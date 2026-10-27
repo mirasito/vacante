@@ -1,4 +1,5 @@
-# Каждый час: собрать новые вакансии, сохранить их в ветку data и опубликовать сайт на GitHub Pages.
+# Каждый час: собрать новые вакансии, опубликовать свежие в каналы, сохранить данные в ветку data
+# и опубликовать сайт на GitHub Pages.
 name: Обновление вакансий
 
 on:
@@ -44,27 +45,35 @@ jobs:
       - name: Собрать вакансии
         run: python -m vacante collect --data-dir data
 
-      - name: Сохранить данные
-        run: |
-          cd data
-          git add vacancies.json state.json
-          if ! git diff --cached --quiet; then
-            git commit -q -m "Вакансии на $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git push origin data
-          fi
-
       # Адрес сайта из настроек Pages: <owner>.github.io/<repo>, а после подключения домена сам домен
       - id: pages
         uses: actions/configure-pages@v5
 
-      - name: Собрать сайт
+      - name: Адрес сайта
         env:
           SITE_URL: ${{ vars.SITE_URL || steps.pages.outputs.base_url }}
         run: |
           : "${SITE_URL:=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}}"
           # Pages отдаёт http://, пока для домена выпускается сертификат; ссылки сразу делаем https
-          SITE_URL="${SITE_URL/#http:/https:}"
-          python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
+          echo "SITE_URL=${SITE_URL/#http:/https:}" >> "$GITHUB_ENV"
+
+      - name: Опубликовать в каналы
+        continue-on-error: true  # сбой Telegram не должен останавливать обновление сайта
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python -m vacante post --data-dir data --base-url "$SITE_URL"
+
+      - name: Сохранить данные
+        run: |
+          cd data
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Вакансии на $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push origin data
+          fi
+
+      - name: Собрать сайт
+        run: python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -158,6 +158,7 @@ PERKS = [
 ]
 _PERKS = [(name, re.compile(p)) for name, p in PERKS]
 _FOR_STUDENTS = re.compile(r"(?<!не )студент")
+_NO_STUDENTS = re.compile(r"студент\w*[^.\n]{0,40}не (?:беспоко|рассматрива|подход|бер)|(?:без|кроме) студент")
 
 _NUM = r"\d{1,3}(?:[   .,]\d{3})+|\d+"
 _MULT = r"\s*(?:к|k|тыс\.?|тысяч[аи]?)(?![а-яa-z])"
@@ -307,7 +308,7 @@ def parse_schedule(text: str) -> str | None:
 def parse_perks(text: str) -> list[str]:
     low = _lower(text)
     perks = [name for name, rx in _PERKS if rx.search(low)]
-    if _FOR_STUDENTS.search(low) and "не студент" not in low:
+    if _FOR_STUDENTS.search(low) and "не студент" not in low and not _NO_STUDENTS.search(low):
         perks.append("Можно студентам")
     return perks
 
@@ -325,10 +326,14 @@ def detect_city(text: str, default: str | None) -> str | None:
 _NOT_EMPLOYER = re.compile(r"не указан|частн\w* лиц|объявлени|хозяин|^я\b")
 
 
+_VERB_TAIL = re.compile(r"(?i)\s+(?:приглашает|ищет|требу|набирает)\w*\b.*$")
+
+
 def _clean_name(name: str) -> str | None:
     quoted = _EMPLOYER_QUOTED.search(name)
     if quoted:
         name = quoted[1]
+    name = _VERB_TAIL.sub("", name)
     name = re.sub(r"[^\w\s&'’.,\-+()]", "", name).strip(" .,-")
     if not 2 <= len(name) <= 40 or _NOT_EMPLOYER.search(_lower(name)):
         return None
@@ -345,8 +350,8 @@ def detect_employer(text: str) -> str | None:
     if m:
         return m[1].strip()
     m = _EMPLOYER_PLACE.search(text)
-    if m:
-        return m[2].strip(" .,")
+    if m and (name := _VERB_TAIL.sub("", m[2]).strip(" .,")):
+        return name
     m = _EMPLOYER_INVITES.search(text)
     if m:
         return _clean_name(m[1])

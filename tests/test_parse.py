@@ -158,3 +158,12 @@ def test_salary_ignores_foreign_currency():
 def test_generic_title_only_without_specific_one():
     assert detect_titles("Требуются\nработники в цех, 300 000 тг") == [("Сотрудник", "other")]
     assert detect_titles("Требуются сотрудники: кассир") == [("Кассир", "retail")]
+
+
+def test_students_perk_respects_refusal():
+    assert "Можно студентам" in parse_perks("Подходит студентам, гибкий график")
+    assert "Можно студентам" not in parse_perks("Студентов очного отделения просьба не беспокоить")
+
+
+def test_employer_stops_before_invite_verb():
+    assert detect_employer("🔥 СЕТЬ СУПЕРМАРКЕТОВ SMALL ПРИГЛАШАЕТ В КОМАНДУ! 🔥") == "SMALL"

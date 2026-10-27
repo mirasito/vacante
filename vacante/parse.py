@@ -369,9 +369,20 @@ def parse_schedule(text: str) -> str | None:
     return ", ".join(parts) or None
 
 
+# «Развозки нет», «без питания», «жильё не предоставляем», «развозка жоқ»: условие упомянуто, но его нет
+_NEGATED_BEFORE = re.compile(r"\b(?:без|нет|не)\s+(?!только\b)(?:\w+\s+)?$")
+_NEGATED_AFTER = re.compile(r"^\w*[\s,:—–-]*(?:нет\b|не\s|отсутству|жо[кқ]\b)")
+
+
+def _offered(rx: re.Pattern, low: str) -> bool:
+    return any(not _NEGATED_BEFORE.search(low[max(0, m.start() - 25):m.start()])
+               and not _NEGATED_AFTER.match(low[m.end():m.end() + 30])
+               for m in rx.finditer(low))
+
+
 def parse_perks(text: str) -> list[str]:
     low = _lower(text)
-    perks = [name for name, rx in _PERKS if rx.search(low)]
+    perks = [name for name, rx in _PERKS if _offered(rx, low)]
     if _FOR_STUDENTS.search(low) and "не студент" not in low and not _NO_STUDENTS.search(low):
         perks.append("Можно студентам")
     return perks

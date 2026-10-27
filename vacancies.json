@@ -1,5 +1,45 @@
 [
  {
+  "id": "almaty_rabota01-25986",
+  "title": "Хостес, Официант, Кассир",
+  "category": "horeca",
+  "city": "almaty",
+  "salary_min": 16000,
+  "salary_max": null,
+  "salary_period": "day",
+  "schedule": "2/2, ночные смены",
+  "perks": [],
+  "employer": "Лаффа",
+  "text": "В кафе восточной кухни «Лаффа»\nТребуются\nХостес\n— Женщина, 20–30 лет\n— Опыт работы от 1 года\n\nУсловия\n— График: 2/2, с 12:00 до 02:00\n— Оплата: 16 000 ₸ + 1 000 ₸ на дорожные расходы\n— Расчёт 2 раза в месяц\n\nОфицианты\n— Возраст: 18–45 лет\n— Опыт работы от 1 года\n\nУсловия\n— График на выбор: 5/2 или 2/2\n— Смены на выбор: с 10:00 до 02:00 или с 19:00 до 10:00\n— 8% от личной кассы\n— Доход: 15 000–40 000 ₸\n— Расчёт ежедневно, задним числом\n\nКассир (iiko)\n— Женщина, 25–45 лет\n— Опыт работы 4–5 лет\n— Опыт работы в общепите обязателен\n\nУсловия\n— График: сутки через двое, с 10:00 до 10:00\n— Зарплата: 250 000 ₸\n— Выплаты: аванс и зарплата\n\nПовар китайской кухни в ночную смену\n— Мужчина, 25–45 лет\n— Опыт работы от 4–5 лет\n\nУсловия\n— График: 2/2, с 22:00 до 10:00\n— Оплата: 20 000 ₸ за смену\n— Выплаты ежедневно или аванс и зарплата\n\nФритюрщик\n— Мужчина, 23–45 лет\n— Опыт работы от 3 лет\n\nУсловия\n— График: 2/2, с 12:00 до 01:00\n— Оплата: 16 000 ₸ за смену\n— Выплаты ежедневно или аванс и зарплата\n\nКонтакты\nАдрес: Турксибский район, ул. Акан Серы, 28/1, кафе «Лаффа»\nWhatsApp: , Алёна",
+  "source": "telegram",
+  "source_url": "https://t.me/almaty_rabota01/25986",
+  "posted_at": "2026-10-27T09:30:09+00:00",
+  "fingerprint": "16a33e100ebcc875",
+  "also_seen_in": [],
+  "address": "ул. Акан Серы, 28/1, кафе «Лаффа»"
+ },
+ {
+  "id": "rabota_astanakz-30980",
+  "title": "Сушист",
+  "category": "horeca",
+  "city": "astana",
+  "salary_min": 500000,
+  "salary_max": 600000,
+  "salary_period": "month",
+  "schedule": "4/3",
+  "perks": [
+   "Жильё"
+  ],
+  "employer": "Служба доставки суши",
+  "text": "✅ Компания: Служба доставки суши\n\n🧰 Вакансия: Сушист\n\n💰 З/п: 500 000 – 600 000 ₸ за месяц (19 000 – 22 000 ₸ в день; еженедельная оплата)\n🕘 График: 4/3, 5/2, 6/1 (с 11:00 до 23:00)\n\n▫️ Адрес: г. Астана, ул. Култегин, 4А / ул. Молдагалиева, 10\n▫️ Обязанности\n - Приготовление блюд японской кухни\n - Разделка рыбы и приготовление заготовок\n▫️ Требования\n - Опыт работы сушистом более 1.5 года\n - Возраст: 18–22 лет\n - Чистоплотность, пунктуальность, ответственность, быстрота и сообразительность\n - Умение работать в команде\n▫️ Условия\n - Предоставляется проживание (дом рядом с работой)\n - Молодой коллектив\n\n📞 Телефон: (Адильбек)\n💬 WhatsApp",
+  "source": "telegram",
+  "source_url": "https://t.me/rabota_Astanakz/30980",
+  "posted_at": "2026-10-27T09:30:00+00:00",
+  "fingerprint": "8db19182a3467f30",
+  "also_seen_in": [],
+  "address": "ул. Култегин, 4А"
+ },
+ {
   "id": "rabotaalmatyyyy-15217",
   "title": "Продавец-кассир",
   "category": "retail",
@@ -17,7 +57,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15217",
   "posted_at": "2026-10-27T09:14:47+00:00",
   "fingerprint": "2125d6f2d4ae433a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Розыбакиева 181А (р-н MEGA)"
  },
  {
   "id": "almaty_rabota01-25985",
@@ -35,7 +76,8 @@
   "source_url": "https://t.me/almaty_rabota01/25985",
   "posted_at": "2026-10-27T09:13:43+00:00",
   "fingerprint": "b957ddb23649db46",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Самал-2"
  },
  {
   "id": "rabota_astanakz-30979",
@@ -53,7 +95,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30979",
   "posted_at": "2026-10-27T09:00:00+00:00",
   "fingerprint": "468079e98f62f655",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Мангилик Ел, 49 (ЖК «Дрим Сити»)"
  },
  {
   "id": "almatyrabota1-21264",
@@ -71,7 +114,8 @@
   "source_url": "https://t.me/almatyrabota1/21264",
   "posted_at": "2026-10-27T08:56:59+00:00",
   "fingerprint": "c77b8cb9334690a1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25984",
@@ -89,7 +133,8 @@
   "source_url": "https://t.me/almaty_rabota01/25984",
   "posted_at": "2026-10-27T08:56:04+00:00",
   "fingerprint": "38f846fb78af8743",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25983",
@@ -109,7 +154,8 @@
   "source_url": "https://t.me/almaty_rabota01/25983",
   "posted_at": "2026-10-27T08:53:24+00:00",
   "fingerprint": "916e8a738c6918cb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "площадь Республики, 4 (городской акимат)"
  },
  {
   "id": "agashka_job_almaty-975",
@@ -127,7 +173,8 @@
   "source_url": "https://t.me/agashka_job_almaty/975",
   "posted_at": "2026-10-27T08:50:09+00:00",
   "fingerprint": "38b30e9e1daea095",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5751",
@@ -145,7 +192,8 @@
   "source_url": "https://t.me/rabota4almaty/5751",
   "posted_at": "2026-10-27T08:41:24+00:00",
   "fingerprint": "1e9762ca780179ce",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Сүйінбай Даңғылы, 38А"
  },
  {
   "id": "rabota4almaty-5749",
@@ -163,7 +211,8 @@
   "source_url": "https://t.me/rabota4almaty/5749",
   "posted_at": "2026-10-27T08:41:22+00:00",
   "fingerprint": "53f00d1c16be64e4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Әйтиев көшесі, 23"
  },
  {
   "id": "rabota4almaty-5748",
@@ -181,7 +230,8 @@
   "source_url": "https://t.me/rabota4almaty/5748",
   "posted_at": "2026-10-27T08:41:21+00:00",
   "fingerprint": "971cee278931f7dc",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Жароков көшесі, 366"
  },
  {
   "id": "astana_job_vakansii-129805",
@@ -203,7 +253,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129805",
   "posted_at": "2026-10-27T08:36:28+00:00",
   "fingerprint": "facf34b602495b43",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кабанбай Батыра, д. 5/3 и проспект Аль-Фараби, д. 9"
  },
  {
   "id": "astana_job_vakansii-129804",
@@ -221,7 +272,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129804",
   "posted_at": "2026-10-27T08:32:35+00:00",
   "fingerprint": "a047bb65c348700c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Джангельдина, 6/1"
  },
  {
   "id": "rabota_astanakz-30978",
@@ -242,7 +294,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30978",
   "posted_at": "2026-10-27T08:30:00+00:00",
   "fingerprint": "cb345e5719eb728a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "локации на Левом и Правом берегу"
  },
  {
   "id": "zhumys_astana_kz-16855",
@@ -260,7 +313,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16855",
   "posted_at": "2026-10-27T08:13:56+00:00",
   "fingerprint": "9f7c9ad8f7b24886",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16791",
@@ -280,7 +334,8 @@
   "fingerprint": "59fc937aee2da9f5",
   "also_seen_in": [
    "https://t.me/zhumys_astana_kz/16854"
-  ]
+  ],
+  "address": "Левый берег, район Экспо"
  },
  {
   "id": "zhumys_astana_kz-16853",
@@ -298,7 +353,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16853",
   "posted_at": "2026-10-27T08:04:38+00:00",
   "fingerprint": "a9822db0d26ba6f4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Манаса, 2/1"
  },
  {
   "id": "zhumys_astana_kz-16852",
@@ -318,7 +374,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16852",
   "posted_at": "2026-10-27T08:03:00+00:00",
   "fingerprint": "601ea72bec651228",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Мкр Шубар, А.Ермеков 15"
  },
  {
   "id": "rabota_astanakz-30977",
@@ -336,7 +393,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30977",
   "posted_at": "2026-10-27T08:00:06+00:00",
   "fingerprint": "f88afd4125920c91",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Есенберлина, 21"
  },
  {
   "id": "almaty_rabota_work-31695",
@@ -356,7 +414,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31695",
   "posted_at": "2026-10-27T07:53:00+00:00",
   "fingerprint": "98cfab0f707236a4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Абая – ул. Манаса, ЖК «Легенда»"
  },
  {
   "id": "rabota_v_nursultane1-12754",
@@ -376,7 +435,8 @@
   "fingerprint": "34277e4e2baf80bc",
   "also_seen_in": [
    "https://t.me/astana_job_vakansii/129803"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31694",
@@ -397,7 +457,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31694",
   "posted_at": "2026-10-27T07:46:14+00:00",
   "fingerprint": "b7ac721dd1ef44d1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5747",
@@ -417,7 +478,8 @@
   "source_url": "https://t.me/rabota4almaty/5747",
   "posted_at": "2026-10-27T07:41:04+00:00",
   "fingerprint": "a79a7bc573ba6fa9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Абылай хана, 121-А"
  },
  {
   "id": "rabota4almaty-5746",
@@ -435,7 +497,8 @@
   "source_url": "https://t.me/rabota4almaty/5746",
   "posted_at": "2026-10-27T07:41:02+00:00",
   "fingerprint": "ec7c23dacacca1d5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Даулеткерея, 88-А"
  },
  {
   "id": "astana_job_vakansii-129801",
@@ -455,7 +518,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129801",
   "posted_at": "2026-10-27T07:37:55+00:00",
   "fingerprint": "0ca603a80e744c12",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21263",
@@ -475,7 +539,8 @@
   "source_url": "https://t.me/almatyrabota1/21263",
   "posted_at": "2026-10-27T07:32:50+00:00",
   "fingerprint": "f435602e1f9206cf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Назарбаева, 43"
  },
  {
   "id": "rabota_astanakz-30976",
@@ -493,7 +558,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30976",
   "posted_at": "2026-10-27T07:30:00+00:00",
   "fingerprint": "91189bc644239299",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Бухар Жырау, 25"
  },
  {
   "id": "agashka_job_almaty-974",
@@ -513,7 +579,8 @@
   "source_url": "https://t.me/agashka_job_almaty/974",
   "posted_at": "2026-10-27T07:20:08+00:00",
   "fingerprint": "2d59d69071e7a878",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129800",
@@ -531,7 +598,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129800",
   "posted_at": "2026-10-27T07:16:56+00:00",
   "fingerprint": "657e99c64474c3ae",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул.Сыганак, 2"
  },
  {
   "id": "rabota_astanakz-30944",
@@ -551,7 +619,8 @@
   "fingerprint": "ce59c26c559c2e70",
   "also_seen_in": [
    "https://t.me/rabota_Astanakz/30975"
-  ]
+  ],
+  "address": "пр. Мангилик Ел, 53"
  },
  {
   "id": "zhumys_astana_kz-16851",
@@ -569,7 +638,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16851",
   "posted_at": "2026-10-27T06:53:21+00:00",
   "fingerprint": "5e7d9904a4a8498c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21262",
@@ -591,7 +661,8 @@
   "source_url": "https://t.me/almatyrabota1/21262",
   "posted_at": "2026-10-27T06:53:13+00:00",
   "fingerprint": "9395b2240316b673",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "проспект Суюнбая, 19(ниже Саяхата)"
  },
  {
   "id": "astana_job_vakansii-129798",
@@ -611,7 +682,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129798",
   "posted_at": "2026-10-27T06:52:20+00:00",
   "fingerprint": "fe39d861f1233d26",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "левый берег"
  },
  {
   "id": "zhumys_astana_kz-16850",
@@ -631,7 +703,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16850",
   "posted_at": "2026-10-27T06:51:43+00:00",
   "fingerprint": "fb7a9749ca6f14b3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25982",
@@ -652,7 +725,8 @@
   "source_url": "https://t.me/almaty_rabota01/25982",
   "posted_at": "2026-10-27T06:46:15+00:00",
   "fingerprint": "1edae0fb4b630cf2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ Globus, 2-й этаж, пр. Абая, 109В"
  },
  {
   "id": "rabota_astanakz-30974",
@@ -670,7 +744,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30974",
   "posted_at": "2026-10-27T06:41:38+00:00",
   "fingerprint": "291036e9b0114a06",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Шаймердена Косшыгулулы, 11/4"
  },
  {
   "id": "rabota4almaty-5745",
@@ -688,7 +763,8 @@
   "source_url": "https://t.me/rabota4almaty/5745",
   "posted_at": "2026-10-27T06:41:23+00:00",
   "fingerprint": "7a37d20ea3b8ed6e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Жароков көшесі, 20"
  },
  {
   "id": "almaty_rabota_work-31693",
@@ -706,7 +782,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31693",
   "posted_at": "2026-10-27T06:39:49+00:00",
   "fingerprint": "56794636bb2a3bdf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Ауэзова – пр. Райымбека"
  },
  {
   "id": "astana_job_vakansii-129795",
@@ -728,7 +805,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129795",
   "posted_at": "2026-10-27T06:34:53+00:00",
   "fingerprint": "d41cb5dd9c038d1a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "вахтовый поселок, месторождение «Семизбай» (300 км от г. Астаны, за…"
  },
  {
   "id": "almatyrabota1-21261",
@@ -748,7 +826,8 @@
   "source_url": "https://t.me/almatyrabota1/21261",
   "posted_at": "2026-10-27T06:33:02+00:00",
   "fingerprint": "d74a675497ff9ec4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "3 мкр/65"
  },
  {
   "id": "zhumys_astana_kz-16849",
@@ -766,7 +845,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16849",
   "posted_at": "2026-10-27T06:31:26+00:00",
   "fingerprint": "2718e2ff2bba1faf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Улица Амман 21"
  },
  {
   "id": "rabota_astanakz-30973",
@@ -784,7 +864,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30973",
   "posted_at": "2026-10-27T06:30:00+00:00",
   "fingerprint": "b4cb6ae7f601632e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Байтурсынова, 34 (ТРЦ «Жибек Жолы»)"
  },
  {
   "id": "zhumys_astana_kz-16847",
@@ -802,7 +883,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16847",
   "posted_at": "2026-10-27T06:28:56+00:00",
   "fingerprint": "56442a8fb8349b3d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кабанбай батыра, 75А"
  },
  {
   "id": "zhumys_astana_kz-16846",
@@ -820,7 +902,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16846",
   "posted_at": "2026-10-27T06:27:50+00:00",
   "fingerprint": "7fe63f93d425f34b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Балқантау 10"
  },
  {
   "id": "zhumys_astana_kz-16845",
@@ -841,7 +924,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16845",
   "posted_at": "2026-10-27T06:26:43+00:00",
   "fingerprint": "2d80f38089227e37",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Каркаралы, 11"
  },
  {
   "id": "zhumys_astana_kz-16844",
@@ -863,7 +947,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16844",
   "posted_at": "2026-10-27T06:25:48+00:00",
   "fingerprint": "bf317ea29aa9c535",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кабанбай Батыра 13"
  },
  {
   "id": "almaty_rabota05-11683",
@@ -883,7 +968,8 @@
   "source_url": "https://t.me/almaty_rabota05/11683",
   "posted_at": "2026-10-27T06:24:13+00:00",
   "fingerprint": "dfd39d725ec7be41",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Розыбакиева 181А (р-н MEGA)"
  },
  {
   "id": "zhumys_astana_kz-16792",
@@ -903,7 +989,8 @@
   "fingerprint": "0332232c0e1b090a",
   "also_seen_in": [
    "https://t.me/zhumys_astana_kz/16840"
-  ]
+  ],
+  "address": "ул. Сыганак, 62/3, CAPITOL CAFE"
  },
  {
   "id": "astana_job_vakansii-129794",
@@ -927,7 +1014,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129794",
   "posted_at": "2026-10-27T06:20:04+00:00",
   "fingerprint": "e7521316904a6fe2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15631",
@@ -951,7 +1039,8 @@
   "fingerprint": "271d9ddfd4a0f170",
   "also_seen_in": [
    "https://t.me/zhumys_astana_kz/16838"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129793",
@@ -972,7 +1061,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129793",
   "posted_at": "2026-10-27T06:12:45+00:00",
   "fingerprint": "fbb56d46d3e31041",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кумисбекова, 11"
  },
  {
   "id": "astana_job_vakansii-129792",
@@ -990,7 +1080,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129792",
   "posted_at": "2026-10-27T06:10:35+00:00",
   "fingerprint": "38c2a5edcd74d676",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Аккербез, 10 (гостиница «Астория», есть в 2ГИС)"
  },
  {
   "id": "astana_job_vakansii-129791",
@@ -1012,7 +1103,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129791",
   "posted_at": "2026-10-27T06:09:26+00:00",
   "fingerprint": "803bacca6e7a3eec",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30972",
@@ -1030,7 +1122,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30972",
   "posted_at": "2026-10-27T06:06:06+00:00",
   "fingerprint": "fa6ef59897f8df13",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Алматы, 13"
  },
  {
   "id": "rabota_astanakz-30971",
@@ -1052,7 +1145,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30971",
   "posted_at": "2026-10-27T06:00:06+00:00",
   "fingerprint": "748170a6a93afaf4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район 7-й поликлиники"
  },
  {
   "id": "astana_rabota-90078",
@@ -1072,7 +1166,8 @@
   "source_url": "https://t.me/Astana_rabota/90078",
   "posted_at": "2026-10-27T05:49:32+00:00",
   "fingerprint": "0794356a435c8805",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30970",
@@ -1092,7 +1187,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30970",
   "posted_at": "2026-10-27T05:47:44+00:00",
   "fingerprint": "3e8f659f6ee78458",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Майлина, 1А"
  },
  {
   "id": "rabotaalmatyyyy-15158",
@@ -1112,7 +1208,8 @@
   "fingerprint": "70901bbaa42c6f41",
   "also_seen_in": [
    "https://t.me/rabotaalmatyyyy/15213"
-  ]
+  ],
+  "address": "Барыс-4 Оптовка базарына грузчик қажет"
  },
  {
   "id": "rabota4almaty-5741",
@@ -1132,7 +1229,8 @@
   "source_url": "https://t.me/rabota4almaty/5741",
   "posted_at": "2026-10-27T05:41:05+00:00",
   "fingerprint": "2f9b5a6be7757f58",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Бостандыкский район"
  },
  {
   "id": "rabota4almaty-5742",
@@ -1150,7 +1248,8 @@
   "source_url": "https://t.me/rabota4almaty/5742",
   "posted_at": "2026-10-27T05:41:05+00:00",
   "fingerprint": "ee2e2d2a83dd93b0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Алматы-Капчагай трасса, 5"
  },
  {
   "id": "rabota4almaty-5739",
@@ -1168,7 +1267,8 @@
   "source_url": "https://t.me/rabota4almaty/5739",
   "posted_at": "2026-10-27T05:41:03+00:00",
   "fingerprint": "22dfdddd2ad7594c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр Айнабулак-3, д 98б"
  },
  {
   "id": "astana_job_vakansii-129790",
@@ -1191,7 +1291,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129790",
   "posted_at": "2026-10-27T05:40:25+00:00",
   "fingerprint": "b2a9dc63ab09dfe9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25978",
@@ -1209,7 +1310,8 @@
   "source_url": "https://t.me/almaty_rabota01/25978",
   "posted_at": "2026-10-27T05:37:55+00:00",
   "fingerprint": "5bcaea4c918bf8ad",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Назарбаева, 301, ЖК «Ренессанс»"
  },
  {
   "id": "almaty_rabota01-25977",
@@ -1227,7 +1329,8 @@
   "source_url": "https://t.me/almaty_rabota01/25977",
   "posted_at": "2026-10-27T05:36:00+00:00",
   "fingerprint": "a7f878c2f808dfa5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Горного гиганта, ул. Искендерова, 22/1"
  },
  {
   "id": "almaty_rabota01-25976",
@@ -1247,7 +1350,8 @@
   "source_url": "https://t.me/almaty_rabota01/25976",
   "posted_at": "2026-10-27T05:32:59+00:00",
   "fingerprint": "f984a34387b2ff91",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кабдолова, 1/8"
  },
  {
   "id": "almaty_rabota01-25975",
@@ -1267,7 +1371,8 @@
   "source_url": "https://t.me/almaty_rabota01/25975",
   "posted_at": "2026-10-27T05:31:07+00:00",
   "fingerprint": "7247adcb1786871c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Розыбакиева, 181А (район MEGA)"
  },
  {
   "id": "almaty_rabota01-25974",
@@ -1285,7 +1390,8 @@
   "source_url": "https://t.me/almaty_rabota01/25974",
   "posted_at": "2026-10-27T05:29:26+00:00",
   "fingerprint": "0ffc5001e08eaf49",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Назарбаева, 301, ЖК «Ренессанс»"
  },
  {
   "id": "astana_job_vakansii-129789",
@@ -1305,7 +1411,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129789",
   "posted_at": "2026-10-27T05:17:33+00:00",
   "fingerprint": "3e8df682f46a2769",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Республика, 4"
  },
  {
   "id": "astana_job_vakansii-129788",
@@ -1323,7 +1430,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129788",
   "posted_at": "2026-10-27T05:14:49+00:00",
   "fingerprint": "d8b0653d0168c7d2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Есенберлина, 21"
  },
  {
   "id": "almaty_rabota_work-31692",
@@ -1341,7 +1449,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31692",
   "posted_at": "2026-10-27T05:12:24+00:00",
   "fingerprint": "39f7a6d90f02db10",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Жибек Жолы, 111, ТД «Аэровокзал»"
  },
  {
   "id": "agashka_job_almaty-972",
@@ -1362,7 +1471,8 @@
   "source_url": "https://t.me/agashka_job_almaty/972",
   "posted_at": "2026-10-27T05:00:14+00:00",
   "fingerprint": "a7a9862af3ce5631",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21219",
@@ -1386,7 +1496,8 @@
   "also_seen_in": [
    "https://t.me/almatyrabota1/21259",
    "https://t.me/rabotaalmatyyyy/15212"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129787",
@@ -1406,7 +1517,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129787",
   "posted_at": "2026-10-27T04:42:47+00:00",
   "fingerprint": "f0796e3d86611698",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31691",
@@ -1428,7 +1540,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31691",
   "posted_at": "2026-10-27T04:42:15+00:00",
   "fingerprint": "036854bf5318259e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5738",
@@ -1446,7 +1559,8 @@
   "source_url": "https://t.me/rabota4almaty/5738",
   "posted_at": "2026-10-27T04:41:06+00:00",
   "fingerprint": "8acd83575e9bcf1b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Наурызбайский район"
  },
  {
   "id": "rabota4almaty-5737",
@@ -1466,7 +1580,8 @@
   "source_url": "https://t.me/rabota4almaty/5737",
   "posted_at": "2026-10-27T04:41:05+00:00",
   "fingerprint": "1c6a6ea43239057c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Шавтрова 11"
  },
  {
   "id": "rabota4almaty-5735",
@@ -1484,7 +1599,8 @@
   "source_url": "https://t.me/rabota4almaty/5735",
   "posted_at": "2026-10-27T04:41:04+00:00",
   "fingerprint": "73dc9a9b270d3740",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Алматы Жагалау 377/1"
  },
  {
   "id": "astana_job_vakansii-129786",
@@ -1506,7 +1622,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129786",
   "posted_at": "2026-10-27T04:40:41+00:00",
   "fingerprint": "e4aff9980abd6fdc",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Омарова, 27"
  },
  {
   "id": "astana_rabota-90077",
@@ -1524,7 +1641,8 @@
   "source_url": "https://t.me/Astana_rabota/90077",
   "posted_at": "2026-10-27T04:27:16+00:00",
   "fingerprint": "be8c1e5e2be292c2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16813",
@@ -1546,7 +1664,8 @@
   "fingerprint": "361a83cc963bf695",
   "also_seen_in": [
    "https://t.me/zhumys_astana_kz/16835"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_rabota-90018",
@@ -1571,7 +1690,8 @@
    "https://t.me/Astana_rabota/90059",
    "https://t.me/Astana_rabota/90068",
    "https://t.me/Astana_rabota/90076"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_rabota-90016",
@@ -1592,7 +1712,8 @@
   "also_seen_in": [
    "https://t.me/Astana_rabota/90053",
    "https://t.me/Astana_rabota/90075"
-  ]
+  ],
+  "address": "Кошкарбаева 32"
  },
  {
   "id": "astana_hh-1811",
@@ -1618,7 +1739,8 @@
    "https://t.me/Astana_rabota/90025",
    "https://t.me/Astana_rabota/90036",
    "https://t.me/Astana_rabota/90074"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "rabota4almaty-5732",
@@ -1636,7 +1758,8 @@
   "source_url": "https://t.me/rabota4almaty/5732",
   "posted_at": "2026-10-27T03:41:03+00:00",
   "fingerprint": "fadb711ae406d025",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Аксай-4 90"
  },
  {
   "id": "astana_job_vakansii-129748",
@@ -1657,7 +1780,8 @@
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12774",
    "https://t.me/astana_hh/1840"
-  ]
+  ],
+  "address": "ТРЦ «Arujan»"
  },
  {
   "id": "astana_hh-1839",
@@ -1677,7 +1801,8 @@
   "source_url": "https://t.me/astana_hh/1839",
   "posted_at": "2026-10-26T19:00:54+00:00",
   "fingerprint": "e753fa5516ca251a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25973",
@@ -1697,7 +1822,8 @@
   "source_url": "https://t.me/almaty_rabota01/25973",
   "posted_at": "2026-10-26T17:58:34+00:00",
   "fingerprint": "566d9346fd5911b9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Жандосова, 83, ТРЦ «Алматы Молл»"
  },
  {
   "id": "rabota4almaty-5730",
@@ -1715,7 +1841,8 @@
   "source_url": "https://t.me/rabota4almaty/5730",
   "posted_at": "2026-10-26T17:41:07+00:00",
   "fingerprint": "ef33984d05c99266",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Жансугурова, 235"
  },
  {
   "id": "rabota4almaty-5728",
@@ -1733,7 +1860,8 @@
   "source_url": "https://t.me/rabota4almaty/5728",
   "posted_at": "2026-10-26T17:41:06+00:00",
   "fingerprint": "3c36993f6827e659",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Масанчы көшесі, 78"
  },
  {
   "id": "rabota4almaty-5727",
@@ -1751,7 +1879,8 @@
   "source_url": "https://t.me/rabota4almaty/5727",
   "posted_at": "2026-10-26T17:41:04+00:00",
   "fingerprint": "cba7098a5d354577",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Алатауский район"
  },
  {
   "id": "rabota4almaty-5726",
@@ -1769,7 +1898,8 @@
   "source_url": "https://t.me/rabota4almaty/5726",
   "posted_at": "2026-10-26T16:41:07+00:00",
   "fingerprint": "d63296857bfdcf94",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5724",
@@ -1787,7 +1917,8 @@
   "source_url": "https://t.me/rabota4almaty/5724",
   "posted_at": "2026-10-26T16:41:05+00:00",
   "fingerprint": "0ed9d7f6e5217585",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Фучика 1"
  },
  {
   "id": "rabota4almaty-5725",
@@ -1805,7 +1936,8 @@
   "source_url": "https://t.me/rabota4almaty/5725",
   "posted_at": "2026-10-26T16:41:05+00:00",
   "fingerprint": "1656d3935b7e6331",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Есенова 138В"
  },
  {
   "id": "rabota4almaty-5721",
@@ -1823,7 +1955,8 @@
   "source_url": "https://t.me/rabota4almaty/5721",
   "posted_at": "2026-10-26T15:41:03+00:00",
   "fingerprint": "4abb1dd49e02676c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Микрорайон Нур Алатау улица 17, 21"
  },
  {
   "id": "rabota_astanakz-30969",
@@ -1841,7 +1974,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30969",
   "posted_at": "2026-10-26T15:21:48+00:00",
   "fingerprint": "d9437d39df27ed2b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Есильский район"
  },
  {
   "id": "rabota_astana-15635",
@@ -1859,7 +1993,8 @@
   "source_url": "https://t.me/rabota_astana/15635",
   "posted_at": "2026-10-26T15:11:09+00:00",
   "fingerprint": "238ba4a68f16c640",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31687",
@@ -1879,7 +2014,8 @@
   "fingerprint": "704bda4385954c38",
   "also_seen_in": [
    "https://t.me/rabotaalmatyyyy/15211"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11681",
@@ -1899,7 +2035,8 @@
   "source_url": "https://t.me/almaty_rabota05/11681",
   "posted_at": "2026-10-26T15:01:25+00:00",
   "fingerprint": "17a2a0804df61725",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11079",
@@ -1917,7 +2054,8 @@
   "source_url": "https://t.me/almatyvacancies/11079",
   "posted_at": "2026-10-26T14:53:15+00:00",
   "fingerprint": "4fa526ba505befbf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Жарокова 289а"
  },
  {
   "id": "almatyvacancies-11078",
@@ -1937,7 +2075,8 @@
   "source_url": "https://t.me/almatyvacancies/11078",
   "posted_at": "2026-10-26T14:52:38+00:00",
   "fingerprint": "3c4cd818ffb3e830",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11077",
@@ -1955,7 +2094,8 @@
   "source_url": "https://t.me/almatyvacancies/11077",
   "posted_at": "2026-10-26T14:51:46+00:00",
   "fingerprint": "9ed58a2adf54d29f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-970",
@@ -1973,7 +2113,8 @@
   "source_url": "https://t.me/agashka_job_almaty/970",
   "posted_at": "2026-10-26T14:50:08+00:00",
   "fingerprint": "b2368ba062f6656a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11073",
@@ -1991,7 +2132,8 @@
   "source_url": "https://t.me/almatyvacancies/11073",
   "posted_at": "2026-10-26T14:46:00+00:00",
   "fingerprint": "9b3fe5ceec4e5294",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5719",
@@ -2009,7 +2151,8 @@
   "source_url": "https://t.me/rabota4almaty/5719",
   "posted_at": "2026-10-26T14:41:11+00:00",
   "fingerprint": "39c15c70bb5c0774",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ҚАРАСАЙ БАТЫР көшесі, 152"
  },
  {
   "id": "rabota4almaty-5720",
@@ -2027,7 +2170,8 @@
   "source_url": "https://t.me/rabota4almaty/5720",
   "posted_at": "2026-10-26T14:41:11+00:00",
   "fingerprint": "f78c90afbd3329d9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Аносов көшесі, 37"
  },
  {
   "id": "rabota4almaty-5718",
@@ -2045,7 +2189,8 @@
   "source_url": "https://t.me/rabota4almaty/5718",
   "posted_at": "2026-10-26T14:41:10+00:00",
   "fingerprint": "3d34d17e7427d6f0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Терехина, 42/7"
  },
  {
   "id": "zhumys_astana_kz-16834",
@@ -2065,7 +2210,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16834",
   "posted_at": "2026-10-26T14:30:20+00:00",
   "fingerprint": "c3f27bca1e52d3f7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129743",
@@ -2085,7 +2231,8 @@
   "fingerprint": "b04705d19c571876",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12776"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129749",
@@ -2105,7 +2252,8 @@
   "fingerprint": "e0e5a86eb094b7af",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12773"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129755",
@@ -2125,7 +2273,8 @@
   "fingerprint": "c61219b415b3e021",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12772"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129764",
@@ -2145,7 +2294,8 @@
   "fingerprint": "66f597e82ddf48b2",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12770"
-  ]
+  ],
+  "address": "ул. Сарайшык, 7/7, БЦ «Лазурный» (новая точка)"
  },
  {
   "id": "astana_job_vakansii-129765",
@@ -2167,7 +2317,8 @@
   "fingerprint": "2d6ef4b17490fe3b",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12769"
-  ]
+  ],
+  "address": "ул. Шаймердена Косшыгулулы, 25"
  },
  {
   "id": "astana_job_vakansii-129766",
@@ -2189,7 +2340,8 @@
   "fingerprint": "e6f9b24c9ef3902a",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12768"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129771",
@@ -2209,7 +2361,8 @@
   "fingerprint": "7bb2cf944ba5f383",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12767"
-  ]
+  ],
+  "address": "Шубары, Караоткел, 33/1"
  },
  {
   "id": "astana_job_vakansii-129778",
@@ -2229,7 +2382,8 @@
   "fingerprint": "529ceb90cc2be67c",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12766"
-  ]
+  ],
+  "address": "левый берег, район Абу-Даби Плаза, ул. Акмешит, 5А"
  },
  {
   "id": "astana_job_vakansii-129785",
@@ -2249,7 +2403,8 @@
   "fingerprint": "ac69601b23f81199",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12765"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "rabota4almaty-5713",
@@ -2267,7 +2422,8 @@
   "source_url": "https://t.me/rabota4almaty/5713",
   "posted_at": "2026-10-26T13:41:05+00:00",
   "fingerprint": "777ef8db638b9073",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Навои, 208/1"
  },
  {
   "id": "rabota_astanakz-30968",
@@ -2287,7 +2443,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30968",
   "posted_at": "2026-10-26T13:32:38+00:00",
   "fingerprint": "2e1cee117b5bab10",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-969",
@@ -2308,7 +2465,8 @@
   "source_url": "https://t.me/agashka_job_almaty/969",
   "posted_at": "2026-10-26T13:30:09+00:00",
   "fingerprint": "f046217fa9c92d54",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11680",
@@ -2326,7 +2484,8 @@
   "source_url": "https://t.me/almaty_rabota05/11680",
   "posted_at": "2026-10-26T13:22:25+00:00",
   "fingerprint": "632f9028cae65661",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТЦ Галерея"
  },
  {
   "id": "astana_job_vakansii-129784",
@@ -2346,7 +2505,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129784",
   "posted_at": "2026-10-26T13:18:19+00:00",
   "fingerprint": "9c460b6fa970026a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Абылай хана, 28а"
  },
  {
   "id": "astana_rabota-90071",
@@ -2364,7 +2524,8 @@
   "source_url": "https://t.me/Astana_rabota/90071",
   "posted_at": "2026-10-26T13:09:49+00:00",
   "fingerprint": "53a0da472c47e27f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31690",
@@ -2384,7 +2545,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31690",
   "posted_at": "2026-10-26T12:59:11+00:00",
   "fingerprint": "03c303a9bf3973a6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Мамыр-1, ЖК «Спутник»"
  },
  {
   "id": "almaty_rabota_work-31689",
@@ -2402,7 +2564,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31689",
   "posted_at": "2026-10-26T12:57:18+00:00",
   "fingerprint": "e49084ac1858f1b3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "проспект Абая 23 (Eleon dress), Метро Абай"
  },
  {
   "id": "rabota_astanakz-30967",
@@ -2422,7 +2585,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30967",
   "posted_at": "2026-10-26T12:56:55+00:00",
   "fingerprint": "87ffaec59ed82f23",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Левый берег, Есильский район, ул. Толе би, 44/1"
  },
  {
   "id": "astana_job_vakansii-129783",
@@ -2440,7 +2604,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129783",
   "posted_at": "2026-10-26T12:49:52+00:00",
   "fingerprint": "0a5dc7b94d92f220",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Улытау, 33/4"
  },
  {
   "id": "jobkz_1-23059",
@@ -2458,7 +2623,8 @@
   "source_url": "https://t.me/jobkz_1/23059",
   "posted_at": "2026-10-26T12:45:44+00:00",
   "fingerprint": "ceb7064780b1675d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5711",
@@ -2476,7 +2642,8 @@
   "source_url": "https://t.me/rabota4almaty/5711",
   "posted_at": "2026-10-26T12:41:05+00:00",
   "fingerprint": "60784fb50a97f760",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Ақжар Шағын ауданы Дәулеткерей көшесі, 125"
  },
  {
   "id": "astana_rabota-90070",
@@ -2497,7 +2664,8 @@
   "source_url": "https://t.me/Astana_rabota/90070",
   "posted_at": "2026-10-26T12:26:21+00:00",
   "fingerprint": "d4b644a424ffe0af",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota-90069",
@@ -2518,7 +2686,8 @@
   "source_url": "https://t.me/Astana_rabota/90069",
   "posted_at": "2026-10-26T12:22:55+00:00",
   "fingerprint": "19ed6517e3970c36",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "проспект Улы Дала E-669, 9А"
  },
  {
   "id": "astana_job_vakansii-129781",
@@ -2539,7 +2708,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129781",
   "posted_at": "2026-10-26T12:19:15+00:00",
   "fingerprint": "de876a45420f93f8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сығанақ, 62/3"
  },
  {
   "id": "astana_job_vakansii-129780",
@@ -2560,7 +2730,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129780",
   "posted_at": "2026-10-26T12:17:16+00:00",
   "fingerprint": "eee861a874525ff0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ «Аружан», ул. Жансугурова, 8/1"
  },
  {
   "id": "almaty_rabota01-25972",
@@ -2580,7 +2751,8 @@
   "source_url": "https://t.me/almaty_rabota01/25972",
   "posted_at": "2026-10-26T12:15:45+00:00",
   "fingerprint": "08debe6ff1ad30ef",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Елебекова, 48"
  },
  {
   "id": "almaty_rabota01-25971",
@@ -2600,7 +2772,8 @@
   "source_url": "https://t.me/almaty_rabota01/25971",
   "posted_at": "2026-10-26T12:14:37+00:00",
   "fingerprint": "3287bd445671a8ab",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "площадь Республики, 4 (городской акимат)"
  },
  {
   "id": "zhumys_astana_kz-16833",
@@ -2620,7 +2793,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16833",
   "posted_at": "2026-10-26T12:05:12+00:00",
   "fingerprint": "525008179ceff92a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30966",
@@ -2638,7 +2812,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30966",
   "posted_at": "2026-10-26T12:04:12+00:00",
   "fingerprint": "886e5509614319bd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "оптовый рынок Шарын, ул. Циолковского, 4"
  },
  {
   "id": "astana_rabota-90024",
@@ -2661,7 +2836,8 @@
    "https://t.me/Astana_rabota/90044",
    "https://t.me/Astana_rabota/90052",
    "https://t.me/Astana_rabota/90067"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129779",
@@ -2682,7 +2858,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129779",
   "posted_at": "2026-10-26T12:01:41+00:00",
   "fingerprint": "c955a549590270d7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Туркестан, 34"
  },
  {
   "id": "rabota4almaty-5708",
@@ -2700,7 +2877,8 @@
   "source_url": "https://t.me/rabota4almaty/5708",
   "posted_at": "2026-10-26T11:41:07+00:00",
   "fingerprint": "76f7cc61ade426c2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Мақатаев көшесі, 127Б"
  },
  {
   "id": "rabota4almaty-5706",
@@ -2721,7 +2899,8 @@
   "source_url": "https://t.me/rabota4almaty/5706",
   "posted_at": "2026-10-26T11:41:03+00:00",
   "fingerprint": "fd871a4e0ba0772f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Наурызбайский район"
  },
  {
   "id": "astana_job_vakansii-129777",
@@ -2739,7 +2918,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129777",
   "posted_at": "2026-10-26T11:36:52+00:00",
   "fingerprint": "8c6190002f00c309",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129776",
@@ -2760,7 +2940,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129776",
   "posted_at": "2026-10-26T11:31:55+00:00",
   "fingerprint": "9bd0966db98ce3ef",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Болекпаева 12"
  },
  {
   "id": "rabota_astanakz-30964",
@@ -2778,7 +2959,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30964",
   "posted_at": "2026-10-26T11:30:00+00:00",
   "fingerprint": "ffe03b064c065b8d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район аэропорта"
  },
  {
   "id": "rabota_astanakz-30963",
@@ -2799,7 +2981,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30963",
   "posted_at": "2026-10-26T11:23:11+00:00",
   "fingerprint": "b789fa465bd5dce7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Туран, 34"
  },
  {
   "id": "almaty_rabota_work-31686",
@@ -2817,7 +3000,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31686",
   "posted_at": "2026-10-26T11:22:19+00:00",
   "fingerprint": "9b577b37c3a59555",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30962",
@@ -2835,7 +3019,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30962",
   "posted_at": "2026-10-26T11:00:01+00:00",
   "fingerprint": "980c1665a390a9ff",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Нура, пр. Мәңгілік Ел, 62, блок Д"
  },
  {
   "id": "agashka_job_almaty-967",
@@ -2853,7 +3038,8 @@
   "source_url": "https://t.me/agashka_job_almaty/967",
   "posted_at": "2026-10-26T10:50:09+00:00",
   "fingerprint": "80e4ceda15b0eb70",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5702",
@@ -2871,7 +3057,8 @@
   "source_url": "https://t.me/rabota4almaty/5702",
   "posted_at": "2026-10-26T10:41:06+00:00",
   "fingerprint": "d843e57a2a66f4a0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Шоссейна 9А"
  },
  {
   "id": "rabota4almaty-5703",
@@ -2891,7 +3078,8 @@
   "source_url": "https://t.me/rabota4almaty/5703",
   "posted_at": "2026-10-26T10:41:06+00:00",
   "fingerprint": "0ee60dc7c44872e8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Бостандыкский район"
  },
  {
   "id": "rabota4almaty-5704",
@@ -2909,7 +3097,8 @@
   "source_url": "https://t.me/rabota4almaty/5704",
   "posted_at": "2026-10-26T10:41:06+00:00",
   "fingerprint": "3368557b9a1d0859",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Алмалинский район"
  },
  {
   "id": "rabota4almaty-5701",
@@ -2927,7 +3116,8 @@
   "source_url": "https://t.me/rabota4almaty/5701",
   "posted_at": "2026-10-26T10:41:05+00:00",
   "fingerprint": "fe34b3eabbb14129",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129774",
@@ -2945,7 +3135,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129774",
   "posted_at": "2026-10-26T10:40:13+00:00",
   "fingerprint": "e41ae657fde8c11f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21258",
@@ -2966,7 +3157,8 @@
   "source_url": "https://t.me/almatyrabota1/21258",
   "posted_at": "2026-10-26T10:40:08+00:00",
   "fingerprint": "177cd4912f9ee133",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кабанбай Батыра 77"
  },
  {
   "id": "rabota_astanakz-30959",
@@ -2987,7 +3179,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30959",
   "posted_at": "2026-10-26T10:30:00+00:00",
   "fingerprint": "ea5a19e6c0b057b6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Юго-Восток, ул. Жанкент, 190а"
  },
  {
   "id": "rabota_astanakz-30958",
@@ -3005,7 +3198,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30958",
   "posted_at": "2026-10-26T10:20:40+00:00",
   "fingerprint": "cba2b9bcb0d99360",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Арай, 50"
  },
  {
   "id": "zhumys_astana_kz-16832",
@@ -3023,7 +3217,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16832",
   "posted_at": "2026-10-26T10:14:56+00:00",
   "fingerprint": "9219b99050cbb3a3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Мангилик Ел, 19/2"
  },
  {
   "id": "rabota_astanakz-30957",
@@ -3043,7 +3238,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30957",
   "posted_at": "2026-10-26T10:00:01+00:00",
   "fingerprint": "5e3bfb8a420352dc",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Мангилик Ел, 36"
  },
  {
   "id": "rabota_astanakz-30956",
@@ -3061,7 +3257,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30956",
   "posted_at": "2026-10-26T09:54:58+00:00",
   "fingerprint": "5eb95b780dc6c56b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129772",
@@ -3081,7 +3278,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129772",
   "posted_at": "2026-10-26T09:51:45+00:00",
   "fingerprint": "4e04b3903b6dadb6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Гейдара Алиева, 2"
  },
  {
   "id": "astana_job_vakansii-129770",
@@ -3102,7 +3300,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129770",
   "posted_at": "2026-10-26T09:40:39+00:00",
   "fingerprint": "5e3490451ae8cea3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31685",
@@ -3123,7 +3322,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31685",
   "posted_at": "2026-10-26T09:36:14+00:00",
   "fingerprint": "f40779437eb07037",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "БЦ Esentai Tower, пр. Аль-Фараби, 77/7"
  },
  {
   "id": "astana_job_vakansii-129769",
@@ -3145,7 +3345,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129769",
   "posted_at": "2026-10-26T09:33:37+00:00",
   "fingerprint": "a984bff521e43433",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Достык, 18, БЦ «Москва», 25 этаж, ресторан «Вечное Небо»"
  },
  {
   "id": "rabota_astanakz-30955",
@@ -3166,7 +3367,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30955",
   "posted_at": "2026-10-26T09:32:43+00:00",
   "fingerprint": "aed0ffe399c84ca7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Район 7-й поликлиники"
  },
  {
   "id": "rabota_astanakz-30954",
@@ -3186,7 +3388,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30954",
   "posted_at": "2026-10-26T09:30:00+00:00",
   "fingerprint": "0c3ac8ebc785ccc7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Сарыаркинский район"
  },
  {
   "id": "almaty_rabota_work-31684",
@@ -3206,7 +3409,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31684",
   "posted_at": "2026-10-26T09:13:07+00:00",
   "fingerprint": "504f4c30e460b2a0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ГРЭС, с. Отеген батыра, переулок Жарык, 1"
  },
  {
   "id": "almaty_rabota_work-31683",
@@ -3224,7 +3428,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31683",
   "posted_at": "2026-10-26T09:08:39+00:00",
   "fingerprint": "fecaf5015f939403",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "с. Отеген Батыра, переулок Жарык, 1"
  },
  {
   "id": "rabota_astanakz-30952",
@@ -3242,7 +3447,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30952",
   "posted_at": "2026-10-26T09:00:00+00:00",
   "fingerprint": "90f6b965d6da4d7a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кунаева, 12/1"
  },
  {
   "id": "rabota_astana-15634",
@@ -3260,7 +3466,8 @@
   "source_url": "https://t.me/rabota_astana/15634",
   "posted_at": "2026-10-26T08:56:45+00:00",
   "fingerprint": "82d96ddd4f371092",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Сарыарқа, 34"
  },
  {
   "id": "astana_job_vakansii-129767",
@@ -3280,7 +3487,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129767",
   "posted_at": "2026-10-26T08:53:33+00:00",
   "fingerprint": "651489dd5cfcf9bf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Мәңгілік Ел, 36/1"
  },
  {
   "id": "zhumys_astana_kz-16831",
@@ -3302,7 +3510,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16831",
   "posted_at": "2026-10-26T08:51:52+00:00",
   "fingerprint": "ba1d1eca6e5d4e8f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16830",
@@ -3323,7 +3532,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16830",
   "posted_at": "2026-10-26T08:50:16+00:00",
   "fingerprint": "c99806c79728b950",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кабанбай батыра, 62, Mega Silk Way, 1 этаж"
  },
  {
   "id": "agashka_job_almaty-965",
@@ -3344,7 +3554,8 @@
   "source_url": "https://t.me/agashka_job_almaty/965",
   "posted_at": "2026-10-26T08:50:09+00:00",
   "fingerprint": "8bb6ace6e4710f8f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30951",
@@ -3362,7 +3573,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30951",
   "posted_at": "2026-10-26T08:30:00+00:00",
   "fingerprint": "4f8ba763e22ff278",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ «Азия Парк», ТРЦ «Хан Шатыр»"
  },
  {
   "id": "rabota_astanakz-30950",
@@ -3380,7 +3592,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30950",
   "posted_at": "2026-10-26T08:21:17+00:00",
   "fingerprint": "ef55507fe8ba20b1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ JRT, ул. Бейбарыс Султан, 3"
  },
  {
   "id": "astana_job_vakansii-129762",
@@ -3398,7 +3611,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129762",
   "posted_at": "2026-10-26T07:58:08+00:00",
   "fingerprint": "ebc139bd7499e8f8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "оптово-розничный рынок, ул. Дукенулы, 31"
  },
  {
   "id": "almaty_rabota_work-31682",
@@ -3416,7 +3630,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31682",
   "posted_at": "2026-10-26T07:43:24+00:00",
   "fingerprint": "5fe2fba0ff752fe0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ Grand Park"
  },
  {
   "id": "astana_job_vakansii-129760",
@@ -3434,7 +3649,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129760",
   "posted_at": "2026-10-26T07:24:43+00:00",
   "fingerprint": "d818b79a39bade10",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Достык, 9, ТРЦ «Керуен», 3 этаж"
  },
  {
   "id": "zhumys_astana_kz-16793",
@@ -3456,7 +3672,8 @@
   "fingerprint": "1e9c7720110e2389",
   "also_seen_in": [
    "https://t.me/rabota_astana/15633"
-  ]
+  ],
+  "address": "Мангилик Ел 36"
  },
  {
   "id": "rabota_astana-15632",
@@ -3474,7 +3691,8 @@
   "source_url": "https://t.me/rabota_astana/15632",
   "posted_at": "2026-10-26T07:19:20+00:00",
   "fingerprint": "d70b0aa6479df418",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129759",
@@ -3492,7 +3710,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129759",
   "posted_at": "2026-10-26T07:19:16+00:00",
   "fingerprint": "e4293906f938e47e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21257",
@@ -3510,7 +3729,8 @@
   "source_url": "https://t.me/almatyrabota1/21257",
   "posted_at": "2026-10-26T07:00:24+00:00",
   "fingerprint": "4ba8957171ecdcf7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кульджинский тракт, 106"
  },
  {
   "id": "rabota_astanakz-30947",
@@ -3528,7 +3748,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30947",
   "posted_at": "2026-10-26T07:00:16+00:00",
   "fingerprint": "15c1dad79285ad1e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сейфуллина, 11/1а"
  },
  {
   "id": "astana_job_vakansii-129758",
@@ -3550,7 +3771,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129758",
   "posted_at": "2026-10-26T06:46:43+00:00",
   "fingerprint": "6cb01ba4bd01c846",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129757",
@@ -3571,7 +3793,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129757",
   "posted_at": "2026-10-26T06:33:39+00:00",
   "fingerprint": "a86ddd78893da6e8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Богенбай батыра, 1"
  },
  {
   "id": "rabota_astanakz-30946",
@@ -3591,7 +3814,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30946",
   "posted_at": "2026-10-26T06:30:05+00:00",
   "fingerprint": "3be1ce2d3df82036",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Иманова, 19 (ТД Алма-Ата)"
  },
  {
   "id": "astana_job_vakansii-129756",
@@ -3614,7 +3838,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129756",
   "posted_at": "2026-10-26T06:27:49+00:00",
   "fingerprint": "51098ae770303b20",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16829",
@@ -3632,7 +3857,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16829",
   "posted_at": "2026-10-26T06:18:43+00:00",
   "fingerprint": "275a408588de5479",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16828",
@@ -3650,7 +3876,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16828",
   "posted_at": "2026-10-26T06:17:46+00:00",
   "fingerprint": "1a30bc1bf6774fd7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16827",
@@ -3668,7 +3895,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16827",
   "posted_at": "2026-10-26T06:16:44+00:00",
   "fingerprint": "3abb4267721a59a0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Мангилик ел, 53"
  },
  {
   "id": "zhumys_astana_kz-16826",
@@ -3688,7 +3916,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16826",
   "posted_at": "2026-10-26T06:15:08+00:00",
   "fingerprint": "6add3b3aa8e613bd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16825",
@@ -3709,7 +3938,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16825",
   "posted_at": "2026-10-26T06:14:11+00:00",
   "fingerprint": "6fee67a48ab3cd5e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16824",
@@ -3729,7 +3959,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16824",
   "posted_at": "2026-10-26T06:13:10+00:00",
   "fingerprint": "99d17db764185fcd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Буйрат 23/8"
  },
  {
   "id": "zhumys_astana_kz-16823",
@@ -3750,7 +3981,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16823",
   "posted_at": "2026-10-26T06:12:16+00:00",
   "fingerprint": "6da29b63affe78c4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129754",
@@ -3771,7 +4003,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129754",
   "posted_at": "2026-10-26T06:11:42+00:00",
   "fingerprint": "e008dcfb346834a9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Мухамедханова 12, н.п. 1"
  },
  {
   "id": "agashka_job_almaty-963",
@@ -3791,7 +4024,8 @@
   "source_url": "https://t.me/agashka_job_almaty/963",
   "posted_at": "2026-10-26T06:10:08+00:00",
   "fingerprint": "2f424819373a326f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16821",
@@ -3809,7 +4043,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16821",
   "posted_at": "2026-10-26T06:09:01+00:00",
   "fingerprint": "6f5dc0fb3f9632f0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Толе би 48"
  },
  {
   "id": "zhumys_astana_kz-16820",
@@ -3827,7 +4062,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16820",
   "posted_at": "2026-10-26T06:08:03+00:00",
   "fingerprint": "60ed68779c7a369c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16818",
@@ -3849,7 +4085,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16818",
   "posted_at": "2026-10-26T06:06:20+00:00",
   "fingerprint": "dee2c24b1925b846",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Айтматова, 36"
  },
  {
   "id": "zhumys_astana_kz-16816",
@@ -3867,7 +4104,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16816",
   "posted_at": "2026-10-26T06:04:15+00:00",
   "fingerprint": "a825255690e21e8a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "переулок Созак 10"
  },
  {
   "id": "astana_job_vakansii-129753",
@@ -3885,7 +4123,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129753",
   "posted_at": "2026-10-26T06:03:39+00:00",
   "fingerprint": "d2b0710371450422",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Мухамедханова, 20"
  },
  {
   "id": "astana_job_vakansii-129752",
@@ -3903,7 +4142,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129752",
   "posted_at": "2026-10-26T06:00:16+00:00",
   "fingerprint": "7c44b53649706812",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ «Азия Парк», ТРЦ Хан Шатыр"
  },
  {
   "id": "almaty_rabota_work-31680",
@@ -3921,7 +4161,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31680",
   "posted_at": "2026-10-26T05:54:07+00:00",
   "fingerprint": "acfd5cf9b9bc08ba",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16814",
@@ -3941,7 +4182,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16814",
   "posted_at": "2026-10-26T05:52:09+00:00",
   "fingerprint": "c5d4bad218efba43",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31679",
@@ -3959,7 +4201,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31679",
   "posted_at": "2026-10-26T05:51:37+00:00",
   "fingerprint": "58ff300f0073a74c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota4almaty-5697",
@@ -3977,7 +4220,8 @@
   "source_url": "https://t.me/rabota4almaty/5697",
   "posted_at": "2026-10-26T05:41:09+00:00",
   "fingerprint": "d6071c4334ab4cbc",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "УЛИЦА Розыбакиева, 145"
  },
  {
   "id": "zhumys_astana_kz-16812",
@@ -3997,7 +4241,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16812",
   "posted_at": "2026-10-26T05:35:01+00:00",
   "fingerprint": "af7ca1e0895b4af3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кенгир, 16"
  },
  {
   "id": "rabota_astanakz-30943",
@@ -4015,7 +4260,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30943",
   "posted_at": "2026-10-26T05:30:00+00:00",
   "fingerprint": "a177307e8f551535",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ «Arujan»"
  },
  {
   "id": "zhumys_astana_kz-16810",
@@ -4033,7 +4279,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16810",
   "posted_at": "2026-10-26T05:15:45+00:00",
   "fingerprint": "dff229906df23db8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кобда 4/2"
  },
  {
   "id": "zhumys_astana_kz-16809",
@@ -4051,7 +4298,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16809",
   "posted_at": "2026-10-26T05:15:42+00:00",
   "fingerprint": "f6b1718edba9e698",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кобда 4/2"
  },
  {
   "id": "agashka_job_almaty-962",
@@ -4072,7 +4320,8 @@
   "source_url": "https://t.me/agashka_job_almaty/962",
   "posted_at": "2026-10-26T05:10:06+00:00",
   "fingerprint": "93479ca89dba0140",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30942",
@@ -4092,7 +4341,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30942",
   "posted_at": "2026-10-26T05:00:00+00:00",
   "fingerprint": "64a9d6901267bc45",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кенесары, 47"
  },
  {
   "id": "rabota4almaty-5694",
@@ -4110,7 +4360,8 @@
   "source_url": "https://t.me/rabota4almaty/5694",
   "posted_at": "2026-10-26T04:41:05+00:00",
   "fingerprint": "8e9a913d3a3fe2fd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Грибоедова, 74"
  },
  {
   "id": "rabota4almaty-5695",
@@ -4128,7 +4379,8 @@
   "source_url": "https://t.me/rabota4almaty/5695",
   "posted_at": "2026-10-26T04:41:05+00:00",
   "fingerprint": "67b93f2130b0cb69",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Ахметова, 12"
  },
  {
   "id": "rabota4almaty-5691",
@@ -4146,7 +4398,8 @@
   "source_url": "https://t.me/rabota4almaty/5691",
   "posted_at": "2026-10-26T03:41:03+00:00",
   "fingerprint": "2c197bc25adaf36b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Медеуский район"
  },
  {
   "id": "rabota4almaty-5690",
@@ -4166,7 +4419,8 @@
   "source_url": "https://t.me/rabota4almaty/5690",
   "posted_at": "2026-10-26T03:41:02+00:00",
   "fingerprint": "7ca98190e2c50d95",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Проспект Абая 220/1"
  },
  {
   "id": "rabota_astanakz-30941",
@@ -4184,7 +4438,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30941",
   "posted_at": "2026-10-26T03:40:20+00:00",
   "fingerprint": "de13771962b3d6bd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Алматы, 13"
  },
  {
   "id": "rabota_astana-15625",
@@ -4208,7 +4463,8 @@
   "fingerprint": "d2257d3431e6be96",
   "also_seen_in": [
    "https://t.me/astana_hh/1838"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "astana_hh-1836",
@@ -4226,7 +4482,8 @@
   "source_url": "https://t.me/astana_hh/1836",
   "posted_at": "2026-10-25T18:57:26+00:00",
   "fingerprint": "a2a75c31dbfda67b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-961",
@@ -4244,7 +4501,8 @@
   "source_url": "https://t.me/agashka_job_almaty/961",
   "posted_at": "2026-10-25T15:50:08+00:00",
   "fingerprint": "03dd4ccaddce58a9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25970",
@@ -4265,7 +4523,8 @@
   "source_url": "https://t.me/almaty_rabota01/25970",
   "posted_at": "2026-10-25T14:30:38+00:00",
   "fingerprint": "2b11780faa9305ee",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16807",
@@ -4283,7 +4542,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16807",
   "posted_at": "2026-10-25T13:48:03+00:00",
   "fingerprint": "40b9bd36fbbac1a2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21255",
@@ -4303,7 +4563,8 @@
   "source_url": "https://t.me/almatyrabota1/21255",
   "posted_at": "2026-10-25T13:07:15+00:00",
   "fingerprint": "08b5f70db7b73e3e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-959",
@@ -4325,7 +4586,8 @@
   "source_url": "https://t.me/agashka_job_almaty/959",
   "posted_at": "2026-10-25T13:00:10+00:00",
   "fingerprint": "25a34208188efaa6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12749",
@@ -4345,7 +4607,8 @@
   "fingerprint": "f11e25c2ca3afc77",
   "also_seen_in": [
    "https://t.me/astana_job_vakansii/129745"
-  ]
+  ],
+  "address": "ул. Мангилик ел, 19/2"
  },
  {
   "id": "almatyvacancies-11070",
@@ -4363,7 +4626,8 @@
   "source_url": "https://t.me/almatyvacancies/11070",
   "posted_at": "2026-10-25T12:42:08+00:00",
   "fingerprint": "994b4d68ff95f280",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11069",
@@ -4381,7 +4645,8 @@
   "source_url": "https://t.me/almatyvacancies/11069",
   "posted_at": "2026-10-25T12:41:32+00:00",
   "fingerprint": "9609dffa9322aa4d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11068",
@@ -4399,7 +4664,8 @@
   "source_url": "https://t.me/almatyvacancies/11068",
   "posted_at": "2026-10-25T12:40:51+00:00",
   "fingerprint": "0fc1fb7d7f6993b1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11067",
@@ -4417,7 +4683,8 @@
   "source_url": "https://t.me/almatyvacancies/11067",
   "posted_at": "2026-10-25T12:39:22+00:00",
   "fingerprint": "a388fbca771c0169",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11065",
@@ -4435,7 +4702,8 @@
   "source_url": "https://t.me/almatyvacancies/11065",
   "posted_at": "2026-10-25T12:37:27+00:00",
   "fingerprint": "12d18160f46cdc53",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129744",
@@ -4453,7 +4721,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129744",
   "posted_at": "2026-10-25T12:36:54+00:00",
   "fingerprint": "faf933f6b8b0556b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Туран, 34б"
  },
  {
   "id": "rabota_v_nursultane1-12764",
@@ -4471,7 +4740,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12764",
   "posted_at": "2026-10-25T12:11:25+00:00",
   "fingerprint": "f847d104d35042e2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12762",
@@ -4489,7 +4759,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12762",
   "posted_at": "2026-10-25T12:10:25+00:00",
   "fingerprint": "b55450540b082b78",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Район Нового вокзала"
  },
  {
   "id": "rabota_v_nursultane1-12761",
@@ -4510,7 +4781,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12761",
   "posted_at": "2026-10-25T12:10:16+00:00",
   "fingerprint": "2c97104a84e8b50c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Левый берег"
  },
  {
   "id": "rabota_v_nursultane1-12759",
@@ -4530,7 +4802,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12759",
   "posted_at": "2026-10-25T12:09:45+00:00",
   "fingerprint": "13ee6f3a1ec18452",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Улы дала, 71, НП-9"
  },
  {
   "id": "rabota_v_nursultane1-12758",
@@ -4551,7 +4824,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12758",
   "posted_at": "2026-10-25T12:09:35+00:00",
   "fingerprint": "e0696613a77cdf45",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сарайшык, 4"
  },
  {
   "id": "rabota_v_nursultane1-12757",
@@ -4569,7 +4843,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12757",
   "posted_at": "2026-10-25T12:09:21+00:00",
   "fingerprint": "757efe0d15ba5e30",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Петрова, 22, район «Евразии»"
  },
  {
   "id": "zhumys_astana_kz-16806",
@@ -4590,7 +4865,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16806",
   "posted_at": "2026-10-25T12:08:11+00:00",
   "fingerprint": "1e5eac33ea5fe2ce",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_job_vakansii-129742",
@@ -4612,7 +4888,8 @@
   "source_url": "https://t.me/astana_job_vakansii/129742",
   "posted_at": "2026-10-25T12:01:27+00:00",
   "fingerprint": "9527271def710021",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Калдаякова, 6"
  },
  {
   "id": "agashka_job_almaty-958",
@@ -4630,7 +4907,8 @@
   "source_url": "https://t.me/agashka_job_almaty/958",
   "posted_at": "2026-10-25T12:00:13+00:00",
   "fingerprint": "f019fa79bfdd0cff",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30918",
@@ -4653,7 +4931,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30918",
   "posted_at": "2026-10-25T12:00:01+00:00",
   "fingerprint": "410487ca350ef6ea",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Бейбитшилик"
  },
  {
   "id": "rabota_astanakz-30916",
@@ -4673,7 +4952,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30916",
   "posted_at": "2026-10-25T11:00:10+00:00",
   "fingerprint": "39d8ce9a647e331f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16805",
@@ -4693,7 +4973,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16805",
   "posted_at": "2026-10-25T10:36:07+00:00",
   "fingerprint": "01c6f97aaccf8091",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Мәңгілік Ел, 41"
  },
  {
   "id": "rabota_astanakz-30915",
@@ -4711,7 +4992,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30915",
   "posted_at": "2026-10-25T10:30:00+00:00",
   "fingerprint": "642899daa8147204",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30913",
@@ -4732,7 +5014,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30913",
   "posted_at": "2026-10-25T10:00:00+00:00",
   "fingerprint": "23961e78880f6115",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Туран, 55/3"
  },
  {
   "id": "rabota_astanakz-30912",
@@ -4753,7 +5036,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30912",
   "posted_at": "2026-10-25T09:37:04+00:00",
   "fingerprint": "70d0854005c1b25c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Правый берег"
  },
  {
   "id": "rabota_astanakz-30911",
@@ -4771,7 +5055,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30911",
   "posted_at": "2026-10-25T09:30:00+00:00",
   "fingerprint": "163e64b655cdca5a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota-90060",
@@ -4789,7 +5074,8 @@
   "source_url": "https://t.me/Astana_rabota/90060",
   "posted_at": "2026-10-25T08:58:34+00:00",
   "fingerprint": "88880ce389357740",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabotaalmatyyyy-15176",
@@ -4809,7 +5095,8 @@
   "fingerprint": "bcd24e1c79f5edf9",
   "also_seen_in": [
    "https://t.me/rabotaalmatyyyy/15203"
-  ]
+  ],
+  "address": "ул. Утепова 31"
  },
  {
   "id": "rabota_astanakz-30907",
@@ -4829,7 +5116,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30907",
   "posted_at": "2026-10-25T08:30:00+00:00",
   "fingerprint": "951de8f6aefc3a57",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Жанкент, 96/1а"
  },
  {
   "id": "zhumys_astana_kz-16804",
@@ -4847,7 +5135,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16804",
   "posted_at": "2026-10-25T08:12:29+00:00",
   "fingerprint": "fb327d38f2760516",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "zhumys_astana_kz-16803",
@@ -4867,7 +5156,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16803",
   "posted_at": "2026-10-25T08:11:10+00:00",
   "fingerprint": "24c94e3745c63f6d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Объекты находятся в районе левого берега ( в стороне Президентской…"
  },
  {
   "id": "rabota_astanakz-30905",
@@ -4887,7 +5177,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30905",
   "posted_at": "2026-10-25T07:30:00+00:00",
   "fingerprint": "22b22a85c84d2d19",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кенгир, 16"
  },
  {
   "id": "zhumys_astana_kz-16802",
@@ -4905,7 +5196,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16802",
   "posted_at": "2026-10-25T07:00:39+00:00",
   "fingerprint": "f259151b71ff2d74",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "объект (жилой массив Пригородный, строящийся жилой дом, возле…"
  },
  {
   "id": "zhumys_astana_kz-16800",
@@ -4925,7 +5217,8 @@
   "source_url": "https://t.me/zhumys_astana_kz/16800",
   "posted_at": "2026-10-25T06:57:12+00:00",
   "fingerprint": "271bec0fc0543fee",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Жанкент, 96/1а"
  },
  {
   "id": "almaty_rabota05-11678",
@@ -4943,7 +5236,8 @@
   "source_url": "https://t.me/almaty_rabota05/11678",
   "posted_at": "2026-10-25T06:36:35+00:00",
   "fingerprint": "6a92fa6e4606ea3c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ MART Village"
  },
  {
   "id": "almaty_rabota_work-31657",
@@ -4965,7 +5259,8 @@
   "fingerprint": "519b2b2d037f83f1",
   "also_seen_in": [
    "https://t.me/almaty_rabota_work/31677"
-  ]
+  ],
+  "address": "ул. Толе би Муратбаева"
  },
  {
   "id": "astana_rabota-90021",
@@ -4990,7 +5285,8 @@
    "https://t.me/Astana_rabota/90029",
    "https://t.me/Astana_rabota/90039",
    "https://t.me/Astana_rabota/90056"
-  ]
+  ],
+  "address": "Едил 26, Аль-Фараби"
  },
  {
   "id": "agashka_job_almaty-954",
@@ -5010,7 +5306,8 @@
   "source_url": "https://t.me/agashka_job_almaty/954",
   "posted_at": "2026-10-25T06:30:08+00:00",
   "fingerprint": "ed23872994373de2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30903",
@@ -5028,7 +5325,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30903",
   "posted_at": "2026-10-25T06:30:00+00:00",
   "fingerprint": "ee6a559410fbf268",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota-90043",
@@ -5049,7 +5347,8 @@
   "also_seen_in": [
    "https://t.me/Astana_rabota/90050",
    "https://t.me/Astana_rabota/90055"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31676",
@@ -5069,7 +5368,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31676",
   "posted_at": "2026-10-25T06:01:02+00:00",
   "fingerprint": "b9825f7b739af495",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Баянауыл, 62/1 (район Car City)"
  },
  {
   "id": "rabota_astanakz-30902",
@@ -5087,7 +5387,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30902",
   "posted_at": "2026-10-25T06:00:00+00:00",
   "fingerprint": "859d51839a61850d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ «Хан Шатыр»"
  },
  {
   "id": "rabota_astanakz-30901",
@@ -5108,7 +5409,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30901",
   "posted_at": "2026-10-25T05:30:00+00:00",
   "fingerprint": "3e97f958ba55e059",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Мангилик Ел"
  },
  {
   "id": "astana_rabota-90054",
@@ -5126,7 +5428,8 @@
   "source_url": "https://t.me/Astana_rabota/90054",
   "posted_at": "2026-10-25T05:08:07+00:00",
   "fingerprint": "b11f2232086dcaca",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21254",
@@ -5144,7 +5447,8 @@
   "source_url": "https://t.me/almatyrabota1/21254",
   "posted_at": "2026-10-25T05:01:01+00:00",
   "fingerprint": "b5f3f47536225112",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Аксай 3а,91"
  },
  {
   "id": "almaty_rabota_work-31675",
@@ -5165,7 +5469,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31675",
   "posted_at": "2026-10-25T04:47:58+00:00",
   "fingerprint": "bead9ad43763e0c1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Жибек жолы, 65А (Арбат)"
  },
  {
   "id": "rabota_astanakz-30899",
@@ -5183,7 +5488,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30899",
   "posted_at": "2026-10-25T04:30:00+00:00",
   "fingerprint": "79e60d46316053c9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Беймбет Майлина, 16/12"
  },
  {
   "id": "rabota_astanakz-30898",
@@ -5203,7 +5509,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30898",
   "posted_at": "2026-10-25T04:00:00+00:00",
   "fingerprint": "9123fbf1d53aea8f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Нура, ул. Сауран, 3/1 (объект на пересечении ул. Е-117 и Улы…"
  },
  {
   "id": "rabota_astana-15630",
@@ -5221,7 +5528,8 @@
   "source_url": "https://t.me/rabota_astana/15630",
   "posted_at": "2026-10-24T16:22:07+00:00",
   "fingerprint": "9293910006feff95",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-952",
@@ -5242,7 +5550,8 @@
   "source_url": "https://t.me/agashka_job_almaty/952",
   "posted_at": "2026-10-24T16:00:09+00:00",
   "fingerprint": "1dd2f2f8997e731a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-951",
@@ -5260,7 +5569,8 @@
   "source_url": "https://t.me/agashka_job_almaty/951",
   "posted_at": "2026-10-24T14:30:11+00:00",
   "fingerprint": "1d4da8c5b6cbcc70",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-950",
@@ -5280,7 +5590,8 @@
   "source_url": "https://t.me/agashka_job_almaty/950",
   "posted_at": "2026-10-24T13:20:06+00:00",
   "fingerprint": "83a877bc9143d86f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "jumystap1-1509",
@@ -5300,7 +5611,8 @@
   "source_url": "https://t.me/jumystap1/1509",
   "posted_at": "2026-10-24T12:54:10+00:00",
   "fingerprint": "807cc421382b2b29",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabotaalmatyyyy-15201",
@@ -5318,7 +5630,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15201",
   "posted_at": "2026-10-24T12:40:22+00:00",
   "fingerprint": "2989f8a02407b5df",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30895",
@@ -5336,7 +5649,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30895",
   "posted_at": "2026-10-24T12:30:05+00:00",
   "fingerprint": "ff3eb6188efdb2f4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кунаева, 12/1"
  },
  {
   "id": "rabota_astanakz-30893",
@@ -5356,7 +5670,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30893",
   "posted_at": "2026-10-24T11:30:00+00:00",
   "fingerprint": "7a4c543cc27c51d7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Сарыаркинский район (стройка находится в районе аэропорта)"
  },
  {
   "id": "rabota_astanakz-30892",
@@ -5374,7 +5689,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30892",
   "posted_at": "2026-10-24T11:21:27+00:00",
   "fingerprint": "cd0905e9823c3191",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Кабанбай Батыра, 21 (ТРЦ «Азия Парк»)"
  },
  {
   "id": "agashka_job_almaty-948",
@@ -5394,7 +5710,8 @@
   "source_url": "https://t.me/agashka_job_almaty/948",
   "posted_at": "2026-10-24T11:10:06+00:00",
   "fingerprint": "07b5dc9a31b1dea1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astanakz-30891",
@@ -5412,7 +5729,8 @@
   "source_url": "https://t.me/rabota_Astanakz/30891",
   "posted_at": "2026-10-24T11:00:01+00:00",
   "fingerprint": "09daadce75fd2a25",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Есильский район (Юго-Восток), ул. Жанкент, 190а"
  },
  {
   "id": "almaty_rabota05-11677",
@@ -5432,7 +5750,8 @@
   "source_url": "https://t.me/almaty_rabota05/11677",
   "posted_at": "2026-10-24T09:12:08+00:00",
   "fingerprint": "37d9f20eb74ad9f6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Тянь-Шань, 280 км от Алматы"
  },
  {
   "id": "rabota_astana-15610",
@@ -5455,7 +5774,8 @@
   "fingerprint": "0baf964876d57828",
   "also_seen_in": [
    "https://t.me/rabota_astana/15629"
-  ]
+  ],
+  "address": "ул. Туран, 55З"
  },
  {
   "id": "almaty_rabota_work-31672",
@@ -5473,7 +5793,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31672",
   "posted_at": "2026-10-24T07:56:28+00:00",
   "fingerprint": "aa78ff43cb88feda",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Саина – ул. Толе би"
  },
  {
   "id": "rabota_v_nursultane1-12750",
@@ -5498,7 +5819,8 @@
   "fingerprint": "954ffe771f854791",
   "also_seen_in": [
    "https://t.me/astana_hh/1835"
-  ]
+  ],
+  "address": "ул. Сатпаева, 5"
  },
  {
   "id": "almaty_rabota_work-31638",
@@ -5518,7 +5840,8 @@
   "fingerprint": "4315a54b467a0ed3",
   "also_seen_in": [
    "https://t.me/almaty_rabota_work/31670"
-  ]
+  ],
+  "address": "ТРЦ \"Мега 2\", ул. Розыбакиева, д. 263"
  },
  {
   "id": "almaty_rabota_work-31669",
@@ -5538,7 +5861,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31669",
   "posted_at": "2026-10-24T05:56:08+00:00",
   "fingerprint": "675eb39e07590eef",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabotaalmatyyyy-15200",
@@ -5559,7 +5883,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15200",
   "posted_at": "2026-10-24T05:32:51+00:00",
   "fingerprint": "e85970de0f22b80b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-943",
@@ -5579,7 +5904,8 @@
   "source_url": "https://t.me/agashka_job_almaty/943",
   "posted_at": "2026-10-24T05:10:05+00:00",
   "fingerprint": "863ea94f87f0d2c4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11050",
@@ -5601,7 +5927,8 @@
   "fingerprint": "fd3cb805aca20871",
   "also_seen_in": [
    "https://t.me/almatyvacancies/11064"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "almatyvacancies-11063",
@@ -5619,7 +5946,8 @@
   "source_url": "https://t.me/almatyvacancies/11063",
   "posted_at": "2026-10-23T16:50:24+00:00",
   "fingerprint": "3dfd42e7c5ef9939",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11062",
@@ -5637,7 +5965,8 @@
   "source_url": "https://t.me/almatyvacancies/11062",
   "posted_at": "2026-10-23T16:49:22+00:00",
   "fingerprint": "f0c2a8b3ab3e9d1c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11061",
@@ -5657,7 +5986,8 @@
   "source_url": "https://t.me/almatyvacancies/11061",
   "posted_at": "2026-10-23T16:47:28+00:00",
   "fingerprint": "1b7fdaf3629ecece",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11060",
@@ -5675,7 +6005,8 @@
   "source_url": "https://t.me/almatyvacancies/11060",
   "posted_at": "2026-10-23T16:45:42+00:00",
   "fingerprint": "44c7fe1ac953c3d1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12756",
@@ -5695,7 +6026,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12756",
   "posted_at": "2026-10-23T16:24:30+00:00",
   "fingerprint": "84f79526a6419423",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12755",
@@ -5715,7 +6047,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12755",
   "posted_at": "2026-10-23T16:22:37+00:00",
   "fingerprint": "06d4c9b3bf6bf00b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Турар Рыскулова, 24а, Алдияр маркет"
  },
  {
   "id": "rabota_v_nursultane1-12753",
@@ -5736,7 +6069,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12753",
   "posted_at": "2026-10-23T16:21:37+00:00",
   "fingerprint": "a563b95eb964f4eb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Коктал"
  },
  {
   "id": "rabota_v_nursultane1-12752",
@@ -5754,7 +6088,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12752",
   "posted_at": "2026-10-23T16:21:16+00:00",
   "fingerprint": "6fe30fd5709758ed",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "проспект Мангилик Ел, 47"
  },
  {
   "id": "rabota_v_nursultane1-12723",
@@ -5774,7 +6109,8 @@
   "fingerprint": "0fd4a06dbf95adff",
   "also_seen_in": [
    "https://t.me/rabota_v_nursultane1/12751"
-  ]
+  ],
+  "address": "ул. Желтоксан, 2"
  },
  {
   "id": "rabota_v_nursultane1-12748",
@@ -5792,7 +6128,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12748",
   "posted_at": "2026-10-23T16:19:11+00:00",
   "fingerprint": "0abcbe2570b0ceda",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТЦ «Евразия-1», ул. Петрова, 24"
  },
  {
   "id": "almaty_rabota01-25969",
@@ -5812,7 +6149,8 @@
   "source_url": "https://t.me/almaty_rabota01/25969",
   "posted_at": "2026-10-23T15:46:56+00:00",
   "fingerprint": "b05bf57655bdce24",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Курмангазы, 104"
  },
  {
   "id": "astana_hh-1832",
@@ -5832,7 +6170,8 @@
   "source_url": "https://t.me/astana_hh/1832",
   "posted_at": "2026-10-23T14:58:24+00:00",
   "fingerprint": "1a924e0e6acfdc45",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31667",
@@ -5850,7 +6189,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31667",
   "posted_at": "2026-10-23T14:09:29+00:00",
   "fingerprint": "75ad0dbf5fc99495",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Назарбаева, 76"
  },
  {
   "id": "agashka_job_almaty-940",
@@ -5871,7 +6211,8 @@
   "source_url": "https://t.me/agashka_job_almaty/940",
   "posted_at": "2026-10-23T13:20:06+00:00",
   "fingerprint": "1e24d3d25f3eb2a8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11676",
@@ -5889,7 +6230,8 @@
   "source_url": "https://t.me/almaty_rabota05/11676",
   "posted_at": "2026-10-23T12:39:13+00:00",
   "fingerprint": "924df21b8f9a3904",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31666",
@@ -5907,7 +6249,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31666",
   "posted_at": "2026-10-23T12:26:10+00:00",
   "fingerprint": "e6c42cb4543ad73c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Сусанина көшесі, 26"
  },
  {
   "id": "agashka_job_almaty-939",
@@ -5925,7 +6268,8 @@
   "source_url": "https://t.me/agashka_job_almaty/939",
   "posted_at": "2026-10-23T12:20:06+00:00",
   "fingerprint": "1a0c429ecb956b90",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31664",
@@ -5943,7 +6287,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31664",
   "posted_at": "2026-10-23T12:10:53+00:00",
   "fingerprint": "d61560b4f0745efb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Бокейхана, 147 А/1"
  },
  {
   "id": "almaty_rabota_work-31662",
@@ -5961,7 +6306,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31662",
   "posted_at": "2026-10-23T11:01:33+00:00",
   "fingerprint": "397068639a0fc808",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Ришата и Муслима Абдуллиных, 7"
  },
  {
   "id": "agashka_job_almaty-938",
@@ -5981,7 +6327,8 @@
   "source_url": "https://t.me/agashka_job_almaty/938",
   "posted_at": "2026-10-23T11:00:08+00:00",
   "fingerprint": "33c1bcecdbf842bb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31660",
@@ -6001,7 +6348,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31660",
   "posted_at": "2026-10-23T10:28:34+00:00",
   "fingerprint": "3533faaba8bc9ce4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Алгабас, 7-я улица, 1а"
  },
  {
   "id": "jobkz_1-23040",
@@ -6019,7 +6367,8 @@
   "source_url": "https://t.me/jobkz_1/23040",
   "posted_at": "2026-10-23T10:06:49+00:00",
   "fingerprint": "1e1ec2927142004b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-936",
@@ -6040,7 +6389,8 @@
   "source_url": "https://t.me/agashka_job_almaty/936",
   "posted_at": "2026-10-23T08:50:05+00:00",
   "fingerprint": "4ed12692f2b309ec",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabotaaty-38199",
@@ -6060,7 +6410,8 @@
   "source_url": "https://t.me/rabotaaty/38199",
   "posted_at": "2026-10-23T08:42:31+00:00",
   "fingerprint": "3ab4f734a5e09d8d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25967",
@@ -6078,7 +6429,8 @@
   "source_url": "https://t.me/almaty_rabota01/25967",
   "posted_at": "2026-10-23T08:23:50+00:00",
   "fingerprint": "e485fe59190fdcae",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Толе би, 285"
  },
  {
   "id": "almaty_rabota01-25920",
@@ -6102,7 +6454,8 @@
   "fingerprint": "f933911dfb77f833",
   "also_seen_in": [
    "https://t.me/almaty_rabota01/25966"
-  ]
+  ],
+  "address": "ул. Желтоксан, 160, кафе «Воронка»"
  },
  {
   "id": "almaty_rabota_work-31659",
@@ -6120,7 +6473,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31659",
   "posted_at": "2026-10-23T07:41:08+00:00",
   "fingerprint": "79ed0cf441a3578d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Айнабулак-4, 172а"
  },
  {
   "id": "agashka_job_almaty-935",
@@ -6140,7 +6494,8 @@
   "source_url": "https://t.me/agashka_job_almaty/935",
   "posted_at": "2026-10-23T07:30:09+00:00",
   "fingerprint": "7d637ba6e4f7c175",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota-90042",
@@ -6161,7 +6516,8 @@
   "source_url": "https://t.me/Astana_rabota/90042",
   "posted_at": "2026-10-23T07:20:24+00:00",
   "fingerprint": "4ae2e89273c1a3e4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Керей жанибек 12б"
  },
  {
   "id": "almaty_rabota_work-31658",
@@ -6179,7 +6535,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31658",
   "posted_at": "2026-10-23T07:11:06+00:00",
   "fingerprint": "f825a711f3b20647",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Рыскулова, 103B"
  },
  {
   "id": "almaty_rabota_work-31656",
@@ -6197,7 +6554,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31656",
   "posted_at": "2026-10-23T06:15:05+00:00",
   "fingerprint": "582b3ac1343ceefb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Арена Парк (Алатауский район)"
  },
  {
   "id": "almaty_rabota01-25965",
@@ -6218,7 +6576,8 @@
   "source_url": "https://t.me/almaty_rabota01/25965",
   "posted_at": "2026-10-23T06:03:04+00:00",
   "fingerprint": "99c697213b887ada",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota-90041",
@@ -6236,7 +6595,8 @@
   "source_url": "https://t.me/Astana_rabota/90041",
   "posted_at": "2026-10-23T05:54:06+00:00",
   "fingerprint": "8a9a0d05e5cb748f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15628",
@@ -6256,7 +6616,8 @@
   "source_url": "https://t.me/rabota_astana/15628",
   "posted_at": "2026-10-23T05:49:19+00:00",
   "fingerprint": "b4df645346390d6c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabotaalmatyyyy-15189",
@@ -6276,7 +6637,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15189",
   "posted_at": "2026-10-23T05:44:13+00:00",
   "fingerprint": "27032615a8622bd7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Барахолка, ТЦ Алатау"
  },
  {
   "id": "almaty_rabota_work-31655",
@@ -6296,7 +6658,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31655",
   "posted_at": "2026-10-23T05:43:59+00:00",
   "fingerprint": "329beb48ace1a0be",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Мажорова, 52"
  },
  {
   "id": "agashka_job_almaty-933",
@@ -6320,7 +6683,8 @@
   "source_url": "https://t.me/agashka_job_almaty/933",
   "posted_at": "2026-10-23T05:10:06+00:00",
   "fingerprint": "8f42f91e44c91026",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21251",
@@ -6340,7 +6704,8 @@
   "source_url": "https://t.me/almatyrabota1/21251",
   "posted_at": "2026-10-23T04:40:09+00:00",
   "fingerprint": "3aba5f85988b9466",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21250",
@@ -6358,7 +6723,8 @@
   "source_url": "https://t.me/almatyrabota1/21250",
   "posted_at": "2026-10-23T04:32:01+00:00",
   "fingerprint": "ff25135ffcdd80af",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31654",
@@ -6378,7 +6744,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31654",
   "posted_at": "2026-10-23T04:31:52+00:00",
   "fingerprint": "93e6083a91235b3d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21249",
@@ -6396,7 +6763,8 @@
   "source_url": "https://t.me/almatyrabota1/21249",
   "posted_at": "2026-10-23T04:31:07+00:00",
   "fingerprint": "020a08194996d305",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Бекмаханова, 96Б/1"
  },
  {
   "id": "jumystap1-1505",
@@ -6414,7 +6782,8 @@
   "source_url": "https://t.me/jumystap1/1505",
   "posted_at": "2026-10-22T19:09:35+00:00",
   "fingerprint": "3608b72534f72243",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11059",
@@ -6434,7 +6803,8 @@
   "source_url": "https://t.me/almatyvacancies/11059",
   "posted_at": "2026-10-22T14:13:38+00:00",
   "fingerprint": "1697b135d6a6e987",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11057",
@@ -6454,7 +6824,8 @@
   "source_url": "https://t.me/almatyvacancies/11057",
   "posted_at": "2026-10-22T14:12:14+00:00",
   "fingerprint": "06ce2c2bb46a7993",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Кайрат 181-182 КБ"
  },
  {
   "id": "almatyvacancies-11056",
@@ -6472,7 +6843,8 @@
   "source_url": "https://t.me/almatyvacancies/11056",
   "posted_at": "2026-10-22T14:11:12+00:00",
   "fingerprint": "0de7db9e70c65fcd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11055",
@@ -6490,7 +6862,8 @@
   "source_url": "https://t.me/almatyvacancies/11055",
   "posted_at": "2026-10-22T14:10:20+00:00",
   "fingerprint": "644d8ac8253dfad9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11054",
@@ -6508,7 +6881,8 @@
   "source_url": "https://t.me/almatyvacancies/11054",
   "posted_at": "2026-10-22T14:08:40+00:00",
   "fingerprint": "7f8697d92a92c911",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11053",
@@ -6526,7 +6900,8 @@
   "source_url": "https://t.me/almatyvacancies/11053",
   "posted_at": "2026-10-22T14:06:26+00:00",
   "fingerprint": "0e642d6e55cf9c82",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "улица Фаризы Онгарсыновой 175"
  },
  {
   "id": "almatyvacancies-11052",
@@ -6546,7 +6921,8 @@
   "source_url": "https://t.me/almatyvacancies/11052",
   "posted_at": "2026-10-22T14:05:46+00:00",
   "fingerprint": "06a5f6587d0baae0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31651",
@@ -6567,7 +6943,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31651",
   "posted_at": "2026-10-22T13:55:33+00:00",
   "fingerprint": "688286b9373a05f5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25957",
@@ -6590,7 +6967,8 @@
   "also_seen_in": [
    "https://t.me/almaty_rabota_work/31637",
    "https://t.me/almatyrabota1/21247"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-930",
@@ -6608,7 +6986,8 @@
   "source_url": "https://t.me/agashka_job_almaty/930",
   "posted_at": "2026-10-22T13:30:07+00:00",
   "fingerprint": "72e7a367718ccbb5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21245",
@@ -6626,7 +7005,8 @@
   "source_url": "https://t.me/almatyrabota1/21245",
   "posted_at": "2026-10-22T13:01:57+00:00",
   "fingerprint": "3bdba192bb8333c2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "11-й микрорайон, 3Д"
  },
  {
   "id": "almaty_rabota05-11671",
@@ -6647,7 +7027,8 @@
   "source_url": "https://t.me/almaty_rabota05/11671",
   "posted_at": "2026-10-22T13:01:12+00:00",
   "fingerprint": "dbbf771cf0553fe8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21244",
@@ -6667,7 +7048,8 @@
   "source_url": "https://t.me/almatyrabota1/21244",
   "posted_at": "2026-10-22T12:55:34+00:00",
   "fingerprint": "16d665922f8cbdcd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Райымбека 496а/7"
  },
  {
   "id": "rabota_v_nursultane1-12747",
@@ -6685,7 +7067,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12747",
   "posted_at": "2026-10-22T12:54:02+00:00",
   "fingerprint": "c716ab5ec83aabf2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Бокейхана, 34Б (левый берег), банный комплекс AQMONSHA"
  },
  {
   "id": "rabota_v_nursultane1-12745",
@@ -6703,7 +7086,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12745",
   "posted_at": "2026-10-22T12:53:02+00:00",
   "fingerprint": "ec83bdd7bf6c5aec",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Коргалжын, 9, гостинично-ресторанный комплекс «Томирис»"
  },
  {
   "id": "rabota_v_nursultane1-12744",
@@ -6721,7 +7105,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12744",
   "posted_at": "2026-10-22T12:52:29+00:00",
   "fingerprint": "59eb893f5dde9030",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ Green Mall, ул. Сыганак, 17"
  },
  {
   "id": "rabota_v_nursultane1-12743",
@@ -6739,7 +7124,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12743",
   "posted_at": "2026-10-22T12:52:20+00:00",
   "fingerprint": "927d2727b55145d8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Туркестан, 20"
  },
  {
   "id": "rabota_v_nursultane1-12742",
@@ -6757,7 +7143,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12742",
   "posted_at": "2026-10-22T12:52:03+00:00",
   "fingerprint": "eb94ae6f7a9432c1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "рынок «Мереке»"
  },
  {
   "id": "rabota_v_nursultane1-12741",
@@ -6780,7 +7167,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12741",
   "posted_at": "2026-10-22T12:51:40+00:00",
   "fingerprint": "b4a747da4ada1c24",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Бауыржана Момышулы, 10"
  },
  {
   "id": "almaty_rabota_work-31649",
@@ -6800,7 +7188,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31649",
   "posted_at": "2026-10-22T12:51:16+00:00",
   "fingerprint": "46801daec2c9a7a6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Шевченко, 165Б, БЦ TS COM"
  },
  {
   "id": "rabota_v_nursultane1-12739",
@@ -6821,7 +7210,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12739",
   "posted_at": "2026-10-22T12:51:12+00:00",
   "fingerprint": "b3370c6b4859dfb3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Улы Дала, 61"
  },
  {
   "id": "almatyrabota1-21242",
@@ -6839,7 +7229,8 @@
   "source_url": "https://t.me/almatyrabota1/21242",
   "posted_at": "2026-10-22T12:26:09+00:00",
   "fingerprint": "9840808d94bcf6fe",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21241",
@@ -6859,7 +7250,8 @@
   "source_url": "https://t.me/almatyrabota1/21241",
   "posted_at": "2026-10-22T12:23:59+00:00",
   "fingerprint": "867990b5e64f0484",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Райымбека 496а/7"
  },
  {
   "id": "almatyrabota1-21240",
@@ -6881,7 +7273,8 @@
   "source_url": "https://t.me/almatyrabota1/21240",
   "posted_at": "2026-10-22T12:21:54+00:00",
   "fingerprint": "8b6de1a75604c066",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Утеген Батыра 11Вк6"
  },
  {
   "id": "almaty_rabota01-25964",
@@ -6902,7 +7295,8 @@
   "source_url": "https://t.me/almaty_rabota01/25964",
   "posted_at": "2026-10-22T12:20:13+00:00",
   "fingerprint": "f51f310e3bef9643",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Муратбаева 14/2"
  },
  {
   "id": "rabota_astana-15627",
@@ -6920,7 +7314,8 @@
   "source_url": "https://t.me/rabota_astana/15627",
   "posted_at": "2026-10-22T12:08:18+00:00",
   "fingerprint": "5c078019232dacad",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Достык, 18, БЦ «Москва»"
  },
  {
   "id": "agashka_job_almaty-929",
@@ -6938,7 +7333,8 @@
   "source_url": "https://t.me/agashka_job_almaty/929",
   "posted_at": "2026-10-22T12:00:11+00:00",
   "fingerprint": "abf0b931c073ff0d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "jobkz_1-23032",
@@ -6956,7 +7352,8 @@
   "source_url": "https://t.me/jobkz_1/23032",
   "posted_at": "2026-10-22T11:57:54+00:00",
   "fingerprint": "ecfe94a2074cffae",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1830",
@@ -6974,7 +7371,8 @@
   "source_url": "https://t.me/astana_hh/1830",
   "posted_at": "2026-10-22T11:31:22+00:00",
   "fingerprint": "ae22f26a8870e2fc",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "\"Алаш\" - ул.Е-15, 9/1 (Жагалау 4)"
  },
  {
   "id": "astana_hh-1829",
@@ -6995,7 +7393,8 @@
   "source_url": "https://t.me/astana_hh/1829",
   "posted_at": "2026-10-22T11:30:55+00:00",
   "fingerprint": "58830d073eea465b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Момышулы, 5"
  },
  {
   "id": "astana_hh-1827",
@@ -7016,7 +7415,8 @@
   "source_url": "https://t.me/astana_hh/1827",
   "posted_at": "2026-10-22T11:30:15+00:00",
   "fingerprint": "5ed1b052011cf022",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31648",
@@ -7034,7 +7434,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31648",
   "posted_at": "2026-10-22T11:12:20+00:00",
   "fingerprint": "c8f2a2d0849fb1d4",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Алтын Орда, 19"
  },
  {
   "id": "almaty_rabota05-11670",
@@ -7052,7 +7453,8 @@
   "source_url": "https://t.me/almaty_rabota05/11670",
   "posted_at": "2026-10-22T11:11:02+00:00",
   "fingerprint": "a65ffb3f55b462ee",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11669",
@@ -7070,7 +7472,8 @@
   "source_url": "https://t.me/almaty_rabota05/11669",
   "posted_at": "2026-10-22T10:57:14+00:00",
   "fingerprint": "e601ee37aa1d00e1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota-90031",
@@ -7088,7 +7491,8 @@
   "source_url": "https://t.me/Astana_rabota/90031",
   "posted_at": "2026-10-22T10:17:57+00:00",
   "fingerprint": "94eeee3e92ffb3f9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "jobkz_1-23025",
@@ -7111,7 +7515,8 @@
   "also_seen_in": [
    "https://t.me/astana_rabota_vacancy/124",
    "https://t.me/trudogolikz/749"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31646",
@@ -7131,7 +7536,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31646",
   "posted_at": "2026-10-22T09:59:41+00:00",
   "fingerprint": "4123b4046646150f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Райымбека, 496а/7"
  },
  {
   "id": "rabotaalmatyyyy-15183",
@@ -7149,7 +7555,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15183",
   "posted_at": "2026-10-22T08:35:58+00:00",
   "fingerprint": "485235f79140026c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31644",
@@ -7170,7 +7577,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31644",
   "posted_at": "2026-10-22T08:12:22+00:00",
   "fingerprint": "b14bc3699937dc7f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Байтурсынова, 19, агентство «Рост»"
  },
  {
   "id": "rabota_astana-15626",
@@ -7190,7 +7598,8 @@
   "source_url": "https://t.me/rabota_astana/15626",
   "posted_at": "2026-10-22T08:11:17+00:00",
   "fingerprint": "196ce621ff2cc124",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31642",
@@ -7210,7 +7619,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31642",
   "posted_at": "2026-10-22T07:14:33+00:00",
   "fingerprint": "7d3e61c827d8e2fe",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Абая – Саина"
  },
  {
   "id": "almaty_rabota01-25963",
@@ -7231,7 +7641,8 @@
   "source_url": "https://t.me/almaty_rabota01/25963",
   "posted_at": "2026-10-22T07:08:00+00:00",
   "fingerprint": "59a3b6dde3fe4230",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-924",
@@ -7249,7 +7660,8 @@
   "source_url": "https://t.me/agashka_job_almaty/924",
   "posted_at": "2026-10-22T06:20:06+00:00",
   "fingerprint": "5697da4620ef0a65",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31640",
@@ -7267,7 +7679,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31640",
   "posted_at": "2026-10-22T06:12:21+00:00",
   "fingerprint": "39ec92aef6be1f0f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31639",
@@ -7287,7 +7700,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31639",
   "posted_at": "2026-10-22T05:57:50+00:00",
   "fingerprint": "1dc46d99d785705c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Байзакова, 280"
  },
  {
   "id": "agashka_job_almaty-923",
@@ -7305,7 +7719,8 @@
   "source_url": "https://t.me/agashka_job_almaty/923",
   "posted_at": "2026-10-22T05:20:06+00:00",
   "fingerprint": "a79a19d2448b2bc6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25961",
@@ -7326,7 +7741,8 @@
   "source_url": "https://t.me/almaty_rabota01/25961",
   "posted_at": "2026-10-22T05:18:49+00:00",
   "fingerprint": "0d9b1b94ce749353",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ЖК Esentai City, пр. Аль-Фараби, 116/20"
  },
  {
   "id": "almaty_rabota_work-31635",
@@ -7346,7 +7762,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31635",
   "posted_at": "2026-10-22T04:13:03+00:00",
   "fingerprint": "062b8657821aba82",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "jobkz_1-23026",
@@ -7364,7 +7781,8 @@
   "source_url": "https://t.me/jobkz_1/23026",
   "posted_at": "2026-10-22T04:09:36+00:00",
   "fingerprint": "93ff0b9ffce4d5eb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11051",
@@ -7382,7 +7800,8 @@
   "source_url": "https://t.me/almatyvacancies/11051",
   "posted_at": "2026-10-21T16:48:05+00:00",
   "fingerprint": "66a7bf25cb37599b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Рыскулбекова 37"
  },
  {
   "id": "almatyvacancies-11049",
@@ -7402,7 +7821,8 @@
   "source_url": "https://t.me/almatyvacancies/11049",
   "posted_at": "2026-10-21T16:45:17+00:00",
   "fingerprint": "70c5e391e0c1d8b5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12737",
@@ -7420,7 +7840,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12737",
   "posted_at": "2026-10-21T16:27:23+00:00",
   "fingerprint": "e10b83f7471d7fd2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Момышулы, 4А"
  },
  {
   "id": "rabota_v_nursultane1-12735",
@@ -7438,7 +7859,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12735",
   "posted_at": "2026-10-21T16:26:56+00:00",
   "fingerprint": "72f36f7023189f81",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12734",
@@ -7459,7 +7881,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12734",
   "posted_at": "2026-10-21T16:26:44+00:00",
   "fingerprint": "aa91ff3cd1069f4f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Рыскулбекова, 29"
  },
  {
   "id": "rabota_v_nursultane1-12733",
@@ -7477,7 +7900,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12733",
   "posted_at": "2026-10-21T16:26:36+00:00",
   "fingerprint": "f02646c3eda7b988",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сарайшык, 1, SPA «Grand Prix»"
  },
  {
   "id": "rabota_v_nursultane1-12732",
@@ -7497,7 +7921,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12732",
   "posted_at": "2026-10-21T16:25:48+00:00",
   "fingerprint": "2575fb7f5280cb0f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Иманова 19, ТЦ «Алма-Ата»"
  },
  {
   "id": "rabota_v_nursultane1-12730",
@@ -7517,7 +7942,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12730",
   "posted_at": "2026-10-21T16:25:18+00:00",
   "fingerprint": "129b7791d6c82718",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12729",
@@ -7535,7 +7961,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12729",
   "posted_at": "2026-10-21T16:24:16+00:00",
   "fingerprint": "642c5a6f93b7aad7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Мустафина, 15/1"
  },
  {
   "id": "rabota_v_nursultane1-12728",
@@ -7555,7 +7982,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12728",
   "posted_at": "2026-10-21T16:24:02+00:00",
   "fingerprint": "35bcee1987e65c6a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25959",
@@ -7573,7 +8001,8 @@
   "source_url": "https://t.me/almaty_rabota01/25959",
   "posted_at": "2026-10-21T16:09:05+00:00",
   "fingerprint": "2d2647ce11a0d242",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "7-й микрорайон, дом 7"
  },
  {
   "id": "almaty_rabota01-25958",
@@ -7591,7 +8020,8 @@
   "source_url": "https://t.me/almaty_rabota01/25958",
   "posted_at": "2026-10-21T16:06:54+00:00",
   "fingerprint": "3898e6dde3d7142b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-921",
@@ -7609,7 +8039,8 @@
   "source_url": "https://t.me/agashka_job_almaty/921",
   "posted_at": "2026-10-21T14:40:08+00:00",
   "fingerprint": "02d07ce8a2773fed",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21238",
@@ -7627,7 +8058,8 @@
   "source_url": "https://t.me/almatyrabota1/21238",
   "posted_at": "2026-10-21T14:16:33+00:00",
   "fingerprint": "210e8859fe925d64",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11657",
@@ -7647,7 +8079,8 @@
   "fingerprint": "3b77bc2ac907a2e2",
   "also_seen_in": [
    "https://t.me/almaty_rabota05/11667"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-920",
@@ -7665,7 +8098,8 @@
   "source_url": "https://t.me/agashka_job_almaty/920",
   "posted_at": "2026-10-21T13:20:07+00:00",
   "fingerprint": "6790d368ceddca93",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11666",
@@ -7683,7 +8117,8 @@
   "source_url": "https://t.me/almaty_rabota05/11666",
   "posted_at": "2026-10-21T13:01:32+00:00",
   "fingerprint": "687ddf7f64d4a07d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Алгабас, ул. Кара Жорга, 28"
  },
  {
   "id": "almaty_rabota_work-31634",
@@ -7701,7 +8136,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31634",
   "posted_at": "2026-10-21T12:32:07+00:00",
   "fingerprint": "e35c7e8032621eea",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1825",
@@ -7719,7 +8155,8 @@
   "source_url": "https://t.me/astana_hh/1825",
   "posted_at": "2026-10-21T11:10:14+00:00",
   "fingerprint": "d0631148576981bf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25956",
@@ -7739,7 +8176,8 @@
   "source_url": "https://t.me/almaty_rabota01/25956",
   "posted_at": "2026-10-21T10:56:38+00:00",
   "fingerprint": "ca0d3749c5bf947a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Щепкина, 35Б, Орбита (внутри супермаркета SMALL)"
  },
  {
   "id": "almaty_rabota05-11665",
@@ -7759,7 +8197,8 @@
   "source_url": "https://t.me/almaty_rabota05/11665",
   "posted_at": "2026-10-21T10:50:45+00:00",
   "fingerprint": "7e2cbb7002608a3e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota_work-31633",
@@ -7777,7 +8216,8 @@
   "source_url": "https://t.me/almaty_rabota_work/31633",
   "posted_at": "2026-10-21T10:42:28+00:00",
   "fingerprint": "f528d2f599baf32d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ MART Village"
  },
  {
   "id": "almaty_rabota05-11664",
@@ -7798,7 +8238,8 @@
   "source_url": "https://t.me/almaty_rabota05/11664",
   "posted_at": "2026-10-21T09:56:23+00:00",
   "fingerprint": "9c8d3c53d2fdbf94",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Ул.Курмангазы 43"
  },
  {
   "id": "agashka_job_almaty-917",
@@ -7818,7 +8259,8 @@
   "source_url": "https://t.me/agashka_job_almaty/917",
   "posted_at": "2026-10-21T09:40:06+00:00",
   "fingerprint": "e5352dc74ef952c2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25955",
@@ -7838,7 +8280,8 @@
   "source_url": "https://t.me/almaty_rabota01/25955",
   "posted_at": "2026-10-21T09:05:05+00:00",
   "fingerprint": "c5bb31eab3eade5c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Аскарова, 12"
  },
  {
   "id": "agashka_job_almaty-916",
@@ -7858,7 +8301,8 @@
   "source_url": "https://t.me/agashka_job_almaty/916",
   "posted_at": "2026-10-21T08:40:06+00:00",
   "fingerprint": "ac67b030c3c34876",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "agashka_job_almaty-915",
@@ -7878,7 +8322,8 @@
   "source_url": "https://t.me/agashka_job_almaty/915",
   "posted_at": "2026-10-21T07:30:07+00:00",
   "fingerprint": "6a9bdc7ef26d45b7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21236",
@@ -7898,7 +8343,8 @@
   "fingerprint": "794931207ab44998",
   "also_seen_in": [
    "https://t.me/almaty_rabota05/11662"
-  ]
+  ],
+  "address": "ул. Ауэзова, 163А"
  },
  {
   "id": "almaty_rabota01-25954",
@@ -7916,7 +8362,8 @@
   "source_url": "https://t.me/almaty_rabota01/25954",
   "posted_at": "2026-10-21T07:04:37+00:00",
   "fingerprint": "adc62d2892cd6332",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11661",
@@ -7937,7 +8384,8 @@
   "source_url": "https://t.me/almaty_rabota05/11661",
   "posted_at": "2026-10-21T06:43:41+00:00",
   "fingerprint": "72bb3c5d5ba8989d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "м-он Аксай 5"
  },
  {
   "id": "astana_rabota-90022",
@@ -7958,7 +8406,8 @@
   "source_url": "https://t.me/Astana_rabota/90022",
   "posted_at": "2026-10-21T06:42:24+00:00",
   "fingerprint": "b072d029a8ecf7ee",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "левый берег"
  },
  {
   "id": "almaty_rabota01-25953",
@@ -7978,7 +8427,8 @@
   "source_url": "https://t.me/almaty_rabota01/25953",
   "posted_at": "2026-10-21T06:13:52+00:00",
   "fingerprint": "de93b03003a26ede",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "рынок Ожет, ул. Бекболата, 1-й блок, А"
  },
  {
   "id": "almaty_rabota01-25952",
@@ -7996,7 +8446,8 @@
   "source_url": "https://t.me/almaty_rabota01/25952",
   "posted_at": "2026-10-21T06:03:29+00:00",
   "fingerprint": "50c816fb2fb14841",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Суюнбая, 114А"
  },
  {
   "id": "almaty_rabota05-11660",
@@ -8014,7 +8465,8 @@
   "source_url": "https://t.me/almaty_rabota05/11660",
   "posted_at": "2026-10-21T06:03:02+00:00",
   "fingerprint": "232fda7c2efba171",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Алгабас, ул. Кара Жорга, 28"
  },
  {
   "id": "almaty_rabota05-11659",
@@ -8032,7 +8484,8 @@
   "source_url": "https://t.me/almaty_rabota05/11659",
   "posted_at": "2026-10-21T05:45:33+00:00",
   "fingerprint": "dbc85999a4b85151",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Алгабас, ул. Кара Жорга, 28"
  },
  {
   "id": "rabotaalmatyyyy-15170",
@@ -8052,7 +8505,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15170",
   "posted_at": "2026-10-20T21:26:21+00:00",
   "fingerprint": "62f8b3517054d516",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Өжет, ул. Бекболат, 41"
  },
  {
   "id": "almatyvacancies-11046",
@@ -8070,7 +8524,8 @@
   "source_url": "https://t.me/almatyvacancies/11046",
   "posted_at": "2026-10-20T16:52:56+00:00",
   "fingerprint": "4d65c445d17f04a2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11045",
@@ -8088,7 +8543,8 @@
   "source_url": "https://t.me/almatyvacancies/11045",
   "posted_at": "2026-10-20T16:50:09+00:00",
   "fingerprint": "f236db1b2eac97cf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11043",
@@ -8106,7 +8562,8 @@
   "source_url": "https://t.me/almatyvacancies/11043",
   "posted_at": "2026-10-20T16:46:02+00:00",
   "fingerprint": "6d92fdeb8782219b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11042",
@@ -8124,7 +8581,8 @@
   "source_url": "https://t.me/almatyvacancies/11042",
   "posted_at": "2026-10-20T16:44:08+00:00",
   "fingerprint": "ca4806ae89b11558",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11040",
@@ -8144,7 +8602,8 @@
   "source_url": "https://t.me/almatyvacancies/11040",
   "posted_at": "2026-10-20T16:42:27+00:00",
   "fingerprint": "88032241704f2cea",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_v_nursultane1-12727",
@@ -8164,7 +8623,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12727",
   "posted_at": "2026-10-20T16:22:22+00:00",
   "fingerprint": "c9274de71815d0cf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сейфуллина, 47, Артём"
  },
  {
   "id": "rabota_v_nursultane1-12726",
@@ -8182,7 +8642,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12726",
   "posted_at": "2026-10-20T16:22:13+00:00",
   "fingerprint": "21f1c7295d77e170",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Балқантау, 129"
  },
  {
   "id": "rabota_v_nursultane1-12725",
@@ -8204,7 +8665,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12725",
   "posted_at": "2026-10-20T16:21:55+00:00",
   "fingerprint": "06f27f615e122150",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Туркестан, 8/2 (левый берег)"
  },
  {
   "id": "rabota_v_nursultane1-12721",
@@ -8222,7 +8684,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12721",
   "posted_at": "2026-10-20T16:20:51+00:00",
   "fingerprint": "6a09a1c2cd21068e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Туран, 50/4"
  },
  {
   "id": "rabota_v_nursultane1-12718",
@@ -8240,7 +8703,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12718",
   "posted_at": "2026-10-20T16:19:55+00:00",
   "fingerprint": "cb171dccf0625447",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Акжол, 113"
  },
  {
   "id": "rabota_v_nursultane1-12717",
@@ -8258,7 +8722,8 @@
   "source_url": "https://t.me/rabota_v_nursultane1/12717",
   "posted_at": "2026-10-20T16:19:45+00:00",
   "fingerprint": "af54c419564b36b1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Мусрепова, д. 14/2"
  },
  {
   "id": "rabotaalmatyyyy-15159",
@@ -8278,7 +8743,8 @@
   "fingerprint": "7d865e27b77fa3fd",
   "also_seen_in": [
    "https://t.me/rabotaalmatyyyy/15169"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "rabotaalmatyyyy-15168",
@@ -8301,7 +8767,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15168",
   "posted_at": "2026-10-20T14:11:07+00:00",
   "fingerprint": "4065175f24aeb63e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15624",
@@ -8321,7 +8788,8 @@
   "source_url": "https://t.me/rabota_astana/15624",
   "posted_at": "2026-10-20T13:27:01+00:00",
   "fingerprint": "861d3be8f88bc0e6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21234",
@@ -8339,7 +8807,8 @@
   "source_url": "https://t.me/almatyrabota1/21234",
   "posted_at": "2026-10-20T13:01:21+00:00",
   "fingerprint": "73cb2b1fd3477a63",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21233",
@@ -8359,7 +8828,8 @@
   "source_url": "https://t.me/almatyrabota1/21233",
   "posted_at": "2026-10-20T12:24:32+00:00",
   "fingerprint": "63f46ad82f1fbc14",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Райымбека 496а/7"
  },
  {
   "id": "almaty_rabota01-25951",
@@ -8380,7 +8850,8 @@
   "source_url": "https://t.me/almaty_rabota01/25951",
   "posted_at": "2026-10-20T11:54:38+00:00",
   "fingerprint": "f586207ec24d8c1e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Кульджинский тракт, 106"
  },
  {
   "id": "almaty_rabota01-25949",
@@ -8398,7 +8869,8 @@
   "source_url": "https://t.me/almaty_rabota01/25949",
   "posted_at": "2026-10-20T09:14:27+00:00",
   "fingerprint": "a300a2bcf0b4ae2f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25948",
@@ -8416,7 +8888,8 @@
   "source_url": "https://t.me/almaty_rabota01/25948",
   "posted_at": "2026-10-20T08:45:56+00:00",
   "fingerprint": "3cdb28fbc5ebdd0e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Сейфуллина — Макатаева"
  },
  {
   "id": "astana_hh-1824",
@@ -8434,7 +8907,8 @@
   "source_url": "https://t.me/astana_hh/1824",
   "posted_at": "2026-10-20T08:45:50+00:00",
   "fingerprint": "e0d7ef43a804905f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1823",
@@ -8452,7 +8926,8 @@
   "source_url": "https://t.me/astana_hh/1823",
   "posted_at": "2026-10-20T08:40:13+00:00",
   "fingerprint": "b3dde64a006a022e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Ахмет Байтурсынулы, 16"
  },
  {
   "id": "astana_hh-1822",
@@ -8473,7 +8948,8 @@
   "source_url": "https://t.me/astana_hh/1822",
   "posted_at": "2026-10-20T08:39:50+00:00",
   "fingerprint": "8a329a41510d1091",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Туран 55/11"
  },
  {
   "id": "almaty_rabota05-11656",
@@ -8491,7 +8967,8 @@
   "source_url": "https://t.me/almaty_rabota05/11656",
   "posted_at": "2026-10-20T08:17:30+00:00",
   "fingerprint": "47a7107b04e14ebf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Алтын Арды"
  },
  {
   "id": "trudogolikz-747",
@@ -8509,7 +8986,8 @@
   "source_url": "https://t.me/trudogolikz/747",
   "posted_at": "2026-10-20T08:12:01+00:00",
   "fingerprint": "296dbb382ce0ee61",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1820",
@@ -8530,7 +9008,8 @@
   "source_url": "https://t.me/astana_hh/1820",
   "posted_at": "2026-10-20T08:10:14+00:00",
   "fingerprint": "583e72e92bb30a94",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Байтурсынова, 9"
  },
  {
   "id": "almaty_rabota01-25947",
@@ -8548,7 +9027,8 @@
   "source_url": "https://t.me/almaty_rabota01/25947",
   "posted_at": "2026-10-20T07:54:03+00:00",
   "fingerprint": "e994e661b07cce91",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРК Grand Park, ул. Кабдолова, 1"
  },
  {
   "id": "almaty_rabota01-25944",
@@ -8566,7 +9046,8 @@
   "source_url": "https://t.me/almaty_rabota01/25944",
   "posted_at": "2026-10-20T06:31:27+00:00",
   "fingerprint": "0e6396efd5565c4f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25943",
@@ -8584,7 +9065,8 @@
   "source_url": "https://t.me/almaty_rabota01/25943",
   "posted_at": "2026-10-20T05:47:58+00:00",
   "fingerprint": "2cf1868f2b23e5df",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25942",
@@ -8602,7 +9084,8 @@
   "source_url": "https://t.me/almaty_rabota01/25942",
   "posted_at": "2026-10-20T05:28:48+00:00",
   "fingerprint": "1787a64ad14c85e7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25941",
@@ -8620,7 +9103,8 @@
   "source_url": "https://t.me/almaty_rabota01/25941",
   "posted_at": "2026-10-20T05:00:26+00:00",
   "fingerprint": "cc0d86b72fe75034",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11655",
@@ -8640,7 +9124,8 @@
   "source_url": "https://t.me/almaty_rabota05/11655",
   "posted_at": "2026-10-20T04:22:56+00:00",
   "fingerprint": "7ab7f935b05c53fb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Радостовца 292/1а"
  },
  {
   "id": "almaty_rabota01-25940",
@@ -8658,7 +9143,8 @@
   "source_url": "https://t.me/almaty_rabota01/25940",
   "posted_at": "2026-10-20T04:07:50+00:00",
   "fingerprint": "876a705318a7f3f6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ЖК Esentai City, пр. Аль-Фараби, 116/20"
  },
  {
   "id": "almatyrabota1-21231",
@@ -8676,7 +9162,8 @@
   "source_url": "https://t.me/almatyrabota1/21231",
   "posted_at": "2026-10-20T04:03:01+00:00",
   "fingerprint": "e740122924c4f4b0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Желтоксан 75"
  },
  {
   "id": "almatyrabota1-21230",
@@ -8696,7 +9183,8 @@
   "source_url": "https://t.me/almatyrabota1/21230",
   "posted_at": "2026-10-19T16:54:23+00:00",
   "fingerprint": "5cc293f3b64d89e2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "4 микрорайон дом 24"
  },
  {
   "id": "astana_hh-1819",
@@ -8714,7 +9202,8 @@
   "source_url": "https://t.me/astana_hh/1819",
   "posted_at": "2026-10-19T16:43:00+00:00",
   "fingerprint": "6a652c3d45655e02",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сейфуллина, 47, ТД «Артём»"
  },
  {
   "id": "rabota_astana-15623",
@@ -8732,7 +9221,8 @@
   "source_url": "https://t.me/rabota_astana/15623",
   "posted_at": "2026-10-19T15:16:10+00:00",
   "fingerprint": "ef167ee7c178701f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabotaalmatyyyy-15160",
@@ -8750,7 +9240,8 @@
   "source_url": "https://t.me/rabotaalmatyyyy/15160",
   "posted_at": "2026-10-19T15:07:55+00:00",
   "fingerprint": "6845b0eddadb415d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11038",
@@ -8768,7 +9259,8 @@
   "source_url": "https://t.me/almatyvacancies/11038",
   "posted_at": "2026-10-19T14:42:54+00:00",
   "fingerprint": "4534be01525e17fe",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11036",
@@ -8788,7 +9280,8 @@
   "source_url": "https://t.me/almatyvacancies/11036",
   "posted_at": "2026-10-19T14:41:36+00:00",
   "fingerprint": "7202ed25d8ecebb8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21229",
@@ -8806,7 +9299,8 @@
   "source_url": "https://t.me/almatyrabota1/21229",
   "posted_at": "2026-10-19T12:58:47+00:00",
   "fingerprint": "1a03958a7c6553a2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Аль-Фараби, 140А/4"
  },
  {
   "id": "almatyrabota1-21228",
@@ -8826,7 +9320,8 @@
   "source_url": "https://t.me/almatyrabota1/21228",
   "posted_at": "2026-10-19T12:12:18+00:00",
   "fingerprint": "43d10304bda38280",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25938",
@@ -8848,7 +9343,8 @@
   "source_url": "https://t.me/almaty_rabota01/25938",
   "posted_at": "2026-10-19T12:03:42+00:00",
   "fingerprint": "1cd654bd016b50f5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Казыбек би, 139"
  },
  {
   "id": "jobkz_1-22990",
@@ -8866,7 +9362,8 @@
   "source_url": "https://t.me/jobkz_1/22990",
   "posted_at": "2026-10-19T11:05:46+00:00",
   "fingerprint": "5cd60db21f2a5932",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21226",
@@ -8886,7 +9383,8 @@
   "source_url": "https://t.me/almatyrabota1/21226",
   "posted_at": "2026-10-19T10:34:33+00:00",
   "fingerprint": "40bee7727d515fba",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр.Сейфуллина 617, ТРЦ Forum"
  },
  {
   "id": "almatyrabota1-21225",
@@ -8906,7 +9404,8 @@
   "source_url": "https://t.me/almatyrabota1/21225",
   "posted_at": "2026-10-19T10:32:09+00:00",
   "fingerprint": "c25fabf507ca0e11",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21224",
@@ -8926,7 +9425,8 @@
   "source_url": "https://t.me/almatyrabota1/21224",
   "posted_at": "2026-10-19T10:30:08+00:00",
   "fingerprint": "d09737229c864cbd",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11630",
@@ -8946,7 +9446,8 @@
   "fingerprint": "512241bbfe09c58b",
   "also_seen_in": [
    "https://t.me/almaty_rabota05/11652"
-  ]
+  ],
+  "address": null
  },
  {
   "id": "almatyrabota1-21223",
@@ -8964,7 +9465,8 @@
   "source_url": "https://t.me/almatyrabota1/21223",
   "posted_at": "2026-10-19T10:19:44+00:00",
   "fingerprint": "edef67d87fe73561",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21222",
@@ -8985,7 +9487,8 @@
   "source_url": "https://t.me/almatyrabota1/21222",
   "posted_at": "2026-10-19T09:15:47+00:00",
   "fingerprint": "a4130fd1e7024bd1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21221",
@@ -9005,7 +9508,8 @@
   "source_url": "https://t.me/almatyrabota1/21221",
   "posted_at": "2026-10-19T08:45:35+00:00",
   "fingerprint": "246d14354cb4d76a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21220",
@@ -9023,7 +9527,8 @@
   "source_url": "https://t.me/almatyrabota1/21220",
   "posted_at": "2026-10-19T08:40:34+00:00",
   "fingerprint": "b9cee36018ffb293",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район ТРЦ Grand Park"
  },
  {
   "id": "almaty_rabota05-11650",
@@ -9041,7 +9546,8 @@
   "source_url": "https://t.me/almaty_rabota05/11650",
   "posted_at": "2026-10-19T08:31:54+00:00",
   "fingerprint": "62d9dc84fb4f3aa2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ Mart village"
  },
  {
   "id": "almatyrabota1-21218",
@@ -9059,7 +9565,8 @@
   "source_url": "https://t.me/almatyrabota1/21218",
   "posted_at": "2026-10-19T08:23:59+00:00",
   "fingerprint": "9a16941e6b17c3c9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_rabota_jumys-15116",
@@ -9077,7 +9584,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15116",
   "posted_at": "2026-10-19T06:32:04+00:00",
   "fingerprint": "f6a6e4a8a0d19e04",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Женис, 14, салон «Мерси»"
  },
  {
   "id": "astana_rabota_jumys-15115",
@@ -9095,7 +9603,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15115",
   "posted_at": "2026-10-19T06:31:23+00:00",
   "fingerprint": "af47da7a5072c3ea",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25937",
@@ -9113,7 +9622,8 @@
   "source_url": "https://t.me/almaty_rabota01/25937",
   "posted_at": "2026-10-19T06:26:25+00:00",
   "fingerprint": "3151515a6fc7821e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРК Forum, пр. Сейфуллина, 617, Bro&N"
  },
  {
   "id": "astana_rabota_jumys-15114",
@@ -9134,7 +9644,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15114",
   "posted_at": "2026-10-19T06:26:10+00:00",
   "fingerprint": "bed122f2be5f778c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Туран, д. 52/4, НП4 (около СК «Астана Арена», СК «Алау»)"
  },
  {
   "id": "astana_rabota_jumys-15112",
@@ -9152,7 +9663,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15112",
   "posted_at": "2026-10-19T06:18:19+00:00",
   "fingerprint": "2fcbc54fdd77e626",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ЖК Арнау 12, магазин «Супермаркет Посуды»"
  },
  {
   "id": "astana_rabota_jumys-15111",
@@ -9170,7 +9682,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15111",
   "posted_at": "2026-10-19T06:14:36+00:00",
   "fingerprint": "dce022d513036a30",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "район Абу-Даби"
  },
  {
   "id": "astana_rabota_jumys-15110",
@@ -9191,7 +9704,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15110",
   "posted_at": "2026-10-19T06:13:59+00:00",
   "fingerprint": "b29cb451cd0c55e0",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11649",
@@ -9209,7 +9723,8 @@
   "source_url": "https://t.me/almaty_rabota05/11649",
   "posted_at": "2026-10-19T06:00:46+00:00",
   "fingerprint": "e26c73534dbaaab7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25936",
@@ -9230,7 +9745,8 @@
   "source_url": "https://t.me/almaty_rabota01/25936",
   "posted_at": "2026-10-19T05:39:42+00:00",
   "fingerprint": "f6957220955efd0d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25935",
@@ -9248,7 +9764,8 @@
   "source_url": "https://t.me/almaty_rabota01/25935",
   "posted_at": "2026-10-19T05:02:55+00:00",
   "fingerprint": "4f157989477d772a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "trudogolikz-746",
@@ -9266,7 +9783,8 @@
   "source_url": "https://t.me/trudogolikz/746",
   "posted_at": "2026-10-19T03:57:03+00:00",
   "fingerprint": "639bf32d4214c70e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11648",
@@ -9284,7 +9802,8 @@
   "source_url": "https://t.me/almaty_rabota05/11648",
   "posted_at": "2026-10-18T17:08:25+00:00",
   "fingerprint": "e63a3aacec88a15d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15621",
@@ -9304,7 +9823,8 @@
   "source_url": "https://t.me/rabota_astana/15621",
   "posted_at": "2026-10-18T15:08:42+00:00",
   "fingerprint": "f60b7c1d017e63a8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Илияс Омарова, 27"
  },
  {
   "id": "almatyvacancies-11033",
@@ -9322,7 +9842,8 @@
   "source_url": "https://t.me/almatyvacancies/11033",
   "posted_at": "2026-10-18T14:03:20+00:00",
   "fingerprint": "0f109de0d64d2915",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11030",
@@ -9340,7 +9861,8 @@
   "source_url": "https://t.me/almatyvacancies/11030",
   "posted_at": "2026-10-18T13:59:13+00:00",
   "fingerprint": "3d48a1bae9556599",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11028",
@@ -9358,7 +9880,8 @@
   "source_url": "https://t.me/almatyvacancies/11028",
   "posted_at": "2026-10-18T13:55:11+00:00",
   "fingerprint": "a4c217d70f3aa1da",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11027",
@@ -9378,7 +9901,8 @@
   "source_url": "https://t.me/almatyvacancies/11027",
   "posted_at": "2026-10-18T13:54:24+00:00",
   "fingerprint": "600398b28b81629e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21217",
@@ -9396,7 +9920,8 @@
   "source_url": "https://t.me/almatyrabota1/21217",
   "posted_at": "2026-10-18T12:04:14+00:00",
   "fingerprint": "d9e234cc13d59528",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Розыбакиева, 237/1"
  },
  {
   "id": "almaty_rabota01-25934",
@@ -9416,7 +9941,8 @@
   "source_url": "https://t.me/almaty_rabota01/25934",
   "posted_at": "2026-10-18T12:02:59+00:00",
   "fingerprint": "9e062642584a9ee1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25931",
@@ -9436,7 +9962,8 @@
   "source_url": "https://t.me/almaty_rabota01/25931",
   "posted_at": "2026-10-18T10:04:52+00:00",
   "fingerprint": "270db39d8169419b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25930",
@@ -9456,7 +9983,8 @@
   "source_url": "https://t.me/almaty_rabota01/25930",
   "posted_at": "2026-10-18T09:17:10+00:00",
   "fingerprint": "a90460f92a4817ca",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул.Юрия Гагарина 287 Б"
  },
  {
   "id": "almatyrabota1-21215",
@@ -9476,7 +10004,8 @@
   "source_url": "https://t.me/almatyrabota1/21215",
   "posted_at": "2026-10-18T06:32:20+00:00",
   "fingerprint": "59ea27e4132bb46a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11025",
@@ -9497,7 +10026,8 @@
   "source_url": "https://t.me/almatyvacancies/11025",
   "posted_at": "2026-10-17T14:15:07+00:00",
   "fingerprint": "00bcee4d2174e03d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11024",
@@ -9515,7 +10045,8 @@
   "source_url": "https://t.me/almatyvacancies/11024",
   "posted_at": "2026-10-17T14:14:13+00:00",
   "fingerprint": "01a7a0f86fc69f09",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyvacancies-11021",
@@ -9533,7 +10064,8 @@
   "source_url": "https://t.me/almatyvacancies/11021",
   "posted_at": "2026-10-17T14:09:55+00:00",
   "fingerprint": "ee0a63294c67af9d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25928",
@@ -9554,7 +10086,8 @@
   "source_url": "https://t.me/almaty_rabota01/25928",
   "posted_at": "2026-10-17T11:56:34+00:00",
   "fingerprint": "1a30ef0ff81f5f73",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул.Ескараева, 3"
  },
  {
   "id": "almaty_rabota05-11645",
@@ -9572,7 +10105,8 @@
   "source_url": "https://t.me/almaty_rabota05/11645",
   "posted_at": "2026-10-17T08:03:01+00:00",
   "fingerprint": "dee2db8427bb2d86",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15618",
@@ -9593,7 +10127,8 @@
   "source_url": "https://t.me/rabota_astana/15618",
   "posted_at": "2026-10-17T07:39:06+00:00",
   "fingerprint": "cbc711a6dc44a8a8",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15617",
@@ -9613,7 +10148,8 @@
   "source_url": "https://t.me/rabota_astana/15617",
   "posted_at": "2026-10-16T11:49:48+00:00",
   "fingerprint": "92d5d9203783dfd7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "С 319, 12, район Лесозавода"
  },
  {
   "id": "almaty_rabota01-25925",
@@ -9634,7 +10170,8 @@
   "source_url": "https://t.me/almaty_rabota01/25925",
   "posted_at": "2026-10-16T11:48:53+00:00",
   "fingerprint": "0ce0c17e9b95407f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ MEGA Center, ул. Розыбакиева"
  },
  {
   "id": "almaty_rabota01-25924",
@@ -9654,7 +10191,8 @@
   "source_url": "https://t.me/almaty_rabota01/25924",
   "posted_at": "2026-10-16T11:32:18+00:00",
   "fingerprint": "e26693e277bfde23",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Сатпаева, 30/8, 3-й этаж, кабинет 147"
  },
  {
   "id": "almaty_rabota01-25923",
@@ -9675,7 +10213,8 @@
   "source_url": "https://t.me/almaty_rabota01/25923",
   "posted_at": "2026-10-16T11:00:37+00:00",
   "fingerprint": "4df860cc9636e0e5",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРЦ Globus, 2-й этаж, пр. Абая, 109В"
  },
  {
   "id": "almaty_rabota05-11642",
@@ -9693,7 +10232,8 @@
   "source_url": "https://t.me/almaty_rabota05/11642",
   "posted_at": "2026-10-16T10:11:31+00:00",
   "fingerprint": "7326c9a8522411e1",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota01-25921",
@@ -9716,7 +10256,8 @@
   "source_url": "https://t.me/almaty_rabota01/25921",
   "posted_at": "2026-10-16T09:05:09+00:00",
   "fingerprint": "34966dc0022366c2",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11640",
@@ -9737,7 +10278,8 @@
   "source_url": "https://t.me/almaty_rabota05/11640",
   "posted_at": "2026-10-16T04:17:51+00:00",
   "fingerprint": "65f4a2e78c667234",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "jumystap1-1488",
@@ -9755,7 +10297,8 @@
   "source_url": "https://t.me/jumystap1/1488",
   "posted_at": "2026-10-15T12:50:08+00:00",
   "fingerprint": "ff4e9475f66b301c",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Алматы қ, Көксай ауылы, Наурызбай 109а (Қалқаман/Алғабас район)"
  },
  {
   "id": "almatyrabota1-21212",
@@ -9776,7 +10319,8 @@
   "source_url": "https://t.me/almatyrabota1/21212",
   "posted_at": "2026-10-15T12:40:12+00:00",
   "fingerprint": "aa3265831fa1cf57",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almaty_rabota05-11638",
@@ -9798,7 +10342,8 @@
   "source_url": "https://t.me/almaty_rabota05/11638",
   "posted_at": "2026-10-15T12:22:42+00:00",
   "fingerprint": "a4e543700b845ea3",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21209",
@@ -9816,7 +10361,8 @@
   "source_url": "https://t.me/almatyrabota1/21209",
   "posted_at": "2026-10-15T10:30:10+00:00",
   "fingerprint": "c9f9e45afbc08c51",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТРК Forum, проспект Сейфуллина, 617 Bro&N"
  },
  {
   "id": "almatyrabota1-21208",
@@ -9834,7 +10380,8 @@
   "source_url": "https://t.me/almatyrabota1/21208",
   "posted_at": "2026-10-15T10:19:33+00:00",
   "fingerprint": "547881d863c726fb",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21207",
@@ -9854,7 +10401,8 @@
   "source_url": "https://t.me/almatyrabota1/21207",
   "posted_at": "2026-10-15T09:58:49+00:00",
   "fingerprint": "ded9fdf2a1735afc",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21206",
@@ -9874,7 +10422,8 @@
   "source_url": "https://t.me/almatyrabota1/21206",
   "posted_at": "2026-10-15T09:54:42+00:00",
   "fingerprint": "e3a92a80c09bc061",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "rabota_astana-15614",
@@ -9892,7 +10441,8 @@
   "source_url": "https://t.me/rabota_astana/15614",
   "posted_at": "2026-10-15T08:54:06+00:00",
   "fingerprint": "10bd93701b1b03e6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "УЛЫ ДАЛА 54"
  },
  {
   "id": "rabota_astana-15611",
@@ -9914,7 +10464,8 @@
   "source_url": "https://t.me/rabota_astana/15611",
   "posted_at": "2026-10-15T07:41:49+00:00",
   "fingerprint": "01dbd856cd9ceac7",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Е-753 дом 5"
  },
  {
   "id": "astana_hh-1813",
@@ -9935,7 +10486,8 @@
   "source_url": "https://t.me/astana_hh/1813",
   "posted_at": "2026-10-15T07:08:01+00:00",
   "fingerprint": "0b9a5f8d4ea7de26",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Брусиловского, 18"
  },
  {
   "id": "astana_rabota_jumys-15106",
@@ -9955,7 +10507,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15106",
   "posted_at": "2026-10-15T06:44:53+00:00",
   "fingerprint": "1a1c5019510f4504",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ТЦ «Аружан»"
  },
  {
   "id": "astana_rabota_jumys-15105",
@@ -9973,7 +10526,8 @@
   "source_url": "https://t.me/astana_rabota_jumys/15105",
   "posted_at": "2026-10-15T06:44:22+00:00",
   "fingerprint": "8fc51a8d4fb9a867",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21205",
@@ -9993,7 +10547,8 @@
   "source_url": "https://t.me/almatyrabota1/21205",
   "posted_at": "2026-10-14T10:17:50+00:00",
   "fingerprint": "8793cf000201ad92",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "almatyrabota1-21204",
@@ -10014,7 +10569,8 @@
   "source_url": "https://t.me/almatyrabota1/21204",
   "posted_at": "2026-10-14T06:59:45+00:00",
   "fingerprint": "ff0dece71ed50f3d",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Проспект Суюнбая, 258/4"
  },
  {
   "id": "almatyrabota1-21202",
@@ -10032,7 +10588,8 @@
   "source_url": "https://t.me/almatyrabota1/21202",
   "posted_at": "2026-10-14T06:36:52+00:00",
   "fingerprint": "270711c076faac1e",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Шевченко 48 уг Назарбаева Кулинарный бутик Визит Дмитрий"
  },
  {
   "id": "almaty_rabota05-11632",
@@ -10050,7 +10607,8 @@
   "source_url": "https://t.me/almaty_rabota05/11632",
   "posted_at": "2026-10-14T06:05:40+00:00",
   "fingerprint": "1217569c03a24ab6",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Суюнбая, 633/1"
  },
  {
   "id": "astana_hh-1809",
@@ -10068,7 +10626,8 @@
   "source_url": "https://t.me/astana_hh/1809",
   "posted_at": "2026-10-14T05:15:08+00:00",
   "fingerprint": "ca28a2466c6575bf",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1808",
@@ -10086,7 +10645,8 @@
   "source_url": "https://t.me/astana_hh/1808",
   "posted_at": "2026-10-14T05:10:09+00:00",
   "fingerprint": "39a6a9cd6b8f7f0f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1805",
@@ -10104,7 +10664,8 @@
   "source_url": "https://t.me/astana_hh/1805",
   "posted_at": "2026-10-13T16:07:43+00:00",
   "fingerprint": "5512bbec1272aa3f",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": null
  },
  {
   "id": "astana_hh-1804",
@@ -10122,7 +10683,8 @@
   "source_url": "https://t.me/astana_hh/1804",
   "posted_at": "2026-10-13T16:05:56+00:00",
   "fingerprint": "1e61893320317f53",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Кабанбай батыра, 5/3, «Шишка Премиум»"
  },
  {
   "id": "astana_hh-1803",
@@ -10143,7 +10705,8 @@
   "source_url": "https://t.me/astana_hh/1803",
   "posted_at": "2026-10-13T16:05:21+00:00",
   "fingerprint": "4a1670edcf85f9d9",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "пр. Богенбай батыра, 1"
  },
  {
   "id": "astana_hh-1801",
@@ -10165,7 +10728,8 @@
   "source_url": "https://t.me/astana_hh/1801",
   "posted_at": "2026-10-13T16:04:39+00:00",
   "fingerprint": "32f9f2c9b8566518",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "Қарасақал Ерімбет, 37/1"
  },
  {
   "id": "almaty_rabota05-11631",
@@ -10183,7 +10747,8 @@
   "source_url": "https://t.me/almaty_rabota05/11631",
   "posted_at": "2026-10-13T13:36:35+00:00",
   "fingerprint": "a83710ee49a79a5a",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "мкр. Алгабас, ул. Кара Жорга, 28"
  },
  {
   "id": "rabota_astana-15609",
@@ -10201,26 +10766,7 @@
   "source_url": "https://t.me/rabota_astana/15609",
   "posted_at": "2026-10-13T12:24:59+00:00",
   "fingerprint": "ca6e17550af2fe6e",
-  "also_seen_in": []
- },
- {
-  "id": "astana_rabota_jumys-15089",
-  "title": "Менеджер по продажам",
-  "category": "retail",
-  "city": "astana",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [
-   "Официально"
-  ],
-  "employer": null,
-  "text": "Астана!\nВ магазин освещения требуется МЕНЕДЖЕР по продажам.\nОнлайн и оффлайн продажи.\nТребования\nОпыт работы в продажах\nОпыт работы в 1С\nОбучаемость, дисциплина, знание Каз,рус языков.\n📍Левый берег\n💵 Оклад+ % + бонусы\nОфициальное трудоустройство.\n📲",
-  "source": "telegram",
-  "source_url": "https://t.me/astana_rabota_jumys/15089",
-  "posted_at": "2026-10-13T09:24:48+00:00",
-  "fingerprint": "1b336600e026e33b",
-  "also_seen_in": []
+  "also_seen_in": [],
+  "address": "ул. Куйши Дина, 28"
  }
 ]

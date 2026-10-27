@@ -81,13 +81,15 @@ PROFESSIONS: list[tuple[str, str, str]] = [
     (r"разнорабоч", "Разнорабочий", "warehouse"),
     (r"\bшве(я|ю|и)\b|швейн\w* цех", "Швея", "warehouse"),
     (r"рабоч\w* на производств", "Рабочий на производство", "warehouse"),
+    (r"шлифовщ", "Шлифовщик", "warehouse"),
     # Доставка и водители
     (r"курьер", "Курьер", "delivery"),
     (r"водител\w* такси|таксист", "Водитель такси", "delivery"),
     (r"водител", "Водитель", "delivery"),
     (r"экспедитор", "Экспедитор", "delivery"),
     # Сервис и уборка
-    (r"уборщ|клинер|техничк", "Уборщица", "service"),
+    (r"уборщ|клинер|техничк|уборк\w* (домов|квартир|офис|помещ)", "Уборщица", "service"),
+    (r"помощни\w* воспитател", "Помощник воспитателя", "service"),
     (r"горничн", "Горничная", "service"),
     (r"\bнян(я|ю|и)\b", "Няня", "service"),
     (r"сиделк", "Сиделка", "service"),
@@ -108,17 +110,31 @@ PROFESSIONS: list[tuple[str, str, str]] = [
     (r"каменщик", "Каменщик", "construction"),
     (r"монтажник", "Монтажник", "construction"),
     (r"отделочник", "Отделочник", "construction"),
+    (r"столяр(?!н)", "Столяр", "construction"),
     (r"экскаваторщ|крановщ|машинист", "Машинист спецтехники", "construction"),
     # Колл-центр
     (r"оператор\w* (колл|call)|колл-центр|call-центр|кол-центр", "Оператор колл-центра", "callcenter"),
-    # Общие слова: срабатывают, только если конкретной должности в тексте нет раньше
-    (r"сотрудни(к|ка|ца|цу|цы|ков)\b", "Сотрудник", "other"),
+    # Общие слова «требуется сотрудник», «нужны работники»: только рядом с глаголом найма,
+    # чтобы не ловить «сотрудники компании» в объявлениях и новостях
+    (r"(требу\w*|ищ\w+|нуж\w+|приглаша\w*)[\s\S]{0,40}?(сотрудни|работни)(к|ка|ца|цу|цы|ков|ки|ц)\b",
+     "Сотрудник", "other"),
 ]
+GENERIC_TITLE = "Сотрудник"
 _PROFESSIONS = [(re.compile(p), title, cat) for p, title, cat in PROFESSIONS]
+_TITLE_NAMES = {_t.lower() for _, _t, _ in PROFESSIONS}
 
 HIRING = re.compile(
-    r"требу[ею]т|ищ[еу]м|ищет|нуж(ен|на|ны)|ваканси|набор|приглаша|в поиске|срочно|на работу"
+    r"требу[ею]т|ищ[еу]м|ищет|нуж(ен|на|ны)|ваканси|набор|приглаша|в поиске|срочно|на работу|"
+    r"қажет|керек|шақырамыз"
 )
+# Офисные и руководящие позиции: если такая должность названа раньше рабочей, пост не наш
+WHITE_COLLAR = re.compile(
+    r"директор|руководител|супервайзер|специалист по|инженер|разработчик|программист|developer|"
+    r"маркетолог|marketing|smm|дизайнер|аналитик|бухгалтер|юрист|рекрутер|hr[- ]менеджер|"
+    r"педагог|учител|воспитател|врач|медсестр|преподавател|эксперт|consultant"
+)
+# Вакансии за пределами Казахстана
+FOREIGN = re.compile(r"ташкент(?!ск)|узбекистан|бишкек|кыргызстан|москв|санкт-петербург|россии\b|\bрф\b")
 NOT_VACANCY = re.compile(
     r"ищу работу|#резюме|^резюме|рассмотрю (любые )?предложения|"
     r"\bсда(м|ю|ется|ются)\b|\bпрода(м|ю|ется)\b|\bкуплю\b|\bаренд"
@@ -152,10 +168,23 @@ SALARY = re.compile(
 )
 _CURRENCY = re.compile(r"^\s*(тг|тенге|₸|kzt|tg)", re.I)
 _MONEY_CONTEXT = re.compile(r"зп|з/п|зарплат|оклад|оплат|доход|ставк|платим|выплат|смен")
-_NOT_MONEY_TAIL = re.compile(r"^\s*(лет|год|:\d|/\s*\d|%|шт|кг|м\b|км|мин|чел|ч\b|час(а|ов)\b)")
+_NOT_MONEY_TAIL = re.compile(r"^\s*(лет|год|:\d|/\s*\d|%|шт|кг|м\b|км|мин|чел|ч\b|час(а|ов)\b|\$|usd|руб|€|eur|долл)")
+_FOREIGN_CURRENCY_HEAD = re.compile(r"(\$|usd|€|руб\.?)\s*$")
 _LIMITS = {"hour": (300, 15_000), "day": (2_000, 150_000), "month": (40_000, 5_000_000)}
 
 _SCHEDULE = re.compile(r"(?<![\d/])(\d{1,2})\s*/\s*(\d{1,2})(?![\d/])")
+# Обычные сменные графики и вахты. Другие пары («11/4») принимаем только в строке про график,
+# иначе это номер дома или корпус в адресе.
+COMMON_SCHEDULES = {
+    "1/1", "1/2", "1/3", "2/1", "2/2", "3/1", "3/2", "3/3", "4/2", "4/3", "5/1", "5/2", "6/1",
+    "7/7", "10/10", "14/7", "14/14", "15/15", "20/10", "21/7", "21/21", "28/28", "30/15", "30/30",
+}
+_SCHEDULE_LINE = re.compile(r"график|смен|вахт|режим")
+_ADDRESS_LINE = re.compile(r"адрес|\bул\b|улиц|\bд\.|\bдом\b|мкр|микрорайон|проспект|пр\.|корпус|офис")
+_EMPLOYER_LABEL = re.compile(
+    r"(?i:название компании|компания|работодатель|организация)\s*[:\-–—]\s*([^\n]{2,60})"
+)
+_EMPLOYER_INVITES = re.compile(r"^[^\w\n]*([^\n]{2,40}?)\s+приглашает на работу", re.M)
 _EMPLOYER_QUOTED = re.compile(r"[«\"]([^«»\"\n]{2,40})[»\"]")
 _EMPLOYER_PLACE = re.compile(
     r"(?i:\b(?:кафе|ресторан\w*|кофейн\w*|магазин\w*|бар\w*|сет(ь|и)(?:[ \t]+[а-яё]+){1,3}|компани\w*|супермаркет\w*|"
@@ -182,17 +211,21 @@ def is_vacancy(text: str) -> bool:
     return has_profession and (bool(HIRING.search(low)) or parse_salary(text)[0] is not None)
 
 
-def detect_titles(text: str) -> list[tuple[str, str]]:
-    """Должности в порядке появления в тексте: [(название, категория), ...]."""
-    low = _lower(text)
+def _title_hits(low: str) -> list[tuple[int, int, str, str]]:
+    """Все совпадения должностей: (позиция, −длина, название, категория), по порядку в тексте."""
     hits = []
     for rx, title, cat in _PROFESSIONS:
         for m in rx.finditer(low):
             hits.append((m.start(), -(m.end() - m.start()), title, cat))
-    hits.sort()
+    specific = [h for h in hits if h[2] != GENERIC_TITLE]
+    return sorted(specific or hits)  # «Сотрудник» — только когда конкретной должности нет
+
+
+def detect_titles(text: str) -> list[tuple[str, str]]:
+    """Должности в порядке появления в тексте: [(название, категория), ...]."""
     result: list[tuple[str, str]] = []
     covered_until = -1
-    for start, neg_len, title, cat in hits:
+    for start, neg_len, title, cat in _title_hits(_lower(text)):
         if start < covered_until:
             continue  # «консультант» внутри уже найденного «продавец-консультант»
         covered_until = start - neg_len
@@ -219,6 +252,8 @@ def parse_salary(text: str) -> tuple[int | None, int | None, str | None]:
         mult = bool(m["am"] or m["bm"])
         if not (_CURRENCY.match(tail) or mult or _MONEY_CONTEXT.search(head)):
             continue
+        if _FOREIGN_CURRENCY_HEAD.search(head):
+            continue
         a = _to_int(a_raw) * (1000 if m["am"] else 1)
         b = _to_int(b_raw) * (1000 if m["bm"] else 1) if b_raw else None
         if m["bm"] and not m["am"] and a < 1000:
@@ -243,13 +278,22 @@ def parse_salary(text: str) -> tuple[int | None, int | None, str | None]:
     return None, None, None
 
 
+def _line_at(text: str, pos: int) -> str:
+    end = text.find("\n", pos)
+    return text[text.rfind("\n", 0, pos) + 1: end if end != -1 else len(text)]
+
+
 def parse_schedule(text: str) -> str | None:
     low = _lower(text)
     parts = []
     for m in _SCHEDULE.finditer(low):
         work, rest = int(m[1]), int(m[2])
-        if 1 <= work <= 30 and 1 <= rest <= 30 and work + rest <= 60:
-            parts.append(f"{work}/{rest}")
+        pair = f"{work}/{rest}"
+        line = _line_at(low, m.start())
+        if pair in COMMON_SCHEDULES and not _ADDRESS_LINE.search(line) or (
+            _SCHEDULE_LINE.search(line) and 1 <= work <= 30 and 1 <= rest <= 30
+        ):
+            parts.append(pair)
             break
     if "вахт" in low:
         parts.append("вахта")
@@ -278,13 +322,34 @@ def detect_city(text: str, default: str | None) -> str | None:
     return default if default in found else None
 
 
+_NOT_EMPLOYER = re.compile(r"не указан|частн\w* лиц|объявлени|хозяин|^я\b")
+
+
+def _clean_name(name: str) -> str | None:
+    quoted = _EMPLOYER_QUOTED.search(name)
+    if quoted:
+        name = quoted[1]
+    name = re.sub(r"[^\w\s&'’.,\-+()]", "", name).strip(" .,-")
+    if not 2 <= len(name) <= 40 or _NOT_EMPLOYER.search(_lower(name)):
+        return None
+    if _lower(name) in _TITLE_NAMES:
+        return None  # «Работодатель: Администратор» — это должность, а не компания
+    return name
+
+
 def detect_employer(text: str) -> str | None:
+    m = _EMPLOYER_LABEL.search(text)
+    if m and (name := _clean_name(m[1])):
+        return name
     m = _EMPLOYER_QUOTED.search(text)
     if m:
         return m[1].strip()
     m = _EMPLOYER_PLACE.search(text)
     if m:
         return m[2].strip(" .,")
+    m = _EMPLOYER_INVITES.search(text)
+    if m:
+        return _clean_name(m[1])
     return None
 
 
@@ -317,6 +382,15 @@ def parse_post(post: RawPost) -> Vacancy | None:
     titles = detect_titles(post.text)
     if not titles:
         return None
+    low = _lower(post.text)
+    white = WHITE_COLLAR.search(low)
+    if white and white.start() < _title_hits(low)[0][0]:
+        return None  # офисная или руководящая позиция
+    city = detect_city(post.text, post.default_city)
+    if FOREIGN.search(low) and city == post.default_city and not any(
+        re.search(rx, low) for _, rx in CITIES.values()
+    ):
+        return None
     title = ", ".join(t for t, _ in titles[:3])
     salary_min, salary_max, period = parse_salary(post.text)
     text = clean_text(post.text)
@@ -324,7 +398,7 @@ def parse_post(post: RawPost) -> Vacancy | None:
         id=f"{post.channel.lower()}-{post.post_id}",
         title=title,
         category=titles[0][1],
-        city=detect_city(post.text, post.default_city),
+        city=city,
         salary_min=salary_min,
         salary_max=salary_max,
         salary_period=period,

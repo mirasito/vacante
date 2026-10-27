@@ -6,6 +6,7 @@
   {% if v.employer %}<div class="employer">{{ v.employer }}</div>{% endif %}
   <div class="meta">{{ city_name(v.city) }}{% if v.schedule %} · {{ v.schedule }}{% endif %}</div>
   <div class="pills">
+    {% if v.source == "bot" %}<span class="pill direct-pill">От работодателя</span>{% endif %}
     {% set s = salary_label(v) %}
     {% if s %}<span class="pill salary">{{ s }}</span>{% endif %}
     {% for perk in v.perks[:3] %}<span class="pill">{{ perk }}</span>{% endfor %}

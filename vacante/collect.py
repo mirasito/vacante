@@ -10,6 +10,7 @@ from pathlib import Path
 import httpx
 import yaml
 
+from vacante import direct as direct_jobs
 from vacante import parse
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
@@ -53,7 +54,9 @@ def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
 
 
 def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegram.fetch_channel,
-        now: datetime | None = None) -> dict:
+        now: datetime | None = None, direct: list[Vacancy] | None = None) -> dict:
+    """direct: одобренные вакансии от работодателей из бота (vacante.direct). None значит, что базу бота
+    прочитать не удалось или её нет: тогда такие вакансии на сайте остаются как были."""
     now = now or datetime.now(timezone.utc)
     channels = load_channels(config_path)
     state = load_state(data_dir)
@@ -93,8 +96,21 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     incoming.sort(key=lambda v: v.posted_at)
     cities = {ch["username"].lower(): ch.get("city") for ch in channels}
     dropped: dict[str, str] = {}
-    existing = reparse(load_vacancies(data_dir), cities, dropped)
-    vacancies = expire(merge(existing, incoming), max_age_days, now)
+    saved = load_vacancies(data_dir)
+    from_bot = [v for v in saved if v.source == direct_jobs.SOURCE]
+    if direct is not None:
+        # Закрытые работодателем уходят, новые одобренные приходят. Склейки с повторами
+        # из каналов сохраняем: такие повторы сами больше не приходят.
+        previous = {v.id: v for v in from_bot}
+        for v in direct:
+            if v.id in previous:
+                v.also_seen_in = previous[v.id].also_seen_in
+                v.posted_at = max(v.posted_at, previous[v.id].posted_at)
+        from_bot = direct
+        stats["direct"] = len(direct)
+    existing = reparse([v for v in saved if v.source != direct_jobs.SOURCE], cities, dropped)
+    # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
+    vacancies = expire(merge(from_bot + existing, incoming), max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)
     save_vacancies(data_dir, vacancies)
     save_state(data_dir, state)

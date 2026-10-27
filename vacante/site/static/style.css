@@ -13,6 +13,7 @@ a { color: inherit; }
 .logo { font-weight: 800; font-size: 28px; text-decoration: none; letter-spacing: -0.5px; }
 .logo .dot { color: var(--accent); }
 .tagline { color: var(--quiet); font-size: 14px; }
+.post-job { margin-left: auto; font-size: 14px; font-weight: 600; white-space: nowrap; }
 .hero { background: var(--hero); color: #fff; border-radius: var(--radius); padding: 28px 20px; margin: 8px 0 20px; }
 .hero h1 { margin: 0 0 16px; font-size: clamp(26px, 5vw, 40px); line-height: 1.15; }
 .search input { width: 100%; font: inherit; padding: 14px 20px; border-radius: 999px; border: 0; color: #1d1d1f; }
@@ -44,10 +45,13 @@ a { color: inherit; }
 .facts dd { margin: 0; font-weight: 600; }
 .apply { display: block; text-align: center; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 16px; border-radius: 999px; margin: 20px 0; }
 .text { white-space: pre-line; }
-.also, .source { color: var(--quiet); font-size: 14px; word-break: break-all; }
+.also, .source, .direct { color: var(--quiet); font-size: 14px; word-break: break-all; }
+.direct { word-break: normal; margin-top: -8px; }
+.pill.direct-pill { background: var(--accent); color: #fff; }
 .empty { color: var(--quiet); padding: 24px 0; }
 .footer { color: var(--quiet); font-size: 13px; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 12px; padding-bottom: 32px; }
 @media (max-width: 600px) {
+  .tagline { display: none; }
   /* Города и сферы в одну прокручиваемую строку, чтобы фильтры и вакансии были видны сразу */
   .hero .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; }
   .hero .chips::-webkit-scrollbar { display: none; }

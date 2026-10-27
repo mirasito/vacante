@@ -17,7 +17,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card
+from vacante import card, direct
 from vacante.models import Vacancy
 from vacante.site.build import twogis_url
 from vacante.store import load_vacancies
@@ -63,8 +63,9 @@ def is_due(last_at: str | None, now: datetime) -> bool:
 
 
 def _score(v: Vacancy) -> float:
-    return (3 * (v.salary_min is not None or v.salary_max is not None) + 2 * bool(v.employer)
-            + bool(v.schedule) + 0.5 * min(len(v.perks), 2) + (v.category != "other"))
+    # Вакансии, размещённые работодателем через бота, идут в канал первыми
+    return (10 * (v.source == direct.SOURCE) + 3 * (v.salary_min is not None or v.salary_max is not None)
+            + 2 * bool(v.employer) + bool(v.schedule) + 0.5 * min(len(v.perks), 2) + (v.category != "other"))
 
 
 def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> Vacancy | None:
@@ -100,6 +101,8 @@ def format_caption(v: Vacancy) -> str:
 
 def make_post(v: Vacancy, base_url: str) -> Post:
     buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
+    if v.source == direct.SOURCE:
+        buttons.append(("✉️ Откликнуться", v.source_url))
     if url := twogis_url(v):
         buttons.append(("📍 Открыть в 2ГИС", url))
     return Post(format_caption(v), card.render(v), buttons)
@@ -107,7 +110,8 @@ def make_post(v: Vacancy, base_url: str) -> Post:
 
 def telegram_sender(client: httpx.Client, token: str) -> Sender:
     def send(chat: str, post: Post) -> None:
-        markup = {"inline_keyboard": [[{"text": text, "url": url} for text, url in post.buttons]]}
+        keys = [{"text": text, "url": url} for text, url in post.buttons]
+        markup = {"inline_keyboard": [keys[i:i + 2] for i in range(0, len(keys), 2)]}  # по две кнопки в ряд
         r = client.post(
             f"https://api.telegram.org/bot{token}/sendPhoto",
             data={"chat_id": chat, "caption": post.caption, "parse_mode": "HTML",

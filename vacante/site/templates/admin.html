@@ -164,6 +164,15 @@ td.nowrap { white-space: nowrap; }
     $("#loading").textContent = "Не удалось загрузить данные: " + e;
   });
 
+  // Вакансии, которые работодатели разместили через бота: по статусам и отклики
+  function jobsLine(jobs) {
+    if (!jobs) return "";
+    const n = (k) => num(jobs[k] || 0);
+    return `<p>Вакансии от работодателей: на проверке ${n("pending")}, опубликовано ${n("approved")}, ` +
+      `закрыто ${n("closed")}, отклонено ${n("rejected")}. Откликов: ${n("applications")}. ` +
+      `<span class="quiet">Проверять в боте командой /admin.</span></p>`;
+  }
+
   function render(data) {
     const now = new Date(data.generated_at);
     $("#updated").textContent = "обновлено " + when(data.generated_at) + " по Астане, раз в час вместе со сбором";
@@ -179,6 +188,7 @@ td.nowrap { white-space: nowrap; }
       [`${t.channels}`, `каналов${t.errors ? `, <span class="err">${t.errors} с ошибкой</span>` : ""}${t.silent ? `, ${t.silent} молчат 3+ дн` : ""}`],
     ];
     if (subs !== null) tiles.push([num(subs), "подписчиков бота"]);
+    tiles.push([num(t.direct || 0), "на сайте от работодателей"]);
     $("#tiles").innerHTML = tiles.map(([b, s]) => `<div class="tile"><b>${b}</b><span>${s}</span></div>`).join("");
 
     // Источники
@@ -290,6 +300,7 @@ td.nowrap { white-space: nowrap; }
       const total = rows.reduce((a, r) => a + r.total, 0);
       $("#bot").innerHTML = `
         <p class="quiet">Активных подписчиков: ${num(subs)} из ${num(total)} начавших. Обновлено ${when(data.bot.updated_at)}.</p>
+        ${jobsLine(data.bot.jobs)}
         <ul class="list">${rows.map((r) => `<li><span>${esc(r.city)}</span><span class="num">активных: ${num(r.active)} из ${num(r.total)}</span></li>`).join("") || `<li class="quiet">Пока никого</li>`}</ul>`;
     } else {
       $("#bot").innerHTML = `<p class="quiet">Данных о подписчиках пока нет: они появятся после следующего часового обновления.</p>`;

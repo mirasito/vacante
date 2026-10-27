@@ -17,6 +17,7 @@ from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from vacante.direct import POST_URL
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
 from vacante.site.admin import admin_data
@@ -112,7 +113,7 @@ def _env() -> Environment:
         lstrip_blocks=True,
     )
     env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
-                       monthly_pay=monthly_pay, money=money, FILTER_PERKS=FILTER_PERKS)
+                       monthly_pay=monthly_pay, money=money, FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL)
     env.filters["plural"] = plural
     return env
 

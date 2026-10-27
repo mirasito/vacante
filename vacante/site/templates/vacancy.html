@@ -17,7 +17,12 @@
     {% if v.schedule %}<dt>График</dt><dd>{{ v.schedule }}</dd>{% endif %}
     {% if v.address %}<dt>Адрес</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">в 2ГИС</a>{% endif %}</dd>{% endif %}
   </dl>
+  {% if v.source == "bot" %}
+  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в Telegram</a>
+  <p class="direct">Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.</p>
+  {% else %}
   <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в оригинальном объявлении</a>
+  {% endif %}
   <h2>Описание</h2>
   <div class="text">{{ v.text }}</div>
   {% if v.also_seen_in %}
@@ -25,6 +30,8 @@
     {% for url in v.also_seen_in %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ url.split('/')[3] }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
   </p>
   {% endif %}
+  {% if v.source != "bot" %}
   <p class="source">Источник: <a href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ v.source_url }}</a></p>
+  {% endif %}
 </article>
 {% endblock %}

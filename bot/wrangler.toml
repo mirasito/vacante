@@ -1,4 +1,4 @@
-# Бот для соискателей @vacantekz_bot на Cloudflare Workers (бесплатный тариф).
+# Бот @vacantekz_bot (подписки соискателей и вакансии от работодателей) на Cloudflare Workers (бесплатный тариф).
 # Выкладывается workflow .github/workflows/bot.yml; database_id он подставляет сам.
 name = "vacante-bot"
 main = "src/index.js"
@@ -9,6 +9,8 @@ preview_urls = false  # отдельные адреса для каждой ве
 [vars]
 SITE_URL = "https://vacante.kz"
 GITHUB_REPO = "mirasito/vacante"
+# Каналы vacante: их админы становятся модераторами вакансий командой /admin (бот там тоже админ)
+CHANNELS = "@vacanteastana,@vacantealmaty"
 
 # Запасной будильник часового обновления сайта (src/cron.js). Расписание update.yml
 # стоит на 17-ю минуту, будильник проверяет в 25-ю и запускает, только если GitHub проспал.

@@ -35,7 +35,8 @@ TELEGRAM_CHANNELS = {
 TWOGIS_CITIES = {"almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda"}
 # Подтверждение сайта в Google Search Console и Яндекс Вебмастере (метатеги) и счётчик
 # Яндекс Метрики. Значения публичные, они всё равно видны в коде страницы.
-SITE_TAGS = {"google_verification": "", "yandex_verification": "", "metrika_id": ""}
+SITE_TAGS = {"google_verification": "GQjMSgo5pc-ADt2n0s-GBlVU9kMnuA9jWIZo2WQAejA",
+             "yandex_verification": "5e4790f22ea3db3f", "metrika_id": "113822258"}
 _MAP_WORTHY = re.compile(r"(?i)\d|\b(?:трц|трк|тц|тд|бц|жк)\b")
 
 

@@ -66,6 +66,7 @@ def test_search_tags_and_metrika_only_when_set(tmp_path, monkeypatch):
     raw = RawPost("telegram", "chan", 9, "https://t.me/chan/9", "Требуется повар, 300 000 тг",
                   datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
     save_vacancies(tmp_path / "data", [parse_post(raw)])
+    monkeypatch.setattr(site, "SITE_TAGS", {"google_verification": "", "yandex_verification": "", "metrika_id": ""})
     build(tmp_path / "data", tmp_path / "a", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     plain = (tmp_path / "a" / "index.html").read_text("utf-8")
     assert "verification" not in plain and "mc.yandex.ru" not in plain

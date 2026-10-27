@@ -40,6 +40,9 @@ jobs:
         with:
           node-version: "22"
 
+      # Версия wrangler закреплена в bot/package.json: начиная с 4.135 после загрузки он
+      # спрашивает новый API /workers/workers/<имя>, а тот на нашем аккаунте отвечает
+      # «This Worker does not exist» (код 10007), и выкладка падает.
       - name: Установить wrangler
         if: steps.secrets.outputs.ready
         run: npm ci --no-audit --no-fund

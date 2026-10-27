@@ -22,6 +22,10 @@ from vacante.store import load_vacancies
 
 HERE = Path(__file__).parent
 PERIOD_LABEL = {"month": "мес", "day": "день", "hour": "час"}
+# Для фильтра «Зарплата от …»: смены и часы пересчитываем в полный месяц.
+PER_MONTH = {"month": 1, "day": 22, "hour": 176}
+# Условия, по которым можно отфильтровать список; «С зарплатой» проверяется отдельно.
+FILTER_PERKS = ["Без опыта", "Питание", "Развозка", "Жильё", "Ежедневная оплата", "Можно студентам", "Официально"]
 # Свои каналы vacante по городам: кнопка подписки на страницах города.
 TELEGRAM_CHANNELS = {
     "astana": "https://t.me/vacanteastana",
@@ -45,6 +49,19 @@ def salary_label(v: Vacancy) -> str | None:
     if v.salary_min is not None:
         return f"от {money(v.salary_min)} {unit}"
     return f"до {money(v.salary_max)} {unit}"
+
+
+def monthly_pay(v: Vacancy) -> int | None:
+    top = v.salary_max or v.salary_min
+    return top * PER_MONTH[v.salary_period] if top else None
+
+
+def plural(n: int, one: str, few: str, many: str) -> str:
+    if n % 10 == 1 and n % 100 != 11:
+        return one
+    if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14:
+        return few
+    return many
 
 
 def twogis_url(v: Vacancy) -> str | None:
@@ -76,7 +93,9 @@ def _env() -> Environment:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url)
+    env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
+                       monthly_pay=monthly_pay, money=money, FILTER_PERKS=FILTER_PERKS)
+    env.filters["plural"] = plural
     return env
 
 

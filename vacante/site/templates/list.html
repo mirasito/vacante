@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}{{ heading }} — {{ total }} вакансий | vacante.kz{% endblock %}
-{% block description %}{{ heading }}: {{ total }} свежих вакансий с зарплатой, графиком и условиями. Обновляется каждый час.{% endblock %}
+{% block title %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }} | vacante.kz{% endblock %}
+{% block description %}{{ heading }}: свежие вакансии с зарплатой, графиком и условиями, сейчас {{ total }}. Обновляется каждый час.{% endblock %}
 {% block content %}
 <section class="hero">
   <h1>{{ heading }}</h1>
@@ -24,6 +24,21 @@
 {% if city and channels.get(city) %}
 <a class="subscribe" href="{{ channels[city] }}">Новые вакансии {{ city_name(city) }} каждый день в Telegram →</a>
 {% endif %}
+{% if vacancies %}
+<div class="filters">
+  <select id="pay" aria-label="Зарплата">
+    <option value="0">Любая зарплата</option>
+    {% for amount in [200000, 300000, 400000] %}
+    <option value="{{ amount }}">от {{ money(amount) }} ₸ в месяц</option>
+    {% endfor %}
+  </select>
+  <button type="button" class="toggle" data-perk="salary" aria-pressed="false">С зарплатой</button>
+  {% for perk in FILTER_PERKS %}
+  <button type="button" class="toggle" data-perk="{{ perk }}" aria-pressed="false">{{ perk }}</button>
+  {% endfor %}
+</div>
+<p id="pay-note" class="note" hidden>Оплату за смену считаем как 22 смены в месяц, почасовую как 176 часов.</p>
+{% endif %}
 <p class="count">Результаты: <span id="count">{{ vacancies | length }}</span>{% if total > vacancies | length %} из {{ total }}{% endif %}</p>
 <div id="list" class="list">
 {% for v in vacancies %}
@@ -32,16 +47,31 @@
 <p class="empty">Пока нет вакансий. Загляните через час: сборщик обновляет список каждый час.</p>
 {% endfor %}
 </div>
+<p id="none" class="empty" hidden>Ничего не нашлось. Попробуйте убрать часть фильтров.</p>
 <script>
-const q = document.getElementById('q'), cards = [...document.querySelectorAll('#list .card')], count = document.getElementById('count');
-q.addEventListener('input', () => {
+const $ = id => document.getElementById(id);
+const q = $('q'), pay = $('pay'), count = $('count');
+const cards = [...document.querySelectorAll('#list .card')], toggles = [...document.querySelectorAll('.toggle')];
+function apply() {
   const words = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const min = pay ? +pay.value : 0;
+  const need = toggles.filter(t => t.getAttribute('aria-pressed') === 'true').map(t => t.dataset.perk);
   let n = 0;
   for (const c of cards) {
-    const hit = words.every(w => c.dataset.search.includes(w));
+    const perks = c.dataset.perks.split('|'), money = +c.dataset.pay;
+    const hit = words.every(w => c.dataset.search.includes(w)) && money >= min
+      && need.every(p => p === 'salary' ? money > 0 : perks.includes(p));
     c.hidden = !hit; if (hit) n++;
   }
   count.textContent = n;
+  $('none').hidden = n > 0 || !cards.length;
+  if (pay) $('pay-note').hidden = !min;
+}
+q.addEventListener('input', apply);
+if (pay) pay.addEventListener('change', apply);
+for (const t of toggles) t.addEventListener('click', () => {
+  t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true');
+  apply();
 });
 </script>
 {% endblock %}

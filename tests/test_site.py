@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 
 from vacante.models import RawPost
 from vacante.parse import parse_post
-from vacante.site.build import build
+from vacante.site.build import build, plural
 from vacante.store import save_vacancies
 
 
@@ -44,3 +44,18 @@ def test_vacancy_page_shows_address_with_2gis(tmp_path):
     page = (tmp_path / "public" / "v" / "chan-7" / "index.html").read_text("utf-8")
     assert "<dt>Адрес</dt><dd>ул. Сыганак, 2" in page
     assert 'href="https://2gis.kz/astana/search/%D1%83%D0%BB.%20%D0%A1%D1%8B%D0%B3%D0%B0%D0%BD%D0%B0%D0%BA%2C%202"' in page
+
+
+def test_list_has_filters_and_counts_in_russian(tmp_path):
+    raw = RawPost("telegram", "chan", 8, "https://t.me/chan/8",
+                  "Ресторан Ramen77 ищет официанта, 14 000–18 000 тг в день, без опыта, питание",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "almaty")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    home = (tmp_path / "public" / "index.html").read_text("utf-8")
+    assert "<title>Вакансии — 1 вакансия | vacante.kz</title>" in home
+    assert 'data-pay="396000"' in home  # 18 000 за смену × 22 смены
+    assert 'data-perks="Питание|Без опыта"' in home
+    assert 'data-perk="Без опыта"' in home and 'value="300000"' in home
+    assert [plural(n, "вакансия", "вакансии", "вакансий") for n in (1, 3, 5, 11, 21, 522)] == [
+        "вакансия", "вакансии", "вакансий", "вакансий", "вакансия", "вакансии"]

@@ -138,6 +138,8 @@ FOREIGN = re.compile(
     r"ташкент(?!ск)|узбекистан|бишкек|кыргызстан|москв|санкт-петербург|россии\b|\bрф\b|"
     r"турци|анкар|стамбул|ереван|армени|ямал|новомосковск"
 )
+# Работа точно за границей, даже если в тексте есть казахстанский город (например, город выезда)
+ABROAD = re.compile(r"вахт\w*?\s*(?:в\s+)?росси|российская федерация")
 NOT_VACANCY = re.compile(
     r"ищу работу|#резюме|^резюме|рассмотрю (любые )?предложения|"
     r"\bсда(м|ю|ется|ются)\b|\bпрода(м|ю|ется)\b|\bкуплю\b|\bаренд"
@@ -437,6 +439,8 @@ def parse_post(post: RawPost) -> Vacancy | None:
     white = WHITE_COLLAR.search(low)
     if white and white.start() < _title_hits(low)[0][0]:
         return None  # офисная или руководящая позиция
+    if ABROAD.search(low):
+        return None
     city = detect_city(post.text, post.default_city)
     if FOREIGN.search(low) and city == post.default_city and not any(
         re.search(rx, low) for _, rx in CITIES.values()

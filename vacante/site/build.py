@@ -20,9 +20,11 @@ from vacante.store import load_vacancies
 
 HERE = Path(__file__).parent
 PERIOD_LABEL = {"month": "мес", "day": "день", "hour": "час"}
-# Свои каналы vacante по городам: {"almaty": "https://t.me/<username>", ...}.
-# Пока пусто: ссылки на подписку на сайте не показываются.
-TELEGRAM_CHANNELS: dict[str, str] = {}
+# Свои каналы vacante по городам: кнопка подписки на страницах города.
+TELEGRAM_CHANNELS = {
+    "astana": "https://t.me/vacanteastana",
+    "almaty": "https://t.me/vacantealmaty",
+}
 
 
 def money(value: int) -> str:

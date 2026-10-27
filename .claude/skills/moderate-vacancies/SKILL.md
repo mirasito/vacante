@@ -87,17 +87,27 @@ git show origin/data:moderation.json
 ]
 ```
 
-Для approve и edit передавай все оформленные поля. Для reject поля не нужны. Проверь, что JSON валиден
-(`python3 -c 'import json,sys; json.load(sys.stdin)'`), и запусти workflow одним вызовом на всю очередь:
+Для approve и edit передавай все оформленные поля. Для reject поля не нужны. Сохрани массив в `decisions.json`
+вне репозитория (например, в `/tmp`), проверь, что JSON валиден, и запусти workflow одним вызовом на всю очередь,
+затем дождись его и прочитай итог по каждой вакансии из аннотаций (логи скачать нельзя, а аннотации можно):
 
-- GitHub MCP: `actions_run_trigger`, method `run_workflow`, owner `mirasito`, repo `vacante`,
-  workflow_id `moderate.yml`, ref `main`, inputs `{"decisions": "<JSON-массив строкой>"}`;
-- или `gh workflow run moderate.yml --repo mirasito/vacante --ref main -f decisions="$(cat decisions.json)"`.
+```bash
+python3 -c 'import json,sys; json.load(open(sys.argv[1]))' /tmp/decisions.json
+since=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+gh workflow run moderate.yml --repo mirasito/vacante --ref main -f decisions="$(cat /tmp/decisions.json)"
+sleep 10
+run=$(gh run list --repo mirasito/vacante --workflow moderate.yml --limit 5 --json databaseId,createdAt \
+  --jq "[.[] | select(.createdAt >= \"$since\")] | last | .databaseId")
+gh run watch "$run" --repo mirasito/vacante --exit-status >/dev/null || true
+job=$(gh api "repos/mirasito/vacante/actions/runs/$run/jobs" --jq '.jobs[0].id')
+gh api "repos/mirasito/vacante/check-runs/$job/annotations" --jq '.[] | select(.title | startswith("№")) | "\(.title): \(.message)"'
+```
 
-Если GitHub отказывает в доступе к репозиторию, сначала подключи его: `add_repo` для `mirasito/vacante`.
+Если `gh` недоступен, но есть GitHub MCP: `actions_run_trigger` (method `run_workflow`, owner `mirasito`,
+repo `vacante`, workflow_id `moderate.yml`, ref `main`, inputs `{"decisions": "<JSON-массив строкой>"}`).
 
-Дождись конца запуска и прочитай лог шага «Передать решения боту»: по строке на вакансию,
-`№1: approved`, `№2: rejected`, `№3: edited` или `skipped: ...` (вакансию уже решили или закрыли, это нормально).
-Строки `error: ...` значат, что поле не прошло проверку бота: исправь именно его и отправь заново только эти вакансии.
+По строке на вакансию: `№1: approved`, `№2: rejected`, `№3: edited` или `skipped: ...` (вакансию уже решили
+или закрыли, это нормально). `error: ...` значит, что поле не прошло проверку бота: исправь именно его и отправь
+заново только эти вакансии. Если строк нет совсем, а запуск упал, значит, бот недоступен: сообщи об этом.
 
 В конце напиши одну строку: сколько опубликовано, отклонено, оформлено и оставлено модератору.

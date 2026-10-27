@@ -37,7 +37,9 @@ jobs:
           printf '%s' "$DECISIONS" | jq '{decisions: .}' \
             | curl -fsS "https://vacante-bot.$sub.workers.dev/api/moderate" \
                 -H "Authorization: Bearer $key" -H "Content-Type: application/json" -d @- > result.json
-          jq -r '.results[] | "№\(.id): \(.result)"' result.json
+          # Итог по каждой вакансии ещё и аннотацией: агент читает их через REST API, без скачивания логов
+          jq -r '.results[] | (if (.result | startswith("error")) then "error" else "notice" end) + " title=№\(.id)::\(.result)"' result.json \
+            | sed 's/^/::/'
           if jq -e '[.results[] | select(.result | startswith("error"))] | length > 0' result.json >/dev/null; then
             echo "::error::Часть решений бот не принял, см. строки с error выше"
             exit 1

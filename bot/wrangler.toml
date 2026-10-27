@@ -8,6 +8,12 @@ preview_urls = false  # отдельные адреса для каждой ве
 
 [vars]
 SITE_URL = "https://vacante.kz"
+GITHUB_REPO = "mirasito/vacante"
+
+# Запасной будильник часового обновления сайта (src/cron.js). Расписание update.yml
+# стоит на 17-ю минуту, будильник проверяет в 25-ю и запускает, только если GitHub проспал.
+[triggers]
+crons = ["25 * * * *"]
 
 [[d1_databases]]
 binding = "DB"

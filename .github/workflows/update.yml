@@ -53,12 +53,17 @@ jobs:
             git push origin data
           fi
 
+      # Адрес сайта из настроек Pages: <owner>.github.io/<repo>, а после подключения домена сам домен
+      - id: pages
+        uses: actions/configure-pages@v5
+
       - name: Собрать сайт
         env:
-          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_URL: ${{ vars.SITE_URL || steps.pages.outputs.base_url }}
         run: |
-          # Пока домен не подключён, сайт живёт на <owner>.github.io/<repo>
           : "${SITE_URL:=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}}"
+          # Pages отдаёт http://, пока для домена выпускается сертификат; ссылки сразу делаем https
+          SITE_URL="${SITE_URL/#http:/https:}"
           python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
 
       - uses: actions/upload-pages-artifact@v3

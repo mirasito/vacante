@@ -142,12 +142,14 @@ def test_employer_from_labels_and_invites():
     "Супервайзер в отдел взыскания, удалённо. Доход: $1,300 – 2,400. Нужен курьер документов",
     "Требуется официант в ресторан в Ташкенте, оплата 5 000 000 сум",
     "Требуются официантки в ночной клуб в Анкаре, перелёт и жильё за счёт работодателя, 3000$",
+    "#вахтаРоссия Требуются разнорабочие на завод, 23 000 тенге за смену. Выезд из города #Костанай",
 ])
 def test_rejects_white_collar_and_foreign(text):
     assert parse_post(post(text)) is None
 
 
 def test_keeps_blue_collar_near_misleading_words():
+    assert parse_post(post("Требуется грузчик, командировки в Россию раз в неделю, 300 000 тг")) is not None
     assert parse_post(post("Требуются помощники воспитателя (няни), 200 000 тг")).title == "Помощник воспитателя, Няня"
     shop = parse_post(post("Магазин на Ташкентском тракте: требуется продавец, 250 000 тг"))
     assert shop is not None and shop.city == "almaty"

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Админка vacante.kz</title>
+<style>
+:root {
+  --ink: #1d1d1f; --quiet: #6b6b70; --line: #e4e4e7; --bg: #ffffff; --soft: #f5f5f7;
+  --accent: #0a8ff0; --pill: #e3f1fd; --ok: #1f8a4c; --ok-bg: #e2f4ea; --dup: #8a6d1f; --dup-bg: #f7efd8;
+  --bad: #b3261e; --bad-bg: #fbe6e4;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #f2f2f3; --quiet: #a1a1a8; --line: #2c2c30; --bg: #0f0f10; --soft: #1a1a1d; --pill: #12304a;
+    --ok: #6fd39a; --ok-bg: #143322; --dup: #e2c56f; --dup-bg: #332a12; --bad: #f28b82; --bad-bg: #3a1a18; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 16px; }
+h1 { margin: 0; font-size: 24px; letter-spacing: -0.3px; }
+h2 { font-size: 19px; margin: 32px 0 10px; }
+.quiet { color: var(--quiet); font-size: 13px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.tile { background: var(--soft); border-radius: 12px; padding: 12px 14px; }
+.tile b { display: block; font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile span { color: var(--quiet); font-size: 13px; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; color: var(--quiet); font-weight: 600; white-space: nowrap; background: var(--soft); }
+th[data-sort] { cursor: pointer; user-select: none; }
+th[data-sort]:hover { color: var(--ink); }
+td.n, th.n { text-align: right; white-space: nowrap; }
+td.nowrap { white-space: nowrap; }
+.row-link { cursor: pointer; }
+.row-link:hover td { background: var(--soft); }
+.err { color: var(--bad); font-weight: 600; }
+.badge { display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.badge.accepted { color: var(--ok); background: var(--ok-bg); }
+.badge.duplicate { color: var(--dup); background: var(--dup-bg); }
+.badge.rejected, .badge.gone { color: var(--bad); background: var(--bad-bg); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.filters select, .filters input, .seg button { font: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+.filters input { min-width: 200px; flex: 1; }
+.filters select { max-width: 100%; text-overflow: ellipsis; }
+.seg { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.seg button { cursor: pointer; font-weight: 600; }
+.seg button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.list li:last-child { border-bottom: 0; }
+.list .num { font-variant-numeric: tabular-nums; color: var(--quiet); white-space: nowrap; }
+.list li.click { cursor: pointer; }
+.list li.click:hover { color: var(--accent); }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.card h3 { margin: 0 0 4px; font-size: 16px; }
+.snippet { color: var(--quiet); font-size: 13px; }
+.more { margin-top: 10px; font: inherit; font-weight: 600; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+.more[hidden] { display: none; }
+#loading { padding: 40px 0; color: var(--quiet); }
+@media (max-width: 640px) {
+  .wrap { padding: 12px; }
+  .tile b { font-size: 22px; }
+  .filters input { min-width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="wrap" data-root="{{ root }}">
+<header>
+  <h1>Админка vacante.kz</h1>
+  <span class="quiet" id="updated"></span>
+</header>
+<p id="loading">Загружаю данные…</p>
+<div id="app" hidden>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Источники</h2>
+  <p class="quiet">Посты за последние две недели. Нажмите на канал, чтобы увидеть его посты ниже. «Принято»: стали карточкой на сайте, «Дубли»: та же вакансия уже была из другого поста.</p>
+  <div class="scroll"><table id="sources">
+    <thead><tr>
+      <th data-sort="name">Канал</th><th data-sort="city">Город</th>
+      <th class="n" data-sort="posts">Постов</th><th class="n" data-sort="accepted">Принято</th>
+      <th class="n" data-sort="duplicate">Дубли</th><th class="n" data-sort="rejected">Отброшено</th>
+      <th class="n" data-sort="rate">% принятых</th><th class="n" data-sort="on_site">На сайте</th>
+      <th data-sort="last_post_at">Последний пост</th><th data-sort="checked_at">Проверен</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <div class="cols">
+    <section>
+      <h2>Почему отброшены</h2>
+      <ul class="list" id="reasons"></ul>
+    </section>
+    <section>
+      <h2>На сайте по городам</h2>
+      <ul class="list" id="by-city"></ul>
+    </section>
+    <section>
+      <h2>По сферам</h2>
+      <ul class="list" id="by-category"></ul>
+    </section>
+  </div>
+
+  <h2 id="posts-title">Посты</h2>
+  <div class="filters">
+    <div class="seg" id="status">
+      <button type="button" data-v="" aria-pressed="true">Все</button>
+      <button type="button" data-v="accepted" aria-pressed="false">Приняты</button>
+      <button type="button" data-v="duplicate" aria-pressed="false">Дубли</button>
+      <button type="button" data-v="rejected" aria-pressed="false">Отброшены</button>
+    </div>
+    <select id="channel" aria-label="Канал"><option value="">Все каналы</option></select>
+    <select id="reason" aria-label="Причина"><option value="">Любая причина</option></select>
+    <input id="q" type="search" placeholder="Поиск по должности и тексту" aria-label="Поиск">
+  </div>
+  <p class="quiet" id="posts-count"></p>
+  <div class="scroll"><table id="posts">
+    <thead><tr><th>Когда</th><th>Канал</th><th>Решение</th><th>Пост</th><th>Ссылки</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <button type="button" class="more" id="more" hidden>Показать ещё</button>
+
+  <h2>Автопостинг в свои каналы</h2>
+  <div class="cols" id="autopost"></div>
+
+  <h2>Бот @vacantekz_bot</h2>
+  <div id="bot"></div>
+</div>
+</div>
+{% raw %}
+<script>
+(function () {
+  const ROOT = document.querySelector(".wrap").dataset.root;
+  const STATUS = { accepted: "Принят", duplicate: "Дубль", rejected: "Отброшен", gone: "Пропал" };
+  const PAGE = 100;
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const num = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  const pct = (a, b) => (b ? Math.round((100 * a) / b) + "%" : "—");
+  // Время Казахстана, UTC+5
+  function when(iso) {
+    if (!iso) return "—";
+    const d = new Date(new Date(iso).getTime() + 5 * 3600e3);
+    const p = (n) => String(n).padStart(2, "0");
+    return `${p(d.getUTCDate())}.${p(d.getUTCMonth() + 1)} ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}`;
+  }
+  function ago(iso, now) {
+    if (!iso) return "нет постов";
+    const h = Math.floor((now - new Date(iso)) / 3600e3);
+    if (h < 1) return "меньше часа назад";
+    if (h < 24) return `${h} ч назад`;
+    return `${Math.floor(h / 24)} дн назад`;
+  }
+
+  fetch("data.json", { cache: "no-store" }).then((r) => r.json()).then(render).catch((e) => {
+    $("#loading").textContent = "Не удалось загрузить данные: " + e;
+  });
+
+  function render(data) {
+    const now = new Date(data.generated_at);
+    $("#updated").textContent = "обновлено " + when(data.generated_at) + " по Астане, раз в час вместе со сбором";
+    const t = data.totals;
+    const subs = data.bot ? data.bot.subscribers.reduce((a, r) => a + r.active, 0) : null;
+    const tiles = [
+      [num(t.on_site), "вакансий на сайте"],
+      [num(t.new_24h), "новых за сутки"],
+      [num(t.posts), "постов проверено за 2 недели"],
+      [`${num(t.accepted)} <small class="quiet">${pct(t.accepted, t.posts)}</small>`, "принято"],
+      [num(t.duplicate), "дублей склеено"],
+      [num(t.rejected), "отброшено"],
+      [`${t.channels}`, `каналов${t.errors ? `, <span class="err">${t.errors} с ошибкой</span>` : ""}${t.silent ? `, ${t.silent} молчат 3+ дн` : ""}`],
+    ];
+    if (subs !== null) tiles.push([num(subs), "подписчиков бота"]);
+    $("#tiles").innerHTML = tiles.map(([b, s]) => `<div class="tile"><b>${b}</b><span>${s}</span></div>`).join("");
+
+    // Источники
+    const sources = data.sources.map((s) => ({ ...s, rate: s.posts ? s.accepted / s.posts : -1 }));
+    let sortKey = "accepted", sortDir = -1;
+    function drawSources() {
+      const rows = [...sources].sort((a, b) => {
+        const x = a[sortKey] ?? "", y = b[sortKey] ?? "";
+        return (x > y ? 1 : x < y ? -1 : 0) * sortDir;
+      });
+      $("#sources tbody").innerHTML = rows.map((s) => `
+        <tr class="row-link" data-ch="${esc(s.name)}">
+          <td><a href="https://t.me/s/${esc(s.name)}" target="_blank" rel="noopener" title="Открыть канал">@${esc(s.name)}</a></td>
+          <td>${esc(s.city)}</td>
+          <td class="n">${s.posts}</td><td class="n">${s.accepted}</td><td class="n">${s.duplicate}</td><td class="n">${s.rejected}</td>
+          <td class="n">${pct(s.accepted, s.posts)}</td><td class="n">${s.on_site}</td>
+          <td class="nowrap">${ago(s.last_post_at, now)}</td>
+          <td class="nowrap">${s.error ? `<span class="err">ошибка: ${esc(s.error)}</span>` : when(s.checked_at)}</td>
+        </tr>`).join("");
+    }
+    document.querySelectorAll("#sources th[data-sort]").forEach((th) => th.addEventListener("click", () => {
+      const k = th.dataset.sort;
+      sortDir = k === sortKey ? -sortDir : (["name", "city"].includes(k) ? 1 : -1);
+      sortKey = k;
+      drawSources();
+    }));
+    $("#sources tbody").addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      const tr = e.target.closest("tr[data-ch]");
+      if (!tr) return;
+      $("#channel").value = tr.dataset.ch;
+      drawPosts(true);
+      $("#posts-title").scrollIntoView({ behavior: "smooth" });
+    });
+    drawSources();
+
+    // Причины и разрезы
+    $("#reasons").innerHTML = data.reasons.length
+      ? data.reasons.map((r) => `<li class="click" data-reason="${esc(r.code)}"><span>${esc(r.label)}</span><span class="num">${num(r.count)}</span></li>`).join("")
+      : `<li class="quiet">Пока ничего не отброшено</li>`;
+    $("#reasons").addEventListener("click", (e) => {
+      const li = e.target.closest("li[data-reason]");
+      if (!li) return;
+      setStatus("rejected");
+      $("#reason").value = li.dataset.reason;
+      drawPosts(true);
+      $("#posts-title").scrollIntoView({ behavior: "smooth" });
+    });
+    const list = (pairs) => pairs.map(([k, n]) => `<li><span>${esc(k)}</span><span class="num">${num(n)}</span></li>`).join("");
+    $("#by-city").innerHTML = list(data.by_city);
+    $("#by-category").innerHTML = list(data.by_category);
+
+    // Посты
+    const posts = data.posts;
+    for (const s of [...data.sources].sort((a, b) => a.name.localeCompare(b.name))) {
+      $("#channel").insertAdjacentHTML("beforeend", `<option value="${esc(s.name)}">@${esc(s.name)} (${s.posts})</option>`);
+    }
+    for (const r of data.reasons) {
+      $("#reason").insertAdjacentHTML("beforeend", `<option value="${esc(r.code)}">${esc(r.label)} (${r.count})</option>`);
+    }
+    let status = "", shown = PAGE;
+    function setStatus(v) {
+      status = v;
+      document.querySelectorAll("#status button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+    }
+    function filtered() {
+      const ch = $("#channel").value, reason = $("#reason").value, q = $("#q").value.trim().toLowerCase();
+      return posts.filter((p) =>
+        (!status || p.status === status || (status === "rejected" && p.status === "gone")) &&
+        (!ch || p.channel === ch) &&
+        (!reason || (p.reason || "gone") === reason) &&
+        (!q || `${p.title || ""} ${p.snippet}`.toLowerCase().includes(q)));
+    }
+    function drawPosts(reset) {
+      if (reset) shown = PAGE;
+      const rows = filtered();
+      $("#posts-count").textContent = `Найдено: ${num(rows.length)}`;
+      $("#posts tbody").innerHTML = rows.slice(0, shown).map((p) => {
+        const label = p.status === "rejected" || p.status === "gone"
+          ? (data.reasons.find((r) => r.code === (p.reason || "gone")) || {}).label || "" : "";
+        const target = p.vacancy ? `<a href="${ROOT}/v/${esc(p.vacancy)}/" target="_blank">${p.status === "duplicate" ? "карточка" : "на сайте"}</a> · ` : "";
+        return `<tr>
+          <td class="nowrap">${when(p.posted_at)}</td>
+          <td class="nowrap">@${esc(p.channel)}</td>
+          <td><span class="badge ${p.status}">${STATUS[p.status] || p.status}</span>${label ? `<div class="snippet">${esc(label)}</div>` : ""}</td>
+          <td>${p.title ? `<b>${esc(p.title)}</b><div class="snippet">${esc(p.snippet)}</div>` : esc(p.snippet)}</td>
+          <td class="nowrap">${target}<a href="${esc(p.url)}" target="_blank" rel="noopener">пост</a></td>
+        </tr>`;
+      }).join("") || `<tr><td colspan="5" class="quiet">Ничего не найдено</td></tr>`;
+      $("#more").hidden = rows.length <= shown;
+    }
+    document.querySelectorAll("#status button").forEach((b) => b.addEventListener("click", () => { setStatus(b.dataset.v); drawPosts(true); }));
+    ["#channel", "#reason"].forEach((s) => $(s).addEventListener("change", () => drawPosts(true)));
+    $("#q").addEventListener("input", () => drawPosts(true));
+    $("#more").addEventListener("click", () => { shown += PAGE; drawPosts(false); });
+    drawPosts(true);
+
+    // Автопостинг
+    $("#autopost").innerHTML = data.autopost.map((a) => `
+      <div class="card">
+        <h3><a href="${esc(a.channel)}" target="_blank" rel="noopener">${esc(a.city)}</a></h3>
+        <p class="quiet">Опубликовано: ${num(a.count)}${a.last_at ? `, последний пост ${when(a.last_at)}` : ""}</p>
+        <ul class="list">${a.recent.map((r) => `<li><span>${r.live ? `<a href="${ROOT}/v/${esc(r.id)}/" target="_blank">${esc(r.title)}</a>` : esc(r.title)}</span></li>`).join("") || `<li class="quiet">Пока ничего</li>`}</ul>
+      </div>`).join("");
+
+    // Бот
+    if (data.bot) {
+      const rows = data.bot.subscribers;
+      const total = rows.reduce((a, r) => a + r.total, 0);
+      $("#bot").innerHTML = `
+        <p class="quiet">Активных подписчиков: ${num(subs)} из ${num(total)} начавших. Обновлено ${when(data.bot.updated_at)}.</p>
+        <ul class="list">${rows.map((r) => `<li><span>${esc(r.city)}</span><span class="num">активных: ${num(r.active)} из ${num(r.total)}</span></li>`).join("") || `<li class="quiet">Пока никого</li>`}</ul>`;
+    } else {
+      $("#bot").innerHTML = `<p class="quiet">Данных о подписчиках пока нет: они появятся после следующего часового обновления.</p>`;
+    }
+
+    $("#loading").hidden = true;
+    $("#app").hidden = false;
+  }
+})();
+</script>
+{% endraw %}
+</body>
+</html>

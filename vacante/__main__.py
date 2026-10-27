@@ -1,6 +1,8 @@
 import argparse
+import json
 import logging
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 import httpx
@@ -58,6 +60,9 @@ def main() -> None:
             stats = digest.run(args.data_dir, args.base_url, d1.subscriptions,
                                digest.telegram_sender(client, env["TELEGRAM_BOT_TOKEN"]))
             d1.deactivate(stats["blocked"])
+            bot = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                   "subscribers": d1.subscriber_counts()}
+            (args.data_dir / "bot.json").write_text(json.dumps(bot, ensure_ascii=False) + "\n", "utf-8")
         logging.info("подборки: %s", stats)
     else:
         count = build.build(args.data_dir, args.out, args.base_url)

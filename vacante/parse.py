@@ -209,12 +209,32 @@ def _lower(text: str) -> str:
     return text.lower().replace("ё", "е")
 
 
+# Почему пост не стал вакансией: код причины → подпись для админки
+REJECT_REASONS = {
+    "not_vacancy": "Резюме или объявление",
+    "scam": "Сомнительное: заработок в интернете, МЛМ, за рубеж",
+    "no_profession": "Нет рабочей профессии",
+    "no_hiring": "Не похоже на вакансию",
+    "white_collar": "Офис или руководство",
+    "abroad": "Вахта в России",
+    "foreign": "Другая страна",
+}
+
+
+def _not_vacancy_reason(text: str, low: str) -> str | None:
+    if NOT_VACANCY.search(low):
+        return "not_vacancy"
+    if SCAM.search(low):
+        return "scam"
+    if not any(rx.search(low) for rx, _, _ in _PROFESSIONS):
+        return "no_profession"
+    if not HIRING.search(low) and parse_salary(text)[0] is None:
+        return "no_hiring"
+    return None
+
+
 def is_vacancy(text: str) -> bool:
-    low = _lower(text)
-    if NOT_VACANCY.search(low) or SCAM.search(low):
-        return False
-    has_profession = any(rx.search(low) for rx, _, _ in _PROFESSIONS)
-    return has_profession and (bool(HIRING.search(low)) or parse_salary(text)[0] is not None)
+    return _not_vacancy_reason(text, _lower(text)) is None
 
 
 def _title_hits(low: str) -> list[tuple[int, int, str, str]]:
@@ -430,22 +450,28 @@ def fingerprint(text: str) -> str:
 
 def parse_post(post: RawPost) -> Vacancy | None:
     """RawPost → Vacancy, или None, если это не вакансия."""
-    if not is_vacancy(post.text):
-        return None
+    return explain(post)[0]
+
+
+def explain(post: RawPost) -> tuple[Vacancy | None, str | None]:
+    """Как parse_post, но вместе с причиной отказа (ключ REJECT_REASONS) для журнала сбора."""
+    low = _lower(post.text)
+    reason = _not_vacancy_reason(post.text, low)
+    if reason:
+        return None, reason
     titles = detect_titles(post.text)
     if not titles:
-        return None
-    low = _lower(post.text)
+        return None, "no_profession"
     white = WHITE_COLLAR.search(low)
     if white and white.start() < _title_hits(low)[0][0]:
-        return None  # офисная или руководящая позиция
+        return None, "white_collar"  # офисная или руководящая позиция названа раньше рабочей
     if ABROAD.search(low):
-        return None
+        return None, "abroad"
     city = detect_city(post.text, post.default_city)
     if FOREIGN.search(low) and city == post.default_city and not any(
         re.search(rx, low) for _, rx in CITIES.values()
     ):
-        return None
+        return None, "foreign"
     title = ", ".join(t for t, _ in titles[:3])
     salary_min, salary_max, period = parse_salary(post.text)
     text = clean_text(post.text)
@@ -466,4 +492,4 @@ def parse_post(post: RawPost) -> Vacancy | None:
         posted_at=post.posted_at.isoformat(),
         fingerprint=fingerprint(text),
         address=detect_address(text),
-    )
+    ), None

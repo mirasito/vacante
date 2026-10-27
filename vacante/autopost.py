@@ -26,7 +26,9 @@ log = logging.getLogger(__name__)
 CHANNELS = {"astana": "@vacanteastana", "almaty": "@vacantealmaty"}
 LOCAL = timezone(timedelta(hours=5))  # весь Казахстан живёт по UTC+5
 POST_HOURS = range(9, 21)  # публикуем с 9:00 до 20:59 по местному времени
-MIN_GAP = timedelta(hours=3)  # так выходит 4 поста в день: около 9, 12, 15 и 18 часов
+# Около 4 постов в день: в 9, 12, 15 и 18 часов. Чуть меньше трёх часов, потому что
+# часовой запуск GitHub Actions может сдвинуться на несколько минут.
+MIN_GAP = timedelta(hours=2, minutes=45)
 FRESH = timedelta(hours=48)
 KEEP = 500  # сколько опубликованных id помнить на канал
 HASHTAGS = {"horeca": "#общепит", "retail": "#продажи", "warehouse": "#склад", "delivery": "#доставка",

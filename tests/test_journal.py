@@ -134,3 +134,15 @@ def test_admin_page_and_data(tmp_path):
     assert admin["by_city"] == [["Алматы", 1]]
     assert [s["city"] for s in admin["bot"]["subscribers"]] == ["Алматы", "Весь Казахстан"]
     assert [a["city"] for a in admin["autopost"]] == ["Астана", "Алматы"]
+
+
+def test_parser_change_rereads_channels(tmp_path, monkeypatch):
+    channels = {"chan_a": [raw("chan_a", 1, BARISTA)]}
+    run_collect(tmp_path, channels)
+    calls = []
+    run_collect(tmp_path, channels, calls)
+    assert calls == [("chan_a", 1)]
+    monkeypatch.setattr(collect, "parser_version", lambda: "new-rules")
+    calls.clear()
+    run_collect(tmp_path, channels, calls)
+    assert calls == [("chan_a", 0)]

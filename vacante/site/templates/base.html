@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}vacante.kz — работа рядом с домом{% endblock %}</title>
+<meta name="description" content="{% block description %}Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.{% endblock %}">
+<link rel="canonical" href="{{ base_url }}/{{ path ~ '/' if path else '' }}">
+<link rel="stylesheet" href="/static/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="/"><span class="dot">.</span>vacante</a>
+  <span class="tagline">работа рядом с домом</span>
+</header>
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+<footer class="footer wrap">
+  <p>vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.</p>
+  <p>Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.</p>
+</footer>
+</body>
+</html>

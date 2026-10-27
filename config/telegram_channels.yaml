@@ -1,0 +1,40 @@
+# Публичные Telegram-каналы с вакансиями для синих воротничков.
+# Источник списка: kaz.tgstat.com/career и promtpress.com (октябрь 2026).
+# city — город по умолчанию для постов канала (если в тексте не указан другой).
+# Чтобы отключить канал, поставьте enabled: false. Если владелец канала
+# попросит убрать его из сбора, удалите строку целиком.
+
+channels:
+  # Алматы
+  - {username: almatyrabota1, city: almaty}
+  - {username: almaty_rabota01, city: almaty}
+  - {username: almaty_rabota_work, city: almaty}
+  - {username: almaty_rabota05, city: almaty}
+  - {username: rabota_a1maty, city: almaty}
+  - {username: rabotaalmatyyyy, city: almaty}
+  - {username: rabota_almaty, city: almaty}
+  - {username: almatyvacancies, city: almaty}
+  - {username: rabotaaty, city: almaty}
+  - {username: rabota4almaty, city: almaty}
+  - {username: agashka_job_almaty, city: almaty}
+  - {username: almatyrabota360, city: almaty}
+  - {username: alaportjobs, city: almaty}
+
+  # Астана
+  - {username: astana_job_vakansii, city: astana}
+  - {username: zhumys_astana_kz, city: astana}
+  - {username: Astana_rabota, city: astana}
+  - {username: astana_hh, city: astana}
+  - {username: rabota_Astanakz, city: astana}
+  - {username: rabota_astana, city: astana}
+  - {username: astana_rabota_jumys, city: astana}
+  - {username: rabota_v_nursultane1, city: astana}
+  - {username: astana_rabota_vacancy, city: astana}
+  - {username: astanakettik, city: astana}
+
+  # Несколько городов (город определяем по тексту)
+  - {username: jobkz_1, city: null}
+  - {username: jumystap1, city: null}
+  - {username: jobs_kazakhstan, city: null}
+  - {username: horeca_kz1, city: null}
+  - {username: trudogolikz, city: null}

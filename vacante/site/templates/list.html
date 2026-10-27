@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }} — {{ total }} вакансий | vacante.kz{% endblock %}
+{% block description %}{{ heading }}: {{ total }} свежих вакансий с зарплатой, графиком и условиями. Обновляется каждый час.{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>{{ heading }}</h1>
+  <div class="search">
+    <input id="q" type="search" placeholder="Должность, например «официант»" autocomplete="off">
+  </div>
+  <nav class="chips">
+    <a class="chip{% if not city %} on{% endif %}" href="/">Все города</a>
+    {% for slug, n in city_counts[:8] %}
+    <a class="chip{% if city == slug %} on{% endif %}" href="/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
+    {% endfor %}
+  </nav>
+  {% if city %}
+  <nav class="chips">
+    {% for cat, n in category_counts %}
+    <a class="chip{% if category == cat %} on{% endif %}" href="/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+</section>
+{% if city and channels.get(city) %}
+<a class="subscribe" href="{{ channels[city] }}">Новые вакансии {{ city_name(city) }} каждый день в Telegram →</a>
+{% endif %}
+<p class="count">Результаты: <span id="count">{{ vacancies | length }}</span>{% if total > vacancies | length %} из {{ total }}{% endif %}</p>
+<div id="list" class="list">
+{% for v in vacancies %}
+{% include "_card.html" %}
+{% else %}
+<p class="empty">Пока нет вакансий. Загляните через час: сборщик обновляет список каждый час.</p>
+{% endfor %}
+</div>
+<script>
+const q = document.getElementById('q'), cards = [...document.querySelectorAll('#list .card')], count = document.getElementById('count');
+q.addEventListener('input', () => {
+  const words = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  let n = 0;
+  for (const c of cards) {
+    const hit = words.every(w => c.dataset.search.includes(w));
+    c.hidden = !hit; if (hit) n++;
+  }
+  count.textContent = n;
+});
+</script>
+{% endblock %}

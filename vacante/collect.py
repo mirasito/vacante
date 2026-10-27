@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -9,6 +10,7 @@ from pathlib import Path
 import httpx
 import yaml
 
+from vacante import parse
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain
@@ -16,6 +18,11 @@ from vacante.sources import telegram
 from vacante.store import expire, load_state, load_vacancies, merge, save_state, save_vacancies
 
 log = logging.getLogger(__name__)
+
+
+def parser_version() -> str:
+    """Меняется при любой правке правил разбора."""
+    return hashlib.sha1(Path(parse.__file__).read_bytes()).hexdigest()[:12]
 
 
 def load_channels(config_path: Path) -> list[dict]:
@@ -52,9 +59,12 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     state = load_state(data_dir)
     last_ids: dict[str, int] = state.setdefault("last_post_id", {})
     journal = Journal.load(data_dir)
-    # Журнала ещё нет: перечитываем каналы за все две недели, чтобы в нём сразу была полная картина.
-    # Уже собранные посты при этом не задваиваются: склейка узнаёт их по id.
-    rescan = journal is None
+    # Журнала ещё нет или правила разбора поменялись: перечитываем каналы за все две недели,
+    # чтобы в журнале была полная картина, а посты, отброшенные старыми правилами, получили
+    # второй шанс. Уже собранные посты при этом не задваиваются: склейка узнаёт их по id.
+    version = parser_version()
+    rescan = journal is None or state.get("parser") != version
+    state["parser"] = version
     journal = journal or Journal()
     stats = {"channels": len(channels), "failed": 0, "posts": 0, "vacancies": 0}
     incoming = []

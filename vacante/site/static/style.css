@@ -21,6 +21,11 @@ a { color: inherit; }
 .chip small { opacity: .6; font-weight: 400; }
 .chip.on { background: #fff; color: #161616; }
 .subscribe { display: block; background: var(--pill); border-radius: 12px; padding: 12px 16px; text-decoration: none; font-weight: 600; margin-bottom: 16px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.filters select, .toggle { font: inherit; font-size: 15px; font-weight: 600; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.toggle[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.note { color: var(--quiet); font-size: 13px; margin: 0 0 8px; }
+.note[hidden], .empty[hidden] { display: none; }
 .count { color: var(--quiet); font-weight: 600; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
 .card { display: block; text-decoration: none; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .card[hidden] { display: none; }
@@ -42,3 +47,9 @@ a { color: inherit; }
 .also, .source { color: var(--quiet); font-size: 14px; word-break: break-all; }
 .empty { color: var(--quiet); padding: 24px 0; }
 .footer { color: var(--quiet); font-size: 13px; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 12px; padding-bottom: 32px; }
+@media (max-width: 600px) {
+  /* Города и сферы в одну прокручиваемую строку, чтобы фильтры и вакансии были видны сразу */
+  .hero .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; }
+  .hero .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: none; white-space: nowrap; }
+}

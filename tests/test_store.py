@@ -1,5 +1,7 @@
+from dataclasses import replace
 from datetime import datetime, timezone
 
+from vacante.collect import reparse
 from vacante.models import RawPost
 from vacante.parse import parse_post
 from vacante.store import expire, load_vacancies, merge, save_vacancies
@@ -41,3 +43,16 @@ def test_expire_and_roundtrip(tmp_path):
     assert [v.id for v in kept] == ["chan_a-2"]
     save_vacancies(tmp_path, kept)
     assert load_vacancies(tmp_path) == kept
+
+
+def test_reparse_applies_parser_fixes_to_stored_cards():
+    kept = make("Chan_A", 1, day=25)
+    kept.also_seen_in = ["https://t.me/chan_b/7"]
+    kept.employer = None  # как будто старый разбор работодателя не нашёл
+    # карточка, которую старый разбор пропустил, а нынешний считает офисной вакансией
+    office = replace(kept, id="chan_a-2", text="Требуется бухгалтер-кассир в ТОО, 320 000 тг", title="Кассир")
+    result = reparse([kept, office], {"chan_a": "almaty"})
+    assert [v.id for v in result] == ["chan_a-1"]
+    assert result[0].employer == "Зерно"
+    assert result[0].also_seen_in == ["https://t.me/chan_b/7"]
+    assert result[0].posted_at.startswith("2026-10-25")

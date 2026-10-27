@@ -26,8 +26,8 @@ python -m http.server 8000 -d public
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Actions → «Обновление вакансий» → Run workflow**, чтобы не ждать первого часового запуска.
-3. Пока домен не подключён, задайте переменную `SITE_URL` (Settings → Secrets and variables → Actions → Variables) со значением `https://mirasito.github.io/vacante`. Без неё сайт собирается под `https://vacante.kz`.
-4. Чтобы подключить vacante.kz, в DNS домена добавьте записи для GitHub Pages и укажите домен в Settings → Pages → Custom domain.
+3. Пока домен не подключён, сайт открывается по адресу `https://mirasito.github.io/vacante`.
+4. Чтобы подключить vacante.kz, в DNS домена добавьте записи для GitHub Pages, укажите домен в Settings → Pages → Custom domain и задайте переменную `SITE_URL` = `https://vacante.kz` (Settings → Secrets and variables → Actions → Variables).
 
 ## Каналы
 

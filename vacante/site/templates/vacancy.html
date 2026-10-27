@@ -3,7 +3,7 @@
 {% block description %}{{ v.title }} в {{ city_name(v.city) }}{% set s = salary_label(v) %}{% if s %}, {{ s }}{% endif %}{% if v.schedule %}, график {{ v.schedule }}{% endif %}. {{ v.text[:120] }}{% endblock %}
 {% block head %}{% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}{% endblock %}
 {% block content %}
-<p class="crumbs"><a href="/">Вакансии</a>{% if v.city %} / <a href="/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="/{{ v.city }}/{{ v.category }}/">{{ CATEGORIES[v.category] }}</a>{% endif %}</p>
+<p class="crumbs"><a href="{{ root }}/">Вакансии</a>{% if v.city %} / <a href="{{ root }}/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="{{ root }}/{{ v.city }}/{{ v.category }}/">{{ CATEGORIES[v.category] }}</a>{% endif %}</p>
 <article class="vacancy">
   <h1>{{ v.title }}</h1>
   {% if v.employer %}<div class="employer">{{ v.employer }}</div>{% endif %}

@@ -11,6 +11,7 @@ import shutil
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -101,7 +102,9 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     base_url = base_url.rstrip("/")
     vacancies = sorted(load_vacancies(data_dir), key=lambda v: v.posted_at, reverse=True)
     env = _env()
-    env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url)
+    # root: путь сайта без домена, чтобы ссылки работали и на vacante.kz, и на <user>.github.io/vacante
+    env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url,
+                       root=urlparse(base_url).path.rstrip("/"))
 
     if out.exists():
         shutil.rmtree(out)

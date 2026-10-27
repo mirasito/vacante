@@ -1,0 +1,13 @@
+<a class="card" href="/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-search="{{ (v.title ~ ' ' ~ (v.employer or '') ~ ' ' ~ v.text) | lower }}">
+  <div class="card-head">
+    <h3>{{ v.title }}</h3>
+    <span class="age">{{ age(v) }}</span>
+  </div>
+  {% if v.employer %}<div class="employer">{{ v.employer }}</div>{% endif %}
+  <div class="meta">{{ city_name(v.city) }}{% if v.schedule %} · {{ v.schedule }}{% endif %}</div>
+  <div class="pills">
+    {% set s = salary_label(v) %}
+    {% if s %}<span class="pill salary">{{ s }}</span>{% endif %}
+    {% for perk in v.perks[:3] %}<span class="pill">{{ perk }}</span>{% endfor %}
+  </div>
+</a>

@@ -20,6 +20,7 @@ jobs:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
     defaults:
       run:
         working-directory: bot
@@ -64,6 +65,12 @@ jobs:
         run: |
           npx wrangler deploy
           printf '%s' "$TELEGRAM_BOT_TOKEN" | npx wrangler secret put TELEGRAM_BOT_TOKEN
+          # Токен GitHub для запасного будильника обновления (src/cron.js); без него будильник молчит
+          if [ -n "$GH_DISPATCH_TOKEN" ]; then
+            printf '%s' "$GH_DISPATCH_TOKEN" | npx wrangler secret put GH_DISPATCH_TOKEN
+          else
+            echo "::notice::Нет секрета GH_DISPATCH_TOKEN, запасной будильник обновления не включён"
+          fi
 
       - name: Вебхук и команды в Telegram
         if: steps.secrets.outputs.ready

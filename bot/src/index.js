@@ -1,6 +1,8 @@
 // Бот для соискателей @vacantekz_bot: настройка подписки на новые вакансии.
 // Telegram присылает обновления вебхуком на /telegram. Подписки хранятся в D1,
 // а сами подборки каждый час рассылает `python -m vacante digest` из GitHub Actions.
+// Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
+import { wakeUpdate } from "./cron.js";
 import * as bot from "./logic.js";
 
 const GREETING =
@@ -24,6 +26,11 @@ export default {
       console.error(err && err.stack ? err.stack : err);
     }
     return new Response("ok"); // всегда 200, иначе Telegram будет повторять то же обновление
+  },
+
+  // Раз в час (crons в wrangler.toml): подстраховка расписания GitHub, см. cron.js
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(wakeUpdate(env).then((result) => console.log(`update.yml: ${result}`)));
   },
 };
 

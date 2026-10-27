@@ -3,6 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
 
+import { moderationKey } from "../src/employer.js";
 import worker from "../src/index.js";
 import { webhookSecret } from "../src/logic.js";
 
@@ -33,9 +34,14 @@ function fakeEnv() {
 
 // Поддельный Telegram: запоминает вызовы, админом канала считается только пользователь 900
 function fakeFetch(calls) {
+  let messageId = 1000;
   return async (url, init) => {
     if (String(url).endsWith("/feed.json")) {
       return Response.json({ vacancies: [{ id: "a", city: "almaty", category: "horeca", perks: [], pay: 0, html: "<b>Бариста</b>" }] });
+    }
+    if (String(url).startsWith("https://api.github.com/")) {
+      calls.push({ method: "github", url: String(url) });
+      return new Response(null, { status: 204 });
     }
     const method = String(url).split("/").pop();
     const body = JSON.parse(init.body);
@@ -43,13 +49,24 @@ function fakeFetch(calls) {
     if (method === "getChatMember") {
       return Response.json({ ok: true, result: { status: body.user_id === 900 ? "creator" : "left" } });
     }
-    return Response.json({ ok: true, result: {} });
+    return Response.json({ ok: true, result: method === "sendMessage" ? { message_id: ++messageId } : {} });
   };
 }
 
+// ctx как у Cloudflare: фоновые задачи (запуск обновления сайта) собираем, чтобы дождаться их в тесте
+const ctx = { tasks: [], waitUntil(promise) { this.tasks.push(promise); } };
+
 async function post(env, update, secret) {
   const headers = { "X-Telegram-Bot-Api-Secret-Token": secret ?? (await webhookSecret(env.TELEGRAM_BOT_TOKEN)) };
-  return worker.fetch(new Request("https://bot.example/telegram", { method: "POST", headers, body: JSON.stringify(update) }), env);
+  return worker.fetch(new Request("https://bot.example/telegram", { method: "POST", headers, body: JSON.stringify(update) }), env, ctx);
+}
+
+async function moderateApi(env, decisions, key) {
+  const headers = { Authorization: `Bearer ${key ?? (await moderationKey(env.TELEGRAM_BOT_TOKEN))}` };
+  const res = await worker.fetch(
+    new Request("https://bot.example/api/moderate", { method: "POST", headers, body: JSON.stringify({ decisions }) }), env, ctx);
+  await Promise.all(ctx.tasks.splice(0));
+  return res;
 }
 
 const user = (id, first_name, username) => ({ id, first_name, ...(username ? { username } : {}) });
@@ -113,7 +130,7 @@ test("работодатель размещает вакансию, модера
   await say(env, boss, "Питание и развозка");
   const preview = sentTo(calls, 100).at(-1).body;
   assert.match(preview.text, /Проверьте вакансию/);
-  assert.match(preview.text, /<b>Официант<\/b>\n🏢 Кафе «Зерно»\n📍 Алматы\n💰 12 000 ₸ за смену\n🕒 2\/2/);
+  assert.match(preview.text, /<b>Официант<\/b>\n🏢 Кафе «Зерно»\n📍 Алматы\n💰 <b>12 000 ₸ за смену<\/b>\n🕒 2\/2/);
   assert.deepEqual(env.DB.get("SELECT status, step, address FROM jobs"), { status: "draft", step: null, address: "" });
 
   // На проверку: модератор получает карточку с кнопками
@@ -136,7 +153,7 @@ test("работодатель размещает вакансию, модера
   assert.match(sentTo(calls, 100).at(-1).body.text, /прошла проверку/);
   await press(env, admin, `mod:no:${job.id}`, 21); // повторное нажатие: решение уже принято
   assert.equal(env.DB.get("SELECT status FROM jobs").status, "approved");
-  assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /Уже опубликована/);
+  assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /✅ Опубликована: Мирас/);
 
   // Отклик: ссылка из карточки на сайте, номер кнопкой «Отправить мой номер»
   await say(env, candidate, `/start apply_${job.id}`);
@@ -192,4 +209,73 @@ test("вакансии до /admin ждут модератора, лимит н�
   await say(env, boss, "Повар");
   assert.match(sentTo(calls, 100).at(-1).body.text, /\/vacancy: разместить вакансию/);
   assert.ok(sentTo(calls, 100).some((c) => /не опубликовали/.test(c.body.text)));
+});
+
+test("агент оформляет и публикует вакансию, отклоняет с причиной, правит опубликованную", async () => {
+  const env = { ...fakeEnv(), GH_DISPATCH_TOKEN: "gh", GITHUB_REPO: "mirasito/vacante" };
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(100, "Дана");
+  const admin = user(900, "Мирас", "mirasimus");
+  await say(env, admin, "/admin");
+  const fill = async (title, salary) => {
+    await say(env, boss, "/vacancy");
+    await press(env, boss, "jobcity:almaty");
+    for (const answer of [title, "Алматысу", salary]) await say(env, boss, answer);
+    await say(env, boss, "Обычный с девяти до шести");
+    for (const field of ["address", "details"]) await press(env, boss, `skip:${field}`);
+    await press(env, boss, "jobsend");
+    await Promise.all(ctx.tasks.splice(0));
+  };
+  await fill("Электрик первого разряда", "2500 00 + бонусы");
+  assert.equal(calls.filter((c) => c.method === "github").length, 1); // заявка сразу обновляет очередь на сайте
+  await fill("Работа в интернете", "100 000");
+  await fill("Сварщик", "400 000");
+
+  // Без ключа нельзя
+  assert.equal((await moderateApi(env, [], "wrong")).status, 403);
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE status = 'pending'").n, 3);
+
+  // Мирас успел сам опубликовать №3 как есть
+  const notice3 = env.DB.get("SELECT message_id FROM notices WHERE job_id = 3");
+  await press(env, admin, "mod:ok:3", notice3.message_id);
+
+  calls.length = 0;
+  const res = await moderateApi(env, [
+    { id: 1, verdict: "approve", fields: { title: "Электрик 1-го разряда", company: "Алматы Су", salary: "250 000 ₸ в месяц + бонусы",
+      schedule: "09:00–18:00", salary_min: 250000, salary_period: "month" } },
+    { id: 2, verdict: "reject", reason: "похоже на «работу в интернете», а не на настоящую вакансию" },
+    { id: 3, verdict: "approve", fields: { salary: "400 000 ₸ в месяц", salary_min: 400000, salary_period: "month" } },
+    { id: 4, verdict: "approve" },
+    { id: 1, verdict: "edit", fields: { salary_min: 250, salary_period: "month" } },
+  ]);
+  assert.deepEqual((await res.json()).results, [
+    { id: 1, result: "approved" },
+    { id: 2, result: "rejected" },
+    { id: 3, result: "edited" },
+    { id: 4, result: "error: нет такой вакансии" },
+    { id: 1, result: "error: salary: сумма за month вне 40000–5000000" },
+  ]);
+
+  const first = env.DB.get("SELECT * FROM jobs WHERE id = 1");
+  assert.equal(first.status, "approved");
+  assert.equal(first.decided_by, "агент");
+  assert.ok(first.reviewed_at && first.approved_at);
+  assert.deepEqual([first.salary, first.salary_min, first.salary_max, first.salary_period, first.schedule],
+    ["250 000 ₸ в месяц + бонусы", 250000, null, "month", "09:00–18:00"]);
+  const toBoss = calls.filter((c) => c.method === "sendMessage" && c.body.chat_id === 100).map((c) => c.body.text);
+  assert.match(toBoss[0], /прошла проверку[\s\S]*Электрик 1-го разряда[\s\S]*💰 <b>250 000 ₸ в месяц \+ бонусы<\/b>/);
+  assert.match(toBoss[1], /не опубликовали\. Причина: похоже на «работу в интернете»/);
+  assert.equal(toBoss.length, 2); // правка уже опубликованной №3 работодателю не пишется
+
+  // Карточки у модератора обновились: кто решил, без кнопок
+  const edits = calls.filter((c) => c.method === "editMessageText" && c.body.chat_id === 900);
+  assert.match(edits[0].body.text, /✅ Опубликована: агент$/);
+  assert.equal(edits[0].body.reply_markup, undefined);
+  assert.match(edits[1].body.text, /❌ Отклонена: агент$/);
+  assert.match(edits[2].body.text, /💰 <b>400 000 ₸ в месяц<\/b>[\s\S]*✅ Опубликована: Мирас \(@mirasimus\)$/);
+  const third = env.DB.get("SELECT decided_by, reviewed_at FROM jobs WHERE id = 3");
+  assert.equal(third.decided_by, "Мирас (@mirasimus)");
+  assert.ok(third.reviewed_at);
+  assert.equal(calls.filter((c) => c.method === "github").length, 1); // одно обновление сайта на всю пачку
 });

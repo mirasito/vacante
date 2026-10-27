@@ -28,6 +28,10 @@ log = logging.getLogger(__name__)
 CHANNELS = {"astana": "@vacanteastana", "almaty": "@vacantealmaty"}
 LOCAL = timezone(timedelta(hours=5))  # весь Казахстан живёт по UTC+5
 POST_HOURS = range(9, 21)  # публикуем с 9:00 до 20:59 по местному времени
+# Вакансии от работодателей (через бота) публикуем сразу после одобрения, вне общей очереди,
+# но не ночью: с 22:00 до 8:00 ждут утра
+DIRECT_HOURS = range(8, 22)
+MAX_DIRECT = 3  # за один запуск в канал, остальные следующим часом
 # Около 4 постов в день: в 9, 12, 15 и 18 часов. Чуть меньше трёх часов, потому что
 # часовой запуск GitHub Actions может сдвинуться на несколько минут.
 MIN_GAP = timedelta(hours=2, minutes=45)
@@ -78,6 +82,17 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> Vac
         if v.city == city and v.id not in seen and v.posted_at >= cutoff and v.title not in recent_titles
     ]
     return max(candidates, key=lambda v: (_score(v), v.posted_at), default=None)
+
+
+def direct_due(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> list[Vacancy]:
+    """Свежие одобренные вакансии от работодателей, которые ещё не выходили в канал города."""
+    if now.astimezone(LOCAL).hour not in DIRECT_HOURS:
+        return []
+    seen = set(state.get("ids", []))
+    cutoff = (now - FRESH).isoformat()
+    fresh = [v for v in vacancies
+             if v.source == direct.SOURCE and v.city == city and v.id not in seen and v.posted_at >= cutoff]
+    return sorted(fresh, key=lambda v: v.posted_at)[:MAX_DIRECT]
 
 
 def _lower_first(title: str) -> str:
@@ -133,20 +148,27 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
     stats = {"posted": 0, "failed": 0}
     for city, chat in CHANNELS.items():
         state = posted.setdefault(city, {"ids": [], "titles": [], "last_at": None})
+        # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь
+        for v in direct_due(vacancies, city, state, now):
+            if _publish(chat, v, base_url, send, state, stats):
+                stats["direct"] = stats.get("direct", 0) + 1
         if not is_due(state["last_at"], now):
             continue
         v = pick(vacancies, city, state, now)
-        if v is None:
-            continue
-        try:
-            send(chat, make_post(v, base_url))
-        except (httpx.HTTPError, RuntimeError) as exc:
-            log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
-            stats["failed"] += 1
-            continue
-        state["ids"] = (state["ids"] + [v.id])[-KEEP:]
-        state["titles"] = (state["titles"] + [v.title])[-KEEP:]
-        state["last_at"] = now.isoformat()
-        stats["posted"] += 1
+        if v is not None and _publish(chat, v, base_url, send, state, stats):
+            state["last_at"] = now.isoformat()
     save_posted(data_dir, posted)
     return stats
+
+
+def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, stats: dict) -> bool:
+    try:
+        send(chat, make_post(v, base_url))
+    except (httpx.HTTPError, RuntimeError) as exc:
+        log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        stats["failed"] += 1
+        return False
+    state["ids"] = (state["ids"] + [v.id])[-KEEP:]
+    state["titles"] = (state["titles"] + [v.title])[-KEEP:]
+    stats["posted"] += 1
+    return True

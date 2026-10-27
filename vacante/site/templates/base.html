@@ -15,11 +15,13 @@
 <header class="topbar">
   <a class="logo" href="{{ root }}/"><span class="dot">.</span>vacante</a>
   <span class="tagline">работа рядом с домом</span>
+  <a class="post-job" href="{{ employer_url }}" rel="nofollow">Разместить вакансию</a>
 </header>
 <main class="wrap">
 {% block content %}{% endblock %}
 </main>
 <footer class="footer wrap">
+  <p><b>Работодателям:</b> разместите вакансию бесплатно через <a href="{{ employer_url }}" rel="nofollow">бота @vacantekz_bot</a>. Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.</p>
   <p>vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.</p>
   <p>Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.</p>
 </footer>

@@ -86,6 +86,8 @@ jobs:
           jq -n '{commands: [
               {command: "start", description: "Подписаться на новые вакансии"},
               {command: "settings", description: "Изменить город, сферу и условия"},
-              {command: "stop", description: "Остановить рассылку"}]}' \
+              {command: "stop", description: "Остановить рассылку"},
+              {command: "vacancy", description: "Работодателям: разместить вакансию"},
+              {command: "myjobs", description: "Работодателям: мои вакансии и отклики"}]}' \
             | curl -fsS "$tg/setMyCommands" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
           echo "Бот: https://vacante-bot.$sub.workers.dev"

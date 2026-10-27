@@ -125,7 +125,10 @@ class D1:
         r = self.client.post(f"{self.base}/{self.database_id()}/query", headers=self.headers,
                              json={"sql": sql, "params": params or []})
         r.raise_for_status()
-        return r.json()["result"][0]["results"]
+        data = r.json()
+        if not data.get("success", True):
+            raise RuntimeError(f"D1: {data.get('errors')}")
+        return data["result"][0]["results"]
 
     def subscriptions(self) -> list[Subscription]:
         rows = self.query("SELECT chat_id, city, categories, perks, min_pay FROM subscribers WHERE active = 1")
@@ -134,6 +137,18 @@ class D1:
     def subscriber_counts(self) -> list[dict]:
         """Подписчики по городам для админки, без chat_id: [{city, total, active}]."""
         return self.query("SELECT city, COUNT(*) AS total, SUM(active) AS active FROM subscribers GROUP BY city")
+
+    def approved_jobs(self) -> list[dict]:
+        """Вакансии от работодателей, одобренные модератором и не закрытые (vacante.direct)."""
+        return self.query("SELECT id, city, title, company, salary, schedule, address, details, approved_at "
+                          "FROM jobs WHERE status = 'approved'")
+
+    def job_counts(self) -> dict:
+        """Для админки: вакансии от работодателей по статусам и число откликов."""
+        counts = {row["status"]: int(row["n"]) for row in
+                  self.query("SELECT status, COUNT(*) AS n FROM jobs WHERE status != 'draft' GROUP BY status")}
+        counts["applications"] = int(self.query("SELECT COUNT(*) AS n FROM applications")[0]["n"])
+        return counts
 
     def deactivate(self, chat_ids: list[int]) -> None:
         for chat_id in chat_ids:

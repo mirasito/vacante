@@ -12,6 +12,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from vacante.direct import SOURCE as DIRECT
 from vacante.journal import ACCEPTED, DUPLICATE, GONE, REJECTED
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES, REJECT_REASONS
@@ -58,6 +59,7 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
     statuses = Counter(p["status"] for p in posts)
     totals = {
         "on_site": len(vacancies),
+        "direct": sum(1 for v in vacancies if v.source == DIRECT),
         "new_24h": sum(1 for p in posts if p["status"] == ACCEPTED and p["posted_at"] >= day_ago),
         "posts": len(posts),
         "accepted": statuses[ACCEPTED],

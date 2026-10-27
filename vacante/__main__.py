@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, collect, digest
+from vacante import autopost, collect, digest, direct
 from vacante.site import build
 
 
@@ -37,7 +37,7 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)  # иначе в лог попадают адреса запросов, а в них токен бота
     if args.command == "collect":
-        stats = collect.run(args.config, args.data_dir, args.max_age_days)
+        stats = collect.run(args.config, args.data_dir, args.max_age_days, direct=direct_vacancies())
         logging.info("сбор: %s", stats)
     elif args.command == "post":
         token = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -60,13 +60,33 @@ def main() -> None:
             stats = digest.run(args.data_dir, args.base_url, d1.subscriptions,
                                digest.telegram_sender(client, env["TELEGRAM_BOT_TOKEN"]))
             d1.deactivate(stats["blocked"])
+            try:
+                jobs = d1.job_counts()
+            except (httpx.HTTPError, RuntimeError):
+                jobs = None  # таблиц вакансий ещё нет: бот не перевыложен
             bot = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                   "subscribers": d1.subscriber_counts()}
+                   "subscribers": d1.subscriber_counts(), "jobs": jobs}
             (args.data_dir / "bot.json").write_text(json.dumps(bot, ensure_ascii=False) + "\n", "utf-8")
         logging.info("подборки: %s", stats)
     else:
         count = build.build(args.data_dir, args.out, args.base_url)
         logging.info("сайт: %s страниц в %s", count, args.out)
+
+
+def direct_vacancies() -> list | None:
+    """Одобренные вакансии от работодателей из базы бота, или None, если её не прочитать."""
+    env = {k: os.environ.get(k) for k in ("CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
+    if not all(env.values()):
+        return None
+    try:
+        with httpx.Client(timeout=30) as client:
+            d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+            if d1.database_id() is None:
+                return None
+            return [direct.to_vacancy(job) for job in d1.approved_jobs()]
+    except (httpx.HTTPError, RuntimeError) as exc:
+        logging.warning("вакансии от работодателей: %s", exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        return None
 
 
 if __name__ == "__main__":

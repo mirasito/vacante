@@ -131,6 +131,10 @@ class D1:
         rows = self.query("SELECT chat_id, city, categories, perks, min_pay FROM subscribers WHERE active = 1")
         return [Subscription.from_row(row) for row in rows]
 
+    def subscriber_counts(self) -> list[dict]:
+        """Подписчики по городам для админки, без chat_id: [{city, total, active}]."""
+        return self.query("SELECT city, COUNT(*) AS total, SUM(active) AS active FROM subscribers GROUP BY city")
+
     def deactivate(self, chat_ids: list[int]) -> None:
         for chat_id in chat_ids:
             self.query("UPDATE subscribers SET active = 0, updated_at = datetime('now') WHERE chat_id = ?", [chat_id])

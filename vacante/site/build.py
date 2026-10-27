@@ -1,7 +1,7 @@
 """Статический сайт-каталог из data/vacancies.json.
 
 Страницы: главная, город, город + сфера (для поиска «работа официантом Алматы»),
-карточка вакансии, sitemap.xml и robots.txt.
+карточка вакансии, sitemap.xml и robots.txt. Плюс админка /admin/ для владельца (см. site/admin.py).
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
+from vacante.site.admin import admin_data
 from vacante.store import load_vacancies
 
 HERE = Path(__file__).parent
@@ -197,6 +198,11 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": v.perks, "pay": monthly_pay(v) or 0,
              "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
     (out / "feed.json").write_text(json.dumps({"vacancies": feed}, ensure_ascii=False), "utf-8")
+    # Админка: не в sitemap и закрыта от индексации, данные грузит сама из data.json
+    (out / "admin").mkdir()
+    (out / "admin" / "index.html").write_text(env.get_template("admin.html").render(path="admin"), "utf-8")
+    admin = admin_data(data_dir, vacancies, TELEGRAM_CHANNELS, now)
+    (out / "admin" / "data.json").write_text(json.dumps(admin, ensure_ascii=False, separators=(",", ":")), "utf-8")
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n", "utf-8")
     (out / "sitemap.xml").write_text(env.get_template("sitemap.xml").render(pages=pages), "utf-8")
     if base_url.startswith("https://") and "github.io" not in base_url:

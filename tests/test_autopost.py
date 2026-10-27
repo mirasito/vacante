@@ -19,6 +19,7 @@ def test_due_only_in_daytime_and_after_gap():
     assert not autopost.is_due(None, datetime(2026, 10, 27, 17, tzinfo=timezone.utc))  # 22:00 местного
     assert not autopost.is_due("2026-10-27T05:30:00+00:00", NOON)
     assert autopost.is_due("2026-10-27T04:00:00+00:00", NOON)
+    assert autopost.is_due("2026-10-27T04:05:00+00:00", NOON)  # прошлый запуск опоздал на 5 минут
 
 
 def test_pick_prefers_complete_fresh_unposted_and_varies_titles():

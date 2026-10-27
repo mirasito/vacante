@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 
 from vacante.models import RawPost
 from vacante.parse import parse_post
+from vacante.site import build as site
 from vacante.site.build import build, plural
 from vacante.store import save_vacancies
 
@@ -59,3 +60,20 @@ def test_list_has_filters_and_counts_in_russian(tmp_path):
     assert 'data-perk="Без опыта"' in home and 'value="300000"' in home
     assert [plural(n, "вакансия", "вакансии", "вакансий") for n in (1, 3, 5, 11, 21, 522)] == [
         "вакансия", "вакансии", "вакансий", "вакансий", "вакансия", "вакансии"]
+
+
+def test_search_tags_and_metrika_only_when_set(tmp_path, monkeypatch):
+    raw = RawPost("telegram", "chan", 9, "https://t.me/chan/9", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    monkeypatch.setattr(site, "SITE_TAGS", {"google_verification": "", "yandex_verification": "", "metrika_id": ""})
+    build(tmp_path / "data", tmp_path / "a", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    plain = (tmp_path / "a" / "index.html").read_text("utf-8")
+    assert "verification" not in plain and "mc.yandex.ru" not in plain
+    monkeypatch.setattr(site, "SITE_TAGS", {"google_verification": "g123", "yandex_verification": "y456",
+                                            "metrika_id": "98765432"})
+    build(tmp_path / "data", tmp_path / "b", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    home = (tmp_path / "b" / "index.html").read_text("utf-8")
+    assert '<meta name="google-site-verification" content="g123">' in home
+    assert '<meta name="yandex-verification" content="y456">' in home
+    assert 'ym(98765432, "init"' in home

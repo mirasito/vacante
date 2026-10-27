@@ -169,6 +169,14 @@ def test_students_perk_respects_refusal():
     assert "Можно студентам" not in parse_perks("Студентов очного отделения просьба не беспокоить")
 
 
+def test_perk_mentioned_as_absent_is_not_a_perk():
+    assert parse_perks("Есть питание.\nРазвозки нет.\nОфициальное оформление по ТК.") == ["Питание", "Официально"]
+    assert parse_perks("🍽 Питание не предоставляется\n🏠 Общежитие не предоставляется") == []
+    assert parse_perks("Без проживания, ежедневной оплаты нет, развозка жоқ") == []
+    assert parse_perks("Не только питание, но и развозка") == ["Питание", "Развозка"]
+    assert parse_perks("Опыт не обязателен, обучим") == ["Обучение", "Без опыта"]
+
+
 def test_employer_stops_before_invite_verb():
     assert detect_employer("🔥 СЕТЬ СУПЕРМАРКЕТОВ SMALL ПРИГЛАШАЕТ В КОМАНДУ! 🔥") == "SMALL"
 

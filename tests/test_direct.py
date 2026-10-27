@@ -82,3 +82,35 @@ def test_autopost_puts_bot_job_first_with_apply_button(tmp_path):
     v = autopost.pick(vacancies, "almaty", {}, NOW)
     assert v.id == "bot-7"
     assert ("✉️ Откликнуться", "https://t.me/vacantekz_bot?start=apply_7") in autopost.make_post(v, "https://vacante.kz").buttons
+
+
+def test_agent_salary_numbers_win_over_text():
+    v = direct.to_vacancy({**JOB, "salary": "250 000 ₸ в месяц + бонусы", "salary_min": 250000, "salary_max": None,
+                           "salary_period": "month"})
+    assert (v.salary_min, v.salary_max, v.salary_period) == (250000, None, "month") and "Бонусы" in v.perks
+
+
+def test_queue_item_has_no_contacts():
+    item = direct.queue_item({**JOB, "status": "pending", "reviewed_at": None, "created_at": "2026-10-27 12:00:00",
+                              "employer_name": "Дана (@dana)", "details": "Звоните +7 701 123 45 67, t.me/dana_cafe"})
+    assert item["city_name"] == "Алматы" and item["status"] == "pending"
+    assert "employer_name" not in item and "701" not in item["details"] and "t.me" not in item["details"]
+
+
+def test_bot_job_goes_to_channel_at_once_but_not_at_night(tmp_path):
+    from vacante.store import save_vacancies
+    job = direct.to_vacancy({**JOB, "approved_at": "2026-10-27 06:50:00"})
+    save_vacancies(tmp_path, [job])
+    autopost.save_posted(tmp_path, {"almaty": {"ids": [], "titles": [], "last_at": "2026-10-27T06:30:00+00:00"}})
+    sent = []
+    send = lambda chat, post: sent.append((chat, [b[0] for b in post.buttons]))  # noqa: E731
+    night = datetime(2026, 10, 27, 2, 30, tzinfo=timezone.utc)  # 7:30 по Казахстану
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=night) == {"posted": 0, "failed": 0}
+    # В 12:00 общий слот ещё не подошёл (последний пост в 11:30), а вакансия работодателя выходит сразу
+    stats = autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 7, tzinfo=timezone.utc))
+    assert stats == {"posted": 1, "failed": 0, "direct": 1}
+    assert sent == [("@vacantealmaty", ["👆 Подробнее", "✉️ Откликнуться", "📍 Открыть в 2ГИС"])]
+    state = autopost.load_posted(tmp_path)["almaty"]
+    assert state["ids"] == ["bot-7"] and state["last_at"] == "2026-10-27T06:30:00+00:00"
+    # Второй раз не публикуется
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 8, tzinfo=timezone.utc))["posted"] == 0

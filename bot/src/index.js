@@ -1,6 +1,7 @@
 // Бот @vacantekz_bot. Соискатели настраивают подписку на новые вакансии (logic.js),
-// работодатели размещают вакансии через анкету, админы каналов их проверяют,
-// а кандидаты откликаются прямо в боте (employer.js).
+// работодатели размещают вакансии через анкету, агент-модератор или админы каналов их проверяют,
+// а кандидаты откликаются прямо в боте (employer.js). Решения агента приходят на /api/moderate
+// из workflow moderate.yml.
 // Telegram присылает обновления вебхуком на /telegram. Всё хранится в D1,
 // а подборки каждый час рассылает `python -m vacante digest` из GitHub Actions.
 // Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
@@ -23,6 +24,7 @@ const NO_KEYBOARD = { remove_keyboard: true };
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (request.method === "POST" && url.pathname === "/api/moderate") return moderationApi(request, env, ctx);
     if (request.method !== "POST" || url.pathname !== "/telegram") {
       return new Response("vacante.kz bot", { status: 200 });
     }
@@ -51,7 +53,7 @@ async function handle(update, env, ctx) {
   const data = q.data || "";
   if (data.startsWith("mod:")) return moderate(env, q, ctx);
   if (data.startsWith("close:")) return closeJob(env, q);
-  if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q);
+  if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q, ctx);
   return subscriptionButton(env, q);
 }
 
@@ -146,7 +148,7 @@ async function postAnswer(env, m, d) {
   return advance(env, chatId, next);
 }
 
-async function postButton(env, q) {
+async function postButton(env, q, ctx) {
   const chatId = q.message.chat.id;
   const messageId = q.message.message_id;
   const d = await env.DB.prepare("SELECT * FROM dialogs WHERE chat_id = ? AND mode = 'post'").bind(chatId).first();
@@ -158,7 +160,7 @@ async function postButton(env, q) {
     await endDialog(env, chatId);
     return edit(env, chatId, messageId, "Отменили. Разместить вакансию заново: /vacancy");
   }
-  if (q.data === "jobsend") return draft.step ? null : submit(env, chatId, messageId, draft);
+  if (q.data === "jobsend") return draft.step ? null : submit(env, chatId, messageId, draft, ctx);
   const next = job.pressed(draft, q.data);
   return next && advance(env, chatId, next, messageId);
 }
@@ -177,13 +179,35 @@ async function advance(env, chatId, draft, messageId) {
   return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
 }
 
-async function submit(env, chatId, messageId, draft) {
+async function submit(env, chatId, messageId, draft, ctx) {
   await env.DB.prepare("UPDATE jobs SET status = 'pending', updated_at = datetime('now') WHERE id = ?").bind(draft.id).run();
   await endDialog(env, chatId);
-  await edit(env, chatId, messageId, `${job.card(draft)}\n\n⏳ Отправили на проверку, напишу, когда опубликуем. Ваши вакансии: /myjobs`);
+  await edit(env, chatId, messageId, `${job.card(draft)}\n\n⏳ Отправили на проверку, обычно это до часа. Напишу, когда опубликуем. Ваши вакансии: /myjobs`);
   const { results } = await env.DB.prepare("SELECT chat_id FROM admins").all();
-  const { text, keyboard } = job.moderationScreen(draft);
-  for (const admin of results) await send(env, admin.chat_id, text, keyboard);
+  for (const admin of results) await sendNotice(env, admin.chat_id, { ...draft, status: "pending" });
+  // Обновление сайта выкладывает и очередь на проверку (moderation.json в ветке data), её читает агент
+  wakeSite(env, ctx);
+}
+
+// Карточка вакансии модератору; запоминаем сообщение, чтобы потом обновить его после решения
+async function sendNotice(env, chatId, found) {
+  const r = await send(env, chatId, ...screen(job.moderationScreen(found)));
+  if (r && r.result && r.result.message_id) {
+    await env.DB.prepare("INSERT INTO notices (job_id, chat_id, message_id) VALUES (?, ?, ?)")
+      .bind(found.id, chatId, r.result.message_id)
+      .run();
+  }
+}
+
+// После решения карточки у всех модераторов показывают, кто и что решил
+async function refreshNotices(env, found) {
+  const { results } = await env.DB.prepare("SELECT chat_id, message_id FROM notices WHERE job_id = ?").bind(found.id).all();
+  const { text, keyboard } = job.moderationScreen(found);
+  for (const n of results) await edit(env, n.chat_id, n.message_id, text, keyboard);
+}
+
+function wakeSite(env, ctx) {
+  if (env.GH_DISPATCH_TOKEN) ctx?.waitUntil(dispatchUpdate(env).catch((err) => console.warn(String(err))));
 }
 
 async function myJobs(env, chatId) {
@@ -226,37 +250,82 @@ async function becomeAdmin(env, m) {
   await env.DB.prepare("INSERT OR IGNORE INTO admins (chat_id) VALUES (?)").bind(chatId).run();
   const { results } = await env.DB.prepare("SELECT * FROM jobs WHERE status = 'pending' ORDER BY id").all();
   await send(env, chatId, `Готово, вы модератор: вакансии от работодателей будут приходить сюда на проверку. Сейчас ждут: ${results.length}.`);
-  for (const pending of results) await send(env, chatId, ...screen(job.moderationScreen(pending)));
+  for (const pending of results) await sendNotice(env, chatId, pending);
 }
 
 async function moderate(env, q, ctx) {
-  const chatId = q.message.chat.id;
   const [, verdict, id] = q.data.split(":");
   const admin = await env.DB.prepare("SELECT chat_id FROM admins WHERE chat_id = ?").bind(q.from.id).first();
   const found = admin && (await getJob(env, Number(id)));
   if (!found) return answerCallback(env, q, admin ? "Вакансия не найдена" : "Только для модераторов");
   await answerCallback(env, q);
   const approve = verdict === "ok";
+  const who = job.employerName(q.from);
   const { meta } = await env.DB.prepare(
     approve
-      ? "UPDATE jobs SET status = 'approved', approved_at = datetime('now'), updated_at = datetime('now') WHERE id = ? AND status = 'pending'"
-      : "UPDATE jobs SET status = 'rejected', updated_at = datetime('now') WHERE id = ? AND status = 'pending'",
+      ? `UPDATE jobs SET status = 'approved', approved_at = datetime('now'), decided_by = ?, updated_at = datetime('now')
+         WHERE id = ? AND status = 'pending'`
+      : "UPDATE jobs SET status = 'rejected', decided_by = ?, updated_at = datetime('now') WHERE id = ? AND status = 'pending'",
   )
-    .bind(found.id)
+    .bind(who, found.id)
     .run();
-  const { text } = job.moderationScreen(found);
-  if (!meta.changes) {
-    // Другой модератор успел раньше или работодатель закрыл вакансию
-    const now = await getJob(env, found.id);
-    return edit(env, chatId, q.message.message_id, `${text}\n\nУже ${job.STATUS[now.status]}.`);
+  // Если другой модератор или агент успел раньше, карточка просто покажет их решение
+  const now = await getJob(env, found.id);
+  await edit(env, q.message.chat.id, q.message.message_id, ...screen(job.moderationScreen(now)));
+  if (!meta.changes) return;
+  await refreshNotices(env, now);
+  await send(env, now.employer_chat, approve ? job.approvedText(now) : job.rejectedText(now));
+  // Не ждём часового обновления: сразу запускаем сборку, чтобы вакансия появилась на сайте и в канале за несколько минут
+  if (approve) wakeSite(env, ctx);
+}
+
+// Агент-модератор: решения из moderate.yml. Каждое решение: {id, verdict: approve|reject|edit, fields, reason}.
+// Поля приходят уже оформленными (зарплата, график, адрес, текст); edit только правит поля, не меняя статус.
+async function moderationApi(request, env, ctx) {
+  const key = await job.moderationKey(env.TELEGRAM_BOT_TOKEN);
+  if (request.headers.get("Authorization") !== `Bearer ${key}`) return new Response("forbidden", { status: 403 });
+  const body = await request.json().catch(() => null);
+  if (!body || !Array.isArray(body.decisions)) return Response.json({ error: "нужен {decisions: [...]}" }, { status: 400 });
+  const results = [];
+  for (const d of body.decisions) {
+    try {
+      results.push({ id: d.id, result: await review(env, d) });
+    } catch (err) {
+      console.error(err && err.stack ? err.stack : err);
+      results.push({ id: d.id, result: "error: сбой бота" });
+    }
   }
-  const who = job.employerName(q.from);
-  await edit(env, chatId, q.message.message_id, `${text}\n\n${approve ? "✅ Опубликовал" : "❌ Отклонил"}: ${job.esc(who)}`);
-  await send(env, found.employer_chat, approve ? job.approvedText(found) : job.rejectedText(found));
-  if (approve && env.GH_DISPATCH_TOKEN) {
-    // Не ждём часового обновления: сразу запускаем сборку, чтобы вакансия появилась на сайте за несколько минут
-    ctx?.waitUntil(dispatchUpdate(env).catch((err) => console.warn(String(err))));
-  }
+  if (results.some((r) => r.result === "approved" || r.result === "edited")) wakeSite(env, ctx);
+  return Response.json({ results });
+}
+
+async function review(env, d) {
+  const found = await getJob(env, Number(d.id));
+  if (!found) return "error: нет такой вакансии";
+  if (found.status !== "pending" && found.status !== "approved") return `skipped: ${job.STATUS[found.status]}`;
+  if (!["approve", "reject", "edit"].includes(d.verdict)) return "error: verdict = approve, reject или edit";
+  const { job: next, error } = job.reviewFields(found, d.fields);
+  if (error) return `error: ${error}`;
+  // Уже опубликованную (модератор нажал кнопку сам) агент только оформляет
+  const status = found.status === "approved" || d.verdict === "edit" ? found.status : d.verdict === "approve" ? "approved" : "rejected";
+  const decided = status !== found.status;
+  const { meta } = await env.DB.prepare(
+    `UPDATE jobs SET status = ?, title = ?, company = ?, salary = ?, schedule = ?, address = ?, details = ?,
+       salary_min = ?, salary_max = ?, salary_period = ?, reviewed_at = datetime('now'),
+       decided_by = CASE WHEN ? THEN 'агент' ELSE decided_by END,
+       approved_at = CASE WHEN ? = 'approved' AND approved_at IS NULL THEN datetime('now') ELSE approved_at END,
+       updated_at = datetime('now')
+     WHERE id = ? AND status = ?`,
+  )
+    .bind(status, next.title, next.company, next.salary, next.schedule, next.address, next.details,
+      next.salary_min ?? null, next.salary_max ?? null, next.salary_period ?? null, decided ? 1 : 0, status, found.id, found.status)
+    .run();
+  if (!meta.changes) return "skipped: вакансию только что изменили";
+  const saved = await getJob(env, found.id);
+  await refreshNotices(env, saved);
+  if (!decided) return "edited";
+  await send(env, saved.employer_chat, status === "approved" ? job.approvedText(saved) : job.rejectedText(saved, d.reason));
+  return status;
 }
 
 // Кандидат: отклик по ссылке t.me/vacantekz_bot?start=apply_<id> с сайта или из канала

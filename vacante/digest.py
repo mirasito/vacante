@@ -140,8 +140,14 @@ class D1:
 
     def approved_jobs(self) -> list[dict]:
         """Вакансии от работодателей, одобренные модератором и не закрытые (vacante.direct)."""
-        return self.query("SELECT id, city, title, company, salary, schedule, address, details, approved_at "
-                          "FROM jobs WHERE status = 'approved'")
+        return self.query("SELECT id, city, title, company, salary, schedule, address, details, approved_at, "
+                          "salary_min, salary_max, salary_period FROM jobs WHERE status = 'approved'")
+
+    def review_queue(self) -> list[dict]:
+        """Что ждёт агента-модератора: вакансии на проверке и опубликованные модератором без оформления."""
+        return self.query("SELECT id, status, reviewed_at, created_at, city, title, company, salary, schedule, address, "
+                          "details FROM jobs WHERE status = 'pending' OR (status = 'approved' AND reviewed_at IS NULL) "
+                          "ORDER BY id")
 
     def job_counts(self) -> dict:
         """Для админки: вакансии от работодателей по статусам и число откликов."""

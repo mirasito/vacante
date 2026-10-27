@@ -1,0 +1,44 @@
+# Решения агента-модератора по вакансиям от работодателей (.claude/skills/moderate-vacancies).
+# Агент запускает этот workflow со списком решений в JSON, а workflow передаёт их боту на /api/moderate.
+# Ключ считается из токена бота так же, как в самом боте (moderationKey в bot/src/employer.js),
+# поэтому отдельного секрета не нужно, а сам агент ключа не знает.
+name: Модерация вакансий
+
+on:
+  workflow_dispatch:
+    inputs:
+      decisions:
+        description: 'JSON: [{"id": 1, "verdict": "approve | reject | edit", "fields": {...}, "reason": "..."}]'
+        required: true
+
+concurrency:
+  group: moderate
+  cancel-in-progress: false
+
+jobs:
+  moderate:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      DECISIONS: ${{ inputs.decisions }}  # через переменную, а не подстановкой в скрипт
+    steps:
+      - name: Передать решения боту
+        run: |
+          if ! printf '%s' "$DECISIONS" | jq -e 'type == "array" and length > 0 and all(.[]; (.id | type) == "number")' >/dev/null; then
+            echo "::error::decisions: нужен непустой JSON-массив решений, у каждого числовой id"
+            exit 1
+          fi
+          sub=$(curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain" | jq -r '.result.subdomain')
+          key=$(printf 'moderation:%s' "$TELEGRAM_BOT_TOKEN" | sha256sum | cut -d' ' -f1)
+          echo "::add-mask::$key"
+          printf '%s' "$DECISIONS" | jq '{decisions: .}' \
+            | curl -fsS "https://vacante-bot.$sub.workers.dev/api/moderate" \
+                -H "Authorization: Bearer $key" -H "Content-Type: application/json" -d @- > result.json
+          jq -r '.results[] | "№\(.id): \(.result)"' result.json
+          if jq -e '[.results[] | select(.result | startswith("error"))] | length > 0' result.json >/dev/null; then
+            echo "::error::Часть решений бот не принял, см. строки с error выше"
+            exit 1
+          fi

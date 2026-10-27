@@ -37,7 +37,7 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)  # иначе в лог попадают адреса запросов, а в них токен бота
     if args.command == "collect":
-        stats = collect.run(args.config, args.data_dir, args.max_age_days, direct=direct_vacancies())
+        stats = collect.run(args.config, args.data_dir, args.max_age_days, direct=direct_vacancies(args.data_dir))
         logging.info("сбор: %s", stats)
     elif args.command == "post":
         token = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -73,8 +73,10 @@ def main() -> None:
         logging.info("сайт: %s страниц в %s", count, args.out)
 
 
-def direct_vacancies() -> list | None:
-    """Одобренные вакансии от работодателей из базы бота, или None, если её не прочитать."""
+def direct_vacancies(data_dir: Path) -> list | None:
+    """Одобренные вакансии от работодателей из базы бота, или None, если её не прочитать.
+
+    Заодно выкладывает в data/moderation.json очередь на проверку для агента-модератора."""
     env = {k: os.environ.get(k) for k in ("CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
     if not all(env.values()):
         return None
@@ -83,6 +85,10 @@ def direct_vacancies() -> list | None:
             d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
             if d1.database_id() is None:
                 return None
+            queue = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                     "jobs": [direct.queue_item(job) for job in d1.review_queue()]}
+            data_dir.mkdir(parents=True, exist_ok=True)
+            (data_dir / "moderation.json").write_text(json.dumps(queue, ensure_ascii=False, indent=1) + "\n", "utf-8")
             return [direct.to_vacancy(job) for job in d1.approved_jobs()]
     except (httpx.HTTPError, RuntimeError) as exc:
         logging.warning("вакансии от работодателей: %s", exc if isinstance(exc, RuntimeError) else type(exc).__name__)

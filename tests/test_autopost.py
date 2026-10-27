@@ -34,17 +34,30 @@ def test_pick_prefers_complete_fresh_unposted_and_varies_titles():
     assert autopost.pick(vacancies, "almaty", {"titles": ["Бариста"]}, NOON) is bare
 
 
-def test_post_has_main_fields_escaped():
-    v = make(5, "Кафе «Зерно & Ко» ищет бариста, 2/2, 12 000 тг за смену, питание\n" + "Обязанности: " + "варить кофе " * 40)
-    assert autopost.format_post(v) == (
-        "<b>Бариста</b>\n💰 от 12\u00a0000 ₸/день\n🕒 2/2\n🏢 Зерно &amp; Ко\n✅ Питание\n\n#вакансии #общепит")
+def test_caption_has_the_rest_escaped():
+    v = make(5, "Кафе «Зерно & Ко» ищет бариста, 2/2, 12 000 тг за смену, питание")
+    assert autopost.format_caption(v) == (
+        "В Зерно &amp; Ко требуется <b>бариста</b>\n🕒 График: 2/2\n✅ Питание\n\n#вакансии #общепит")
+    many = make(9, "Требуются повар и официант")
+    assert autopost.format_caption(many).startswith("Требуются <b>повар, официант</b>")
+
+
+def test_post_is_picture_with_map_button():
+    v = make(10, "Кафе «Зерно» ищет бариста, 12 000 тг за смену\n📍 Адрес: г. Алматы, ул. Жибек Жолы, 65А (Арбат)")
+    post = autopost.make_post(v, "https://vacante.kz")
+    assert post.photo.startswith(b"\x89PNG")
+    assert post.buttons == [("👆 Подробнее", "https://vacante.kz/v/chan-10/"),
+                            ("📍 Открыть в 2ГИС", "https://2gis.kz/almaty/search/"
+                             "%D1%83%D0%BB.%20%D0%96%D0%B8%D0%B1%D0%B5%D0%BA%20%D0%96%D0%BE%D0%BB%D1%8B%2C%2065%D0%90")]
+    no_address = autopost.make_post(make(11, "Кафе «Зерно» ищет бариста"), "https://vacante.kz")
+    assert [text for text, _ in no_address.buttons] == ["👆 Подробнее"]
 
 
 def test_run_posts_once_per_channel_and_remembers(tmp_path):
     save_vacancies(tmp_path, [make(6, "Кафе «Зерно» ищет бариста, 12 000 тг за смену"),
                               make(7, "Ресторан «Луна» ищет повара, 400 000 тг", city="astana")])
     sent = []
-    stats = autopost.run(tmp_path, "https://vacante.kz/", lambda chat, text, url: sent.append((chat, url)), now=NOON)
+    stats = autopost.run(tmp_path, "https://vacante.kz/", lambda chat, post: sent.append((chat, post.buttons[0][1])), now=NOON)
     assert stats == {"posted": 2, "failed": 0}
     assert sorted(sent) == [("@vacantealmaty", "https://vacante.kz/v/chan-6/"),
                             ("@vacanteastana", "https://vacante.kz/v/chan-7/")]
@@ -57,7 +70,7 @@ def test_run_posts_once_per_channel_and_remembers(tmp_path):
 def test_failed_send_is_not_remembered(tmp_path):
     save_vacancies(tmp_path, [make(8, "Кафе «Зерно» ищет бариста, 12 000 тг за смену")])
 
-    def fail(chat, text, url):
+    def fail(chat, post):
         raise RuntimeError("Telegram 403: bot is not a member of the channel chat")
 
     assert autopost.run(tmp_path, "https://vacante.kz", fail, now=NOON) == {"posted": 0, "failed": 1}

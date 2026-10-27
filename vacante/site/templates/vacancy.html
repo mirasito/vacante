@@ -15,6 +15,7 @@
     {% set s = salary_label(v) %}
     {% if s %}<dt>Зарплата</dt><dd>{{ s }}</dd>{% endif %}
     {% if v.schedule %}<dt>График</dt><dd>{{ v.schedule }}</dd>{% endif %}
+    {% if v.address %}<dt>Адрес</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">в 2ГИС</a>{% endif %}</dd>{% endif %}
   </dl>
   <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в оригинальном объявлении</a>
   <h2>Описание</h2>

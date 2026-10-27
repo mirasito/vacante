@@ -34,3 +34,13 @@ def test_links_follow_base_path_on_github_pages(tmp_path):
     assert 'href="/vacante/v/chan-6/"' in home
     assert 'href="/v/' not in home
     assert not (out / "CNAME").exists()
+
+
+def test_vacancy_page_shows_address_with_2gis(tmp_path):
+    raw = RawPost("telegram", "chan", 7, "https://t.me/chan/7", "Требуется повар, 300 000 тг\n📍 Адрес: ул. Сыганак, 2",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    page = (tmp_path / "public" / "v" / "chan-7" / "index.html").read_text("utf-8")
+    assert "<dt>Адрес</dt><dd>ул. Сыганак, 2" in page
+    assert 'href="https://2gis.kz/astana/search/%D1%83%D0%BB.%20%D0%A1%D1%8B%D0%B3%D0%B0%D0%BD%D0%B0%D0%BA%2C%202"' in page

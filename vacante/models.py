@@ -37,6 +37,7 @@ class Vacancy:
     posted_at: str  # ISO 8601, UTC
     fingerprint: str
     also_seen_in: list[str] = field(default_factory=list)
+    address: str | None = None  # без города: «ул. Сыганак, 2»
 
     def to_dict(self) -> dict:
         return asdict(self)

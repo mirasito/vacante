@@ -7,11 +7,12 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -26,6 +27,9 @@ TELEGRAM_CHANNELS = {
     "astana": "https://t.me/vacanteastana",
     "almaty": "https://t.me/vacantealmaty",
 }
+# Города, для которых знаем адрес страницы поиска на 2gis.kz.
+TWOGIS_CITIES = {"almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda"}
+_MAP_WORTHY = re.compile(r"(?i)\d|\b(?:трц|трк|тц|тд|бц|жк)\b")
 
 
 def money(value: int) -> str:
@@ -41,6 +45,15 @@ def salary_label(v: Vacancy) -> str | None:
     if v.salary_min is not None:
         return f"от {money(v.salary_min)} {unit}"
     return f"до {money(v.salary_max)} {unit}"
+
+
+def twogis_url(v: Vacancy) -> str | None:
+    """Поиск адреса в 2ГИС, чтобы сразу понять, где это. Только для адресов с домом или ТЦ."""
+    city = TWOGIS_CITIES.get(v.city or "")
+    if not city or not v.address or not _MAP_WORTHY.search(v.address):
+        return None
+    query = re.sub(r"\s*\([^)]*\)?|…", "", v.address).strip(" ,")
+    return f"https://2gis.kz/{city}/search/{quote(query)}"
 
 
 def age_label(posted_at: str, now: datetime) -> str:
@@ -63,7 +76,7 @@ def _env() -> Environment:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label)
+    env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url)
     return env
 
 

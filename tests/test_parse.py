@@ -5,6 +5,7 @@ import pytest
 from vacante.models import RawPost
 from vacante.parse import (
     clean_text,
+    detect_address,
     detect_city,
     detect_employer,
     detect_titles,
@@ -167,3 +168,21 @@ def test_students_perk_respects_refusal():
 
 def test_employer_stops_before_invite_verb():
     assert detect_employer("🔥 СЕТЬ СУПЕРМАРКЕТОВ SMALL ПРИГЛАШАЕТ В КОМАНДУ! 🔥") == "SMALL"
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("Бариста\n📍 Адрес: г. Астана, Есильский район, пр. Мангилик Ел, 49 (ЖК «Дрим Сити»)",
+     "пр. Мангилик Ел, 49 (ЖК «Дрим Сити»)"),
+    ("Бариста\n▫️ Адрес: ул. Сыганак, 2; ул. Кенесары, 47", "ул. Сыганак, 2"),
+    ("Адрес:\nАлматы, Жароков көшесі, 20", "Жароков көшесі, 20"),
+    ("📌Адреса для собеседования: ТРЦ «Хан Шатыр»", "ТРЦ «Хан Шатыр»"),
+    ("📍ул. Розыбакиева 181А (р-н MEGA)", "ул. Розыбакиева 181А (р-н MEGA)"),
+    ("📍 Место работы: Кульджинский тракт, 106", "Кульджинский тракт, 106"),
+    ("📍 График работы: 2/2", None),
+    ("▫️ Адрес: 6 точек по городу", None),
+    ("• Адресіңіз барынша жұмысқа жақын болуы керек", None),
+    ("Адрес: Алматы, Бостандыкский район", "Бостандыкский район"),
+    ("Отправьте резюме на адрес: hr@cafe.kz", None),
+])
+def test_address(text, expected):
+    assert detect_address(text) == expected

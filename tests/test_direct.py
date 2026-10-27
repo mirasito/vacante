@@ -114,3 +114,19 @@ def test_bot_job_goes_to_channel_at_once_but_not_at_night(tmp_path):
     assert state["ids"] == ["bot-7"] and state["last_at"] == "2026-10-27T06:30:00+00:00"
     # Второй раз не публикуется
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 8, tzinfo=timezone.utc))["posted"] == 0
+
+
+def test_bot_job_waits_for_agent_before_channel(tmp_path):
+    from vacante.store import save_vacancies
+    save_vacancies(tmp_path, [direct.to_vacancy({**JOB, "approved_at": "2026-10-27 06:50:00"})])
+    autopost.save_posted(tmp_path, {"almaty": {"ids": [], "titles": [], "last_at": "2026-10-27T06:00:00+00:00"}})
+    queue = tmp_path / "moderation.json"
+    sent = []
+    send = lambda chat, post: sent.append(chat)  # noqa: E731
+    # Модератор опубликовал №7 кнопкой, агент ещё не оформил: ни сразу, ни в общий слот
+    queue.write_text(json.dumps({"jobs": [{"id": 7, "status": "approved", "reviewed_at": None}]}), "utf-8")
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 9, tzinfo=timezone.utc))["posted"] == 0
+    # Агент оформил: очередь пуста, вакансия выходит
+    queue.write_text(json.dumps({"jobs": []}), "utf-8")
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 9, 5, tzinfo=timezone.utc))["direct"] == 1
+    assert sent == ["@vacantealmaty"]

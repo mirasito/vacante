@@ -140,10 +140,23 @@ def telegram_sender(client: httpx.Client, token: str) -> Sender:
     return send
 
 
+def awaiting_review(data_dir: Path) -> set[str]:
+    """Вакансии работодателей, которые агент-модератор ещё не проверил (очередь moderation.json).
+
+    Модератор может опубликовать вакансию кнопкой как есть: на сайте она появится сразу,
+    а в канал выйдет только после того, как агент её оформит."""
+    try:
+        queue = json.loads((data_dir / "moderation.json").read_text("utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return {f"{direct.SOURCE}-{job['id']}" for job in queue.get("jobs", [])}
+
+
 def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None) -> dict:
     now = now or datetime.now(timezone.utc)
     base_url = base_url.rstrip("/")
-    vacancies = load_vacancies(data_dir)
+    held = awaiting_review(data_dir)
+    vacancies = [v for v in load_vacancies(data_dir) if v.id not in held]
     posted = load_posted(data_dir)
     stats = {"posted": 0, "failed": 0}
     for city, chat in CHANNELS.items():

@@ -1,8 +1,8 @@
 """Автопостинг свежих вакансий в свои Telegram-каналы vacante.
 
 Каждый час после сбора: если для канала подошло время, выбираем лучшую свежую вакансию
-его города и публикуем её с кнопкой на карточку сайта. Что уже опубликовано, хранится
-в posted.json рядом с вакансиями.
+его города и публикуем картинку-карточку (должность, заведение, адрес, зарплата) с подписью
+и кнопками «Подробнее» и «2ГИС». Что уже опубликовано, хранится в posted.json рядом с вакансиями.
 """
 
 from __future__ import annotations
@@ -11,13 +11,15 @@ import html
 import json
 import logging
 from collections.abc import Callable
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import httpx
 
+from vacante import card
 from vacante.models import Vacancy
-from vacante.site.build import salary_label
+from vacante.site.build import twogis_url
 from vacante.store import load_vacancies
 
 log = logging.getLogger(__name__)
@@ -34,7 +36,15 @@ KEEP = 500  # сколько опубликованных id помнить на
 HASHTAGS = {"horeca": "#общепит", "retail": "#продажи", "warehouse": "#склад", "delivery": "#доставка",
             "service": "#сервис", "construction": "#стройка", "callcenter": "#колцентр", "other": ""}
 
-Sender = Callable[[str, str, str], None]
+
+@dataclass
+class Post:
+    caption: str  # HTML-разметка Telegram
+    photo: bytes  # PNG
+    buttons: list[tuple[str, str]]  # (текст, ссылка)
+
+
+Sender = Callable[[str, Post], None]
 
 
 def load_posted(data_dir: Path) -> dict:
@@ -69,32 +79,41 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> Vac
     return max(candidates, key=lambda v: (_score(v), v.posted_at), default=None)
 
 
-def format_post(v: Vacancy) -> str:
-    """Текст поста в HTML-разметке Telegram: только главное, полный текст на карточке сайта."""
+def _lower_first(title: str) -> str:
+    return title[:1].lower() + title[1:] if title[1:2].islower() else title  # «SMM-менеджер» не трогаем
+
+
+def format_caption(v: Vacancy) -> str:
+    """Подпись под картинкой: на картинке должность, заведение, адрес и зарплата, здесь остальное."""
     e = html.escape
-    lines = [f"<b>{e(v.title)}</b>"]
-    salary = salary_label(v)
-    if salary:
-        lines.append(f"💰 {e(salary)}")
+    titles = [_lower_first(t) for t in v.title.split(", ")]
+    need = "требуется" if len(titles) == 1 else "требуются"
+    what = f"<b>{e(', '.join(titles))}</b>"
+    lines = [f"В {e(v.employer)} {need} {what}" if v.employer else f"{need.capitalize()} {what}"]
     if v.schedule:
-        lines.append(f"🕒 {e(v.schedule)}")
-    if v.employer:
-        lines.append(f"🏢 {e(v.employer)}")
+        lines.append(f"🕒 График: {e(v.schedule)}")
     if v.perks:
         lines.append(f"✅ {e(' · '.join(v.perks))}")
     lines += ["", f"#вакансии {HASHTAGS[v.category]}".strip()]
     return "\n".join(lines)
 
 
+def make_post(v: Vacancy, base_url: str) -> Post:
+    buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
+    if url := twogis_url(v):
+        buttons.append(("📍 Открыть в 2ГИС", url))
+    return Post(format_caption(v), card.render(v), buttons)
+
+
 def telegram_sender(client: httpx.Client, token: str) -> Sender:
-    def send(chat: str, text: str, url: str) -> None:
-        r = client.post(f"https://api.telegram.org/bot{token}/sendMessage", json={
-            "chat_id": chat,
-            "text": text,
-            "parse_mode": "HTML",
-            "disable_web_page_preview": True,
-            "reply_markup": {"inline_keyboard": [[{"text": "Подробнее и откликнуться", "url": url}]]},
-        })
+    def send(chat: str, post: Post) -> None:
+        markup = {"inline_keyboard": [[{"text": text, "url": url} for text, url in post.buttons]]}
+        r = client.post(
+            f"https://api.telegram.org/bot{token}/sendPhoto",
+            data={"chat_id": chat, "caption": post.caption, "parse_mode": "HTML",
+                  "reply_markup": json.dumps(markup, ensure_ascii=False)},
+            files={"photo": ("vacancy.png", post.photo, "image/png")},
+        )
         if r.status_code != 200:
             # В логах только ответ Telegram: адрес запроса содержит токен
             json_body = r.headers.get("content-type", "").startswith("application/json")
@@ -116,7 +135,7 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
         if v is None:
             continue
         try:
-            send(chat, format_post(v), f"{base_url}/v/{v.id}/")
+            send(chat, make_post(v, base_url))
         except (httpx.HTTPError, RuntimeError) as exc:
             log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
             stats["failed"] += 1

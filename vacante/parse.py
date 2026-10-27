@@ -358,6 +358,49 @@ def detect_employer(text: str) -> str | None:
     return None
 
 
+_ADDRESS_LABEL = re.compile(
+    r"(?im)^[^\w\n]*(?:адрес\w*|мекенжай\w*|место работы|локаци\w*)(?:[ \t][^:\n]{1,30})?[ \t]*[:.\-–—][ \t]*(.*)$"
+)
+_PIN_LINE = re.compile(r"(?m)^[ \t]*📍[ \t]*(.+)$")
+_INLINE_LABEL = re.compile(r"(?i)^(?:[^:\d\n]{0,25}?\b(?:место(?: работы)?|мекенжай\w*|район|локаци\w*)\s*:|.{0,40}?по адресу\s*:?)\s*")
+_NOT_PLACE = re.compile(r"(?i)график|зарплат|з/п|оплат|опыт|требован|обязанност|точ(?:ек|ки)\b|по (?:всему )?город|ближайш|филиал|@|почт")
+_PLACE_WORD = re.compile(
+    r"(?i)\d|\bул\b|улиц|проспект|\bпр\b|переул|мкр|микрорайон|\b(?:жк|трц|трк|тц|тд|бц)\b|көше|даңғыл|район|берег|рынок|базар"
+)
+_CITY_NAMES = "|".join(name for name, _ in CITIES.values()) + "|нур-султан"
+_CITY_PREFIX = re.compile(rf"(?i)^(?:(?:г\.\s*|город\s+)(?:{_CITY_NAMES})\b|(?:{_CITY_NAMES})(?=\s*[,(]|\s*$))[\s,]*")
+_CITY_SUFFIX = re.compile(rf"(?i),\s*(?:г\.?\s*)?(?:{_CITY_NAMES})\s*$")
+_DISTRICT_PREFIX = re.compile(r"^[А-ЯЁ][а-яё]+ский район,\s*(?=\S)")
+
+
+def _shorten(text: str, limit: int) -> str:
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" ,.;–-")
+    return cut + "…"
+
+
+def detect_address(text: str) -> str | None:
+    """Адрес из строки «Адрес: …» или «📍 …», без названия города: город и так известен."""
+    m = _ADDRESS_LABEL.search(text)
+    if m:
+        line = m[1].strip()
+        if not line:  # «Адрес:» и сам адрес строкой ниже
+            line = next((s.strip() for s in text[m.end():].splitlines() if s.strip()), "")
+    else:
+        pins = (_INLINE_LABEL.sub("", p[1].strip()) for p in _PIN_LINE.finditer(text))
+        line = next((p for p in pins if _PLACE_WORD.search(p) and not _NOT_PLACE.search(p)), "")
+    line = re.split(r";|\s/\s", line)[0]
+    line = re.sub(r"^[^\w«\"(]+", "", line).strip(" \t.,:")
+    line = _CITY_SUFFIX.sub("", _CITY_PREFIX.sub("", line))
+    if line.startswith("(") and line.endswith(")"):
+        line = line[1:-1].strip()
+    line = _DISTRICT_PREFIX.sub("", line).strip(" .,")
+    if _NOT_PLACE.search(line) or not _PLACE_WORD.search(line) or not re.search(r"[^\W\d_]{3}", line):
+        return None
+    return _shorten(line, 70)
+
+
 def clean_text(text: str) -> str:
     """Убирает контакты, ссылки и рекламные хвосты каналов: откликаются в источнике."""
     lines = []
@@ -415,4 +458,5 @@ def parse_post(post: RawPost) -> Vacancy | None:
         source_url=post.url,
         posted_at=post.posted_at.isoformat(),
         fingerprint=fingerprint(text),
+        address=detect_address(text),
     )

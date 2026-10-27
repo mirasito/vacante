@@ -54,7 +54,12 @@ jobs:
           fi
 
       - name: Собрать сайт
-        run: python -m vacante build --data-dir data --out public --base-url "${{ vars.SITE_URL || 'https://vacante.kz' }}"
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          # Пока домен не подключён, сайт живёт на <owner>.github.io/<repo>
+          : "${SITE_URL:=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}}"
+          python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -8,15 +8,15 @@
     <input id="q" type="search" placeholder="Должность, например «официант»" autocomplete="off">
   </div>
   <nav class="chips">
-    <a class="chip{% if not city %} on{% endif %}" href="/">Все города</a>
+    <a class="chip{% if not city %} on{% endif %}" href="{{ root }}/">Все города</a>
     {% for slug, n in city_counts[:8] %}
-    <a class="chip{% if city == slug %} on{% endif %}" href="/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
+    <a class="chip{% if city == slug %} on{% endif %}" href="{{ root }}/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
     {% endfor %}
   </nav>
   {% if city %}
   <nav class="chips">
     {% for cat, n in category_counts %}
-    <a class="chip{% if category == cat %} on{% endif %}" href="/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
+    <a class="chip{% if category == cat %} on{% endif %}" href="{{ root }}/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
     {% endfor %}
   </nav>
   {% endif %}

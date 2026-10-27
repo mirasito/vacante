@@ -6,12 +6,12 @@
 <title>{% block title %}vacante.kz — работа рядом с домом{% endblock %}</title>
 <meta name="description" content="{% block description %}Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.{% endblock %}">
 <link rel="canonical" href="{{ base_url }}/{{ path ~ '/' if path else '' }}">
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="{{ root }}/static/style.css">
 {% block head %}{% endblock %}
 </head>
 <body>
 <header class="topbar">
-  <a class="logo" href="/"><span class="dot">.</span>vacante</a>
+  <a class="logo" href="{{ root }}/"><span class="dot">.</span>vacante</a>
   <span class="tagline">работа рядом с домом</span>
 </header>
 <main class="wrap">

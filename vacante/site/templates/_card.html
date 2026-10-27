@@ -1,4 +1,4 @@
-<a class="card" href="/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-search="{{ (v.title ~ ' ' ~ (v.employer or '') ~ ' ' ~ v.text) | lower }}">
+<a class="card" href="{{ root }}/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-search="{{ (v.title ~ ' ' ~ (v.employer or '') ~ ' ' ~ v.text) | lower }}">
   <div class="card-head">
     <h3>{{ v.title }}</h3>
     <span class="age">{{ age(v) }}</span>

@@ -21,3 +21,16 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     assert (out / "almaty" / "horeca" / "index.html").exists()
     assert "https://vacante.kz/almaty/" in (out / "sitemap.xml").read_text("utf-8")
     assert (out / "CNAME").read_text().strip() == "vacante.kz"
+
+
+def test_links_follow_base_path_on_github_pages(tmp_path):
+    raw = RawPost("telegram", "chan", 6, "https://t.me/chan/6", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://mirasito.github.io/vacante", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    home = (out / "index.html").read_text("utf-8")
+    assert 'href="/vacante/static/style.css"' in home
+    assert 'href="/vacante/v/chan-6/"' in home
+    assert 'href="/v/' not in home
+    assert not (out / "CNAME").exists()

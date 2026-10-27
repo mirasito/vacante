@@ -12,6 +12,8 @@
 4. **Сайт** (`vacante/site/`). Главная, страницы городов и пар «город + сфера» для поиска, карточка вакансии с разметкой JobPosting для Google, `sitemap.xml`.
 5. **Автопостинг** (`vacante/autopost.py`). С 9 до 21 часа по времени Казахстана, примерно раз в 3 часа, в @vacanteastana и @vacantealmaty уходит лучшая свежая вакансия города. Пост — картинка (`vacante/card.py`: должность, заведение, адрес, зарплата) с подписью про график и условия и кнопками «Подробнее» (карточка сайта) и «Открыть в 2ГИС», если в объявлении есть адрес. Опубликованное запоминается в `posted.json` ветки `data`.
 
+6. **Бот для соискателей** (`bot/`, `vacante/digest.py`). В @vacantekz_bot человек выбирает город, сферы и условия («без опыта», «зарплата от…»), сразу получает три последние подходящие вакансии, а дальше раз в час, с 8 до 22, подборку новых. Диалог работает на Cloudflare Workers, подписки лежат в Cloudflare D1, а подборки рассылает часовой workflow командой `python -m vacante digest`. Уже разосланное запоминается в `digest.json` ветки `data`. Первые примеры бот берёт из `feed.json`, который публикует сайт.
+
 ## Запуск локально
 
 ```bash
@@ -22,6 +24,7 @@ python -m vacante collect --data-dir data # сбор (нужен доступ к
 python -m vacante build --data-dir data --out public --base-url http://localhost:8000
 TELEGRAM_BOT_TOKEN=... python -m vacante post --data-dir data  # публикация в каналы
 python -m http.server 8000 -d public
+cd bot && npm install && node --test   # тесты бота
 ```
 
 ## Включение на GitHub (один раз)
@@ -31,6 +34,8 @@ python -m http.server 8000 -d public
 3. Пока домен не подключён, сайт открывается по адресу `https://mirasito.github.io/vacante`.
 4. Чтобы подключить vacante.kz, в DNS домена добавьте записи для GitHub Pages (четыре `A` для `vacante.kz`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, и `CNAME` для `www` на `mirasito.github.io`) и укажите домен в Settings → Pages → Custom domain. Следующий сбор сам возьмёт адрес сайта из настроек Pages. Переменная `SITE_URL` (Settings → Secrets and variables → Actions → Variables) нужна, только если адрес надо задать вручную.
 5. Для автопостинга создайте бота в @BotFather, сделайте его админом обоих каналов с правом публиковать сообщения и сохраните токен как секрет `TELEGRAM_BOT_TOKEN` (Settings → Secrets and variables → Actions → Secrets). Без секрета шаг публикации просто пропускается.
+
+6. Для бота: зарегистрируйтесь на Cloudflare, один раз откройте раздел Workers & Pages (так появится адрес workers.dev), создайте API-токен по шаблону «Edit Cloudflare Workers» с добавленным правом «Account → D1 → Edit» и сохраните секреты `CLOUDFLARE_API_TOKEN` и `CLOUDFLARE_ACCOUNT_ID`. Затем запустите **Actions → «Бот» → Run workflow**: он создаст базу, выложит бота и подключит вебхук. Дальше бот выкладывается сам при каждом изменении в `bot/`.
 
 ## Каналы
 

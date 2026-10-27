@@ -16,3 +16,9 @@ jobs:
           cache: pip
       - run: pip install ".[dev]"
       - run: python -m pytest -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Тесты бота
+        working-directory: bot
+        run: node --test

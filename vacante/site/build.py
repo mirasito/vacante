@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 import re
 import shutil
@@ -33,6 +34,7 @@ TELEGRAM_CHANNELS = {
 }
 # Города, для которых знаем адрес страницы поиска на 2gis.kz.
 TWOGIS_CITIES = {"almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda"}
+FEED_SIZE = 300
 # Подтверждение сайта в Google Search Console и Яндекс Вебмастере (метатеги) и счётчик
 # Яндекс Метрики. Значения публичные, они всё равно видны в коде страницы.
 SITE_TAGS = {"google_verification": "GQjMSgo5pc-ADt2n0s-GBlVU9kMnuA9jWIZo2WQAejA",
@@ -75,6 +77,17 @@ def twogis_url(v: Vacancy) -> str | None:
         return None
     query = re.sub(r"\s*\([^)]*\)?|…", "", v.address).strip(" ,")
     return f"https://2gis.kz/{city}/search/{quote(query)}"
+
+
+def bot_item(v: Vacancy, base_url: str) -> str:
+    """Вакансия в подборке бота (HTML-разметка Telegram). Её же бот берёт из feed.json для первых примеров."""
+    e = html.escape
+    lines = [f'<b><a href="{base_url}/v/{v.id}/">{e(v.title)}</a></b>' + (f" · {e(v.employer)}" if v.employer else "")]
+    facts = [f"💰 {e(s)}" for s in [salary_label(v)] if s] + ([f"🕒 {e(v.schedule)}"] if v.schedule else [])
+    if facts:
+        lines.append(" · ".join(facts))
+    lines.append(f"📍 {e(city_name(v.city))}" + (f", {e(v.address)}" if v.address else ""))
+    return "\n".join(lines)
 
 
 def age_label(posted_at: str, now: datetime) -> str:
@@ -180,6 +193,10 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
         write(f"v/{v.id}", "vacancy.html", v=v, ld=job_posting_ld(v, base_url), channels=TELEGRAM_CHANNELS)
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404"), "utf-8")
+    # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки
+    feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": v.perks, "pay": monthly_pay(v) or 0,
+             "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
+    (out / "feed.json").write_text(json.dumps({"vacancies": feed}, ensure_ascii=False), "utf-8")
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n", "utf-8")
     (out / "sitemap.xml").write_text(env.get_template("sitemap.xml").render(pages=pages), "utf-8")
     if base_url.startswith("https://") and "github.io" not in base_url:

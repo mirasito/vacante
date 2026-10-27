@@ -1,0 +1,81 @@
+# Выкладка бота для соискателей @vacantekz_bot на Cloudflare Workers: база D1 с подписками,
+# код из bot/, токен бота и вебхук Telegram. Нужны секреты CLOUDFLARE_API_TOKEN,
+# CLOUDFLARE_ACCOUNT_ID и TELEGRAM_BOT_TOKEN; пока их нет, выкладка пропускается.
+name: Бот
+
+on:
+  push:
+    branches: [main]
+    paths: ["bot/**", ".github/workflows/bot.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: bot
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    defaults:
+      run:
+        working-directory: bot
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Проверить секреты
+        id: secrets
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ] && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Нет секретов Cloudflare или бота, выкладку пропускаю"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.secrets.outputs.ready
+        with:
+          node-version: "22"
+
+      - name: Установить wrangler
+        if: steps.secrets.outputs.ready
+        run: npm ci --no-audit --no-fund
+
+      - name: База D1
+        if: steps.secrets.outputs.ready
+        run: |
+          api="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/d1/database"
+          auth="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+          id=$(curl -fsS -H "$auth" "$api?name=vacante-bot" | jq -r '.result[] | select(.name == "vacante-bot") | .uuid' | head -1)
+          if [ -z "$id" ]; then
+            id=$(curl -fsS -H "$auth" -H "Content-Type: application/json" -d '{"name":"vacante-bot"}' "$api" | jq -r '.result.uuid')
+          fi
+          sed -i "s/DATABASE_ID/$id/" wrangler.toml
+          npx wrangler d1 migrations apply vacante-bot --remote
+
+      - name: Выложить бота
+        if: steps.secrets.outputs.ready
+        run: |
+          npx wrangler deploy
+          printf '%s' "$TELEGRAM_BOT_TOKEN" | npx wrangler secret put TELEGRAM_BOT_TOKEN
+
+      - name: Вебхук и команды в Telegram
+        if: steps.secrets.outputs.ready
+        run: |
+          sub=$(curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain" | jq -r '.result.subdomain')
+          # Тот же секрет вычисляет бот (webhookSecret в bot/src/logic.js)
+          secret=$(printf '%s' "$TELEGRAM_BOT_TOKEN" | sha256sum | cut -c1-32)
+          tg="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN"
+          jq -n --arg url "https://vacante-bot.$sub.workers.dev/telegram" --arg secret "$secret" \
+            '{url: $url, secret_token: $secret, allowed_updates: ["message", "callback_query"]}' \
+            | curl -fsS "$tg/setWebhook" -H "Content-Type: application/json" -d @- | jq -c '{ok, description}'
+          jq -n '{commands: [
+              {command: "start", description: "Подписаться на новые вакансии"},
+              {command: "settings", description: "Изменить город, сферу и условия"},
+              {command: "stop", description: "Остановить рассылку"}]}' \
+            | curl -fsS "$tg/setMyCommands" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
+          echo "Бот: https://vacante-bot.$sub.workers.dev"

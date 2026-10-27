@@ -5,7 +5,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, collect
+from vacante import autopost, collect, digest
 from vacante.site import build
 
 
@@ -21,6 +21,10 @@ def main() -> None:
     p_post = sub.add_parser("post", help="опубликовать свежие вакансии в свои Telegram-каналы")
     p_post.add_argument("--data-dir", type=Path, default=Path("data"))
     p_post.add_argument("--base-url", default="https://vacante.kz")
+
+    p_digest = sub.add_parser("digest", help="разослать подписчикам бота подборки новых вакансий")
+    p_digest.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_digest.add_argument("--base-url", default="https://vacante.kz")
 
     p_build = sub.add_parser("build", help="собрать статический сайт")
     p_build.add_argument("--data-dir", type=Path, default=Path("data"))
@@ -41,6 +45,20 @@ def main() -> None:
         with httpx.Client(timeout=30) as client:
             stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token))
         logging.info("автопостинг: %s", stats)
+    elif args.command == "digest":
+        env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
+        if not all(env.values()):
+            logging.info("подборки: нет секретов бота или Cloudflare, пропускаю")
+            return
+        with httpx.Client(timeout=30) as client:
+            d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+            if d1.database_id() is None:
+                logging.info("подборки: базы бота ещё нет (бот не выложен), пропускаю")
+                return
+            stats = digest.run(args.data_dir, args.base_url, d1.subscriptions,
+                               digest.telegram_sender(client, env["TELEGRAM_BOT_TOKEN"]))
+            d1.deactivate(stats["blocked"])
+        logging.info("подборки: %s", stats)
     else:
         count = build.build(args.data_dir, args.out, args.base_url)
         logging.info("сайт: %s страниц в %s", count, args.out)

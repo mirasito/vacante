@@ -1,0 +1,15 @@
+# Бот для соискателей @vacantekz_bot на Cloudflare Workers (бесплатный тариф).
+# Выкладывается workflow .github/workflows/bot.yml; database_id он подставляет сам.
+name = "vacante-bot"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+[vars]
+SITE_URL = "https://vacante.kz"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "vacante-bot"
+database_id = "DATABASE_ID"
+migrations_dir = "migrations"

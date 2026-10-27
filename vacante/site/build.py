@@ -33,6 +33,9 @@ TELEGRAM_CHANNELS = {
 }
 # Города, для которых знаем адрес страницы поиска на 2gis.kz.
 TWOGIS_CITIES = {"almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda"}
+# Подтверждение сайта в Google Search Console и Яндекс Вебмастере (метатеги) и счётчик
+# Яндекс Метрики. Значения публичные, они всё равно видны в коде страницы.
+SITE_TAGS = {"google_verification": "", "yandex_verification": "", "metrika_id": ""}
 _MAP_WORTHY = re.compile(r"(?i)\d|\b(?:трц|трк|тц|тд|бц|жк)\b")
 
 
@@ -136,7 +139,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     env = _env()
     # root: путь сайта без домена, чтобы ссылки работали и на vacante.kz, и на <user>.github.io/vacante
     env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url,
-                       root=urlparse(base_url).path.rstrip("/"))
+                       root=urlparse(base_url).path.rstrip("/"), **SITE_TAGS)
 
     if out.exists():
         shutil.rmtree(out)

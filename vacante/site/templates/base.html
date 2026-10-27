@@ -7,6 +7,8 @@
 <meta name="description" content="{% block description %}Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.{% endblock %}">
 <link rel="canonical" href="{{ base_url }}/{{ path ~ '/' if path else '' }}">
 <link rel="stylesheet" href="{{ root }}/static/style.css">
+{% if google_verification %}<meta name="google-site-verification" content="{{ google_verification }}">{% endif %}
+{% if yandex_verification %}<meta name="yandex-verification" content="{{ yandex_verification }}">{% endif %}
 {% block head %}{% endblock %}
 </head>
 <body>
@@ -21,5 +23,12 @@
   <p>vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.</p>
   <p>Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.</p>
 </footer>
+{% if metrika_id %}
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym({{ metrika_id }}, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/{{ metrika_id }}" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+{% endif %}
 </body>
 </html>

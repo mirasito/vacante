@@ -122,3 +122,39 @@ def test_employer_stays_on_its_line():
 def test_generic_staff_falls_back_to_other():
     v = parse_post(post("Сеть игровых площадок Play Smart ищет сотрудника\nГрафик 5/2\nОклад 350 000 тг"))
     assert (v.title, v.category, v.employer) == ("Сотрудник", "other", "Play Smart")
+
+
+def test_schedule_ignores_house_numbers():
+    assert parse_schedule("Адрес: ул. Шаймердена, 11/4\nГрафик сменный") is None
+    assert parse_schedule("График работы: 14/2") == "14/2"
+
+
+def test_employer_from_labels_and_invites():
+    assert detect_employer("✅ Название компании: Coffee Boom ☕\nТребуется повар") == "Coffee Boom"
+    assert detect_employer("🏭 Saitama_Japan приглашает на работу (Алматы)") == "Saitama_Japan"
+    assert detect_employer("Компания: Не указана\nТребуется грузчик") is None
+    assert detect_employer("Работодатель: Администратор\nНужен кассир") is None
+
+
+@pytest.mark.parametrize("text", [
+    "Требуется инженер по охране труда, водитель служебного авто, 300 000 тг",
+    "Супервайзер в отдел взыскания, удалённо. Доход: $1,300 – 2,400. Нужен курьер документов",
+    "Требуется официант в ресторан в Ташкенте, оплата 5 000 000 сум",
+])
+def test_rejects_white_collar_and_foreign(text):
+    assert parse_post(post(text)) is None
+
+
+def test_keeps_blue_collar_near_misleading_words():
+    assert parse_post(post("Требуются помощники воспитателя (няни), 200 000 тг")).title == "Помощник воспитателя, Няня"
+    shop = parse_post(post("Магазин на Ташкентском тракте: требуется продавец, 250 000 тг"))
+    assert shop is not None and shop.city == "almaty"
+
+
+def test_salary_ignores_foreign_currency():
+    assert parse_salary("Доход: $1,300 – 2,400 на руки") == (None, None, None)
+
+
+def test_generic_title_only_without_specific_one():
+    assert detect_titles("Требуются\nработники в цех, 300 000 тг") == [("Сотрудник", "other")]
+    assert detect_titles("Требуются сотрудники: кассир") == [("Кассир", "retail")]

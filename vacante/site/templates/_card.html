@@ -1,4 +1,4 @@
-<a class="card" href="{{ root }}/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-pay="{{ monthly_pay(v) or 0 }}" data-perks="{{ v.perks | join('|') }}" data-search="{{ (v.title ~ ' ' ~ (v.employer or '') ~ ' ' ~ v.text) | lower }}">
+<a class="card" href="{{ root }}/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-posted="{{ v.posted_at }}" data-pay="{{ monthly_pay(v) or 0 }}" data-perks="{{ v.perks | join('|') }}" data-search="{{ search_text(v) }}">
   <div class="card-head">
     <h3>{{ v.title }}</h3>
     <span class="age">{{ age(v) }}</span>
@@ -9,6 +9,8 @@
     {% if v.source == "bot" %}<span class="pill direct-pill">От работодателя</span>{% endif %}
     {% set s = salary_label(v) %}
     {% if s %}<span class="pill salary">{{ s }}</span>{% endif %}
+    {% set m = monthly_label(v) %}
+    {% if m %}<span class="pill monthly">{{ m }}</span>{% endif %}
     {% for perk in v.perks[:3] %}<span class="pill">{{ perk }}</span>{% endfor %}
   </div>
 </a>

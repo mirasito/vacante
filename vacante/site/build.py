@@ -37,6 +37,9 @@ TELEGRAM_CHANNELS = {
 # Города, для которых знаем адрес страницы поиска на 2gis.kz.
 TWOGIS_CITIES = {"almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda"}
 FEED_SIZE = 300
+# Сколько первых символов текста объявления попадает в поиск на странице списка: страница
+# содержит все вакансии города, и полный текст каждой сделал бы её слишком тяжёлой для телефона.
+SEARCH_TEXT = 300
 # Подтверждение сайта в Google Search Console и Яндекс Вебмастере (метатеги) и счётчик
 # Яндекс Метрики. Значения публичные, они всё равно видны в коде страницы.
 SITE_TAGS = {"google_verification": "GQjMSgo5pc-ADt2n0s-GBlVU9kMnuA9jWIZo2WQAejA",
@@ -62,6 +65,24 @@ def salary_label(v: Vacancy) -> str | None:
 def monthly_pay(v: Vacancy) -> int | None:
     top = v.salary_max or v.salary_min
     return top * PER_MONTH[v.salary_period] if top else None
+
+
+def monthly_label(v: Vacancy) -> str | None:
+    """Оплата за смену или час в пересчёте на месяц, чтобы сравнивать с месячными: «≈ 264 000 ₸/мес»."""
+    if v.salary_period in (None, "month") or (v.salary_min is None and v.salary_max is None):
+        return None
+    k = PER_MONTH[v.salary_period]
+    lo = v.salary_min * k if v.salary_min is not None else None
+    hi = v.salary_max * k if v.salary_max is not None else None
+    if lo is not None and hi is not None:
+        return f"≈ {money(lo)} – {money(hi)} ₸/мес"
+    return f"≈ от {money(lo)} ₸/мес" if lo is not None else f"≈ до {money(hi)} ₸/мес"
+
+
+def search_text(v: Vacancy) -> str:
+    """По чему ищет строка поиска на странице списка: должность, заведение, условия и начало текста."""
+    parts = [v.title, v.employer or "", v.schedule or "", v.address or "", " ".join(v.perks), v.text[:SEARCH_TEXT]]
+    return " ".join(parts).lower()
 
 
 def plural(n: int, one: str, few: str, many: str) -> str:
@@ -113,7 +134,8 @@ def _env() -> Environment:
         lstrip_blocks=True,
     )
     env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
-                       monthly_pay=monthly_pay, money=money, FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL)
+                       monthly_pay=monthly_pay, monthly_label=monthly_label, search_text=search_text, money=money,
+                       FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL)
     env.filters["plural"] = plural
     return env
 
@@ -176,12 +198,13 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
             by_city[v.city].append(v)
     city_counts = sorted(((slug, len(items)) for slug, items in by_city.items()), key=lambda x: -x[1])
 
-    write("", "list.html", heading="Вакансии", vacancies=vacancies[:300], total=len(vacancies),
+    # На страницах списка все вакансии: фильтры и сортировка работают в браузере и должны видеть каждую
+    write("", "list.html", heading="Вакансии", vacancies=vacancies, total=len(vacancies),
           city=None, category=None, city_counts=city_counts, category_counts=_category_counts(vacancies),
           channels=TELEGRAM_CHANNELS)
 
     for slug, items in by_city.items():
-        write(slug, "list.html", heading=f"Работа в {_locative(slug)}", vacancies=items[:300], total=len(items),
+        write(slug, "list.html", heading=f"Работа в {_locative(slug)}", vacancies=items, total=len(items),
               city=slug, category=None, city_counts=city_counts, category_counts=_category_counts(items),
               channels=TELEGRAM_CHANNELS)
         by_cat: dict[str, list[Vacancy]] = defaultdict(list)

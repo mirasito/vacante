@@ -89,6 +89,13 @@
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
  },
+ "almaty:adriano": {
+  "name": "ADRIANO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
  "almaty:anajer": {
   "name": "ANAJER",
   "city": "almaty",
@@ -110,6 +117,20 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "almaty:atamura group": {
+  "name": "Atamura Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "atamura.group",
+  "website": "https://atamuragroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055250581",
+  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:dino fest": {
   "name": "DINO FEST",
   "city": "almaty",
@@ -121,6 +142,13 @@
   "avatar_source": "manual",
   "source": "https://2gis.kz/almaty/firm/70000001110093666"
  },
+ "almaty:family store": {
+  "name": "FAMILY STORE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
  "almaty:french bakery": {
   "name": "French Bakery",
   "city": "almaty",
@@ -129,6 +157,15 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "french_bakery_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001033669069"
+ },
+ "almaty:glasman trade": {
+  "name": "GLASMAN TRADE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "glasman.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001024452567"
  },
  "almaty:kulikov": {
   "name": "Kulikov",
@@ -158,6 +195,15 @@
    "website"
   ]
  },
+ "almaty:marrone rosso тм тоо dand m investments": {
+  "name": "Marrone Rosso, ТМ ( ТОО DAND M INVESTMENTS)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "marrone_rosso",
+  "source": "https://2gis.kz/almaty/firm/9429940000788591"
+ },
  "almaty:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "almaty",
@@ -173,6 +219,54 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:mycar almaty": {
+  "name": "MyCar Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "mycar__almaty",
+  "website": "https://mycar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001051848961",
+  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "eaf19c31fb17a1c0.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:oi qaragai": {
+  "name": "Oi-Qaragai",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "oiqaragai",
+  "source": "https://www.instagram.com/oiqaragai/"
+ },
+ "almaty:qqq qazaqstan qamqor qyzmet": {
+  "name": "QQQ - Qazaqstan Qamqor Qyzmet",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:royal petrol": {
+  "name": "Royal Petrol",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "royalpetrol.kz",
+  "website": "https://royal-petrol.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000825065",
+  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "70f1f0b170cc8298.jpg",
+  "avatar_source": "website"
  },
  "almaty:small": {
   "name": "SMALL",
@@ -267,6 +361,13 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:алматыгазмонтаж ао": {
+  "name": "АЛМАТЫГАЗМОНТАЖ, АО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
  "almaty:бакорда": {
   "name": "Бакорда",
   "city": "almaty",
@@ -309,12 +410,26 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:заммлер казахстан": {
+  "name": "ЗАММЛЕР КАЗАХСТАН",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
  "almaty:казоборонсервис": {
   "name": "КАЗОБОРОНСЕРВИС",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:котофей казахстан": {
+  "name": "Котофей Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
  },
  "almaty:лаффа": {
   "name": "Лаффа",
@@ -391,12 +506,33 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:ресурс плюс kz": {
+  "name": "Ресурс Плюс KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
  "almaty:специалист": {
   "name": "Специалист",
   "city": "almaty",
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:спортмастер казахстан": {
+  "name": "Спортмастер Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "sportmaster_kz",
+  "website": "https://sportmaster.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001077396025",
+  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:студент": {
   "name": "Студент",
@@ -411,6 +547,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:центр красоты и здоровья николь": {
+  "name": "Центр Красоты и Здоровья НикОль",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
  },
  "almaty:чл": {
   "name": "ЧЛ",
@@ -641,6 +784,15 @@
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
  },
+ "astana:группа компаний аллюр allur": {
+  "name": "Группа компаний Аллюр (Allur)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "allur.kz",
+  "source": "https://www.instagram.com/allur.kz/"
+ },
  "astana:дошкольное воспитание и обучение": {
   "name": "Дошкольное воспитание и обучение",
   "city": "astana",
@@ -732,6 +884,29 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "karaganda:эверест auto": {
+  "name": "ЭВЕРЕСТ-AUTO",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "kostanay:компания саламат": {
+  "name": "Компания САЛАМАТ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "salamat.company",
+  "website": "https://salamatcompany.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036775882",
+  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6779da0b7fdc57aa.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:erg kazakhstan": {
   "name": "ERG Kazakhstan",
   "city": "pavlodar",
@@ -778,6 +953,13 @@
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
  },
+ "taraz:avtomarketkaraganda": {
+  "name": "AvtoMarketKaraganda",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00"
+ },
  "turkestan:inclair": {
   "name": "Inclair",
   "city": "turkestan",
@@ -795,6 +977,22 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "oshaq_oral",
   "source": "https://2gis.kz/uralsk/firm/70000001117369794"
+ },
+ "uralsk:wefind": {
+  "name": "WeFind",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T11:44:45+00:00",
+  "instagram": "wefind.solutions",
+  "website": "https://wefindkz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103705211",
+  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9fdbeac31d12d0a2.jpg",
+  "avatar_source": "website"
  },
  "uralsk:игрушек": {
   "name": "ИГРУШЕК",

@@ -1,4 +1,78 @@
 {
+ "aktau:dark cloud": {
+  "name": "Dark Cloud",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "dark.cloud.aktau",
+  "website": "http://dark-cloud-aktau.kamiqr.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001067386944",
+  "avatar_checked_at": "2026-10-28T09:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "aktau:актаусервискурылыс": {
+  "name": "АктауСервисКурылыс",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "aktau:алихан": {
+  "name": "Алихан",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "aktau:арман": {
+  "name": "Арман",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "aktau:виктория": {
+  "name": "Виктория",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "victoryhotel.aktau",
+  "website": "http://victory-aktau.pro-hotels24.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001028556722",
+  "avatar_checked_at": "2026-10-28T09:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0fe932e4069c010a.jpg",
+  "avatar_source": "website"
+ },
+ "aktau:прокурорский": {
+  "name": "Прокурорский",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "aktau:топ стоп": {
+  "name": "ТОП-СТОП",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "topstop.aktau",
+  "website": "https://top-stopaktau.choiceqr.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001029219238",
+  "avatar_checked_at": "2026-10-28T09:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d127ff82713a335c.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:актобе нан": {
   "name": "Актобе-нан",
   "city": "aktobe",
@@ -81,6 +155,22 @@
   "avatar": "10a5f8705280e3a8.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:sulpak": {
+  "name": "Sulpak",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "sulpak",
+  "website": "https://sulpak.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001080616552",
+  "avatar_checked_at": "2026-10-28T09:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "39c314e379664a36.jpg",
+  "avatar_source": "website"
+ },
  "almaty:top_mebel": {
   "name": "Top_Mebel",
   "city": "almaty",
@@ -97,11 +187,32 @@
   "instagram": "vanila.collection_",
   "source": "https://2gis.kz/almaty/firm/70000001109886094"
  },
+ "almaty:аватария": {
+  "name": "Аватария",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "avatariya.almaty",
+  "website": "https://avatariya.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001067380312",
+  "avatar_checked_at": "2026-10-28T09:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алма": {
   "name": "Алма",
   "city": "almaty",
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
+ },
+ "almaty:бакорда": {
+  "name": "Бакорда",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
  },
  "almaty:бариста": {
   "name": "Бариста",
@@ -156,6 +267,13 @@
    "website"
   ]
  },
+ "almaty:производственная база": {
+  "name": "производственная база",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
  "almaty:ренессанс": {
   "name": "Ренессанс",
   "city": "almaty",
@@ -182,6 +300,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:чл": {
+  "name": "ЧЛ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
  },
  "almaty:яхьяров": {
   "name": "ИП Яхьяров",
@@ -230,6 +355,29 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "cartel_mens_shop",
   "source": "https://2gis.kz/astana/firm/70000001087861371"
+ },
+ "astana:good ломбард": {
+  "name": "GOOD ЛОМБАРД",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "good_lombard_astana",
+  "source": "https://2gis.kz/astana/firm/70000001039438500"
+ },
+ "astana:li kon пзм li con": {
+  "name": "LI-KON (ПЗМ LI-CON)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "astana:mansur cafe mellys": {
+  "name": "MANSUR CAFE  MELLY’S",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
  },
  "astana:pako trade": {
   "name": "PAKO TRADE",
@@ -300,6 +448,15 @@
   "instagram": "detskiy_magazin_aisultan",
   "source": "https://2gis.kz/astana/firm/70000001058956737"
  },
+ "astana:актив ломбард": {
+  "name": "Актив Ломбард",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "astana_activ_zoloto",
+  "source": "https://www.instagram.com/astana_activ_zoloto/"
+ },
  "astana:астория": {
   "name": "Астория",
   "city": "astana",
@@ -330,6 +487,13 @@
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "astana:дошкольное воспитание и обучение": {
+  "name": "Дошкольное воспитание и обучение",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
  },
  "astana:жибек жолы": {
   "name": "Жибек Жолы",
@@ -387,6 +551,13 @@
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
  },
+ "petropavlovsk:кристалл": {
+  "name": "Кристалл",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
+ },
  "petropavlovsk:северный 4": {
   "name": "Северный 4",
   "city": "petropavlovsk",
@@ -413,6 +584,15 @@
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
  },
+ "turkestan:inclair": {
+  "name": "Inclair",
+  "city": "turkestan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00",
+  "instagram": "inclair_cafe",
+  "source": "https://2gis.kz/astana/firm/70000001051170179"
+ },
  "uralsk:oshaq": {
   "name": "OSHAQ",
   "city": "uralsk",
@@ -421,5 +601,12 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "oshaq_oral",
   "source": "https://2gis.kz/uralsk/firm/70000001117369794"
+ },
+ "uralsk:игрушек": {
+  "name": "ИГРУШЕК",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T09:43:33+00:00"
  }
 }

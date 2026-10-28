@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T09:57:53+00:00",
+ "updated_at": "2026-10-28T10:42:46+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -479,6 +479,21 @@
    "fields": {
     "title": "Помощник воспитателя, няня",
     "employer": "Детский сад «Almaly Preschool»"
+   }
+  },
+  "hh-138647358": {
+   "verdict": "approve",
+   "at": "2026-10-28T10:42:46+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "address": "Толе би, 187"
+   }
+  },
+  "hh-138917916": {
+   "verdict": "approve",
+   "at": "2026-10-28T10:42:46+00:00",
+   "fields": {
+    "title": "Флорист"
    }
   }
  }

@@ -18,6 +18,8 @@
     {% if v.schedule %}<dt>График</dt><dd>{{ v.schedule }}</dd>{% endif %}
     {% set ig = instagram_url(place) %}
     {% if ig %}<dt>Instagram</dt><dd><a href="{{ ig }}" rel="nofollow noopener" target="_blank">@{{ place.instagram }}</a></dd>{% endif %}
+    {% if place and place.telegram %}<dt>Telegram</dt><dd><a href="https://t.me/{{ place.telegram }}" rel="nofollow noopener" target="_blank">@{{ place.telegram }}</a></dd>{% endif %}
+    {% if place and place.website %}<dt>Сайт</dt><dd><a href="{{ place.website }}" rel="nofollow noopener" target="_blank">{{ site_name(place.website) }}</a></dd>{% endif %}
     {% if v.address %}<dt>Адрес</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">в 2ГИС</a>{% endif %}</dd>{% endif %}
   </dl>
   {% if v.source == "bot" %}

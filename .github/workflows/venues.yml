@@ -1,14 +1,14 @@
-# Заведения: агент (.claude/skills/find-venues) запускает этот workflow с найденными Instagram в JSON,
-# а workflow записывает их в venues.json ветки data и скачивает аватары через официальный API Instagram.
-# Без секрета INSTAGRAM_TOKEN аватары не скачиваются, а ссылки на Instagram всё равно сохраняются.
-# Пустой список [] просто докачивает аватары тем заведениям, у которых Instagram найден, а аватара нет.
+# Заведения: агент (.claude/skills/find-venues) запускает этот workflow с найденными ссылками в JSON,
+# а workflow записывает их в venues.json ветки data и скачивает аватары: из Instagram только через
+# официальный API (секрет INSTAGRAM_TOKEN), из Telegram-канала через Bot API, с сайта заведения его значок.
+# Пустой список [] просто докачивает аватары тем заведениям, у которых есть ссылки, а аватара нет.
 name: Заведения
 
 on:
   workflow_dispatch:
     inputs:
       results:
-        description: 'JSON: [{"key": "almaty:dino fest", "status": "found | none | skip", "instagram": "dino_fest_almaty", "source": "..."}]'
+        description: 'JSON: [{"key": "almaty:dino fest", "status": "found | none | skip", "instagram": "...", "telegram": "...", "website": "https://...", "source": "..."}]'
         required: true
         default: "[]"
 
@@ -45,6 +45,7 @@ jobs:
         env:
           VENUES_RESULTS: ${{ inputs.results }}  # через переменную, а не подстановкой в скрипт
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python -m vacante venues apply --data-dir data
 
       # venues.json и venues/ пишет только этот workflow, поэтому rebase на свежие вакансии проходит без конфликтов

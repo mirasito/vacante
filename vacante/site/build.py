@@ -136,13 +136,20 @@ def _env() -> Environment:
     )
     env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
                        monthly_pay=monthly_pay, monthly_label=monthly_label, search_text=search_text, money=money,
-                       FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url)
+                       FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url,
+                       site_name=site_name)
     env.filters["plural"] = plural
     return env
 
 
 def instagram_url(venue: dict | None) -> str | None:
     return f"https://www.instagram.com/{venue['instagram']}/" if venue and venue.get("instagram") else None
+
+
+def site_name(url: str) -> str:
+    """«https://www.dinofest.kz/» → «dinofest.kz», «https://taplink.cc/dinofest» → «taplink.cc/dinofest»."""
+    parts = urlparse(url)
+    return (parts.netloc.removeprefix("www.") + parts.path).rstrip("/")
 
 
 def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str | None:
@@ -166,8 +173,8 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
     }
     if venue and venue.get("avatar"):
         data["hiringOrganization"]["logo"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"
-    if url := instagram_url(venue):
-        data["hiringOrganization"]["sameAs"] = url
+    if same := [u for u in (instagram_url(venue), venue and venue.get("website")) if u]:
+        data["hiringOrganization"]["sameAs"] = same[0] if len(same) == 1 else same
     if v.salary_min or v.salary_max:
         unit = {"month": "MONTH", "day": "DAY", "hour": "HOUR"}[v.salary_period]
         value = {"@type": "QuantitativeValue", "unitText": unit}

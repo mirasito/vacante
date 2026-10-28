@@ -133,6 +133,22 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "almaty:aster автомобили": {
+  "name": "ASTER Автомобили",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "aster_kz",
+  "website": "https://aster.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001072145132",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a392a2e192170608.jpg",
+  "avatar_source": "website"
+ },
  "almaty:atamura group": {
   "name": "Atamura Group",
   "city": "almaty",
@@ -218,6 +234,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:delivery fast": {
+  "name": "Delivery Fast",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "almaty:dino fest": {
   "name": "DINO FEST",
@@ -384,6 +407,20 @@
   "instagram": "minisokz",
   "source": "https://2gis.kz/almaty/firm/70000001025693945"
  },
+ "almaty:monamie сеть парфюмерно косметических магазинов": {
+  "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "monamie.kz",
+  "website": "https://monamie.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000819709",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:my blins": {
   "name": "MY BLINS",
   "city": "almaty",
@@ -508,12 +545,32 @@
   "avatar": "39c314e379664a36.jpg",
   "avatar_source": "website"
  },
+ "almaty:tea house ти хаус": {
+  "name": "Tea House (Ти Хаус)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "website": "https://teahouse.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000790535",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:top_mebel": {
   "name": "Top_Mebel",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:tsdc": {
+  "name": "TSDC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "almaty:ultra food": {
   "name": "Ultra Food",
@@ -646,6 +703,20 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:астро бт": {
+  "name": "Астро БТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "astrobtkz",
+  "website": "https://www.astrobt.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001033279483",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:бакорда": {
   "name": "Бакорда",
   "city": "almaty",
@@ -659,6 +730,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:бизнес парк станица": {
+  "name": "Бизнес парк Станица",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "stanitsa.kz",
+  "website": "https://bcalmaty.kz/stanitsa",
+  "source": "https://2gis.kz/almaty/firm/70000001060263869",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:галерея новостроек": {
   "name": "Галерея Новостроек",
@@ -1026,6 +1111,13 @@
   "instagram": "agash_oneri",
   "source": "https://2gis.kz/astana/firm/70000001062327354"
  },
+ "astana:astana motors north": {
+  "name": "Astana Motors North",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
+ },
  "astana:avrora fashion gallery ип пурей е и": {
   "name": "Avrora Fashion Gallery (ИП Пурей Е.И.)",
   "city": "astana",
@@ -1061,6 +1153,20 @@
   "avatar_checked_at": "2026-10-28T14:47:20+00:00",
   "avatar_tried": [
    "telegram",
+   "website"
+  ]
+ },
+ "astana:floralogistic": {
+  "name": "FloraLogistic",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "bezposrednikov01",
+  "website": "https://bpshop.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001103276678",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
    "website"
   ]
  },
@@ -1154,6 +1260,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "astana:mega center management": {
+  "name": "Mega Center Management",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
+ },
  "astana:pako trade": {
   "name": "PAKO TRADE",
   "city": "astana",
@@ -1207,6 +1320,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "simple_ashana",
   "source": "https://2gis.kz/astana/firm/70000001076582201"
+ },
+ "astana:sofiaglobal": {
+  "name": "SofiaGlobal",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "astana:sq": {
   "name": "SQ",
@@ -1267,12 +1387,26 @@
   "avatar": "1ef35b44ef5f46ed.jpg",
   "avatar_source": "website"
  },
+ "astana:августа": {
+  "name": "Августа",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
+ },
  "astana:автосвет & аксессуары": {
   "name": "АВТОСВЕТ & Аксессуары",
   "city": "astana",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "astana:азия лайн": {
+  "name": "Азия-Лайн",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "astana:айсултан": {
   "name": "Айсултан",
@@ -1462,6 +1596,19 @@
   "instagram": "puhovic_official",
   "source": "https://2gis.kz/astana/firm/70000001045497736"
  },
+ "astana:рационал азия": {
+  "name": "РАЦИОНАЛ Азия",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "website": "https://www.razional.ru/",
+  "source": "https://2gis.kz/astana/firm/70000001018110705",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:рекрутинговое агентство change ип куприянова": {
   "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
   "city": "astana",
@@ -1477,6 +1624,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "rik_pivo",
   "source": "https://2gis.kz/astana/firm/70000001019440535"
+ },
+ "astana:салават": {
+  "name": "Салават",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "astana:солод": {
   "name": "Солод",
@@ -1497,6 +1651,20 @@
   "website": "http://sportmaster.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018529780",
   "avatar_checked_at": "2026-10-28T13:48:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:тануки японский ресторан": {
+  "name": "Тануки, Японский ресторан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "tanuki_kz",
+  "website": "https://tanukifamily.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001093451570",
+  "avatar_checked_at": "2026-10-28T17:44:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1563,6 +1731,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:av company": {
+  "name": "AV Company",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "karaganda:kaz metiz каз метиз": {
   "name": "Kaz-metiz (Каз-метиз)",
@@ -1732,6 +1907,13 @@
    "website"
   ]
  },
+ "petropavlovsk:глобал сервис": {
+  "name": "Глобал Сервис",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
+ },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",
   "city": "petropavlovsk",
@@ -1802,6 +1984,15 @@
    "website"
   ]
  },
+ "shymkent:procoffee": {
+  "name": "ProCoffee",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00",
+  "instagram": "procoffee_kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001063864737"
+ },
  "shymkent:тамерлан моторс": {
   "name": "Тамерлан Моторс",
   "city": "shymkent",
@@ -1863,6 +2054,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "ust-kamenogorsk:казахстанское промышленное предприятие": {
+  "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T17:44:31+00:00"
  },
  "ust-kamenogorsk:шығыс жылу": {
   "name": "Шығыс Жылу",

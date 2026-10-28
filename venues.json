@@ -96,6 +96,22 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:almawine": {
+  "name": "ALMAWINE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "almawine.kz",
+  "website": "https://almawine.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001064390353",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "78cd38cb1b45050a.jpg",
+  "avatar_source": "website"
+ },
  "almaty:anajer": {
   "name": "ANAJER",
   "city": "almaty",
@@ -127,6 +143,34 @@
   "website": "https://atamuragroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055250581",
   "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:beauty style": {
+  "name": "Beauty Style",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:caspian beverage holding ао": {
+  "name": "CASPIAN beverage holding, АО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:cs seven": {
+  "name": "CS Seven",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "cs7.kz",
+  "website": "https://cs7.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000802142",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -175,6 +219,27 @@
   "checked_at": "2026-10-28T11:44:45+00:00",
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/almaty/firm/70000001024452567"
+ },
+ "almaty:hila": {
+  "name": "Hila",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:kazdi group": {
+  "name": "KazDi Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "kazdigroup.kz",
+  "website": "https://kazdigroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032171244",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:kulikov": {
   "name": "Kulikov",
@@ -345,6 +410,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:umay labs": {
+  "name": "UMAY Labs",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
  },
  "almaty:vanilla collection": {
   "name": "Vanilla Collection",
@@ -544,6 +616,20 @@
    "website"
   ]
  },
+ "almaty:парасат": {
+  "name": "Парасат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "dodopizza.almaty",
+  "website": "https://dodopizza.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032793835",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:примавера каз": {
   "name": "Примавера КАЗ",
   "city": "almaty",
@@ -722,6 +808,35 @@
   "instagram": "cartel_mens_shop",
   "source": "https://2gis.kz/astana/firm/70000001087861371"
  },
+ "astana:center beton company": {
+  "name": "Center Beton Company",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "telegram": "center_beton_company",
+  "website": "https://centerbeton.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018064803",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
+ "astana:good project": {
+  "name": "Good project",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "asai.restaurant",
+  "website": "https://goodproject.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001103749196",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:good ломбард": {
   "name": "GOOD ЛОМБАРД",
   "city": "astana",
@@ -730,6 +845,31 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "good_lombard_astana",
   "source": "https://2gis.kz/astana/firm/70000001039438500"
+ },
+ "astana:home2car": {
+  "name": "Home2Car",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "home2car.kz",
+  "website": "https://home2car.tilda.ws/",
+  "source": "https://2gis.kz/astana/firm/70000001099932356",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "462ab75ad2efbfda.jpg",
+  "avatar_source": "website"
+ },
+ "astana:koktem friends": {
+  "name": "Koktem friends",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "koktem.bistro",
+  "source": "https://2gis.kz/astana/firm/70000001100839755"
  },
  "astana:li kon пзм li con": {
   "name": "LI-KON (ПЗМ LI-CON)",
@@ -910,6 +1050,24 @@
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
  },
+ "astana:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "fixprice.kazakhstan",
+  "telegram": "fixprice_kazakhstan",
+  "website": "https://fix-price.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001047830255",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2890e57b7046c7ba.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "astana",
@@ -954,6 +1112,27 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "steakhouse.mangal",
   "source": "https://2gis.kz/astana/firm/70000001089777153"
+ },
+ "astana:мусатаева ж р meat & beer": {
+  "name": "Мусатаева Ж.Р. (MEAT & BEER)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "mb.astana",
+  "website": "https://mbastana.taplink.ws/",
+  "source": "https://2gis.kz/astana/firm/70000001109929603",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:мясная продукция": {
+  "name": "Мясная продукция",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
  },
  "astana:примавера каз": {
   "name": "Примавера КАЗ",
@@ -1024,6 +1203,13 @@
    "website"
   ]
  },
+ "astana:құрылысшы ltd": {
+  "name": "Құрылысшы LTD",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
+ },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",
   "city": "atyrau",
@@ -1060,6 +1246,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:сана онлайн": {
+  "name": "Сана Онлайн",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00"
  },
  "karaganda:центр цветов крг": {
   "name": "Центр Цветов Крг",
@@ -1132,12 +1325,44 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "pavlodar:кэмми group": {
+  "name": "КЭММИ GROUP",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "kemmi_kz",
+  "website": "https://kemmi.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018662789",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cda222f1bf0f48f1.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",
   "city": "petropavlovsk",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "petropavlovsk:масло дел": {
+  "name": "Масло-Дел",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "maslodel_kz",
+  "website": "https://maslodel.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001039026480",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6efd21a1561520a0.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:северный 4": {
   "name": "Северный 4",
@@ -1164,6 +1389,20 @@
   ],
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
+ },
+ "shymkent:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T14:47:20+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025991413",
+  "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "taraz:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",

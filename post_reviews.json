@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T08:56:34+00:00",
+ "updated_at": "2026-10-28T09:57:53+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -325,6 +325,160 @@
     "title": "Водитель на личном авто",
     "schedule": "5/2, 08:00–14:00",
     "address": "ул. Сазановская, 37"
+   }
+  },
+  "zhumys_astana_kz-16906": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Официант, кассир",
+    "employer": "Центр плова «SQ»",
+    "schedule": "6/1, 11:00–23:00"
+   }
+  },
+  "rabota_astanakz-31009": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Упаковщик-раннер, повар, бариста, раннер, грузчик",
+    "employer": "Mansur Cafe, Melly’s",
+    "address": "ул. Ұшқыштар, 11"
+   }
+  },
+  "rabota_astanakz-30998": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "employer": "Мужской бутик «Cartel»",
+    "schedule": "2/1, 10:00–22:00"
+   }
+  },
+  "astana_hh-1842": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Кассир на фудкорт",
+    "employer": null,
+    "schedule": "5/2, 10:00–22:00",
+    "address": "ул. Байтурсынова, 34, ТРЦ «Жибек Жолы»",
+    "perks": [
+     "Бонусы",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_v_nursultane1-12754": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "employer": "Гостиница Дворца единоборств «Жекпе-Жек»",
+    "schedule": "2/2, по 11 часов"
+   }
+  },
+  "astana_job_vakansii-129828": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Водитель-курьер на личном автомобиле",
+    "employer": null,
+    "schedule": "4/2, 09:00–20:00"
+   }
+  },
+  "astana_job_vakansii-129827": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "employer": "Детская обувь «Taranis»"
+   }
+  },
+  "astana_job_vakansii-129823": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Грузчик",
+    "employer": "ТОО «GrandMarket NS»",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month"
+   }
+  },
+  "almaty_rabota_work-31708": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Няня, помощник воспитателя",
+    "employer": "Детский сад «Ордоген»",
+    "schedule": "5/2, 08:00–18:00",
+    "address": "ул. Поповича, 45"
+   }
+  },
+  "rabota4almaty-5789": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Охранник на строительный объект",
+    "employer": "ТОО «Казоборонсервис»",
+    "schedule": "сутки через двое",
+    "address": "пл. Республики, 2/2"
+   }
+  },
+  "rabota4almaty-5791": {
+   "verdict": "reject",
+   "at": "2026-10-28T09:57:53+00:00",
+   "reason": "Вахта, работа в другом городе"
+  },
+  "agashka_job_almaty-981": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "employer": "Ресторан «ЮГ22»"
+   }
+  },
+  "rabota4almaty-5774": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Уборщица на хлебокомбинат",
+    "employer": "Хлебокомбинат «Алматынан»",
+    "schedule": "5/2, 08:00–17:00",
+    "address": "пр. Райымбека, 486Б"
+   }
+  },
+  "rabota4almaty-5766": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Электромонтажник",
+    "employer": "ТОО «Мега Инвест Строй»",
+    "salary_min": 350000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "09:00–18:00",
+    "address": "мкр. Дарабоз",
+    "perks": [
+     "Питание",
+     "Спецодежда"
+    ]
+   }
+  },
+  "rabota4almaty-5765": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Водитель на личном автомобиле",
+    "employer": null,
+    "schedule": "5/2, 06:00–15:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "agashka_job_almaty-976": {
+   "verdict": "approve",
+   "at": "2026-10-28T09:57:53+00:00",
+   "fields": {
+    "title": "Помощник воспитателя, няня",
+    "employer": "Детский сад «Almaly Preschool»"
    }
   }
  }

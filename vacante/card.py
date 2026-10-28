@@ -1,5 +1,6 @@
 """Картинка к посту в Telegram, как в старых постах vacante: значок заведения,
-должность, заведение, адрес и зарплата на белой карточке.
+должность, заведение, адрес и зарплата на белой карточке. Значок: аватар заведения из Instagram,
+а если его нет, первая буква на цветном фоне.
 """
 
 from __future__ import annotations
@@ -7,7 +8,7 @@ from __future__ import annotations
 from io import BytesIO
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from vacante.models import Vacancy
 from vacante.site.build import city_name, salary_label
@@ -17,7 +18,7 @@ WIDTH, PAD, LOGO, GAP = 1280, 64, 240, 56
 TEXT_X = PAD + LOGO + GAP
 TEXT_W = WIDTH - TEXT_X - PAD
 INK, QUIET, PILL, PILL_INK = "#1d1d1f", "#6b6b70", "#e3f1fd", "#0b4f8a"
-# Цвет значка по сфере: логотипов заведений у нас нет, поэтому первая буква на цветном фоне.
+# Цвет значка по сфере, когда аватара заведения нет: первая буква на цветном фоне.
 COLORS = {"horeca": "#e8590c", "retail": "#0a8ff0", "warehouse": "#7048e8", "delivery": "#2b8a3e",
           "service": "#0c8599", "construction": "#e67700", "callcenter": "#d6336c", "other": "#495057"}
 
@@ -43,8 +44,20 @@ def _wrap(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, wi
     return lines
 
 
-def render(v: Vacancy) -> bytes:
-    """PNG-карточка вакансии для sendPhoto."""
+def _paste_avatar(img: Image.Image, avatar: bytes) -> bool:
+    try:
+        with Image.open(BytesIO(avatar)) as pic:
+            pic = ImageOps.fit(pic.convert("RGB"), (LOGO, LOGO), Image.LANCZOS)
+    except OSError:
+        return False
+    mask = Image.new("L", (LOGO, LOGO), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, LOGO - 1, LOGO - 1), radius=48, fill=255)
+    img.paste(pic, (PAD, PAD), mask)
+    return True
+
+
+def render(v: Vacancy, avatar: bytes | None = None) -> bytes:
+    """PNG-карточка вакансии для sendPhoto. avatar: JPEG аватара заведения, если он есть."""
     title_font, employer_font = _font("Bold", 64), _font("SemiBold", 46)
     address_font, salary_font = _font("Regular", 38), _font("SemiBold", 40)
     probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
@@ -63,9 +76,10 @@ def render(v: Vacancy) -> bytes:
     img = Image.new("RGB", (WIDTH, height), "white")
     draw = ImageDraw.Draw(img)
 
-    draw.rounded_rectangle((PAD, PAD, PAD + LOGO, PAD + LOGO), radius=48, fill=COLORS[v.category])
-    letter = next((ch for ch in (v.employer or v.title) if ch.isalnum()), "V").upper()
-    draw.text((PAD + LOGO / 2, PAD + LOGO / 2), letter, font=_font("Bold", 130), fill="white", anchor="mm")
+    if not (avatar and _paste_avatar(img, avatar)):
+        draw.rounded_rectangle((PAD, PAD, PAD + LOGO, PAD + LOGO), radius=48, fill=COLORS[v.category])
+        letter = next((ch for ch in (v.employer or v.title) if ch.isalnum()), "V").upper()
+        draw.text((PAD + LOGO / 2, PAD + LOGO / 2), letter, font=_font("Bold", 130), fill="white", anchor="mm")
 
     y = PAD - 6
     for lines, font, color, step in blocks:

@@ -3,7 +3,8 @@
     <h3>{{ v.title }}</h3>
     <span class="age">{{ age(v) }}</span>
   </div>
-  {% if v.employer %}<div class="employer">{{ v.employer }}</div>{% endif %}
+  {% set place = venue(v) %}
+  {% if v.employer %}<div class="employer">{% if place and place.avatar %}<img class="avatar" src="{{ root }}/venues/{{ place.avatar }}" alt="" width="28" height="28" loading="lazy">{% endif %}{{ v.employer }}</div>{% endif %}
   <div class="meta">{{ city_name(v.city) }}{% if v.schedule %} · {{ v.schedule }}{% endif %}</div>
   <div class="pills">
     {% if v.source == "bot" %}<span class="pill direct-pill">От работодателя</span>{% endif %}

@@ -6,7 +6,8 @@
 <p class="crumbs"><a href="{{ root }}/">Вакансии</a>{% if v.city %} / <a href="{{ root }}/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="{{ root }}/{{ v.city }}/{{ v.category }}/">{{ CATEGORIES[v.category] }}</a>{% endif %}</p>
 <article class="vacancy">
   <h1>{{ v.title }}</h1>
-  {% if v.employer %}<div class="employer">{{ v.employer }}</div>{% endif %}
+  {% set place = venue(v) %}
+  {% if v.employer %}<div class="employer">{% if place and place.avatar %}<img class="avatar" src="{{ root }}/venues/{{ place.avatar }}" alt="" width="40" height="40">{% endif %}{{ v.employer }}</div>{% endif %}
   <div class="meta">{{ city_name(v.city) }} · опубликовано {{ age(v) }}</div>
   <div class="pills">
     {% for perk in v.perks %}<span class="pill">{{ perk }}</span>{% endfor %}
@@ -15,6 +16,8 @@
     {% set s = salary_label(v) %}
     {% if s %}<dt>Зарплата</dt><dd>{{ s }}</dd>{% endif %}
     {% if v.schedule %}<dt>График</dt><dd>{{ v.schedule }}</dd>{% endif %}
+    {% set ig = instagram_url(place) %}
+    {% if ig %}<dt>Instagram</dt><dd><a href="{{ ig }}" rel="nofollow noopener" target="_blank">@{{ place.instagram }}</a></dd>{% endif %}
     {% if v.address %}<dt>Адрес</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">в 2ГИС</a>{% endif %}</dd>{% endif %}
   </dl>
   {% if v.source == "bot" %}

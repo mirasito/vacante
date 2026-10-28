@@ -32,7 +32,7 @@ CITIES = {
     "aktau": ("Актау", r"актау"),
     "pavlodar": ("Павлодар", r"павлодар"),
     "ust-kamenogorsk": ("Усть-Каменогорск", r"усть-каменогорск|оскемен"),
-    "semey": ("Семей", r"\bсемей"),
+    "semey": ("Семей", r"\bсемей(?!н|ств)"),  # не «семейный ресторан»
     "kostanay": ("Костанай", r"костана"),
     "uralsk": ("Уральск", r"уральск|орал\b"),
     "taraz": ("Тараз", r"тараз"),
@@ -232,10 +232,20 @@ _EMPLOYER_LABEL = re.compile(
 _EMPLOYER_INVITES = re.compile(r"^[^\w\n]*([^\n]{2,40}?)\s+приглашает на работу", re.M)
 _EMPLOYER_QUOTED = re.compile(r"[«\"]([^«»\"\n]{2,40})[»\"]")
 _EMPLOYER_PLACE = re.compile(
-    r"(?i:\b(?:кафе|ресторан\w*|кофейн\w*|магазин\w*|бар\w*|сет(ь|и)(?:[ \t]+[а-яё]+){1,3}|компани\w*|супермаркет\w*|"
+    r"(?i:\b(?:кафе|ресторан\w*|рестопарк\w*|рестобар\w*|кофейн\w*|магазин\w*|бар\w*|сет(ь|и)(?:[ \t]+[а-яё]+){1,3}|компани\w*|супермаркет\w*|"
     r"пекарн\w*|столов\w*|пункт\w* выдачи|салон\w*|отел\w*|гостиниц\w*))[ \t]+"
     r"([A-ZА-ЯЁ][\w&'’.-]*(?:[ \t]+[A-ZА-ЯЁ0-9][\w&'’.-]*){0,2})"
 )
+
+# Как в agashka_job_almaty: «💼 Бармен», строкой ниже заведение «DINO FEST», дальше зарплата или город
+_EMPLOYER_UNDER_TITLE = re.compile(r"(?m)^[ \t]*💼[ \t]*([^\n]*)\n[ \t]*([«\"A-Za-zА-Яа-яЁё][^\n]{1,60})\n[ \t]*(?:💰|📍)")
+# Не заведение: «Ресторан паназиатской кухни» без названия, ФИО индивидуального предпринимателя
+_GENERIC_PLACE = re.compile(
+    r"(?i:кафе|ресторан|столовая|кофейня|пекарня|магазин|минимаркет|супермаркет|салон|компания|сеть|цех|склад|"
+    r"производство|завод|фабрика|офис)\w*(?:[ \t,-]+[а-яё]+)*$"
+)
+_PERSON = re.compile(r"(?i)\b[а-яё]+(?:ович|евич|овна|евна|улы|ұлы|кызы|қызы)\b")
+_LEGAL_PARENS = re.compile(r"\s*\((?:тоо|ип|ооо|ао)\b[^)]*\)", re.I)
 
 _PHONE = re.compile(r"(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}")
 _LINK = re.compile(r"https?://\S+|t\.me/\S+|wa\.me/\S+|@\w{4,}")
@@ -398,7 +408,7 @@ def detect_city(text: str, default: str | None) -> str | None:
     return default if default in found else None
 
 
-_NOT_EMPLOYER = re.compile(r"не указан|частн\w* лиц|объявлени|хозяин|^я\b")
+_NOT_EMPLOYER = re.compile(r"не указан|частн\w* лиц|объявлени|хозяин|^я\b|^требу|^нужн|^срочн|ж[ұу]мыс")
 
 
 _VERB_TAIL = re.compile(r"(?i)\s+(?:приглашает|ищет|требу|набирает)\w*\b.*$")
@@ -417,16 +427,34 @@ def _clean_name(name: str) -> str | None:
     return name
 
 
+def _employer_under_title(text: str) -> str | None:
+    m = _EMPLOYER_UNDER_TITLE.search(text)
+    if not m:
+        return None
+    place = _EMPLOYER_PLACE.search(m[1])  # «💼 Официант в ресторан ЮГ22»: название уже в строке должности
+    if place:
+        return _VERB_TAIL.sub("", place[2]).strip(" .,") or None
+    line = _LEGAL_PARENS.sub("", m[2]).strip()
+    inner = _EMPLOYER_PLACE.search(line)  # «Сеть ресторанов Lanzhou», «Кафе PARADISE»
+    if inner and inner.start() == 0:
+        line = inner[2]
+    if _GENERIC_PLACE.match(line) or _PERSON.search(line):
+        return None
+    return _clean_name(line)
+
+
 def detect_employer(text: str) -> str | None:
     m = _EMPLOYER_LABEL.search(text)
     if m and (name := _clean_name(m[1])):
+        return name
+    if name := _employer_under_title(text):
         return name
     m = _EMPLOYER_QUOTED.search(text)
     if m:
         return m[1].strip()
     m = _EMPLOYER_PLACE.search(text)
-    if m and (name := _VERB_TAIL.sub("", m[2]).strip(" .,")):
-        return name
+    if m and (name := _VERB_TAIL.sub("", m[2]).strip(" .,")) and not _NOT_EMPLOYER.search(_lower(name)):
+        return name  # но не «в кафе Требуется повар»
     m = _EMPLOYER_INVITES.search(text)
     if m:
         return _clean_name(m[1])

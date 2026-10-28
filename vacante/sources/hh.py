@@ -148,6 +148,15 @@ def _text(item: dict) -> str:
     return clean_text("\n".join(parts))
 
 
+def _schedule(item: dict) -> str | None:
+    """График: старое поле schedule или новые work_schedule_by_days («5/2») и working_hours («8 часов»)."""
+    if name := ((item.get("schedule") or {}).get("name") or "").strip():
+        return name
+    parts = [(x or {}).get("name", "").strip() for key in ("work_schedule_by_days", "working_hours")
+             for x in item.get(key) or []]
+    return ", ".join(p for p in parts if p) or None
+
+
 def _address(item: dict, city: str) -> str | None:
     raw = ((item.get("address") or {}).get("raw") or "").strip()
     name = CITIES[city][0]
@@ -166,7 +175,7 @@ def to_vacancy(item: dict) -> Vacancy | None:
     if city is None:
         return None
     salary_min, salary_max, period = _salary(item)
-    schedule = ((item.get("schedule") or {}).get("name") or "").strip() or None
+    schedule = _schedule(item)
     text = _text(item) or name
     published = datetime.fromisoformat(item["published_at"]).astimezone(timezone.utc)
     return Vacancy(

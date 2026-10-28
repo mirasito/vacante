@@ -21,7 +21,7 @@ from collections.abc import Callable
 from datetime import datetime, timedelta, timezone
 from io import BytesIO
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import quote, urljoin, urlparse
 from urllib.robotparser import RobotFileParser
 
 import httpx
@@ -42,8 +42,9 @@ AVATAR_RETRY = timedelta(days=7)  # аватар не скачался: проб
 AVATARS_PER_RUN = 60
 # found: найдена хотя бы одна ссылка; none: заведение настоящее, но ссылок не нашлось; skip: это не название заведения
 STATUSES = ("found", "none", "skip")
-# 2: агент записывает не только Instagram, но и сайт и Telegram. Заведения, разобранные раньше, он проходит снова.
-VERSION = 2
+# 2: агент записывает не только Instagram, но и сайт и Telegram; 3: ищет через страницу поиска 2ГИС из очереди.
+# Заведения, разобранные по старым правилам, он проходит снова.
+VERSION = 3
 LINKS = ("instagram", "telegram", "website")
 GRAPH = "https://graph.facebook.com/v23.0"
 USER_AGENT = "vacante.kz/1.0 (+https://vacante.kz)"
@@ -54,7 +55,15 @@ _TG_HANDLE = re.compile(r"^[a-z][a-z0-9_]{3,31}$")
 # Сайтом не считаем соцсети и мессенджеры: у них свои правила и свои ссылки
 _NOT_WEBSITE = re.compile(r"(?:^|\.)(?:instagram\.com|facebook\.com|fb\.com|wa\.me|whatsapp\.com|t\.me|"
                           r"telegram\.me|2gis\.\w+|vk\.com|tiktok\.com|youtube\.com)$")
-_LEGAL = re.compile(r"^(?:тоо|ип|ооо|ао|too|llp)\s+")
+_LEGAL = re.compile(r"^(?:тоо|ип|ооо|ао|too|llp)\s+", re.I)
+
+# Город в адресе страниц 2gis.kz: 2gis.kz/<город>/search/<запрос>
+TWOGIS_CITIES = {
+    "almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda", "aktobe": "aktobe",
+    "atyrau": "atyrau", "aktau": "aktau", "pavlodar": "pavlodar", "ust-kamenogorsk": "ustkam", "semey": "semey",
+    "kostanay": "kostanaj", "uralsk": "uralsk", "taraz": "taraz", "turkestan": "turkestan",
+    "petropavlovsk": "petropavlovsk", "kyzylorda": "kyzylorda",
+}
 
 AvatarSource = Callable[[str], bytes | None]
 
@@ -135,6 +144,12 @@ def avatar_bytes(data_dir: Path, venue: dict | None) -> bytes | None:
     return path.read_bytes() if path.exists() else None
 
 
+def twogis_search(name: str, city: str | None) -> str | None:
+    """Страница поиска заведения в 2ГИС его города: в выдаче адреса и ссылки на карточки."""
+    slug = TWOGIS_CITIES.get(city or "")
+    return f"https://2gis.kz/{slug}/search/{quote(_LEGAL.sub('', name.strip()))}" if slug else None
+
+
 def queue(vacancies: list[Vacancy], venues: dict[str, dict], now: datetime) -> list[dict]:
     """Заведения, которые агент ещё не искал (или искал по старым правилам): сначала с самыми свежими
     вакансиями, потом с самыми частыми."""
@@ -158,6 +173,7 @@ def queue(vacancies: list[Vacancy], venues: dict[str, dict], now: datetime) -> l
         items.append({
             "key": k, "name": v.employer, "city": v.city, "city_name": CITIES.get(v.city, ("Казахстан",))[0],
             "vacancies": len(group), "title": v.title, "address": v.address, "text": v.text[:400],
+            "twogis": twogis_search(v.employer, v.city),
         })
     return items
 

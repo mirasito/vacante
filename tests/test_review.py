@@ -76,3 +76,17 @@ def test_run_posts_reviewed_and_writes_queue(tmp_path):
     assert autopost.write_review_queue(tmp_path, now=NOON) == 1
     queue = json.loads((tmp_path / review.QUEUE).read_text("utf-8"))["vacancies"]
     assert [item["id"] for item in queue] == [waiting.id]
+
+
+def test_venue_is_found_by_original_name_after_agent_renames_it(tmp_path):
+    from vacante import venues
+    v = make(14, "Кафе «Зерно» ищет бариста, 12 000 тг за смену")
+    save_vacancies(tmp_path, [v])
+    (tmp_path / venues.FILE).write_text(json.dumps(
+        {venues.key(v.employer, v.city): {"status": "found", "instagram": "zerno_almaty"}}), "utf-8")
+    review.apply(tmp_path, [{"id": v.id, "verdict": "approve", "fields": {"employer": "Кофейня «Зерно»"}}], [v],
+                 now=NOON)
+    sent = []
+    autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(post), now=NOON)
+    assert "Кофейня «Зерно»" in sent[0].caption
+    assert any(text == "📸 Instagram" for text, _ in sent[0].buttons)

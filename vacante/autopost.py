@@ -200,29 +200,31 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
     now = now or datetime.now(timezone.utc)
     base_url = base_url.rstrip("/")
     held = awaiting_review(data_dir)
-    vacancies = checked_by_agent([v for v in load_vacancies(data_dir) if v.id not in held], review.load(data_dir))
+    original = {v.id: v for v in load_vacancies(data_dir) if v.id not in held}
+    vacancies = checked_by_agent(list(original.values()), review.load(data_dir))
     posted = load_posted(data_dir)
     table = venues.load(data_dir)
-    known = {v.id for v in vacancies if (venue := venues.lookup(table, v)) and venue.get("avatar")}
+    # Заведение ищем по названию из исходного объявления: агент мог оформить его иначе («DINO FEST» → «Рестопарк «Dino Fest»»)
+    venue_of = {v.id: venues.lookup(table, v) for v in original.values()}
+    known = {i for i, venue in venue_of.items() if venue and venue.get("avatar")}
     stats = {"posted": 0, "failed": 0}
     for city, chat in CHANNELS.items():
         state = posted.setdefault(city, {"ids": [], "titles": [], "last_at": None})
         # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь
         for v in direct_due(vacancies, city, state, now):
-            if _publish(chat, v, base_url, send, state, stats, data_dir, table):
+            if _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id)):
                 stats["direct"] = stats.get("direct", 0) + 1
         if not is_due(state["last_at"], now):
             continue
         v = pick(vacancies, city, state, now, known)
-        if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, table):
+        if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id)):
             state["last_at"] = now.isoformat()
     save_posted(data_dir, posted)
     return stats
 
 
 def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, stats: dict,
-             data_dir: Path, table: dict) -> bool:
-    venue = venues.lookup(table, v)
+             data_dir: Path, venue: dict | None) -> bool:
     try:
         send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue)))
     except (httpx.HTTPError, RuntimeError) as exc:

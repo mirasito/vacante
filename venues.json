@@ -147,6 +147,20 @@
    "website"
   ]
  },
+ "almaty:avrora fashion gallery ип пурей е и": {
+  "name": "Avrora Fashion Gallery (ИП Пурей Е.И.)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "avrora_kz",
+  "website": "https://www.avrora.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001341864",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:beauty style": {
   "name": "Beauty Style",
   "city": "almaty",
@@ -220,12 +234,44 @@
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/almaty/firm/70000001024452567"
  },
+ "almaty:glovo kazakhstan": {
+  "name": "Glovo Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "glovo_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001038239655"
+ },
  "almaty:hila": {
   "name": "Hila",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:invitro тоо инвитро казахстан": {
+  "name": "INVITRO (ТОО ИНВИТРО-Казахстан)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "invitro_kazakhstan",
+  "website": "https://invitro.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001046041710",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "30449f0f2207679f.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:iron grill": {
+  "name": "Iron Grill",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
  },
  "almaty:kazdi group": {
   "name": "KazDi Group",
@@ -356,6 +402,13 @@
   "avatar": "70f1f0b170cc8298.jpg",
   "avatar_source": "website"
  },
+ "almaty:sandyq world": {
+  "name": "Sandyq World",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
+ },
  "almaty:small": {
   "name": "SMALL",
   "city": "almaty",
@@ -450,6 +503,27 @@
   "avatar": "209881adf06e1885.jpg",
   "avatar_source": "website"
  },
+ "almaty:yes exchange": {
+  "name": "YES EXCHANGE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "yes_exchange",
+  "website": "http://almaty1.yes-exchange.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001094342527",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:zerberg": {
+  "name": "ZERBERG",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
+ },
  "almaty:аватария": {
   "name": "Аватария",
   "city": "almaty",
@@ -463,6 +537,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:аифcosmetic": {
+  "name": "АиФcosmetic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "aifcosmetic.kz",
+  "website": "https://aifcosmetic.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000963265",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4be4d686ea22a24b.jpg",
+  "avatar_source": "website"
  },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
@@ -532,6 +622,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:жылкайдарова м н сеть отелей ренион": {
+  "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "renion.park",
+  "telegram": "renioncity",
+  "website": "http://renion.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001030378233",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "almaty:заммлер казахстан": {
   "name": "ЗАММЛЕР КАЗАХСТАН",
@@ -994,6 +1100,22 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "astana:wefind": {
+  "name": "WeFind",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "wefind.solutions",
+  "website": "http://wefindkz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103705211",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1ef35b44ef5f46ed.jpg",
+  "avatar_source": "website"
+ },
  "astana:автосвет & аксессуары": {
   "name": "АВТОСВЕТ & Аксессуары",
   "city": "astana",
@@ -1018,6 +1140,13 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "astana_activ_zoloto",
   "source": "https://www.instagram.com/astana_activ_zoloto/"
+ },
+ "astana:астана белпродукт": {
+  "name": "Астана БелПродукт",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
  },
  "astana:астория": {
   "name": "Астория",
@@ -1150,6 +1279,13 @@
   "instagram": "puhovic_official",
   "source": "https://2gis.kz/astana/firm/70000001045497736"
  },
+ "astana:рекрутинговое агентство change ип куприянова": {
+  "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
+ },
  "astana:рик": {
   "name": "РиК",
   "city": "astana",
@@ -1188,6 +1324,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "astana:эраунд групп around": {
+  "name": "Эраунд Групп AROUND",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
  },
  "astana:этажи": {
   "name": "Этажи",
@@ -1240,12 +1383,28 @@
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
  },
+ "karaganda:алып 2008": {
+  "name": "Алып-2008",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
+ },
  "karaganda:казтранстехпром": {
   "name": "КазТрансТехПром",
   "city": "karaganda",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:ресторан мой тбилиси ип бурбуташвили н н": {
+  "name": "Ресторан Мой Тбилиси (ИП Бурбуташвили Н.Н.)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "moy_tbilisi",
+  "source": "https://2gis.kz/karaganda/firm/11822477302830683"
  },
  "karaganda:сана онлайн": {
   "name": "Сана Онлайн",
@@ -1267,6 +1426,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "kostanay:technologies and personnel": {
+  "name": "TECHNOLOGIES AND PERSONNEL",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
  },
  "kostanay:алтын алма": {
   "name": "Алтын Алма",
@@ -1305,6 +1471,13 @@
    "website"
   ]
  },
+ "kyzylorda:полежаев андрей валерьевич": {
+  "name": "Полежаев Андрей Валерьевич",
+  "city": "kyzylorda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
+ },
  "pavlodar:erg kazakhstan": {
   "name": "ERG Kazakhstan",
   "city": "pavlodar",
@@ -1340,6 +1513,20 @@
   ],
   "avatar": "cda222f1bf0f48f1.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:magnum": {
+  "name": "MAGNUM",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001062151780",
+  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",
@@ -1404,12 +1591,26 @@
    "website"
   ]
  },
+ "shymkent:тамерлан моторс": {
+  "name": "Тамерлан Моторс",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
+ },
  "taraz:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
   "city": "taraz",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "taraz:тсз": {
+  "name": "ТСЗ",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T15:44:53+00:00"
  },
  "turkestan:inclair": {
   "name": "Inclair",

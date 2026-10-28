@@ -3,11 +3,13 @@ from datetime import datetime, timezone
 
 import httpx
 import pytest
+from cryptography.exceptions import InvalidTag
 
 from vacante import collect
 from vacante.journal import snippet
 from vacante.models import RawPost
 from vacante.parse import REJECT_REASONS, explain
+from vacante.site.admin import unseal
 from vacante.site.build import build
 
 NOW = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
@@ -119,13 +121,18 @@ def test_admin_page_and_data(tmp_path):
     data = tmp_path / "data"
     (data / "bot.json").write_text(json.dumps({"updated_at": NOW.isoformat(), "subscribers": [
         {"city": "almaty", "total": 3, "active": 2}, {"city": None, "total": 1, "active": 1}]}), "utf-8")
-    build(data, tmp_path / "out", now=NOW)
+    build(data, tmp_path / "out", now=NOW, admin_password="ключ от админки")
 
     page = (tmp_path / "out" / "admin" / "index.html").read_text("utf-8")
     assert 'name="robots" content="noindex, nofollow"' in page and "mc.yandex" not in page
     assert "/admin/" not in (tmp_path / "out" / "sitemap.xml").read_text("utf-8")
 
-    admin = json.loads((tmp_path / "out" / "admin" / "data.json").read_text("utf-8"))
+    # Данные лежат только зашифрованными: без пароля из них ничего не прочитать
+    sealed = (tmp_path / "out" / "admin" / "sealed.json").read_text("utf-8")
+    assert "chan_a" not in sealed and not (tmp_path / "out" / "admin" / "data.json").exists()
+    with pytest.raises(InvalidTag):
+        unseal(json.loads(sealed), "не тот пароль")
+    admin = unseal(json.loads(sealed), "ключ от админки")
     t = admin["totals"]
     assert (t["on_site"], t["posts"], t["accepted"], t["duplicate"], t["rejected"], t["new_24h"]) == (1, 3, 1, 1, 1, 1)
     a = next(s for s in admin["sources"] if s["name"] == "chan_a")
@@ -134,6 +141,12 @@ def test_admin_page_and_data(tmp_path):
     assert admin["by_city"] == [["Алматы", 1]]
     assert [s["city"] for s in admin["bot"]["subscribers"]] == ["Алматы", "Весь Казахстан"]
     assert [a["city"] for a in admin["autopost"]] == ["Астана", "Алматы"]
+
+
+def test_admin_has_no_data_without_password(tmp_path):
+    run_collect(tmp_path, {"chan_a": [raw("chan_a", 1, BARISTA)]})
+    build(tmp_path / "data", tmp_path / "out", now=NOW)
+    assert sorted(p.name for p in (tmp_path / "out" / "admin").iterdir()) == ["index.html"]
 
 
 def test_parser_change_rereads_channels(tmp_path, monkeypatch):

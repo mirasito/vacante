@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 
 from vacante import autopost, collect, direct
 from vacante.models import RawPost
+from vacante.site.admin import unseal
 from vacante.site.build import build
 
 NOW = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
@@ -65,13 +66,13 @@ def test_channel_repost_of_bot_job_is_glued_to_it(tmp_path):
 
 def test_site_shows_bot_job_with_apply_button(tmp_path):
     run_collect(tmp_path, [], [JOB])
-    build(tmp_path / "data", tmp_path / "out", now=NOW)
+    build(tmp_path / "data", tmp_path / "out", now=NOW, admin_password="пароль")
     page = (tmp_path / "out" / "v" / "bot-7" / "index.html").read_text("utf-8")
     assert 'href="https://t.me/vacantekz_bot?start=apply_7"' in page and "Откликнуться в Telegram" in page
     assert "Источник:" not in page and "оригинальном объявлении</a>" not in page
     listing = (tmp_path / "out" / "almaty" / "index.html").read_text("utf-8")
     assert "От работодателя" in listing and 'href="https://t.me/vacantekz_bot?start=post"' in listing
-    admin = json.loads((tmp_path / "out" / "admin" / "data.json").read_text("utf-8"))
+    admin = unseal(json.loads((tmp_path / "out" / "admin" / "sealed.json").read_text("utf-8")), "пароль")
     assert admin["totals"]["direct"] == 1
 
 

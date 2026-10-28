@@ -69,7 +69,10 @@ def main() -> None:
             (args.data_dir / "bot.json").write_text(json.dumps(bot, ensure_ascii=False) + "\n", "utf-8")
         logging.info("подборки: %s", stats)
     else:
-        count = build.build(args.data_dir, args.out, args.base_url)
+        password = os.environ.get("ADMIN_PASSWORD") or None
+        if not password:
+            logging.warning("админка: нет ADMIN_PASSWORD, данные админки не публикую")
+        count = build.build(args.data_dir, args.out, args.base_url, admin_password=password)
         logging.info("сайт: %s страниц в %s", count, args.out)
 
 

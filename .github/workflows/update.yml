@@ -84,6 +84,8 @@ jobs:
           exit 1
 
       - name: Собрать сайт
+        env:
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}  # данные админки шифруются этим паролем
         run: python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
 
       - uses: actions/upload-pages-artifact@v3

@@ -3,26 +3,51 @@
   "name": "TOO Arlan logistics grop",
   "city": "almaty",
   "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00"
  },
  "almaty:dino fest": {
   "name": "DINO FEST",
   "city": "almaty",
   "status": "found",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "dino_fest_almaty",
   "avatar": "cc4ec669bd71e433.jpg",
   "avatar_source": "manual",
   "source": "https://2gis.kz/almaty/firm/70000001110093666"
  },
+ "almaty:kulikov": {
+  "name": "Kulikov",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "kulikov_kz",
+  "website": "https://kulikov.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001111152934",
+  "avatar_checked_at": "2026-10-28T07:59:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:small": {
   "name": "SMALL",
   "city": "almaty",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "smallkz_official",
+  "telegram": "smallkz",
+  "website": "https://small.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001021523816",
+  "avatar_checked_at": "2026-10-28T07:59:01+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "10a5f8705280e3a8.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:алма": {
   "name": "Алма",
@@ -30,14 +55,21 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:бариста": {
+  "name": "Бариста",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00"
+ },
  "almaty:лаффа": {
   "name": "Лаффа",
   "city": "almaty",
   "status": "found",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "laffa.cafe",
-  "source": "https://www.instagram.com/laffa.cafe/"
+  "source": "https://2gis.kz/almaty/firm/70000001020792892"
  },
  "almaty:ренессанс": {
   "name": "Ренессанс",
@@ -45,58 +77,77 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:студент": {
+  "name": "Студент",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00"
+ },
  "astana:3 й тайм": {
   "name": "3-й Тайм",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "3itime_bar",
+  "source": "https://2gis.kz/astana/firm/70000001114798147"
  },
  "astana:agash_oneri": {
   "name": "agash_oneri",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "agash_oneri",
+  "source": "https://2gis.kz/astana/firm/70000001062327354"
  },
  "astana:cartel": {
   "name": "CARTEL",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "cartel_mens_shop",
+  "source": "https://2gis.kz/astana/firm/70000001087861371"
  },
  "astana:pako trade": {
   "name": "PAKO TRADE",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "website": "https://pako.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001042876961",
+  "avatar_checked_at": "2026-10-28T07:59:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:pantheon": {
   "name": "Pantheon",
   "city": "astana",
   "status": "found",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00",
-  "instagram": "pantheon.live",
-  "source": "https://www.instagram.com/pantheon.live/"
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "pantheon.astana",
+  "source": "https://2gis.kz/astana/firm/70000001100733321"
  },
  "astana:simple": {
   "name": "Simple",
   "city": "astana",
   "status": "found",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00",
-  "instagram": "ashana_simple",
-  "source": "https://sxodim.com/astana/place/stolovaya-simple"
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "simple_ashana",
+  "source": "https://2gis.kz/astana/firm/70000001076582201"
  },
  "astana:sq": {
   "name": "SQ",
   "city": "astana",
   "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -108,15 +159,17 @@
   "name": "АВТОСВЕТ & Аксессуары",
   "city": "astana",
   "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00"
  },
  "astana:астория": {
   "name": "Астория",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "astoriahotelkz",
+  "source": "https://2gis.kz/astana/firm/70000001105215429"
  },
  "astana:банный комплекс": {
   "name": "Банный комплекс",
@@ -128,10 +181,10 @@
   "name": "БАУЫРДАҚ",
   "city": "astana",
   "status": "found",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "bauyrdaq_astana",
-  "source": "https://www.instagram.com/bauyrdaq_astana/"
+  "source": "https://2gis.kz/astana/firm/70000001068898146"
  },
  "astana:бизнес центр": {
   "name": "Бизнес-центр",
@@ -149,23 +202,29 @@
  "astana:мангал": {
   "name": "МАНГАЛ",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "steakhouse.mangal",
+  "source": "https://2gis.kz/astana/firm/70000001089777153"
  },
  "astana:рик": {
   "name": "РиК",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "rik_pivo",
+  "source": "https://2gis.kz/astana/firm/70000001019440535"
  },
  "astana:солод": {
   "name": "Солод",
   "city": "astana",
-  "status": "none",
-  "v": 2,
-  "checked_at": "2026-10-28T07:43:20+00:00"
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T07:59:01+00:00",
+  "instagram": "solod.astana",
+  "source": "https://2gis.kz/astana/firm/70000001039844078"
  },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",

@@ -109,7 +109,8 @@ def get(client: httpx.Client, path: str, params: dict, sleep: Callable[[float], 
 def search(client: httpx.Client, date_from: datetime, date_to: datetime,
            sleep: Callable[[float], None] = time.sleep) -> list[dict]:
     """Все вакансии Казахстана за окно. Окно, где больше 2000 результатов, делится пополам по дате."""
-    params = {"area": AREA, "order_by": "publication_time", "per_page": PER_PAGE, "page": 0,
+    # host=hh.kz: ссылки alternate_url ведут на hh.kz, а не на hh.ru
+    params = {"area": AREA, "host": "hh.kz", "order_by": "publication_time", "per_page": PER_PAGE, "page": 0,
               "date_from": date_from.isoformat(timespec="seconds"), "date_to": date_to.isoformat(timespec="seconds")}
     first = get(client, "/vacancies", params, sleep)
     found = first.get("found", 0)

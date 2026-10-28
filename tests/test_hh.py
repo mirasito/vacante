@@ -97,6 +97,7 @@ def test_collect_remembers_window(monkeypatch):
 
     def handler(request):
         seen.append(request.url.params["date_from"])
+        assert request.url.params["host"] == "hh.kz"
         return httpx.Response(200, json={"found": 1, "pages": 1, "items": [item(8)]})
 
     state = {}

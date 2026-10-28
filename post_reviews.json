@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T10:42:46+00:00",
+ "updated_at": "2026-10-28T11:00:13+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -483,10 +483,14 @@
   },
   "hh-138647358": {
    "verdict": "approve",
-   "at": "2026-10-28T10:42:46+00:00",
+   "at": "2026-10-28T11:00:13+00:00",
    "fields": {
     "title": "Продавец-консультант",
-    "address": "Толе би, 187"
+    "address": "ул. Толе би, 187",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
    }
   },
   "hh-138917916": {
@@ -495,6 +499,137 @@
    "fields": {
     "title": "Флорист"
    }
+  },
+  "rabota_astanakz-31013": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "schedule": "6/1, 09:00–16:00"
+   }
+  },
+  "rabota_astanakz-30973": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "schedule": "5/2, 10:00–22:00",
+    "perks": [
+     "Бонусы",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-30986": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Машинист фронтального погрузчика",
+    "employer": "ТОО «Аурика»",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-30983": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "employer": "Супермаркет «Riverside Market»",
+    "schedule": "2/2, 08:00–00:00"
+   }
+  },
+  "rabota_astanakz-30980": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "schedule": "4/3, 5/2 или 6/1, 11:00–23:00"
+   }
+  },
+  "astana_job_vakansii-129801": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Курьер с личным автомобилем",
+    "employer": "Кондитерская «Аяшка»",
+    "schedule": "6/1, 08:45–18:00",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-30972": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Кондитер-оформитель, продавец-кассир, торговый представитель",
+    "employer": "Кондитерская «Tika Cake»",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_period": null,
+    "schedule": "5/2, 6/1 или 2/2"
+   }
+  },
+  "rabota_astanakz-30971": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Технический персонал, повар на мангал",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_period": null
+   }
+  },
+  "almatyrabota1-21272": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "employer": "Ресторан «Dau Fish»",
+    "address": "Коктобе-1, 51а",
+    "schedule": "2/2, 10:30–00:00",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "agashka_job_almaty-986": {
+   "verdict": "reject",
+   "at": "2026-10-28T11:00:13+00:00",
+   "reason": "Офисная IT-должность (техподдержка)"
+  },
+  "rabota4almaty-5797": {
+   "verdict": "reject",
+   "at": "2026-10-28T11:00:13+00:00",
+   "reason": "Повтор вакансии Sulpak на Толе би 187 из этой же очереди"
+  },
+  "hh-129271331": {
+   "verdict": "reject",
+   "at": "2026-10-28T11:00:13+00:00",
+   "reason": "Неправдоподобная зарплата курьера, похоже на рекламный набор"
+  },
+  "hh-137856440": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Грузчик на склад Kaspi"
+   }
+  },
+  "hh-138592028": {
+   "verdict": "approve",
+   "at": "2026-10-28T11:00:13+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "ГК «Sabyrzhan Group»",
+    "salary_min": 220000,
+    "salary_max": null,
+    "salary_period": "month",
+    "address": "ул. Алишера Навои, 328",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-136330089": {
+   "verdict": "reject",
+   "at": "2026-10-28T11:00:13+00:00",
+   "reason": "Вахта в Москву"
   }
  }
 }

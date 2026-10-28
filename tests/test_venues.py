@@ -305,3 +305,28 @@ def test_autopost_sends_avatar_and_prefers_venues_with_it(tmp_path):
     sent = []
     autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(post), now=NOW)
     assert ("📸 Instagram", "https://www.instagram.com/dino_fest_almaty/") in sent[0].buttons
+
+
+def test_admin_crm_lists_venues_with_public_links_only(tmp_path):
+    import json as _json
+    from datetime import datetime as _dt, timezone as _tz
+
+    from vacante.models import RawPost
+    from vacante.parse import parse_post
+    from vacante.site.admin import crm
+
+    def make(i, text):
+        return parse_post(RawPost("telegram", "chan", i, f"https://t.me/chan/{i}", text,
+                                  _dt(2026, 10, 27, 5 + i, tzinfo=_tz.utc), "almaty"))
+
+    a = make(1, "Кафе «Зерно» ищет бариста. Звоните +7 777 123 45 67")
+    b = make(2, "Кафе «Зерно» ищет официанта, 300 000 тг")
+    c = make(3, "Ресторан «Сад» ищет повара")
+    (tmp_path / "venues.json").write_text(_json.dumps(
+        {venues.key("Зерно", "almaty"): {"status": "found", "instagram": "zerno_kz", "website": "https://zerno.kz"}}),
+        "utf-8")
+    rows = crm(tmp_path, [a, b, c])
+    assert [(r["name"], r["count"]) for r in rows] == [("Зерно", 2), ("Сад", 1)]
+    assert (rows[0]["instagram"], rows[0]["website"], rows[0]["city"]) == ("zerno_kz", "https://zerno.kz", "Алматы")
+    assert rows[0]["twogis"].startswith("https://2gis.kz/almaty/search/")
+    assert "777" not in _json.dumps(rows, ensure_ascii=False)

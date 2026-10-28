@@ -31,8 +31,8 @@ def main() -> None:
 
     p_venues = sub.add_parser("venues", help="заведения: Instagram и аватары")
     p_venues.add_argument("action", choices=["apply", "avatars", "set-avatar"],
-                          help="apply: записать находки агента из VENUES_RESULTS и скачать аватары; avatars: только "
-                               "скачать аватары; set-avatar: поставить аватар вручную")
+                          help="apply: записать находки агента из VENUES_RESULTS и скачать аватары (Instagram по API, "
+                               "Telegram, сайт); avatars: только скачать аватары; set-avatar: поставить аватар вручную")
     p_venues.add_argument("--data-dir", type=Path, default=Path("data"))
     p_venues.add_argument("--name", help="set-avatar: название заведения, как на сайте")
     p_venues.add_argument("--city", help="set-avatar: город, например almaty")
@@ -110,15 +110,17 @@ def run_venues(args: argparse.Namespace) -> None:
         except ValueError:
             results = None
         if not isinstance(results, list) or not all(isinstance(r, dict) for r in results):
-            print("::error::VENUES_RESULTS: нужен JSON-массив объектов {key, status, instagram}")
+            print("::error::VENUES_RESULTS: нужен JSON-массив объектов {key, status, instagram, telegram, website}")
             raise SystemExit(1)
         annotate(venues.apply(args.data_dir, results), "Заведения")
-    token = os.environ.get("INSTAGRAM_TOKEN")
-    if not token:
-        logging.info("заведения: нет INSTAGRAM_TOKEN, аватары не скачиваю")
-        return
-    with httpx.Client(timeout=30, follow_redirects=True) as client:
-        annotate(venues.fetch_avatars(args.data_dir, venues.InstagramAPI(client, token).avatar), "Аватары")
+    with httpx.Client(timeout=20, follow_redirects=True) as client:
+        sources = {}
+        if token := os.environ.get("INSTAGRAM_TOKEN"):
+            sources["instagram"] = venues.InstagramAPI(client, token).avatar
+        if token := os.environ.get("TELEGRAM_BOT_TOKEN"):
+            sources["telegram"] = venues.TelegramAvatars(client, token).avatar
+        sources["website"] = venues.WebsiteLogo(client).avatar
+        annotate(venues.fetch_avatars(args.data_dir, sources), "Аватары")
 
 
 def direct_vacancies(data_dir: Path) -> list | None:

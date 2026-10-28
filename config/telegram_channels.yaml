@@ -54,3 +54,25 @@ channels:
   - {username: rabota_semey_official, city: semey}
   - {username: vakansiya_ukg, city: ust-kamenogorsk}
   - {username: rabotapetropavlovsk1, city: petropavlovsk}
+
+  # Добавлены 28.10.2026: нашли по упоминаниям в наших каналах, у всех есть посты за последние две недели
+  - {username: vakansii_oskemen, city: ust-kamenogorsk}
+  - {username: oskemenjob, city: ust-kamenogorsk}
+  - {username: rabota_v_pavlodare, city: pavlodar}
+  - {username: rabota_v_shymkente, city: shymkent}
+  - {username: rabota_v_semee, city: semey}
+  - {username: rabotaaktau, city: aktau}
+  - {username: rabota_v_aktobe, city: aktobe}
+  - {username: rabotkz, city: null}
+  - {username: kzjumys, city: null}
+
+  # Городские доски объявлений, где много вакансий. Продажи, аренду и услуги разбор отсеивает сам.
+  - {username: vakankz, city: null}
+  - {username: vacankz1, city: astana}
+  - {username: avastane, city: astana}
+  - {username: oastana, city: astana}
+  - {username: arbitans, city: almaty}
+  - {username: vkostanai, city: kostanay}
+  - {username: petropavlovkz, city: petropavlovsk}
+  - {username: pavlogradkz, city: pavlodar}
+  - {username: ekibasik, city: null}  # Экибастуз, своего города в списке нет

@@ -68,6 +68,10 @@
 {% endfor %}
 </div>
 <p id="none" class="empty" hidden>Ничего не нашлось. Попробуйте убрать часть фильтров.</p>
+<p class="more">Ещё вакансии{% if city %} {{ city_name(city) }}{% endif %}:
+  {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
+</p>
+<a class="employer" href="{{ employer_url }}" rel="nofollow">Нанимаете? Разместите вакансию бесплатно через бота: она появится здесь и в подборках соискателям →</a>
 {% if city and not category and category_counts %}
 <nav class="by-category">
   <h2>Вакансии по сферам</h2>

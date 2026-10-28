@@ -161,6 +161,13 @@
    "website"
   ]
  },
+ "almaty:barista": {
+  "name": "Barista",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
+ },
  "almaty:beauty style": {
   "name": "Beauty Style",
   "city": "almaty",
@@ -174,6 +181,29 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000980662",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "412aa2bb329e39b4.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:cbc group группа компаний свс": {
+  "name": "CBC-GROUP (Группа компаний СВС)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
  },
  "almaty:cs seven": {
   "name": "CS Seven",
@@ -199,6 +229,13 @@
   "avatar": "cc4ec669bd71e433.jpg",
   "avatar_source": "manual",
   "source": "https://2gis.kz/almaty/firm/70000001110093666"
+ },
+ "almaty:elk и эл кей": {
+  "name": "ELK (И Эл Кей)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
  },
  "almaty:family store": {
   "name": "FAMILY STORE",
@@ -441,6 +478,20 @@
    "website"
   ]
  },
+ "almaty:stynergy": {
+  "name": "STYNERGY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "stynergy_kz",
+  "website": "http://stynergy.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000790394",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:sulpak": {
   "name": "Sulpak",
   "city": "almaty",
@@ -463,6 +514,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:ultra food": {
+  "name": "Ultra Food",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
  },
  "almaty:umay labs": {
   "name": "UMAY Labs",
@@ -581,6 +639,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:арман": {
+  "name": "АРМАН",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
+ },
  "almaty:бакорда": {
   "name": "Бакорда",
   "city": "almaty",
@@ -623,6 +688,19 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:группа компаний аллюр allur": {
+  "name": "Группа компаний Аллюр (Allur)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "telegram": "allur_auto",
+  "source": "https://2gis.kz/almaty/firm/70000001049695959",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
+ },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
   "city": "almaty",
@@ -652,6 +730,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:корпорация gulfstream": {
+  "name": "КОРПОРАЦИЯ GULFSTREAM",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "website": "https://www.asiaelectro.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001554583",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:котофей казахстан": {
   "name": "Котофей Казахстан",
@@ -750,6 +841,29 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "almaty:профсанэксперт": {
+  "name": "ПрофСанЭксперт",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "profsanexpert.kz",
+  "website": "http://profsanexpert.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001093454373",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "80df1adb856a5fa9.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:рекламное агентство проджект м": {
+  "name": "Рекламное Агентство Проджект-М",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
+ },
  "almaty:ренессанс": {
   "name": "Ренессанс",
   "city": "almaty",
@@ -811,6 +925,20 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "almaty:торгстрой": {
+  "name": "ТОРГСТРОЙ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "torgstroy.kz",
+  "website": "http://torgstroy.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000801291",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:центр красоты и здоровья николь": {
   "name": "Центр Красоты и Здоровья НикОль",
   "city": "almaty",
@@ -824,6 +952,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "almaty:элит макс строй": {
+  "name": "Элит Макс Строй",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
  },
  "almaty:этажи": {
   "name": "Этажи",
@@ -1094,6 +1229,22 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "astana:sulpak": {
+  "name": "Sulpak",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "sulpak",
+  "website": "https://www.sulpak.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018295681",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c92c206f34f2ecc5.jpg",
+  "avatar_source": "website"
+ },
  "astana:vvcg": {
   "name": "Vvcg",
   "city": "astana",
@@ -1131,6 +1282,15 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "detskiy_magazin_aisultan",
   "source": "https://2gis.kz/astana/firm/70000001058956737"
+ },
+ "astana:академия здоровья тоо беркут 2016": {
+  "name": "Академия здоровья (ТОО БЕРКУТ-2016)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "aurum_astana",
+  "source": "https://2gis.kz/astana/firm/70000001117640041"
  },
  "astana:актив ломбард": {
   "name": "Актив Ломбард",
@@ -1197,6 +1357,13 @@
   "avatar": "2890e57b7046c7ba.jpg",
   "avatar_source": "telegram"
  },
+ "astana:восток инвест group": {
+  "name": "Восток Инвест Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
+ },
  "astana:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "astana",
@@ -1219,6 +1386,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "astana:ели худели тм ип юлия": {
+  "name": "Ели-худели, ТМ (ИП Юлия)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "elihudeli.kz",
+  "website": "https://elihudeli.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001100710081",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "56f0484378651c82.jpg",
+  "avatar_source": "website"
  },
  "astana:жибек жолы": {
   "name": "Жибек Жолы",
@@ -1353,6 +1536,20 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "atyrau:west dala": {
+  "name": "WEST DALA",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00",
+  "instagram": "westdalallp",
+  "website": "https://www.westdala.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035892642",
+  "avatar_checked_at": "2026-10-28T16:44:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",
   "city": "atyrau",
@@ -1419,6 +1616,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "karaganda:центрально казахстанский филиал тоо базис ст в городе астана": {
+  "name": "Центрально-казахстанский филиал ТОО Базис - СТ в городе Астана",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
  },
  "karaganda:эверест auto": {
   "name": "ЭВЕРЕСТ-AUTO",
@@ -1576,6 +1780,13 @@
   ],
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
+ },
+ "semey:шығыс шпз": {
+  "name": "Шығыс ШПЗ",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T16:44:42+00:00"
  },
  "shymkent:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",

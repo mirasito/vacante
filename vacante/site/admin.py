@@ -25,6 +25,8 @@ from vacante.parse import CATEGORIES, CITIES, REJECT_REASONS
 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
+# Воркер бота: там CRM хранит статусы и заметки (bot/src/crm.js)
+BOT_URL = os.environ.get("BOT_URL") or "https://vacante-bot.vacante-kz.workers.dev"
 SILENT_DAYS = 3  # канал без новых постов дольше этого считаем замолчавшим
 RECENT_POSTED = 15
 
@@ -135,6 +137,7 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
         "autopost": autopost,
         "bot": bot,
         "crm": crm(data_dir, vacancies),
+        "crm_api": f"{BOT_URL}/api/crm",
     }
 
 

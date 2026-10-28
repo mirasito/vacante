@@ -6,6 +6,7 @@
 // а подборки каждый час рассылает `python -m vacante digest` из GitHub Actions.
 // Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
 import { dispatchUpdate, wakeUpdate } from "./cron.js";
+import { crmApi } from "./crm.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
 
@@ -25,6 +26,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (request.method === "POST" && url.pathname === "/api/moderate") return moderationApi(request, env, ctx);
+    if (url.pathname === "/api/crm") return crmApi(request, env);  // CRM заведений в админке сайта
     if (request.method !== "POST" || url.pathname !== "/telegram") {
       return new Response("vacante.kz bot", { status: 200 });
     }

@@ -41,11 +41,11 @@ def test_matches_city_category_perks_and_pay():
     assert not digest.matches(sub(perks=["salary"]), make(2, "Требуется грузчик на склад"))
 
 
-def test_digest_lists_five_and_points_to_site():
-    hits = [make(i, f"Кафе «Луна» ищет официанта, {200 + i} 000 тг\n📍 Адрес: ул. Абая, {i}") for i in range(3, 10)]
+def test_digest_lists_ten_and_points_to_site():
+    hits = [make(i, f"Кафе «Луна» ищет официанта, {200 + i} 000 тг\n📍 Адрес: ул. Абая, {i}") for i in range(3, 15)]
     text = digest.format_digest(hits, "https://vacante.kz")
-    assert text.startswith("🆕 Новые вакансии для вас: 7")
-    assert text.count("<a href=") == 5 and "Остальные 2 на сайте" in text
+    assert text.startswith("🆕 Новые вакансии для вас: 12")
+    assert text.count("<a href=") == 10 and "Остальные 2 на сайте" in text
     assert '<b><a href="https://vacante.kz/v/chan-3/">Официант</a></b> · Луна' in text
     assert "📍 Алматы, ул. Абая, 3" in text
 

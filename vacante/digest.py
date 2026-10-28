@@ -26,7 +26,7 @@ log = logging.getLogger(__name__)
 
 LOCAL = timezone(timedelta(hours=5))
 SEND_HOURS = range(8, 22)  # с 8:00 до 21:59 по времени Казахстана
-MAX_ITEMS = 5  # вакансий в одном сообщении, остальные на сайте
+MAX_ITEMS = 10  # вакансий в одном сообщении, остальные на сайте
 SALARY = "salary"  # условие «С зарплатой» в подписке
 
 Sender = Callable[[int, str, list], None]

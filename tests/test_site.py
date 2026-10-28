@@ -85,3 +85,19 @@ def test_search_tags_and_metrika_only_when_set(tmp_path, monkeypatch):
     assert '<meta name="google-site-verification" content="g123">' in home
     assert '<meta name="yandex-verification" content="y456">' in home
     assert 'ym(98765432, "init"' in home
+
+
+def test_list_links_to_more_vacancies_elsewhere(tmp_path):
+    raw = RawPost("telegram", "chan", 8, "https://t.me/chan/8", "Требуется официант, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "almaty")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    city = (out / "almaty" / "index.html").read_text("utf-8")
+    assert 'href="https://hh.kz/search/vacancy?area=160"' in city
+    assert 'href="https://www.olx.kz/rabota/"' in city
+    horeca = (out / "almaty" / "horeca" / "index.html").read_text("utf-8")
+    assert "area=160&amp;text=%D0%BE%D1%84" in horeca
+    assert "Разместите вакансию бесплатно" in city
+    assert site.more_links("astana")[1] == ("OLX", "https://www.olx.kz/rabota/astana/")
+    assert site.more_links(None)[0] == ("hh.kz", "https://hh.kz/search/vacancy?area=40")

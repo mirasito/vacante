@@ -35,6 +35,19 @@ TELEGRAM_CHANNELS = {
     "astana": "https://t.me/vacanteastana",
     "almaty": "https://t.me/vacantealmaty",
 }
+# Ссылки «Ещё вакансии» на поиск hh.kz и рубрику «Работа» OLX: только переход на их сайт, их данные
+# мы не собираем (правила hh.kz запрещают автоматический сбор, OLX закрывает рубрику от ботов).
+# Коды городов hh из справочника api.hh.ru/areas/40, адреса городов OLX из olx.kz/sitemap-locations.xml;
+# для остальных городов ссылка ведёт на весь Казахстан.
+HH_AREAS = {"almaty": 160, "astana": 159, "aktobe": 154, "atyrau": 153, "semey": 185, "ust-kamenogorsk": 194,
+            "taraz": 187}
+OLX_CITIES = {"astana": "astana", "atyrau": "atyrau", "aktau": "aktau_5633", "kostanay": "kostanay",
+              "petropavlovsk": "petropavlovsk"}
+# Запрос в поиск hh.kz для сферы (синтаксис hh: OR между словами)
+HH_QUERIES = {"horeca": "официант OR повар OR бармен OR бариста", "retail": "продавец OR кассир",
+              "warehouse": "кладовщик OR грузчик OR комплектовщик", "delivery": "курьер OR водитель",
+              "service": "уборщица OR горничная OR мойщик", "construction": "разнорабочий OR строитель",
+              "callcenter": "оператор колл-центра"}
 FEED_SIZE = 300
 # Сколько первых символов текста объявления попадает в поиск на странице списка: страница
 # содержит все вакансии города, и полный текст каждой сделал бы её слишком тяжёлой для телефона.
@@ -121,6 +134,15 @@ def age_label(posted_at: str, now: datetime) -> str:
     return f"{days} дн. назад"
 
 
+def more_links(city: str | None, category: str | None = None) -> list[tuple[str, str]]:
+    """Куда ещё посмотреть вакансии этого города: [(название, адрес)]."""
+    hh = f"https://hh.kz/search/vacancy?area={HH_AREAS.get(city or '', 40)}"
+    if category in HH_QUERIES:
+        hh += "&text=" + quote(HH_QUERIES[category])
+    olx = "https://www.olx.kz/rabota/" + (f"{OLX_CITIES[city]}/" if city in OLX_CITIES else "")
+    return [("hh.kz", hh), ("OLX", olx)]
+
+
 def city_name(slug: str | None) -> str:
     return CITIES[slug][0] if slug in CITIES else "Казахстан"
 
@@ -135,7 +157,7 @@ def _env() -> Environment:
     env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
                        monthly_pay=monthly_pay, monthly_label=monthly_label, search_text=search_text, money=money,
                        FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url,
-                       site_name=site_name)
+                       site_name=site_name, more_links=more_links)
     env.filters["plural"] = plural
     return env
 

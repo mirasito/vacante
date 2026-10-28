@@ -175,6 +175,13 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "almaty:asai clinic": {
+  "name": "ASAI-CLINIC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
+ },
  "almaty:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "almaty",
@@ -387,6 +394,22 @@
   "instagram": "glovo_kz",
   "source": "https://2gis.kz/almaty/firm/70000001038239655"
  },
+ "almaty:greencity": {
+  "name": "GreenCity",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "greencity_kz",
+  "website": "http://green-city.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029865749",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dd9ba8f9ad0b7c2d.jpg",
+  "avatar_source": "website"
+ },
  "almaty:hila": {
   "name": "Hila",
   "city": "almaty",
@@ -444,6 +467,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:lumiere service": {
+  "name": "LUMIERE Service”",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
  },
  "almaty:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -626,6 +656,20 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:staff up consulting group": {
+  "name": "Staff-UP Consulting Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "almaty:studio массаж": {
+  "name": "Studio Массаж",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
  },
  "almaty:stynergy": {
   "name": "STYNERGY",
@@ -849,6 +893,20 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:алма телекоммуникейшнс казахстан almaplus": {
+  "name": "Алма Телекоммуникейшнс Казахстан (almaPLUS)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "alma__plus",
+  "website": "https://alma.plus/",
+  "source": "https://2gis.kz/almaty/firm/9429940000870610",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алматыгазмонтаж ао": {
   "name": "АЛМАТЫГАЗМОНТАЖ, АО",
   "city": "almaty",
@@ -1035,6 +1093,15 @@
   "instagram": "yvesrocherkz",
   "source": "https://2gis.kz/almaty/firm/70000001113860458"
  },
+ "almaty:инжиниринговая компания казгипронефтетранс": {
+  "name": "ИНЖИНИРИНГОВАЯ КОМПАНИЯ КАЗГИПРОНЕФТЕТРАНС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "kgnt.kz",
+  "source": "https://2gis.kz/almaty/firm/9429940000796244"
+ },
  "almaty:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "almaty",
@@ -1149,6 +1216,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:мфо ломбард деньги населению": {
+  "name": "МФО Ломбард Деньги населению",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
+ },
  "almaty:мүслім": {
   "name": "Мүслім",
   "city": "almaty",
@@ -1229,6 +1303,22 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:республиканская школа лидерства жаңа ұрпақ": {
+  "name": "Республиканская школа лидерства Жаңа Ұрпақ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "zhanaurpaq.kz",
+  "website": "http://zhanaurpak.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001088915181",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d8364f9715378789.jpg",
+  "avatar_source": "website"
+ },
  "almaty:ресурс плюс kz": {
   "name": "Ресурс Плюс KZ",
   "city": "almaty",
@@ -1248,6 +1338,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:сейф ломбард": {
+  "name": "Сейф-ломбард",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "seiflombard.kz",
+  "website": "https://seiflombard.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001057284887",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "460e73c2b79668ae.jpg",
+  "avatar_source": "website"
  },
  "almaty:специалист": {
   "name": "Специалист",
@@ -1276,6 +1382,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:телс карго казахстан": {
+  "name": "ТЕЛС КАРГО КАЗАХСТАН",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
  },
  "almaty:терракота": {
   "name": "Терракота",
@@ -1353,6 +1466,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ювелирная компания merhat jewelry ип кенжеғалиева т б": {
+  "name": "Ювелирная компания MERHAT JEWELRY (ИП КЕНЖЕҒАЛИЕВА Т. Б)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "merhat_jewelry",
+  "source": "https://2gis.kz/almaty/firm/70000001038668959"
  },
  "almaty:яхьяров": {
   "name": "ИП Яхьяров",
@@ -1458,6 +1580,15 @@
    "website"
   ]
  },
+ "astana:dora bakery": {
+  "name": "DORA Bakery",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "dora_bakery",
+  "source": "https://2gis.kz/astana/firm/70000001118719154"
+ },
  "astana:ds trading company": {
   "name": "DS Trading Company",
   "city": "astana",
@@ -1475,6 +1606,20 @@
   "website": "https://bpshop.kz/",
   "source": "https://2gis.kz/astana/firm/70000001103276678",
   "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:glovo": {
+  "name": "GLOVO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "glovo_kz",
+  "website": "https://glovoapp.com/",
+  "source": "https://2gis.kz/astana/firm/70000001039423066",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1556,6 +1701,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "astana:lpp kazakhstan лпп казахстан": {
+  "name": "LPP Kazakhstan (ЛПП Казахстан)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
  },
  "astana:magnum": {
   "name": "MAGNUM",
@@ -1686,6 +1838,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:solmoryn": {
+  "name": "SOLMORYN",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
  },
  "astana:sq": {
   "name": "SQ",
@@ -2188,6 +2347,13 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "karaganda:resto gamma": {
+  "name": "Resto GAMMA",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
+ },
  "karaganda:sary arka copper processing": {
   "name": "Sary-Arka Copper Processing",
   "city": "karaganda",
@@ -2344,6 +2510,20 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "kostanay:каmlitkz": {
+  "name": "КаmLitKZ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "kamlit.kz",
+  "website": "http://kamlit.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001054917362",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:компания саламат": {
   "name": "Компания САЛАМАТ",
   "city": "kostanay",
@@ -2425,6 +2605,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00"
  },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
@@ -2536,6 +2723,20 @@
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001025991413",
   "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "shymkent:nls kazakhstan": {
+  "name": "NLS Kazakhstan",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T21:46:06+00:00",
+  "instagram": "nlskazakhstan",
+  "website": "http://nls.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001033718369",
+  "avatar_checked_at": "2026-10-28T21:46:06+00:00",
   "avatar_tried": [
    "website"
   ]

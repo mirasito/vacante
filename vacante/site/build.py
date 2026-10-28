@@ -17,6 +17,7 @@ from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from vacante import venues as venue_store
 from vacante.direct import POST_URL
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
@@ -135,12 +136,16 @@ def _env() -> Environment:
     )
     env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
                        monthly_pay=monthly_pay, monthly_label=monthly_label, search_text=search_text, money=money,
-                       FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL)
+                       FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url)
     env.filters["plural"] = plural
     return env
 
 
-def job_posting_ld(v: Vacancy, base_url: str) -> str | None:
+def instagram_url(venue: dict | None) -> str | None:
+    return f"https://www.instagram.com/{venue['instagram']}/" if venue and venue.get("instagram") else None
+
+
+def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str | None:
     """Разметка JobPosting для Google Jobs. Google требует работодателя, без него не выводим."""
     if not v.employer:
         return None
@@ -159,6 +164,10 @@ def job_posting_ld(v: Vacancy, base_url: str) -> str | None:
         },
         "url": f"{base_url}/v/{v.id}/",
     }
+    if venue and venue.get("avatar"):
+        data["hiringOrganization"]["logo"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"
+    if url := instagram_url(venue):
+        data["hiringOrganization"]["sameAs"] = url
     if v.salary_min or v.salary_max:
         unit = {"month": "MONTH", "day": "DAY", "hour": "HOUR"}[v.salary_period]
         value = {"@type": "QuantitativeValue", "unitText": unit}
@@ -175,15 +184,19 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     now = now or datetime.now(timezone.utc)
     base_url = base_url.rstrip("/")
     vacancies = sorted(load_vacancies(data_dir), key=lambda v: v.posted_at, reverse=True)
+    venues = venue_store.load(data_dir)
     env = _env()
     # root: путь сайта без домена, чтобы ссылки работали и на vacante.kz, и на <user>.github.io/vacante
     env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url,
-                       root=urlparse(base_url).path.rstrip("/"), **SITE_TAGS)
+                       root=urlparse(base_url).path.rstrip("/"), venue=lambda v: venue_store.lookup(venues, v),
+                       **SITE_TAGS)
 
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
     shutil.copytree(HERE / "static", out / "static")
+    if (data_dir / venue_store.AVATARS).is_dir():
+        shutil.copytree(data_dir / venue_store.AVATARS, out / venue_store.AVATARS)
     pages: list[str] = []
 
     def write(path: str, template: str, **ctx) -> None:
@@ -216,7 +229,8 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                   category_counts=_category_counts(items), channels=TELEGRAM_CHANNELS)
 
     for v in vacancies:
-        write(f"v/{v.id}", "vacancy.html", v=v, ld=job_posting_ld(v, base_url), channels=TELEGRAM_CHANNELS)
+        write(f"v/{v.id}", "vacancy.html", v=v, ld=job_posting_ld(v, base_url, venue_store.lookup(venues, v)),
+              channels=TELEGRAM_CHANNELS)
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404"), "utf-8")
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки

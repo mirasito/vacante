@@ -1,0 +1,62 @@
+# Заведения: агент (.claude/skills/find-venues) запускает этот workflow с найденными Instagram в JSON,
+# а workflow записывает их в venues.json ветки data и скачивает аватары через официальный API Instagram.
+# Без секрета INSTAGRAM_TOKEN аватары не скачиваются, а ссылки на Instagram всё равно сохраняются.
+# Пустой список [] просто докачивает аватары тем заведениям, у которых Instagram найден, а аватара нет.
+name: Заведения
+
+on:
+  workflow_dispatch:
+    inputs:
+      results:
+        description: 'JSON: [{"key": "almaty:dino fest", "status": "found | none | skip", "instagram": "dino_fest_almaty", "source": "..."}]'
+        required: true
+        default: "[]"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: venues
+  cancel-in-progress: false
+
+jobs:
+  venues:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install .
+
+      - name: Подготовить ветку data
+        run: |
+          git config user.name "vacante-bot"
+          git config user.email "vacante-bot@users.noreply.github.com"
+          git fetch --depth 1 origin data:refs/remotes/origin/data
+          git worktree add data origin/data
+          git -C data switch -C data
+
+      - name: Записать заведения и скачать аватары
+        env:
+          VENUES_RESULTS: ${{ inputs.results }}  # через переменную, а не подстановкой в скрипт
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: python -m vacante venues apply --data-dir data
+
+      # venues.json и venues/ пишет только этот workflow, поэтому rebase на свежие вакансии проходит без конфликтов
+      - name: Сохранить
+        run: |
+          git -C data add venues.json
+          if [ -d data/venues ]; then git -C data add venues; fi
+          git -C data diff --cached --quiet && exit 0
+          git -C data commit -q -m "Заведения $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for attempt in 1 2 3 4; do
+            git -C data push -q origin data && exit 0
+            git -C data pull -q --rebase origin data || true
+          done
+          echo "::error::не удалось сохранить venues.json"
+          exit 1

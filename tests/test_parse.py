@@ -181,6 +181,40 @@ def test_employer_stops_before_invite_verb():
     assert detect_employer("🔥 СЕТЬ СУПЕРМАРКЕТОВ SMALL ПРИГЛАШАЕТ В КОМАНДУ! 🔥") == "SMALL"
 
 
+DINO_FEST = """В семейный рестопарк DINO FEST
+Требуются
+
+Бармены — 2 человека
+— Зарплата: 18 000 ₸ за смену
+Адрес: ТЦ FORUM, ул. Сейфуллина, 617, 4-й этаж, DINO FEST"""
+
+
+def test_family_restaurant_is_not_semey():
+    v = parse_post(RawPost("telegram", "almaty_rabota01", 1, "https://t.me/almaty_rabota01/1", DINO_FEST,
+                           datetime(2026, 10, 28, tzinfo=timezone.utc), "almaty"))
+    assert (v.city, v.employer) == ("almaty", "DINO FEST")
+    assert detect_city("Требуется продавец в Семей", "almaty") == "semey"
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("💼 Бармен\nDINO FEST\n💰 18 000 ₸ / смена\n📍 Алматы", "DINO FEST"),
+    ("💼 Официант в ресторан ЮГ22\nПримавера КАЗ\n💰 500 000 ₸ / оклад", "ЮГ22"),
+    ("💼 Сборщик заказов\nСеть ресторанов Lanzhou\n💰 18 000 ₸ / смена", "Lanzhou"),
+    ("💼 Служащий склада\nТОО \"ЮСКО Интернешнл\"\n💰 366 000 ₸ / оклад", "ЮСКО Интернешнл"),
+    ("💼 Администратор\nINVITRO (ТОО ИНВИТРО-Казахстан)\n💰 211 820 ₸ / оклад", "INVITRO"),
+    ("💼 Упаковщик\nРесторан паназиатской кухни\n💰 12 000 ₸ / смена", None),
+    ("💼 Электрик участка\nРАХИМБАЕВ БАУРЖАН ЕРБОЛОВИЧ\n💰 273 000 ₸ / оклад", None),
+    ("💼 Торговый представитель\nОбъявления от частных лиц\n💰 300 000 ₸ / оклад", None),
+    ("💼 Пекарь-кондитер\n💰 15 000 ₸ / в день\n📍 Алматы", None),
+])
+def test_employer_on_line_under_title(text, expected):
+    assert detect_employer(text) == expected
+
+
+def test_hiring_verb_is_not_an_employer():
+    assert detect_employer("В кафе Требуется повар универсал") is None
+
+
 @pytest.mark.parametrize("text, expected", [
     ("Бариста\n📍 Адрес: г. Астана, Есильский район, пр. Мангилик Ел, 49 (ЖК «Дрим Сити»)",
      "пр. Мангилик Ел, 49 (ЖК «Дрим Сити»)"),

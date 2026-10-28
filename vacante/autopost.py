@@ -1,8 +1,8 @@
 """Автопостинг свежих вакансий в свои Telegram-каналы vacante.
 
 Каждый час после сбора: если для канала подошло время, выбираем лучшую свежую вакансию
-его города и публикуем картинку-карточку (должность, заведение, адрес, зарплата) с подписью
-и кнопками «Подробнее» и «2ГИС». Что уже опубликовано, хранится в posted.json рядом с вакансиями.
+его города и публикуем картинку-карточку (аватар заведения, должность, заведение, адрес, зарплата)
+с подписью и кнопками «Подробнее», «2ГИС» и Instagram заведения. Что уже опубликовано, хранится в posted.json рядом с вакансиями.
 """
 
 from __future__ import annotations
@@ -17,9 +17,9 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, direct
+from vacante import card, direct, venues
 from vacante.models import Vacancy
-from vacante.site.build import twogis_url
+from vacante.site.build import instagram_url, twogis_url
 from vacante.store import load_vacancies
 
 log = logging.getLogger(__name__)
@@ -67,13 +67,15 @@ def is_due(last_at: str | None, now: datetime) -> bool:
     return last_at is None or now - datetime.fromisoformat(last_at) >= MIN_GAP
 
 
-def _score(v: Vacancy) -> float:
-    # Вакансии, размещённые работодателем через бота, идут в канал первыми
+def _score(v: Vacancy, known: set[str]) -> float:
+    # Вакансии, размещённые работодателем через бота, идут в канал первыми; с аватаром заведения чуть выше
     return (10 * (v.source == direct.SOURCE) + 3 * (v.salary_min is not None or v.salary_max is not None)
-            + 2 * bool(v.employer) + bool(v.schedule) + 0.5 * min(len(v.perks), 2) + (v.category != "other"))
+            + 2 * bool(v.employer) + (v.id in known) + bool(v.schedule) + 0.5 * min(len(v.perks), 2)
+            + (v.category != "other"))
 
 
-def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> Vacancy | None:
+def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
+         known: set[str] = frozenset()) -> Vacancy | None:
     """Лучшая свежая неопубликованная вакансия города; должности последних постов не повторяем."""
     seen = set(state.get("ids", []))
     recent_titles = set(state.get("titles", [])[-3:])
@@ -82,7 +84,7 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> Vac
         v for v in vacancies
         if v.city == city and v.id not in seen and v.posted_at >= cutoff and v.title not in recent_titles
     ]
-    return max(candidates, key=lambda v: (_score(v), v.posted_at), default=None)
+    return max(candidates, key=lambda v: (_score(v, known), v.posted_at), default=None)
 
 
 def direct_due(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> list[Vacancy]:
@@ -115,13 +117,15 @@ def format_caption(v: Vacancy) -> str:
     return "\n".join(lines)
 
 
-def make_post(v: Vacancy, base_url: str) -> Post:
+def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: bytes | None = None) -> Post:
     buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
     if url := twogis_url(v):
         buttons.append(("📍 Открыть в 2ГИС", url))
-    return Post(format_caption(v), card.render(v), buttons)
+    if url := instagram_url(venue):
+        buttons.append(("📸 Instagram", url))
+    return Post(format_caption(v), card.render(v, avatar), buttons)
 
 
 def telegram_sender(client: httpx.Client, token: str) -> Sender:
@@ -159,25 +163,29 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
     held = awaiting_review(data_dir)
     vacancies = [v for v in load_vacancies(data_dir) if v.id not in held]
     posted = load_posted(data_dir)
+    table = venues.load(data_dir)
+    known = {v.id for v in vacancies if (venue := venues.lookup(table, v)) and venue.get("avatar")}
     stats = {"posted": 0, "failed": 0}
     for city, chat in CHANNELS.items():
         state = posted.setdefault(city, {"ids": [], "titles": [], "last_at": None})
         # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь
         for v in direct_due(vacancies, city, state, now):
-            if _publish(chat, v, base_url, send, state, stats):
+            if _publish(chat, v, base_url, send, state, stats, data_dir, table):
                 stats["direct"] = stats.get("direct", 0) + 1
         if not is_due(state["last_at"], now):
             continue
-        v = pick(vacancies, city, state, now)
-        if v is not None and _publish(chat, v, base_url, send, state, stats):
+        v = pick(vacancies, city, state, now, known)
+        if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, table):
             state["last_at"] = now.isoformat()
     save_posted(data_dir, posted)
     return stats
 
 
-def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, stats: dict) -> bool:
+def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, stats: dict,
+             data_dir: Path, table: dict) -> bool:
+    venue = venues.lookup(table, v)
     try:
-        send(chat, make_post(v, base_url))
+        send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue)))
     except (httpx.HTTPError, RuntimeError) as exc:
         log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
         stats["failed"] += 1

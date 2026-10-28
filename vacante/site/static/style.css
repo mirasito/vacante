@@ -33,7 +33,10 @@ a { color: inherit; }
 .card-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
 .card h3 { margin: 0; font-size: 20px; }
 .age { color: var(--quiet); font-size: 13px; white-space: nowrap; }
-.employer { font-size: 17px; margin-top: 2px; }
+.employer { font-size: 17px; margin-top: 2px; display: flex; align-items: center; gap: 8px; }
+.employer .avatar { width: 28px; height: 28px; border-radius: 50%; flex: none; object-fit: cover; background: var(--line); }
+.vacancy .employer { font-size: 19px; margin-top: 8px; }
+.vacancy .employer .avatar { width: 40px; height: 40px; }
 .meta { color: var(--quiet); font-size: 14px; margin-top: 4px; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pill { background: var(--pill); border-radius: 999px; padding: 4px 12px; font-size: 14px; }

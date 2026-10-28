@@ -25,6 +25,8 @@
   {% if v.source == "bot" %}
   <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в Telegram</a>
   <p class="direct">Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.</p>
+  {% elif v.source == "hh" %}
+  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться на hh.kz</a>
   {% else %}
   <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в оригинальном объявлении</a>
   {% endif %}

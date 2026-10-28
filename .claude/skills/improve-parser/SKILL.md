@@ -19,7 +19,7 @@ description: Агент-технолог vacante.kz. Раз в день смот
 
 ## Правила
 
-- Код меняешь только через PR из своей ветки. Никаких пушей в `main` и в ветку `data`.
+- Код меняешь только через PR из своей ветки (`parser/<дата>`; если сессия назначила тебе ветку, работай в ней). Никаких пушей в `main` и в ветку `data`.
 - Меняешь только `vacante/parse.py`, тесты в `tests/` и журнал `.claude/skills/improve-parser/log.md`.
   Не трогай workflows, бота, сайт, секреты и `config/telegram_channels.yaml` (каналы ты только упоминаешь в итоге).
 - Один PR за запуск, от одной до трёх правок. Каждая правка закрывает заметную группу постов, а не один пост.
@@ -33,7 +33,7 @@ description: Агент-технолог vacante.kz. Раз в день смот
 
 ```bash
 git fetch -q origin main +refs/heads/data:refs/remotes/origin/data
-git checkout -q -B "parser/$(date -u +%Y-%m-%d)" origin/main
+git checkout -q -B "parser/$(date -u +%Y-%m-%d)" origin/main  # или ветка, которую назначила сессия
 pip install -q -e ".[dev]"
 D=/tmp/vdata; mkdir -p $D
 for f in journal.json vacancies.json rejected.json; do git show origin/data:$f > $D/$f 2>/dev/null || rm -f $D/$f; done

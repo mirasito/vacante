@@ -3,22 +3,26 @@
   "name": "TOO Arlan logistics grop",
   "city": "almaty",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "almaty:dino fest": {
   "name": "DINO FEST",
   "city": "almaty",
   "status": "found",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00",
   "instagram": "dino_fest_almaty",
   "avatar": "cc4ec669bd71e433.jpg",
-  "checked_at": "2026-10-28T06:46:08+00:00",
-  "source": "https://2gis.kz/almaty/firm/70000001110093666; аватар прислал Мирас"
+  "avatar_source": "manual",
+  "source": "https://2gis.kz/almaty/firm/70000001110093666"
  },
  "almaty:small": {
   "name": "SMALL",
   "city": "almaty",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "almaty:алма": {
   "name": "Алма",
@@ -30,7 +34,8 @@
   "name": "Лаффа",
   "city": "almaty",
   "status": "found",
-  "checked_at": "2026-10-28T06:51:26+00:00",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00",
   "instagram": "laffa.cafe",
   "source": "https://www.instagram.com/laffa.cafe/"
  },
@@ -44,25 +49,36 @@
   "name": "3-й Тайм",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "astana:agash_oneri": {
+  "name": "agash_oneri",
+  "city": "astana",
+  "status": "none",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:cartel": {
   "name": "CARTEL",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:pako trade": {
   "name": "PAKO TRADE",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:pantheon": {
   "name": "Pantheon",
   "city": "astana",
   "status": "found",
-  "checked_at": "2026-10-28T06:51:26+00:00",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00",
   "instagram": "pantheon.live",
   "source": "https://www.instagram.com/pantheon.live/"
  },
@@ -70,7 +86,8 @@
   "name": "Simple",
   "city": "astana",
   "status": "found",
-  "checked_at": "2026-10-28T06:51:26+00:00",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00",
   "instagram": "ashana_simple",
   "source": "https://sxodim.com/astana/place/stolovaya-simple"
  },
@@ -78,7 +95,8 @@
   "name": "SQ",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -90,13 +108,15 @@
   "name": "АВТОСВЕТ & Аксессуары",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:астория": {
   "name": "Астория",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:банный комплекс": {
   "name": "Банный комплекс",
@@ -108,9 +128,17 @@
   "name": "БАУЫРДАҚ",
   "city": "astana",
   "status": "found",
-  "checked_at": "2026-10-28T06:51:26+00:00",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00",
   "instagram": "bauyrdaq_astana",
   "source": "https://www.instagram.com/bauyrdaq_astana/"
+ },
+ "astana:бизнес центр": {
+  "name": "Бизнес-центр",
+  "city": "astana",
+  "status": "skip",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:жибек жолы": {
   "name": "Жибек Жолы",
@@ -122,18 +150,35 @@
   "name": "МАНГАЛ",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:рик": {
   "name": "РиК",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  },
  "astana:солод": {
   "name": "Солод",
   "city": "astana",
   "status": "none",
-  "checked_at": "2026-10-28T06:51:26+00:00"
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "atyrau:магазин женской одежды": {
+  "name": "Магазин женской одежды",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "semey:kari": {
+  "name": "KARI",
+  "city": "semey",
+  "status": "none",
+  "v": 2,
+  "checked_at": "2026-10-28T07:43:20+00:00"
  }
 }

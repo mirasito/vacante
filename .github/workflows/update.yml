@@ -51,6 +51,9 @@ jobs:
           # Источник hh.kz (vacante/sources/hh.py) выключен, пока в Variables не задано HH_SOURCE_ENABLED=true
           HH_SOURCE_ENABLED: ${{ vars.HH_SOURCE_ENABLED || 'false' }}
           HH_TOKEN: ${{ secrets.HH_TOKEN }}
+          # Или токен приложения по Client Id и Client Secret с dev.hh.ru (HH_TOKEN тогда не нужен)
+          HH_CLIENT_ID: ${{ secrets.HH_CLIENT_ID }}
+          HH_CLIENT_SECRET: ${{ secrets.HH_CLIENT_SECRET }}
           HH_USER_AGENT: ${{ vars.HH_USER_AGENT }}
         run: python -m vacante collect --data-dir data
 

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T22:56:31+00:00",
+ "updated_at": "2026-10-28T23:57:05+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -1957,6 +1957,124 @@
     "title": "Помощник мастера-приёмщика автосервиса",
     "employer": "Liqui Moly Eurasia",
     "schedule": null
+   }
+  },
+  "hh-138922509": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {}
+  },
+  "rabota_astanakz-31002": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "title": "Мастер по замене масла",
+    "employer": "LI-KON",
+    "schedule": "6/1, 09:00–20:00"
+   }
+  },
+  "astana_job_vakansii-129840": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "title": "Водитель «Газели», грузчик",
+    "employer": "Homeway",
+    "schedule": "6/1, 08:30–18:30"
+   }
+  },
+  "astana_job_vakansii-129838": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "title": "Сотрудник пункта выдачи заказов",
+    "employer": "ПВЗ Wildberries",
+    "schedule": "1/1 или 2/2, 09:00–21:15"
+   }
+  },
+  "astana_job_vakansii-129836": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "employer": "Магазин «Тойбастар»",
+    "schedule": "6/1, 09:00–18:00"
+   }
+  },
+  "astana_job_vakansii-129788": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "employer": "Алкомаркет «РиК»",
+    "schedule": "14/14, 10:00–23:00"
+   }
+  },
+  "astana_job_vakansii-129831": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, 08:00–19:00"
+   }
+  },
+  "rabota_astanakz-30992": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "employer": "Гостиница «Астория»",
+    "schedule": "1/2, 08:00–08:00",
+    "address": "ул. Аккербез, 10"
+   }
+  },
+  "hh-138010394": {
+   "verdict": "reject",
+   "at": "2026-10-28T23:57:05+00:00",
+   "reason": "Офисная должность: продажи недвижимости"
+  },
+  "hh-138925246": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "title": "Торговый представитель (детская гигиена)"
+   }
+  },
+  "hh-138925022": {
+   "verdict": "reject",
+   "at": "2026-10-28T23:57:05+00:00",
+   "reason": "Талгар, не Алматы"
+  },
+  "hh-135766885": {
+   "verdict": "reject",
+   "at": "2026-10-28T23:57:05+00:00",
+   "reason": "Менеджер B2B-продаж, офисная должность"
+  },
+  "hh-138924555": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "title": "Водитель-монтажник рекламных конструкций"
+   }
+  },
+  "hh-138924532": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "employer": "ГК «Sabyrzhan Group»"
+   }
+  },
+  "hh-138924440": {
+   "verdict": "reject",
+   "at": "2026-10-28T23:57:05+00:00",
+   "reason": "Менеджер по продажам с планом, не рабочая специальность"
+  },
+  "rabota4almaty-5807": {
+   "verdict": "approve",
+   "at": "2026-10-28T23:57:05+00:00",
+   "fields": {
+    "employer": "Компания «SANTRADE»",
+    "salary_min": 70000,
+    "salary_max": 110000,
+    "salary_period": "month",
+    "schedule": "5/2, 06:00–08:00",
+    "address": "пр. Назарбаева, 242, БЦ «Арыс»"
    }
   }
  }

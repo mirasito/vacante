@@ -140,6 +140,20 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:antalya group": {
+  "name": "Antalya Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "antalya_pool.spa",
+  "website": "https://antalya-pool.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001051885880",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:arco invest": {
   "name": "ARCO INVEST",
   "city": "almaty",
@@ -241,6 +255,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:classic kindergarten частный детский сад": {
+  "name": "CLASSIC KINDERGARTEN ( Частный детский сад )",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "classic_kindergarten",
+  "website": "https://classickindergarten.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001263850",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:cs seven": {
   "name": "CS Seven",
@@ -746,6 +774,13 @@
   "avatar": "4be4d686ea22a24b.jpg",
   "avatar_source": "website"
  },
+ "almaty:айсаров б а": {
+  "name": "АЙСАРОВ Б.А.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
+ },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
   "city": "almaty",
@@ -808,6 +843,24 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "almaty:белый ветер kz": {
+  "name": "Белый Ветер KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "beliy_veter_shop.kz",
+  "telegram": "belyiveter_kz",
+  "website": "https://shop.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001626635",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "a7c44a91f14f39d1.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:бизнес парк станица": {
   "name": "Бизнес парк Станица",
   "city": "almaty",
@@ -837,6 +890,13 @@
   ],
   "avatar": "1b1d39b18a538f3b.jpg",
   "avatar_source": "website"
+ },
+ "almaty:ботай арман": {
+  "name": "БОТАЙ АРМАН",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
  },
  "almaty:галерея новостроек": {
   "name": "Галерея Новостроек",
@@ -988,6 +1048,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:мүслім": {
+  "name": "Мүслім",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
  },
  "almaty:ордоген": {
   "name": "Ордоген",
@@ -1152,6 +1219,20 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:эраунд групп around": {
+  "name": "Эраунд Групп AROUND",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "aroundgroup.world",
+  "website": "https://aroundgroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082802485",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:этажи": {
   "name": "Этажи",
   "city": "almaty",
@@ -1262,6 +1343,13 @@
    "telegram",
    "website"
   ]
+ },
+ "astana:ds trading company": {
+  "name": "DS Trading Company",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
  },
  "astana:floralogistic": {
   "name": "FloraLogistic",
@@ -1498,6 +1586,13 @@
   ],
   "avatar": "c92c206f34f2ecc5.jpg",
   "avatar_source": "website"
+ },
+ "astana:tomiris ип валиев": {
+  "name": "Tomiris (ИП Валиев)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -1824,6 +1919,20 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "astana:цан": {
+  "name": "ЦАН",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "tsan_astana",
+  "website": "https://tsan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001100907094",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:эраунд групп around": {
   "name": "Эраунд Групп AROUND",
   "city": "astana",
@@ -1887,6 +1996,22 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "karaganda:eurasian machinery евразиан машинери": {
+  "name": "Eurasian Machinery (Евразиан Машинери)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "eurasianmachinery.kz",
+  "website": "https://eurasianmachinery.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001036731475",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b2015f15aff7b202.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:kaz metiz каз метиз": {
   "name": "Kaz-metiz (Каз-метиз)",
   "city": "karaganda",
@@ -1902,6 +2027,22 @@
   ],
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "magnumgo.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001110137174"
+ },
+ "karaganda:sary arka copper processing": {
+  "name": "Sary-Arka Copper Processing",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
  },
  "karaganda:sulpak": {
   "name": "Sulpak",
@@ -1928,6 +2069,22 @@
   "instagram": "tpa_sary_arka",
   "source": "https://2gis.kz/karaganda/firm/70000001100524756"
  },
+ "karaganda:автоматические котлы": {
+  "name": "Автоматические Котлы",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "karaganda:автоцентр бахус": {
+  "name": "Автоцентр Бахус",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "autocentre_bahus",
+  "source": "https://2gis.kz/karaganda/firm/70000001034460062"
+ },
  "karaganda:алып 2008": {
   "name": "Алып-2008",
   "city": "karaganda",
@@ -1941,6 +2098,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:карагандинский драматический театр им к с станиславского": {
+  "name": "Карагандинский драматический театр им. К.С. Станиславского",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "stanislavsky_inside",
+  "website": "https://stanislavsky.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302830811",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:пакт": {
   "name": "ПАКТ",
@@ -2000,6 +2171,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "kostanay:автокомплекс тарлан": {
+  "name": "Автокомплекс Тарлан",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "tarlan.auto",
+  "website": "https://tarlan-auto.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035754650",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:алтын алма": {
   "name": "Алтын Алма",
@@ -2181,6 +2366,13 @@
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
  },
+ "shymkent:смэу астана": {
+  "name": "СМЭУ Астана",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00"
+ },
  "shymkent:тамерлан моторс": {
   "name": "Тамерлан Моторс",
   "city": "shymkent",
@@ -2259,12 +2451,35 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "ust-kamenogorsk:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "magnumgo.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001110137174"
+ },
  "ust-kamenogorsk:казахстанское промышленное предприятие": {
   "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",
   "city": "ust-kamenogorsk",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "ust-kamenogorsk:лакокрасочная торговая сеть 5 баллов": {
+  "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T19:44:26+00:00",
+  "instagram": "5ballov.ukg",
+  "website": "https://5-ballov.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721378852",
+  "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:шығыс жылу": {
   "name": "Шығыс Жылу",

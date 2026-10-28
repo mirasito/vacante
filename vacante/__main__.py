@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, collect, digest, direct, review, venues
+from vacante import autopost, collect, digest, direct, quality, review, venues
 from vacante.site import build
 from vacante.store import load_vacancies
 
@@ -42,6 +42,15 @@ def main() -> None:
     p_review = sub.add_parser("review", help="записать решения агента по постам в каналы из REVIEW_DECISIONS")
     p_review.add_argument("--data-dir", type=Path, default=Path("data"))
 
+    p_quality = sub.add_parser("quality", help="агенту-технологу: сводка качества сбора с примерами постов")
+    p_quality.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_quality.add_argument("--days", type=int, default=7)
+
+    p_replay = sub.add_parser("replay", help="агенту-технологу: что изменит правка parse.py на сохранённых постах")
+    p_replay.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_replay.add_argument("--base-ref", default="origin/main", help="с какой версией parse.py сравнивать")
+    p_replay.add_argument("--examples", type=int, default=8)
+
     p_build = sub.add_parser("build", help="собрать статический сайт")
     p_build.add_argument("--data-dir", type=Path, default=Path("data"))
     p_build.add_argument("--out", type=Path, default=Path("public"))
@@ -55,6 +64,10 @@ def main() -> None:
         stats["venues_queue"] = venues.write_queue(args.data_dir, load_vacancies(args.data_dir))
         stats["post_queue"] = autopost.write_review_queue(args.data_dir)
         logging.info("сбор: %s", stats)
+    elif args.command == "quality":
+        print(quality.report(args.data_dir, days=args.days))
+    elif args.command == "replay":
+        print(quality.replay(args.data_dir, quality.base_parser(args.base_ref), examples=args.examples)[1])
     elif args.command == "venues":
         run_venues(args)
     elif args.command == "review":

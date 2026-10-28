@@ -1,4 +1,4 @@
-"""Данные для админки /admin/: источники, решения по постам, автопостинг и подписчики бота.
+"""Данные для админки /admin/: источники, решения по постам, автопостинг, подписчики бота и CRM заведений.
 
 Страница статическая и не попадает в sitemap. Данные публикуются только зашифрованными паролем
 владельца (секрет ADMIN_PASSWORD): AES-GCM с ключом из PBKDF2-SHA256, расшифровывает их сама
@@ -17,6 +17,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from vacante import venues as venue_links
 from vacante.direct import SOURCE as DIRECT
 from vacante.journal import ACCEPTED, DUPLICATE, GONE, REJECTED
 from vacante.models import Vacancy
@@ -34,6 +35,36 @@ def _read(path: Path) -> dict | None:
 
 def _city(slug: str | None) -> str:
     return CITIES[slug][0] if slug in CITIES else "Весь Казахстан"
+
+
+def crm(data_dir: Path, vacancies: list[Vacancy]) -> list[dict]:
+    """Заведения из вакансий на сайте с их публичными каналами: сайт, Instagram, Telegram и 2ГИС.
+
+    Только каналы самих компаний, которые нашёл агент «Заведения» (venues.json). Контакты рекрутеров
+    и телефоны из объявлений сюда не попадают."""
+    table = venue_links.load(data_dir)
+    groups: dict[str, list[Vacancy]] = defaultdict(list)
+    for v in vacancies:
+        if v.employer:
+            groups[venue_links.key(v.employer, v.city)].append(v)
+    rows = []
+    for k, items in groups.items():
+        items.sort(key=lambda v: v.posted_at, reverse=True)
+        name = Counter(v.employer for v in items).most_common(1)[0][0]
+        venue = table.get(k) or {}
+        rows.append({
+            "key": k, "name": name, "city": _city(items[0].city), "count": len(items),
+            "last_at": items[0].posted_at, "direct": any(v.source == DIRECT for v in items),
+            "titles": list(dict.fromkeys(t for v in items for t in v.title.split(", ")))[:4],
+            "categories": sorted({CATEGORIES[v.category] for v in items}),
+            "vacancy": items[0].id,
+            "instagram": venue.get("instagram"),
+            "telegram": venue.get("telegram"), "website": venue.get("website"),
+            "twogis": venue_links.twogis_search(name, items[0].city), "searched": venue.get("status"),
+        })
+    rows.sort(key=lambda r: r["last_at"], reverse=True)
+    rows.sort(key=lambda r: -r["count"])  # больше вакансий — выше, при равенстве свежие первыми
+    return rows
 
 
 def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str], now: datetime) -> dict:
@@ -103,6 +134,7 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
         "posts": posts,
         "autopost": autopost,
         "bot": bot,
+        "crm": crm(data_dir, vacancies),
     }
 
 

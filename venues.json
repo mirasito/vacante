@@ -330,6 +330,29 @@
   "avatar_source": "manual",
   "source": "https://2gis.kz/almaty/firm/70000001110093666"
  },
+ "almaty:doorhan": {
+  "name": "DoorHan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "almaty:eagle eye construction": {
+  "name": "Eagle Eye Construction",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "eagle.eye.kz",
+  "website": "http://eagle-eye.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001101732605",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "da05d5072c690dc2.jpg",
+  "avatar_source": "website"
+ },
  "almaty:elk и эл кей": {
   "name": "ELK (И Эл Кей)",
   "city": "almaty",
@@ -439,6 +462,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "almaty:jana post": {
+  "name": "Jana Post",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "janapost.kazakhstan",
+  "website": "https://www.janapost.kz/ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001086757838",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f6603fc98d6f4927.jpg",
+  "avatar_source": "website"
  },
  "almaty:kazdi group": {
   "name": "KazDi Group",
@@ -581,6 +620,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:rks kz": {
+  "name": "RKS.KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
+ },
  "almaty:royal petrol": {
   "name": "Royal Petrol",
   "city": "almaty",
@@ -610,6 +656,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "almaty:santrade": {
+  "name": "SANTRADE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
  },
  "almaty:sila energy kz сила энерджи кз": {
   "name": "SILA ENERGY KZ (СИЛА ЭНЕРДЖИ КЗ)",
@@ -1084,6 +1137,20 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:зооторг сеть зоомагазинов": {
+  "name": "ЗооТорг (Сеть зоомагазинов)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "zoopt.kz",
+  "website": "https://zoopt.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001064797263",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ив роше казахстан": {
   "name": "Ив Роше Казахстан",
   "city": "almaty",
@@ -1259,6 +1326,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:первомайские деликатесы": {
+  "name": "Первомайские деликатесы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
  },
  "almaty:примавера каз": {
   "name": "Примавера КАЗ",
@@ -1528,6 +1602,20 @@
   "instagram": "agash_oneri",
   "source": "https://2gis.kz/astana/firm/70000001062327354"
  },
+ "astana:alem agro holding алемагро холдинг": {
+  "name": "Alem Agro Holding (АлемАгро Холдинг)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "alemagro",
+  "website": "http://alemagro.com/",
+  "source": "https://2gis.kz/astana/firm/70000001041359427",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:astana motors north": {
   "name": "Astana Motors North",
   "city": "astana",
@@ -1552,6 +1640,20 @@
   "website": "http://avrora.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018425100",
   "avatar_checked_at": "2026-10-28T13:48:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:bigm2": {
+  "name": "BIGm2",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "big_m2_",
+  "website": "https://bigm2.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001102939669",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1606,6 +1708,20 @@
   "website": "https://bpshop.kz/",
   "source": "https://2gis.kz/astana/firm/70000001103276678",
   "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:french bakery": {
+  "name": "French Bakery",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "paul_kazakhstan",
+  "website": "http://paul.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001051036239",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1751,6 +1867,13 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:of corp": {
+  "name": "OF Corp",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
+ },
  "astana:ozon": {
   "name": "Ozon",
   "city": "astana",
@@ -1831,6 +1954,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "simple_ashana",
   "source": "https://2gis.kz/astana/firm/70000001076582201"
+ },
+ "astana:smart commerce kazakhstan": {
+  "name": "Smart Commerce Kazakhstan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
  },
  "astana:sofiaglobal": {
   "name": "SofiaGlobal",
@@ -1998,6 +2128,24 @@
   "instagram": "bauyrdaq_astana",
   "source": "https://2gis.kz/astana/firm/70000001068898146"
  },
+ "astana:белый ветер kz": {
+  "name": "Белый Ветер KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "beliy_veter_shop.kz",
+  "telegram": "beliy_veter_shopkz",
+  "website": "http://shop.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001046561012",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "770061b8ce07b854.jpg",
+  "avatar_source": "website"
+ },
  "astana:бизнес центр": {
   "name": "Бизнес-центр",
   "city": "astana",
@@ -2088,6 +2236,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "astana:кадровое агентство prohr ип байбалин": {
+  "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
  },
  "astana:мангал": {
   "name": "МАНГАЛ",
@@ -2556,6 +2711,24 @@
   "avatar": "dd0cca36d7c7ed81.jpg",
   "avatar_source": "website"
  },
+ "kostanay:олжа агро": {
+  "name": "Олжа Агро",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "olzhaagro",
+  "telegram": "olzha_agro",
+  "website": "https://olzhaagro.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036689777",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3c1ea3bfb9fdfbe7.jpg",
+  "avatar_source": "telegram"
+ },
  "kostanay:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
   "city": "kostanay",
@@ -2713,6 +2886,22 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "shymkent:kub group": {
+  "name": "KUB GROUP",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "kubvisa",
+  "website": "http://kubvisa.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001075322460",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cc0697ec4ec7da53.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
   "city": "shymkent",
@@ -2750,6 +2939,29 @@
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
  },
+ "shymkent:womans time": {
+  "name": "Woman’s time",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00",
+  "instagram": "ladygym_shym",
+  "website": "https://ladygym.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001071262541",
+  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e4125742de223e0c.jpg",
+  "avatar_source": "website"
+ },
+ "shymkent:алиди казахстан": {
+  "name": "АЛИДИ Казахстан",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
+ },
  "shymkent:смэу астана": {
   "name": "СМЭУ Астана",
   "city": "shymkent",
@@ -2770,6 +2982,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "taraz:беркет сауда": {
+  "name": "Беркет-Сауда",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
  },
  "taraz:тсз": {
   "name": "ТСЗ",
@@ -2885,6 +3104,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "ust-kamenogorsk:радуга тоо компания raduga kdr": {
+  "name": "Радуга, ТОО (Компания Raduga KDR)",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T22:44:50+00:00"
  },
  "ust-kamenogorsk:шығыс жылу": {
   "name": "Шығыс Жылу",

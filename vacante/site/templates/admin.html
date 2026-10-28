@@ -164,7 +164,8 @@ td.nowrap { white-space: nowrap; }
   </div>
 
   <div id="tab-crm" hidden>
-  <p class="quiet">Заведения из вакансий на сайте и их публичные каналы, которые нашёл агент «Заведения»: сайт, Instagram, Telegram, а также поиск в 2ГИС, где есть телефон заведения. Пишите от себя и по одному: массовая рассылка без согласия — это спам. Статус и заметки хранятся только в этом браузере.</p>
+  <p class="quiet">Заведения из вакансий на сайте и их публичные каналы, которые нашёл агент «Заведения»: сайт, Instagram, Telegram, а также поиск в 2ГИС, где есть телефон заведения. Пишите от себя и по одному: массовая рассылка без согласия — это спам. Статус и заметки сохраняются на сервере и видны на всех ваших устройствах, дата последнего контакта ставится при смене статуса.</p>
+  <p class="err" id="crm-offline" hidden></p>
   <div class="filters">
     <div class="seg" id="crm-has">
       <button type="button" data-v="" aria-pressed="true">Все</button>
@@ -177,7 +178,7 @@ td.nowrap { white-space: nowrap; }
   </div>
   <p class="quiet" id="crm-count"></p>
   <div class="scroll"><table id="crm">
-    <thead><tr><th>Заведение</th><th>Город</th><th class="n">Вакансий</th><th>Последняя</th><th>Кого ищут</th><th>Каналы</th><th>Статус</th></tr></thead>
+    <thead><tr><th>Заведение</th><th>Город</th><th class="n">Вакансий</th><th>Последняя</th><th>Кого ищут</th><th>Каналы</th><th>Статус, контакт</th></tr></thead>
     <tbody></tbody>
   </table></div>
   <button type="button" class="more" id="crm-more" hidden>Показать ещё</button>
@@ -231,7 +232,9 @@ td.nowrap { white-space: nowrap; }
     const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: bytes(box.iv) }, key, bytes(box.data));
     return JSON.parse(new TextDecoder().decode(plain));
   }
-  function showData(data) {
+  let adminPassword = "";
+  function showData(data, password) {
+    adminPassword = password;
     $("#login").hidden = true;
     $("#logout").hidden = false;
     render(data);
@@ -251,7 +254,7 @@ td.nowrap { white-space: nowrap; }
       try {
         const data = await unseal(box, password);
         remember(password, $("#remember").checked);
-        showData(data);
+        showData(data, password);
       } catch (e) {
         $("#login-error").hidden = false;
         $("#password").select();
@@ -270,7 +273,7 @@ td.nowrap { white-space: nowrap; }
   }).then(async (box) => {
     const saved = savedPassword();
     if (saved) {
-      try { return showData(await unseal(box, saved)); } catch (e) { forget(); }  // пароль сменили
+      try { return showData(await unseal(box, saved), saved); } catch (e) { forget(); }  // пароль сменили
     }
     askPassword(box);
   }).catch((e) => {
@@ -419,7 +422,7 @@ td.nowrap { white-space: nowrap; }
       $("#bot").innerHTML = `<p class="quiet">Данных о подписчиках пока нет: они появятся после следующего часового обновления.</p>`;
     }
 
-    renderCrm(data.crm || [], now);
+    renderCrm(data.crm || [], now, data.crm_api);
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
       $("#tab-stats").hidden = b.dataset.tab !== "stats";
@@ -430,14 +433,47 @@ td.nowrap { white-space: nowrap; }
     $("#app").hidden = false;
   }
 
-  // CRM: статусы и заметки живут только в этом браузере
+  // CRM: статусы и заметки на сервере (воркер бота, bot/src/crm.js), ключ доступа из пароля админки.
+  // Если сервер недоступен, отметки временно копятся в этом браузере и уходят на сервер при следующем входе.
   const CRM_KEY = "vacante-admin-crm";
   const CRM_STATUS = { "": "Не писал", sent: "Написал", replied: "Ответил", client: "Клиент", no: "Отказ" };
-  function crmLoad() { try { return JSON.parse(localStorage.getItem(CRM_KEY) || "{}"); } catch (e) { return {}; } }
-  function crmSave(marks) { try { localStorage.setItem(CRM_KEY, JSON.stringify(marks)); } catch (e) { /* без сохранения */ } }
+  function crmLocal() { try { return JSON.parse(localStorage.getItem(CRM_KEY) || "{}"); } catch (e) { return {}; } }
+  function crmLocalSave(marks) {
+    try { Object.keys(marks).length ? localStorage.setItem(CRM_KEY, JSON.stringify(marks)) : localStorage.removeItem(CRM_KEY); } catch (e) { /* без сохранения */ }
+  }
+  async function crmAuth() {
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("crm:" + adminPassword.normalize("NFKC")));
+    return "Bearer " + [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  }
+  async function crmFetch(api, body) {
+    const headers = { Authorization: await crmAuth() };
+    const init = body ? { method: "POST", headers: { ...headers, "Content-Type": "application/json" }, body: JSON.stringify(body) } : { headers };
+    const r = await fetch(api, init);
+    if (!r.ok) throw new Error(r.status === 403 ? "сервер не принял пароль" : r.status === 503 ? "на сервере не задан пароль админки" : "ошибка " + r.status);
+    return r.json();
+  }
 
-  function renderCrm(rows, now) {
-    const marks = crmLoad();
+  async function renderCrm(rows, now, api) {
+    let marks = {}, online = false;
+    const offline = (msg) => {
+      online = false;
+      $("#crm-offline").hidden = false;
+      $("#crm-offline").textContent = `Сервер CRM недоступен (${msg}): отметки пока сохраняются только в этом браузере.`;
+    };
+    try {
+      marks = (await crmFetch(api)).marks;
+      online = true;
+      // Отметки, сделанные без сервера, отправляем и забываем локально
+      const pending = crmLocal();
+      for (const [venue, m] of Object.entries(pending)) {
+        marks[venue] = await crmFetch(api, { venue, status: m.status || "", note: m.note || "" });
+        delete pending[venue];
+      }
+      crmLocalSave(pending);
+    } catch (e) {
+      offline(e.message);
+      marks = { ...marks, ...crmLocal() };
+    }
     let has = "", shown = PAGE;
     for (const c of [...new Set(rows.map((r) => r.city))].sort()) {
       $("#crm-city").insertAdjacentHTML("beforeend", `<option>${esc(c)}</option>`);
@@ -472,21 +508,29 @@ td.nowrap { white-space: nowrap; }
           <td class="links">${links(r) || `<span class="quiet">ищем</span>`}</td>
           <td><select class="crm-status" aria-label="Статус">${Object.entries(CRM_STATUS).map(([v, t]) =>
               `<option value="${v}"${(m.status || "") === v ? " selected" : ""}>${t}</option>`).join("")}</select>
+            ${m.contacted_at ? `<div class="snippet">контакт ${when(m.contacted_at)}</div>` : ""}
             <input class="crm-note" placeholder="Заметка" aria-label="Заметка" value="${esc(m.note || "")}"></td>
         </tr>`;
       }).join("") || `<tr><td colspan="7" class="quiet">Ничего не найдено</td></tr>`;
       $("#crm-more").hidden = list.length <= shown;
     }
-    function update(tr, patch) {
-      const k = tr.dataset.key;
-      marks[k] = { ...(marks[k] || {}), ...patch, at: new Date().toISOString() };
-      crmSave(marks);
+    async function update(venue, patch) {
+      const at = new Date().toISOString();
+      const local = { ...(marks[venue] || {}), ...patch, updated_at: at };
+      if ("status" in patch && patch.status) local.contacted_at = at;
+      marks[venue] = local;
+      if (online) {
+        try { marks[venue] = await crmFetch(api, { venue, ...patch }); return; } catch (e) { offline(e.message); }
+      }
+      const pending = crmLocal();
+      pending[venue] = local;
+      crmLocalSave(pending);
     }
-    $("#crm tbody").addEventListener("change", (e) => {
+    $("#crm tbody").addEventListener("change", async (e) => {
       const tr = e.target.closest("tr[data-key]");
       if (!tr) return;
-      if (e.target.matches(".crm-status")) { update(tr, { status: e.target.value }); draw(false); }
-      if (e.target.matches(".crm-note")) update(tr, { note: e.target.value });
+      if (e.target.matches(".crm-status")) { await update(tr.dataset.key, { status: e.target.value }); draw(false); }
+      if (e.target.matches(".crm-note")) await update(tr.dataset.key, { note: e.target.value });
     });
     document.querySelectorAll("#crm-has button").forEach((b) => b.addEventListener("click", () => {
       has = b.dataset.v;
@@ -498,12 +542,12 @@ td.nowrap { white-space: nowrap; }
     $("#crm-more").addEventListener("click", () => { shown += PAGE; draw(false); });
     $("#crm-csv").addEventListener("click", () => {
       const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-      const head = ["Заведение", "Город", "Вакансий", "Последняя вакансия", "Кого ищут", "Сайт", "Instagram", "Telegram", "2ГИС", "Статус", "Заметка"];
+      const head = ["Заведение", "Город", "Вакансий", "Последняя вакансия", "Кого ищут", "Сайт", "Instagram", "Telegram", "2ГИС", "Статус", "Заметка", "Последний контакт"];
       const lines = filtered().map((r) => {
         const m = marks[r.key] || {};
         return [r.name, r.city, r.count, when(r.last_at), r.titles.join(", "), r.website,
           r.instagram && `https://www.instagram.com/${r.instagram}/`, r.telegram && `https://t.me/${r.telegram}`,
-          r.twogis, CRM_STATUS[m.status || ""], m.note].map(cell).join(",");
+          r.twogis, CRM_STATUS[m.status || ""], m.note, m.contacted_at ? when(m.contacted_at) : ""].map(cell).join(",");
       });
       const blob = new Blob(["\ufeff" + [head.map(cell).join(","), ...lines].join("\n")], { type: "text/csv;charset=utf-8" });
       const a = document.createElement("a");

@@ -21,6 +21,7 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
     defaults:
       run:
         working-directory: bot
@@ -70,6 +71,12 @@ jobs:
             printf '%s' "$GH_DISPATCH_TOKEN" | npx wrangler secret put GH_DISPATCH_TOKEN
           else
             echo "::notice::Нет секрета GH_DISPATCH_TOKEN, запасной будильник обновления не включён"
+          fi
+          # Пароль админки: им открывается CRM заведений на /api/crm (src/crm.js)
+          if [ -n "$ADMIN_PASSWORD" ]; then
+            printf '%s' "$ADMIN_PASSWORD" | npx wrangler secret put ADMIN_PASSWORD
+          else
+            echo "::notice::Нет секрета ADMIN_PASSWORD, CRM в админке работает только в браузере"
           fi
 
       - name: Вебхук и команды в Telegram

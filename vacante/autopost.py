@@ -3,6 +3,7 @@
 Каждый час после сбора: если для канала подошло время, выбираем лучшую свежую вакансию
 его города и публикуем картинку-карточку (аватар заведения, должность, заведение, адрес, зарплата)
 с подписью и кнопками «Подробнее», «2ГИС» и Instagram заведения. Что уже опубликовано, хранится в posted.json рядом с вакансиями.
+Вакансии из чужих каналов перед постом проверяет и оформляет агент-модератор (vacante.review).
 """
 
 from __future__ import annotations
@@ -17,7 +18,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, direct, venues
+from vacante import card, direct, review, venues
 from vacante.models import Vacancy
 from vacante.site.build import instagram_url, twogis_url
 from vacante.store import load_vacancies
@@ -38,6 +39,9 @@ MAX_DIRECT = 3  # за один запуск в канал, остальные �
 MIN_GAP = timedelta(minutes=10)
 FRESH = timedelta(hours=48)
 KEEP = 500  # сколько опубликованных id помнить на канал
+# Сколько ближайших кандидатов на пост в каждом городе агент проверяет за раз: каждый час с запасом
+# на серию из 4 постов и на отклонённые
+REVIEW_PER_CITY = 8
 HASHTAGS = {"horeca": "#общепит", "retail": "#продажи", "warehouse": "#склад", "delivery": "#доставка",
             "service": "#сервис", "construction": "#стройка", "callcenter": "#колцентр", "other": ""}
 
@@ -157,11 +161,46 @@ def awaiting_review(data_dir: Path) -> set[str]:
     return {f"{direct.SOURCE}-{job['id']}" for job in queue.get("jobs", [])}
 
 
+def checked_by_agent(vacancies: list[Vacancy], reviews: dict | None) -> list[Vacancy]:
+    """Что можно постить: вакансии работодателей и одобренные агентом вакансии из каналов, с его правками.
+
+    Пока агент ещё ничего не проверял (post_reviews.json нет), постим как раньше, без проверки."""
+    if reviews is None:
+        return vacancies
+    return [review.reviewed(v, reviews.get(v.id)) for v in vacancies
+            if v.source == direct.SOURCE or reviews.get(v.id, {}).get("verdict") == "approve"]
+
+
+def review_queue(vacancies: list[Vacancy], posted: dict, reviews: dict, now: datetime,
+                 known: set[str] = frozenset()) -> list[Vacancy]:
+    """Ближайшие кандидаты на пост в каждом городе, которые агент ещё не проверял, в порядке очереди."""
+    cutoff = (now - FRESH).isoformat()
+    out = []
+    for city in CHANNELS:
+        seen = set(posted.get(city, {}).get("ids", []))
+        fresh = [v for v in vacancies if v.city == city and v.source != direct.SOURCE and v.id not in seen
+                 and v.id not in reviews and v.posted_at >= cutoff]
+        out += sorted(fresh, key=lambda v: (_score(v, known), v.posted_at), reverse=True)[:REVIEW_PER_CITY]
+    return out
+
+
+def write_review_queue(data_dir: Path, now: datetime | None = None) -> int:
+    """Выкладывает очередь для агента в post_queue.json; возвращает её длину."""
+    now = now or datetime.now(timezone.utc)
+    vacancies = load_vacancies(data_dir)
+    table = venues.load(data_dir)
+    known = {v.id for v in vacancies if (venue := venues.lookup(table, v)) and venue.get("avatar")}
+    items = review_queue(vacancies, load_posted(data_dir), review.load(data_dir) or {}, now, known)
+    payload = {"updated_at": now.isoformat(timespec="seconds"), "vacancies": [review.queue_item(v) for v in items]}
+    (data_dir / review.QUEUE).write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", "utf-8")
+    return len(items)
+
+
 def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None) -> dict:
     now = now or datetime.now(timezone.utc)
     base_url = base_url.rstrip("/")
     held = awaiting_review(data_dir)
-    vacancies = [v for v in load_vacancies(data_dir) if v.id not in held]
+    vacancies = checked_by_agent([v for v in load_vacancies(data_dir) if v.id not in held], review.load(data_dir))
     posted = load_posted(data_dir)
     table = venues.load(data_dir)
     known = {v.id for v in vacancies if (venue := venues.lookup(table, v)) and venue.get("avatar")}

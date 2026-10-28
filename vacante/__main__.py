@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, collect, digest, direct, venues
+from vacante import autopost, collect, digest, direct, review, venues
 from vacante.site import build
 from vacante.store import load_vacancies
 
@@ -39,6 +39,9 @@ def main() -> None:
     p_venues.add_argument("--image", type=Path, help="set-avatar: картинка")
     p_venues.add_argument("--instagram", help="set-avatar: Instagram заведения")
 
+    p_review = sub.add_parser("review", help="записать решения агента по постам в каналы из REVIEW_DECISIONS")
+    p_review.add_argument("--data-dir", type=Path, default=Path("data"))
+
     p_build = sub.add_parser("build", help="собрать статический сайт")
     p_build.add_argument("--data-dir", type=Path, default=Path("data"))
     p_build.add_argument("--out", type=Path, default=Path("public"))
@@ -50,9 +53,12 @@ def main() -> None:
     if args.command == "collect":
         stats = collect.run(args.config, args.data_dir, args.max_age_days, direct=direct_vacancies(args.data_dir))
         stats["venues_queue"] = venues.write_queue(args.data_dir, load_vacancies(args.data_dir))
+        stats["post_queue"] = autopost.write_review_queue(args.data_dir)
         logging.info("сбор: %s", stats)
     elif args.command == "venues":
         run_venues(args)
+    elif args.command == "review":
+        run_review(args)
     elif args.command == "post":
         token = os.environ.get("TELEGRAM_BOT_TOKEN")
         if not token:
@@ -90,16 +96,31 @@ def main() -> None:
         logging.info("сайт: %s страниц в %s", count, args.out)
 
 
-def run_venues(args: argparse.Namespace) -> None:
-    """Итог по заведениям ещё и аннотациями: агент читает их через REST API, без скачивания логов.
+def annotate(report: list[tuple[str, str]], title: str) -> None:
+    """Итог ещё и аннотациями: агент читает их через REST API, без скачивания логов.
     GitHub сохраняет не больше 10 аннотаций одного уровня на шаг, поэтому все строки в одной аннотации."""
-    def annotate(report: list[tuple[str, str]], title: str) -> None:
-        for level in ("notice", "error"):
-            lines = [f"{key}: {outcome}" for key, outcome in report if outcome.startswith("error") == (level == "error")]
-            if lines:
-                text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
-                print(f"::{level} title={title}::{text}")
+    for level in ("notice", "error"):
+        lines = [f"{key}: {outcome}" for key, outcome in report if outcome.startswith("error") == (level == "error")]
+        if lines:
+            text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+            print(f"::{level} title={title}::{text}")
 
+
+def run_review(args: argparse.Namespace) -> None:
+    try:
+        decisions = json.loads(os.environ.get("REVIEW_DECISIONS") or "")
+    except ValueError:
+        decisions = None
+    if not isinstance(decisions, list) or not decisions or not all(isinstance(d, dict) for d in decisions):
+        print("::error::REVIEW_DECISIONS: нужен непустой JSON-массив объектов {id, verdict, fields | reason}")
+        raise SystemExit(1)
+    report = review.apply(args.data_dir, decisions, load_vacancies(args.data_dir))
+    annotate(report, "Посты")
+    if any(outcome.startswith("error") for _, outcome in report):
+        raise SystemExit(1)
+
+
+def run_venues(args: argparse.Namespace) -> None:
     if args.action == "set-avatar":
         key = venues.set_avatar(args.data_dir, args.name, args.city, args.image.read_bytes(), args.instagram)
         logging.info("заведения: аватар %s", key)

@@ -1,0 +1,66 @@
+# Решения агента-модератора по вакансиям из каналов перед постом в свои каналы (.claude/skills/moderate-vacancies).
+# Агент запускает этот workflow со списком решений в JSON, а workflow записывает их в post_reviews.json ветки data.
+# После этого в каналы идут только одобренные агентом вакансии из каналов, с его правками (vacante/review.py).
+name: Проверка постов
+
+on:
+  workflow_dispatch:
+    inputs:
+      decisions:
+        description: 'JSON: [{"id": "chan-123", "verdict": "approve | reject", "fields": {...}, "reason": "..."}]'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-reviews
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install .
+
+      - name: Подготовить ветку data
+        run: |
+          git config user.name "vacante-bot"
+          git config user.email "vacante-bot@users.noreply.github.com"
+          git fetch --depth 1 origin data:refs/remotes/origin/data
+          git worktree add data origin/data
+          git -C data switch -C data
+
+      # Верные решения записываются, даже если в части других ошибка: их агент исправит и пришлёт заново
+      - name: Записать решения
+        id: apply
+        env:
+          REVIEW_DECISIONS: ${{ inputs.decisions }}  # через переменную, а не подстановкой в скрипт
+        run: python -m vacante review --data-dir data || echo "failed=1" >> "$GITHUB_OUTPUT"
+
+      # post_reviews.json пишет только этот workflow, поэтому rebase на свежие вакансии проходит без конфликтов
+      - name: Сохранить
+        run: |
+          git -C data add post_reviews.json 2>/dev/null || true
+          git -C data diff --cached --quiet && exit 0
+          git -C data commit -q -m "Проверка постов $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for attempt in 1 2 3 4; do
+            git -C data push -q origin data && exit 0
+            git -C data pull -q --rebase origin data || true
+          done
+          echo "::error::не удалось сохранить post_reviews.json"
+          exit 1
+
+      - name: Итог
+        if: steps.apply.outputs.failed == '1'
+        run: |
+          echo "::error::Часть решений не записана, см. аннотацию «Посты»"
+          exit 1

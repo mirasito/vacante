@@ -73,6 +73,13 @@
   "avatar": "d127ff82713a335c.jpg",
   "avatar_source": "website"
  },
+ "aktobe:kol auto service": {
+  "name": "«Kol-Auto-Service»",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
  "aktobe:актобе нан": {
   "name": "Актобе-нан",
   "city": "aktobe",
@@ -88,6 +95,20 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
+ },
+ "almaty:adrenaline fitness адреналин фитнес": {
+  "name": "Adrenaline Fitness (Адреналин Фитнес)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "adrenaline_kz",
+  "website": "https://www.adrenaline.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001045720859",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:adriano": {
   "name": "ADRIANO",
@@ -285,6 +306,13 @@
   "instagram": "french_bakery_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001033669069"
  },
+ "almaty:fruit republic alа": {
+  "name": "Fruit Republic ALА",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
  "almaty:glasman trade": {
   "name": "GLASMAN TRADE",
   "city": "almaty",
@@ -293,6 +321,13 @@
   "checked_at": "2026-10-28T11:44:45+00:00",
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/almaty/firm/70000001024452567"
+ },
+ "almaty:globalink": {
+  "name": "Globalink",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
  },
  "almaty:glovo kazakhstan": {
   "name": "Glovo Kazakhstan",
@@ -476,12 +511,33 @@
   "avatar": "70f1f0b170cc8298.jpg",
   "avatar_source": "website"
  },
+ "almaty:ruby market": {
+  "name": "RUBY MARKET",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
  "almaty:sandyq world": {
   "name": "Sandyq World",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "almaty:sila energy kz сила энерджи кз": {
+  "name": "SILA ENERGY KZ (СИЛА ЭНЕРДЖИ КЗ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "sila.energy.kz",
+  "website": "https://generator-energy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001067365008",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:small": {
   "name": "SMALL",
@@ -653,6 +709,27 @@
    "website"
   ]
  },
+ "almaty:августа": {
+  "name": "Августа",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "almaty:автотрейд": {
+  "name": "Автотрейд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "autotrade_kz",
+  "website": "https://autotrade.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001328601",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:аифcosmetic": {
   "name": "АиФcosmetic",
   "city": "almaty",
@@ -745,6 +822,22 @@
    "website"
   ]
  },
+ "almaty:бостан": {
+  "name": "Бостан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "bostan_hr",
+  "website": "http://bostan.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001558501",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1b1d39b18a538f3b.jpg",
+  "avatar_source": "website"
+ },
  "almaty:галерея новостроек": {
   "name": "Галерея Новостроек",
   "city": "almaty",
@@ -808,6 +901,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "intertopkz",
+  "website": "https://intertop.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795916",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:казоборонсервис": {
   "name": "КАЗОБОРОНСЕРВИС",
@@ -1209,6 +1316,13 @@
   "avatar": "462ab75ad2efbfda.jpg",
   "avatar_source": "website"
  },
+ "astana:ivi express": {
+  "name": "IVI EXPRESS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
  "astana:koktem friends": {
   "name": "Koktem friends",
   "city": "astana",
@@ -1267,6 +1381,19 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:ozon": {
+  "name": "Ozon",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "website": "https://ozon.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001061754491",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:pako trade": {
   "name": "PAKO TRADE",
   "city": "astana",
@@ -1288,6 +1415,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "pantheon.astana",
   "source": "https://2gis.kz/astana/firm/70000001100733321"
+ },
+ "astana:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
  },
  "astana:sheraton astana hotel": {
   "name": "Sheraton Astana Hotel",
@@ -1498,6 +1632,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "astana:гастрономия вкуса гарсов а м": {
+  "name": "Гастрономия вкуса (ГАРСОВ А.М.)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
  "astana:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "astana",
@@ -1655,6 +1796,13 @@
    "website"
   ]
  },
+ "astana:строй монтаж проект": {
+  "name": "Строй Монтаж Проект",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
+ },
  "astana:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
   "city": "astana",
@@ -1755,6 +1903,31 @@
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
  },
+ "karaganda:sulpak": {
+  "name": "Sulpak",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "sulpak",
+  "website": "https://sulpak.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302849800",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3375d5225918e679.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:tpa sary arka": {
+  "name": "TPA SARY ARKA",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "tpa_sary_arka",
+  "source": "https://2gis.kz/karaganda/firm/70000001100524756"
+ },
  "karaganda:алып 2008": {
   "name": "Алып-2008",
   "city": "karaganda",
@@ -1768,6 +1941,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:пакт": {
+  "name": "ПАКТ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "website": "https://pakt.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302833698",
+  "avatar_checked_at": "2026-10-28T18:44:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0a23a24c13cf6784.jpg",
+  "avatar_source": "website"
  },
  "karaganda:ресторан мой тбилиси ип бурбуташвили н н": {
   "name": "Ресторан Мой Тбилиси (ИП Бурбуташвили Н.Н.)",
@@ -2014,6 +2202,15 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "taraz:электрострой сеть фирменных магазинов инструмента и крепежа": {
+  "name": "ЭлектроСтрой - сеть фирменных магазинов инструмента и крепежа",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00",
+  "instagram": "electrostroy.taraz",
+  "source": "https://2gis.kz/taraz/firm/70000001053552027"
+ },
  "turkestan:inclair": {
   "name": "Inclair",
   "city": "turkestan",
@@ -2054,6 +2251,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "ust-kamenogorsk:bus logistic group": {
+  "name": "Bus Logistic Group",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T18:44:37+00:00"
  },
  "ust-kamenogorsk:казахстанское промышленное предприятие": {
   "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",

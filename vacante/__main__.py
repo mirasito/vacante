@@ -91,11 +91,14 @@ def main() -> None:
 
 
 def run_venues(args: argparse.Namespace) -> None:
-    """Итог по каждому заведению ещё и аннотацией: агент читает их через REST API, без скачивания логов."""
-    def annotate(report: list[tuple[str, str]]) -> None:
-        for key, outcome in report:
-            level = "error" if outcome.startswith("error") else "notice"
-            print(f"::{level} title={key.replace(',', ' ').replace(':', ' ')}::{outcome}")
+    """Итог по заведениям ещё и аннотациями: агент читает их через REST API, без скачивания логов.
+    GitHub сохраняет не больше 10 аннотаций одного уровня на шаг, поэтому все строки в одной аннотации."""
+    def annotate(report: list[tuple[str, str]], title: str) -> None:
+        for level in ("notice", "error"):
+            lines = [f"{key}: {outcome}" for key, outcome in report if outcome.startswith("error") == (level == "error")]
+            if lines:
+                text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+                print(f"::{level} title={title}::{text}")
 
     if args.action == "set-avatar":
         key = venues.set_avatar(args.data_dir, args.name, args.city, args.image.read_bytes(), args.instagram)
@@ -109,13 +112,13 @@ def run_venues(args: argparse.Namespace) -> None:
         if not isinstance(results, list) or not all(isinstance(r, dict) for r in results):
             print("::error::VENUES_RESULTS: нужен JSON-массив объектов {key, status, instagram}")
             raise SystemExit(1)
-        annotate(venues.apply(args.data_dir, results))
+        annotate(venues.apply(args.data_dir, results), "Заведения")
     token = os.environ.get("INSTAGRAM_TOKEN")
     if not token:
         logging.info("заведения: нет INSTAGRAM_TOKEN, аватары не скачиваю")
         return
     with httpx.Client(timeout=30, follow_redirects=True) as client:
-        annotate(venues.fetch_avatars(args.data_dir, venues.InstagramAPI(client, token).avatar))
+        annotate(venues.fetch_avatars(args.data_dir, venues.InstagramAPI(client, token).avatar), "Аватары")
 
 
 def direct_vacancies(data_dir: Path) -> list | None:

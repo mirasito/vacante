@@ -89,14 +89,15 @@ run=$(gh run list --repo mirasito/vacante --workflow venues.yml --limit 5 --json
 gh run watch "$run" --repo mirasito/vacante --exit-status >/dev/null || true
 job=$(gh api "repos/mirasito/vacante/actions/runs/$run/jobs" --jq '.jobs[0].id')
 gh api "repos/mirasito/vacante/check-runs/$job/annotations" \
-  --jq '.[] | select(.annotation_level != "warning") | "\(.title): \(.message)"'
+  --jq '.[] | select(.title == "Заведения" or .title == "Аватары") | "\(.annotation_level) \(.title):\n\(.message)"'
 ```
 
 Если `gh` недоступен, но есть GitHub MCP: `actions_run_trigger` (method `run_workflow`, owner `mirasito`,
 repo `vacante`, workflow_id `venues.yml`, ref `main`, inputs `{"results": "<JSON-массив строкой>"}`).
 
-По строке на заведение: `found @ник`, `none` или `skip`. Ниже могут быть строки про аватары: `аватар скачан`
-или `аватара нет: ...` (у аккаунта нет бизнес-профиля, это нормально). `error: ...` у заведения значит, что
+Аннотация «Заведения»: по строке на заведение, `ключ: found @ник`, `ключ: none` или `ключ: skip`. Строки с ошибками
+приходят отдельной аннотацией с тем же названием и уровнем `failure`. Аннотация «Аватары»: `аватар скачан` или
+`аватара нет: ...` (у аккаунта нет бизнес-профиля, это нормально). `error: ...` у заведения значит, что
 ты передал неверное поле: исправь и отправь заново только эти заведения. Если ошибка про токен Instagram
 (`Instagram API ... token` или «токен истёк»), ссылки всё равно сохранились, а аватары не скачались:
 сообщи об этом.

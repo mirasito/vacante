@@ -20,7 +20,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from vacante.direct import POST_URL
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
-from vacante.site.admin import admin_data
+from vacante.site.admin import admin_data, seal
 from vacante.store import load_vacancies
 
 HERE = Path(__file__).parent
@@ -148,7 +148,8 @@ def job_posting_ld(v: Vacancy, base_url: str) -> str | None:
     return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
 
-def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: datetime | None = None) -> int:
+def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: datetime | None = None,
+          admin_password: str | None = None) -> int:
     now = now or datetime.now(timezone.utc)
     base_url = base_url.rstrip("/")
     vacancies = sorted(load_vacancies(data_dir), key=lambda v: v.posted_at, reverse=True)
@@ -199,11 +200,13 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": v.perks, "pay": monthly_pay(v) or 0,
              "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
     (out / "feed.json").write_text(json.dumps({"vacancies": feed}, ensure_ascii=False), "utf-8")
-    # Админка: не в sitemap и закрыта от индексации, данные грузит сама из data.json
+    # Админка: не в sitemap и закрыта от индексации. Данные только зашифрованные паролем владельца,
+    # страница сама спрашивает пароль и расшифровывает их. Без пароля данных нет вовсе.
     (out / "admin").mkdir()
     (out / "admin" / "index.html").write_text(env.get_template("admin.html").render(path="admin"), "utf-8")
-    admin = admin_data(data_dir, vacancies, TELEGRAM_CHANNELS, now)
-    (out / "admin" / "data.json").write_text(json.dumps(admin, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    if admin_password:
+        sealed = seal(admin_data(data_dir, vacancies, TELEGRAM_CHANNELS, now), admin_password)
+        (out / "admin" / "sealed.json").write_text(json.dumps(sealed), "utf-8")
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n", "utf-8")
     (out / "sitemap.xml").write_text(env.get_template("sitemap.xml").render(pages=pages), "utf-8")
     if base_url.startswith("https://") and "github.io" not in base_url:

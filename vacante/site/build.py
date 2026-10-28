@@ -35,8 +35,6 @@ TELEGRAM_CHANNELS = {
     "astana": "https://t.me/vacanteastana",
     "almaty": "https://t.me/vacantealmaty",
 }
-# Города, для которых знаем адрес страницы поиска на 2gis.kz.
-TWOGIS_CITIES = {"almaty": "almaty", "astana": "astana", "shymkent": "shymkent", "karaganda": "karaganda"}
 FEED_SIZE = 300
 # Сколько первых символов текста объявления попадает в поиск на странице списка: страница
 # содержит все вакансии города, и полный текст каждой сделал бы её слишком тяжёлой для телефона.
@@ -96,7 +94,7 @@ def plural(n: int, one: str, few: str, many: str) -> str:
 
 def twogis_url(v: Vacancy) -> str | None:
     """Поиск адреса в 2ГИС, чтобы сразу понять, где это. Только для адресов с домом или ТЦ."""
-    city = TWOGIS_CITIES.get(v.city or "")
+    city = venue_store.TWOGIS_CITIES.get(v.city or "")
     if not city or not v.address or not _MAP_WORTHY.search(v.address):
         return None
     query = re.sub(r"\s*\([^)]*\)?|…", "", v.address).strip(" ,")

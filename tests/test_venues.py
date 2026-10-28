@@ -54,11 +54,22 @@ def test_queue_lists_unknown_venues_freshest_and_busiest_first():
     nameless = make(7, "Требуется грузчик на склад")
     table = {venues.key("Зерно", "almaty"): {"status": "none", "v": venues.VERSION},
              venues.key("Луна", "almaty"): {"status": "skip"},
-             venues.key("SMALL", "almaty"): {"status": "none"}}  # разобран до сайтов и Telegram: ещё раз
+             venues.key("SMALL", "almaty"): {"status": "none", "v": 2}}  # разобран по старым правилам: ещё раз
     items = venues.queue([*dino, small, old, known, skipped, nameless], table, NOW)
     assert [(i["key"], i["vacancies"]) for i in items] == [
         ("almaty:dino fest", 2), ("almaty:small", 1), ("almaty:ramen77", 1)]
     assert items[0]["city_name"] == "Алматы" and items[0]["text"].startswith("💼 Бармен")
+    assert items[0]["twogis"] == "https://2gis.kz/almaty/search/DINO%20FEST"
+
+
+@pytest.mark.parametrize("name, city, expected", [
+    ("МАНГАЛ", "astana", "https://2gis.kz/astana/search/%D0%9C%D0%90%D0%9D%D0%93%D0%90%D0%9B"),
+    ("TOO Arlan logistics", "almaty", "https://2gis.kz/almaty/search/Arlan%20logistics"),
+    ("KARI", "ust-kamenogorsk", "https://2gis.kz/ustkam/search/KARI"),
+    ("KARI", None, None),
+])
+def test_twogis_search(name, city, expected):
+    assert venues.twogis_search(name, city) == expected
 
 
 @pytest.mark.parametrize("value, expected", [

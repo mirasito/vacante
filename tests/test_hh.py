@@ -160,3 +160,11 @@ def test_bad_client_secret_skips_source(monkeypatch, caplog):
     assert hh.collect(state, NOW, sleep=no_sleep) is None
     assert "hh_checked_at" not in state
     assert "invalid_client" in caplog.text and "wrong" not in caplog.text
+
+
+def test_schedule_from_new_fields():
+    v = hh.to_vacancy(item(9, schedule=None, work_schedule_by_days=[{"id": "TWO_ON_TWO_OFF", "name": "2/2"}],
+                           working_hours=[{"id": "HOURS_12", "name": "12 часов"}]))
+    assert v.schedule == "2/2, 12 часов"
+    assert hh.to_vacancy(item(10, schedule=None)).schedule is None
+    assert hh.to_vacancy(item(11)).schedule == "Сменный график"

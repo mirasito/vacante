@@ -89,6 +89,20 @@
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
  },
+ "almaty:anajer": {
+  "name": "ANAJER",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:arco invest": {
+  "name": "ARCO INVEST",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
  "almaty:arlan logistics grop": {
   "name": "TOO Arlan logistics grop",
   "city": "almaty",
@@ -129,6 +143,29 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040103024",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "minisokz",
+  "source": "https://2gis.kz/almaty/firm/70000001025693945"
  },
  "almaty:my blins": {
   "name": "MY BLINS",
@@ -187,6 +224,29 @@
   "instagram": "vanila.collection_",
   "source": "https://2gis.kz/almaty/firm/70000001109886094"
  },
+ "almaty:vega food": {
+  "name": "Vega Food",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:wefind": {
+  "name": "WeFind",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "wefind.solutions",
+  "website": "https://wefindkz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103705211",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "209881adf06e1885.jpg",
+  "avatar_source": "website"
+ },
  "almaty:аватария": {
   "name": "Аватария",
   "city": "almaty",
@@ -235,6 +295,20 @@
    "website"
   ]
  },
+ "almaty:гк sabyrzhan group": {
+  "name": "ГК SABYRZHAN GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:грамматикопуло к и": {
+  "name": "ГРАММАТИКОПУЛО К.И.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
  "almaty:казоборонсервис": {
   "name": "КАЗОБОРОНСЕРВИС",
   "city": "almaty",
@@ -251,6 +325,36 @@
   "instagram": "laffa.cafe",
   "source": "https://2gis.kz/almaty/firm/70000001020792892"
  },
+ "almaty:макаронная by sabina temiralieva": {
+  "name": "Макаронная by Sabina Temiralieva",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:масло дел": {
+  "name": "Масло-Дел",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "maslodel_kz",
+  "website": "https://www.maslodel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001036557222",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3089f66e2a9ebcc3.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:модерн ритейл": {
+  "name": "МОДЕРН РИТЕЙЛ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
  "almaty:ордоген": {
   "name": "Ордоген",
   "city": "almaty",
@@ -266,6 +370,13 @@
    "telegram",
    "website"
   ]
+ },
+ "almaty:примавера каз": {
+  "name": "Примавера КАЗ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
  },
  "almaty:производственная база": {
   "name": "производственная база",
@@ -372,6 +483,34 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "astana:magnum": {
+  "name": "MAGNUM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040103024",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040103024",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:mansur cafe mellys": {
   "name": "MANSUR CAFE  MELLY’S",
   "city": "astana",
@@ -425,6 +564,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "astana:startaff": {
+  "name": "Startaff",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "astana:strong tea": {
+  "name": "Strong tea",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -510,6 +663,13 @@
   "instagram": "steakhouse.mangal",
   "source": "https://2gis.kz/astana/firm/70000001089777153"
  },
+ "astana:примавера каз": {
+  "name": "Примавера КАЗ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
  "astana:пуховик": {
   "name": "Пуховик",
   "city": "astana",
@@ -544,12 +704,46 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "astana:этажи": {
+  "name": "Этажи",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "instagram": "etagi__astana",
+  "website": "https://astana.etagi.com/",
+  "source": "https://2gis.kz/astana/firm/70000001054048241",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",
   "city": "atyrau",
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "karaganda:центр цветов крг": {
+  "name": "Центр Цветов Крг",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "pavlodar:erg kazakhstan": {
+  "name": "ERG Kazakhstan",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T10:43:31+00:00",
+  "website": "https://erg.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001109725536",
+  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T08:08:16+00:00",
+ "updated_at": "2026-10-28T08:56:34+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -172,6 +172,159 @@
      "Без опыта",
      "Официально"
     ]
+   }
+  },
+  "rabota_astanakz-31008": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Эксперт-оценщик в ломбард",
+    "employer": "Сеть ломбардов «Актив Ломбард»",
+    "schedule": "4/2, дневные 09:00–20:00 и ночные 20:00–09:00"
+   }
+  },
+  "zhumys_astana_kz-16830": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Повар, раннер, официант",
+    "employer": "Ресторан «RUMI»",
+    "schedule": "5/2, 10:00–00:00"
+   }
+  },
+  "astana_job_vakansii-129858": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Продавец-консультант, грузчик, кладовщик",
+    "employer": "Магазин «12 Месяцев»",
+    "salary_min": 250000,
+    "salary_max": 400000,
+    "salary_period": "month",
+    "schedule": "5/2, 08:30–19:00 или 11:30–21:00",
+    "address": "пр. Абая, 94А"
+   }
+  },
+  "astana_job_vakansii-129852": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "employer": "Магазин детской одежды «Айсултан»",
+    "schedule": "5/2 или 6/1, 10:00–21:00",
+    "address": "ул. Кенесары, 42"
+   }
+  },
+  "zhumys_astana_kz-16888": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "employer": "Столовая «Simple»",
+    "schedule": "6/1, 07:00–18:00",
+    "address": "ул. Чокина, 9"
+   }
+  },
+  "zhumys_astana_kz-16887": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Пекарь, пекарь-жарщик",
+    "employer": "Столовая «Simple»",
+    "schedule": "6/1, 07:00–18:00",
+    "address": "ул. Чокина, 9"
+   }
+  },
+  "astana_job_vakansii-129842": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "employer": "Кафе «Nanmai»",
+    "schedule": "2/2, 08:00–21:00"
+   }
+  },
+  "zhumys_astana_kz-16829": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Кассир на фудкорт",
+    "employer": null,
+    "schedule": "5/2, 10:00–22:00",
+    "address": "ул. Байтурсынова, 34, ТРЦ «Жибек Жолы»",
+    "perks": [
+     "Бонусы",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "agashka_job_almaty-985": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {}
+  },
+  "almaty_rabota_work-31711": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Пекарь-слойщик, лепщица самсы, пиццмейкер",
+    "employer": "Пекарня «French Bakery»"
+   }
+  },
+  "almaty_rabota_work-31710": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Оператор VR-аттракциона",
+    "employer": "Парк «Аватария»",
+    "schedule": "2/2, 3/3 или 5/2, 10:00–22:00 или 11:00–23:00"
+   }
+  },
+  "almaty_rabota01-25974": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Ассистент скульптора в мастерскую",
+    "employer": "Exdeko",
+    "schedule": "5/2, 09:00–18:00",
+    "perks": []
+   }
+  },
+  "almaty_rabota01-25973": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "almaty_rabota01-25994": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–18:00",
+    "address": "рынок Ожет, ул. Рафикова, 11, 5-й ряд, бутик 3",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "rabota4almaty-5795": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "employer": "Столовая «Студент»",
+    "schedule": "05:00–17:00, воскресенье выходной",
+    "address": "ул. Рыскулбекова, 39а",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "rabota4almaty-5793": {
+   "verdict": "approve",
+   "at": "2026-10-28T08:56:34+00:00",
+   "fields": {
+    "title": "Водитель на личном авто",
+    "schedule": "5/2, 08:00–14:00",
+    "address": "ул. Сазановская, 37"
    }
   }
  }

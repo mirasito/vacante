@@ -11,7 +11,7 @@ import httpx
 import yaml
 
 from vacante import direct as direct_jobs
-from vacante import parse
+from vacante import parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain
@@ -66,7 +66,10 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     # чтобы в журнале была полная картина, а посты, отброшенные старыми правилами, получили
     # второй шанс. Уже собранные посты при этом не задваиваются: склейка узнаёт их по id.
     version = parser_version()
-    rescan = journal is None or state.get("parser") != version
+    # Текстов отброшенных постов ещё нет (rejected.json): тоже перечитываем, чтобы агенту-технологу было что смотреть.
+    rejected = quality.load_rejected(data_dir)
+    rescan = journal is None or rejected is None or state.get("parser") != version
+    rejected = rejected or {}
     state["parser"] = version
     journal = journal or Journal()
     stats = {"channels": len(channels), "failed": 0, "posts": 0, "vacancies": 0}
@@ -89,6 +92,9 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
                 journal.add(post, vacancy, reason)
                 if vacancy:
                     incoming.append(vacancy)
+                else:
+                    item = quality.rejected_item(post, reason)
+                    rejected[item["id"]] = item
             if posts:
                 last_ids[name] = max(last_ids.get(name, 0), *(p.post_id for p in posts))
     journal.channels = {c["username"]: journal.channels[c["username"]] for c in channels}  # убранные из конфига уходят
@@ -112,8 +118,12 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
     vacancies = expire(merge(from_bot + existing, incoming), max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)
+    for v in saved:
+        if v.id in dropped:
+            rejected[v.id] = quality.dropped_item(v, dropped[v.id])
     save_vacancies(data_dir, vacancies)
     save_state(data_dir, state)
     journal.save(data_dir)
+    quality.save_rejected(data_dir, rejected, journal.posts)
     stats["total"] = len(vacancies)
     return stats

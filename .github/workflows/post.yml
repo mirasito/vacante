@@ -1,0 +1,82 @@
+# Посты в свои каналы: после каждого обновления вакансий серия до 4 постов в каждый канал,
+# по одному раз в 15 минут, с 8 до 22 по Казахстану. Отдельно от обновления, чтобы ожидание
+# между постами не задерживало сайт и вакансии от работодателей.
+name: Посты в каналы
+
+on:
+  workflow_run:
+    workflows: ["Обновление вакансий"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: read
+
+# Новое обновление начинает серию заново, уже на свежих вакансиях
+concurrency:
+  group: post
+  cancel-in-progress: true
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Ночью не публикуем
+        id: hours
+        run: |
+          hour=$(date -u -d '+5 hours' +%-H)
+          # С 7 часов начинаем: третий и четвёртый посты серии придутся на 8 утра
+          if [ "$hour" -ge 22 ] || [ "$hour" -lt 7 ]; then echo "night=1" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/checkout@v4
+        if: steps.hours.outputs.night != '1'
+
+      - uses: actions/setup-python@v5
+        if: steps.hours.outputs.night != '1'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install .
+        if: steps.hours.outputs.night != '1'
+
+      - name: Подготовить ветку data
+        if: steps.hours.outputs.night != '1'
+        run: |
+          git config user.name "vacante-bot"
+          git config user.email "vacante-bot@users.noreply.github.com"
+          git fetch --depth 1 origin data:refs/remotes/origin/data
+          git worktree add data origin/data
+          git -C data switch -C data
+
+      - id: pages
+        if: steps.hours.outputs.night != '1'
+        uses: actions/configure-pages@v5
+
+      - name: Опубликовать серию
+        if: steps.hours.outputs.night != '1'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          SITE_URL: ${{ vars.SITE_URL || steps.pages.outputs.base_url }}
+        run: |
+          : "${SITE_URL:=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}}"
+          SITE_URL="${SITE_URL/#http:/https:}"
+          # Опубликованное сохраняем после каждого поста: следующий запуск может отменить этот посреди серии
+          save() {
+            git -C data add posted.json
+            git -C data diff --cached --quiet && return 0
+            git -C data commit -q -m "Посты в каналы $(date -u +'%Y-%m-%d %H:%M') UTC"
+            for attempt in 1 2 3; do
+              git -C data push -q origin data && return 0
+              git -C data pull -q --rebase origin data || true
+            done
+            return 1
+          }
+          for slot in 1 2 3 4; do
+            if [ "$slot" -gt 1 ]; then sleep 870; fi
+            git -C data pull -q --rebase origin data || true  # свежие вакансии и очередь агента
+            python -m vacante post --data-dir data --base-url "$SITE_URL" || echo "::warning::серия $slot: публикация не удалась"
+            save || echo "::warning::серия $slot: не удалось сохранить posted.json"
+          done

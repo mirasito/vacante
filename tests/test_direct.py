@@ -101,17 +101,17 @@ def test_bot_job_goes_to_channel_at_once_but_not_at_night(tmp_path):
     from vacante.store import save_vacancies
     job = direct.to_vacancy({**JOB, "approved_at": "2026-10-27 06:50:00"})
     save_vacancies(tmp_path, [job])
-    autopost.save_posted(tmp_path, {"almaty": {"ids": [], "titles": [], "last_at": "2026-10-27T06:30:00+00:00"}})
+    autopost.save_posted(tmp_path, {"almaty": {"ids": [], "titles": [], "last_at": "2026-10-27T06:55:00+00:00"}})
     sent = []
     send = lambda chat, post: sent.append((chat, [b[0] for b in post.buttons]))  # noqa: E731
     night = datetime(2026, 10, 27, 2, 30, tzinfo=timezone.utc)  # 7:30 по Казахстану
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=night) == {"posted": 0, "failed": 0}
-    # В 12:00 общий слот ещё не подошёл (последний пост в 11:30), а вакансия работодателя выходит сразу
+    # В 12:00 общий слот ещё не подошёл (последний пост в 11:55), а вакансия работодателя выходит сразу
     stats = autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 7, tzinfo=timezone.utc))
     assert stats == {"posted": 1, "failed": 0, "direct": 1}
     assert sent == [("@vacantealmaty", ["👆 Подробнее", "✉️ Откликнуться", "📍 Открыть в 2ГИС"])]
     state = autopost.load_posted(tmp_path)["almaty"]
-    assert state["ids"] == ["bot-7"] and state["last_at"] == "2026-10-27T06:30:00+00:00"
+    assert state["ids"] == ["bot-7"] and state["last_at"] == "2026-10-27T06:55:00+00:00"
     # Второй раз не публикуется
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 8, tzinfo=timezone.utc))["posted"] == 0
 

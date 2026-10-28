@@ -115,3 +115,47 @@ def test_pipeline_keeps_hh_vacancies_and_survives_403(tmp_path):
     assert [v.id for v in load_vacancies(data)] == ["hh-9"]
     stats = collect.run(config, data, fetch=None, now=NOW, from_hh=lambda state, now: None)  # 403 или выключен
     assert [v.id for v in load_vacancies(data)] == ["hh-9"] and "hh" not in stats
+
+
+def token_transport(status=200, body=None, seen=None):
+    def handler(request):
+        if seen is not None:
+            seen.append(request)
+        return httpx.Response(status, json=body if body is not None else {"access_token": "APP", "token_type": "bearer"})
+    return httpx.MockTransport(handler)
+
+
+def test_app_token_by_client_credentials(monkeypatch):
+    monkeypatch.delenv("HH_TOKEN", raising=False)
+    monkeypatch.setenv("HH_CLIENT_ID", "id")
+    monkeypatch.setenv("HH_CLIENT_SECRET", "secret")
+    seen = []
+    assert hh.token_from_env(token_transport(seen=seen)) == "APP"
+    request = seen[0]
+    assert request.method == "POST" and request.url.path == "/token"
+    assert dict(httpx.QueryParams(request.content.decode())) == {
+        "grant_type": "client_credentials", "client_id": "id", "client_secret": "secret"}
+
+
+def test_hh_token_wins_and_no_secrets_means_anonymous(monkeypatch):
+    monkeypatch.setenv("HH_TOKEN", "OWN")
+    monkeypatch.setenv("HH_CLIENT_ID", "id")
+    monkeypatch.setenv("HH_CLIENT_SECRET", "secret")
+    assert hh.token_from_env(token_transport(500)) == "OWN"
+    for name in ("HH_TOKEN", "HH_CLIENT_ID", "HH_CLIENT_SECRET"):
+        monkeypatch.delenv(name)
+    assert hh.token_from_env(token_transport(500)) is None
+
+
+def test_bad_client_secret_skips_source(monkeypatch, caplog):
+    monkeypatch.setenv("HH_SOURCE_ENABLED", "true")
+    monkeypatch.delenv("HH_TOKEN", raising=False)
+    monkeypatch.setenv("HH_CLIENT_ID", "id")
+    monkeypatch.setenv("HH_CLIENT_SECRET", "wrong")
+    real = hh.app_token
+    monkeypatch.setattr(hh, "app_token", lambda i, s, a=None, t=None: real(
+        i, s, a, token_transport(400, {"error": "invalid_client"})))
+    state = {}
+    assert hh.collect(state, NOW, sleep=no_sleep) is None
+    assert "hh_checked_at" not in state
+    assert "invalid_client" in caplog.text and "wrong" not in caplog.text

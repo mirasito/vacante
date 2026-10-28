@@ -1,7 +1,8 @@
 """Вакансии hh.kz через официальный API hh (api.hh.ru обслуживает и hh.kz).
 
 Источник выключен, пока не задана переменная HH_SOURCE_ENABLED=true: включаем, когда hh одобрит
-приложение vacante.kz. Токен приложения берётся из секрета HH_TOKEN, без него запросы идут анонимно.
+приложение vacante.kz. Токен приложения берётся из секрета HH_TOKEN, а если его нет, получается при каждом
+запуске по секретам HH_CLIENT_ID и HH_CLIENT_SECRET приложения с dev.hh.ru. Без них запросы идут анонимно.
 Если hh отвечает 403, источник пропускает этот запуск с понятным логом, остальной сбор идёт как обычно.
 
 Берём из поисковой выдачи только саму вакансию: название, компанию, зарплату, город, адрес, короткое
@@ -41,12 +42,44 @@ PERIODS = {"MONTH": "month", "SHIFT": "day", "HOUR": "hour"}
 _TAG = re.compile(r"<[^>]+>")
 
 
+class TokenError(Exception):
+    """hh не выдал токен приложения: неверные Client Id или Client Secret."""
+
+
 class Forbidden(Exception):
     """hh ответил 403: нет доступа для нашего приложения или анонимного клиента."""
 
 
 def enabled() -> bool:
     return os.environ.get("HH_SOURCE_ENABLED", "").strip().lower() in ("1", "true", "yes")
+
+
+def app_token(client_id: str, client_secret: str, user_agent: str | None = None,
+              transport: httpx.BaseTransport | None = None) -> str:
+    """Токен приложения hh по Client Id и Client Secret (grant_type=client_credentials)."""
+    agent = user_agent or USER_AGENT
+    with httpx.Client(base_url=API, transport=transport, timeout=30,
+                      headers={"User-Agent": agent, "HH-User-Agent": agent}) as http:
+        r = http.post("/token", data={"grant_type": "client_credentials",
+                                      "client_id": client_id, "client_secret": client_secret})
+    if r.status_code != 200:
+        try:
+            error = r.json().get("error_description") or r.json().get("error") or ""
+        except ValueError:
+            error = ""
+        raise TokenError(f"hh не выдал токен приложения: {r.status_code} {error}".strip())
+    return r.json()["access_token"]
+
+
+def token_from_env(transport: httpx.BaseTransport | None = None) -> str | None:
+    """HH_TOKEN, иначе токен по HH_CLIENT_ID и HH_CLIENT_SECRET, иначе None (анонимные запросы)."""
+    if token := os.environ.get("HH_TOKEN", "").strip():
+        return token
+    client_id = os.environ.get("HH_CLIENT_ID", "").strip()
+    client_secret = os.environ.get("HH_CLIENT_SECRET", "").strip()
+    if client_id and client_secret:
+        return app_token(client_id, client_secret, os.environ.get("HH_USER_AGENT") or None, transport)
+    return None
 
 
 def make_client(token: str | None = None, user_agent: str | None = None) -> httpx.Client:
@@ -161,7 +194,16 @@ def collect(state: dict, now: datetime, client: httpx.Client | None = None,
     if not enabled():
         return None
     own = client is None
-    client = client or make_client(os.environ.get("HH_TOKEN") or None, os.environ.get("HH_USER_AGENT") or None)
+    if own:
+        try:
+            token = token_from_env()
+        except TokenError as exc:
+            log.warning("%s. Проверьте секреты HH_CLIENT_ID и HH_CLIENT_SECRET, источник пропускает этот запуск", exc)
+            return None
+        except httpx.HTTPError as exc:
+            log.warning("hh: токен приложения не получен (%s), источник пропускает этот запуск", type(exc).__name__)
+            return None
+        client = make_client(token, os.environ.get("HH_USER_AGENT") or None)
     last = state.get("hh_checked_at")
     date_from = datetime.fromisoformat(last) - OVERLAP if last else now - FIRST_RUN
     try:

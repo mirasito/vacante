@@ -247,12 +247,33 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "almaty:big business consulting": {
+  "name": "Big Business Consulting",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "bbccomkz",
+  "website": "https://bbc.com.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001088034522",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:blue ocean": {
   "name": "BLUE OCEAN",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "almaty:caffe del teatro": {
+  "name": "CAFFE DEL TEATRO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
  },
  "almaty:caspian beverage holding ао": {
   "name": "CASPIAN beverage holding, АО",
@@ -276,6 +297,19 @@
   ],
   "avatar": "412aa2bb329e39b4.jpg",
   "avatar_source": "website"
+ },
+ "almaty:caspian offshore construction realty": {
+  "name": "Caspian Offshore Construction Realty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "website": "https://cocrealty.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001027954112",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:cbc group группа компаний свс": {
   "name": "CBC-GROUP (Группа компаний СВС)",
@@ -376,6 +410,20 @@
   "instagram": "fort_vernyi",
   "source": "https://2gis.kz/almaty/firm/9429940000801811"
  },
+ "almaty:freedom telecom operations": {
+  "name": "Freedom Telecom Operations",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "ftelecomkz",
+  "website": "https://business.ftel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001093518396",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:french bakery": {
   "name": "French Bakery",
   "city": "almaty",
@@ -431,6 +479,22 @@
    "website"
   ],
   "avatar": "dd9ba8f9ad0b7c2d.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:gt oil service": {
+  "name": "GT oil service",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "gtoilservicekz",
+  "website": "http://gtoilservice.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001019247787",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b69ebbfefad03941.jpg",
   "avatar_source": "website"
  },
  "almaty:hila": {
@@ -606,6 +670,13 @@
   "instagram": "oiqaragai",
   "source": "https://www.instagram.com/oiqaragai/"
  },
+ "almaty:one fitness": {
+  "name": "ONE Fitness",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
+ },
  "almaty:prima distribution": {
   "name": "Prima Distribution",
   "city": "almaty",
@@ -696,6 +767,13 @@
   "avatar": "10a5f8705280e3a8.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:socar": {
+  "name": "SOCAR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
+ },
  "almaty:sporttrade": {
   "name": "ТОО SPORTTRADE",
   "city": "almaty",
@@ -773,6 +851,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:trend energy": {
+  "name": "TREND ENERGY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
  },
  "almaty:tsdc": {
   "name": "TSDC",
@@ -1072,6 +1157,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "almaty:гайдаров": {
+  "name": "Гайдаров",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
  },
  "almaty:галерея новостроек": {
   "name": "Галерея Новостроек",
@@ -1860,6 +1952,20 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "astana:mechta kz tm тоо мечта маркет": {
+  "name": "Mechta.kz TM ( ТОО Мечта Маркет )",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "mechta.kz",
+  "website": "http://mechta.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018502928",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:mega center management": {
   "name": "Mega Center Management",
   "city": "astana",
@@ -2048,6 +2154,19 @@
   ],
   "avatar": "1ef35b44ef5f46ed.jpg",
   "avatar_source": "website"
+ },
+ "astana:wsteel kz": {
+  "name": "WSTEEL.KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "website": "http://wsteel.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001116553619",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:августа": {
   "name": "Августа",
@@ -2253,6 +2372,24 @@
   "instagram": "steakhouse.mangal",
   "source": "https://2gis.kz/astana/firm/70000001089777153"
  },
+ "astana:марк формэль": {
+  "name": "Марк Формэль",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "markformelle",
+  "telegram": "markformelle_official",
+  "website": "https://markformelle.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001078538697",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2567f4c8ffcbc502.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:мусатаева ж р meat & beer": {
   "name": "Мусатаева Ж.Р. (MEAT & BEER)",
   "city": "astana",
@@ -2426,6 +2563,15 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "atyrau:avtomarketkaraganda": {
+  "name": "AvtoMarketKaraganda",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "avtomarket06",
+  "source": "https://2gis.kz/atyrau/firm/70000001066531440"
+ },
  "atyrau:west dala": {
   "name": "WEST DALA",
   "city": "atyrau",
@@ -2502,6 +2648,13 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "karaganda:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
+ },
  "karaganda:resto gamma": {
   "name": "Resto GAMMA",
   "city": "karaganda",
@@ -2531,6 +2684,13 @@
   ],
   "avatar": "3375d5225918e679.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:tomiris ип валиев": {
+  "name": "Tomiris (ИП Валиев)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
  },
  "karaganda:tpa sary arka": {
   "name": "TPA SARY ARKA",
@@ -2600,6 +2760,21 @@
   "avatar": "0a23a24c13cf6784.jpg",
   "avatar_source": "website"
  },
+ "karaganda:резинотехника": {
+  "name": "Резинотехника",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "website": "https://rezinotechnika.ru/",
+  "source": "https://2gis.kz/karaganda/firm/70000001062879423",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8bf623f06751b617.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:ресторан мой тбилиси ип бурбуташвили н н": {
   "name": "Ресторан Мой Тбилиси (ИП Бурбуташвили Н.Н.)",
   "city": "karaganda",
@@ -2636,6 +2811,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "kostanay:osp agro": {
+  "name": "OSP-AGRO",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "osp_agro",
+  "source": "https://2gis.kz/kostanaj/firm/70000001056268423"
  },
  "kostanay:technologies and personnel": {
   "name": "TECHNOLOGIES AND PERSONNEL",
@@ -2728,6 +2912,13 @@
   ],
   "avatar": "3c1ea3bfb9fdfbe7.jpg",
   "avatar_source": "telegram"
+ },
+ "kostanay:табыс&co": {
+  "name": "Табыс&CO",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
  },
  "kostanay:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
@@ -2830,6 +3021,22 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "petropavlovsk:евразиан фудс корпорэйшн ао": {
+  "name": "Евразиан Фудс Корпорэйшн, АО",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00",
+  "instagram": "efc.kz",
+  "website": "https://www.efc.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795207",
+  "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "af630713181a3cee.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",
   "city": "petropavlovsk",
@@ -2885,6 +3092,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "shymkent:ann global": {
+  "name": "ANN GLOBAL",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-28T23:45:40+00:00"
  },
  "shymkent:kub group": {
   "name": "KUB GROUP",

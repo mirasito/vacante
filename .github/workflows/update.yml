@@ -1,6 +1,6 @@
-# Каждый час: собрать новые вакансии (из каналов и от работодателей через бота), опубликовать
-# свежие в каналы, разослать подборки подписчикам бота, сохранить данные в ветку data
-# и опубликовать сайт на GitHub Pages.
+# Каждый час: собрать новые вакансии (из каналов и от работодателей через бота), разослать
+# подборки подписчикам бота, сохранить данные в ветку data и опубликовать сайт на GitHub Pages.
+# После него post.yml публикует серию постов в свои каналы.
 name: Обновление вакансий
 
 on:
@@ -62,12 +62,6 @@ jobs:
           # Pages отдаёт http://, пока для домена выпускается сертификат; ссылки сразу делаем https
           echo "SITE_URL=${SITE_URL/#http:/https:}" >> "$GITHUB_ENV"
 
-      - name: Опубликовать в каналы
-        continue-on-error: true  # сбой Telegram не должен останавливать обновление сайта
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: python -m vacante post --data-dir data --base-url "$SITE_URL"
-
       - name: Разослать подборки подписчикам бота
         continue-on-error: true
         env:
@@ -80,10 +74,14 @@ jobs:
         run: |
           cd data
           git add -A
-          if ! git diff --cached --quiet; then
-            git commit -q -m "Вакансии на $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git push origin data
-          fi
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Вакансии на $(date -u +'%Y-%m-%d %H:%M') UTC"
+          # Параллельно post.yml мог сохранить posted.json: подтягиваем его коммит и пробуем снова
+          for attempt in 1 2 3; do
+            git push -q origin data && exit 0
+            git pull -q --rebase origin data
+          done
+          exit 1
 
       - name: Собрать сайт
         run: python -m vacante build --data-dir data --out public --base-url "$SITE_URL"

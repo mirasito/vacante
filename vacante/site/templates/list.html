@@ -13,7 +13,7 @@
     <a class="chip{% if city == slug %} on{% endif %}" href="{{ root }}/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
     {% endfor %}
   </nav>
-  {% if city %}
+  {% if category %}
   <nav class="chips">
     {% for cat, n in category_counts %}
     <a class="chip{% if category == cat %} on{% endif %}" href="{{ root }}/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
@@ -25,21 +25,41 @@
 <a class="subscribe" href="{{ channels[city] }}">Новые вакансии {{ city_name(city) }} каждый день в Telegram →</a>
 {% endif %}
 {% if vacancies %}
-<div class="filters">
+<div class="filters selects">
+  <select id="sort" aria-label="Сортировка">
+    <option value="new">По новизне</option>
+    <option value="pay">По зарплате</option>
+  </select>
+  <select id="fresh" aria-label="Свежесть">
+    <option value="" data-label="За всё время">За всё время</option>
+    <option value="0" data-label="За сегодня">За сегодня</option>
+    <option value="2" data-label="За 3 дня">За 3 дня</option>
+    <option value="6" data-label="За неделю">За неделю</option>
+  </select>
+  {% if not category %}
+  <select id="cat" aria-label="Сфера">
+    <option value="" data-label="Все сферы">Все сферы</option>
+    {% for cat, n in category_counts %}
+    <option value="{{ cat }}" data-label="{{ CATEGORIES[cat] }}">{{ CATEGORIES[cat] }}</option>
+    {% endfor %}
+  </select>
+  {% endif %}
   <select id="pay" aria-label="Зарплата">
     <option value="0">Любая зарплата</option>
     {% for amount in [200000, 300000, 400000] %}
     <option value="{{ amount }}">от {{ money(amount) }} ₸ в месяц</option>
     {% endfor %}
   </select>
+</div>
+<div class="filters perks">
   <button type="button" class="toggle" data-perk="salary" aria-pressed="false">С зарплатой</button>
   {% for perk in FILTER_PERKS %}
   <button type="button" class="toggle" data-perk="{{ perk }}" aria-pressed="false">{{ perk }}</button>
   {% endfor %}
 </div>
-<p id="pay-note" class="note" hidden>Оплату за смену считаем как 22 смены в месяц, почасовую как 176 часов.</p>
+<p id="pay-note" class="note" hidden>Зарплату сравниваем в тенге в месяц: смену считаем как 22 смены в месяц, час как 176 часов.</p>
 {% endif %}
-<p class="count">Результаты: <span id="count">{{ vacancies | length }}</span>{% if total > vacancies | length %} из {{ total }}{% endif %}</p>
+<p class="count">Результаты: <span id="count">{{ vacancies | length }}</span></p>
 <div id="list" class="list">
 {% for v in vacancies %}
 {% include "_card.html" %}
@@ -48,30 +68,111 @@
 {% endfor %}
 </div>
 <p id="none" class="empty" hidden>Ничего не нашлось. Попробуйте убрать часть фильтров.</p>
+{% if city and not category and category_counts %}
+<nav class="by-category">
+  <h2>Вакансии по сферам</h2>
+  {% for cat, n in category_counts %}
+  <a href="{{ root }}/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
+  {% endfor %}
+</nav>
+{% endif %}
 <script>
-const $ = id => document.getElementById(id);
-const q = $('q'), pay = $('pay'), count = $('count');
-const cards = [...document.querySelectorAll('#list .card')], toggles = [...document.querySelectorAll('.toggle')];
-function apply() {
-  const words = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  const min = pay ? +pay.value : 0;
-  const need = toggles.filter(t => t.getAttribute('aria-pressed') === 'true').map(t => t.dataset.perk);
-  let n = 0;
-  for (const c of cards) {
-    const perks = c.dataset.perks.split('|'), money = +c.dataset.pay;
-    const hit = words.every(w => c.dataset.search.includes(w)) && money >= min
-      && need.every(p => p === 'salary' ? money > 0 : perks.includes(p));
-    c.hidden = !hit; if (hit) n++;
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const q = $('q'), pay = $('pay'), fresh = $('fresh'), cat = $('cat'), sort = $('sort'), list = $('list');
+  const cards = [...list.querySelectorAll('.card')], toggles = [...document.querySelectorAll('.toggle')];
+  if (!cards.length) return;
+  const info = new Map(cards.map((c, i) => [c, {
+    i, posted: Date.parse(c.dataset.posted), pay: +c.dataset.pay, cat: c.dataset.category,
+    perks: c.dataset.perks.split('|'), search: c.dataset.search,
+  }]));
+  // Начало дня по времени Казахстана (UTC+5) days дней назад: «за сегодня» значит с полуночи
+  const DAY = 864e5, KZ = 5 * 3600e3;
+  const since = (days) => { const local = Date.now() + KZ; return local - (local % DAY) - KZ - days * DAY; };
+
+  function state() {
+    return {
+      words: q.value.toLowerCase().trim().split(/\s+/).filter(Boolean),
+      min: pay ? +pay.value : 0,
+      fresh: fresh ? fresh.value : '',
+      cat: cat ? cat.value : '',
+      need: toggles.filter((t) => t.getAttribute('aria-pressed') === 'true').map((t) => t.dataset.perk),
+    };
   }
-  count.textContent = n;
-  $('none').hidden = n > 0 || !cards.length;
-  if (pay) $('pay-note').hidden = !min;
-}
-q.addEventListener('input', apply);
-if (pay) pay.addEventListener('change', apply);
-for (const t of toggles) t.addEventListener('click', () => {
-  t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true');
-  apply();
-});
+  function fits(d, s) {
+    return s.words.every((w) => d.search.includes(w)) && d.pay >= s.min
+      && (s.fresh === '' || d.posted >= since(+s.fresh))
+      && (s.cat === '' || d.cat === s.cat)
+      && s.need.every((p) => (p === 'salary' ? d.pay > 0 : d.perks.includes(p)));
+  }
+  // Умные подсказки: сколько вакансий даст каждый вариант при остальных фильтрах; пустые варианты гаснут
+  function counts(select, key, s) {
+    if (!select) return;
+    for (const o of select.options) {
+      const alt = { ...s, [key]: o.value };
+      let n = 0;
+      for (const d of info.values()) if (fits(d, alt)) n++;
+      o.textContent = `${o.dataset.label} · ${n}`;
+      o.disabled = n === 0 && o.value !== select.value;
+    }
+  }
+  function order() {
+    const byPay = sort && sort.value === 'pay';
+    const sorted = [...cards].sort((a, b) => {
+      const x = info.get(a), y = info.get(b);
+      return byPay ? (y.pay - x.pay) || (x.i - y.i) : x.i - y.i;  // без зарплаты в конце, внутри по новизне
+    });
+    list.append(...sorted);
+  }
+  function save() {
+    const p = new URLSearchParams();
+    if (q.value.trim()) p.set('q', q.value.trim());
+    if (sort && sort.value !== 'new') p.set('sort', sort.value);
+    if (fresh && fresh.value) p.set('fresh', fresh.value);
+    if (cat && cat.value) p.set('cat', cat.value);
+    if (pay && +pay.value) p.set('pay', pay.value);
+    const need = state().need;
+    if (need.length) p.set('perks', need.join(','));
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  }
+  function apply(reorder) {
+    const s = state();
+    let n = 0;
+    for (const [c, d] of info) {
+      const hit = fits(d, s);
+      c.hidden = !hit;
+      if (hit) n++;
+    }
+    if (reorder) order();
+    counts(fresh, 'fresh', s);
+    counts(cat, 'cat', s);
+    $('count').textContent = n;
+    $('none').hidden = n > 0;
+    if (pay) $('pay-note').hidden = !(+pay.value || (sort && sort.value === 'pay'));
+    save();
+  }
+  // Фильтры из адреса страницы: ссылкой с ними можно поделиться
+  const saved = new URLSearchParams(location.search);
+  const pick = (select, value) => {
+    if (select && value !== null && [...select.options].some((o) => o.value === value)) select.value = value;
+  };
+  q.value = saved.get('q') || '';
+  pick(sort, saved.get('sort'));
+  pick(fresh, saved.get('fresh'));
+  pick(cat, saved.get('cat'));
+  pick(pay, saved.get('pay'));
+  const perks = (saved.get('perks') || '').split(',');
+  for (const t of toggles) t.setAttribute('aria-pressed', perks.includes(t.dataset.perk));
+
+  q.addEventListener('input', () => apply(false));
+  for (const el of [pay, fresh, cat]) if (el) el.addEventListener('change', () => apply(false));
+  if (sort) sort.addEventListener('change', () => apply(true));
+  for (const t of toggles) t.addEventListener('click', () => {
+    t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true');
+    apply(false);
+  });
+  apply(true);
+})();
 </script>
 {% endblock %}

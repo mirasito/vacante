@@ -38,6 +38,11 @@ a { color: inherit; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pill { background: var(--pill); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
 .pill.salary { font-weight: 700; }
+.pill.monthly { background: none; border: 1.5px solid var(--line); color: var(--quiet); padding: 2.5px 10.5px; }
+.by-category { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.by-category h2 { width: 100%; font-size: 18px; margin: 0; }
+.by-category a { font-weight: 600; text-decoration: none; }
+.by-category small { color: var(--quiet); font-weight: 400; }
 .crumbs { color: var(--quiet); font-size: 14px; }
 .vacancy h1 { font-size: clamp(28px, 6vw, 44px); margin: 8px 0 4px; line-height: 1.1; }
 .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 18px 0; }
@@ -56,4 +61,10 @@ a { color: inherit; }
   .hero .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; }
   .hero .chips::-webkit-scrollbar { display: none; }
   .chip { flex: none; white-space: nowrap; }
+  /* Сортировка и фильтры по два в ряд, условия одной прокручиваемой строкой */
+  .filters.selects { display: grid; grid-template-columns: 1fr 1fr; }
+  .filters.selects select { width: 100%; min-width: 0; }
+  .filters.perks { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -16px; padding-right: 16px; }
+  .filters.perks::-webkit-scrollbar { display: none; }
+  .filters.perks .toggle { flex: none; white-space: nowrap; }
 }

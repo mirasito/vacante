@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from vacante.models import RawPost
 from vacante.parse import parse_post
 from vacante.site import build as site
-from vacante.site.build import build, plural
+from vacante.site.build import build, money, plural
 from vacante.store import save_vacancies
 
 
@@ -58,6 +58,14 @@ def test_list_has_filters_and_counts_in_russian(tmp_path):
     assert 'data-pay="396000"' in home  # 18 000 за смену × 22 смены
     assert 'data-perks="Питание|Без опыта"' in home
     assert 'data-perk="Без опыта"' in home and 'value="300000"' in home
+    # Сортировка, свежесть и сфера; оплата за смену видна и в пересчёте на месяц
+    assert 'id="sort"' in home and 'id="fresh"' in home and '<option value="horeca" data-label="Кафе и рестораны">' in home
+    assert 'data-posted="2026-10-27T00:00:00+00:00"' in home
+    assert f'<span class="pill monthly">≈ {money(308000)} – {money(396000)} ₸/мес</span>' in home
+    city = (tmp_path / "public" / "almaty" / "index.html").read_text("utf-8")
+    assert 'id="cat"' in city and 'href="/almaty/horeca/">Кафе и рестораны <small>1</small>' in city
+    category = (tmp_path / "public" / "almaty" / "horeca" / "index.html").read_text("utf-8")
+    assert 'id="cat"' not in category and 'id="fresh"' in category
     assert [plural(n, "вакансия", "вакансии", "вакансий") for n in (1, 3, 5, 11, 21, 522)] == [
         "вакансия", "вакансии", "вакансий", "вакансий", "вакансия", "вакансии"]
 

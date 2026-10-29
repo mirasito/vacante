@@ -1,4 +1,5 @@
-from datetime import datetime, timezone
+import json
+from datetime import datetime, timedelta, timezone
 
 from vacante import autopost
 from vacante.models import RawPost
@@ -75,3 +76,44 @@ def test_failed_send_is_not_remembered(tmp_path):
 
     assert autopost.run(tmp_path, "https://vacante.kz", fail, now=NOON) == {"posted": 0, "failed": 1}
     assert autopost.load_posted(tmp_path)["almaty"]["ids"] == []
+
+
+def test_same_employer_is_not_posted_again_for_three_days(tmp_path):
+    # Одну вакансию работодатель разместил в нескольких каналах разными словами
+    first = make(20, "Рестопарк «DINO FEST» ищет бармена, 300 000 тг")
+    repost = make(21, "Ресторан «DINO FEST» ищет официантов, 250 000 тг, питание")
+    other = make(22, "Кафе «Луна» ищет повара, 200 000 тг")
+    save_vacancies(tmp_path, [first, repost, other])
+    sent = []
+    for minutes in (0, 15, 30):
+        autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(post.buttons[0][1]),
+                     now=NOON + timedelta(minutes=minutes))
+    assert sent == ["https://vacante.kz/v/chan-21/", "https://vacante.kz/v/chan-22/"]
+    state = autopost.load_posted(tmp_path)["almaty"]
+    assert state["employers"] == {"almaty:dino fest": NOON.isoformat(),
+                                  "almaty:луна": (NOON + timedelta(minutes=15)).isoformat()}
+    later = NOON + autopost.EMPLOYER_GAP + timedelta(minutes=1)
+    assert autopost.pick([first, repost], "almaty", state, NOON + timedelta(hours=1)) is None
+    assert autopost.pick([first, repost], "almaty", state, later) is None  # свежесть 48 часов уже вышла
+    first.posted_at = later.isoformat()
+    assert autopost.pick([first, repost], "almaty", state, later) is first
+
+
+def test_employers_posted_before_the_fix_are_remembered(tmp_path):
+    old = make(23, "Компания «WeFind» ищет грузчика на склад Kaspi, 300 000 тг")
+    again = make(24, "Компания «WeFind» ищет грузчика на склад, 350 000 тг, развозка")
+    save_vacancies(tmp_path, [old, again])
+    (tmp_path / "posted.json").write_text(json.dumps(
+        {"almaty": {"ids": [old.id], "titles": [old.title], "last_at": "2026-10-27T06:00:00+00:00"}}), "utf-8")
+    sent = []
+    autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(chat), now=NOON)
+    assert sent == []
+    assert autopost.load_posted(tmp_path)["almaty"]["employers"] == {"almaty:wefind": "2026-10-27T06:00:00+00:00"}
+
+
+def test_earlier_approved_goes_first_among_equal():
+    a = make(25, "Цветочный «Lumi» ищет флориста, 300 000 тг", hour=2)
+    b = make(26, "Кафе «Зерно» ищет бариста, 300 000 тг", hour=6)
+    approved = {a.id: "2026-10-27T03:00:00+00:00", b.id: "2026-10-27T06:30:00+00:00"}
+    assert autopost.pick([a, b], "almaty", {}, NOON) is b  # без агента самая свежая
+    assert autopost.pick([a, b], "almaty", {}, NOON, approved_at=approved) is a

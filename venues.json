@@ -242,6 +242,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:arhat holding": {
+  "name": "ARHAT HOLDING",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
  "almaty:arlan logistics grop": {
   "name": "TOO Arlan logistics grop",
   "city": "almaty",
@@ -382,6 +389,15 @@
    "website"
   ]
  },
+ "almaty:bizdin auyl": {
+  "name": "Bizdin Auyl",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "bizdin__auyl",
+  "source": "https://2gis.kz/almaty/firm/70000001110637674"
+ },
  "almaty:blesk kz": {
   "name": "BLESK.KZ",
   "city": "almaty",
@@ -487,6 +503,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:damdala": {
+  "name": "Damdala",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "damdala.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001091380779"
  },
  "almaty:daua pharma": {
   "name": "DAUA Pharma",
@@ -793,6 +818,13 @@
   "avatar": "1254b43fb1b59fad.jpg",
   "avatar_source": "website"
  },
+ "almaty:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
  "almaty:kazdi group": {
   "name": "KazDi Group",
   "city": "almaty",
@@ -834,6 +866,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:lb dostyk": {
+  "name": "LB DOSTYK",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:lion restaurants лион рестораны": {
+  "name": "LiON Restaurants (ЛиОН Рестораны)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "lion.restaurants",
+  "source": "https://2gis.kz/almaty/firm/70000001101025365"
  },
  "almaty:lumiere service": {
   "name": "LUMIERE Service”",
@@ -998,6 +1046,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:p2p logistic group": {
+  "name": "P2P LOGISTIC GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
  },
  "almaty:prima distribution": {
   "name": "Prima Distribution",
@@ -1422,6 +1477,13 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "almaty:автора": {
+  "name": "Автора",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
  "almaty:автотрейд": {
   "name": "Автотрейд",
   "city": "almaty",
@@ -1458,6 +1520,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "almaty:ак цент микросистемс": {
+  "name": "АК Цент Микросистемс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "akcentmicrosystems",
+  "website": "https://www.ak-cent.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000791812",
+  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:аксай нан хбк": {
   "name": "Аксай-Нан ХБК",
@@ -1741,6 +1817,13 @@
    "telegram"
   ]
  },
+ "almaty:детский": {
+  "name": "Детский",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
  "almaty:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
   "city": "almaty",
@@ -1842,6 +1925,20 @@
   "website": "http://eyeinst.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796130",
   "avatar_checked_at": "2026-10-28T20:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:каздорзапчасть лтд": {
+  "name": "КазДорЗапчасть Лтд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "tookazdorzapchast",
+  "website": "http://saimanpro.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028046693",
+  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2241,6 +2338,22 @@
    "website"
   ]
  },
+ "almaty:торговый дом rokos": {
+  "name": "ТОРГОВЫЙ ДОМ ROKOS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "rokos.market",
+  "website": "https://rokos.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001085331900",
+  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "66a063e8606ff526.jpg",
+  "avatar_source": "website"
+ },
  "almaty:торгстрой": {
   "name": "ТОРГСТРОЙ",
   "city": "almaty",
@@ -2277,6 +2390,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:частная компания eurasian retаil group limited": {
+  "name": "Частная компания EURASIAN RETАIL GROUP Limited",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
  },
  "almaty:чл": {
   "name": "ЧЛ",
@@ -2436,6 +2556,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:beat": {
+  "name": "BEAT",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
  },
  "astana:bi group": {
   "name": "BI Group",
@@ -3049,6 +3176,13 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:азия парк": {
+  "name": "Азия Парк",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
  "astana:айсултан": {
   "name": "Айсултан",
   "city": "astana",
@@ -3439,6 +3573,22 @@
    "website"
   ]
  },
+ "astana:торговый дом rokos": {
+  "name": "ТОРГОВЫЙ ДОМ ROKOS",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "instagram": "rokos.kz",
+  "website": "https://rokos.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001023109439",
+  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5df3670cc3055e35.jpg",
+  "avatar_source": "website"
+ },
  "astana:умаг": {
   "name": "Умаг",
   "city": "astana",
@@ -3486,6 +3636,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:экспортер": {
+  "name": "Экспортер",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
  },
  "astana:элан в": {
   "name": "ЭЛАН-В",
@@ -3647,6 +3804,13 @@
   ],
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:lissa": {
+  "name": "LISSA",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
  },
  "karaganda:magnum": {
   "name": "MAGNUM",
@@ -3923,6 +4087,13 @@
   "instagram": "osp_agro",
   "source": "https://2gis.kz/kostanaj/firm/70000001056268423"
  },
+ "kostanay:skill hub": {
+  "name": "Skill Hub",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00"
+ },
  "kostanay:technologies and personnel": {
   "name": "TECHNOLOGIES AND PERSONNEL",
   "city": "kostanay",
@@ -3994,6 +4165,21 @@
    "website"
   ],
   "avatar": "a0c3dfbad39a62b0.jpg",
+  "avatar_source": "website"
+ },
+ "kostanay:мибеко": {
+  "name": "МИБЕКО",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T06:44:07+00:00",
+  "website": "http://altyn-dala.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001037325058",
+  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "07147a5b252d9a57.jpg",
   "avatar_source": "website"
  },
  "kostanay:мясоед": {

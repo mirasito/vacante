@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-29T12:00:23+00:00",
+ "updated_at": "2026-10-29T13:17:17+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -2844,6 +2844,218 @@
    "fields": {
     "title": "Мерчендайзер, сборщик заказов",
     "schedule": "2/2, 08:00–20:00 или 20:00–08:00"
+   }
+  },
+  "astana_job_vakansii-129896": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Повар горячего цеха, официант",
+    "employer": "Ресторан «МОНА»"
+   }
+  },
+  "hh-138949499": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Бариста",
+    "employer": "Wedrink",
+    "schedule": "Свободный график, смены по 8 часов"
+   }
+  },
+  "rabota_astana-15640": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Кассир",
+    "employer": "Компьютерный клуб «BRO»"
+   }
+  },
+  "hh-138974377": {
+   "verdict": "reject",
+   "at": "2026-10-29T13:17:17+00:00",
+   "reason": "Офисная должность (менеджер образовательного центра)"
+  },
+  "hh-138973578": {
+   "verdict": "reject",
+   "at": "2026-10-29T13:17:17+00:00",
+   "reason": "Продажи абонементов с размытой зарплатой, не рабочая специальность"
+  },
+  "hh-138971552": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "MSQ Man",
+    "address": "ТРЦ «Mega Silk Way», пр. Кабанбай батыра, 62"
+   }
+  },
+  "rabota_astanakz-31064": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "employer": null,
+    "salary_min": 325000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "6/1, 09:00–20:00",
+    "address": "ул. Кенесары, 63, угол ул. Валиханова"
+   }
+  },
+  "hh-138970469": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Упаковщик на склад",
+    "employer": "Wildberries",
+    "schedule": "2/2, смены по 11–12 часов",
+    "address": "трасса Астана – Караганда, 91/2"
+   }
+  },
+  "hh-138968702": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Су-шеф",
+    "schedule": "5/2, смены по 12 часов",
+    "address": "пр. Аль-Фараби, 7",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-16938": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "employer": "Магазин «VIAGGIO»",
+    "schedule": "2/2, 10:00–21:00",
+    "address": "ТД «Рахмет», ул. Момышулы, 10",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31056": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Официант, хостес, повар, су-шеф, бармен",
+    "employer": "Лаундж-бар «Hookah Place»",
+    "schedule": "2/2, 5/2 или 6/1"
+   }
+  },
+  "hh-138961669": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Кассир",
+    "employer": "Рестораны «Pinta»",
+    "schedule": "2/2",
+    "address": "Коргалжынское шоссе, 1"
+   }
+  },
+  "hh-138972364": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Администратор на ресепшен в клинику",
+    "employer": "ЛОР Практика",
+    "schedule": "2/2, смены по 12 часов",
+    "address": "пр. Сейфуллина, 574/3"
+   }
+  },
+  "hh-138957248": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "employer": "Bugel",
+    "schedule": "6/1, смены по 8 часов",
+    "address": "ул. Бухтарминская, 24/4"
+   }
+  },
+  "hh-138973995": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "employer": "Flip.kz",
+    "schedule": "2/2, смены по 11 часов",
+    "address": "мкр Кайрат, 182",
+    "perks": []
+   }
+  },
+  "almaty_rabota01-26002": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Мини-маркеты «Nauryz»",
+    "salary_min": 200000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2, 08:00–20:00, 11:00–23:00 или 12:00–00:00",
+    "perks": [
+     "Питание",
+     "Официально",
+     "Обучение"
+    ]
+   }
+  },
+  "hh-138955598": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Продавец-кассир в магазин Vans",
+    "employer": "INTERTOP",
+    "address": "ТРЦ «Forum», пр. Сейфуллина, 617",
+    "perks": [
+     "Обучение",
+     "Спецодежда"
+    ]
+   }
+  },
+  "hh-138955135": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "schedule": null,
+    "address": "ул. Льва Толстого, 15Б",
+    "perks": []
+   }
+  },
+  "almaty_rabota_work-31728": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "employer": "Гостиница «Bizdin Auyl»",
+    "address": null
+   }
+  },
+  "hh-138408730": {
+   "verdict": "reject",
+   "at": "2026-10-29T13:17:17+00:00",
+   "reason": "Торговый представитель, работа с продажами и планами, сомнительно для каналов"
+  },
+  "hh-138949997": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "employer": "LiON Restaurants",
+    "schedule": "5/2 или 3/2",
+    "address": "пр. Сейфуллина, 498"
+   }
+  },
+  "hh-138905392": {
+   "verdict": "reject",
+   "at": "2026-10-29T13:17:17+00:00",
+   "reason": "Офисная должность (менеджер по продажам)"
+  },
+  "hh-138976954": {
+   "verdict": "approve",
+   "at": "2026-10-29T13:17:17+00:00",
+   "fields": {
+    "title": "Администратор в театр",
+    "employer": "Иммерсивный театр «Play Theater»",
+    "schedule": null,
+    "address": "ул. Наурызбай батыра, 146",
+    "perks": []
    }
   }
  }

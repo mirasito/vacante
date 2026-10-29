@@ -188,6 +188,15 @@
   "instagram": "aa.express_",
   "source": "https://2gis.kz/almaty/firm/70000001059445078"
  },
+ "almaty:ab exim management": {
+  "name": "AB exim Management",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "babypolis_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001036394543"
+ },
  "almaty:adrenaline fitness адреналин фитнес": {
   "name": "Adrenaline Fitness (Адреналин Фитнес)",
   "city": "almaty",
@@ -471,6 +480,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "almaty:bugel алматы": {
+  "name": "BUGEL Алматы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "bugel_almaty",
+  "website": "http://bugel.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792590",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "db097cc8d051df96.jpg",
+  "avatar_source": "website"
  },
  "almaty:buta development": {
   "name": "Buta Development",
@@ -1261,6 +1286,24 @@
   "instagram": "procoffee.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001097293522"
  },
+ "almaty:profi kz": {
+  "name": "PROFI KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "profikz.kz",
+  "telegram": "profi_kz",
+  "website": "http://www.profikz.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000789499",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "874822e452f58ebf.jpg",
+  "avatar_source": "website"
+ },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
   "city": "almaty",
@@ -1312,6 +1355,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "almaty:rwb wildberries & russ": {
+  "name": "RWB (Wildberries & Russ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "website": "https://wildberries.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001105605374",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:sandyq world": {
   "name": "Sandyq World",
@@ -1444,6 +1500,13 @@
   ],
   "avatar": "0d07a4c70e9fa886.jpg",
   "avatar_source": "website"
+ },
+ "almaty:stom dautovy": {
+  "name": "Stom-Dautovy",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
  },
  "almaty:studio массаж": {
   "name": "Studio Массаж",
@@ -2397,6 +2460,22 @@
   "instagram": "laffa.cafe",
   "source": "https://2gis.kz/almaty/firm/70000001020792892"
  },
+ "almaty:лор практика": {
+  "name": "Лор практика",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "lor_praktika",
+  "website": "https://www.lordoctor.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103885022",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "939ef4ec1271f552.jpg",
+  "avatar_source": "website"
+ },
  "almaty:лпгруп lpgroup": {
   "name": "ЛПГруп (LPGroup)",
   "city": "almaty",
@@ -2658,6 +2737,13 @@
   "avatar": "460e73c2b79668ae.jpg",
   "avatar_source": "website"
  },
+ "almaty:сергей": {
+  "name": "Сергей",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
+ },
  "almaty:специалист": {
   "name": "Специалист",
   "city": "almaty",
@@ -2785,6 +2871,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:трасттраффик": {
+  "name": "ТрастТраффик",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
  },
  "almaty:уткелов ж б": {
   "name": "Уткелов Ж.Б.",
@@ -2968,6 +3061,13 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:astana motors premium": {
+  "name": "Astana Motors Premium",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
+ },
  "astana:avenue танатаров а м": {
   "name": "Avenue (ТАНАТАРОВ А.М)",
   "city": "astana",
@@ -3030,6 +3130,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "astana:buildtrust": {
+  "name": "BuildTrust",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
  },
  "astana:cartel": {
   "name": "CARTEL",
@@ -3395,6 +3502,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "astana:orbis machinery": {
+  "name": "ORBIS MACHINERY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
+ },
  "astana:ozon": {
   "name": "Ozon",
   "city": "astana",
@@ -3450,6 +3564,28 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:rwb wildberries & russ": {
+  "name": "RWB (Wildberries & Russ)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "website": "https://wildberries.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001105605374",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:samgepo": {
+  "name": "Samgepo",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "samgepo",
+  "source": "https://2gis.kz/astana/firm/70000001059726382"
  },
  "astana:senim staff": {
   "name": "Senim Staff",
@@ -4182,6 +4318,19 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "astana:эмити интернешнл": {
+  "name": "ЭМИТИ Интернешнл",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "website": "https://amity.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000802621",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:энергострой": {
   "name": "ЭнергоСтрой",
   "city": "astana",
@@ -4682,6 +4831,20 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "kostanay:oil центр": {
+  "name": "Oil центр",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "oil24.kz",
+  "website": "http://oil24.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035463776",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:osp agro": {
   "name": "OSP-AGRO",
   "city": "kostanay",
@@ -4966,6 +5129,22 @@
   "avatar": "447d0083e59c682c.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:tradicom": {
+  "name": "TRADICOM",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "tradicom7",
+  "website": "http://tradicom.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001038763512",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5c67d834e0b0199b.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
   "city": "pavlodar",
@@ -4979,6 +5158,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "pavlodar:компания troya": {
+  "name": "Компания TROYA",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "instagram": "troya_kz",
+  "website": "https://www.troya.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001027812142",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "pavlodar:кэмми group": {
   "name": "КЭММИ GROUP",
@@ -5208,6 +5401,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "shymkent:altyn bala kz": {
+  "name": "Altyn-bala.kz",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
+ },
  "shymkent:ann global": {
   "name": "ANN GLOBAL",
   "city": "shymkent",
@@ -5332,6 +5532,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "shymkent:фиркан": {
+  "name": "Фиркан",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00"
  },
  "taraz:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
@@ -5466,6 +5673,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "ust-kamenogorsk:green house limited": {
+  "name": "Green House Limited",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T11:44:49+00:00",
+  "website": "https://greenhouse.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001093348769",
+  "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "17c40eb2d1fb3e9b.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:kazdrill service": {
   "name": "KAZDRILL SERVICE",

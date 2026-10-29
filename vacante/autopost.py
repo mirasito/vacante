@@ -42,6 +42,12 @@ KEEP = 500  # сколько опубликованных id помнить на
 # Сколько ближайших кандидатов на пост в каждом городе агент проверяет за раз: каждый час с запасом
 # на серию из 4 постов и на отклонённые
 REVIEW_PER_CITY = 8
+# Агенту даём новых кандидатов, только пока одобренных и ещё не вышедших меньше этого числа: иначе очередь
+# растёт быстрее, чем выходят посты, и раньше одобренные вакансии вытесняются свежими и не выходят никогда
+BACKLOG = 8
+# Одно заведение выходит в канал не чаще раза в трое суток: работодатели размещают одну и ту же вакансию
+# в нескольких каналах и с разными словами, а у WeFind на hh.kz десятки почти одинаковых вакансий грузчиков
+EMPLOYER_GAP = timedelta(days=3)
 HASHTAGS = {"horeca": "#общепит", "retail": "#продажи", "warehouse": "#склад", "delivery": "#доставка",
             "service": "#сервис", "construction": "#стройка", "callcenter": "#колцентр", "other": ""}
 
@@ -78,17 +84,64 @@ def _score(v: Vacancy, known: set[str]) -> float:
             + (v.category != "other"))
 
 
+def dup_keys(v: Vacancy) -> set[str]:
+    """По чему узнаём повтор: заведение, а без него должность с зарплатой."""
+    if v.employer and v.employer.strip():
+        return {venues.key(v.employer, v.city)}
+    if v.salary_min is not None or v.salary_max is not None:
+        return {f"{v.city}:{v.title.lower()}:{v.salary_min}:{v.salary_max}"}
+    return set()
+
+
+def _recent(state: dict, now: datetime) -> set[str]:
+    cutoff = (now - EMPLOYER_GAP).isoformat()
+    return {k for k, at in state.get("employers", {}).items() if at >= cutoff}
+
+
+def _remember(state: dict, keys: set[str], now: datetime) -> None:
+    employers = state.setdefault("employers", {})
+    for k in keys:
+        employers[k] = now.isoformat()
+    cutoff = (now - EMPLOYER_GAP).isoformat()
+    state["employers"] = {k: at for k, at in employers.items() if at >= cutoff}
+
+
+def _backfill(state: dict, vacancies: list[Vacancy], keys_of: dict[str, set[str]], now: datetime) -> None:
+    """Каналы, опубликованные до учёта заведений: их заведения считаем вышедшими во время последнего поста."""
+    if "employers" in state:
+        return
+    at = datetime.fromisoformat(state["last_at"]) if state.get("last_at") else now
+    by_id = {v.id: v for v in vacancies}
+    keys = set().union(*(keys_of.get(i) or dup_keys(by_id[i]) for i in state.get("ids", []) if i in by_id))
+    state["employers"] = {}
+    _remember(state, keys, at)
+
+
 def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
-         known: set[str] = frozenset()) -> Vacancy | None:
-    """Лучшая свежая неопубликованная вакансия города; должности последних постов не повторяем."""
+         known: set[str] = frozenset(), keys_of: dict[str, set[str]] | None = None,
+         approved_at: dict[str, str] | None = None) -> Vacancy | None:
+    """Лучшая свежая неопубликованная вакансия города.
+
+    Должности последних постов и заведения, вышедшие за последние трое суток, не повторяем. Из равных
+    по полноте первой идёт та, что агент одобрил раньше, без проверки агента — самая свежая."""
+    keys_of = keys_of or {}
+    approved_at = approved_at or {}
     seen = set(state.get("ids", []))
     recent_titles = set(state.get("titles", [])[-3:])
+    recent = _recent(state, now)
     cutoff = (now - FRESH).isoformat()
     candidates = [
         v for v in vacancies
         if v.city == city and v.id not in seen and v.posted_at >= cutoff and v.title not in recent_titles
+        and not (keys_of.get(v.id) or dup_keys(v)) & recent
     ]
-    return max(candidates, key=lambda v: (_score(v, known), v.posted_at), default=None)
+
+    def order(v: Vacancy) -> tuple:
+        at = approved_at.get(v.id)
+        # Одобренные раньше выше; без одобрения (вакансии из бота, или агент ещё не включён) — свежие выше
+        return (_score(v, known), at is None, -datetime.fromisoformat(at).timestamp() if at else v.posted_at)
+
+    return max(candidates, key=order, default=None)
 
 
 def direct_due(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> list[Vacancy]:
@@ -173,14 +226,32 @@ def checked_by_agent(vacancies: list[Vacancy], reviews: dict | None) -> list[Vac
 
 def review_queue(vacancies: list[Vacancy], posted: dict, reviews: dict, now: datetime,
                  known: set[str] = frozenset()) -> list[Vacancy]:
-    """Ближайшие кандидаты на пост в каждом городе, которые агент ещё не проверял, в порядке очереди."""
+    """Ближайшие кандидаты на пост в каждом городе, которые агент ещё не проверял, в порядке очереди.
+
+    Повторы уже вышедших или уже одобренных заведений агенту не показываем, и новых кандидатов не даём,
+    пока одобренных и ещё не вышедших хватает на пару часов постов."""
     cutoff = (now - FRESH).isoformat()
     out = []
     for city in CHANNELS:
-        seen = set(posted.get(city, {}).get("ids", []))
+        state = posted.get(city, {})
+        seen = set(state.get("ids", []))
         fresh = [v for v in vacancies if v.city == city and v.source != direct.SOURCE and v.id not in seen
-                 and v.id not in reviews and v.posted_at >= cutoff]
-        out += sorted(fresh, key=lambda v: (_score(v, known), v.posted_at), reverse=True)[:REVIEW_PER_CITY]
+                 and v.posted_at >= cutoff]
+        taken = _recent(state, now)
+        waiting = 0
+        for v in fresh:
+            if reviews.get(v.id, {}).get("verdict") == "approve" and not dup_keys(v) & taken:
+                waiting += 1
+                taken |= dup_keys(v)
+        room = min(REVIEW_PER_CITY, BACKLOG - waiting)
+        for v in sorted(fresh, key=lambda v: (_score(v, known), v.posted_at), reverse=True):
+            if room <= 0:
+                break
+            if v.id in reviews or dup_keys(v) & taken:
+                continue
+            out.append(v)
+            taken |= dup_keys(v)
+            room -= 1
     return out
 
 
@@ -207,18 +278,25 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
     # Заведение ищем по названию из исходного объявления: агент мог оформить его иначе («DINO FEST» → «Рестопарк «Dino Fest»»)
     venue_of = {v.id: venues.lookup(table, v) for v in original.values()}
     known = {i for i, venue in venue_of.items() if venue and venue.get("avatar")}
+    # Повторы ищем и по исходному названию заведения, и по оформленному агентом
+    keys_of = {v.id: dup_keys(v) | dup_keys(original[v.id]) for v in vacancies}
+    reviews = review.load(data_dir) or {}
+    approved_at = {i: r["at"] for i, r in reviews.items() if r.get("verdict") == "approve" and r.get("at")}
     stats = {"posted": 0, "failed": 0}
     for city, chat in CHANNELS.items():
         state = posted.setdefault(city, {"ids": [], "titles": [], "last_at": None})
+        _backfill(state, list(original.values()), keys_of, now)
         # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь
         for v in direct_due(vacancies, city, state, now):
             if _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id)):
                 stats["direct"] = stats.get("direct", 0) + 1
+                _remember(state, keys_of[v.id], now)
         if not is_due(state["last_at"], now):
             continue
-        v = pick(vacancies, city, state, now, known)
+        v = pick(vacancies, city, state, now, known, keys_of, approved_at)
         if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id)):
             state["last_at"] = now.isoformat()
+            _remember(state, keys_of[v.id], now)
     save_posted(data_dir, posted)
     return stats
 

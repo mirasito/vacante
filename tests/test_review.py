@@ -90,3 +90,17 @@ def test_venue_is_found_by_original_name_after_agent_renames_it(tmp_path):
     autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(post), now=NOON)
     assert "Кофейня «Зерно»" in sent[0].caption
     assert any(text == "📸 Instagram" for text, _ in sent[0].buttons)
+
+
+def test_queue_skips_repeats_and_stops_while_approved_wait():
+    posted_venue = make(30, "Кафе «Луна» ищет официанта, 300 000 тг")
+    repost = make(31, "Кафе «Луна» ищет бармена, 250 000 тг")
+    twin_a = make(32, "Рестопарк «DINO FEST» ищет бармена, 300 000 тг")
+    twin_b = make(33, "Рестопарк «DINO FEST» ищет администратора, 300 000 тг")
+    posted = {"almaty": {"ids": [posted_venue.id], "employers": {"almaty:луна": NOON.isoformat()}}}
+    queue = autopost.review_queue([posted_venue, repost, twin_a, twin_b], posted, {}, NOON)
+    assert len(queue) == 1 and queue[0].id in {twin_a.id, twin_b.id}
+    waiting = [make(40 + i, f"Кафе «Место {i}» ищет повара, 300 000 тг") for i in range(autopost.BACKLOG)]
+    reviews = {v.id: {"verdict": "approve"} for v in waiting}
+    assert autopost.review_queue(waiting + [twin_a], {}, reviews, NOON) == []
+    assert autopost.review_queue(waiting[1:] + [twin_a], {}, reviews, NOON) == [twin_a]

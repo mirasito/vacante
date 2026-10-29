@@ -288,6 +288,19 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "almaty:best products company": {
+  "name": "Best Products Company",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "website": "https://bpc.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001075928383",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:big business consulting": {
   "name": "Big Business Consulting",
   "city": "almaty",
@@ -298,6 +311,20 @@
   "website": "https://bbc.com.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001088034522",
   "avatar_checked_at": "2026-10-28T23:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:blesk kz": {
+  "name": "BLESK.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "instagram": "blesk.kazakhstan",
+  "website": "http://blesk.ltd/",
+  "source": "https://2gis.kz/almaty/firm/70000001110533767",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -653,6 +680,22 @@
   "avatar": "f6603fc98d6f4927.jpg",
   "avatar_source": "website"
  },
+ "almaty:joseph джозеф": {
+  "name": "Joseph (Джозеф)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "instagram": "joseph.company.kz",
+  "website": "http://dio-implant.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001054563746",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1254b43fb1b59fad.jpg",
+  "avatar_source": "website"
+ },
  "almaty:kazdi group": {
   "name": "KazDi Group",
   "city": "almaty",
@@ -710,6 +753,13 @@
   "checked_at": "2026-10-28T11:44:45+00:00",
   "instagram": "marrone_rosso",
   "source": "https://2gis.kz/almaty/firm/9429940000788591"
+ },
+ "almaty:mat group": {
+  "name": "MAT Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
  },
  "almaty:mebitex group": {
   "name": "Mebitex Group",
@@ -934,6 +984,19 @@
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
  },
+ "almaty:spark логистика": {
+  "name": "Spark Логистика",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "website": "https://spark.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117566246",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:sporttrade": {
   "name": "ТОО SPORTTRADE",
   "city": "almaty",
@@ -954,6 +1017,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "almaty:star brands asia стар брэндс азия": {
+  "name": "Star Brands Asia (Стар Брэндс Азия)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "website": "https://starbrands-asia.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032821207",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0d07a4c70e9fa886.jpg",
+  "avatar_source": "website"
  },
  "almaty:studio массаж": {
   "name": "Studio Массаж",
@@ -1182,6 +1260,13 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "almaty:zhersu corp": {
+  "name": "Zhersu corp",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
+ },
  "almaty:аватария": {
   "name": "Аватария",
   "city": "almaty",
@@ -1407,6 +1492,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "almaty:буркит сэйфти": {
+  "name": "Буркит Сэйфти",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
  },
  "almaty:вин анастасия сергеевна": {
   "name": "Вин Анастасия Сергеевна",
@@ -1666,6 +1758,19 @@
   "avatar": "3089f66e2a9ebcc3.jpg",
   "avatar_source": "website"
  },
+ "almaty:мир инструмента алматы": {
+  "name": "Мир Инструмента Алматы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "website": "http://www.instrument.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001017795905",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:мир подиум статус": {
   "name": "МИР ПОДИУМ Статус",
   "city": "almaty",
@@ -1884,6 +1989,13 @@
   "avatar": "938cde019632e18b.jpg",
   "avatar_source": "website"
  },
+ "almaty:тарган тул": {
+  "name": "ТАРГАН ТУЛ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
+ },
  "almaty:телс карго казахстан": {
   "name": "ТЕЛС КАРГО КАЗАХСТАН",
   "city": "almaty",
@@ -2096,6 +2208,20 @@
   "website": "http://avrora.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018425100",
   "avatar_checked_at": "2026-10-28T13:48:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:bi group": {
+  "name": "BI Group",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "instagram": "bi.group",
+  "website": "https://bi.group/",
+  "source": "https://2gis.kz/astana/firm/70000001103342821",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2824,6 +2950,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "astana:казспецинжиниринг а": {
+  "name": "КазСпецИнжиниринг-А",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
+ },
  "astana:легато": {
   "name": "Легато",
   "city": "astana",
@@ -3132,6 +3265,21 @@
   "avatar": "b2015f15aff7b202.jpg",
   "avatar_source": "website"
  },
+ "karaganda:explosion solutions": {
+  "name": "Explosion Solutions",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "website": "https://exso.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001065261271",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a5a626f1a7726240.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:jet logistic": {
   "name": "Jet Logistic",
   "city": "karaganda",
@@ -3161,6 +3309,20 @@
   ],
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:magnum": {
+  "name": "MAGNUM",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001028886726",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -3263,6 +3425,24 @@
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
  },
+ "karaganda:белый ветер kz": {
+  "name": "Белый Ветер KZ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "instagram": "beliy_veter_shop.kz",
+  "telegram": "belyiveter_kz",
+  "website": "https://shop.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302861148",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3dd43ff8d89130e7.jpg",
+  "avatar_source": "telegram"
+ },
  "karaganda:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "karaganda",
@@ -3308,6 +3488,19 @@
   ],
   "avatar": "9d83aa6d1296ec55.jpg",
   "avatar_source": "telegram"
+ },
+ "karaganda:металлофасад": {
+  "name": "МЕТАЛЛОФАСАД",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "website": "https://www.metallofasad.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001097841849",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:пакт": {
   "name": "ПАКТ",
@@ -3513,12 +3706,26 @@
    "website"
   ]
  },
+ "kyzylorda:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
+ },
  "kyzylorda:полежаев андрей валерьевич": {
   "name": "Полежаев Андрей Валерьевич",
   "city": "kyzylorda",
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "kyzylorda:стелл": {
+  "name": "Стелл",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
  },
  "pavlodar:aster автомобили": {
   "name": "ASTER Автомобили",
@@ -3662,6 +3869,20 @@
   "instagram": "severnyi.kz",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001081602936"
  },
+ "petropavlovsk:этажи": {
+  "name": "Этажи",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00",
+  "instagram": "etagi_sko",
+  "website": "https://petropavlovsk.etagi.com/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038328492",
+  "avatar_checked_at": "2026-10-29T03:44:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "semey:kari": {
   "name": "KARI",
   "city": "semey",
@@ -3696,6 +3917,13 @@
   ],
   "avatar": "caea51af2dcd2bfc.jpg",
   "avatar_source": "telegram"
+ },
+ "semey:горно металлургическая компания васильевское": {
+  "name": "Горно-металлургическая компания «Васильевское»",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T03:44:45+00:00"
  },
  "semey:калкан а в": {
   "name": "КАЛКАН А.В.",

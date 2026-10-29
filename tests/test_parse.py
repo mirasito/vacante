@@ -9,6 +9,7 @@ from vacante.parse import (
     detect_city,
     detect_employer,
     detect_titles,
+    explain,
     is_vacancy,
     parse_perks,
     parse_post,
@@ -154,6 +155,30 @@ def test_keeps_blue_collar_near_misleading_words():
     shop = parse_post(post("Магазин на Ташкентском тракте: требуется продавец, 250 000 тг"))
     assert shop is not None and shop.city == "almaty"
 
+
+@pytest.mark.parametrize("text", [
+    "Работа в топ отелях Турции, официанты, бармены, 500 000 тг. Оформление с рабочей визой. Адрес: Алматы",
+    "Требуется кондитер технолог в Китай, 600 000 тг. Адрес: Алматы, Алмалинский район",
+    "Требуются горничные в отель в Дубае, проживание и питание, офис в Астане",
+    "Набор на сезон в Корею! Работа на заводе, упаковщики, 1 500 000 тг. Алматы",
+    "Требуются упаковщики в Москву, вахта 30/15, отправка из Шымкента",
+    "Работа за границей: разнорабочие на стройку в Польшу, Алматы",
+    "Түркияға жұмысқа даяшылар қажет, Алматы",
+])
+def test_rejects_work_abroad_even_with_kazakh_city(text):
+    vacancy, why = explain(post(text))
+    assert vacancy is None and why in ("abroad", "scam")
+
+
+@pytest.mark.parametrize("text", [
+    "В ресторан требуется повар европейской и грузинской кухни, Алматы, 300 000 тг",
+    "Требуется уборщица, Астана, ул. Достык, 18, БЦ «Москва», 100 000 тг",
+    "Требуется оператор колл-центра, 400 000 тг, путевки за границу лучшим сотрудникам, Алматы",
+    "Требуется водитель-международник, рейсы Алматы – Москва – Алматы, 600 000 тг",
+    "Требуется продавец в магазин корейской косметики, знание английского, Алматы, 250 000 тг",
+])
+def test_keeps_kazakh_jobs_mentioning_other_countries(text):
+    assert parse_post(post(text)) is not None
 
 def test_salary_ignores_foreign_currency():
     assert parse_salary("Доход: $1,300 – 2,400 на руки") == (None, None, None)

@@ -495,6 +495,13 @@
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
  },
+ "almaty:aspan rehab clinic 2": {
+  "name": "ASPAN REHAB CLINIC-2",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
+ },
  "almaty:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "almaty",
@@ -593,6 +600,24 @@
   ],
   "avatar": "f48eb591bc8821b7.jpg",
   "avatar_source": "website"
+ },
+ "almaty:bcc invest ao": {
+  "name": "BCC INVEST, AO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "bcc.invest",
+  "telegram": "bcc_invest",
+  "website": "https://www.bcc-invest.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000785975",
+  "avatar_checked_at": "2026-10-29T20:43:40+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "11d76ec54925e718.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:beauty guide": {
   "name": "Beauty Guide",
@@ -1777,6 +1802,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:sary arka copper processing": {
+  "name": "Sary-Arka Copper Processing",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
+ },
  "almaty:sd trade in": {
   "name": "SD Trade In",
   "city": "almaty",
@@ -1956,6 +1988,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:success forge mobile technology limited": {
+  "name": "Success Forge Mobile Technology Limited",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "almaty:suleimen clinic": {
   "name": "SULEIMEN CLINIC",
@@ -2253,6 +2292,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "almaty:zhebe logistics": {
+  "name": "Zhebe Logistics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "almaty:zhersu corp": {
   "name": "Zhersu corp",
@@ -3236,6 +3282,20 @@
    "website"
   ]
  },
+ "almaty:оптимус медика": {
+  "name": "Оптимус Медика",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "optimus_medica",
+  "website": "https://www.opmd.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001068610401",
+  "avatar_checked_at": "2026-10-29T20:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ордоген": {
   "name": "Ордоген",
   "city": "almaty",
@@ -3573,6 +3633,22 @@
    "website"
   ],
   "avatar": "2dfdf697627b0a02.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:ферронордик казахстан": {
+  "name": "Ферронордик Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "ferronordic_kazakhstan",
+  "website": "https://ferronordic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001038319391",
+  "avatar_checked_at": "2026-10-29T20:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a37282c2cf4dcab7.jpg",
   "avatar_source": "website"
  },
  "almaty:фирма амарата": {
@@ -4012,6 +4088,13 @@
    "website"
   ]
  },
+ "astana:danmar строй": {
+  "name": "Danmar Строй",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
+ },
  "astana:delivery fast": {
   "name": "Delivery Fast",
   "city": "astana",
@@ -4057,6 +4140,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "astana:duty free": {
+  "name": "Duty Free",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "astana:evs construction": {
   "name": "EVS Construction",
@@ -4221,6 +4311,13 @@
   ],
   "avatar": "50cf3a7815be9ebb.jpg",
   "avatar_source": "website"
+ },
+ "astana:healthy food": {
+  "name": "Healthy Food",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "astana:home2car": {
   "name": "Home2Car",
@@ -4408,6 +4505,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:msq man": {
+  "name": "MSQ Man",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "astana:of corp": {
   "name": "OF Corp",
@@ -5174,6 +5278,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "astana:нуртазина": {
+  "name": "Нуртазина",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
+ },
  "astana:парадайс": {
   "name": "ПАРАДАЙС",
   "city": "astana",
@@ -5303,6 +5414,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "astana:сыроварня": {
+  "name": "СЫРОВАРНЯ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "syrovarnya_astana",
+  "website": "https://www.cheese-farm.com/astana_mega",
+  "source": "https://2gis.kz/astana/firm/70000001100242484",
+  "avatar_checked_at": "2026-10-29T20:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3b58cc225e41fd91.jpg",
+  "avatar_source": "website"
  },
  "astana:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
@@ -5518,6 +5645,15 @@
   "checked_at": "2026-10-28T23:45:40+00:00",
   "instagram": "avtomarket06",
   "source": "https://2gis.kz/atyrau/firm/70000001066531440"
+ },
+ "atyrau:eurasia support services": {
+  "name": "Eurasia Support Services",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "compasskazakhstan",
+  "source": "https://2gis.kz/atyrau/firm/70000001045107222"
  },
  "atyrau:hydroserv central asia": {
   "name": "Hydroserv Central Asia",
@@ -6167,6 +6303,13 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "kostanay:вебер н п": {
+  "name": "Вебер Н.П",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
+ },
  "kostanay:гелиос": {
   "name": "Гелиос",
   "city": "kostanay",
@@ -6197,6 +6340,13 @@
   "avatar": "2160e0bd36b5c429.jpg",
   "avatar_source": "website"
  },
+ "kostanay:дычко в ю": {
+  "name": "Дычко В.Ю",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
+ },
  "kostanay:каmlitkz": {
   "name": "КаmLitKZ",
   "city": "kostanay",
@@ -6226,6 +6376,20 @@
   ],
   "avatar": "6779da0b7fdc57aa.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:костанайская железнодорожная больница": {
+  "name": "Костанайская железнодорожная больница",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "zhd.bolnica_kst",
+  "website": "http://kzhdb.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035726228",
+  "avatar_checked_at": "2026-10-29T20:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:марк формэль": {
   "name": "Марк Формэль",
@@ -6296,6 +6460,22 @@
    "website"
   ],
   "avatar": "3c1ea3bfb9fdfbe7.jpg",
+  "avatar_source": "telegram"
+ },
+ "kostanay:сервисный центр ростсельмаш": {
+  "name": "Сервисный центр Ростсельмаш",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00",
+  "instagram": "rostselmash_kst",
+  "telegram": "rostselmash_official",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036839992",
+  "avatar_checked_at": "2026-10-29T20:43:40+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "20ea0b412ff4855e.jpg",
   "avatar_source": "telegram"
  },
  "kostanay:табыс&co": {
@@ -6382,6 +6562,13 @@
   ],
   "avatar": "58a7c58a39adb20a.jpg",
   "avatar_source": "website"
+ },
+ "pavlodar:av company": {
+  "name": "AV Company",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "pavlodar:capex romantic pavlodar": {
   "name": "CAPEX - «ROMANTIC PAVLODAR»",
@@ -7070,6 +7257,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "taraz:пырақ құрылыс": {
+  "name": "Пырақ-Құрылыс",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T20:43:40+00:00"
  },
  "taraz:тсз": {
   "name": "ТСЗ",

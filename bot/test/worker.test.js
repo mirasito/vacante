@@ -279,3 +279,76 @@ test("агент оформляет и публикует вакансию, от
   assert.ok(third.reviewed_at);
   assert.equal(calls.filter((c) => c.method === "github").length, 1); // одно обновление сайта на всю пачку
 });
+
+test("«Срочно»: работодатель платит на Kaspi, модератор подтверждает, вакансия поднимается", async () => {
+  const env = { ...fakeEnv(), KASPI_DETAILS: "+7 700 000 00 00, Мирас Б.", BOOST_PRICE: "3000", BOOST_DAYS: "7" };
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(100, "Дана", "dana_cafe");
+  const admin = user(900, "Мирас");
+  const stranger = user(555, "Хитрец");
+  await say(env, admin, "/admin");
+  env.DB.prepare(
+    `INSERT INTO jobs (employer_chat, employer_name, status, city, title, company, salary, approved_at)
+     VALUES (100, 'Дана', 'pending', 'astana', 'Повар', 'Кафе', '300 000 ₸', NULL)`,
+  ).run();
+  await press(env, admin, "mod:ok:1", 21);
+  const approved = sentTo(calls, 100).at(-1).body;
+  assert.match(approved.text, /«🔥 Срочно» за 3 000 ₸/);
+  assert.equal(approved.reply_markup.inline_keyboard[0][0].callback_data, "boost:1");
+
+  // Чужую вакансию поднять нельзя
+  await press(env, stranger, "boost:1");
+  await press(env, stranger, "paid:1");
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM payments").n, 0);
+
+  await press(env, boss, "boost:1");
+  const offer = sentTo(calls, 100).at(-1).body;
+  assert.match(offer.text, /\+7 700 000 00 00, Мирас Б\./);
+  assert.match(offer.text, /«№1»/);
+  await press(env, boss, "paid:1", 31);
+  await press(env, boss, "paid:1", 31); // второй раз: уже сверяем
+  assert.deepEqual(env.DB.get("SELECT job_id, amount, days, status FROM payments"), { job_id: 1, amount: 3000, days: 7, status: "pending" });
+  const card = sentTo(calls, 900).at(-1).body;
+  assert.match(card.text, /Оплата «Срочно» №1: <b>3 000 ₸<\/b>/);
+  assert.deepEqual(card.reply_markup.inline_keyboard[0].map((b) => b.callback_data), ["pay:ok:1", "pay:no:1"]);
+
+  await press(env, stranger, "pay:ok:1");
+  assert.equal(env.DB.get("SELECT boost_until FROM jobs").boost_until, null);
+  await press(env, admin, "pay:ok:1", 41);
+  const boosted = env.DB.get("SELECT boost_until, julianday(boost_until) - julianday('now') AS left FROM jobs");
+  assert.ok(boosted.left > 6.99 && boosted.left < 7.01);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Оплата получена/);
+  assert.equal(env.DB.get("SELECT status, decided_by FROM payments").decided_by, "Мирас");
+  assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /✅ Деньги пришли: Мирас/);
+
+  // Продление считается от конца текущего «Срочно»; неподтверждённый перевод ничего не меняет
+  await press(env, boss, "paid:1", 32);
+  await press(env, admin, "pay:no:2", 42);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /не нашли перевод/);
+  await press(env, boss, "paid:1", 33);
+  await press(env, admin, "pay:ok:3", 43);
+  await press(env, admin, "pay:ok:3", 43); // повторное нажатие не продлевает ещё раз
+  const left = env.DB.get("SELECT julianday(boost_until) - julianday('now') AS left FROM jobs").left;
+  assert.ok(left > 13.99 && left < 14.01);
+
+  await say(env, boss, "/myjobs");
+  const mine = sentTo(calls, 100).at(-1).body;
+  assert.match(mine.text, /🔥 срочно до \d\d\.\d\d/);
+  assert.match(mine.reply_markup.inline_keyboard[0][0].text, /Продлить «Срочно» №1: 3 000 ₸/);
+});
+
+test("без реквизитов Kaspi кнопок «Поднять» нет", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(100, "Дана");
+  env.DB.prepare(
+    `INSERT INTO jobs (employer_chat, employer_name, status, city, title, company, salary, approved_at)
+     VALUES (100, 'Дана', 'approved', 'astana', 'Повар', 'Кафе', '300 000 ₸', datetime('now'))`,
+  ).run();
+  await say(env, boss, "/myjobs");
+  assert.deepEqual(sentTo(calls, 100).at(-1).body.reply_markup.inline_keyboard.map((r) => r[0].callback_data), ["close:1"]);
+  await press(env, boss, "paid:1");
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM payments").n, 0);
+});

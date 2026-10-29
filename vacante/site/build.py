@@ -211,10 +211,12 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     now = now or datetime.now(timezone.utc)
     base_url = base_url.rstrip("/")
     vacancies = sorted(load_vacancies(data_dir), key=lambda v: v.posted_at, reverse=True)
+    # Оплаченные «🔥 Срочно» первыми во всех списках, дальше по новизне
+    vacancies.sort(key=lambda v: not v.is_top(now))
     venues = venue_store.load(data_dir)
     env = _env()
     # root: путь сайта без домена, чтобы ссылки работали и на vacante.kz, и на <user>.github.io/vacante
-    env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url,
+    env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url, top=lambda v: v.is_top(now),
                        root=urlparse(base_url).path.rstrip("/"), venue=lambda v: venue_store.lookup(venues, v),
                        **SITE_TAGS)
 

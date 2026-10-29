@@ -22,6 +22,7 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      KASPI_DETAILS: ${{ secrets.KASPI_DETAILS }}
     defaults:
       run:
         working-directory: bot
@@ -77,6 +78,12 @@ jobs:
             printf '%s' "$ADMIN_PASSWORD" | npx wrangler secret put ADMIN_PASSWORD
           else
             echo "::notice::Нет секрета ADMIN_PASSWORD, CRM в админке работает только в браузере"
+          fi
+          # Реквизиты Kaspi для оплаты «🔥 Срочно» (src/employer.js boostOffer); без них услуга выключена
+          if [ -n "$KASPI_DETAILS" ]; then
+            printf '%s' "$KASPI_DETAILS" | npx wrangler secret put KASPI_DETAILS
+          else
+            echo "::notice::Нет секрета KASPI_DETAILS, платная услуга «Срочно» в боте выключена"
           fi
 
       - name: Вебхук и команды в Telegram

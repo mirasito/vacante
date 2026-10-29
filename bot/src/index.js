@@ -55,6 +55,9 @@ async function handle(update, env, ctx) {
   const data = q.data || "";
   if (data.startsWith("mod:")) return moderate(env, q, ctx);
   if (data.startsWith("close:")) return closeJob(env, q);
+  if (data.startsWith("boost:")) return boostJob(env, q);
+  if (data.startsWith("paid:")) return paid(env, q);
+  if (data.startsWith("pay:")) return confirmPayment(env, q, ctx);
   if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q, ctx);
   return subscriptionButton(env, q);
 }
@@ -74,7 +77,7 @@ async function onMessage(m, env) {
   const name = command.split("@")[0];
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
   if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
-  if (name === "/myjobs") return send(env, chatId, ...screen(job.myJobsScreen(await myJobs(env, chatId))));
+  if (name === "/myjobs") return send(env, chatId, ...screen(job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env))));
   if (name === "/admin") return becomeAdmin(env, m);
   if (name === "/start" || name === "/settings") {
     const sub = await load(env, chatId);
@@ -232,8 +235,82 @@ async function closeJob(env, q) {
     .bind(id, chatId)
     .run();
   await answerCallback(env, q, meta.changes ? "Вакансия закрыта, с сайта она уйдёт в течение часа" : undefined);
-  const { text, keyboard } = job.myJobsScreen(await myJobs(env, chatId));
+  const { text, keyboard } = job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env));
   return edit(env, chatId, q.message.message_id, text, keyboard);
+}
+
+// Платная услуга «🔥 Срочно»: работодатель переводит деньги на Kaspi и жмёт «Я оплатил»,
+// модераторы получают карточку и подтверждают перевод кнопкой, после этого вакансия поднимается
+
+async function ownApproved(env, q) {
+  const found = await getJob(env, Number(q.data.split(":")[1]));
+  return found && found.employer_chat === q.message.chat.id && found.status === "approved" ? found : null;
+}
+
+async function boostJob(env, q) {
+  const boost = job.boostOffer(env);
+  const found = boost && (await ownApproved(env, q));
+  if (!found) return answerCallback(env, q, boost ? "Поднять можно только опубликованную вакансию" : "Услуга пока недоступна");
+  await answerCallback(env, q);
+  return send(env, q.message.chat.id, ...screen(job.boostScreen(found, boost)));
+}
+
+async function paid(env, q) {
+  const boost = job.boostOffer(env);
+  const found = boost && (await ownApproved(env, q));
+  if (!found) return answerCallback(env, q, boost ? "Вакансия уже закрыта" : "Услуга пока недоступна");
+  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE job_id = ? AND status = 'pending'").bind(found.id).first();
+  if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод, напишу, как только поднимем");
+  await answerCallback(env, q);
+  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days) VALUES (?, ?, ?, ?)")
+    .bind(found.id, found.employer_chat, boost.price, boost.days)
+    .run();
+  await edit(env, q.message.chat.id, q.message.message_id, job.paymentWaitText(found));
+  const payment = await getPayment(env, meta.last_row_id);
+  const { results } = await env.DB.prepare("SELECT chat_id FROM admins").all();
+  for (const admin of results) {
+    const r = await send(env, admin.chat_id, ...screen(job.paymentScreen(payment, found)));
+    if (r && r.result && r.result.message_id) {
+      await env.DB.prepare("INSERT INTO payment_notices (payment_id, chat_id, message_id) VALUES (?, ?, ?)")
+        .bind(payment.id, admin.chat_id, r.result.message_id)
+        .run();
+    }
+  }
+}
+
+async function confirmPayment(env, q, ctx) {
+  const [, verdict, id] = q.data.split(":");
+  const admin = await env.DB.prepare("SELECT chat_id FROM admins WHERE chat_id = ?").bind(q.from.id).first();
+  const payment = admin && (await getPayment(env, Number(id)));
+  if (!payment) return answerCallback(env, q, admin ? "Оплата не найдена" : "Только для модераторов");
+  await answerCallback(env, q);
+  const ok = verdict === "ok";
+  const { meta } = await env.DB.prepare(
+    `UPDATE payments SET status = ?, decided_by = ?, decided_at = datetime('now') WHERE id = ? AND status = 'pending'`,
+  )
+    .bind(ok ? "confirmed" : "rejected", job.employerName(q.from), payment.id)
+    .run();
+  if (meta.changes && ok) {
+    // Продление считаем от конца текущего «Срочно», если оно ещё идёт
+    await env.DB.prepare(
+      `UPDATE jobs SET boost_until = datetime(MAX(COALESCE(boost_until, datetime('now')), datetime('now')), '+' || ? || ' days'),
+         updated_at = datetime('now') WHERE id = ?`,
+    )
+      .bind(payment.days, payment.job_id)
+      .run();
+  }
+  const now = await getPayment(env, payment.id);
+  const found = await getJob(env, payment.job_id);
+  const { results } = await env.DB.prepare("SELECT chat_id, message_id FROM payment_notices WHERE payment_id = ?").bind(now.id).all();
+  const card = job.paymentScreen(now, found);
+  for (const n of results) await edit(env, n.chat_id, n.message_id, card.text, card.keyboard);
+  if (!meta.changes) return;
+  await send(env, found.employer_chat, ok ? job.boostedText(found) : job.paymentRejectedText(found));
+  if (ok) wakeSite(env, ctx);
+}
+
+function getPayment(env, id) {
+  return env.DB.prepare("SELECT * FROM payments WHERE id = ?").bind(id).first();
 }
 
 // Модерация: админы каналов vacante подтверждают себя командой /admin
@@ -276,7 +353,7 @@ async function moderate(env, q, ctx) {
   await edit(env, q.message.chat.id, q.message.message_id, ...screen(job.moderationScreen(now)));
   if (!meta.changes) return;
   await refreshNotices(env, now);
-  await send(env, now.employer_chat, approve ? job.approvedText(now) : job.rejectedText(now));
+  await send(env, now.employer_chat, ...(approve ? screen(job.approvedScreen(now, job.boostOffer(env))) : [job.rejectedText(now)]));
   // Не ждём часового обновления: сразу запускаем сборку, чтобы вакансия появилась на сайте и в канале за несколько минут
   if (approve) wakeSite(env, ctx);
 }
@@ -326,7 +403,8 @@ async function review(env, d) {
   const saved = await getJob(env, found.id);
   await refreshNotices(env, saved);
   if (!decided) return "edited";
-  await send(env, saved.employer_chat, status === "approved" ? job.approvedText(saved) : job.rejectedText(saved, d.reason));
+  await send(env, saved.employer_chat,
+    ...(status === "approved" ? screen(job.approvedScreen(saved, job.boostOffer(env))) : [job.rejectedText(saved, d.reason)]));
   return status;
 }
 

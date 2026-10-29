@@ -144,28 +144,35 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
     return max(candidates, key=order, default=None)
 
 
+def top_key(v: Vacancy) -> str:
+    """Отметка в posted.json, что оплаченное «🔥 Срочно» вышло в канал; продление даёт новый пост."""
+    return f"{v.id}@{v.top_until}"
+
+
 def direct_due(vacancies: list[Vacancy], city: str, state: dict, now: datetime) -> list[Vacancy]:
-    """Свежие одобренные вакансии от работодателей, которые ещё не выходили в канал города."""
+    """Вакансии от работодателей для канала города: свежие одобренные, которые ещё не выходили,
+    и оплатившие «🔥 Срочно», которые ещё не выходили с этой пометкой."""
     if now.astimezone(LOCAL).hour not in DIRECT_HOURS:
         return []
-    seen = set(state.get("ids", []))
+    seen, tops = set(state.get("ids", [])), set(state.get("tops", []))
     cutoff = (now - FRESH).isoformat()
-    fresh = [v for v in vacancies
-             if v.source == direct.SOURCE and v.city == city and v.id not in seen and v.posted_at >= cutoff]
-    return sorted(fresh, key=lambda v: v.posted_at)[:MAX_DIRECT]
+    due = [v for v in vacancies if v.source == direct.SOURCE and v.city == city
+           and ((v.id not in seen and v.posted_at >= cutoff) or (v.is_top(now) and top_key(v) not in tops))]
+    return sorted(due, key=lambda v: (not v.is_top(now), v.posted_at))[:MAX_DIRECT]
 
 
 def _lower_first(title: str) -> str:
     return title[:1].lower() + title[1:] if title[1:2].islower() else title  # «SMM-менеджер» не трогаем
 
 
-def format_caption(v: Vacancy) -> str:
+def format_caption(v: Vacancy, urgent: bool = False) -> str:
     """Подпись под картинкой: на картинке должность, заведение, адрес и зарплата, здесь остальное."""
     e = html.escape
     titles = [_lower_first(t) for t in v.title.split(", ")]
     need = "требуется" if len(titles) == 1 else "требуются"
     what = f"<b>{e(', '.join(titles))}</b>"
-    lines = [f"В {e(v.employer)} {need} {what}" if v.employer else f"{need.capitalize()} {what}"]
+    lines = ["🔥 <b>Срочно!</b>"] if urgent else []
+    lines.append(f"В {e(v.employer)} {need} {what}" if v.employer else f"{need.capitalize()} {what}")
     if v.schedule:
         lines.append(f"🕒 График: {e(v.schedule)}")
     if v.perks:
@@ -174,7 +181,8 @@ def format_caption(v: Vacancy) -> str:
     return "\n".join(lines)
 
 
-def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: bytes | None = None) -> Post:
+def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: bytes | None = None,
+              urgent: bool = False) -> Post:
     buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
@@ -182,7 +190,7 @@ def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: byte
         buttons.append(("📍 Открыть в 2ГИС", url))
     if url := instagram_url(venue):
         buttons.append(("📸 Instagram", url))
-    return Post(format_caption(v), card.render(v, avatar), buttons)
+    return Post(format_caption(v, urgent), card.render(v, avatar), buttons)
 
 
 def telegram_sender(client: httpx.Client, token: str) -> Sender:
@@ -288,9 +296,12 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
         _backfill(state, list(original.values()), keys_of, now)
         # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь
         for v in direct_due(vacancies, city, state, now):
-            if _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id)):
+            urgent = v.is_top(now)
+            if _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id), urgent):
                 stats["direct"] = stats.get("direct", 0) + 1
                 _remember(state, keys_of[v.id], now)
+                if urgent:
+                    state["tops"] = (state.get("tops", []) + [top_key(v)])[-KEEP:]
         if not is_due(state["last_at"], now):
             continue
         v = pick(vacancies, city, state, now, known, keys_of, approved_at)
@@ -302,9 +313,9 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
 
 
 def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, stats: dict,
-             data_dir: Path, venue: dict | None) -> bool:
+             data_dir: Path, venue: dict | None, urgent: bool = False) -> bool:
     try:
-        send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue)))
+        send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue), urgent))
     except (httpx.HTTPError, RuntimeError) as exc:
         log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
         stats["failed"] += 1

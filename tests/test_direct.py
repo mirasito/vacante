@@ -131,3 +131,33 @@ def test_bot_job_waits_for_agent_before_channel(tmp_path):
     queue.write_text(json.dumps({"jobs": []}), "utf-8")
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 9, 5, tzinfo=timezone.utc))["direct"] == 1
     assert sent == ["@vacantealmaty"]
+
+
+def test_paid_top_goes_first_on_site_and_stays_past_max_age(tmp_path):
+    old = {**JOB, "id": 8, "title": "повар", "approved_at": "2026-10-01 10:00:00", "boost_until": "2026-11-03 10:00:00"}
+    run_collect(tmp_path, [], [JOB, old])
+    build(tmp_path / "data", tmp_path / "out", now=NOW)
+    listing = (tmp_path / "out" / "almaty" / "index.html").read_text("utf-8")
+    assert listing.index("/v/bot-8/") < listing.index("/v/bot-7/")  # старше, но оплачена
+    assert listing.count("🔥 Срочно") == 1 and 'class="card top"' in listing
+    # Когда «Срочно» кончилось, вакансия снова обычная
+    build(tmp_path / "data", tmp_path / "out", now=datetime(2026, 11, 4, tzinfo=timezone.utc))
+    assert "🔥 Срочно" not in (tmp_path / "out" / "almaty" / "index.html").read_text("utf-8")
+
+
+def test_paid_top_is_posted_again_once_per_payment(tmp_path):
+    from vacante.store import save_vacancies
+    job = {**JOB, "approved_at": "2026-10-20 06:50:00"}
+    save_vacancies(tmp_path, [direct.to_vacancy(job)])
+    autopost.save_posted(tmp_path, {"almaty": {"ids": ["bot-7"], "titles": [], "last_at": "2026-10-27T06:55:00+00:00"}})
+    sent = []
+    send = lambda chat, post: sent.append(post.caption)  # noqa: E731
+    at = lambda h: datetime(2026, 10, 27, h, tzinfo=timezone.utc)  # noqa: E731
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(7))["posted"] == 0  # уже выходила, не оплачена
+    save_vacancies(tmp_path, [direct.to_vacancy({**job, "boost_until": "2026-11-03 07:30:00"})])
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(8))["direct"] == 1
+    assert sent[0].startswith("🔥 <b>Срочно!</b>\nВ Кафе «Зерно» требуется")
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(9))["posted"] == 0
+    # Продление: новый срок, ещё один пост
+    save_vacancies(tmp_path, [direct.to_vacancy({**job, "boost_until": "2026-11-10 07:30:00"})])
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(10))["direct"] == 1

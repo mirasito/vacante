@@ -114,6 +114,15 @@ export function moderationScreen(job) {
   };
 }
 
+// boost: если включена услуга «Срочно», под сообщением кнопка поднять вакансию
+export function approvedScreen(job, boost = null) {
+  if (!boost) return { text: approvedText(job), keyboard: [] };
+  const more =
+    `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: ${boost.days} дней первой в списке города на сайте ` +
+    "с яркой пометкой и повторный пост в канале.";
+  return { text: approvedText(job) + more, keyboard: [[boostButton(job, boost)]] };
+}
+
 export function approvedText(job) {
   return (
     `✅ Вакансия прошла проверку и публикуется:\n\n${card(job)}\n\n` +
@@ -196,17 +205,100 @@ export function applicationText(job, from, text, phone) {
   return `📩 Отклик на «${esc(job.title)}»\n\n${about}👤 ${esc(who)}${link}`;
 }
 
-// Список вакансий работодателя: jobs с полем applications (число откликов)
-export function myJobsScreen(jobs) {
+// Список вакансий работодателя: jobs с полем applications (число откликов).
+// boost: условия «🔥 Срочно» (boostOffer) или null, если платная услуга выключена.
+export function myJobsScreen(jobs, boost = null, now = new Date()) {
   if (!jobs.length) {
     return { text: "У вас пока нет вакансий. Разместить: /vacancy", keyboard: [] };
   }
   const lines = jobs.map((j) => `№${j.id} <b>${esc(j.title)}</b>, ${esc(CITY[j.city] || "")}: ${STATUS[j.status]}` +
-    (j.status === "approved" ? `, откликов: ${j.applications}` : ""));
-  const keyboard = jobs
-    .filter((j) => j.status === "approved" || j.status === "pending")
-    .map((j) => [{ text: `Закрыть №${j.id} ${j.title}`.slice(0, 60), callback_data: `close:${j.id}` }]);
+    (j.status === "approved" ? `, откликов: ${j.applications}` : "") +
+    (j.status === "approved" && isBoosted(j, now) ? `, 🔥 срочно до ${localDate(j.boost_until)}` : ""));
+  const keyboard = [];
+  for (const j of jobs.filter((j) => j.status === "approved" || j.status === "pending")) {
+    if (boost && j.status === "approved") keyboard.push([boostButton(j, boost, now)]);
+    keyboard.push([{ text: `Закрыть №${j.id} ${j.title}`.slice(0, 60), callback_data: `close:${j.id}` }]);
+  }
   return { text: `Ваши вакансии:\n\n${lines.join("\n")}\n\nНовая вакансия: /vacancy`, keyboard };
+}
+
+// Платная услуга «🔥 Срочно»: вакансия первой в списке своего города на сайте с пометкой и повторный пост
+// в канале. Оплата переводом на Kaspi, модератор подтверждает её кнопкой. Без реквизитов (секрет
+// KASPI_DETAILS) услуга выключена, и кнопки не показываются.
+export function boostOffer(env) {
+  const kaspi = String(env.KASPI_DETAILS || "").trim();
+  if (!kaspi) return null;
+  return { price: Number(env.BOOST_PRICE) || 3000, days: Number(env.BOOST_DAYS) || 7, kaspi };
+}
+
+const money = (n) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₸`;
+const sqliteTime = (s) => new Date(`${String(s).replace(" ", "T")}Z`);  // datetime('now') в D1 — это UTC
+
+export function isBoosted(j, now = new Date()) {
+  return Boolean(j.boost_until) && sqliteTime(j.boost_until) > now;
+}
+
+// Дата по времени Казахстана (UTC+5): «05.11»
+export function localDate(s) {
+  const d = new Date(sqliteTime(s).getTime() + 5 * 3600e3);
+  return `${String(d.getUTCDate()).padStart(2, "0")}.${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+}
+
+export function boostButton(j, boost, now = new Date()) {
+  const what = isBoosted(j, now) ? "Продлить «Срочно»" : "🔥 Поднять";
+  return { text: `${what} №${j.id}: ${money(boost.price)}`, callback_data: `boost:${j.id}` };
+}
+
+export function boostScreen(j, boost) {
+  const channel = ["astana", "almaty"].includes(j.city) ? `\n2. Повторный пост в нашем канале ${CITY[j.city]} с той же пометкой.` : "";
+  return {
+    text:
+      `🔥 <b>«Срочно» на ${boost.days} дней за ${money(boost.price)}</b>\n\n${card(j)}\n\n` +
+      `1. Вакансия первой в списке города на vacante.kz с пометкой «🔥 Срочно».${channel}\n\n` +
+      `Как оплатить: переведите <b>${money(boost.price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
+      `В комментарии к переводу напишите «№${j.id}». Потом нажмите кнопку ниже: мы сверим перевод и поднимем вакансию.`,
+    keyboard: [[{ text: "✅ Я оплатил", callback_data: `paid:${j.id}` }]],
+  };
+}
+
+export const PAYMENT_STATUS = { pending: "ждёт проверки", confirmed: "подтверждена", rejected: "не найдена" };
+
+// Карточка оплаты у модераторов: пока ждёт, с кнопками, потом с решением
+export function paymentScreen(p, j) {
+  const head =
+    `💳 Оплата «Срочно» №${p.id}: <b>${money(p.amount)}</b> на ${p.days} дней\n` +
+    `Вакансия №${j.id} «${esc(j.title)}», ${esc(j.company)}\nОт: ${esc(j.employer_name)}\n\n`;
+  if (p.status !== "pending") {
+    const by = p.decided_by ? `: ${esc(p.decided_by)}` : "";
+    return { text: head + (p.status === "confirmed" ? `✅ Деньги пришли${by}` : `❌ Перевод не найден${by}`), keyboard: [] };
+  }
+  return {
+    text: head + `Проверьте в Kaspi перевод на ${money(p.amount)} с комментарием «№${j.id}».`,
+    keyboard: [[
+      { text: "✅ Деньги пришли", callback_data: `pay:ok:${p.id}` },
+      { text: "❌ Не пришли", callback_data: `pay:no:${p.id}` },
+    ]],
+  };
+}
+
+export function paymentWaitText(j) {
+  return `⏳ Сверяем перевод за вакансию №${j.id} «${esc(j.title)}». Обычно это до пары часов днём. Напишу, как только поднимем.`;
+}
+
+export function boostedText(j) {
+  return (
+    `🔥 Оплата получена, спасибо! Вакансия «${esc(j.title)}» отмечена «Срочно» до ${localDate(j.boost_until)}: ` +
+    "через несколько минут она будет первой в списке своего города на vacante.kz." +
+    (["astana", "almaty"].includes(j.city) ? ` И выйдет ещё раз в нашем канале ${CITY[j.city]}.` : "") +
+    "\n\nВаши вакансии: /myjobs"
+  );
+}
+
+export function paymentRejectedText(j) {
+  return (
+    `Мы не нашли перевод за вакансию №${j.id} «${esc(j.title)}». Если вы уже переводили, проверьте сумму и комментарий ` +
+    "и нажмите «Я оплатил» ещё раз: /myjobs"
+  );
 }
 
 export const ADMIN_STATUSES = ["creator", "administrator"];

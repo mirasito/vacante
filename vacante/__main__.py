@@ -78,7 +78,8 @@ def main() -> None:
             logging.info("автопостинг: нет TELEGRAM_BOT_TOKEN, пропускаю")
             return
         with httpx.Client(timeout=30) as client:
-            stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token))
+            stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token),
+                                 pin=autopost.telegram_pinner(client, token))
         logging.info("автопостинг: %s", stats)
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}

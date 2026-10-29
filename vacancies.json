@@ -1,5 +1,25 @@
 [
  {
+  "id": "hh-138986109",
+  "title": "Повар",
+  "category": "horeca",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": "5/2, Другое, Другое",
+  "perks": [],
+  "employer": "Strong Co, ТОО",
+  "text": "Обязанности: Повар на манты.\nТребования: Аккуратность, исполнительность, чистоплотность и ответственность. Умение работать в команде и соблюдать внутренний распорядок заведения.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/138986109?tech_source=api",
+  "posted_at": "2026-10-29T22:30:00+00:00",
+  "fingerprint": "92a79710cc487ea5",
+  "also_seen_in": [],
+  "address": "улица Абдуллы Розыбакиева, 13",
+  "top_until": null
+ },
+ {
   "id": "hh-138802278",
   "title": "Упаковщик",
   "category": "warehouse",

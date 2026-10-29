@@ -119,7 +119,7 @@ export function approvedScreen(job, boost = null) {
   if (!boost) return { text: approvedText(job), keyboard: [] };
   const more =
     `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: ${boost.days} дней первой в списке города на сайте ` +
-    "с яркой пометкой и повторный пост в канале.";
+    "с яркой пометкой и закреплённый пост в канале.";
   return { text: approvedText(job) + more, keyboard: [[boostButton(job, boost)]] };
 }
 
@@ -250,7 +250,7 @@ export function boostButton(j, boost, now = new Date()) {
 }
 
 export function boostScreen(j, boost) {
-  const channel = ["astana", "almaty"].includes(j.city) ? `\n2. Повторный пост в нашем канале ${CITY[j.city]} с той же пометкой.` : "";
+  const channel = ["astana", "almaty"].includes(j.city) ? `\n2. Пост в нашем канале ${CITY[j.city]} с той же пометкой, закреплённый наверху канала на все ${boost.days} дней.` : "";
   return {
     text:
       `🔥 <b>«Срочно» на ${boost.days} дней за ${money(boost.price)}</b>\n\n${card(j)}\n\n` +
@@ -289,7 +289,7 @@ export function boostedText(j) {
   return (
     `🔥 Оплата получена, спасибо! Вакансия «${esc(j.title)}» отмечена «Срочно» до ${localDate(j.boost_until)}: ` +
     "через несколько минут она будет первой в списке своего города на vacante.kz." +
-    (["astana", "almaty"].includes(j.city) ? ` И выйдет ещё раз в нашем канале ${CITY[j.city]}.` : "") +
+    (["astana", "almaty"].includes(j.city) ? ` А в нашем канале ${CITY[j.city]} выйдет пост, закреплённый до конца срока.` : "") +
     "\n\nВаши вакансии: /myjobs"
   );
 }

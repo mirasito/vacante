@@ -55,6 +55,13 @@ def test_skips_office_foreign_city_and_odd_salary():
     assert usd.salary_min is None and usd.salary_period is None
 
 
+def test_skips_work_abroad_with_kazakh_area():
+    assert hh.to_vacancy(item(6, name="Хостес в клуб (Турция)")) is None
+    assert hh.to_vacancy(item(7, name="Комплектовщик-упаковщик, вахта Москва! 7000р за смену")) is None
+    assert hh.to_vacancy(item(8, name="Курьер на электровелосипед (Вахта)", snippet={
+        "responsibility": "Доставляйте заказы в различных городах России."})) is None
+    assert hh.to_vacancy(item(9, name="Продавец-консультант (Алматы, ТРЦ Москва)")) is not None
+
 def test_search_splits_windows_over_2000_and_pages():
     calls = []
 

@@ -23,7 +23,7 @@ import httpx
 
 from vacante.models import Vacancy
 from vacante.parse import (CITIES, WHITE_COLLAR, _LIMITS, clean_text, detect_city, detect_titles, fingerprint,
-                           parse_perks)
+                           parse_perks, works_abroad)
 
 log = logging.getLogger(__name__)
 
@@ -174,9 +174,11 @@ def to_vacancy(item: dict) -> Vacancy | None:
     city = detect_city((item.get("area") or {}).get("name") or "", None)
     if city is None:
         return None
+    text = _text(item) or name
+    if works_abroad(f"{name}\n{text}".lower()):
+        return None  # работа в Турции, Москве и т.п., хотя регион вакансии на hh казахстанский
     salary_min, salary_max, period = _salary(item)
     schedule = _schedule(item)
-    text = _text(item) or name
     published = datetime.fromisoformat(item["published_at"]).astimezone(timezone.utc)
     return Vacancy(
         id=f"{SOURCE}-{item['id']}",

@@ -187,6 +187,20 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "aktobe:келешек": {
+  "name": "Келешек",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "aktobe:м стройтранс": {
+  "name": "М-СтройТранс",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
+ },
  "aktobe:очаг": {
   "name": "Очаг",
   "city": "aktobe",
@@ -1089,6 +1103,15 @@
   "avatar": "f6603fc98d6f4927.jpg",
   "avatar_source": "website"
  },
+ "almaty:janamen health": {
+  "name": "JanaMen Health",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "janamen.health",
+  "source": "https://www.instagram.com/janamen.health/"
+ },
  "almaty:jet finance тоо mogo kazakhstan": {
   "name": "Jet Finance (ТОО Mogo Kazakhstan)",
   "city": "almaty",
@@ -1246,6 +1269,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "almaty:lumi garden детский развивающий центр": {
+  "name": "Lumi Garden, детский развивающий центр",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "lumi_garden_remizovka",
+  "source": "https://2gis.kz/almaty/firm/70000001118335952"
  },
  "almaty:lumiere service": {
   "name": "LUMIERE Service”",
@@ -1433,6 +1465,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:optipack": {
+  "name": "ТОО Optipack",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "website": "https://optipack.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082130832",
+  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cbb4175f52345b7b.jpg",
+  "avatar_source": "website"
  },
  "almaty:orange": {
   "name": "Orange",
@@ -1775,6 +1822,15 @@
    "website"
   ]
  },
+ "almaty:taurus gss": {
+  "name": "Taurus GSS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "taurus_grass_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001102013941"
+ },
  "almaty:tea house ти хаус": {
   "name": "Tea House (Ти Хаус)",
   "city": "almaty",
@@ -1816,6 +1872,13 @@
   ],
   "avatar": "4ed80c863e2dc4ad.jpg",
   "avatar_source": "website"
+ },
+ "almaty:tnt": {
+  "name": "TNT",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
  },
  "almaty:tomiris ип валиев": {
   "name": "Tomiris (ИП Валиев)",
@@ -2216,6 +2279,20 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:арт инсайт": {
+  "name": "АРТ Инсайт",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "artinsight.kz",
+  "website": "https://artinsight.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001044727010",
+  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:асторг": {
   "name": "Асторг",
   "city": "almaty",
@@ -2336,6 +2413,21 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "almaty:бьюти ретейлер золотое яблоко": {
+  "name": "Бьюти-ретейлер Золотое Яблоко",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "website": "https://goldapple.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001066233271",
+  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "30cd2d0a5f61024d.jpg",
+  "avatar_source": "website"
+ },
  "almaty:вин анастасия сергеевна": {
   "name": "Вин Анастасия Сергеевна",
   "city": "almaty",
@@ -2453,6 +2545,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "almaty:жибек жолы": {
+  "name": "Жибек жолы",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
  },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
@@ -2591,6 +2690,29 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:канагат": {
+  "name": "Канагат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "ashana__qanagat",
+  "source": "https://2gis.kz/almaty/firm/70000001080818546"
+ },
+ "almaty:капиталпрофснаб": {
+  "name": "КАПИТАЛПРОФСНАБ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "kps_snab",
+  "website": "https://kps-snab.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001022720996",
+  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:карина paper карина пейпа": {
   "name": "Карина Paper (Карина Пейпа)",
@@ -3329,6 +3451,13 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "astana:asl corporation": {
+  "name": "ASL CORPORATION",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
+ },
  "astana:astana motors north": {
   "name": "Astana Motors North",
   "city": "astana",
@@ -3817,6 +3946,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:media center astana": {
+  "name": "MEDIA CENTER ASTANA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
  },
  "astana:mega center management": {
   "name": "Mega Center Management",
@@ -4496,6 +4632,15 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "astana:республика шағын маркеті": {
+  "name": "Республика шағын маркеті",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "respublika_shagynmarket",
+  "source": "https://2gis.kz/astana/firm/70000001112611319"
+ },
  "astana:рик": {
   "name": "РиК",
   "city": "astana",
@@ -4703,6 +4848,13 @@
    "website"
   ]
  },
+ "astana:юникс": {
+  "name": "Юникс",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
+ },
  "astana:құрылысшы ltd": {
   "name": "Құрылысшы LTD",
   "city": "astana",
@@ -4739,6 +4891,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "atyrau:даулетов н а акжелкен": {
+  "name": "Даулетов Н.А. АкЖелкен",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "akzhelken_group",
+  "source": "https://2gis.kz/atyrau/firm/70000001093959071"
  },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",
@@ -5517,6 +5678,13 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "pavlodar:кациев м р": {
+  "name": "КАЦИЕВ М.Р.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
+ },
  "pavlodar:кип technology": {
   "name": "КИП Technology",
   "city": "pavlodar",
@@ -5954,6 +6122,20 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "taraz:lamoda kz мода с доставкой тоо": {
+  "name": "Lamoda.kz (Мода с доставкой, ТОО)",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00",
+  "instagram": "lamoda_kz",
+  "website": "https://lamoda.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001057589314",
+  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "taraz:беркет сауда": {
   "name": "Беркет-Сауда",
   "city": "taraz",
@@ -6171,6 +6353,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "ust-kamenogorsk:stroy invest capital": {
+  "name": "Stroy Invest Capital",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T14:46:23+00:00"
  },
  "ust-kamenogorsk:докка": {
   "name": "ДОККА",

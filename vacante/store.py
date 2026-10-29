@@ -76,4 +76,5 @@ def merge(existing: list[Vacancy], incoming: list[Vacancy]) -> list[Vacancy]:
 def expire(vacancies: list[Vacancy], max_age_days: int, now: datetime | None = None) -> list[Vacancy]:
     now = now or datetime.now(timezone.utc)
     cutoff = (now - timedelta(days=max_age_days)).isoformat()
-    return [v for v in vacancies if v.posted_at >= cutoff]
+    # Оплаченное «🔥 Срочно» держит вакансию на сайте, даже если она старше срока
+    return [v for v in vacancies if v.posted_at >= cutoff or v.is_top(now)]

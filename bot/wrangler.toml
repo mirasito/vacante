@@ -11,6 +11,10 @@ SITE_URL = "https://vacante.kz"
 GITHUB_REPO = "mirasito/vacante"
 # Каналы vacante: их админы становятся модераторами вакансий командой /admin (бот там тоже админ)
 CHANNELS = "@vacanteastana,@vacantealmaty"
+# Платная услуга «🔥 Срочно» (src/employer.js): цена в тенге и на сколько дней. Включается секретом
+# KASPI_DETAILS (номер Kaspi и имя получателя), без него кнопки «Поднять» в боте нет.
+BOOST_PRICE = "3000"
+BOOST_DAYS = "7"
 
 # Запасной будильник часового обновления сайта (src/cron.js). Расписание update.yml
 # стоит на 17-ю минуту, будильник проверяет в 25-ю и запускает, только если GitHub проспал.

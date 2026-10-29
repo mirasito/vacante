@@ -43,3 +43,17 @@ test("мои вакансии: закрыть можно только откры
   assert.deepEqual(screen.keyboard.map((row) => row[0].callback_data), ["close:5"]);
   assert.match(job.myJobsScreen([]).text, /пока нет вакансий/);
 });
+
+test("«Срочно»: условия из настроек, дата по Казахстану, пост в канале только для Астаны и Алматы", () => {
+  assert.equal(job.boostOffer({}), null);
+  assert.deepEqual(job.boostOffer({ KASPI_DETAILS: " +7 700 ", BOOST_PRICE: "5000", BOOST_DAYS: "3" }), { price: 5000, days: 3, kaspi: "+7 700" });
+  assert.equal(job.localDate("2026-11-05 20:00:00"), "06.11");
+  const now = new Date("2026-11-01T00:00:00Z");
+  assert.ok(job.isBoosted({ boost_until: "2026-11-01 00:00:01" }, now));
+  assert.ok(!job.isBoosted({ boost_until: "2026-10-31 23:59:59" }, now));
+  assert.ok(!job.isBoosted({ boost_until: null }, now));
+  const boost = { price: 3000, days: 7, kaspi: "+7 700 <Мирас>" };
+  assert.match(job.boostScreen(filled, boost).text, /в нашем канале Астана/);
+  assert.match(job.boostScreen(filled, boost).text, /\+7 700 &lt;Мирас&gt;/);
+  assert.doesNotMatch(job.boostScreen({ ...filled, city: "shymkent" }, boost).text, /канале/);
+});

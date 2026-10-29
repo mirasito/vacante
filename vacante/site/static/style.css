@@ -59,6 +59,8 @@ a { color: inherit; }
 .also, .source, .direct { color: var(--quiet); font-size: 14px; word-break: break-all; }
 .direct { word-break: normal; margin-top: -8px; }
 .pill.direct-pill { background: var(--accent); color: #fff; }
+.pill.top-pill { background: #e8590c; color: #fff; font-weight: 600; }
+.card.top { background: rgba(232, 89, 12, 0.08); border-left: 3px solid #e8590c; padding-left: 12px; padding-right: 12px; }
 .empty { color: var(--quiet); padding: 24px 0; }
 .footer { color: var(--quiet); font-size: 13px; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 12px; padding-bottom: 32px; }
 @media (max-width: 600px) {

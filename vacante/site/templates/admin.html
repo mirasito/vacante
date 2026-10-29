@@ -286,6 +286,7 @@ td.nowrap { white-space: nowrap; }
     const n = (k) => num(jobs[k] || 0);
     return `<p>Вакансии от работодателей: на проверке ${n("pending")}, опубликовано ${n("approved")}, ` +
       `закрыто ${n("closed")}, отклонено ${n("rejected")}. Откликов: ${n("applications")}. ` +
+      (jobs.paid ? `<b>Оплачено «🔥 Срочно»: ${n("paid")} на ${n("revenue")} ₸.</b> ` : "") +
       `<span class="quiet">Проверять в боте командой /admin.</span></p>`;
   }
 

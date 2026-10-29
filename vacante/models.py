@@ -38,6 +38,10 @@ class Vacancy:
     fingerprint: str
     also_seen_in: list[str] = field(default_factory=list)
     address: str | None = None  # без города: «ул. Сыганак, 2»
+    top_until: str | None = None  # до когда оплачено «🔥 Срочно» (ISO 8601, UTC), только у вакансий из бота
+
+    def is_top(self, now: datetime) -> bool:
+        return self.top_until is not None and datetime.fromisoformat(self.top_until) > now
 
     def to_dict(self) -> dict:
         return asdict(self)

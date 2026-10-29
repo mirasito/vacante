@@ -69,4 +69,5 @@ def to_vacancy(job: dict) -> Vacancy:
         posted_at=_iso(job["approved_at"]),
         fingerprint=fingerprint(text),
         address=job.get("address") or None,
+        top_until=_iso(job["boost_until"]) if job.get("boost_until") else None,
     )

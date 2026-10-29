@@ -254,6 +254,13 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "aktobe:алтын алма": {
+  "name": "Алтын Алма",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "aktobe:келешек": {
   "name": "Келешек",
   "city": "aktobe",
@@ -586,6 +593,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ayza stellazh": {
+  "name": "AYZA Stellazh",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00",
+  "instagram": "ayza_stellazh",
+  "website": "https://ayzastellazh.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001059949222",
+  "avatar_checked_at": "2026-10-29T22:43:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f7015e8f05051d26.jpg",
+  "avatar_source": "website"
  },
  "almaty:bakha potolok": {
   "name": "BAKHA POTOLOK",
@@ -1897,6 +1920,15 @@
    "website"
   ]
  },
+ "almaty:skincare магазин косметики": {
+  "name": "“Skincare” магазин косметики",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00",
+  "instagram": "skincare.topbrands",
+  "source": "https://2gis.kz/almaty/firm/70000001029864204"
+ },
  "almaty:small": {
   "name": "SMALL",
   "city": "almaty",
@@ -2582,6 +2614,20 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:альфа кт": {
+  "name": "Альфа-КТ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "almaty:андреев вадим": {
+  "name": "Андреев Вадим",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "almaty:анкор центральная азия": {
   "name": "АНКОР Центральная Азия",
   "city": "almaty",
@@ -2996,6 +3042,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:и владлена": {
+  "name": "И Владлена",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
  },
  "almaty:ив роше казахстан": {
   "name": "Ив Роше Казахстан",
@@ -4257,6 +4310,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:ecotara": {
+  "name": "EcoTara",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "astana:evs construction": {
   "name": "EVS Construction",
   "city": "astana",
@@ -4743,6 +4803,15 @@
   "checked_at": "2026-10-29T05:44:59+00:00",
   "instagram": "senimstaff",
   "source": "https://2gis.kz/astana/firm/70000001117886885"
+ },
+ "astana:shapan": {
+  "name": "SHAPAN",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00",
+  "instagram": "shapan.kzz_astana2",
+  "source": "https://2gis.kz/astana/firm/70000001103793334"
  },
  "astana:sheraton astana hotel": {
   "name": "Sheraton Astana Hotel",
@@ -5415,6 +5484,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:омартрейд": {
+  "name": "ОмарТрейд",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "astana:парадайс": {
   "name": "ПАРАДАЙС",
   "city": "astana",
@@ -5767,6 +5843,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "atyrau:astoria трц qiwi": {
+  "name": "ASTORIA (ТРЦ QIWI)",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "atyrau:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
   "city": "atyrau",
@@ -5886,6 +5969,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "karaganda:center professional engineering": {
+  "name": "Center Professional Engineering",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
  },
  "karaganda:ekibastuzferroalloys": {
   "name": "EkibastuzFerroAlloys",
@@ -6027,6 +6117,19 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "karaganda:rossko": {
+  "name": "ROSSKO",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00",
+  "website": "https://krg.rossko.ru/",
+  "source": "https://2gis.kz/karaganda/firm/70000001055973317",
+  "avatar_checked_at": "2026-10-29T22:43:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:sary arka copper processing": {
   "name": "Sary-Arka Copper Processing",
   "city": "karaganda",
@@ -6166,6 +6269,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:каздорстройтех": {
+  "name": "Каздорстройтех",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
  },
  "karaganda:казтранстехпром": {
   "name": "КазТрансТехПром",
@@ -6839,6 +6949,13 @@
   "avatar": "5c67d834e0b0199b.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:агрохимпрогресс": {
+  "name": "АгроХимПрогресс",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
   "city": "pavlodar",
@@ -7229,6 +7346,20 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "shymkent:ekibastuzferroalloys": {
+  "name": "EkibastuzFerroAlloys",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "shymkent:insoft": {
+  "name": "INSOFT",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
  "shymkent:kub group": {
   "name": "KUB GROUP",
   "city": "shymkent",
@@ -7288,6 +7419,20 @@
   "checked_at": "2026-10-28T17:44:31+00:00",
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
+ },
+ "shymkent:studyon": {
+  "name": "StudyON",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00",
+  "instagram": "study_on_shym",
+  "website": "http://study-on.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001093718196",
+  "avatar_checked_at": "2026-10-29T22:43:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:womans time": {
   "name": "Woman’s time",
@@ -7409,6 +7554,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "taraz:alvin market": {
+  "name": "Alvin Market",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00",
+  "instagram": "alvinmarketkz",
+  "website": "https://www.alvin.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000785423",
+  "avatar_checked_at": "2026-10-29T22:43:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ad006f400d8de145.jpg",
+  "avatar_source": "website"
  },
  "taraz:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
@@ -7587,6 +7748,20 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:полюс групп": {
+  "name": "Полюс Групп",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "ust-kamenogorsk:asteco": {
+  "name": "ASTECO",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T22:43:35+00:00"
  },
  "ust-kamenogorsk:bus logistic group": {
   "name": "Bus Logistic Group",

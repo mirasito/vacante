@@ -14,6 +14,13 @@
   "avatar": "57b6970a6082bf65.jpg",
   "avatar_source": "website"
  },
+ "aktau:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "aktau:dark cloud": {
   "name": "Dark Cloud",
   "city": "aktau",
@@ -27,6 +34,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "aktau:monte napoleone": {
+  "name": "MONTE NAPOLEONE",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
  },
  "aktau:sw auto aktau": {
   "name": "Sw Auto Aktau",
@@ -1515,6 +1529,22 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:percorso": {
+  "name": "Percorso",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "instagram": "percorso_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001062089129"
+ },
+ "almaty:play theater": {
+  "name": "Play Theater",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "almaty:prima distribution": {
   "name": "Prima Distribution",
   "city": "almaty",
@@ -2014,6 +2044,13 @@
   "avatar": "209881adf06e1885.jpg",
   "avatar_source": "website"
  },
+ "almaty:white payments": {
+  "name": "White Payments",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "almaty:yes exchange": {
   "name": "YES EXCHANGE",
   "city": "almaty",
@@ -2125,6 +2162,13 @@
    "website"
   ]
  },
+ "almaty:адф логистик": {
+  "name": "АДФ-ЛОГИСТИК",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "almaty:аифcosmetic": {
   "name": "АиФcosmetic",
   "city": "almaty",
@@ -2140,6 +2184,13 @@
   ],
   "avatar": "4be4d686ea22a24b.jpg",
   "avatar_source": "website"
+ },
+ "almaty:айгерим": {
+  "name": "Айгерим",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
  },
  "almaty:айсаров б а": {
   "name": "АЙСАРОВ Б.А.",
@@ -2496,6 +2547,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:глоббинг": {
+  "name": "Глоббинг",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "instagram": "globbingkazakhstan",
+  "website": "https://globbing.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001081794303",
+  "avatar_checked_at": "2026-10-29T16:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dd7ecf45ef6b1ae5.jpg",
+  "avatar_source": "website"
  },
  "almaty:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
@@ -3157,6 +3224,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:срл": {
+  "name": "СРЛ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
  },
  "almaty:студент": {
   "name": "Студент",
@@ -3953,6 +4027,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "astana:jan": {
+  "name": "JAN",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "astana:kinderland": {
   "name": "KINDERLAND",
   "city": "astana",
@@ -4725,6 +4806,13 @@
   "avatar": "a7a308ffffc84c9a.jpg",
   "avatar_source": "website"
  },
+ "astana:полезный продукт": {
+  "name": "Полезный Продукт",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "astana:примавера каз": {
   "name": "Примавера КАЗ",
   "city": "astana",
@@ -4845,6 +4933,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:торговая компания дозор": {
+  "name": "Торговая компания ДОЗОР",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "website": "https://dozor.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001116121692",
+  "avatar_checked_at": "2026-10-29T16:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d42820f7c4492bcc.jpg",
+  "avatar_source": "website"
  },
  "astana:торговый дом rokos": {
   "name": "ТОРГОВЫЙ ДОМ ROKOS",
@@ -5029,6 +5132,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "atyrau:академия юнит академия маленьких принцесс": {
+  "name": "АКАДЕМИЯ ЮНИТ (Академия Маленьких Принцесс)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "instagram": "lovelyacademy.kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001100908455"
  },
  "atyrau:даулетов н а акжелкен": {
   "name": "Даулетов Н.А. АкЖелкен",
@@ -5502,6 +5614,22 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "kostanay:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036013262",
+  "avatar_checked_at": "2026-10-29T16:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ce1fe1f2784acd5b.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:oil центр": {
   "name": "Oil центр",
   "city": "kostanay",
@@ -5696,12 +5824,32 @@
    "website"
   ]
  },
+ "kyzylorda:kyzylorda refinery": {
+  "name": "Kyzylorda Refinery",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "website": "https://kref.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001080244738",
+  "avatar_checked_at": "2026-10-29T16:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kyzylorda:prima distribution": {
   "name": "Prima Distribution",
   "city": "kyzylorda",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "kyzylorda:дан стафф": {
+  "name": "Дан-Стафф",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
  },
  "kyzylorda:люма клиник": {
   "name": "ЛЮМА КЛИНИК",
@@ -6032,6 +6180,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "semey:heavy truck kazakhstan": {
+  "name": "HEAVY TRUCK KAZAKHSTAN",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "semey:kari": {
   "name": "KARI",
   "city": "semey",
@@ -6311,6 +6466,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "shymkent:юнифарм казахстан": {
+  "name": "ЮНИФАРМ КАЗАХСТАН",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
+ },
  "taraz:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
   "city": "taraz",
@@ -6497,6 +6659,24 @@
   "avatar": "17c40eb2d1fb3e9b.jpg",
   "avatar_source": "website"
  },
+ "ust-kamenogorsk:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00",
+  "instagram": "kaspi.kz",
+  "telegram": "kaspikz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313710",
+  "avatar_checked_at": "2026-10-29T16:44:32+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "44d30644eb156cbc.jpg",
+  "avatar_source": "telegram"
+ },
  "ust-kamenogorsk:kazdrill service": {
   "name": "KAZDRILL SERVICE",
   "city": "ust-kamenogorsk",
@@ -6651,6 +6831,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "ust-kamenogorsk:сентрас капитал": {
+  "name": "Сентрас Капитал",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T16:44:32+00:00"
  },
  "ust-kamenogorsk:тех эксперт": {
   "name": "Тех.эксперт",

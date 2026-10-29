@@ -53,6 +53,15 @@
   "avatar": "17db3dbfebe101a9.jpg",
   "avatar_source": "website"
  },
+ "aktau:kitsu rolls": {
+  "name": "KITSU ROLLS",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00",
+  "instagram": "kitsu.rolls",
+  "source": "https://2gis.kz/aktau/firm/70000001102936200"
+ },
  "aktau:monte napoleone": {
   "name": "MONTE NAPOLEONE",
   "city": "aktau",
@@ -87,6 +96,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "aktau:в актау": {
+  "name": "В АКТАУ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "aktau:виктория": {
   "name": "Виктория",
@@ -180,6 +196,20 @@
   "avatar": "d127ff82713a335c.jpg",
   "avatar_source": "website"
  },
+ "aktobe:aktobe business systems": {
+  "name": "Aktobe Business Systems",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00",
+  "instagram": "umagaktobe",
+  "website": "http://umag.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001037968515",
+  "avatar_checked_at": "2026-10-29T23:43:36+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
   "city": "aktobe",
@@ -260,6 +290,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "aktobe:казснаблогистиксервис": {
+  "name": "КазСнабЛогистикСервис",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "aktobe:келешек": {
   "name": "Келешек",
@@ -960,6 +997,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:dostyk plaza": {
+  "name": "Dostyk Plaza",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
+ },
  "almaty:dream land co": {
   "name": "Dream Land Co",
   "city": "almaty",
@@ -1395,6 +1439,20 @@
   "website": "https://kazdigroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032171244",
   "avatar_checked_at": "2026-10-28T14:47:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:kazlogistic solutions": {
+  "name": "KAZLOGISTIC SOLUTIONS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00",
+  "instagram": "cls_international_group",
+  "website": "https://forwarder.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001113899818",
+  "avatar_checked_at": "2026-10-29T23:43:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2059,6 +2117,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "almaty:strong co тоо": {
+  "name": "Strong Co, ТОО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "almaty:studio массаж": {
   "name": "Studio Массаж",
@@ -3029,6 +3094,15 @@
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
  },
+ "almaty:зиярус": {
+  "name": "ИП Зиярус",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00",
+  "instagram": "ziyaruss",
+  "source": "https://2gis.kz/almaty/firm/70000001048137196"
+ },
  "almaty:зооторг сеть зоомагазинов": {
   "name": "ЗооТорг (Сеть зоомагазинов)",
   "city": "almaty",
@@ -3227,6 +3301,13 @@
    "website"
   ]
  },
+ "almaty:коскельдиева д ж": {
+  "name": "Коскельдиева Д.Ж.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
+ },
  "almaty:котофей казахстан": {
   "name": "Котофей Казахстан",
   "city": "almaty",
@@ -3286,6 +3367,13 @@
   ],
   "avatar": "939ef4ec1271f552.jpg",
   "avatar_source": "website"
+ },
+ "almaty:лоск прачечная": {
+  "name": "Лоск прачечная",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "almaty:лпгруп lpgroup": {
   "name": "ЛПГруп (LPGroup)",
@@ -3879,6 +3967,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:энергострой": {
+  "name": "ЭнергоСтрой",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "almaty:эраунд групп around": {
   "name": "Эраунд Групп AROUND",
@@ -5360,6 +5455,13 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "astana:казэксимекс": {
+  "name": "КАЗЭКСИМЕКС",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
+ },
  "astana:каусар": {
   "name": "Каусар",
   "city": "astana",
@@ -5607,6 +5709,13 @@
    "website"
   ]
  },
+ "astana:стальная марка алматы kz": {
+  "name": "Стальная Марка Алматы.kz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
+ },
  "astana:строй монтаж проект": {
   "name": "Строй Монтаж Проект",
   "city": "astana",
@@ -5702,6 +5811,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:улар трейд хаус": {
+  "name": "Улар Трейд Хаус",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "astana:умаг": {
   "name": "Умаг",
@@ -5867,6 +5983,13 @@
   "checked_at": "2026-10-29T20:43:40+00:00",
   "instagram": "compasskazakhstan",
   "source": "https://2gis.kz/atyrau/firm/70000001045107222"
+ },
+ "atyrau:grand кондитер": {
+  "name": "Grand Кондитер",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "atyrau:hydroserv central asia": {
   "name": "Hydroserv Central Asia",
@@ -6230,6 +6353,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "karaganda:баккара": {
+  "name": "Баккара",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "karaganda:белый ветер kz": {
   "name": "Белый Ветер KZ",
@@ -7265,6 +7395,13 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "semey:балкымыза": {
+  "name": "БАЛКЫМЫЗА",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
+ },
  "semey:бизнес эксперт консалт": {
   "name": "Бизнес-Эксперт Консалт",
   "city": "semey",
@@ -7520,6 +7657,20 @@
    "website"
   ]
  },
+ "shymkent:компания эврика": {
+  "name": "Компания ЭВРИКА",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00",
+  "instagram": "evrika.kazakhstan",
+  "website": "https://evrika.com/",
+  "source": "https://2gis.kz/shymkent/firm/70000001088022540",
+  "avatar_checked_at": "2026-10-29T23:43:36+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:смэу астана": {
   "name": "СМЭУ Астана",
   "city": "shymkent",
@@ -7533,6 +7684,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "shymkent:торговый дом rokos": {
+  "name": "ТОРГОВЫЙ ДОМ ROKOS",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "shymkent:уралметаллинвест": {
   "name": "УралМеталлинвест",
@@ -7621,6 +7779,13 @@
   "checked_at": "2026-10-28T18:44:37+00:00",
   "instagram": "electrostroy.taraz",
   "source": "https://2gis.kz/taraz/firm/70000001053552027"
+ },
+ "taraz:энергострой": {
+  "name": "ЭнергоСтрой",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T23:43:36+00:00"
  },
  "turkestan:inclair": {
   "name": "Inclair",

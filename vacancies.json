@@ -1,5 +1,51 @@
 [
  {
+  "id": "hh-138802278",
+  "title": "Упаковщик",
+  "category": "warehouse",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [],
+  "employer": "Андреев Вадим",
+  "text": "Обязанности: Сборка товаров с помощью ТСД. Размещение товаров по ячейкам. Упаковка товара. Соблюдение техники безопасности.\nТребования: Желание работать.",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138802278?tech_source=api",
+  "posted_at": "2026-10-29T20:55:50+00:00",
+  "fingerprint": "76600ace9d1dff48",
+  "also_seen_in": [
+   "https://hh.ru/vacancy/138802299?tech_source=api",
+   "https://hh.kz/vacancy/138802299?tech_source=api"
+  ],
+  "address": "садовое товарищество Софрино",
+  "top_until": null
+ },
+ {
+  "id": "hh-138802237",
+  "title": "Комплектовщик",
+  "category": "warehouse",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [],
+  "employer": "Андреев Вадим",
+  "text": "Обязанности: Сканировать товары. Сборка товаров с помощью тсд. Размещение товаров по ячейкам. Соблюдение техники безопасности.\nТребования: Желание работать.",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138802237?tech_source=api",
+  "posted_at": "2026-10-29T20:44:20+00:00",
+  "fingerprint": "09f85627f9455e45",
+  "also_seen_in": [
+   "https://hh.ru/vacancy/138802248?tech_source=api",
+   "https://hh.kz/vacancy/138802248?tech_source=api"
+  ],
+  "address": "Москва",
+  "top_until": null
+ },
+ {
   "id": "hh-138985486",
   "title": "Водитель в такси Яндекс",
   "category": "delivery",
@@ -86023,50 +86069,6 @@
   "fingerprint": "941ad5ecf0ca4488",
   "also_seen_in": [],
   "address": "улица Таира Жарокова, 230",
-  "top_until": null
- },
- {
-  "id": "hh-138802278",
-  "title": "Упаковщик",
-  "category": "warehouse",
-  "city": "almaty",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [],
-  "employer": "Андреев Вадим",
-  "text": "Обязанности: Сборка товаров с помощью ТСД. Размещение товаров по ячейкам. Упаковка товара. Соблюдение техники безопасности.\nТребования: Желание работать.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138802278?tech_source=api",
-  "posted_at": "2026-10-26T20:55:50+00:00",
-  "fingerprint": "76600ace9d1dff48",
-  "also_seen_in": [
-   "https://hh.ru/vacancy/138802299?tech_source=api"
-  ],
-  "address": "садовое товарищество Софрино",
-  "top_until": null
- },
- {
-  "id": "hh-138802237",
-  "title": "Комплектовщик",
-  "category": "warehouse",
-  "city": "almaty",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [],
-  "employer": "Андреев Вадим",
-  "text": "Обязанности: Сканировать товары. Сборка товаров с помощью тсд. Размещение товаров по ячейкам. Соблюдение техники безопасности.\nТребования: Желание работать.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138802237?tech_source=api",
-  "posted_at": "2026-10-26T20:44:20+00:00",
-  "fingerprint": "09f85627f9455e45",
-  "also_seen_in": [
-   "https://hh.ru/vacancy/138802248?tech_source=api"
-  ],
-  "address": "Москва",
   "top_until": null
  },
  {

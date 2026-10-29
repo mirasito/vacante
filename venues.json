@@ -529,12 +529,35 @@
   "avatar": "b69ebbfefad03941.jpg",
   "avatar_source": "website"
  },
+ "almaty:high level хай левел": {
+  "name": "High Level (Хай Левел)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "highleveleducation",
+  "telegram": "highleveleducation",
+  "website": "https://highlevel.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000918908",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:hila": {
   "name": "Hila",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:inditex kazakhstan": {
+  "name": "INDITEX Kazakhstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
  },
  "almaty:invitro тоо инвитро казахстан": {
   "name": "INVITRO (ТОО ИНВИТРО-Казахстан)",
@@ -670,6 +693,20 @@
    "website"
   ]
  },
+ "almaty:mountain view hotels": {
+  "name": "Mountain View Hotels",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "mountainviewhotels",
+  "website": "https://mvhotels.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000842241",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:my blins": {
   "name": "MY BLINS",
   "city": "almaty",
@@ -692,6 +729,27 @@
   ],
   "avatar": "eaf19c31fb17a1c0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:nurancell": {
+  "name": "Nurancell",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:office expert kz": {
+  "name": "Office-Expert.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "officeexpert",
+  "website": "https://oe.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001065669201",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:oi qaragai": {
   "name": "Oi-Qaragai",
@@ -876,6 +934,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:tomiris ип валиев": {
+  "name": "Tomiris (ИП Валиев)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
  },
  "almaty:top_mebel": {
   "name": "Top_Mebel",
@@ -1269,6 +1334,19 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:глобал медикал": {
+  "name": "Глобал Медикал",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "website": "https://globalmedical.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082842168",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "almaty",
@@ -1435,6 +1513,20 @@
   "instagram": "laffa.cafe",
   "source": "https://2gis.kz/almaty/firm/70000001020792892"
  },
+ "almaty:лпгруп lpgroup": {
+  "name": "ЛПГруп (LPGroup)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "lpgroup.kz",
+  "website": "https://www.lpgroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001116104113",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:макаронная by sabina temiralieva": {
   "name": "Макаронная by Sabina Temiralieva",
   "city": "almaty",
@@ -1457,6 +1549,13 @@
   ],
   "avatar": "3089f66e2a9ebcc3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:мир подиум статус": {
+  "name": "МИР ПОДИУМ Статус",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
  },
  "almaty:модерн ритейл": {
   "name": "МОДЕРН РИТЕЙЛ",
@@ -1582,6 +1681,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:рузи нан астана": {
+  "name": "Рузи Нан Астана",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
+ },
  "almaty:свс модуль": {
   "name": "СВС-Модуль",
   "city": "almaty",
@@ -1668,6 +1774,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:тк пищевик": {
+  "name": "ТК Пищевик",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "website": "https://www.pichevik.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000801232",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:торгстрой": {
   "name": "ТОРГСТРОЙ",
@@ -1940,6 +2059,24 @@
    "website"
   ]
  },
+ "astana:fortebank": {
+  "name": "ForteBank",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "fortebankkz",
+  "telegram": "forte",
+  "website": "https://forte.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001023484972",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "8e6eeae11fe4a0fc.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:french bakery": {
   "name": "French Bakery",
   "city": "astana",
@@ -1964,6 +2101,20 @@
   "website": "https://glovoapp.com/",
   "source": "https://2gis.kz/astana/firm/70000001039423066",
   "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:goals lab": {
+  "name": "Goals lab",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "goals_lab_gl",
+  "website": "https://goalslab.tilda.ws/",
+  "source": "https://2gis.kz/astana/firm/70000001065233426",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2382,6 +2533,13 @@
   "instagram": "astoriahotelkz",
   "source": "https://2gis.kz/astana/firm/70000001105215429"
  },
+ "astana:байгабулова а м": {
+  "name": "Байгабулова А. М",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
+ },
  "astana:банный комплекс": {
   "name": "Банный комплекс",
   "city": "astana",
@@ -2643,6 +2801,13 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:стюфляев и в": {
+  "name": "Стюфляев И.В",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
+ },
  "astana:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
   "city": "astana",
@@ -2663,6 +2828,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "astana:ф а логистик казахстан": {
+  "name": "Ф.А. ЛОГИСТИК КАЗАХСТАН",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "website": "https://forum-auto.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001087662656",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:цан": {
   "name": "ЦАН",
@@ -2915,6 +3093,24 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:марк формэль": {
+  "name": "Марк Формэль",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "markformelle",
+  "telegram": "markformelle_official",
+  "website": "https://markformelle.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001098171219",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "9d83aa6d1296ec55.jpg",
+  "avatar_source": "telegram"
  },
  "karaganda:пакт": {
   "name": "ПАКТ",
@@ -3480,6 +3676,40 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "ust-kamenogorsk:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "minisokz",
+  "website": "https://miniso.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001043784602",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3eeb6576911c1b31.jpg",
+  "avatar_source": "website"
+ },
+ "ust-kamenogorsk:заречье эколэнд": {
+  "name": "Заречье ЭкоЛэнд",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00",
+  "instagram": "zarechye_parkhotel",
+  "telegram": "zarechye_kz",
+  "website": "https://www.zarechye.kz/",
+  "source": "https://2gis.kz/ustkam/firm/70000001083432544",
+  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "86c392d830f425bb.jpg",
+  "avatar_source": "telegram"
+ },
  "ust-kamenogorsk:казахстанское промышленное предприятие": {
   "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",
   "city": "ust-kamenogorsk",
@@ -3500,6 +3730,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:ново широкинский рудник": {
+  "name": "Ново-Широкинский рудник",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T01:44:16+00:00"
  },
  "ust-kamenogorsk:остин казахстан ostin тм": {
   "name": "Остин Казахстан (O'stin ТМ)",

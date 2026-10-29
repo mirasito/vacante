@@ -28,6 +28,13 @@
    "website"
   ]
  },
+ "aktau:sw auto aktau": {
+  "name": "Sw Auto Aktau",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "aktau:актаусервискурылыс": {
   "name": "АктауСервисКурылыс",
   "city": "aktau",
@@ -662,6 +669,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:en electronics": {
+  "name": "EN Electronics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "almaty:family store": {
   "name": "FAMILY STORE",
   "city": "almaty",
@@ -729,6 +743,20 @@
   ],
   "avatar": "844778890062cb2f.jpg",
   "avatar_source": "website"
+ },
+ "almaty:gamma doro": {
+  "name": "Gamma Doro",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "instagram": "gammadoro.kz",
+  "website": "https://gammadoro.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104024539",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -953,6 +981,19 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:leader trans team": {
+  "name": "Leader Trans Team",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "website": "http://www.ltt.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035238899",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:lion restaurants лион рестораны": {
   "name": "LiON Restaurants (ЛиОН Рестораны)",
   "city": "almaty",
@@ -1089,6 +1130,13 @@
    "website"
   ]
  },
+ "almaty:mp solutions": {
+  "name": "MP Solutions",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "almaty:my blins": {
   "name": "MY BLINS",
   "city": "almaty",
@@ -1148,6 +1196,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:orange": {
+  "name": "Orange",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
  },
  "almaty:p2p logistic group": {
   "name": "P2P LOGISTIC GROUP",
@@ -1296,6 +1351,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:spey kazakhstan спей қазақстан": {
+  "name": "SPEY KAZAKHSTAN (СПЕЙ ҚАЗАҚСТАН)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "instagram": "spey.kz",
+  "website": "http://spey.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001049839158",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "78b578ca56c301c0.jpg",
+  "avatar_source": "website"
  },
  "almaty:sporttrade": {
   "name": "ТОО SPORTTRADE",
@@ -1999,6 +2070,20 @@
    "telegram"
   ]
  },
+ "almaty:дега": {
+  "name": "Дега",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "instagram": "dega.optical.kz",
+  "website": "http://www.degaoptical.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000819676",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:детский": {
   "name": "Детский",
   "city": "almaty",
@@ -2044,6 +2129,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:захаров с а": {
+  "name": "Захаров С.А",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "almaty:зинулла а с": {
   "name": "Зинулла А.С",
   "city": "almaty",
@@ -2082,6 +2174,19 @@
   "checked_at": "2026-10-28T21:46:06+00:00",
   "instagram": "kgnt.kz",
   "source": "https://2gis.kz/almaty/firm/9429940000796244"
+ },
+ "almaty:интер мульти сервис": {
+  "name": "Интер Мульти Сервис",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "website": "http://www.ims-box.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795872",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
@@ -2361,6 +2466,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:платон аа": {
+  "name": "Платон-АА",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "almaty:примавера каз": {
   "name": "Примавера КАЗ",
   "city": "almaty",
@@ -2507,6 +2619,19 @@
   "avatar": "938cde019632e18b.jpg",
   "avatar_source": "website"
  },
+ "almaty:тануки японский ресторан": {
+  "name": "Тануки, Японский ресторан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "website": "http://tanukifamily.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060461272",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:тарган тул": {
   "name": "ТАРГАН ТУЛ",
   "city": "almaty",
@@ -2577,6 +2702,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:уткелов ж б": {
+  "name": "Уткелов Ж.Б.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
  },
  "almaty:халык life": {
   "name": "Халык-Life",
@@ -2961,6 +3093,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:fruit republic alа": {
+  "name": "Fruit Republic ALА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
  },
  "astana:glovo": {
   "name": "GLOVO",
@@ -4385,6 +4524,21 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "karaganda:тэмпо казахстан": {
+  "name": "ТЭМПО-Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "website": "http://tempo.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001116894200",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f68041a8bce3750e.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:центр цветов крг": {
   "name": "Центр Цветов Крг",
   "city": "karaganda",
@@ -4643,6 +4797,13 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "pavlodar:matras kz": {
+  "name": "MATRAS.KZ",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "pavlodar:small тм скиф трейд тоо": {
   "name": "Small, ТМ (Скиф Трейд, ТОО)",
   "city": "pavlodar",
@@ -4798,6 +4959,13 @@
   "instagram": "severnyi.kz",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001081602936"
  },
+ "petropavlovsk:фурманова светлана евгеньевна": {
+  "name": "Фурманова Светлана Евгеньевна",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
  "petropavlovsk:этажи": {
   "name": "Этажи",
   "city": "petropavlovsk",
@@ -4835,6 +5003,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "semey:бакырчикское горнодобывающее предприятие": {
+  "name": "Бакырчикское горнодобывающее предприятие",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
  },
  "semey:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
@@ -5267,6 +5442,27 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "ust-kamenogorsk:тех эксперт": {
+  "name": "Тех.эксперт",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "ust-kamenogorsk:усть каменогорский мукомольный комбинат": {
+  "name": "Усть-Каменогорский мукомольный комбинат",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T09:45:02+00:00",
+  "instagram": "ukmk.kz",
+  "website": "http://ukmk.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721318159",
+  "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:шығыс жылу": {
   "name": "Шығыс Жылу",

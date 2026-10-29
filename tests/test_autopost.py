@@ -18,9 +18,9 @@ def make(post_id: int, text: str, city: str = "almaty", hour: int = 5):
 def test_due_only_in_daytime_and_after_gap():
     assert autopost.is_due(None, NOON)
     assert not autopost.is_due(None, datetime(2026, 10, 27, 17, tzinfo=timezone.utc))  # 22:00 местного
-    assert not autopost.is_due("2026-10-27T06:55:00+00:00", NOON)
-    assert autopost.is_due("2026-10-27T06:45:00+00:00", NOON)
-    assert autopost.is_due("2026-10-27T06:49:00+00:00", NOON)  # прошлый пост серии опоздал на 4 минуты
+    assert not autopost.is_due("2026-10-27T06:57:00+00:00", NOON)
+    assert autopost.is_due("2026-10-27T06:54:30+00:00", NOON)
+    assert autopost.is_due("2026-10-27T06:56:00+00:00", NOON)  # прошлый пост серии опоздал на полторы минуты
 
 
 def test_pick_prefers_complete_fresh_unposted_and_varies_titles():

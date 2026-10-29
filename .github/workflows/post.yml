@@ -1,5 +1,5 @@
-# Посты в свои каналы: после каждого обновления вакансий серия до 4 постов в каждый канал,
-# по одному раз в 15 минут, с 8 до 22 по Казахстану. Отдельно от обновления, чтобы ожидание
+# Посты в свои каналы: после каждого обновления вакансий серия до 10 постов в каждый канал,
+# по одному раз в 5,5 минуты, с 8 до 22 по Казахстану. Отдельно от обновления, чтобы ожидание
 # между постами не задерживало сайт и вакансии от работодателей.
 name: Посты в каналы
 
@@ -21,13 +21,13 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 59
     steps:
       - name: Ночью не публикуем
         id: hours
         run: |
           hour=$(date -u -d '+5 hours' +%-H)
-          # С 7 часов начинаем: третий и четвёртый посты серии придутся на 8 утра
+          # С 7 часов начинаем: конец серии придётся на 8 утра
           if [ "$hour" -ge 22 ] || [ "$hour" -lt 7 ]; then echo "night=1" >> "$GITHUB_OUTPUT"; fi
 
       - uses: actions/checkout@v4
@@ -74,8 +74,8 @@ jobs:
             done
             return 1
           }
-          for slot in 1 2 3 4; do
-            if [ "$slot" -gt 1 ]; then sleep 870; fi
+          for slot in $(seq 1 10); do
+            if [ "$slot" -gt 1 ]; then sleep 300; fi
             git -C data pull -q --rebase origin data || true  # свежие вакансии и очередь агента
             python -m vacante post --data-dir data --base-url "$SITE_URL" || echo "::warning::серия $slot: публикация не удалась"
             save || echo "::warning::серия $slot: не удалось сохранить posted.json"

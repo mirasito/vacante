@@ -109,6 +109,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "aktau:ком мунай": {
+  "name": "КОМ-МУНАЙ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
+ },
  "aktau:кр асель": {
   "name": "Кр Асель",
   "city": "aktau",
@@ -1095,6 +1102,22 @@
   "checked_at": "2026-10-28T15:44:53+00:00",
   "instagram": "glovo_kz",
   "source": "https://2gis.kz/almaty/firm/70000001038239655"
+ },
+ "almaty:grand hotel tien shan": {
+  "name": "Grand Hotel Tien-Shan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "grandhotel_tienshan",
+  "website": "https://www.ts-hotels.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000787489",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9d6ac3e7ce4a97ab.jpg",
+  "avatar_source": "website"
  },
  "almaty:greencity": {
   "name": "GreenCity",
@@ -2156,6 +2179,19 @@
   "avatar": "209881adf06e1885.jpg",
   "avatar_source": "website"
  },
+ "almaty:wellness solutions": {
+  "name": "WELLNESS SOLUTIONS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "website": "https://www.ws-group.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001020654656",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:white payments": {
   "name": "White Payments",
   "city": "almaty",
@@ -3048,6 +3084,20 @@
   "instagram": "laffa.cafe",
   "source": "https://2gis.kz/almaty/firm/70000001020792892"
  },
+ "almaty:лика мебельная компания": {
+  "name": "ЛИКА мебельная компания",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "lika.furniture",
+  "website": "http://lika-mebel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001044772108",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:лор практика": {
   "name": "Лор практика",
   "city": "almaty",
@@ -3136,6 +3186,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "almaty:миронова ульяна владимировна": {
+  "name": "Миронова Ульяна Владимировна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
  },
  "almaty:модерн ритейл": {
   "name": "МОДЕРН РИТЕЙЛ",
@@ -3547,6 +3604,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
+ },
+ "almaty:центр банкротства казахстана": {
+  "name": "Центр банкротства Казахстана",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "cbk.kz",
+  "website": "http://cbk.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001105315942",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "95fbbd668dd1891f.jpg",
+  "avatar_source": "website"
  },
  "almaty:центр красоты и здоровья николь": {
   "name": "Центр Красоты и Здоровья НикОль",
@@ -4392,6 +4465,20 @@
   "instagram": "pantheon.astana",
   "source": "https://2gis.kz/astana/firm/70000001100733321"
  },
+ "astana:paradiegma astana": {
+  "name": "Paradiegma Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "paradiegma.kz",
+  "website": "http://paradiegma.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001066895850",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:prima distribution": {
   "name": "Prima Distribution",
   "city": "astana",
@@ -4576,6 +4663,20 @@
   "website": "https://taptatti.kz/",
   "source": "https://2gis.kz/astana/firm/70000001032777613",
   "avatar_checked_at": "2026-10-29T18:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:terra motors astana": {
+  "name": "TERRA MOTORS Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "chevrolet__terramotors",
+  "website": "https://terra.chevrolet-auto.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001055596697",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4793,6 +4894,13 @@
   "avatar": "2890e57b7046c7ba.jpg",
   "avatar_source": "telegram"
  },
+ "astana:валиева": {
+  "name": "Валиева",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
+ },
  "astana:восток инвест group": {
   "name": "Восток Инвест Group",
   "city": "astana",
@@ -4890,6 +4998,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "astana:исмурзина с у": {
+  "name": "Исмурзина С У",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
  },
  "astana:история вкуса": {
   "name": "История вкуса",
@@ -5275,6 +5390,13 @@
    "website"
   ]
  },
+ "astana:филиал тоо китайская компания по строительству и развитию синьсин в республике казахстан": {
+  "name": "Филиал ТОО Китайская Компания по строительству и развитию Синьсин в Республике Казахстан",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
+ },
  "astana:х о иксо сеть магазинов товаров из южной кореи иксо": {
   "name": "Х.О.ИКСО (Сеть магазинов товаров из Южной Кореи ИКСО)",
   "city": "astana",
@@ -5397,6 +5519,20 @@
   "instagram": "avtomarket06",
   "source": "https://2gis.kz/atyrau/firm/70000001066531440"
  },
+ "atyrau:hydroserv central asia": {
+  "name": "Hydroserv Central Asia",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "hydroserv_ca",
+  "website": "http://hydroservgroup.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001103318820",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:sunali": {
   "name": "SunAli",
   "city": "atyrau",
@@ -5477,6 +5613,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "karaganda:ekibastuzferroalloys": {
+  "name": "EkibastuzFerroAlloys",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
  },
  "karaganda:eurasian machinery евразиан машинери": {
   "name": "Eurasian Machinery (Евразиан Машинери)",
@@ -5656,6 +5799,15 @@
   "checked_at": "2026-10-28T18:44:37+00:00",
   "instagram": "tpa_sary_arka",
   "source": "https://2gis.kz/karaganda/firm/70000001100524756"
+ },
+ "karaganda:trdelnikgo": {
+  "name": "TrdelnikGo",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "trdelnikgo",
+  "source": "https://2gis.kz/karaganda/firm/70000001114127998"
  },
  "karaganda:автоматические котлы": {
   "name": "Автоматические Котлы",
@@ -6029,6 +6181,22 @@
    "website"
   ]
  },
+ "kostanay:гостиница медео": {
+  "name": "Гостиница Медео",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "hotel_medeu_kostanay",
+  "website": "http://medeuhotel.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001041793828",
+  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2160e0bd36b5c429.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:каmlitkz": {
   "name": "КаmLitKZ",
   "city": "kostanay",
@@ -6215,6 +6383,13 @@
   "avatar": "58a7c58a39adb20a.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:capex romantic pavlodar": {
+  "name": "CAPEX - «ROMANTIC PAVLODAR»",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
+ },
  "pavlodar:erg kazakhstan": {
   "name": "ERG Kazakhstan",
   "city": "pavlodar",
@@ -6390,6 +6565,24 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:alcomag": {
+  "name": "AlcoMag",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "a1comag",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001116651230"
+ },
+ "petropavlovsk:d treid": {
+  "name": "D-TREID",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00",
+  "instagram": "d_treid",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001110079619"
  },
  "petropavlovsk:dolce mamma": {
   "name": "DOLCE MAMMA",
@@ -6829,6 +7022,13 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "shymkent:уралметаллинвест": {
+  "name": "УралМеталлинвест",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
+ },
  "shymkent:фиркан": {
   "name": "Фиркан",
   "city": "shymkent",
@@ -7259,6 +7459,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:центр с": {
+  "name": "ЦЕНТР-С",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T19:43:27+00:00"
  },
  "ust-kamenogorsk:шығыс innovation": {
   "name": "ШЫҒЫС INNOVATION",

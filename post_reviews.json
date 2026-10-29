@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-29T20:57:11+00:00",
+ "updated_at": "2026-10-29T21:56:50+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -4028,6 +4028,14 @@
     "employer": "АО «Caspian Beverage Holding»",
     "schedule": "1/2, смена 8 часов",
     "address": "Каменское плато"
+   }
+  },
+  "hh-138960613": {
+   "verdict": "approve",
+   "at": "2026-10-29T21:56:50+00:00",
+   "fields": {
+    "employer": "ZR Златарь",
+    "address": "ул. Ю. Ратушного, 74"
    }
   }
  }

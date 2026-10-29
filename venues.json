@@ -73,6 +73,15 @@
   "avatar": "d127ff82713a335c.jpg",
   "avatar_source": "website"
  },
+ "aktobe:avtomarketkaraganda": {
+  "name": "AvtoMarketKaraganda",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "avtomarket04_arynova",
+  "source": "https://2gis.kz/aktobe/firm/70000001058715484"
+ },
  "aktobe:kaznurstroygroup": {
   "name": "KazNurStroyGroup",
   "city": "aktobe",
@@ -180,6 +189,20 @@
   "website": "https://antalya-pool.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001051885880",
   "avatar_checked_at": "2026-10-28T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:arbuz group арбуз груп": {
+  "name": "Arbuz Group (Арбуз Груп)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "arbuz_kz",
+  "website": "http://arbuz.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001383830",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -469,6 +492,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:dream land co": {
+  "name": "Dream Land Co",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
+ },
  "almaty:eagle eye construction": {
   "name": "Eagle Eye Construction",
   "city": "almaty",
@@ -680,6 +710,22 @@
   "avatar": "f6603fc98d6f4927.jpg",
   "avatar_source": "website"
  },
+ "almaty:jet finance тоо mogo kazakhstan": {
+  "name": "Jet Finance (ТОО Mogo Kazakhstan)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "jetfinance.kz",
+  "website": "http://jetfin.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001099361294",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5ee14fd7ccd5b5b5.jpg",
+  "avatar_source": "website"
+ },
  "almaty:joseph джозеф": {
   "name": "Joseph (Джозеф)",
   "city": "almaty",
@@ -797,6 +843,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:morrison code academy": {
+  "name": "Morrison Code Academy",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "morrison_academy",
+  "website": "http://morrison-academy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001058681616",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ee45f73ed7b3d87b.jpg",
+  "avatar_source": "website"
  },
  "almaty:mountain view hotels": {
   "name": "Mountain View Hotels",
@@ -1325,6 +1387,20 @@
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
  },
+ "almaty:аксай нан хбк": {
+  "name": "Аксай-Нан ХБК",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "aksaynan",
+  "website": "http://aksaynan.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000836798",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
   "city": "almaty",
@@ -1469,6 +1545,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:богомолов андрей андреевич": {
+  "name": "Богомолов Андрей Андреевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
  },
  "almaty:бостан": {
   "name": "Бостан",
@@ -1757,6 +1840,15 @@
   ],
   "avatar": "3089f66e2a9ebcc3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:международный аэропорт алматы ао": {
+  "name": "Международный Аэропорт Алматы, АО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "almatyinternationalairport",
+  "source": "https://2gis.kz/almaty/firm/9429940000833020"
  },
  "almaty:мир инструмента алматы": {
   "name": "Мир Инструмента Алматы",
@@ -2183,6 +2275,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:asai clinic": {
+  "name": "ASAI-CLINIC",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
  },
  "astana:astana motors north": {
   "name": "Astana Motors North",
@@ -2812,6 +2911,13 @@
   "instagram": "astoriahotelkz",
   "source": "https://2gis.kz/astana/firm/70000001105215429"
  },
+ "astana:афият": {
+  "name": "Афият",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
+ },
  "astana:байгабулова а м": {
   "name": "Байгабулова А. М",
   "city": "astana",
@@ -2949,6 +3055,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "astana:казахстан мед дез": {
+  "name": "КАЗАХСТАН-МЕД ДЕЗ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "kazakhstan_med_dez",
+  "website": "http://kazmeddez.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001020461045",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:казспецинжиниринг а": {
   "name": "КазСпецИнжиниринг-А",
@@ -3228,12 +3348,26 @@
    "website"
   ]
  },
+ "atyrau:автотехлайн": {
+  "name": "АвтоТехЛайн",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
+ },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",
   "city": "atyrau",
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "atyrau:холдинговая компания казтурборемонт": {
+  "name": "Холдинговая компания КазТурбоРемонт",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
  },
  "karaganda:arcada": {
   "name": "ARCADA",
@@ -3470,6 +3604,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:карбон инвест": {
+  "name": "Карбон-Инвест",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
  },
  "karaganda:марк формэль": {
   "name": "Марк Формэль",
@@ -3763,6 +3904,24 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "pavlodar:small тм скиф трейд тоо": {
+  "name": "Small, ТМ (Скиф Трейд, ТОО)",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "smallkz_official",
+  "telegram": "smallkz",
+  "website": "http://small.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018633257",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "795c428d7ef31d20.jpg",
+  "avatar_source": "telegram"
+ },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
   "city": "pavlodar",
@@ -3899,6 +4058,13 @@
   ],
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
+ },
+ "semey:алатау": {
+  "name": "Алатау",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
  },
  "semey:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
@@ -4107,6 +4273,20 @@
   "avatar": "9fdbeac31d12d0a2.jpg",
   "avatar_source": "website"
  },
+ "uralsk:аксуат": {
+  "name": "АКСУАТ",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "too_aksuat",
+  "website": "http://www.tooaksuat.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001024976446",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:игрушек": {
   "name": "ИГРУШЕК",
   "city": "uralsk",
@@ -4114,12 +4294,40 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "uralsk:нуржанар": {
+  "name": "Нуржанар",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00",
+  "instagram": "nurzhanar.kz",
+  "website": "http://nurzhanar.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025525977",
+  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "ust-kamenogorsk:bus logistic group": {
   "name": "Bus Logistic Group",
   "city": "ust-kamenogorsk",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "ust-kamenogorsk:dtj service": {
+  "name": "DTJ SERVICE",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "ust-kamenogorsk:eurasian minerals trade": {
+  "name": "Eurasian minerals trade",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T04:44:51+00:00"
  },
  "ust-kamenogorsk:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",

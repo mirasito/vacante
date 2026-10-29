@@ -97,6 +97,22 @@
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
  },
+ "aktobe:d city group": {
+  "name": "D city group",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "aktobe:esetmontazh": {
+  "name": "Esetmontazh",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "esetmontazh",
+  "source": "https://2gis.kz/aktobe/firm/70000001066010857"
+ },
  "aktobe:kaznurstroygroup": {
   "name": "KazNurStroyGroup",
   "city": "aktobe",
@@ -262,6 +278,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "almaty:asg development": {
+  "name": "ASG Development",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
  },
  "almaty:aster автомобили": {
   "name": "ASTER Автомобили",
@@ -660,6 +683,21 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "almaty:galanz bottlers ао": {
+  "name": "Galanz Bottlers, АО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "website": "https://www.galanz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037263070",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "844778890062cb2f.jpg",
+  "avatar_source": "website"
+ },
  "almaty:glasman trade": {
   "name": "GLASMAN TRADE",
   "city": "almaty",
@@ -883,6 +921,13 @@
   "instagram": "lion.restaurants",
   "source": "https://2gis.kz/almaty/firm/70000001101025365"
  },
+ "almaty:longbo industry": {
+  "name": "LONGBO-INDUSTRY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
+ },
  "almaty:lumiere service": {
   "name": "LUMIERE Service”",
   "city": "almaty",
@@ -903,6 +948,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:magnum go": {
+  "name": "Magnum GO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "magnumgo.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001084026398"
  },
  "almaty:marrone rosso тм тоо dand m investments": {
   "name": "Marrone Rosso, ТМ ( ТОО DAND M INVESTMENTS)",
@@ -1127,6 +1181,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:sd trade in": {
+  "name": "SD Trade In",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
+ },
  "almaty:sila energy kz сила энерджи кз": {
   "name": "SILA ENERGY KZ (СИЛА ЭНЕРДЖИ КЗ)",
   "city": "almaty",
@@ -1252,6 +1313,20 @@
   "avatar": "39c314e379664a36.jpg",
   "avatar_source": "website"
  },
+ "almaty:svydis astana": {
+  "name": "Svydis Astana",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "svydis.kz",
+  "website": "https://svydis.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000850409",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:tea house ти хаус": {
   "name": "Tea House (Ти Хаус)",
   "city": "almaty",
@@ -1261,6 +1336,19 @@
   "website": "https://teahouse.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790535",
   "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:tele2 altel": {
+  "name": "Tele2/Altel",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "website": "https://tele2.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060766658",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1531,6 +1619,20 @@
   "website": "https://www.ak-cent.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000791812",
   "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:аквапарк гавайи aquapark hawaii": {
+  "name": "Аквапарк Гавайи ( Aquapark Hawaii)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "miami_hawaii_aquapark",
+  "website": "http://www.hawaii.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000886837",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1914,6 +2016,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:каз нью электроникс": {
+  "name": "Каз Нью Электроникс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
  },
  "almaty:казахский ордена знак почета научно исследовательский институт глазных болезней": {
   "name": "Казахский ордена Знак почета научно-исследовательский институт глазных болезней",
@@ -2630,6 +2739,15 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "astana:discovery": {
+  "name": "Discovery",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "discovery_coffee_astana",
+  "source": "https://2gis.kz/astana/firm/70000001080351248"
+ },
  "astana:dora bakery": {
   "name": "DORA Bakery",
   "city": "astana",
@@ -2675,6 +2793,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:floral express": {
+  "name": "«Floral Express»",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
  },
  "astana:floralogistic": {
   "name": "FloraLogistic",
@@ -3076,6 +3201,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "astana:status prof group": {
+  "name": "STATUS PROF GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
+ },
  "astana:strong tea": {
   "name": "Strong tea",
   "city": "astana",
@@ -3408,6 +3540,15 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "astana:каусар": {
+  "name": "Каусар",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "kausar.astana.shayhana",
+  "source": "https://2gis.kz/astana/firm/70000001100863596"
+ },
  "astana:легато": {
   "name": "Легато",
   "city": "astana",
@@ -3588,6 +3729,20 @@
   ],
   "avatar": "5df3670cc3055e35.jpg",
   "avatar_source": "website"
+ },
+ "astana:тәп тәтті": {
+  "name": "Тәп-Тәтті",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "taptatti",
+  "website": "http://taptatti.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018081729",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:умаг": {
   "name": "Умаг",
@@ -3980,6 +4135,29 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "karaganda:котлы xxi век": {
+  "name": "Котлы XXI век",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "kotly.karaganda",
+  "website": "http://kotly-veka.com/",
+  "source": "https://2gis.kz/karaganda/firm/70000001039503863",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f8d0f31f0447f154.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:кристалл авто": {
+  "name": "Кристалл Авто",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00"
+ },
  "karaganda:марк формэль": {
   "name": "Марк Формэль",
   "city": "karaganda",
@@ -4121,6 +4299,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "kostanay:гелиос": {
+  "name": "Гелиос",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "helios_kz",
+  "website": "https://helios.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036642668",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:каmlitkz": {
   "name": "КаmLitKZ",
@@ -4597,6 +4789,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "shymkent:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T07:46:02+00:00",
+  "instagram": "intertopkz",
+  "website": "https://intertop.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025728877",
+  "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:смэу астана": {
   "name": "СМЭУ Астана",

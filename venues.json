@@ -298,6 +298,13 @@
    "website"
   ]
  },
+ "almaty:adala construction": {
+  "name": "Adala Construction",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "almaty:adrenaline fitness адреналин фитнес": {
   "name": "Adrenaline Fitness (Адреналин Фитнес)",
   "city": "almaty",
@@ -552,6 +559,15 @@
   "avatar": "f48eb591bc8821b7.jpg",
   "avatar_source": "website"
  },
+ "almaty:beauty guide": {
+  "name": "Beauty Guide",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00",
+  "instagram": "beauty.guide.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001035950943"
+ },
  "almaty:beauty style": {
   "name": "Beauty Style",
   "city": "almaty",
@@ -631,6 +647,13 @@
   ],
   "avatar": "db097cc8d051df96.jpg",
   "avatar_source": "website"
+ },
+ "almaty:business pro": {
+  "name": "BUSINESS PRO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
  },
  "almaty:buta development": {
   "name": "Buta Development",
@@ -838,6 +861,22 @@
   "avatar": "da05d5072c690dc2.jpg",
   "avatar_source": "website"
  },
+ "almaty:east palace": {
+  "name": "East Palace",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00",
+  "instagram": "eastpalace_hotel",
+  "website": "http://east-hotel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001050761202",
+  "avatar_checked_at": "2026-10-29T17:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f787bec73ddfa361.jpg",
+  "avatar_source": "website"
+ },
  "almaty:elite personnel": {
   "name": "Elite personnel",
   "city": "almaty",
@@ -867,6 +906,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "almaty:eqvi": {
+  "name": "Eqvi",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00",
+  "website": "http://eqvi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117168405",
+  "avatar_checked_at": "2026-10-29T17:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:eurasian machinery евразиан машинери": {
   "name": "Eurasian Machinery (Евразиан Машинери)",
@@ -2213,6 +2265,15 @@
    "website"
   ]
  },
+ "almaty:академбала": {
+  "name": "Академбала",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00",
+  "instagram": "akadembala",
+  "source": "https://2gis.kz/almaty/firm/70000001116314241"
+ },
  "almaty:аквапарк гавайи aquapark hawaii": {
   "name": "Аквапарк Гавайи ( Aquapark Hawaii)",
   "city": "almaty",
@@ -2849,6 +2910,13 @@
    "website"
   ]
  },
+ "almaty:компания стройдекор тм": {
+  "name": "Компания СтройДекор, ТМ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "almaty:компания эврика": {
   "name": "Компания ЭВРИКА",
   "city": "almaty",
@@ -3360,6 +3428,13 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "almaty:фирма амарата": {
+  "name": "Фирма АмаратА",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "almaty:халык life": {
   "name": "Халык-Life",
   "city": "almaty",
@@ -3688,6 +3763,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "astana:bulvar flowers": {
+  "name": "Bulvar Flowers",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "astana:capital education services": {
   "name": "Capital Education Services",
   "city": "astana",
@@ -3773,6 +3855,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "astana:design pro": {
+  "name": "Design Pro",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
  },
  "astana:discovery": {
   "name": "Discovery",
@@ -4584,6 +4673,22 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:голд пар": {
+  "name": "Голд пар",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00",
+  "instagram": "gold.par.astana",
+  "website": "https://gold-par.netlify.app/",
+  "source": "https://2gis.kz/astana/firm/70000001105269282",
+  "avatar_checked_at": "2026-10-29T17:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "94a16b6f299cb59e.jpg",
+  "avatar_source": "website"
+ },
  "astana:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "astana",
@@ -4768,6 +4873,13 @@
   ],
   "avatar": "2567f4c8ffcbc502.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:муратова": {
+  "name": "Муратова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
  },
  "astana:мусатаева ж р meat & beer": {
   "name": "Мусатаева Ж.Р. (MEAT & BEER)",
@@ -5006,6 +5118,13 @@
    "website"
   ]
  },
+ "astana:хасенов т с": {
+  "name": "Хасенов Т.С.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "astana:цан": {
   "name": "ЦАН",
   "city": "astana",
@@ -5217,6 +5336,13 @@
   "avatar": "a5a626f1a7726240.jpg",
   "avatar_source": "website"
  },
+ "karaganda:germes": {
+  "name": "GERMES",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "karaganda:hyundai karaganda": {
   "name": "Hyundai Karaganda",
   "city": "karaganda",
@@ -5244,6 +5370,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:karaganda insulation": {
+  "name": "Karaganda Insulation",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
  },
  "karaganda:kaz metiz каз метиз": {
   "name": "Kaz-metiz (Каз-метиз)",
@@ -5421,6 +5554,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "karaganda:казахмедимпорт": {
+  "name": "КазахМедИмпорт",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00",
+  "instagram": "kazahmedimport.kz",
+  "website": "https://kazahmedimport.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038555096",
+  "avatar_checked_at": "2026-10-29T17:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:казтранстехпром": {
   "name": "КазТрансТехПром",
@@ -6127,6 +6274,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "petropavlovsk:ксп холдинг": {
+  "name": "КСП Холдинг",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "petropavlovsk:масло дел": {
   "name": "Масло-Дел",
   "city": "petropavlovsk",
@@ -6203,6 +6357,13 @@
   ],
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
+ },
+ "semey:nordgold": {
+  "name": "Nordgold",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
  },
  "semey:trans alliance service": {
   "name": "Trans Alliance Service",
@@ -6609,6 +6770,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "uralsk:люстр": {
+  "name": "ЛЮСТР",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
+ },
  "uralsk:нуржанар": {
   "name": "Нуржанар",
   "city": "uralsk",
@@ -6838,6 +7006,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "ust-kamenogorsk:сеть магазинов цифровой и бытовой техники днс казахстан": {
+  "name": "Сеть магазинов цифровой и бытовой техники ДНС КАЗАХСТАН",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T17:43:26+00:00"
  },
  "ust-kamenogorsk:тех эксперт": {
   "name": "Тех.эксперт",

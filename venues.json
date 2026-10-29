@@ -133,6 +133,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:ah wellhouse": {
+  "name": "AH Wellhouse",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00"
+ },
  "almaty:almawine": {
   "name": "ALMAWINE",
   "city": "almaty",
@@ -148,6 +155,13 @@
   ],
   "avatar": "78cd38cb1b45050a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:altin sapa": {
+  "name": "ALTIN SAPA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00"
  },
  "almaty:anajer": {
   "name": "ANAJER",
@@ -243,6 +257,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:bakha potolok": {
+  "name": "BAKHA POTOLOK",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "bakha.potolok",
+  "source": "https://2gis.kz/almaty/firm/70000001098071424"
  },
  "almaty:barista": {
   "name": "Barista",
@@ -371,6 +394,22 @@
    "website"
   ]
  },
+ "almaty:decathlon": {
+  "name": "Decathlon",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "decathlon_kz",
+  "website": "http://decathlon.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001038800154",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "df971ea3f28361ee.jpg",
+  "avatar_source": "website"
+ },
  "almaty:delivery fast": {
   "name": "Delivery Fast",
   "city": "almaty",
@@ -417,6 +456,22 @@
    "website"
   ],
   "avatar": "da05d5072c690dc2.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:elite personnel": {
+  "name": "Elite personnel",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "elite_personnel",
+  "website": "http://www.elite-personnel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001022099270",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a56986c0b8afbf4a.jpg",
   "avatar_source": "website"
  },
  "almaty:elk и эл кей": {
@@ -781,6 +836,21 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:recruit expert": {
+  "name": "Recruit expert",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "website": "http://recruitexpert.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001105223267",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6aecb8ada2b3d8be.jpg",
+  "avatar_source": "website"
+ },
  "almaty:rks kz": {
   "name": "RKS.KZ",
   "city": "almaty",
@@ -935,6 +1005,22 @@
    "website"
   ]
  },
+ "almaty:teplostil": {
+  "name": "TEPLOSTIL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "teplostil_kazakhstan",
+  "website": "http://teplostil.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055590023",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4ed80c863e2dc4ad.jpg",
+  "avatar_source": "website"
+ },
  "almaty:tomiris ип валиев": {
   "name": "Tomiris (ИП Валиев)",
   "city": "almaty",
@@ -1008,6 +1094,29 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:vernao group": {
+  "name": "Vernao Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "vernao_group",
+  "website": "http://vernaogroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001102888372",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:vici kazakhstan": {
+  "name": "VICI-KAZAKHSTAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "vici.kazakhstan",
+  "source": "https://2gis.kz/almaty/firm/70000001060647899"
  },
  "almaty:wefind": {
   "name": "WeFind",
@@ -1390,6 +1499,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:зинулла а с": {
+  "name": "Зинулла А.С",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00"
+ },
  "almaty:зооторг сеть зоомагазинов": {
   "name": "ЗооТорг (Сеть зоомагазинов)",
   "city": "almaty",
@@ -1556,6 +1672,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:мирзоян гарегин руштунович": {
+  "name": "Мирзоян Гарегин Руштунович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00"
  },
  "almaty:модерн ритейл": {
   "name": "МОДЕРН РИТЕЙЛ",
@@ -1801,6 +1924,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:халык life": {
+  "name": "Халык-Life",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "halyk_life",
+  "website": "http://halyklife.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000801890",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7db0610de11ed4aa.jpg",
+  "avatar_source": "website"
  },
  "almaty:центр красоты и здоровья николь": {
   "name": "Центр Красоты и Здоровья НикОль",
@@ -2171,6 +2310,20 @@
   "avatar_checked_at": "2026-10-28T20:44:33+00:00",
   "avatar_tried": [
    "telegram",
+   "website"
+  ]
+ },
+ "astana:iron club": {
+  "name": "Iron club",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "iron_club_ast",
+  "website": "http://ironclub.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001092731018",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
    "website"
   ]
  },
@@ -2671,6 +2824,20 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "astana:легато": {
+  "name": "Легато",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "legato.kz",
+  "website": "http://legato.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001041608760",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:мангал": {
   "name": "МАНГАЛ",
   "city": "astana",
@@ -2965,6 +3132,20 @@
   "avatar": "b2015f15aff7b202.jpg",
   "avatar_source": "website"
  },
+ "karaganda:jet logistic": {
+  "name": "Jet Logistic",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "jet.logistic",
+  "website": "http://jetlogistic.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302944214",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:kaz metiz каз метиз": {
   "name": "Kaz-metiz (Каз-метиз)",
   "city": "karaganda",
@@ -3059,12 +3240,28 @@
   "instagram": "autocentre_bahus",
   "source": "https://2gis.kz/karaganda/firm/70000001034460062"
  },
+ "karaganda:алиди казахстан": {
+  "name": "АЛИДИ Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "alidi.kazakhstan",
+  "source": "https://www.instagram.com/alidi.kazakhstan/"
+ },
  "karaganda:алып 2008": {
   "name": "Алып-2008",
   "city": "karaganda",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "karaganda:альфа кт": {
+  "name": "Альфа-КТ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00"
  },
  "karaganda:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
@@ -3246,6 +3443,21 @@
   "avatar": "6779da0b7fdc57aa.jpg",
   "avatar_source": "website"
  },
+ "kostanay:масло дел": {
+  "name": "Масло-Дел",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "website": "http://maslodel.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001051508338",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a0c3dfbad39a62b0.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:мясоед": {
   "name": "Мясоед",
   "city": "kostanay",
@@ -3403,6 +3615,20 @@
   ],
   "avatar": "af630713181a3cee.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:казахмедимпорт": {
+  "name": "КазахМедИмпорт",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00",
+  "instagram": "kazahmedimport.kz",
+  "website": "http://kazahmedimport.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038555096",
+  "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",
@@ -3691,6 +3917,13 @@
   ],
   "avatar": "3eeb6576911c1b31.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:oskemenagroprodukt": {
+  "name": "OskemenAgroProdukt",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T02:44:24+00:00"
  },
  "ust-kamenogorsk:заречье эколэнд": {
   "name": "Заречье ЭкоЛэнд",

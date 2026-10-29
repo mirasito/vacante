@@ -716,6 +716,13 @@
    "website"
   ]
  },
+ "almaty:crown star": {
+  "name": "Crown Star",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "almaty:cs seven": {
   "name": "CS Seven",
   "city": "almaty",
@@ -2199,6 +2206,13 @@
   "avatar": "efbdd60afc45a0a9.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:акционерный инвестиционный фонд недвижимости east investment group": {
+  "name": "Акционерный инвестиционный фонд недвижимости East Investment Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
   "city": "almaty",
@@ -2428,6 +2442,13 @@
   "avatar": "30cd2d0a5f61024d.jpg",
   "avatar_source": "website"
  },
+ "almaty:виктория": {
+  "name": "Виктория",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "almaty:вин анастасия сергеевна": {
   "name": "Вин Анастасия Сергеевна",
   "city": "almaty",
@@ -2546,6 +2567,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:жан массажный салон": {
+  "name": "Жан массажный салон",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "almaty:жибек жолы": {
   "name": "Жибек жолы",
   "city": "almaty",
@@ -2575,6 +2603,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:зауре": {
+  "name": "Зауре",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
  },
  "almaty:захаров с а": {
   "name": "Захаров С.А",
@@ -2950,6 +2985,13 @@
    "telegram",
    "website"
   ]
+ },
+ "almaty:отель апартаменты": {
+  "name": "Отель-апартаменты",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
  },
  "almaty:парасат": {
   "name": "Парасат",
@@ -3405,6 +3447,13 @@
    "website"
   ]
  },
+ "astana:ag property management": {
+  "name": "AG Property Management",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "astana:agash_oneri": {
   "name": "agash_oneri",
   "city": "astana",
@@ -3499,6 +3548,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:avventurista": {
+  "name": "AVVENTURISTA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "instagram": "avventurista_",
+  "telegram": "avventurista",
+  "source": "https://2gis.kz/astana/firm/70000001102849835",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "c1a41f6213c49164.jpg",
+  "avatar_source": "telegram"
  },
  "astana:beat": {
   "name": "BEAT",
@@ -3659,6 +3724,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "astana:dsc balance": {
+  "name": "DSC Balance",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
  },
  "astana:evs construction": {
   "name": "EVS Construction",
@@ -3840,6 +3912,19 @@
    "website"
   ]
  },
+ "astana:ingri": {
+  "name": "INGRI",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "website": "https://ingri.ru/",
+  "source": "https://2gis.kz/astana/firm/70000001018120711",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:iron club": {
   "name": "Iron club",
   "city": "astana",
@@ -3890,6 +3975,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "astana:lift master": {
+  "name": "Lift Master",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "instagram": "liftmaster.kz",
+  "website": "https://www.lift-master.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018069625",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:lpp kazakhstan лпп казахстан": {
   "name": "LPP Kazakhstan (ЛПП Казахстан)",
@@ -3967,6 +4066,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "astana:ohana": {
+  "name": "Ohana",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
  },
  "astana:orbis machinery": {
   "name": "ORBIS MACHINERY",
@@ -4465,6 +4571,13 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "astana:история вкуса": {
+  "name": "История вкуса",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "astana:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
   "city": "astana",
@@ -4485,6 +4598,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:казахстанский международный колледж": {
+  "name": "КАЗАХСТАНСКИЙ МЕЖДУНАРОДНЫЙ КОЛЛЕДЖ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "instagram": "kilc.college",
+  "website": "https://kilc.edu.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001038950320",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "057aedb9f5dbc74a.jpg",
+  "avatar_source": "website"
  },
  "astana:казспецинжиниринг а": {
   "name": "КазСпецИнжиниринг-А",
@@ -4515,6 +4644,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:магазин мужской одежды sott": {
+  "name": "Магазин мужской одежды SOTT",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "instagram": "sott.astana",
+  "source": "https://2gis.kz/astana/firm/70000001117676726"
  },
  "astana:манабаева": {
   "name": "Манабаева",
@@ -4901,6 +5039,13 @@
   "instagram": "akzhelken_group",
   "source": "https://2gis.kz/atyrau/firm/70000001093959071"
  },
+ "atyrau:квартал": {
+  "name": "КВАРТАЛ",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
+ },
  "atyrau:магазин женской одежды": {
   "name": "Магазин женской одежды",
   "city": "atyrau",
@@ -5132,6 +5277,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "karaganda:ангел": {
+  "name": "Ангел",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00"
  },
  "karaganda:белый ветер kz": {
   "name": "Белый Ветер KZ",
@@ -5622,6 +5774,22 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "pavlodar:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "https://qazaqoil.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001053056711",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d280849cd74f366e.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:small тм скиф трейд тоо": {
   "name": "Small, ТМ (Скиф Трейд, ТОО)",
   "city": "pavlodar",
@@ -6080,6 +6248,21 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "shymkent:завод триумф м м с": {
+  "name": "Завод Триумф М.М.С",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "website": "https://aspan-pro.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001066292972",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f83a49d747d73b9e.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "shymkent",
@@ -6090,6 +6273,19 @@
   "website": "https://intertop.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001025728877",
   "avatar_checked_at": "2026-10-29T07:46:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "shymkent:коллекторское агентство id collect айди коллект": {
+  "name": "КОЛЛЕКТОРСКОЕ АГЕНТСТВО ID COLLECT (АЙДИ КОЛЛЕКТ)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T15:45:22+00:00",
+  "website": "https://idcollect.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055520546",
+  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
   "avatar_tried": [
    "website"
   ]

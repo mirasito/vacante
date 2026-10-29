@@ -11,22 +11,22 @@ from __future__ import annotations
 import html
 import json
 import logging
-from collections.abc import Callable
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import httpx
 
-from vacante import card, direct, review, venues
+from vacante import card, channels, direct, review, venues
 from vacante.models import Vacancy
 from vacante.site.build import instagram_url, twogis_url
 from vacante.store import load_vacancies
 
 log = logging.getLogger(__name__)
 
-# Свои каналы по городам.
-CHANNELS = {"astana": "@vacanteastana", "almaty": "@vacantealmaty"}
+# Свои каналы по городам (config/own_channels.yaml); постим только в уже работающие, см. vacante.channels
+CHANNELS = {city: c["chat"] for city, c in channels.ALL.items()}
 LOCAL = timezone(timedelta(hours=5))  # весь Казахстан живёт по UTC+5
 POST_HOURS = range(8, 22)  # публикуем с 8:00 до 21:59 по местному времени
 # Вакансии от работодателей (через бота) публикуем сразу после одобрения, вне общей очереди,
@@ -233,14 +233,15 @@ def checked_by_agent(vacancies: list[Vacancy], reviews: dict | None) -> list[Vac
 
 
 def review_queue(vacancies: list[Vacancy], posted: dict, reviews: dict, now: datetime,
-                 known: set[str] = frozenset()) -> list[Vacancy]:
+                 known: set[str] = frozenset(), cities: Iterable[str] | None = None) -> list[Vacancy]:
     """Ближайшие кандидаты на пост в каждом городе, которые агент ещё не проверял, в порядке очереди.
 
     Повторы уже вышедших или уже одобренных заведений агенту не показываем, и новых кандидатов не даём,
     пока одобренных и ещё не вышедших хватает на пару часов постов."""
     cutoff = (now - FRESH).isoformat()
     out = []
-    for city in CHANNELS:
+    # По умолчанию — каналы, которые работают всегда (Астана и Алматы)
+    for city in ([c for c, ch in channels.ALL.items() if ch["always"]] if cities is None else cities):
         state = posted.get(city, {})
         seen = set(state.get("ids", []))
         fresh = [v for v in vacancies if v.city == city and v.source != direct.SOURCE and v.id not in seen
@@ -269,14 +270,18 @@ def write_review_queue(data_dir: Path, now: datetime | None = None) -> int:
     vacancies = load_vacancies(data_dir)
     table = venues.load(data_dir)
     known = {v.id for v in vacancies if (venue := venues.lookup(table, v)) and venue.get("avatar")}
-    items = review_queue(vacancies, load_posted(data_dir), review.load(data_dir) or {}, now, known)
+    items = review_queue(vacancies, load_posted(data_dir), review.load(data_dir) or {}, now, known,
+                         channels.live(data_dir))
     payload = {"updated_at": now.isoformat(timespec="seconds"), "vacancies": [review.queue_item(v) for v in items]}
     (data_dir / review.QUEUE).write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", "utf-8")
     return len(items)
 
 
-def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None) -> dict:
+def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None,
+        live: dict[str, str] | None = None) -> dict:
+    """live: работающие каналы, город → @username; по умолчанию из channels.json."""
     now = now or datetime.now(timezone.utc)
+    live = channels.live(data_dir) if live is None else live
     base_url = base_url.rstrip("/")
     held = awaiting_review(data_dir)
     original = {v.id: v for v in load_vacancies(data_dir) if v.id not in held}
@@ -291,7 +296,7 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
     reviews = review.load(data_dir) or {}
     approved_at = {i: r["at"] for i, r in reviews.items() if r.get("verdict") == "approve" and r.get("at")}
     stats = {"posted": 0, "failed": 0}
-    for city, chat in CHANNELS.items():
+    for city, chat in live.items():
         state = posted.setdefault(city, {"ids": [], "titles": [], "last_at": None})
         _backfill(state, list(original.values()), keys_of, now)
         # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь

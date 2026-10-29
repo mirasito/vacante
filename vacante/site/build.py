@@ -17,6 +17,7 @@ from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from vacante import channels
 from vacante import venues as venue_store
 from vacante.direct import POST_URL
 from vacante.models import Vacancy
@@ -30,11 +31,12 @@ PERIOD_LABEL = {"month": "мес", "day": "день", "hour": "час"}
 PER_MONTH = {"month": 1, "day": 22, "hour": 176}
 # Условия, по которым можно отфильтровать список; «С зарплатой» проверяется отдельно.
 FILTER_PERKS = ["Без опыта", "Питание", "Развозка", "Жильё", "Ежедневная оплата", "Можно студентам", "Официально"]
-# Свои каналы vacante по городам: кнопка подписки на страницах города.
-TELEGRAM_CHANNELS = {
-    "astana": "https://t.me/vacanteastana",
-    "almaty": "https://t.me/vacantealmaty",
-}
+
+
+def telegram_channels(data_dir: Path) -> dict[str, str]:
+    """Работающие свои каналы vacante по городам: кнопка подписки на страницах города."""
+    return {city: f"https://t.me/{chat.lstrip('@')}" for city, chat in channels.live(data_dir).items()}
+
 # Ссылки «Ещё вакансии» на поиск hh.kz и рубрику «Работа» OLX: только переход на их сайт, их данные
 # мы не собираем (правила hh.kz запрещают автоматический сбор, OLX закрывает рубрику от ботов).
 # Коды городов hh из справочника api.hh.ru/areas/40, адреса городов OLX из olx.kz/sitemap-locations.xml;
@@ -214,6 +216,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     # Оплаченные «🔥 Срочно» первыми во всех списках, дальше по новизне
     vacancies.sort(key=lambda v: not v.is_top(now))
     venues = venue_store.load(data_dir)
+    tg_channels = telegram_channels(data_dir)
     env = _env()
     # root: путь сайта без домена, чтобы ссылки работали и на vacante.kz, и на <user>.github.io/vacante
     env.globals.update(age=lambda v: age_label(v.posted_at, now), base_url=base_url, top=lambda v: v.is_top(now),
@@ -243,23 +246,23 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     # На страницах списка все вакансии: фильтры и сортировка работают в браузере и должны видеть каждую
     write("", "list.html", heading="Вакансии", vacancies=vacancies, total=len(vacancies),
           city=None, category=None, city_counts=city_counts, category_counts=_category_counts(vacancies),
-          channels=TELEGRAM_CHANNELS)
+          channels=tg_channels)
 
     for slug, items in by_city.items():
         write(slug, "list.html", heading=f"Работа в {_locative(slug)}", vacancies=items, total=len(items),
               city=slug, category=None, city_counts=city_counts, category_counts=_category_counts(items),
-              channels=TELEGRAM_CHANNELS)
+              channels=tg_channels)
         by_cat: dict[str, list[Vacancy]] = defaultdict(list)
         for v in items:
             by_cat[v.category].append(v)
         for cat, cat_items in by_cat.items():
             write(f"{slug}/{cat}", "list.html", heading=f"{CATEGORIES[cat]}: работа в {_locative(slug)}",
                   vacancies=cat_items, total=len(cat_items), city=slug, category=cat, city_counts=city_counts,
-                  category_counts=_category_counts(items), channels=TELEGRAM_CHANNELS)
+                  category_counts=_category_counts(items), channels=tg_channels)
 
     for v in vacancies:
         write(f"v/{v.id}", "vacancy.html", v=v, ld=job_posting_ld(v, base_url, venue_store.lookup(venues, v)),
-              channels=TELEGRAM_CHANNELS)
+              channels=tg_channels)
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404"), "utf-8")
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки
@@ -271,7 +274,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     (out / "admin").mkdir()
     (out / "admin" / "index.html").write_text(env.get_template("admin.html").render(path="admin"), "utf-8")
     if admin_password:
-        sealed = seal(admin_data(data_dir, vacancies, TELEGRAM_CHANNELS, now), admin_password)
+        sealed = seal(admin_data(data_dir, vacancies, tg_channels, now), admin_password)
         (out / "admin" / "sealed.json").write_text(json.dumps(sealed), "utf-8")
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n", "utf-8")
     (out / "sitemap.xml").write_text(env.get_template("sitemap.xml").render(pages=pages), "utf-8")

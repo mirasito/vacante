@@ -66,6 +66,7 @@ jobs:
           # Опубликованное сохраняем после каждого поста: следующий запуск может отменить этот посреди серии
           save() {
             git -C data add posted.json
+            git -C data add channels.json 2>/dev/null || true  # какие свои каналы уже работают
             git -C data diff --cached --quiet && return 0
             git -C data commit -q -m "Посты в каналы $(date -u +'%Y-%m-%d %H:%M') UTC"
             for attempt in 1 2 3; do

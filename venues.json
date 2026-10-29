@@ -72,6 +72,22 @@
   "avatar": "0fe932e4069c010a.jpg",
   "avatar_source": "website"
  },
+ "aktau:дана": {
+  "name": "Дана",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "supermarket.dana",
+  "website": "http://dana-market.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001035446856",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "391e3f0867ad3166.jpg",
+  "avatar_source": "website"
+ },
  "aktau:прокурорский": {
   "name": "Прокурорский",
   "city": "aktau",
@@ -165,6 +181,36 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
+ },
+ "almaty:12 месяцев": {
+  "name": "12 месяцев",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "12_mesyacev_almaty",
+  "website": "http://12.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000827094",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:35 health clubs kazakhstan": {
+  "name": "35 HEALTH CLUBS KAZAKHSTAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "35minut.kz",
+  "website": "http://35minut.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110565939",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c3c5d4838db044df.jpg",
+  "avatar_source": "website"
  },
  "almaty:585 золотой": {
   "name": "585, Золотой",
@@ -722,6 +768,24 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "almaty:flip kz": {
+  "name": "Flip.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "flip.kz",
+  "telegram": "flip_kz",
+  "website": "http://flip.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001047454966",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "9b7f3b31e6a85a5d.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:fort vernyi family ип картанбаева э ш": {
   "name": "FORT VERNYI FAMILY (ИП КАРТАНБАЕВА Э.Ш.)",
   "city": "almaty",
@@ -1019,6 +1083,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "almaty:lamoda kz мода с доставкой тоо": {
+  "name": "Lamoda.kz (Мода с доставкой, ТОО)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "lamoda_kz",
+  "telegram": "lamoda_kz",
+  "website": "http://lamoda.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001111085449",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "497e4781b54a69d4.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:lb dostyk": {
   "name": "LB DOSTYK",
@@ -1427,6 +1509,24 @@
    "website"
   ],
   "avatar": "10a5f8705280e3a8.jpg",
+  "avatar_source": "telegram"
+ },
+ "almaty:small тм скиф трейд тоо": {
+  "name": "Small, ТМ (Скиф Трейд, ТОО)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "smallkz_official",
+  "telegram": "smallkz",
+  "website": "https://small.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000829556",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "ad43fed7f26e4085.jpg",
   "avatar_source": "telegram"
  },
  "almaty:socar": {
@@ -2902,6 +3002,13 @@
   "avatar": "7db0610de11ed4aa.jpg",
   "avatar_source": "website"
  },
+ "almaty:хорека фуд": {
+  "name": "Хорека Фуд",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
+ },
  "almaty:центр красоты и здоровья николь": {
   "name": "Центр Красоты и Здоровья НикОль",
   "city": "almaty",
@@ -3011,6 +3118,22 @@
   "instagram": "3itime_bar",
   "source": "https://2gis.kz/astana/firm/70000001114798147"
  },
+ "astana:35 health clubs kazakhstan": {
+  "name": "35 HEALTH CLUBS KAZAKHSTAN",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "35minut.kz",
+  "website": "http://35minut.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001102723571",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c0e59642afaaff84.jpg",
+  "avatar_source": "website"
+ },
  "astana:acp trade": {
   "name": "ACP Trade",
   "city": "astana",
@@ -3033,6 +3156,13 @@
   "instagram": "agash_oneri",
   "source": "https://2gis.kz/astana/firm/70000001062327354"
  },
+ "astana:alai group": {
+  "name": "ИП ALAI GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
+ },
  "astana:alem agro holding алемагро холдинг": {
   "name": "Alem Agro Holding (АлемАгро Холдинг)",
   "city": "astana",
@@ -3046,6 +3176,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:aramit": {
+  "name": "Aramit",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "aramit_billiard_club",
+  "source": "https://2gis.kz/astana/firm/70000001090756901"
  },
  "astana:asai clinic": {
   "name": "ASAI-CLINIC",
@@ -3146,6 +3285,22 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "cartel_mens_shop",
   "source": "https://2gis.kz/astana/firm/70000001087861371"
+ },
+ "astana:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://www.kfc.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001110484566",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e16aed69b09a4edb.jpg",
+  "avatar_source": "website"
  },
  "astana:center beton company": {
   "name": "Center Beton Company",
@@ -4050,6 +4205,13 @@
    "website"
   ]
  },
+ "astana:манабаева": {
+  "name": "Манабаева",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
+ },
  "astana:мангал": {
   "name": "МАНГАЛ",
   "city": "astana",
@@ -4680,6 +4842,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "karaganda:компания стройдекор тм": {
+  "name": "Компания СтройДекор, ТМ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "stroydecor_karaganda",
+  "website": "http://stroydecor.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302834900",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:котлы xxi век": {
   "name": "Котлы XXI век",
@@ -5341,6 +5517,13 @@
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
  },
+ "semey:trans alliance service": {
+  "name": "Trans Alliance Service",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
+ },
  "semey:алатау": {
   "name": "Алатау",
   "city": "semey",
@@ -5394,6 +5577,13 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "semey:торговый дом азия м": {
+  "name": "Торговый дом Азия-М",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
+ },
  "semey:шығыс шпз": {
   "name": "Шығыс ШПЗ",
   "city": "semey",
@@ -5422,6 +5612,13 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "shymkent:doscar group": {
+  "name": "DOSCAR GROUP",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
+ },
  "shymkent:kub group": {
   "name": "KUB GROUP",
   "city": "shymkent",
@@ -5437,6 +5634,13 @@
   ],
   "avatar": "cc0697ec4ec7da53.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:la tomatina": {
+  "name": "La Tomatina",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
  },
  "shymkent:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -5497,6 +5701,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "shymkent:амина трейд": {
+  "name": "Амина Трейд",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00"
  },
  "shymkent:генерал стафф": {
   "name": "ГЕНЕРАЛ-СТАФФ",
@@ -5587,6 +5798,29 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "oshaq_oral",
   "source": "https://2gis.kz/uralsk/firm/70000001117369794"
+ },
+ "uralsk:taza group": {
+  "name": "Taza group",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "uralsk_karcher",
+  "website": "http://tazagroup.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001035249910",
+  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "uralsk:two friends": {
+  "name": "TWO FRIENDS",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T12:47:32+00:00",
+  "instagram": "two_friends_kz",
+  "source": "https://2gis.kz/uralsk/firm/70000001110524989"
  },
  "uralsk:wefind": {
   "name": "WeFind",

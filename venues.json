@@ -209,6 +209,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:agrofood ltd": {
+  "name": "AGROFOOD LTD",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "almaty:ah wellhouse": {
   "name": "AH Wellhouse",
   "city": "almaty",
@@ -722,6 +729,13 @@
   "instagram": "french_bakery_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001033669069"
  },
+ "almaty:fresh republic": {
+  "name": "Fresh Republic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "almaty:fruit republic alа": {
   "name": "Fruit Republic ALА",
   "city": "almaty",
@@ -974,6 +988,13 @@
    "website"
   ]
  },
+ "almaty:kyndr": {
+  "name": "Kyndr",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "almaty:lb dostyk": {
   "name": "LB DOSTYK",
   "city": "almaty",
@@ -1204,6 +1225,19 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "almaty:ozon": {
+  "name": "Ozon",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00",
+  "website": "https://ozon.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082665956",
+  "avatar_checked_at": "2026-10-29T10:46:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:p2p logistic group": {
   "name": "P2P LOGISTIC GROUP",
   "city": "almaty",
@@ -1299,6 +1333,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "almaty:service auto старыгин а в": {
+  "name": "Service Auto (СТАРЫГИН А.В)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "almaty:sila energy kz сила энерджи кз": {
   "name": "SILA ENERGY KZ (СИЛА ЭНЕРДЖИ КЗ)",
@@ -1424,6 +1465,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:suleimen clinic": {
+  "name": "SULEIMEN CLINIC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "almaty:sulpak": {
   "name": "Sulpak",
@@ -1593,6 +1641,20 @@
   "checked_at": "2026-10-29T02:44:24+00:00",
   "instagram": "vici.kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001060647899"
+ },
+ "almaty:vincent": {
+  "name": "Vincent",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00",
+  "instagram": "vincent.kz",
+  "website": "http://vincentrestaurant.taplink.ws/",
+  "source": "https://2gis.kz/almaty/firm/70000001109542409",
+  "avatar_checked_at": "2026-10-29T10:46:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:wefind": {
   "name": "WeFind",
@@ -2070,6 +2132,13 @@
    "telegram"
   ]
  },
+ "almaty:даньяров е д": {
+  "name": "Даньяров Е.Д.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "almaty:дега": {
   "name": "Дега",
   "city": "almaty",
@@ -2105,6 +2174,13 @@
   ],
   "avatar": "b4b7769464c2981a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:евгений цой алексеевич": {
+  "name": "Евгений Цой Алексеевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
@@ -2304,6 +2380,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "almaty:кутюрина": {
+  "name": "Кутюрина",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "almaty:лаффа": {
   "name": "Лаффа",
@@ -2969,6 +3052,20 @@
   "avatar_checked_at": "2026-10-28T14:47:20+00:00",
   "avatar_tried": [
    "telegram",
+   "website"
+  ]
+ },
+ "astana:connect global": {
+  "name": "Connect Global",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00",
+  "instagram": "visahelp.kaz",
+  "website": "https://visahelp.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001099943367",
+  "avatar_checked_at": "2026-10-29T10:46:00+00:00",
+  "avatar_tried": [
    "website"
   ]
  },
@@ -3865,6 +3962,22 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "astana:парадайс": {
+  "name": "ПАРАДАЙС",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00",
+  "instagram": "paradise_qazaqstan",
+  "website": "http://paradise-qazaqstan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040771244",
+  "avatar_checked_at": "2026-10-29T10:46:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a7a308ffffc84c9a.jpg",
+  "avatar_source": "website"
+ },
  "astana:примавера каз": {
   "name": "Примавера КАЗ",
   "city": "astana",
@@ -3880,6 +3993,15 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "puhovic_official",
   "source": "https://2gis.kz/astana/firm/70000001045497736"
+ },
+ "astana:рахмет": {
+  "name": "РАХМЕТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00",
+  "instagram": "viaggio__shop",
+  "source": "https://2gis.kz/astana/firm/70000001037590582"
  },
  "astana:рационал азия": {
   "name": "РАЦИОНАЛ Азия",
@@ -4804,6 +4926,13 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "pavlodar:one two sleep": {
+  "name": "One-two-sleep",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "pavlodar:small тм скиф трейд тоо": {
   "name": "Small, ТМ (Скиф Трейд, ТОО)",
   "city": "pavlodar",
@@ -4822,12 +4951,34 @@
   "avatar": "795c428d7ef31d20.jpg",
   "avatar_source": "telegram"
  },
+ "pavlodar:startaff": {
+  "name": "Startaff",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00",
+  "website": "http://startaff.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001104894369",
+  "avatar_checked_at": "2026-10-29T10:46:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "447d0083e59c682c.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
   "city": "pavlodar",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "pavlodar:кип technology": {
+  "name": "КИП Technology",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "pavlodar:кэмми group": {
   "name": "КЭММИ GROUP",
@@ -5010,6 +5161,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "semey:бизнес эксперт консалт": {
+  "name": "Бизнес-Эксперт Консалт",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "semey:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
@@ -5309,6 +5467,13 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "ust-kamenogorsk:kazdrill service": {
+  "name": "KAZDRILL SERVICE",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "ust-kamenogorsk:magnum": {
   "name": "MAGNUM",
   "city": "ust-kamenogorsk",
@@ -5408,6 +5573,13 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:налобнов максим валентинович": {
+  "name": "Налобнов Максим Валентинович",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
+ },
  "ust-kamenogorsk:ново широкинский рудник": {
   "name": "Ново-Широкинский рудник",
   "city": "ust-kamenogorsk",
@@ -5463,6 +5635,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:шығыс innovation": {
+  "name": "ШЫҒЫС INNOVATION",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T10:46:00+00:00"
  },
  "ust-kamenogorsk:шығыс жылу": {
   "name": "Шығыс Жылу",

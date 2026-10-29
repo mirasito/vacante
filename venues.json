@@ -103,6 +103,15 @@
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
  },
+ "almaty:aa express": {
+  "name": "AA-Express",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "aa.express_",
+  "source": "https://2gis.kz/almaty/firm/70000001059445078"
+ },
  "almaty:adrenaline fitness адреналин фитнес": {
   "name": "Adrenaline Fitness (Адреналин Фитнес)",
   "city": "almaty",
@@ -212,6 +221,15 @@
    "website"
   ]
  },
+ "almaty:aura 02": {
+  "name": "Aura 02",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "aura02_coffee",
+  "source": "https://2gis.kz/almaty/firm/70000001118736147"
+ },
  "almaty:avrora fashion gallery ип пурей е и": {
   "name": "Avrora Fashion Gallery (ИП Пурей Е.И.)",
   "city": "almaty",
@@ -318,6 +336,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:central city properties": {
+  "name": "Central City Properties",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
+ },
  "almaty:classic kindergarten частный детский сад": {
   "name": "CLASSIC KINDERGARTEN ( Частный детский сад )",
   "city": "almaty",
@@ -352,6 +377,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "almaty:delta sport казахстан": {
+  "name": "Delta Sport (Казахстан)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "almaty:dino fest": {
   "name": "DINO FEST",
@@ -866,6 +898,22 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "almaty:tvin kazakhstan твин казахстан": {
+  "name": "TVIN KAZAKHSTAN (ТВИН КАЗАХСТАН)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "tvin.kazakhstan",
+  "website": "http://tvin-hr.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001076296969",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4e72ff67a5375c9a.jpg",
+  "avatar_source": "website"
+ },
  "almaty:ultra food": {
   "name": "Ultra Food",
   "city": "almaty",
@@ -932,6 +980,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "almaty:ys kazakhstan": {
+  "name": "YS-KAZAKHSTAN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "almaty:yto express international kazakhstan": {
   "name": "YTO EXPRESS INTERNATIONAL (KAZAKHSTAN)",
@@ -1031,6 +1086,20 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:алма мебель тпк": {
+  "name": "Алма-Мебель, ТПК",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "almamebelkz",
+  "website": "https://almamebel.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000834825",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алма телекоммуникейшнс казахстан almaplus": {
   "name": "Алма Телекоммуникейшнс Казахстан (almaPLUS)",
   "city": "almaty",
@@ -1058,6 +1127,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:асторг": {
+  "name": "Асторг",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "almaty:астра лoмбард": {
   "name": "Астра-Лoмбард",
@@ -1157,6 +1233,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "almaty:вин анастасия сергеевна": {
+  "name": "Вин Анастасия Сергеевна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "almaty:гайдаров": {
   "name": "Гайдаров",
@@ -1308,6 +1391,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ким н б": {
+  "name": "КИМ Н. Б.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "almaty:корпорация gulfstream": {
   "name": "КОРПОРАЦИЯ GULFSTREAM",
@@ -1549,6 +1639,22 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "almaty:тайсейко": {
+  "name": "Тайсейко",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "doublecoffee_almaty",
+  "website": "http://doublecoffee.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001041258049",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "938cde019632e18b.jpg",
+  "avatar_source": "website"
+ },
  "almaty:телс карго казахстан": {
   "name": "ТЕЛС КАРГО КАЗАХСТАН",
   "city": "almaty",
@@ -1750,6 +1856,13 @@
    "website"
   ]
  },
+ "astana:bright retail": {
+  "name": "BRIGHT RETAIL",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
+ },
  "astana:cartel": {
   "name": "CARTEL",
   "city": "astana",
@@ -1774,6 +1887,13 @@
    "website"
   ]
  },
+ "astana:delivery fast": {
+  "name": "Delivery Fast",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
+ },
  "astana:dora bakery": {
   "name": "DORA Bakery",
   "city": "astana",
@@ -1789,6 +1909,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "astana:evs construction": {
+  "name": "EVS Construction",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "evsgroup.kz",
+  "website": "https://evsgroup.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001023908166",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b96eca4dc5240994.jpg",
+  "avatar_source": "website"
  },
  "astana:floralogistic": {
   "name": "FloraLogistic",
@@ -2021,6 +2157,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "astana:rixos president hotel astana": {
+  "name": "RIXOS  PRESIDENT  HOTEL  ASTANA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "rixospresidentastana",
+  "website": "https://presidentastana.rixos.com/",
+  "source": "https://2gis.kz/astana/firm/70000001018072481",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:sheraton astana hotel": {
   "name": "Sheraton Astana Hotel",
@@ -2528,6 +2678,20 @@
    "website"
   ]
  },
+ "astana:эклипс сервис": {
+  "name": "Эклипс сервис",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "eklipsservis",
+  "website": "https://eklips.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018127803",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:элан в": {
   "name": "ЭЛАН-В",
   "city": "astana",
@@ -2723,6 +2887,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "karaganda:грамматикопуло к и": {
+  "name": "ГРАММАТИКОПУЛО К.И.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "karaganda:казтранстехпром": {
   "name": "КазТрансТехПром",
@@ -3086,6 +3257,31 @@
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
  },
+ "semey:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00",
+  "instagram": "fixprice.kazakhstan",
+  "telegram": "fixprice_kazakhstan",
+  "website": "https://fix-price.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001076149699",
+  "avatar_checked_at": "2026-10-29T00:43:40+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "caea51af2dcd2bfc.jpg",
+  "avatar_source": "telegram"
+ },
+ "semey:калкан а в": {
+  "name": "КАЛКАН А.В.",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
+ },
  "semey:шығыс шпз": {
   "name": "Шығыс ШПЗ",
   "city": "semey",
@@ -3175,6 +3371,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "shymkent:генерал стафф": {
+  "name": "ГЕНЕРАЛ-СТАФФ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T00:43:40+00:00"
  },
  "shymkent:смэу астана": {
   "name": "СМЭУ Астана",

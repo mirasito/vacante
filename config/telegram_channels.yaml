@@ -5,6 +5,8 @@
 # city — город по умолчанию для постов канала (если в тексте не указан другой).
 # Чтобы отключить канал, поставьте enabled: false. Если владелец канала
 # попросит убрать его из сбора, удалите строку целиком.
+# 29.10.2026 отключена сетка досок объявлений (enabled: false): одни и те же рекламные посты
+# во всех каналах сразу, барахолка и почти ни одной вакансии за две недели.
 
 channels:
   # Алматы
@@ -21,7 +23,7 @@ channels:
   - {username: agashka_job_almaty, city: almaty}
   - {username: almatyrabota360, city: almaty}
   - {username: alaportjobs, city: almaty}
-  - {username: almaty_rabota_vacancy, city: almaty}
+  - {username: almaty_rabota_vacancy, city: almaty, enabled: false}
 
   # Астана
   - {username: astana_job_vakansii, city: astana}
@@ -32,7 +34,7 @@ channels:
   - {username: rabota_astana, city: astana}
   - {username: astana_rabota_jumys, city: astana}
   - {username: rabota_v_nursultane1, city: astana}
-  - {username: astana_rabota_vacancy, city: astana}
+  - {username: astana_rabota_vacancy, city: astana, enabled: false}
   - {username: astanakettik, city: astana}
 
   # Несколько городов (город определяем по тексту)
@@ -40,7 +42,7 @@ channels:
   - {username: jumystap1, city: null}
   - {username: jobs_kazakhstan, city: null}
   - {username: horeca_kz1, city: null}
-  - {username: trudogolikz, city: null}
+  - {username: trudogolikz, city: null, enabled: false}
   - {username: kz_job_opportunities, city: null}
   - {username: tengiz_vahta, city: null}
 
@@ -63,16 +65,16 @@ channels:
   - {username: rabota_v_semee, city: semey}
   - {username: rabotaaktau, city: aktau}
   - {username: rabota_v_aktobe, city: aktobe}
-  - {username: rabotkz, city: null}
-  - {username: kzjumys, city: null}
+  - {username: rabotkz, city: null, enabled: false}
+  - {username: kzjumys, city: null, enabled: false}
 
   # Городские доски объявлений, где много вакансий. Продажи, аренду и услуги разбор отсеивает сам.
-  - {username: vakankz, city: null}
-  - {username: vacankz1, city: astana}
-  - {username: avastane, city: astana}
-  - {username: oastana, city: astana}
-  - {username: arbitans, city: almaty}
-  - {username: vkostanai, city: kostanay}
-  - {username: petropavlovkz, city: petropavlovsk}
-  - {username: pavlogradkz, city: pavlodar}
-  - {username: ekibasik, city: null}  # Экибастуз, своего города в списке нет
+  - {username: vakankz, city: null, enabled: false}
+  - {username: vacankz1, city: astana, enabled: false}
+  - {username: avastane, city: astana, enabled: false}
+  - {username: oastana, city: astana, enabled: false}
+  - {username: arbitans, city: almaty, enabled: false}
+  - {username: vkostanai, city: kostanay, enabled: false}
+  - {username: petropavlovkz, city: petropavlovsk, enabled: false}
+  - {username: pavlogradkz, city: pavlodar, enabled: false}
+  - {username: ekibasik, city: null, enabled: false}  # Экибастуз, своего города в списке нет

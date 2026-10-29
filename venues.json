@@ -72,6 +72,15 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "aktau:смак": {
+  "name": "Смак",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "kulinariya_smak_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001028572387"
+ },
  "aktau:топ стоп": {
   "name": "ТОП-СТОП",
   "city": "aktau",
@@ -96,6 +105,13 @@
   "checked_at": "2026-10-29T04:44:51+00:00",
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
+ },
+ "aktobe:consumer trade company": {
+  "name": "Consumer Trade Company",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "aktobe:d city group": {
   "name": "D city group",
@@ -442,6 +458,15 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "almaty:buta development": {
+  "name": "Buta Development",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "buta.group.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001114404438"
+ },
  "almaty:caffe del teatro": {
   "name": "CAFFE DEL TEATRO",
   "city": "almaty",
@@ -643,6 +668,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:firm kaz centre": {
+  "name": "FIRM KAZ CENTRE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "almaty:fort vernyi family ип картанбаева э ш": {
   "name": "FORT VERNYI FAMILY (ИП КАРТАНБАЕВА Э.Ш.)",
@@ -877,6 +909,15 @@
    "website"
   ]
  },
+ "almaty:koton textile котон текстиль": {
+  "name": "KOTON TEXTILE (КОТОН Текстиль)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "kotonkazakhstan",
+  "source": "https://2gis.kz/almaty/firm/70000001041693626"
+ },
  "almaty:kulikov": {
   "name": "Kulikov",
   "city": "almaty",
@@ -987,6 +1028,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:medteka": {
+  "name": "Medteka",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "almaty:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
@@ -1114,6 +1162,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "almaty:procoffee": {
+  "name": "ProCoffee",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "procoffee.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001097293522"
  },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
@@ -1565,6 +1622,13 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "almaty:авто дом сервис": {
+  "name": "АВТО-ДОМ-СЕРВИС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
+ },
  "almaty:автора": {
   "name": "Автора",
   "city": "almaty",
@@ -1650,6 +1714,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:актуаль клуб оптика лтд": {
+  "name": "Актуаль Клуб Оптика ЛТД",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "actualoptic_kz",
+  "telegram": "actualopticsale",
+  "source": "https://2gis.kz/almaty/firm/70000001036832023",
+  "avatar_checked_at": "2026-10-29T08:44:59+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "efbdd60afc45a0a9.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
@@ -2079,6 +2159,20 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "almaty:компания эврика": {
+  "name": "Компания ЭВРИКА",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "evrika.kazakhstan",
+  "website": "https://evrika.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001065052097",
+  "avatar_checked_at": "2026-10-29T08:44:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:корпорация gulfstream": {
   "name": "КОРПОРАЦИЯ GULFSTREAM",
   "city": "almaty",
@@ -2434,6 +2528,13 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "almaty:техстройконтракт": {
+  "name": "ТЕХСТРОЙКОНТРАКТ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
+ },
  "almaty:тк пищевик": {
   "name": "ТК Пищевик",
   "city": "almaty",
@@ -2555,6 +2656,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:юбилейный": {
+  "name": "Юбилейный",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "almaty:ювелирная компания merhat jewelry ип кенжеғалиева т б": {
   "name": "Ювелирная компания MERHAT JEWELRY (ИП КЕНЖЕҒАЛИЕВА Т. Б)",
@@ -2814,6 +2922,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:food retail pro": {
+  "name": "Food Retail PRO",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "astana:fortebank": {
   "name": "ForteBank",
@@ -3930,6 +4045,20 @@
   "avatar": "a5a626f1a7726240.jpg",
   "avatar_source": "website"
  },
+ "karaganda:hyundai karaganda": {
+  "name": "Hyundai Karaganda",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "hyundai_karaganda",
+  "website": "http://karaganda.hyundai.kz/ru/",
+  "source": "https://2gis.kz/karaganda/firm/70000001041384239",
+  "avatar_checked_at": "2026-10-29T08:44:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:jet logistic": {
   "name": "Jet Logistic",
   "city": "karaganda",
@@ -4026,6 +4155,13 @@
   ],
   "avatar": "3375d5225918e679.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:tm logistic": {
+  "name": "TM-LOGISTIC",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "karaganda:tomiris ип валиев": {
   "name": "Tomiris (ИП Валиев)",
@@ -4157,6 +4293,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "karaganda:людмила kz tm аян": {
+  "name": "Людмила-KZ TM Аян",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "ayan_supermarket",
+  "website": "https://ayan.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302829693",
+  "avatar_checked_at": "2026-10-29T08:44:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:марк формэль": {
   "name": "Марк Формэль",
@@ -4436,6 +4586,13 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "kyzylorda:люма клиник": {
+  "name": "ЛЮМА КЛИНИК",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
+ },
  "kyzylorda:полежаев андрей валерьевич": {
   "name": "Полежаев Андрей Валерьевич",
   "city": "kyzylorda",
@@ -4539,6 +4696,24 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:m1 сервис": {
+  "name": "M1 Сервис",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "m1_service.ptr",
+  "telegram": "mobil_service_petropavl",
+  "website": "http://mobilservice.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001075349930",
+  "avatar_checked_at": "2026-10-29T08:44:59+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "8942e0a5ab30b0b0.jpg",
+  "avatar_source": "telegram"
  },
  "petropavlovsk:magnum": {
   "name": "MAGNUM",
@@ -4706,6 +4881,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "shymkent:atamiras s": {
+  "name": "ATAMIRAS.S",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00"
  },
  "shymkent:kub group": {
   "name": "KUB GROUP",
@@ -4997,6 +5179,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "ust-kamenogorsk:докка": {
+  "name": "ДОККА",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-29T08:44:59+00:00",
+  "instagram": "dokka.kz",
+  "website": "https://dokka.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001030050301",
+  "avatar_checked_at": "2026-10-29T08:44:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:заречье эколэнд": {
   "name": "Заречье ЭкоЛэнд",

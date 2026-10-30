@@ -263,6 +263,22 @@
    "website"
   ]
  },
+ "aktobe:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001031848232",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c8df2ef0fc0e35e1.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:kaznurstroygroup": {
   "name": "KazNurStroyGroup",
   "city": "aktobe",
@@ -297,6 +313,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "aktobe:гелиос": {
+  "name": "Гелиос",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
  },
  "aktobe:казснаблогистиксервис": {
   "name": "КазСнабЛогистикСервис",
@@ -592,6 +615,13 @@
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
  },
+ "almaty:asj company": {
+  "name": "ASJ company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "almaty:aspan rehab clinic 2": {
   "name": "ASPAN REHAB CLINIC-2",
   "city": "almaty",
@@ -805,6 +835,23 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "almaty:bns group": {
+  "name": "BNS Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "telegram": "bnsclub",
+  "website": "https://bns-trade.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089022288",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "f114fc58412c1e78.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:bugel алматы": {
   "name": "BUGEL Алматы",
   "city": "almaty",
@@ -893,6 +940,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:chickenem": {
+  "name": "ChickenEm",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "chickenem.kz",
+  "website": "https://abchickenem.tilda.ws/links",
+  "source": "https://2gis.kz/almaty/firm/70000001039538267",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:chimbulak development": {
   "name": "Chimbulak Development",
@@ -1100,6 +1161,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "almaty:endeavour": {
+  "name": "ENDEAVOUR",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "endeavour.kz",
+  "website": "http://endeavour.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000786894",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:eqvi": {
   "name": "Eqvi",
@@ -1309,6 +1384,13 @@
   ],
   "avatar": "b69ebbfefad03941.jpg",
   "avatar_source": "website"
+ },
+ "almaty:halyq soft": {
+  "name": "Halyq Soft",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
  },
  "almaty:high level хай левел": {
   "name": "High Level (Хай Левел)",
@@ -1999,6 +2081,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:shanyraq study": {
+  "name": "SHANYRAQ STUDY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "almaty:sila energy kz сила энерджи кз": {
   "name": "SILA ENERGY KZ (СИЛА ЭНЕРДЖИ КЗ)",
   "city": "almaty",
@@ -2057,6 +2146,13 @@
   ],
   "avatar": "ad43fed7f26e4085.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:smart english": {
+  "name": "Smart English",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
  },
  "almaty:socar": {
   "name": "SOCAR",
@@ -3087,6 +3183,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:жакашбаев": {
+  "name": "Жакашбаев",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "almaty:жан массажный салон": {
   "name": "Жан массажный салон",
   "city": "almaty",
@@ -3612,6 +3715,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "almaty:первый пивзавод": {
+  "name": "ПЕРВЫЙ ПИВЗАВОД",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "pivzavod1.kz",
+  "website": "http://pivzavod1.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001024922",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "80c63bb2086cc442.jpg",
+  "avatar_source": "website"
  },
  "almaty:платон аа": {
   "name": "Платон-АА",
@@ -4664,6 +4783,15 @@
   "avatar": "462ab75ad2efbfda.jpg",
   "avatar_source": "website"
  },
+ "astana:hookah place": {
+  "name": "Hookah Place",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "hookahplace_botanic",
+  "source": "https://2gis.kz/astana/firm/70000001113657283"
+ },
  "astana:ined kz": {
   "name": "ined.kz",
   "city": "astana",
@@ -5271,6 +5399,13 @@
   "instagram": "astana_activ_zoloto",
   "source": "https://www.instagram.com/astana_activ_zoloto/"
  },
+ "astana:алотос": {
+  "name": "Алотос",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "astana:амангалиева": {
   "name": "АМАНГАЛИЕВА",
   "city": "astana",
@@ -5637,6 +5772,13 @@
   "instagram": "steakhouse.mangal",
   "source": "https://2gis.kz/astana/firm/70000001089777153"
  },
+ "astana:марал": {
+  "name": "Марал",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "astana:марк формэль": {
   "name": "Марк Формэль",
   "city": "astana",
@@ -5727,6 +5869,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "astana:проект пинт": {
+  "name": "ПРОЕКТ ПИНТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "astana:пуховик": {
   "name": "Пуховик",
   "city": "astana",
@@ -5783,12 +5932,33 @@
   "instagram": "rik_pivo",
   "source": "https://2gis.kz/astana/firm/70000001019440535"
  },
+ "astana:сайрам нан": {
+  "name": "Сайрам нан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "sayram.nan",
+  "website": "https://sayram-nan.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001069144341",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:салават": {
   "name": "Салават",
   "city": "astana",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:свой": {
+  "name": "Свой",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
  },
  "astana:сеть лаундж баров hookah place": {
   "name": "Сеть лаундж-баров Hookah Place",
@@ -7780,6 +7950,20 @@
   "avatar": "f83a49d747d73b9e.jpg",
   "avatar_source": "website"
  },
+ "shymkent:занур": {
+  "name": "ЗАНУР",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00",
+  "instagram": "dr_bulatovna",
+  "website": "http://bulatovna.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001035503199",
+  "avatar_checked_at": "2026-10-30T01:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "shymkent",
@@ -7821,6 +8005,13 @@
    "website"
   ]
  },
+ "shymkent:охранное агентство its": {
+  "name": "Охранное Агентство ITS",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
+ },
  "shymkent:смэу астана": {
   "name": "СМЭУ Астана",
   "city": "shymkent",
@@ -7848,6 +8039,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "shymkent:умарова": {
+  "name": "УМАРОВА",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T01:43:30+00:00"
  },
  "shymkent:уралметаллинвест": {
   "name": "УралМеталлинвест",

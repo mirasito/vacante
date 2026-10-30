@@ -43,47 +43,49 @@
  },
  "@vacantesemey": {
   "city": "semey",
-  "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "live": true,
+  "checked_at": "2026-10-30T07:50:28+00:00",
+  "since": "2026-10-30T07:50:28+00:00"
  },
  "@vacantekostanay": {
   "city": "kostanay",
-  "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "live": true,
+  "checked_at": "2026-10-30T07:50:28+00:00",
+  "since": "2026-10-30T07:50:28+00:00"
  },
  "@vacanteuralsk": {
   "city": "uralsk",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  },
  "@vacantepetropavlovsk": {
   "city": "petropavlovsk",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  },
  "@vacantetaraz": {
   "city": "taraz",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  },
  "@vacantekyzylorda": {
   "city": "kyzylorda",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  },
  "@vacanteturkestan": {
   "city": "turkestan",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  },
  "@vacantekokshetau": {
   "city": "kokshetau",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  },
  "@vacantetaldykorgan": {
   "city": "taldykorgan",
   "live": false,
-  "checked_at": "2026-10-30T06:37:01+00:00"
+  "checked_at": "2026-10-30T07:50:28+00:00"
  }
 }

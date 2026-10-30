@@ -692,6 +692,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:ags fittech": {
+  "name": "AGS FITTECH",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
+ },
  "almaty:ah wellhouse": {
   "name": "AH Wellhouse",
   "city": "almaty",
@@ -869,6 +876,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:armandar": {
+  "name": "ARMANDAR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
  },
  "almaty:asai clinic": {
   "name": "ASAI-CLINIC",
@@ -2417,6 +2431,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:ng distribution": {
+  "name": "NG Distribution",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
+ },
  "almaty:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
   "city": "almaty",
@@ -3777,6 +3798,13 @@
    "website"
   ]
  },
+ "almaty:аяла": {
+  "name": "Аяла",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
+ },
  "almaty:бакорда": {
   "name": "Бакорда",
   "city": "almaty",
@@ -4483,6 +4511,22 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:ламэд": {
+  "name": "Ламэд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "lamedkz",
+  "website": "https://www.lamed.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000797343",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9c3cbb061b6ab5d3.jpg",
+  "avatar_source": "website"
+ },
  "almaty:лаффа": {
   "name": "Лаффа",
   "city": "almaty",
@@ -5038,6 +5082,13 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "almaty:тау жетысу": {
+  "name": "ТАУ ЖЕТЫСУ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
+ },
  "almaty:телс карго казахстан": {
   "name": "ТЕЛС КАРГО КАЗАХСТАН",
   "city": "almaty",
@@ -5278,6 +5329,20 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "almaty:эгида group": {
+  "name": "Эгида Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "egidagroupkz",
+  "website": "http://egida.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043425564",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:элит макс строй": {
   "name": "Элит Макс Строй",
   "city": "almaty",
@@ -5342,6 +5407,13 @@
   "checked_at": "2026-10-28T21:46:06+00:00",
   "instagram": "merhat_jewelry",
   "source": "https://2gis.kz/almaty/firm/70000001038668959"
+ },
+ "almaty:юрий": {
+  "name": "Юрий",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
  },
  "almaty:яхьяров": {
   "name": "ИП Яхьяров",
@@ -5743,6 +5815,20 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "instagram": "creatura_kazakhstan",
   "source": "https://2gis.kz/astana/firm/70000001078732348"
+ },
+ "astana:cupedoor": {
+  "name": "CUPEDOOR",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "cupedoor",
+  "website": "http://cupedoor.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001046022406",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:danmar строй": {
   "name": "Danmar Строй",
@@ -6442,6 +6528,20 @@
    "website"
   ]
  },
+ "astana:planirovka": {
+  "name": "Planirovka",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "planirovkaa",
+  "website": "https://planirovka-calc.netlify.app/glavnaya",
+  "source": "https://2gis.kz/astana/firm/70000001095173362",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:prima distribution": {
   "name": "Prima Distribution",
   "city": "astana",
@@ -6610,6 +6710,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "astana:spark логистика": {
+  "name": "Spark Логистика",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "website": "http://spark.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018073529",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:sq": {
   "name": "SQ",
@@ -7076,6 +7189,20 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "astana:ванилла кунаева": {
+  "name": "Ванилла Кунаева",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "vanillacoffee.astana",
+  "website": "http://vanillahandmade.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001115350951",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:вечное небо": {
   "name": "Вечное Небо",
   "city": "astana",
@@ -7134,6 +7261,22 @@
    "website"
   ],
   "avatar": "94a16b6f299cb59e.jpg",
+  "avatar_source": "website"
+ },
+ "astana:голпас": {
+  "name": "ГолПас",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "golpas_sportbars",
+  "website": "http://golpas.cafe/",
+  "source": "https://2gis.kz/astana/firm/70000001083689942",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4615d0a6a4aa03c9.jpg",
   "avatar_source": "website"
  },
  "astana:грамматикопуло к и": {
@@ -7225,6 +7368,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "astana:жасыл аудан kazrecycle manager": {
+  "name": "ЖАСЫЛ АУДАН KAZRECYCLE MANAGER",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
  },
  "astana:жеті аспан супермаркет galmart": {
   "name": "Жеті Аспан (Супермаркет galmart)",
@@ -7570,6 +7720,20 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "astana:ойл": {
+  "name": "ОЙЛ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00",
+  "instagram": "azsoil",
+  "website": "http://oilkz.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019613493",
+  "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:омартрейд": {
   "name": "ОмарТрейд",
   "city": "astana",
@@ -7613,6 +7777,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "astana:продуктовый магазин": {
+  "name": "Продуктовый магазин",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
  },
  "astana:проект пинт": {
   "name": "ПРОЕКТ ПИНТ",
@@ -8002,6 +8173,13 @@
   "checked_at": "2026-10-30T19:43:59+00:00",
   "instagram": "neomarketskz",
   "source": "https://www.instagram.com/neomarketskz/"
+ },
+ "astana:экко рос казахстан": {
+  "name": "ЭККО-РОС Казахстан",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
  },
  "astana:эклипс сервис": {
   "name": "Эклипс сервис",
@@ -8929,6 +9107,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "kokshetau:azart company": {
+  "name": "Azart Company",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
+ },
  "kokshetau:etalon auto": {
   "name": "Etalon Auto",
   "city": "kokshetau",
@@ -9671,6 +9856,13 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "pavlodar:детский мир казахстан": {
+  "name": "Детский мир - Казахстан",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
+ },
  "pavlodar:кари кз": {
   "name": "КАРИ КЗ",
   "city": "pavlodar",
@@ -9889,6 +10081,13 @@
   ],
   "avatar": "6618e4f7e7d1f67e.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:аушахметов т ш": {
+  "name": "Аушахметов Т.Ш",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T20:45:03+00:00"
  },
  "petropavlovsk:глобал сервис": {
   "name": "Глобал Сервис",

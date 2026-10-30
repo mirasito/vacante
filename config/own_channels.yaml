@@ -1,0 +1,25 @@
+# Свои Telegram-каналы vacante по городам (ключ — город из vacante.parse.CITIES).
+# Канал из списка включается сам: раз в час автопостинг спрашивает Telegram, админ ли бот
+# @vacantekz_bot в этом канале и может ли публиковать. Как только да, туда идут посты,
+# на сайте появляется кнопка подписки, а агент-модератор начинает проверять вакансии города.
+# Если имя занято и канал создан под другим, поменяйте username здесь.
+# always: true — канал точно работает, без проверки.
+channels:
+  astana: {username: vacanteastana, always: true}
+  almaty: {username: vacantealmaty, always: true}
+  shymkent: {username: vacanteshymkent}
+  karaganda: {username: vacantekaraganda}
+  aktobe: {username: vacanteaktobe}
+  atyrau: {username: vacanteatyrau}
+  aktau: {username: vacanteaktau}
+  pavlodar: {username: vacantepavlodar}
+  ust-kamenogorsk: {username: vacanteoskemen}
+  semey: {username: vacantesemey}
+  kostanay: {username: vacantekostanay}
+  uralsk: {username: vacanteuralsk}
+  petropavlovsk: {username: vacantepetropavlovsk}
+  taraz: {username: vacantetaraz}
+  kyzylorda: {username: vacantekyzylorda}
+  turkestan: {username: vacanteturkestan}
+  kokshetau: {username: vacantekokshetau}
+  taldykorgan: {username: vacantetaldykorgan}

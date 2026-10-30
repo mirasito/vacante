@@ -198,6 +198,13 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "aktau:мангистау волна": {
+  "name": "Мангистау-Волна",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
+ },
  "aktau:натахтари": {
   "name": "Натахтари",
   "city": "aktau",
@@ -363,6 +370,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "aktobe:актюбинская медная компания": {
+  "name": "Актюбинская Медная Компания",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
  },
  "aktobe:алтын алма": {
   "name": "Алтын Алма",
@@ -552,6 +566,22 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:adverso group адверсо груп": {
+  "name": "ADVERSO GROUP (АДВЕРСО ГРУП)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "adverso.group",
+  "website": "https://www.adverso.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001204983",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1bc77bc08c695791.jpg",
+  "avatar_source": "website"
+ },
  "almaty:agrofood ltd": {
   "name": "AGROFOOD LTD",
   "city": "almaty",
@@ -652,6 +682,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:amimed": {
+  "name": "AMIMED",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
  },
  "almaty:anajer": {
   "name": "ANAJER",
@@ -1430,6 +1467,13 @@
    "website"
   ]
  },
+ "almaty:erdem central asia": {
+  "name": "ERDEM CENTRAL ASIA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
+ },
  "almaty:eurasian machinery евразиан машинери": {
   "name": "Eurasian Machinery (Евразиан Машинери)",
   "city": "almaty",
@@ -1919,6 +1963,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:kzburo": {
+  "name": "KZBURO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
+ },
  "almaty:lamoda kz мода с доставкой тоо": {
   "name": "Lamoda.kz (Мода с доставкой, ТОО)",
   "city": "almaty",
@@ -2045,6 +2096,20 @@
   "website": "http://mebitex.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001038885336",
   "avatar_checked_at": "2026-10-28T13:48:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:mechta kz tm тоо мечта маркет": {
+  "name": "Mechta.kz TM ( ТОО Мечта Маркет )",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "mechta.kz",
+  "website": "http://mechta.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000836794",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2228,6 +2293,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:optimus kz": {
+  "name": "Optimus kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
  },
  "almaty:optipack": {
   "name": "ТОО Optipack",
@@ -3938,6 +4010,24 @@
    "website"
   ]
  },
+ "almaty:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "kari_club",
+  "telegram": "kariofficial",
+  "website": "http://kz.kari.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001030206281",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "36b707ac4d35900f.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:карина paper карина пейпа": {
   "name": "Карина Paper (Карина Пейпа)",
   "city": "almaty",
@@ -3957,6 +4047,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "almaty:керемет су ске": {
+  "name": "Керемет Су СКЕ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
  },
  "almaty:ким н б": {
   "name": "КИМ Н. Б.",
@@ -4489,6 +4586,13 @@
    "website"
   ]
  },
+ "almaty:спэйспрачка spaceprachka": {
+  "name": "СПЭЙСПРАЧКА (SPACEPRACHKA)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
+ },
  "almaty:срл": {
   "name": "СРЛ",
   "city": "almaty",
@@ -5011,6 +5115,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "astana:aster автомобили": {
+  "name": "ASTER Автомобили",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "aster_kz",
+  "website": "http://aster.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001032397568",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "badb98fbb7d26d3f.jpg",
+  "avatar_source": "website"
  },
  "astana:asyl bala group": {
   "name": "ASYL Bala Group",
@@ -7339,6 +7459,20 @@
   "instagram": "avtomarket06",
   "source": "https://2gis.kz/atyrau/firm/70000001066531440"
  },
+ "atyrau:caspian offshore construction realty": {
+  "name": "Caspian Offshore Construction Realty",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "cocrealty_hr",
+  "website": "https://cocrealty.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001114811724",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:eurasia support services": {
   "name": "Eurasia Support Services",
   "city": "atyrau",
@@ -8032,6 +8166,20 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "kokshetau:etalon auto": {
+  "name": "Etalon Auto",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "etalon_avto_03",
+  "website": "https://etalonauto.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033494932",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:food market 1": {
   "name": "FOOD MARKET 1",
   "city": "kokshetau",
@@ -8114,6 +8262,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "kostanay:tehnopark kz": {
+  "name": "TEHNOPARK KZ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "tehnopark_kz",
+  "source": "https://2gis.kz/kostanaj/firm/70000001098644766"
  },
  "kostanay:автодом костанай": {
   "name": "Автодом Костанай",
@@ -8230,6 +8387,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:компания ale": {
+  "name": "Компания ALE",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
  },
  "kostanay:компания саламат": {
   "name": "Компания САЛАМАТ",
@@ -8428,6 +8592,13 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "kyzylorda:алменов а у": {
+  "name": "Алменов А.У",
+  "city": "kyzylorda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00"
+ },
  "kyzylorda:дан стафф": {
   "name": "Дан-Стафф",
   "city": "kyzylorda",
@@ -8498,6 +8669,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:kaz minerals management": {
+  "name": "KAZ Minerals Management",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "kazminerals_official",
+  "website": "https://kazminerals.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940001330162",
+  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a7f758c32a319200.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:kiddi": {
   "name": "Kiddi",
@@ -9565,6 +9752,15 @@
   "instagram": "oshaq_oral",
   "source": "https://2gis.kz/uralsk/firm/70000001117369794"
  },
+ "uralsk:simit": {
+  "name": "SIMIT",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "simit_turkish_cafe",
+  "source": "https://2gis.kz/uralsk/firm/70000001112071625"
+ },
  "uralsk:taza group": {
   "name": "Taza group",
   "city": "uralsk",
@@ -9932,6 +10128,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "ust-kamenogorsk:нью йоркер ритейл каз": {
+  "name": "НЬЮ ЙОРКЕР Ритейл КАЗ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T12:44:25+00:00",
+  "instagram": "newyorkeronline",
+  "source": "https://2gis.kz/pavlodar/firm/70000001059331894"
  },
  "ust-kamenogorsk:орика казахстан ао": {
   "name": "Орика-Казахстан, АО",

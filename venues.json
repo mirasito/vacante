@@ -53,6 +53,15 @@
   "avatar": "17db3dbfebe101a9.jpg",
   "avatar_source": "website"
  },
+ "aktau:fume lounge": {
+  "name": "Fume Lounge",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00",
+  "instagram": "fume_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001099774610"
+ },
  "aktau:kitsu rolls": {
   "name": "KITSU ROLLS",
   "city": "aktau",
@@ -202,6 +211,13 @@
   ],
   "avatar": "d127ff82713a335c.jpg",
   "avatar_source": "website"
+ },
+ "aktau:трансвелл": {
+  "name": "ТРАНСВЕЛЛ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "aktobe:aktobe business systems": {
   "name": "Aktobe Business Systems",
@@ -488,6 +504,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "almaty:alem": {
+  "name": "Alem",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "almaty:alg company": {
   "name": "ALG Company",
   "city": "almaty",
@@ -500,6 +523,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:allergo clinic": {
+  "name": "Allergo Clinic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00",
+  "instagram": "allergoclinic",
+  "website": "http://allergoclinic.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001053088",
+  "avatar_checked_at": "2026-10-30T02:43:42+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d6c566acbf08233c.jpg",
+  "avatar_source": "website"
  },
  "almaty:almawine": {
   "name": "ALMAWINE",
@@ -2372,6 +2411,13 @@
   "avatar": "4ed80c863e2dc4ad.jpg",
   "avatar_source": "website"
  },
+ "almaty:tiss auto parts": {
+  "name": "TISS AUTO PARTS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "almaty:tnt": {
   "name": "TNT",
   "city": "almaty",
@@ -2392,6 +2438,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:tramax limited трамаkc лимитед": {
+  "name": "TRAMAX Limited (ТРАМАKC Лимитед)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "almaty:trend energy": {
   "name": "TREND ENERGY",
@@ -2526,6 +2579,13 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "almaty:yango group": {
+  "name": "Yango Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "almaty:yes exchange": {
   "name": "YES EXCHANGE",
   "city": "almaty",
@@ -2594,6 +2654,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "almaty:zr златарь": {
+  "name": "ZR ЗЛАТАРЬ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "almaty:аватария": {
   "name": "Аватария",
@@ -3407,6 +3474,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:кахарова": {
+  "name": "Кахарова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "almaty:ким н б": {
   "name": "КИМ Н. Б.",
@@ -4292,6 +4366,13 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "astana:alco&beerpoint": {
+  "name": "Alco&BeerPoint",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "astana:alem agro holding алемагро холдинг": {
   "name": "Alem Agro Holding (АлемАгро Холдинг)",
   "city": "astana",
@@ -4970,6 +5051,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:na batys group": {
+  "name": "NA BATYS GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "astana:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
   "city": "astana",
@@ -5281,6 +5369,13 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "astana:tiss auto parts": {
+  "name": "TISS AUTO PARTS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "astana:tomiris ип валиев": {
   "name": "Tomiris (ИП Валиев)",
   "city": "astana",
@@ -5429,6 +5524,13 @@
   "instagram": "astoriahotelkz",
   "source": "https://2gis.kz/astana/firm/70000001105215429"
  },
+ "astana:астра": {
+  "name": "Астра",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "astana:асхана": {
   "name": "Асхана",
   "city": "astana",
@@ -5442,6 +5544,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "astana:аян": {
+  "name": "Аян",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00",
+  "instagram": "ayan_supermarket",
+  "website": "http://ayan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001035282583",
+  "avatar_checked_at": "2026-10-30T02:43:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:байгабулова а м": {
   "name": "Байгабулова А. М",
@@ -7076,6 +7192,13 @@
    "website"
   ]
  },
+ "kostanay:лопатина о в": {
+  "name": "Лопатина О.В.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "kostanay:марк формэль": {
   "name": "Марк Формэль",
   "city": "kostanay",
@@ -7183,6 +7306,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kyzylorda:adam group inc": {
+  "name": "Adam Group Inc",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "kyzylorda:kyzylorda refinery": {
   "name": "Kyzylorda Refinery",
@@ -7403,6 +7533,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "pavlodar:бис сервис": {
+  "name": "БИС-СЕРВИС",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "pavlodar:каустик ао": {
   "name": "Каустик, АО",
@@ -8269,12 +8406,28 @@
    "website"
   ]
  },
+ "uralsk:парнасқа": {
+  "name": "Парнасқа",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
+ },
  "uralsk:полюс групп": {
   "name": "Полюс Групп",
   "city": "uralsk",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "uralsk:спортмастер казахстан": {
+  "name": "Спортмастер Казахстан",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00",
+  "instagram": "sportmaster_kz",
+  "source": "https://2gis.kz/uralsk/firm/70000001024984537"
  },
  "ust-kamenogorsk:12 месяцев восток": {
   "name": "12 месяцев-Восток",
@@ -8396,6 +8549,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "ust-kamenogorsk:sigua on staff": {
+  "name": "Sigua on Staff",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T02:43:42+00:00"
  },
  "ust-kamenogorsk:stroy invest capital": {
   "name": "Stroy Invest Capital",

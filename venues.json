@@ -836,6 +836,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:bazis а corp": {
+  "name": "BAZIS-А Corp.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "almaty:bbq kazakhstan": {
   "name": "BBQ Kazakhstan",
   "city": "almaty",
@@ -1196,6 +1203,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:digital energy group": {
+  "name": "Digital Energy Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00",
+  "instagram": "digitalenergy.group",
+  "website": "http://digitalenergy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001116808405",
+  "avatar_checked_at": "2026-10-30T06:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:dino fest": {
   "name": "DINO FEST",
@@ -2158,6 +2179,13 @@
   "avatar": "874822e452f58ebf.jpg",
   "avatar_source": "website"
  },
+ "almaty:profskills academy": {
+  "name": "PROFSKILLS ACADEMY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "almaty:qazaq parfum": {
   "name": "QAZAQ PARFUM",
   "city": "almaty",
@@ -2166,6 +2194,13 @@
   "checked_at": "2026-10-30T04:43:33+00:00",
   "instagram": "qazaqparfum",
   "source": "https://2gis.kz/almaty/firm/70000001081108357"
+ },
+ "almaty:qazjihaz": {
+  "name": "QazJihaz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
@@ -3005,6 +3040,20 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:алма ата гостиница": {
+  "name": "Алма-Ата Гостиница",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00",
+  "instagram": "almaty.hotel",
+  "website": "http://hotelalmaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792321",
+  "avatar_checked_at": "2026-10-30T06:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алма мебель тпк": {
   "name": "Алма-Мебель, ТПК",
   "city": "almaty",
@@ -3052,6 +3101,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:алтын алма": {
+  "name": "Алтын Алма",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00",
+  "instagram": "altynalma.kazakhstan",
+  "website": "http://altyn-alma.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001095562608",
+  "avatar_checked_at": "2026-10-30T06:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:альфа кт": {
   "name": "Альфа-КТ",
@@ -3216,6 +3279,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:блинова елена владимировна": {
+  "name": "Блинова Елена Владимировна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "almaty:богомолов андрей андреевич": {
   "name": "Богомолов Андрей Андреевич",
@@ -4028,6 +4098,13 @@
   ],
   "avatar": "80c63bb2086cc442.jpg",
   "avatar_source": "website"
+ },
+ "almaty:пласт продукт тм ахмерова ип": {
+  "name": "Пласт продукт, ТМ (Ахмерова, ИП)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "almaty:платон аа": {
   "name": "Платон-АА",
@@ -4893,6 +4970,13 @@
   "instagram": "dora_bakery",
   "source": "https://2gis.kz/astana/firm/70000001118719154"
  },
+ "astana:doscar group": {
+  "name": "DOSCAR GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "astana:ds trading company": {
   "name": "DS Trading Company",
   "city": "astana",
@@ -4920,6 +5004,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "astana:en trade эн трейд": {
+  "name": "EN TRADE (ЭН ТРЕЙД)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "astana:evs construction": {
   "name": "EVS Construction",
@@ -5767,6 +5858,15 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "astana:автосервис перекресток": {
+  "name": "Автосервис-Перекресток",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00",
+  "instagram": "perekrestok_astana",
+  "source": "https://2gis.kz/astana/firm/70000001091768466"
+ },
  "astana:азия лайн": {
   "name": "Азия-Лайн",
   "city": "astana",
@@ -6005,6 +6105,13 @@
   "instagram": "allur.kz",
   "source": "https://www.instagram.com/allur.kz/"
  },
+ "astana:давлетов а х": {
+  "name": "Давлетов А.Х.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "astana:донер на абая mega silk way": {
   "name": "Донер на Абая (MEGA SILK WAY)",
   "city": "astana",
@@ -6027,6 +6134,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:единый центр списания долгов": {
+  "name": "Единый центр списания долгов",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "astana:ели худели тм ип юлия": {
   "name": "Ели-худели, ТМ (ИП Юлия)",
@@ -6199,6 +6313,13 @@
   ],
   "avatar": "604f73b1d2218c01.jpg",
   "avatar_source": "website"
+ },
+ "astana:кондитерская milky cake": {
+  "name": "Кондитерская MILKY CAKE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "astana:легато": {
   "name": "Легато",
@@ -6675,6 +6796,13 @@
    "website"
   ]
  },
+ "astana:чарын": {
+  "name": "Чарын",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "astana:эклипс сервис": {
   "name": "Эклипс сервис",
   "city": "astana",
@@ -7080,6 +7208,13 @@
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
  },
+ "karaganda:staff up consulting group": {
+  "name": "Staff-UP Consulting Group",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "karaganda:sulpak": {
   "name": "Sulpak",
   "city": "karaganda",
@@ -7205,6 +7340,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "karaganda:интервзрыв": {
+  "name": "ИнтерВзрыв",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "karaganda:казахмедимпорт": {
   "name": "КазахМедИмпорт",
@@ -7336,6 +7478,22 @@
   ],
   "avatar": "9d83aa6d1296ec55.jpg",
   "avatar_source": "telegram"
+ },
+ "karaganda:масло дел": {
+  "name": "Масло-Дел",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00",
+  "instagram": "maslodel_kz",
+  "website": "https://www.maslodel.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000797732",
+  "avatar_checked_at": "2026-10-30T06:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "08cd5308c9cf21f7.jpg",
+  "avatar_source": "website"
  },
  "karaganda:металлофасад": {
   "name": "МЕТАЛЛОФАСАД",
@@ -8038,6 +8196,13 @@
    "website"
   ]
  },
+ "pavlodar:кулер": {
+  "name": "КУЛЕР",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
+ },
  "pavlodar:кэмми group": {
   "name": "КЭММИ GROUP",
   "city": "pavlodar",
@@ -8375,6 +8540,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "semey:рекламно производственная компания семей коркем": {
+  "name": "Рекламно-производственная компания Семей Коркем",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T06:43:37+00:00"
  },
  "semey:торговый дом азия м": {
   "name": "Торговый дом Азия-М",

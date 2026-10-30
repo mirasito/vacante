@@ -63,6 +63,7 @@ TWOGIS_CITIES = {
     "atyrau": "atyrau", "aktau": "aktau", "pavlodar": "pavlodar", "ust-kamenogorsk": "ustkam", "semey": "semey",
     "kostanay": "kostanaj", "uralsk": "uralsk", "taraz": "taraz", "turkestan": "turkestan",
     "petropavlovsk": "petropavlovsk", "kyzylorda": "kyzylorda",
+    "kokshetau": "kokshetau", "taldykorgan": "taldykorgan",
 }
 
 AvatarSource = Callable[[str], bytes | None]

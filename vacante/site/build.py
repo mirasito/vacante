@@ -294,7 +294,8 @@ _LOCATIVE = {"almaty": "Алматы", "astana": "Астане", "shymkent": "Ш
              "aktobe": "Актобе", "atyrau": "Атырау", "aktau": "Актау", "pavlodar": "Павлодаре",
              "ust-kamenogorsk": "Усть-Каменогорске", "semey": "Семее", "kostanay": "Костанае",
              "uralsk": "Уральске", "taraz": "Таразе", "turkestan": "Туркестане",
-             "petropavlovsk": "Петропавловске", "kyzylorda": "Кызылорде"}
+             "petropavlovsk": "Петропавловске", "kyzylorda": "Кызылорде",
+             "kokshetau": "Кокшетау", "taldykorgan": "Талдыкоргане"}
 
 
 def _locative(slug: str) -> str:

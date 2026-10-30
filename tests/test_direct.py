@@ -150,14 +150,32 @@ def test_paid_top_is_posted_again_once_per_payment(tmp_path):
     job = {**JOB, "approved_at": "2026-10-20 06:50:00"}
     save_vacancies(tmp_path, [direct.to_vacancy(job)])
     autopost.save_posted(tmp_path, {"almaty": {"ids": ["bot-7"], "titles": [], "last_at": "2026-10-27T06:55:00+00:00"}})
-    sent = []
-    send = lambda chat, post: sent.append(post.caption)  # noqa: E731
-    at = lambda h: datetime(2026, 10, 27, h, tzinfo=timezone.utc)  # noqa: E731
-    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(7))["posted"] == 0  # уже выходила, не оплачена
-    save_vacancies(tmp_path, [direct.to_vacancy({**job, "boost_until": "2026-11-03 07:30:00"})])
-    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(8))["direct"] == 1
+    sent, pins = [], []
+
+    def send(chat, post):
+        sent.append(post.caption)
+        return 500 + len(sent)  # message_id поста в канале
+
+    def pin(chat, message_id, on):
+        pins.append((chat, message_id, on))
+
+    at = lambda h, day=27: datetime(2026, 10, day, h, tzinfo=timezone.utc)  # noqa: E731
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(7), pin=pin)["posted"] == 0  # уже выходила
+    save_vacancies(tmp_path, [direct.to_vacancy({**job, "boost_until": "2026-10-29 07:30:00"})])
+    stats = autopost.run(tmp_path, "https://vacante.kz", send, now=at(8), pin=pin)
+    assert stats["direct"] == 1 and stats["pinned"] == 1
     assert sent[0].startswith("🔥 <b>Срочно!</b>\nВ Кафе «Зерно» требуется")
-    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(9))["posted"] == 0
-    # Продление: новый срок, ещё один пост
-    save_vacancies(tmp_path, [direct.to_vacancy({**job, "boost_until": "2026-11-10 07:30:00"})])
-    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(10))["direct"] == 1
+    assert pins == [("@vacantealmaty", 501, True)]  # закреплён на весь оплаченный срок
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(9), pin=pin)["posted"] == 0
+    assert len(pins) == 1
+    # Продление: новый срок, ещё один пост и закреп; старый закреп снимается, когда кончится его срок
+    save_vacancies(tmp_path, [direct.to_vacancy({**job, "boost_until": "2026-11-05 07:30:00"})])
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(10), pin=pin)["direct"] == 1
+    assert pins[-1] == ("@vacantealmaty", 502, True)
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(8, 29), pin=pin)["unpinned"] == 1
+    assert pins[-1] == ("@vacantealmaty", 501, False)
+    # Работодатель закрыл вакансию раньше: открепляем сразу
+    save_vacancies(tmp_path, [])
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(9, 29), pin=pin)["unpinned"] == 1
+    assert pins[-1] == ("@vacantealmaty", 502, False)
+    assert autopost.load_posted(tmp_path)["almaty"]["pins"] == []

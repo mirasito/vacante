@@ -59,7 +59,8 @@ class Post:
     buttons: list[tuple[str, str]]  # (текст, ссылка)
 
 
-Sender = Callable[[str, Post], None]
+Sender = Callable[[str, Post], "int | None"]  # возвращает message_id поста, если Telegram его сообщил
+Pinner = Callable[[str, int, bool], None]  # (канал, message_id, закрепить или открепить)
 
 
 def load_posted(data_dir: Path) -> dict:
@@ -203,11 +204,26 @@ def telegram_sender(client: httpx.Client, token: str) -> Sender:
                   "reply_markup": json.dumps(markup, ensure_ascii=False)},
             files={"photo": ("vacancy.png", post.photo, "image/png")},
         )
-        if r.status_code != 200:
-            # В логах только ответ Telegram: адрес запроса содержит токен
-            json_body = r.headers.get("content-type", "").startswith("application/json")
-            raise RuntimeError(f"Telegram {r.status_code}: {r.json().get('description') if json_body else r.reason_phrase}")
+        _check(r)
+        return r.json().get("result", {}).get("message_id")
     return send
+
+
+def telegram_pinner(client: httpx.Client, token: str) -> Pinner:
+    """Закрепляет пост «🔥 Срочно» в канале без уведомления подписчиков и открепляет его после срока.
+    Боту нужно право администратора канала «Редактирование сообщений»."""
+    def pin(chat: str, message_id: int, on: bool) -> None:
+        method, body = ("pinChatMessage", {"disable_notification": True}) if on else ("unpinChatMessage", {})
+        _check(client.post(f"https://api.telegram.org/bot{token}/{method}",
+                           json={"chat_id": chat, "message_id": message_id, **body}))
+    return pin
+
+
+def _check(r: httpx.Response) -> None:
+    if r.status_code != 200:
+        # В логах только ответ Telegram: адрес запроса содержит токен
+        json_body = r.headers.get("content-type", "").startswith("application/json")
+        raise RuntimeError(f"Telegram {r.status_code}: {r.json().get('description') if json_body else r.reason_phrase}")
 
 
 def awaiting_review(data_dir: Path) -> set[str]:
@@ -277,7 +293,7 @@ def write_review_queue(data_dir: Path, now: datetime | None = None) -> int:
     return len(items)
 
 
-def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None,
+def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None, pin: Pinner | None = None,
         live: dict[str, str] | None = None) -> dict:
     """live: работающие каналы, город → @username; по умолчанию из channels.json."""
     now = now or datetime.now(timezone.utc)
@@ -299,18 +315,23 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
     for city, chat in live.items():
         state = posted.setdefault(city, {"ids": [], "titles": [], "last_at": None})
         _backfill(state, list(original.values()), keys_of, now)
+        if pin:
+            _unpin_expired(chat, state, original, pin, now, stats)
         # Сначала вакансии от работодателей: они не ждут слота и не сдвигают общую очередь
         for v in direct_due(vacancies, city, state, now):
             urgent = v.is_top(now)
-            if _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id), urgent):
+            ok, message_id = _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id), urgent)
+            if ok:
                 stats["direct"] = stats.get("direct", 0) + 1
                 _remember(state, keys_of[v.id], now)
                 if urgent:
                     state["tops"] = (state.get("tops", []) + [top_key(v)])[-KEEP:]
+                    if pin and message_id:
+                        _pin(chat, v, message_id, state, pin, stats)
         if not is_due(state["last_at"], now):
             continue
         v = pick(vacancies, city, state, now, known, keys_of, approved_at)
-        if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id)):
+        if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id))[0]:
             state["last_at"] = now.isoformat()
             _remember(state, keys_of[v.id], now)
     save_posted(data_dir, posted)
@@ -318,14 +339,43 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
 
 
 def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, stats: dict,
-             data_dir: Path, venue: dict | None, urgent: bool = False) -> bool:
+             data_dir: Path, venue: dict | None, urgent: bool = False) -> tuple[bool, int | None]:
     try:
-        send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue), urgent))
+        message_id = send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue), urgent))
     except (httpx.HTTPError, RuntimeError) as exc:
         log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
         stats["failed"] += 1
-        return False
+        return False, None
     state["ids"] = (state["ids"] + [v.id])[-KEEP:]
     state["titles"] = (state["titles"] + [v.title])[-KEEP:]
     stats["posted"] += 1
-    return True
+    return True, message_id
+
+
+# Пост оплаченного «🔥 Срочно» закреплён в канале до конца срока (posted.json → pins)
+
+def _pin(chat: str, v: Vacancy, message_id: int, state: dict, pin: Pinner, stats: dict) -> None:
+    try:
+        pin(chat, message_id, True)
+    except (httpx.HTTPError, RuntimeError) as exc:
+        log.warning("закреп в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        return
+    state.setdefault("pins", []).append({"message_id": message_id, "vacancy": v.id, "until": v.top_until})
+    stats["pinned"] = stats.get("pinned", 0) + 1
+
+
+def _unpin_expired(chat: str, state: dict, live: dict[str, Vacancy], pin: Pinner, now: datetime, stats: dict) -> None:
+    """Открепляет посты, у которых кончился оплаченный срок или вакансию закрыли."""
+    keep = []
+    for p in state.get("pins", []):
+        if datetime.fromisoformat(p["until"]) > now and p["vacancy"] in live:
+            keep.append(p)
+            continue
+        try:
+            pin(chat, p["message_id"], False)
+            stats["unpinned"] = stats.get("unpinned", 0) + 1
+        except httpx.HTTPError:
+            keep.append(p)  # сеть: попробуем в следующий раз
+        except RuntimeError as exc:
+            log.warning("открепить в %s: %s", chat, exc)  # пост удалили вручную: забываем
+    state["pins"] = keep

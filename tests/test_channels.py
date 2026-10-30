@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 
 from vacante import autopost, channels
 from vacante.models import RawPost
-from vacante.parse import parse_post
+from vacante.parse import CITIES, parse_post
 from vacante.store import save_vacancies
 
 NOON = datetime(2026, 10, 29, 7, tzinfo=timezone.utc)  # 12:00 в Казахстане
@@ -15,7 +15,8 @@ CONF = {"astana": {"chat": "@vacanteastana", "always": True},
 def test_config_lists_all_main_cities():
     assert channels.ALL["astana"] == {"chat": "@vacanteastana", "always": True}
     assert channels.ALL["shymkent"] == {"chat": "@vacanteshymkent", "always": False}
-    assert len(channels.ALL) == 16
+    assert len(channels.ALL) == 18
+    assert set(channels.ALL) == set(CITIES)
 
 
 def test_new_channel_turns_on_when_bot_is_admin(tmp_path):

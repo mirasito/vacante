@@ -79,7 +79,8 @@ def main() -> None:
             return
         with httpx.Client(timeout=30) as client:
             live = channels.refresh(args.data_dir, channels.telegram_checker(client, token), datetime.now(timezone.utc))
-            stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token), live=live)
+            stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token),
+                                 pin=autopost.telegram_pinner(client, token), live=live)
         logging.info("автопостинг: %s", stats)
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}

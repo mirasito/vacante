@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-30T18:56:34+00:00",
+ "updated_at": "2026-10-30T19:57:09+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -10535,6 +10535,14 @@
     "employer": "Easy Solution",
     "schedule": "3/3 или 7/7",
     "perks": []
+   }
+  },
+  "hh-139022008": {
+   "verdict": "approve",
+   "at": "2026-10-30T19:57:09+00:00",
+   "fields": {
+    "schedule": "6/1 или 5/2, смены 8–10 часов",
+    "address": "пр. Сарыарка, 11"
    }
   }
  }

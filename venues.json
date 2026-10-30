@@ -110,6 +110,13 @@
   "avatar": "9a69b77e5f3529d0.jpg",
   "avatar_source": "website"
  },
+ "aktau:ак кала молл": {
+  "name": "Ак Кала Молл",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "aktau:актаусервискурылыс": {
   "name": "АктауСервисКурылыс",
   "city": "aktau",
@@ -3424,6 +3431,13 @@
   "avatar": "e83596376854b6f3.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:антаев х м": {
+  "name": "Антаев Х.М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "almaty:аптекаплюс": {
   "name": "АПТЕКАПЛЮС",
   "city": "almaty",
@@ -4370,6 +4384,13 @@
    "website"
   ]
  },
+ "almaty:от зарплаты до зарплаты": {
+  "name": "от зарплаты до зарплаты",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "almaty:отель апартаменты": {
   "name": "Отель-апартаменты",
   "city": "almaty",
@@ -4558,6 +4579,20 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "almaty:смартер казахстан": {
+  "name": "Смартер Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "smter_callcenter",
+  "website": "https://smter.ru/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026175242",
+  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:союз металл": {
   "name": "Союз Металл",
   "city": "almaty",
@@ -4606,6 +4641,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:табер трейд кз сеть магазинов подружка": {
+  "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
  },
  "almaty:тайсейко": {
   "name": "Тайсейко",
@@ -5116,6 +5158,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "astana:astana motors qabanbai": {
+  "name": "Astana Motors Qabanbai",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "astana:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "astana",
@@ -5217,6 +5266,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "astana:bro": {
+  "name": "BRO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "brocyberastana",
+  "telegram": "brocybercup",
+  "website": "https://brocyber.taplink.kz/p/fc58cd/",
+  "source": "https://2gis.kz/astana/firm/70000001117714705",
+  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "1588d4b16f15da26.jpg",
+  "avatar_source": "telegram"
  },
  "astana:buildtrust": {
   "name": "BuildTrust",
@@ -5674,6 +5741,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "astana:kaber kids": {
+  "name": "Kaber Kids",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "kaber_kids",
+  "website": "https://taplink.cc/kaber_kids",
+  "source": "https://2gis.kz/astana/firm/70000001038545633",
+  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d565c51c9258a8b8.jpg",
+  "avatar_source": "website"
  },
  "astana:kinderland": {
   "name": "KINDERLAND",
@@ -6617,6 +6700,13 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:даньяров е д": {
+  "name": "Даньяров Е.Д.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "astana:донер на абая mega silk way": {
   "name": "Донер на Абая (MEGA SILK WAY)",
   "city": "astana",
@@ -6705,6 +6795,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "astana:измир": {
+  "name": "Измир",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "izmir_cafe_astana",
+  "source": "https://2gis.kz/astana/firm/70000001088884272"
  },
  "astana:исмурзина с у": {
   "name": "Исмурзина С У",
@@ -7365,6 +7464,13 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "astana:элитная баня": {
+  "name": "Элитная баня",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "astana:эмити интернешнл": {
   "name": "ЭМИТИ Интернешнл",
   "city": "astana",
@@ -7787,6 +7893,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "karaganda:stratera": {
+  "name": "STRATERA",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "stratera.kz",
+  "source": "https://2gis.kz/astana/firm/70000001087690675"
  },
  "karaganda:sulpak": {
   "name": "Sulpak",
@@ -8272,6 +8387,13 @@
   "instagram": "tehnopark_kz",
   "source": "https://2gis.kz/kostanaj/firm/70000001098644766"
  },
+ "kostanay:zakaz auto group": {
+  "name": "Zakaz Auto Group",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "kostanay:автодом костанай": {
   "name": "Автодом Костанай",
   "city": "kostanay",
@@ -8308,6 +8430,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "kostanay:ахметов": {
+  "name": "АХМЕТОВ",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
  },
  "kostanay:балкан курылыс": {
   "name": "Балкан Курылыс",
@@ -9253,6 +9382,13 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "semey:коллекторское агентство seven": {
+  "name": "Коллекторское агентство Seven",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "semey:рекламно производственная компания семей коркем": {
   "name": "Рекламно-производственная компания Семей Коркем",
   "city": "semey",
@@ -9330,6 +9466,22 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "shymkent:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025879632",
+  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "94040154fc3f41c7.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:kub group": {
   "name": "KUB GROUP",
   "city": "shymkent",
@@ -9352,6 +9504,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
+ },
+ "shymkent:lpp kazakhstan лпп казахстан": {
+  "name": "LPP Kazakhstan (ЛПП Казахстан)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
  },
  "shymkent:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -9399,6 +9558,13 @@
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
  },
+ "shymkent:q saiman": {
+  "name": "Q-Saiman",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
+ },
  "shymkent:studyon": {
   "name": "StudyON",
   "city": "shymkent",
@@ -9412,6 +9578,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:temir tulpar automarket": {
+  "name": "TEMIR TULPAR AUTOMARKET",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00"
  },
  "shymkent:womans time": {
   "name": "Woman’s time",
@@ -9554,6 +9727,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "shymkent:смартер казахстан": {
+  "name": "Смартер Казахстан",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T13:44:04+00:00",
+  "instagram": "smter_callcenter",
+  "website": "https://smter.ru/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026175242",
+  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:смэу астана": {
   "name": "СМЭУ Астана",

@@ -229,6 +229,29 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "aktau:звезда актау": {
+  "name": "Звезда Актау",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "aktau:каймак": {
+  "name": "Каймак",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "instagram": "kaimak_kafe_aktau",
+  "website": "https://taplink.cc/kaimak_kafe_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001075291044",
+  "avatar_checked_at": "2026-10-30T21:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "71eb8797c9e4d2b2.jpg",
+  "avatar_source": "website"
+ },
  "aktau:кари кз": {
   "name": "КАРИ КЗ",
   "city": "aktau",
@@ -1427,6 +1450,20 @@
    "website"
   ]
  },
+ "almaty:daryn online": {
+  "name": "Daryn.online",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "instagram": "daryn.online",
+  "website": "https://daryn.online/",
+  "source": "https://2gis.kz/almaty/firm/70000001042989664",
+  "avatar_checked_at": "2026-10-30T21:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:daua pharma": {
   "name": "DAUA Pharma",
   "city": "almaty",
@@ -1820,6 +1857,15 @@
   "instagram": "glovo_kz",
   "source": "https://2gis.kz/almaty/firm/70000001038239655"
  },
+ "almaty:goldcar": {
+  "name": "Goldcar",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "instagram": "goldcar_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001032505326"
+ },
  "almaty:grand hotel tien shan": {
   "name": "Grand Hotel Tien-Shan",
   "city": "almaty",
@@ -1924,6 +1970,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:howaboutsmm": {
+  "name": "Howaboutsmm",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "almaty:hyundai trans auto": {
   "name": "Hyundai Trans Auto",
@@ -2659,6 +2712,15 @@
   "instagram": "qazjihaz_group",
   "source": "https://2gis.kz/almaty/firm/70000001103487134"
  },
+ "almaty:qazyna beauty": {
+  "name": "Qazyna Beauty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "instagram": "qazyna_beauty",
+  "source": "https://2gis.kz/almaty/firm/70000001046992544"
+ },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
   "city": "almaty",
@@ -2687,6 +2749,13 @@
   ],
   "avatar": "6aecb8ada2b3d8be.jpg",
   "avatar_source": "website"
+ },
+ "almaty:resident group": {
+  "name": "Resident Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "almaty:rks kz": {
   "name": "RKS.KZ",
@@ -3489,6 +3558,21 @@
    "website"
   ]
  },
+ "almaty:акра холдинг": {
+  "name": "АКРА Холдинг",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "website": "http://akra-holding.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001047392457",
+  "avatar_checked_at": "2026-10-30T21:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ea28fda38811f4fd.jpg",
+  "avatar_source": "website"
+ },
  "almaty:аксай нан хбк": {
   "name": "Аксай-Нан ХБК",
   "city": "almaty",
@@ -4284,6 +4368,13 @@
    "website"
   ]
  },
+ "almaty:ирбис 2016": {
+  "name": "Ирбис 2016",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
+ },
  "almaty:каз нью электроникс": {
   "name": "Каз Нью Электроникс",
   "city": "almaty",
@@ -4334,6 +4425,13 @@
   "checked_at": "2026-10-29T14:46:23+00:00",
   "instagram": "ashana__qanagat",
   "source": "https://2gis.kz/almaty/firm/70000001080818546"
+ },
+ "almaty:канат": {
+  "name": "Канат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "almaty:капиталпрофснаб": {
   "name": "КАПИТАЛПРОФСНАБ",
@@ -5911,6 +6009,13 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:eurasia klimat евразия климат": {
+  "name": "EurAsia Klimat (ЕврАзия Климат)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
+ },
  "astana:evs construction": {
   "name": "EVS Construction",
   "city": "astana",
@@ -7247,6 +7352,15 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:гккп государственный академический русский театр драмы имени м горького акимата города астана": {
+  "name": "ГККП ГОСУДАРСТВЕННЫЙ АКАДЕМИЧЕСКИЙ РУССКИЙ ТЕАТР ДРАМЫ ИМЕНИ М. ГОРЬКОГО АКИМАТА ГОРОДА АСТАНА",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "instagram": "gorkytheatre.kz",
+  "source": "https://www.instagram.com/gorkytheatre.kz/"
+ },
  "astana:голд пар": {
   "name": "Голд пар",
   "city": "astana",
@@ -7404,6 +7518,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "astana:зияхметов": {
+  "name": "Зияхметов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "astana:ибраев к а": {
   "name": "Ибраев К.А",
@@ -7946,6 +8067,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "solod.astana",
   "source": "https://2gis.kz/astana/firm/70000001039844078"
+ },
+ "astana:сотрудники": {
+  "name": "СОТРУДНИКИ",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "astana:спортмастер казахстан": {
   "name": "Спортмастер Казахстан",
@@ -9048,6 +9176,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "karaganda:специализированный учебный центр по гражданской защите щит": {
+  "name": "Специализированный учебный центр по гражданской защите ЩИТ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
+ },
  "karaganda:стройлогистика": {
   "name": "Стройлогистика",
   "city": "karaganda",
@@ -9159,6 +9294,13 @@
   ],
   "avatar": "6aa4415f987e23f3.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:армада": {
+  "name": "АРМАДА",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "kokshetau:ахметова а г": {
   "name": "Ахметова А.Г.",
@@ -9612,6 +9754,13 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "kyzylorda:береке торг": {
+  "name": "Береке Торг",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
+ },
  "kyzylorda:дан стафф": {
   "name": "Дан-Стафф",
   "city": "kyzylorda",
@@ -9662,6 +9811,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "pavlodar:bn house group": {
+  "name": "BN House Group",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
  },
  "pavlodar:capex romantic pavlodar": {
   "name": "CAPEX - «ROMANTIC PAVLODAR»",
@@ -10362,6 +10518,13 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "semey:мереке": {
+  "name": "Мереке",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00"
+ },
  "semey:рекламно производственная компания семей коркем": {
   "name": "Рекламно-производственная компания Семей Коркем",
   "city": "semey",
@@ -10955,6 +11118,15 @@
   "checked_at": "2026-10-30T10:44:23+00:00",
   "instagram": "altyncar_kuzov",
   "source": "https://2gis.kz/uralsk/firm/70000001117361555"
+ },
+ "uralsk:cosmoshop": {
+  "name": "COSMOSHOP",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T21:43:07+00:00",
+  "instagram": "cosmoshop_uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001039269973"
  },
  "uralsk:oshaq": {
   "name": "OSHAQ",

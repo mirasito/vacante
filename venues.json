@@ -865,6 +865,21 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "almaty:apple tech kazakhstan": {
+  "name": "Apple Tech Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "website": "https://www.apltech.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001025551871",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4c2308e07ba5da03.jpg",
+  "avatar_source": "website"
+ },
  "almaty:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
   "city": "almaty",
@@ -1174,6 +1189,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:biohayat kids": {
+  "name": "BioHayat Kids",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "biohayat.kz",
+  "website": "http://biohayat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001033599347",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6d160e3b0f1076f8.jpg",
+  "avatar_source": "website"
  },
  "almaty:bizdin auyl": {
   "name": "Bizdin Auyl",
@@ -1991,6 +2022,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:ile tau": {
+  "name": "ILE TAU",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "almaty:imannur & ramazan": {
   "name": "IMANNUR & RAMAZAN",
@@ -3225,6 +3263,15 @@
   ],
   "avatar": "4e72ff67a5375c9a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:uchina ючайна": {
+  "name": "UChina (ЮЧайна)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "uchina.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001097172803"
  },
  "almaty:ultra food": {
   "name": "Ultra Food",
@@ -4526,6 +4573,20 @@
    "website"
   ]
  },
+ "almaty:компания по страхованию жизни nomad life": {
+  "name": "«Компания по страхованию жизни «Nomad Life»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "nomadlife.kz_official",
+  "website": "http://nomadlife.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055937895",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:компания стройдекор тм": {
   "name": "Компания СтройДекор, ТМ",
   "city": "almaty",
@@ -4647,6 +4708,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ломбард белый tm": {
+  "name": "Ломбард Белый TM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "almaty:лор практика": {
   "name": "Лор практика",
@@ -4813,6 +4881,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:новосталь м казахстан": {
+  "name": "Новосталь-М Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "almaty:оптимус медика": {
   "name": "Оптимус Медика",
@@ -5890,6 +5965,19 @@
   "checked_at": "2026-10-30T09:43:32+00:00",
   "instagram": "coffee.hub.kz",
   "source": "https://2gis.kz/astana/firm/70000001115504720"
+ },
+ "astana:common market corporation": {
+  "name": "Common Market Corporation",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "website": "https://www.common.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001024663799",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:connect global": {
   "name": "Connect Global",
@@ -7180,6 +7268,13 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "astana:асылым парк 1": {
+  "name": "Асылым Парк 1",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
+ },
  "astana:афият": {
   "name": "Афият",
   "city": "astana",
@@ -7361,6 +7456,13 @@
   "instagram": "gorkytheatre.kz",
   "source": "https://www.instagram.com/gorkytheatre.kz/"
  },
+ "astana:глобал логистик": {
+  "name": "Глобал Логистик",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
+ },
  "astana:голд пар": {
   "name": "Голд пар",
   "city": "astana",
@@ -7422,6 +7524,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "astana:детский сад": {
+  "name": "Детский сад",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "astana:донер на абая mega silk way": {
   "name": "Донер на Абая (MEGA SILK WAY)",
@@ -7791,6 +7900,20 @@
   "checked_at": "2026-10-30T09:43:32+00:00",
   "instagram": "salon_merci_a",
   "source": "https://2gis.kz/astana/firm/70000001018131004"
+ },
+ "astana:мечта маркет": {
+  "name": "Мечта Маркет",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "mechta.kz",
+  "website": "https://www.mechta.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001062368114",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:москва": {
   "name": "Москва",
@@ -8757,6 +8880,13 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "karaganda:oxflo": {
+  "name": "OXFLO",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
+ },
  "karaganda:prima distribution": {
   "name": "Prima Distribution",
   "city": "karaganda",
@@ -9428,6 +9558,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "kostanay:арасан trade bottlers": {
+  "name": "Арасан Trade Bottlers",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "kostanay:ахметов": {
   "name": "АХМЕТОВ",
@@ -10172,6 +10309,20 @@
   "instagram": "a1comag",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001116651230"
  },
+ "petropavlovsk:bhk agro ag": {
+  "name": "BHK Agro AG",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "bhkagro",
+  "website": "https://www.bhkagro.com/",
+  "source": "https://2gis.kz/astana/firm/70000001039682678",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:d treid": {
   "name": "D-TREID",
   "city": "petropavlovsk",
@@ -10380,6 +10531,24 @@
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
  },
+ "semey:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "kaspi.kz",
+  "telegram": "kaspikz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001051550257",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "bf99729d6d343fd9.jpg",
+  "avatar_source": "telegram"
+ },
  "semey:nango": {
   "name": "NANGO",
   "city": "semey",
@@ -10490,6 +10659,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "semey:казына синема": {
+  "name": "Казына Синема",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "instagram": "qazynacinema",
+  "source": "https://2gis.kz/semej/firm/70000001051336672"
  },
  "semey:калкан а в": {
   "name": "КАЛКАН А.В.",
@@ -11044,6 +11222,21 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "taraz:дудар": {
+  "name": "Дудар",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001093455757",
+  "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c8fa235762a0e4ff.jpg",
+  "avatar_source": "website"
+ },
  "taraz:енина надежда ивановна": {
   "name": "Енина Надежда Ивановна",
   "city": "taraz",
@@ -11089,6 +11282,13 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "inclair_cafe",
   "source": "https://2gis.kz/astana/firm/70000001051170179"
+ },
+ "turkestan:lider group 2005": {
+  "name": "LIDER GROUP 2005",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "turkestan:sandyq world": {
   "name": "Sandyq World",
@@ -11492,6 +11692,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:заман": {
+  "name": "Заман",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T22:43:08+00:00"
  },
  "ust-kamenogorsk:заречье эколэнд": {
   "name": "Заречье ЭкоЛэнд",

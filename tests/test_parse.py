@@ -443,3 +443,13 @@ def test_hiring_words_do_not_overreach(text):
 ])
 def test_professions_found_by_technologist_3_do_not_overreach(text, wrong):
     assert wrong not in [t for t, _ in detect_titles(text)]
+
+
+@pytest.mark.parametrize("text", [
+    "🔥 САТУ МЕНЕДЖЕРІ ҚАЖЕТ!\n\n💰 Жалақы: тұрақты оклад + бонус",
+    "📢 USTAZ EDUCATION-ға САТУ МЕНЕДЖЕРЛЕРІ ҚАЖЕТ!\n\nЕгер адамдармен сөйлесіп, түсіндіре алсаңыз",
+    "📢 Витамин сататын дүкенге сату мамандары керек!\n\n👩 Әйел адам, 25–30 жас аралығы.",
+])
+def test_kazakh_sales_manager_shown_in_russian(text):
+    vacancy = parse_post(RawPost("telegram", "chan", 1, "u", text, datetime(2026, 10, 30, tzinfo=timezone.utc), "almaty"))
+    assert vacancy is not None and vacancy.title == "Менеджер по продажам"

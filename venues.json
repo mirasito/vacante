@@ -935,6 +935,19 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "almaty:beeline тм": {
+  "name": "Beeline, ТМ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "website": "https://beeline.kz/",
+  "source": "https://beeline.kz/ru/about",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:best products company": {
   "name": "Best Products Company",
   "city": "almaty",
@@ -1008,6 +1021,20 @@
   ],
   "avatar": "f114fc58412c1e78.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:breezy": {
+  "name": "Breezy",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "instagram": "breezy_kaz",
+  "website": "https://breezy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001086801365",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:bta almaty airport services": {
   "name": "BTA Almaty - Airport Services",
@@ -1419,6 +1446,13 @@
   "avatar": "8e044ddc18469726.jpg",
   "avatar_source": "website"
  },
+ "almaty:expert logistic kazakhstan": {
+  "name": "Expert Logistic Kazakhstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
+ },
  "almaty:family store": {
   "name": "FAMILY STORE",
   "city": "almaty",
@@ -1605,6 +1639,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "almaty:haval al farabi": {
+  "name": "Haval Al-Farabi",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "instagram": "haval_alfarabi",
+  "website": "https://haval-al-farabi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001090698915",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:high level хай левел": {
   "name": "High Level (Хай Левел)",
@@ -2107,6 +2155,22 @@
   "instagram": "nauryz.kz",
   "source": "https://2gis.kz/almaty/firm/70000001081531267"
  },
+ "almaty:nkb group kazakhstan": {
+  "name": "NKB Group Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "instagram": "nkb_group",
+  "website": "https://nkb.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000789026",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f24ea328cb6a77f9.jpg",
+  "avatar_source": "website"
+ },
  "almaty:nl beauty": {
   "name": "NL beauty",
   "city": "almaty",
@@ -2150,6 +2214,13 @@
   "checked_at": "2026-10-28T11:44:45+00:00",
   "instagram": "oiqaragai",
   "source": "https://www.instagram.com/oiqaragai/"
+ },
+ "almaty:olympia fitness": {
+  "name": "Olympia Fitness",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "almaty:one fitness": {
   "name": "ONE Fitness",
@@ -2477,6 +2548,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:solvera": {
+  "name": "Solvera",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "almaty:spark логистика": {
   "name": "Spark Логистика",
@@ -3115,6 +3193,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:алель агро": {
+  "name": "Алель Агро",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "instagram": "alelagrojsc",
+  "website": "https://alelagro.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792067",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e12a044e3f0265ba.jpg",
+  "avatar_source": "website"
  },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
@@ -4251,6 +4345,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:прогресс": {
+  "name": "ПРОГРЕСС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
+ },
  "almaty:производственная база": {
   "name": "производственная база",
   "city": "almaty",
@@ -4417,6 +4518,13 @@
   ],
   "avatar": "938cde019632e18b.jpg",
   "avatar_source": "website"
+ },
+ "almaty:тамерлан моторс": {
+  "name": "Тамерлан Моторс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "almaty:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
@@ -4596,6 +4704,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "almaty:хагай": {
+  "name": "ХАГАЙ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "almaty:халык life": {
   "name": "Халык-Life",
@@ -4854,6 +4969,20 @@
   "checked_at": "2026-10-29T12:47:32+00:00",
   "instagram": "aramit_billiard_club",
   "source": "https://2gis.kz/astana/firm/70000001090756901"
+ },
+ "astana:arbuz group арбуз груп": {
+  "name": "Arbuz Group (Арбуз Груп)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "instagram": "arbuz_kz",
+  "website": "https://arbuz.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001114687647",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:asai clinic": {
   "name": "ASAI-CLINIC",
@@ -5586,6 +5715,13 @@
   "avatar": "bda4bf99e376f427.jpg",
   "avatar_source": "website"
  },
+ "astana:nomado partners": {
+  "name": "Nomado Partners",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
+ },
  "astana:of corp": {
   "name": "OF Corp",
   "city": "astana",
@@ -5599,6 +5735,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "astana:oil hub": {
+  "name": "OIL HUB",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "instagram": "oilhub.kz",
+  "source": "https://2gis.kz/astana/firm/70000001103692855"
  },
  "astana:orbis machinery": {
   "name": "ORBIS MACHINERY",
@@ -6262,6 +6407,13 @@
   "avatar": "2890e57b7046c7ba.jpg",
   "avatar_source": "telegram"
  },
+ "astana:білім consulting": {
+  "name": "БІЛІМ CONSULTING",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
+ },
  "astana:валиева": {
   "name": "Валиева",
   "city": "astana",
@@ -6284,6 +6436,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "astana:высочайший": {
+  "name": "Высочайший",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "astana:газель": {
   "name": "Газель",
@@ -6574,6 +6733,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:ломбард белый tm": {
+  "name": "Ломбард Белый TM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00",
+  "website": "https://lombard-b.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001046165610",
+  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:магазин мужской одежды sott": {
   "name": "Магазин мужской одежды SOTT",
@@ -8827,6 +8999,13 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "semey:yniti": {
+  "name": "YNITI",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
+ },
  "semey:алатау": {
   "name": "Алатау",
   "city": "semey",
@@ -9069,6 +9248,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "shymkent:айсаров б а": {
+  "name": "АЙСАРОВ Б.А.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "shymkent:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
@@ -9494,6 +9680,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "uralsk:сеть супермаркетов суровский ип едаменко андрей александрович": {
+  "name": "Сеть супермаркетов Суровский, ИП Едаменко Андрей Александрович",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T11:43:44+00:00"
  },
  "uralsk:спортмастер казахстан": {
   "name": "Спортмастер Казахстан",

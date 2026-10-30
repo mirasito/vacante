@@ -23,7 +23,7 @@ import httpx
 
 from vacante.models import Vacancy
 from vacante.parse import (CITIES, WHITE_COLLAR, _LIMITS, clean_text, detect_city, detect_titles, fingerprint,
-                           parse_perks, works_abroad)
+                           parse_perks, split_title, works_abroad)
 
 log = logging.getLogger(__name__)
 
@@ -180,9 +180,12 @@ def to_vacancy(item: dict) -> Vacancy | None:
     salary_min, salary_max, period = _salary(item)
     schedule = _schedule(item)
     published = datetime.fromisoformat(item["published_at"]).astimezone(timezone.utc)
+    # «Сату менеджер/Менеджер по продажам»: на сайте и в каналах по-русски, казахское для казахской версии
+    title, title_kk = split_title(name[:1].upper() + name[1:])
     return Vacancy(
         id=f"{SOURCE}-{item['id']}",
-        title=name[:1].upper() + name[1:],
+        title=title,
+        title_kk=title_kk,
         category=titles[0][1],
         city=city,
         salary_min=salary_min,

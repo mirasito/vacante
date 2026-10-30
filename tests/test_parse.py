@@ -15,6 +15,7 @@ from vacante.parse import (
     parse_post,
     parse_salary,
     parse_schedule,
+    split_title,
 )
 
 WAITER = """Ресторан Ramen77 ищет официанта
@@ -443,3 +444,19 @@ def test_hiring_words_do_not_overreach(text):
 ])
 def test_professions_found_by_technologist_3_do_not_overreach(text, wrong):
     assert wrong not in [t for t, _ in detect_titles(text)]
+
+
+@pytest.mark.parametrize("name, ru, kk", [
+    ("Сату менеджер/менеджер по продажам ZERFARM", "Менеджер по продажам ZERFARM", "Сату менеджер"),
+    ("Менеджер по продажам/Сату менеджері", "Менеджер по продажам", "Сату менеджері"),
+    ("Сатушы-кассир/Продавец-кассир Fix Price (ул. Е 15, д. 9/2)", "Продавец-кассир Fix Price (ул. Е 15, д. 9/2)",
+     "Сатушы-кассир"),
+    ("Сату менеджер", "Менеджер по продажам", "Сату менеджер"),
+    ("Қойма жұмысшысы", "Работник склада", "Қойма жұмысшысы"),
+    # Русское название с казахским словом или брендом не трогаем
+    ("Оператор call-центра (Қазақ тілі)", "Оператор call-центра (Қазақ тілі)", None),
+    ("Кондитер в сеть кондитерских Тәп-Тәтті", "Кондитер в сеть кондитерских Тәп-Тәтті", None),
+    ("Продавец 2/2", "Продавец 2/2", None),
+])
+def test_split_title_russian_and_kazakh(name, ru, kk):
+    assert split_title(name) == (ru, kk)

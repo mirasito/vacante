@@ -175,3 +175,9 @@ def test_schedule_from_new_fields():
     assert v.schedule == "2/2, 12 часов"
     assert hh.to_vacancy(item(10, schedule=None)).schedule is None
     assert hh.to_vacancy(item(11)).schedule == "Сменный график"
+
+
+def test_bilingual_title_goes_russian_with_kazakh_kept():
+    v = hh.to_vacancy(item(9, name="Сату менеджер/менеджер по продажам ZERFARM"))
+    assert (v.title, v.title_kk) == ("Менеджер по продажам ZERFARM", "Сату менеджер")
+    assert hh.to_vacancy(item(10)).title_kk is None

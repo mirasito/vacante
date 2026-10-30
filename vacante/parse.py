@@ -88,12 +88,13 @@ PROFESSIONS: list[tuple[str, str, str]] = [
     (r"помощни(?:ца|цу|к|ка) в (?:\w+ )?магазин", "Помощник по залу", "retail"),
     (r"администратор\w* магазин", "Администратор магазина", "retail"),
     (r"пункт\w* выдачи|\bпвз\b", "Сотрудник пункта выдачи", "retail"),
-    (r"менеджер\w* по продаж", "Менеджер по продажам", "retail"),
+    (r"менеджер\w* по продаж|сату менеджер|сату маман", "Менеджер по продажам", "retail"),
     (r"менеджер\w* по работе с клиент", "Менеджер по работе с клиентами", "retail"),
     (r"консультант", "Консультант", "retail"),
     (r"(?:эксперт|менеджер)[- ]оценщи|оценщи\w* (?:в |ломбард)", "Оценщик в ломбард", "retail"),
     # Склад и производство
-    (r"кладовщ", "Кладовщик", "warehouse"),
+    (r"кладовщ|[қк]оймаш[ыі]", "Кладовщик", "warehouse"),
+    (r"[қк]ойма ж[уұ]мысш", "Работник склада", "warehouse"),
     (r"комплектовщ|сборщи\w* заказ|оператор\w* сборки", "Сборщик заказов", "warehouse"),
     (r"упаковщ|фасовщ", "Упаковщик", "warehouse"),
     (r"грузчик", "Грузчик", "warehouse"),
@@ -366,6 +367,40 @@ def detect_titles(text: str) -> list[tuple[str, str]]:
         if all(t != title for t, _ in result):
             result.append((title, cat))
     return result
+
+
+# Слово на казахском: есть казахская буква или это частое слово без них («сату менеджер»)
+_KK_LETTERS = re.compile(r"[әғқңөұүһі]")
+_KK_WORDS = {"сату", "сатушы", "маман", "маманы", "менеджері", "операторы", "бойынша", "аспаз", "даяшы",
+             "кассирі", "кеңесші", "жүк", "тиеуші"}
+
+
+def _kazakh_words(part: str) -> list[bool]:
+    words = re.findall(r"[а-яёәғқңөұүһі]+(?:-[а-яёәғқңөұүһі]+)*", part.lower())
+    return [bool(_KK_LETTERS.search(w)) or any(x in _KK_WORDS for x in w.split("-")) for w in words]
+
+
+def _is_kazakh(part: str) -> bool:
+    """Хотя бы половина слов казахские: «Сату менеджер», «Сатушы-кассир»."""
+    kk = _kazakh_words(part)
+    return bool(kk) and sum(kk) * 2 >= len(kk)
+
+
+def split_title(name: str) -> tuple[str, str | None]:
+    """Русское и казахское название должности из двуязычного «Сату менеджер/Менеджер по продажам ZERFARM».
+
+    Русские части идут в название, казахские в название для казахской версии сайта. Название только
+    на казахском («Қойма жұмысшысы») заменяем найденной должностью («Работник склада»). Русское название
+    с казахским словом внутри («Оператор call-центра (Қазақ тілі)») не трогаем: оно начинается по-русски."""
+    parts = [p.strip() for p in re.split(r"(?<!\d)/|/(?!\d)", name) if p.strip()]  # «д. 9/2» не делим
+    kazakh = [_is_kazakh(p) for p in parts]
+    if len(parts) > 1 and any(kazakh) and not all(kazakh):
+        ru = " / ".join(p for p, kk in zip(parts, kazakh) if not kk)
+        kk = " / ".join(p for p, kk in zip(parts, kazakh) if kk)
+        return ru[:1].upper() + ru[1:], kk[:1].upper() + kk[1:]
+    if all(kazakh) and _kazakh_words(name)[:1] == [True] and (titles := detect_titles(name)):
+        return titles[0][0], name
+    return name, None
 
 
 def _to_int(num: str) -> int:

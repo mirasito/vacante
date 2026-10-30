@@ -1,11 +1,18 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}vacante.kz — работа рядом с домом{% endblock %}</title>
-<meta name="description" content="{% block description %}Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.{% endblock %}">
+<title>{% block title %}{{ t("vacante.kz — работа рядом с домом") }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ t("Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.") }}{% endblock %}">
 <link rel="canonical" href="{{ base_url }}/{{ path ~ '/' if path else '' }}">
+{% if page != "404" and page != "admin" %}
+{% for l in LANGS %}
+{% set p = (("kk/" if l == "kk" else "") ~ page) | trim("/") %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ base_url }}/{{ p ~ '/' if p else '' }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ base_url }}/{{ page ~ '/' if page else '' }}">
+{% endif %}
 <link rel="stylesheet" href="{{ root }}/static/style.css">
 {% if google_verification %}<meta name="google-site-verification" content="{{ google_verification }}">{% endif %}
 {% if yandex_verification %}<meta name="yandex-verification" content="{{ yandex_verification }}">{% endif %}
@@ -13,17 +20,25 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="logo" href="{{ root }}/"><span class="dot">.</span>vacante</a>
-  <span class="tagline">работа рядом с домом</span>
-  <a class="post-job" href="{{ employer_url }}" rel="nofollow">Разместить вакансию</a>
+  <a class="logo" href="{{ home }}/"><span class="dot">.</span>vacante</a>
+  <span class="tagline">{{ t("работа рядом с домом") }}</span>
+  {% if page != "404" and page != "admin" %}
+  <nav class="langs" aria-label="Тіл / Язык">
+    {% for l in LANGS %}
+    {% set p = (("kk/" if l == "kk" else "") ~ page) | trim("/") %}
+    {% if l == lang %}<b lang="{{ l }}">{{ "Рус" if l == "ru" else "Қаз" }}</b>{% else %}<a href="{{ root }}/{{ p ~ '/' if p else '' }}" hreflang="{{ l }}" lang="{{ l }}" title="{{ LANG_NAME[l] }}">{{ "Рус" if l == "ru" else "Қаз" }}</a>{% endif %}
+    {% endfor %}
+  </nav>
+  {% endif %}
+  <a class="post-job" href="{{ employer_url }}" rel="nofollow">{{ t("Разместить вакансию") }}</a>
 </header>
 <main class="wrap">
 {% block content %}{% endblock %}
 </main>
 <footer class="footer wrap">
-  <p><b>Работодателям:</b> разместите вакансию бесплатно через <a href="{{ employer_url }}" rel="nofollow">бота @vacantekz_bot</a>. Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.</p>
-  <p>vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.</p>
-  <p>Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.</p>
+  <p><b>{{ t("Работодателям:") }}</b> {{ t("разместите вакансию бесплатно через") }} <a href="{{ employer_url }}" rel="nofollow">{{ t("бота @vacantekz_bot") }}</a>. {{ t("Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.") }}</p>
+  <p>{{ t("vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.") }}</p>
+  <p>{{ t("Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.") }}</p>
 </footer>
 {% if metrika_id %}
 <!-- Yandex.Metrika counter -->

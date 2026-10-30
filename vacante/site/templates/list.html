@@ -1,82 +1,82 @@
 {% extends "base.html" %}
 {% block title %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }} | vacante.kz{% endblock %}
-{% block description %}{{ heading }}: свежие вакансии с зарплатой, графиком и условиями, сейчас {{ total }}. Обновляется каждый час.{% endblock %}
+{% block description %}{{ t("{heading}: свежие вакансии с зарплатой, графиком и условиями, сейчас {total}. Обновляется каждый час.", heading=heading, total=total) }}{% endblock %}
 {% block content %}
 <section class="hero">
   <h1>{{ heading }}</h1>
   <div class="search">
-    <input id="q" type="search" placeholder="Должность, например «официант»" autocomplete="off">
+    <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" autocomplete="off">
   </div>
   <nav class="chips">
-    <a class="chip{% if not city %} on{% endif %}" href="{{ root }}/">Все города</a>
+    <a class="chip{% if not city %} on{% endif %}" href="{{ home }}/">{{ t("Все города") }}</a>
     {% for slug, n in city_counts[:8] %}
-    <a class="chip{% if city == slug %} on{% endif %}" href="{{ root }}/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
+    <a class="chip{% if city == slug %} on{% endif %}" href="{{ home }}/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
     {% endfor %}
   </nav>
   {% if category %}
   <nav class="chips">
     {% for cat, n in category_counts %}
-    <a class="chip{% if category == cat %} on{% endif %}" href="{{ root }}/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
+    <a class="chip{% if category == cat %} on{% endif %}" href="{{ home }}/{{ city }}/{{ cat }}/">{{ cat_name(cat) }} <small>{{ n }}</small></a>
     {% endfor %}
   </nav>
   {% endif %}
 </section>
 {% if city and channels.get(city) %}
-<a class="subscribe" href="{{ channels[city] }}">Новые вакансии {{ city_name(city) }} каждый день в Telegram →</a>
+<a class="subscribe" href="{{ channels[city] }}">{{ t("Новые вакансии {city} каждый день в Telegram →", city=city_name(city)) }}</a>
 {% endif %}
 {% if vacancies %}
 <div class="filters selects">
-  <select id="sort" aria-label="Сортировка">
-    <option value="new">По новизне</option>
-    <option value="pay">По зарплате</option>
+  <select id="sort" aria-label="{{ t("Сортировка") }}">
+    <option value="new">{{ t("По новизне") }}</option>
+    <option value="pay">{{ t("По зарплате") }}</option>
   </select>
-  <select id="fresh" aria-label="Свежесть">
-    <option value="" data-label="За всё время">За всё время</option>
-    <option value="0" data-label="За сегодня">За сегодня</option>
-    <option value="2" data-label="За 3 дня">За 3 дня</option>
-    <option value="6" data-label="За неделю">За неделю</option>
+  <select id="fresh" aria-label="{{ t("Свежесть") }}">
+    <option value="" data-label="{{ t("За всё время") }}">{{ t("За всё время") }}</option>
+    <option value="0" data-label="{{ t("За сегодня") }}">{{ t("За сегодня") }}</option>
+    <option value="2" data-label="{{ t("За 3 дня") }}">{{ t("За 3 дня") }}</option>
+    <option value="6" data-label="{{ t("За неделю") }}">{{ t("За неделю") }}</option>
   </select>
   {% if not category %}
-  <select id="cat" aria-label="Сфера">
-    <option value="" data-label="Все сферы">Все сферы</option>
+  <select id="cat" aria-label="{{ t("Сфера") }}">
+    <option value="" data-label="{{ t("Все сферы") }}">{{ t("Все сферы") }}</option>
     {% for cat, n in category_counts %}
-    <option value="{{ cat }}" data-label="{{ CATEGORIES[cat] }}">{{ CATEGORIES[cat] }}</option>
+    <option value="{{ cat }}" data-label="{{ cat_name(cat) }}">{{ cat_name(cat) }}</option>
     {% endfor %}
   </select>
   {% endif %}
-  <select id="pay" aria-label="Зарплата">
-    <option value="0">Любая зарплата</option>
+  <select id="pay" aria-label="{{ t("Зарплата") }}">
+    <option value="0">{{ t("Любая зарплата") }}</option>
     {% for amount in [200000, 300000, 400000] %}
-    <option value="{{ amount }}">от {{ money(amount) }} ₸ в месяц</option>
+    <option value="{{ amount }}">{{ t("от {amount} ₸ в месяц", amount=money(amount)) }}</option>
     {% endfor %}
   </select>
 </div>
 <div class="filters perks">
-  <button type="button" class="toggle" data-perk="salary" aria-pressed="false">С зарплатой</button>
-  {% for perk in FILTER_PERKS %}
-  <button type="button" class="toggle" data-perk="{{ perk }}" aria-pressed="false">{{ perk }}</button>
+  <button type="button" class="toggle" data-perk="salary" aria-pressed="false">{{ t("С зарплатой") }}</button>
+  {% for name in FILTER_PERKS %}
+  <button type="button" class="toggle" data-perk="{{ name }}" aria-pressed="false">{{ perk(name) }}</button>
   {% endfor %}
 </div>
-<p id="pay-note" class="note" hidden>Зарплату сравниваем в тенге в месяц: смену считаем как 22 смены в месяц, час как 176 часов.</p>
+<p id="pay-note" class="note" hidden>{{ t("Зарплату сравниваем в тенге в месяц: смену считаем как 22 смены в месяц, час как 176 часов.") }}</p>
 {% endif %}
-<p class="count">Результаты: <span id="count">{{ vacancies | length }}</span></p>
+<p class="count">{{ t("Результаты:") }} <span id="count">{{ vacancies | length }}</span></p>
 <div id="list" class="list">
 {% for v in vacancies %}
 {% include "_card.html" %}
 {% else %}
-<p class="empty">Пока нет вакансий. Загляните через час: сборщик обновляет список каждый час.</p>
+<p class="empty">{{ t("Пока нет вакансий. Загляните через час: сборщик обновляет список каждый час.") }}</p>
 {% endfor %}
 </div>
-<p id="none" class="empty" hidden>Ничего не нашлось. Попробуйте убрать часть фильтров.</p>
-<p class="more">Ещё вакансии{% if city %} {{ city_name(city) }}{% endif %}:
+<p id="none" class="empty" hidden>{{ t("Ничего не нашлось. Попробуйте убрать часть фильтров.") }}</p>
+<p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ city_name(city) }}{% endif %}:
   {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
 </p>
-<a class="employer" href="{{ employer_url }}" rel="nofollow">Нанимаете? Разместите вакансию бесплатно через бота: она появится здесь и в подборках соискателям →</a>
+<a class="employer" href="{{ employer_url }}" rel="nofollow">{{ t("Нанимаете? Разместите вакансию бесплатно через бота: она появится здесь и в подборках соискателям →") }}</a>
 {% if city and not category and category_counts %}
 <nav class="by-category">
-  <h2>Вакансии по сферам</h2>
+  <h2>{{ t("Вакансии по сферам") }}</h2>
   {% for cat, n in category_counts %}
-  <a href="{{ root }}/{{ city }}/{{ cat }}/">{{ CATEGORIES[cat] }} <small>{{ n }}</small></a>
+  <a href="{{ home }}/{{ city }}/{{ cat }}/">{{ cat_name(cat) }} <small>{{ n }}</small></a>
   {% endfor %}
 </nav>
 {% endif %}

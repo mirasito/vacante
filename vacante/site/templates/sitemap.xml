@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for url in pages %}
-  <url><loc>{{ url }}</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% for page in pages %}
+{% for lang in LANGS %}
+  <url><loc>{{ base_url }}/{{ lang_path(lang, page) ~ '/' if lang_path(lang, page) else '' }}</loc>
+{% for alt in LANGS %}
+    <xhtml:link rel="alternate" hreflang="{{ alt }}" href="{{ base_url }}/{{ lang_path(alt, page) ~ '/' if lang_path(alt, page) else '' }}"/>
+{% endfor %}
+  </url>
+{% endfor %}
 {% endfor %}
 </urlset>

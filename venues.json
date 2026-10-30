@@ -85,6 +85,22 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "aktau:top stop": {
+  "name": "TOP STOP",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "topstop.aktau",
+  "website": "https://top-stopaktau.choiceqr.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001029219238",
+  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9a69b77e5f3529d0.jpg",
+  "avatar_source": "website"
+ },
  "aktau:актаусервискурылыс": {
   "name": "АктауСервисКурылыс",
   "city": "aktau",
@@ -316,6 +332,13 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "aktobe:актобе климат комфорт": {
+  "name": "Актобе Климат Комфорт",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
+ },
  "aktobe:актобе нан": {
   "name": "Актобе-нан",
   "city": "aktobe",
@@ -336,6 +359,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "aktobe:запказ авто": {
+  "name": "ЗапКаз-Авто",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "chevrolet_aktobe",
+  "website": "https://zapkazauto-aktobe.chevrolet-auto.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001047303294",
+  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:казснаблогистиксервис": {
   "name": "КазСнабЛогистикСервис",
@@ -366,6 +403,13 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
+ },
+ "aktobe:спецпром invest": {
+  "name": "СпецПром INVEST",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "aktobe:центр красоты и здоровья айгерим тоо цкиз айгерим": {
   "name": "Центр красоты и здоровья Айгерим ТОО ЦКиЗ «Айгерим»",
@@ -597,6 +641,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:anymatic": {
+  "name": "Anymatic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "almaty:apple city corps": {
   "name": "Apple City Corps",
@@ -1833,6 +1884,13 @@
   "avatar": "ee45f73ed7b3d87b.jpg",
   "avatar_source": "website"
  },
+ "almaty:mosaic agency": {
+  "name": "Mosaic Agency",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
+ },
  "almaty:mountain view hotels": {
   "name": "Mountain View Hotels",
   "city": "almaty",
@@ -1876,6 +1934,15 @@
   ],
   "avatar": "eaf19c31fb17a1c0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:nauryz": {
+  "name": "Nauryz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "nauryz.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001081531267"
  },
  "almaty:nl beauty": {
   "name": "NL beauty",
@@ -1979,6 +2046,22 @@
   "instagram": "percorso_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001062089129"
  },
+ "almaty:pinta": {
+  "name": "Pinta",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "pinta_almaty",
+  "website": "https://pinta.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000830240",
+  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1cfd182fa5fb95b5.jpg",
+  "avatar_source": "website"
+ },
  "almaty:play theater": {
   "name": "Play Theater",
   "city": "almaty",
@@ -2048,6 +2131,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "almaty:rm logistics": {
+  "name": "RM Logistics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "almaty:royal petrol": {
   "name": "Royal Petrol",
@@ -2879,6 +2969,19 @@
    "website"
   ]
  },
+ "almaty:алматинский продукт": {
+  "name": "Алматинский продукт",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "website": "https://a-product.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792248",
+  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алматыгазмонтаж ао": {
   "name": "АЛМАТЫГАЗМОНТАЖ, АО",
   "city": "almaty",
@@ -3140,6 +3243,20 @@
   "website": "https://galereya.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001094712170",
   "avatar_checked_at": "2026-10-28T08:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:геокурс": {
+  "name": "Геокурс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "geokurs",
+  "website": "https://geokurs.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000794395",
+  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -3812,6 +3929,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "almaty:полати": {
+  "name": "ПОЛАТИ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "almaty:примавера каз": {
   "name": "Примавера КАЗ",
@@ -4937,6 +5061,13 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "astana:janatalap konditerlik onimderi": {
+  "name": "Janatalap konditerlik onimderi",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
+ },
  "astana:kinderland": {
   "name": "KINDERLAND",
   "city": "astana",
@@ -5333,6 +5464,13 @@
   ],
   "avatar": "c92c206f34f2ecc5.jpg",
   "avatar_source": "website"
+ },
+ "astana:tamos space school тамос спэйс скул": {
+  "name": "Tamos Space School (Тамос Спэйс Скул)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "astana:taptatti retail": {
   "name": "TapTatti Retail",
@@ -5817,6 +5955,15 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "astana:канго +": {
+  "name": "Канго +",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "kangojump_astana",
+  "source": "https://2gis.kz/astana/firm/70000001026933143"
+ },
  "astana:каусар": {
   "name": "Каусар",
   "city": "astana",
@@ -6068,6 +6215,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:сауна": {
+  "name": "Сауна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "astana:свой": {
   "name": "Свой",
@@ -6671,6 +6825,13 @@
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
  },
+ "karaganda:skill hub": {
+  "name": "Skill Hub",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
+ },
  "karaganda:sulpak": {
   "name": "Sulpak",
   "city": "karaganda",
@@ -7270,6 +7431,22 @@
   "avatar": "3c1ea3bfb9fdfbe7.jpg",
   "avatar_source": "telegram"
  },
+ "kostanay:первый бит": {
+  "name": "Первый БИТ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "1_bit_kazakhstan",
+  "website": "https://kostanai.1cbit.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035468667",
+  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "17b034104a86ca4b.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:сервисный центр ростсельмаш": {
   "name": "Сервисный центр Ростсельмаш",
   "city": "kostanay",
@@ -7292,6 +7469,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "kostanay:фирма стс бетон": {
+  "name": "ФИРМА СТС-Бетон",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00",
+  "instagram": "010_ctc",
+  "source": "https://2gis.kz/kostanaj/firm/70000001044558401"
  },
  "kostanay:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
@@ -8672,6 +8858,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "ust-kamenogorsk:тексти лайн сервис": {
+  "name": "Тексти-Лайн Сервис",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T03:43:38+00:00"
  },
  "ust-kamenogorsk:тех эксперт": {
   "name": "Тех.эксперт",

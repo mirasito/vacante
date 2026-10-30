@@ -78,6 +78,22 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "aktau:orchestra": {
+  "name": "Orchestra",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00",
+  "instagram": "orchestrakz",
+  "website": "http://orchestra.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001102208882",
+  "avatar_checked_at": "2026-10-30T16:42:48+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9ae6b7efc8e74d3a.jpg",
+  "avatar_source": "website"
+ },
  "aktau:sw auto aktau": {
   "name": "Sw Auto Aktau",
   "city": "aktau",
@@ -1205,6 +1221,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:celviano": {
+  "name": "CELVIANO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "almaty:central city properties": {
   "name": "Central City Properties",
   "city": "almaty",
@@ -1301,6 +1324,13 @@
   "checked_at": "2026-10-29T06:44:07+00:00",
   "instagram": "damdala.kz",
   "source": "https://2gis.kz/almaty/firm/70000001091380779"
+ },
+ "almaty:dara": {
+  "name": "DARA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "almaty:daris tte": {
   "name": "Daris-TTE",
@@ -1687,6 +1717,19 @@
   ],
   "avatar": "9d6ac3e7ce4a97ab.jpg",
   "avatar_source": "website"
+ },
+ "almaty:grand line logistics": {
+  "name": "Grand line logistics",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00",
+  "website": "https://grandlinelogistics.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110238116",
+  "avatar_checked_at": "2026-10-30T16:42:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:greencity": {
   "name": "GreenCity",
@@ -2262,6 +2305,13 @@
   "checked_at": "2026-10-30T03:43:38+00:00",
   "instagram": "nauryz.kz",
   "source": "https://2gis.kz/almaty/firm/70000001081531267"
+ },
+ "almaty:next": {
+  "name": "Next",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "almaty:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
@@ -2968,6 +3018,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "almaty:unirout station тоо автовокзал": {
+  "name": "UniRout Station, ТОО, автовокзал",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "almaty:vanilla collection": {
   "name": "Vanilla Collection",
   "city": "almaty",
@@ -3183,6 +3240,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:автосервис jonde": {
+  "name": "Автосервис Jonde",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "almaty:автотрейд": {
   "name": "Автотрейд",
@@ -3580,6 +3644,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:барс моторс": {
+  "name": "БАРС МОТОРС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "almaty:белый ветер kz": {
   "name": "Белый Ветер KZ",
@@ -4105,6 +4176,13 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "almaty:кб шлимут": {
+  "name": "КБ Шлимут",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "almaty:керемет су ске": {
   "name": "Керемет Су СКЕ",
   "city": "almaty",
@@ -4579,6 +4657,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:риза кочиев": {
+  "name": "Риза Кочиев",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "almaty:рузи нан астана": {
   "name": "Рузи Нан Астана",
   "city": "almaty",
@@ -4684,6 +4769,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:стоматологическая клиника adodent": {
+  "name": "Стоматологическая клиника «ADOdent»",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:стройлогистика": {
+  "name": "Стройлогистика",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "almaty:студент": {
   "name": "Студент",
@@ -6686,6 +6785,13 @@
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
  },
+ "astana:будапешт": {
+  "name": "Будапешт",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "astana:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "astana",
@@ -7076,6 +7182,22 @@
   "instagram": "sott.astana",
   "source": "https://2gis.kz/astana/firm/70000001117676726"
  },
+ "astana:мамыр": {
+  "name": "Мамыр",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00",
+  "instagram": "mamyrcafe",
+  "website": "http://mamyrcafe.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001084103565",
+  "avatar_checked_at": "2026-10-30T16:42:48+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ddc916bc9fd7fee4.jpg",
+  "avatar_source": "website"
+ },
  "astana:манабаева": {
   "name": "Манабаева",
   "city": "astana",
@@ -7191,6 +7313,13 @@
   "avatar": "a7a308ffffc84c9a.jpg",
   "avatar_source": "website"
  },
+ "astana:паркет finnfloor": {
+  "name": "Паркет FinnFloor",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "astana:полезный продукт": {
   "name": "Полезный Продукт",
   "city": "astana",
@@ -7220,6 +7349,13 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "puhovic_official",
   "source": "https://2gis.kz/astana/firm/70000001045497736"
+ },
+ "astana:райбер": {
+  "name": "РайБер",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "astana:рахмет": {
   "name": "РАХМЕТ",
@@ -8366,6 +8502,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "karaganda:стройлогистика": {
+  "name": "Стройлогистика",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
+ },
  "karaganda:тэмпо казахстан": {
   "name": "ТЭМПО-Казахстан",
   "city": "karaganda",
@@ -8380,6 +8523,15 @@
   ],
   "avatar": "f68041a8bce3750e.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:фудмарт караганда": {
+  "name": "ФУДМАРТ КАРАГАНДА",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00",
+  "instagram": "foodmartkrg",
+  "source": "https://2gis.kz/karaganda/firm/11822477302829839"
  },
  "karaganda:хан ли кз": {
   "name": "ХАН ЛИ КЗ",
@@ -9216,6 +9368,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "pavlodar:стройлогистика": {
+  "name": "Стройлогистика",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "petropavlovsk:alcomag": {
   "name": "AlcoMag",
@@ -10501,6 +10660,13 @@
   "checked_at": "2026-10-30T12:44:25+00:00",
   "instagram": "newyorkeronline",
   "source": "https://2gis.kz/pavlodar/firm/70000001059331894"
+ },
+ "ust-kamenogorsk:октеракт": {
+  "name": "Октеракт",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T16:42:48+00:00"
  },
  "ust-kamenogorsk:орика казахстан ао": {
   "name": "Орика-Казахстан, АО",

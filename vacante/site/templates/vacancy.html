@@ -1,44 +1,45 @@
 {% extends "base.html" %}
-{% block title %}{{ v.title }}{% if v.employer %}, {{ v.employer }}{% endif %} — {{ city_name(v.city) }} | vacante.kz{% endblock %}
-{% block description %}{{ v.title }} в {{ city_name(v.city) }}{% set s = salary_label(v) %}{% if s %}, {{ s }}{% endif %}{% if v.schedule %}, график {{ v.schedule }}{% endif %}. {{ v.text[:120] }}{% endblock %}
+{% block title %}{{ title(v) }}{% if v.employer %}, {{ v.employer }}{% endif %} — {{ city_name(v.city) }} | vacante.kz{% endblock %}
+{% block description %}{{ t("{title} в {city}", title=title(v), city=city_name(v.city)) }}{% set s = salary_label(v) %}{% if s %}, {{ s }}{% endif %}{% if v.schedule %}, {{ t("график {schedule}", schedule=v.schedule) }}{% endif %}. {{ v.text[:120] }}{% endblock %}
 {% block head %}{% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}{% endblock %}
 {% block content %}
-<p class="crumbs"><a href="{{ root }}/">Вакансии</a>{% if v.city %} / <a href="{{ root }}/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="{{ root }}/{{ v.city }}/{{ v.category }}/">{{ CATEGORIES[v.category] }}</a>{% endif %}</p>
+<p class="crumbs"><a href="{{ home }}/">{{ t("Вакансии") }}</a>{% if v.city %} / <a href="{{ home }}/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="{{ home }}/{{ v.city }}/{{ v.category }}/">{{ cat_name(v.category) }}</a>{% endif %}</p>
 <article class="vacancy">
-  <h1>{{ v.title }}</h1>
+  <h1>{{ title(v) }}</h1>
   {% set place = venue(v) %}
   {% if v.employer %}<div class="employer">{% if place and place.avatar %}<img class="avatar" src="{{ root }}/venues/{{ place.avatar }}" alt="" width="40" height="40">{% else %}{% set ch = initial(v.employer) %}<span class="avatar initial" style="background:{{ ch[1] }}" aria-hidden="true">{{ ch[0] }}</span>{% endif %}{{ v.employer }}</div>{% endif %}
-  <div class="meta">{{ city_name(v.city) }} · опубликовано {{ age(v) }}</div>
+  <div class="meta">{{ city_name(v.city) }} · {{ t("опубликовано {age}", age=age(v)) }}</div>
   <div class="pills">
-    {% for perk in v.perks %}<span class="pill">{{ perk }}</span>{% endfor %}
+    {% for name in v.perks %}<span class="pill">{{ perk(name) }}</span>{% endfor %}
   </div>
   <dl class="facts">
     {% set s = salary_label(v) %}
-    {% if s %}<dt>Зарплата</dt><dd>{{ s }}</dd>{% endif %}
-    {% if v.schedule %}<dt>График</dt><dd>{{ v.schedule }}</dd>{% endif %}
+    {% if s %}<dt>{{ t("Зарплата") }}</dt><dd>{{ s }}</dd>{% endif %}
+    {% if v.schedule %}<dt>{{ t("График") }}</dt><dd>{{ v.schedule }}</dd>{% endif %}
     {% set ig = instagram_url(place) %}
     {% if ig %}<dt>Instagram</dt><dd><a href="{{ ig }}" rel="nofollow noopener" target="_blank">@{{ place.instagram }}</a></dd>{% endif %}
     {% if place and place.telegram %}<dt>Telegram</dt><dd><a href="https://t.me/{{ place.telegram }}" rel="nofollow noopener" target="_blank">@{{ place.telegram }}</a></dd>{% endif %}
-    {% if place and place.website %}<dt>Сайт</dt><dd><a href="{{ place.website }}" rel="nofollow noopener" target="_blank">{{ site_name(place.website) }}</a></dd>{% endif %}
-    {% if v.address %}<dt>Адрес</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">в 2ГИС</a>{% endif %}</dd>{% endif %}
+    {% if place and place.website %}<dt>{{ t("Сайт") }}</dt><dd><a href="{{ place.website }}" rel="nofollow noopener" target="_blank">{{ site_name(place.website) }}</a></dd>{% endif %}
+    {% if v.address %}<dt>{{ t("Адрес") }}</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t("в 2ГИС") }}</a>{% endif %}</dd>{% endif %}
   </dl>
   {% if v.source == "bot" %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в Telegram</a>
-  <p class="direct">Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.</p>
+  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в Telegram") }}</a>
+  <p class="direct">{{ t("Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.") }}</p>
   {% elif v.source == "hh" %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться на hh.kz</a>
+  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться на hh.kz") }}</a>
   {% else %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">Откликнуться в оригинальном объявлении</a>
+  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в оригинальном объявлении") }}</a>
   {% endif %}
-  <h2>Описание</h2>
+  <h2>{{ t("Описание") }}</h2>
+  {% if lang != "ru" %}<p class="note">{{ t("Текст объявления на языке оригинала.") }}</p>{% endif %}
   <div class="text">{{ v.text }}</div>
   {% if v.also_seen_in %}
-  <p class="also">Эту вакансию также публиковали:
+  <p class="also">{{ t("Эту вакансию также публиковали:") }}
     {% for url in v.also_seen_in %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ url.split('/')[3] }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
   </p>
   {% endif %}
   {% if v.source != "bot" %}
-  <p class="source">Источник: <a href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ v.source_url }}</a></p>
+  <p class="source">{{ t("Источник:") }} <a href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ v.source_url }}</a></p>
   {% endif %}
 </article>
 {% endblock %}

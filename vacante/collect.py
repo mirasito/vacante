@@ -14,7 +14,7 @@ from vacante import direct as direct_jobs
 from vacante import parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
-from vacante.parse import explain
+from vacante.parse import explain, split_title
 from vacante.sources import hh, telegram
 from vacante.store import expire, load_state, load_vacancies, merge, save_state, save_vacancies
 
@@ -121,6 +121,9 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     # Правилами заново разбираем только посты из каналов: у вакансий hh поля уже разложены по полочкам
     existing = reparse([v for v in saved if v.source == "telegram"], cities, dropped)
     from_hh_saved = [v for v in saved if v.source == hh.SOURCE]
+    for v in from_hh_saved:
+        if v.title_kk is None:  # сохранённые до разделения двуязычных названий
+            v.title, v.title_kk = split_title(v.title)
     # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
     vacancies = expire(merge(from_bot + existing + from_hh_saved, incoming), max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)

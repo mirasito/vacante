@@ -1,18 +1,18 @@
-<a class="card{% if top(v) %} top{% endif %}" href="{{ root }}/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-posted="{{ v.posted_at }}" data-pay="{{ monthly_pay(v) or 0 }}" data-perks="{{ v.perks | join('|') }}" data-search="{{ search_text(v) }}">
+<a class="card{% if top(v) %} top{% endif %}" href="{{ home }}/v/{{ v.id }}/" data-city="{{ v.city or '' }}" data-category="{{ v.category }}" data-posted="{{ v.posted_at }}" data-pay="{{ monthly_pay(v) or 0 }}" data-perks="{{ v.perks | join('|') }}" data-search="{{ search_text(v) }}">
   <div class="card-head">
-    <h3>{{ v.title }}</h3>
+    <h3>{{ title(v) }}</h3>
     <span class="age">{{ age(v) }}</span>
   </div>
   {% set place = venue(v) %}
   {% if v.employer %}<div class="employer">{% if place and place.avatar %}<img class="avatar" src="{{ root }}/venues/{{ place.avatar }}" alt="" width="28" height="28" loading="lazy">{% else %}{% set ch = initial(v.employer) %}<span class="avatar initial" style="background:{{ ch[1] }}" aria-hidden="true">{{ ch[0] }}</span>{% endif %}{{ v.employer }}</div>{% endif %}
   <div class="meta">{{ city_name(v.city) }}{% if v.schedule %} · {{ v.schedule }}{% endif %}</div>
   <div class="pills">
-    {% if top(v) %}<span class="pill top-pill">🔥 Срочно</span>{% endif %}
-    {% if v.source == "bot" %}<span class="pill direct-pill">От работодателя</span>{% endif %}
+    {% if top(v) %}<span class="pill top-pill">{{ t("🔥 Срочно") }}</span>{% endif %}
+    {% if v.source == "bot" %}<span class="pill direct-pill">{{ t("От работодателя") }}</span>{% endif %}
     {% set s = salary_label(v) %}
     {% if s %}<span class="pill salary">{{ s }}</span>{% endif %}
     {% set m = monthly_label(v) %}
     {% if m %}<span class="pill monthly">{{ m }}</span>{% endif %}
-    {% for perk in v.perks[:3] %}<span class="pill">{{ perk }}</span>{% endfor %}
+    {% for name in v.perks[:3] %}<span class="pill">{{ perk(name) }}</span>{% endfor %}
   </div>
 </a>

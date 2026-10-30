@@ -14,7 +14,7 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     out = tmp_path / "public"
     count = build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
-    assert count == 4  # главная, город, город+сфера, вакансия
+    assert count == 8  # главная, город, город+сфера, вакансия: по-русски и по-казахски
     page = (out / "v" / "chan-5" / "index.html").read_text("utf-8")
     assert "Официант" in page and "14 000 – 18 000 ₸/день" in page
     assert 'href="https://t.me/chan/5"' in page
@@ -101,3 +101,40 @@ def test_list_links_to_more_vacancies_elsewhere(tmp_path):
     assert "Разместите вакансию бесплатно" in city
     assert site.more_links("astana")[1] == ("OLX", "https://www.olx.kz/rabota/astana/")
     assert site.more_links(None)[0] == ("hh.kz", "https://hh.kz/search/vacancy?area=40")
+
+
+def test_kazakh_version_with_language_switch_and_hreflang(tmp_path):
+    raw = RawPost("telegram", "chan", 9, "https://t.me/chan/9",
+                  "Ресторан Ramen77 ищет официанта, 14 000–18 000 тг в день, без опыта, питание",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "almaty")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    kk = (out / "kk" / "almaty" / "index.html").read_text("utf-8")
+    assert '<html lang="kk">' in kk and "Алматыдағы жұмыс" in kk
+    assert "<h3>Даяшы</h3>" in kk and "14\xa0000 – 18\xa0000 ₸/күн" in kk
+    assert "≈ 308\xa0000 – 396\xa0000 ₸/ай" in kk
+    assert 'href="/kk/v/chan-9/"' in kk and "Тәжірибесіз" in kk and 'data-perk="Без опыта"' in kk
+    assert '<link rel="alternate" hreflang="ru" href="https://vacante.kz/almaty/">' in kk
+    assert '<a href="/almaty/" hreflang="ru"' in kk
+    ru = (out / "almaty" / "index.html").read_text("utf-8")
+    assert '<link rel="alternate" hreflang="kk" href="https://vacante.kz/kk/almaty/">' in ru
+    assert "Работа в Алматы" in ru and "<h3>Официант</h3>" in ru
+    page = (out / "kk" / "v" / "chan-9" / "index.html").read_text("utf-8")
+    assert "<h1>Даяшы</h1>" in page and "Ramen77" in page and "JobPosting" not in page
+    assert (out / "kk" / "almaty" / "horeca" / "index.html").exists()
+    assert "Кафе мен мейрамханалар: Алматыдағы жұмыс" in (out / "kk" / "almaty" / "horeca" / "index.html").read_text()
+    sitemap = (out / "sitemap.xml").read_text("utf-8")
+    assert "<loc>https://vacante.kz/kk/</loc>" in sitemap
+    assert '<xhtml:link rel="alternate" hreflang="kk" href="https://vacante.kz/kk/v/chan-9/"/>' in sitemap
+
+
+def test_kazakh_title_from_hh(tmp_path):
+    from vacante.sources import hh
+    v = hh.to_vacancy({"id": "5", "name": "Сату менеджер/Менеджер по продажам", "area": {"name": "Алматы"},
+                       "published_at": "2026-10-28T10:00:00+0500", "alternate_url": "https://hh.kz/vacancy/5",
+                       "employer": {"name": "ZERFARM"}})
+    save_vacancies(tmp_path / "data", [v])
+    build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 28, tzinfo=timezone.utc))
+    assert "<h1>Менеджер по продажам</h1>" in (tmp_path / "public" / "v" / "hh-5" / "index.html").read_text()
+    assert "<h1>Сату менеджер</h1>" in (tmp_path / "public" / "kk" / "v" / "hh-5" / "index.html").read_text()

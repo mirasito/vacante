@@ -113,9 +113,9 @@
  "aktau:ак кала молл": {
   "name": "Ак Кала Молл",
   "city": "aktau",
-  "status": "skip",
+  "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "aktau:актаусервискурылыс": {
   "name": "АктауСервисКурылыс",
@@ -3436,7 +3436,7 @@
   "city": "almaty",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "almaty:аптекаплюс": {
   "name": "АПТЕКАПЛЮС",
@@ -4389,7 +4389,7 @@
   "city": "almaty",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "almaty:отель апартаменты": {
   "name": "Отель-апартаменты",
@@ -4584,11 +4584,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "smter_callcenter",
-  "website": "https://smter.ru/",
+  "website": "http://smter.ru/",
   "source": "https://2gis.kz/shymkent/firm/70000001026175242",
-  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_checked_at": "2026-10-30T14:43:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4647,7 +4647,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "almaty:тайсейко": {
   "name": "Тайсейко",
@@ -5163,7 +5163,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "astana:aster автомобили": {
   "name": "ASTER Автомобили",
@@ -5272,18 +5272,13 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "brocyberastana",
   "telegram": "brocybercup",
   "website": "https://brocyber.taplink.kz/p/fc58cd/",
-  "source": "https://2gis.kz/astana/firm/70000001117714705",
-  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
-  "avatar_tried": [
-   "telegram",
-   "website"
-  ],
   "avatar": "1588d4b16f15da26.jpg",
-  "avatar_source": "telegram"
+  "avatar_source": "telegram",
+  "source": "https://2gis.kz/astana/firm/70000001117714705"
  },
  "astana:buildtrust": {
   "name": "BuildTrust",
@@ -5747,16 +5742,12 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "kaber_kids",
   "website": "https://taplink.cc/kaber_kids",
-  "source": "https://2gis.kz/astana/firm/70000001038545633",
-  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "d565c51c9258a8b8.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/astana/firm/70000001038545633"
  },
  "astana:kinderland": {
   "name": "KINDERLAND",
@@ -6705,7 +6696,7 @@
   "city": "astana",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "astana:донер на абая mega silk way": {
   "name": "Донер на Абая (MEGA SILK WAY)",
@@ -6801,7 +6792,7 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "izmir_cafe_astana",
   "source": "https://2gis.kz/astana/firm/70000001088884272"
  },
@@ -7469,7 +7460,7 @@
   "city": "astana",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "astana:эмити интернешнл": {
   "name": "ЭМИТИ Интернешнл",
@@ -7899,7 +7890,7 @@
   "city": "karaganda",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "stratera.kz",
   "source": "https://2gis.kz/astana/firm/70000001087690675"
  },
@@ -8392,7 +8383,7 @@
   "city": "kostanay",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "kostanay:автодом костанай": {
   "name": "Автодом Костанай",
@@ -8436,7 +8427,7 @@
   "city": "kostanay",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "kostanay:балкан курылыс": {
   "name": "Балкан Курылыс",
@@ -9387,7 +9378,7 @@
   "city": "semey",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "semey:рекламно производственная компания семей коркем": {
   "name": "Рекламно-производственная компания Семей Коркем",
@@ -9471,16 +9462,12 @@
   "city": "shymkent",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "kaspi.kz",
   "website": "https://kaspi.kz/",
-  "source": "https://2gis.kz/shymkent/firm/70000001025879632",
-  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "94040154fc3f41c7.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/shymkent/firm/70000001025879632"
  },
  "shymkent:kub group": {
   "name": "KUB GROUP",
@@ -9510,7 +9497,7 @@
   "city": "shymkent",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "shymkent:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -9563,7 +9550,7 @@
   "city": "shymkent",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "shymkent:studyon": {
   "name": "StudyON",
@@ -9584,7 +9571,7 @@
   "city": "shymkent",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00"
+  "checked_at": "2026-10-30T14:43:59+00:00"
  },
  "shymkent:womans time": {
   "name": "Woman’s time",
@@ -9733,11 +9720,11 @@
   "city": "shymkent",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-10-30T13:44:04+00:00",
+  "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "smter_callcenter",
-  "website": "https://smter.ru/",
+  "website": "http://smter.ru/",
   "source": "https://2gis.kz/shymkent/firm/70000001026175242",
-  "avatar_checked_at": "2026-10-30T13:44:04+00:00",
+  "avatar_checked_at": "2026-10-30T14:43:59+00:00",
   "avatar_tried": [
    "website"
   ]

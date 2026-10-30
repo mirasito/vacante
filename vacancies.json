@@ -1,5 +1,30 @@
 [
  {
+  "id": "hh-138825519",
+  "title": "Оператор call-центра (теплая база)",
+  "category": "callcenter",
+  "city": "ust-kamenogorsk",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [],
+  "employer": "Sigua on Staff",
+  "text": "Обязанности: Обработка входящих заявок от клиентов, поступающих в CRM-систему через сайт (только тёплая клиентская база!) (звонят клиенты, которые хотят купить...\nТребования: Операционная система компьютера или ноутбука не ниже Windows 10. - Оперативная память от 8 ГБ. - Наличие браузера Google Chrome.",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138825519?tech_source=api",
+  "posted_at": "2026-10-30T00:45:47+00:00",
+  "fingerprint": "4b3393428c1ff085",
+  "also_seen_in": [
+   "https://hh.ru/vacancy/138495967?tech_source=api",
+   "https://hh.ru/vacancy/138495972?tech_source=api",
+   "https://hh.kz/vacancy/138495967?tech_source=api",
+   "https://hh.kz/vacancy/138495972?tech_source=api"
+  ],
+  "address": "Москва",
+  "top_until": null
+ },
+ {
   "id": "hh-138986442",
   "title": "Менеджер по продажам",
   "category": "retail",
@@ -85946,29 +85971,6 @@
   "fingerprint": "39045d90f6ee2a2a",
   "also_seen_in": [],
   "address": "Тугуро-Чумиканский муниципальный округ",
-  "top_until": null
- },
- {
-  "id": "hh-138825519",
-  "title": "Оператор call-центра (теплая база)",
-  "category": "callcenter",
-  "city": "ust-kamenogorsk",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [],
-  "employer": "Sigua on Staff",
-  "text": "Обязанности: Обработка входящих заявок от клиентов, поступающих в CRM-систему через сайт (только тёплая клиентская база!) (звонят клиенты, которые хотят купить...\nТребования: Операционная система компьютера или ноутбука не ниже Windows 10. - Оперативная память от 8 ГБ. - Наличие браузера Google Chrome.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138825519?tech_source=api",
-  "posted_at": "2026-10-27T00:45:47+00:00",
-  "fingerprint": "4b3393428c1ff085",
-  "also_seen_in": [
-   "https://hh.ru/vacancy/138495967?tech_source=api",
-   "https://hh.ru/vacancy/138495972?tech_source=api"
-  ],
-  "address": "Москва",
   "top_until": null
  },
  {

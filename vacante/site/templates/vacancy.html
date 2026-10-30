@@ -7,7 +7,7 @@
 <article class="vacancy">
   <h1>{{ v.title }}</h1>
   {% set place = venue(v) %}
-  {% if v.employer %}<div class="employer">{% if place and place.avatar %}<img class="avatar" src="{{ root }}/venues/{{ place.avatar }}" alt="" width="40" height="40">{% endif %}{{ v.employer }}</div>{% endif %}
+  {% if v.employer %}<div class="employer">{% if place and place.avatar %}<img class="avatar" src="{{ root }}/venues/{{ place.avatar }}" alt="" width="40" height="40">{% else %}{% set ch = initial(v.employer) %}<span class="avatar initial" style="background:{{ ch[1] }}" aria-hidden="true">{{ ch[0] }}</span>{% endif %}{{ v.employer }}</div>{% endif %}
   <div class="meta">{{ city_name(v.city) }} · опубликовано {{ age(v) }}</div>
   <div class="pills">
     {% for perk in v.perks %}<span class="pill">{{ perk }}</span>{% endfor %}

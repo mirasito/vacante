@@ -9,7 +9,7 @@ from PIL import Image
 from vacante import autopost, card, venues
 from vacante.models import RawPost
 from vacante.parse import parse_post
-from vacante.site.build import build
+from vacante.site.build import build, initial
 from vacante.store import save_vacancies
 
 NOW = datetime(2026, 10, 28, 7, tzinfo=timezone.utc)  # 12:00 в Казахстане
@@ -261,6 +261,23 @@ def test_website_logo_prefers_touch_icon_and_respects_robots():
         "https://shop.kz/touch.png": image(),
     }))
     assert closed.avatar("https://shop.kz/") is None
+
+
+def test_initial_placeholder_skips_quotes_and_legal_form():
+    assert initial('ТОО «Жеті Аспан»')[0] == "Ж"
+    assert initial("dino fest")[0] == "D"
+    assert initial("DINO FEST") == initial("Dino Fest")  # цвет постоянный для заведения
+    assert initial("«»")[0] == "•"
+
+
+def test_site_shows_letter_when_venue_has_no_avatar(tmp_path):
+    data = tmp_path / "data"
+    v = make(1, DINO)
+    save_vacancies(data, [v])
+    build(data, tmp_path / "out", now=NOW)
+    listing = (tmp_path / "out" / "almaty" / "index.html").read_text("utf-8")
+    assert 'class="avatar initial"' in listing and ">D</span>DINO FEST" in listing
+    assert '<img class="avatar"' not in listing
 
 
 def test_site_and_post_show_avatar_and_instagram(tmp_path):

@@ -136,6 +136,13 @@
   "avatar": "391e3f0867ad3166.jpg",
   "avatar_source": "website"
  },
+ "aktau:жигер": {
+  "name": "Жигер",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
+ },
  "aktau:заман": {
   "name": "Заман",
   "city": "aktau",
@@ -321,6 +328,13 @@
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
  },
+ "aktobe:центр красоты и здоровья айгерим тоо цкиз айгерим": {
+  "name": "Центр красоты и здоровья Айгерим ТОО ЦКиЗ «Айгерим»",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
+ },
  "almaty:12 месяцев": {
   "name": "12 месяцев",
   "city": "almaty",
@@ -436,6 +450,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "almaty:akdess": {
+  "name": "AKDESS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "almaty:albakov group": {
+  "name": "Albakov Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "almaty:alg company": {
   "name": "ALG Company",
@@ -1304,6 +1332,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:hyundai trans auto": {
+  "name": "Hyundai Trans Auto",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "almaty:imannur & ramazan": {
   "name": "IMANNUR & RAMAZAN",
@@ -2492,6 +2527,15 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "almaty:автоимперия 8 миля": {
+  "name": "Автоимперия 8 Миля",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00",
+  "instagram": "8milya.autoimperiya",
+  "source": "https://2gis.kz/almaty/firm/9429940000901993"
+ },
  "almaty:автора": {
   "name": "Автора",
   "city": "almaty",
@@ -2685,6 +2729,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "almaty:амиркулова": {
+  "name": "Амиркулова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "almaty:андреев вадим": {
   "name": "Андреев Вадим",
@@ -3042,6 +3093,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:жапаров": {
+  "name": "Жапаров",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "almaty:жибек жолы": {
   "name": "Жибек жолы",
@@ -4307,6 +4365,13 @@
   "avatar": "e16aed69b09a4edb.jpg",
   "avatar_source": "website"
  },
+ "astana:caspipromtekh": {
+  "name": "CaspiPromTekh",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
+ },
  "astana:center beton company": {
   "name": "Center Beton Company",
   "city": "astana",
@@ -4777,6 +4842,22 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:nkb group kazakhstan": {
+  "name": "NKB Group Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00",
+  "instagram": "nkb_astana",
+  "website": "https://nkb.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001036976004",
+  "avatar_checked_at": "2026-10-30T00:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bda4bf99e376f427.jpg",
+  "avatar_source": "website"
+ },
  "astana:of corp": {
   "name": "OF Corp",
   "city": "astana",
@@ -4853,6 +4934,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "astana:rapidregqz": {
+  "name": "RapidRegQz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "astana:rixos president hotel astana": {
   "name": "RIXOS  PRESIDENT  HOTEL  ASTANA",
@@ -5338,6 +5426,15 @@
   "instagram": "allur.kz",
   "source": "https://www.instagram.com/allur.kz/"
  },
+ "astana:донер на абая mega silk way": {
+  "name": "Донер на Абая (MEGA SILK WAY)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00",
+  "instagram": "doner_na_abaya_astanaa",
+  "source": "https://2gis.kz/astana/firm/70000001094949378"
+ },
  "astana:дошкольное воспитание и обучение": {
   "name": "Дошкольное воспитание и обучение",
   "city": "astana",
@@ -5360,6 +5457,13 @@
   ],
   "avatar": "56f0484378651c82.jpg",
   "avatar_source": "website"
+ },
+ "astana:есова": {
+  "name": "Есова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "astana:жеті аспан супермаркет galmart": {
   "name": "Жеті Аспан (Супермаркет galmart)",
@@ -5686,6 +5790,13 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:сеть лаундж баров hookah place": {
+  "name": "Сеть лаундж-баров Hookah Place",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
+ },
  "astana:солод": {
   "name": "Солод",
   "city": "astana",
@@ -5958,6 +6069,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "atyrau:apple city corps": {
+  "name": "Apple City Corps",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00",
+  "instagram": "applecity_careers",
+  "website": "https://applecity.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001051614192",
+  "avatar_checked_at": "2026-10-30T00:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:astoria трц qiwi": {
   "name": "ASTORIA (ТРЦ QIWI)",
@@ -6980,6 +7105,13 @@
    "website"
   ]
  },
+ "pavlodar:kiddi": {
+  "name": "Kiddi",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
+ },
  "pavlodar:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
   "city": "pavlodar",
@@ -6993,6 +7125,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "pavlodar:megabron": {
+  "name": "Megabron",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00",
+  "instagram": "megabron_pavlodar",
+  "source": "https://2gis.kz/pavlodar/firm/70000001047526770"
  },
  "pavlodar:one two sleep": {
   "name": "One-two-sleep",
@@ -7534,6 +7675,15 @@
    "website"
   ]
  },
+ "shymkent:main energy group": {
+  "name": "Main Energy Group",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00",
+  "instagram": "main_energy_group_etl",
+  "source": "https://2gis.kz/shymkent/firm/70000001103677001"
+ },
  "shymkent:nls kazakhstan": {
   "name": "NLS Kazakhstan",
   "city": "shymkent",
@@ -7684,6 +7834,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "shymkent:танкеев б б": {
+  "name": "Танкеев Б.Б.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "shymkent:торговый дом rokos": {
   "name": "ТОРГОВЫЙ ДОМ ROKOS",
@@ -7920,6 +8077,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "ust-kamenogorsk:12 месяцев восток": {
+  "name": "12 месяцев-Восток",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T00:43:00+00:00"
  },
  "ust-kamenogorsk:asteco": {
   "name": "ASTECO",

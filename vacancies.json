@@ -1,5 +1,73 @@
 [
  {
+  "id": "rabota_astana-15646",
+  "title": "Продавец",
+  "category": "retail",
+  "city": "astana",
+  "salary_min": 12000,
+  "salary_max": null,
+  "salary_period": "day",
+  "schedule": "2/2, ночные смены",
+  "perks": [
+   "Жильё",
+   "Обучение",
+   "Можно студентам"
+  ],
+  "employer": null,
+  "text": "📌Требуется в Продуктовый магазин продавец НОЧНАЯ СМЕНА\n\n📅График 2/2\nНОЧНАЯ СМЕНА\n21:00-09:00\nЗарплата: ЗА ВЫХОД 12000\n\nПрошу только ответственных людей писать!\nНА ДОЛГИЙ СРОК\n\nМагазин находится и Район КОКТАЛ\nСтажировка 2 дня не оплачивается\n\n📋Требования\n· Владение рус и каз языком в совершенстве;\n· Проживание только в черте города;\n-студентов тоже рассматриваем (только ответственных)\nЕсли полностью ознакомлены требованиями и подходите под наши критерии, при звонке сказать кодовое « *“ГОТОВ РАБОТАТЬ”))))\n\n📍Адрес:Е-753 дом 5\n📲Обращаться по номеру\n Мадина\n Асет\n Асет ватсап",
+  "source": "telegram",
+  "source_url": "https://t.me/rabota_astana/15646",
+  "posted_at": "2026-10-30T06:35:22+00:00",
+  "fingerprint": "7614b8ba01e7bb28",
+  "also_seen_in": [],
+  "address": "Е-753 дом 5",
+  "top_until": null
+ },
+ {
+  "id": "astana_job_vakansii-129946",
+  "title": "Продавец",
+  "category": "retail",
+  "city": "astana",
+  "salary_min": 2000,
+  "salary_max": null,
+  "salary_period": "hour",
+  "schedule": null,
+  "perks": [],
+  "employer": null,
+  "text": "📌 Сатушы кыз керек (пысык)\n📌 Требуется продавщица\n✔️ Продажа Мобильных аксессуаров желательно опытом\n\n📋 Требования\n– Желательно шустрая, ответственная\n– Девушки с 20-26 лет\n– На постоянную работу\n\nУсловия\n📆 График работы: с 9:30 до 20:00\n💰 Заработная плата: выход 2.000тг + % от продажи\n💵 В среднем в месяц выходит 250.000-350.000 тг\n\n📍 Адрес: Кошкарбаева 37/1, ТД Аспан базар\n📲 Все вопросы по телефону",
+  "source": "telegram",
+  "source_url": "https://t.me/astana_job_vakansii/129946",
+  "posted_at": "2026-10-30T06:35:14+00:00",
+  "fingerprint": "3529432b2fedeee6",
+  "also_seen_in": [],
+  "address": "Кошкарбаева 37/1, ТД Аспан базар",
+  "top_until": null
+ },
+ {
+  "id": "rabota_astanakz-31081",
+  "title": "Разнорабочий",
+  "category": "warehouse",
+  "city": "astana",
+  "salary_min": 15000,
+  "salary_max": null,
+  "salary_period": "day",
+  "schedule": null,
+  "perks": [
+   "Питание"
+  ],
+  "employer": "Чарын",
+  "text": "Вакансия: Разнорабочий\nЗ/п: 15 000 ₸ в день (выплата ежедневно)\n\nТелефон: , (Жулдуз)\nWhatsApp\n\nАдрес: Рынок «Чарын»\n\nТребования / Условия\n- Мужчина, 25–30 лет\n- Без вредных привычек\n- Обед за счет работодателя",
+  "source": "telegram",
+  "source_url": "https://t.me/rabota_Astanakz/31081",
+  "posted_at": "2026-10-30T06:34:26+00:00",
+  "fingerprint": "742188a550277d30",
+  "also_seen_in": [
+   "https://t.me/rabota_Astanakz/31090"
+  ],
+  "address": "Рынок «Чарын»",
+  "top_until": null
+ },
+ {
   "id": "hh-138994944",
   "title": "Мастер-приёмщик",
   "category": "service",
@@ -3701,28 +3769,6 @@
   "fingerprint": "8c80a590275149dd",
   "also_seen_in": [],
   "address": null,
-  "top_until": null
- },
- {
-  "id": "rabota_astanakz-31081",
-  "title": "Разнорабочий",
-  "category": "warehouse",
-  "city": "astana",
-  "salary_min": 15000,
-  "salary_max": null,
-  "salary_period": "day",
-  "schedule": null,
-  "perks": [
-   "Питание"
-  ],
-  "employer": "Чарын",
-  "text": "Вакансия: Разнорабочий\nЗ/п: 15 000 ₸ в день (выплата ежедневно)\n\nТелефон: , (Жулдуз)\nWhatsApp\n\nАдрес: Рынок «Чарын»\n\nТребования / Условия\n- Мужчина, 25–30 лет\n- Без вредных привычек\n- Обед за счет работодателя",
-  "source": "telegram",
-  "source_url": "https://t.me/rabota_Astanakz/31081",
-  "posted_at": "2026-10-30T04:42:22+00:00",
-  "fingerprint": "742188a550277d30",
-  "also_seen_in": [],
-  "address": "Рынок «Чарын»",
   "top_until": null
  },
  {
@@ -59327,26 +59373,6 @@
   "source_url": "https://hh.ru/vacancy/138312593?tech_source=api",
   "posted_at": "2026-10-27T13:33:27+00:00",
   "fingerprint": "fe3ffcfc2dcf29c7",
-  "also_seen_in": [],
-  "address": null,
-  "top_until": null
- },
- {
-  "id": "astana_rabota-90081",
-  "title": "Технический персонал",
-  "category": "service",
-  "city": "astana",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": "6/1",
-  "perks": [],
-  "employer": "Малика",
-  "text": "",
-  "source": "telegram",
-  "source_url": "https://t.me/Astana_rabota/90081",
-  "posted_at": "2026-10-27T13:32:44+00:00",
-  "fingerprint": "da39a3ee5e6b4b0d",
   "also_seen_in": [],
   "address": null,
   "top_until": null

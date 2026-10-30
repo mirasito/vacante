@@ -325,6 +325,15 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "aktobe:reny": {
+  "name": "Reny",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "reny_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001109863379"
+ },
  "aktobe:taza group": {
   "name": "Taza group",
   "city": "aktobe",
@@ -1120,6 +1129,20 @@
   "checked_at": "2026-10-29T06:44:07+00:00",
   "instagram": "damdala.kz",
   "source": "https://2gis.kz/almaty/firm/70000001091380779"
+ },
+ "almaty:daris tte": {
+  "name": "Daris-TTE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "daristte.almaty",
+  "website": "http://daris-tte.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000786557",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:daua pharma": {
   "name": "DAUA Pharma",
@@ -2103,6 +2126,15 @@
   "avatar": "874822e452f58ebf.jpg",
   "avatar_source": "website"
  },
+ "almaty:qazaq parfum": {
+  "name": "QAZAQ PARFUM",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "qazaqparfum",
+  "source": "https://2gis.kz/almaty/firm/70000001081108357"
+ },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
   "city": "almaty",
@@ -3003,6 +3035,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "almaty:анатолий": {
+  "name": "Анатолий",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
+ },
  "almaty:андреев вадим": {
   "name": "Андреев Вадим",
   "city": "almaty",
@@ -3674,6 +3713,20 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "almaty:кузет сенім": {
+  "name": "Кузет Сенім",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "kuzetsenim",
+  "website": "https://www.kuzet-senim.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001022675240",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:кутюрина": {
   "name": "Кутюрина",
   "city": "almaty",
@@ -3845,6 +3898,20 @@
   "website": "https://narxoz.edu.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796151",
   "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:нобел алматинская фармацевтическая фабрика": {
+  "name": "Нобел Алматинская Фармацевтическая Фабрика",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "nobel.kz",
+  "website": "http://nobel.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000789033",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -5084,6 +5151,13 @@
   "instagram": "koktem.bistro",
   "source": "https://2gis.kz/astana/firm/70000001100839755"
  },
+ "astana:korean shop": {
+  "name": "Korean Shop",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
+ },
  "astana:li kon пзм li con": {
   "name": "LI-KON (ПЗМ LI-CON)",
   "city": "astana",
@@ -5382,6 +5456,13 @@
   "instagram": "simple_ashana",
   "source": "https://2gis.kz/astana/firm/70000001076582201"
  },
+ "astana:skill hub": {
+  "name": "Skill Hub",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
+ },
  "astana:small тм скиф трейд тоо": {
   "name": "Small, ТМ (Скиф Трейд, ТОО)",
   "city": "astana",
@@ -5500,6 +5581,20 @@
    "website"
   ]
  },
+ "astana:terra pro": {
+  "name": "Terra Pro",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "terraprowear.kz",
+  "website": "http://terrapro.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001065617024",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:the shamrock": {
   "name": "The Shamrock",
   "city": "astana",
@@ -5534,6 +5629,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
+ },
+ "astana:vds": {
+  "name": "VDS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -5776,6 +5878,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "astana:газель": {
+  "name": "Газель",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
+ },
  "astana:гастрономия вкуса гарсов а м": {
   "name": "Гастрономия вкуса (ГАРСОВ А.М.)",
   "city": "astana",
@@ -5830,6 +5939,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "astana:евразиан фудс корпорэйшн ао": {
+  "name": "Евразиан Фудс Корпорэйшн, АО",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
  },
  "astana:ели худели тм ип юлия": {
   "name": "Ели-худели, ТМ (ИП Юлия)",
@@ -6009,6 +6125,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:лига полис": {
+  "name": "Лига Полис",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
  },
  "astana:магазин мужской одежды sott": {
   "name": "Магазин мужской одежды SOTT",
@@ -6229,6 +6352,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "astana:семь морей алматы": {
+  "name": "Семь морей-Алматы",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "7morey.kz",
+  "website": "https://7morey.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001046859422",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:сеть лаундж баров hookah place": {
   "name": "Сеть лаундж-баров Hookah Place",
@@ -7785,6 +7922,24 @@
   "avatar": "cda222f1bf0f48f1.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:пекарня 5 kz": {
+  "name": "Пекарня №5 KZ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "pekarnya_n5",
+  "telegram": "pekarnya5_kz",
+  "website": "https://taplink.cc/pekarnya5",
+  "source": "https://2gis.kz/pavlodar/firm/70000001051327421",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3b503f9aa329e359.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:пкф атриум": {
   "name": "ПКФ Атриум",
   "city": "pavlodar",
@@ -7797,6 +7952,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:попова": {
+  "name": "Попова",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
  },
  "petropavlovsk:alcomag": {
   "name": "AlcoMag",
@@ -8102,6 +8264,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "shymkent:arbuz group арбуз груп": {
+  "name": "Arbuz Group (Арбуз Груп)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "arbuz_kz",
+  "website": "https://arbuz.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001114687647",
+  "avatar_checked_at": "2026-10-30T04:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:atamiras s": {
   "name": "ATAMIRAS.S",
@@ -8413,6 +8589,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "taraz:green house limited": {
+  "name": "Green House Limited",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00",
+  "instagram": "greenhouse_limited",
+  "source": "https://2gis.kz/shymkent/firm/70000001026666557"
  },
  "taraz:lamoda kz мода с доставкой тоо": {
   "name": "Lamoda.kz (Мода с доставкой, ТОО)",
@@ -8750,6 +8935,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "ust-kamenogorsk:высочайший": {
+  "name": "Высочайший",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
+ },
  "ust-kamenogorsk:докка": {
   "name": "ДОККА",
   "city": "ust-kamenogorsk",
@@ -8809,6 +9001,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "ust-kamenogorsk:научно технический центр востоктехносервис": {
+  "name": "Научно-Технический Центр Востоктехносервис",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T04:43:33+00:00"
  },
  "ust-kamenogorsk:ново широкинский рудник": {
   "name": "Ново-Широкинский рудник",

@@ -184,6 +184,21 @@
   "avatar": "0fe932e4069c010a.jpg",
   "avatar_source": "website"
  },
+ "aktau:волна": {
+  "name": "ВОЛНА",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "website": "http://volna.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001032499279",
+  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "729c0357b48979b7.jpg",
+  "avatar_source": "website"
+ },
  "aktau:дана": {
   "name": "Дана",
   "city": "aktau",
@@ -261,6 +276,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "aktau:свежак": {
+  "name": "СВЕЖАК",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "instagram": "svezhak_bar_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001028524104"
  },
  "aktau:смак": {
   "name": "Смак",
@@ -427,6 +451,15 @@
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
  },
+ "aktobe:актобе молл": {
+  "name": "Актобе Молл",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "instagram": "aqtobe.mall",
+  "source": "https://2gis.kz/aktobe/firm/70000001032720012"
+ },
  "aktobe:актобе нан": {
   "name": "Актобе-нан",
   "city": "aktobe",
@@ -489,6 +522,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "aktobe:лядов е е": {
+  "name": "Лядов Е.Е",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
  },
  "aktobe:м стройтранс": {
   "name": "М-СтройТранс",
@@ -1743,6 +1783,20 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "almaty:globus machinery": {
+  "name": "GLOBUS MACHINERY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "instagram": "globus_machinery",
+  "website": "https://globusmachinery.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082986184",
+  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:glovo kazakhstan": {
   "name": "Glovo Kazakhstan",
   "city": "almaty",
@@ -2494,6 +2548,13 @@
   "checked_at": "2026-10-29T16:44:32+00:00",
   "instagram": "percorso_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001062089129"
+ },
+ "almaty:pharmix": {
+  "name": "PHARMIX",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
  },
  "almaty:pinta": {
   "name": "Pinta",
@@ -3584,6 +3645,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "almaty:анар": {
+  "name": "Анар",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "almaty:анатолий": {
   "name": "Анатолий",
   "city": "almaty",
@@ -3715,6 +3783,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "almaty:банк центркредит": {
+  "name": "Банк ЦентрКредит",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "instagram": "centercreditkz",
+  "website": "https://bcc.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000824139",
+  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:бариста": {
   "name": "Бариста",
@@ -5905,6 +5987,13 @@
   "instagram": "good_lombard_astana",
   "source": "https://2gis.kz/astana/firm/70000001039438500"
  },
+ "astana:gresso kz": {
+  "name": "GRESSO KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "astana:gsco group": {
   "name": "GSCO Group",
   "city": "astana",
@@ -6444,6 +6533,13 @@
   "instagram": "sherlock_coffee_astana",
   "source": "https://2gis.kz/astana/firm/70000001077842327"
  },
+ "astana:signtech kazakhstan": {
+  "name": "SignTech Kazakhstan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "astana:silkway store": {
   "name": "SilkWay Store",
   "city": "astana",
@@ -6966,6 +7062,13 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "astana:в квадрате недвижимости": {
+  "name": "В Квадрате недвижимости",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "astana:валиева": {
   "name": "Валиева",
   "city": "astana",
@@ -7265,6 +7368,13 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "astana:кожапова м а": {
+  "name": "Кожапова М.А.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "astana:компания cp retail компания си пи ритэил": {
   "name": "Компания CP Retail (Компания Си Пи Ритэил)",
   "city": "astana",
@@ -7452,6 +7562,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "astana:общепит": {
+  "name": "Общепит",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
  },
  "astana:омартрейд": {
   "name": "ОмарТрейд",
@@ -7740,6 +7857,13 @@
   "avatar": "24fd2d9268e3180c.jpg",
   "avatar_source": "website"
  },
+ "astana:торговая компания": {
+  "name": "Торговая компания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "astana:торговая компания дозор": {
   "name": "Торговая компания ДОЗОР",
   "city": "astana",
@@ -7869,6 +7993,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "astana:частная компания neomarkets ltd": {
+  "name": "Частная компания Neomarkets Ltd.",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "instagram": "neomarketskz",
+  "source": "https://www.instagram.com/neomarketskz/"
  },
  "astana:эклипс сервис": {
   "name": "Эклипс сервис",
@@ -8577,6 +8710,13 @@
    "website"
   ]
  },
+ "karaganda:кгу единый координационный центр государственного учреждения управление цифровых технологий карагандинской области": {
+  "name": "КГУ Единый координационный центр государственного учреждения Управление цифровых технологий Карагандинской области",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "karaganda:компания витанова": {
   "name": "Компания Витанова",
   "city": "karaganda",
@@ -8834,6 +8974,13 @@
   ],
   "avatar": "6aa4415f987e23f3.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:ахметова а г": {
+  "name": "Ахметова А.Г.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
  },
  "kokshetau:итенова": {
   "name": "ИТЕНОВА",
@@ -9201,6 +9348,20 @@
   ],
   "avatar": "20ea0b412ff4855e.jpg",
   "avatar_source": "telegram"
+ },
+ "kostanay:страховая компания freedom insurance": {
+  "name": "Страховая компания Freedom Insurance",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00",
+  "instagram": "ffins.kz",
+  "website": "https://ffins.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001089274087",
+  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:табыс&co": {
   "name": "Табыс&CO",
@@ -9880,6 +10041,13 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "semey:sandyq world": {
+  "name": "Sandyq World",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
+ },
  "semey:trans alliance service": {
   "name": "Trans Alliance Service",
   "city": "semey",
@@ -10268,6 +10436,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "shymkent:дентро": {
+  "name": "Дентро",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T19:43:59+00:00"
  },
  "shymkent:дск 17": {
   "name": "ДСК 17",

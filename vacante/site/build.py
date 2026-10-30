@@ -10,6 +10,7 @@ import html
 import json
 import re
 import shutil
+import zlib
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -159,9 +160,20 @@ def _env() -> Environment:
     env.globals.update(CATEGORIES=CATEGORIES, city_name=city_name, salary_label=salary_label, twogis_url=twogis_url,
                        monthly_pay=monthly_pay, monthly_label=monthly_label, search_text=search_text, money=money,
                        FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url,
-                       site_name=site_name, more_links=more_links)
+                       site_name=site_name, more_links=more_links, initial=initial)
     env.filters["plural"] = plural
     return env
+
+
+# Фон заглушки вместо аватара: спокойные тона, на всех читается белая буква в светлой и тёмной теме
+INITIAL_COLORS = ["#5b7db1", "#4f9a8a", "#b0735a", "#8a6bb0", "#a3864a", "#5e8f5a", "#b05f7a", "#6a7f8f"]
+
+
+def initial(name: str) -> tuple[str, str]:
+    """Заглушка аватара: первая буква названия (без кавычек и «ТОО») и цвет, постоянный для этого названия."""
+    clean = venue_store.key(name, None).split(":", 1)[1]
+    letter = next((c for c in clean if c.isalnum()), "•").upper()
+    return letter, INITIAL_COLORS[zlib.crc32(clean.encode()) % len(INITIAL_COLORS)]
 
 
 def instagram_url(venue: dict | None) -> str | None:

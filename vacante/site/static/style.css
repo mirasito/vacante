@@ -36,7 +36,9 @@ a { color: inherit; }
 .employer { font-size: 17px; margin-top: 2px; display: flex; align-items: center; gap: 8px; }
 .employer .avatar { width: 28px; height: 28px; border-radius: 50%; flex: none; object-fit: cover; background: var(--line); }
 .vacancy .employer { font-size: 19px; margin-top: 8px; }
+.employer .initial { display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 700; line-height: 1; }
 .vacancy .employer .avatar { width: 40px; height: 40px; }
+.vacancy .employer .initial { font-size: 19px; }
 .meta { color: var(--quiet); font-size: 14px; margin-top: 4px; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pill { background: var(--pill); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
@@ -44,7 +46,7 @@ a { color: inherit; }
 .pill.monthly { background: none; border: 1.5px solid var(--line); color: var(--quiet); padding: 2.5px 10.5px; }
 .more { margin: 24px 0 12px; color: var(--quiet); }
 .more a { font-weight: 600; }
-.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12px; padding: 12px 16px; text-decoration: none; font-weight: 600; }
+a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12px; padding: 12px 16px; text-decoration: none; font-weight: 600; }
 .by-category { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 16px; }
 .by-category h2 { width: 100%; font-size: 18px; margin: 0; }
 .by-category a { font-weight: 600; text-decoration: none; }

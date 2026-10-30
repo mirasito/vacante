@@ -21,6 +21,22 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "aktau:coffeе boom": {
+  "name": "Coffeе BOOM",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "instagram": "coffeeboom.aqtau",
+  "website": "https://coffeeboom.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001050242365",
+  "avatar_checked_at": "2026-10-30T23:43:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "14534ea057697ede.jpg",
+  "avatar_source": "website"
+ },
  "aktau:dark cloud": {
   "name": "Dark Cloud",
   "city": "aktau",
@@ -460,6 +476,13 @@
   "instagram": "reny_aktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001109863379"
  },
+ "aktobe:sms group kazakhstan": {
+  "name": "SMS group Kazakhstan",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "aktobe:taza group": {
   "name": "Taza group",
   "city": "aktobe",
@@ -651,6 +674,21 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "almaty:abt & e trans forwarding company": {
+  "name": "ABT & E-trans Forwarding company",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "website": "http://abttrans.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104624062",
+  "avatar_checked_at": "2026-10-30T23:43:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f70aecd73d9896cd.jpg",
+  "avatar_source": "website"
+ },
  "almaty:adal сут": {
   "name": "Adal сут",
   "city": "almaty",
@@ -762,6 +800,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ali bi": {
+  "name": "Ali Bi",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "instagram": "ali_bi_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001099440809"
  },
  "almaty:allergo clinic": {
   "name": "Allergo Clinic",
@@ -1580,6 +1627,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:dos охрана": {
+  "name": "DOS Охрана",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "almaty:dostyk plaza": {
   "name": "Dostyk Plaza",
   "city": "almaty",
@@ -2205,6 +2259,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "almaty:kelet machine building plant": {
+  "name": "KELET Machine-Building Plant",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "almaty:kill house": {
   "name": "Kill House",
   "city": "almaty",
@@ -2794,6 +2855,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "almaty:right contact": {
+  "name": "Right Contact",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
  },
  "almaty:rks kz": {
   "name": "RKS.KZ",
@@ -4545,6 +4613,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
+ },
+ "almaty:ким в р": {
+  "name": "Ким В.Р",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
  },
  "almaty:ким н б": {
   "name": "КИМ Н. Б.",
@@ -6552,6 +6627,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "astana:medical pro": {
+  "name": "Medical PRO",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "astana:mega center management": {
   "name": "Mega Center Management",
   "city": "astana",
@@ -6741,6 +6823,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "astana:profservice": {
+  "name": "ProfService",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "website": "https://profservice.team/",
+  "source": "https://2gis.kz/astana/firm/70000001051452799",
+  "avatar_checked_at": "2026-10-30T23:43:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "95176a1e7f9f8337.jpg",
+  "avatar_source": "website"
  },
  "astana:rapidregqz": {
   "name": "RapidRegQz",
@@ -7785,6 +7882,15 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:контроль техники": {
+  "name": "«Контроль Техники»",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "instagram": "kontrol_expert",
+  "source": "https://2gis.kz/astana/firm/70000001033704557"
+ },
  "astana:котофей казахстан": {
   "name": "Котофей Казахстан",
   "city": "astana",
@@ -8359,6 +8465,15 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "astana:урумчи хого": {
+  "name": "Урумчи Хого",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "instagram": "urumchi.hogo.astana3",
+  "source": "https://2gis.kz/astana/firm/70000001113328880"
+ },
  "astana:ф а логистик казахстан": {
   "name": "Ф.А. ЛОГИСТИК КАЗАХСТАН",
   "city": "astana",
@@ -8691,6 +8806,13 @@
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "atyrau:союз групп 20": {
+  "name": "Союз групп 20",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
  },
  "atyrau:холдинговая компания казтурборемонт": {
   "name": "Холдинговая компания КазТурбоРемонт",
@@ -9077,6 +9199,13 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "karaganda:даньяров е д": {
+  "name": "Даньяров Е.Д.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "karaganda:интервзрыв": {
   "name": "ИнтерВзрыв",
   "city": "karaganda",
@@ -9409,6 +9538,22 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "kokshetau:jana post": {
+  "name": "Jana Post",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00",
+  "instagram": "janapost.kazakhstan",
+  "website": "https://janapost.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001076061952",
+  "avatar_checked_at": "2026-10-30T23:43:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6f80523a6fe53a42.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "kokshetau",
@@ -9445,6 +9590,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
+ },
+ "kokshetau:тогузбаева е а": {
+  "name": "ТОГУЗБАЕВА Е.А.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
  },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
@@ -9864,6 +10016,13 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "kyzylorda:common market corporation": {
+  "name": "Common Market Corporation",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "kyzylorda:kyzylorda refinery": {
   "name": "Kyzylorda Refinery",
   "city": "kyzylorda",
@@ -10111,6 +10270,13 @@
   ],
   "avatar": "447d0083e59c682c.jpg",
   "avatar_source": "website"
+ },
+ "pavlodar:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
  },
  "pavlodar:tradicom": {
   "name": "TRADICOM",
@@ -11672,6 +11838,13 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "ust-kamenogorsk:востокцветмет": {
+  "name": "Востокцветмет",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
+ },
  "ust-kamenogorsk:высочайший": {
   "name": "Высочайший",
   "city": "ust-kamenogorsk",
@@ -11717,6 +11890,13 @@
   ],
   "avatar": "86c392d830f425bb.jpg",
   "avatar_source": "telegram"
+ },
+ "ust-kamenogorsk:илькон": {
+  "name": "ИльКон",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T23:43:10+00:00"
  },
  "ust-kamenogorsk:казахстанское промышленное предприятие": {
   "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",

@@ -460,3 +460,13 @@ def test_professions_found_by_technologist_3_do_not_overreach(text, wrong):
 ])
 def test_split_title_russian_and_kazakh(name, ru, kk):
     assert split_title(name) == (ru, kk)
+
+
+@pytest.mark.parametrize("text", [
+    "🔥 САТУ МЕНЕДЖЕРІ ҚАЖЕТ!\n\n💰 Жалақы: тұрақты оклад + бонус",
+    "📢 USTAZ EDUCATION-ға САТУ МЕНЕДЖЕРЛЕРІ ҚАЖЕТ!\n\nЕгер адамдармен сөйлесіп, түсіндіре алсаңыз",
+    "📢 Витамин сататын дүкенге сату мамандары керек!\n\n👩 Әйел адам, 25–30 жас аралығы.",
+])
+def test_kazakh_sales_manager_shown_in_russian(text):
+    vacancy = parse_post(RawPost("telegram", "chan", 1, "u", text, datetime(2026, 10, 30, tzinfo=timezone.utc), "almaty"))
+    assert vacancy is not None and vacancy.title == "Менеджер по продажам"

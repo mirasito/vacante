@@ -392,6 +392,13 @@
    "website"
   ]
  },
+ "aktobe:интерстиль тоо": {
+  "name": "Интерстиль, ТОО",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
+ },
  "aktobe:казснаблогистиксервис": {
   "name": "КазСнабЛогистикСервис",
   "city": "aktobe",
@@ -827,6 +834,13 @@
   "avatar": "f7015e8f05051d26.jpg",
   "avatar_source": "website"
  },
+ "almaty:azimut solutions": {
+  "name": "Azimut solutions",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
+ },
  "almaty:bakha potolok": {
   "name": "BAKHA POTOLOK",
   "city": "almaty",
@@ -897,6 +911,13 @@
   ],
   "avatar": "11d76ec54925e718.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:beat": {
+  "name": "BEAT",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "almaty:beauty guide": {
   "name": "Beauty Guide",
@@ -987,6 +1008,13 @@
   ],
   "avatar": "f114fc58412c1e78.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:bta almaty airport services": {
+  "name": "BTA Almaty - Airport Services",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "almaty:bugel алматы": {
   "name": "BUGEL Алматы",
@@ -1607,6 +1635,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "almaty:i con": {
+  "name": "I-Con",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "almaty:imannur & ramazan": {
   "name": "IMANNUR & RAMAZAN",
@@ -3223,6 +3258,20 @@
   "avatar": "e83596376854b6f3.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:аптекаплюс": {
+  "name": "АПТЕКАПЛЮС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "aptekaplus",
+  "website": "http://aptekaplus.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792751",
+  "avatar_checked_at": "2026-10-30T10:44:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:арман": {
   "name": "АРМАН",
   "city": "almaty",
@@ -3427,6 +3476,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:высочайший": {
+  "name": "Высочайший",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "almaty:гайдаров": {
   "name": "Гайдаров",
@@ -4608,6 +4664,13 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "almaty:шынай групп": {
+  "name": "Шынай Групп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
+ },
  "almaty:элит макс строй": {
   "name": "Элит Макс Строй",
   "city": "almaty",
@@ -5484,6 +5547,22 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:mycar astana": {
+  "name": "Mycar Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "mycar.astana",
+  "website": "https://mycar.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001052469569",
+  "avatar_checked_at": "2026-10-30T10:44:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c8497e03a7c4be1a.jpg",
+  "avatar_source": "website"
+ },
  "astana:na batys group": {
   "name": "NA BATYS GROUP",
   "city": "astana",
@@ -5868,6 +5947,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:the circle": {
+  "name": "The Circle",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "astana:the shamrock": {
   "name": "The Shamrock",
@@ -7042,6 +7128,15 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "atyrau:adona ltd": {
+  "name": "Adona ltd",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "adona.kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001055762774"
+ },
  "atyrau:apple city corps": {
   "name": "Apple City Corps",
   "city": "atyrau",
@@ -7276,6 +7371,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "karaganda:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302852255",
+  "avatar_checked_at": "2026-10-30T10:44:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0b6ee04918e46866.jpg",
+  "avatar_source": "website"
  },
  "karaganda:kaz metiz каз метиз": {
   "name": "Kaz-metiz (Каз-метиз)",
@@ -7756,6 +7867,22 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "kokshetau:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "minisokz",
+  "website": "https://miniso.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001033181780",
+  "avatar_checked_at": "2026-10-30T10:44:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6aa4415f987e23f3.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "kostanay",
@@ -7816,6 +7943,22 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "kostanay:автодом костанай": {
+  "name": "Автодом Костанай",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "autodomkostanay",
+  "website": "http://autodomkst.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001087499451",
+  "avatar_checked_at": "2026-10-30T10:44:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a85f6beb4d511fea.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:автокомплекс тарлан": {
   "name": "Автокомплекс Тарлан",
   "city": "kostanay",
@@ -7836,6 +7979,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "kostanay:балкан курылыс": {
+  "name": "Балкан Курылыс",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "kostanay:бостан": {
   "name": "Бостан",
@@ -7880,6 +8030,13 @@
   ],
   "avatar": "2160e0bd36b5c429.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:даньяров е д": {
+  "name": "Даньяров Е.Д.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
  },
  "kostanay:дычко в ю": {
   "name": "Дычко В.Ю",
@@ -8385,6 +8542,20 @@
   "avatar": "cda222f1bf0f48f1.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:павлодарская распределительная электросетевая компания ао": {
+  "name": "Павлодарская Распределительная Электросетевая Компания, АО",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "aopavlodarenergo",
+  "website": "https://www.pavlodarenergo.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001102917103",
+  "avatar_checked_at": "2026-10-30T10:44:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:пекарня 5 kz": {
   "name": "Пекарня №5 KZ",
   "city": "pavlodar",
@@ -8632,6 +8803,15 @@
   ],
   "avatar": "1e39ea5ae32aed86.jpg",
   "avatar_source": "telegram"
+ },
+ "semey:nango": {
+  "name": "NANGO",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "nango.kz",
+  "source": "https://2gis.kz/semej/firm/70000001067221057"
  },
  "semey:nordgold": {
   "name": "Nordgold",
@@ -8911,6 +9091,13 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "shymkent:высочайший": {
+  "name": "Высочайший",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00"
+ },
  "shymkent:генерал стафф": {
   "name": "ГЕНЕРАЛ-СТАФФ",
   "city": "shymkent",
@@ -9173,6 +9360,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "uralsk:altyncar": {
+  "name": "AltynCar",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T10:44:23+00:00",
+  "instagram": "altyncar_kuzov",
+  "source": "https://2gis.kz/uralsk/firm/70000001117361555"
  },
  "uralsk:oshaq": {
   "name": "OSHAQ",

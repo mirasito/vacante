@@ -71,6 +71,13 @@
   "instagram": "kitsu.rolls",
   "source": "https://2gis.kz/aktau/firm/70000001102936200"
  },
+ "aktau:majorica kz": {
+  "name": "MAJORICA KZ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "aktau:monte napoleone": {
   "name": "MONTE NAPOLEONE",
   "city": "aktau",
@@ -206,6 +213,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "aktau:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktau:ком мунай": {
   "name": "КОМ-МУНАЙ",
@@ -1415,6 +1435,13 @@
   "avatar_source": "manual",
   "source": "https://2gis.kz/almaty/firm/70000001110093666"
  },
+ "almaty:dmc": {
+  "name": "DMC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "almaty:dominika курилова э с": {
   "name": "Dominika (Курилова Э.С)",
   "city": "almaty",
@@ -1444,6 +1471,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "almaty:dsb food": {
+  "name": "DSB FOOD",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
  },
  "almaty:eagle eye construction": {
   "name": "Eagle Eye Construction",
@@ -2550,6 +2584,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:racks kz": {
+  "name": "Racks.kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "almaty:recruit expert": {
   "name": "Recruit expert",
   "city": "almaty",
@@ -3515,6 +3556,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:алтрикс": {
+  "name": "АЛТРИКС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "almaty:алтын алма": {
   "name": "Алтын Алма",
   "city": "almaty",
@@ -3801,6 +3849,15 @@
    "website"
   ]
  },
+ "almaty:восточный квартал": {
+  "name": "Восточный квартал",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "instagram": "vkalmaty",
+  "source": "https://2gis.kz/almaty/firm/9429940000941052"
+ },
  "almaty:высочайший": {
   "name": "Высочайший",
   "city": "almaty",
@@ -3956,6 +4013,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:елисеев максим анатольевич": {
+  "name": "Елисеев Максим Анатольевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "almaty:жакашбаев": {
   "name": "Жакашбаев",
   "city": "almaty",
@@ -4075,6 +4139,13 @@
   "checked_at": "2026-10-28T21:46:06+00:00",
   "instagram": "kgnt.kz",
   "source": "https://2gis.kz/almaty/firm/9429940000796244"
+ },
+ "almaty:инсталлгрупп": {
+  "name": "ИнсталлГрупп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
  },
  "almaty:интер мульти сервис": {
   "name": "Интер Мульти Сервис",
@@ -5869,6 +5940,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "astana:holy melon": {
+  "name": "Holy Melon",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
  },
  "astana:home2car": {
   "name": "Home2Car",
@@ -8025,6 +8103,19 @@
   "instagram": "akzhelken_group",
   "source": "https://2gis.kz/atyrau/firm/70000001093959071"
  },
+ "atyrau:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:квартал": {
   "name": "КВАРТАЛ",
   "city": "atyrau",
@@ -8125,6 +8216,24 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:ideal plintus qazaqstan": {
+  "name": "IDEAL Plintus Qazaqstan",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "instagram": "idealplintusqaz",
+  "telegram": "idealplintusqazaqstan",
+  "website": "https://taplink.cc/idealplintusqaz",
+  "source": "https://2gis.kz/astana/firm/70000001082033647",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "155ebf08f659512b.jpg",
+  "avatar_source": "telegram"
  },
  "karaganda:jet logistic": {
   "name": "Jet Logistic",
@@ -8454,6 +8563,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "karaganda:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:компания витанова": {
   "name": "Компания Витанова",
@@ -9388,6 +9510,19 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "pavlodar:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:каустик ао": {
   "name": "Каустик, АО",
   "city": "pavlodar",
@@ -9661,6 +9796,13 @@
   "avatar": "6efd21a1561520a0.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:прессбук": {
+  "name": "ПрессБук",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "petropavlovsk:северный 4": {
   "name": "Северный 4",
   "city": "petropavlovsk",
@@ -9832,6 +9974,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "semey:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "semey:коллекторское агентство seven": {
   "name": "Коллекторское агентство Seven",
@@ -10352,6 +10507,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "taraz:енина надежда ивановна": {
+  "name": "Енина Надежда Ивановна",
+  "city": "taraz",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "taraz:пырақ құрылыс": {
   "name": "Пырақ-Құрылыс",
   "city": "taraz",
@@ -10397,6 +10559,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "turkestan:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "turkestan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:altyncar": {
   "name": "AltynCar",
@@ -10744,6 +10919,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "ust-kamenogorsk:аппетитная": {
+  "name": "Аппетитная",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00"
+ },
  "ust-kamenogorsk:высочайший": {
   "name": "Высочайший",
   "city": "ust-kamenogorsk",
@@ -10789,6 +10971,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "ust-kamenogorsk:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-30T18:42:57+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
+  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",

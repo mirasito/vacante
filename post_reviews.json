@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T10:57:07+00:00",
+ "updated_at": "2026-10-31T11:57:36+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -12459,6 +12459,318 @@
    "verdict": "reject",
    "at": "2026-10-31T10:57:07+00:00",
    "reason": "Руководящая должность, работа в Атырау, не в Актау"
+  },
+  "rabota_astanakz-31125": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Технический персонал, посудомойщица",
+    "schedule": "2/2"
+   }
+  },
+  "rabota_astanakz-31068": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Монтажник",
+    "schedule": "Пн–Пт 09:00–19:00, Сб 09:00–15:00"
+   }
+  },
+  "zhumys_astana_kz-16863": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Уборщик, технический персонал",
+    "employer": "Кинотеатр «Чаплин»",
+    "address": "ТРЦ «Mega Silk Way»",
+    "schedule": "5/2 или 6/1, 08:00–20:00 или 20:00–08:00"
+   }
+  },
+  "astana_job_vakansii-129970": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Пекарь",
+    "schedule": "6/1, 08:00–19:00",
+    "perks": []
+   }
+  },
+  "astana_job_vakansii-129981": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "5/2, 11:00–20:00"
+   }
+  },
+  "zhumys_astana_kz-17011": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Кассир, официант",
+    "employer": "Активити-парк «Kidlavie»",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2, 10:00–22:00",
+    "address": "ТРЦ «Mega Silk Way», пр. Кабанбай батыра, 62, 1 этаж"
+   }
+  },
+  "rabota_astana-15631": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Технический персонал",
+    "salary_min": 350000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "6/1, 11:30–22:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16928": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Официант, хостес",
+    "employer": "Шайхана «Каусар»",
+    "schedule": "2/2, 11:00–00:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "astana_job_vakansii-129984": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Администратор, уборщица",
+    "employer": "Компьютерный клуб «HERO»",
+    "schedule": "сутки через двое, 10:00–10:00",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_job_vakansii-129962": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Донерщик, помощник повара",
+    "schedule": "2/2, 10:00–01:00",
+    "perks": [
+     "Питание",
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_job_vakansii-129961": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Менеджер-консультант",
+    "employer": "MARTEBE",
+    "schedule": "2/2 или 5/2"
+   }
+  },
+  "astana_job_vakansii-129853": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Сборщик-фасовщик",
+    "schedule": "5/2, ночные смены, 20:00–05:00"
+   }
+  },
+  "astana_rabota-90087": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Продавец-кассир, пекарь, мясник-обвальщик",
+    "employer": "Magnum",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "rabota4almaty-5948": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Технический персонал",
+    "salary_min": 210000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2, 08:30–18:00",
+    "address": "пр. Аль-Фараби, 77/1"
+   }
+  },
+  "hh-139026783": {
+   "verdict": "reject",
+   "at": "2026-10-31T11:57:36+00:00",
+   "reason": "Руководящая офисная должность (построение отдела продаж)"
+  },
+  "hh-138461528": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "Илийский район, промзона"
+   }
+  },
+  "agashka_job_almaty-1016": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Мастер по электромонтажным работам"
+   }
+  },
+  "hh-139026584": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Менеджер по продажам",
+    "address": "пр. Жибек Жолы, 135"
+   }
+  },
+  "rabota4almaty-5949": {
+   "verdict": "reject",
+   "at": "2026-10-31T11:57:36+00:00",
+   "reason": "Удалённая работа в продажах, не рабочая специальность"
+  },
+  "agashka_job_almaty-1002": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Фасовщик",
+    "schedule": "2/2, по 8 часов",
+    "address": "Алмалинский район"
+   }
+  },
+  "rabota4almaty-5881": {
+   "verdict": "reject",
+   "at": "2026-10-31T11:57:36+00:00",
+   "reason": "Сомнительное заведение (массажный салон для мужчин), работодатель неясен"
+  },
+  "rabota4almaty-5880": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Меховой салон «Союз Меха»",
+    "address": "мкр Самал-2, 33А"
+   }
+  },
+  "rabota4almaty-5879": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Монтажник окон",
+    "employer": "Qazyna Energy",
+    "address": "ул. Байзакова"
+   }
+  },
+  "rabota4almaty-5877": {
+   "verdict": "reject",
+   "at": "2026-10-31T11:57:36+00:00",
+   "reason": "Офисная должность (помощник администратора офиса)"
+  },
+  "hh-139026512": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Торговый представитель (HoReCa)",
+    "employer": "Рекрутинговое агентство CHANGE",
+    "schedule": "5/2",
+    "perks": []
+   }
+  },
+  "hh-139026666": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, по 12 часов",
+    "address": "мкр Катынкопыр, ул. Жангельдина, 26"
+   }
+  },
+  "hh-139026831": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "schedule": "2/2, по 12 часов",
+    "address": "ул. Абая, 20"
+   }
+  },
+  "aktobevakansii-44319": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Водитель на личном авто"
+   }
+  },
+  "vakansii_rabota_atyrau-49942": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Сушист, кассир",
+    "schedule": "6/1, 11:00–00:00"
+   }
+  },
+  "hh-131003936": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Токарь 5–6 разряда",
+    "employer": "Павлодарэнерго",
+    "schedule": "2/2, по 12 часов",
+    "address": "ул. Кривенко, 27"
+   }
+  },
+  "hh-139026034": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, по 9 часов",
+    "address": "ул. Естая, 81"
+   }
+  },
+  "hh-139026557": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "employer": "Mechta.kz",
+    "schedule": "5/2, по 8 часов",
+    "address": "ул. Казахстан, 159/4"
+   }
+  },
+  "hh-139026707": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, по 11 часов",
+    "address": "ул. Затаевича, 33А"
+   }
+  },
+  "hh-139026672": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "«Дико & Полезно»",
+    "schedule": "6/1 или 5/2"
+   }
+  },
+  "hh-139026786": {
+   "verdict": "approve",
+   "at": "2026-10-31T11:57:36+00:00",
+   "fields": {
+    "title": "Оптометрист-консультант",
+    "employer": "BRO glasses",
+    "schedule": "5/2, по 8 часов",
+    "address": "ул. Маяковского"
+   }
   }
  }
 }

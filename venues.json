@@ -1018,6 +1018,13 @@
   "avatar": "d6c566acbf08233c.jpg",
   "avatar_source": "website"
  },
+ "almaty:alliance solutions": {
+  "name": "Alliance Solutions",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
+ },
  "almaty:almatin group": {
   "name": "Almatin group",
   "city": "almaty",
@@ -1155,6 +1162,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:archimedes medical group": {
+  "name": "Archimedes Medical Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "instagram": "archimedes_almaty",
+  "website": "http://www.archimedes.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001573148",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d5625d5e1fc94fde.jpg",
+  "avatar_source": "website"
  },
  "almaty:arco invest": {
   "name": "ARCO INVEST",
@@ -1375,6 +1398,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:badimus group": {
+  "name": "Badimus Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
  },
  "almaty:bakha potolok": {
   "name": "BAKHA POTOLOK",
@@ -2268,6 +2298,20 @@
    "website"
   ]
  },
+ "almaty:gelato tutto bene": {
+  "name": "Gelato tutto bene",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "instagram": "tuttobene.kz",
+  "website": "http://tuttobene.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061125185",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:get target agency": {
   "name": "Get Target Agency",
   "city": "almaty",
@@ -2283,6 +2327,28 @@
   "checked_at": "2026-10-28T11:44:45+00:00",
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/almaty/firm/70000001024452567"
+ },
+ "almaty:global export shipping": {
+  "name": "ТОО Global Export Shipping",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:global wine and spirits": {
+  "name": "Global Wine and Spirits",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "website": "https://globalws.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001024205889",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e285d49cff68b8dc.jpg",
+  "avatar_source": "website"
  },
  "almaty:globalink": {
   "name": "Globalink",
@@ -3475,6 +3541,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:samgay": {
+  "name": "Samgay",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
  },
  "almaty:sandyq world": {
   "name": "Sandyq World",
@@ -5042,6 +5115,13 @@
    "website"
   ]
  },
+ "almaty:делюкс": {
+  "name": "ИП Делюкс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
+ },
  "almaty:дергаев вячеслав александрович": {
   "name": "Дергаев Вячеслав Александрович",
   "city": "almaty",
@@ -5706,6 +5786,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:махнина н в": {
+  "name": "Махнина Н.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
+ },
  "almaty:медицинский центр хак": {
   "name": "Медицинский центр ХАК",
   "city": "almaty",
@@ -6142,6 +6229,20 @@
   "avatar": "460e73c2b79668ae.jpg",
   "avatar_source": "website"
  },
+ "almaty:семь морей алматы": {
+  "name": "Семь морей-Алматы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "instagram": "7morey.kz",
+  "website": "https://7morey.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001046859422",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:сентрас капитал": {
   "name": "Сентрас Капитал",
   "city": "almaty",
@@ -6558,6 +6659,13 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "almaty:хуа ю интернационал в казахстане": {
+  "name": "Хуа Ю Интернационал в Казахстане",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
+ },
  "almaty:центр банкротства казахстана": {
   "name": "Центр банкротства Казахстана",
   "city": "almaty",
@@ -6908,6 +7016,13 @@
   ],
   "avatar": "badb98fbb7d26d3f.jpg",
   "avatar_source": "website"
+ },
+ "astana:asti": {
+  "name": "ASTI",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
  },
  "astana:asyl bala group": {
   "name": "ASYL Bala Group",
@@ -8256,6 +8371,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "astana:sm minerals": {
+  "name": "SM Minerals",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
+ },
  "astana:small тм скиф трейд тоо": {
   "name": "Small, ТМ (Скиф Трейд, ТОО)",
   "city": "astana",
@@ -8887,6 +9009,24 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "astana:бургерная farш": {
+  "name": "Бургерная FARШ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "instagram": "farsh_burger_kz",
+  "telegram": "farshburgerskz",
+  "website": "https://farsh-burger.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001050092804",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "e1b9377707bba64b.jpg",
+  "avatar_source": "website"
+ },
  "astana:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "astana",
@@ -9052,6 +9192,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "astana:грандбизнеспроект": {
+  "name": "ГрандБизнесПроект",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "instagram": "grandbp.kz",
+  "website": "http://gbp.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001103310652",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:группа компаний аллюр allur": {
   "name": "Группа компаний Аллюр (Allur)",
@@ -9326,6 +9480,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "astana:киселев и и": {
+  "name": "Киселёв И.И.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
  },
  "astana:кожапова м а": {
   "name": "Кожапова М.А.",
@@ -9666,6 +9827,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:олександра": {
+  "name": "Олександра",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
  },
  "astana:омартрейд": {
   "name": "ОмарТрейд",
@@ -10602,6 +10770,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "atyrau:страховая компания freedom insurance": {
+  "name": "Страховая компания Freedom Insurance",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "website": "https://ffins.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001094997040",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:филиал компании powerchina sepco1 electric power construction co ltd в республике казахстан": {
   "name": "Филиал компании POWERCHINA SEPCO1 Electric Power Construction Co.Ltd в Республике Казахстан",
@@ -13902,6 +14083,19 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "taraz:радуга тоо компания raduga kdr": {
+  "name": "Радуга, ТОО (Компания Raduga KDR)",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00",
+  "website": "https://www.kdr.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001111570615",
+  "avatar_checked_at": "2026-10-31T17:43:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "taraz:тсз": {
   "name": "ТСЗ",
   "city": "taraz",
@@ -13924,6 +14118,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "turkestan:bellas": {
+  "name": "BELLAS",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T17:43:24+00:00"
  },
  "turkestan:inclair": {
   "name": "Inclair",

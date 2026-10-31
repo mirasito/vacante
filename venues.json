@@ -654,6 +654,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "aktobe:аслан": {
+  "name": "АСЛАН",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "aktobe:гелиос": {
   "name": "Гелиос",
   "city": "aktobe",
@@ -3292,6 +3299,13 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:panther": {
+  "name": "Panther",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "almaty:percorso": {
   "name": "Percorso",
   "city": "almaty",
@@ -3549,6 +3563,13 @@
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
  },
+ "almaty:samruk trade": {
+  "name": "SAMRUK Trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "almaty:sandyq world": {
   "name": "Sandyq World",
   "city": "almaty",
@@ -3604,6 +3625,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "almaty:she brand": {
+  "name": "SHE brand",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00",
+  "instagram": "she.brand.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001098311815"
  },
  "almaty:sila energy kz сила энерджи кз": {
   "name": "SILA ENERGY KZ (СИЛА ЭНЕРДЖИ КЗ)",
@@ -4747,6 +4777,24 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "almaty:астория": {
+  "name": "АСТОРИЯ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00",
+  "instagram": "kz.casino.kz",
+  "telegram": "kzcasino",
+  "website": "http://casino.kz/astoria/",
+  "source": "https://2gis.kz/almaty/firm/70000001040690072",
+  "avatar_checked_at": "2026-10-31T18:42:42+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "8f94bcdf1c743b53.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:астра лoмбард": {
   "name": "Астра-Лoмбард",
   "city": "almaty",
@@ -5857,6 +5905,13 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "almaty:мнацаканьян а с": {
+  "name": "Мнацаканьян А.С.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "almaty:модерн ритейл": {
   "name": "МОДЕРН РИТЕЙЛ",
   "city": "almaty",
@@ -6256,6 +6311,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "almaty:сила харизмы": {
+  "name": "Сила Харизмы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00",
+  "instagram": "sila.harizmy.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001112465963"
  },
  "almaty:смартер казахстан": {
   "name": "Смартер Казахстан",
@@ -6832,6 +6896,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:ілияс": {
+  "name": "Ілияс",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
  },
  "astana:12 месяцев": {
   "name": "12 Месяцев",
@@ -7791,6 +7862,13 @@
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
  },
+ "astana:jas education": {
+  "name": "JAS EDUCATION",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "astana:js алматы": {
   "name": "JS Алматы",
   "city": "astana",
@@ -8403,6 +8481,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "astana:snd engineering": {
+  "name": "SND Engineering",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "astana:sofiaglobal": {
   "name": "SofiaGlobal",
   "city": "astana",
@@ -8869,6 +8954,19 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "astana:ар ал ди": {
+  "name": "Ар-Ал-Ди",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00",
+  "website": "http://f-okna.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001066155259",
+  "avatar_checked_at": "2026-10-31T18:42:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:арбалет": {
   "name": "Арбалет",
   "city": "astana",
@@ -9001,6 +9099,13 @@
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "astana:бостан": {
+  "name": "Бостан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
  },
  "astana:будапешт": {
   "name": "Будапешт",
@@ -11171,6 +11276,13 @@
   "instagram": "trdelnikgo",
   "source": "https://2gis.kz/karaganda/firm/70000001114127998"
  },
+ "karaganda:zikeyev murat": {
+  "name": "Zikeyev Murat",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "karaganda:автоматические котлы": {
   "name": "Автоматические Котлы",
   "city": "karaganda",
@@ -11248,6 +11360,13 @@
   ],
   "avatar": "3dd43ff8d89130e7.jpg",
   "avatar_source": "telegram"
+ },
+ "karaganda:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
  },
  "karaganda:гелиос": {
   "name": "Гелиос",
@@ -11868,6 +11987,13 @@
   "checked_at": "2026-10-28T23:45:40+00:00",
   "instagram": "osp_agro",
   "source": "https://2gis.kz/kostanaj/firm/70000001056268423"
+ },
+ "kostanay:rzv trans": {
+  "name": "RZV TRANS",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
  },
  "kostanay:skill hub": {
   "name": "Skill Hub",
@@ -13073,6 +13199,13 @@
   "instagram": "severnyi.kz",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001081602936"
  },
+ "petropavlovsk:уалиев ж а": {
+  "name": "Уалиев Ж.А.",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
+ },
  "petropavlovsk:фурманова светлана евгеньевна": {
   "name": "Фурманова Светлана Евгеньевна",
   "city": "petropavlovsk",
@@ -13311,6 +13444,19 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "semey:объединенная энергосервисная компания": {
+  "name": "Объединённая ЭнергоСервисная Компания",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00",
+  "website": "http://besk.kz/ru/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721358523",
+  "avatar_checked_at": "2026-10-31T18:42:42+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "semey:рекламно производственная компания семей коркем": {
   "name": "Рекламно-производственная компания Семей Коркем",
   "city": "semey",
@@ -13517,6 +13663,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:orda motors auto market": {
+  "name": "ORDA MOTORS AUTO MARKET",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
  },
  "shymkent:procoffee": {
   "name": "ProCoffee",
@@ -14914,6 +15067,15 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "ust-kamenogorsk:селена": {
+  "name": "Селена",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00",
+  "instagram": "selena_store_uka",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313963"
+ },
  "ust-kamenogorsk:сентрас капитал": {
   "name": "Сентрас Капитал",
   "city": "ust-kamenogorsk",
@@ -14989,6 +15151,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:фирма нкг": {
+  "name": "Фирма НКГ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T18:42:42+00:00"
  },
  "ust-kamenogorsk:центр с": {
   "name": "ЦЕНТР-С",

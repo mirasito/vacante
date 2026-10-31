@@ -78,6 +78,15 @@
   "instagram": "fume_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001099774610"
  },
+ "aktau:jamesburger 29мкр 229зд": {
+  "name": "Jamesburger 29мкр 229зд",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00",
+  "instagram": "jamesburger.kz",
+  "source": "https://www.instagram.com/jamesburger.kz/"
+ },
  "aktau:kitsu rolls": {
   "name": "KITSU ROLLS",
   "city": "aktau",
@@ -511,6 +520,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "aktobe:minestone": {
+  "name": "MINESTONE",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "aktobe:reny": {
   "name": "Reny",
@@ -985,6 +1001,13 @@
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
  },
+ "almaty:apex co": {
+  "name": "Apex Co",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "almaty:apple city corps": {
   "name": "Apple City Corps",
   "city": "almaty",
@@ -1027,6 +1050,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:arena s арена s": {
+  "name": "Arena S (Арена S)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "almaty:arhat holding": {
   "name": "ARHAT HOLDING",
@@ -2467,6 +2497,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:kazkrom": {
+  "name": "KazKrom",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "almaty:kazlogistic solutions": {
   "name": "KAZLOGISTIC SOLUTIONS",
@@ -4721,6 +4758,13 @@
    "website"
   ]
  },
+ "almaty:дергаев вячеслав александрович": {
+  "name": "Дергаев Вячеслав Александрович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "almaty:детский": {
   "name": "Детский",
   "city": "almaty",
@@ -5658,6 +5702,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:ремарк сервис": {
+  "name": "Ремарк Сервис",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00",
+  "instagram": "remark_service",
+  "source": "https://2gis.kz/almaty/firm/9429940000971288"
  },
  "almaty:ренессанс": {
   "name": "Ренессанс",
@@ -6833,6 +6886,15 @@
   "avatar": "b96eca4dc5240994.jpg",
   "avatar_source": "website"
  },
+ "astana:fade lab x": {
+  "name": "Fade Lab X",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00",
+  "instagram": "fade.lab.x",
+  "source": "https://2gis.kz/astana/firm/70000001113637339"
+ },
  "astana:fitness palace kz нурмаханбетов е с": {
   "name": "Fitness Palace KZ Нурмаханбетов Е.С.",
   "city": "astana",
@@ -7791,6 +7853,13 @@
    "website"
   ]
  },
+ "astana:teos": {
+  "name": "TEOS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "astana:terra motors astana": {
   "name": "TERRA MOTORS Astana",
   "city": "astana",
@@ -7875,6 +7944,15 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "astana:viaggio": {
+  "name": "VIAGGIO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00",
+  "instagram": "viaggio__shop",
+  "source": "https://2gis.kz/astana/firm/70000001037590582"
+ },
  "astana:vici kazakhstan": {
   "name": "VICI-KAZAKHSTAN",
   "city": "astana",
@@ -7894,6 +7972,13 @@
   "city": "astana",
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
+ },
+ "astana:way market": {
+  "name": "WAY MARKET",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "astana:wefind": {
   "name": "WeFind",
@@ -8005,6 +8090,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "astana:айдарбекова н": {
+  "name": "АЙДАРБЕКОВА Н.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "astana:айсултан": {
   "name": "Айсултан",
@@ -8886,6 +8978,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:нурумов": {
+  "name": "Нурумов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "astana:общепит": {
   "name": "Общепит",
   "city": "astana",
@@ -9039,6 +9138,13 @@
   "checked_at": "2026-10-29T14:46:23+00:00",
   "instagram": "respublika_shagynmarket",
   "source": "https://2gis.kz/astana/firm/70000001112611319"
+ },
+ "astana:ресторан быстрого питания": {
+  "name": "Ресторан быстрого питания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "astana:рик": {
   "name": "РиК",
@@ -11732,6 +11838,13 @@
    "website"
   ]
  },
+ "petropavlovsk:крайнов п а": {
+  "name": "Крайнов П.А.",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "petropavlovsk:кристалл": {
   "name": "Кристалл",
   "city": "petropavlovsk",
@@ -12018,6 +12131,13 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "semey:стропальщик": {
+  "name": "Стропальщик",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "semey:торговый дом азия м": {
   "name": "Торговый дом Азия-М",
   "city": "semey",
@@ -12219,6 +12339,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "shymkent:rukami kz": {
+  "name": "RUKAMI KZ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "shymkent:studyon": {
   "name": "StudyON",
@@ -12486,6 +12613,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "shymkent:түзелбай": {
+  "name": "ТҮЗЕЛБАЙ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "shymkent:умарова": {
   "name": "УМАРОВА",
@@ -12755,6 +12889,13 @@
   "instagram": "cosmoshop_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001039269973"
  },
+ "uralsk:medina cosmetologyclinic": {
+  "name": "Medina-cosmetologyclinic",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
+ },
  "uralsk:oshaq": {
   "name": "OSHAQ",
   "city": "uralsk",
@@ -12853,6 +12994,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:ассорти": {
+  "name": "АССОРТИ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T08:43:03+00:00"
  },
  "uralsk:ваша вахта": {
   "name": "Ваша вахта",

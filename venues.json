@@ -480,6 +480,19 @@
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
  },
+ "aktobe:common market corporation": {
+  "name": "Common Market Corporation",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00",
+  "website": "https://www.common.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001024663799",
+  "avatar_checked_at": "2026-10-31T16:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:consumer trade company": {
   "name": "Consumer Trade Company",
   "city": "aktobe",
@@ -1806,6 +1819,13 @@
    "website"
   ]
  },
+ "almaty:dala brand": {
+  "name": "Dala Brand",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "almaty:damdala": {
   "name": "Damdala",
   "city": "almaty",
@@ -2247,6 +2267,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:get target agency": {
+  "name": "Get Target Agency",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "almaty:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -2699,6 +2726,20 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "almaty:konsel trade": {
+  "name": "KONSEL Trade",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00",
+  "instagram": "konsel_kz",
+  "website": "https://konselgroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000934233",
+  "avatar_checked_at": "2026-10-31T16:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:koton textile котон текстиль": {
   "name": "KOTON TEXTILE (КОТОН Текстиль)",
   "city": "almaty",
@@ -3060,6 +3101,13 @@
    "website"
   ]
  },
+ "almaty:noble foods": {
+  "name": "Noble Foods",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "almaty:noblesse food": {
   "name": "Noblesse Food",
   "city": "almaty",
@@ -3291,6 +3339,13 @@
   "checked_at": "2026-10-30T21:43:07+00:00",
   "instagram": "qazyna_beauty",
   "source": "https://2gis.kz/almaty/firm/70000001046992544"
+ },
+ "almaty:qazyna energy": {
+  "name": "Qazyna energy",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "almaty:qlife": {
   "name": "Qlife",
@@ -6122,6 +6177,13 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "almaty:союз меха": {
+  "name": "Союз Меха",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "almaty:специалист": {
   "name": "Специалист",
   "city": "almaty",
@@ -6518,6 +6580,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:частная компания automated communication solutions ltd": {
+  "name": "Частная компания “Automated Communication Solutions Ltd.”",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "almaty:частная компания eurasian retаil group limited": {
   "name": "Частная компания EURASIAN RETАIL GROUP Limited",
@@ -8353,6 +8422,13 @@
    "website"
   ]
  },
+ "astana:the buffet 23": {
+  "name": "The Buffet 23",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "astana:the circle": {
   "name": "The Circle",
   "city": "astana",
@@ -9131,6 +9207,20 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "astana:игровой центр zuzu": {
+  "name": "Игровой центр ZuZu",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00",
+  "instagram": "zuzu_astana",
+  "website": "https://zuzuplay.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001097168390",
+  "avatar_checked_at": "2026-10-31T16:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:измир": {
   "name": "Измир",
   "city": "astana",
@@ -9815,6 +9905,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "astana:сеть магазинов": {
+  "name": "Сеть магазинов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "astana:сеть магазинов gaissina": {
   "name": "Сеть магазинов GAISSINA",
@@ -11068,6 +11165,13 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "karaganda:кмк group corporation": {
+  "name": "КМК- Group Corporation",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "karaganda:компания витанова": {
   "name": "Компания Витанова",
   "city": "karaganda",
@@ -11522,6 +11626,22 @@
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
  },
+ "kostanay:auto sila": {
+  "name": "Auto Sila",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00",
+  "instagram": "autosila.kz",
+  "website": "http://tonar.autosila.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035635620",
+  "avatar_checked_at": "2026-10-31T16:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "075e2d8bb86aaec8.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "kostanay",
@@ -11755,6 +11875,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "kostanay:комлик": {
+  "name": "Комлик",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "kostanay:компания ale": {
   "name": "Компания ALE",
@@ -12036,6 +12163,13 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "kyzylorda:rg brands kazakhstan": {
+  "name": "RG Brands Kazakhstan",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "kyzylorda:алменов а у": {
   "name": "Алменов А.У",
   "city": "kyzylorda",
@@ -12156,6 +12290,13 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "pavlodar:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "pavlodar:kaz minerals management": {
   "name": "KAZ Minerals Management",
   "city": "pavlodar",
@@ -12258,6 +12399,13 @@
   ],
   "avatar": "d280849cd74f366e.jpg",
   "avatar_source": "website"
+ },
+ "pavlodar:rpv trade company": {
+  "name": "RPV-TRADE Company",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "pavlodar:small тм скиф трейд тоо": {
   "name": "Small, ТМ (Скиф Трейд, ТОО)",
@@ -13569,6 +13717,13 @@
    "website"
   ]
  },
+ "taldykorgan:галактика kz": {
+  "name": "Галактика KZ",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
+ },
  "taldykorgan:нұр шапағатқұрылыс": {
   "name": "НҰР-ШАПАҒАТҚҰРЫЛЫС",
   "city": "taldykorgan",
@@ -14326,6 +14481,22 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "ust-kamenogorsk:беакрис": {
+  "name": "Беакрис",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00",
+  "instagram": "toobeakris.uka",
+  "website": "https://beakris.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721314886",
+  "avatar_checked_at": "2026-10-31T16:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "74f8a60cd044e823.jpg",
+  "avatar_source": "website"
+ },
  "ust-kamenogorsk:бонасорт": {
   "name": "Бонасорт",
   "city": "ust-kamenogorsk",
@@ -14624,6 +14795,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
+ },
+ "ust-kamenogorsk:шохотим": {
+  "name": "ШОХОТИМ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T16:43:38+00:00"
  },
  "ust-kamenogorsk:шығыс innovation": {
   "name": "ШЫҒЫС INNOVATION",

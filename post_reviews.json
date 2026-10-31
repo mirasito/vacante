@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T14:57:51+00:00",
+ "updated_at": "2026-10-31T15:57:28+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -13289,6 +13289,255 @@
    "at": "2026-10-31T14:57:51+00:00",
    "fields": {
     "title": "Менеджер по продажам лакокрасочных материалов"
+   }
+  },
+  "hh-120745319": {
+   "verdict": "reject",
+   "at": "2026-10-31T15:57:28+00:00",
+   "reason": "Агент по недвижимости, офисная работа на проценте"
+  },
+  "zhumys_astana_kz-16948": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "El Mura",
+    "schedule": "2/2, 10:00–22:00",
+    "address": "ТРЦ «Азия Парк», 1 этаж"
+   }
+  },
+  "astana_job_vakansii-129991": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Пиццамейкер, кассир, курьер",
+    "schedule": "08:00–17:00 или 17:00–01:00"
+   }
+  },
+  "zhumys_astana_kz-16999": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Кассир",
+    "employer": "Компьютерный клуб «Top Game»",
+    "schedule": "4/2, 08:00–19:30 и 19:30–08:00",
+    "address": "ул. Туран, 55/5",
+    "perks": [
+     "Спецодежда",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-129987": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "Стоматологическая клиника «The Stom»",
+    "schedule": "2/2, 09:00–21:00"
+   }
+  },
+  "rabotaaktau-141965": {
+   "verdict": "reject",
+   "at": "2026-10-31T15:57:28+00:00",
+   "reason": "Вакансия из Актау, не из Астаны"
+  },
+  "zhumys_astana_kz-16995": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "schedule": "1/2, сутки через двое",
+    "address": "ул. Калдаякова, 25"
+   }
+  },
+  "zhumys_astana_kz-16994": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "Aroma Perfume",
+    "schedule": "2/2, 10:00–22:00",
+    "address": "ТРЦ «Аружан»",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "astana_job_vakansii-129900": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "KT Cloud Lab",
+    "salary_min": 160000,
+    "salary_max": 250000,
+    "salary_period": "month"
+   }
+  },
+  "rabota4almaty-5966": {
+   "verdict": "reject",
+   "at": "2026-10-31T15:57:28+00:00",
+   "reason": "IT-специалист, офисная должность"
+  },
+  "rabota4almaty-5964": {
+   "verdict": "reject",
+   "at": "2026-10-31T15:57:28+00:00",
+   "reason": "Нет описания работы, только должность"
+  },
+  "rabota4almaty-5965": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "Торговый дом «ЭлитФиш»",
+    "address": "ул. Боралдай, 93Б"
+   }
+  },
+  "rabota4almaty-5960": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "G and G Гламур",
+    "address": "пр. Достык, 34/1"
+   }
+  },
+  "zhumys_astana_kz-17028": {
+   "verdict": "reject",
+   "at": "2026-10-31T15:57:28+00:00",
+   "reason": "Из астанинского канала, ТД «Алма-Ата» в Астане, не в Алматы"
+  },
+  "almatyvacancies-11039": {
+   "verdict": "reject",
+   "at": "2026-10-31T15:57:28+00:00",
+   "reason": "Удерживают депозит из зарплаты"
+  },
+  "agashka_job_almaty-1018": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Слесарь на производство",
+    "schedule": "6/1, сокращённая суббота",
+    "address": "Ауэзовский район",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "almaty_rabota01-26010": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Кассир-продавец",
+    "schedule": "2/2, 08:00–20:00 или 20:00–08:00"
+   }
+  },
+  "hh-138905455": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Промоутер, продавец-консультант"
+   }
+  },
+  "hh-139016758": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "employer": "Astel",
+    "address": "ул. Маметовой, 67Б"
+   }
+  },
+  "rabotaalmatyyyy-15159": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–18:00",
+    "address": "рынок «Бакорда»"
+   }
+  },
+  "hh-138432966": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Торговый представитель"
+   }
+  },
+  "almatyrabota1-21284": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "rabota_v_shymkente-1451": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {}
+  },
+  "rabota_v_aktobe-3009": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "address": "ул. Нокина, 42, АЗС «Синойл»"
+   }
+  },
+  "rabota_v_pavlodare-7293": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "schedule": "2/2, 08:00–20:00"
+   }
+  },
+  "rabota_v_pavlodare-7317": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор"
+   }
+  },
+  "vakansii_oskemen-9212": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Машинист буровой установки"
+   }
+  },
+  "rabota_v_semee-7922": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Водитель грузовика с прицепом"
+   }
+  },
+  "rabota_v_semee-7921": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "address": "рынок «Жансая»"
+   }
+  },
+  "rabota_v_semee-7920": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Водитель зерновоза"
+   }
+  },
+  "rabota_v_semee-7918": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "title": "Разнорабочий на стройку"
+   }
+  },
+  "hh-139028195": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "schedule": null,
+    "address": "пр. Назарбаева"
+   }
+  },
+  "hh-139028158": {
+   "verdict": "approve",
+   "at": "2026-10-31T15:57:28+00:00",
+   "fields": {
+    "schedule": "3/3",
+    "address": "ул. Алтынсарина, 32"
    }
   }
  }

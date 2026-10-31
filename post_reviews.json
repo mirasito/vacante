@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T15:57:28+00:00",
+ "updated_at": "2026-10-31T16:57:12+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -13538,6 +13538,198 @@
    "fields": {
     "schedule": "3/3",
     "address": "ул. Алтынсарина, 32"
+   }
+  },
+  "astana_job_vakansii-129978": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Грузчик, курьер",
+    "employer": "BOX Express",
+    "schedule": null
+   }
+  },
+  "zhumys_astana_kz-16908": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Электрик-сантехник",
+    "schedule": "6/1, 09:00–18:00, суббота — короткий день"
+   }
+  },
+  "astana_job_vakansii-129977": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Водитель Газели",
+    "schedule": "6/1, 09:00–19:00",
+    "address": "Уркер"
+   }
+  },
+  "rabota_astanakz-31105": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2 или 5/2"
+   }
+  },
+  "astana_job_vakansii-129778": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Помощник кондитера",
+    "schedule": "5/2, 08:00–20:00",
+    "address": "ул. Акмешит, 5А (район Абу-Даби Плаза)"
+   }
+  },
+  "hh-139006026": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Консультант по продаже автомобилей",
+    "employer": "Mycar"
+   }
+  },
+  "astana_job_vakansii-129965": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "employer": "Магазин «Shapan»",
+    "schedule": "5/2 или 6/1",
+    "perks": [
+     "Обучение",
+     "Без опыта",
+     "Ежедневная оплата",
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_job_vakansii-129964": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "employer": "«Мечта Маркет»",
+    "perks": [
+     "Обучение",
+     "Без опыта",
+     "Бонусы",
+     "Официально"
+    ]
+   }
+  },
+  "astana_job_vakansii-129865": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "employer": "Ресторан «Proseccarna»"
+   }
+  },
+  "hh-138940470": {
+   "verdict": "reject",
+   "at": "2026-10-31T16:57:12+00:00",
+   "reason": "Офисная должность B2B-продаж"
+  },
+  "agashka_job_almaty-1020": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "employer": "Рестораны «Vincent»",
+    "schedule": "гибкий график"
+   }
+  },
+  "rabota4almaty-5968": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Кассир в столовую",
+    "employer": "«Noble Foods»"
+   }
+  },
+  "hh-139008293": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Водитель грузового автомобиля"
+   }
+  },
+  "almaty_rabota01-26007": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "schedule": "5/2, 07:00–18:00",
+    "address": "район Абая — Алтынсарина"
+   }
+  },
+  "almaty_rabota05-11706": {
+   "verdict": "reject",
+   "at": "2026-10-31T16:57:12+00:00",
+   "reason": "Разовая подработка до конца прошлой недели, уже неактуально"
+  },
+  "almatyrabota1-21214": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Эксперт-оценщик в ломбард",
+    "employer": "«Like Ломбард»",
+    "schedule": "5/2, 08:00–20:00 или 20:00–08:00"
+   }
+  },
+  "almatyrabota1-21231": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Оператор, актёр квеста",
+    "employer": "Квест «Kill House»",
+    "schedule": "гибкий график",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "almatyvacancies-11057": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Продавец в магазин детской одежды"
+   }
+  },
+  "almatyrabota1-21261": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Сотрудник пункта выдачи",
+    "schedule": "2/2, 09:00–21:00"
+   }
+  },
+  "rabota4almaty-5909": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Продавец в магазин разливных напитков",
+    "schedule": "сменный, 09:00–23:00"
+   }
+  },
+  "hh-139006079": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "perks": []
+   }
+  },
+  "almaty_rabota_work-31749": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "employer": "Чайхана «Jaya»",
+    "schedule": "10:00–23:00"
+   }
+  },
+  "hh-139028305": {
+   "verdict": "approve",
+   "at": "2026-10-31T16:57:12+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин женской одежды"
    }
   }
  }

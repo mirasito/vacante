@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T04:57:08+00:00",
+ "updated_at": "2026-10-31T05:58:24+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -10874,6 +10874,354 @@
    "fields": {
     "title": "Сборщик корпусной мебели",
     "employer": "DN Мебель"
+   }
+  },
+  "hh-139023913": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Флорист",
+    "employer": "IVI Express",
+    "schedule": "5/2",
+    "address": "ул. Шабал Бейсековой, 3"
+   }
+  },
+  "rabota_astanakz-31106": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Автомеханик, слесарь",
+    "employer": null,
+    "schedule": "гибкий график"
+   }
+  },
+  "zhumys_astana_kz-16983": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "Mansur Cafe",
+    "schedule": "6/1, 08:00–20:00 или 11:00–23:00",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-16981": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Сборщик бургеров, кассир",
+    "salary_min": 170000,
+    "salary_max": 300000,
+    "salary_period": "month",
+    "schedule": "2/2 или 5/2",
+    "address": "Левый берег",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Официально",
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-138868337": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "employer": "РайБер",
+    "address": "ул. Шамши Калдаякова, 26"
+   }
+  },
+  "hh-136057855": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Работник склада в ночную смену",
+    "employer": "Заммлер Казахстан"
+   }
+  },
+  "hh-138011049": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "employer": "Торговая компания «Омега»"
+   }
+  },
+  "astana_job_vakansii-129968": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Истопник (охранник), горничная",
+    "employer": "Банный комплекс",
+    "salary_min": 200000,
+    "salary_max": 300000,
+    "salary_period": "month",
+    "schedule": "2/2 или 5/2, 09:00–21:00",
+    "address": "район аэропорта"
+   }
+  },
+  "hh-138377217": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Продавец-консультант в бутик женской одежды",
+    "employer": "Tomiris",
+    "address": "пр. Улы Дала, 58"
+   }
+  },
+  "astana_job_vakansii-129967": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Курьер на авто или мопеде",
+    "employer": "Dodo Pizza",
+    "schedule": "6/1, 12:00–00:00 или 17:00–00:00"
+   }
+  },
+  "rabota_astanakz-31096": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "employer": "ТОО «ОЙЛ»",
+    "schedule": "сменный график"
+   }
+  },
+  "rabota_astanakz-31095": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Слесарь, помощник маляра, сварщик",
+    "schedule": "6/1, Пн–Пт 09:00–19:00, Сб 09:00–15:00",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-129862": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин мужской одежды",
+    "schedule": "5/2, 10:00–22:00",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16900": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Кассир-бариста",
+    "employer": "Стрит-кофейня «Sherlock Coffee»",
+    "schedule": "08:00–21:00",
+    "address": "правый берег",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-138694834": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "zhumys_astana_kz-16886": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Кассир-оператор, бармен",
+    "employer": "Антикафе «LOFT Park»",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "1/2 или 2/2, 17:00–05:00",
+    "address": "Левый берег"
+   }
+  },
+  "hh-139023996": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "address": "ул. Парковая, 78/1"
+   }
+  },
+  "rabota4almaty-5927": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Водитель, грузчик на мебельный склад",
+    "address": "рынок Ожет"
+   }
+  },
+  "hh-138959275": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Koton",
+    "address": "ТРЦ «Aport Mall», Ташкентский тракт, 17К",
+    "schedule": "5/2"
+   }
+  },
+  "hh-138959219": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "employer": "Firm Kaz Centre",
+    "address": "ул. Булкушева, 4е",
+    "schedule": "5/2"
+   }
+  },
+  "hh-138958353": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "IT-должность"
+  },
+  "hh-138137900": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "hh-138958216": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Фасовщик",
+    "employer": "Алматинский продукт",
+    "address": "ул. Руставели, 3"
+   }
+  },
+  "hh-138957771": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "Работа в Конаеве, игорная индустрия"
+  },
+  "almaty_rabota01-26001": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Кассир, повар холодного цеха",
+    "employer": "Ресторан «LALI by Novikov»",
+    "salary_min": 18000,
+    "salary_max": 20000,
+    "salary_period": "day",
+    "schedule": "5/2 или 2/2, 11:00–00:00",
+    "address": "пр. Аль-Фараби, 27/1"
+   }
+  },
+  "hh-138957055": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "Офисные продажи образовательных услуг"
+  },
+  "hh-138956580": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "address": "мкр Алмагуль, 4А"
+   }
+  },
+  "hh-138956353": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "Офисные проектные продажи"
+  },
+  "rabota4almaty-5840": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Монтажник пластиковых окон и дверей",
+    "employer": null,
+    "schedule": "подработка, гибкий график",
+    "address": "ул. Шевченко, 165"
+   }
+  },
+  "hh-138955579": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "employer": "Longbo Industry",
+    "address": "пр. Суюнбая, 215"
+   }
+  },
+  "vakansii_rabota_atyrau-49939": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Сварщик, монтажник по отоплению, сантехник",
+    "salary_min": 250000,
+    "salary_max": 500000,
+    "salary_period": "month",
+    "schedule": "6/1, 09:00–18:00"
+   }
+  },
+  "rabotaaktau-141940": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Воспитатель, помощник воспитателя",
+    "employer": "Детский сад «Алтын Ұрпақ»",
+    "address": "мкр Шығыс-2, 59"
+   }
+  },
+  "rabotaaktau-141908": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "employer": "Автомойка «Люкс Уаш»",
+    "schedule": "08:00–18:00 или 18:00–03:00",
+    "address": "23 мкр, 9/11",
+    "perks": [
+     "Жильё",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabotaaktau-141922": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Помощник в продуктовый магазин",
+    "schedule": "5/2 или 6/1",
+    "address": "мкр 18А",
+    "perks": []
+   }
+  },
+  "rabotaaktau-141856": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Повар в фастфуд",
+    "salary_min": 10000,
+    "salary_max": 18000,
+    "salary_period": "day",
+    "schedule": "смены по 12 часов"
+   }
+  },
+  "hh-138598144": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Монтажник-спайщик",
+    "address": "ул. Калинина, 73"
+   }
+  },
+  "vakansii_oskemen-9198": {
+   "verdict": "reject",
+   "at": "2026-10-31T05:58:24+00:00",
+   "reason": "Нет работодателя и зарплаты"
+  },
+  "hh-139023940": {
+   "verdict": "approve",
+   "at": "2026-10-31T05:58:24+00:00",
+   "fields": {
+    "title": "Кассир-оператор в доставку суши",
+    "employer": "Доставка суши «Shiba»",
+    "schedule": "2/2, 8 часов",
+    "address": "ул. Строительная, 2/3"
    }
   }
  }

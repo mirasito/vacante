@@ -423,6 +423,19 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "aktobe:contineo": {
+  "name": "CONTINEO",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00",
+  "website": "https://contineo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001042206719",
+  "avatar_checked_at": "2026-10-31T04:42:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:d city group": {
   "name": "D city group",
   "city": "aktobe",
@@ -1372,6 +1385,15 @@
    "website"
   ]
  },
+ "almaty:brosto": {
+  "name": "BROSTO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00",
+  "instagram": "brosto_service",
+  "source": "https://2gis.kz/almaty/firm/70000001055214182"
+ },
  "almaty:bta almaty airport services": {
   "name": "BTA Almaty - Airport Services",
   "city": "almaty",
@@ -1784,6 +1806,13 @@
   "avatar": "f787bec73ddfa361.jpg",
   "avatar_source": "website"
  },
+ "almaty:easy solution": {
+  "name": "easy solution",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "almaty:eco group kazakhstan эко групп казахстан": {
   "name": "ECO GROUP KAZAKHSTAN (ЭКО ГРУПП КАЗАХСТАН)",
   "city": "almaty",
@@ -1869,6 +1898,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
+ },
+ "almaty:eurasia support services": {
+  "name": "Eurasia Support Services",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00",
+  "instagram": "compasskazakhstan",
+  "source": "https://2gis.kz/atyrau/firm/70000001045107222"
  },
  "almaty:eurasian machinery евразиан машинери": {
   "name": "Eurasian Machinery (Евразиан Машинери)",
@@ -2341,6 +2379,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:karavan караван": {
+  "name": "KARAVAN (КАРАВАН)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "almaty:kazdi group": {
   "name": "KazDi Group",
@@ -3630,6 +3675,13 @@
    "website"
   ]
  },
+ "almaty:vzboilers": {
+  "name": "VZboilers",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "almaty:wefind": {
   "name": "WeFind",
   "city": "almaty",
@@ -4004,6 +4056,13 @@
    "website"
   ]
  },
+ "almaty:алма машстрой": {
+  "name": "ТОО АЛМА-МАШСТРОЙ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "almaty:алма мебель тпк": {
   "name": "Алма-Мебель, ТПК",
   "city": "almaty",
@@ -4351,6 +4410,13 @@
   ],
   "avatar": "30cd2d0a5f61024d.jpg",
   "avatar_source": "website"
+ },
+ "almaty:васильева ангелина игоревна": {
+  "name": "Васильева Ангелина Игоревна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "almaty:виктория": {
   "name": "Виктория",
@@ -5237,6 +5303,13 @@
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
  },
+ "almaty:оливер": {
+  "name": "Оливер",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "almaty:оптимус медика": {
   "name": "Оптимус Медика",
   "city": "almaty",
@@ -5833,6 +5906,13 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "almaty:хрустальный мир": {
+  "name": "Хрустальный Мир",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "almaty:центр банкротства казахстана": {
   "name": "Центр банкротства Казахстана",
   "city": "almaty",
@@ -6176,6 +6256,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "astana:atamiras s": {
+  "name": "ATAMIRAS.S",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "astana:avenue танатаров а м": {
   "name": "Avenue (ТАНАТАРОВ А.М)",
@@ -7668,6 +7755,13 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "astana:айгерим": {
+  "name": "Айгерим",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "astana:айсултан": {
   "name": "Айсултан",
   "city": "astana",
@@ -7802,6 +7896,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "bauyrdaq_astana",
   "source": "https://2gis.kz/astana/firm/70000001068898146"
+ },
+ "astana:безалкогольный ресторан": {
+  "name": "Безалкогольный ресторан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "astana:белый ветер kz": {
   "name": "Белый Ветер KZ",
@@ -8482,6 +8583,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "astana:научно исследовательская лаборатория гамма технологии": {
+  "name": "«Научно-Исследовательская Лаборатория «Гамма Технологии»",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "astana:нуртазина": {
   "name": "Нуртазина",
@@ -10596,6 +10704,19 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "kyzylorda:contineo": {
+  "name": "CONTINEO",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00",
+  "website": "https://contineo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001042206719",
+  "avatar_checked_at": "2026-10-31T04:42:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kyzylorda:kyzylorda refinery": {
   "name": "Kyzylorda Refinery",
   "city": "kyzylorda",
@@ -11072,6 +11193,19 @@
   "website": "https://www.bhkagro.com/",
   "source": "https://2gis.kz/astana/firm/70000001039682678",
   "avatar_checked_at": "2026-10-30T22:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "petropavlovsk:contineo": {
+  "name": "CONTINEO",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00",
+  "website": "https://contineo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001042206719",
+  "avatar_checked_at": "2026-10-31T04:42:23+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11853,6 +11987,13 @@
    "website"
   ]
  },
+ "shymkent:кондитерская розалина ип юнусметов": {
+  "name": "Кондитерская Розалина (ИП Юнусметов)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "shymkent:кристалл авто": {
   "name": "Кристалл Авто",
   "city": "shymkent",
@@ -11866,6 +12007,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "shymkent:сапсан": {
+  "name": "САПСАН",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "shymkent:смартер казахстан": {
   "name": "Смартер Казахстан",
@@ -12246,6 +12394,13 @@
    "website"
   ]
  },
+ "uralsk:ваша вахта": {
+  "name": "Ваша вахта",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
+ },
  "uralsk:громас": {
   "name": "Громас",
   "city": "uralsk",
@@ -12310,6 +12465,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "uralsk:сапсан": {
+  "name": "САПСАН",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T04:42:23+00:00"
  },
  "uralsk:сеть супермаркетов суровский ип едаменко андрей александрович": {
   "name": "Сеть супермаркетов Суровский, ИП Едаменко Андрей Александрович",

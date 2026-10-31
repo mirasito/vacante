@@ -306,6 +306,13 @@
    "website"
   ]
  },
+ "aktau:каспиан марин груп": {
+  "name": "Каспиан Марин Груп",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "aktau:ком мунай": {
   "name": "КОМ-МУНАЙ",
   "city": "aktau",
@@ -681,6 +688,20 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "aktobe:оптика народная": {
+  "name": "Оптика Народная",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00",
+  "instagram": "optika_narodnaya.aktobe",
+  "website": "http://optika-narodnaya.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032314401",
+  "avatar_checked_at": "2026-10-31T10:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:очаг": {
   "name": "Очаг",
   "city": "aktobe",
@@ -806,6 +827,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "almaty:adallin": {
+  "name": "Adallin",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00",
+  "instagram": "adallin_brand",
+  "source": "https://2gis.kz/almaty/firm/70000001104382410"
  },
  "almaty:adrenaline fitness адреналин фитнес": {
   "name": "Adrenaline Fitness (Адреналин Фитнес)",
@@ -953,6 +983,15 @@
   ],
   "avatar": "78cd38cb1b45050a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:altai business hotel": {
+  "name": "Altai Business Hotel",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00",
+  "instagram": "altaihotel",
+  "source": "https://2gis.kz/almaty/firm/70000001034138230"
  },
  "almaty:altin sapa": {
   "name": "ALTIN SAPA",
@@ -3952,6 +3991,13 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "almaty:zeta trade": {
+  "name": "ZETA TRADE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "almaty:zhebe logistics": {
   "name": "Zhebe Logistics",
   "city": "almaty",
@@ -4759,6 +4805,13 @@
   "avatar_tried": [
    "telegram"
   ]
+ },
+ "almaty:гущин": {
+  "name": "Гущин",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
  },
  "almaty:даньяров е д": {
   "name": "Даньяров Е.Д.",
@@ -6494,6 +6547,13 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "astana:asf partnership": {
+  "name": "ASF PARTNERSHIP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "astana:asl corporation": {
   "name": "ASL CORPORATION",
   "city": "astana",
@@ -6728,6 +6788,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "astana:caviar house qazaqstan": {
+  "name": "Caviar House Qazaqstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00",
+  "instagram": "caviarhouse.kz",
+  "website": "http://caviarhouse.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001025428203",
+  "avatar_checked_at": "2026-10-31T10:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:center beton company": {
   "name": "Center Beton Company",
@@ -8864,6 +8938,13 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "astana:лаврут": {
+  "name": "Лаврут",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "astana:легато": {
   "name": "Легато",
   "city": "astana",
@@ -9335,6 +9416,13 @@
    "website"
   ]
  },
+ "astana:сеть кондитерских кофеен": {
+  "name": "Сеть кондитерских кофеен",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "astana:сеть лаундж баров hookah place": {
   "name": "Сеть лаундж-баров Hookah Place",
   "city": "astana",
@@ -9454,6 +9542,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:тд электроцентр": {
+  "name": "ТД Электроцентр",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
  },
  "astana:техническое предприятие синтез": {
   "name": "Техническое предприятие Синтез",
@@ -10270,6 +10365,13 @@
   "instagram": "stratera.kz",
   "source": "https://2gis.kz/astana/firm/70000001087690675"
  },
+ "karaganda:subedai": {
+  "name": "SUBEDAI",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "karaganda:sulpak": {
   "name": "Sulpak",
   "city": "karaganda",
@@ -10646,6 +10748,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "karaganda:сая констракшн": {
+  "name": "САЯ КОНСТРАКШН",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "karaganda:специализированный учебный центр по гражданской защите щит": {
   "name": "Специализированный учебный центр по гражданской защите ЩИТ",
   "city": "karaganda",
@@ -10802,6 +10911,13 @@
   "avatar": "6aa4415f987e23f3.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:азенов самат": {
+  "name": "Азенов Самат",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "kokshetau:армада": {
   "name": "АРМАДА",
   "city": "kokshetau",
@@ -10831,6 +10947,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
+ },
+ "kokshetau:завод казагромаш": {
+  "name": "ЗАВОД КАЗАГРОМАШ",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00",
+  "instagram": "kazagromash.zavod",
+  "website": "http://kazagromash.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001090127541",
+  "avatar_checked_at": "2026-10-31T10:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dd822770eb0b05d1.jpg",
+  "avatar_source": "website"
  },
  "kokshetau:итенова": {
   "name": "ИТЕНОВА",
@@ -12365,6 +12497,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "shymkent:eurasia support services": {
+  "name": "Eurasia Support Services",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "shymkent:friday ai": {
   "name": "FRIDAY AI",
   "city": "shymkent",
@@ -12783,6 +12922,20 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "taldykorgan:2гис справочник двух столиц": {
+  "name": "2ГИС-Справочник Двух Столиц",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "taldykorgan:oktrening": {
+  "name": "Oktrening",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
+ },
  "taldykorgan:teplostandart": {
   "name": "TeploStandart",
   "city": "taldykorgan",
@@ -13107,6 +13260,13 @@
   ],
   "avatar": "9fdbeac31d12d0a2.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:автозапчастей": {
+  "name": "АВТОЗАПЧАСТЕЙ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00"
  },
  "uralsk:аксуат": {
   "name": "АКСУАТ",
@@ -13529,6 +13689,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "ust-kamenogorsk:заммлер казахстан": {
+  "name": "ЗАММЛЕР КАЗАХСТАН",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T10:43:49+00:00",
+  "instagram": "zammler.kazakhstan",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001061238485"
  },
  "ust-kamenogorsk:заречье эколэнд": {
   "name": "Заречье ЭкоЛэнд",

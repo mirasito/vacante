@@ -3415,6 +3415,13 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "almaty:orbis machinery": {
+  "name": "ORBIS MACHINERY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
+ },
  "almaty:ozon": {
   "name": "Ozon",
   "city": "almaty",
@@ -3441,6 +3448,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
+ },
+ "almaty:patentes talgo s l филиал в республике казахстан": {
+  "name": "Patentes Talgo, S.L. Филиал в Республике Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "almaty:percorso": {
   "name": "Percorso",
@@ -3648,6 +3662,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:royal meat qazaqstan": {
+  "name": "Royal Meat Qazaqstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "almaty:royal petrol": {
   "name": "Royal Petrol",
@@ -4362,6 +4383,22 @@
    "website"
   ]
  },
+ "almaty:world trade center almaty best western plus atakent park hotel": {
+  "name": "World Trade Center Almaty (Best Western Plus Atakent Park Hotel)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "instagram": "bestwesternplusalmaty",
+  "website": "http://aphotel.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000963187",
+  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c7dc1207697187fa.jpg",
+  "avatar_source": "website"
+ },
  "almaty:yango group": {
   "name": "Yango Group",
   "city": "almaty",
@@ -4905,6 +4942,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:армоснаб": {
+  "name": "Армоснаб",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "almaty:арт инсайт": {
   "name": "АРТ Инсайт",
@@ -5711,6 +5755,13 @@
    "website"
   ]
  },
+ "almaty:кенжехан": {
+  "name": "Кенжехан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
+ },
  "almaty:керемет су ске": {
   "name": "Керемет Су СКЕ",
   "city": "almaty",
@@ -5836,6 +5887,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:ксж standard life": {
+  "name": "КСЖ Standard Life",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "instagram": "std.lifekz",
+  "website": "https://standardlife.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035198857",
+  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "863932499a95bcca.jpg",
+  "avatar_source": "website"
  },
  "almaty:куанышбаев": {
   "name": "Куанышбаев",
@@ -6483,6 +6550,15 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "almaty:сеть фитнес клубов workout ип fb zharokova": {
+  "name": "Сеть фитнес-клубов WORKOUT (ИП FB Zharokova)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "instagram": "workoutgym.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001031662234"
+ },
  "almaty:сила харизмы": {
   "name": "Сила Харизмы",
   "city": "almaty",
@@ -6752,6 +6828,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:тпэп": {
+  "name": "ТПЭП",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "almaty:транспортная компания kit": {
   "name": "Транспортная компания Kit",
@@ -8077,6 +8160,13 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "astana:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
+ },
  "astana:kaber kids": {
   "name": "Kaber Kids",
   "city": "astana",
@@ -8266,6 +8356,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:millennium astana": {
+  "name": "Millennium Astana",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "astana:mm shop": {
   "name": "MM Shop",
@@ -9771,6 +9868,13 @@
   "instagram": "izmir_cafe_astana",
   "source": "https://2gis.kz/astana/firm/70000001088884272"
  },
+ "astana:илахунов": {
+  "name": "Илахунов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
+ },
  "astana:исмурзина с у": {
   "name": "Исмурзина С У",
   "city": "astana",
@@ -9874,6 +9978,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "astana:клиника здоровья и эстетической стоматологии colibri": {
+  "name": "Клиника здоровья и эстетической стоматологии Colibri",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "instagram": "colibri.smile",
+  "website": "https://www.colibri-smile.com/",
+  "source": "https://2gis.kz/astana/firm/70000001018122675",
+  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:кожапова м а": {
   "name": "Кожапова М.А.",
@@ -10809,6 +10927,13 @@
   "instagram": "neomarketskz",
   "source": "https://www.instagram.com/neomarketskz/"
  },
+ "astana:частная компания relitalk ltd": {
+  "name": "Частная компания Relitalk Ltd.",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
+ },
  "astana:чк alkor kazakhstan ltd": {
   "name": "ЧК ALKOR KAZAKHSTAN LTD.",
   "city": "astana",
@@ -10956,6 +11081,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "atyrau:avrora fashion gallery ип пурей е и": {
+  "name": "Avrora Fashion Gallery (ИП Пурей Е.И.)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "instagram": "avrora_kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001088198950"
  },
  "atyrau:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
@@ -11255,6 +11389,19 @@
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
  },
+ "karaganda:common market corporation": {
+  "name": "Common Market Corporation",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "website": "http://www.common.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001024663799",
+  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:consumer trade company": {
   "name": "Consumer Trade Company",
   "city": "karaganda",
@@ -11465,6 +11612,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "karaganda:profland rt": {
+  "name": "Profland-RT",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00",
+  "instagram": "zavod.profland",
+  "website": "http://profland.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302828092",
+  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0597c25642753ac4.jpg",
+  "avatar_source": "website"
  },
  "karaganda:resto gamma": {
   "name": "Resto GAMMA",
@@ -11683,6 +11846,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "karaganda:генерал стафф": {
+  "name": "ГЕНЕРАЛ-СТАФФ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "karaganda:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
@@ -13924,6 +14094,13 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "shymkent:beibars bottlers бейбарс ботлерс": {
+  "name": "Beibars Bottlers (Бейбарс Ботлерс)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
+ },
  "shymkent:doscar group": {
   "name": "DOSCAR GROUP",
   "city": "shymkent",
@@ -15376,6 +15553,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:коктем": {
+  "name": "Коктем",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T22:43:53+00:00"
  },
  "ust-kamenogorsk:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",

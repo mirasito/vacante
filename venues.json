@@ -804,6 +804,20 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "almaty:alberto casiano": {
+  "name": "Alberto Casiano",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "alberto_casiano_eyewear",
+  "website": "https://albertocasiano.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001054511006",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:alem": {
   "name": "Alem",
   "city": "almaty",
@@ -1109,6 +1123,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ayla group nn": {
+  "name": "AYLA GROUP NN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "almaty:ayza stellazh": {
   "name": "AYZA Stellazh",
@@ -1453,6 +1474,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:centrion": {
+  "name": "CENTRION",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "almaty:chaikhana navat чайхана нават": {
   "name": "Chaikhana NAVAT ( Чайхана НАВАТ)",
@@ -3009,6 +3037,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "almaty:rg brands kazakhstan": {
+  "name": "RG Brands Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "website": "http://brands.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001026759297",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:right contact": {
   "name": "Right Contact",
@@ -4692,6 +4733,20 @@
    "website"
   ]
  },
+ "almaty:казбад": {
+  "name": "КазБАД",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "kazbad.kz",
+  "website": "http://kazbad.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001025068804",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:каздорзапчасть лтд": {
   "name": "КазДорЗапчасть Лтд",
   "city": "almaty",
@@ -4767,6 +4822,13 @@
   ],
   "avatar": "36b707ac4d35900f.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:карина": {
+  "name": "Карина",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "almaty:карина paper карина пейпа": {
   "name": "Карина Paper (Карина Пейпа)",
@@ -5047,6 +5109,20 @@
   ],
   "avatar": "3089f66e2a9ebcc3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:медицинский центр хак": {
+  "name": "Медицинский центр ХАК",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "hakmedical",
+  "website": "http://www.hakmedical.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000801882",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:международный аэропорт алматы ао": {
   "name": "Международный Аэропорт Алматы, АО",
@@ -5489,6 +5565,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:сумо сан": {
+  "name": "СУМО-САН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "sumosankz",
+  "website": "https://sumo-san.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940000800832",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:табер трейд кз сеть магазинов подружка": {
   "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",
@@ -6693,6 +6783,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:intermode интермоде": {
+  "name": "Intermode (Интермоде)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "astana:iron club": {
   "name": "Iron club",
@@ -8196,6 +8293,15 @@
   "instagram": "kontrol_expert",
   "source": "https://2gis.kz/astana/firm/70000001033704557"
  },
+ "astana:корпорация детей": {
+  "name": "Корпорация детей",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "children_corpar",
+  "source": "https://2gis.kz/astana/firm/70000001064328133"
+ },
  "astana:котофей казахстан": {
   "name": "Котофей Казахстан",
   "city": "astana",
@@ -8312,6 +8418,13 @@
   "avatar": "2567f4c8ffcbc502.jpg",
   "avatar_source": "telegram"
  },
+ "astana:мақсат": {
+  "name": "Мақсат",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
+ },
  "astana:мерси": {
   "name": "Мерси",
   "city": "astana",
@@ -8404,6 +8517,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "astana:охранное агентство ran security": {
+  "name": "Охранное агентство RAN SECURITY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "astana:парадайс": {
   "name": "ПАРАДАЙС",
@@ -9013,6 +9133,15 @@
   "instagram": "avtomarket06",
   "source": "https://2gis.kz/atyrau/firm/70000001066531440"
  },
+ "atyrau:bereke market": {
+  "name": "Bereke Market",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "bereke.market.atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001035163008"
+ },
  "atyrau:caspian offshore construction realty": {
   "name": "Caspian Offshore Construction Realty",
   "city": "atyrau",
@@ -9555,6 +9684,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "karaganda:байбеков": {
+  "name": "БАЙБЕКОВ",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
+ },
  "karaganda:баккара": {
   "name": "Баккара",
   "city": "karaganda",
@@ -10007,6 +10143,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "kokshetau:тех эксперт сервис": {
+  "name": "Тех.Эксперт Сервис",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
+ },
  "kokshetau:тогузбаева е а": {
   "name": "ТОГУЗБАЕВА Е.А.",
   "city": "kokshetau",
@@ -10020,6 +10163,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "kostanay:alvin market": {
+  "name": "Alvin Market",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
@@ -10992,6 +11142,22 @@
   "avatar": "6618e4f7e7d1f67e.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "https://qazaqoil.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001053056711",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e2850ad6049549da.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:аушахметов т ш": {
   "name": "Аушахметов Т.Ш",
   "city": "petropavlovsk",
@@ -11722,6 +11888,19 @@
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
  },
+ "shymkent:таврида электрик астана": {
+  "name": "Таврида Электрик Астана",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00",
+  "website": "https://www.tavrida.ru/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026626112",
+  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:тамерлан моторс": {
   "name": "Тамерлан Моторс",
   "city": "shymkent",
@@ -12090,6 +12269,13 @@
   "instagram": "imperia_potolkov_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001025274101"
  },
+ "uralsk:кип электромонтаж": {
+  "name": "КИП-ЭЛЕКТРОМОНТАЖ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
+ },
  "uralsk:люстр": {
   "name": "ЛЮСТР",
   "city": "uralsk",
@@ -12408,6 +12594,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "ust-kamenogorsk:казэнергопроект kazenergoproject": {
+  "name": "КазЭнергоПроект (KazEnergoProject)",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T03:43:12+00:00"
  },
  "ust-kamenogorsk:кари кз": {
   "name": "КАРИ КЗ",

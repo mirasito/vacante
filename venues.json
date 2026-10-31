@@ -85,6 +85,15 @@
   "instagram": "fume_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001099774610"
  },
+ "aktau:garden 3": {
+  "name": "Garden 3",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "cafe.garden.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001061020502"
+ },
  "aktau:jamesburger 29мкр 229зд": {
   "name": "Jamesburger 29мкр 229зд",
   "city": "aktau",
@@ -116,6 +125,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "aktau:omir": {
+  "name": "Omir",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
  },
  "aktau:orchestra": {
   "name": "Orchestra",
@@ -3485,12 +3501,37 @@
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
  },
+ "almaty:solva group": {
+  "name": "Solva Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "solva_app",
+  "source": "https://www.instagram.com/solva_app/"
+ },
  "almaty:solvera": {
   "name": "Solvera",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "almaty:sp eco link": {
+  "name": "SP Eco Link",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "specolink",
+  "website": "http://specolink.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001052585",
+  "avatar_checked_at": "2026-10-31T12:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b1b0facef3c114c8.jpg",
+  "avatar_source": "website"
  },
  "almaty:spark логистика": {
   "name": "Spark Логистика",
@@ -5211,6 +5252,13 @@
    "website"
   ]
  },
+ "almaty:кафе софт сервис": {
+  "name": "Кафе Софт Сервис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
+ },
  "almaty:кахарова": {
   "name": "Кахарова",
   "city": "almaty",
@@ -5718,6 +5766,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:пельмень": {
+  "name": "Пельмень",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "pelmen_cafe",
+  "source": "https://2gis.kz/almaty/firm/70000001044984217"
  },
  "almaty:первомайские деликатесы": {
   "name": "Первомайские деликатесы",
@@ -6845,6 +6902,13 @@
    "website"
   ]
  },
+ "astana:cbc group группа компаний свс": {
+  "name": "CBC-GROUP (Группа компаний СВС)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
+ },
  "astana:center beton company": {
   "name": "Center Beton Company",
   "city": "astana",
@@ -6868,6 +6932,13 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "instagram": "chester_lounge_astana",
   "source": "https://2gis.kz/astana/firm/70000001102011408"
+ },
+ "astana:choco рядом": {
+  "name": "Choco рядом",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
  },
  "astana:chocolatel": {
   "name": "CHOCOLATEL",
@@ -7389,6 +7460,31 @@
   "avatar_source": "website",
   "source": "https://2gis.kz/astana/firm/70000001038545633"
  },
+ "astana:kazpan казпан": {
+  "name": "KazPan (КазПан)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "kazpan_kz",
+  "website": "http://kazpan.com/",
+  "source": "https://2gis.kz/astana/firm/70000001066530483",
+  "avatar_checked_at": "2026-10-31T12:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b9fbabce7a9c6f29.jpg",
+  "avatar_source": "website"
+ },
+ "astana:kedr & pikhta": {
+  "name": "Kedr & Pikhta",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "kedr_pikhta",
+  "source": "https://2gis.kz/astana/firm/70000001082840889"
+ },
  "astana:kinderland": {
   "name": "KINDERLAND",
   "city": "astana",
@@ -7476,6 +7572,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:magnum e commerce": {
+  "name": "Magnum e-commerce",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "magnumgo.kz",
+  "source": "https://www.instagram.com/magnumgo.kz/"
  },
  "astana:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -9028,6 +9133,15 @@
    "website"
   ]
  },
+ "astana:магазин женской одежды viaggio": {
+  "name": "Магазин женской одежды VIAGGIO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "viaggio__shop",
+  "source": "https://2gis.kz/astana/firm/70000001105121072"
+ },
  "astana:магазин мужской одежды sott": {
   "name": "Магазин мужской одежды SOTT",
   "city": "astana",
@@ -10075,6 +10189,22 @@
    "website"
   ]
  },
+ "atyrau:білім инновация": {
+  "name": "БІЛІМ-ИННОВАЦИЯ",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "instagram": "atyraubilim",
+  "telegram": "atyraubilim",
+  "source": "https://2gis.kz/atyrau/firm/70000001034678230",
+  "avatar_checked_at": "2026-10-31T12:44:38+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "4cce34fc74aaba55.jpg",
+  "avatar_source": "telegram"
+ },
  "atyrau:даулетов н а акжелкен": {
   "name": "Даулетов Н.А. АкЖелкен",
   "city": "atyrau",
@@ -10132,6 +10262,19 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "atyrau:филиал компании powerchina sepco1 electric power construction co ltd в республике казахстан": {
+  "name": "Филиал компании POWERCHINA SEPCO1 Electric Power Construction Co.Ltd в Республике Казахстан",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00",
+  "website": "http://en.sepco1.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001089659724",
+  "avatar_checked_at": "2026-10-31T12:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:холдинговая компания казтурборемонт": {
   "name": "Холдинговая компания КазТурбоРемонт",
   "city": "atyrau",
@@ -10182,6 +10325,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "karaganda:delivery fast": {
+  "name": "Delivery Fast",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
  },
  "karaganda:ekibastuzferroalloys": {
   "name": "EkibastuzFerroAlloys",
@@ -10913,6 +11063,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "kokshetau:bms company": {
+  "name": "BMS Company",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
  },
  "kokshetau:etalon auto": {
   "name": "Etalon Auto",
@@ -12048,6 +12205,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "pavlodar:шабалина": {
+  "name": "ШАБАЛИНА",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
+ },
  "petropavlovsk:alcomag": {
   "name": "AlcoMag",
   "city": "petropavlovsk",
@@ -13097,6 +13261,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "taldykorgan:ресурс плюс kz": {
+  "name": "Ресурс Плюс KZ",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
+ },
  "taldykorgan:темір сауда": {
   "name": "Темір сауда",
   "city": "taldykorgan",
@@ -13158,6 +13329,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "taraz:batyr": {
+  "name": "Batyr",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
+ },
  "taraz:expert авто": {
   "name": "EXPERT АВТО",
   "city": "taraz",
@@ -13189,6 +13367,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "taraz:tumar": {
+  "name": "TUMAR",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T12:44:38+00:00"
  },
  "taraz:беркет сауда": {
   "name": "Беркет-Сауда",

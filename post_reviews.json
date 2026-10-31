@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T08:57:54+00:00",
+ "updated_at": "2026-10-31T09:57:28+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -11973,6 +11973,276 @@
    "at": "2026-10-31T08:57:54+00:00",
    "fields": {
     "address": "Северная промзона, 438"
+   }
+  },
+  "zhumys_astana_kz-17020": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Караоке-бар «SALIERI»",
+    "salary_min": 20000,
+    "salary_max": 25000,
+    "salary_period": "day",
+    "schedule": "2/2, 16:30–06:00"
+   }
+  },
+  "zhumys_astana_kz-17015": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Магазин «VIAGGIO»",
+    "schedule": "2/2, 10:00–21:00",
+    "address": "ТРЦ «Тумар», Сыганак, 1б",
+    "perks": []
+   }
+  },
+  "astana_job_vakansii-129989": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Продавец в минимаркет",
+    "employer": null,
+    "schedule": "6/1, 12:00–00:00",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-17016": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Повар раздачи",
+    "employer": "Ресторан «Lanzhou»",
+    "schedule": "10:00–23:00",
+    "address": "пр. Кабанбай батыра, 62, ТРЦ «Mega Silk Way», 2 этаж"
+   }
+  },
+  "hh-139025774": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "BN Build",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139025599": {
+   "verdict": "reject",
+   "at": "2026-10-31T09:57:28+00:00",
+   "reason": "Удалённая работа, не рабочая специальность"
+  },
+  "rabota_astanakz-31118": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Пекарь",
+    "employer": null,
+    "schedule": "6/1, 08:00–19:00"
+   }
+  },
+  "rabota_astanakz-31120": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": null
+   }
+  },
+  "zhumys_astana_kz-17023": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Пекарь-кондитер",
+    "salary_min": 350000,
+    "salary_max": 400000,
+    "salary_period": "month",
+    "schedule": "5/2, 08:00–18:00",
+    "perks": [
+     "Питание",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-129990": {
+   "verdict": "reject",
+   "at": "2026-10-31T09:57:28+00:00",
+   "reason": "Подработка на личном авто по 2–4 часа ночью, сомнительные условия"
+  },
+  "hh-137894616": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Bounty Shop",
+    "address": "ул. Кайыма Мухамедханова, 4Б"
+   }
+  },
+  "hh-138556841": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Alkor Kazakhstan",
+    "address": "пр. Абая, 48",
+    "salary_min": 234000,
+    "salary_max": null,
+    "salary_period": "month"
+   }
+  },
+  "astana_rabota-90105": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Разнорабочий на бетонный завод",
+    "schedule": "6/1",
+    "address": "трасса Астана — Караганда"
+   }
+  },
+  "rabota4almaty-5942": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Агентство «Гепард»",
+    "address": "пр. Назарбаева, 50"
+   }
+  },
+  "rabota4almaty-5943": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Уборщик в кинотеатр",
+    "employer": "Santex"
+   }
+  },
+  "rabotaalmatyyyy-15253": {
+   "verdict": "reject",
+   "at": "2026-10-31T09:57:28+00:00",
+   "reason": "Реклама набора курьеров-партнёров, не вакансия работодателя"
+  },
+  "rabota4almaty-5911": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Мастер по замене масла",
+    "employer": "Автосервис «Jonde»",
+    "address": "ул. Тлендиева, 196"
+   }
+  },
+  "rabota4almaty-5906": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Автослесарь-геометрист",
+    "address": "мкр. Аксай-1А"
+   }
+  },
+  "rabota4almaty-5903": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Мастер по корпусной мебели",
+    "employer": null
+   }
+  },
+  "almaty_rabota_work-31750": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Менеджер по продажам",
+    "employer": "Damu Trend",
+    "schedule": "6/1, 09:00–18:00",
+    "perks": [
+     "Обучение",
+     "Бонусы",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-138708627": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Armandar"
+   }
+  },
+  "hh-137941586": {
+   "verdict": "reject",
+   "at": "2026-10-31T09:57:28+00:00",
+   "reason": "Онлайн-продажи образовательных услуг со своим ноутбуком, офисная работа"
+  },
+  "hh-136624246": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Приёмщик товара",
+    "employer": "Заммлер Казахстан"
+   }
+  },
+  "rabota4almaty-5899": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Грузчик на строительный склад",
+    "employer": null,
+    "schedule": "Пн–Пт, 08:00–17:00, Сб 08:00–15:00",
+    "address": "ул. Механическая, 26а"
+   }
+  },
+  "rabota4almaty-5897": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Кузовщик-маляр",
+    "address": "ул. Садовникова, 95"
+   }
+  },
+  "almaty_rabota_work-31748": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "schedule": "5/2, 09:00–19:00"
+   }
+  },
+  "hh-137232320": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {}
+  },
+  "hh-138003341": {
+   "verdict": "reject",
+   "at": "2026-10-31T09:57:28+00:00",
+   "reason": "Банковская должность, нужно высшее образование"
+  },
+  "rabotaaktau-141969": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Бариста, официант, мангальщик",
+    "employer": "Кафе «Стамбул»",
+    "schedule": "6/1",
+    "address": "7-й микрорайон"
+   }
+  },
+  "rabotaaktau-141972": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Продавец в продуктовый магазин",
+    "schedule": "2/2, 08:00–23:00"
+   }
+  },
+  "rabotaaktau-141968": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Магазин «CODEX»",
+    "schedule": "Пн–Пт, 10:00–19:00",
+    "perks": []
+   }
+  },
+  "hh-139025918": {
+   "verdict": "approve",
+   "at": "2026-10-31T09:57:28+00:00",
+   "fields": {
+    "employer": "Magic Group",
+    "schedule": "по 8 часов",
+    "address": "ул. Чехова, 68/1"
    }
   }
  }

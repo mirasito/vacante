@@ -567,6 +567,13 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "aktobe:mkr plus": {
+  "name": "MKR PLUS",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "aktobe:reny": {
   "name": "Reny",
   "city": "aktobe",
@@ -815,6 +822,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "almaty:abl": {
+  "name": "ABL.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "almaty:abt & e trans forwarding company": {
   "name": "ABT & E-trans Forwarding company",
@@ -1274,6 +1288,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:atg group": {
+  "name": "ATG Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "almaty:athletex production": {
   "name": "Athletex Production",
@@ -2190,6 +2211,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "almaty:g and g гламур": {
+  "name": "G and G Гламур",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "almaty:galanz bottlers ао": {
   "name": "Galanz Bottlers, АО",
@@ -3472,6 +3500,13 @@
   "instagram": "skincare.topbrands",
   "source": "https://2gis.kz/almaty/firm/70000001029864204"
  },
+ "almaty:skybridge invest": {
+  "name": "SkyBridge Invest",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "almaty:small": {
   "name": "SMALL",
   "city": "almaty",
@@ -3917,6 +3952,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:united hygiene": {
+  "name": "UNITED HYGIENE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "almaty:vanilla collection": {
   "name": "Vanilla Collection",
   "city": "almaty",
@@ -4108,6 +4150,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "almaty:zoomlion central asia": {
+  "name": "ZOOMLION CENTRAL ASIA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00",
+  "instagram": "zoomlion_kazakhstan",
+  "website": "https://zoomlion.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061693221",
+  "avatar_checked_at": "2026-10-31T15:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:zr златарь": {
   "name": "ZR ЗЛАТАРЬ",
@@ -5400,6 +5456,13 @@
    "website"
   ]
  },
+ "almaty:комплектстройдеталь": {
+  "name": "КомплектСтройДеталь",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "almaty:корпорация gulfstream": {
   "name": "КОРПОРАЦИЯ GULFSTREAM",
   "city": "almaty",
@@ -5461,6 +5524,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "almaty:кфк medservice plus": {
+  "name": "КФК Medservice Plus",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00",
+  "website": "https://www.medservice.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001066009845",
+  "avatar_checked_at": "2026-10-31T15:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:ламэд": {
   "name": "Ламэд",
@@ -6257,6 +6333,13 @@
   ],
   "avatar": "66a063e8606ff526.jpg",
   "avatar_source": "website"
+ },
+ "almaty:торговый дом элитфиш": {
+  "name": "Торговый Дом ЭлитФиш",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "almaty:торгстрой": {
   "name": "ТОРГСТРОЙ",
@@ -8551,6 +8634,22 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "astana:алтын ұрпақ астана": {
+  "name": "Алтын ұрпақ Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00",
+  "instagram": "altynurpaq.astana",
+  "website": "http://taplink.cc/altynurpak.astana",
+  "source": "https://2gis.kz/astana/firm/70000001019914690",
+  "avatar_checked_at": "2026-10-31T15:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c9760b0c25dff948.jpg",
+  "avatar_source": "website"
+ },
  "astana:амангалиева": {
   "name": "АМАНГАЛИЕВА",
   "city": "astana",
@@ -10045,6 +10144,13 @@
   "instagram": "neomarketskz",
   "source": "https://www.instagram.com/neomarketskz/"
  },
+ "astana:чк alkor kazakhstan ltd": {
+  "name": "ЧК ALKOR KAZAKHSTAN LTD.",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "astana:шинный магазин": {
   "name": "Шинный магазин",
   "city": "astana",
@@ -11285,6 +11391,22 @@
   "avatar": "6aa4415f987e23f3.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:nurlytau construction": {
+  "name": "Nurlytau Construction",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00",
+  "instagram": "nurlytau01",
+  "website": "http://nurlytau01.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001068027208",
+  "avatar_checked_at": "2026-10-31T15:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2f9088dd7be086b7.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:азенов самат": {
   "name": "Азенов Самат",
   "city": "kokshetau",
@@ -11415,6 +11537,13 @@
   ],
   "avatar": "ce1fe1f2784acd5b.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:kuandyk grou": {
+  "name": "KUANDYK GROU",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "kostanay:oil центр": {
   "name": "Oil центр",
@@ -11613,6 +11742,13 @@
    "website"
   ]
  },
+ "kostanay:казспецснабсервис": {
+  "name": "КАЗСПЕЦСНАБСЕРВИС",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "kostanay:кенжетаев ж ж": {
   "name": "Кенжетаев Ж Ж",
   "city": "kostanay",
@@ -11744,6 +11880,13 @@
   ],
   "avatar": "dd0cca36d7c7ed81.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:нейфельд а а": {
+  "name": "Нейфельд А.А.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "kostanay:олжа агро": {
   "name": "Олжа Агро",
@@ -13055,6 +13198,13 @@
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
  },
+ "shymkent:prolight": {
+  "name": "ProLight",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "shymkent:q saiman": {
   "name": "Q-Saiman",
   "city": "shymkent",
@@ -13583,6 +13733,13 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "taraz:прессбук": {
+  "name": "ПрессБук",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
+ },
  "taraz:пырақ құрылыс": {
   "name": "Пырақ-Құрылыс",
   "city": "taraz",
@@ -13687,6 +13844,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "uralsk:moon spa": {
+  "name": "MOON SPA",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00",
+  "instagram": "moon_spa.url",
+  "source": "https://2gis.kz/uralsk/firm/70000001089381649"
  },
  "uralsk:oshaq": {
   "name": "OSHAQ",
@@ -13800,6 +13966,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "uralsk:батыс шины": {
+  "name": "БАТЫС ШИНЫ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T15:43:32+00:00"
  },
  "uralsk:ваша вахта": {
   "name": "Ваша вахта",

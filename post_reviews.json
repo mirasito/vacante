@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T03:56:12+00:00",
+ "updated_at": "2026-10-31T04:57:08+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -10606,6 +10606,274 @@
    "fields": {
     "title": "Помощник повара, кассир, курьер",
     "employer": "Фаст-фуд «Doner na Kaspi»"
+   }
+  },
+  "hh-137893232": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "address": null,
+    "employer": "Atamiras.S"
+   }
+  },
+  "hh-138949679": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Офисная IT-должность"
+  },
+  "hh-138949631": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "address": "ул. Кендирли, 4"
+   }
+  },
+  "hh-138949486": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "hh-138949473": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Повар горячего цеха",
+    "employer": "Fitness Palace KZ",
+    "address": "пр. Туран, 30",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "hh-138949469": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Контролёр-охранник в магазин",
+    "employer": "MonAmie",
+    "address": "пр. Республики, 8"
+   }
+  },
+  "hh-138949439": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Туран, 33"
+   }
+  },
+  "zhumys_astana_kz-16967": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Мерчендайзер, продавец-кассир",
+    "employer": "Магазин «Blizzko»",
+    "address": "ул. Александра Бараева, 18/2"
+   }
+  },
+  "rabota_astanakz-31081": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "employer": null,
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16868": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Работник торгового зала, мерчендайзер",
+    "employer": "Магазин «Каусар»",
+    "schedule": "10:00–20:00 или 20:00–01:00",
+    "address": "ул. Кенжебека Кумисбекова, 8",
+    "perks": [
+     "Можно студентам",
+     "Развозка"
+    ]
+   }
+  },
+  "rabota_astanakz-31037": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Маляр-кузовщик",
+    "employer": "Сервис Кузова"
+   }
+  },
+  "hh-139023640": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Работа в посёлке Актогай, не в Алматы"
+  },
+  "hh-139023628": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Персональный водитель",
+    "schedule": "5/2"
+   }
+  },
+  "almaty_rabota_work-31704": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Депозитная система (удержания с работника)"
+  },
+  "hh-138993100": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "address": "ул. Макатаева, 117"
+   }
+  },
+  "hh-138992765": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "employer": "ABL",
+    "address": "ул. Ташена Утепова, 31, блок 10"
+   }
+  },
+  "hh-138992731": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "employer": "КФК «Medservice Plus»",
+    "address": "ул. Тюлькубасская, 4А"
+   }
+  },
+  "hh-138992693": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "schedule": null,
+    "address": "с. Жаналык"
+   }
+  },
+  "hh-138992691": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Офисная B2B-продажа, развитие дилерской сети"
+  },
+  "hh-138458569": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-5858": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Подозрительно: «только девушки», проживание, 900 000+ ₸ массажисту"
+  },
+  "hh-138959920": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Администратор кофейни",
+    "employer": null,
+    "schedule": "2/2",
+    "address": "пр. Аль-Фараби, 116/22"
+   }
+  },
+  "hh-139023515": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Вахта в Тенгизе, не в Шымкенте"
+  },
+  "hh-139023709": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "employer": "Кондитерская «Розалина»",
+    "address": "ж/м Сайрам"
+   }
+  },
+  "hh-138661215": {
+   "verdict": "reject",
+   "at": "2026-10-31T04:57:08+00:00",
+   "reason": "Продвижение табачного бренда"
+  },
+  "rabotaaktau-141949": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Кассир, хостес, раннер, бармен",
+    "employer": "Кафе «SAAD»",
+    "address": "18А мкр, 3 дом"
+   }
+  },
+  "rabotaaktau-141910": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "schedule": "10:00–20:00",
+    "address": "ТРЦ «Маңғыстау»"
+   }
+  },
+  "rabotaaktau-141907": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Сварщик, монтажник металлоконструкций"
+   }
+  },
+  "rabotaaktau-141900": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Автоэлектрик, мастер по ходовой"
+   }
+  },
+  "rabotaaktau-141886": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Воспитатель, няня",
+    "schedule": "09:00–18:00",
+    "address": "мкр Толқын-2"
+   }
+  },
+  "rabotaaktau-141879": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-141874": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "employer": "ЖЭК"
+   }
+  },
+  "rabotaaktau-141867": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Администратор, продавец-консультант"
+   }
+  },
+  "rabotaaktau-141859": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "schedule": "08:00–13:00",
+    "address": "4 мкр"
+   }
+  },
+  "rabotaaktau-141858": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {}
+  },
+  "vakansii_oskemen-9204": {
+   "verdict": "approve",
+   "at": "2026-10-31T04:57:08+00:00",
+   "fields": {
+    "title": "Сборщик корпусной мебели",
+    "employer": "DN Мебель"
    }
   }
  }

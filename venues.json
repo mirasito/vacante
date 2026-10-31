@@ -318,6 +318,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "aktau:прессбук": {
+  "name": "ПрессБук",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "aktau:прокурорский": {
   "name": "Прокурорский",
   "city": "aktau",
@@ -1052,6 +1059,13 @@
   "avatar": "a392a2e192170608.jpg",
   "avatar_source": "website"
  },
+ "almaty:atamiras s": {
+  "name": "ATAMIRAS.S",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "almaty:atamura group": {
   "name": "Atamura Group",
   "city": "almaty",
@@ -1315,6 +1329,13 @@
   ],
   "avatar": "f114fc58412c1e78.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:boombala знание": {
+  "name": "Boombala. Знание",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
  },
  "almaty:breezy": {
   "name": "Breezy",
@@ -2118,6 +2139,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "almaty:hr capital space": {
+  "name": "HR CAPITAL SPACE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "almaty:hyundai trans auto": {
   "name": "Hyundai Trans Auto",
   "city": "almaty",
@@ -2352,6 +2380,13 @@
   "checked_at": "2026-10-30T05:43:28+00:00",
   "instagram": "killhouse_quest",
   "source": "https://2gis.kz/almaty/firm/70000001113867161"
+ },
+ "almaty:klara fashion house": {
+  "name": "Klara Fashion House",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
  },
  "almaty:koton textile котон текстиль": {
   "name": "KOTON TEXTILE (КОТОН Текстиль)",
@@ -2707,6 +2742,22 @@
    "website"
   ]
  },
+ "almaty:noblesse food": {
+  "name": "Noblesse Food",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00",
+  "instagram": "noblesse_food",
+  "website": "http://noblessefood.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098553458",
+  "avatar_checked_at": "2026-10-31T02:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c6a1728074170488.jpg",
+  "avatar_source": "website"
+ },
  "almaty:nurancell": {
   "name": "Nurancell",
   "city": "almaty",
@@ -2906,6 +2957,15 @@
   "checked_at": "2026-10-30T21:43:07+00:00",
   "instagram": "qazyna_beauty",
   "source": "https://2gis.kz/almaty/firm/70000001046992544"
+ },
+ "almaty:qlife": {
+  "name": "Qlife",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00",
+  "instagram": "qlifekz",
+  "source": "https://2gis.kz/almaty/firm/70000001078741033"
  },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
@@ -3223,6 +3283,19 @@
   ],
   "avatar": "23ef27b2ba532ccb.jpg",
   "avatar_source": "website"
+ },
+ "almaty:steel group r": {
+  "name": "STEEL GROUP R",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00",
+  "website": "https://steelgroupkz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001053828060",
+  "avatar_checked_at": "2026-10-31T02:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:stom dautovy": {
   "name": "Stom-Dautovy",
@@ -5618,6 +5691,13 @@
   ],
   "avatar": "a37282c2cf4dcab7.jpg",
   "avatar_source": "website"
+ },
+ "almaty:филиал рдц клиника animed": {
+  "name": "ФИЛИАЛ РДЦ- КЛИНИКА ANIMED",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
  },
  "almaty:фирма амарата": {
   "name": "Фирма АмаратА",
@@ -8566,6 +8646,15 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "astana:стоматология neo dent": {
+  "name": "Стоматология Neo Dent",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00",
+  "instagram": "neodentastana",
+  "source": "https://2gis.kz/astana/firm/70000001018071209"
+ },
  "astana:строй монтаж проект": {
   "name": "Строй Монтаж Проект",
   "city": "astana",
@@ -8878,6 +8967,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "astana:ұсталар": {
+  "name": "Ұсталар",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "atyrau:adona ltd": {
   "name": "Adona ltd",
   "city": "atyrau",
@@ -9012,6 +9108,20 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "atyrau:атыраутехинвест": {
+  "name": "АтырауТехИнвест",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00",
+  "instagram": "atyrautechinvest.kz",
+  "website": "http://atikz.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034849012",
+  "avatar_checked_at": "2026-10-31T02:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:даулетов н а акжелкен": {
   "name": "Даулетов Н.А. АкЖелкен",
   "city": "atyrau",
@@ -9048,6 +9158,13 @@
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
  },
+ "atyrau:масло дел": {
+  "name": "Масло-Дел",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "atyrau:союз групп 20": {
   "name": "Союз групп 20",
   "city": "atyrau",
@@ -9061,6 +9178,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "karaganda:220 volt": {
+  "name": "220 VOLT",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00",
+  "instagram": "220volt.kz",
+  "website": "https://www.220volt.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302913199",
+  "avatar_checked_at": "2026-10-31T02:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "989c4c0eddcffd25.jpg",
+  "avatar_source": "website"
  },
  "karaganda:arcada": {
   "name": "ARCADA",
@@ -9763,6 +9896,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "kokshetau:autocity karaganda": {
+  "name": "AutoCity Karaganda",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "kokshetau:azart company": {
   "name": "Azart Company",
   "city": "kokshetau",
@@ -9816,6 +9956,13 @@
   "avatar": "6f80523a6fe53a42.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:kokshetau motors": {
+  "name": "Kokshetau motors",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "kokshetau:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "kokshetau",
@@ -9866,6 +10013,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "kostanay:allur auto qostanay": {
+  "name": "Allur Auto Qostanay",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
  },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
@@ -11617,6 +11771,13 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "taldykorgan:teplostandart": {
+  "name": "TeploStandart",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
+ },
  "taraz:alvin market": {
   "name": "Alvin Market",
   "city": "taraz",
@@ -11815,6 +11976,13 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "oshaq_oral",
   "source": "https://2gis.kz/uralsk/firm/70000001117369794"
+ },
+ "uralsk:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
  },
  "uralsk:simit": {
   "name": "SIMIT",
@@ -12051,6 +12219,13 @@
   ],
   "avatar": "17c40eb2d1fb3e9b.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T02:43:59+00:00"
  },
  "ust-kamenogorsk:kaspi kz": {
   "name": "Kaspi.kz",

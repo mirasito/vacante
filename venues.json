@@ -529,6 +529,15 @@
   "instagram": "esetmontazh",
   "source": "https://2gis.kz/aktobe/firm/70000001066010857"
  },
+ "aktobe:glasman trade": {
+  "name": "GLASMAN TRADE",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "glasman.kz",
+  "source": "https://www.instagram.com/glasman.kz/"
+ },
  "aktobe:hotel ilek": {
   "name": "HOTEL ILEK",
   "city": "aktobe",
@@ -660,6 +669,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
+ },
+ "aktobe:вибро мастер казахстан": {
+  "name": "Вибро Мастер Казахстан",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "vibromaster.kz",
+  "website": "http://vibromaster.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001033146448",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:гелиос": {
   "name": "Гелиос",
@@ -2038,6 +2061,22 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "almaty:doctors hunter": {
+  "name": "Doctors Hunter",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "doctorshunter",
+  "telegram": "lovetsvrachey",
+  "website": "https://doctorshunter.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001027601382",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:dominika курилова э с": {
   "name": "Dominika (Курилова Э.С)",
   "city": "almaty",
@@ -2228,6 +2267,13 @@
    "website"
   ]
  },
+ "almaty:era kz": {
+  "name": "ERA KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
+ },
  "almaty:erdem central asia": {
   "name": "ERDEM CENTRAL ASIA",
   "city": "almaty",
@@ -2259,6 +2305,15 @@
   ],
   "avatar": "8e044ddc18469726.jpg",
   "avatar_source": "website"
+ },
+ "almaty:eurosnab": {
+  "name": "EUROSNAB",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "eurosnab_chocolate",
+  "source": "https://2gis.kz/almaty/firm/70000001117713113"
  },
  "almaty:expert logistic kazakhstan": {
   "name": "Expert Logistic Kazakhstan",
@@ -3622,6 +3677,13 @@
   "avatar": "6aecb8ada2b3d8be.jpg",
   "avatar_source": "website"
  },
+ "almaty:reklamix": {
+  "name": "REKLAMIX",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
+ },
  "almaty:resident group": {
   "name": "Resident Group",
   "city": "almaty",
@@ -3709,6 +3771,20 @@
   "website": "https://wildberries.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001105605374",
   "avatar_checked_at": "2026-10-29T11:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:sahar&vosk almaty": {
+  "name": "SAHAR&VOSK Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "saharvosk_almaty",
+  "website": "http://saharvosk.ru/almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001032892323",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4502,6 +4578,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "almaty:ааа логистика": {
+  "name": "ААА Логистика",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "website": "https://aaalogistics.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001118548638",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:аватария": {
   "name": "Аватария",
@@ -5329,6 +5418,13 @@
    "telegram"
   ]
  },
+ "almaty:гумм": {
+  "name": "Гумм",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
+ },
  "almaty:гущин": {
   "name": "Гущин",
   "city": "almaty",
@@ -5620,6 +5716,19 @@
   "website": "http://kazbad.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001025068804",
   "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:казбиотранс": {
+  "name": "КазБиоТранс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "website": "https://www.kazbiotrans.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001075575750",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6630,6 +6739,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:ста поехали с нами": {
+  "name": "СТА Поехали с нами",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "poehalisnami__kz",
+  "website": "https://poehalisnami.kz/office/almaty/2213",
+  "source": "https://2gis.kz/almaty/firm/70000001082031162",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:столовая": {
   "name": "Столовая",
@@ -7928,6 +8051,15 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "astana:glasman trade": {
+  "name": "GLASMAN TRADE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "glasman.kz",
+  "source": "https://www.instagram.com/glasman.kz/"
+ },
  "astana:glovo": {
   "name": "GLOVO",
   "city": "astana",
@@ -7938,6 +8070,20 @@
   "website": "https://glovoapp.com/",
   "source": "https://2gis.kz/astana/firm/70000001039423066",
   "avatar_checked_at": "2026-10-28T21:46:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:glovo kazakhstan": {
+  "name": "Glovo Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "glovo_kz",
+  "website": "https://glovoapp.com/",
+  "source": "https://2gis.kz/astana/firm/70000001039423066",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8706,6 +8852,13 @@
   "instagram": "senimstaff",
   "source": "https://2gis.kz/astana/firm/70000001117886885"
  },
+ "astana:sg beton завод": {
+  "name": "SG Beton завод",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
+ },
  "astana:shapan": {
   "name": "SHAPAN",
   "city": "astana",
@@ -9103,6 +9256,15 @@
   ],
   "avatar": "1ef35b44ef5f46ed.jpg",
   "avatar_source": "website"
+ },
+ "astana:whoopie cakes": {
+  "name": "Whoopie Cakes",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "instagram": "whoopiecakes_citycafe",
+  "source": "https://2gis.kz/astana/firm/70000001047928378"
  },
  "astana:wsteel kz": {
   "name": "WSTEEL.KZ",
@@ -10061,6 +10223,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "astana:кутюрина": {
+  "name": "Кутюрина",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
  },
  "astana:лаврут": {
   "name": "Лаврут",
@@ -11123,6 +11292,13 @@
    "website"
   ]
  },
+ "atyrau:coffee nation kz": {
+  "name": "Coffee Nation KZ",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
+ },
  "atyrau:eurasia support services": {
   "name": "Eurasia Support Services",
   "city": "atyrau",
@@ -11510,6 +11686,19 @@
   "website": "http://jetlogistic.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302944214",
   "avatar_checked_at": "2026-10-29T02:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "karaganda:karadel mechanics": {
+  "name": "Karadel Mechanics",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00",
+  "website": "https://karadel.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001112409197",
+  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14215,6 +14404,13 @@
    "website"
   ]
  },
+ "shymkent:meiram kurylys": {
+  "name": "Meiram Kurylys",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
+ },
  "shymkent:nls kazakhstan": {
   "name": "NLS Kazakhstan",
   "city": "shymkent",
@@ -14743,6 +14939,13 @@
   "checked_at": "2026-10-30T04:43:33+00:00",
   "instagram": "greenhouse_limited",
   "source": "https://2gis.kz/shymkent/firm/70000001026666557"
+ },
+ "taraz:korzinka retail group": {
+  "name": "KORZINKA RETAIL GROUP",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T23:43:38+00:00"
  },
  "taraz:lamoda kz мода с доставкой тоо": {
   "name": "Lamoda.kz (Мода с доставкой, ТОО)",

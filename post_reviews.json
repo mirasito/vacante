@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T12:57:27+00:00",
+ "updated_at": "2026-10-31T13:57:17+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -12997,6 +12997,315 @@
    "at": "2026-10-31T12:57:27+00:00",
    "fields": {
     "address": "ул. Жибек Жолы, 44"
+   }
+  },
+  "rabota_astanakz-31134": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Донерщик, помощник повара",
+    "employer": "Дөнерхана",
+    "salary_min": 10000,
+    "salary_max": 14000,
+    "salary_period": "day",
+    "schedule": "2/2, 10:00–01:00",
+    "perks": [
+     "Питание",
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-121870475": {
+   "verdict": "reject",
+   "at": "2026-10-31T13:57:17+00:00",
+   "reason": "Офисная должность (продажи недвижимости)"
+  },
+  "rabota_astanakz-31135": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "ТОО «TITAN SECURITY»",
+    "schedule": "сутки через двое",
+    "address": null,
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "hh-139027621": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "address": null
+   }
+  },
+  "hh-139027410": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Продавец-кассир в строительный магазин",
+    "address": "ул. Е-36, 4",
+    "schedule": "2/2, по 11 часов"
+   }
+  },
+  "hh-139027359": {
+   "verdict": "reject",
+   "at": "2026-10-31T13:57:17+00:00",
+   "reason": "Офисная должность, неясно, что продавать"
+  },
+  "astana_job_vakansii-129867": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "Игровой центр «Cosmic Kids»",
+    "schedule": "2/2 или 5/2, 10:00–22:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "astana_job_vakansii-129910": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Мастер по ремонту бензо- и электроинструмента",
+    "employer": "Центр проката «Torent»",
+    "schedule": "6/1, 09:00–19:00"
+   }
+  },
+  "astana_job_vakansii-129996": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Горничная в хостел"
+   }
+  },
+  "rabota_astanakz-31132": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "Магазин мужской одежды «SHAPAN»",
+    "schedule": "5/2, 6/1 или 2/2",
+    "perks": [
+     "Бонусы",
+     "Ежедневная оплата",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-129974": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "Магазин игрушек «JNK»",
+    "schedule": "6/1, 10:00–22:00"
+   }
+  },
+  "astana_job_vakansii-129976": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "Ресторан «Pantheon»"
+   }
+  },
+  "hh-139027654": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "«Мукажан»",
+    "schedule": "5/2 или 2/2, по 10 часов",
+    "address": "пр. Жибек Жолы, 85"
+   }
+  },
+  "hh-139027496": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "Салон «Розовое»",
+    "schedule": null,
+    "address": "ул. Курмангазы, 20"
+   }
+  },
+  "hh-138755199": {
+   "verdict": "reject",
+   "at": "2026-10-31T13:57:17+00:00",
+   "reason": "Офисная должность, онлайн-продажи курсов"
+  },
+  "hh-138619900": {
+   "verdict": "reject",
+   "at": "2026-10-31T13:57:17+00:00",
+   "reason": "Похоже на «лёгкий заработок» от частного лица"
+  },
+  "rabota4almaty-5956": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Слесарь механосборочных работ",
+    "employer": "ТОО «IceCore»",
+    "address": "ул. Гоголя, 86"
+   }
+  },
+  "rabota4almaty-5957": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "ТОО «Gorelnik Damu»",
+    "address": "ул. Ескендирова, 1"
+   }
+  },
+  "rabota4almaty-5955": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "ТОО «Фирма А-Профиль»",
+    "address": "пр. Суюнбая, 481В"
+   }
+  },
+  "agashka_job_almaty-1011": {
+   "verdict": "reject",
+   "at": "2026-10-31T13:57:17+00:00",
+   "reason": "Повтор вакансии склада электроники из этой же очереди"
+  },
+  "almaty_rabota_work-31753": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Сортировщик посылок",
+    "schedule": "5/2, 09:00–20:00",
+    "address": "с. Аскара Токпанова, Илийский район",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "almatyrabota1-21285": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Грузчик, отборщик-грузчик",
+    "schedule": "5/2 или 2/2, 08:00–20:00 или 20:00–08:00",
+    "address": "ул. Закарпатская, 1а/1",
+    "perks": [
+     "Развозка"
+    ]
+   }
+  },
+  "hh-139007344": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов",
+    "address": "ул. Бухтарминская, 9Б",
+    "perks": []
+   }
+  },
+  "rabota4almaty-5889": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Сборщик-грузчик на склад",
+    "schedule": "5/2, 09:00–18:00",
+    "address": "мкр Алгабас, 7-я улица, 130/13",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "almaty_rabota05-11649": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Оператор колл-центра (удалённо)",
+    "schedule": "5/2, 09:00–18:00"
+   }
+  },
+  "almaty_rabota05-11705": {
+   "verdict": "reject",
+   "at": "2026-10-31T13:57:17+00:00",
+   "reason": "Совмещена с офисной должностью (отдел кадров)"
+  },
+  "almatyrabota1-21269": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Kelzin Group",
+    "schedule": "6/1, 08:00–17:00"
+   }
+  },
+  "almaty_rabota01-25960": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Помощник по торговому залу",
+    "schedule": "2/2, 09:00–00:00",
+    "perks": []
+   }
+  },
+  "aktobevakansii-44325": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "schedule": "2/2, 11:00–00:00"
+   }
+  },
+  "aktobevakansii-44323": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин косметики"
+   }
+  },
+  "aktobevakansii-44322": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Повар, помощник повара, уборщица, посудомойщица"
+   }
+  },
+  "vakansii_rabota_atyrau-49946": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Кассир, официант",
+    "salary_min": 200000,
+    "salary_max": 350000,
+    "salary_period": "month",
+    "address": "ул. Сатпаева, 17Б"
+   }
+  },
+  "rabotaaktau-141982": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Продавец в бутик детской одежды",
+    "schedule": "2/2, 10:00–19:00",
+    "perks": [
+     "Можно студентам"
+    ]
+   }
+  },
+  "rabotaaktau-141980": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Помощник кондитера",
+    "schedule": "6/1, 07:00–16:00"
+   }
+  },
+  "rabotaaktau-141979": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "employer": "Торговая фирма «Doss Group»"
+   }
+  },
+  "vakansii_oskemen-9211": {
+   "verdict": "approve",
+   "at": "2026-10-31T13:57:17+00:00",
+   "fields": {
+    "title": "Менеджер по продажам лакокрасочных материалов"
    }
   }
  }

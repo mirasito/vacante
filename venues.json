@@ -1641,6 +1641,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "almaty:dostyk world group": {
+  "name": "DOSTYK WORLD GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "almaty:dream land co": {
   "name": "Dream Land Co",
   "city": "almaty",
@@ -2098,6 +2105,22 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "almaty:inspire international": {
+  "name": "Inspire International",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00",
+  "instagram": "inspire_international.kz",
+  "website": "https://inspireapp.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001066593949",
+  "avatar_checked_at": "2026-10-31T00:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d71217686c173b38.jpg",
+  "avatar_source": "website"
+ },
  "almaty:international almaty": {
   "name": "INTERNATIONAL ALMATY",
   "city": "almaty",
@@ -2425,6 +2448,15 @@
   "checked_at": "2026-10-29T07:46:02+00:00",
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/almaty/firm/70000001084026398"
+ },
+ "almaty:mai qazan": {
+  "name": "Mai Qazan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00",
+  "instagram": "maiqazan",
+  "source": "https://2gis.kz/almaty/firm/70000001038678879"
  },
  "almaty:marrone rosso тм тоо dand m investments": {
   "name": "Marrone Rosso, ТМ ( ТОО DAND M INVESTMENTS)",
@@ -2834,6 +2866,13 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "almaty:rail trade": {
+  "name": "Rail Trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "almaty:recruit expert": {
   "name": "Recruit expert",
   "city": "almaty",
@@ -2933,6 +2972,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "almaty:satelco": {
+  "name": "SATELCO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
  },
  "almaty:scorpy": {
   "name": "Scorpy",
@@ -4525,6 +4571,13 @@
    "website"
   ]
  },
+ "almaty:казиева а э": {
+  "name": "КАЗИЕВА А.Э",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "almaty:казоборонсервис": {
   "name": "КАЗОБОРОНСЕРВИС",
   "city": "almaty",
@@ -5152,6 +5205,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:ртс розничная торговая сеть": {
+  "name": "РТС - Розничная Торговая Сеть",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00",
+  "website": "https://cosmart.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001102935813",
+  "avatar_checked_at": "2026-10-31T00:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:рузи нан астана": {
   "name": "Рузи Нан Астана",
@@ -5854,6 +5920,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "astana:asyl group": {
+  "name": "Asyl Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "astana:avenue танатаров а м": {
   "name": "Avenue (ТАНАТАРОВ А.М)",
   "city": "astana",
@@ -5925,6 +5998,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:blizzko": {
+  "name": "Blizzko",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00",
+  "instagram": "magazin_blizzko",
+  "source": "https://2gis.kz/astana/firm/70000001046118936"
  },
  "astana:bright retail": {
   "name": "BRIGHT RETAIL",
@@ -6031,6 +6113,13 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "instagram": "chester_lounge_astana",
   "source": "https://2gis.kz/astana/firm/70000001102011408"
+ },
+ "astana:chocolatel": {
+  "name": "CHOCOLATEL",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
  },
  "astana:coffee hub": {
   "name": "Coffee Hub",
@@ -6789,6 +6878,13 @@
    "website"
   ]
  },
+ "astana:pet": {
+  "name": "PET",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "astana:pingwin bowling": {
   "name": "Pingwin bowling",
   "city": "astana",
@@ -7184,6 +7280,13 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "astana:vita property": {
+  "name": "Vita property",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "astana:vvcg": {
   "name": "Vvcg",
   "city": "astana",
@@ -7432,6 +7535,13 @@
   ],
   "avatar": "770061b8ce07b854.jpg",
   "avatar_source": "website"
+ },
+ "astana:бестерек": {
+  "name": "Бестерек",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
  },
  "astana:бизнес центр": {
   "name": "Бизнес-центр",
@@ -7979,6 +8089,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "astana:маринад": {
+  "name": "МАРИНАД",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00",
+  "instagram": "marinad_astana01",
+  "source": "https://2gis.kz/astana/firm/70000001096234941"
  },
  "astana:марк формэль": {
   "name": "Марк Формэль",
@@ -8842,6 +8961,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "karaganda:consumer trade company": {
+  "name": "Consumer Trade Company",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "karaganda:ekibastuzferroalloys": {
   "name": "EkibastuzFerroAlloys",
   "city": "karaganda",
@@ -8918,6 +9044,13 @@
   ],
   "avatar": "155ebf08f659512b.jpg",
   "avatar_source": "telegram"
+ },
+ "karaganda:izi": {
+  "name": "IZI",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
  },
  "karaganda:jet logistic": {
   "name": "Jet Logistic",
@@ -10085,6 +10218,20 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "kyzylorda:чк hong tu mining group co ltd": {
+  "name": "ЧК HONG TU MINING GROUP CO., LTD.",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "pavlodar:ar line service": {
+  "name": "Ar line service",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
+ },
  "pavlodar:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "pavlodar",
@@ -10635,6 +10782,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "petropavlovsk:север": {
+  "name": "Север",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00",
+  "instagram": "severpivo",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001053413580"
  },
  "petropavlovsk:северный 4": {
   "name": "Северный 4",
@@ -11851,6 +12007,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "ust-kamenogorsk:даньяров е д": {
+  "name": "Даньяров Е.Д.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T00:43:30+00:00"
  },
  "ust-kamenogorsk:докка": {
   "name": "ДОККА",

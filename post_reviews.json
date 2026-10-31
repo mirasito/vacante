@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T18:57:01+00:00",
+ "updated_at": "2026-10-31T19:56:13+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -13904,6 +13904,11 @@
     "employer": "RZV Trans",
     "schedule": null
    }
+  },
+  "hh-138204592": {
+   "verdict": "approve",
+   "at": "2026-10-31T19:56:13+00:00",
+   "fields": {}
   }
  }
 }

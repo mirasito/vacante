@@ -690,6 +690,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "aktobe:керуен сити": {
+  "name": "Керуен Сити",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
+ },
  "aktobe:лядов е е": {
   "name": "Лядов Е.Е",
   "city": "aktobe",
@@ -2268,6 +2275,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "almaty:gorelnik damu": {
+  "name": "Gorelnik Damu",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
+ },
  "almaty:grand hotel tien shan": {
   "name": "Grand Hotel Tien-Shan",
   "city": "almaty",
@@ -2400,6 +2414,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:icecore": {
+  "name": "IceCore",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "almaty:ile tau": {
   "name": "ILE TAU",
@@ -5632,6 +5653,15 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "almaty:мукажан": {
+  "name": "МУКАЖАН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "mukajankz",
+  "source": "https://2gis.kz/almaty/firm/70000001031688321"
+ },
  "almaty:мфо ломбард деньги населению": {
   "name": "МФО Ломбард Деньги населению",
   "city": "almaty",
@@ -5922,6 +5952,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:розовое": {
+  "name": "Розовое",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "rozovoe_studio_",
+  "source": "https://2gis.kz/almaty/firm/70000001059431751"
  },
  "almaty:ртс розничная торговая сеть": {
   "name": "РТС - Розничная Торговая Сеть",
@@ -6300,6 +6339,20 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "almaty:фирма а профиль": {
+  "name": "Фирма А-Профиль",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "aprofile_kz",
+  "website": "http://a-profile.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792740",
+  "avatar_checked_at": "2026-10-31T13:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:фирма амарата": {
   "name": "Фирма АмаратА",
   "city": "almaty",
@@ -6396,6 +6449,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "almaty:шевцов богдан васильевич": {
+  "name": "Шевцов Богдан Васильевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "almaty:шляппо": {
   "name": "Шляппо",
@@ -6806,6 +6866,22 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "astana:bounty shop глазкова м б": {
+  "name": "BOUNTY SHOP (ГЛАЗКОВА М.Б)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "bountyshop.kz",
+  "website": "http://bountyshop.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001118014982",
+  "avatar_checked_at": "2026-10-31T13:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "eb531deb9802e070.jpg",
+  "avatar_source": "website"
+ },
  "astana:bright retail": {
   "name": "BRIGHT RETAIL",
   "city": "astana",
@@ -7127,6 +7203,13 @@
   "checked_at": "2026-10-31T08:43:03+00:00",
   "instagram": "fade.lab.x",
   "source": "https://2gis.kz/astana/firm/70000001113637339"
+ },
+ "astana:fahrenhite jewelry studio": {
+  "name": "Fahrenhite Jewelry Studio",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "astana:fitness palace kz нурмаханбетов е с": {
   "name": "Fitness Palace KZ Нурмаханбетов Е.С.",
@@ -7698,6 +7781,15 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "astana:novastroy": {
+  "name": "NovaStroy",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "novastroy.kz",
+  "source": "https://2gis.kz/astana/firm/70000001104797277"
+ },
  "astana:of corp": {
   "name": "OF Corp",
   "city": "astana",
@@ -8198,6 +8290,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "astana:titan security": {
+  "name": "TITAN SECURITY",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "titansecurity.kz",
+  "source": "https://2gis.kz/astana/firm/70000001054385810"
+ },
+ "astana:tlg": {
+  "name": "TLG",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "astana:tomiris ип валиев": {
   "name": "Tomiris (ИП Валиев)",
@@ -8816,6 +8924,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "astana:дөнерхана": {
+  "name": "Дөнерхана",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
+ },
  "astana:евразиан фудс корпорэйшн ао": {
   "name": "Евразиан Фудс Корпорэйшн, АО",
   "city": "astana",
@@ -9141,6 +9256,15 @@
   "checked_at": "2026-10-31T12:44:38+00:00",
   "instagram": "viaggio__shop",
   "source": "https://2gis.kz/astana/firm/70000001105121072"
+ },
+ "astana:магазин мужской одежды shapan": {
+  "name": "Магазин мужской одежды SHAPAN",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "instagram": "shapan.kzz_astana2",
+  "source": "https://2gis.kz/astana/firm/70000001103793334"
  },
  "astana:магазин мужской одежды sott": {
   "name": "Магазин мужской одежды SOTT",
@@ -9616,6 +9740,13 @@
   "instagram": "simba_astana",
   "source": "https://2gis.kz/astana/firm/70000001032647185"
  },
+ "astana:служба доставки суши": {
+  "name": "Служба доставки суши",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
+ },
  "astana:солод": {
   "name": "Солод",
   "city": "astana",
@@ -9661,6 +9792,13 @@
   "checked_at": "2026-10-31T02:43:59+00:00",
   "instagram": "neodentastana",
   "source": "https://2gis.kz/astana/firm/70000001018071209"
+ },
+ "astana:строительный объект": {
+  "name": "Строительный объект",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "astana:строй монтаж проект": {
   "name": "Строй Монтаж Проект",
@@ -11641,6 +11779,13 @@
   "avatar": "17b034104a86ca4b.jpg",
   "avatar_source": "website"
  },
+ "kostanay:промбаза 7": {
+  "name": "Промбаза-7",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
+ },
  "kostanay:сервисный центр ростсельмаш": {
   "name": "Сервисный центр Ростсельмаш",
   "city": "kostanay",
@@ -11840,6 +11985,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
+ },
+ "pavlodar:delivery fast": {
+  "name": "Delivery Fast",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "pavlodar:erg kazakhstan": {
   "name": "ERG Kazakhstan",
@@ -12395,6 +12547,19 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "petropavlovsk:кфк medservice plus": {
+  "name": "КФК Medservice Plus",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00",
+  "website": "https://medservice.kz/",
+  "source": "https://en.medservice.kz/about",
+  "avatar_checked_at": "2026-10-31T13:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:масло дел": {
   "name": "Масло-Дел",
   "city": "petropavlovsk",
@@ -12659,6 +12824,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "semey:корпорация gulfstream": {
+  "name": "КОРПОРАЦИЯ GULFSTREAM",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T13:43:50+00:00"
  },
  "semey:мереке": {
   "name": "Мереке",

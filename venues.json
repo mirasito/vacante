@@ -614,6 +614,20 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "aktobe:келет": {
+  "name": "КЕЛЕТ",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "instagram": "kelet.kz",
+  "website": "https://kelet.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032822113",
+  "avatar_checked_at": "2026-10-31T06:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:келешек": {
   "name": "Келешек",
   "city": "aktobe",
@@ -1115,6 +1129,15 @@
   ],
   "avatar": "a392a2e192170608.jpg",
   "avatar_source": "website"
+ },
+ "almaty:ataauto": {
+  "name": "AtaAuto",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "instagram": "ataautoservice",
+  "source": "https://2gis.kz/almaty/firm/70000001115458713"
  },
  "almaty:atamiras s": {
   "name": "ATAMIRAS.S",
@@ -1797,6 +1820,13 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "almaty:drd service": {
+  "name": "DRD SERVICE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "almaty:dream land co": {
   "name": "Dream Land Co",
   "city": "almaty",
@@ -2452,6 +2482,13 @@
    "website"
   ]
  },
+ "almaty:kazservicepartner": {
+  "name": "KazServicePartner",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "almaty:kaztorgline": {
   "name": "KAZTORGLINE",
   "city": "almaty",
@@ -2701,6 +2738,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:medeu mart": {
+  "name": "Medeu Mart",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
  },
  "almaty:medteka": {
   "name": "Medteka",
@@ -3368,6 +3412,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:spservice": {
+  "name": "SPService",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "instagram": "sp_service_",
+  "source": "https://2gis.kz/almaty/firm/70000001076111918"
  },
  "almaty:staff up consulting group": {
   "name": "Staff-UP Consulting Group",
@@ -4986,6 +5039,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:келет": {
+  "name": "КЕЛЕТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "instagram": "kelet.kz",
+  "website": "https://kelet.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000796758",
+  "avatar_checked_at": "2026-10-31T06:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:керемет су ске": {
   "name": "Керемет Су СКЕ",
@@ -7918,6 +7985,20 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "astana:анар": {
+  "name": "Анар",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "astana:апорт": {
+  "name": "АПОРТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "astana:астана белпродукт": {
   "name": "Астана БелПродукт",
   "city": "astana",
@@ -8343,6 +8424,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "astana:золотой актив": {
+  "name": "Золотой Актив",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "astana:ибраев к а": {
   "name": "Ибраев К.А",
   "city": "astana",
@@ -8657,6 +8745,22 @@
    "website"
   ]
  },
+ "astana:мико": {
+  "name": "Мико",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "instagram": "miko_astana",
+  "website": "http://miko.easyfood.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040604576",
+  "avatar_checked_at": "2026-10-31T06:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "001144b90b88c662.jpg",
+  "avatar_source": "website"
+ },
  "astana:москва": {
   "name": "Москва",
   "city": "astana",
@@ -8691,6 +8795,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "astana:надежный таксопарк": {
+  "name": "Надёжный Таксопарк",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
  },
  "astana:научно исследовательская лаборатория гамма технологии": {
   "name": "«Научно-Исследовательская Лаборатория «Гамма Технологии»",
@@ -8763,6 +8874,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "astana:пекарня": {
+  "name": "Пекарня",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
  },
  "astana:полезный продукт": {
   "name": "Полезный Продукт",
@@ -8944,6 +9062,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:симба": {
+  "name": "Симба",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "instagram": "simba_astana",
+  "source": "https://2gis.kz/astana/firm/70000001032647185"
  },
  "astana:солод": {
   "name": "Солод",
@@ -10285,6 +10412,13 @@
   "instagram": "eurasiagroup_kz",
   "source": "https://2gis.kz/kokshetau/firm/70000001033559263"
  },
+ "kokshetau:evrotec": {
+  "name": "EVROTEC",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "kokshetau:food market 1": {
   "name": "FOOD MARKET 1",
   "city": "kokshetau",
@@ -10973,6 +11107,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:fonet er tai ak mining": {
+  "name": "Fonet Er-Tai AK Mining",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
  },
  "pavlodar:kaz minerals management": {
   "name": "KAZ Minerals Management",
@@ -12132,6 +12273,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "shymkent:миррахимов": {
+  "name": "Миррахимов",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "shymkent:охранное агентство its": {
   "name": "Охранное Агентство ITS",
   "city": "shymkent",
@@ -12235,6 +12383,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "taldykorgan:банк центркредит": {
+  "name": "Банк ЦентрКредит",
+  "city": "taldykorgan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00",
+  "website": "https://www.bcc.kz/",
+  "source": "https://www.bcc.kz/llms.txt",
+  "avatar_checked_at": "2026-10-31T06:44:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "taldykorgan:прайм недвижимость n1": {
   "name": "Прайм недвижимость N1",
@@ -12634,6 +12795,13 @@
   "instagram": "sportmaster_kz",
   "source": "https://2gis.kz/uralsk/firm/70000001024984537"
  },
+ "uralsk:ширявсков": {
+  "name": "Ширявсков",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
+ },
  "ust-kamenogorsk:12 месяцев восток": {
   "name": "12 месяцев-Восток",
   "city": "ust-kamenogorsk",
@@ -12827,6 +12995,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "ust-kamenogorsk:бонасорт": {
+  "name": "Бонасорт",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T06:44:38+00:00"
  },
  "ust-kamenogorsk:ваша вахта": {
   "name": "Ваша вахта",

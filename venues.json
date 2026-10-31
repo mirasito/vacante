@@ -1242,6 +1242,22 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "almaty:asiathaispa razh group": {
+  "name": "AsiaThaiSpa (Razh group)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "asiathaispa",
+  "website": "http://asiathaispa.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060741944",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a8cf822ce8397e0e.jpg",
+  "avatar_source": "website"
+ },
  "almaty:asj company": {
   "name": "ASJ company",
   "city": "almaty",
@@ -1533,6 +1549,15 @@
    "website"
   ]
  },
+ "almaty:bidai": {
+  "name": "Bidai",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "bidai_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001112107009"
+ },
  "almaty:big business consulting": {
   "name": "Big Business Consulting",
   "city": "almaty",
@@ -1616,6 +1641,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "almaty:bork": {
+  "name": "BORK",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "bork__kazakhstan",
+  "website": "http://bork.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001038099112",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:breezy": {
   "name": "Breezy",
@@ -2118,6 +2157,20 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:elki kz": {
+  "name": "ELKI.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "elki.kz",
+  "website": "http://elki.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001109756781",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:en electronics": {
   "name": "EN Electronics",
   "city": "almaty",
@@ -2528,6 +2581,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "almaty:hydrosta kazakhstan": {
+  "name": "Hydrosta Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "hydrosta.kz",
+  "website": "http://hydrosta.asia/",
+  "source": "https://2gis.kz/almaty/firm/9429940001346080",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "06adba46dc480da2.jpg",
+  "avatar_source": "website"
  },
  "almaty:hyundai trans auto": {
   "name": "Hyundai Trans Auto",
@@ -2940,6 +3009,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "almaty:m manzoni ип мавлитов е": {
+  "name": "M.Manzoni ( ИП Мавлитов Е)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "manzoni.kz",
+  "website": "http://mmanzoni.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001093671154",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
@@ -4542,6 +4625,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "almaty:алексеевский хлебный дом г алматы": {
+  "name": "Алексеевский хлебный дом г.Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
+ },
  "almaty:алель агро": {
   "name": "Алель Агро",
   "city": "almaty",
@@ -5199,6 +5289,13 @@
   "avatar": "b4b7769464c2981a.jpg",
   "avatar_source": "website"
  },
+ "almaty:диал строй": {
+  "name": "Диал-Строй",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
+ },
  "almaty:евгений цой алексеевич": {
   "name": "Евгений Цой Алексеевич",
   "city": "almaty",
@@ -5380,6 +5477,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "almaty:кадровое агентство prohr ип байбалин": {
+  "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "almaty:каз нью электроникс": {
   "name": "Каз Нью Электроникс",
@@ -5890,6 +5994,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:мирахметов": {
+  "name": "Мирахметов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "almaty:мирзоян гарегин руштунович": {
   "name": "Мирзоян Гарегин Руштунович",
@@ -6971,6 +7082,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "agash_oneri",
   "source": "https://2gis.kz/astana/firm/70000001062327354"
+ },
+ "astana:ager 2005": {
+  "name": "AGER 2005",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "astana:aitolkyn": {
   "name": "Aitolkyn",
@@ -8066,6 +8184,22 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:mm shop": {
+  "name": "MM Shop",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "mm_shop_cosmetics",
+  "telegram": "mmshopcosmetics",
+  "source": "https://2gis.kz/astana/firm/70000001028113635",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "0d9c6b637e8d17bb.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:msq man": {
   "name": "MSQ Man",
   "city": "astana",
@@ -8932,6 +9066,13 @@
   ],
   "avatar": "c9760b0c25dff948.jpg",
   "avatar_source": "website"
+ },
+ "astana:альфа кт": {
+  "name": "Альфа-КТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "astana:амангалиева": {
   "name": "АМАНГАЛИЕВА",
@@ -10710,6 +10851,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "atyrau:gungir": {
+  "name": "GUNGIR",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
+ },
  "atyrau:hydroserv central asia": {
   "name": "Hydroserv Central Asia",
   "city": "atyrau",
@@ -10945,6 +11093,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "karaganda:centercontact kz ип лидер 2023": {
+  "name": "CenterContact.kz(ИП Лидер 2023)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "karaganda:consumer trade company": {
   "name": "Consumer Trade Company",
@@ -11388,6 +11543,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "karaganda:евротехно логистик": {
+  "name": "Евротехно Логистик",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "karaganda:интервзрыв": {
   "name": "ИнтерВзрыв",
@@ -12798,6 +12960,22 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "pavlodar:евразиан фудс корпорэйшн ао": {
+  "name": "Евразиан Фудс Корпорэйшн, АО",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "efc.kz",
+  "website": "https://www.efc.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795207",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a83173fe0131ef9d.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:кари кз": {
   "name": "КАРИ КЗ",
   "city": "pavlodar",
@@ -13650,6 +13828,20 @@
   "instagram": "main_energy_group_etl",
   "source": "https://2gis.kz/shymkent/firm/70000001103677001"
  },
+ "shymkent:mds doors": {
+  "name": "MDS DOORS",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00",
+  "instagram": "mds_doors",
+  "website": "https://mds-doors.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001067620951",
+  "avatar_checked_at": "2026-10-31T20:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:nls kazakhstan": {
   "name": "NLS Kazakhstan",
   "city": "shymkent",
@@ -13700,6 +13892,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "shymkent:sanishev": {
+  "name": "SANISHEV",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "shymkent:studyon": {
   "name": "StudyON",
@@ -15089,6 +15288,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "ust-kamenogorsk:сторк казахстан": {
+  "name": "СТОРК-КАЗАХСТАН",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T20:44:52+00:00"
  },
  "ust-kamenogorsk:табер трейд кз сеть магазинов подружка": {
   "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",

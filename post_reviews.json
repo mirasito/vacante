@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T11:57:36+00:00",
+ "updated_at": "2026-10-31T12:57:27+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -12770,6 +12770,233 @@
     "employer": "BRO glasses",
     "schedule": "5/2, по 8 часов",
     "address": "ул. Маяковского"
+   }
+  },
+  "rabota_astanakz-31129": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Администратор-горничная",
+    "employer": "Сауна «Kedr & Pikhta»",
+    "schedule": "2/2, 09:00–00:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "zhumys_astana_kz-17027": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Администратор, посудомойщица, официант",
+    "employer": "Кафе «Хинкальная №1»",
+    "salary_min": 10000,
+    "salary_max": 12000,
+    "salary_period": "day",
+    "address": "пр. Сарыарка, 11",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-31128": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Сборщик заказов, оператор выдачи, курьер"
+   }
+  },
+  "astana_job_vakansii-129994": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Продавец-кассир, кондитер",
+    "salary_min": 150000,
+    "salary_max": 250000,
+    "salary_period": "month",
+    "address": "ул. Байтурсынова, 20; ул. Туран, 55/11"
+   }
+  },
+  "rabota_astana-15639": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Мясник, заготовщик, лепщица",
+    "salary_min": 418000,
+    "salary_max": 594000,
+    "salary_period": "month",
+    "schedule": "6/1 или 5/2, 08:00–20:00",
+    "address": "ул. Улы Дала, 65/2"
+   }
+  },
+  "zhumys_astana_kz-16889": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "employer": "Бутик «Global Fruit»",
+    "schedule": "5/2, 10:00–22:00",
+    "address": "ул. Кабанбай батыра, 49а; ул. Асфендиярова, 10; ул. Е-36, 9",
+    "perks": [
+     "Бонусы",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-129941": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "schedule": "5/2, 09:00–21:00"
+   }
+  },
+  "almaty_rabota01-26011": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Официант, технический персонал",
+    "employer": "Кафе «Пельмень»",
+    "schedule": "2/2, 08:00–00:00",
+    "address": "ЖК «Esentai City», пр. аль-Фараби, 116/20"
+   }
+  },
+  "hh-139026551": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Администратор-кассир в клинику",
+    "employer": "TESM Company — Eye Clinic",
+    "schedule": "6/1, 8 часов",
+    "address": "ул. Жамбыла, 98"
+   }
+  },
+  "rabota4almaty-5954": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Офисная должность (менеджер по закупкам и продажам)"
+  },
+  "hh-138345365": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "address": "ул. Айтеке би, 187"
+   }
+  },
+  "hh-137913449": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Офисная должность (B2B-продажи оборудования)"
+  },
+  "rabota4almaty-5874": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Салон массажа с завышенной зарплатой без описания работы"
+  },
+  "rabota4almaty-5875": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Тестомес на производство лаваша",
+    "employer": "ТОО «Global Export Shipping»",
+    "address": "с. Бесагаш, 958, напротив «Магнума» (Талгарская трасса)"
+   }
+  },
+  "rabota4almaty-5873": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "employer": null,
+    "address": "ул. Омарова"
+   }
+  },
+  "rabota4almaty-5872": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Медицинский представитель, офисная должность"
+  },
+  "rabota4almaty-5870": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Салон массажа без описания работы"
+  },
+  "rabota4almaty-5866": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Работник цеха упаковки",
+    "employer": "ТОО «Optipack»",
+    "address": "ул. Байзакова, 47/1"
+   }
+  },
+  "rabota4almaty-5864": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Водитель руководителя",
+    "employer": "ТОО «Капиталпрофснаб»"
+   }
+  },
+  "rabotaalmatyyyy-15228": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Продажи через стримы в TikTok, по сути работа в интернете"
+  },
+  "almaty_rabota_work-31731": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Курьер на личном авто",
+    "employer": "ChickenEm",
+    "salary_min": 400000,
+    "salary_max": 500000,
+    "salary_period": "month",
+    "schedule": "5/2, 10:00–22:00"
+   }
+  },
+  "hh-133823965": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "schedule": "смены по 11 часов"
+   }
+  },
+  "vakansii_rabota_atyrau-49945": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "employer": "Лицей-интернат «Білім-Инновация» №1",
+    "address": "ул. Ж. Досмухамбетова, 10"
+   }
+  },
+  "rabotaaktau-141973": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Кухонная работница, сиделка, курьер",
+    "schedule": "6/1, 09:00–18:00"
+   }
+  },
+  "rabotaaktau-141975": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "title": "Повар-универсал",
+    "employer": "Кафе «Garden»",
+    "schedule": "12:00–00:00",
+    "address": "3 мкр., 141"
+   }
+  },
+  "hh-138812002": {
+   "verdict": "reject",
+   "at": "2026-10-31T12:57:27+00:00",
+   "reason": "Офисная должность (продажа недвижимости)"
+  },
+  "vakansii_oskemen-9210": {
+   "verdict": "approve",
+   "at": "2026-10-31T12:57:27+00:00",
+   "fields": {
+    "address": "ул. Жибек Жолы, 44"
    }
   }
  }

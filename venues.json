@@ -2912,6 +2912,15 @@
   "avatar": "c6a1728074170488.jpg",
   "avatar_source": "website"
  },
+ "almaty:nogti mania студия красоты": {
+  "name": "Nogti Mania, студия красоты",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00",
+  "instagram": "nogtimania.salon",
+  "source": "https://2gis.kz/almaty/firm/70000001040596963"
+ },
  "almaty:nurancell": {
   "name": "Nurancell",
   "city": "almaty",
@@ -3043,6 +3052,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:premium logistic": {
+  "name": "Premium Logistic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "almaty:prima distribution": {
   "name": "Prima Distribution",
@@ -3999,6 +4015,13 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "almaty:айдын": {
+  "name": "Айдын",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "almaty:айсаров б а": {
   "name": "АЙСАРОВ Б.А.",
   "city": "almaty",
@@ -4613,6 +4636,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:гк скиф": {
+  "name": "ГК СКИФ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "almaty:глобал медикал": {
   "name": "Глобал Медикал",
@@ -5385,6 +5415,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:москва": {
+  "name": "Москва",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "almaty:мфо ломбард деньги населению": {
   "name": "МФО Ломбард Деньги населению",
   "city": "almaty",
@@ -5563,6 +5600,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:прессбук": {
+  "name": "ПрессБук",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "almaty:примавера каз": {
   "name": "Примавера КАЗ",
@@ -6041,6 +6085,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "almaty:хадиша салон красоты": {
+  "name": "Хадиша, салон красоты",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00",
+  "instagram": "hadisha.sululyk",
+  "source": "https://2gis.kz/almaty/firm/70000001118104076"
  },
  "almaty:халык life": {
   "name": "Халык-Life",
@@ -7156,6 +7209,15 @@
    "website"
   ]
  },
+ "astana:lily": {
+  "name": "lily",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00",
+  "instagram": "lily__qz",
+  "source": "https://2gis.kz/astana/firm/70000001097454374"
+ },
  "astana:lpp kazakhstan лпп казахстан": {
   "name": "LPP Kazakhstan (ЛПП Казахстан)",
   "city": "astana",
@@ -7262,6 +7324,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "astana:natstroy": {
+  "name": "NatStroy",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "astana:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
@@ -8882,6 +8951,13 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "astana:пл люченте казахстан": {
+  "name": "ПЛ-Люченте Казахстан",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "astana:полезный продукт": {
   "name": "Полезный Продукт",
   "city": "astana",
@@ -9317,6 +9393,13 @@
    "website"
   ]
  },
+ "astana:цех мясных полуфабрикатов": {
+  "name": "Цех мясных полуфабрикатов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "astana:чарын": {
   "name": "Чарын",
   "city": "astana",
@@ -9525,6 +9608,20 @@
   "website": "http://hydroservgroup.com/",
   "source": "https://2gis.kz/atyrau/firm/70000001103318820",
   "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "atyrau:lift capital": {
+  "name": "Lift Capital",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00",
+  "instagram": "lift_capital",
+  "website": "https://liftcapital.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001095550821",
+  "avatar_checked_at": "2026-10-31T07:43:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10502,6 +10599,13 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "kokshetau:канаева": {
+  "name": "Канаева",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "kokshetau:кокшетауская железнодорожная больница": {
   "name": "Кокшетауская железнодорожная больница",
   "city": "kokshetau",
@@ -10522,6 +10626,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "kostanay:agroservice kz": {
+  "name": "AGROSERVICE KZ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00",
+  "website": "https://agro-s.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001042928156",
+  "avatar_checked_at": "2026-10-31T07:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:allur auto qostanay": {
   "name": "Allur Auto Qostanay",
@@ -10844,6 +10961,13 @@
   ],
   "avatar": "07147a5b252d9a57.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:мохито кст": {
+  "name": "Мохито КСТ",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "kostanay:мясоед": {
   "name": "Мясоед",
@@ -11943,6 +12067,13 @@
    "website"
   ]
  },
+ "shymkent:asai logistics": {
+  "name": "AsAi Logistics",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "shymkent:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "shymkent",
@@ -11979,6 +12110,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "shymkent:friday ai": {
+  "name": "FRIDAY AI",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "shymkent:insoft": {
   "name": "INSOFT",
@@ -12410,6 +12548,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "taldykorgan:халык life": {
+  "name": "Халык-Life",
+  "city": "taldykorgan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00",
+  "instagram": "halyk_life",
+  "website": "https://www.halyklife.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001037206436",
+  "avatar_checked_at": "2026-10-31T07:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6c3988993487cfd7.jpg",
+  "avatar_source": "website"
  },
  "taraz:alvin market": {
   "name": "Alvin Market",
@@ -12881,6 +13035,13 @@
   "avatar": "17c40eb2d1fb3e9b.jpg",
   "avatar_source": "website"
  },
+ "ust-kamenogorsk:indigo solutions": {
+  "name": "Indigo Solutions",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
+ },
  "ust-kamenogorsk:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "ust-kamenogorsk",
@@ -12912,6 +13073,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "ust-kamenogorsk:level travel up": {
+  "name": "Level Travel Up",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T07:43:27+00:00"
  },
  "ust-kamenogorsk:magnum": {
   "name": "MAGNUM",

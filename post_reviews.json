@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T05:58:24+00:00",
+ "updated_at": "2026-10-31T06:57:36+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -11223,6 +11223,191 @@
     "schedule": "2/2, 8 часов",
     "address": "ул. Строительная, 2/3"
    }
+  },
+  "hh-139024026": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
+  },
+  "astana_job_vakansii-129979": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "employer": "Кафе «Мико»",
+    "schedule": "6/1, 10:00–00:00"
+   }
+  },
+  "rabota_astanakz-31109": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2, 07:00–18:00"
+   }
+  },
+  "rabota_astanakz-31108": {
+   "verdict": "reject",
+   "at": "2026-10-31T06:57:36+00:00",
+   "reason": "Таксопарк, неясные условия, оплата за 10 дней"
+  },
+  "rabota_uralsk-74273": {
+   "verdict": "reject",
+   "at": "2026-10-31T06:57:36+00:00",
+   "reason": "Вакансия в Уральске, а не в Астане"
+  },
+  "rabota_astanakz-31092": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Парикмахер-универсал",
+    "employer": "Салон красоты «Мерси»",
+    "schedule": "Полный день"
+   }
+  },
+  "rabota_astanakz-31091": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "employer": "Пиццерия «Гранд Италия»",
+    "salary_min": 440000,
+    "salary_max": 480000,
+    "salary_period": "month",
+    "schedule": "10:00–21:00"
+   }
+  },
+  "rabota4almaty-5932": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "schedule": "1/2, сутки"
+   }
+  },
+  "rabota4almaty-5930": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Куратор-механик",
+    "salary_min": 400000,
+    "salary_max": 600000,
+    "salary_period": "month",
+    "schedule": "6/1, 09:00–22:00"
+   }
+  },
+  "hh-137568061": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-5931": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Мастер шиномонтажа"
+   }
+  },
+  "hh-138957716": {
+   "verdict": "reject",
+   "at": "2026-10-31T06:57:36+00:00",
+   "reason": "Работа в Конаеве, а не в Алматы"
+  },
+  "hh-134913470": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
+  },
+  "hh-138955164": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
+  },
+  "hh-138955086": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
+  },
+  "hh-138954835": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
+  },
+  "agashka_job_almaty-1006": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Домработница, домработник",
+    "employer": null
+   }
+  },
+  "rabota4almaty-5902": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "address": "Северное кольцо"
+   }
+  },
+  "agashka_job_almaty-1005": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Администратор-хостес",
+    "employer": null
+   }
+  },
+  "almaty_rabota_work-31747": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "schedule": "Гибкий график"
+   }
+  },
+  "hh-138806043": {
+   "verdict": "reject",
+   "at": "2026-10-31T06:57:36+00:00",
+   "reason": "Сомнительно: 800 000–1 500 000 ₸ без опыта"
+  },
+  "hh-138515676": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Слесарь по ремонту оборудования сервисного центра"
+   }
+  },
+  "aktobevakansii-44312": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Повар-универсал"
+   }
+  },
+  "rabotaaktau-141952": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Пекарь, кондитер",
+    "schedule": "6/1, 2/2 или 5/2, 09:00–18:00"
+   }
+  },
+  "rabotaaktau-141951": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Кондитер-кремщица",
+    "schedule": "2/2, с 09:00"
+   }
+  },
+  "hh-139024320": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {
+    "title": "Швея, портной",
+    "schedule": "Смены по 11 часов"
+   }
+  },
+  "hh-139024275": {
+   "verdict": "approve",
+   "at": "2026-10-31T06:57:36+00:00",
+   "fields": {}
   }
  }
 }

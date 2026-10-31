@@ -1,4 +1,11 @@
 {
+ "aktau:ar line service": {
+  "name": "Ar line service",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "aktau:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "aktau",
@@ -374,6 +381,15 @@
   "checked_at": "2026-10-29T08:44:59+00:00",
   "instagram": "kulinariya_smak_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001028572387"
+ },
+ "aktau:стамбул": {
+  "name": "СТАМБУЛ",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00",
+  "instagram": "istanbul_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001028530873"
  },
  "aktau:топ стоп": {
   "name": "ТОП-СТОП",
@@ -4022,6 +4038,13 @@
    "website"
   ]
  },
+ "almaty:агентство гепард": {
+  "name": "Агентство ГЕПАРД",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "almaty:адф логистик": {
   "name": "АДФ-ЛОГИСТИК",
   "city": "almaty",
@@ -5177,6 +5200,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:компания santex компания сантекс": {
+  "name": "Компания Santex (Компания Сантекс)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "almaty:компания по страхованию жизни nomad life": {
   "name": "«Компания по страхованию жизни «Nomad Life»",
@@ -6610,6 +6640,13 @@
   "instagram": "magazin_blizzko",
   "source": "https://2gis.kz/astana/firm/70000001046118936"
  },
+ "astana:bn build": {
+  "name": "BN BUILD",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "astana:bright retail": {
   "name": "BRIGHT RETAIL",
   "city": "astana",
@@ -6722,6 +6759,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "astana:city drive": {
+  "name": "CITY DRIVE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00",
+  "instagram": "city_drive_ast",
+  "source": "https://2gis.kz/astana/firm/70000001109568804"
  },
  "astana:coffee hub": {
   "name": "Coffee Hub",
@@ -7250,6 +7296,20 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "astana:lanzhou": {
+  "name": "Lanzhou",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00",
+  "instagram": "lanzhou_astana",
+  "website": "https://lanzhou.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001104987225",
+  "avatar_checked_at": "2026-10-31T09:42:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:li kon пзм li con": {
   "name": "LI-KON (ПЗМ LI-CON)",
   "city": "astana",
@@ -7616,6 +7676,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:salieri": {
+  "name": "SALIERI",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00",
+  "instagram": "salieri.karaoke",
+  "source": "https://2gis.kz/astana/firm/70000001034415500"
  },
  "astana:samgepo": {
   "name": "Samgepo",
@@ -8024,6 +8093,13 @@
   "avatar": "33e53a3b07aaeb4d.jpg",
   "avatar_source": "website"
  },
+ "astana:zanger": {
+  "name": "ZANGER",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "astana:августа": {
   "name": "Августа",
   "city": "astana",
@@ -8159,6 +8235,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "astana:арбалет": {
+  "name": "Арбалет",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "astana:астана белпродукт": {
   "name": "Астана БелПродукт",
@@ -8368,6 +8451,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "astana:времена года": {
+  "name": "Времена года",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "astana:высочайший": {
   "name": "Высочайший",
@@ -8735,6 +8825,13 @@
   "avatar": "604f73b1d2218c01.jpg",
   "avatar_source": "website"
  },
+ "astana:кондитерская": {
+  "name": "Кондитерская",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "astana:кондитерская milky cake": {
   "name": "Кондитерская MILKY CAKE",
   "city": "astana",
@@ -8957,6 +9054,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "astana:мясной цех": {
+  "name": "Мясной цех",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "astana:надежный таксопарк": {
   "name": "Надёжный Таксопарк",
   "city": "astana",
@@ -9019,6 +9123,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
+ },
+ "astana:пак": {
+  "name": "Пак",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "astana:парадайс": {
   "name": "ПАРАДАЙС",
@@ -9404,6 +9515,13 @@
   ],
   "avatar": "5df3670cc3055e35.jpg",
   "avatar_source": "website"
+ },
+ "astana:тумар": {
+  "name": "ТУМАР",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "astana:тымакбаева": {
   "name": "Тымакбаева",
@@ -10033,6 +10151,22 @@
    "website"
   ],
   "avatar": "8d6ae25a9f02b70c.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:kmf банк": {
+  "name": "KMF Банк",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00",
+  "instagram": "kmf_kz",
+  "website": "https://www.kmf.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302827637",
+  "avatar_checked_at": "2026-10-31T09:42:43+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2a3bb5883cd61e35.jpg",
   "avatar_source": "website"
  },
  "karaganda:lissa": {
@@ -12669,6 +12803,13 @@
    "website"
   ]
  },
+ "taldykorgan:нұр шапағатқұрылыс": {
+  "name": "НҰР-ШАПАҒАТҚҰРЫЛЫС",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "taldykorgan:прайм недвижимость n1": {
   "name": "Прайм недвижимость N1",
   "city": "taldykorgan",
@@ -12871,6 +13012,13 @@
    "website"
   ]
  },
+ "uralsk:2gis запад": {
+  "name": "2GIS Запад",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
+ },
  "uralsk:altyncar": {
   "name": "AltynCar",
   "city": "uralsk",
@@ -13031,6 +13179,13 @@
   "checked_at": "2026-10-31T01:43:11+00:00",
   "instagram": "imperia_potolkov_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001025274101"
+ },
+ "uralsk:казбеков": {
+  "name": "КАЗБЕКОВ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "uralsk:кип электромонтаж": {
   "name": "КИП-ЭЛЕКТРОМОНТАЖ",
@@ -13228,6 +13383,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "ust-kamenogorsk:magic group": {
+  "name": "MAGIC GROUP",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T09:42:43+00:00"
  },
  "ust-kamenogorsk:magnum": {
   "name": "MAGNUM",

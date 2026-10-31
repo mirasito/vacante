@@ -170,6 +170,15 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "aktau:алтын ұрпақ": {
+  "name": "Алтын Ұрпақ",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00",
+  "instagram": "altynurpaq_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001102340405"
+ },
  "aktau:арман": {
   "name": "Арман",
   "city": "aktau",
@@ -294,6 +303,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "aktau:люкс уаш": {
+  "name": "Люкс Уаш",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "aktau:манали": {
   "name": "МАНАЛИ",
@@ -1047,12 +1063,26 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "almaty:aspack": {
+  "name": "Aspack",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
+ },
  "almaty:aspan rehab clinic 2": {
   "name": "ASPAN REHAB CLINIC-2",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "almaty:astana energi group": {
+  "name": "Astana Energi group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "almaty:astel ао": {
   "name": "ASTEL, АО",
@@ -1106,6 +1136,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:athletex production": {
+  "name": "Athletex Production",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "almaty:aura 02": {
   "name": "Aura 02",
@@ -3718,6 +3755,19 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "almaty:wildberries": {
+  "name": "Wildberries",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00",
+  "website": "https://wildberries.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001033122288",
+  "avatar_checked_at": "2026-10-31T05:43:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:yango group": {
   "name": "Yango Group",
   "city": "almaty",
@@ -4411,6 +4461,13 @@
   "avatar": "30cd2d0a5f61024d.jpg",
   "avatar_source": "website"
  },
+ "almaty:в": {
+  "name": "В",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
+ },
  "almaty:васильева ангелина игоревна": {
   "name": "Васильева Ангелина Игоревна",
   "city": "almaty",
@@ -4630,6 +4687,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:жанайхан": {
+  "name": "ИП Жанайхан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "almaty:жапаров": {
   "name": "Жапаров",
@@ -5176,6 +5240,13 @@
   "avatar": "3089f66e2a9ebcc3.jpg",
   "avatar_source": "website"
  },
+ "almaty:матпро": {
+  "name": "МатПро",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
+ },
  "almaty:медицинский центр хак": {
   "name": "Медицинский центр ХАК",
   "city": "almaty",
@@ -5189,6 +5260,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:медэверест": {
+  "name": "МедЭверест",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "almaty:международный аэропорт алматы ао": {
   "name": "Международный Аэропорт Алматы, АО",
@@ -5309,6 +5387,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "almaty:омирбаева": {
+  "name": "ИП Омирбаева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "almaty:оптимус медика": {
   "name": "Оптимус Медика",
@@ -5617,6 +5702,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:столовая": {
+  "name": "Столовая",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "almaty:стоматологическая клиника adodent": {
   "name": "Стоматологическая клиника «ADOdent»",
@@ -7354,6 +7446,15 @@
   "instagram": "shapan.kzz_astana2",
   "source": "https://2gis.kz/astana/firm/70000001103793334"
  },
+ "astana:shejyre": {
+  "name": "SHEJYRE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00",
+  "instagram": "shejire_astana",
+  "source": "https://2gis.kz/astana/firm/70000001118760535"
+ },
  "astana:sheraton astana hotel": {
   "name": "Sheraton Astana Hotel",
   "city": "astana",
@@ -7715,6 +7816,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "astana:автосервис": {
+  "name": "Автосервис",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "astana:автосервис перекресток": {
   "name": "Автосервис-Перекресток",
@@ -10230,6 +10338,22 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "kokshetau:астра лoмбард": {
+  "name": "Астра-Лoмбард",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00",
+  "instagram": "astralombard.kz",
+  "telegram": "astralombard_kz",
+  "website": "https://astra-lombard.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033357709",
+  "avatar_checked_at": "2026-10-31T05:43:11+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "kokshetau:ахметова а г": {
   "name": "Ахметова А.Г.",
   "city": "kokshetau",
@@ -10484,6 +10608,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:кенжетаев ж ж": {
+  "name": "Кенжетаев Ж Ж",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "kostanay:компания ale": {
   "name": "Компания ALE",
@@ -12105,6 +12236,20 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "taldykorgan:прайм недвижимость n1": {
+  "name": "Прайм недвижимость N1",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "taldykorgan:темір сауда": {
+  "name": "Темір сауда",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
+ },
  "taraz:alvin market": {
   "name": "Alvin Market",
   "city": "taraz",
@@ -12683,6 +12828,13 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "ust-kamenogorsk:ваша вахта": {
+  "name": "Ваша вахта",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
+ },
  "ust-kamenogorsk:востокцветмет": {
   "name": "Востокцветмет",
   "city": "ust-kamenogorsk",
@@ -12749,6 +12901,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "ust-kamenogorsk:казахские домашние сети": {
+  "name": "Казахские Домашние Сети",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T05:43:11+00:00"
  },
  "ust-kamenogorsk:казахстанское промышленное предприятие": {
   "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",

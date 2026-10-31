@@ -968,6 +968,13 @@
   "avatar": "d6c566acbf08233c.jpg",
   "avatar_source": "website"
  },
+ "almaty:almatin group": {
+  "name": "Almatin group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "almaty:almawine": {
   "name": "ALMAWINE",
   "city": "almaty",
@@ -3322,6 +3329,13 @@
   "avatar": "70f1f0b170cc8298.jpg",
   "avatar_source": "website"
  },
+ "almaty:rr interiors": {
+  "name": "RR INTERIORS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "almaty:ruby market": {
   "name": "RUBY MARKET",
   "city": "almaty",
@@ -3711,6 +3725,13 @@
   "avatar": "4ed80c863e2dc4ad.jpg",
   "avatar_source": "website"
  },
+ "almaty:tesm company eye clinic": {
+  "name": "TESM Company - Eye Clinic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "almaty:tiss auto parts": {
   "name": "TISS AUTO PARTS",
   "city": "almaty",
@@ -3731,6 +3752,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:top kz": {
+  "name": "TOP.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00",
+  "instagram": "top.kz",
+  "website": "https://top.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001021055352",
+  "avatar_checked_at": "2026-10-31T11:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:top_mebel": {
   "name": "Top_Mebel",
@@ -6056,6 +6091,13 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "almaty:тембаев о к": {
+  "name": "Тембаев О.К.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "almaty:тен и р": {
   "name": "ТЕН И.Р.",
   "city": "almaty",
@@ -8174,6 +8216,13 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "astana:абдыкадыр": {
+  "name": "ИП Абдыкадыр",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "astana:августа": {
   "name": "Августа",
   "city": "astana",
@@ -9698,6 +9747,15 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "astana:хинкальная 1": {
+  "name": "Хинкальная 1",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00",
+  "instagram": "xinkalnaya_1_qazaqstan",
+  "source": "https://2gis.kz/astana/firm/70000001106049642"
+ },
  "astana:цан": {
   "name": "ЦАН",
   "city": "astana",
@@ -9734,6 +9792,13 @@
   "checked_at": "2026-10-30T19:43:59+00:00",
   "instagram": "neomarketskz",
   "source": "https://www.instagram.com/neomarketskz/"
+ },
+ "astana:шинный магазин": {
+  "name": "Шинный магазин",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "astana:экко рос казахстан": {
   "name": "ЭККО-РОС Казахстан",
@@ -10053,6 +10118,13 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "atyrau:промэлектроторг": {
+  "name": "ПромЭлектроТорг",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "atyrau:союз групп 20": {
   "name": "Союз групп 20",
   "city": "atyrau",
@@ -10364,6 +10436,13 @@
   "checked_at": "2026-10-30T14:43:59+00:00",
   "instagram": "stratera.kz",
   "source": "https://2gis.kz/astana/firm/70000001087690675"
+ },
+ "karaganda:stroy elektro group": {
+  "name": "STROY ELEKTRO GROUP",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "karaganda:subedai": {
   "name": "SUBEDAI",
@@ -11211,6 +11290,13 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "kostanay:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "kostanay:дычко в ю": {
   "name": "Дычко В.Ю",
   "city": "kostanay",
@@ -11340,6 +11426,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "kostanay:муратбек bro glasses": {
+  "name": "Муратбек «BRO glasses»",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "kostanay:мясоед": {
   "name": "Мясоед",
@@ -11890,6 +11983,19 @@
    "website"
   ]
  },
+ "pavlodar:павлодарэнерго": {
+  "name": "ПАВЛОДАРЭНЕРГО",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00",
+  "website": "https://pavlodarenergo.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018658154",
+  "avatar_checked_at": "2026-10-31T11:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:пекарня 5 kz": {
   "name": "Пекарня №5 KZ",
   "city": "pavlodar",
@@ -12279,6 +12385,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "semey:антоненко": {
+  "name": "АНТОНЕНКО",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "semey:баку": {
   "name": "Баку",
@@ -12811,6 +12924,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "shymkent:мирахметова дилбар бахтиер қизи": {
+  "name": "МИРАХМЕТОВА ДИЛБАР БАХТИЁР ҚИЗИ",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "shymkent:миррахимов": {
   "name": "Миррахимов",
   "city": "shymkent",
@@ -12824,6 +12944,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "shymkent:рекрутинговое агентство change ип куприянова": {
+  "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "shymkent:сапсан": {
   "name": "САПСАН",
@@ -13069,6 +13196,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "taraz:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "taraz:дудар": {
   "name": "Дудар",
@@ -13324,6 +13458,13 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "uralsk:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
+ },
  "uralsk:игрушек": {
   "name": "ИГРУШЕК",
   "city": "uralsk",
@@ -13374,6 +13515,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:орталықстройинвест": {
+  "name": "ОрталықСтройИнвест",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00"
  },
  "uralsk:парнасқа": {
   "name": "Парнасқа",
@@ -13573,6 +13721,20 @@
   "checked_at": "2026-10-28T19:44:26+00:00",
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
+ },
+ "ust-kamenogorsk:mechta kz tm тоо мечта маркет": {
+  "name": "Mechta.kz TM ( ТОО Мечта Маркет )",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-10-31T11:43:29+00:00",
+  "instagram": "mechta.kz",
+  "website": "https://www.mechta.kz/",
+  "source": "https://www.instagram.com/mechta.kz/",
+  "avatar_checked_at": "2026-10-31T11:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:megabronukg": {
   "name": "MegabronUkg",

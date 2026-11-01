@@ -2639,6 +2639,15 @@
    "website"
   ]
  },
+ "almaty:hightower": {
+  "name": "HIGHTOWER",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "dodopizza.almaty",
+  "source": "https://2gis.kz/almaty/branches/70000001090706450"
+ },
  "almaty:hila": {
   "name": "Hila",
   "city": "almaty",
@@ -3490,6 +3499,13 @@
    "website"
   ]
  },
+ "almaty:ozze group оззе групп": {
+  "name": "OZZE GROUP (ОЗЗЕ ГРУПП )",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
+ },
  "almaty:p2p logistic group": {
   "name": "P2P LOGISTIC GROUP",
   "city": "almaty",
@@ -3549,6 +3565,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:ploshadki kz площадки кз": {
+  "name": "PLOSHADKI.KZ (ПЛОЩАДКИ.КЗ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "ploshadki.kz",
+  "website": "http://ploshadki.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001079691858",
+  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "06908eb210823849.jpg",
+  "avatar_source": "website"
  },
  "almaty:premium logistic": {
   "name": "Premium Logistic",
@@ -4446,6 +4478,22 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "almaty:whoopie cakes": {
+  "name": "Whoopie Cakes",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "whoopiecakes",
+  "website": "http://whoopiecafe.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001023602706",
+  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a4da8256258f9f4a.jpg",
+  "avatar_source": "website"
+ },
  "almaty:wildberries": {
   "name": "Wildberries",
   "city": "almaty",
@@ -4707,6 +4755,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "almaty:айм ивент": {
+  "name": "Айм Ивент",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "almaty:айсаров б а": {
   "name": "АЙСАРОВ Б.А.",
@@ -5391,6 +5446,20 @@
   "avatar": "dd7ecf45ef6b1ae5.jpg",
   "avatar_source": "website"
  },
+ "almaty:гостиница жетысу novotel living and ibis almaty zhetisu": {
+  "name": "«Гостиница «Жетысу» (Novotel living and Ibis Almaty Zhetisu)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "ibis_almatyjetisu",
+  "website": "https://all.accor.com/hotel/B5J5/index.en.shtml",
+  "source": "https://2gis.kz/almaty/firm/70000001055753272",
+  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "almaty",
@@ -5643,6 +5712,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "almaty:интер камень": {
+  "name": "Интер Камень",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "almaty:интер мульти сервис": {
   "name": "Интер Мульти Сервис",
@@ -7813,6 +7889,13 @@
    "website"
   ]
  },
+ "astana:consumer trade company": {
+  "name": "Consumer Trade Company",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
+ },
  "astana:creatura": {
   "name": "Creatura",
   "city": "astana",
@@ -8148,6 +8231,13 @@
   "avatar": "50cf3a7815be9ebb.jpg",
   "avatar_source": "website"
  },
+ "astana:gwm nurly zhol": {
+  "name": "GWM Nurly Zhol",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
+ },
  "astana:han doors": {
   "name": "Han Doors",
   "city": "astana",
@@ -8324,6 +8414,19 @@
   "avatar": "d565c51c9258a8b8.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/astana/firm/70000001038545633"
+ },
+ "astana:kazakhstan paramount engineering": {
+  "name": "Kazakhstan Paramount Engineering",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "website": "http://kpe.com.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018083058",
+  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:kazpan казпан": {
   "name": "KazPan (КазПан)",
@@ -8696,6 +8799,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "pantheon.astana",
   "source": "https://2gis.kz/astana/firm/70000001100733321"
+ },
+ "astana:paper products": {
+  "name": "Paper Products",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "astana:paradiegma astana": {
   "name": "Paradiegma Astana",
@@ -10378,6 +10488,22 @@
   "avatar": "2567f4c8ffcbc502.jpg",
   "avatar_source": "telegram"
  },
+ "astana:масло дел": {
+  "name": "Масло-Дел",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "maslodel_kz",
+  "website": "http://maslodel.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001022471527",
+  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f57656f075df6f0a.jpg",
+  "avatar_source": "website"
+ },
  "astana:мақсат": {
   "name": "Мақсат",
   "city": "astana",
@@ -10677,6 +10803,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "rik_pivo",
   "source": "https://2gis.kz/astana/firm/70000001019440535"
+ },
+ "astana:сабиров талгат абдумуханович": {
+  "name": "Сабиров Талгат Абдумуханович",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "astana:сайрам нан": {
   "name": "Сайрам нан",
@@ -11026,6 +11159,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:филиал рдц клиника animed": {
+  "name": "ФИЛИАЛ РДЦ- КЛИНИКА ANIMED",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "animed_astana",
+  "source": "https://2gis.kz/astana/firm/70000001069259556"
  },
  "astana:филиал тоо китайская компания по строительству и развитию синьсин в республике казахстан": {
   "name": "Филиал ТОО Китайская Компания по строительству и развитию Синьсин в Республике Казахстан",
@@ -12615,6 +12757,15 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "kostanay:alpina kst": {
+  "name": "ALPINA-KST",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00",
+  "instagram": "alpinakostanay",
+  "source": "https://2gis.kz/kostanaj/firm/70000001040656758"
+ },
  "kostanay:alvin market": {
   "name": "Alvin Market",
   "city": "kostanay",
@@ -12637,6 +12788,13 @@
   ],
   "avatar": "075e2d8bb86aaec8.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:hightower": {
+  "name": "HIGHTOWER",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
@@ -13932,6 +14090,13 @@
   "instagram": "severnyi.kz",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001081602936"
  },
+ "petropavlovsk:семенов юрий александрович": {
+  "name": "Семенов Юрий Александрович",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
+ },
  "petropavlovsk:уалиев ж а": {
   "name": "Уалиев Ж.А.",
   "city": "petropavlovsk",
@@ -15104,6 +15269,13 @@
    "website"
   ]
  },
+ "turkestan:полежаев андрей валерьевич": {
+  "name": "Полежаев Андрей Валерьевич",
+  "city": "turkestan",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
+ },
  "uralsk:2gis запад": {
   "name": "2GIS Запад",
   "city": "uralsk",
@@ -15215,6 +15387,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "uralsk:аджип": {
+  "name": "Аджип",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "uralsk:аксуат": {
   "name": "АКСУАТ",
@@ -15639,6 +15818,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "ust-kamenogorsk:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T00:42:45+00:00"
  },
  "ust-kamenogorsk:ваша вахта": {
   "name": "Ваша вахта",

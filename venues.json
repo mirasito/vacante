@@ -1206,6 +1206,15 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "almaty:apodit medical clinic": {
+  "name": "Apodit Medical Clinic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "apodit_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001096911022"
+ },
  "almaty:apple city corps": {
   "name": "Apple City Corps",
   "city": "almaty",
@@ -2268,6 +2277,22 @@
   "avatar": "f787bec73ddfa361.jpg",
   "avatar_source": "website"
  },
+ "almaty:east palace almaty": {
+  "name": "East Palace Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "eastpalace_hotel",
+  "website": "https://east-hotel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001050761202",
+  "avatar_checked_at": "2026-11-01T05:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6e0b1ab5f2945865.jpg",
+  "avatar_source": "website"
+ },
  "almaty:easy solution": {
   "name": "easy solution",
   "city": "almaty",
@@ -2443,6 +2468,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:fast meals and goods": {
+  "name": "Fast Meals and Goods",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
  },
  "almaty:firm kaz centre": {
   "name": "FIRM KAZ CENTRE",
@@ -3198,6 +3230,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
+ },
+ "almaty:la baia": {
+  "name": "La Baia",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "labaia.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001096256524"
  },
  "almaty:lamoda kz мода с доставкой тоо": {
   "name": "Lamoda.kz (Мода с доставкой, ТОО)",
@@ -4883,6 +4924,13 @@
    "website"
   ]
  },
+ "almaty:абдыкадырова г и": {
+  "name": "Абдыкадырова Г.И.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
+ },
  "almaty:аватария": {
   "name": "Аватария",
   "city": "almaty",
@@ -5108,6 +5156,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:алатау премиум мунай": {
+  "name": "Алатау Премиум Мунай",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "almaty:алексеевский хлебный дом": {
+  "name": "Алексеевский хлебный дом",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
  },
  "almaty:алексеевский хлебный дом г алматы": {
   "name": "Алексеевский хлебный дом г.Алматы",
@@ -6606,6 +6668,15 @@
   "instagram": "almatyinternationalairport",
   "source": "https://2gis.kz/almaty/firm/9429940000833020"
  },
+ "almaty:мир бабочек": {
+  "name": "МИР БАБОЧЕК",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "world_butterflies.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001111735009"
+ },
  "almaty:мир инструмента алматы": {
   "name": "Мир Инструмента Алматы",
   "city": "almaty",
@@ -7010,6 +7081,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:сандугаш": {
+  "name": "Сандугаш",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
  },
  "almaty:сарисунова м б": {
   "name": "Сарисунова М.Б.",
@@ -7623,6 +7701,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "almaty:чугаевой": {
+  "name": "Чугаевой",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
+ },
  "almaty:шевцов богдан васильевич": {
   "name": "Шевцов Богдан Васильевич",
   "city": "almaty",
@@ -7834,6 +7919,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "astana:ai pro school": {
+  "name": "AI Pro School",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
  },
  "astana:aitolkyn": {
   "name": "Aitolkyn",
@@ -8232,6 +8324,22 @@
   "checked_at": "2026-10-31T09:42:43+00:00",
   "instagram": "city_drive_ast",
   "source": "https://2gis.kz/astana/firm/70000001109568804"
+ },
+ "astana:coffee boom": {
+  "name": "Coffee Boom",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "coffeeboom2010",
+  "website": "https://coffeeboom.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001030389227",
+  "avatar_checked_at": "2026-11-01T05:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a33d0b3aa70c2e96.jpg",
+  "avatar_source": "website"
  },
  "astana:coffee hub": {
   "name": "Coffee Hub",
@@ -8729,6 +8837,15 @@
    "website"
   ]
  },
+ "astana:instaxminiqz": {
+  "name": "Instaxminiqz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "instaxmini.qz",
+  "source": "https://www.instagram.com/instaxmini.qz/"
+ },
  "astana:intermode интермоде": {
   "name": "Intermode (Интермоде)",
   "city": "astana",
@@ -8824,6 +8941,13 @@
   "avatar": "d565c51c9258a8b8.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/astana/firm/70000001038545633"
+ },
+ "astana:kango kids": {
+  "name": "Kango Kids",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
  },
  "astana:kazakhstan paramount engineering": {
   "name": "Kazakhstan Paramount Engineering",
@@ -11184,6 +11308,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "astana:партнерагро": {
+  "name": "ПартнёрАгро",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
+ },
  "astana:пекарня": {
   "name": "Пекарня",
   "city": "astana",
@@ -11745,6 +11876,13 @@
   "checked_at": "2026-10-31T11:43:29+00:00",
   "instagram": "xinkalnaya_1_qazaqstan",
   "source": "https://2gis.kz/astana/firm/70000001106049642"
+ },
+ "astana:хозяйственных товаров": {
+  "name": "ХОЗЯЙСТВЕННЫХ ТОВАРОВ",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
  },
  "astana:цан": {
   "name": "ЦАН",
@@ -12675,6 +12813,15 @@
   "instagram": "autocentre_bahus",
   "source": "https://2gis.kz/karaganda/firm/70000001034460062"
  },
+ "karaganda:аква мастер": {
+  "name": "Аква Мастер",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "aquamaster.krg",
+  "source": "https://2gis.kz/karaganda/firm/70000001104938338"
+ },
  "karaganda:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
   "city": "karaganda",
@@ -13130,6 +13277,13 @@
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
  },
+ "kokshetau:cfc": {
+  "name": "CFC",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00"
+ },
  "kokshetau:etalon auto": {
   "name": "Etalon Auto",
   "city": "kokshetau",
@@ -13581,6 +13735,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "kostanay:деп": {
+  "name": "ДЕП",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "instagram": "dep_company",
+  "website": "https://dep.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001104159266",
+  "avatar_checked_at": "2026-11-01T05:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:дико&полезно": {
   "name": "Дико&Полезно",
@@ -16122,6 +16290,19 @@
   ],
   "avatar": "9fdbeac31d12d0a2.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:zkmk западно казахстанская машиностроительная компания": {
+  "name": "ZKMK (Западно-Казахстанская машиностроительная компания)",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T05:43:29+00:00",
+  "website": "https://www.zkmk.kz/",
+  "source": "https://www.zkmk.kz/en/about-company/",
+  "avatar_checked_at": "2026-11-01T05:43:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:автозапчастей": {
   "name": "АВТОЗАПЧАСТЕЙ",

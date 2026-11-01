@@ -1,5 +1,26 @@
 [
  {
+  "id": "bot-6",
+  "title": "Курьер по доставке еды",
+  "category": "delivery",
+  "city": "astana",
+  "salary_min": 400000,
+  "salary_max": null,
+  "salary_period": "month",
+  "schedule": "Свободный",
+  "perks": [],
+  "employer": "Яндекс",
+  "text": "Курьер по доставке еды, Яндекс.",
+  "source": "bot",
+  "source_url": "https://t.me/vacantekz_bot?start=apply_6",
+  "posted_at": "2026-11-01T13:27:32+00:00",
+  "fingerprint": "1f09362bc051b3e7",
+  "also_seen_in": [],
+  "address": null,
+  "top_until": null,
+  "title_kk": null
+ },
+ {
   "id": "astana_job_vakansii-130030",
   "title": "Консультант",
   "category": "retail",

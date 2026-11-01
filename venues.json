@@ -1214,6 +1214,19 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "almaty:aquapolis": {
+  "name": "AQUAPOLIS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00",
+  "website": "https://aquapolis.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104407629",
+  "avatar_checked_at": "2026-11-01T03:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
   "city": "almaty",
@@ -1449,6 +1462,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:avtomarketkaraganda": {
+  "name": "AvtoMarketKaraganda",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:ayla group nn": {
   "name": "AYLA GROUP NN",
@@ -1922,6 +1942,13 @@
   "avatar": "5d1081036c02e00d.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:choco тоо chocofamily": {
+  "name": "Choco (ТОО Chocofamily)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
+ },
  "almaty:classic kindergarten частный детский сад": {
   "name": "CLASSIC KINDERGARTEN ( Частный детский сад )",
   "city": "almaty",
@@ -2354,6 +2381,13 @@
   "instagram": "eurosnab_chocolate",
   "source": "https://2gis.kz/almaty/firm/70000001117713113"
  },
+ "almaty:eurotex": {
+  "name": "Eurotex",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
+ },
  "almaty:expert logistic kazakhstan": {
   "name": "Expert Logistic Kazakhstan",
   "city": "almaty",
@@ -2581,6 +2615,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "almaty:good co": {
+  "name": "Good Co.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:gorelnik damu": {
   "name": "Gorelnik Damu",
@@ -2931,6 +2972,24 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "almaty:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00",
+  "instagram": "kaspi.kz",
+  "telegram": "kaspikz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100710744",
+  "avatar_checked_at": "2026-11-01T03:43:33+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "e5397512463141db.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:kazdi group": {
   "name": "KazDi Group",
   "city": "almaty",
@@ -3277,6 +3336,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "almaty:mia kazakhstan": {
+  "name": "MIA Kazakhstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
@@ -3990,6 +4056,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:simple inc": {
+  "name": "Simple INC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:skincare магазин косметики": {
   "name": "“Skincare” магазин косметики",
@@ -5332,6 +5405,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:белорусский продукт": {
+  "name": "БЕЛОРУССКИЙ ПРОДУКТ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
+ },
  "almaty:белый ветер kz": {
   "name": "Белый Ветер KZ",
   "city": "almaty",
@@ -5501,6 +5581,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:генерал стафф": {
+  "name": "ГЕНЕРАЛ-СТАФФ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:геокурс": {
   "name": "Геокурс",
@@ -5826,6 +5913,13 @@
   "instagram": "kgnt.kz",
   "source": "https://2gis.kz/almaty/firm/9429940000796244"
  },
+ "almaty:иностранное предприятие компания маолин": {
+  "name": "ИНОСТРАННОЕ ПРЕДПРИЯТИЕ КОМПАНИЯ МАОЛИН",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
+ },
  "almaty:инсталлгрупп": {
   "name": "ИнсталлГрупп",
   "city": "almaty",
@@ -5852,6 +5946,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:интерпол строительная компания": {
+  "name": "ИнтерПол, Строительная компания",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
@@ -6491,6 +6592,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
+ },
+ "almaty:мц эко": {
+  "name": "МЦ ЭКО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "almaty:мүслім": {
   "name": "Мүслім",
@@ -8301,6 +8409,15 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "astana:future": {
+  "name": "Future",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00",
+  "instagram": "future.astana",
+  "source": "https://2gis.kz/astana/firm/70000001109842925"
+ },
  "astana:glasman trade": {
   "name": "GLASMAN TRADE",
   "city": "astana",
@@ -8677,6 +8794,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "astana:life fitness astana": {
+  "name": "Life Fitness Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00",
+  "instagram": "lifefitnessastana",
+  "website": "http://www.lifefit.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018069607",
+  "avatar_checked_at": "2026-11-01T03:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "06541d5c8f8cacc9.jpg",
+  "avatar_source": "website"
  },
  "astana:lift master": {
   "name": "Lift Master",
@@ -11150,6 +11283,13 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "astana:смирнова зоя александровна": {
+  "name": "Смирнова Зоя Александровна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
+ },
  "astana:солнечный дар": {
   "name": "Солнечный дар",
   "city": "astana",
@@ -13454,6 +13594,19 @@
   "avatar": "dd0cca36d7c7ed81.jpg",
   "avatar_source": "website"
  },
+ "kostanay:научно производственная фирма пружина": {
+  "name": "Научно-производственная фирма Пружина",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00",
+  "website": "https://ru.kazsprings.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001115443893",
+  "avatar_checked_at": "2026-11-01T03:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:нейфельд а а": {
   "name": "Нейфельд А.А.",
   "city": "kostanay",
@@ -13538,6 +13691,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "kostanay:тасмаганбетова а ж": {
+  "name": "Тасмаганбетова А.Ж.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
  },
  "kostanay:фирма стс бетон": {
   "name": "ФИРМА СТС-Бетон",
@@ -14277,6 +14437,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "petropavlovsk:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00"
+ },
  "petropavlovsk:глобал сервис": {
   "name": "Глобал Сервис",
   "city": "petropavlovsk",
@@ -14504,6 +14671,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "semey:profi kz": {
+  "name": "PROFI KZ",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T03:43:33+00:00",
+  "instagram": "profi_kz",
+  "telegram": "profi_kz",
+  "website": "http://profikz.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001051537081",
+  "avatar_checked_at": "2026-11-01T03:43:33+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "45f01bb1a9d8c238.jpg",
+  "avatar_source": "website"
  },
  "semey:sandyq world": {
   "name": "Sandyq World",

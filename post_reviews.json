@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T03:56:35+00:00",
+ "updated_at": "2026-11-01T04:56:42+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -13923,6 +13923,212 @@
    "at": "2026-11-01T03:56:35+00:00",
    "fields": {
     "schedule": "5/2, 8 часов в день"
+   }
+  },
+  "zhumys_astana_kz-16946": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "schedule": "свободный график, 09:00–03:00"
+   }
+  },
+  "astana_rabota-90099": {
+   "verdict": "reject",
+   "at": "2026-11-01T04:56:42+00:00",
+   "reason": "Офисная должность (B2B-менеджер)"
+  },
+  "rabota_v_nursultane1-12717": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Посудомойщица, уборщица",
+    "salary_min": 190000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "Пн–Пт, 08:00–17:00"
+   }
+  },
+  "astana_job_vakansii-129940": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Хостес, официант",
+    "employer": "Hookah Place",
+    "schedule": "Пт, Сб, 17:00–02:00"
+   }
+  },
+  "zhumys_astana_kz-16973": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Горничная в посуточные квартиры",
+    "schedule": "каждый день, 4–5 часов в день"
+   }
+  },
+  "zhumys_astana_kz-16880": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "schedule": "Пн–Пт, 08:00–17:00, Сб 08:00–13:00",
+    "address": "ул. Жиенкулова, 6/6, склад 17",
+    "perks": [
+     "Питание",
+     "Без опыта"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16813": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "employer": "Яндекс Go",
+    "schedule": "свободный график"
+   }
+  },
+  "astana_job_vakansii-129993": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Курьер на личном автомобиле",
+    "employer": "Yummy Maki",
+    "salary_min": 30000,
+    "salary_max": null,
+    "salary_period": "day",
+    "address": null,
+    "perks": [
+     "Бонусы",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-31124": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Менеджер по продажам шин",
+    "employer": null,
+    "schedule": "6/1, 09:30–19:00"
+   }
+  },
+  "zhumys_astana_kz-16930": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Кассир, продавец, администратор",
+    "employer": null,
+    "schedule": "2/2 или 5/2, 08:00–20:00 или 20:00–08:00",
+    "address": null,
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "rabota4almaty-5972": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Горничная в посуточные квартиры",
+    "employer": "ИП Оленбергер",
+    "address": "ЖК «Auezov City»"
+   }
+  },
+  "rabota4almaty-5970": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2 или сутки через двое",
+    "address": "пр. Назарбаева, 100"
+   }
+  },
+  "hh-136876797": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "GPS-установщик, автоэлектрик",
+    "address": "пр. Назарбаева, 269А"
+   }
+  },
+  "rabota4almaty-5971": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Автомеханик (ходовик, моторист)",
+    "employer": null
+   }
+  },
+  "agashka_job_almaty-1021": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {}
+  },
+  "agashka_job_almaty-1013": {
+   "verdict": "reject",
+   "at": "2026-11-01T04:56:42+00:00",
+   "reason": "Неправдоподобная зарплата для посудомойщицы, похоже на ошибку или приманку"
+  },
+  "almaty_rabota_work-31758": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Администратор студии загара",
+    "schedule": "Вт, Чт, Сб, Вс, 12:00–21:00"
+   }
+  },
+  "hh-139021601": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "employer": "Алтрикс",
+    "schedule": "5/2, 8 или 10 часов"
+   }
+  },
+  "hh-139021238": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Продавец женской одежды",
+    "employer": "Dominika",
+    "schedule": "2/2, по 12 часов"
+   }
+  },
+  "hh-139017118": {
+   "verdict": "reject",
+   "at": "2026-11-01T04:56:42+00:00",
+   "reason": "Работа в России (грузоперевозки по РФ)"
+  },
+  "hh-139010499": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Водитель на личном автомобиле",
+    "schedule": "5/2, 8 часов"
+   }
+  },
+  "hh-139007837": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "employer": "Хагай",
+    "schedule": "сменный, по 10 часов",
+    "address": "мкр. Самал-2, 90"
+   }
+  },
+  "hh-130146826": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "title": "Водитель Shacman, КамАЗ",
+    "schedule": null
+   }
+  },
+  "hh-138246445": {
+   "verdict": "approve",
+   "at": "2026-11-01T04:56:42+00:00",
+   "fields": {
+    "employer": "ИП Трубачёва Н. Ю.",
+    "schedule": "посменно, 15 дней в месяц",
+    "address": "ул. Антона Чехова, 55"
    }
   }
  }

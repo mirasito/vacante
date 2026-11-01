@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T12:58:02+00:00",
+ "updated_at": "2026-11-01T13:57:51+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -16055,6 +16055,280 @@
    "verdict": "reject",
    "at": "2026-11-01T12:58:02+00:00",
    "reason": "Это резюме, а не вакансия"
+  },
+  "astana_job_vakansii-130026": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Кассир, оператор, технический персонал",
+    "schedule": "2/2 или 1/1, дневные и ночные смены по 12 часов",
+    "address": "Левый и правый берег"
+   }
+  },
+  "rabota_astanakz-31160": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": "Заведение «Чашка»",
+    "schedule": "5/2 или 6/1, 12:45–01:00",
+    "address": "пр. Мәңгілік Ел, 62, блок Д"
+   }
+  },
+  "rabota_astanakz-31159": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Продавец-консультант, кассир",
+    "schedule": "Сменный, день/ночь",
+    "address": "Аэропорт, магазин Duty Free"
+   }
+  },
+  "astana_job_vakansii-130001": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": "Алкомаркет «Солод»",
+    "schedule": "7/7, 10:00–23:00"
+   }
+  },
+  "astana_job_vakansii-130025": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2 дня в неделю",
+    "address": "ТД «Евразия»"
+   }
+  },
+  "rabota_astanakz-31155": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "Сб–Вс, 10:30–20:00"
+   }
+  },
+  "zhumys_astana_kz-16985": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Официант, оператор колл-центра, кассир-сборщик",
+    "schedule": "2/2, 10:00–23:00"
+   }
+  },
+  "rabota_astanakz-31107": {
+   "verdict": "reject",
+   "at": "2026-11-01T13:57:51+00:00",
+   "reason": "Руководящая должность: администратор со своей командой"
+  },
+  "astana_job_vakansii-130019": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Продавец-консультант, видеомодель",
+    "employer": "SHAPAN",
+    "schedule": "5/2, 10:00–22:00 или 12:00–00:00",
+    "perks": [
+     "Бонусы",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "astana_job_vakansii-130003": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Повар, истопник, официант",
+    "schedule": "6/1, 13:00–01:00",
+    "address": "ул. Ошакты, 8"
+   }
+  },
+  "zhumys_astana_kz-17025": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Посудомойщица",
+    "salary_min": 338000,
+    "salary_max": 400000,
+    "salary_period": "month",
+    "schedule": "6/1, 08:00–20:00",
+    "address": "ул. Бектурова, 1/2"
+   }
+  },
+  "astana_job_vakansii-129985": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Технический персонал в кондитерский цех",
+    "schedule": "6/1, 08:00–18:00"
+   }
+  },
+  "zhumys_astana_kz-16824": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Складщик-грузчик",
+    "salary_min": 10000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "6/1, 09:30–20:00",
+    "address": "Буйрат, 23/8",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139034341": {
+   "verdict": "reject",
+   "at": "2026-11-01T13:57:51+00:00",
+   "reason": "Офисная должность"
+  },
+  "rabota4almaty-6007": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": "Корпорация «Сайман»",
+    "address": "мкр Алатау, ул. Ибрагимова, 9/9"
+   }
+  },
+  "rabota4almaty-6006": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "Вт–Вс, 09:00–17:30",
+    "address": "ул. Северное кольцо, 23, ТЦ «Алатау-1», блок 2, ряд 3, бутик 64"
+   }
+  },
+  "hh-138750897": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "address": "мкр Горный Гигант, ул. Карибжанова, 1"
+   }
+  },
+  "agashka_job_almaty-1029": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Кухонный работник в школьную столовую",
+    "address": "Жетысуский район"
+   }
+  },
+  "rabota4almaty-6004": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": "Автомойка «Денди»",
+    "address": "ул. Розыбакиева, 181Б"
+   }
+  },
+  "rabotaalmatyyyy-15194": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": "Yandex Go",
+    "schedule": "Гибкий график",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabotaalmatyyyy-15260": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Официант, пекарь",
+    "employer": "Кафе «Кулжа»",
+    "schedule": "07:30–18:30",
+    "address": "Рынок «Алтын Орда»"
+   }
+  },
+  "almatyvacancies-11090": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Сборщик корпусной мебели",
+    "schedule": "Пн–Сб"
+   }
+  },
+  "almatyvacancies-11093": {
+   "verdict": "reject",
+   "at": "2026-11-01T13:57:51+00:00",
+   "reason": "Слишком мало информации, неясно, кого ищут"
+  },
+  "almaty_rabota_work-31759": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Мастер маникюра и педикюра, бровист",
+    "employer": "Zari Studio",
+    "address": "ТРЦ «Grand Park»"
+   }
+  },
+  "hh-139034074": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Марата Оспанова, 81"
+   }
+  },
+  "vakansii_rabota_atyrau-49949": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "schedule": "6/1, 08:00–20:00",
+    "address": "мкр Геолог",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Обучение"
+    ]
+   }
+  },
+  "hh-139034379": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "schedule": null,
+    "address": "ул. Бажова, 26"
+   }
+  },
+  "vakansii_oskemen-9221": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Фармацевт на аптечный склад"
+   }
+  },
+  "rabota_semey_official-6756": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, 18:00–06:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "rabota_semey_official-6755": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Конюх, скотник, повар, разнорабочий"
+   }
+  },
+  "rabota_semey_official-6754": {
+   "verdict": "approve",
+   "at": "2026-11-01T13:57:51+00:00",
+   "fields": {
+    "title": "Продавец-консультант в мужской бутик"
+   }
   }
  }
 }

@@ -2899,6 +2899,13 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "almaty:fit service": {
+  "name": "FIT SERVICE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "almaty:flip kz": {
   "name": "Flip.kz",
   "city": "almaty",
@@ -2993,6 +3000,13 @@
   ],
   "avatar": "844778890062cb2f.jpg",
   "avatar_source": "website"
+ },
+ "almaty:game over kz": {
+  "name": "Game Over KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
  },
  "almaty:gamma doro": {
   "name": "Gamma Doro",
@@ -3704,6 +3718,20 @@
   "website": "https://kulikov.com/",
   "source": "https://2gis.kz/almaty/firm/70000001111152934",
   "avatar_checked_at": "2026-10-28T07:59:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:kulikov кондитерский дом": {
+  "name": "Kulikov, кондитерский дом",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "instagram": "kulikov_kz",
+  "website": "https://kulikov.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940001671404",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4728,6 +4756,13 @@
   "instagram": "sbdental.kz",
   "source": "https://2gis.kz/almaty/firm/70000001061846708"
  },
+ "almaty:science house": {
+  "name": "Science House",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "almaty:scorpy": {
   "name": "Scorpy",
   "city": "almaty",
@@ -5722,6 +5757,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:азия см": {
+  "name": "АЗИЯ-СМ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "website": "https://centersm.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001027794167",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "73ab94dc8fb7cd60.jpg",
+  "avatar_source": "website"
  },
  "almaty:аифcosmetic": {
   "name": "АиФcosmetic",
@@ -10377,6 +10427,13 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "astana:m83": {
+  "name": "M83",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "astana:magnum": {
   "name": "MAGNUM",
   "city": "astana",
@@ -11275,6 +11332,13 @@
    "website"
   ]
  },
+ "astana:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "astana:tele2 altel": {
   "name": "Tele2/Altel",
   "city": "astana",
@@ -11714,6 +11778,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "astana:ап импэкс": {
+  "name": "АП-Импэкс",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
  },
  "astana:апорт": {
   "name": "АПОРТ",
@@ -13834,6 +13905,13 @@
    "website"
   ]
  },
+ "astana:эксклюзивстрой": {
+  "name": "ЭксклюзивСтрой",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "astana:экспортер": {
   "name": "Экспортер",
   "city": "astana",
@@ -14785,6 +14863,22 @@
   "instagram": "autocentre_bahus",
   "source": "https://2gis.kz/karaganda/firm/70000001034460062"
  },
+ "karaganda:азия см": {
+  "name": "АЗИЯ-СМ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "instagram": "protec_antifreeze",
+  "website": "https://centersm.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001021665333",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "227db40867c4c7ef.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:аква мастер": {
   "name": "Аква Мастер",
   "city": "karaganda",
@@ -15111,6 +15205,19 @@
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
  },
+ "karaganda:кфк medservice plus": {
+  "name": "КФК Medservice Plus",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "website": "https://www.medservice.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001066009845",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:людмила kz tm аян": {
   "name": "Людмила-KZ TM Аян",
   "city": "karaganda",
@@ -15167,6 +15274,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:ново тек": {
+  "name": "НОВО ТЕК",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
  },
  "karaganda:пакт": {
   "name": "ПАКТ",
@@ -16280,6 +16394,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "kyzylorda:дудар": {
+  "name": "Дудар",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001075175111",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "75d538f92b1bd319.jpg",
+  "avatar_source": "website"
  },
  "kyzylorda:люма клиник": {
   "name": "ЛЮМА КЛИНИК",
@@ -17648,6 +17777,19 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "shymkent:galanz bottlers ао": {
+  "name": "Galanz Bottlers, АО",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "website": "https://www.galanz.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000935791",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:gmgroup 9": {
   "name": "GMGroup 9",
   "city": "shymkent",
@@ -17828,6 +17970,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "shymkent:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "https://qazaqoil.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001053138105",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7083235d9af6f5ce.jpg",
+  "avatar_source": "website"
  },
  "shymkent:rossko": {
   "name": "ROSSKO",
@@ -18141,6 +18299,13 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "shymkent:нурлан": {
+  "name": "Нурлан",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "shymkent:охранное агентство its": {
   "name": "Охранное Агентство ITS",
   "city": "shymkent",
@@ -18161,6 +18326,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "shymkent:секвойя сервис": {
+  "name": "СЕКВОЙЯ СЕРВИС",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "instagram": "sequoiaservice_kz",
+  "website": "https://sequoia-service.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110980544",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:смартер казахстан": {
   "name": "Смартер Казахстан",
@@ -18456,6 +18635,13 @@
    "website"
   ]
  },
+ "taraz:sandyq world": {
+  "name": "Sandyq World",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
+ },
  "taraz:tumar": {
   "name": "TUMAR",
   "city": "taraz",
@@ -18642,6 +18828,13 @@
   "checked_at": "2026-10-30T10:44:23+00:00",
   "instagram": "altyncar_kuzov",
   "source": "https://2gis.kz/uralsk/firm/70000001117361555"
+ },
+ "uralsk:aziz dent": {
+  "name": "AZIZ DENT",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00"
  },
  "uralsk:cosmoshop": {
   "name": "COSMOSHOP",
@@ -19223,6 +19416,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:азия см": {
+  "name": "АЗИЯ-СМ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T20:43:30+00:00",
+  "website": "https://centersm.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001027794167",
+  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "981caf62fded0454.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:антоненко и в": {
   "name": "Антоненко И. В",

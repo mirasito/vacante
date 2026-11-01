@@ -208,6 +208,13 @@
   "avatar": "9a69b77e5f3529d0.jpg",
   "avatar_source": "website"
  },
+ "aktau:августа": {
+  "name": "Августа",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "aktau:ак кала молл": {
   "name": "Ак Кала Молл",
   "city": "aktau",
@@ -735,6 +742,13 @@
   "checked_at": "2026-11-01T15:43:07+00:00",
   "instagram": "lounge_kafe_uya",
   "source": "https://2gis.kz/aktobe/firm/70000001111516728"
+ },
+ "aktobe:августа": {
+  "name": "Августа",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
@@ -1427,6 +1441,13 @@
   "avatar": "4c2308e07ba5da03.jpg",
   "avatar_source": "website"
  },
+ "almaty:aqjol ig": {
+  "name": "AQJOL IG",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "almaty:aqsaraim": {
   "name": "AQSARAIM",
   "city": "almaty",
@@ -2002,6 +2023,15 @@
   ],
   "avatar": "f114fc58412c1e78.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:bolme apartments": {
+  "name": "Bolme apartments",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00",
+  "instagram": "bolme.apartments",
+  "source": "https://2gis.kz/almaty/firm/70000001096241035"
  },
  "almaty:boombala знание": {
   "name": "Boombala. Знание",
@@ -3731,6 +3761,13 @@
    "website"
   ]
  },
+ "almaty:mad almaty": {
+  "name": "MAD Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "almaty:magnum e commerce kazakhstan": {
   "name": "Magnum E-commerce Kazakhstan",
   "city": "almaty",
@@ -4346,6 +4383,13 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "almaty:real trade astana": {
+  "name": "Real Trade Astana",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "almaty:recruit expert": {
   "name": "Recruit expert",
   "city": "almaty",
@@ -4568,6 +4612,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:sewel": {
+  "name": "Sew’EL",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "almaty:shanyraq study": {
   "name": "SHANYRAQ STUDY",
   "city": "almaty",
@@ -4597,6 +4648,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:silk road resources ltd": {
+  "name": "Silk Road Resources Ltd.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "almaty:simple inc": {
   "name": "Simple INC",
@@ -6536,6 +6594,22 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "almaty:емех лицензиат fedex тм": {
+  "name": "ЕМЕХ (лицензиат FedEx, ТМ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00",
+  "instagram": "emexkz",
+  "website": "https://www.emex.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001054519614",
+  "avatar_checked_at": "2026-11-01T16:42:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4007203ae9fedd3c.jpg",
+  "avatar_source": "website"
+ },
  "almaty:жакашбаев": {
   "name": "Жакашбаев",
   "city": "almaty",
@@ -6607,6 +6681,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "almaty:зина групп": {
+  "name": "Зина Групп",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00",
+  "website": "https://zinagroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001074358688",
+  "avatar_checked_at": "2026-11-01T16:42:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:зинулла а с": {
   "name": "Зинулла А.С",
@@ -7706,6 +7793,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:предприятие": {
+  "name": "Предприятие",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "almaty:прессбук": {
   "name": "ПрессБук",
@@ -10866,6 +10960,20 @@
    "website"
   ]
  },
+ "astana:taza zher capital": {
+  "name": "Taza Zher Capital",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00",
+  "instagram": "tazazher_capital001",
+  "website": "https://tazazher.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001090248194",
+  "avatar_checked_at": "2026-11-01T16:42:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:tele2 altel": {
   "name": "Tele2/Altel",
   "city": "astana",
@@ -13144,6 +13252,13 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "astana:управляющая компания keruen management": {
+  "name": "Управляющая компания Keruen Management",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "astana:урумчи хого": {
   "name": "Урумчи Хого",
   "city": "astana",
@@ -13621,6 +13736,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:августа": {
+  "name": "Августа",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "atyrau:автотехлайн": {
   "name": "АвтоТехЛайн",
@@ -14215,6 +14337,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "karaganda:августа": {
+  "name": "Августа",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
+ },
  "karaganda:автоматические котлы": {
   "name": "Автоматические Котлы",
   "city": "karaganda",
@@ -14269,6 +14398,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "karaganda:асбк казахстан тм ispace": {
+  "name": "АСБК КАЗАХСТАН (ТМ iSpace).",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00",
+  "instagram": "ispace.kazakhstan",
+  "website": "https://ispace.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302831240",
+  "avatar_checked_at": "2026-11-01T16:42:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d77cf2b29092c529.jpg",
+  "avatar_source": "website"
  },
  "karaganda:байбеков": {
   "name": "БАЙБЕКОВ",
@@ -14350,6 +14495,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:дудар": {
+  "name": "Дудар",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "karaganda:евротехно логистик": {
   "name": "Евротехно Логистик",
@@ -14635,6 +14787,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "karaganda:торговый дом": {
+  "name": "Торговый дом",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "karaganda:тэмпо казахстан": {
   "name": "ТЭМПО-Казахстан",
@@ -15109,6 +15268,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
+ },
+ "kostanay:августа": {
+  "name": "Августа",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "kostanay:автодом костанай": {
   "name": "Автодом Костанай",
@@ -17088,6 +17254,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
+ },
+ "shymkent:pat & co": {
+  "name": "Pat & Co",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T16:42:40+00:00"
  },
  "shymkent:procoffee": {
   "name": "ProCoffee",

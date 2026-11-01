@@ -745,6 +745,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "aktobe:венера atd": {
+  "name": "Венера ATD",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "aktobe:вибро мастер казахстан": {
   "name": "Вибро Мастер Казахстан",
   "city": "aktobe",
@@ -793,6 +800,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "aktobe:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032164699",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:келет": {
   "name": "КЕЛЕТ",
@@ -893,6 +913,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "aktobe:яндекс": {
+  "name": "Яндекс",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
  },
  "almaty:12 месяцев": {
   "name": "12 месяцев",
@@ -1559,6 +1586,19 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:atlant security kz": {
+  "name": "Atlant security kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "website": "http://atlantsecurity.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000817265",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:aura 02": {
   "name": "Aura 02",
   "city": "almaty",
@@ -2042,6 +2082,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:cemex engineering": {
+  "name": "CemEX Engineering",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "website": "http://cemex.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001561715",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2e637d3c5346d093.jpg",
+  "avatar_source": "website"
  },
  "almaty:central city properties": {
   "name": "Central City Properties",
@@ -4757,6 +4812,13 @@
   "avatar": "a2ba60bbfe4c6ba1.jpg",
   "avatar_source": "website"
  },
+ "almaty:tatiyna": {
+  "name": "Tatiyna",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "almaty:taurus gss": {
   "name": "Taurus GSS",
   "city": "almaty",
@@ -5297,6 +5359,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "almaty:автомойка денди": {
+  "name": "Автомойка Денди",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "almaty:автора": {
   "name": "Автора",
   "city": "almaty",
@@ -5646,6 +5715,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "almaty:аманат": {
+  "name": "Аманат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "website": "http://amanat.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795572",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:амиркулова": {
   "name": "Амиркулова",
@@ -6833,6 +6915,20 @@
    "website"
   ]
  },
+ "almaty:корпорация сайман": {
+  "name": "Корпорация Сайман",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "instagram": "saimancorp",
+  "website": "https://www.saiman.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000799985",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:коскельдиева д ж": {
   "name": "Коскельдиева Д.Ж.",
   "city": "almaty",
@@ -7079,6 +7175,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:медоптика": {
+  "name": "МЕДОПТИКА",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "instagram": "medoptica.almaty",
+  "website": "https://www.medoptika.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000821929",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "626247cf8c824aa8.jpg",
+  "avatar_source": "website"
  },
  "almaty:медэверест": {
   "name": "МедЭверест",
@@ -8351,6 +8463,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "almaty:яндекс": {
+  "name": "Яндекс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "almaty:яндекс такси": {
   "name": "Яндекс Такси",
   "city": "almaty",
@@ -9042,6 +9161,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "astana:duty free astana": {
+  "name": "Duty Free Astana",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
  },
  "astana:ecotara": {
   "name": "EcoTara",
@@ -10088,6 +10214,22 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:prime game hub": {
+  "name": "PRIME GAME HUB",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "instagram": "pr1me.kz",
+  "telegram": "primegamehub",
+  "source": "https://2gis.kz/astana/firm/70000001061120780",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "0f2975e33e88249f.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:pro line": {
   "name": "PRO-LINE",
   "city": "astana",
@@ -10968,6 +11110,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "astana:аружан": {
+  "name": "Аружан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
  },
  "astana:астана белпродукт": {
   "name": "Астана БелПродукт",
@@ -12850,6 +12999,13 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "astana:чашка": {
+  "name": "Чашка",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "astana:чигасов алексей сергеевич": {
   "name": "Чигасов Алексей Сергеевич",
   "city": "astana",
@@ -12960,6 +13116,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "astana:яндекс": {
+  "name": "Яндекс",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
  },
  "astana:құрылысшы ltd": {
   "name": "Құрылысшы LTD",
@@ -14362,6 +14525,13 @@
   ],
   "avatar": "2f9088dd7be086b7.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:tops group": {
+  "name": "TOPS GROUP",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
  },
  "kokshetau:азенов самат": {
   "name": "Азенов Самат",
@@ -16307,6 +16477,13 @@
    "website"
   ]
  },
+ "semey:промстрой": {
+  "name": "Промстрой",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "semey:рекламно производственная компания семей коркем": {
   "name": "Рекламно-производственная компания Семей Коркем",
   "city": "semey",
@@ -17904,6 +18081,13 @@
   "avatar": "3eeb6576911c1b31.jpg",
   "avatar_source": "website"
  },
+ "ust-kamenogorsk:mtk bizon": {
+  "name": "MTK BIZON",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00"
+ },
  "ust-kamenogorsk:oskemenagroprodukt": {
   "name": "OskemenAgroProdukt",
   "city": "ust-kamenogorsk",
@@ -18351,6 +18535,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "ust-kamenogorsk:уралэнергоцветмет": {
+  "name": "Уралэнергоцветмет",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T13:43:27+00:00",
+  "website": "https://uecm.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721318225",
+  "avatar_checked_at": "2026-11-01T13:43:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:усть каменогорский мукомольный комбинат": {
   "name": "Усть-Каменогорский мукомольный комбинат",

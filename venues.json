@@ -663,6 +663,15 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "aktobe:алтын бу": {
+  "name": "Алтын Бу",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "instagram": "altyn_bu_monsha",
+  "source": "https://2gis.kz/aktobe/firm/70000001032692231"
+ },
  "aktobe:аслан": {
   "name": "АСЛАН",
   "city": "aktobe",
@@ -1529,6 +1538,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:b2b service": {
+  "name": "B2B service",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
  },
  "almaty:badimus group": {
   "name": "Badimus Group",
@@ -2613,6 +2629,15 @@
    "website"
   ]
  },
+ "almaty:geo nan": {
+  "name": "Geo Nan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "instagram": "geonan_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001063419978"
+ },
  "almaty:get target agency": {
   "name": "Get Target Agency",
   "city": "almaty",
@@ -3158,6 +3183,19 @@
   "checked_at": "2026-10-30T05:43:28+00:00",
   "instagram": "killhouse_quest",
   "source": "https://2gis.kz/almaty/firm/70000001113867161"
+ },
+ "almaty:kingboost": {
+  "name": "KingBoost",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "website": "https://kingboost.net/",
+  "source": "https://career.habr.com/companies/kingboost",
+  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:klara fashion house": {
   "name": "Klara Fashion House",
@@ -5502,6 +5540,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "almaty:байбулатов": {
+  "name": "ИП Байбулатов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
+ },
  "almaty:байтукенова": {
   "name": "БАЙТУКЕНОВА",
   "city": "almaty",
@@ -5910,6 +5955,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "almaty:дунфэн трак кз": {
+  "name": "ДУНФЭН ТРАК КЗ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "website": "https://www.dftruck.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104151407",
+  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e82f3c42f67ec213.jpg",
+  "avatar_source": "website"
  },
  "almaty:евгений цой алексеевич": {
   "name": "Евгений Цой Алексеевич",
@@ -6587,6 +6647,13 @@
    "website"
   ]
  },
+ "almaty:лофт парк": {
+  "name": "Лофт парк",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
+ },
  "almaty:лпгруп lpgroup": {
   "name": "ЛПГруп (LPGroup)",
   "city": "almaty",
@@ -6796,6 +6863,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:национальной": {
+  "name": "Национальной",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
  },
  "almaty:нобел алматинская фармацевтическая фабрика": {
   "name": "Нобел Алматинская Фармацевтическая Фабрика",
@@ -7158,6 +7232,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "almaty:сервис": {
+  "name": "Сервис",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
  },
  "almaty:сергей": {
   "name": "Сергей",
@@ -8070,6 +8151,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "astana:auto trader": {
+  "name": "Auto Trader",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "instagram": "geely_autotrader_astana",
+  "website": "https://geely-autotrader.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001097228776",
+  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:avenue танатаров а м": {
   "name": "Avenue (ТАНАТАРОВ А.М)",
@@ -9155,6 +9250,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:megapolis": {
+  "name": "Megapolis",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
  },
  "astana:millennium astana": {
   "name": "Millennium Astana",
@@ -10998,6 +11100,13 @@
    "website"
   ]
  },
+ "astana:лотос": {
+  "name": "Лотос",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
+ },
  "astana:мc груп группа компаний": {
   "name": "МC-Груп, Группа компаний",
   "city": "astana",
@@ -11614,6 +11723,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "astana:столовая ханым": {
+  "name": "Столовая Ханым",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
+ },
  "astana:стоматология neo dent": {
   "name": "Стоматология Neo Dent",
   "city": "astana",
@@ -12196,6 +12312,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "atyrau:street shop": {
+  "name": "Street Shop",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "instagram": "stt_atyrau",
+  "telegram": "streetshopatyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001044299604",
+  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
  },
  "atyrau:sunali": {
   "name": "SunAli",
@@ -14861,6 +14991,20 @@
   "avatar": "6efd21a1561520a0.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:настоящую пекарню": {
+  "name": "НАСТОЯЩУЮ ПЕКАРНЮ",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
+ },
+ "petropavlovsk:овсянникова елена ивановна": {
+  "name": "Овсянникова Елена Ивановна",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
+ },
  "petropavlovsk:прессбук": {
   "name": "ПрессБук",
   "city": "petropavlovsk",
@@ -14950,6 +15094,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "semey:eurasia support services": {
+  "name": "Eurasia Support Services",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "instagram": "compasskazakhstan",
+  "source": "https://2gis.kz/atyrau/firm/70000001045107222"
  },
  "semey:heavy truck kazakhstan": {
   "name": "HEAVY TRUCK KAZAKHSTAN",
@@ -15319,6 +15472,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "shymkent:gtex llc": {
+  "name": "GTEX LLC",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00"
  },
  "shymkent:insoft": {
   "name": "INSOFT",
@@ -16846,6 +17006,20 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "ust-kamenogorsk:инжир": {
+  "name": "Инжир",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "instagram": "injir_uka",
+  "website": "https://dostavka.injir-rest.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001064093692",
+  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "ust-kamenogorsk:казахские домашние сети": {
   "name": "Казахские Домашние Сети",
   "city": "ust-kamenogorsk",
@@ -16886,6 +17060,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "ust-kamenogorsk:компания русский свет": {
+  "name": "Компания Русский Свет",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T06:43:07+00:00",
+  "website": "https://russvet.ru/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721317545",
+  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",

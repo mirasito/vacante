@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T10:57:16+00:00",
+ "updated_at": "2026-11-01T11:57:30+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -15524,6 +15524,248 @@
    "verdict": "reject",
    "at": "2026-11-01T10:57:16+00:00",
    "reason": "Хромтау в Актюбинской области, не Костанай; руководящая должность"
+  },
+  "rabota_astanakz-31154": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Эксперт-оценщик",
+    "employer": "Ломбард «GOOD ЛОМБАРД»",
+    "schedule": "2/2 или 4/2"
+   }
+  },
+  "hh-139033510": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Курылыс Тан Сервис",
+    "schedule": "6/1",
+    "address": null
+   }
+  },
+  "zhumys_astana_kz-17056": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "2/2, 10:00–21:00",
+    "address": "ул. Туран, 52/5",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16820": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Склад Kaspi",
+    "schedule": "смены на выбор: 08:00–20:00, 10:00–22:00, 18:00–06:00, 20:00–08:00",
+    "perks": []
+   }
+  },
+  "astana_job_vakansii-130014": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Администратор, сушист, повар, раннер",
+    "salary_min": 10000,
+    "salary_max": 20000,
+    "salary_period": "day",
+    "schedule": "6/1, 10:00–00:00",
+    "address": "ул. Мангилик Ел, 22"
+   }
+  },
+  "zhumys_astana_kz-17050": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Qazaq Furniture"
+   }
+  },
+  "rabota_astanakz-31153": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Кухонный работник, стафф-повар",
+    "employer": "Кондитерский цех «Saniya Bakery»",
+    "schedule": "6/1, 09:00–18:00"
+   }
+  },
+  "zhumys_astana_kz-16903": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Водитель такси",
+    "schedule": "дневные и ночные смены"
+   }
+  },
+  "rabota_astanakz-31133": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Охранник строительного объекта",
+    "employer": null
+   }
+  },
+  "hh-137094278": {
+   "verdict": "reject",
+   "at": "2026-11-01T11:57:30+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "zhumys_astana_kz-16935": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "schedule": "2/2, 08:00–20:00",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "rabota4almaty-5996": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Повар холодного цеха",
+    "employer": "Шипудим",
+    "schedule": "2/2, 10:00–00:00"
+   }
+  },
+  "hh-139033560": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": null
+   }
+  },
+  "hh-139033529": {
+   "verdict": "reject",
+   "at": "2026-11-01T11:57:30+00:00",
+   "reason": "Офисная должность (логист-координатор)"
+  },
+  "rabota4almaty-5998": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Помощник продавца",
+    "employer": "Магазин «Султан»",
+    "salary_min": 10000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 09:00–23:00",
+    "address": "ул. Жумабаева, 21а",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "rabota4almaty-5999": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Администратор, хостес, кассир",
+    "employer": "Антикафе «Loft Park»"
+   }
+  },
+  "almaty_rabota_work-31764": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "schedule": "6/1, 08:00–18:00",
+    "address": "рынок «Ожет», ул. Бекболата, 2а/7"
+   }
+  },
+  "almaty_rabota_work-31763": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "schedule": "2/2 или 5/2",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "agashka_job_almaty-1027": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Охранник бизнес-центра"
+   }
+  },
+  "rabota4almaty-5997": {
+   "verdict": "reject",
+   "at": "2026-11-01T11:57:30+00:00",
+   "reason": "Офисная должность менеджера"
+  },
+  "hh-137973747": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Расклейщик объявлений"
+   }
+  },
+  "almatyvacancies-11098": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "6/1, понедельник выходной",
+    "address": "ул. Розыбакиева, 33/1"
+   }
+  },
+  "almatyvacancies-11096": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Парикмахер, мастер маникюра и педикюра"
+   }
+  },
+  "almaty_rabota01-25998": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Magnum"
+   }
+  },
+  "rabotaalmatyyyy-15226": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "schedule": "пн–пт, с проживанием",
+    "address": "мкр. Тастак-2"
+   }
+  },
+  "hh-139033455": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "title": "Электромонтер по ремонту электрооборудования"
+   }
+  },
+  "rabotaaktau-142002": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Лаунж-бар «Мята»"
+   }
+  },
+  "rabotaaktau-142003": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Супермаркет «Дана»",
+    "schedule": "6/1, 09:00–22:00 или 11:00–00:00",
+    "address": "16 мкр., 64"
+   }
+  },
+  "rabotaaktau-142001": {
+   "verdict": "approve",
+   "at": "2026-11-01T11:57:30+00:00",
+   "fields": {
+    "employer": "Магазин «Carducci»",
+    "address": "12а мкр., ТРЦ «Port Aktau», 3 этаж"
+   }
   }
  }
 }

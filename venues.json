@@ -2352,6 +2352,20 @@
   "instagram": "damdala.kz",
   "source": "https://2gis.kz/almaty/firm/70000001091380779"
  },
+ "almaty:damu logistics": {
+  "name": "DAMU LOGISTICS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "instagram": "damu_logistics",
+  "website": "https://dlg.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001238905",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:dara": {
   "name": "DARA",
   "city": "almaty",
@@ -6303,6 +6317,19 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "almaty:вип системы": {
+  "name": "ВИП Системы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "website": "https://vipsistems.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001053021077",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:восток oil kz": {
   "name": "Восток OIL KZ",
   "city": "almaty",
@@ -6818,6 +6845,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ип эфес казахстан": {
+  "name": "АО ИП Эфес Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
  },
  "almaty:ирбис 2016": {
   "name": "Ирбис 2016",
@@ -7787,6 +7821,13 @@
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
  },
+ "almaty:пожсервис алматы": {
+  "name": "Пожсервис Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
+ },
  "almaty:полати": {
   "name": "ПОЛАТИ",
   "city": "almaty",
@@ -8083,6 +8124,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T16:43:38+00:00"
+ },
+ "almaty:спатарь вадим валерьевич": {
+  "name": "Спатарь Вадим Валерьевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
  },
  "almaty:специалист": {
   "name": "Специалист",
@@ -9374,6 +9422,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:deal": {
+  "name": "Deal",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
+ },
  "astana:defacto retail store kz": {
   "name": "Defacto Retail Store Kz",
   "city": "astana",
@@ -9461,6 +9516,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "astana:eea group": {
+  "name": "EEA GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
  },
  "astana:en trade эн трейд": {
   "name": "EN TRADE (ЭН ТРЕЙД)",
@@ -11691,6 +11753,20 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "astana:вкусмарт": {
+  "name": "ВКУСМАРТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "instagram": "vkusmartastana",
+  "website": "http://vkusmart.vmv.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001026980818",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:восток инвест group": {
   "name": "Восток Инвест Group",
   "city": "astana",
@@ -11859,6 +11935,21 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "astana:дин ва кэс": {
+  "name": "ДиН ВА-КЭС",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "website": "https://www.dinva.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040621727",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "23179f79d8c2ac5d.jpg",
+  "avatar_source": "website"
  },
  "astana:дом финанс": {
   "name": "ДОМ ФИНАНС",
@@ -12897,6 +12988,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "astana:семизбай": {
+  "name": "Семизбай",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
  },
  "astana:семь морей алматы": {
   "name": "Семь морей-Алматы",
@@ -14181,6 +14279,13 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "karaganda:nar global": {
+  "name": "NAR GLOBAL",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
+ },
  "karaganda:oxflo": {
   "name": "OXFLO",
   "city": "karaganda",
@@ -14502,6 +14607,35 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
+ },
+ "karaganda:евразиан фудс корпорэйшн ао": {
+  "name": "Евразиан Фудс Корпорэйшн, АО",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "website": "https://www.efc.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302827359",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ead5957cbfe33187.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:еврогидросервис": {
+  "name": "Еврогидросервис",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "instagram": "eurohydroservice",
+  "website": "https://eurohydroservice.com/",
+  "source": "https://2gis.kz/karaganda/firm/70000001033763546",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:евротехно логистик": {
   "name": "Евротехно Логистик",
@@ -16147,6 +16281,20 @@
   "avatar": "a83173fe0131ef9d.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "instagram": "intertopkz",
+  "website": "https://www.intertop.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018094399",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:кари кз": {
   "name": "КАРИ КЗ",
   "city": "pavlodar",
@@ -16304,6 +16452,15 @@
    "website"
   ]
  },
+ "pavlodar:пкф рыбный мир": {
+  "name": "ПКФ Рыбный Мир",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "instagram": "rybniy_mir_pvl",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018977553"
+ },
  "pavlodar:попова": {
   "name": "Попова",
   "city": "pavlodar",
@@ -16331,6 +16488,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "pavlodar:чернов е в": {
+  "name": "Чернов Е.В.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
  },
  "pavlodar:шабалина": {
   "name": "ШАБАЛИНА",
@@ -17407,6 +17571,13 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "shymkent:буравлев р в": {
+  "name": "Буравлев Р.В",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
+ },
  "shymkent:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "shymkent",
@@ -18086,6 +18257,13 @@
   "instagram": "cosmoshop_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001039269973"
  },
+ "uralsk:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
+ },
  "uralsk:medina cosmetologyclinic": {
   "name": "Medina-cosmetologyclinic",
   "city": "uralsk",
@@ -18220,6 +18398,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "uralsk:алтын алма": {
+  "name": "Алтын Алма",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00"
  },
  "uralsk:алтындар": {
   "name": "АЛТЫНДАР",
@@ -18614,6 +18799,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "ust-kamenogorsk:trans car service": {
+  "name": "TRANS CAR SERVICE",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T17:43:01+00:00",
+  "instagram": "trans_car_service",
+  "website": "http://tcs.com.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721387748",
+  "avatar_checked_at": "2026-11-01T17:43:01+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "aa12574dad16eeaf.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:wildberries": {
   "name": "WILDBERRIES",

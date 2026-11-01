@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T04:56:42+00:00",
+ "updated_at": "2026-11-01T05:56:56+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -14129,6 +14129,204 @@
     "employer": "ИП Трубачёва Н. Ю.",
     "schedule": "посменно, 15 дней в месяц",
     "address": "ул. Антона Чехова, 55"
+   }
+  },
+  "rabota_uralsk-74285": {
+   "verdict": "reject",
+   "at": "2026-11-01T05:56:56+00:00",
+   "reason": "Объявление из уральского канала, не Астана"
+  },
+  "hh-139031403": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "rabota_astanakz-31131": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Оператор приёма заказов",
+    "employer": null,
+    "schedule": "11:00–00:00"
+   }
+  },
+  "rabota_astanakz-31126": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Сотрудник игровой площадки",
+    "employer": "Детская игровая площадка «Kango Kids»",
+    "schedule": "2/2 или 5/2, 09:00–22:00"
+   }
+  },
+  "astana_job_vakansii-129980": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "employer": "Супермаркет «SQ»",
+    "schedule": "6/1, 08:00–17:00 или 17:00–01:00"
+   }
+  },
+  "zhumys_astana_kz-17022": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Декоратор тортов",
+    "schedule": "5/2, 08:00–18:00",
+    "perks": [
+     "Питание",
+     "Бонусы"
+    ]
+   }
+  },
+  "zhumys_astana_kz-17021": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Оформитель тортов",
+    "schedule": "5/2, 08:00–18:00",
+    "perks": [
+     "Питание",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota_astanakz-31139": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Водитель с личным авто",
+    "schedule": "5/2, 10:00–19:00"
+   }
+  },
+  "astana_job_vakansii-129950": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "employer": "Ресторан «Вечное Небо»",
+    "schedule": "2/2, 10:00–00:00",
+    "address": "ул. Достык, 18, БЦ «Москва»"
+   }
+  },
+  "hh-139011621": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Грузчик в строительный магазин",
+    "schedule": "смены по 11 часов"
+   }
+  },
+  "agashka_job_almaty-1008": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Комплектовщик-грузчик",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "agashka_job_almaty-1022": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-136317947": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "employer": "ASTER Автомобили",
+    "schedule": "5/2"
+   }
+  },
+  "hh-137974020": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Повар-кассир",
+    "employer": "KFC",
+    "schedule": "5/2",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-138001189": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Курьер-водитель на личном автомобиле",
+    "schedule": "2/2, смены по 12 часов",
+    "perks": []
+   }
+  },
+  "hh-139031404": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "schedule": "2–3 смены в неделю"
+   }
+  },
+  "rabota4almaty-5973": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Няня, помощница по дому",
+    "employer": null,
+    "schedule": null,
+    "address": null
+   }
+  },
+  "hh-138995411": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Водитель-курьер на грузовике JAC N56",
+    "schedule": "6/1, смены по 9 часов"
+   }
+  },
+  "rabota4almaty-5890": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Водитель развозки сотрудников",
+    "employer": "ТОО «Первомайские деликатесы»",
+    "address": "мкр. Коянкус, ул. Момышулы, 200",
+    "perks": []
+   }
+  },
+  "rabota4almaty-5975": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {}
+  },
+  "hh-138092544": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {}
+  },
+  "rabota_v_pavlodare-7316": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "title": "Сторож",
+    "schedule": "1/1 или 2/2"
+   }
+  },
+  "hh-129189158": {
+   "verdict": "approve",
+   "at": "2026-11-01T05:56:56+00:00",
+   "fields": {
+    "schedule": "1/3"
    }
   }
  }

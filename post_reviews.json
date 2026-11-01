@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T06:57:11+00:00",
+ "updated_at": "2026-11-01T07:57:05+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -14453,11 +14453,6 @@
    "at": "2026-11-01T06:57:11+00:00",
    "reason": "Домработница в частный дом, мало сведений"
   },
-  "rabota4almaty-5979": {
-   "verdict": "reject",
-   "at": "2026-11-01T06:57:11+00:00",
-   "reason": "Нет должности и описания"
-  },
   "agashka_job_almaty-1023": {
    "verdict": "approve",
    "at": "2026-11-01T06:57:11+00:00",
@@ -14555,6 +14550,257 @@
    "verdict": "reject",
    "at": "2026-11-01T06:57:11+00:00",
    "reason": "Работа в посёлке Актогай, не в Семее"
+  },
+  "rabota_astanakz-31145": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Экскаваторщик",
+    "employer": "ТОО «Arlan logistics grop»",
+    "schedule": "вахта 60/10",
+    "address": "район Нура"
+   }
+  },
+  "astana_job_vakansii-130002": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Техничка в детский сад",
+    "employer": "ДОЦ «Алтын Сара»",
+    "schedule": "2/2, 08:00–20:00",
+    "address": "ул. Кабанбай батыра, 9/7"
+   }
+  },
+  "rabota_astanakz-31143": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "1/2, сутки через двое"
+   }
+  },
+  "hh-138085819": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "ул. Жетиген, 9"
+   }
+  },
+  "hh-137709904": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "address": "ул. Кайыма Мухамедханова, 4б",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-129829": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "employer": "Минимаркет «BESTMART»",
+    "schedule": "2/2 или 5/2, 08:00–20:00 или 20:00–08:00",
+    "address": "ул. Сыганак, 54/2"
+   }
+  },
+  "hh-139007245": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "ЭККО-РОС Казахстан",
+    "schedule": "5/2",
+    "address": "ТРЦ «Mega Silk Way»",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-16879": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Повар, няня, воспитатель",
+    "salary_min": 200000,
+    "salary_max": 250000,
+    "salary_period": "month",
+    "address": "ул. Ұлы Дала, 65"
+   }
+  },
+  "hh-127271541": {
+   "verdict": "reject",
+   "at": "2026-11-01T07:57:05+00:00",
+   "reason": "IT-должность, не рабочая специальность"
+  },
+  "rabota4almaty-5983": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Водитель такси",
+    "schedule": "6/1 или свободный график",
+    "address": "ул. Тимирязева, 42к16"
+   }
+  },
+  "hh-129447379": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Бухтарминская, 66"
+   }
+  },
+  "almaty_rabota_work-31761": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "employer": "Стоматология «SB dental clinic»",
+    "schedule": "5/2, 09:00–22:00",
+    "address": "ул. Навои, 7"
+   }
+  },
+  "hh-139031778": {
+   "verdict": "reject",
+   "at": "2026-11-01T07:57:05+00:00",
+   "reason": "Работа в другом городе (Актогай), не в Алматы"
+  },
+  "hh-138825057": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "ул. Кабдолова, 16/1"
+   }
+  },
+  "hh-138457220": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "пр. Сейфуллина, 467/1, блок 2"
+   }
+  },
+  "almatyrabota1-21290": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "employer": "Стрит-фуд «COCO»",
+    "schedule": "2/2, 09:30–00:00",
+    "address": "ТРЦ «Dostyk Plaza»",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Официально",
+     "Без опыта"
+    ]
+   }
+  },
+  "rabota4almaty-5982": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Разнорабочий на озеленение",
+    "employer": "ТОО «Гарант Групп»",
+    "schedule": "08:00–18:00",
+    "address": "ул. Абая"
+   }
+  },
+  "rabota4almaty-5981": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Кузовщик, маляр, моторист",
+    "employer": "СТО «Нур ПДР Сервис»",
+    "address": "мкр. Мамыр-4, 1а/4"
+   }
+  },
+  "rabotaalmatyyyy-15261": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Продавец на авторынке",
+    "schedule": "6/1, 09:00–18:00",
+    "address": "авторынок на Жибек Жолы",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139004680": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "schedule": "2/2, по 12 часов",
+    "address": "Аэропорт Алматы, терминал международных авиалиний"
+   }
+  },
+  "hh-139003998": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Водитель с личным автомобилем",
+    "employer": "Nomad Life",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139003088": {
+   "verdict": "reject",
+   "at": "2026-11-01T07:57:05+00:00",
+   "reason": "Бодайбинский район — Россия"
+  },
+  "hh-139031760": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2",
+    "address": "ул. Камали Дюсембекова, 67/8"
+   }
+  },
+  "hh-138587294": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант автозапчастей",
+    "employer": "«Планета Инструментов»",
+    "schedule": "5/2"
+   }
+  },
+  "hh-136876358": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант парфюмерии и косметики",
+    "employer": "Viled Fashion",
+    "schedule": "2/2, по 11 часов"
+   }
+  },
+  "hh-138658660": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "employer": "Сеть «5 баллов»"
+   }
+  },
+  "rabota_semey_official-6753": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "address": "район Затона"
+   }
+  },
+  "rabota_semey_official-6752": {
+   "verdict": "approve",
+   "at": "2026-11-01T07:57:05+00:00",
+   "fields": {
+    "title": "Администратор, официант, технический персонал",
+    "schedule": "1/2, сутки через двое"
+   }
+  },
+  "rabota_semey_official-6751": {
+   "verdict": "reject",
+   "at": "2026-11-01T07:57:05+00:00",
+   "reason": "Офисные должности (бухгалтер, SMM)"
   }
  }
 }

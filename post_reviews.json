@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T07:57:05+00:00",
+ "updated_at": "2026-11-01T08:56:30+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -14801,6 +14801,212 @@
    "verdict": "reject",
    "at": "2026-11-01T07:57:05+00:00",
    "reason": "Офисные должности (бухгалтер, SMM)"
+  },
+  "hh-133853971": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "schedule": "1/2"
+   }
+  },
+  "rabota_astanakz-31147": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "Суточный график"
+   }
+  },
+  "astana_job_vakansii-130006": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "employer": "Rumble Boxing & Fitness",
+    "schedule": "6/1, с 22:30"
+   }
+  },
+  "astana_job_vakansii-130005": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Технический персонал (посуда, уборка)",
+    "employer": "Караоке-клуб «Bariton»",
+    "salary_min": 10000,
+    "salary_max": 16000,
+    "salary_period": "day",
+    "schedule": "ночные смены, 17:00–06:30"
+   }
+  },
+  "hh-139032542": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "employer": "PRO-LINE",
+    "schedule": "5/2"
+   }
+  },
+  "rabota_astanakz-31136": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "schedule": "Свободный график"
+   }
+  },
+  "astana_job_vakansii-129992": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Инструктор по вождению",
+    "employer": "Автошкола «Central Drive»",
+    "schedule": "09:00–20:30"
+   }
+  },
+  "hh-139025412": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-139024274": {
+   "verdict": "reject",
+   "at": "2026-11-01T08:56:30+00:00",
+   "reason": "Работа в России (Якутия)"
+  },
+  "zhumys_astana_kz-16987": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Продавец фруктов и овощей",
+    "salary_min": 12000,
+    "salary_max": 13000,
+    "salary_period": "day",
+    "schedule": "08:00–20:00, 1 выходной",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139032560": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "O'stin",
+    "schedule": null
+   }
+  },
+  "hh-139032307": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "hh-139032300": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Машинист автокрана",
+    "employer": "Кадышев Ерлан",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139032134": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-139021730": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Ив Роше",
+    "schedule": "2/2"
+   }
+  },
+  "rabota4almaty-5987": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Администратор-горничная",
+    "employer": null,
+    "schedule": "2/2, сутки",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota4almaty-5986": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Автослесарь (ходовик, моторист)"
+   }
+  },
+  "hh-138959438": {
+   "verdict": "reject",
+   "at": "2026-11-01T08:56:30+00:00",
+   "reason": "Работа в России (Мытищи)"
+  },
+  "rabota4almaty-5988": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Сварщик 4-го разряда",
+    "employer": "ИП «Техно Logic»"
+   }
+  },
+  "hh-139032306": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "employer": "Бастық",
+    "schedule": "2/2 или 3/2"
+   }
+  },
+  "rabota4almaty-5985": {
+   "verdict": "reject",
+   "at": "2026-11-01T08:56:30+00:00",
+   "reason": "Офисная должность, кредитный брокер"
+  },
+  "hh-139002889": {
+   "verdict": "reject",
+   "at": "2026-11-01T08:56:30+00:00",
+   "reason": "Работа в России (Бодайбинский район)"
+  },
+  "hh-139032556": {
+   "verdict": "reject",
+   "at": "2026-11-01T08:56:30+00:00",
+   "reason": "Похоже на продажи с доходом «без потолка», не рабочая специальность"
+  },
+  "rabotaaktau-141987": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Официант, кассир",
+    "employer": "Кафетерий «Le Brunch»",
+    "address": "18а-3"
+   }
+  },
+  "hh-139032505": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-139032599": {
+   "verdict": "approve",
+   "at": "2026-11-01T08:56:30+00:00",
+   "fields": {
+    "title": "Старший продавец овощного отдела",
+    "schedule": "5/2 или 2/2"
+   }
   }
  }
 }

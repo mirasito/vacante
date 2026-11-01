@@ -1069,6 +1069,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "almaty:almaty autoparts production": {
+  "name": "Almaty Autoparts Production",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
+ },
  "almaty:almaty mai": {
   "name": "ALMATY MAI",
   "city": "almaty",
@@ -1465,6 +1472,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:bakerson kz": {
+  "name": "BAKERSON.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "bakerson.kz",
+  "source": "https://www.instagram.com/bakerson.kz/"
  },
  "almaty:bakha potolok": {
   "name": "BAKHA POTOLOK",
@@ -3083,6 +3099,19 @@
   "instagram": "lion.restaurants",
   "source": "https://2gis.kz/almaty/firm/70000001101025365"
  },
+ "almaty:logycom": {
+  "name": "Logycom",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "website": "https://logycom.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000818919",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:longbo industry": {
   "name": "LONGBO-INDUSTRY",
   "city": "almaty",
@@ -3405,6 +3434,15 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "instagram": "nogtimania.salon",
   "source": "https://2gis.kz/almaty/firm/70000001040596963"
+ },
+ "almaty:nomad exclusive eyewear": {
+  "name": "«Nomad Exclusive Eyewear»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "nomad_exclusive_eyewear",
+  "source": "https://2gis.kz/almaty/firm/70000001116200414"
  },
  "almaty:nurancell": {
   "name": "Nurancell",
@@ -3965,6 +4003,22 @@
   ],
   "avatar": "ad43fed7f26e4085.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:sman bayman group qazaqstan": {
+  "name": "SMAN (Bayman Group Qazaqstan)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "sman.kz",
+  "website": "https://sman.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001109721775",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2947a66261b241f9.jpg",
+  "avatar_source": "website"
  },
  "almaty:smart english": {
   "name": "Smart English",
@@ -6691,6 +6745,19 @@
    "website"
   ]
  },
+ "almaty:сдэк экспресс алматы": {
+  "name": "СДЭК Экспресс Алматы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "website": "https://cdek.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001067902858",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:сейф ломбард": {
   "name": "Сейф-ломбард",
   "city": "almaty",
@@ -7948,6 +8015,13 @@
   "checked_at": "2026-10-29T07:46:02+00:00",
   "instagram": "discovery_coffee_astana",
   "source": "https://2gis.kz/astana/firm/70000001080351248"
+ },
+ "astana:doctor dent": {
+  "name": "Doctor Dent",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
  },
  "astana:dora bakery": {
   "name": "DORA Bakery",
@@ -9986,6 +10060,13 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "astana:дария 2012 диона тм": {
+  "name": "Дария-2012 (Диона, ТМ)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
+ },
  "astana:детский сад": {
   "name": "Детский сад",
   "city": "astana",
@@ -10931,6 +11012,13 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "astana:солнечный дар": {
+  "name": "Солнечный дар",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
+ },
  "astana:солод": {
   "name": "Солод",
   "city": "astana",
@@ -10990,6 +11078,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "astana:стройтехметалл": {
+  "name": "Стройтехметалл",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
  },
  "astana:стюфляев и в": {
   "name": "Стюфляев И.В",
@@ -12198,6 +12293,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "karaganda:дельта м казахстан": {
+  "name": "ДЕЛЬТА М КАЗАХСТАН",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "deltamkz",
+  "website": "https://delta-m.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001027688143",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:евротехно логистик": {
   "name": "Евротехно Логистик",
@@ -13652,6 +13761,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "pavlodar:дом пекаря": {
+  "name": "Дом Пекаря",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
+ },
  "pavlodar:евразиан фудс корпорэйшн ао": {
   "name": "Евразиан Фудс Корпорэйшн, АО",
   "city": "pavlodar",
@@ -14110,6 +14226,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "petropavlovsk:эйкос": {
+  "name": "ЭЙКОС",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "aikos.kz",
+  "website": "https://aikos.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038675819",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b74f9b1693dd99c6.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:этажи": {
   "name": "Этажи",
@@ -14590,6 +14722,15 @@
    "website"
   ]
  },
+ "shymkent:optimus kz": {
+  "name": "Optimus kz",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "optimus.kz",
+  "source": "https://www.instagram.com/optimus.kz/"
+ },
  "shymkent:orda motors auto market": {
   "name": "ORDA MOTORS AUTO MARKET",
   "city": "shymkent",
@@ -14633,6 +14774,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "shymkent:senim guard": {
+  "name": "Senim Guard",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "website": "https://senimg.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001076145154",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:studyon": {
   "name": "StudyON",
@@ -14684,6 +14838,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
+ },
+ "shymkent:агротоп": {
+  "name": "Агротоп",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "agrotop.kz",
+  "website": "https://agrotop.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001066126087",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bb836f628adc40bd.jpg",
+  "avatar_source": "website"
  },
  "shymkent:айсаров б а": {
   "name": "АЙСАРОВ Б.А.",
@@ -15169,6 +15339,20 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "taraz:компания эврика": {
+  "name": "Компания ЭВРИКА",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00",
+  "instagram": "evrika.kazakhstan",
+  "website": "https://evrika.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001052621978",
+  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "taraz:прессбук": {
   "name": "ПрессБук",
   "city": "taraz",
@@ -15268,6 +15452,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "turkestan:нурлан": {
+  "name": "Нурлан",
+  "city": "turkestan",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
  },
  "turkestan:полежаев андрей валерьевич": {
   "name": "Полежаев Андрей Валерьевич",
@@ -15610,6 +15801,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "ust-kamenogorsk:building realty": {
+  "name": "BUILDING REALTY",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
+ },
  "ust-kamenogorsk:bus logistic group": {
   "name": "Bus Logistic Group",
   "city": "ust-kamenogorsk",
@@ -15788,6 +15986,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "ust-kamenogorsk:антоненко и в": {
+  "name": "Антоненко И. В",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T01:42:32+00:00"
  },
  "ust-kamenogorsk:аппетитная": {
   "name": "Аппетитная",

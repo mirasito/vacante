@@ -996,6 +996,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "almaty:akylbekubajdullaev": {
+  "name": "akylbekubajdullaev",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
  "almaty:albakov group": {
   "name": "Albakov Group",
   "city": "almaty",
@@ -1013,6 +1020,20 @@
   "website": "https://albertocasiano.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001054511006",
   "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:alcom engineering group": {
+  "name": "AlCom Engineering Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "instagram": "dveri_staleks",
+  "website": "http://staleks.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001033598164",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1775,6 +1796,20 @@
    "website"
   ]
  },
+ "almaty:bright rich": {
+  "name": "Bright Rich",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "instagram": "brightrich.kz",
+  "website": "https://brightrich.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001074374024",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:brosto": {
   "name": "BROSTO",
   "city": "almaty",
@@ -2388,6 +2423,13 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:everest dental clinic": {
+  "name": "Everest dental clinic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
  "almaty:expert logistic kazakhstan": {
   "name": "Expert Logistic Kazakhstan",
   "city": "almaty",
@@ -2517,6 +2559,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:gauf group": {
+  "name": "Gauf Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
  },
  "almaty:gelato tutto bene": {
   "name": "Gelato tutto bene",
@@ -2743,6 +2792,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "almaty:hilding anders": {
+  "name": "Hilding Anders",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
  },
  "almaty:howaboutsmm": {
   "name": "Howaboutsmm",
@@ -3160,6 +3216,20 @@
   ],
   "avatar": "497e4781b54a69d4.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:lanzhou": {
+  "name": "Lanzhou",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "instagram": "lanzhou_kafe",
+  "website": "http://lanzhou.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001031693292",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:lb dostyk": {
   "name": "LB DOSTYK",
@@ -4564,6 +4634,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:venus medikal kz": {
+  "name": "Venus medikal kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
  "almaty:vernao group": {
   "name": "Vernao Group",
   "city": "almaty",
@@ -5904,6 +5981,13 @@
   "instagram": "yvesrocherkz",
   "source": "https://2gis.kz/almaty/firm/70000001113860458"
  },
+ "almaty:ильбисинова": {
+  "name": "Ильбисинова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
  "almaty:инжиниринговая компания казгипронефтетранс": {
   "name": "ИНЖИНИРИНГОВАЯ КОМПАНИЯ КАЗГИПРОНЕФТЕТРАНС",
   "city": "almaty",
@@ -6427,6 +6511,20 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "almaty:лотте рахат": {
+  "name": "ЛОТТЕ Рахат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "instagram": "lotte.rakhat",
+  "website": "https://www.rakhat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032789637",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:лпгруп lpgroup": {
   "name": "ЛПГруп (LPGroup)",
   "city": "almaty",
@@ -6648,6 +6746,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "almaty:оленбергер": {
+  "name": "ИП ОЛЕНБЕРГЕР",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
  },
  "almaty:оливер": {
   "name": "Оливер",
@@ -6982,6 +7087,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "almaty:серик": {
+  "name": "Серик",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
  },
  "almaty:сеть фитнес клубов workout ип fb zharokova": {
   "name": "Сеть фитнес-клубов WORKOUT (ИП FB Zharokova)",
@@ -9177,6 +9289,29 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:prodom invest": {
+  "name": "PRODOM INVEST",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "astana:proflowers": {
+  "name": "PROFLOWERS",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "instagram": "proflowers_kz",
+  "website": "http://proflowers.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001082373442",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "12090fdc408053f3.jpg",
+  "avatar_source": "website"
+ },
  "astana:profservice": {
   "name": "ProfService",
   "city": "astana",
@@ -9792,6 +9927,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:азия норд": {
+  "name": "Азия Норд",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "instagram": "asianord",
+  "website": "http://asianord.com/",
+  "source": "https://2gis.kz/astana/firm/70000001023344602",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:азия парк": {
   "name": "Азия Парк",
@@ -12096,6 +12245,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:asia ferroalloys": {
+  "name": "Asia FerroAlloys",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00",
+  "website": "https://qazcarbon.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302943550",
+  "avatar_checked_at": "2026-11-01T04:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:av company": {
   "name": "AV Company",
@@ -14607,6 +14769,13 @@
    "website"
   ]
  },
+ "semey:dn mebel": {
+  "name": "DN Mebel",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
  "semey:east wellness group": {
   "name": "EAST WELLNESS GROUP",
   "city": "semey",
@@ -15328,6 +15497,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:калменов ж к": {
+  "name": "КАЛМЕНОВ Ж.К",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
  },
  "shymkent:коллекторское агентство id collect айди коллект": {
   "name": "КОЛЛЕКТОРСКОЕ АГЕНТСТВО ID COLLECT (АЙДИ КОЛЛЕКТ)",
@@ -16713,6 +16889,20 @@
   ],
   "avatar": "8613b9c17d97ab5f.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:трубачева н ю": {
+  "name": "ТРУБАЧЁВА Н.Ю.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "ust-kamenogorsk:ук трк": {
+  "name": "УК ТРК",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T04:43:00+00:00"
  },
  "ust-kamenogorsk:усть каменогорский мукомольный комбинат": {
   "name": "Усть-Каменогорский мукомольный комбинат",

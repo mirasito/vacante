@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T14:56:49+00:00",
+ "updated_at": "2026-11-01T15:57:23+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -16371,6 +16371,212 @@
    "fields": {
     "schedule": "5/2",
     "address": "пр. Кенеса Нокина, 34Е"
+   }
+  },
+  "hh-138068663": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Сотрудник ресторана, повар-кассир",
+    "employer": "KFC",
+    "schedule": "5/2",
+    "address": "ул. Достык, 9",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139035029": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": "Jack Market",
+    "schedule": "5/2",
+    "address": "ул. Е-15, 13/1"
+   }
+  },
+  "hh-138676665": {
+   "verdict": "reject",
+   "at": "2026-11-01T15:57:23+00:00",
+   "reason": "Неясные обязанности, похоже на онлайн-продажи"
+  },
+  "hh-139034697": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Бариста-кассир",
+    "employer": "Global Coffee",
+    "schedule": null,
+    "address": "пр. Бауыржана Момышулы, 2Б"
+   }
+  },
+  "hh-139034614": {
+   "verdict": "reject",
+   "at": "2026-11-01T15:57:23+00:00",
+   "reason": "Офисная должность: продажи и CRM"
+  },
+  "hh-139035025": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": "Marmelad Group",
+    "schedule": null,
+    "address": "ул. Акмешит, 1, блок 6"
+   }
+  },
+  "astana_job_vakansii-130030": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Консультант в магазин",
+    "schedule": "2/2, 08:30–21:00"
+   }
+  },
+  "astana_job_vakansii-130029": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Охранник в магазин",
+    "schedule": "2/2, 08:30–21:00"
+   }
+  },
+  "rabotaaktau-142009": {
+   "verdict": "reject",
+   "at": "2026-11-01T15:57:23+00:00",
+   "reason": "Вакансии в Актау, не в Астане"
+  },
+  "zhumys_astana_kz-17055": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "salary_min": 13000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 08:00–20:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16975": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Повар китайской и уйгурской кухни",
+    "salary_min": 20000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "5/2 или 6/1, 10:00–22:00"
+   }
+  },
+  "hh-139034883": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Администратор спа",
+    "schedule": "2/2",
+    "address": "пр. Назарбаева, 117"
+   }
+  },
+  "hh-139034949": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Казакова, 4"
+   }
+  },
+  "hh-139034700": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": "Студия «Gradient»",
+    "schedule": "5/2 или 2/2",
+    "address": "ул. Асанбая Аскарова, 21/67"
+   }
+  },
+  "agashka_job_almaty-1010": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": "Столовая «Канагат»",
+    "schedule": "2/2 или 5/2"
+   }
+  },
+  "rabota4almaty-6012": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": "ТОО «КМСА»",
+    "address": "пр. Райымбека, 239Г"
+   }
+  },
+  "almaty_rabota05-11711": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "schedule": "2/2, сутки"
+   }
+  },
+  "agashka_job_almaty-1030": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {}
+  },
+  "aktobevakansii-44343": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": "Ресторан «UYA»",
+    "schedule": "2/2, 09:00–22:00"
+   }
+  },
+  "aktobevakansii-44344": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, 08:00–00:00",
+    "address": "11 мкр"
+   }
+  },
+  "hh-139034790": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Охранник, оператор пульта",
+    "address": null
+   }
+  },
+  "hh-137027695": {
+   "verdict": "reject",
+   "at": "2026-11-01T15:57:23+00:00",
+   "reason": "Похоже на работу на Самокат в России"
+  },
+  "hh-138400158": {
+   "verdict": "reject",
+   "at": "2026-11-01T15:57:23+00:00",
+   "reason": "Руководящая должность"
+  },
+  "rabota_semey_official-6759": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "title": "Посудомойщица в столовую"
+   }
+  },
+  "rabota_semey_official-6758": {
+   "verdict": "reject",
+   "at": "2026-11-01T15:57:23+00:00",
+   "reason": "Почти нет сведений, руководящая должность"
+  },
+  "hh-139034810": {
+   "verdict": "approve",
+   "at": "2026-11-01T15:57:23+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Л. Толстого, 51"
    }
   }
  }

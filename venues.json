@@ -1694,6 +1694,15 @@
    "website"
   ]
  },
+ "almaty:bekzat": {
+  "name": "BEKZAT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "instagram": "almaty_prokat_service",
+  "source": "https://2gis.kz/almaty/firm/70000001086838075"
+ },
  "almaty:best products company": {
   "name": "Best Products Company",
   "city": "almaty",
@@ -2029,6 +2038,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:climcom": {
+  "name": "ClimCom",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "almaty:coca cola i çecek kazakhstan тоо сп кока кола алматы боттлерс": {
   "name": "Coca-Cola İçecek Kazakhstan  ( ТОО СП «Кока-Кола Алматы Боттлерс» )",
@@ -3917,6 +3933,22 @@
   "avatar": "06908eb210823849.jpg",
   "avatar_source": "website"
  },
+ "almaty:praticamente astana": {
+  "name": "Praticamente Astana",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "instagram": "praticamente_school",
+  "website": "https://praticamente.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001038847",
+  "avatar_checked_at": "2026-11-01T08:42:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f7d26b3bb4f27765.jpg",
+  "avatar_source": "website"
+ },
  "almaty:premium logistic": {
   "name": "Premium Logistic",
   "city": "almaty",
@@ -4718,6 +4750,15 @@
   ],
   "avatar": "4e72ff67a5375c9a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:tvs company kazakhstan": {
+  "name": "TVS Company Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "instagram": "tvs.avtoservice",
+  "source": "https://2gis.kz/almaty/firm/70000001021300036"
  },
  "almaty:uchina ючайна": {
   "name": "UChina (ЮЧайна)",
@@ -5648,6 +5689,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:бастық": {
+  "name": "БАСТЫҚ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
+ },
  "almaty:белорусский продукт": {
   "name": "БЕЛОРУССКИЙ ПРОДУКТ",
   "city": "almaty",
@@ -5902,6 +5950,13 @@
   ],
   "avatar": "dd7ecf45ef6b1ae5.jpg",
   "avatar_source": "website"
+ },
+ "almaty:гостиница": {
+  "name": "гостиница",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "almaty:гостиница жетысу novotel living and ibis almaty zhetisu": {
   "name": "«Гостиница «Жетысу» (Novotel living and Ibis Almaty Zhetisu)",
@@ -6253,6 +6308,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "almaty:кадышев ерлан": {
+  "name": "КАДЫШЕВ ЕРЛАН",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "almaty:каз нью электроникс": {
   "name": "Каз Нью Электроникс",
@@ -7018,6 +7080,15 @@
    "website"
   ]
  },
+ "almaty:остин казахстан ostin тм": {
+  "name": "Остин Казахстан (O'stin ТМ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "instagram": "ostin.kz",
+  "source": "https://www.instagram.com/ostin.kz/"
+ },
  "almaty:от зарплаты до зарплаты": {
   "name": "от зарплаты до зарплаты",
   "city": "almaty",
@@ -7550,6 +7621,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:техно logic": {
+  "name": "ИП Техно Logic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "almaty:технокоминвест": {
   "name": "ТЕХНОКОМИНВЕСТ",
@@ -8351,6 +8429,13 @@
   ],
   "avatar": "eb531deb9802e070.jpg",
   "avatar_source": "website"
+ },
+ "astana:brand": {
+  "name": "Brand",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "astana:bright retail": {
   "name": "BRIGHT RETAIL",
@@ -9610,6 +9695,13 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:pro line": {
+  "name": "PRO-LINE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
+ },
  "astana:prodom invest": {
   "name": "PRODOM INVEST",
   "city": "astana",
@@ -9921,6 +10013,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "astana:status cars": {
+  "name": "Status Cars",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
+ },
  "astana:status prof group": {
   "name": "STATUS PROF GROUP",
   "city": "astana",
@@ -9982,6 +10081,19 @@
   "website": "https://taptatti.kz/",
   "source": "https://2gis.kz/astana/firm/70000001032777613",
   "avatar_checked_at": "2026-10-29T18:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:tele2 altel": {
+  "name": "Tele2/Altel",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "website": "https://tele2.kz/",
+  "source": "https://tele2.kz/about",
+  "avatar_checked_at": "2026-11-01T08:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11054,6 +11166,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "astana:кальянный магазин fox": {
+  "name": "Кальянный магазин FOX",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "instagram": "fox_hookahs_ast",
+  "source": "https://2gis.kz/astana/firm/70000001061122067"
  },
  "astana:канго +": {
   "name": "Канго +",
@@ -12168,6 +12289,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "astana:частный дом": {
+  "name": "Частный дом",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
+ },
+ "astana:чигасов алексей сергеевич": {
+  "name": "Чигасов Алексей Сергеевич",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "astana:чк alkor kazakhstan ltd": {
   "name": "ЧК ALKOR KAZAKHSTAN LTD.",
@@ -14682,6 +14817,19 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "pavlodar:азбука стали": {
+  "name": "Азбука Стали",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00",
+  "website": "https://abc-steel.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018642820",
+  "avatar_checked_at": "2026-11-01T08:42:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
   "city": "pavlodar",
@@ -15528,6 +15676,13 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "semey:тусупбаева ляззат": {
+  "name": "Тусупбаева Ляззат",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
+ },
  "semey:шығыс шпз": {
   "name": "Шығыс ШПЗ",
   "city": "semey",
@@ -15683,6 +15838,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
+ },
+ "shymkent:liberty space": {
+  "name": "LIBERTY SPACE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "shymkent:lpp kazakhstan лпп казахстан": {
   "name": "LPP Kazakhstan (ЛПП Казахстан)",
@@ -16188,6 +16350,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "taldykorgan:астра лoмбард": {
+  "name": "Астра-Лoмбард",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T08:42:53+00:00"
  },
  "taldykorgan:банк центркредит": {
   "name": "Банк ЦентрКредит",

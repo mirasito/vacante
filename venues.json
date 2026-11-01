@@ -28,6 +28,13 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "aktau:coffee mind": {
+  "name": "Coffee Mind",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
+ },
  "aktau:coffeе boom": {
   "name": "Coffeе BOOM",
   "city": "aktau",
@@ -102,6 +109,13 @@
   "checked_at": "2026-10-31T08:43:03+00:00",
   "instagram": "jamesburger.kz",
   "source": "https://www.instagram.com/jamesburger.kz/"
+ },
+ "aktau:keruen inn qazaq": {
+  "name": "Keruen Inn Qazaq",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "aktau:kitsu rolls": {
   "name": "KITSU ROLLS",
@@ -231,6 +245,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "aktau:ақтау": {
+  "name": "Ақтау",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
+ },
  "aktau:в актау": {
   "name": "В АКТАУ",
   "city": "aktau",
@@ -285,6 +306,13 @@
   "avatar": "391e3f0867ad3166.jpg",
   "avatar_source": "website"
  },
+ "aktau:дентал мед плюс": {
+  "name": "ДЕНТАЛ МЕД ПЛЮС",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
+ },
  "aktau:жигер": {
   "name": "Жигер",
   "city": "aktau",
@@ -298,6 +326,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "aktau:зами": {
+  "name": "Зами",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "aktau:звезда актау": {
   "name": "Звезда Актау",
@@ -557,6 +592,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "aktobe:dynamo": {
+  "name": "Dynamo",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "aktobe:esetmontazh": {
   "name": "Esetmontazh",
@@ -3279,6 +3321,22 @@
   "avatar": "1254b43fb1b59fad.jpg",
   "avatar_source": "website"
  },
+ "almaty:jsi kz": {
+  "name": "JSI.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "just_speak_it",
+  "telegram": "jsiclub",
+  "website": "https://jsi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001068041909",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "almaty",
@@ -3739,6 +3797,13 @@
   "checked_at": "2026-10-28T10:43:31+00:00",
   "instagram": "minisokz",
   "source": "https://2gis.kz/almaty/firm/70000001025693945"
+ },
+ "almaty:mix light": {
+  "name": "Mix Light",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "almaty:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
@@ -5906,6 +5971,22 @@
    "website"
   ]
  },
+ "almaty:атлант групп": {
+  "name": "Атлант Групп",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "atlantgroupservice",
+  "website": "https://www.a-group.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000785784",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0663b9dded815a21.jpg",
+  "avatar_source": "website"
+ },
  "almaty:атри": {
   "name": "АТРИ",
   "city": "almaty",
@@ -6679,6 +6760,20 @@
    "website"
   ]
  },
+ "almaty:каззнт": {
+  "name": "КазЗНТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "kazznt",
+  "website": "https://kazznt.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001080994531",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:казиева а э": {
   "name": "КАЗИЕВА А.Э",
   "city": "almaty",
@@ -6823,6 +6918,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:кинопарк студент": {
+  "name": "Кинопарк Студент",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "kinopark_kz",
+  "website": "https://kinopark.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037363298",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:классик коммерц": {
   "name": "КЛАССИК КОММЕРЦ",
@@ -7207,6 +7316,13 @@
   "checked_at": "2026-10-29T04:44:51+00:00",
   "instagram": "almatyinternationalairport",
   "source": "https://2gis.kz/almaty/firm/9429940000833020"
+ },
+ "almaty:микрофинансовая организация orda finance": {
+  "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ORDA FINANCE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "almaty:мир бабочек": {
   "name": "МИР БАБОЧЕК",
@@ -8651,6 +8767,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "astana:asiapharm": {
+  "name": "AsiaPharm",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "astana:asl corporation": {
   "name": "ASL CORPORATION",
@@ -11843,6 +11966,22 @@
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
  },
+ "astana:клиника джуматаева": {
+  "name": "КЛИНИКА ДЖУМАТАЕВА",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "jumatayev.clinic",
+  "website": "https://jumatayev-clinic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001102610135",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c89e9cd152423eda.jpg",
+  "avatar_source": "website"
+ },
  "astana:клиника здоровья и эстетической стоматологии colibri": {
   "name": "Клиника здоровья и эстетической стоматологии Colibri",
   "city": "astana",
@@ -11900,6 +12039,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "astana:конкрит продактс астана": {
+  "name": "Конкрит Продактс Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "concreteastana",
+  "website": "https://concrete-astana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018134318",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:контроль техники": {
   "name": "«Контроль Техники»",
@@ -13288,6 +13441,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "atyrau:sportform": {
+  "name": "SPORTFORM",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "sportform.atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001066160385"
  },
  "atyrau:street shop": {
   "name": "Street Shop",
@@ -14804,6 +14966,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "kostanay:абди компани": {
+  "name": "АБДИ Компани",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "kostanay:автодом костанай": {
   "name": "Автодом Костанай",
@@ -17166,6 +17335,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "shymkent:торговый дом казбел техника": {
+  "name": "Торговый дом КазБел-Техника",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
+ },
  "shymkent:түзелбай": {
   "name": "ТҮЗЕЛБАЙ",
   "city": "shymkent",
@@ -17800,6 +17976,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "uralsk:каримова альфия": {
+  "name": "Каримова Альфия",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00"
  },
  "uralsk:кип электромонтаж": {
   "name": "КИП-ЭЛЕКТРОМОНТАЖ",
@@ -18452,6 +18635,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "ust-kamenogorsk:силумин восток": {
+  "name": "Силумин-Восток",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T14:43:23+00:00",
+  "instagram": "siluminvostok",
+  "website": "https://silumin.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721317694",
+  "avatar_checked_at": "2026-11-01T14:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:спортмастер казахстан": {
   "name": "Спортмастер Казахстан",

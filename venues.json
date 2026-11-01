@@ -791,6 +791,13 @@
   "instagram": "ochagaktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032228765"
  },
+ "aktobe:разумова светлана анатольевна": {
+  "name": "Разумова Светлана Анатольевна",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
+ },
  "aktobe:спецпром invest": {
   "name": "СпецПром INVEST",
   "city": "aktobe",
@@ -1200,6 +1207,13 @@
   "avatar": "4c2308e07ba5da03.jpg",
   "avatar_source": "website"
  },
+ "almaty:aqsaraim": {
+  "name": "AQSARAIM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
+ },
  "almaty:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
   "city": "almaty",
@@ -1472,6 +1486,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:baitau": {
+  "name": "Baitau",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "instagram": "baitau_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001117225518"
  },
  "almaty:bakerson kz": {
   "name": "BAKERSON.KZ",
@@ -2369,6 +2392,15 @@
   ],
   "avatar": "9b7f3b31e6a85a5d.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:flowersbox kz ип эм к а": {
+  "name": "Flowersbox.kz (ИП Эм К.А.)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "instagram": "flowersbox.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001044448854"
  },
  "almaty:fort vernyi family ип картанбаева э ш": {
   "name": "FORT VERNYI FAMILY (ИП КАРТАНБАЕВА Э.Ш.)",
@@ -3825,6 +3857,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "almaty:ruba technology": {
+  "name": "Ruba Technology",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
+ },
  "almaty:ruby market": {
   "name": "RUBY MARKET",
   "city": "almaty",
@@ -5217,6 +5256,19 @@
    "website"
   ]
  },
+ "almaty:астрон": {
+  "name": "Астрон",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "website": "https://www.astron.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000793121",
+  "avatar_checked_at": "2026-11-01T02:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:атри": {
   "name": "АТРИ",
   "city": "almaty",
@@ -5237,6 +5289,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "almaty:байтукенова": {
+  "name": "БАЙТУКЕНОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
  },
  "almaty:бакорда": {
   "name": "Бакорда",
@@ -5470,6 +5529,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "almaty:глав денталь": {
+  "name": "Глав Денталь",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
  },
  "almaty:глобал медикал": {
   "name": "Глобал Медикал",
@@ -6732,6 +6798,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "almaty:сарисунова м б": {
+  "name": "Сарисунова М.Б.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
+ },
  "almaty:свс модуль": {
   "name": "СВС-Модуль",
   "city": "almaty",
@@ -7169,6 +7242,19 @@
   "avatar": "a245c3e23010ac2c.jpg",
   "avatar_source": "website"
  },
+ "almaty:ф а логистик казахстан": {
+  "name": "Ф.А. ЛОГИСТИК КАЗАХСТАН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "website": "http://forum-auto.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001087662656",
+  "avatar_checked_at": "2026-11-01T02:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ферронордик казахстан": {
   "name": "Ферронордик Казахстан",
   "city": "almaty",
@@ -7388,6 +7474,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:эрсиджи": {
+  "name": "ЭРСИДЖИ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
  },
  "almaty:эстетикс групп aesthetics group": {
   "name": "Эстетикс групп (Aesthetics Group)",
@@ -8364,6 +8457,20 @@
   "instagram": "hookahplace_botanic",
   "source": "https://2gis.kz/astana/firm/70000001113657283"
  },
+ "astana:hyundai auto esil": {
+  "name": "Hyundai Auto Esil",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "instagram": "hyundai_esil",
+  "website": "https://hyundai-esil.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001113076631",
+  "avatar_checked_at": "2026-11-01T02:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:ined kz": {
   "name": "ined.kz",
   "city": "astana",
@@ -9202,6 +9309,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "astana:star brands asia стар брэндс азия": {
+  "name": "Star Brands Asia (Стар Брэндс Азия)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "website": "http://starbrands-asia.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032821207",
+  "avatar_checked_at": "2026-11-01T02:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8a8d4990c267c61f.jpg",
+  "avatar_source": "website"
  },
  "astana:startaff": {
   "name": "Startaff",
@@ -10073,6 +10195,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "astana:дом финанс": {
+  "name": "ДОМ ФИНАНС",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
  },
  "astana:донер на абая mega silk way": {
   "name": "Донер на Абая (MEGA SILK WAY)",
@@ -10996,6 +11125,15 @@
    "website"
   ]
  },
+ "astana:сила харизмы": {
+  "name": "Сила Харизмы",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "instagram": "sila.harizmy.kz",
+  "source": "https://2gis.kz/astana/firm/70000001095646257"
+ },
  "astana:симба": {
   "name": "Симба",
   "city": "astana",
@@ -11145,6 +11283,29 @@
   ],
   "avatar": "24fd2d9268e3180c.jpg",
   "avatar_source": "website"
+ },
+ "astana:техцентр tez auto": {
+  "name": "Техцентр Tez Auto",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "instagram": "tezauto.kz",
+  "website": "https://www.tezauto.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001066224474",
+  "avatar_checked_at": "2026-11-01T02:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:тм erzo property тоо transcapital": {
+  "name": "ТМ ERZO.PROPERTY (ТОО TRANSCAPITAL)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "instagram": "goldland.erzo",
+  "source": "https://2gis.kz/astana/firm/70000001048078112"
  },
  "astana:торговая компания": {
   "name": "Торговая компания",
@@ -11535,6 +11696,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T23:43:38+00:00"
+ },
+ "atyrau:dancastle operations": {
+  "name": "Dancastle Operations",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00",
+  "website": "https://www.dancastle.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001093318420",
+  "avatar_checked_at": "2026-11-01T02:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "05e3fcfddcf82a06.jpg",
+  "avatar_source": "website"
  },
  "atyrau:eurasia support services": {
   "name": "Eurasia Support Services",
@@ -13862,6 +14038,13 @@
   "avatar": "cda222f1bf0f48f1.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:лмз техносталь": {
+  "name": "ЛМЗ ТехноСталь",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
+ },
  "pavlodar:остин казахстан ostin тм": {
   "name": "Остин Казахстан (O'stin ТМ)",
   "city": "pavlodar",
@@ -15265,6 +15448,13 @@
   "checked_at": "2026-10-30T05:43:28+00:00",
   "instagram": "expert_avto_taraz",
   "source": "https://2gis.kz/taraz/firm/70000001099954127"
+ },
+ "taraz:golden compass jambul": {
+  "name": "Golden Compass Jambul",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T02:42:54+00:00"
  },
  "taraz:green house limited": {
   "name": "Green House Limited",

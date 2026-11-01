@@ -1,4 +1,19 @@
 {
- "updated_at": "2026-11-01T13:25:53+00:00",
- "jobs": []
+ "updated_at": "2026-11-01T13:27:14+00:00",
+ "jobs": [
+  {
+   "id": 6,
+   "status": "pending",
+   "reviewed_at": null,
+   "created_at": "2026-11-01 13:25:07",
+   "city": "astana",
+   "title": "Курьер по доставке еды",
+   "company": "Яндекс",
+   "salary": "от 400 000 в месяц",
+   "schedule": "Свободный",
+   "address": "",
+   "city_name": "Астана",
+   "details": ""
+  }
+ ]
 }

@@ -1,5 +1,26 @@
 [
  {
+  "id": "hh-139035657",
+  "title": "Менеджер по продажам в премиальный бутик",
+  "category": "retail",
+  "city": "almaty",
+  "salary_min": 250000,
+  "salary_max": 550000,
+  "salary_period": "month",
+  "schedule": "2/2, Другое, 12 часов",
+  "perks": [],
+  "employer": "Спатарь Вадим Валерьевич",
+  "text": "Обязанности: Консультирование клиентов по ассортименту премиальной верхней одежды. Активные продажи и выполнение планов. Поддержание высокого уровня сервиса и презентации товара.\nТребования: Опыт работы в продажах от 1 года, предпочтительно в премиум сегменте. Коммуникабельность и клиентоориентированность. Знание техники продаж и умение работать...",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139035657?tech_source=api",
+  "posted_at": "2026-11-01T16:39:17+00:00",
+  "fingerprint": "0941ca4c6b58d026",
+  "also_seen_in": [],
+  "address": "проспект Сакена Сейфуллина, 617",
+  "top_until": null,
+  "title_kk": null
+ },
+ {
   "id": "hh-139035305",
   "title": "Горничная",
   "category": "service",
@@ -17,6 +38,30 @@
   "fingerprint": "abd129dba72a5c12",
   "also_seen_in": [],
   "address": "улица Ташена Утепова, 31блок1",
+  "top_until": null,
+  "title_kk": null
+ },
+ {
+  "id": "hh-138338081",
+  "title": "Менеджер по продажам образовательных услуг",
+  "category": "retail",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [],
+  "employer": "BUSINESS PRO",
+  "text": "Обязанности: Менеджер по онлайн-продажам (High Ticket Sales). Основные направления продуктов — бизнес, финансы, предпринимательство и другие экспертные ниши. Свободный график — с...\nТребования: Преимущества работы. Опыт продажи дорогих инфопродуктов с чеком от 4 000 обязателен. Опыт продаж через диагностические консультации и личные онлайн...",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138338081?tech_source=api",
+  "posted_at": "2026-11-01T16:13:00+00:00",
+  "fingerprint": "e0390cb71192fc07",
+  "also_seen_in": [
+   "https://hh.ru/vacancy/138338082?tech_source=api",
+   "https://hh.kz/vacancy/138338082?tech_source=api"
+  ],
+  "address": "Киев",
   "top_until": null,
   "title_kk": null
  },
@@ -35603,30 +35648,6 @@
    "https://t.me/rabota_v_nursultane1/12793"
   ],
   "address": "район аэропорта",
-  "top_until": null,
-  "title_kk": null
- },
- {
-  "id": "hh-138338081",
-  "title": "Менеджер по продажам образовательных услуг",
-  "category": "retail",
-  "city": "almaty",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [],
-  "employer": "BUSINESS PRO",
-  "text": "Обязанности: Менеджер по онлайн-продажам (High Ticket Sales). Основные направления продуктов — бизнес, финансы, предпринимательство и другие экспертные ниши. Свободный график — с...\nТребования: Преимущества работы. Опыт продажи дорогих инфопродуктов с чеком от 4 000 обязателен. Опыт продаж через диагностические консультации и личные онлайн...",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138338081?tech_source=api",
-  "posted_at": "2026-10-29T16:13:00+00:00",
-  "fingerprint": "e0390cb71192fc07",
-  "also_seen_in": [
-   "https://hh.ru/vacancy/138338082?tech_source=api",
-   "https://hh.kz/vacancy/138338082?tech_source=api"
-  ],
-  "address": "Киев",
   "top_until": null,
   "title_kk": null
  },

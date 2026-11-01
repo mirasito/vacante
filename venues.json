@@ -4433,6 +4433,20 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "almaty:prosnab service": {
+  "name": "PROSNAB service",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "instagram": "prosnab_service",
+  "website": "https://prosnabservice.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001034446055",
+  "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:qazaq parfum": {
   "name": "QAZAQ PARFUM",
   "city": "almaty",
@@ -5797,6 +5811,13 @@
    "website"
   ]
  },
+ "almaty:акерке": {
+  "name": "Акерке",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
+ },
  "almaty:акишев а д": {
   "name": "Акишев А.Д.",
   "city": "almaty",
@@ -6489,6 +6510,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:гарант": {
+  "name": "Гарант",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "almaty:гарант групп": {
   "name": "ТОО ГАРАНТ ГРУПП",
@@ -7532,6 +7560,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:мадина": {
+  "name": "Мадина",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "almaty:макаронная by sabina temiralieva": {
   "name": "Макаронная by Sabina Temiralieva",
@@ -8986,6 +9021,13 @@
    "website"
   ]
  },
+ "astana:advanced information security solutions": {
+  "name": "Advanced Information Security Solutions",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
+ },
  "astana:ag property management": {
   "name": "AG Property Management",
   "city": "astana",
@@ -9597,6 +9639,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "astana:drink tea": {
+  "name": "Drink tea",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "astana:ds trading company": {
   "name": "DS Trading Company",
@@ -10485,6 +10534,15 @@
   "avatar": "0d9c6b637e8d17bb.jpg",
   "avatar_source": "telegram"
  },
+ "astana:monamie сеть парфюмерно косметических магазинов": {
+  "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "instagram": "monamie.kz",
+  "source": "https://www.instagram.com/monamie.kz/"
+ },
  "astana:msq man": {
   "name": "MSQ Man",
   "city": "astana",
@@ -10802,6 +10860,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "https://qazaqoil.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019546485",
+  "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ca92e86388631a92.jpg",
+  "avatar_source": "website"
  },
  "astana:qazmedbio казмедбио": {
   "name": "QazMedBio (КазМедБио)",
@@ -11299,6 +11373,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "astana:uaka food": {
+  "name": "Uaka Food",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "astana:unilife": {
   "name": "UNILIFE",
@@ -12999,6 +13080,20 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "astana:перекресток": {
+  "name": "Перекрёсток",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "astana:пкф атриум": {
+  "name": "ПКФ Атриум",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
+ },
  "astana:пл люченте казахстан": {
   "name": "ПЛ-Люченте Казахстан",
   "city": "astana",
@@ -13493,6 +13588,22 @@
    "website"
   ],
   "avatar": "5df3670cc3055e35.jpg",
+  "avatar_source": "website"
+ },
+ "astana:традициональ": {
+  "name": "Традициональ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "instagram": "traditionalkz",
+  "website": "https://traditional.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018123134",
+  "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8a067c2e11e5312f.jpg",
   "avatar_source": "website"
  },
  "astana:тумар": {
@@ -15501,6 +15612,22 @@
   "avatar": "075e2d8bb86aaec8.jpg",
   "avatar_source": "website"
  },
+ "kostanay:bereke bank": {
+  "name": "Bereke Bank",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "instagram": "berekebank",
+  "website": "https://berekebank.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035266176",
+  "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9b64edf839ce14d9.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:hightower": {
   "name": "HIGHTOWER",
   "city": "kostanay",
@@ -15734,6 +15861,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "kostanay:дельта м казахстан": {
+  "name": "ДЕЛЬТА М КАЗАХСТАН",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "kostanay:деп": {
   "name": "ДЕП",
@@ -16269,6 +16403,13 @@
   "avatar": "a7f758c32a319200.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
+ },
  "pavlodar:kiddi": {
   "name": "Kiddi",
   "city": "pavlodar",
@@ -16459,6 +16600,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "pavlodar:ваша вахта": {
+  "name": "Ваша вахта",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "pavlodar:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
@@ -16691,6 +16839,15 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "pavlodar:стеклоцентр": {
+  "name": "Стеклоцентр",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "instagram": "steklocenterpvl",
+  "source": "https://2gis.kz/pavlodar/firm/70000001047987840"
+ },
  "pavlodar:стройлогистика": {
   "name": "Стройлогистика",
   "city": "pavlodar",
@@ -16836,6 +16993,13 @@
   ],
   "avatar": "e2850ad6049549da.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:vipcompany": {
+  "name": "VIPCOMPANY",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
  },
  "petropavlovsk:аушахметов т ш": {
   "name": "Аушахметов Т.Ш",
@@ -17505,6 +17669,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "shymkent:itconsult": {
+  "name": "ItConsult",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00"
+ },
  "shymkent:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "shymkent",
@@ -17821,6 +17992,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
+ },
+ "shymkent:детский мир казахстан": {
+  "name": "Детский мир - Казахстан",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T19:44:04+00:00",
+  "website": "https://detmir.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025997389",
+  "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "18af8f1d19974b66.jpg",
+  "avatar_source": "website"
  },
  "shymkent:дск 17": {
   "name": "ДСК 17",

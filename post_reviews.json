@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T19:56:13+00:00",
+ "updated_at": "2026-11-01T03:56:35+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -13909,6 +13909,21 @@
    "verdict": "approve",
    "at": "2026-10-31T19:56:13+00:00",
    "fields": {}
+  },
+  "hh-139029598": {
+   "verdict": "approve",
+   "at": "2026-11-01T03:56:35+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Алии Молдагуловой, 23"
+   }
+  },
+  "hh-138471501": {
+   "verdict": "approve",
+   "at": "2026-11-01T03:56:35+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов в день"
+   }
   }
  }
 }

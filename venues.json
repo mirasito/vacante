@@ -464,6 +464,13 @@
    "website"
   ]
  },
+ "aktobe:arzan shop": {
+  "name": "Arzan Shop",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
+ },
  "aktobe:asai clinic": {
   "name": "ASAI-CLINIC",
   "city": "aktobe",
@@ -857,6 +864,13 @@
   ],
   "avatar": "c3c5d4838db044df.jpg",
   "avatar_source": "website"
+ },
+ "almaty:365 consulting": {
+  "name": "365 Consulting",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
  },
  "almaty:585 золотой": {
   "name": "585, Золотой",
@@ -4600,6 +4614,21 @@
    "website"
   ]
  },
+ "almaty:tapioca": {
+  "name": "Tapioca",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "website": "https://tapioca.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001083248534",
+  "avatar_checked_at": "2026-11-01T09:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a2ba60bbfe4c6ba1.jpg",
+  "avatar_source": "website"
+ },
  "almaty:taurus gss": {
   "name": "Taurus GSS",
   "city": "almaty",
@@ -4618,6 +4647,19 @@
   "website": "https://teahouse.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790535",
   "avatar_checked_at": "2026-10-28T17:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "website": "https://technodom.kz/",
+  "source": "https://technodom.kz",
+  "avatar_checked_at": "2026-11-01T09:43:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -5483,6 +5525,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "almaty:анкер сталь кз": {
+  "name": "АНКЕР СТАЛЬ КЗ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "instagram": "ankernye_bolty_fundamentnye",
+  "website": "http://ankerstal.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032291297",
+  "avatar_checked_at": "2026-11-01T09:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:анкор центральная азия": {
   "name": "АНКОР Центральная Азия",
@@ -6731,6 +6787,20 @@
    "website"
   ]
  },
+ "almaty:линия система видеонаблюдения": {
+  "name": "ЛИНИЯ СИСТЕМА ВИДЕОНАБЛЮДЕНИЯ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "instagram": "liniya.kz",
+  "website": "http://www.devline.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103090761",
+  "avatar_checked_at": "2026-11-01T09:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ломбард белый tm": {
   "name": "Ломбард Белый TM",
   "city": "almaty",
@@ -7467,6 +7537,15 @@
    "website"
   ]
  },
+ "almaty:спутник": {
+  "name": "Спутник",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "instagram": "sputnikmall",
+  "source": "https://2gis.kz/almaty/firm/9429940000800634"
+ },
  "almaty:спэйспрачка spaceprachka": {
   "name": "СПЭЙСПРАЧКА (SPACEPRACHKA)",
   "city": "almaty",
@@ -7786,6 +7865,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:фараз": {
+  "name": "Фараз",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
  },
  "almaty:ферронордик казахстан": {
   "name": "Ферронордик Казахстан",
@@ -8676,6 +8762,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:defacto retail store kz": {
+  "name": "Defacto Retail Store Kz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
+ },
  "astana:delivery fast": {
   "name": "Delivery Fast",
   "city": "astana",
@@ -9388,6 +9481,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:manana": {
+  "name": "MANANA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "instagram": "manana_astana",
+  "source": "https://2gis.kz/astana/firm/70000001118381535"
  },
  "astana:mansur cafe mellys": {
   "name": "MANSUR CAFE  MELLY’S",
@@ -10934,6 +11036,15 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "astana:донер на абая": {
+  "name": "Донер на Абая",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "instagram": "doner_na_abaya_astanaa",
+  "source": "https://2gis.kz/astana/firm/70000001087620672"
+ },
  "astana:донер на абая mega silk way": {
   "name": "Донер на Абая (MEGA SILK WAY)",
   "city": "astana",
@@ -10986,6 +11097,13 @@
   ],
   "avatar": "56f0484378651c82.jpg",
   "avatar_source": "website"
+ },
+ "astana:емельянов": {
+  "name": "Емельянов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
  },
  "astana:ермекбаев": {
   "name": "Ермекбаев",
@@ -11626,6 +11744,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "astana:организация дорожного движения": {
+  "name": "Организация дорожного движения",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
+ },
  "astana:охранное агентство ran security": {
   "name": "Охранное агентство RAN SECURITY",
   "city": "astana",
@@ -11766,12 +11891,26 @@
   "instagram": "respublika_shagynmarket",
   "source": "https://2gis.kz/astana/firm/70000001112611319"
  },
+ "astana:ресторан rabiya": {
+  "name": "Ресторан Rabiya",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
+ },
  "astana:ресторан быстрого питания": {
   "name": "Ресторан быстрого питания",
   "city": "astana",
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "astana:ресторан восточной кухни vostok story": {
+  "name": "Ресторан восточной кухни Vostok Story",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
  },
  "astana:рик": {
   "name": "РиК",
@@ -13344,6 +13483,13 @@
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
  },
+ "karaganda:ертайлаков р ж": {
+  "name": "ЕРТАЙЛАКОВ Р. Ж",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
+ },
  "karaganda:интервзрыв": {
   "name": "ИнтерВзрыв",
   "city": "karaganda",
@@ -13645,6 +13791,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "karaganda:хантер агзс": {
+  "name": "Хантер АГЗС",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00",
+  "instagram": "huntergaskz",
+  "website": "https://huntergas.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302871178",
+  "avatar_checked_at": "2026-11-01T09:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "05e3af54aff93042.jpg",
+  "avatar_source": "website"
  },
  "karaganda:центр цветов крг": {
   "name": "Центр Цветов Крг",
@@ -14030,6 +14192,13 @@
   "checked_at": "2026-10-30T12:44:25+00:00",
   "instagram": "tehnopark_kz",
   "source": "https://2gis.kz/kostanaj/firm/70000001098644766"
+ },
+ "kostanay:wowtop": {
+  "name": "WOWTOP",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
  },
  "kostanay:zakaz auto group": {
   "name": "Zakaz Auto Group",
@@ -17282,6 +17451,13 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "ust-kamenogorsk:грп восток": {
+  "name": "ГРП ВОСТОК",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
+ },
  "ust-kamenogorsk:даньяров е д": {
   "name": "Даньяров Е.Д.",
   "city": "ust-kamenogorsk",
@@ -17411,6 +17587,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:көпбай р м": {
+  "name": "Көпбай Р.М.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-01T09:43:31+00:00"
  },
  "ust-kamenogorsk:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",

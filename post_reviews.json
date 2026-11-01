@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T09:57:34+00:00",
+ "updated_at": "2026-11-01T10:57:16+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -15275,6 +15275,255 @@
      "Без опыта"
     ]
    }
+  },
+  "astana_job_vakansii-130010": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Бармен, кассир",
+    "employer": "Банный комплекс «Аура»",
+    "address": "ул. Караменде би Шакаулы, 22",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "hh-138455739": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Мерчендайзер-грузчик",
+    "address": "пр. Шакарима Кудайбердиулы, 92"
+   }
+  },
+  "zhumys_astana_kz-17053": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Продавец-консультант, кассир",
+    "employer": "Минимаркет «Есиль»",
+    "schedule": "5/2, 09:00–21:00",
+    "address": "ул. Мангилик Ел, 17, ЖК «Коркем»",
+    "perks": []
+   }
+  },
+  "hh-139033242": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "address": "ул. Амангельды Иманова, 19"
+   }
+  },
+  "rabota_astanakz-31151": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {}
+  },
+  "hh-139033010": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": "Just Sing",
+    "address": "пр. Мангилик Ел, 36"
+   }
+  },
+  "astana_job_vakansii-130018": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Уборщица",
+    "employer": "Doff Company",
+    "schedule": "Пн–Пт, 09:00–19:00, Сб 10:00–16:00",
+    "address": "пер. Когалы, 9",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "astana_job_vakansii-130015": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": "Orda Academy",
+    "schedule": "13:00–21:00",
+    "perks": [
+     "Бонусы",
+     "Можно студентам",
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139033282": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Агент по недвижимости, не рабочая специальность"
+  },
+  "rabota4almaty-5993": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": "«Линия Система Видеонаблюдения»",
+    "address": "ул. Чаплина, 71/66"
+   }
+  },
+  "rabota4almaty-5994": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": "Автоломбард «Quick Finance»",
+    "address": "11-й мкр, 7"
+   }
+  },
+  "agashka_job_almaty-1026": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Набор водителей такси со своим авто через таксопарк"
+  },
+  "hh-138050647": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {}
+  },
+  "rabotaalmatyyyy-15235": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–18:00",
+    "address": "ул. Саина, 14/1"
+   }
+  },
+  "hh-139033220": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Банкетный официант",
+    "employer": "Hilton Garden Inn Almaty Al-Farabi",
+    "schedule": "5/2",
+    "address": "пр. Аль-Фараби, 140А/2",
+    "perks": []
+   }
+  },
+  "hh-138542260": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Работа в России"
+  },
+  "hh-138908075": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Работа в России"
+  },
+  "hh-138719623": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": "Барс Моторс",
+    "address": "ул. Ю. Ратушного, 78Г"
+   }
+  },
+  "rabota4almaty-5913": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": null,
+    "address": "ул. Жамбыла, 129"
+   }
+  },
+  "hh-138048890": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Офисная B2B-должность с высшим образованием"
+  },
+  "hh-138303719": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "address": "мкр. Нур Алатау, ул. Казыбек Тауасарулы, 3"
+   }
+  },
+  "almatyrabota1-21243": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Менеджер-оценщик в ломбард",
+    "employer": "Смарт Ломбард",
+    "salary_min": 250000,
+    "salary_max": 400000,
+    "salary_period": "month",
+    "schedule": "1/2, суточный",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "almatyvacancies-11100": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {}
+  },
+  "hh-139033278": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Продажа БАДов, похоже на сетевой маркетинг"
+  },
+  "hh-138119433": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "employer": "Daryn Online",
+    "address": "пр. Тауке хана, 106/1"
+   }
+  },
+  "hh-138571536": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "schedule": null
+   }
+  },
+  "rabotaaktau-141998": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Продавец в магазин женской одежды",
+    "schedule": "6/1, 10:00–19:00"
+   }
+  },
+  "rabotaaktau-141997": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Продавец, посудомойщица",
+    "employer": "Кондитерская «Манали»",
+    "perks": []
+   }
+  },
+  "rabotaaktau-141996": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Повар в фастфуд",
+    "salary_min": 10000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "13:00–01:00"
+   }
+  },
+  "hh-139033008": {
+   "verdict": "approve",
+   "at": "2026-11-01T10:57:16+00:00",
+   "fields": {
+    "title": "Торговый представитель с личным авто",
+    "address": "Тобыл, ул. 40 лет Октября, 74"
+   }
+  },
+  "hh-139033013": {
+   "verdict": "reject",
+   "at": "2026-11-01T10:57:16+00:00",
+   "reason": "Хромтау в Актюбинской области, не Костанай; руководящая должность"
   }
  }
 }

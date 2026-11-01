@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-01T05:56:56+00:00",
+ "updated_at": "2026-11-01T06:57:11+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -14328,6 +14328,233 @@
    "fields": {
     "schedule": "1/3"
    }
+  },
+  "rabota_astanakz-31141": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Посудомойщица, кухонный работник",
+    "employer": "Столовая «Ханым»",
+    "schedule": "6/1, 07:30–17:30",
+    "address": "ул. Бұйрат, 53, Индустриальный парк",
+    "perks": []
+   }
+  },
+  "hh-139031756": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "rabota_astanakz-31142": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Водитель Газели",
+    "schedule": "5/2"
+   }
+  },
+  "astana_job_vakansii-130000": {
+   "verdict": "reject",
+   "at": "2026-11-01T06:57:11+00:00",
+   "reason": "Стример и онлайн-менеджер, непонятная оплата"
+  },
+  "zhumys_astana_kz-17004": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Повар, пекарь, кассир",
+    "employer": null,
+    "salary_min": 300000,
+    "salary_max": 420000,
+    "salary_period": "month",
+    "schedule": "Пн–Пт"
+   }
+  },
+  "zhumys_astana_kz-17003": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Посудомойщица, официант, технический персонал",
+    "salary_min": 300000,
+    "salary_max": 320000,
+    "salary_period": "month",
+    "schedule": "Пн–Пт"
+   }
+  },
+  "zhumys_astana_kz-16839": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Лепщик, лепщица"
+   }
+  },
+  "astana_job_vakansii-129988": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "schedule": "07:00–02:00",
+    "address": "Сарыарка — Богенбай батыра"
+   }
+  },
+  "rabota_astanakz-31113": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Менеджер зала (администратор)",
+    "employer": null,
+    "schedule": "5/2 или 2/2",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-16990": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "schedule": "Пн–Сб, 08:30–19:00"
+   }
+  },
+  "hh-139031701": {
+   "verdict": "reject",
+   "at": "2026-11-01T06:57:11+00:00",
+   "reason": "Работа в посёлке Актогай, не в Алматы"
+  },
+  "hh-139031571": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "employer": "Дунфэн Трак КЗ",
+    "schedule": "5/2",
+    "address": "ул. Мухаммеда Физули, 64"
+   }
+  },
+  "rabota4almaty-5977": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "schedule": "2/2",
+    "address": "ул. Вишнёвая, 31"
+   }
+  },
+  "rabota4almaty-5926": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Мастер по наращиванию ресниц",
+    "employer": "Milash",
+    "schedule": "2/2",
+    "address": "ул. Кабдолова, 1/4, ТРЦ «Гранд Парк», 6 блок"
+   }
+  },
+  "rabota4almaty-5980": {
+   "verdict": "reject",
+   "at": "2026-11-01T06:57:11+00:00",
+   "reason": "Домработница в частный дом, мало сведений"
+  },
+  "rabota4almaty-5979": {
+   "verdict": "reject",
+   "at": "2026-11-01T06:57:11+00:00",
+   "reason": "Нет должности и описания"
+  },
+  "agashka_job_almaty-1023": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "address": "Зелёный базар"
+   }
+  },
+  "almaty_rabota_work-31757": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Сборщик-упаковщик на производство",
+    "schedule": "Пн–Пт, 09:00–18:00",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-130008373": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Оператор-кассир АЗС",
+    "schedule": "2/2"
+   }
+  },
+  "rabota4almaty-5974": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Работник цеха",
+    "schedule": "6/1, 07:45–20:15",
+    "address": "ул. Яссауи, 68"
+   }
+  },
+  "hh-139031736": {
+   "verdict": "reject",
+   "at": "2026-11-01T06:57:11+00:00",
+   "reason": "Офисная работа с онлайн-обращениями"
+  },
+  "aktobevakansii-44337": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "employer": "Банный комплекс «Алтын Бу»",
+    "schedule": "2/2, 11:00–00:00",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "vakansii_rabota_atyrau-49948": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–21:00",
+    "perks": [
+     "Обучение",
+     "Без опыта",
+     "Можно студентам"
+    ]
+   }
+  },
+  "vakansii_rabota_atyrau-49947": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-141984": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "employer": "Ресто-бар «Chechil»",
+    "schedule": "раннер 2/2, мясник 5/2",
+    "address": "7а мкр, здание 6"
+   }
+  },
+  "rabotaaktau-141983": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Продавец в мебельный салон"
+   }
+  },
+  "vakansiya_ukg-21709": {
+   "verdict": "approve",
+   "at": "2026-11-01T06:57:11+00:00",
+   "fields": {
+    "title": "Кассир (шаурма, фастфуд)"
+   }
+  },
+  "hh-139031677": {
+   "verdict": "reject",
+   "at": "2026-11-01T06:57:11+00:00",
+   "reason": "Работа в посёлке Актогай, не в Семее"
   }
  }
 }

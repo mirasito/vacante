@@ -1,5 +1,53 @@
 [
  {
+  "id": "bot-8",
+  "title": "Курьер по доставке еды",
+  "category": "delivery",
+  "city": "aktobe",
+  "salary_min": 400000,
+  "salary_max": null,
+  "salary_period": "month",
+  "schedule": null,
+  "perks": [],
+  "employer": "Яндекс",
+  "text": "Курьер по доставке еды, Яндекс.",
+  "source": "bot",
+  "source_url": "https://t.me/vacantekz_bot?start=apply_8",
+  "posted_at": "2026-11-01T13:31:35+00:00",
+  "fingerprint": "1f09362bc051b3e7",
+  "also_seen_in": [],
+  "address": null,
+  "top_until": null,
+  "title_kk": null
+ },
+ {
+  "id": "rabotaalmatyyyy-15194",
+  "title": "Курьер",
+  "category": "delivery",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [
+   "Бонусы"
+  ],
+  "employer": null,
+  "text": "🚴‍♂️ Yandex Go-ға курьерлер қабылдау басталды!\n\n💸 Жұмысты бүгін тіркеліп, ертеңнен бастап табыс табуға болады.\n\nБіз ұсынамыз\n✅ Күнделікті немесе апталық төлем\n🔥 Жоғары ставка + бонустар\n🍽 Тегін түскі ас + медициналық сақтандыру\n🚕 Кеш аяқталған ауысымнан кейін үйге тегін такси\n⏰ Икемді график — өз уақытыңызды өзіңіз таңдайсыз\n\n⚠️ Орын саны шектеулі!\n\n📲 WhatsApp",
+  "source": "telegram",
+  "source_url": "https://t.me/rabotaalmatyyyy/15194",
+  "posted_at": "2026-11-01T13:30:14+00:00",
+  "fingerprint": "251f5074bc5ccf77",
+  "also_seen_in": [
+   "https://t.me/rabotaalmatyyyy/15209",
+   "https://t.me/rabotaalmatyyyy/15238",
+   "https://t.me/rabotaalmatyyyy/15265"
+  ],
+  "address": null,
+  "top_until": null,
+  "title_kk": null
+ },
+ {
   "id": "agashka_job_almaty-1029",
   "title": "Кухонный работник",
   "category": "horeca",
@@ -80,6 +128,29 @@
   "fingerprint": "470c3b58c330f704",
   "also_seen_in": [],
   "address": null,
+  "top_until": null,
+  "title_kk": null
+ },
+ {
+  "id": "hh-139034379",
+  "title": "Кладовщик-комплектовщик",
+  "category": "warehouse",
+  "city": "ust-kamenogorsk",
+  "salary_min": null,
+  "salary_max": 400000,
+  "salary_period": "month",
+  "schedule": "Другое, Другое",
+  "perks": [
+   "Обучение"
+  ],
+  "employer": "MTK BIZON",
+  "text": "Обязанности: Работа по приему, хранению и отпуску товара. Комплектация и упаковка заказов. Проверка товара на качество. Поддержание порядка хранения и сохранности...\nТребования: Внимательность к мелочам и ответственность. Желание развиваться и готовность к обучению. Способность работать в команде. Лидерские качества. Инициативность, ответственность, внимательность...",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139034379?tech_source=api",
+  "posted_at": "2026-11-01T13:25:16+00:00",
+  "fingerprint": "5f439929d3a782e1",
+  "also_seen_in": [],
+  "address": "улица Бажова, 26",
   "top_until": null,
   "title_kk": null
  },
@@ -38569,32 +38640,6 @@
   "fingerprint": "278090d640711833",
   "also_seen_in": [],
   "address": "улица Ахмета Байтурсынова, 5",
-  "top_until": null,
-  "title_kk": null
- },
- {
-  "id": "rabotaalmatyyyy-15194",
-  "title": "Курьер",
-  "category": "delivery",
-  "city": "almaty",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [
-   "Бонусы"
-  ],
-  "employer": null,
-  "text": "🚴‍♂️ Yandex Go-ға курьерлер қабылдау басталды!\n\n💸 Жұмысты бүгін тіркеліп, ертеңнен бастап табыс табуға болады.\n\nБіз ұсынамыз\n✅ Күнделікті немесе апталық төлем\n🔥 Жоғары ставка + бонустар\n🍽 Тегін түскі ас + медициналық сақтандыру\n🚕 Кеш аяқталған ауысымнан кейін үйге тегін такси\n⏰ Икемді график — өз уақытыңызды өзіңіз таңдайсыз\n\n⚠️ Орын саны шектеулі!\n\n📲 WhatsApp",
-  "source": "telegram",
-  "source_url": "https://t.me/rabotaalmatyyyy/15194",
-  "posted_at": "2026-10-29T11:40:13+00:00",
-  "fingerprint": "251f5074bc5ccf77",
-  "also_seen_in": [
-   "https://t.me/rabotaalmatyyyy/15209",
-   "https://t.me/rabotaalmatyyyy/15238"
-  ],
-  "address": null,
   "top_until": null,
   "title_kk": null
  },

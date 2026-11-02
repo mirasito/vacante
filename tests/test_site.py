@@ -138,3 +138,19 @@ def test_kazakh_title_from_hh(tmp_path):
     build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 28, tzinfo=timezone.utc))
     assert "<h1>Менеджер по продажам</h1>" in (tmp_path / "public" / "v" / "hh-5" / "index.html").read_text()
     assert "<h1>Сату менеджер</h1>" in (tmp_path / "public" / "kk" / "v" / "hh-5" / "index.html").read_text()
+
+
+def test_build_writes_app_feed_by_city(tmp_path):
+    raw = RawPost("telegram", "chan", 9, "https://t.me/chan/9",
+                  "Кофейня ищет бариста, 250 000 тг, питание, без опыта",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    import json
+    index = json.loads((out / "app" / "data" / "index.json").read_text("utf-8"))
+    assert index["cities"] == [{"slug": "astana", "name": "Астана", "name_kk": "Астана", "count": 1}]
+    feed = json.loads((out / "app" / "data" / "astana.json").read_text("utf-8"))
+    card = feed["vacancies"][0]
+    assert card["title"] == "Бариста" and card["url"] == "https://vacante.kz/v/chan-9/"
+    assert card["pay"].replace("\xa0", " ") == "от 250 000 ₸/мес" and "Тамақ" in card["perks_kk"]

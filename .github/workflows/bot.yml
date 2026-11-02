@@ -104,4 +104,7 @@ jobs:
               {command: "vacancy", description: "Работодателям: разместить вакансию"},
               {command: "myjobs", description: "Работодателям: мои вакансии и отклики"}]}' \
             | curl -fsS "$tg/setMyCommands" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
+          # Кнопка слева от поля ввода открывает приложение со свайпами (app/, выложено на сайте в /app/)
+          jq -n '{menu_button: {type: "web_app", text: "Вакансии", web_app: {url: "https://vacante.kz/app/"}}}' \
+            | curl -fsS "$tg/setChatMenuButton" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
           echo "Бот: https://vacante-bot.$sub.workers.dev"

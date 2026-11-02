@@ -23,7 +23,7 @@ from vacante import venues as venue_store
 from vacante.direct import POST_URL
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
-from vacante.site import i18n
+from vacante.site import appfeed, i18n
 from vacante.site.admin import admin_data, seal
 from vacante.store import load_vacancies
 
@@ -315,6 +315,8 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": v.perks, "pay": monthly_pay(v) or 0,
              "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
     (out / "feed.json").write_text(json.dumps({"vacancies": feed}, ensure_ascii=False), "utf-8")
+    # Лента приложения со свайпами (app/ в репозитории): вакансии по городам
+    appfeed.write(out, vacancies, base_url, now, venues)
     # Админка: не в sitemap и закрыта от индексации. Данные только зашифрованные паролем владельца,
     # страница сама спрашивает пароль и расшифровывает их. Без пароля данных нет вовсе.
     (out / "admin").mkdir()

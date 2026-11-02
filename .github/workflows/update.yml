@@ -98,6 +98,17 @@ jobs:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}  # данные админки шифруются этим паролем
         run: python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
 
+      # Веб-версия приложения со свайпами (её собирает app.yml в ветку app-web) ложится рядом
+      # с данными ленты в public/app/
+      - name: Приложение в /app/
+        run: |
+          if git fetch -q origin app-web; then
+            mkdir -p public/app
+            git archive FETCH_HEAD | tar -x -C public/app
+          else
+            echo "::notice::Ветки app-web ещё нет, приложение не выкладываю"
+          fi
+
       # Только когда есть секрет INSTAGRAM_TOKEN: карточки подборок городов, которым по графику пора
       - name: Карточки подборок в Instagram
         id: instagram

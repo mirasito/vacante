@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Vacante",
+    "slug": "vacante",
+    "scheme": "vacante",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "description": "Вакансии Казахстана свайпами: кафе, магазины, склады, доставка.",
+    "ios": {
+      "bundleIdentifier": "kz.vacante.app",
+      "supportsTablet": false,
+      "config": { "usesNonExemptEncryption": false }
+    },
+    "android": {
+      "package": "kz.vacante.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0a8ff0",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "name": "Vacante — вакансии свайпами",
+      "shortName": "Vacante",
+      "lang": "ru",
+      "themeColor": "#0a8ff0",
+      "backgroundColor": "#f4f4f6",
+      "favicon": "./assets/favicon.png",
+      "output": "single"
+    },
+    "experiments": {
+      "baseUrl": "/app"
+    }
+  }
+}

@@ -364,6 +364,13 @@
   "avatar": "729c0357b48979b7.jpg",
   "avatar_source": "website"
  },
+ "aktau:гулнур": {
+  "name": "Гулнур",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "aktau:дана": {
   "name": "Дана",
   "city": "aktau",
@@ -386,6 +393,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
+ },
+ "aktau:жана отель": {
+  "name": "Жана Отель",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "zhanaotel",
+  "source": "https://2gis.kz/aktau/firm/70000001028544286"
  },
  "aktau:жигер": {
   "name": "Жигер",
@@ -578,6 +594,22 @@
   "checked_at": "2026-11-01T12:43:29+00:00",
   "instagram": "subeli_as",
   "source": "https://2gis.kz/aktau/firm/70000001092490132"
+ },
+ "aktau:тагам": {
+  "name": "Тагам",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "tagam.kz_aktau",
+  "website": "https://tagam-halal.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001112412244",
+  "avatar_checked_at": "2026-11-02T18:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e0aa1d8661cc75be.jpg",
+  "avatar_source": "website"
  },
  "aktau:топ стоп": {
   "name": "ТОП-СТОП",
@@ -3046,6 +3078,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "almaty:elitalco kz": {
+  "name": "Elitalco.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "elitalco.kz",
+  "website": "https://newelitalco.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001023478167",
+  "avatar_checked_at": "2026-11-02T18:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "443769ab581372b5.jpg",
+  "avatar_source": "website"
  },
  "almaty:elite personnel": {
   "name": "Elite personnel",
@@ -6555,6 +6603,13 @@
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
  },
+ "almaty:авангард": {
+  "name": "Авангард",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "almaty:аватария": {
   "name": "Аватария",
   "city": "almaty",
@@ -8081,6 +8136,13 @@
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
  },
+ "almaty:ильхам trade": {
+  "name": "Ильхам trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "almaty:инжиниринговая компания казгипронефтетранс": {
   "name": "ИНЖИНИРИНГОВАЯ КОМПАНИЯ КАЗГИПРОНЕФТЕТРАНС",
   "city": "almaty",
@@ -8120,6 +8182,20 @@
   "website": "http://www.ims-box.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000795872",
   "avatar_checked_at": "2026-10-29T09:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:интеркоммерц казахстан": {
+  "name": "Интеркоммерц Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "intercommertz_kazakhstan",
+  "website": "https://www.intercommertz.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795885",
+  "avatar_checked_at": "2026-11-02T18:43:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8344,6 +8420,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:каспарова а в дилижанс шоу": {
+  "name": "Каспарова А.В. Дилижанс-шоу",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "prokat_kostumov_01",
+  "website": "https://dilizhans-show.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000868162",
+  "avatar_checked_at": "2026-11-02T18:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "be2ef08ca35a5fc3.jpg",
+  "avatar_source": "website"
  },
  "almaty:кафе софт сервис": {
   "name": "Кафе Софт Сервис",
@@ -9481,6 +9573,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "almaty:сакаева": {
+  "name": "Сакаева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "almaty:сандугаш": {
   "name": "Сандугаш",
   "city": "almaty",
@@ -10429,6 +10528,15 @@
   "checked_at": "2026-10-28T21:46:06+00:00",
   "instagram": "merhat_jewelry",
   "source": "https://2gis.kz/almaty/firm/70000001038668959"
+ },
+ "almaty:юг электрокомплект": {
+  "name": "Юг-ЭлектроКомплект",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "ekt.kz",
+  "source": "https://2gis.kz/almaty/firm/9429940000802539"
  },
  "almaty:юрий": {
   "name": "Юрий",
@@ -14939,6 +15047,13 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "astana:кофейня segafredo": {
+  "name": "Кофейня Segafredo",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "astana:ксж freedom life": {
   "name": "КСЖ Freedom Life",
   "city": "astana",
@@ -15394,6 +15509,13 @@
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
  },
+ "astana:охранное агентство": {
+  "name": "Охранное агентство",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "astana:охранное агентство ran security": {
   "name": "Охранное агентство RAN SECURITY",
   "city": "astana",
@@ -15767,6 +15889,13 @@
   "instagram": "simba_astana",
   "source": "https://2gis.kz/astana/firm/70000001032647185"
  },
+ "astana:сит фирма строительных материалов": {
+  "name": "Сит (фирма строительных материалов)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "astana:склад kaspi": {
   "name": "Склад KASPI",
   "city": "astana",
@@ -16041,6 +16170,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
+ },
+ "astana:торговая компания unity": {
+  "name": "Торговая компания UNITY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
  },
  "astana:торговая компания дозор": {
   "name": "Торговая компания ДОЗОР",
@@ -17319,6 +17455,13 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "karaganda:karavan караван": {
+  "name": "KARAVAN (КАРАВАН)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "karaganda:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "karaganda",
@@ -17350,6 +17493,13 @@
   ],
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
  },
  "karaganda:kmf банк": {
   "name": "KMF Банк",
@@ -18335,6 +18485,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "kokshetau:delonghi": {
+  "name": "De'Longhi",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "instagram": "delonghikazakhstan",
+  "website": "https://delonghi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001066718175",
+  "avatar_checked_at": "2026-11-02T18:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kokshetau:etalon auto": {
   "name": "Etalon Auto",
@@ -19988,6 +20152,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
+ },
+ "pavlodar:нагиев": {
+  "name": "Нагиев",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
  },
  "pavlodar:остин казахстан ostin тм": {
   "name": "Остин Казахстан (O'stin ТМ)",
@@ -22323,6 +22494,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "turkestan:aknazar holding": {
+  "name": "AKNAZAR HOLDING",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00"
+ },
  "turkestan:bellas": {
   "name": "BELLAS",
   "city": "turkestan",
@@ -22430,6 +22608,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
+ },
+ "uralsk:common market corporation": {
+  "name": "Common Market Corporation",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:43:31+00:00",
+  "website": "https://common.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025330598",
+  "avatar_checked_at": "2026-11-02T18:43:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:cosmoshop": {
   "name": "COSMOSHOP",

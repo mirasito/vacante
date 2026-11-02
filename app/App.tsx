@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   ActivityIndicator,
+  BackHandler,
   FlatList,
   Modal,
   Pressable,
@@ -115,6 +116,22 @@ function Main() {
     telegram()?.setHeaderColor?.(c.bg);
     telegram()?.setBackgroundColor?.(c.bg);
   }, [c.bg]);
+
+  // Кнопка «Назад» на Android сначала закрывает выбор города и «Избранное», а не всё приложение
+  useEffect(() => {
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+      if (picking && city) {
+        setPicking(false);
+        return true;
+      }
+      if (tab === 'liked') {
+        setTab('feed');
+        return true;
+      }
+      return false;
+    });
+    return () => sub.remove();
+  }, [picking, city, tab]);
 
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),

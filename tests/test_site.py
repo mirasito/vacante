@@ -14,7 +14,7 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     out = tmp_path / "public"
     count = build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
-    assert count == 8  # главная, город, город+сфера, вакансия: по-русски и по-казахски
+    assert count == 10  # главная, город, город+сфера, вакансия, конфиденциальность: по-русски и по-казахски
     page = (out / "v" / "chan-5" / "index.html").read_text("utf-8")
     assert "Официант" in page and "14 000 – 18 000 ₸/день" in page
     assert 'href="https://t.me/chan/5"' in page
@@ -154,3 +154,18 @@ def test_build_writes_app_feed_by_city(tmp_path):
     card = feed["vacancies"][0]
     assert card["title"] == "Бариста" and card["url"] == "https://vacante.kz/v/chan-9/"
     assert card["pay"].replace("\xa0", " ") == "от 250 000 ₸/мес" and "Тамақ" in card["perks_kk"]
+
+
+def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
+    raw = RawPost("telegram", "chan", 10, "https://t.me/chan/10", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    ru = (out / "privacy" / "index.html").read_text("utf-8")
+    kk = (out / "kk" / "privacy" / "index.html").read_text("utf-8")
+    assert "<h1>Политика конфиденциальности</h1>" in ru and "только на вашем устройстве" in ru
+    assert "<h1>Құпиялылық саясаты</h1>" in kk and '<html lang="kk">' in kk
+    home = (out / "index.html").read_text("utf-8")
+    assert 'href="/privacy/"' in home and 'href="/app/"' in home
+    assert 'href="/kk/privacy/"' in (out / "kk" / "index.html").read_text("utf-8")

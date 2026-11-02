@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, channels, collect, digest, direct, quality, review, venues
+from vacante import autopost, channels, collect, digest, direct, instagram, quality, review, venues
 from vacante.site import build
 from vacante.store import load_vacancies
 
@@ -51,6 +51,14 @@ def main() -> None:
     p_replay.add_argument("--base-ref", default="origin/main", help="с какой версией parse.py сравнивать")
     p_replay.add_argument("--examples", type=int, default=8)
 
+    p_ig = sub.add_parser("instagram", help="подборки вакансий в Instagram по городам")
+    p_ig.add_argument("action", choices=["plan", "publish"],
+                      help="plan: карточки и план на этот час в <out>/ig/; publish: опубликовать план (INSTAGRAM_TOKEN)")
+    p_ig.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_ig.add_argument("--out", type=Path, default=Path("public"), help="plan: куда положить карточки (сайт)")
+    p_ig.add_argument("--plan", type=Path, help="publish: файл плана (по умолчанию <out>/ig/plan.json)")
+    p_ig.add_argument("--base-url", default="https://vacante.kz")
+
     p_build = sub.add_parser("build", help="собрать статический сайт")
     p_build.add_argument("--data-dir", type=Path, default=Path("data"))
     p_build.add_argument("--out", type=Path, default=Path("public"))
@@ -72,6 +80,8 @@ def main() -> None:
         run_venues(args)
     elif args.command == "review":
         run_review(args)
+    elif args.command == "instagram":
+        run_instagram(args)
     elif args.command == "post":
         token = os.environ.get("TELEGRAM_BOT_TOKEN")
         if not token:
@@ -119,6 +129,22 @@ def annotate(report: list[tuple[str, str]], title: str) -> None:
         if lines:
             text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
             print(f"::{level} title={title}::{text}")
+
+
+def run_instagram(args: argparse.Namespace) -> None:
+    if args.action == "plan":
+        posts = instagram.plan(args.data_dir, args.out, args.base_url)
+        logging.info("instagram: подборки на этот час: %s", ", ".join(p["city"] for p in posts) or "нет")
+        return
+    token = os.environ.get("INSTAGRAM_TOKEN")
+    if not token:
+        print("::notice title=Instagram в ленту::нет секрета INSTAGRAM_TOKEN, пропускаю")
+        return
+    path = args.plan or args.out / instagram.PLAN
+    posts = json.loads(path.read_text("utf-8"))["posts"] if path.exists() else []
+    with httpx.Client(timeout=60) as client:
+        publisher = instagram.Publisher(venues.InstagramAPI(client, token))
+        annotate(instagram.publish(args.data_dir, posts, publisher), "Instagram в ленту")
 
 
 def run_review(args: argparse.Namespace) -> None:

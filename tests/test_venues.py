@@ -250,8 +250,9 @@ def test_instagram_check_without_instagram_and_page_token():
         return httpx.Response(200, json={"business_discovery": {"profile_picture_url": "https://cdn.test/a.jpg"}})
 
     assert venues.InstagramAPI(graph(page), "page-token").check(now=NOW) == [
-        ("токен", "страницы «vacante», права: instagram_basic"), ("аккаунт", "Instagram id 1784"),
-        ("проверка", "Business Discovery работает: @dino_fest_almaty")]
+        ("токен", "страницы «vacante», права: instagram_basic"),
+        ("публикация", "нет права instagram_content_publish: подборки в ленту не выйдут"),
+        ("аккаунт", "Instagram id 1784"), ("проверка", "Business Discovery работает: @dino_fest_almaty")]
 
 
 def test_telegram_avatar_via_bot_api():

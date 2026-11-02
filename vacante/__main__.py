@@ -152,7 +152,9 @@ def run_venues(args: argparse.Namespace) -> None:
     with httpx.Client(timeout=20, follow_redirects=True) as client:
         sources = {}
         if token := os.environ.get("INSTAGRAM_TOKEN"):
-            sources["instagram"] = venues.InstagramAPI(client, token).avatar
+            instagram = venues.InstagramAPI(client, token)
+            annotate(instagram.check(), "Instagram")
+            sources["instagram"] = instagram.avatar
         if token := os.environ.get("TELEGRAM_BOT_TOKEN"):
             sources["telegram"] = venues.TelegramAvatars(client, token).avatar
         sources["website"] = venues.WebsiteLogo(client).avatar

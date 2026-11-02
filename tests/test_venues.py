@@ -200,6 +200,58 @@ def test_instagram_api_with_user_token_and_expired_token():
         api.avatar("dino_fest_almaty")
 
 
+def user_graph(granted_instagram: bool):
+    """Токен пользователя, которому при входе не отдали страницу; Instagram отмечен или нет."""
+    def handler(request):
+        fields = request.url.params.get("fields", "")
+        path = request.url.path
+        if path.endswith("/me") and fields == "instagram_business_account":
+            return httpx.Response(400, json={"error": {"message": "(#100) Tried accessing nonexisting field "
+                                                       "(instagram_business_account) on node type (User)", "code": 100}})
+        if path.endswith("/me"):
+            return httpx.Response(200, json={"id": "5", "name": "Miras"})
+        if path.endswith("/me/accounts"):
+            return httpx.Response(200, json={"data": []})
+        if path.endswith("/debug_token"):
+            scopes = [{"scope": "pages_show_list"}]
+            if granted_instagram:
+                scopes.append({"scope": "instagram_basic", "target_ids": ["1784"]})
+            return httpx.Response(200, json={"data": {
+                "type": "USER", "expires_at": int((NOW + timedelta(hours=1)).timestamp()),
+                "scopes": ["instagram_basic", "pages_show_list"], "granular_scopes": scopes}})
+        if path.endswith("/1784"):
+            return httpx.Response(200, json={"business_discovery": {"profile_picture_url": "https://cdn.test/a.jpg"}})
+        return httpx.Response(200, content=b"jpeg")
+    return graph(handler)
+
+
+def test_instagram_check_user_token_with_instagram_chosen_at_login():
+    api = venues.InstagramAPI(user_graph(granted_instagram=True), "user-token")
+    report = dict(api.check(now=NOW))
+    assert report["токен"].startswith("пользователя «Miras», права: instagram_basic, pages_show_list")
+    assert report["срок"].startswith("error: токен истекает")
+    assert report["страницы"].startswith("error: токен не видит ни одной страницы")
+    assert report["аккаунт"] == "Instagram id 1784"
+    assert report["проверка"] == "Business Discovery работает: @dino_fest_almaty"
+    assert api.avatar("dino_fest_almaty") == b"jpeg"
+
+
+def test_instagram_check_without_instagram_and_page_token():
+    report = dict(venues.InstagramAPI(user_graph(granted_instagram=False), "user-token").check(now=NOW))
+    assert report["ошибка"] == "error: Instagram API: у токена нет страницы с привязанным бизнес-аккаунтом Instagram"
+
+    def page(request):
+        if request.url.path.endswith("/debug_token"):
+            return httpx.Response(200, json={"data": {"type": "PAGE", "expires_at": 0, "scopes": ["instagram_basic"]}})
+        if request.url.path.endswith("/me"):
+            return httpx.Response(200, json={"id": "99", "name": "vacante", "instagram_business_account": {"id": "1784"}})
+        return httpx.Response(200, json={"business_discovery": {"profile_picture_url": "https://cdn.test/a.jpg"}})
+
+    assert venues.InstagramAPI(graph(page), "page-token").check(now=NOW) == [
+        ("токен", "страницы «vacante», права: instagram_basic"), ("аккаунт", "Instagram id 1784"),
+        ("проверка", "Business Discovery работает: @dino_fest_almaty")]
+
+
 def test_telegram_avatar_via_bot_api():
     def handler(request):
         assert "SECRET" in request.url.path

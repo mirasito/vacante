@@ -335,19 +335,70 @@ class InstagramAPI:
             raise (TokenError if error.get("code") in (102, 190) else RuntimeError)(message)
         return body
 
+    def _debug(self) -> dict:
+        """Сведения о самом токене: тип, срок, права, выбранные при входе страницы и аккаунты Instagram."""
+        try:
+            return self._get("debug_token", input_token=self.token).get("data", {})
+        except TokenError:
+            raise
+        except RuntimeError:  # токен страницы debug_token может не принять: это не ошибка
+            return {}
+
+    def _pages(self) -> list[dict]:
+        return self._get("me/accounts", fields="name,instagram_business_account").get("data", [])
+
     def user_id(self) -> str:
         """id Instagram-аккаунта vacante, от имени которого идут запросы."""
         if self._user_id is None:
-            me = self._get("me", fields="instagram_business_account")  # токен страницы
-            account = me.get("instagram_business_account")
+            try:
+                account = self._get("me", fields="instagram_business_account").get("instagram_business_account")
+            except TokenError:
+                raise
+            except RuntimeError:  # у пользователя (не страницы) такого поля нет
+                account = None
             if not account:  # токен пользователя: ищем среди его страниц
-                pages = self._get("me/accounts", fields="instagram_business_account").get("data", [])
-                account = next((p["instagram_business_account"] for p in pages
+                account = next((p["instagram_business_account"] for p in self._pages()
                                 if p.get("instagram_business_account")), None)
+            if not account:  # страниц не видно, но аккаунт Instagram могли отметить при входе
+                ids = next((s.get("target_ids") for s in self._debug().get("granular_scopes", [])
+                            if s.get("scope") == "instagram_basic"), None)
+                account = {"id": ids[0]} if ids else None
             if not account:
                 raise TokenError("Instagram API: у токена нет страницы с привязанным бизнес-аккаунтом Instagram")
             self._user_id = account["id"]
         return self._user_id
+
+    def check(self, probe: str = "dino_fest_almaty", now: datetime | None = None) -> list[tuple[str, str]]:
+        """Что видит токен, для аннотации «Instagram» в каждом запуске «Заведений». Сам токен не выводится."""
+        now = now or datetime.now(timezone.utc)
+        report = []
+        try:
+            name = self._get("me", fields="name").get("name", "?")
+            info = self._debug()
+            kind = {"USER": "пользователя", "PAGE": "страницы"}.get(info.get("type"), "неизвестного типа")
+            scopes = ", ".join(info.get("scopes", [])) or "не видно"
+            line = f"{kind} «{name}», права: {scopes}"
+            expires = info.get("expires_at")
+            if expires:  # 0: бессрочный
+                until = datetime.fromtimestamp(expires, timezone.utc)
+                line += f", действует до {until:%Y-%m-%d %H:%M} UTC"
+                if until - now < timedelta(days=7):
+                    report.append(("срок", f"error: токен истекает {until:%Y-%m-%d %H:%M} UTC, нужен долгий (README)"))
+            report.insert(0, ("токен", line))
+            if kind == "пользователя":
+                pages = self._pages()
+                linked = [p.get("name", "?") + (" с Instagram" if p.get("instagram_business_account") else " без Instagram")
+                          for p in pages]
+                report.append(("страницы", ", ".join(linked) if linked else
+                               "error: токен не видит ни одной страницы Facebook (при входе не отметили страницу?)"))
+            report.append(("аккаунт", f"Instagram id {self.user_id()}"))
+            body = self._get(self.user_id(), fields=f"business_discovery.username({probe}){{username,profile_picture_url}}")
+            ok = body.get("business_discovery", {}).get("profile_picture_url")
+            report.append(("проверка", f"Business Discovery работает: @{probe}" if ok
+                           else f"error: Business Discovery не вернул фото @{probe}"))
+        except RuntimeError as exc:  # и TokenError
+            report.append(("ошибка", f"error: {exc}"))
+        return report
 
     def avatar(self, username: str) -> bytes | None:
         try:

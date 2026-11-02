@@ -302,9 +302,12 @@ function Main() {
       </View>
 
       <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)} transparent>
-        {open ? <Details v={open} lang={lang} c={c} onClose={() => setOpen(null)} /> : null}
+        {/* У модального окна своя иерархия view: отступы под вырез экрана считаем заново */}
+        <SafeAreaProvider>
+          {open ? <Details v={open} lang={lang} c={c} onClose={() => setOpen(null)} /> : null}
+        </SafeAreaProvider>
       </Modal>
-      <StatusBar style={c.bg === '#0f0f10' ? 'light' : 'dark'} />
+      <StatusBar style="auto" />
     </Screen>
   );
 }

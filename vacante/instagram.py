@@ -10,8 +10,10 @@
 2. После выкладки сайта `publish` создаёт контейнеры карусели через Instagram Graph API, публикует их
    и записывает вышедшее в instagram.json ветки data.
 
-Нужно: секрет INSTAGRAM_TOKEN с правами instagram_basic, instagram_content_publish, pages_show_list,
-pages_read_engagement и страница Facebook с привязанным бизнес-аккаунтом Instagram. Пока Instagram не
+Нужно: секрет INSTAGRAM_TOKEN — либо токен входа через Instagram (Instagram API with Instagram Login, права
+instagram_business_basic и instagram_business_content_publish, страница Facebook не нужна), либо токен
+Facebook с правами instagram_basic, instagram_content_publish, pages_show_list, pages_read_engagement и
+страницей, к которой привязан бизнес-аккаунт Instagram. Пока Instagram не
 привязан, публикация пропускается (аннотация «Instagram в ленту») и включится сама.
 """
 
@@ -205,7 +207,7 @@ class Publisher:
         self.api, self.sleep = api, sleep
 
     def _post(self, path: str, **params) -> dict:
-        r = self.api.client.post(f"{venues.GRAPH}/{path}", data={**params, "access_token": self.api.token})
+        r = self.api.client.post(f"{self.api.base}/{path}", data={**params, "access_token": self.api.token})
         body = r.json() if r.headers.get("content-type", "").startswith(("application/json", "text/javascript")) else {}
         if r.status_code != 200:
             error = body.get("error", {})
@@ -219,6 +221,8 @@ class Publisher:
             self.api.user_id()
         except RuntimeError as exc:
             return str(exc)
+        if self.api.instagram_login:
+            return None  # debug_token у graph.instagram.com нет; без права instagram_business_content_publish ответит API
         scopes = self.api._debug().get("scopes")
         if scopes is not None and "instagram_content_publish" not in scopes:
             return "у токена нет права instagram_content_publish: выберите его при создании токена"

@@ -182,7 +182,7 @@ def run_venues(args: argparse.Namespace) -> None:
             annotate(instagram.check(), "Instagram")
             # Instagram ещё не привязан: это видно в аннотации «Instagram», а «Аватары» не засоряем
             # ошибкой на каждом заведении, и агент не пишет о ней каждый час
-            if instagram.linked is not False:
+            if instagram.linked is not False and not instagram.instagram_login:
                 sources["instagram"] = instagram.avatar
         if token := os.environ.get("TELEGRAM_BOT_TOKEN"):
             sources["telegram"] = venues.TelegramAvatars(client, token).avatar

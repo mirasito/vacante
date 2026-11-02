@@ -233,12 +233,14 @@ def test_instagram_check_user_token_with_instagram_chosen_at_login():
     assert report["страницы"].startswith("error: токен не видит ни одной страницы")
     assert report["аккаунт"] == "Instagram id 1784"
     assert report["проверка"] == "Business Discovery работает: @dino_fest_almaty"
-    assert api.avatar("dino_fest_almaty") == b"jpeg"
+    assert api.linked is True and api.avatar("dino_fest_almaty") == b"jpeg"
 
 
 def test_instagram_check_without_instagram_and_page_token():
-    report = dict(venues.InstagramAPI(user_graph(granted_instagram=False), "user-token").check(now=NOW))
+    api = venues.InstagramAPI(user_graph(granted_instagram=False), "user-token")
+    report = dict(api.check(now=NOW))
     assert report["ошибка"] == "error: Instagram API: у токена нет страницы с привязанным бизнес-аккаунтом Instagram"
+    assert api.linked is False
 
     def page(request):
         if request.url.path.endswith("/debug_token"):

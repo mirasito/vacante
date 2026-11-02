@@ -323,6 +323,7 @@ class InstagramAPI:
     def __init__(self, client: httpx.Client, token: str):
         self.client, self.token = client, token
         self._user_id: str | None = None
+        self.linked: bool | None = None  # False: токен рабочий, но Instagram к нему не привязан
 
     def _get(self, path: str, **params) -> dict:
         r = self.client.get(f"{GRAPH}/{path}", params={**params, "access_token": self.token})
@@ -363,6 +364,7 @@ class InstagramAPI:
                 ids = next((s.get("target_ids") for s in self._debug().get("granular_scopes", [])
                             if s.get("scope") == "instagram_basic"), None)
                 account = {"id": ids[0]} if ids else None
+            self.linked = bool(account)
             if not account:
                 raise TokenError("Instagram API: у токена нет страницы с привязанным бизнес-аккаунтом Instagram")
             self._user_id = account["id"]

@@ -1,0 +1,64 @@
+# Сборка Android-приложения (app/) для Google Play на серверах Expo (EAS Build, бесплатный план).
+# Запуск вручную: Actions → «Android» → Run workflow. Нужен секрет EXPO_TOKEN (expo.dev → Account settings →
+# Access tokens); пока его нет, сборка пропускается. Ключ подписи EAS создаёт и хранит сам при первой сборке.
+# Готовый .aab скачивается по ссылке из итога прогона; первую версию загружают в Play Console вручную.
+name: Android
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: android
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      EAS: npx -y eas-cli@27.2.0  # версия закреплена: обновлять, только проверив сборку
+    steps:
+      - name: Проверить секрет
+        id: secrets
+        run: |
+          if [ -z "$EXPO_TOKEN" ]; then
+            echo "::warning::Нет секрета EXPO_TOKEN: создайте токен на expo.dev и добавьте его в Settings → Secrets and variables → Actions"
+          else
+            echo "ready=1" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.secrets.outputs.ready
+
+      - uses: actions/setup-node@v4
+        if: steps.secrets.outputs.ready
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Зависимости
+        if: steps.secrets.outputs.ready
+        working-directory: app
+        run: npm ci
+
+      # Создаёт проект @<аккаунт>/vacante на expo.dev или привязывает уже созданный (пишет projectId в app.json)
+      - name: Проект на expo.dev
+        if: steps.secrets.outputs.ready
+        working-directory: app
+        run: $EAS init --non-interactive --force
+
+      - name: Сборка .aab
+        if: steps.secrets.outputs.ready
+        working-directory: app
+        run: |
+          $EAS build -p android --profile production --non-interactive --no-wait --json > build.json
+          url=$(jq -r '.[0] | "https://expo.dev/accounts/\(.app.ownerAccount.name)/projects/\(.app.slug)/builds/\(.id)"' build.json)
+          echo "Сборка: $url"
+          {
+            echo "### Android-сборка запущена"
+            echo
+            echo "Статус и файл .aab: $url"
+            echo
+            echo "На бесплатном плане сборка ждёт в очереди, иногда больше часа."
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -305,6 +305,9 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                   vacancies=cat_items, total=len(cat_items), city=slug, category=cat, city_counts=city_counts,
                   category_counts=_category_counts(items), channels=tg_channels)
 
+    # Политика конфиденциальности: на неё ссылаются подвал сайта и страница приложения в Google Play
+    write("privacy", "privacy.html")
+
     for v in vacancies:
         # Разметка для Google Jobs только на русской странице: одна вакансия — одно объявление
         ld = job_posting_ld(v, base_url, venue_store.lookup(venues, v))

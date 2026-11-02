@@ -4208,6 +4208,13 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "almaty:mehkaz": {
+  "name": "MehKaz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "almaty:mia kazakhstan": {
   "name": "MIA Kazakhstan",
   "city": "almaty",
@@ -5719,6 +5726,20 @@
    "website"
   ]
  },
+ "almaty:vm premium almaty": {
+  "name": "VM Premium Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "changan_vmpremium_almaty",
+  "website": "http://changan-vmpremiumalmaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001111386609",
+  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:vzboilers": {
   "name": "VZboilers",
   "city": "almaty",
@@ -6024,6 +6045,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:автостройремсервис": {
+  "name": "Автостройремсервис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "almaty:автотрейд": {
   "name": "Автотрейд",
   "city": "almaty",
@@ -6044,6 +6072,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "almaty:ада 6": {
+  "name": "АДА-6",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
  },
  "almaty:адф логистик": {
   "name": "АДФ-ЛОГИСТИК",
@@ -6544,6 +6579,22 @@
   ],
   "avatar": "8f94bcdf1c743b53.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:астра дент": {
+  "name": "Астра-дент",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "astra_dent",
+  "website": "https://astradent.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001152366",
+  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d9dbe8a92a81450c.jpg",
+  "avatar_source": "website"
  },
  "almaty:астра лoмбард": {
   "name": "Астра-Лoмбард",
@@ -8493,6 +8544,13 @@
   "avatar": "80df1adb856a5fa9.jpg",
   "avatar_source": "website"
  },
+ "almaty:псф алонс": {
+  "name": "ПСФ АЛОНС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "almaty:рахымжанов": {
   "name": "ИП Рахымжанов",
   "city": "almaty",
@@ -9184,6 +9242,13 @@
   "avatar": "19e405b78d420e43.jpg",
   "avatar_source": "website"
  },
+ "almaty:финтех": {
+  "name": "финтех",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "almaty:фирма а профиль": {
   "name": "Фирма А-Профиль",
   "city": "almaty",
@@ -9511,6 +9576,13 @@
    "website"
   ]
  },
+ "astana:2 зерделі мектебі": {
+  "name": "№2 Зерделі мектебі",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "astana:3 й тайм": {
   "name": "3-й Тайм",
   "city": "astana",
@@ -9603,6 +9675,13 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "aiel_astana",
   "source": "https://2gis.kz/astana/firm/70000001103100650"
+ },
+ "astana:aitas rtc": {
+  "name": "Aitas RTC",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
  },
  "astana:aitolkyn": {
   "name": "Aitolkyn",
@@ -10702,6 +10781,13 @@
   "checked_at": "2026-11-01T05:43:29+00:00",
   "instagram": "instaxmini.qz",
   "source": "https://www.instagram.com/instaxmini.qz/"
+ },
+ "astana:integra x": {
+  "name": "Integra X",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
  },
  "astana:intermode интермоде": {
   "name": "Intermode (Интермоде)",
@@ -12334,6 +12420,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "astana:азиястрой": {
+  "name": "АзияСтрой",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
  },
  "astana:айару групп": {
   "name": "Айару групп",
@@ -14327,6 +14420,15 @@
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
  },
+ "astana:темир лизинг": {
+  "name": "ТЕМИР ЛИЗИНГ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "temir.leasing",
+  "source": "https://2gis.kz/astana/firm/70000001018520438"
+ },
  "astana:тепло": {
   "name": "ТЕПЛО",
   "city": "astana",
@@ -14939,6 +15041,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "atyrau:haiat": {
+  "name": "Haiat",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "haiat_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001095162774"
  },
  "atyrau:hydroserv central asia": {
   "name": "Hydroserv Central Asia",
@@ -16788,6 +16899,13 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "kostanay:альфа инвест групп": {
+  "name": "Альфа Инвест Групп",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "kostanay:ампер трейд": {
   "name": "Ампер Трейд",
   "city": "kostanay",
@@ -16908,6 +17026,21 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "kostanay:евразиан фудс корпорэйшн ао": {
+  "name": "Евразиан Фудс Корпорэйшн, АО",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "website": "https://efc.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001044483047",
+  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "32916b346658ff2c.jpg",
+  "avatar_source": "website"
  },
  "kostanay:каmlitkz": {
   "name": "КаmLitKZ",
@@ -18221,6 +18354,13 @@
   "instagram": "pater.servis.kz_",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001038080998"
  },
+ "petropavlovsk:петров а с": {
+  "name": "ПЕТРОВ А.С.",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "petropavlovsk:прессбук": {
   "name": "ПрессБук",
   "city": "petropavlovsk",
@@ -18701,6 +18841,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "shymkent:beeline тм": {
+  "name": "Beeline, ТМ",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "beeline_kz",
+  "source": "https://www.instagram.com/beeline_kz/"
  },
  "shymkent:beibars bottlers бейбарс ботлерс": {
   "name": "Beibars Bottlers (Бейбарс Ботлерс)",
@@ -19305,6 +19454,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "shymkent:м двери пон в в": {
+  "name": "М.двери (Пон В.В.)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00"
+ },
  "shymkent:мирахметова дилбар бахтиер қизи": {
   "name": "МИРАХМЕТОВА ДИЛБАР БАХТИЁР ҚИЗИ",
   "city": "shymkent",
@@ -19591,6 +19747,20 @@
   ],
   "avatar": "6c3988993487cfd7.jpg",
   "avatar_source": "website"
+ },
+ "taraz:alem agro holding алемагро холдинг": {
+  "name": "Alem Agro Holding (АлемАгро Холдинг)",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "alemagro",
+  "website": "http://alemagro.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001035777558",
+  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "taraz:alvin market": {
   "name": "Alvin Market",
@@ -20671,6 +20841,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:интерполе": {
+  "name": "ИНТЕРПОЛЕ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T03:43:32+00:00",
+  "instagram": "agrotrak_interpole_kz",
+  "website": "http://www.interpole.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001022776785",
+  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f85f7dae75dcac7c.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:казахские домашние сети": {
   "name": "Казахские Домашние Сети",

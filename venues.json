@@ -923,6 +923,19 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "aktobe:аврора холдинг": {
+  "name": "Аврора Холдинг",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00",
+  "website": "https://avh.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001049266757",
+  "avatar_checked_at": "2026-11-02T18:01:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
   "city": "aktobe",
@@ -6825,6 +6838,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "almaty:алатау плаза": {
+  "name": "Алатау Плаза",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "almaty:алатау премиум мунай": {
   "name": "Алатау Премиум Мунай",
   "city": "almaty",
@@ -7148,6 +7168,20 @@
   "website": "https://artinsight.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001044727010",
   "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:аспан карагай машинери": {
+  "name": "Аспан Карагай Машинери",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00",
+  "instagram": "akm_komatsu",
+  "website": "http://ak-machinery.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110878349",
+  "avatar_checked_at": "2026-11-02T18:01:01+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7855,6 +7889,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "almaty:елемесов": {
+  "name": "Елемесов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
  },
  "almaty:елисеев максим анатольевич": {
   "name": "Елисеев Максим Анатольевич",
@@ -11236,6 +11277,13 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "astana:delonghi": {
+  "name": "De'Longhi",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "astana:delta sport казахстан": {
   "name": "Delta Sport (Казахстан)",
   "city": "astana",
@@ -11961,6 +12009,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
+ },
+ "astana:kitchen": {
+  "name": "Kitchen",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
  },
  "astana:kmf банк": {
   "name": "KMF Банк",
@@ -13145,6 +13200,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "astana:steklove kz": {
+  "name": "StekLove Kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00",
+  "instagram": "steklove.ast",
+  "source": "https://2gis.kz/astana/firm/70000001112346984"
  },
  "astana:strong tea": {
   "name": "Strong tea",
@@ -14529,6 +14593,13 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "astana:жуматаева а с": {
+  "name": "Жуматаева А.С.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "astana:заммлер казахстан": {
   "name": "ЗАММЛЕР КАЗАХСТАН",
   "city": "astana",
@@ -15181,6 +15252,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "astana:молоснова мария алексеевна": {
+  "name": "Молоснова Мария Алексеевна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "astana:мона": {
   "name": "МОНА",
   "city": "astana",
@@ -15689,6 +15767,13 @@
   "instagram": "simba_astana",
   "source": "https://2gis.kz/astana/firm/70000001032647185"
  },
+ "astana:склад kaspi": {
+  "name": "Склад KASPI",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "astana:служба доставки суши": {
   "name": "Служба доставки суши",
   "city": "astana",
@@ -15857,6 +15942,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:таргенетика": {
+  "name": "Таргенетика",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
  },
  "astana:тарту": {
   "name": "Тарту",
@@ -16278,6 +16370,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "astana:школа robo valli": {
+  "name": "Школа Robo VALLI",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00",
+  "instagram": "robovalli.kz",
+  "source": "https://2gis.kz/astana/firm/70000001103854709"
  },
  "astana:эдем": {
   "name": "ЭДЕМ",
@@ -16828,6 +16929,21 @@
   "instagram": "akzhelken_group",
   "source": "https://2gis.kz/atyrau/firm/70000001093959071"
  },
+ "atyrau:дудар": {
+  "name": "Дудар",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001090257851",
+  "avatar_checked_at": "2026-11-02T18:01:01+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "342cc1d8a67576b2.jpg",
+  "avatar_source": "website"
+ },
  "atyrau:кари кз": {
   "name": "КАРИ КЗ",
   "city": "atyrau",
@@ -17057,6 +17173,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "karaganda:darom as kazakhstan": {
+  "name": "Darom As Kazakhstan",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
  },
  "karaganda:delivery fast": {
   "name": "Delivery Fast",
@@ -17613,6 +17736,13 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "karaganda:головкина в м": {
+  "name": "Головкина В.М",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "karaganda:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "karaganda",
@@ -18042,6 +18172,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "karaganda:тм romeo flowers касымгалиев а а": {
+  "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "karaganda:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
   "city": "karaganda",
@@ -18344,6 +18481,13 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "kokshetau:деко": {
+  "name": "Деко",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
+ },
  "kokshetau:завод казагромаш": {
   "name": "ЗАВОД КАЗАГРОМАШ",
   "city": "kokshetau",
@@ -18520,6 +18664,13 @@
   ],
   "avatar": "9b64edf839ce14d9.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:call center ecommerce": {
+  "name": "Call-center ecommerce",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
  },
  "kostanay:dynamic group": {
   "name": "Dynamic Group",
@@ -19336,6 +19487,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "kyzylorda:фудмастер тм": {
+  "name": "ФудМастер, ТМ",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00",
+  "instagram": "foodmaster_kz",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001076718765"
  },
  "kyzylorda:чк hong tu mining group co ltd": {
   "name": "ЧК HONG TU MINING GROUP CO., LTD.",
@@ -21965,6 +22125,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
+ },
+ "taraz:deluxe сауда": {
+  "name": "DeLuxe Сауда",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T18:01:00+00:00"
  },
  "taraz:expert авто": {
   "name": "EXPERT АВТО",

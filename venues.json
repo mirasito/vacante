@@ -731,6 +731,20 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "aktobe:kcell": {
+  "name": "Kcell",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "kcell.kz",
+  "website": "https://kcell.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032148654",
+  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:kol auto service": {
   "name": "«Kol-Auto-Service»",
   "city": "aktobe",
@@ -1465,6 +1479,13 @@
    "website"
   ]
  },
+ "almaty:aluminium of kazakhstan": {
+  "name": "Aluminium of Kazakhstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
+ },
  "almaty:amimed": {
   "name": "AMIMED",
   "city": "almaty",
@@ -2056,6 +2077,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:beestroy build esthetic group": {
+  "name": "BeeStroy(Build Esthetic Group)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
  },
  "almaty:bekzat": {
   "name": "BEKZAT",
@@ -2916,6 +2944,13 @@
   "avatar": "8e044ddc18469726.jpg",
   "avatar_source": "website"
  },
+ "almaty:euro truck": {
+  "name": "Euro Truck",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
+ },
  "almaty:eurosnab": {
   "name": "EUROSNAB",
   "city": "almaty",
@@ -3356,6 +3391,19 @@
    "website"
   ]
  },
+ "almaty:headhunter казахстан": {
+  "name": "HeadHunter: Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "website": "https://hh.kz/",
+  "source": "https://hh.kz/article/15661",
+  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:hella good taxi": {
   "name": "Hella Good Taxi",
   "city": "almaty",
@@ -3401,6 +3449,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "almaty:home credit bank дб ао fortebank": {
+  "name": "Home Credit Bank (ДБ АО «ForteBank»)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "homecredit_kz",
+  "telegram": "homecreditbankkz",
+  "website": "https://home.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001093317335",
+  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "11bfdaebd28e77dc.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:howaboutsmm": {
   "name": "Howaboutsmm",
@@ -8212,6 +8278,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:оо окп рк": {
+  "name": "ОО ОКП РК",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
+ },
  "almaty:оптимус медика": {
   "name": "Оптимус Медика",
   "city": "almaty",
@@ -9095,6 +9168,22 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "almaty:филип моррис казахстан": {
+  "name": "Филип Моррис Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "philipmorriskz",
+  "website": "https://www.pmi.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940001320635",
+  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "19e405b78d420e43.jpg",
+  "avatar_source": "website"
+ },
  "almaty:фирма а профиль": {
   "name": "Фирма А-Профиль",
   "city": "almaty",
@@ -9233,6 +9322,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "almaty:шабыт+": {
+  "name": "Шабыт+",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
  },
  "almaty:шевцов богдан васильевич": {
   "name": "Шевцов Богдан Васильевич",
@@ -9744,6 +9840,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "astana:beau monde": {
+  "name": "Beau Monde",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "beau_monde_beauty_",
+  "source": "https://2gis.kz/astana/firm/70000001117338871"
  },
  "astana:bi group": {
   "name": "BI Group",
@@ -10551,6 +10656,15 @@
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
  },
+ "astana:industriall recycling": {
+  "name": "INDUSTRIALL RECYCLING",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "ir_metallkz",
+  "source": "https://2gis.kz/astana/firm/70000001080829138"
+ },
  "astana:ined kz": {
   "name": "ined.kz",
   "city": "astana",
@@ -11306,6 +11420,13 @@
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
  },
+ "astana:premium": {
+  "name": "Premium",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
+ },
  "astana:prima distribution": {
   "name": "Prima Distribution",
   "city": "astana",
@@ -11638,6 +11759,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "astana:slon coffee": {
+  "name": "Slon Coffee",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "slon_astana",
+  "source": "https://2gis.kz/astana/firm/70000001078512582"
  },
  "astana:sm minerals": {
   "name": "SM Minerals",
@@ -12092,6 +12222,22 @@
    "website"
   ],
   "avatar": "33e53a3b07aaeb4d.jpg",
+  "avatar_source": "website"
+ },
+ "astana:yans янс": {
+  "name": "YANS (ЯНС)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "yans.kz",
+  "website": "https://yans.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001021677977",
+  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bbc8cf1cf844416c.jpg",
   "avatar_source": "website"
  },
  "astana:zanger": {
@@ -14382,6 +14528,13 @@
    "website"
   ]
  },
+ "astana:фастфуд ресторан": {
+  "name": "Фастфуд-ресторан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
+ },
  "astana:филиал рдц клиника animed": {
   "name": "ФИЛИАЛ РДЦ- КЛИНИКА ANIMED",
   "city": "astana",
@@ -14635,6 +14788,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "astana:қызмет": {
+  "name": "Қызмет",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
  },
  "astana:құрылысшы ltd": {
   "name": "Құрылысшы LTD",
@@ -17035,6 +17195,22 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "kostanay:торговая компания мегаполис казахстан": {
+  "name": "Торговая Компания Мегаполис-Казахстан",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00",
+  "instagram": "megapoliskazakhstan",
+  "website": "http://tc-megapolis.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001039539401",
+  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4a42ac3356557c41.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:фирма стс бетон": {
   "name": "ФИРМА СТС-Бетон",
   "city": "kostanay",
@@ -18268,6 +18444,13 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "semey:акваарт": {
+  "name": "Акваарт",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
+ },
  "semey:алатау": {
   "name": "Алатау",
   "city": "semey",
@@ -18525,6 +18708,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "shymkent:cinema operation": {
+  "name": "Cinema operation",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
  },
  "shymkent:daryn online": {
   "name": "Daryn.online",
@@ -19930,6 +20120,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "uralsk:жұмыс тәжірибем бар": {
+  "name": "Жұмыс тәжірибем бар",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T02:43:14+00:00"
  },
  "uralsk:игрушек": {
   "name": "ИГРУШЕК",

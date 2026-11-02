@@ -99,3 +99,130 @@ def render(v: Vacancy, avatar: bytes | None = None) -> bytes:
     out = BytesIO()
     img.save(out, "PNG", optimize=True)
     return out.getvalue()
+
+
+# Подборка в Instagram: карусель 4:5 (1080×1350, JPEG — других форматов Instagram API не принимает).
+# Первая карточка — обложка города со списком должностей, дальше по карточке на вакансию.
+
+SLIDE_W, SLIDE_H, SLIDE_PAD = 1080, 1350, 84
+BRAND, BRAND_SOFT = "#0b4f8a", "#9cc7ef"
+
+
+def _jpeg(img: Image.Image) -> bytes:
+    out = BytesIO()
+    img.save(out, "JPEG", quality=90, optimize=True, progressive=True)
+    return out.getvalue()
+
+
+def _letter_logo(img: Image.Image, v: Vacancy, box: tuple[int, int], size: int) -> None:
+    draw = ImageDraw.Draw(img)
+    x, y = box
+    draw.rounded_rectangle((x, y, x + size, y + size), radius=size // 5, fill=COLORS[v.category])
+    letter = next((ch for ch in (v.employer or v.title) if ch.isalnum()), "V").upper()
+    draw.text((x + size / 2, y + size / 2), letter, font=_font("Bold", int(size * 0.54)), fill="white", anchor="mm")
+
+
+def _logo(img: Image.Image, v: Vacancy, avatar: bytes | None, box: tuple[int, int], size: int) -> None:
+    if avatar:
+        try:
+            with Image.open(BytesIO(avatar)) as pic:
+                pic = ImageOps.fit(pic.convert("RGB"), (size, size), Image.LANCZOS)
+            mask = Image.new("L", (size, size), 0)
+            ImageDraw.Draw(mask).rounded_rectangle((0, 0, size - 1, size - 1), radius=size // 5, fill=255)
+            img.paste(pic, box, mask)
+            return
+        except OSError:
+            pass
+    _letter_logo(img, v, box, size)
+
+
+def cover(where: str, items: list[Vacancy], date_label: str, channel: str | None = None) -> bytes:
+    """Обложка подборки «Работа в Алматы» (where — город в предложном падеже): сколько вакансий и первые должности с зарплатой."""
+    img = Image.new("RGB", (SLIDE_W, SLIDE_H), BRAND)
+    draw = ImageDraw.Draw(img)
+    x, width = SLIDE_PAD, SLIDE_W - 2 * SLIDE_PAD
+    draw.text((x, SLIDE_PAD), "vacante.kz", font=_font("Bold", 44), fill="white")
+    draw.text((SLIDE_W - SLIDE_PAD, SLIDE_PAD + 4), date_label, font=_font("SemiBold", 36), fill=BRAND_SOFT,
+              anchor="ra")
+    y = 250
+    draw.text((x, y), "Работа", font=_font("Bold", 120), fill="white")
+    y += 140
+    for line in _wrap(draw, f"в {where}", _font("Bold", 120), width, 2):
+        draw.text((x, y), line, font=_font("Bold", 120), fill="white")
+        y += 140
+    count = len(items)
+    y += 20
+    draw.text((x, y), f"Свежих вакансий: {count}", font=_font("SemiBold", 46), fill=BRAND_SOFT)
+    y += 110
+    row_font, pay_font = _font("SemiBold", 42), _font("Regular", 36)
+    for v in items[:5]:
+        draw.ellipse((x, y + 16, x + 16, y + 32), fill=BRAND_SOFT)
+        draw.text((x + 40, y), _wrap(draw, v.title, row_font, width - 40, 1)[0], font=row_font, fill="white")
+        y += 54
+        if pay := salary_label(v):
+            draw.text((x + 40, y), pay, font=pay_font, fill=BRAND_SOFT)
+            y += 48
+        y += 22
+        if y > SLIDE_H - 300:
+            break
+    footer = "Листайте »"
+    draw.text((x, SLIDE_H - SLIDE_PAD), footer, font=_font("Bold", 48), fill="white", anchor="ls")
+    if channel:
+        draw.text((SLIDE_W - SLIDE_PAD, SLIDE_H - SLIDE_PAD), f"Telegram {channel}", font=_font("SemiBold", 36),
+                  fill=BRAND_SOFT, anchor="rs")
+    return _jpeg(img)
+
+
+def slide(v: Vacancy, avatar: bytes | None = None, page: str = "", channel: str | None = None) -> bytes:
+    """Карточка вакансии в карусели: значок, должность, заведение, адрес, зарплата, график и условия."""
+    # Содержимое рисуем отдельно и ставим по центру между верхом и подвалом карточки
+    img = Image.new("RGB", (SLIDE_W, SLIDE_H), "white")
+    draw = ImageDraw.Draw(img)
+    x, width, logo = SLIDE_PAD, SLIDE_W - 2 * SLIDE_PAD, 220
+    if page:
+        draw.text((SLIDE_W - SLIDE_PAD, SLIDE_PAD), page, font=_font("SemiBold", 34), fill="#adb5bd", anchor="ra")
+    footer_top = SLIDE_H - 150
+    body = Image.new("RGB", (SLIDE_W, SLIDE_H), "white")
+    img, canvas = body, img
+    draw = ImageDraw.Draw(img)
+    _logo(img, v, avatar, (x, 0), logo)
+    y = logo + 64
+    blocks = [(v.title, _font("Bold", 80), INK, 96, 3)]
+    if v.employer:
+        blocks.append((v.employer, _font("SemiBold", 52), INK, 66, 2))
+    place = city_name(v.city) + (f", {v.address}" if v.address else "")
+    blocks.append((place, _font("Regular", 42), QUIET, 56, 2))
+    for text, font, color, step, lines in blocks:
+        for line in _wrap(draw, text, font, width, lines):
+            draw.text((x, y), line, font=font, fill=color)
+            y += step
+        y += 18
+    if salary := salary_label(v):
+        font = _font("SemiBold", 50)
+        y += 10
+        w = draw.textlength(salary, font=font)
+        draw.rounded_rectangle((x, y, x + min(w + 72, width), y + 96), radius=48, fill=PILL)
+        draw.text((x + 36, y + 48), salary, font=font, fill=PILL_INK, anchor="lm")
+        y += 96 + 40
+    facts = ([f"График: {v.schedule}"] if v.schedule else []) + list(v.perks[:4])
+    limit = footer_top - 40 - (SLIDE_PAD + 40) - 58  # в координатах содержимого
+    fact_font = _font("Regular", 40)
+    for fact in facts:
+        if y > limit:
+            break
+        if fact in v.perks:  # галочка рисуется: в шрифте Inter её нет
+            draw.line((x + 4, y + 26, x + 14, y + 37, x + 34, y + 12), fill=PILL_INK, width=6, joint="curve")
+        else:
+            draw.ellipse((x + 10, y + 18, x + 26, y + 34), fill=PILL_INK)
+        draw.text((x + 48, y), _wrap(draw, fact, fact_font, width - 48, 1)[0], font=fact_font, fill=INK)
+        y += 58
+    top = SLIDE_PAD + 40
+    top += max(0, (footer_top - 40 - top - y) // 2)
+    img, draw = canvas, ImageDraw.Draw(canvas)
+    img.paste(body.crop((0, 0, SLIDE_W, y)), (0, top))
+    draw.line((x, SLIDE_H - 150, SLIDE_W - SLIDE_PAD, SLIDE_H - 150), fill="#e9ecef", width=3)
+    draw.text((x, SLIDE_H - SLIDE_PAD), "Откликнуться: vacante.kz", font=_font("Bold", 40), fill=BRAND, anchor="ls")
+    if channel:
+        draw.text((SLIDE_W - SLIDE_PAD, SLIDE_H - SLIDE_PAD), channel, font=_font("SemiBold", 34), fill=QUIET,
+                  anchor="rs")
+    return _jpeg(img)

@@ -387,6 +387,8 @@ class InstagramAPI:
                 if until - now < timedelta(days=7):
                     report.append(("срок", f"error: токен истекает {until:%Y-%m-%d %H:%M} UTC, нужен долгий (README)"))
             report.insert(0, ("токен", line))
+            if info.get("scopes") and "instagram_content_publish" not in info["scopes"]:
+                report.append(("публикация", "нет права instagram_content_publish: подборки в ленту не выйдут"))
             if kind == "пользователя":
                 pages = self._pages()
                 linked = [p.get("name", "?") + (" с Instagram" if p.get("instagram_business_account") else " без Instagram")

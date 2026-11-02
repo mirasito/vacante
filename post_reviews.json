@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-02T17:59:51+00:00",
+ "updated_at": "2026-11-02T18:57:05+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -21434,6 +21434,58 @@
    "fields": {
     "schedule": "2/2",
     "address": "ул. Абая, 1"
+   }
+  },
+  "rabota_astanakz-31205": {
+   "verdict": "approve",
+   "at": "2026-11-02T18:57:05+00:00",
+   "fields": {
+    "employer": "Кофейня «Segafredo»",
+    "schedule": "2/2, 08:00–00:00",
+    "perks": [
+     "Развозка"
+    ]
+   }
+  },
+  "rabota_astanakz-31203": {
+   "verdict": "approve",
+   "at": "2026-11-02T18:57:05+00:00",
+   "fields": {
+    "employer": "Торговая компания «UNITY»",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-139083723": {
+   "verdict": "approve",
+   "at": "2026-11-02T18:57:05+00:00",
+   "fields": {
+    "schedule": "6/1 или 2/2"
+   }
+  },
+  "hh-139059220": {
+   "verdict": "approve",
+   "at": "2026-11-02T18:57:05+00:00",
+   "fields": {
+    "employer": "Бахус"
+   }
+  },
+  "hh-139083813": {
+   "verdict": "approve",
+   "at": "2026-11-02T18:57:05+00:00",
+   "fields": {
+    "title": "Грузчик на открытие магазина",
+    "schedule": "смены по 11 часов",
+    "address": "пр. Строителей, 23"
+   }
+  },
+  "hh-139083789": {
+   "verdict": "approve",
+   "at": "2026-11-02T18:57:05+00:00",
+   "fields": {
+    "perks": [],
+    "address": "ул. Генерала Бакирова, 36/1"
    }
   }
  }

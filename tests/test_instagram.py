@@ -162,3 +162,28 @@ def test_publish_without_linked_instagram(tmp_path):
     assert report == [("instagram", "пропущено: Instagram API: у токена нет страницы с привязанным "
                                     "бизнес-аккаунтом Instagram")]
     assert instagram.publish(tmp_path, [], instagram.Publisher(api), NOON, CONFIG) == [("подборки", "на этот час нет")]
+
+
+def test_publish_with_instagram_login_token_needs_no_facebook_page(tmp_path):
+    hosts, calls = set(), []
+
+    def handler(request):
+        hosts.add(request.url.host)
+        path = request.url.path
+        calls.append(path.rsplit("/", 1)[-1])
+        if path.endswith("/me"):
+            return httpx.Response(200, json={"user_id": 1784, "username": "vacante.kz"})
+        if path.endswith("/content_publishing_limit"):
+            return httpx.Response(200, json={"data": [{"quota_usage": 0, "config": {"quota_total": 100}}]})
+        if path.endswith("/1784/media"):
+            return httpx.Response(200, json={"id": f"c{calls.count('media')}"})
+        if path.endswith("/media_publish"):
+            return httpx.Response(200, json={"id": "post"})
+        return httpx.Response(200, json={"status_code": "FINISHED"})
+
+    api = venues.InstagramAPI(httpx.Client(transport=httpx.MockTransport(handler)), "IGAAtoken")
+    assert api.check() == [("токен", "вход через Instagram, @vacante.kz, id 1784: подборки в ленту работают, "
+                                     "аватары заведений через такой токен недоступны")]
+    report = instagram.publish(tmp_path, POSTS[:1], instagram.Publisher(api, sleep=lambda s: None), NOON, CONFIG)
+    assert report == [("astana", "опубликовано, 2 вакансий (пост post)")]
+    assert hosts == {"graph.instagram.com"} and "debug_token" not in calls

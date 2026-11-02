@@ -47,6 +47,9 @@ STATUSES = ("found", "none", "skip")
 VERSION = 3
 LINKS = ("instagram", "telegram", "website")
 GRAPH = "https://graph.facebook.com/v23.0"
+# Токен входа через Instagram (Instagram API with Instagram Login, начинается с IG): страница Facebook
+# не нужна, запросы идут на graph.instagram.com. Business Discovery (аватары заведений) так недоступен.
+INSTAGRAM_GRAPH = "https://graph.instagram.com/v23.0"
 USER_AGENT = "vacante.kz/1.0 (+https://vacante.kz)"
 MIN_AVATAR = 96  # меньше этого значок будет мутным
 
@@ -322,11 +325,13 @@ class InstagramAPI:
 
     def __init__(self, client: httpx.Client, token: str):
         self.client, self.token = client, token
+        self.instagram_login = token.startswith("IG")
+        self.base = INSTAGRAM_GRAPH if self.instagram_login else GRAPH
         self._user_id: str | None = None
         self.linked: bool | None = None  # False: токен рабочий, но Instagram к нему не привязан
 
     def _get(self, path: str, **params) -> dict:
-        r = self.client.get(f"{GRAPH}/{path}", params={**params, "access_token": self.token})
+        r = self.client.get(f"{self.base}/{path}", params={**params, "access_token": self.token})
         body = r.json() if r.headers.get("content-type", "").startswith(("application/json", "text/javascript")) else {}
         if r.status_code != 200:
             error = body.get("error", {})
@@ -350,6 +355,9 @@ class InstagramAPI:
 
     def user_id(self) -> str:
         """id Instagram-аккаунта vacante, от имени которого идут запросы."""
+        if self._user_id is None and self.instagram_login:
+            self._user_id = str(self._get("me", fields="user_id")["user_id"])
+            self.linked = True
         if self._user_id is None:
             try:
                 account = self._get("me", fields="instagram_business_account").get("instagram_business_account")
@@ -374,6 +382,14 @@ class InstagramAPI:
         """Что видит токен, для аннотации «Instagram» в каждом запуске «Заведений». Сам токен не выводится."""
         now = now or datetime.now(timezone.utc)
         report = []
+        if self.instagram_login:
+            try:
+                me = self._get("me", fields="user_id,username")
+                self._user_id, self.linked = str(me["user_id"]), True
+                return [("токен", f"вход через Instagram, @{me.get('username', '?')}, id {self._user_id}: подборки в "
+                                  "ленту работают, аватары заведений через такой токен недоступны")]
+            except (RuntimeError, KeyError) as exc:
+                return [("ошибка", f"error: {exc}")]
         try:
             name = self._get("me", fields="name").get("name", "?")
             info = self._debug()

@@ -145,6 +145,13 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "aktau:mirror": {
+  "name": "MIRROR",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
+ },
  "aktau:monte napoleone": {
   "name": "MONTE NAPOLEONE",
   "city": "aktau",
@@ -2498,6 +2505,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:darina": {
+  "name": "Darina",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
+ },
  "almaty:daris tte": {
   "name": "Daris-TTE",
   "city": "almaty",
@@ -3022,6 +3036,16 @@
   "instagram": "fort_vernyi",
   "source": "https://2gis.kz/almaty/firm/9429940000801811"
  },
+ "almaty:foton advertising": {
+  "name": "Foton Advertising",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "foton_advertising",
+  "website": "http://www.fa.com.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028334387"
+ },
  "almaty:freedom telecom operations": {
   "name": "Freedom Telecom Operations",
   "city": "almaty",
@@ -3122,6 +3146,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:genair central asia": {
+  "name": "GenAir Central Asia",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "website": "http://genair.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001726885"
  },
  "almaty:geo nan": {
   "name": "Geo Nan",
@@ -5615,6 +5648,16 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "almaty:unicosmo": {
+  "name": "Unicosmo",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "unicosmo_kz",
+  "website": "http://www.cosmetica-optom.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001047376009"
+ },
  "almaty:unirout station тоо автовокзал": {
   "name": "UniRout Station, ТОО, автовокзал",
   "city": "almaty",
@@ -7662,6 +7705,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:кгу кризисный центр жан сая управления занятости и социальных программ города алматы": {
+  "name": "КГУ КРИЗИСНЫЙ ЦЕНТР ЖАН-САЯ УПРАВЛЕНИЯ ЗАНЯТОСТИ И СОЦИАЛЬНЫХ ПРОГРАММ ГОРОДА АЛМАТЫ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
+ },
  "almaty:келет": {
   "name": "КЕЛЕТ",
   "city": "almaty",
@@ -8298,6 +8348,16 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "almaty:научно исследовательский институт кардиологии и внутренних болезней": {
+  "name": "Научно-исследовательский институт кардиологии и внутренних болезней",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "nii_cardiology",
+  "website": "http://ncvb.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000798472"
+ },
  "almaty:национальной": {
   "name": "Национальной",
   "city": "almaty",
@@ -8591,6 +8651,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "almaty:пчелка ип": {
+  "name": "Пчёлка, ИП",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
  },
  "almaty:рахымжанов": {
   "name": "ИП Рахымжанов",
@@ -9029,6 +9096,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "almaty:теплица": {
+  "name": "Теплица",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "teplica_almaty",
+  "source": "https://2gis.kz/almaty/firm/9429940001141548"
  },
  "almaty:терракота": {
   "name": "Терракота",
@@ -9481,6 +9557,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:эвотек центральная азия evotech ca": {
+  "name": "ЭВОТЕК ЦЕНТРАЛЬНАЯ АЗИЯ (Evotech CA)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "website": "https://eca.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001034657704"
  },
  "almaty:эгида group": {
   "name": "Эгида Group",
@@ -10797,6 +10882,15 @@
   "avatar": "43ce9d7a642cd248.jpg",
   "avatar_source": "telegram"
  },
+ "astana:imperia dent": {
+  "name": "IMPERIA DENT",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "imperiadent",
+  "source": "https://2gis.kz/astana/firm/70000001063278752"
+ },
  "astana:impuls": {
   "name": "Impuls",
   "city": "astana",
@@ -11014,6 +11108,15 @@
   "checked_at": "2026-10-31T12:44:38+00:00",
   "instagram": "kedr_pikhta",
   "source": "https://2gis.kz/astana/firm/70000001082840889"
+ },
+ "astana:khonna": {
+  "name": "KhonNa",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "khonna.clinic",
+  "source": "https://www.instagram.com/khonna.clinic/"
  },
  "astana:kinderland": {
   "name": "KINDERLAND",
@@ -11658,6 +11761,13 @@
   ],
   "avatar": "95176a1e7f9f8337.jpg",
   "avatar_source": "website"
+ },
+ "astana:promi kz": {
+  "name": "Promi.kz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
  },
  "astana:qadam visa group": {
   "name": "QADAM VISA GROUP",
@@ -13580,6 +13690,13 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "astana:компания по производству полуфабрикатов": {
+  "name": "Компания по производству полуфабрикатов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
+ },
  "astana:компьютерный клуб bro": {
   "name": "Компьютерный клуб BRO",
   "city": "astana",
@@ -14460,6 +14577,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:стальдекор": {
+  "name": "СтальДекор",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "staldecor.kz",
+  "source": "https://2gis.kz/astana/firm/70000001083997167"
  },
  "astana:стальная марка алматы kz": {
   "name": "Стальная Марка Алматы.kz",
@@ -15518,6 +15644,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "karaganda:beyosa kazakhstan": {
+  "name": "beyosa Kazakhstan",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "beyosa_karaganda",
+  "source": "https://2gis.kz/karaganda/firm/70000001097587023"
  },
  "karaganda:bro karaganda": {
   "name": "BRO KARAGANDA",
@@ -18394,6 +18529,13 @@
   "instagram": "dolce_mamma_petro",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001052284037"
  },
+ "petropavlovsk:fertitrade": {
+  "name": "FertiTrade",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
+ },
  "petropavlovsk:m1 сервис": {
   "name": "M1 Сервис",
   "city": "petropavlovsk",
@@ -18832,6 +18974,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
+ },
+ "semey:tamyr": {
+  "name": "TAMYR",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "instagram": "tamyr_restaurant",
+  "source": "https://2gis.kz/semej/firm/70000001110331350"
  },
  "semey:trans alliance service": {
   "name": "Trans Alliance Service",
@@ -20299,6 +20450,13 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "turkestan:алем транс жол": {
+  "name": "Алем Транс Жол",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00"
+ },
  "turkestan:казахстанская топливная компания": {
   "name": "Казахстанская топливная компания",
   "city": "turkestan",
@@ -20942,6 +21100,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "ust-kamenogorsk:star brands asia стар брэндс азия": {
+  "name": "Star Brands Asia (Стар Брэндс Азия)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T06:43:30+00:00",
+  "website": "https://starbrands-asia.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032821207"
  },
  "ust-kamenogorsk:stroy invest capital": {
   "name": "Stroy Invest Capital",

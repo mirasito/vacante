@@ -30,6 +30,13 @@
   "instagram": "autostock_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001098470579"
  },
+ "aktau:batyr": {
+  "name": "Batyr",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "aktau:bulka": {
   "name": "BULKA",
   "city": "aktau",
@@ -393,6 +400,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
+ },
+ "aktau:ділдә": {
+  "name": "Ділдә",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "dildamarket",
+  "source": "https://2gis.kz/aktau/firm/70000001063314916"
  },
  "aktau:жана отель": {
   "name": "Жана Отель",
@@ -2691,6 +2707,13 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:city market 4": {
+  "name": "City market 4",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "almaty:classic kindergarten частный детский сад": {
   "name": "CLASSIC KINDERGARTEN ( Частный детский сад )",
   "city": "almaty",
@@ -4435,6 +4458,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
+ },
+ "almaty:lider security": {
+  "name": "Lider Security",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "lider101.kz",
+  "website": "http://101almaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000941446",
+  "avatar_checked_at": "2026-11-02T20:42:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:lion restaurants лион рестораны": {
   "name": "LiON Restaurants (ЛиОН Рестораны)",
@@ -7391,6 +7428,13 @@
    "website"
   ]
  },
+ "almaty:ауэльбеков": {
+  "name": "ИП ауэльбеков",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "almaty:аяла": {
   "name": "Аяла",
   "city": "almaty",
@@ -8463,6 +8507,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:каруцяк александр александрович": {
+  "name": "Каруцяк Александр Александрович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
  },
  "almaty:каспарова а в дилижанс шоу": {
   "name": "Каспарова А.В. Дилижанс-шоу",
@@ -10837,6 +10888,13 @@
    "website"
   ]
  },
+ "astana:arlan gts": {
+  "name": "Arlan GTS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "astana:arlan logistics grop": {
   "name": "ТОО Arlan logistics grop",
   "city": "astana",
@@ -12691,6 +12749,20 @@
   "checked_at": "2026-10-31T14:43:47+00:00",
   "instagram": "novastroy.kz",
   "source": "https://2gis.kz/astana/firm/70000001104797277"
+ },
+ "astana:nrg corporation": {
+  "name": "NRG CORPORATION",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "nrg.corp",
+  "website": "https://www.nrg-corp.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001062445846",
+  "avatar_checked_at": "2026-11-02T20:42:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:of corp": {
   "name": "OF Corp",
@@ -14964,6 +15036,13 @@
   "instagram": "kangojump_astana",
   "source": "https://2gis.kz/astana/firm/70000001026933143"
  },
+ "astana:карабалина": {
+  "name": "Карабалина",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "astana:караоке клуб bariton": {
   "name": "Караоке-клуб Bariton",
   "city": "astana",
@@ -15631,6 +15710,13 @@
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
  },
+ "astana:орынбай": {
+  "name": "Орынбай",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "astana:охранное агентство": {
   "name": "Охранное агентство",
   "city": "astana",
@@ -15737,6 +15823,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "astana:профи центр аст": {
+  "name": "Профи центр АСТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
  },
  "astana:пуховик": {
   "name": "Пуховик",
@@ -17000,6 +17093,15 @@
    "website"
   ]
  },
+ "atyrau:nes": {
+  "name": "NES",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "nes_restaurant",
+  "source": "https://2gis.kz/atyrau/firm/70000001095535105"
+ },
  "atyrau:qsr тм burger king": {
   "name": "“QSR” ,ТМ BURGER KING",
   "city": "atyrau",
@@ -17876,6 +17978,13 @@
   "checked_at": "2026-10-29T19:43:27+00:00",
   "instagram": "trdelnikgo",
   "source": "https://2gis.kz/karaganda/firm/70000001114127998"
+ },
+ "karaganda:well kz": {
+  "name": "Well.kz",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
  },
  "karaganda:zikeyev murat": {
   "name": "Zikeyev Murat",
@@ -18871,6 +18980,22 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "kokshetau:эйкос": {
+  "name": "ЭЙКОС",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "aikos.kz",
+  "website": "http://aikos.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001051302807",
+  "avatar_checked_at": "2026-11-02T20:42:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3963c1a9429518e9.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
   "city": "kokshetau",
@@ -19158,6 +19283,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:агромашхолдинг kz": {
+  "name": "Агромашхолдинг KZ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "amh.kz",
+  "website": "http://amh.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001037262469",
+  "avatar_checked_at": "2026-11-02T20:42:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ca31b3eb6c81d9c1.jpg",
+  "avatar_source": "website"
  },
  "kostanay:алтын алма": {
   "name": "Алтын Алма",
@@ -21738,6 +21879,15 @@
   "instagram": "safia_kz",
   "source": "https://www.instagram.com/safia_kz/"
  },
+ "shymkent:sandyq world": {
+  "name": "Sandyq World",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00",
+  "instagram": "sandyq_restaurant",
+  "source": "https://2gis.kz/shymkent/firm/70000001101191920"
+ },
  "shymkent:sanishev": {
   "name": "SANISHEV",
   "city": "shymkent",
@@ -21866,6 +22016,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
+ },
+ "shymkent:аралова с в wok wok": {
+  "name": "Аралова С.В. WOK WOK",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
  },
  "shymkent:буравлев р в": {
   "name": "Буравлев Р.В",
@@ -22001,6 +22158,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:ихсанова диана": {
+  "name": "Ихсанова Диана",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
  },
  "shymkent:каган 2030 security тоо": {
   "name": "Каган 2030 Security, ТОО",
@@ -23130,6 +23294,13 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "uralsk:парфюмерии": {
+  "name": "ПАРФЮМЕРИИ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
+ },
  "uralsk:полюс групп": {
   "name": "Полюс Групп",
   "city": "uralsk",
@@ -23796,6 +23967,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "ust-kamenogorsk:лысоконь сергей": {
+  "name": "Лысоконь Сергей",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T20:42:52+00:00"
  },
  "ust-kamenogorsk:налобнов максим валентинович": {
   "name": "Налобнов Максим Валентинович",

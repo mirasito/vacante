@@ -5322,6 +5322,13 @@
    "website"
   ]
  },
+ "almaty:tan service": {
+  "name": "TAN-Service",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
+ },
  "almaty:tapioca": {
   "name": "Tapioca",
   "city": "almaty",
@@ -5414,6 +5421,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "almaty:tirepro шинные центры": {
+  "name": "TirePro, шинные центры",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "tirepro_online",
+  "website": "https://tirepro.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001105803253",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5c7ba773bcf0a9ad.jpg",
+  "avatar_source": "website"
  },
  "almaty:tiss auto parts": {
   "name": "TISS AUTO PARTS",
@@ -5883,6 +5906,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "almaty:аврора холдинг": {
+  "name": "Аврора Холдинг",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
  },
  "almaty:авто дом сервис": {
   "name": "АВТО-ДОМ-СЕРВИС",
@@ -6585,6 +6615,13 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "almaty:бекзат кулмырза": {
+  "name": "БЕКЗАТ КУЛМЫРЗА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
+ },
  "almaty:белорусский продукт": {
   "name": "БЕЛОРУССКИЙ ПРОДУКТ",
   "city": "almaty",
@@ -6767,6 +6804,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:галам медиа": {
+  "name": "Галам Медиа",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
  },
  "almaty:галерея новостроек": {
   "name": "Галерея Новостроек",
@@ -8337,6 +8381,15 @@
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
  },
+ "almaty:проект pinta": {
+  "name": "Проект PINTA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "pinta_almaty",
+  "source": "https://www.instagram.com/pinta_almaty/"
+ },
  "almaty:производственная база": {
   "name": "производственная база",
   "city": "almaty",
@@ -8685,6 +8738,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:стофарм": {
+  "name": "Стофарм",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
+ },
  "almaty:стройлогистика": {
   "name": "Стройлогистика",
   "city": "almaty",
@@ -8868,6 +8928,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
+ },
+ "almaty:торговый центр адем": {
+  "name": "Торговый центр Адем",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "ademsc.kz",
+  "website": "https://adem.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032691078",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:торгстрой": {
   "name": "ТОРГСТРОЙ",
@@ -9468,6 +9542,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:and asia": {
+  "name": "AND Asia",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
  },
  "astana:aramit": {
   "name": "Aramit",
@@ -11704,6 +11785,20 @@
    "website"
   ]
  },
+ "astana:subaru motor astana": {
+  "name": "Subaru Motor Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "subaru_motor_astana",
+  "website": "https://astana.subaru.kz/ru/",
+  "source": "https://2gis.kz/astana/firm/70000001020355429",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:sulpak": {
   "name": "Sulpak",
   "city": "astana",
@@ -12294,6 +12389,13 @@
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
  },
+ "astana:атамұра табыс": {
+  "name": "Атамұра табыс",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
+ },
  "astana:атри": {
   "name": "Атри",
   "city": "astana",
@@ -12578,6 +12680,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "astana:гол+пас": {
+  "name": "ГОЛ+ПАС",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "golpas_sportbars",
+  "website": "https://golpas.cafe/",
+  "source": "https://2gis.kz/astana/firm/70000001083689942",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7bd551b3a757e4d1.jpg",
+  "avatar_source": "website"
  },
  "astana:голд пар": {
   "name": "Голд пар",
@@ -13892,6 +14010,13 @@
    "website"
   ]
  },
+ "astana:сеть супермаркетов": {
+  "name": "Сеть супермаркетов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
+ },
  "astana:сила харизмы": {
   "name": "Сила Харизмы",
   "city": "astana",
@@ -14041,6 +14166,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:тарту": {
+  "name": "Тарту",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00"
  },
  "astana:тд электроцентр": {
   "name": "ТД Электроцентр",
@@ -14232,6 +14364,20 @@
   "website": "https://forum-auto.kz/",
   "source": "https://2gis.kz/astana/firm/70000001087662656",
   "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:фармация юниверсал": {
+  "name": "Фармация Юниверсал",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "herbion.kazakhstan",
+  "website": "https://kz.herbion.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940000801720",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -15187,6 +15333,20 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "karaganda:millhouse capital kz": {
+  "name": "Millhouse Capital KZ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "millhousecapitalkz",
+  "website": "https://millhouse.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001020585916",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:nar global": {
   "name": "NAR GLOBAL",
   "city": "karaganda",
@@ -15576,6 +15736,22 @@
    "website"
   ]
  },
+ "karaganda:евролюкс строй": {
+  "name": "ЕВРОЛЮКС Строй",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "evrolux_stroy",
+  "website": "https://evrolux.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302929770",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ea987216b7a1257b.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:евротехно логистик": {
   "name": "Евротехно Логистик",
   "city": "karaganda",
@@ -15665,6 +15841,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:кастон": {
+  "name": "КАСТОН",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "kaston.kz",
+  "website": "https://kaston.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032322445",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8a0f7cd68ae2352c.jpg",
+  "avatar_source": "website"
  },
  "karaganda:кгу единый координационный центр государственного учреждения управление цифровых технологий карагандинской области": {
   "name": "КГУ Единый координационный центр государственного учреждения Управление цифровых технологий Карагандинской области",
@@ -16941,6 +17133,15 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "kyzylorda:достык": {
+  "name": "Достык",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "dostyk.company",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001062988208"
+ },
  "kyzylorda:дудар": {
   "name": "Дудар",
   "city": "kyzylorda",
@@ -17084,6 +17285,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "pavlodar:kcell": {
+  "name": "Kcell",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T01:43:26+00:00",
+  "instagram": "kcell.kz",
+  "website": "https://www.kcell.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018648660",
+  "avatar_checked_at": "2026-11-02T01:43:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "pavlodar:kiddi": {
   "name": "Kiddi",

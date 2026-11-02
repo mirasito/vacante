@@ -105,6 +105,7 @@ td.nowrap { white-space: nowrap; }
   <nav class="tabs" role="tablist">
     <button type="button" role="tab" data-tab="stats" aria-selected="true">Сбор и посты</button>
     <button type="button" role="tab" data-tab="crm" aria-selected="false">CRM заведений</button>
+    <button type="button" role="tab" data-tab="jobs" aria-selected="false">Работодатели в боте</button>
   </nav>
   <div id="tab-stats">
   <div class="tiles" id="tiles"></div>
@@ -182,6 +183,16 @@ td.nowrap { white-space: nowrap; }
     <tbody></tbody>
   </table></div>
   <button type="button" class="more" id="crm-more" hidden>Показать ещё</button>
+  </div>
+
+  <div id="tab-jobs" hidden>
+  <p class="quiet">Все, кто размещал вакансии через @vacantekz_bot: имя и @username из Telegram, как в карточке модерации «От: …». Данные берутся прямо из бота при открытии вкладки и на GitHub не хранятся. Черновики: человек начал анкету, но не отправил.</p>
+  <p class="err" id="jobs-error" hidden></p>
+  <p id="jobs-summary"></p>
+  <div class="scroll"><table id="jobs">
+    <thead><tr><th class="n">№</th><th>Отправитель</th><th>Компания</th><th>Вакансия</th><th>Город</th><th>Создана</th><th>Статус</th><th class="n">Отклики</th><th>Оплата</th></tr></thead>
+    <tbody><tr><td colspan="9" class="quiet">Загружаю…</td></tr></tbody>
+  </table></div>
   </div>
 </div>
 </div>
@@ -424,10 +435,11 @@ td.nowrap { white-space: nowrap; }
     }
 
     renderCrm(data.crm || [], now, data.crm_api);
+    let jobsLoaded = false;
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
-      $("#tab-stats").hidden = b.dataset.tab !== "stats";
-      $("#tab-crm").hidden = b.dataset.tab !== "crm";
+      for (const tab of ["stats", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
+      if (b.dataset.tab === "jobs" && !jobsLoaded && data.jobs_api) { jobsLoaded = true; renderJobs(data.jobs_api, data.cities || {}); }
     }));
 
     $("#loading").hidden = true;
@@ -452,6 +464,46 @@ td.nowrap { white-space: nowrap; }
     const r = await fetch(api, init);
     if (!r.ok) throw new Error(r.status === 403 ? "сервер не принял пароль" : r.status === 503 ? "на сервере не задан пароль админки" : "ошибка " + r.status);
     return r.json();
+  }
+
+  // Работодатели из бота (bot/src/crm.js, /api/jobs): время в D1 в UTC вида «2026-11-01 13:27:32»
+  const JOB_STATUS = { draft: "Черновик", pending: "На проверке", approved: "Опубликована", rejected: "Отклонена", closed: "Закрыта" };
+  const sqlTime = (t) => (t ? t.replace(" ", "T") + "Z" : null);
+  function sender(j) {
+    const name = j.employer_name || "без имени";
+    const m = name.match(/@([A-Za-z0-9_]{4,})\)?$/);
+    const href = m ? `https://t.me/${m[1]}` : `tg://user?id=${encodeURIComponent(j.employer_chat)}`;
+    return `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(name)}</a>`;
+  }
+  async function renderJobs(api, cities) {
+    let jobs;
+    try {
+      jobs = (await crmFetch(api)).jobs;
+    } catch (e) {
+      $("#jobs-error").hidden = false;
+      $("#jobs-error").textContent = `Не удалось загрузить из бота (${e.message}). Если вкладка новая, бот ещё не перевыложен: Actions → «Бот» → Run workflow.`;
+      $("#jobs tbody").innerHTML = "";
+      return;
+    }
+    const people = new Set(jobs.map((j) => j.employer_chat));
+    const sent = jobs.filter((j) => j.status !== "draft");
+    $("#jobs-summary").textContent = `Отправителей: ${num(people.size)}. Вакансий отправлено: ${num(sent.length)}, черновиков: ${num(jobs.length - sent.length)}.`;
+    $("#jobs tbody").innerHTML = jobs.map((j) => {
+      const live = j.status === "approved";
+      const title = j.title ? (live ? `<a href="${ROOT}/v/bot-${j.id}/" target="_blank">${esc(j.title)}</a>` : esc(j.title)) : `<span class="quiet">—</span>`;
+      const boost = j.boost_until && sqlTime(j.boost_until) > new Date().toISOString() ? `<div class="snippet">🔥 до ${when(sqlTime(j.boost_until))}</div>` : "";
+      return `<tr>
+        <td class="n">${j.id}</td>
+        <td>${sender(j)}</td>
+        <td>${esc(j.company || "—")}</td>
+        <td>${title}${j.salary ? `<div class="snippet">${esc(j.salary)}</div>` : ""}</td>
+        <td class="nowrap">${esc(cities[j.city] || j.city || "—")}</td>
+        <td class="nowrap">${when(sqlTime(j.created_at))}</td>
+        <td>${JOB_STATUS[j.status] || esc(j.status)}${j.decided_by ? `<div class="snippet">${esc(j.decided_by)}</div>` : ""}</td>
+        <td class="n">${num(j.applications || 0)}</td>
+        <td class="nowrap">${j.paid ? num(j.paid) + " ₸" : "—"}${boost}</td>
+      </tr>`;
+    }).join("") || `<tr><td colspan="9" class="quiet">Пока никто не размещал</td></tr>`;
   }
 
   async function renderCrm(rows, now, api) {

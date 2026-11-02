@@ -23,13 +23,20 @@ function cors(request, env) {
   };
 }
 
-export async function crmApi(request, env, now = new Date()) {
-  const headers = cors(request, env);
-  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
+// null, если пароль админки верный, иначе готовый ответ с ошибкой
+async function deny(request, env, headers) {
   if (!env.ADMIN_PASSWORD) return Response.json({ error: "нет пароля админки" }, { status: 503, headers });
   if (request.headers.get("Authorization") !== `Bearer ${await crmKey(env.ADMIN_PASSWORD)}`) {
     return Response.json({ error: "forbidden" }, { status: 403, headers });
   }
+  return null;
+}
+
+export async function crmApi(request, env, now = new Date()) {
+  const headers = cors(request, env);
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
+  const denied = await deny(request, env, headers);
+  if (denied) return denied;
   if (request.method === "GET") {
     const { results } = await env.DB.prepare("SELECT venue, status, note, contacted_at, updated_at FROM crm").all();
     const marks = Object.fromEntries(results.map(({ venue, ...m }) => [venue, m]));
@@ -59,4 +66,23 @@ export async function crmApi(request, env, now = new Date()) {
     .bind(venue, status, note, contacted, at)
     .run();
   return Response.json({ venue, status, note, contacted_at: contacted, updated_at: at }, { headers });
+}
+
+// Кто размещал вакансии через бота: для вкладки «Работодатели» в админке. Только то, что бот и так
+// показывает модераторам в карточке «От: …» (имя и @username из Telegram), плюс id чата для ссылки.
+// Отдаётся по запросу из браузера и нигде не сохраняется на GitHub.
+export async function jobsApi(request, env) {
+  const headers = cors(request, env);
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
+  const denied = await deny(request, env, headers);
+  if (denied) return denied;
+  if (request.method !== "GET") return new Response("method not allowed", { status: 405, headers });
+  const { results } = await env.DB.prepare(
+    "SELECT j.id, j.employer_chat, j.employer_name, j.status, j.step, j.city, j.title, j.company, j.salary, " +
+      "j.created_at, j.approved_at, j.decided_by, j.boost_until, " +
+      "(SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id) AS applications, " +
+      "(SELECT COALESCE(SUM(p.amount), 0) FROM payments p WHERE p.job_id = j.id AND p.status = 'confirmed') AS paid " +
+      "FROM jobs j ORDER BY j.id DESC LIMIT 1000",
+  ).all();
+  return Response.json({ jobs: results }, { headers });
 }

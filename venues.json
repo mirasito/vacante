@@ -636,6 +636,13 @@
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
  },
+ "aktobe:centercontact kz ип лидер 2023": {
+  "name": "CenterContact.kz(ИП Лидер 2023)",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
+ },
  "aktobe:common market corporation": {
   "name": "Common Market Corporation",
   "city": "aktobe",
@@ -700,6 +707,13 @@
   "checked_at": "2026-10-31T23:43:38+00:00",
   "instagram": "glasman.kz",
   "source": "https://www.instagram.com/glasman.kz/"
+ },
+ "aktobe:gungir": {
+  "name": "GUNGIR",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
  },
  "aktobe:hotel ilek": {
   "name": "HOTEL ILEK",
@@ -962,6 +976,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
+ },
+ "aktobe:дудар": {
+  "name": "Дудар",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032493200",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ff24a3f3363f3d34.jpg",
+  "avatar_source": "website"
  },
  "aktobe:запказ авто": {
   "name": "ЗапКаз-Авто",
@@ -1259,6 +1288,19 @@
   "checked_at": "2026-10-31T10:43:49+00:00",
   "instagram": "adallin_brand",
   "source": "https://2gis.kz/almaty/firm/70000001104382410"
+ },
+ "almaty:adm capital": {
+  "name": "ADM CAPITAL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "website": "https://wolt-adm.com/",
+  "source": "https://2gis.kz/astana/firm/70000001097228394",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:adrenaline fitness адреналин фитнес": {
   "name": "Adrenaline Fitness (Адреналин Фитнес)",
@@ -4581,6 +4623,19 @@
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
  },
+ "almaty:open media group": {
+  "name": "Open Media Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "website": "https://www.openmedia.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001099330314",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:opti trade": {
   "name": "OPTI TRADE",
   "city": "almaty",
@@ -4822,6 +4877,20 @@
   "website": "https://prosnabservice.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001034446055",
   "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:prosport": {
+  "name": "PROSPORT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "prosportshopkz",
+  "website": "http://www.prosport.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001068550495",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -5641,6 +5710,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:top kz топ кз": {
+  "name": "TOP.KZ (ТОП.КЗ)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
  },
  "almaty:top_mebel": {
   "name": "Top_Mebel",
@@ -9278,6 +9354,13 @@
   "avatar": "66a063e8606ff526.jpg",
   "avatar_source": "website"
  },
+ "almaty:торговый дом автоклавного газоблока 1": {
+  "name": "Торговый дом автоклавного газоблока №1",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
+ },
  "almaty:торговый дом элитфиш": {
   "name": "Торговый Дом ЭлитФиш",
   "city": "almaty",
@@ -10412,6 +10495,13 @@
   "instagram": "city_drive_ast",
   "source": "https://2gis.kz/astana/firm/70000001109568804"
  },
+ "astana:clv market": {
+  "name": "Clv Market",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
+ },
  "astana:coffee boom": {
   "name": "Coffee Boom",
   "city": "astana",
@@ -11515,6 +11605,22 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "astana:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "minisokz",
+  "website": "http://miniso.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001027210402",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ce6160af338642a6.jpg",
+  "avatar_source": "website"
+ },
  "astana:mm shop": {
   "name": "MM Shop",
   "city": "astana",
@@ -11682,6 +11788,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "astana:orta development group": {
+  "name": "ORTA DEVELOPMENT GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
  },
  "astana:ozon": {
   "name": "Ozon",
@@ -13054,6 +13167,20 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "astana:бетон пв": {
+  "name": "Бетон ПВ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "beton_pv",
+  "website": "http://betonpv.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018085076",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:бизнес центр": {
   "name": "Бизнес-центр",
   "city": "astana",
@@ -13886,6 +14013,36 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "astana:ксж freedom life": {
+  "name": "КСЖ Freedom Life",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "ffin.life",
+  "website": "https://ffin.life/",
+  "source": "https://2gis.kz/aktobe/firm/70000001035181289",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:кузет астана": {
+  "name": "Кузет Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "kuzet.astana",
+  "website": "https://kuzet-astana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018069292",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "46754bcbd12e98d7.jpg",
+  "avatar_source": "website"
  },
  "astana:курылыс тан сервис": {
   "name": "Курылыс тан сервис",
@@ -15534,6 +15691,27 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "atyrau:аджип": {
+  "name": "Аджип",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "too_adjip",
+  "website": "https://adjip.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001082450155",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "atyrau:айша": {
+  "name": "Айша",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
+ },
  "atyrau:академия юнит академия маленьких принцесс": {
   "name": "АКАДЕМИЯ ЮНИТ (Академия Маленьких Принцесс)",
   "city": "atyrau",
@@ -16375,6 +16553,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "karaganda:группа компаний аллюр allur": {
+  "name": "Группа компаний Аллюр (Allur)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
  },
  "karaganda:даньяров е д": {
   "name": "Даньяров Е.Д.",
@@ -17588,6 +17773,13 @@
    "website"
   ]
  },
+ "kostanay:лидер 2010": {
+  "name": "Лидер-2010",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00"
+ },
  "kostanay:лопатина о в": {
   "name": "Лопатина О.В.",
   "city": "kostanay",
@@ -18132,6 +18324,15 @@
   "checked_at": "2026-10-30T00:43:00+00:00",
   "instagram": "megabron_pavlodar",
   "source": "https://2gis.kz/pavlodar/firm/70000001047526770"
+ },
+ "pavlodar:nur life": {
+  "name": "NUR LIFE",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "nurlife.kz",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018643369"
  },
  "pavlodar:one two sleep": {
   "name": "One-two-sleep",
@@ -19958,6 +20159,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:компания шин line": {
+  "name": "Компания Шин Line",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T07:45:36+00:00",
+  "instagram": "shin_line_kz",
+  "website": "http://shinline.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026133842",
+  "avatar_checked_at": "2026-11-02T07:45:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5b2a2df2a1386507.jpg",
+  "avatar_source": "website"
  },
  "shymkent:компания эврика": {
   "name": "Компания ЭВРИКА",

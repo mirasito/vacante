@@ -3146,6 +3146,19 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:fashion retail group": {
+  "name": "Fashion Retail Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "website": "http://frgroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103021603",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:fast meals and goods": {
   "name": "Fast Meals and Goods",
   "city": "almaty",
@@ -4034,6 +4047,13 @@
    "website"
   ]
  },
+ "almaty:kingfresh": {
+  "name": "KingFresh",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
+ },
  "almaty:klara fashion house": {
   "name": "Klara Fashion House",
   "city": "almaty",
@@ -4388,6 +4408,13 @@
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
  },
+ "almaty:metrix pos": {
+  "name": "METRIX POS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
+ },
  "almaty:mia kazakhstan": {
   "name": "MIA Kazakhstan",
   "city": "almaty",
@@ -4514,6 +4541,13 @@
   ],
   "avatar": "eaf19c31fb17a1c0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:nakama group": {
+  "name": "Nakama group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
  },
  "almaty:nauryz": {
   "name": "Nauryz",
@@ -5475,6 +5509,13 @@
   ],
   "avatar": "78b578ca56c301c0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:sportex ип савина": {
+  "name": "SportEX (ИП Савина)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
  },
  "almaty:sporttrade": {
   "name": "ТОО SPORTTRADE",
@@ -7310,6 +7351,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
+ },
+ "almaty:гостиница достык": {
+  "name": "Гостиница Достык",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "dostyk_hotel_almaty",
+  "website": "http://www.dostyk.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795138",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "050b340c083afbee.jpg",
+  "avatar_source": "website"
  },
  "almaty:гостиница жетысу novotel living and ibis almaty zhetisu": {
   "name": "«Гостиница «Жетысу» (Novotel living and Ibis Almaty Zhetisu)",
@@ -10662,6 +10719,22 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "astana:cosmetics star": {
+  "name": "COSMETICS STAR",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "cosmetics_star_astana",
+  "website": "http://cosmeticsstar.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001075321814",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b1e73e3b03e5dd73.jpg",
+  "avatar_source": "website"
+ },
  "astana:creatura": {
   "name": "Creatura",
   "city": "astana",
@@ -11152,6 +11225,15 @@
   ],
   "avatar": "462ab75ad2efbfda.jpg",
   "avatar_source": "website"
+ },
+ "astana:homeway": {
+  "name": "Homeway",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "homeway.kaz",
+  "source": "https://2gis.kz/astana/firm/70000001036657851"
  },
  "astana:hookah place": {
   "name": "Hookah Place",
@@ -12567,6 +12649,15 @@
   ],
   "avatar": "c92c206f34f2ecc5.jpg",
   "avatar_source": "website"
+ },
+ "astana:sultani": {
+  "name": "Sultani",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "sultani.astana",
+  "source": "https://2gis.kz/astana/firm/70000001089434119"
  },
  "astana:tamos space school тамос спэйс скул": {
   "name": "Tamos Space School (Тамос Спэйс Скул)",
@@ -14444,6 +14535,13 @@
   "avatar": "001144b90b88c662.jpg",
   "avatar_source": "website"
  },
+ "astana:мк корпорация": {
+  "name": "«МК «Корпорация»",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
+ },
  "astana:мона": {
   "name": "МОНА",
   "city": "astana",
@@ -14739,6 +14837,15 @@
   "checked_at": "2026-10-29T14:46:23+00:00",
   "instagram": "respublika_shagynmarket",
   "source": "https://2gis.kz/astana/firm/70000001112611319"
+ },
+ "astana:ресторан aralas": {
+  "name": "Ресторан ARALAS",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "aralas.restaurant",
+  "source": "https://2gis.kz/astana/firm/70000001087557879"
  },
  "astana:ресторан rabiya": {
   "name": "Ресторан Rabiya",
@@ -15762,6 +15869,20 @@
    "website"
   ]
  },
+ "atyrau:hyundai premium atyrau": {
+  "name": "Hyundai Premium Atyrau",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "hyundai_atyrau",
+  "website": "https://atyrau.hyundai.kz/ru/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034937844",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:lift capital": {
   "name": "Lift Capital",
   "city": "atyrau",
@@ -15821,6 +15942,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "atyrau:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "technodomkz",
+  "website": "https://www.technodom.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035242988",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:viled fashion вилед фешн": {
   "name": "VILED FASHION (ВИЛЕД ФЕШН)",
@@ -17142,6 +17277,22 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "karaganda:торговая компания мегаполис казахстан": {
+  "name": "Торговая Компания Мегаполис-Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "megapoliskazakhstan",
+  "website": "http://tc-megapolis.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001039527423",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9f13dfc55c0e4441.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:торговый дом": {
   "name": "Торговый дом",
   "city": "karaganda",
@@ -17446,6 +17597,13 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "kokshetau:химагро сункар": {
+  "name": "ХИМАГРО-СУНКАР",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
+ },
  "kokshetau:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
   "city": "kokshetau",
@@ -17571,6 +17729,15 @@
   ],
   "avatar": "ce1fe1f2784acd5b.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:kst trade": {
+  "name": "Kst trade",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "kst_trade",
+  "source": "https://2gis.kz/kostanaj/firm/70000001046983163"
  },
  "kostanay:kuandyk grou": {
   "name": "KUANDYK GROU",
@@ -19093,6 +19260,22 @@
   "avatar": "e2850ad6049549da.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:teez": {
+  "name": "Teez",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "teezkz",
+  "telegram": "teezkz",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001094225442",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "830d8231eb8a695b.jpg",
+  "avatar_source": "telegram"
+ },
  "petropavlovsk:vipcompany": {
   "name": "VIPCOMPANY",
   "city": "petropavlovsk",
@@ -19764,6 +19947,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "shymkent:dani nan management megaplanet": {
+  "name": "DANI-NAN MANAGEMENT (MegaPlanet)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "mega_planet_kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001025714760"
  },
  "shymkent:daryn online": {
   "name": "Daryn.online",
@@ -21115,6 +21307,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "uralsk:svetlana": {
+  "name": "SVETLANA",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00"
+ },
  "uralsk:taza group": {
   "name": "Taza group",
   "city": "uralsk",
@@ -21965,6 +22164,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "ust-kamenogorsk:нурбанк": {
+  "name": "Нурбанк",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T10:44:42+00:00",
+  "instagram": "nurbank",
+  "telegram": "nurbank_kz",
+  "website": "https://nurbank.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721312797",
+  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "fba534267556ba55.jpg",
+  "avatar_source": "telegram"
  },
  "ust-kamenogorsk:нью йоркер ритейл каз": {
   "name": "НЬЮ ЙОРКЕР Ритейл КАЗ",

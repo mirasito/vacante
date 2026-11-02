@@ -216,6 +216,13 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktau:royal consulting 09": {
+  "name": "Royal Consulting 09",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "aktau:sw auto aktau": {
   "name": "Sw Auto Aktau",
   "city": "aktau",
@@ -4486,6 +4493,13 @@
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
  },
+ "almaty:metawerk alliance": {
+  "name": "Metawerk Alliance",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "almaty:metrix pos": {
   "name": "METRIX POS",
   "city": "almaty",
@@ -5813,6 +5827,13 @@
    "website"
   ]
  },
+ "almaty:swiss factoring": {
+  "name": "Swiss Factoring",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "almaty:tan service": {
   "name": "TAN-Service",
   "city": "almaty",
@@ -6723,6 +6744,13 @@
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
  },
+ "almaty:алвипи": {
+  "name": "Алвипи",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "almaty:алексеевский хлебный дом": {
   "name": "Алексеевский хлебный дом",
   "city": "almaty",
@@ -7177,6 +7205,21 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "almaty:банк bank rbk": {
+  "name": "Банк Bank RBK",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00",
+  "website": "https://bankrbk.kz/",
+  "source": "https://www.products.bankrbk.kz/page154049043.html",
+  "avatar_checked_at": "2026-11-02T16:21:34+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "708deb7a1407462c.jpg",
+  "avatar_source": "website"
  },
  "almaty:банк центркредит": {
   "name": "Банк ЦентрКредит",
@@ -8429,6 +8472,13 @@
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
  },
+ "almaty:кубок copa kz": {
+  "name": "КУБОК (COPA.KZ)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "almaty:кузет сенім": {
   "name": "Кузет Сенім",
   "city": "almaty",
@@ -8661,6 +8711,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:медина": {
+  "name": "Медина",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
  },
  "almaty:медицинский центр хак": {
   "name": "Медицинский центр ХАК",
@@ -12478,6 +12535,13 @@
   "avatar": "0f2975e33e88249f.jpg",
   "avatar_source": "telegram"
  },
+ "astana:prime qurylys": {
+  "name": "Prime Qurylys",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "astana:pro line": {
   "name": "PRO-LINE",
   "city": "astana",
@@ -16074,6 +16138,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "astana:эдем": {
+  "name": "ЭДЕМ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "astana:экко рос казахстан": {
   "name": "ЭККО-РОС Казахстан",
   "city": "astana",
@@ -16407,6 +16478,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "atyrau:salamat service": {
+  "name": "SALAMAT Service",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
  },
  "atyrau:shyn specialty": {
   "name": "Shyn Specialty",
@@ -19416,6 +19494,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "pavlodar:гламаздин istudy go": {
+  "name": "ГЛАМАЗДИН Istudy GO",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "pavlodar:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
   "city": "pavlodar",
@@ -20030,6 +20115,19 @@
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
  },
+ "petropavlovsk:петропавловская нефтебаза": {
+  "name": "Петропавловская нефтебаза",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00",
+  "website": "https://pnb.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001041493021",
+  "avatar_checked_at": "2026-11-02T16:21:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:прессбук": {
   "name": "ПрессБук",
   "city": "petropavlovsk",
@@ -20155,6 +20253,20 @@
   "checked_at": "2026-11-01T06:43:07+00:00",
   "instagram": "compasskazakhstan",
   "source": "https://2gis.kz/atyrau/firm/70000001045107222"
+ },
+ "semey:europa": {
+  "name": "EUROPA",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00",
+  "instagram": "europa.hotel.semey",
+  "website": "https://europahotelsemey.com/",
+  "source": "https://2gis.kz/semej/firm/70000001104315398",
+  "avatar_checked_at": "2026-11-02T16:21:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "semey:heavy truck kazakhstan": {
   "name": "HEAVY TRUCK KAZAKHSTAN",
@@ -20400,12 +20512,26 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "semey:куртыш лтд": {
+  "name": "КУРТЫШ ЛТД",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "semey:мереке": {
   "name": "Мереке",
   "city": "semey",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "semey:на левом берегу": {
+  "name": "НА ЛЕВОМ БЕРЕГУ",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
  },
  "semey:объединенная энергосервисная компания": {
   "name": "Объединённая ЭнергоСервисная Компания",
@@ -21467,6 +21593,13 @@
   "v": 3,
   "checked_at": "2026-11-02T00:42:59+00:00"
  },
+ "shymkent:әбдікаримов а а": {
+  "name": "Әбдікаримов А.А.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
+ },
  "taldykorgan:2гис справочник двух столиц": {
   "name": "2ГИС-Справочник Двух Столиц",
   "city": "taldykorgan",
@@ -21649,6 +21782,13 @@
   "checked_at": "2026-10-30T04:43:33+00:00",
   "instagram": "greenhouse_limited",
   "source": "https://2gis.kz/shymkent/firm/70000001026666557"
+ },
+ "taraz:ielts academy": {
+  "name": "IELTS academy",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
  },
  "taraz:korzinka retail group": {
   "name": "KORZINKA RETAIL GROUP",
@@ -22406,6 +22546,19 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "ust-kamenogorsk:loft park": {
+  "name": "Loft Park",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00",
+  "website": "https://loftpark.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001035879277",
+  "avatar_checked_at": "2026-11-02T16:21:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "ust-kamenogorsk:magic group": {
   "name": "MAGIC GROUP",
   "city": "ust-kamenogorsk",
@@ -22531,6 +22684,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "ust-kamenogorsk:the banka": {
+  "name": "The Banka",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00",
+  "instagram": "banka_bar_ukg",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001102312464"
  },
  "ust-kamenogorsk:trans car service": {
   "name": "TRANS CAR SERVICE",
@@ -22874,6 +23036,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:ларионова и в": {
+  "name": "ЛАРИОНОВА И.В.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T16:21:33+00:00"
  },
  "ust-kamenogorsk:налобнов максим валентинович": {
   "name": "Налобнов Максим Валентинович",

@@ -3271,6 +3271,21 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "almaty:falcon logistic": {
+  "name": "FALCON LOGISTIC",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "website": "https://falcon-logistic.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001080367196",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "577ec977cef1b7a3.jpg",
+  "avatar_source": "website"
+ },
  "almaty:family store": {
   "name": "FAMILY STORE",
   "city": "almaty",
@@ -3375,6 +3390,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:freedom mobile": {
+  "name": "FREEDOM MOBILE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
  },
  "almaty:freedom telecom operations": {
   "name": "Freedom Telecom Operations",
@@ -6155,6 +6177,13 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "almaty:toyota tsusho kazakhstan auto": {
+  "name": "Toyota Tsusho Kazakhstan Auto",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
+ },
  "almaty:tramax limited трамаkc лимитед": {
   "name": "TRAMAX Limited (ТРАМАKC Лимитед)",
   "city": "almaty",
@@ -6681,6 +6710,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:автостарт кз": {
+  "name": "Автостарт КЗ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
  },
  "almaty:автостройремсервис": {
   "name": "Автостройремсервис",
@@ -7974,6 +8010,13 @@
   ],
   "avatar": "4007203ae9fedd3c.jpg",
   "avatar_source": "website"
+ },
+ "almaty:ескендирова а н": {
+  "name": "Ескендирова А.Н",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
  },
  "almaty:жайлы сай": {
   "name": "Жайлы Сай",
@@ -10335,6 +10378,20 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:центр технической компетенции demeu": {
+  "name": "Центр технической компетенции DEMEU",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "ctk_demeu",
+  "website": "http://demeu.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001077206918",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:чайная": {
   "name": "Чайная",
   "city": "almaty",
@@ -10856,6 +10913,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "astana:astana soap factory ип asf": {
+  "name": "Astana Soap Factory (ИП ASF)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "astanasoapfactory",
+  "website": "https://astanasoapfactory.com/",
+  "source": "https://2gis.kz/astana/firm/70000001104399681",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6c5045fafa6ff2aa.jpg",
+  "avatar_source": "website"
  },
  "astana:aster автомобили": {
   "name": "ASTER Автомобили",
@@ -11843,6 +11916,13 @@
   "instagram": "hookahplace_botanic",
   "source": "https://2gis.kz/astana/firm/70000001113657283"
  },
+ "astana:hr 2 viр": {
+  "name": "HR 2 VIР",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
+ },
  "astana:hyundai auto esil": {
   "name": "Hyundai Auto Esil",
   "city": "astana",
@@ -12332,6 +12412,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:mak impex": {
+  "name": "MAK ImpEx",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
  },
  "astana:manana": {
   "name": "MANANA",
@@ -13590,6 +13677,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:venera": {
+  "name": "Venera",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
  },
  "astana:viaggio": {
   "name": "VIAGGIO",
@@ -15105,6 +15199,20 @@
   "v": 3,
   "checked_at": "2026-10-31T23:43:38+00:00"
  },
+ "astana:кухни модуль": {
+  "name": "Кухни Модуль",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "kuhnimodul_kz",
+  "website": "http://kuhni-modul.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001100418695",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:лаврут": {
   "name": "Лаврут",
   "city": "astana",
@@ -15359,6 +15467,20 @@
   ],
   "avatar": "001144b90b88c662.jpg",
   "avatar_source": "website"
+ },
+ "astana:мир реабилитации": {
+  "name": "МИР РЕАБИЛИТАЦИИ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "mir_reabil",
+  "telegram": "mir_reabil",
+  "source": "https://2gis.kz/astana/firm/70000001113725166",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
  },
  "astana:мк корпорация": {
   "name": "«МК «Корпорация»",
@@ -16516,6 +16638,20 @@
   "instagram": "robovalli.kz",
   "source": "https://2gis.kz/astana/firm/70000001103854709"
  },
+ "astana:щелково агрохим kz": {
+  "name": "Щелково Агрохим - KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "betaren_kz",
+  "website": "https://www.betaren.ru/",
+  "source": "https://2gis.kz/astana/firm/70000001018127673",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:эдем": {
   "name": "ЭДЕМ",
   "city": "astana",
@@ -16930,6 +17066,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:v i p clinic": {
+  "name": "V.I.P. CLINIC",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "vip_dental.clinic",
+  "source": "https://2gis.kz/atyrau/firm/70000001064651226"
  },
  "atyrau:viled fashion вилед фешн": {
   "name": "VILED FASHION (ВИЛЕД ФЕШН)",
@@ -21247,6 +21392,13 @@
    "website"
   ]
  },
+ "shymkent:daulet alliance": {
+  "name": "DAULET ALLIANCE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
+ },
  "shymkent:doscar group": {
   "name": "DOSCAR GROUP",
   "city": "shymkent",
@@ -21487,6 +21639,13 @@
   "instagram": "optimus.kz",
   "source": "https://www.instagram.com/optimus.kz/"
  },
+ "shymkent:orbis machinery": {
+  "name": "ORBIS MACHINERY",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
+ },
  "shymkent:orda motors auto market": {
   "name": "ORDA MOTORS AUTO MARKET",
   "city": "shymkent",
@@ -21722,6 +21881,13 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "shymkent:восточный базар ип чернов с в": {
+  "name": "Восточный Базар (ИП Чернов С.В.)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
+ },
  "shymkent:высочайший": {
   "name": "Высочайший",
   "city": "shymkent",
@@ -21842,6 +22008,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "shymkent:казахстанский завод металлоконструкций": {
+  "name": "КАЗАХСТАНСКИЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
  },
  "shymkent:калменов ж к": {
   "name": "КАЛМЕНОВ Ж.К",
@@ -22936,6 +23109,13 @@
    "website"
   ]
  },
+ "uralsk:оками": {
+  "name": "Оками",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00"
+ },
  "uralsk:орталықстройинвест": {
   "name": "ОрталықСтройИнвест",
   "city": "uralsk",
@@ -23712,6 +23892,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "ust-kamenogorsk:продуктофф тм маркет сбыт": {
+  "name": "Продуктофф, ТМ (Маркет Сбыт )",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T19:45:07+00:00",
+  "instagram": "produktoff.kz",
+  "website": "http://produktoff.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001059784733",
+  "avatar_checked_at": "2026-11-02T19:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:радуга тоо компания raduga kdr": {
   "name": "Радуга, ТОО (Компания Raduga KDR)",

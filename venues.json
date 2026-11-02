@@ -599,6 +599,22 @@
   "instagram": "shashlyk.house.akshukur",
   "source": "https://2gis.kz/aktau/firm/70000001101557759"
  },
+ "aktobe:220 volt ип ашимова м м": {
+  "name": "220 VOLT (ИП Ашимова М.М.)",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "220voltaktobe",
+  "website": "https://220volt.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001035423734",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "748a765b0c7b70b4.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:aktobe business systems": {
   "name": "Aktobe Business Systems",
   "city": "aktobe",
@@ -4218,6 +4234,13 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:leader agro": {
+  "name": "Leader AGRO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
+ },
  "almaty:leader trans team": {
   "name": "Leader Trans Team",
   "city": "almaty",
@@ -4342,6 +4365,13 @@
   "checked_at": "2026-10-31T00:43:30+00:00",
   "instagram": "maiqazan",
   "source": "https://2gis.kz/almaty/firm/70000001038678879"
+ },
+ "almaty:mak impex": {
+  "name": "MAK ImpEx",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "almaty:marrone rosso тм тоо dand m investments": {
   "name": "Marrone Rosso, ТМ ( ТОО DAND M INVESTMENTS)",
@@ -4656,6 +4686,20 @@
   "checked_at": "2026-11-01T01:42:32+00:00",
   "instagram": "nomad_exclusive_eyewear",
   "source": "https://2gis.kz/almaty/firm/70000001116200414"
+ },
+ "almaty:nova svet": {
+  "name": "NOVA SVET",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "novasvet.kz",
+  "website": "https://novasvet.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000802535",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:nurancell": {
   "name": "Nurancell",
@@ -5465,6 +5509,13 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "almaty:sozo": {
+  "name": "Sozo",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
+ },
  "almaty:sp eco link": {
   "name": "SP Eco Link",
   "city": "almaty",
@@ -5968,6 +6019,13 @@
   "checked_at": "2026-10-28T08:43:39+00:00",
   "instagram": "vanila.collection_",
   "source": "https://2gis.kz/almaty/firm/70000001109886094"
+ },
+ "almaty:veda s": {
+  "name": "Veda S",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "almaty:vega food": {
   "name": "Vega Food",
@@ -7815,6 +7873,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "almaty:ист вест казахстан": {
+  "name": "Ист-Вест Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "almaty:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
@@ -10197,6 +10262,13 @@
    "website"
   ]
  },
+ "astana:alver group": {
+  "name": "Alver Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
+ },
  "astana:and asia": {
   "name": "AND Asia",
   "city": "astana",
@@ -10684,6 +10756,13 @@
   "checked_at": "2026-10-30T09:43:32+00:00",
   "instagram": "coffee.hub.kz",
   "source": "https://2gis.kz/astana/firm/70000001115504720"
+ },
+ "astana:commercium": {
+  "name": "Commercium",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "astana:common market corporation": {
   "name": "Common Market Corporation",
@@ -12048,6 +12127,20 @@
   "instagram": "pantheon.astana",
   "source": "https://2gis.kz/astana/firm/70000001100733321"
  },
+ "astana:papa johns": {
+  "name": "Papa John’s",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "papajohns_astana",
+  "website": "https://papajohns.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001084470346",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:paper products": {
   "name": "Paper Products",
   "city": "astana",
@@ -12212,6 +12305,20 @@
   "website": "https://qadamvisagroup.com/",
   "source": "https://2gis.kz/astana/firm/70000001115148580",
   "avatar_checked_at": "2026-10-31T01:43:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:qazaq republic": {
+  "name": "Qazaq Republic",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "qazaq.republic",
+  "website": "https://qazaqrepublic.com/",
+  "source": "https://2gis.kz/astana/firm/70000001045454055",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14095,6 +14202,22 @@
   "instagram": "kausar.astana.shayhana",
   "source": "https://2gis.kz/astana/firm/70000001100863596"
  },
+ "astana:кафе софт kz": {
+  "name": "Кафе Софт KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "kafesoft.kz",
+  "website": "https://kafesoft.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001036686980",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1d6b15fcaa547248.jpg",
+  "avatar_source": "website"
+ },
  "astana:керуен": {
   "name": "Керуен",
   "city": "astana",
@@ -15731,6 +15854,13 @@
   "checked_at": "2026-10-30T10:44:23+00:00",
   "instagram": "adona.kz",
   "source": "https://2gis.kz/atyrau/firm/70000001055762774"
+ },
+ "atyrau:alem crypto mining": {
+  "name": "Alem Crypto Mining",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "atyrau:apple city corps": {
   "name": "Apple City Corps",
@@ -17389,6 +17519,15 @@
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
  },
+ "kokshetau:burabay hotel management отель rixos borovoe": {
+  "name": "Burabay Hotel Management (Отель Rixos Borovoe)",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "rixosborovoe",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
+ },
  "kokshetau:canagro exports": {
   "name": "CANAGRO EXPORTS",
   "city": "kokshetau",
@@ -17713,6 +17852,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
+ },
+ "kostanay:home express": {
+  "name": "Home Express",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
@@ -18392,6 +18538,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kyzylorda:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001062711642",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "32156c2ab8a26f75.jpg",
+  "avatar_source": "website"
  },
  "kyzylorda:kyzylorda refinery": {
   "name": "Kyzylorda Refinery",
@@ -19941,6 +20103,15 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "shymkent:burabay hotel management отель rixos borovoe": {
+  "name": "Burabay Hotel Management (Отель Rixos Borovoe)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "rixosborovoe",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
+ },
  "shymkent:cinema operation": {
   "name": "Cinema operation",
   "city": "shymkent",
@@ -20232,6 +20403,22 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "shymkent:qazaq bitum processing": {
+  "name": "QAZAQ BITUM Processing",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00",
+  "instagram": "qazaqbitum.kz",
+  "website": "https://qazaqbitum.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001088196372",
+  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b0644599011f4c4f.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
   "city": "shymkent",
@@ -20268,6 +20455,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "shymkent:sd trade in": {
+  "name": "SD Trade In",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "shymkent:senim guard": {
   "name": "Senim Guard",
@@ -21925,6 +22119,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "ust-kamenogorsk:востокэколайн": {
+  "name": "ВостокЭкоЛайн",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T11:44:06+00:00"
  },
  "ust-kamenogorsk:высочайший": {
   "name": "Высочайший",

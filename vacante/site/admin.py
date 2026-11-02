@@ -138,6 +138,8 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
         "bot": bot,
         "crm": crm(data_dir, vacancies),
         "crm_api": f"{BOT_URL}/api/crm",
+        "jobs_api": f"{BOT_URL}/api/jobs",  # кто размещал вакансии в боте: грузится из воркера, на GitHub не хранится
+        "cities": {slug: names[0] for slug, names in CITIES.items()},
     }
 
 

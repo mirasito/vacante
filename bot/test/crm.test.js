@@ -3,7 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
 
-import { crmApi, crmKey } from "../src/crm.js";
+import { crmApi, crmKey, jobsApi } from "../src/crm.js";
 
 function testDB() {
   const db = new DatabaseSync(":memory:");
@@ -49,4 +49,24 @@ test("чужой пароль, неизвестный статус и предз
   assert.equal(pre.status, 204);
   assert.equal(pre.headers.get("Access-Control-Allow-Origin"), "https://vacante.kz");
   assert.equal((await call({ ...e, ADMIN_PASSWORD: undefined }, "GET")).status, 503);
+});
+
+test("вкладка «Работодатели»: кто разместил, статус, отклики и оплаты, только с паролем", async () => {
+  const e = env();
+  await e.DB.prepare("INSERT INTO jobs (employer_chat, employer_name, status, city, title, company, salary) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    .bind(42, "Айгуль (@aigul)", "approved", "almaty", "Повар", "Зерно", "300 000").run();
+  await e.DB.prepare("INSERT INTO jobs (employer_chat, employer_name, status) VALUES (?, ?, ?)").bind(43, "Ерлан", "draft").run();
+  await e.DB.prepare("INSERT INTO applications (job_id, chat_id) VALUES (1, 7), (1, 8)").run();
+  await e.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days, status) VALUES (1, 42, 3000, 7, 'confirmed'), (1, 42, 3000, 7, 'pending')").run();
+  const req = (password) => new Request("https://bot.example/api/jobs", {
+    headers: { Origin: "https://vacante.kz", Authorization: `Bearer ${password}` },
+  });
+  assert.equal((await jobsApi(req("wrong"), e)).status, 403);
+  const r = await jobsApi(req(await crmKey("secret")), e);
+  assert.equal(r.status, 200);
+  const { jobs } = await r.json();
+  assert.deepEqual(jobs.map((j) => [j.id, j.employer_name, j.status]), [[2, "Ерлан", "draft"], [1, "Айгуль (@aigul)", "approved"]]);
+  assert.equal(jobs[1].applications, 2);
+  assert.equal(jobs[1].paid, 3000);
+  assert.equal(jobs[1].employer_chat, 42);
 });

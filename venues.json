@@ -21,6 +21,15 @@
   "avatar": "57b6970a6082bf65.jpg",
   "avatar_source": "website"
  },
+ "aktau:autostock": {
+  "name": "AUTOSTOCK",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "autostock_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001098470579"
+ },
  "aktau:bulka": {
   "name": "BULKA",
   "city": "aktau",
@@ -1090,6 +1099,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
+ },
+ "aktobe:киреева а н": {
+  "name": "Киреева А. Н.",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
  },
  "aktobe:лядов е е": {
   "name": "Лядов Е.Е",
@@ -5775,6 +5791,13 @@
   "avatar": "a2ba60bbfe4c6ba1.jpg",
   "avatar_source": "website"
  },
+ "almaty:tas company": {
+  "name": "TAS company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "almaty:tatiyna": {
   "name": "Tatiyna",
   "city": "almaty",
@@ -6850,6 +6873,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "almaty:амраев р р": {
+  "name": "Амраев Р.Р",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
  },
  "almaty:анар": {
   "name": "Анар",
@@ -9426,6 +9456,13 @@
    "website"
   ]
  },
+ "almaty:сынар групп": {
+  "name": "Сынар Групп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "almaty:сыробогатов": {
   "name": "Сыробогатов",
   "city": "almaty",
@@ -10584,6 +10621,15 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "astana:bodrum coffee": {
+  "name": "Bodrum Coffee",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "bodrumcoffee_ast",
+  "source": "https://2gis.kz/astana/firm/70000001097608311"
+ },
  "astana:bounty shop глазкова м б": {
   "name": "BOUNTY SHOP (ГЛАЗКОВА М.Б)",
   "city": "astana",
@@ -10853,6 +10899,13 @@
   "avatar": "b1e73e3b03e5dd73.jpg",
   "avatar_source": "website"
  },
+ "astana:counting group": {
+  "name": "Counting Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "astana:creatura": {
   "name": "Creatura",
   "city": "astana",
@@ -10980,6 +11033,15 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:dosso dossi": {
+  "name": "DOSSO DOSSI",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "dosso_dossi_kz",
+  "source": "https://2gis.kz/astana/firm/70000001075433102"
+ },
  "astana:drink tea": {
   "name": "Drink tea",
   "city": "astana",
@@ -11083,6 +11145,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
+ },
+ "astana:financial services audit": {
+  "name": "Financial services audit",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
  },
  "astana:fitness palace kz нурмаханбетов е с": {
   "name": "Fitness Palace KZ Нурмаханбетов Е.С.",
@@ -11696,6 +11765,24 @@
   "avatar": "979bac8f4384ab9b.jpg",
   "avatar_source": "telegram"
  },
+ "astana:lamoda kz мода с доставкой тоо": {
+  "name": "Lamoda.kz (Мода с доставкой, ТОО)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "lamoda_kz",
+  "telegram": "lamoda_kz",
+  "website": "https://lamoda.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001109614219",
+  "avatar_checked_at": "2026-11-02T13:55:35+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3839b2ef203c9820.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:lanzhou": {
   "name": "Lanzhou",
   "city": "astana",
@@ -11976,6 +12063,13 @@
   ],
   "avatar": "0d9c6b637e8d17bb.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:modern technologies kz": {
+  "name": "Modern Technologies KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
  },
  "astana:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
@@ -13504,6 +13598,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "astana:байтлесов а с": {
+  "name": "Байтлесов А.С.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "astana:банный комплекс": {
   "name": "Банный комплекс",
   "city": "astana",
@@ -14486,6 +14587,15 @@
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
  },
+ "astana:лаунж бар totem": {
+  "name": "Лаунж бар TOTEM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "totem.lounge.kz",
+  "source": "https://2gis.kz/astana/firm/70000001113374837"
+ },
  "astana:легато": {
   "name": "Легато",
   "city": "astana",
@@ -15459,6 +15569,20 @@
   "instagram": "goldland.erzo",
   "source": "https://2gis.kz/astana/firm/70000001048078112"
  },
+ "astana:тм hilton astana": {
+  "name": "ТМ Hilton Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "hiltonastana",
+  "website": "https://www3.hilton.com/en/hotels/kazakhstan/hilton-astana-TSEKAHI/",
+  "source": "https://2gis.kz/astana/firm/70000001028852337",
+  "avatar_checked_at": "2026-11-02T13:55:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:торговая компания": {
   "name": "Торговая компания",
   "city": "astana",
@@ -15781,6 +15905,13 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "astana:шимшикова айгерим": {
+  "name": "Шимшикова Айгерим",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "astana:шинный магазин": {
   "name": "Шинный магазин",
   "city": "astana",
@@ -16035,6 +16166,13 @@
   "checked_at": "2026-10-29T20:43:40+00:00",
   "instagram": "compasskazakhstan",
   "source": "https://2gis.kz/atyrau/firm/70000001045107222"
+ },
+ "atyrau:fm keeping atyrau": {
+  "name": "FM-Keeping Atyrau",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
  },
  "atyrau:giansar company": {
   "name": "GIANSAR COMPANY",
@@ -19252,6 +19390,13 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "pavlodar:микs пв": {
+  "name": "МИКS-ПВ",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "pavlodar:остин казахстан ostin тм": {
   "name": "Остин Казахстан (O'stin ТМ)",
   "city": "pavlodar",
@@ -20227,6 +20372,13 @@
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
  },
+ "shymkent:attila empire": {
+  "name": "Attila Empire",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
+ },
  "shymkent:beeline тм": {
   "name": "Beeline, ТМ",
   "city": "shymkent",
@@ -21177,6 +21329,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T16:43:38+00:00"
+ },
+ "taldykorgan:кипчакбаев": {
+  "name": "Кипчакбаев",
+  "city": "taldykorgan",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00"
  },
  "taldykorgan:нұр шапағатқұрылыс": {
   "name": "НҰР-ШАПАҒАТҚҰРЫЛЫС",
@@ -22282,6 +22441,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "ust-kamenogorsk:винт": {
+  "name": "Винт",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T13:55:32+00:00",
+  "instagram": "wint.kz",
+  "website": "https://wint.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721315144",
+  "avatar_checked_at": "2026-11-02T13:55:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c8dfac18331d4e83.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:востокцветмет": {
   "name": "Востокцветмет",

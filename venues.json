@@ -142,6 +142,22 @@
   "instagram": "jamesburger.kz",
   "source": "https://www.instagram.com/jamesburger.kz/"
  },
+ "aktau:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "kimex_grazie",
+  "website": "https://kimex.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001035133876",
+  "avatar_checked_at": "2026-11-02T22:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1a3413259f60595c.jpg",
+  "avatar_source": "website"
+ },
  "aktau:keruen inn qazaq": {
   "name": "Keruen Inn Qazaq",
   "city": "aktau",
@@ -941,6 +957,20 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "aktobe:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "technodomkz",
+  "website": "https://technodom.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001031942248",
+  "avatar_checked_at": "2026-11-02T22:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:temirgroup": {
   "name": "TEMIRGROUP",
   "city": "aktobe",
@@ -1634,6 +1664,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:almata_lenta": {
+  "name": "almata_lenta",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "almata_lenta",
+  "source": "https://www.instagram.com/almata_lenta/"
  },
  "almaty:almatin group": {
   "name": "Almatin group",
@@ -3733,6 +3772,13 @@
   "avatar": "b69ebbfefad03941.jpg",
   "avatar_source": "website"
  },
+ "almaty:gti rent": {
+  "name": "GTI Rent",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "almaty:h&b project": {
   "name": "H&B Project",
   "city": "almaty",
@@ -5114,6 +5160,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "almaty:parasat ii": {
+  "name": "PARASAT II",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "almaty:patentes talgo s l филиал в республике казахстан": {
   "name": "Patentes Talgo, S.L. Филиал в Республике Казахстан",
   "city": "almaty",
@@ -6064,6 +6117,13 @@
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
  },
+ "almaty:tau building company": {
+  "name": "Tau building company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "almaty:taurus gss": {
   "name": "Taurus GSS",
   "city": "almaty",
@@ -6994,6 +7054,13 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "almaty:алдангорова анаргуль": {
+  "name": "ИП Алдангорова Анаргуль",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "almaty:алексеевский хлебный дом": {
   "name": "Алексеевский хлебный дом",
   "city": "almaty",
@@ -7404,6 +7471,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:асхана 5в": {
+  "name": "Асхана 5в",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
  },
  "almaty:атлант групп": {
   "name": "Атлант Групп",
@@ -8377,6 +8451,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:казахстанско российский медицинский университет": {
+  "name": "КАЗАХСТАНСКО-РОССИЙСКИЙ МЕДИЦИНСКИЙ УНИВЕРСИТЕТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "medkrmu",
+  "website": "http://krmu.edu.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001031652688",
+  "avatar_checked_at": "2026-11-02T22:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b5a5bd9f2ec0a8b8.jpg",
+  "avatar_source": "website"
  },
  "almaty:казбад": {
   "name": "КазБАД",
@@ -9600,6 +9690,13 @@
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
  },
+ "almaty:развитие": {
+  "name": "Развитие",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "almaty:рахымжанов": {
   "name": "ИП Рахымжанов",
   "city": "almaty",
@@ -10388,6 +10485,13 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "almaty:фрост ко": {
+  "name": "Фрост Ко",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "almaty:фрэш маркет": {
   "name": "Фрэш Маркет",
   "city": "almaty",
@@ -11161,6 +11265,20 @@
   "checked_at": "2026-11-02T02:43:14+00:00",
   "instagram": "beau_monde_beauty_",
   "source": "https://2gis.kz/astana/firm/70000001117338871"
+ },
+ "astana:beeline тм": {
+  "name": "Beeline, ТМ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "beeline_kz",
+  "website": "https://beeline.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001030141734",
+  "avatar_checked_at": "2026-11-02T22:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:bi group": {
   "name": "BI Group",
@@ -12357,6 +12475,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:koz in optica": {
+  "name": "KOZ IN OPTICA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "koz_in_optica",
+  "source": "https://2gis.kz/astana/firm/70000001053564239"
  },
  "astana:la crème boutique": {
   "name": "La Crème Boutique",
@@ -14133,6 +14260,15 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "astana:алтын адам": {
+  "name": "Алтын Адам",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "altyn_adamdetsad",
+  "source": "https://2gis.kz/astana/firm/70000001060483672"
+ },
  "astana:алтын сара": {
   "name": "Алтын Сара",
   "city": "astana",
@@ -15787,6 +15923,13 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "astana:охранная компания": {
+  "name": "Тоо охранная компания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "astana:охранное агентство": {
   "name": "Охранное агентство",
   "city": "astana",
@@ -15851,6 +15994,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "astana:пиццерия": {
+  "name": "Пиццерия",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
  },
  "astana:пкф атриум": {
   "name": "ПКФ Атриум",
@@ -17872,6 +18022,20 @@
   ],
   "avatar": "2a3bb5883cd61e35.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:ksm": {
+  "name": "KSM",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "tooksm.kz",
+  "website": "https://www.tooksm.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302827683",
+  "avatar_checked_at": "2026-11-02T22:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:lissa": {
   "name": "LISSA",
@@ -20312,6 +20476,13 @@
   "avatar": "d280849cd74f366e.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:rarcom": {
+  "name": "Rarcom",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
+ },
  "pavlodar:rpv trade company": {
   "name": "RPV-TRADE Company",
   "city": "pavlodar",
@@ -21343,6 +21514,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "semey:айтимбетов асхат хамарьянович": {
+  "name": "АЙТИМБЕТОВ АСХАТ ХАМАРЬЯНОВИЧ",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00"
  },
  "semey:акваарт": {
   "name": "Акваарт",
@@ -24023,6 +24201,22 @@
   ],
   "avatar": "86c392d830f425bb.jpg",
   "avatar_source": "telegram"
+ },
+ "ust-kamenogorsk:иванова terrasport fitness club": {
+  "name": "Иванова (TERRASPORT fitness club)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-02T22:43:44+00:00",
+  "instagram": "terrasport.kz",
+  "telegram": "terrasport",
+  "website": "http://terrasport.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721336531",
+  "avatar_checked_at": "2026-11-02T22:43:45+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "ust-kamenogorsk:илькон": {
   "name": "ИльКон",

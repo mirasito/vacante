@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-03T03:56:30+00:00",
+ "updated_at": "2026-11-03T04:57:09+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -21565,6 +21565,275 @@
     "schedule": "5/2, 8 часов",
     "address": "ул. Шолохова, 68"
    }
+  },
+  "astana_job_vakansii-130106": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "Магазин «Имран»",
+    "schedule": "2/2, 09:00–21:00 или 21:00–09:00",
+    "address": "ул. Орынбор, 1",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-31211": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Помощник пекаря",
+    "employer": null,
+    "schedule": "5/2, 07:00–18:00",
+    "perks": [
+     "Питание",
+     "Обучение"
+    ]
+   }
+  },
+  "hh-139089140": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "MEAT & BEER",
+    "address": "пр. Аль-Фараби, 46"
+   }
+  },
+  "hh-139089112": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Детский мир",
+    "address": "ул. Сыганак, 60/5, ТРЦ «Abu Dhabi Plaza»"
+   }
+  },
+  "hh-139075463": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Автокурьер",
+    "address": "бул. Нуржол, 14"
+   }
+  },
+  "hh-139060889": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "address": "пр. Абая, 94А"
+   }
+  },
+  "hh-139060751": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "Apodit Clinic",
+    "address": "пр. Улы Дала, 56/1"
+   }
+  },
+  "rabota_astanakz-31175": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, 08:00–19:00"
+   }
+  },
+  "hh-139059669": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Администратор барбершопа",
+    "employer": "Fellow Barber",
+    "schedule": "2/2",
+    "address": "ул. Кунаева, 2"
+   }
+  },
+  "hh-139059382": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "address": "пр. Туран, 37, ТРЦ «Хан Шатыр»"
+   }
+  },
+  "hh-139054480": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Кассир-универсал"
+   }
+  },
+  "hh-139087322": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "Arcada",
+    "address": "ул. Рихарда Зорге, 18"
+   }
+  },
+  "almaty_rabota_work-31783": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Официант, повар, кухонный работник, техничка",
+    "employer": "Санаторий «Каргалы»",
+    "salary_min": 120000,
+    "salary_max": 220000,
+    "salary_period": "month"
+   }
+  },
+  "hh-139031688": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Кассир-оценщик",
+    "employer": "Ломбард «Белый»"
+   }
+  },
+  "hh-136323712": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "Lumiere Service",
+    "address": "ЖК «Lumiere»"
+   }
+  },
+  "hh-139089094": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Менеджер по продажам",
+    "employer": "2ГИС",
+    "address": "пр. Жибек Жолы, 135"
+   }
+  },
+  "hh-139088994": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "address": "Кульджинский тракт, 601"
+   }
+  },
+  "hh-137109944": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "address": "ул. Керима Мынбаева, 53А"
+   }
+  },
+  "hh-139088788": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "Fintend",
+    "address": "ул. Ломоносова, 61"
+   }
+  },
+  "hh-139088096": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "employer": "Собек-Сервис",
+    "address": "пр. Суюнбая, 465В"
+   }
+  },
+  "hh-139087994": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Упаковщик на склад",
+    "address": "с. Отеген батыр"
+   }
+  },
+  "hh-139088898": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "address": "пр. Санкибай батыра, 177В"
+   }
+  },
+  "hh-139086939": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "address": "ст. Карабатан"
+   }
+  },
+  "hh-139088929": {
+   "verdict": "reject",
+   "at": "2026-11-03T04:57:09+00:00",
+   "reason": "Офисная должность"
+  },
+  "hh-139087360": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "address": "Промышленная ул., 2"
+   }
+  },
+  "hh-134709791": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Оператор приёмки товара",
+    "employer": "Magnum"
+   }
+  },
+  "rabota_semey_official-6782": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Продавец-консультант, кассир",
+    "employer": null,
+    "salary_min": 200000,
+    "salary_max": 210000,
+    "salary_period": "month",
+    "schedule": "5/2, 09:00–19:00",
+    "address": "ТД «Алатау»",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-139087293": {
+   "verdict": "reject",
+   "at": "2026-11-03T04:57:09+00:00",
+   "reason": "Офисная должность с высшим образованием"
+  },
+  "rabota_semey_official-6783": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Продавец салатов",
+    "employer": "Супермаркет «Адал»",
+    "salary_min": 8000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "rabota_semey_official-6784": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "schedule": "09:00–18:00"
+   }
+  },
+  "rabota_semey_official-6781": {
+   "verdict": "approve",
+   "at": "2026-11-03T04:57:09+00:00",
+   "fields": {
+    "title": "Кассир, бармен",
+    "employer": "Пивнофф"
+   }
+  },
+  "hh-139089040": {
+   "verdict": "reject",
+   "at": "2026-11-03T04:57:09+00:00",
+   "reason": "Агент недвижимости, не рабочая специальность"
   }
  }
 }

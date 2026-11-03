@@ -1770,6 +1770,15 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "almaty:almaty ainek": {
+  "name": "Almaty Ainek",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "almatyainek",
+  "source": "https://2gis.kz/almaty/firm/70000001027640878"
+ },
  "almaty:almaty autoparts production": {
   "name": "Almaty Autoparts Production",
   "city": "almaty",
@@ -1783,6 +1792,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
+ },
+ "almaty:almaty motors premium": {
+  "name": "Almaty Motors Premium",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
  },
  "almaty:almawine": {
   "name": "ALMAWINE",
@@ -2229,6 +2245,15 @@
   "checked_at": "2026-10-29T00:43:40+00:00",
   "instagram": "aura02_coffee",
   "source": "https://2gis.kz/almaty/firm/70000001118736147"
+ },
+ "almaty:auris group": {
+  "name": "AURIS Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "auris_restobar_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001109861034"
  },
  "almaty:auto trader": {
   "name": "Auto Trader",
@@ -3057,6 +3082,15 @@
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
  },
+ "almaty:dayin food": {
+  "name": "Dayin Food",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "dayinfood.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001039997490"
+ },
  "almaty:decathlon": {
   "name": "Decathlon",
   "city": "almaty",
@@ -3086,6 +3120,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:deus tour": {
+  "name": "DEUS TOUR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
  },
  "almaty:digital energy group": {
   "name": "Digital Energy Group",
@@ -4472,6 +4513,20 @@
    "website"
   ]
  },
+ "almaty:kazmobil trans": {
+  "name": "KazMobil Trans",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "kazmobil.kz",
+  "website": "https://www.kazmobiltrans.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037402393",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kazparts тоо": {
   "name": "KAZPARTS, ТОО",
   "city": "almaty",
@@ -5125,6 +5180,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:mv": {
+  "name": "MV",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
  },
  "almaty:my blins": {
   "name": "MY BLINS",
@@ -7770,6 +7832,20 @@
    "website"
   ]
  },
+ "almaty:архиметалл": {
+  "name": "АрхиМеталл",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "archimetal.kz",
+  "website": "https://archimetal.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001083787409",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:асар медикус": {
   "name": "Асар Медикус",
   "city": "almaty",
@@ -8486,6 +8562,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:детский магазин uti": {
+  "name": "Детский магазин Uti",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "uti_puti_kz",
+  "telegram": "utiputikz",
+  "source": "https://2gis.kz/almaty/firm/70000001028494148",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "48b50215174a80da.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
@@ -12103,6 +12195,13 @@
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
  },
+ "astana:cbc астана": {
+  "name": "CBC-АСТАНА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
+ },
  "astana:center beton company": {
   "name": "Center Beton Company",
   "city": "astana",
@@ -12177,6 +12276,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T07:45:36+00:00"
+ },
+ "astana:cocobeeastana": {
+  "name": "COCOBEEASTANA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "cocobee_astana",
+  "website": "https://cocobee.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001111868705",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:coffee boom": {
   "name": "Coffee Boom",
@@ -12744,6 +12857,15 @@
   ],
   "avatar": "50cf3a7815be9ebb.jpg",
   "avatar_source": "website"
+ },
+ "astana:guess kazakhstan гесс казахстан": {
+  "name": "GUESS KAZAKHSTAN (ГЕСС КАЗАХСТАН)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "guess.kazakhstan",
+  "source": "https://2gis.kz/astana/firm/70000001027095682"
  },
  "astana:gwm nurly zhol": {
   "name": "GWM Nurly Zhol",
@@ -13576,6 +13698,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
+ },
+ "astana:nastrazhe distribution": {
+  "name": "NASTRAZHE distribution",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "nastrazhe.kz",
+  "telegram": "nastrazhekz",
+  "website": "https://nastrazhe.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001032246937",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "astana:natstroy": {
   "name": "NatStroy",
@@ -14637,6 +14775,20 @@
   ],
   "avatar": "aef0f8cad7edc525.jpg",
   "avatar_source": "website"
+ },
+ "astana:true trade": {
+  "name": "True Trade",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "marcopolo.kaz",
+  "website": "https://truetrade.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001028281836",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:turan": {
   "name": "Turan",
@@ -16652,6 +16804,13 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "astana:мтс торг": {
+  "name": "МТС-ТОРГ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
+ },
  "astana:муратова": {
   "name": "Муратова",
   "city": "astana",
@@ -17083,6 +17242,15 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "astana:семейное кафе sultani": {
+  "name": "Семейное кафе Sultani",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "sultani.astana",
+  "source": "https://2gis.kz/astana/firm/70000001089434119"
+ },
  "astana:семизбай": {
   "name": "Семизбай",
   "city": "astana",
@@ -17467,6 +17635,13 @@
   ],
   "avatar": "24fd2d9268e3180c.jpg",
   "avatar_source": "website"
+ },
+ "astana:техстройконтракт": {
+  "name": "ТЕХСТРОЙКОНТРАКТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
  },
  "astana:техцентр tez auto": {
   "name": "Техцентр Tez Auto",
@@ -20770,6 +20945,13 @@
   "avatar": "32916b346658ff2c.jpg",
   "avatar_source": "website"
  },
+ "kostanay:интернешнл консалт групп": {
+  "name": "Интернешнл консалт групп",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00"
+ },
  "kostanay:каmlitkz": {
   "name": "КаmLitKZ",
   "city": "kostanay",
@@ -21850,6 +22032,38 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
+ },
+ "pavlodar:молком павлодар": {
+  "name": "МолКом-Павлодар",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "molkom_pvl",
+  "website": "https://www.molkom.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018942966",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "50313568a3f9fd53.jpg",
+  "avatar_source": "website"
+ },
+ "pavlodar:монолит": {
+  "name": "МОНОЛИТ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T06:44:20+00:00",
+  "instagram": "azs_monolit",
+  "telegram": "azsmonolit",
+  "source": "https://2gis.kz/pavlodar/firm/70000001063434306",
+  "avatar_checked_at": "2026-11-03T06:44:21+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "acb366e15350a914.jpg",
+  "avatar_source": "telegram"
  },
  "pavlodar:нагиев": {
   "name": "Нагиев",

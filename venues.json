@@ -1527,6 +1527,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "aktobe:чaстный фонд благотворительный фонд жаңа ұрпақ 2025": {
+  "name": "Чaстный фонд Благотворительный фонд Жаңа Ұрпақ 2025",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "aktobe:шинторг центр": {
   "name": "Шинторг-центр",
   "city": "aktobe",
@@ -4563,6 +4570,13 @@
   "avatar": "06adba46dc480da2.jpg",
   "avatar_source": "website"
  },
+ "almaty:hyundai premium batys": {
+  "name": "Hyundai Premium Batys",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "almaty:hyundai trans auto": {
   "name": "Hyundai Trans Auto",
   "city": "almaty",
@@ -5641,6 +5655,13 @@
   "checked_at": "2026-10-30T03:43:38+00:00",
   "instagram": "nauryz.kz",
   "source": "https://2gis.kz/almaty/firm/70000001081531267"
+ },
+ "almaty:newera group": {
+  "name": "NewEra Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
  },
  "almaty:next": {
   "name": "Next",
@@ -6745,6 +6766,20 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "almaty:snt enterprise": {
+  "name": "SNT Enterprise",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "snt_kz",
+  "website": "https://snt1.satu.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001031757869",
+  "avatar_checked_at": "2026-11-03T19:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:socar": {
   "name": "SOCAR",
   "city": "almaty",
@@ -7299,6 +7334,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
+ },
+ "almaty:turone": {
+  "name": "TURONE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "turone.kz",
+  "website": "https://turone.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001051166808",
+  "avatar_checked_at": "2026-11-03T19:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3924f6c764685c90.jpg",
+  "avatar_source": "website"
  },
  "almaty:tvin kazakhstan твин казахстан": {
   "name": "TVIN KAZAKHSTAN (ТВИН КАЗАХСТАН)",
@@ -11760,6 +11811,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "almaty:тау спа": {
+  "name": "Тау-Спа",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "almaty:тбм казахстан": {
   "name": "ТБМ - Казахстан",
   "city": "almaty",
@@ -13223,6 +13281,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "astana:burabayfood": {
+  "name": "Burabayfood",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "burabayfoodkz",
+  "source": "https://2gis.kz/astana/firm/70000001034196809"
  },
  "astana:capital education services": {
   "name": "Capital Education Services",
@@ -15041,6 +15108,15 @@
   "checked_at": "2026-10-30T11:43:44+00:00",
   "instagram": "oilhub.kz",
   "source": "https://2gis.kz/astana/firm/70000001103692855"
+ },
+ "astana:oil king": {
+  "name": "OIL KING",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "oil_king_kz",
+  "source": "https://2gis.kz/astana/firm/70000001060675194"
  },
  "astana:omir collection": {
   "name": "OMIR COLLECTION",
@@ -17582,6 +17658,20 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "astana:итс астана": {
+  "name": "ИТС-Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "svarka_astana_its",
+  "website": "https://its-astana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018518570",
+  "avatar_checked_at": "2026-11-03T19:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:ихсанова диана": {
   "name": "Ихсанова Диана",
   "city": "astana",
@@ -17625,6 +17715,20 @@
   ],
   "avatar": "057aedb9f5dbc74a.jpg",
   "avatar_source": "website"
+ },
+ "astana:казгюу ао": {
+  "name": "КазГЮУ, АО",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "mnu.kz",
+  "website": "https://mnu.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018081024",
+  "avatar_checked_at": "2026-11-03T19:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:казметсервис групп": {
   "name": "КазМетСервис Групп",
@@ -19242,6 +19346,13 @@
   "instagram": "toi_optom",
   "source": "https://2gis.kz/astana/firm/70000001075202592"
  },
+ "astana:токбаева дм": {
+  "name": "Токбаева ДМ",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "astana:торговая компания": {
   "name": "Торговая компания",
   "city": "astana",
@@ -19317,6 +19428,13 @@
   "avatar": "8a067c2e11e5312f.jpg",
   "avatar_source": "website"
  },
+ "astana:трофимович е н": {
+  "name": "ТРОФИМОВИЧ Е.Н.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "astana:тулегенов ахлиддин": {
   "name": "ТУЛЕГЕНОВ АХЛИДДИН",
   "city": "astana",
@@ -19337,6 +19455,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "astana:турсунов ш и": {
+  "name": "ТУРСУНОВ Ш.И.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
  },
  "astana:тымакбаева": {
   "name": "Тымакбаева",
@@ -19473,6 +19598,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
+ },
+ "astana:фирма1": {
+  "name": "Фирма1",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
  },
  "astana:х о иксо сеть магазинов товаров из южной кореи иксо": {
   "name": "Х.О.ИКСО (Сеть магазинов товаров из Южной Кореи ИКСО)",
@@ -22729,6 +22861,13 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "kostanay:девина наталья юрьевна": {
+  "name": "Девина Наталья Юрьевна",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "kostanay:дельта м казахстан": {
   "name": "ДЕЛЬТА М КАЗАХСТАН",
   "city": "kostanay",
@@ -23191,6 +23330,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
+ },
+ "kostanay:элифф": {
+  "name": "Элифф",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "eliff_kst",
+  "source": "https://2gis.kz/kostanaj/firm/70000001094798896"
  },
  "kostanay:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
@@ -25199,6 +25347,13 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "semey:тыштыбаев арман": {
+  "name": "Тыштыбаев Арман",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
+ },
  "semey:фисташка": {
   "name": "ФИСТАШКА",
   "city": "semey",
@@ -25265,6 +25420,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:arystan trade": {
+  "name": "Arystan trade",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
  },
  "shymkent:asai logistics": {
   "name": "AsAi Logistics",
@@ -25394,6 +25556,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T19:45:07+00:00"
+ },
+ "shymkent:de fleur": {
+  "name": "De Fleur",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00",
+  "instagram": "defleur.kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001041168183"
  },
  "shymkent:doscar group": {
   "name": "DOSCAR GROUP",
@@ -25916,6 +26087,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "shymkent:академия продаж": {
+  "name": "Академия продаж",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T19:44:10+00:00"
  },
  "shymkent:алиди казахстан": {
   "name": "АЛИДИ Казахстан",

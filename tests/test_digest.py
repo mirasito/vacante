@@ -50,6 +50,15 @@ def test_digest_lists_ten_and_points_to_site():
     assert "📍 Алматы, ул. Абая, 3" in text
 
 
+def test_buttons_open_swipe_app_on_subscribers_city():
+    rows = digest.buttons(sub(city="almaty"), "https://vacante.kz")
+    assert rows[0] == [{"text": "🃏 Листать свайпами", "web_app": {"url": "https://vacante.kz/app/?city=almaty"}}]
+    assert rows[1][0] == {"text": "Все вакансии на сайте", "url": "https://vacante.kz/almaty/"}
+    assert digest.buttons(sub(city=None), "https://vacante.kz")[0][0]["web_app"] == {"url": "https://vacante.kz/app/"}
+    # Telegram открывает приложение только по https: без него кнопки нет, подборка всё равно уходит
+    assert all("web_app" not in b for row in digest.buttons(sub(), "http://localhost:8000") for b in row)
+
+
 def test_run_sends_only_new_matching_vacancies(tmp_path):
     save_vacancies(tmp_path, [make(10, "Кафе «Зерно» ищет бариста, 12 000 тг за смену")])
     sent = []

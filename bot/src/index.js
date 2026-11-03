@@ -11,7 +11,9 @@ import * as job from "./employer.js";
 import * as bot from "./logic.js";
 
 const GREETING =
-  "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов и присылаю новые по вашему городу и сфере.";
+  "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
+  "🃏 Их можно листать свайпами в приложении: вправо сохранить, влево пропустить.\n" +
+  "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.";
 const HELP =
   "Я присылаю новые вакансии с vacante.kz.\n/settings: изменить подписку\n/stop: остановить\n\n" +
   "Работодателям:\n/vacancy: разместить вакансию бесплатно\n/myjobs: мои вакансии";
@@ -83,9 +85,9 @@ async function onMessage(m, env) {
   if (name === "/start" || name === "/settings") {
     const sub = await load(env, chatId);
     await save(env, chatId, sub);
+    if (name === "/start") await send(env, chatId, GREETING, [[bot.appButton(env.SITE_URL, sub.city)]]);
     const { text: question, keyboard } = bot.screen("city", sub);
-    const intro = name === "/start" ? `${GREETING}\n\n` : "";
-    return send(env, chatId, intro + question, keyboard);
+    return send(env, chatId, question, keyboard);
   }
   if (name === "/stop") {
     await save(env, chatId, { ...(await load(env, chatId)), active: 0 });
@@ -110,11 +112,13 @@ async function subscriptionButton(env, q) {
     return tg(env, "editMessageText", { chat_id: chatId, message_id: q.message.message_id, text: STOPPED });
   }
   const { text, keyboard } = bot.screen(show, sub);
+  // Подписка готова: тут же предлагаем полистать вакансии этого города в приложении
+  const rows = show === "done" ? [[bot.appButton(env.SITE_URL, sub.city)], ...keyboard] : keyboard;
   await tg(env, "editMessageText", {
     chat_id: chatId,
     message_id: q.message.message_id,
     text,
-    reply_markup: { inline_keyboard: keyboard },
+    reply_markup: { inline_keyboard: rows },
   });
   if (show === "done") {
     const feed = await fetch(`${env.SITE_URL}/feed.json`, { cf: { cacheTtl: 300 } }).then((r) => r.json());

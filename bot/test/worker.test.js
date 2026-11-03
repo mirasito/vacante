@@ -82,8 +82,13 @@ test("от /start до «Готово» и первых примеров", async
   const me = user(7, "Аян");
   await say(env, me, "/start");
   assert.equal(calls[0].method, "sendMessage");
-  assert.match(calls[0].body.text, /Где ищете работу/);
+  assert.match(calls[0].body.text, /листать свайпами/);
+  assert.deepEqual(calls[0].body.reply_markup.inline_keyboard[0][0].web_app, { url: "https://vacante.kz/app/" });
+  assert.match(calls[1].body.text, /^Где ищете работу/);
   for (const data of ["city:almaty", "go:perks", "done"]) await press(env, me, data);
+  const done = calls.findLast((c) => c.method === "editMessageText");
+  assert.match(done.body.text, /^Готово!/);
+  assert.deepEqual(done.body.reply_markup.inline_keyboard[0][0].web_app, { url: "https://vacante.kz/app/?city=almaty" });
   assert.deepEqual(env.DB.get("SELECT city, categories, perks, min_pay, active FROM subscribers WHERE chat_id = 7"),
     { city: "almaty", categories: "", perks: "", min_pay: 0, active: 1 });
   const last = calls.at(-1);

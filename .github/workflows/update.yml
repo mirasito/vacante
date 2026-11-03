@@ -190,3 +190,19 @@ jobs:
           done
           echo "::error::не удалось сохранить instagram.json"
           exit 1
+
+  # Серию постов обычно запускает post.yml по событию workflow_run. Но если это обновление
+  # запустил другой workflow (например, «Приложение» после сборки) токеном GITHUB_TOKEN,
+  # GitHub такое событие не присылает, и посты в каналы пропускали целый час.
+  # Тогда запускаем серию сами: workflow_dispatch от GITHUB_TOKEN GitHub разрешает.
+  posts:
+    needs: [collect, deploy]
+    if: always() && needs.collect.result == 'success' && github.actor == 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Запустить посты в каналы
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run post.yml --ref main --repo "$GITHUB_REPOSITORY"

@@ -15,17 +15,32 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { loadCity, loadIndex } from './src/api';
 import * as i18n from './src/i18n';
-import { haptic, initTelegram, openUrl, shareLink, telegram, whatsapp } from './src/platform';
+import {
+  addToHomeScreen,
+  haptic,
+  homeScreenStatus,
+  initTelegram,
+  launchCity,
+  openUrl,
+  shareLink,
+  telegram,
+  useBackButton,
+  whatsapp,
+  type HomeScreen,
+} from './src/platform';
 import { read, write } from './src/storage';
 import { SwipeDeck, type DeckHandle, type Dir } from './src/SwipeDeck';
 import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
 import { VacancyCard } from './src/VacancyCard';
 
-type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean };
+// hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили
+type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean; home?: boolean };
 type Seen = Record<string, 'l' | 'r'>;
 
 const MAX_LIKED = 300;
+// Значок на экран телефона предлагаем один раз, когда человек уже полистал ленту
+const HOME_AFTER = 5;
 
 export default function App() {
   return (
@@ -49,6 +64,7 @@ function Main() {
   const [picking, setPicking] = useState(false);
   const [open, setOpen] = useState<Vacancy | null>(null);
   const [attempt, setAttempt] = useState(0);
+  const [home, setHome] = useState<HomeScreen>('unsupported');
   const deck = useRef<DeckHandle>(null);
   const seenCity = useRef<string | null>(null);
 
@@ -65,9 +81,12 @@ function Main() {
         initTelegram(),
       ]);
       const tgLang = app?.initDataUnsafe?.user?.language_code === 'kk' ? 'kk' : undefined;
-      setPrefs({ ...stored, lang: stored.lang ?? tgLang ?? 'ru' });
+      // Открыли по кнопке из подборки бота: сразу город этой подборки
+      const linkCity = launchCity();
+      setPrefs({ ...stored, lang: stored.lang ?? tgLang ?? 'ru', ...(linkCity ? { city: linkCity } : {}) });
       setLiked(storedLiked);
       setBooted(true);
+      if (app) homeScreenStatus().then(setHome);
     })();
   }, []);
 
@@ -75,6 +94,13 @@ function Main() {
     setError(false);
     loadIndex().then(setIndex, () => setError(true));
   }, [attempt]);
+
+  // Города нет в ленте (старая ссылка или в нём не осталось вакансий): просим выбрать заново
+  useEffect(() => {
+    if (index && city && !index.cities.some((ct) => ct.slug === city)) {
+      setPrefs((p) => ({ ...p, city: undefined }));
+    }
+  }, [index, city]);
 
   // Вакансии города и то, что в нём уже просмотрено
   useEffect(() => {
@@ -133,11 +159,20 @@ function Main() {
     return () => sub.remove();
   }, [picking, city, tab]);
 
+  // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
+  useBackButton(!!open || (picking && !!city) || tab === 'liked', () => {
+    if (open) setOpen(null);
+    else if (picking && city) setPicking(false);
+    else setTab('feed');
+  });
+
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),
     [feed, seen, prefs.cat],
   );
   const skipped = useMemo(() => Object.values(seen).some((d) => d === 'l'), [seen]);
+  const askHome =
+    !prefs.home && (home === 'missed' || home === 'unknown') && Object.keys(seen).length >= HOME_AFTER;
 
   const onSwipe = useCallback(
     (v: Vacancy, dir: Dir) => {
@@ -272,6 +307,23 @@ function Main() {
                 <Text style={[styles.hintText, { color: c.bg }]}>{t('hint')}</Text>
                 <Pressable onPress={() => setPref({ hint: true })} hitSlop={8}>
                   <Text style={[styles.hintOk, { color: c.accent }]}>{t('hintOk')}</Text>
+                </Pressable>
+              </View>
+            ) : askHome && cards.length ? (
+              <View style={[styles.hint, { backgroundColor: c.ink }]}>
+                <Text style={[styles.hintText, { color: c.bg }]}>{t('homeText')}</Text>
+                <Pressable
+                  onPress={() => {
+                    haptic();
+                    addToHomeScreen();
+                    setPref({ home: true });
+                  }}
+                  hitSlop={8}
+                >
+                  <Text style={[styles.hintOk, { color: c.accent }]}>{t('homeAdd')}</Text>
+                </Pressable>
+                <Pressable onPress={() => setPref({ home: true })} hitSlop={8} accessibilityLabel={t('close')}>
+                  <Text style={[styles.hintOk, { color: c.quiet }]}>✕</Text>
                 </Pressable>
               </View>
             ) : null}

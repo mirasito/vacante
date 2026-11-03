@@ -1,6 +1,7 @@
+import { useEffect, useReducer } from 'react';
 import { useColorScheme } from 'react-native';
 
-import { telegram } from './platform';
+import { onThemeChanged, telegram } from './platform';
 
 // Цвета сайта vacante.kz (vacante/site/static/style.css)
 const light = {
@@ -33,6 +34,9 @@ export type Colors = typeof light;
 
 export function useColors(): Colors {
   const scheme = useColorScheme();
+  // В Telegram своя тема, она может не совпадать с темой телефона
+  const [, refresh] = useReducer((n: number) => n + 1, 0);
+  useEffect(() => onThemeChanged(refresh), []);
   const tg = telegram()?.colorScheme;
   return (tg ?? scheme) === 'dark' ? dark : light;
 }

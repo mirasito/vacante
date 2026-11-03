@@ -107,4 +107,7 @@ jobs:
           # Кнопка слева от поля ввода открывает приложение со свайпами (app/, выложено на сайте в /app/)
           jq -n '{menu_button: {type: "web_app", text: "Вакансии", web_app: {url: "https://vacante.kz/app/"}}}' \
             | curl -fsS "$tg/setChatMenuButton" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
+          # Главное приложение бота (Main Mini App) включают только в @BotFather: с ним у бота появляется
+          # кнопка «Открыть» в профиле и работают ссылки t.me/<бот>?startapp=<город>
+          curl -fsS "$tg/getMe" | jq -c '{main_mini_app: (.result.has_main_web_app // false)}'
           echo "Бот: https://vacante-bot.$sub.workers.dev"

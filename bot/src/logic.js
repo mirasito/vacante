@@ -86,6 +86,13 @@ export function screen(name, sub) {
   };
 }
 
+// Кнопка приложения со свайпами (app/, выложено на сайте в /app/): открывает его внутри Telegram.
+// Город передаём в адресе, чтобы лента сразу открылась на нём
+export function appButton(siteUrl, city) {
+  const url = `${siteUrl}/app/${city ? `?city=${city}` : ""}`;
+  return { text: "🃏 Листать вакансии свайпами", web_app: { url } };
+}
+
 // Нажатие кнопки → новая подписка и экран, который показать
 export function press(sub, data) {
   const [action, arg] = data.split(":");

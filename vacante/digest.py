@@ -69,7 +69,12 @@ def format_digest(hits: list[Vacancy], base_url: str) -> str:
 
 def buttons(sub: Subscription, base_url: str) -> list:
     site = f"{base_url}/{sub.city}/" if sub.city else f"{base_url}/"
-    return [[{"text": "Все вакансии на сайте", "url": site}, {"text": "⚙️ Настроить", "callback_data": "settings"}]]
+    rows = [[{"text": "Все вакансии на сайте", "url": site}, {"text": "⚙️ Настроить", "callback_data": "settings"}]]
+    # Приложение со свайпами открывается внутри Telegram (кнопка web_app), Telegram пускает туда только https
+    if base_url.startswith("https://"):
+        app = f"{base_url}/app/?city={sub.city}" if sub.city else f"{base_url}/app/"
+        rows.insert(0, [{"text": "🃏 Листать свайпами", "web_app": {"url": app}}])
+    return rows
 
 
 def run(data_dir: Path, base_url: str, subscriptions: Callable[[], list[Subscription]], send: Sender,

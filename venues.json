@@ -1878,6 +1878,20 @@
   "instagram": "ali_bi_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001099440809"
  },
+ "almaty:all saints": {
+  "name": "ALL SAINTS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "allsaintsbaralmaty",
+  "website": "https://allsaintsbar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001030857390",
+  "avatar_checked_at": "2026-11-03T16:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:allergo clinic": {
   "name": "Allergo Clinic",
   "city": "almaty",
@@ -5659,6 +5673,24 @@
   "instagram": "nomad_exclusive_eyewear",
   "source": "https://2gis.kz/almaty/firm/70000001116200414"
  },
+ "almaty:nova press": {
+  "name": "NOVA Press",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "nova.press",
+  "telegram": "novapresskz",
+  "website": "http://www.novapress.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001024512261",
+  "avatar_checked_at": "2026-11-03T16:44:35+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "0a3bcb5a6d776645.jpg",
+  "avatar_source": "website"
+ },
  "almaty:nova svet": {
   "name": "NOVA SVET",
   "city": "almaty",
@@ -7747,6 +7779,19 @@
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
  },
+ "almaty:автопитер кз": {
+  "name": "Автопитер.кз",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "website": "https://autopiter.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001039173098",
+  "avatar_checked_at": "2026-11-03T16:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:автора": {
   "name": "Автора",
   "city": "almaty",
@@ -8208,6 +8253,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:амир": {
+  "name": "Амир",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
  },
  "almaty:амиркулова": {
   "name": "Амиркулова",
@@ -8685,6 +8737,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "almaty:блс": {
+  "name": "ТОО БЛС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
  },
  "almaty:богомолов андрей андреевич": {
   "name": "Богомолов Андрей Андреевич",
@@ -9822,6 +9881,13 @@
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
  },
+ "almaty:кекс": {
+  "name": "КЕКС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "almaty:келет": {
   "name": "КЕЛЕТ",
   "city": "almaty",
@@ -10141,6 +10207,13 @@
   ],
   "avatar": "9c3cbb061b6ab5d3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:лариса": {
+  "name": "Лариса",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
  },
  "almaty:лаффа": {
   "name": "Лаффа",
@@ -10902,6 +10975,13 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "almaty:пром техника": {
+  "name": "Пром Техника",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "almaty:промомед фарма": {
   "name": "ПРОМОМЕД-Фарма",
   "city": "almaty",
@@ -11512,6 +11592,13 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "almaty:танатов": {
+  "name": "ТАНАТОВ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "almaty:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
   "city": "almaty",
@@ -11630,6 +11717,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "almaty:ти ти джи": {
+  "name": "Ти Ти Джи",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
  },
  "almaty:тк пищевик": {
   "name": "ТК Пищевик",
@@ -14749,6 +14843,22 @@
   "instagram": "oilhub.kz",
   "source": "https://2gis.kz/astana/firm/70000001103692855"
  },
+ "astana:omir collection": {
+  "name": "OMIR COLLECTION",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "omir_collection",
+  "website": "http://taplink.cc/omircollection",
+  "source": "https://2gis.kz/astana/firm/70000001104589380",
+  "avatar_checked_at": "2026-11-03T16:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "206cc0da16c372ef.jpg",
+  "avatar_source": "website"
+ },
  "astana:one filter": {
   "name": "One Filter",
   "city": "astana",
@@ -14757,6 +14867,15 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "one_filter.kz",
   "source": "https://2gis.kz/astana/firm/70000001102913204"
+ },
+ "astana:openhype": {
+  "name": "OpenHype",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "openhype_kaz",
+  "source": "https://2gis.kz/astana/firm/70000001104513223"
  },
  "astana:optimus kz": {
   "name": "Optimus kz",
@@ -19214,6 +19333,13 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "astana:чк glass go ltd": {
+  "name": "ЧК Glass Go Ltd.",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "astana:чк vitis capital ltd": {
   "name": "ЧК Vitis Capital Ltd.",
   "city": "astana",
@@ -21326,6 +21452,20 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "karaganda:спортмастер казахстан": {
+  "name": "Спортмастер Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "sportmaster_kz",
+  "website": "http://sportmaster.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302834780",
+  "avatar_checked_at": "2026-11-03T16:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:стройлогистика": {
   "name": "Стройлогистика",
   "city": "karaganda",
@@ -23346,6 +23486,13 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "pavlodar:грамматикопуло к и": {
+  "name": "ГРАММАТИКОПУЛО К.И.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "pavlodar:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
   "city": "pavlodar",
@@ -24172,6 +24319,13 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "petropavlovsk:трибо": {
+  "name": "Трибо",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "petropavlovsk:уалиев ж а": {
   "name": "Уалиев Ж.А.",
   "city": "petropavlovsk",
@@ -24185,6 +24339,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "petropavlovsk:эдванс kz": {
+  "name": "ЭДВАНС.KZ",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "advance.kz",
+  "website": "http://advance.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001089290927",
+  "avatar_checked_at": "2026-11-03T16:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:эйкос": {
   "name": "ЭЙКОС",
@@ -25431,6 +25599,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "shymkent:биримтаева а б": {
+  "name": "БИРИМТАЕВА А.Б.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
+ },
  "shymkent:буравлев р в": {
   "name": "Буравлев Р.В",
   "city": "shymkent",
@@ -26175,6 +26350,15 @@
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
  },
+ "taraz:ritm day": {
+  "name": "Ritm Day",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00",
+  "instagram": "ritm_day",
+  "source": "https://2gis.kz/taraz/firm/70000001105145960"
+ },
  "taraz:sandyq world": {
   "name": "Sandyq World",
   "city": "taraz",
@@ -26204,6 +26388,13 @@
   "checked_at": "2026-11-01T21:43:44+00:00",
   "instagram": "woowpack.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001094695107"
+ },
+ "taraz:аяна": {
+  "name": "Аяна",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T16:44:34+00:00"
  },
  "taraz:беркет сауда": {
   "name": "Беркет-Сауда",

@@ -688,6 +688,15 @@
   "instagram": "shashlyk.house.akshukur",
   "source": "https://2gis.kz/aktau/firm/70000001101557759"
  },
+ "aktau:өркен": {
+  "name": "Өркен",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "instagram": "orken_sadik_shkola",
+  "source": "https://2gis.kz/aktau/firm/70000001051301773"
+ },
  "aktobe:220 volt ип ашимова м м": {
   "name": "220 VOLT (ИП Ашимова М.М.)",
   "city": "aktobe",
@@ -1568,6 +1577,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "almaty:ala": {
+  "name": "ALA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "almaty:alatau auto tech": {
   "name": "Alatau Auto Tech",
@@ -4739,6 +4755,15 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "almaty:materia": {
+  "name": "Materia",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "instagram": "materia_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001091851902"
+ },
  "almaty:mebitex group": {
   "name": "Mebitex Group",
   "city": "almaty",
@@ -4787,6 +4812,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "almaty:memorial clinic": {
+  "name": "Memorial clinic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "almaty:metawerk alliance": {
   "name": "Metawerk Alliance",
@@ -7601,6 +7633,13 @@
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
  },
+ "almaty:ателье": {
+  "name": "Ателье",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
+ },
  "almaty:атлант групп": {
   "name": "Атлант Групп",
   "city": "almaty",
@@ -7716,6 +7755,20 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "almaty:бахус ао": {
+  "name": "Бахус, АО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "instagram": "bacchus.kz",
+  "website": "https://www.bacchus.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000793508",
+  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:бекзат кулмырза": {
   "name": "БЕКЗАТ КУЛМЫРЗА",
   "city": "almaty",
@@ -7798,6 +7851,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "almaty:брабус": {
+  "name": "Брабус",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "almaty:буркит сэйфти": {
   "name": "Буркит Сэйфти",
@@ -9583,6 +9643,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:онлайн школа mr josy english school": {
+  "name": "Онлайн школа Mr Josy English school",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
+ },
  "almaty:оо окп рк": {
   "name": "ОО ОКП РК",
   "city": "almaty",
@@ -11140,6 +11207,15 @@
   "v": 3,
   "checked_at": "2026-11-02T01:43:26+00:00"
  },
+ "astana:apodit clinic": {
+  "name": "APODIT CLINIC",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "instagram": "apodit_astana",
+  "source": "https://2gis.kz/astana/firm/70000001091781283"
+ },
  "astana:aramit": {
   "name": "Aramit",
   "city": "astana",
@@ -11640,6 +11716,20 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "astana:chopchop": {
+  "name": "CHOPCHOP",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "instagram": "chopchopastana",
+  "website": "http://chopchop.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018121595",
+  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:city drive": {
   "name": "CITY DRIVE",
   "city": "astana",
@@ -11991,6 +12081,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
+ },
+ "astana:fashion retail group": {
+  "name": "Fashion Retail Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
+ },
+ "astana:fellow barber фэлоу барбер": {
+  "name": "Fellow Barber (Фэлоу Барбер)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "astana:financial services audit": {
   "name": "Financial services audit",
@@ -14334,6 +14438,13 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "astana:айсары": {
+  "name": "Айсары",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
+ },
  "astana:айсултан": {
   "name": "Айсултан",
   "city": "astana",
@@ -15891,6 +16002,13 @@
   "avatar": "001144b90b88c662.jpg",
   "avatar_source": "website"
  },
+ "astana:миллениум парк": {
+  "name": "Миллениум Парк",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
+ },
  "astana:мир реабилитации": {
   "name": "МИР РЕАБИЛИТАЦИИ",
   "city": "astana",
@@ -16133,6 +16251,20 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "astana:пивная бухта": {
+  "name": "Пивная бухта",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "instagram": "pivnaya_buxta",
+  "website": "https://taplink.cc/pivnaya_buxta",
+  "source": "https://2gis.kz/astana/firm/70000001043897627",
+  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:пиццерия": {
   "name": "Пиццерия",
   "city": "astana",
@@ -16181,6 +16313,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "astana:промышленный цех": {
+  "name": "Промышленный цех",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "astana:профи центр аст": {
   "name": "Профи центр АСТ",
@@ -18587,6 +18726,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "karaganda:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00",
+  "website": "https://gloria-jeans.ru/",
+  "source": "https://2gis.kz/karaganda/firm/70000001047929240",
+  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5279b126010e92db.jpg",
+  "avatar_source": "website"
  },
  "karaganda:головкина в м": {
   "name": "Головкина В.М",
@@ -21201,6 +21355,13 @@
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
  },
+ "petropavlovsk:kazcrane engineering": {
+  "name": "KazCrane Engineering",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
+ },
  "petropavlovsk:m1 сервис": {
   "name": "M1 Сервис",
   "city": "petropavlovsk",
@@ -21548,6 +21709,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "semey:asai clinic": {
+  "name": "ASAI-CLINIC",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "semey:dn mebel": {
   "name": "DN Mebel",
@@ -22511,6 +22679,13 @@
   ],
   "avatar": "e4125742de223e0c.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:yafitness": {
+  "name": "YAFITNESS",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T00:43:42+00:00"
  },
  "shymkent:zoomlion central asia": {
   "name": "ZOOMLION CENTRAL ASIA",

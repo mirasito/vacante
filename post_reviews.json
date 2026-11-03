@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-03T07:57:37+00:00",
+ "updated_at": "2026-11-03T08:57:31+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -22778,6 +22778,362 @@
     "employer": null,
     "schedule": "Свободный график"
    }
+  },
+  "rabota_astanakz-31223": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Fix Price",
+    "schedule": "2/2, 09:00–21:00 или 5/2, 12:00–21:00",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_job_vakansii-130119": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Повар, повар холодного цеха",
+    "employer": "Семейное кафе «Мико»",
+    "salary_min": 17000,
+    "salary_max": 18000,
+    "salary_period": "day",
+    "schedule": "10:00–00:00"
+   }
+  },
+  "rabota_astanakz-31191": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Повар-универсал",
+    "employer": "Mansur Cafe",
+    "schedule": "6/1, смены по 12 часов"
+   }
+  },
+  "rabota_astanakz-31222": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Магазин мужской одежды «Bauma»"
+   }
+  },
+  "hh-138214111": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139101585": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "2/2"
+   }
+  },
+  "hh-139100644": {
+   "verdict": "reject",
+   "at": "2026-11-03T08:57:31+00:00",
+   "reason": "Зарплата сильно выше рынка, похоже на набор за границу"
+  },
+  "hh-139099019": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "2/2, смены по 12 часов"
+   }
+  },
+  "hh-139097402": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Koktem Friends",
+    "schedule": "6/1 или 5/2, смены по 12 часов"
+   }
+  },
+  "hh-139096328": {
+   "verdict": "reject",
+   "at": "2026-11-03T08:57:31+00:00",
+   "reason": "Офисная должность (B2B-продажи)"
+  },
+  "hh-139094211": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "6/1 или 5/2, 8 часов"
+   }
+  },
+  "hh-139101173": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Colore Home"
+   }
+  },
+  "hh-139099542": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "Свободный график",
+    "perks": []
+   }
+  },
+  "rabota4almaty-6080": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Раздатчица, помощник повара, повар",
+    "employer": "Ресторан «Ozyurt»",
+    "schedule": "6/1, 09:00–19:00",
+    "address": "ул. Тимирязева, 42, к3, ТРЦ «Atakent Mall»"
+   }
+  },
+  "almaty_rabota01-26025": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Официант, бармен",
+    "salary_min": 3000,
+    "salary_max": 6000,
+    "salary_period": "day"
+   }
+  },
+  "hh-139102002": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Dalex Development"
+   }
+  },
+  "hh-139101083": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "2/2, смены по 12 часов"
+   }
+  },
+  "hh-139101038": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Администратор клиники",
+    "employer": "Клиника «Аванта Лазер»",
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "hh-138241640": {
+   "verdict": "reject",
+   "at": "2026-11-03T08:57:31+00:00",
+   "reason": "Офисная должность (продажи ивент-агентства)"
+  },
+  "hh-139101935": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "6/1, 9 часов",
+    "address": "ул. Арна"
+   }
+  },
+  "hh-139099721": {
+   "verdict": "reject",
+   "at": "2026-11-03T08:57:31+00:00",
+   "reason": "Офисная должность (кадровик)"
+  },
+  "hh-139097596": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Компания «Эврика»"
+   }
+  },
+  "hh-139097064": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "FMCG Group"
+   }
+  },
+  "hh-139097779": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "2/2, смены по 12 часов"
+   }
+  },
+  "hh-139100013": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Чайная фабрика «Unitea»"
+   }
+  },
+  "hh-139098441": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "«Сариев и К»",
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "rabotaaktau-142133": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "5/2, 18:00–21:00",
+    "address": "БЦ в 17 мкр",
+    "perks": []
+   }
+  },
+  "rabotaaktau-142134": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Магазин «Пломбир»",
+    "salary_min": 5000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 10:00–22:00",
+    "address": "ТРК «Ақтау»"
+   }
+  },
+  "rabotaaktau-142129": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Повар домашней кухни",
+    "schedule": "5 дней, 14:00–18:00",
+    "address": "мкр Шығыс-3"
+   }
+  },
+  "rabotaaktau-142120": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Тестомес, кондитер, пекарь",
+    "salary_min": 8000,
+    "salary_max": 10000,
+    "salary_period": "day",
+    "address": "рядом с «Гранит», 14"
+   }
+  },
+  "rabotaaktau-142115": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Сторож",
+    "employer": "ТОО «Мотерм»"
+   }
+  },
+  "rabotaaktau-142131": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Ретро-клуб «Vinyl»",
+    "address": "7 мкр, 45/2 (напротив «Трёх корон»)"
+   }
+  },
+  "rabotaaktau-142127": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Кафе «Актау»",
+    "salary_min": 15000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "сутки через двое, 08:00–08:00",
+    "address": "возле международного аэропорта"
+   }
+  },
+  "rabotaaktau-142123": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Оператор-заправщик АГЗС",
+    "employer": "ТОО «TanaGasCom»",
+    "address": "п. Акшукур"
+   }
+  },
+  "rabotaaktau-142130": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Детский сад «IQ»"
+   }
+  },
+  "rabotaaktau-142126": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Швея, помощница по бисеру",
+    "address": "32в мкр, 1, ЖК «Шаңырақ»"
+   }
+  },
+  "rabotaaktau-142118": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "title": "Помощник электромеханика по лифтам"
+   }
+  },
+  "hh-139097211": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Сервис com kz"
+   }
+  },
+  "vakansiya_ukg-21725": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "schedule": "2/2, 09:00–23:00",
+    "address": "пересечение ул. Абая и Ворошилова"
+   }
+  },
+  "vakansiya_ukg-21724": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Garderob Men",
+    "schedule": "2/2, 10:00–22:00",
+    "address": "АДК «River»"
+   }
+  },
+  "hh-139100497": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {}
+  },
+  "hh-139099945": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {
+    "employer": "Ресторан «Тумар»",
+    "salary_min": 18000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, смены по 12 часов"
+   }
+  },
+  "hh-139097079": {
+   "verdict": "reject",
+   "at": "2026-11-03T08:57:31+00:00",
+   "reason": "Международные рейсы в Россию и Китай"
+  },
+  "hh-139100902": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {}
+  },
+  "hh-139098691": {
+   "verdict": "approve",
+   "at": "2026-11-03T08:57:31+00:00",
+   "fields": {}
   }
  }
 }

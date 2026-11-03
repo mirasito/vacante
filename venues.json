@@ -2284,6 +2284,20 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "almaty:aлматы энерго kz": {
+  "name": "Aлматы Энерго KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "aenergo.kz",
+  "website": "https://a-energo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001039144545",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:b2b service": {
   "name": "B2B service",
   "city": "almaty",
@@ -5955,6 +5969,13 @@
   "instagram": "she.brand.kz",
   "source": "https://2gis.kz/almaty/firm/70000001098311815"
  },
+ "almaty:shoqan": {
+  "name": "SHOQAN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
+ },
  "almaty:siberian wellness": {
   "name": "Siberian Wellness",
   "city": "almaty",
@@ -6120,6 +6141,13 @@
   ],
   "avatar": "b1b0facef3c114c8.jpg",
   "avatar_source": "website"
+ },
+ "almaty:space line": {
+  "name": "SPACE LINE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
  },
  "almaty:spark логистика": {
   "name": "Spark Логистика",
@@ -6724,6 +6752,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:vk beybarys": {
+  "name": "VK BEYBARYS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "beybarys.volleyball.school",
+  "source": "https://2gis.kz/almaty/firm/70000001090714322"
  },
  "almaty:vm premium almaty": {
   "name": "VM Premium Almaty",
@@ -10130,6 +10167,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
  },
+ "almaty:салем сосед": {
+  "name": "Салем Сосед",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
+ },
  "almaty:сандугаш": {
   "name": "Сандугаш",
   "city": "almaty",
@@ -13018,6 +13062,22 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "astana:luxury house тоо анвик": {
+  "name": "LUXURY HOUSE (ТОО АНВИК)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "lh_astana",
+  "website": "http://mylh.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019499803",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9916ef121349dbe4.jpg",
+  "avatar_source": "website"
+ },
  "astana:m83": {
   "name": "M83",
   "city": "astana",
@@ -15458,6 +15518,13 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:елемесова": {
+  "name": "Елемесова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
+ },
  "astana:ели худели тм ип юлия": {
   "name": "Ели-худели, ТМ (ИП Юлия)",
   "city": "astana",
@@ -17589,6 +17656,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "astana:элснаб кз": {
+  "name": "ЭлСнаб-КЗ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "elsnab_kz",
+  "website": "http://elsnab.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001022630328",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:эмити интернешнл": {
   "name": "ЭМИТИ Интернешнл",
@@ -20396,6 +20477,13 @@
   "avatar": "cdb3f4a7cf90aa68.jpg",
   "avatar_source": "website"
  },
+ "kostanay:казахстан вайн энд спиритс": {
+  "name": "Казахстан Вайн энд Спиритс",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
+ },
  "kostanay:казспецснабсервис": {
   "name": "КАЗСПЕЦСНАБСЕРВИС",
   "city": "kostanay",
@@ -20895,6 +20983,20 @@
   "checked_at": "2026-11-03T01:45:12+00:00",
   "instagram": "2gis_pavlodar",
   "source": "https://2gis.kz/pavlodar/firm/70000001020084514"
+ },
+ "pavlodar:agrinur": {
+  "name": "AgriNur",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "agrinur.kz",
+  "website": "https://agrinur.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001059380374",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "pavlodar:ar line service": {
   "name": "Ar line service",
@@ -21928,6 +22030,20 @@
   "avatar": "6efd21a1561520a0.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:молсервис": {
+  "name": "Молсервис",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "molservice",
+  "website": "https://molservice.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001043865222",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:настоящую пекарню": {
   "name": "НАСТОЯЩУЮ ПЕКАРНЮ",
   "city": "petropavlovsk",
@@ -22125,6 +22241,15 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "semey:istanbul picnic": {
+  "name": "ISTANBUL PICNIC",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "istanbul.picnic.semey",
+  "source": "https://2gis.kz/semej/firm/70000001051427475"
+ },
  "semey:kari": {
   "name": "KARI",
   "city": "semey",
@@ -22230,6 +22355,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "semey:абай букет": {
+  "name": "АБАЙ БУКЕТ",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "abaibuket",
+  "source": "https://2gis.kz/semej/firm/70000001079851455"
  },
  "semey:айтимбетов асхат хамарьянович": {
   "name": "АЙТИМБЕТОВ АСХАТ ХАМАРЬЯНОВИЧ",
@@ -22463,6 +22597,15 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "semey:фисташка": {
+  "name": "ФИСТАШКА",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "fistashka_semey_",
+  "source": "https://2gis.kz/semej/firm/70000001092475699"
+ },
  "semey:шығыс шпз": {
   "name": "Шығыс ШПЗ",
   "city": "semey",
@@ -22573,6 +22716,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "shymkent:cinema property management тоо": {
+  "name": "Cinema property management, ТОО",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
  },
  "shymkent:consumer trade company": {
   "name": "Consumer Trade Company",
@@ -22795,6 +22945,22 @@
   "checked_at": "2026-11-02T00:42:59+00:00",
   "instagram": "mg_logistics20",
   "source": "https://2gis.kz/shymkent/firm/70000001105342698"
+ },
+ "shymkent:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "instagram": "minisokz",
+  "website": "https://miniso.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001029768977",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a0cb91befe135f67.jpg",
+  "avatar_source": "website"
  },
  "shymkent:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
@@ -23271,6 +23437,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "shymkent:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00",
+  "website": "https://kari.com/",
+  "source": "https://2gis.kz/shymkent/firm/70000001067331652",
+  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:карим": {
   "name": "Карим",
@@ -24297,6 +24476,13 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "uralsk:батыс продукт": {
+  "name": "Батыс-Продукт",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
+ },
  "uralsk:батыс шины": {
   "name": "БАТЫС ШИНЫ",
   "city": "uralsk",
@@ -24476,6 +24662,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "uralsk:юбилейная": {
+  "name": "Юбилейная",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
  },
  "ust-kamenogorsk:12 месяцев восток": {
   "name": "12 месяцев-Восток",
@@ -25389,6 +25582,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "ust-kamenogorsk:уку промтехмонтаж": {
+  "name": "УКУ Промтехмонтаж",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T03:45:14+00:00"
  },
  "ust-kamenogorsk:уралэнергоцветмет": {
   "name": "Уралэнергоцветмет",

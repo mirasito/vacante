@@ -2021,6 +2021,20 @@
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
  },
+ "almaty:amd group": {
+  "name": "AMD Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "instagram": "amdgroup.kz",
+  "website": "https://www.amdgroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001030965737",
+  "avatar_checked_at": "2026-11-03T17:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:amimed": {
   "name": "AMIMED",
   "city": "almaty",
@@ -2717,6 +2731,21 @@
   "instagram": "almaty_prokat_service",
   "source": "https://2gis.kz/almaty/firm/70000001086838075"
  },
+ "almaty:bereke bank": {
+  "name": "Bereke Bank",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "website": "https://berekebank.kz/",
+  "source": "https://en.wikipedia.org/wiki/Bereke_Bank",
+  "avatar_checked_at": "2026-11-03T17:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d16e41150036dd86.jpg",
+  "avatar_source": "website"
+ },
  "almaty:best": {
   "name": "BEST",
   "city": "almaty",
@@ -3120,6 +3149,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:city barber": {
+  "name": "City Barber",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "instagram": "citybarber.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001030850253"
  },
  "almaty:city market 4": {
   "name": "City market 4",
@@ -4575,6 +4613,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:informconsulting": {
+  "name": "InformConsulting",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "instagram": "informconsulting",
+  "telegram": "informconsulting",
+  "source": "https://2gis.kz/almaty/firm/9429940001597345",
+  "avatar_checked_at": "2026-11-03T17:44:36+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "364bab4bdb4ca046.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:inn ozz": {
   "name": "INN OZZ",
@@ -8365,6 +8419,13 @@
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
  },
+ "almaty:арка тех": {
+  "name": "Арка-Тех",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
+ },
  "almaty:арман": {
   "name": "АРМАН",
   "city": "almaty",
@@ -8650,6 +8711,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:басибекова": {
+  "name": "Басибекова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
+ },
  "almaty:бастау": {
   "name": "ИП Бастау",
   "city": "almaty",
@@ -8788,6 +8856,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "almaty:буцик": {
+  "name": "БУЦИК",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
  },
  "almaty:бьюти ретейлер золотое яблоко": {
   "name": "Бьюти-ретейлер Золотое Яблоко",
@@ -10422,6 +10497,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "almaty:медицинские газовые системы": {
+  "name": "Медицинские Газовые Системы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "website": "https://mgs.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001591046",
+  "avatar_checked_at": "2026-11-03T17:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "09510372ed390f0d.jpg",
+  "avatar_source": "website"
  },
  "almaty:медицинский центр emirmed": {
   "name": "Медицинский центр EMIRMED",
@@ -12103,6 +12193,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:цемек минералс": {
+  "name": "Цемек Минералс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
  },
  "almaty:центр банкротства казахстана": {
   "name": "Центр банкротства Казахстана",
@@ -14409,6 +14506,13 @@
   "avatar": "9916ef121349dbe4.jpg",
   "avatar_source": "website"
  },
+ "astana:lyalina o s": {
+  "name": "LYALINA O S",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
+ },
  "astana:m manzoni ип мавлитов е": {
   "name": "M.Manzoni ( ИП Мавлитов Е)",
   "city": "astana",
@@ -14584,6 +14688,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
+ },
+ "astana:merci de france": {
+  "name": "MERCI DE FRANCE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "instagram": "mercidefrance",
+  "website": "https://mercidefrance.com/",
+  "source": "https://2gis.kz/astana/firm/70000001060857774",
+  "avatar_checked_at": "2026-11-03T17:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "10ffe3c0c0876bb6.jpg",
+  "avatar_source": "website"
  },
  "astana:meyram group distribution": {
   "name": "Meyram group distribution",
@@ -15718,6 +15838,22 @@
   "instagram": "sultani.astana",
   "source": "https://2gis.kz/astana/firm/70000001089434119"
  },
+ "astana:synergy cyberspace": {
+  "name": "SYNERGY CYBERSPACE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "instagram": "synergycyberspace",
+  "source": "https://2gis.kz/astana/firm/70000001099069301"
+ },
+ "astana:talan service astana": {
+  "name": "TALAN Service Astana",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
+ },
  "astana:tamos space school тамос спэйс скул": {
   "name": "Tamos Space School (Тамос Спэйс Скул)",
   "city": "astana",
@@ -16095,6 +16231,13 @@
   ],
   "avatar": "bbc8cf1cf844416c.jpg",
   "avatar_source": "website"
+ },
+ "astana:ybm technology": {
+  "name": "YBM Technology",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
  },
  "astana:zanger": {
   "name": "ZANGER",
@@ -16945,6 +17088,13 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:даниял": {
+  "name": "Даниял",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
+ },
  "astana:даньяров е д": {
   "name": "Даньяров Е.Д.",
   "city": "astana",
@@ -17103,6 +17253,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "astana:евразия 3": {
+  "name": "Евразия 3",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
  },
  "astana:единый центр списания долгов": {
   "name": "Единый центр списания долгов",
@@ -18100,6 +18257,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "astana:наумов никита валерьевич": {
+  "name": "Наумов Никита Валерьевич",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
  },
  "astana:научно исследовательская лаборатория гамма технологии": {
   "name": "«Научно-Исследовательская Лаборатория «Гамма Технологии»",
@@ -24036,6 +24200,15 @@
   "avatar": "e2850ad6049549da.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:sardana": {
+  "name": "SARDANA",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00",
+  "instagram": "sardana.remont15",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001099157220"
+ },
  "petropavlovsk:teez": {
   "name": "Teez",
   "city": "petropavlovsk",
@@ -26432,6 +26605,13 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "taraz:жәнібек": {
+  "name": "ЖӘНІБЕК",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
+ },
  "taraz:казахювелир ао": {
   "name": "Казахювелир, АО",
   "city": "taraz",
@@ -27907,6 +28087,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "ust-kamenogorsk:лысянская ксения васильевна": {
+  "name": "ЛЫСЯНСКАЯ КСЕНИЯ ВАСИЛЬЕВНА",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T17:44:34+00:00"
  },
  "ust-kamenogorsk:налобнов максим валентинович": {
   "name": "Налобнов Максим Валентинович",

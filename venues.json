@@ -190,6 +190,22 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "aktau:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "minisokz",
+  "website": "https://miniso.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001031675863",
+  "avatar_checked_at": "2026-11-03T15:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "20e8ce3c1d0b2235.jpg",
+  "avatar_source": "website"
+ },
  "aktau:mirror": {
   "name": "MIRROR",
   "city": "aktau",
@@ -2297,6 +2313,15 @@
   "avatar": "a392a2e192170608.jpg",
   "avatar_source": "website"
  },
+ "almaty:asyq": {
+  "name": "ASYQ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "asyq_et",
+  "source": "https://2gis.kz/almaty/firm/70000001052096219"
+ },
  "almaty:ataauto": {
   "name": "AtaAuto",
   "city": "almaty",
@@ -2367,6 +2392,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:atrzss group атрзсс групп": {
+  "name": "ATRZSS Group (АТРЗСС Групп)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
  },
  "almaty:aura 02": {
   "name": "Aura 02",
@@ -3220,6 +3252,20 @@
    "website"
   ]
  },
+ "almaty:damuzone": {
+  "name": "DAMUZONE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "damuzone",
+  "website": "https://damuzone.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001019059840",
+  "avatar_checked_at": "2026-11-03T15:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:danone тм": {
   "name": "Danone, ТМ",
   "city": "almaty",
@@ -3420,6 +3466,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "almaty:dr konisbaev лор орталығы": {
+  "name": "Dr.Konisbaev ЛОР орталығы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
  },
  "almaty:drd service": {
   "name": "DRD SERVICE",
@@ -5327,6 +5380,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "almaty:meyram group distribution": {
+  "name": "Meyram group distribution",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
+ },
  "almaty:mia kazakhstan": {
   "name": "MIA Kazakhstan",
   "city": "almaty",
@@ -5884,6 +5944,15 @@
   ],
   "avatar": "06908eb210823849.jpg",
   "avatar_source": "website"
+ },
+ "almaty:pozitiv energy": {
+  "name": "Pozitiv Energy",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "pozitiv.energy.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001032122116"
  },
  "almaty:praticamente astana": {
   "name": "Praticamente Astana",
@@ -7557,6 +7626,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "almaty:zhiger trade almaty": {
+  "name": "Zhiger Trade Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
  },
  "almaty:zoomlion central asia": {
   "name": "ZOOMLION CENTRAL ASIA",
@@ -10260,6 +10336,13 @@
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
  },
+ "almaty:мебель грация": {
+  "name": "мебель грация",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
+ },
  "almaty:медина": {
   "name": "Медина",
   "city": "almaty",
@@ -11075,6 +11158,13 @@
    "website"
   ]
  },
+ "almaty:сейдакулова т с": {
+  "name": "ИП Сейдакулова Т.С",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
+ },
  "almaty:сейф ломбард": {
   "name": "Сейф-ломбард",
   "city": "almaty",
@@ -11345,6 +11435,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:сункар лдц": {
+  "name": "Сункар, ЛДЦ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "suncar.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001045594307"
  },
  "almaty:сынар групп": {
   "name": "Сынар Групп",
@@ -11882,6 +11981,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
+ },
+ "almaty:холидей": {
+  "name": "Холидей",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
  },
  "almaty:хорека фуд": {
   "name": "Хорека Фуд",
@@ -14659,6 +14765,15 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "astana:orange market": {
+  "name": "Orange Market",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "orangemarket_astana",
+  "source": "https://2gis.kz/astana/firm/70000001106039489"
+ },
  "astana:orbis machinery": {
   "name": "ORBIS MACHINERY",
   "city": "astana",
@@ -16942,6 +17057,15 @@
   "v": 3,
   "checked_at": "2026-11-03T12:44:30+00:00"
  },
+ "astana:жанару": {
+  "name": "Жанару",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "banya_janaru",
+  "source": "https://2gis.kz/astana/firm/70000001083545229"
+ },
  "astana:жасыл аудан kazrecycle manager": {
   "name": "ЖАСЫЛ АУДАН KAZRECYCLE MANAGER",
   "city": "astana",
@@ -18699,6 +18823,15 @@
    "website"
   ]
  },
+ "astana:тойбастар": {
+  "name": "Тойбастар",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "toi_optom",
+  "source": "https://2gis.kz/astana/firm/70000001075202592"
+ },
  "astana:торговая компания": {
   "name": "Торговая компания",
   "city": "astana",
@@ -19539,6 +19672,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:nan": {
+  "name": "Nan",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "instagram": "nan_cakesandbakes_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001069503938"
  },
  "atyrau:nes": {
   "name": "NES",
@@ -21150,6 +21292,19 @@
   "instagram": "moy_tbilisi",
   "source": "https://2gis.kz/karaganda/firm/11822477302830683"
  },
+ "karaganda:рефлор": {
+  "name": "Рефлор",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "website": "https://refloor.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001118400745",
+  "avatar_checked_at": "2026-11-03T15:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:сана онлайн": {
   "name": "Сана Онлайн",
   "city": "karaganda",
@@ -22176,6 +22331,13 @@
   ],
   "avatar": "32916b346658ff2c.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:инструмент": {
+  "name": "Инструмент",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
  },
  "kostanay:интернешнл консалт групп": {
   "name": "Интернешнл консалт групп",
@@ -23798,6 +23960,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "petropavlovsk:дудар": {
+  "name": "Дудар",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019530541",
+  "avatar_checked_at": "2026-11-03T15:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f7ed628c5ccce7e4.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:евразиан фудс корпорэйшн ао": {
   "name": "Евразиан Фудс Корпорэйшн, АО",
@@ -25592,6 +25769,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
+ },
+ "shymkent:союз мастеров": {
+  "name": "СОЮЗ МАСТЕРОВ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T15:44:31+00:00"
  },
  "shymkent:таврида электрик астана": {
   "name": "Таврида Электрик Астана",

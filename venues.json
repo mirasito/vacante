@@ -37,6 +37,15 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "aktau:black tai": {
+  "name": "Black Tai",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "black_thai.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001081675913"
+ },
  "aktau:bulka": {
   "name": "BULKA",
   "city": "aktau",
@@ -2391,6 +2400,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "almaty:automatic service": {
+  "name": "Automatic Service",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
+ },
  "almaty:autosaiman kz": {
   "name": "AUTOSAIMAN.KZ",
   "city": "almaty",
@@ -2848,6 +2864,20 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "instagram": "brosto_service",
   "source": "https://2gis.kz/almaty/firm/70000001055214182"
+ },
+ "almaty:brusnika": {
+  "name": "BRUSNIKA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "brusnikabrand.kz",
+  "website": "https://brusnika.me/",
+  "source": "https://2gis.kz/almaty/firm/70000001083025491",
+  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:bta almaty airport services": {
   "name": "BTA Almaty - Airport Services",
@@ -5521,6 +5551,13 @@
    "website"
   ]
  },
+ "almaty:nobel home": {
+  "name": "Nobel Home",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
+ },
  "almaty:noble foods": {
   "name": "Noble Foods",
   "city": "almaty",
@@ -6121,6 +6158,13 @@
   ],
   "avatar": "6aecb8ada2b3d8be.jpg",
   "avatar_source": "website"
+ },
+ "almaty:red ocean": {
+  "name": "RED OCEAN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
  },
  "almaty:reklamix": {
   "name": "REKLAMIX",
@@ -7157,6 +7201,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:union technology": {
+  "name": "Union Technology",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
  },
  "almaty:unirout station тоо автовокзал": {
   "name": "UniRout Station, ТОО, автовокзал",
@@ -9412,6 +9463,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "almaty:исаева хэда": {
+  "name": "Исаева Хэда",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
+ },
  "almaty:ист вест казахстан": {
   "name": "Ист-Вест Казахстан",
   "city": "almaty",
@@ -10956,6 +11014,20 @@
   "v": 3,
   "checked_at": "2026-11-03T03:45:14+00:00"
  },
+ "almaty:салон атмосфера": {
+  "name": "Салон Атмосфера",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "salonatmosfera.almaty",
+  "website": "http://salonatmosfera.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001081895134",
+  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:санаторий каргалы": {
   "name": "Санаторий Каргалы",
   "city": "almaty",
@@ -11918,6 +11990,13 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "almaty:шетенова г м": {
+  "name": "ШЕТЕНОВА Г.М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
+ },
  "almaty:шипудим": {
   "name": "Шипудим",
   "city": "almaty",
@@ -12101,6 +12180,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
+ },
+ "almaty:ясин": {
+  "name": "Ясин",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
  },
  "almaty:яхьяров": {
   "name": "ИП Яхьяров",
@@ -12289,6 +12375,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "astana:aldimart": {
+  "name": "Aldimart",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
  },
  "astana:alem agro holding алемагро холдинг": {
   "name": "Alem Agro Holding (АлемАгро Холдинг)",
@@ -13320,6 +13413,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:fmedia": {
+  "name": "Fmedia",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
  },
  "astana:food retail pro": {
   "name": "Food Retail PRO",
@@ -14696,6 +14796,15 @@
   "instagram": "poolandbeer.kz",
   "source": "https://2gis.kz/astana/firm/70000001095607265"
  },
+ "astana:poseydon": {
+  "name": "POSEYDON",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "poseydonastana",
+  "source": "https://2gis.kz/astana/firm/70000001082801992"
+ },
  "astana:ppd company": {
   "name": "PPD Company",
   "city": "astana",
@@ -16007,6 +16116,22 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "astana:амк метиз": {
+  "name": "АМК-Метиз",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "amkmetiz",
+  "website": "http://amk-metiz.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001074177483",
+  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "622fde3897e87791.jpg",
+  "avatar_source": "website"
+ },
  "astana:анар": {
   "name": "Анар",
   "city": "astana",
@@ -16448,6 +16573,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "astana:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "website": "https://gloria-jeans.ru/",
+  "source": "https://2gis.kz/astana/firm/70000001030988414",
+  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "27cfdcf2635c0ce7.jpg",
+  "avatar_source": "website"
  },
  "astana:гол+пас": {
   "name": "ГОЛ+ПАС",
@@ -19609,6 +19749,15 @@
   ],
   "avatar": "4cce34fc74aaba55.jpg",
   "avatar_source": "telegram"
+ },
+ "atyrau:дана": {
+  "name": "ДАНА",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "dana_market_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001117128961"
  },
  "atyrau:даулетов н а акжелкен": {
   "name": "Даулетов Н.А. АкЖелкен",
@@ -22829,6 +22978,15 @@
   "instagram": "megabron_pavlodar",
   "source": "https://2gis.kz/pavlodar/firm/70000001047526770"
  },
+ "pavlodar:navi spa salon": {
+  "name": "Navi spa salon",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "navi_pavlodar",
+  "source": "https://2gis.kz/pavlodar/firm/70000001031842810"
+ },
  "pavlodar:nur life": {
   "name": "NUR LIFE",
   "city": "pavlodar",
@@ -24305,6 +24463,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "semey:семей": {
+  "name": "Семей",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "hotelsemey",
+  "website": "http://hotelsemey.com/",
+  "source": "https://2gis.kz/semej/firm/70000001052642479",
+  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "092c4103099fda39.jpg",
+  "avatar_source": "website"
  },
  "semey:стропальщик": {
   "name": "Стропальщик",
@@ -26732,6 +26906,27 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
+ },
+ "ust-kamenogorsk:filuet kazakhstan": {
+  "name": "Filuet Kazakhstan",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00"
+ },
+ "ust-kamenogorsk:forward school ukg": {
+  "name": "Forward School UKG",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T14:44:03+00:00",
+  "instagram": "forward_school_kazakhstan",
+  "website": "http://forwardschool.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721400565",
+  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:green house limited": {
   "name": "Green House Limited",

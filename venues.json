@@ -351,6 +351,22 @@
   "instagram": "altynurpaq_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001102340405"
  },
+ "aktau:анвар": {
+  "name": "Анвар",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "anvar_retail",
+  "website": "http://anvar.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001061382181",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "99e8c4a9a42bdbfd.jpg",
+  "avatar_source": "website"
+ },
  "aktau:арман": {
   "name": "Арман",
   "city": "aktau",
@@ -553,6 +569,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "aktau:лакокрасочная торговая сеть 5 баллов": {
+  "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "website": "https://5-ballov.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001080072487",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktau:люкс уаш": {
   "name": "Люкс Уаш",
@@ -1077,6 +1106,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "aktobe:актобе нефтепереработка": {
+  "name": "Актобе нефтепереработка",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "website": "https://aktoberefinery.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001036832231",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c97819f85d9909d4.jpg",
+  "avatar_source": "website"
  },
  "aktobe:актюбинская медная компания": {
   "name": "Актюбинская Медная Компания",
@@ -5380,6 +5424,22 @@
   "checked_at": "2026-11-02T09:43:43+00:00",
   "instagram": "nurtau_golf_club",
   "source": "https://2gis.kz/almaty/firm/9429940000789102"
+ },
+ "almaty:ocean fresh": {
+  "name": "Ocean Fresh",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "ocean__fresh__group",
+  "website": "https://oceanfresh.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089626787",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a2ff2c167ae9f91d.jpg",
+  "avatar_source": "website"
  },
  "almaty:office expert kz": {
   "name": "Office-Expert.kz",
@@ -9746,6 +9806,24 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "almaty:медицинский центр emirmed": {
+  "name": "Медицинский центр EMIRMED",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "emirmed_almaty",
+  "telegram": "emirmed_kazakhstan",
+  "website": "http://emirmed.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089454660",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2344cb0ad9c01f53.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:медицинский центр хак": {
   "name": "Медицинский центр ХАК",
   "city": "almaty",
@@ -10806,6 +10884,15 @@
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
  },
+ "almaty:тарым ип наметов": {
+  "name": "Тарым (ИП Наметов)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "tarimcafe.kz",
+  "source": "https://www.instagram.com/tarimcafe.kz/"
+ },
  "almaty:тау жетысу": {
   "name": "ТАУ ЖЕТЫСУ",
   "city": "almaty",
@@ -11551,6 +11638,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "astana:2gis astana": {
+  "name": "2GIS Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "2gis_astana",
+  "source": "https://2gis.kz/astana/firm/70000001019135590"
  },
  "astana:3 желания": {
   "name": "3 желания",
@@ -12812,6 +12908,13 @@
    "website"
   ]
  },
+ "astana:goldman astana": {
+  "name": "Goldman Astana",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
+ },
  "astana:good project": {
   "name": "Good project",
   "city": "astana",
@@ -13271,6 +13374,20 @@
   "checked_at": "2026-11-02T22:43:44+00:00",
   "instagram": "koz_in_optica",
   "source": "https://2gis.kz/astana/firm/70000001053564239"
+ },
+ "astana:kultura diktuet": {
+  "name": "KULTURA DIKTUET",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "kultura_diktuet",
+  "website": "https://www.kulturadiktuet.com/",
+  "source": "https://2gis.kz/astana/firm/70000001063901576",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:la crème boutique": {
   "name": "La Crème Boutique",
@@ -14144,6 +14261,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "astana:qqq qazaqstan qamqor qyzmet": {
+  "name": "QQQ - Qazaqstan Qamqor Qyzmet",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
+ },
  "astana:rapidregqz": {
   "name": "RapidRegQz",
   "city": "astana",
@@ -14241,6 +14365,13 @@
   "checked_at": "2026-11-01T11:43:30+00:00",
   "instagram": "saniya.bakery",
   "source": "https://2gis.kz/astana/firm/70000001027000250"
+ },
+ "astana:sbc group": {
+  "name": "SBC Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
  },
  "astana:sdelka plus": {
   "name": "SDELKA PLUS",
@@ -14542,6 +14673,15 @@
   "checked_at": "2026-11-02T18:01:00+00:00",
   "instagram": "steklove.ast",
   "source": "https://2gis.kz/astana/firm/70000001112346984"
+ },
+ "astana:stratera": {
+  "name": "STRATERA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "stratera.kz",
+  "source": "https://2gis.kz/astana/firm/70000001087690675"
  },
  "astana:strong tea": {
   "name": "Strong tea",
@@ -16463,6 +16603,13 @@
   "avatar": "46754bcbd12e98d7.jpg",
   "avatar_source": "website"
  },
+ "astana:культурно": {
+  "name": "Культурно",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
+ },
  "astana:курылыс тан сервис": {
   "name": "Курылыс тан сервис",
   "city": "astana",
@@ -17957,6 +18104,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
+ },
+ "astana:центр анализа и расследования кибер атак": {
+  "name": "Центр анализа и расследования кибер атак",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
  },
  "astana:центр ипотеки астаны": {
   "name": "Центр Ипотеки Астаны",
@@ -19559,6 +19713,19 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "karaganda:гидравлика стройдормаш": {
+  "name": "Гидравлика СтройДорМаш",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "website": "https://www.gsdm.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302830373",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:глория джинс каспиан": {
   "name": "Глория Джинс Каспиан",
   "city": "karaganda",
@@ -20271,6 +20438,15 @@
   "avatar": "6f80523a6fe53a42.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:kazauto03": {
+  "name": "KAZAUTO03",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "instagram": "kazauto03",
+  "source": "https://2gis.kz/kokshetau/firm/70000001090721403"
+ },
  "kokshetau:kokshetau motors": {
   "name": "Kokshetau motors",
   "city": "kokshetau",
@@ -20576,6 +20752,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
+ },
+ "kostanay:goldman astana": {
+  "name": "Goldman Astana",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
+ },
+ "kostanay:group ard": {
+  "name": "Group ARD",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
  },
  "kostanay:hightower": {
   "name": "HIGHTOWER",
@@ -23623,6 +23813,13 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "shymkent:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00"
+ },
  "shymkent:procoffee": {
   "name": "ProCoffee",
   "city": "shymkent",
@@ -23801,6 +23998,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "shymkent:автопитер кз": {
+  "name": "Автопитер.кз",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T07:45:16+00:00",
+  "website": "https://autopiter.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001093712167",
+  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:агро нур азия": {
   "name": "Агро Нур Азия",

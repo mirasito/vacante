@@ -481,6 +481,22 @@
   "avatar": "391e3f0867ad3166.jpg",
   "avatar_source": "website"
  },
+ "aktau:дана 9": {
+  "name": "ДАНА 9",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "supermarket.dana",
+  "website": "https://dana-market.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001105652965",
+  "avatar_checked_at": "2026-11-03T13:44:34+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dd9e285abed245c2.jpg",
+  "avatar_source": "website"
+ },
  "aktau:дентал мед плюс": {
   "name": "ДЕНТАЛ МЕД ПЛЮС",
   "city": "aktau",
@@ -3347,6 +3363,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:dos optics": {
+  "name": "Dos Optics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "almaty:dos охрана": {
   "name": "DOS Охрана",
   "city": "almaty",
@@ -3758,6 +3781,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "almaty:fellowpost": {
+  "name": "FellowPost",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
  },
  "almaty:femmestate": {
   "name": "FEMMESTATE",
@@ -4367,6 +4397,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
+ },
+ "almaty:hr партнер": {
+  "name": "HR Партнёр",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
  },
  "almaty:hydrosta kazakhstan": {
   "name": "Hydrosta Kazakhstan",
@@ -8434,6 +8471,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:бастау": {
+  "name": "ИП Бастау",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "almaty:бастық": {
   "name": "БАСТЫҚ",
   "city": "almaty",
@@ -9233,6 +9277,13 @@
   "checked_at": "2026-10-28T20:44:33+00:00",
   "instagram": "yvesrocherkz",
   "source": "https://2gis.kz/almaty/firm/70000001113860458"
+ },
+ "almaty:илс": {
+  "name": "ИЛС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
  },
  "almaty:ильбисинова": {
   "name": "Ильбисинова",
@@ -12297,6 +12348,13 @@
   "v": 3,
   "checked_at": "2026-11-02T11:44:06+00:00"
  },
+ "astana:amir line": {
+  "name": "AMIR Line",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "astana:and asia": {
   "name": "AND Asia",
   "city": "astana",
@@ -14125,6 +14183,13 @@
   "instagram": "manana_astana",
   "source": "https://2gis.kz/astana/firm/70000001118381535"
  },
+ "astana:maneken kz": {
+  "name": "Maneken.kz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "astana:mansur cafe": {
   "name": "MANSUR CAFE",
   "city": "astana",
@@ -14758,6 +14823,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:qazaq eli aq añyz": {
+  "name": "QAZAQ ELI (AQ AÑYZ)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "uzbechka1_kunaeva14g",
+  "source": "https://2gis.kz/astana/firm/70000001084057591"
  },
  "astana:qazaq republic": {
   "name": "Qazaq Republic",
@@ -17602,6 +17676,13 @@
    "website"
   ]
  },
+ "astana:мырзагалиев с м оц booster": {
+  "name": "МЫРЗАГАЛИЕВ С.М. (ОЦ Booster)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "astana:мясная продукция": {
   "name": "Мясная продукция",
   "city": "astana",
@@ -18307,6 +18388,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "astana:сырные традиции": {
+  "name": "Сырные традиции",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "astana:сыроварня": {
   "name": "СЫРОВАРНЯ",
   "city": "astana",
@@ -18921,6 +19009,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:эверест": {
+  "name": "Эверест",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
  },
  "astana:эдем": {
   "name": "ЭДЕМ",
@@ -19539,6 +19634,13 @@
   "avatar": "342cc1d8a67576b2.jpg",
   "avatar_source": "website"
  },
+ "atyrau:капитал": {
+  "name": "КАПИТАЛ",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
+ },
  "atyrau:кари кз": {
   "name": "КАРИ КЗ",
   "city": "atyrau",
@@ -20019,6 +20121,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:laid": {
+  "name": "LAID",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00"
  },
  "karaganda:lissa": {
   "name": "LISSA",
@@ -21883,6 +21992,20 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "kostanay:должник прав": {
+  "name": "Должник прав",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "d_prav.kz",
+  "website": "http://www.d-prav.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001099942204",
+  "avatar_checked_at": "2026-11-03T13:44:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:дычко в ю": {
   "name": "Дычко В.Ю",
   "city": "kostanay",
@@ -22318,6 +22441,15 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "kyzylorda:auto house kzo": {
+  "name": "AUTO HOUSE KZO",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "auto_house_kzo",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001101711600"
+ },
  "kyzylorda:common market corporation": {
   "name": "Common Market Corporation",
   "city": "kyzylorda",
@@ -22586,6 +22718,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T16:43:38+00:00"
+ },
+ "pavlodar:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018854323",
+  "avatar_checked_at": "2026-11-03T13:44:34+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c3c3016f484ed9e5.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:kaz minerals management": {
   "name": "KAZ Minerals Management",
@@ -25625,6 +25773,22 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "taraz:kmf банк": {
+  "name": "KMF Банк",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "kmf_kz",
+  "website": "https://kmf.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001052160682",
+  "avatar_checked_at": "2026-11-03T13:44:34+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "892b53a480063710.jpg",
+  "avatar_source": "website"
+ },
  "taraz:korzinka retail group": {
   "name": "KORZINKA RETAIL GROUP",
   "city": "taraz",
@@ -26000,6 +26164,23 @@
    "website"
   ],
   "avatar": "a127124be756fdbb.jpg",
+  "avatar_source": "telegram"
+ },
+ "uralsk:kari": {
+  "name": "KARI",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "telegram": "kariofficial",
+  "website": "https://kari.com/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025014196",
+  "avatar_checked_at": "2026-11-03T13:44:34+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "5269b9990f92fa5a.jpg",
   "avatar_source": "telegram"
  },
  "uralsk:kc интернейшнл": {
@@ -26710,6 +26891,20 @@
   ],
   "avatar": "3eeb6576911c1b31.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:monamie сеть парфюмерно косметических магазинов": {
+  "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T13:44:33+00:00",
+  "instagram": "monamie.kz",
+  "website": "https://monamie.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313821",
+  "avatar_checked_at": "2026-11-03T13:44:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:mtk bizon": {
   "name": "MTK BIZON",

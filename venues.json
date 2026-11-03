@@ -843,6 +843,13 @@
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
  },
+ "aktobe:bus logistic group": {
+  "name": "Bus Logistic Group",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
+ },
  "aktobe:centercontact kz ип лидер 2023": {
   "name": "CenterContact.kz(ИП Лидер 2023)",
   "city": "aktobe",
@@ -1116,6 +1123,15 @@
    "website"
   ]
  },
+ "aktobe:автологистика": {
+  "name": "Автологистика",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "boschcarservice_aqtobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001047665826"
+ },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
   "city": "aktobe",
@@ -1197,6 +1213,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
+ },
+ "aktobe:бриг": {
+  "name": "Бриг",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "aktobe:венера atd": {
   "name": "Венера ATD",
@@ -2372,6 +2395,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:aykss": {
+  "name": "AYKSS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "almaty:ayla group nn": {
   "name": "AYLA GROUP NN",
@@ -4310,6 +4340,13 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "almaty:hr group": {
+  "name": "HR group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
+ },
  "almaty:hydrosta kazakhstan": {
   "name": "Hydrosta Kazakhstan",
   "city": "almaty",
@@ -5790,6 +5827,13 @@
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
  },
+ "almaty:private school koktobe": {
+  "name": "PRIVATE SCHOOL KOKTOBE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
+ },
  "almaty:procoffee": {
   "name": "ProCoffee",
   "city": "almaty",
@@ -7227,6 +7271,22 @@
   "avatar": "c7dc1207697187fa.jpg",
   "avatar_source": "website"
  },
+ "almaty:yakuza sushi": {
+  "name": "Yakuza Sushi",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "yakuza.kz",
+  "website": "https://yakuza-sushi.kz/almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001117417510",
+  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2e86f84dd1f2ec97.jpg",
+  "avatar_source": "website"
+ },
  "almaty:yango group": {
   "name": "Yango Group",
   "city": "almaty",
@@ -8569,6 +8629,24 @@
    "website"
   ]
  },
+ "almaty:гиль т в time kafe по правде": {
+  "name": "Гиль Т.В. (Time Kafe По Правде)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "timekafe.kz",
+  "telegram": "go_timekafe",
+  "website": "https://timekafe.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001022963725",
+  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "b533728ca9ea8838.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:гк sabyrzhan group": {
   "name": "ГК SABYRZHAN GROUP",
   "city": "almaty",
@@ -9423,6 +9501,13 @@
   ],
   "avatar": "be2ef08ca35a5fc3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:касымова": {
+  "name": "КАСЫМОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "almaty:кафе софт сервис": {
   "name": "Кафе Софт Сервис",
@@ -12019,6 +12104,13 @@
    "website"
   ]
  },
+ "astana:alloy group": {
+  "name": "Alloy Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
+ },
  "astana:almawine": {
   "name": "ALMAWINE",
   "city": "astana",
@@ -12333,6 +12425,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:bfuria": {
+  "name": "BFuria",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "astana:bi group": {
   "name": "BI Group",
@@ -13779,6 +13878,20 @@
   ],
   "avatar": "9916ef121349dbe4.jpg",
   "avatar_source": "website"
+ },
+ "astana:m manzoni ип мавлитов е": {
+  "name": "M.Manzoni ( ИП Мавлитов Е)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "manzoni.kz",
+  "website": "https://mmanzoni.com/",
+  "source": "https://2gis.kz/astana/firm/70000001076593215",
+  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:m83": {
   "name": "M83",
@@ -16522,6 +16635,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T04:43:49+00:00"
+ },
+ "astana:инвест медина": {
+  "name": "Инвест Медина",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "astana:исмурзина с у": {
   "name": "Исмурзина С У",
@@ -20807,6 +20927,20 @@
   "avatar": "2f9088dd7be086b7.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:qazaq republic": {
+  "name": "Qazaq Republic",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "qazaq.republic",
+  "website": "http://qazaqrepublic.com/",
+  "source": "https://2gis.kz/astana/firm/70000001045454055",
+  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:tops group": {
   "name": "TOPS GROUP",
   "city": "kokshetau",
@@ -21508,6 +21642,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
+ },
+ "kostanay:кайдзэн": {
+  "name": "Кайдзэн",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "kostanay:кенжетаев ж ж": {
   "name": "Кенжетаев Ж Ж",
@@ -23395,6 +23536,22 @@
   "avatar": "bf99729d6d343fd9.jpg",
   "avatar_source": "telegram"
  },
+ "semey:kaz minerals management": {
+  "name": "KAZ Minerals Management",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "kazminerals_official",
+  "website": "https://kazminerals.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940001330162",
+  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4b568b0b7cf6db77.jpg",
+  "avatar_source": "website"
+ },
  "semey:nango": {
   "name": "NANGO",
   "city": "semey",
@@ -24889,6 +25046,15 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "shymkent:центр детской неврологии и эпилепсии neurolife": {
+  "name": "Центр детской неврологии и эпилепсии Neurolife",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "cdnie_neurolife",
+  "source": "https://2gis.kz/shymkent/firm/70000001046302412"
+ },
  "shymkent:шымкентский пивоваренный завод": {
   "name": "Шымкентский пивоваренный завод",
   "city": "shymkent",
@@ -25616,6 +25782,20 @@
   "avatar": "9fdbeac31d12d0a2.jpg",
   "avatar_source": "website"
  },
+ "uralsk:zhayik motors": {
+  "name": "ZHAYIK MOTORS",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "haval_zhayikmotors",
+  "website": "http://haval-uralsk.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001050836874",
+  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:zkmk западно казахстанская машиностроительная компания": {
   "name": "ZKMK (Западно-Казахстанская машиностроительная компания)",
   "city": "uralsk",
@@ -25785,6 +25965,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
+ },
+ "uralsk:квант фортуна": {
+  "name": "Квант Фортуна",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00"
  },
  "uralsk:кип электромонтаж": {
   "name": "КИП-ЭЛЕКТРОМОНТАЖ",
@@ -26039,6 +26226,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:m manzoni ип мавлитов е": {
+  "name": "M.Manzoni ( ИП Мавлитов Е)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T10:44:18+00:00",
+  "instagram": "manzoni.kz",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001116017859"
  },
  "ust-kamenogorsk:magic group": {
   "name": "MAGIC GROUP",

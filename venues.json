@@ -239,6 +239,22 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktau:renaissance by sulo": {
+  "name": "Renaissance by Sulo",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "renaissancebysulo_hotel",
+  "website": "http://renaissancebysulo.taplink.ws/",
+  "source": "https://2gis.kz/aktau/firm/70000001028456488",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "91028f44d8367bb0.jpg",
+  "avatar_source": "website"
+ },
  "aktau:royal consulting 09": {
   "name": "Royal Consulting 09",
   "city": "aktau",
@@ -385,6 +401,22 @@
    "website"
   ],
   "avatar": "729c0357b48979b7.jpg",
+  "avatar_source": "website"
+ },
+ "aktau:гранд авеню": {
+  "name": "Гранд Авеню",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "sauclinic",
+  "website": "http://sauclinic.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001086997673",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d6587a5cc187c14e.jpg",
   "avatar_source": "website"
  },
  "aktau:гулнур": {
@@ -3344,6 +3376,13 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "almaty:etalon": {
+  "name": "ETALON",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
+ },
  "almaty:eurasia support services": {
   "name": "Eurasia Support Services",
   "city": "almaty",
@@ -4301,6 +4340,13 @@
   ],
   "avatar": "e5397512463141db.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:kaspkaz": {
+  "name": "KaspKaz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
  },
  "almaty:kazdi group": {
   "name": "KazDi Group",
@@ -7851,6 +7897,13 @@
   "avatar": "a7c44a91f14f39d1.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:бест импорт": {
+  "name": "БЕСТ ИМПОРТ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
+ },
  "almaty:бизнес парк станица": {
   "name": "Бизнес парк Станица",
   "city": "almaty",
@@ -10609,6 +10662,22 @@
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
  },
+ "almaty:университет синергия казахстан": {
+  "name": "Университет Синергия Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "synergykazakhstan",
+  "telegram": "infosynergykz",
+  "website": "http://synergyuniversity.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000798244",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:урманов р а": {
   "name": "Урманов Р. А.",
   "city": "almaty",
@@ -10755,6 +10824,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "almaty:фирма экомед тоо клиника репродукции человека экомед тм": {
+  "name": "Фирма Экомед, ТОО (Клиника репродукции человека Экомед, ТМ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "website": "https://www.ecomed.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100167565",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "aebee97f83389bae.jpg",
+  "avatar_source": "website"
  },
  "almaty:фрост ко": {
   "name": "Фрост Ко",
@@ -11060,6 +11144,15 @@
   "checked_at": "2026-10-28T21:46:06+00:00",
   "instagram": "merhat_jewelry",
   "source": "https://2gis.kz/almaty/firm/70000001038668959"
+ },
+ "almaty:юг там где горы": {
+  "name": "Юг там, где горы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "yugtamgdegory",
+  "source": "https://2gis.kz/almaty/firm/70000001054413336"
  },
  "almaty:юг электрокомплект": {
   "name": "Юг-ЭлектроКомплект",
@@ -15242,6 +15335,13 @@
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
  },
+ "astana:джамилько": {
+  "name": "ДжамильКо",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
+ },
  "astana:дин ва кэс": {
   "name": "ДиН ВА-КЭС",
   "city": "astana",
@@ -15806,6 +15906,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
+ },
+ "astana:кристалл авто": {
+  "name": "Кристалл Авто",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "chery.crystal.astana",
+  "website": "http://chery-crystal-astana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001103490706",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:ксж freedom life": {
   "name": "КСЖ Freedom Life",
@@ -16911,6 +17025,13 @@
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
  },
+ "astana:таксопарк комфорт+": {
+  "name": "Таксопарк (Комфорт+)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
+ },
  "astana:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
   "city": "astana",
@@ -17613,6 +17734,20 @@
   "checked_at": "2026-10-28T23:45:40+00:00",
   "instagram": "avtomarket06",
   "source": "https://2gis.kz/atyrau/firm/70000001066531440"
+ },
+ "atyrau:beeline тм": {
+  "name": "Beeline, ТМ",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "beeline_kz",
+  "website": "https://www.beeline.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001060886068",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:bereke market": {
   "name": "Bereke Market",
@@ -20519,6 +20654,13 @@
   "avatar": "20ea0b412ff4855e.jpg",
   "avatar_source": "telegram"
  },
+ "kostanay:спк вершина": {
+  "name": "СПК Вершина",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
+ },
  "kostanay:страховая компания freedom insurance": {
   "name": "Страховая компания Freedom Insurance",
   "city": "kostanay",
@@ -20817,6 +20959,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:flexway cargo kz": {
+  "name": "Flexway Cargo KZ",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
  },
  "pavlodar:fonet er tai ak mining": {
   "name": "Fonet Er-Tai AK Mining",
@@ -21444,6 +21593,20 @@
    "website"
   ]
  },
+ "pavlodar:тссп казахстан": {
+  "name": "ТССП Казахстан",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "tssp.kz",
+  "website": "https://www.tssp.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001061940839",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:хан ли кз": {
   "name": "ХАН ЛИ КЗ",
   "city": "pavlodar",
@@ -21487,6 +21650,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001066364569",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2ed91ce8e6f0fff7.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:contineo": {
   "name": "CONTINEO",
@@ -21640,6 +21819,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "petropavlovsk:бахыт": {
+  "name": "Бахыт",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
  },
  "petropavlovsk:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
@@ -23881,6 +24067,24 @@
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
  },
+ "uralsk:home credit bank дб ао fortebank": {
+  "name": "Home Credit Bank (ДБ АО «ForteBank»)",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "instagram": "homecredit_kz",
+  "telegram": "homecreditbankkz",
+  "website": "http://home.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025156115",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "a127124be756fdbb.jpg",
+  "avatar_source": "telegram"
+ },
  "uralsk:kc интернейшнл": {
   "name": "KC Интернейшнл",
   "city": "uralsk",
@@ -24107,6 +24311,21 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "uralsk:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00",
+  "website": "https://gloria-jeans.ru/",
+  "source": "https://2gis.kz/uralsk/firm/70000001114208548",
+  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6af57cd04a673a8e.jpg",
+  "avatar_source": "website"
+ },
  "uralsk:громас": {
   "name": "Громас",
   "city": "uralsk",
@@ -24120,6 +24339,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "uralsk:ескерткыш кызмет казахстан": {
+  "name": "Ескерткыш Кызмет Казахстан",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T02:44:10+00:00"
  },
  "uralsk:жұмыс тәжірибем бар": {
   "name": "Жұмыс тәжірибем бар",

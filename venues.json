@@ -2546,6 +2546,20 @@
   "avatar": "6d160e3b0f1076f8.jpg",
   "avatar_source": "website"
  },
+ "almaty:birinshi lombard бірінші ломбард": {
+  "name": "Birinshi Lombard (Бірінші Ломбард)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "1lombard_kz",
+  "website": "http://1lombard.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117074308",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:bizdin auyl": {
   "name": "Bizdin Auyl",
   "city": "almaty",
@@ -3338,6 +3352,13 @@
    "website"
   ]
  },
+ "almaty:elogistics": {
+  "name": "eLogistics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
+ },
  "almaty:en electronics": {
   "name": "EN Electronics",
   "city": "almaty",
@@ -3692,6 +3713,15 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "almaty:galamat company": {
+  "name": "Galamat Company",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "galamat_zhk",
+  "source": "https://2gis.kz/almaty/firm/70000001080694633"
+ },
  "almaty:galanz bottlers ао": {
   "name": "Galanz Bottlers, АО",
   "city": "almaty",
@@ -3987,6 +4017,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "almaty:haridus харидус": {
+  "name": "Haridus (Харидус)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
  },
  "almaty:haval": {
   "name": "Haval",
@@ -4692,6 +4729,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:lb house": {
+  "name": "LB House",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
  },
  "almaty:leader agro": {
   "name": "Leader AGRO",
@@ -5640,6 +5684,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "http://qazaqoil.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018078163",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "93822632da50ff9f.jpg",
+  "avatar_source": "website"
  },
  "almaty:qazjihaz": {
   "name": "QazJihaz",
@@ -8735,6 +8795,20 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "almaty:институт ядерной физики": {
+  "name": "Институт ядерной физики",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "inp_kz",
+  "website": "https://inp.kz/ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001017547277",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:интер камень": {
   "name": "Интер Камень",
   "city": "almaty",
@@ -10210,6 +10284,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:роза": {
+  "name": "Роза",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
+ },
  "almaty:розовое": {
   "name": "Розовое",
   "city": "almaty",
@@ -11378,6 +11459,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "astana:3 желания": {
+  "name": "3 желания",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "efc.kz",
+  "website": "http://www.efc.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795207",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0347a520bb4381dc.jpg",
+  "avatar_source": "website"
  },
  "astana:3 й тайм": {
   "name": "3-й Тайм",
@@ -12668,6 +12765,13 @@
    "website"
   ]
  },
+ "astana:haridus харидус": {
+  "name": "Haridus (Харидус)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
+ },
  "astana:healthy food": {
   "name": "Healthy Food",
   "city": "astana",
@@ -13502,6 +13606,20 @@
   ],
   "avatar": "bda4bf99e376f427.jpg",
   "avatar_source": "website"
+ },
+ "astana:nls kazakhstan": {
+  "name": "NLS Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "nlskazakhstan",
+  "website": "http://nls.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001033718369",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:nomado partners": {
   "name": "Nomado Partners",
@@ -14859,6 +14977,20 @@
   "instagram": "aurum_astana",
   "source": "https://2gis.kz/astana/firm/70000001117640041"
  },
+ "astana:акмолинский автоцентр": {
+  "name": "АКМОЛИНСКИЙ АВТОЦЕНТР",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "kamazakmolcenter",
+  "website": "http://nurkamaz.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018132657",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:актив ломбард": {
   "name": "Актив Ломбард",
   "city": "astana",
@@ -16028,6 +16160,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
+ },
+ "astana:коктал": {
+  "name": "Коктал",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
  },
  "astana:компания cp retail компания си пи ритэил": {
   "name": "Компания CP Retail (Компания Си Пи Ритэил)",
@@ -19302,6 +19441,22 @@
    "website"
   ]
  },
+ "karaganda:детский мир казахстан": {
+  "name": "Детский мир - Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "detmir_shopkz",
+  "website": "http://detmir.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001046703047",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a4b0a08058a29957.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:дудар": {
   "name": "Дудар",
   "city": "karaganda",
@@ -21219,6 +21374,22 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "pavlodar:doscar group": {
+  "name": "DOSCAR GROUP",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "jac.doscar.pvl",
+  "website": "http://pavlodar.jac-doscar.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001067408052",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3eef16e43a07be73.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:erg kazakhstan": {
   "name": "ERG Kazakhstan",
   "city": "pavlodar",
@@ -22092,6 +22263,20 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "petropavlovsk:барс строй": {
+  "name": "БАРС-СТРОЙ",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "barsstroy",
+  "website": "http://bars-stroy.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038330938",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:бахыт": {
   "name": "Бахыт",
   "city": "petropavlovsk",
@@ -22745,6 +22930,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "semey:танирбергенова арайлым бакытбековна": {
+  "name": "ИП ТАНИРБЕРГЕНОВА АРАЙЛЫМ БАКЫТБЕКОВНА",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
  },
  "semey:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
@@ -23532,6 +23724,21 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "shymkent:дудар": {
+  "name": "Дудар",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001052262635",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ad0225073c1cacdb.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:емельянов": {
   "name": "Емельянов",
   "city": "shymkent",
@@ -24093,6 +24300,13 @@
   "instagram": "expert_avto_taraz",
   "source": "https://2gis.kz/taraz/firm/70000001099954127"
  },
+ "taraz:flexway cargo kz": {
+  "name": "Flexway Cargo KZ",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00"
+ },
  "taraz:golden compass jambul": {
   "name": "Golden Compass Jambul",
   "city": "taraz",
@@ -24257,6 +24471,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "taraz:сейф ломбард": {
+  "name": "Сейф-ломбард",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T05:44:23+00:00",
+  "instagram": "seiflombard.kz",
+  "website": "http://seiflombard.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001051770778",
+  "avatar_checked_at": "2026-11-03T05:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c6e5214a86ca6e8f.jpg",
+  "avatar_source": "website"
  },
  "taraz:тсз": {
   "name": "ТСЗ",

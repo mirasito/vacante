@@ -3917,6 +3917,13 @@
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
  },
+ "almaty:fbd logistics": {
+  "name": "FBD Logistics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
+ },
  "almaty:fellowpost": {
   "name": "FellowPost",
   "city": "almaty",
@@ -5447,6 +5454,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
+ },
+ "almaty:metrolux service almaty": {
+  "name": "Metrolux Service Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "metrolux.kz",
+  "website": "https://www.metrolux.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089598102",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:meyram group distribution": {
   "name": "Meyram group distribution",
@@ -8950,6 +8971,13 @@
   "instagram": "vkalmaty",
   "source": "https://2gis.kz/almaty/firm/9429940000941052"
  },
+ "almaty:высота алматы": {
+  "name": "Высота Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
+ },
  "almaty:высочайший": {
   "name": "Высочайший",
   "city": "almaty",
@@ -11928,6 +11956,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "almaty:турецкой": {
+  "name": "Турецкой",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
+ },
  "almaty:турсад": {
   "name": "ТурСад",
   "city": "almaty",
@@ -12053,6 +12088,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "almaty:филиал тоо draft 2022": {
+  "name": "Филиал ТОО Draft-2022",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
  },
  "almaty:филип моррис казахстан": {
   "name": "Филип Моррис Казахстан",
@@ -12457,6 +12499,20 @@
   "instagram": "ekt.kz",
   "source": "https://2gis.kz/almaty/firm/9429940000802539"
  },
+ "almaty:юнитайр": {
+  "name": "ЮНИТАЙР",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "unityre_company",
+  "website": "http://unityre.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000790979",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:юрий": {
   "name": "Юрий",
   "city": "almaty",
@@ -12598,6 +12654,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T08:44:40+00:00"
+ },
+ "astana:adal qyzmet company": {
+  "name": "ADAL QYZMET COMPANY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
  },
  "astana:advanced information security solutions": {
   "name": "Advanced Information Security Solutions",
@@ -13057,6 +13120,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:billow": {
+  "name": "Billow",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
  },
  "astana:blizzko": {
   "name": "Blizzko",
@@ -14791,6 +14861,15 @@
   "checked_at": "2026-11-01T19:44:04+00:00",
   "instagram": "monamie.kz",
   "source": "https://www.instagram.com/monamie.kz/"
+ },
+ "astana:mr b global learning": {
+  "name": "Mr. B Global Learning",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "mrb_ielts_astana",
+  "source": "https://2gis.kz/astana/firm/70000001105189107"
  },
  "astana:msq man": {
   "name": "MSQ Man",
@@ -16928,6 +17007,22 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "astana:гастроном": {
+  "name": "Гастроном",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "gastronom_supermarket",
+  "website": "https://gastronom-supermarket.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001025638130",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6377f11e75ac8668.jpg",
+  "avatar_source": "website"
+ },
  "astana:гастрономия вкуса гарсов а м": {
   "name": "Гастрономия вкуса (ГАРСОВ А.М.)",
   "city": "astana",
@@ -17713,6 +17808,15 @@
   "avatar": "604f73b1d2218c01.jpg",
   "avatar_source": "website"
  },
+ "astana:компьютерный клуб top game": {
+  "name": "Компьютерный клуб Top Game",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "topgame.astana",
+  "source": "https://2gis.kz/astana/firm/70000001104882979"
+ },
  "astana:кондитерская": {
   "name": "Кондитерская",
   "city": "astana",
@@ -17904,6 +18008,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:лихенок": {
+  "name": "Лихенок",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
  },
  "astana:ломбард белый tm": {
   "name": "Ломбард Белый TM",
@@ -19106,6 +19217,22 @@
    "website"
   ]
  },
+ "astana:тмо group": {
+  "name": "ТМО Group",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "tmo_group.kz",
+  "website": "https://tmo-group.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001068821434",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "243129aed08e0fa5.jpg",
+  "avatar_source": "website"
+ },
  "astana:тойбастар": {
   "name": "Тойбастар",
   "city": "astana",
@@ -20300,6 +20427,15 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "atyrau:риал capone": {
+  "name": "Риал (CAPONE)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "capone.kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001035682974"
+ },
  "atyrau:самокат ооо изи лоджистик партнер сервиса": {
   "name": "Самокат (ООО ИЗИ Лоджистик — партнер сервиса)",
   "city": "atyrau",
@@ -20955,6 +21091,13 @@
   "instagram": "trdelnikgo",
   "source": "https://2gis.kz/karaganda/firm/70000001114127998"
  },
+ "karaganda:vintar": {
+  "name": "VINTAR",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
+ },
  "karaganda:well kz": {
   "name": "Well.kz",
   "city": "karaganda",
@@ -21451,6 +21594,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "karaganda:ксэ казахстан": {
+  "name": "КСЭ Казахстан",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
  },
  "karaganda:кулькеева т е": {
   "name": "Кулькеева Т.Е.",
@@ -22071,6 +22221,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "kokshetau:компания ale": {
+  "name": "Компания ALE",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00"
  },
  "kokshetau:тех эксперт сервис": {
   "name": "Тех.Эксперт Сервис",
@@ -25146,6 +25303,22 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "shymkent:auto sila": {
+  "name": "Auto Sila",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "autosila.kz",
+  "website": "http://tonar.autosila.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001114872726",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fc1886b05aa3817a.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:beeline тм": {
   "name": "Beeline, ТМ",
   "city": "shymkent",
@@ -27318,6 +27491,20 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "uralsk:перепелкин алексей яковлевич бош авто сервис уральск": {
+  "name": "Перепелкин Алексей Яковлевич (Бош Авто Сервис Уральск)",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "bosch_service_uralsk",
+  "website": "https://bosch-service.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025319525",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:полюс групп": {
   "name": "Полюс Групп",
   "city": "uralsk",
@@ -28052,6 +28239,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:крепеж опк": {
+  "name": "Крепеж-ОПК",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-03T18:45:16+00:00",
+  "instagram": "krep.kz",
+  "website": "http://krep.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001027729412",
+  "avatar_checked_at": "2026-11-03T18:45:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5dd8faa21b99bdc3.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:көпбай р м": {
   "name": "Көпбай Р.М.",

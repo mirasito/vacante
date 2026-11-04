@@ -154,6 +154,20 @@
   "avatar": "17db3dbfebe101a9.jpg",
   "avatar_source": "website"
  },
+ "aktau:fircaspian": {
+  "name": "FIRCaspian",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "fircaspian",
+  "website": "http://fircaspian.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001076596075",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:fume lounge": {
   "name": "Fume Lounge",
   "city": "aktau",
@@ -839,6 +853,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "aktau:наумов никита валерьевич": {
+  "name": "Наумов Никита Валерьевич",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
  },
  "aktau:пломбир": {
   "name": "Пломбир",
@@ -1979,6 +2000,13 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "almaty:adal medpharm": {
+  "name": "Adal MedPharm",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
+ },
  "almaty:adal сут": {
   "name": "Adal сут",
   "city": "almaty",
@@ -2780,6 +2808,20 @@
   "website": "https://atamuragroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055250581",
   "avatar_checked_at": "2026-11-02T06:49:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:atea": {
+  "name": "ATEA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "atea.cafe",
+  "website": "https://taplink.cc/atea_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001080617613",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4999,6 +5041,15 @@
    "website"
   ]
  },
+ "almaty:green house limited": {
+  "name": "Green House Limited",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "greenhouse_limited",
+  "source": "https://2gis.kz/almaty/firm/70000001115206938"
+ },
  "almaty:greencity": {
   "name": "GreenCity",
   "city": "almaty",
@@ -6882,6 +6933,13 @@
    "website"
   ]
  },
+ "almaty:opencityai": {
+  "name": "OpenCityAI",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
+ },
  "almaty:opti trade": {
   "name": "OPTI TRADE",
   "city": "almaty",
@@ -7500,6 +7558,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "almaty:rixmind тоо сквалио казахстан": {
+  "name": "RixMind (ТОО Сквалио Казахстан)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "website": "https://squalio.com/kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029641958",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:rixos almaty тоо solis ltd": {
   "name": "Rixos Almaty (ТОО Solis ltd)",
@@ -10465,6 +10536,13 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "almaty:гелиос": {
+  "name": "Гелиос",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
+ },
  "almaty:генерал стафф": {
   "name": "ГЕНЕРАЛ-СТАФФ",
   "city": "almaty",
@@ -10698,6 +10776,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "almaty:даулет": {
+  "name": "Даулет",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
  },
  "almaty:дега": {
   "name": "Дега",
@@ -11316,6 +11401,15 @@
   ],
   "avatar": "6d14eb2d43990ec3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:казахстанская мануфактура ткани": {
+  "name": "Казахстанская мануфактура ткани",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "kmtkani",
+  "source": "https://2gis.kz/almaty/firm/70000001100396805"
  },
  "almaty:казахстанско российский медицинский университет": {
   "name": "КАЗАХСТАНСКО-РОССИЙСКИЙ МЕДИЦИНСКИЙ УНИВЕРСИТЕТ",
@@ -13992,6 +14086,13 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "almaty:у хана": {
+  "name": "У Хана",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
+ },
  "almaty:университет синергия казахстан": {
   "name": "Университет Синергия Казахстан",
   "city": "almaty",
@@ -16307,6 +16408,22 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "astana:hammer legend хамер лэджэнд": {
+  "name": "Hammer Legend (Хамер Лэджэнд)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "hammerlegend.fitness",
+  "website": "https://www.hammerlegend.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001030378369",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1533680bc2f4d6ba.jpg",
+  "avatar_source": "website"
+ },
  "astana:han doors": {
   "name": "Han Doors",
   "city": "astana",
@@ -16522,6 +16639,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
+ },
+ "astana:invictus astana": {
+  "name": "Invictus Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "invictusastana",
+  "website": "http://invictus.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001036558298",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ab1ba4aec901c44a.jpg",
+  "avatar_source": "website"
  },
  "astana:iq chess": {
   "name": "IQ CHESS",
@@ -17271,6 +17404,13 @@
   ],
   "avatar": "3e84a02bc7f000b9.jpg",
   "avatar_source": "website"
+ },
+ "astana:milky cake": {
+  "name": "Milky Cake",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
  },
  "astana:millennium astana": {
   "name": "Millennium Astana",
@@ -22729,6 +22869,20 @@
   "instagram": "xinkalnaya_1_qazaqstan",
   "source": "https://2gis.kz/astana/firm/70000001106049642"
  },
+ "astana:ход конем 2021": {
+  "name": "ХОД КОНЕМ-2021",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "instagram": "schoolhodkonem",
+  "website": "http://chess-astana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001046857872",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:хозяйственных товаров": {
   "name": "ХОЗЯЙСТВЕННЫХ ТОВАРОВ",
   "city": "astana",
@@ -23615,6 +23769,13 @@
    "website"
   ]
  },
+ "atyrau:болашак атырау": {
+  "name": "Болашак-Атырау",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
+ },
  "atyrau:білім инновация": {
   "name": "БІЛІМ-ИННОВАЦИЯ",
   "city": "atyrau",
@@ -24181,6 +24342,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "karaganda:green house limited": {
+  "name": "Green House Limited",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
  },
  "karaganda:hyundai karaganda": {
   "name": "Hyundai Karaganda",
@@ -29789,6 +29957,13 @@
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
  },
+ "shymkent:profy gargo": {
+  "name": "Profy Gargo",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
+ },
  "shymkent:prolight": {
   "name": "ProLight",
   "city": "shymkent",
@@ -31710,6 +31885,21 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "uralsk:нефтестройсервис лтд": {
+  "name": "Нефтестройсервис ЛТД",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00",
+  "website": "http://nss.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001045094068",
+  "avatar_checked_at": "2026-11-04T20:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ae8aff3849c21239.jpg",
+  "avatar_source": "website"
+ },
  "uralsk:нуржанар": {
   "name": "Нуржанар",
   "city": "uralsk",
@@ -33095,6 +33285,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:фантазия детства": {
+  "name": "Фантазия детства",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T20:44:13+00:00"
  },
  "ust-kamenogorsk:фантазия детство": {
   "name": "Фантазия детство",

@@ -18,6 +18,8 @@ type WebApp = {
   onEvent?(event: string, callback: () => void): void;
   offEvent?(event: string, callback: () => void): void;
   colorScheme?: 'light' | 'dark';
+  /** Подписанная строка входа: её проверяет сервер (server/src/telegram.ts). */
+  initData?: string;
   initDataUnsafe?: { user?: { language_code?: string }; start_param?: string };
   BackButton?: {
     show(): void;

@@ -1,0 +1,36 @@
+[Unit]
+Description=Vacante API: профили, отклики и напоминания
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vacante
+Group=vacante
+# Токен бота и ключ резервных копий: файл пишет выкладка из GitHub Secrets, читать его может только root
+EnvironmentFile=/etc/vacante/env
+Environment=NODE_ENV=production DATA_DIR=/var/lib/vacante HOST=127.0.0.1 PORT=8080
+WorkingDirectory=/opt/vacante/current/server
+ExecStart=/usr/local/bin/node --disable-warning=ExperimentalWarning src/main.ts
+Restart=always
+RestartSec=3
+TimeoutStopSec=15
+MemoryMax=600M
+
+# Процесс видит только свою папку с данными
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ReadWritePaths=/var/lib/vacante
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictNamespaces=true
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target

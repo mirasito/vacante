@@ -1,0 +1,17 @@
+[Unit]
+Description=Vacante: ночная резервная копия базы и кружков
+
+[Service]
+Type=oneshot
+# Под пользователем сервера: иначе SQLite создаст служебные файлы базы от root
+User=vacante
+Group=vacante
+EnvironmentFile=/etc/vacante/env
+ExecStart=/usr/local/sbin/vacante-backup
+Nice=10
+IOSchedulingClass=idle
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/vacante /var/backups/vacante

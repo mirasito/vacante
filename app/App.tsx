@@ -28,6 +28,7 @@ import {
   whatsapp,
   type HomeScreen,
 } from './src/platform';
+import { whoAmI, type Account } from './src/server';
 import { read, write } from './src/storage';
 import { SwipeDeck, type DeckHandle, type Dir } from './src/SwipeDeck';
 import { useColors, type Colors } from './src/theme';
@@ -65,6 +66,7 @@ function Main() {
   const [open, setOpen] = useState<Vacancy | null>(null);
   const [attempt, setAttempt] = useState(0);
   const [home, setHome] = useState<HomeScreen>('unsupported');
+  const [account, setAccount] = useState<Account | null>(null);
   const deck = useRef<DeckHandle>(null);
   const seenCity = useRef<string | null>(null);
 
@@ -86,7 +88,11 @@ function Main() {
       setPrefs({ ...stored, lang: stored.lang ?? tgLang ?? 'ru', ...(linkCity ? { city: linkCity } : {}) });
       setLiked(storedLiked);
       setBooted(true);
-      if (app) homeScreenStatus().then(setHome);
+      if (app) {
+        homeScreenStatus().then(setHome);
+        // Вход на сервер Vacante: пока сервера нет, просто ничего не показываем
+        whoAmI().then(setAccount);
+      }
     })();
   }, []);
 
@@ -218,6 +224,9 @@ function Main() {
           <Text style={[styles.logo, { color: c.ink }]}>vacante</Text>
           <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
         </View>
+        {account ? (
+          <Text style={[styles.account, { color: c.quiet }]}>✓ {i18n.signedIn(lang, account.first_name)}</Text>
+        ) : null}
         <Text style={[styles.h1, { color: c.ink }]}>{t('chooseCity')}</Text>
         {index ? (
           <ScrollView contentContainerStyle={styles.cityList}>
@@ -589,6 +598,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
+  account: { fontSize: 13, paddingHorizontal: 16, marginTop: -4, marginBottom: 8 },
   cityList: { paddingHorizontal: 16, paddingBottom: 24, gap: 8 },
   cityRow: {
     flexDirection: 'row',

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T16:58:05+00:00",
+ "updated_at": "2026-11-04T17:56:59+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -29808,6 +29808,122 @@
     "title": "Продавец-консультант",
     "employer": "Autosvet-Autolight",
     "address": "авторынок «Восточный»"
+   }
+  },
+  "rabota_astanakz-31273": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Охранник",
+    "employer": "LK-Security",
+    "salary_min": 120000,
+    "salary_max": 192000,
+    "salary_period": "month",
+    "schedule": "Сменный график"
+   }
+  },
+  "astana_job_vakansii-130124": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Менеджер по продажам цветов",
+    "employer": "Raushan Flowers",
+    "schedule": "3/4, 09:00–00:00"
+   }
+  },
+  "hh-138866066": {
+   "verdict": "reject",
+   "at": "2026-11-04T17:56:59+00:00",
+   "reason": "Взыскание задолженности, не рабочая вакансия"
+  },
+  "astana_job_vakansii-130117": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "Детский сад «Toddler Noho»",
+    "schedule": "5/2, 07:50–17:30"
+   }
+  },
+  "rabota_astanakz-31219": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Повар на раздачу, раннер, упаковщица",
+    "schedule": "2/2, 6/1, есть ночные смены"
+   }
+  },
+  "zhumys_astana_kz-17093": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "employer": "Fresh Market",
+    "schedule": "5/2, 08:00–16:00 или 16:00–00:00",
+    "address": "Ұлы Дала, 65/1",
+    "perks": [
+     "Питание",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota_astanakz-31214": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "employer": "Master Security",
+    "schedule": "Сменный график, суточный пост"
+   }
+  },
+  "hh-138119239": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Бариста",
+    "schedule": "2/2, 12 часов"
+   }
+  },
+  "hh-139129690": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "address": "пр. Назарбаева, 187А"
+   }
+  },
+  "hh-139129660": {
+   "verdict": "reject",
+   "at": "2026-11-04T17:56:59+00:00",
+   "reason": "Офисная должность в финансовой организации"
+  },
+  "hh-139129649": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "employer": "Koula Almaty",
+    "address": "ул. Жакабая Отегенова, 19"
+   }
+  },
+  "hh-139129626": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Кладовщик",
+    "address": "мкр Самал-1, ул. Жолдасбекова, 9А"
+   }
+  },
+  "hh-139129396": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "title": "Продавец-консультант в Tommy Hilfiger",
+    "address": "ТРЦ «Dostyk Plaza», мкр Самал-2, 111"
+   }
+  },
+  "hh-139139152": {
+   "verdict": "approve",
+   "at": "2026-11-04T17:56:59+00:00",
+   "fields": {
+    "employer": "ИП Джусупов С. Н.",
+    "address": "ул. 101-й Стрелковой бригады, 5Г"
    }
   }
  }

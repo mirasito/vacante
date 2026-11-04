@@ -1787,6 +1787,13 @@
   "instagram": "babypolis_kz",
   "source": "https://2gis.kz/almaty/firm/70000001036394543"
  },
+ "almaty:ab group": {
+  "name": "AB group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00"
+ },
  "almaty:ab restaurants": {
   "name": "AB Restaurants",
   "city": "almaty",
@@ -3438,7 +3445,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00"
+  "checked_at": "2026-11-04T07:44:30+00:00"
  },
  "almaty:coffeevarka kz": {
   "name": "Coffeevarka kz",
@@ -3504,7 +3511,7 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00",
+  "checked_at": "2026-11-04T07:44:30+00:00",
   "instagram": "cu_kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001093695256"
  },
@@ -4875,6 +4882,13 @@
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
  },
+ "almaty:hr partner": {
+  "name": "HR PARTNER",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00"
+ },
  "almaty:hr партнер": {
   "name": "HR Партнёр",
   "city": "almaty",
@@ -5408,15 +5422,12 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00",
+  "checked_at": "2026-11-04T07:44:30+00:00",
+  "instagram": "kolesagroup",
   "website": "https://kolesa.kz/",
-  "source": "https://kolesa.kz/content/about/",
-  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "675563414e5c5582.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/almaty/firm/9429940000829283"
  },
  "almaty:konsel trade": {
   "name": "KONSEL Trade",
@@ -6341,6 +6352,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:open healthcare kazakhstan оупен хелскэйр казахстан": {
+  "name": "Open Healthcare Kazakhstan (Оупен Хелскэйр Казахстан)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00",
+  "instagram": "ohkz_almaty",
+  "website": "http://www.ohc.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001101364328",
+  "avatar_checked_at": "2026-11-04T07:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:open media group": {
   "name": "Open Media Group",
@@ -9341,6 +9366,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "almaty:баимбетова э о": {
+  "name": "БАИМБЕТОВА Э. О",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00"
+ },
  "almaty:байбулатов": {
   "name": "ИП Байбулатов",
   "city": "almaty",
@@ -9833,6 +9865,15 @@
   ],
   "avatar": "8a6461a9d4d1e53a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:голд казына": {
+  "name": "Голд Казына",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00",
+  "instagram": "gold_kazyna_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001024854330"
  },
  "almaty:гордиюк а м basilic тм": {
   "name": "Гордиюк А.М , Basilic ТМ",
@@ -11317,18 +11358,13 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00",
-  "instagram": "markformelle",
-  "telegram": "markformelle_official",
+  "checked_at": "2026-11-04T07:44:30+00:00",
   "website": "https://markformelle.kz/",
-  "source": "https://2gis.kz/almaty/firm/70000001067423193",
-  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "source": "https://2gis.kz/almaty/firm/70000001032408149",
+  "avatar_checked_at": "2026-11-04T07:44:31+00:00",
   "avatar_tried": [
-   "telegram",
    "website"
-  ],
-  "avatar": "fae0115a921f78b7.jpg",
-  "avatar_source": "telegram"
+  ]
  },
  "almaty:масло дел": {
   "name": "Масло-Дел",
@@ -12835,16 +12871,12 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00",
+  "checked_at": "2026-11-04T07:44:30+00:00",
   "instagram": "tgrad.kz",
   "website": "https://tgrad.kz/",
-  "source": "https://2gis.kz/almaty/firm/9429940001543661",
-  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "cb620f997c8dbef4.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/almaty/firm/9429940001543661"
  },
  "almaty:технокоминвест": {
   "name": "ТЕХНОКОМИНВЕСТ",
@@ -14779,15 +14811,11 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00",
+  "checked_at": "2026-11-04T07:44:30+00:00",
   "website": "https://dpd.kz/",
-  "source": "https://2gis.kz/astana/firm/70000001018065777",
-  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "49962f4f48f448d8.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/astana/firm/70000001018065777"
  },
  "astana:drink tea": {
   "name": "Drink tea",
@@ -15332,6 +15360,22 @@
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
  },
+ "astana:in oil ltd kz": {
+  "name": "In oil LTD KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00",
+  "instagram": "nomadoilkz",
+  "website": "http://www.nomadoil.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019460956",
+  "avatar_checked_at": "2026-11-04T07:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3a0bcab910a96961.jpg",
+  "avatar_source": "website"
+ },
  "astana:industriall recycling": {
   "name": "INDUSTRIALL RECYCLING",
   "city": "astana",
@@ -15560,7 +15604,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00"
+  "checked_at": "2026-11-04T07:44:30+00:00"
  },
  "astana:kazpan казпан": {
   "name": "KazPan (КазПан)",
@@ -17802,7 +17846,7 @@
   "city": "astana",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00"
+  "checked_at": "2026-11-04T07:44:30+00:00"
  },
  "astana:акмолинский автоцентр": {
   "name": "АКМОЛИНСКИЙ АВТОЦЕНТР",
@@ -18748,6 +18792,20 @@
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
  },
+ "astana:евразия 1": {
+  "name": "ЕВРАЗИЯ 1",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00",
+  "instagram": "trc_eurasia",
+  "website": "https://trc-eurasia.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018091635",
+  "avatar_checked_at": "2026-11-04T07:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:евразия 3": {
   "name": "Евразия 3",
   "city": "astana",
@@ -18898,11 +18956,11 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00",
+  "checked_at": "2026-11-04T07:44:30+00:00",
   "instagram": "zavodabkbeton",
-  "website": "https://abk-beton.kz/",
+  "website": "http://abk-beton.kz/",
   "source": "https://2gis.kz/kosshy/firm/70000001075885262",
-  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_checked_at": "2026-11-04T07:44:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19063,9 +19121,9 @@
  "astana:кадровое агентство гарант": {
   "name": "Кадровое агентство Гарант",
   "city": "astana",
-  "status": "skip",
+  "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00"
+  "checked_at": "2026-11-04T07:44:30+00:00"
  },
  "astana:казахстан мед дез": {
   "name": "КАЗАХСТАН-МЕД ДЕЗ",
@@ -19998,6 +20056,13 @@
   "avatar": "a7a308ffffc84c9a.jpg",
   "avatar_source": "website"
  },
+ "astana:парк авеню": {
+  "name": "Парк Авеню",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00"
+ },
  "astana:паркет finnfloor": {
   "name": "Паркет FinnFloor",
   "city": "astana",
@@ -20209,6 +20274,20 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "rik_pivo",
   "source": "https://2gis.kz/astana/firm/70000001019440535"
+ },
+ "astana:ростметалл групп астана": {
+  "name": "РостМеталл Групп Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T07:44:30+00:00",
+  "instagram": "rostmetall.kz",
+  "website": "https://rostmetall.kz/astana/",
+  "source": "https://2gis.kz/astana/firm/70000001062845462",
+  "avatar_checked_at": "2026-11-04T07:44:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:сабиров талгат абдумуханович": {
   "name": "Сабиров Талгат Абдумуханович",
@@ -27658,7 +27737,7 @@
   "city": "shymkent",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T06:44:59+00:00"
+  "checked_at": "2026-11-04T07:44:30+00:00"
  },
  "shymkent:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",

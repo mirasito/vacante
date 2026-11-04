@@ -5,7 +5,7 @@ import httpx
 
 from vacante import collect
 from vacante.sources import hh
-from vacante.store import load_vacancies
+from vacante.store import load_vacancies, save_vacancies
 
 NOW = datetime(2026, 10, 28, 8, tzinfo=timezone.utc)
 
@@ -223,3 +223,15 @@ def test_reread_vacancy_brings_its_point_to_the_saved_card(tmp_path):
     # Следующий прогон без точки её не стирает
     collect.run(config, data, fetch=None, now=NOW, from_hh=lambda state, now: [old])
     assert (load_vacancies(data)[0].lat, load_vacancies(data)[0].lon) == (43.2389, 76.9123)
+
+
+def test_saved_hh_point_gets_its_source(tmp_path):
+    config = tmp_path / "channels.yaml"
+    config.write_text("channels: []\n", "utf-8")
+    data = tmp_path / "data"
+    found = hh.to_vacancy(item(16, address={"raw": "Алматы, Абая, 150", "lat": 43.2389, "lng": 76.9123}))
+    assert found.geo == "hh"
+    found.geo = None  # так лежат точки, сохранённые до поля geo
+    save_vacancies(data, [found])
+    collect.run(config, data, fetch=None, now=NOW, from_hh=lambda state, now: None)
+    assert load_vacancies(data)[0].geo == "hh"

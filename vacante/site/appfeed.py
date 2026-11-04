@@ -47,6 +47,8 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
         # Точка адреса работы: приложение само считает, далеко ли она от дома человека
         "lat": v.lat,
         "lon": v.lon,
+        # Точка из OpenStreetMap: рядом с расстоянием приложение пишет «© OpenStreetMap» (лицензия ODbL)
+        "osm": True if v.geo == "osm" else None,
         "posted_at": v.posted_at,
         "top": v.is_top(now),
         "url": f"{base_url}/v/{v.id}/",

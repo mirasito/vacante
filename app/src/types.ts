@@ -17,9 +17,11 @@ export interface Vacancy {
   perks_kk?: string[];
   address?: string;
   map?: string;
-  /** Точка адреса работы (пока у вакансий с hh.kz): по ней видно, далеко ли от дома. */
+  /** Точка адреса работы: по ней видно, далеко ли от дома. Ставит hh.kz или находит OpenStreetMap. */
   lat?: number;
   lon?: number;
+  /** Точка из OpenStreetMap: рядом с расстоянием пишем «© OpenStreetMap» (так требует лицензия ODbL). */
+  osm?: boolean;
   posted_at: string;
   top?: boolean;
   url: string;

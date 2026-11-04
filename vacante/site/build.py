@@ -21,6 +21,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from vacante import channels
 from vacante import venues as venue_store
 from vacante.direct import POST_URL
+from vacante.geo import MAP_WORTHY
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
 from vacante.site import appfeed, i18n
@@ -59,7 +60,7 @@ SEARCH_TEXT = 300
 # Яндекс Метрики. Значения публичные, они всё равно видны в коде страницы.
 SITE_TAGS = {"google_verification": "GQjMSgo5pc-ADt2n0s-GBlVU9kMnuA9jWIZo2WQAejA",
              "yandex_verification": "5e4790f22ea3db3f", "metrika_id": "113822258"}
-_MAP_WORTHY = re.compile(r"(?i)\d|\b(?:трц|трк|тц|тд|бц|жк)\b")
+_MAP_WORTHY = MAP_WORTHY
 
 
 def money(value: int) -> str:

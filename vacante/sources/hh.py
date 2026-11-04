@@ -215,6 +215,7 @@ def to_vacancy(item: dict) -> Vacancy | None:
         address=_address(item, city),
         lat=lat,
         lon=lon,
+        geo=SOURCE if lat is not None else None,
     )
 
 

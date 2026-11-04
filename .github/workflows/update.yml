@@ -58,6 +58,8 @@ jobs:
           HH_CLIENT_ID: ${{ secrets.HH_CLIENT_ID }}
           HH_CLIENT_SECRET: ${{ secrets.HH_CLIENT_SECRET }}
           HH_USER_AGENT: ${{ vars.HH_USER_AGENT }}
+          # Точки адресов вакансий из каналов по OpenStreetMap (vacante/geocode.py): запросов за прогон, 0 выключает
+          GEOCODE_LIMIT: ${{ vars.GEOCODE_LIMIT || '60' }}
         run: python -m vacante collect --data-dir data
 
       # Адрес сайта из настроек Pages: <owner>.github.io/<repo>, а после подключения домена сам домен

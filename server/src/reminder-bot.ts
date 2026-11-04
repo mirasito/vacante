@@ -27,6 +27,7 @@ import {
 } from "./reminders.ts";
 import { RateLimit } from "./limits.ts";
 import { getProfile, getSeeker, iso } from "./seekers.ts";
+import { goalView, type GoalView } from "./progress.ts";
 import { TelegramError } from "./telegram.ts";
 import { dateLabel, dateTimeLabel, dayWord, DAY_MS, localDayStart, localHour, timeLabel, weekStart } from "./time.ts";
 
@@ -77,9 +78,18 @@ const T = {
     profile:
       "🎥 Профиль с кружком открывают охотнее. Расскажите о себе за минуту: как вас зовут, кем хотите работать и когда можете выйти.",
     record: "🎥 Записать кружок",
-    week: (sent: number, seen: number, invited: number) =>
+    week: (sent: number, seen: number, invited: number, goal: string) =>
       `📊 Итог прошлой недели: ${sent} ${plural(sent, "отклик", "отклика", "откликов")}` +
-      `, ${seen} посмотрели, ${invited} ${plural(invited, "приглашение", "приглашения", "приглашений")}.\nНовые вакансии уже в ленте.`,
+      `, ${seen} посмотрели, ${invited} ${plural(invited, "приглашение", "приглашения", "приглашений")}.` +
+      `${goal ? `\n${goal}` : ""}\nНовые вакансии уже в ленте.`,
+    weeks: (n: number) => `${n} ${plural(n, "неделя", "недели", "недель")}`,
+    goalDone: (sent: number, goal: number, streak: string | null) =>
+      `🎯 Цель выполнена: ${sent} из ${goal}.${streak ? ` Уже ${streak} подряд!` : ""}`,
+    goalNext: (goal: number, kept: boolean) =>
+      `🎯 Цель на эту неделю: ${goal} ${plural(goal, "отклик", "отклика", "откликов")}.` +
+      `${kept ? " Серия не прервалась: один пропуск в месяц можно." : ""}`,
+    goalNow: (sent: number, goal: number, streak: string | null) =>
+      `🎯 Цель недели: ${sent} из ${goal}${streak ? ` · 🔥 ${streak} подряд` : ""}`,
     myApps: "📋 Мои отклики",
     feed: "🃏 Листать вакансии",
     custom: (text: string) => `🔔 ${text}`,
@@ -167,8 +177,16 @@ const T = {
     profile:
       "🎥 Бейнехабары бар профильді жиірек ашады. Бір минутта өзіңіз туралы айтыңыз: атыңыз кім, кім болып жұмыс істегіңіз келеді және қашан шыға аласыз.",
     record: "🎥 Бейнехабар жазу",
-    week: (sent: number, seen: number, invited: number) =>
-      `📊 Өткен аптаның қорытындысы: ${sent} өтінім, ${seen} қаралды, ${invited} шақыру.\nЖаңа бос орындар лентада.`,
+    week: (sent: number, seen: number, invited: number, goal: string) =>
+      `📊 Өткен аптаның қорытындысы: ${sent} өтінім, ${seen} қаралды, ${invited} шақыру.` +
+      `${goal ? `\n${goal}` : ""}\nЖаңа бос орындар лентада.`,
+    weeks: (n: number) => `${n} апта`,
+    goalDone: (sent: number, goal: number, streak: string | null) =>
+      `🎯 Мақсат орындалды: ${sent}/${goal}.${streak ? ` Қатарынан ${streak}!` : ""}`,
+    goalNext: (goal: number, kept: boolean) =>
+      `🎯 Осы аптаның мақсаты: ${goal} өтінім.${kept ? " Серия үзілмеді: айына бір рет өткізуге болады." : ""}`,
+    goalNow: (sent: number, goal: number, streak: string | null) =>
+      `🎯 Апта мақсаты: ${sent}/${goal}${streak ? ` · 🔥 қатарынан ${streak}` : ""}`,
     myApps: "📋 Менің өтінімдерім",
     feed: "🃏 Бос орындарды қарау",
     custom: (text: string) => `🔔 ${text}`,
@@ -261,6 +279,14 @@ async function writeButton(deps: BotDeps, a: ApplicationRow, text: string, t: Te
   return a.source_url ? { text: t.post, url: a.source_url } : null;
 }
 
+/** Строка о цели в итоге недели: выполнили — с серией, нет — цель на новую неделю, без упрёков. */
+function weekGoalLine(t: Texts, g: GoalView): string {
+  const streak = (n: number) => (n > 1 ? t.weeks(n) : null);
+  if (g.last?.goal && g.last.sent >= g.last.goal) return t.goalDone(g.last.sent, g.last.goal, streak(g.streak));
+  if (!g.goal) return "";
+  return t.goalNext(g.goal, g.forgiven);
+}
+
 /** Сообщение для напоминания. null — отправлять уже нечего. */
 export async function render(deps: BotDeps, r: ReminderRow, now: number): Promise<Message | null> {
   const seeker = getSeeker(deps.db, r.seeker_id);
@@ -343,7 +369,7 @@ export async function render(deps: BotDeps, r: ReminderRow, now: number): Promis
       const n = weekNumbers(deps.db, r.seeker_id, iso(monday - 7 * DAY_MS), iso(monday));
       const city = getProfile(deps.db, r.seeker_id)?.city;
       return {
-        text: t.week(n.sent, n.seen, n.invited),
+        text: t.week(n.sent, n.seen, n.invited, weekGoalLine(t, goalView(deps.db, r.seeker_id, now))),
         keyboard: [
           [
             { text: t.myApps, web_app: { url: appUrl(deps, { tab: "applications", city }) } },
@@ -636,8 +662,10 @@ export function applicationsMessage(deps: BotDeps, userId: number, fallbackLang:
     return `${title}\n${shown.join("\n")}`;
   };
   const when = (ms: number) => `${dayWord(ms, now, lang)}${lang === "kk" ? "," : " в"} ${timeLabel(ms)}`;
+  const goal = goalView(db, userId, now);
   const parts = [
     t.appsTitle,
+    goal.goal ? t.goalNow(goal.sent, goal.goal, goal.streak ? t.weeks(goal.streak) : null) : "",
     section(t.groups.interviews, interviews, (a) =>
       a.interview_at && Date.parse(a.interview_at) > now - 2 * 3_600_000 ? t.interviewAt(when(Date.parse(a.interview_at))) : t.stages[a.stage],
     ),

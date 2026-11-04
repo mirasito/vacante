@@ -209,11 +209,38 @@ export interface Application {
   events?: ApplicationEvent[];
 }
 
+/** Цель недели: сколько откликов отправить с понедельника по воскресенье. */
+export const GOALS = [3, 5, 10] as const;
+export type GoalValue = (typeof GOALS)[number];
+
+export interface Goal {
+  /** null — цели нет. */
+  goal: GoalValue | null;
+  /** Отправлено на этой неделе. */
+  sent: number;
+  /** Недель подряд с выполненной целью, вместе с этой, если она уже выполнена. */
+  streak: number;
+  /** Прошлую неделю не выполнили, но серия сохранилась: один пропуск в месяц можно. */
+  forgiven: boolean;
+}
+
+export const ACHIEVEMENTS = ['video', 'first_sent', 'first_invite', 'first_interview', 'hired'] as const;
+export type AchievementKind = (typeof ACHIEVEMENTS)[number];
+
+export interface Achievement {
+  kind: AchievementKind;
+  at: string;
+  /** Приложение уже поздравило. */
+  seen: boolean;
+}
+
 export interface Summary {
   stage: SearchStage;
   week: { from: string; sent: number; seen: number; invited: number };
   next_interview: { id: number; at: string; title: string; employer: string | null; address: string | null } | null;
   counts: Record<Stage, number>;
+  goal: Goal;
+  achievements: Achievement[];
 }
 
 /** Готовый текст отклика и отдельно строка со ссылкой на профиль. */
@@ -253,6 +280,16 @@ export const patchApplication = (id: number, patch: ApplicationPatch) =>
 
 export const deleteApplication = (id: number) =>
   api<{ deleted: boolean; summary: Summary }>(`/me/applications/${id}`, { method: 'DELETE' });
+
+/** Цель недели: 3, 5 или 10 откликов; null выключает. */
+export const putGoal = (goal: GoalValue | null) => api<{ summary: Summary }>('/me/goal', { method: 'PUT', body: { goal } });
+
+/** Цель с телефона, заведённая до профиля, с прошлыми неделями. Сервер берёт её, только если своей цели нет. */
+export const importGoal = (goal: GoalValue | null, history: { week: string; goal: number }[]) =>
+  api<{ summary: Summary }>('/me/goal/import', { method: 'POST', body: { goal, history } });
+
+/** Поздравление с новыми достижениями показано. */
+export const seenAchievements = () => api<{ ok: boolean }>('/me/achievements/seen', { method: 'POST' });
 
 /** Контакт работодателя из исходного поста: сервер берёт его в момент запроса и не хранит. */
 export interface PostContact {

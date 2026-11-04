@@ -16,8 +16,10 @@ import {
   VACANCY_ID,
 } from "./applications.ts";
 import { fetchPostContacts, LookupLimit, POST_URL } from "./contacts.ts";
+import { find2gisLink, resolve2gis, roundHome } from "./geo.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import { RateLimit } from "./limits.ts";
+import { cleanJpeg, MAX_PHOTO_BYTES } from "./photo.ts";
 import { CONSENT_VERSION, parseProfile } from "./profile.ts";
 import { achievementsSeen, importGoal, parseGoal, setGoal } from "./progress.ts";
 import {
@@ -36,14 +38,19 @@ import {
   cancelPhoneAsk,
   createSeeker,
   deleteSeeker,
+  dropPhoto,
   dropSharedLink,
   dropVideo,
+  getPhoto,
   getProfile,
   getSeeker,
   getVideo,
   listViews,
   newSharedLink,
   profileView,
+  putPhoto,
+  randomCode,
+  removeFiles,
   saveProfile,
   setBaseConsent,
   setWriteAccess,
@@ -51,7 +58,8 @@ import {
   PHONE_ASK_MINUTES,
 } from "./seekers.ts";
 import { tx } from "./db.ts";
-import { fileReply } from "./video.ts";
+import { fileReply, writeAtomic } from "./video.ts";
+import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 type Lang = "ru" | "kk";
@@ -84,6 +92,10 @@ export function meRoutes(ctx: Ctx): Route[] {
   // Номера из постов: 30 разных вакансий в день и не больше 6 запросов в минуту на человека
   const lookups = new LookupLimit(30);
   const burst = new RateLimit(6, 60_000);
+  // Ссылки 2ГИС: 20 в час на человека, каждая — до пяти запросов к 2ГИС
+  const homeLinks = new RateLimit(20, 3_600_000);
+  // Фото: 30 загрузок в час, чтобы случайный цикл в приложении не забил диск
+  const photos = new RateLimit(30, 3_600_000);
 
   return [
     // Кто вошёл и можно ли ему создать профиль. До согласия ничего не записываем
@@ -112,6 +124,8 @@ export function meRoutes(ctx: Ctx): Route[] {
       const profile = parseProfile(body.profile);
       const now = ctx.now();
       const existing = getSeeker(ctx.db, user.id);
+      // Приложение до 2026-11-04.2 про дом не знает: правка анкеты из него не стирает точку
+      if ((body.profile as Record<string, unknown>).home === undefined) profile.home = getProfile(ctx.db, user.id)?.home ?? null;
       tx(ctx.db, () => {
         if (!existing) {
           if (!ctx.config.profilesOpen && req.header("x-vacante-beta") !== "1") {
@@ -171,6 +185,58 @@ export function meRoutes(ctx: Ctx): Route[] {
       const seeker = seekerOf(req);
       dropVideo(ctx.db, seeker.id, ctx.config.videosDir);
       return { json: profileView(ctx.db, seeker.id, ctx.config.profileOrigin) };
+    }),
+
+    // Фото: приложение присылает JPEG как есть (Content-Type: image/jpeg), сервер вычищает метаданные
+    route("PUT", "api", "/me/photo", async (req) => {
+      const seeker = seekerOf(req);
+      const now = ctx.now();
+      if (!photos.take(String(seeker.id), now)) throw new HttpError(429, "Слишком часто, подождите немного");
+      const photo = cleanJpeg(await req.bytes(MAX_PHOTO_BYTES));
+      if (!photo) throw new HttpError(400, "Нужно фото JPEG от 100 до 2560 точек по стороне");
+      const dir = ctx.config.videosDir;
+      const file = `${seeker.id}-${randomCode()}-photo.jpg`;
+      mkdirSync(dir, { recursive: true, mode: 0o700 });
+      writeAtomic(join(dir, file), photo.data);
+      const old = putPhoto(ctx.db, seeker.id, { file, width: photo.width, height: photo.height, size: photo.data.length }, now);
+      if (old === false) {
+        removeFiles(dir, [file]);
+        throw new HttpError(409, "Сначала заполните анкету");
+      }
+      removeFiles(dir, [old]);
+      return { json: profileView(ctx.db, seeker.id, ctx.config.profileOrigin) };
+    }),
+
+    route("GET", "api", "/me/photo", (req) => {
+      const photo = getPhoto(ctx.db, seekerOf(req).id);
+      if (!photo) throw new HttpError(404, "Фото нет");
+      return fileReply(req, join(ctx.config.videosDir, photo.file), "image/jpeg");
+    }),
+
+    route("DELETE", "api", "/me/photo", (req) => {
+      const seeker = seekerOf(req);
+      dropPhoto(ctx.db, seeker.id, ctx.config.videosDir);
+      return { json: profileView(ctx.db, seeker.id, ctx.config.profileOrigin) };
+    }),
+
+    // Дом по ссылке из 2ГИС: точка (округлённая) и подпись 2ГИС, чтобы человек проверил, что нашли
+    // его дом. Ничего не записывается: точка попадёт в профиль вместе с анкетой. Профиль не нужен,
+    // ссылку вставляют ещё в анкете
+    route("POST", "api", "/me/home/link", async (req) => {
+      const { user } = ctx.auth(req);
+      const body = (await req.json<Record<string, unknown>>()) ?? {};
+      const text = typeof body.link === "string" ? body.link.slice(0, 2000) : "";
+      if (!find2gisLink(text)) throw new HttpError(400, "Это не ссылка 2ГИС");
+      if (!homeLinks.take(String(user.id), ctx.now())) throw new HttpError(429, "Слишком часто, подождите немного");
+      let found;
+      try {
+        found = await resolve2gis(ctx.fetch, text);
+      } catch (err) {
+        console.warn(`ссылка 2ГИС: ${err instanceof Error ? err.message : err}`);
+        throw new HttpError(502, "2ГИС не ответил, попробуйте ещё раз");
+      }
+      if (!found) throw new HttpError(422, "Не нашли дом по этой ссылке");
+      return { json: { lat: roundHome(found.lat), lon: roundHome(found.lon), source: "2gis", label: found.label } };
     }),
 
     // Приложение сейчас откроет окно Telegram «Поделиться номером»: номер придёт боту сообщением,

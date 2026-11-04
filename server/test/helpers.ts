@@ -72,6 +72,7 @@ export interface TestServer {
   files: Map<string, Buffer>;
   /** Дождаться фоновой работы сервера (скачивание кружков). */
   idle(): Promise<void>;
+  /** body: объект уходит как JSON, строка и Buffer — как есть. */
   call(method: string, path: string, opts?: { host?: string; headers?: Record<string, string>; body?: unknown }): Promise<{
     status: number;
     headers: Record<string, string | string[] | undefined>;
@@ -115,7 +116,12 @@ export async function startServer(overrides: Partial<Deps> = {}, env: Record<str
       while (tasks.length) await Promise.all(tasks.splice(0));
     },
     call(method, path, opts = {}) {
-      const body = opts.body === undefined ? undefined : typeof opts.body === "string" ? opts.body : JSON.stringify(opts.body);
+      const body =
+        opts.body === undefined
+          ? undefined
+          : typeof opts.body === "string" || Buffer.isBuffer(opts.body)
+            ? opts.body
+            : JSON.stringify(opts.body);
       return new Promise((resolve, reject) => {
         const req = httpRequest(
           {

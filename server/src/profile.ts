@@ -1,8 +1,9 @@
 // Анкета соискателя: что можно заполнить, проверка того, что прислало приложение, и сила профиля.
+import { HOME_SOURCES, inKazakhstan, roundHome, type HomeSource } from "./geo.ts";
 import { HttpError } from "./http.ts";
 
-/** Версия текста согласия. Меняется вместе с текстом в приложении (app/src/profile/consent.ts). */
-export const CONSENT_VERSION = "2026-11-04";
+/** Версия текста согласия. Меняется вместе с текстом в приложении (app/src/profile/texts.ts, CONSENT). */
+export const CONSENT_VERSION = "2026-11-04.2";
 
 // Те же города, что у сбора вакансий (vacante/parse.py, CITIES); совпадение проверяет tests/test_server_lists.py
 export const CITIES = [
@@ -16,10 +17,19 @@ export const PAY_PERIOD = ["month", "shift"] as const;
 export const LANGUAGES = ["kk", "ru", "en"] as const;
 export const MAX_ROLES = 3;
 
+/** Дом: точка, округлённая до 300–500 метров. Видит только сам соискатель. */
+export interface Home {
+  lat: number;
+  lon: number;
+  source: HomeSource;
+}
+
 export interface Profile {
   name: string;
   city: string;
+  /** Район из прежней анкеты (до 2026-11-04.2): новое приложение вместо него спрашивает, где дом. */
   district: string | null;
+  home: Home | null;
   roles: string[];
   experience: (typeof EXPERIENCE)[number];
   employment: (typeof EMPLOYMENT)[number][];
@@ -66,6 +76,18 @@ function someOf<T extends string>(value: unknown, allowed: readonly T[], field: 
   return picked;
 }
 
+/** Точка дома из приложения: lat, lon и откуда она (телефон или 2ГИС). Хранится округлённой. */
+export function parseHome(value: unknown): Home | null {
+  if (value === null) return null;
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw bad("Дом: нужна точка lat, lon");
+  const { lat, lon, source } = value as Record<string, unknown>;
+  if (typeof lat !== "number" || typeof lon !== "number" || !Number.isFinite(lat) || !Number.isFinite(lon)) {
+    throw bad("Дом: нужна точка lat, lon");
+  }
+  if (!inKazakhstan({ lat, lon })) throw bad("Дом: точка не в Казахстане");
+  return { lat: roundHome(lat), lon: roundHome(lon), source: oneOf(source, HOME_SOURCES, "home.source") };
+}
+
 /** +7 701 234-56-78, 87012345678, 7012345678 → +77012345678. Только номера Казахстана. */
 export function normalizePhone(raw: string): string | null {
   let digits = raw.replace(/\D/g, "");
@@ -101,6 +123,8 @@ export function parseProfile(body: unknown): Profile {
     name: text(b.name, "name", 40, true) as string,
     city: oneOf(b.city, CITIES, "city"),
     district: text(b.district, "district", 60, false),
+    // Старое приложение дом не присылает: тогда сервер оставляет прежний (me.ts)
+    home: b.home === undefined ? null : parseHome(b.home),
     roles,
     experience: oneOf(b.experience, EXPERIENCE, "experience"),
     employment: someOf(b.employment, EMPLOYMENT, "employment", 1),
@@ -115,20 +139,21 @@ export function parseProfile(body: unknown): Profile {
   };
 }
 
-export type Tip = "video" | "phone" | "about" | "docs";
+export type Tip = "video" | "photo" | "phone" | "about" | "docs";
 
 /**
- * Сила профиля: анкета 50%, кружок 30%, телефон 10%, «о себе» 5%, документы 5%.
+ * Сила профиля: анкета 45%, кружок 25%, фото 10%, телефон 10%, «о себе» 5%, документы 5%.
  * next — что добавить первым, чтобы профиль стал сильнее.
  */
-export function strength(p: Profile, hasVideo: boolean): { percent: number; next: Tip | null } {
+export function strength(p: Profile, has: { video: boolean; photo: boolean }): { percent: number; next: Tip | null } {
   const parts: [Tip, number, boolean][] = [
-    ["video", 30, hasVideo],
+    ["video", 25, has.video],
+    ["photo", 10, has.photo],
     ["phone", 10, !!p.phone],
     ["about", 5, !!p.about],
     ["docs", 5, p.med_book || p.driver],
   ];
-  const percent = 50 + parts.reduce((sum, [, weight, done]) => sum + (done ? weight : 0), 0);
+  const percent = 45 + parts.reduce((sum, [, weight, done]) => sum + (done ? weight : 0), 0);
   return { percent, next: parts.find(([, , done]) => !done)?.[0] ?? null };
 }
 
@@ -138,6 +163,10 @@ export function fromRow(row: Record<string, unknown>): Profile {
     name: String(row.name),
     city: String(row.city),
     district: (row.district as string | null) ?? null,
+    home:
+      typeof row.home_lat === "number" && typeof row.home_lon === "number"
+        ? { lat: row.home_lat, lon: row.home_lon, source: (row.home_source as HomeSource | null) ?? "phone" }
+        : null,
     roles: JSON.parse(String(row.roles)) as string[],
     experience: row.experience as Profile["experience"],
     employment: JSON.parse(String(row.employment)) as Profile["employment"],

@@ -40,6 +40,16 @@ type WebApp = {
     impactOccurred(style: 'light' | 'medium' | 'heavy'): void;
     selectionChanged(): void;
   };
+  /** Геопозиция с разрешения человека (Bot API 8.0). */
+  LocationManager?: {
+    isInited: boolean;
+    isLocationAvailable: boolean;
+    isAccessRequested: boolean;
+    isAccessGranted: boolean;
+    init(callback?: () => void): void;
+    getLocation(callback: (data: { latitude: number; longitude: number } | null) => void): void;
+    openSettings(): void;
+  };
 };
 
 declare global {
@@ -350,6 +360,52 @@ export function onThemeChanged(callback: () => void): () => void {
     alive = false;
     app?.offEvent?.('themeChanged', callback);
   };
+}
+
+export type Located = { lat: number; lon: number } | 'denied' | 'unavailable';
+
+/**
+ * Где сейчас телефон: в Telegram 8.0+ через его окно «Разрешить доступ к геопозиции», иначе
+ * через браузер. 'denied' — человек не разрешил (в Telegram разрешение меняется в настройках бота),
+ * 'unavailable' — телефон не смог определить место.
+ */
+export async function phoneLocation(): Promise<Located> {
+  const app = await initTelegram();
+  const manager = supports(app, '8.0') ? app.LocationManager : undefined;
+  if (manager) {
+    const ready = await new Promise<boolean>((resolve) => {
+      if (manager.isInited) return resolve(true);
+      const timer = setTimeout(() => resolve(false), 5000);
+      manager.init(() => {
+        clearTimeout(timer);
+        resolve(true);
+      });
+    });
+    if (ready && manager.isLocationAvailable) {
+      if (manager.isAccessRequested && !manager.isAccessGranted) return 'denied';
+      return new Promise((resolve) =>
+        manager.getLocation((data) =>
+          resolve(data ? { lat: data.latitude, lon: data.longitude } : manager.isAccessGranted ? 'unavailable' : 'denied'),
+        ),
+      );
+    }
+  }
+  if (!isWeb || !navigator.geolocation) return 'unavailable';
+  return new Promise((resolve) =>
+    navigator.geolocation.getCurrentPosition(
+      (p) => resolve({ lat: p.coords.latitude, lon: p.coords.longitude }),
+      (err) => resolve(err.code === err.PERMISSION_DENIED ? 'denied' : 'unavailable'),
+      { enableHighAccuracy: true, timeout: 20_000, maximumAge: 60_000 },
+    ),
+  );
+}
+
+/** Настройки бота в Telegram, где включается доступ к геопозиции. false, если открыть нельзя. */
+export function openLocationSettings(): boolean {
+  const manager = telegram()?.LocationManager;
+  if (!supports(telegram(), '8.0') || !manager?.isInited) return false;
+  manager.openSettings();
+  return true;
 }
 
 /** Можно ли добавить Mini App значком на экран телефона (Telegram 8.0+). */

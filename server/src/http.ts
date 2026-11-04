@@ -26,6 +26,8 @@ export interface Request {
   json<T = unknown>(): Promise<T>;
   /** Тело HTML-формы (application/x-www-form-urlencoded). */
   form(): Promise<URLSearchParams>;
+  /** Тело как есть, не больше limit байт (фото). */
+  bytes(limit: number): Promise<Buffer>;
 }
 
 export interface Reply {
@@ -57,20 +59,42 @@ export function route(method: string, site: Site | "any", path: string, handler:
   return { method, site, pattern: new RegExp(`^${source}$`), handler };
 }
 
-export async function readBody(req: IncomingMessage, limit = BODY_LIMIT): Promise<Buffer> {
-  const chunks: Buffer[] = [];
-  let size = 0;
-  for await (const chunk of req as AsyncIterable<Buffer>) {
-    size += chunk.length;
-    if (size > limit) throw new HttpError(413, "Слишком большой запрос");
-    chunks.push(chunk);
-  }
-  return Buffer.concat(chunks);
+/** Сколько лишнего ещё дочитываем в никуда после 413, чтобы ответ дошёл до приложения. */
+const DRAIN_LIMIT = 16 * 1024 * 1024;
+
+export function readBody(req: IncomingMessage, limit = BODY_LIMIT): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = [];
+    let size = 0;
+    let done = false;
+    const fail = (err: Error) => {
+      if (done) return;
+      done = true;
+      chunks.length = 0;
+      reject(err);
+    };
+    req.on("data", (chunk: Buffer) => {
+      size += chunk.length;
+      // Слишком большое тело: отвечаем 413, а остаток дочитываем, не сохраняя. Если сразу
+      // оборвать соединение, приложение увидит обрыв связи вместо понятной ошибки
+      if (size > limit) fail(new HttpError(413, "Слишком большой запрос"));
+      if (size > limit + DRAIN_LIMIT) req.destroy();
+      if (!done) chunks.push(chunk);
+    });
+    req.on("end", () => {
+      if (done) return;
+      done = true;
+      resolve(Buffer.concat(chunks));
+    });
+    req.on("error", fail);
+    req.on("close", () => fail(new HttpError(400, "Запрос оборвался")));
+  });
 }
 
 export function makeRequest(raw: IncomingMessage, site: Site, params: Record<string, string>, url: URL): Request {
   let body: Promise<Buffer> | undefined;
-  const text = async () => (await (body ??= readBody(raw))).toString("utf8");
+  const read = (limit = BODY_LIMIT) => (body ??= readBody(raw, limit));
+  const text = async () => (await read()).toString("utf8");
   return {
     method: raw.method ?? "GET",
     path: url.pathname,
@@ -93,6 +117,7 @@ export function makeRequest(raw: IncomingMessage, site: Site, params: Record<str
     async form() {
       return new URLSearchParams(await text());
     },
+    bytes: (limit) => read(limit),
   };
 }
 

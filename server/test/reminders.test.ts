@@ -22,7 +22,7 @@ const ANKETA = {
   start: "week",
   languages: ["ru"],
 };
-const CONSENT = { version: "2026-11-04", adult: true, base: false };
+const CONSENT = { version: "2026-11-04.2", adult: true, base: false };
 const vacancy = (n: number, extra: Record<string, unknown> = {}) => ({
   id: `almatyrabota1-${21258 + n}`,
   title: `Бариста ${n}`,

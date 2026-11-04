@@ -4,8 +4,8 @@ import { BackHandler, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, 
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { loadCity, loadIndex } from './src/api';
-import { ApplicationsTab } from './src/applications/ApplicationsTab';
-import { ApplySheet } from './src/applications/ApplySheet';
+import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
+import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { applyPatch, copyOf, fromLiked, localSummary, toImport } from './src/applications/model';
 import { A } from './src/applications/texts';
 import * as i18n from './src/i18n';
@@ -14,6 +14,7 @@ import {
   haptic,
   homeScreenStatus,
   initTelegram,
+  launchApp,
   launchBeta,
   launchCity,
   launchTab,
@@ -26,11 +27,15 @@ import {
   type HomeScreen,
 } from './src/platform';
 import { ProfileTab } from './src/profile/ProfileTab';
-import { P } from './src/profile/texts';
+import { almaty, P } from './src/profile/texts';
+import { RemindersTab, type Write } from './src/reminders/RemindersTab';
+import { R } from './src/reminders/texts';
 import {
+  actOnReminder,
   deleteApplication,
   importApplications,
   listApplications,
+  listReminders,
   patchApplication,
   setBeta,
   whoAmI,
@@ -38,6 +43,8 @@ import {
   type Application,
   type ApplicationPatch,
   type Method,
+  type Reminder,
+  type Reminders,
   type Summary,
   type VacancyCopy,
 } from './src/server';
@@ -51,7 +58,7 @@ import { VacancyCard } from './src/VacancyCard';
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
 // beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска
 type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean; home?: boolean; beta?: boolean };
-type TabName = 'feed' | 'liked' | 'applications' | 'profile';
+type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
 
 const MAX_LIKED = 300;
@@ -87,8 +94,17 @@ function Main() {
   const [summary, setSummary] = useState<Summary | null>(null);
   const [appsFailed, setAppsFailed] = useState(false);
   const [appsAttempt, setAppsAttempt] = useState(0);
-  // Окно «Как откликнуться?»: копия вакансии и, если есть, вакансия из ленты целиком
-  const [applying, setApplying] = useState<{ copy: VacancyCopy; full?: Vacancy } | null>(null);
+  // Напоминания (только с профилем на сервере): что ждёт, история, счётчик и настройки
+  const [reminders, setReminders] = useState<Reminders | null>(null);
+  const [remindersFailed, setRemindersFailed] = useState(false);
+  const [remindersAttempt, setRemindersAttempt] = useState(0);
+  // Какую карточку отклика открыть: из ссылки бота или кнопкой «Перенести» в напоминании
+  const [showApp, setShowApp] = useState<{ id: number; focus: Focus } | null>(null);
+  // Окно «Как откликнуться?»: копия вакансии и, если есть, вакансия из ленты целиком.
+  // preset — готовый текст из напоминания («Написать ещё раз», «Опаздываю»)
+  const [applying, setApplying] = useState<{ copy: VacancyCopy; full?: Vacancy; preset?: Preset; onDone?(): void } | null>(
+    null,
+  );
   const deck = useRef<DeckHandle>(null);
   const seenCity = useRef<string | null>(null);
   // Шаг назад внутри вкладки «Профиль» (анкета); null — назад некуда, уходим в ленту
@@ -212,14 +228,18 @@ function Main() {
   // Отклики: на сервере, когда есть профиль; без профиля — на телефоне; без сервера — просто «Избранное»
   const tracker: 'off' | 'local' | 'server' = !showProfile ? 'off' : account.profile ? 'server' : 'local';
 
-  // Открыли кнопкой бота «Открыть профиль» (?tab=profile) или из сообщения об отклике (?tab=applications)
+  // Открыли кнопкой бота «Открыть профиль» (?tab=profile), из сообщения об отклике (?tab=applications)
+  // или из напоминания (?tab=reminders; «Перенести» добавляет &app=<id>: сразу дата собеседования)
   const launched = useRef(false);
   useEffect(() => {
     if (!showProfile || launched.current) return;
     launched.current = true;
     const want = launchTab();
+    if (want === 'reminders' && !account.profile) return;
     if (want) setTab(want);
-  }, [showProfile]);
+    const app = launchApp();
+    if (want === 'applications' && app) setShowApp({ id: app, focus: 'interview' });
+  }, [showProfile, account]);
 
   // Отклики с сервера; заодно переносим туда то, что накопилось на телефоне до профиля
   useEffect(() => {
@@ -258,17 +278,49 @@ function Main() {
     );
   }, [tracker, liked]);
 
-  // Вернулись в приложение: работодатель мог открыть профиль или ответить
+  // Напоминания с сервера: при запуске, после изменений в откликах и при переходе на вкладку
+  useEffect(() => {
+    if (tracker !== 'server') {
+      setReminders(null);
+      return;
+    }
+    let alive = true;
+    setRemindersFailed(false);
+    listReminders().then(
+      (r) => alive && setReminders(r),
+      () => alive && setRemindersFailed(true),
+    );
+    return () => {
+      alive = false;
+    };
+  }, [tracker, remindersAttempt]);
+  const refreshReminders = useCallback(() => setRemindersAttempt((n) => n + 1), []);
+  // На вкладке свежее: кнопки в боте меняют и напоминания, и стадии откликов
+  useEffect(() => {
+    if (tab === 'reminders' || tab === 'profile') refreshReminders();
+    if (tab === 'applications') setAppsAttempt((n) => n + 1);
+  }, [tab, refreshReminders]);
+
+  // Вернулись в приложение: работодатель мог открыть профиль или ответить, а в боте могли нажать кнопку
   useEffect(() => {
     if (tracker !== 'server') return;
-    return onAppVisible(() => setAppsAttempt((n) => n + 1));
-  }, [tracker]);
+    return onAppVisible(() => {
+      setAppsAttempt((n) => n + 1);
+      refreshReminders();
+    });
+  }, [tracker, refreshReminders]);
 
-  const putApp = useCallback((a: Application, next?: Summary) => {
-    setApps((list) => [a, ...(list ?? []).filter((x) => x.id !== a.id)]);
-    if (next) setSummary(next);
-  }, []);
+  // Стадия или дата собеседования поменялись: у отклика другие напоминания
+  const putApp = useCallback(
+    (a: Application, next?: Summary) => {
+      setApps((list) => [a, ...(list ?? []).filter((x) => x.id !== a.id)]);
+      if (next) setSummary(next);
+      refreshReminders();
+    },
+    [refreshReminders],
+  );
 
+  const clearShowApp = useCallback(() => setShowApp(null), []);
   const localItems = useMemo(() => liked.map(fromLiked), [liked]);
   const trackerItems = tracker === 'server' ? apps : localItems;
   const trackerSummary = tracker === 'server' ? summary : localSummary(localItems);
@@ -331,6 +383,7 @@ function Main() {
       const r = await deleteApplication(a.id);
       setApps((list) => (list ?? []).filter((x) => x.id !== a.id));
       setSummary(r.summary);
+      refreshReminders();
       return;
     }
     setLiked((list) => list.filter((x) => x.id !== a.vacancy.id));
@@ -338,6 +391,34 @@ function Main() {
 
   const startApply = (v: Vacancy) => city && setApplying({ copy: copyOf(v, city), full: v });
 
+  /** Готовый текст работодателю из напоминания или «Написать ещё раз» в отклике. */
+  const presetFor = (kind: Write, title: string, interviewAt?: string | null): Preset => {
+    const tr = R[lang];
+    if (kind === 'again') return { kicker: tr.againKicker, text: tr.followUp(title), link: true };
+    const at = interviewAt ? almaty(Date.parse(interviewAt)) : null;
+    const time = at ? `${String(at.hour).padStart(2, '0')}:${String(at.minute).padStart(2, '0')}` : '';
+    return { kicker: tr.lateKicker, text: tr.lateText(account?.first_name ?? '', time, title), link: false };
+  };
+
+  const writeFromReminder = (r: Reminder, kind: Write) => {
+    const a = r.application;
+    if (!a) return;
+    const { id: _id, vacancy_id, method: _m, stage: _s, interview_at, start_at: _st, ...copy } = a;
+    const title = (lang === 'kk' && a.title_kk) || a.title;
+    setApplying({
+      copy: { ...copy, id: vacancy_id },
+      preset: presetFor(kind, title, interview_at),
+      // «Опаздываю» может понадобиться ещё раз, а «Написать ещё раз» после сообщения сделано
+      onDone:
+        kind === 'again'
+          ? () =>
+              void actOnReminder(r.id, 'done').then(
+                (next) => setReminders(next),
+                () => undefined,
+              )
+          : undefined,
+    });
+  };
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),
     [feed, seen, prefs.cat],
@@ -553,8 +634,34 @@ function Main() {
             if (!has) {
               setApps(null);
               setSummary(null);
+              setReminders(null);
             }
           }}
+          reminders={
+            tracker === 'server'
+              ? { data: reminders, onChange: setReminders, onOpenAll: () => setTab('reminders') }
+              : undefined
+          }
+        />
+      ) : tab === 'reminders' && tracker === 'server' ? (
+        <RemindersTab
+          c={c}
+          lang={lang}
+          data={reminders}
+          failed={remindersFailed}
+          onRetry={refreshReminders}
+          onChange={setReminders}
+          onWrite={writeFromReminder}
+          onOpenApplication={(id, focus) => {
+            setShowApp({ id, focus });
+            setTab('applications');
+          }}
+          onStage={async (id, stage) => {
+            const r = await patchApplication(id, { stage });
+            putApp(r.application, r.summary);
+          }}
+          onRecord={() => setTab('profile')}
+          onTab={setTab}
         />
       ) : tracker !== 'off' ? (
         <ApplicationsTab
@@ -565,10 +672,17 @@ function Main() {
           local={tracker === 'local'}
           failed={appsFailed}
           onRetry={() => setAppsAttempt((n) => n + 1)}
-          onApply={(a) => setApplying({ copy: a.vacancy })}
+          onApply={(a, again) =>
+            setApplying({
+              copy: a.vacancy,
+              preset: again ? presetFor('again', (lang === 'kk' && a.vacancy.title_kk) || a.vacancy.title) : undefined,
+            })
+          }
           onPatch={patchItem}
           onDelete={removeItem}
           onMakeProfile={() => setTab('profile')}
+          show={showApp}
+          onShown={clearShowApp}
         />
       ) : (
         <LikedList
@@ -581,24 +695,32 @@ function Main() {
       )}
 
       <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]}>
-        <Tab c={c} active={tab === 'feed'} label={`🃏 ${t('feed')}`} onPress={() => setTab('feed')} />
+        <Tab c={c} active={tab === 'feed'} icon="🃏" label={t('feed')} onPress={() => setTab('feed')} />
         {tracker !== 'off' ? (
           <Tab
             c={c}
             active={tab === 'applications' || tab === 'liked'}
-            label={`📋 ${A[lang].tab}${trackerItems?.length ? ` · ${trackerItems.length}` : ''}`}
+            icon="📋"
+            label={A[lang].tab}
+            badge={trackerItems?.length}
             onPress={() => setTab('applications')}
           />
         ) : (
+          <Tab c={c} active={tab === 'liked'} icon="♥" label={t('liked')} badge={liked.length} onPress={() => setTab('liked')} />
+        )}
+        {tracker === 'server' ? (
           <Tab
             c={c}
-            active={tab === 'liked'}
-            label={`♥ ${t('liked')}${liked.length ? ` · ${liked.length}` : ''}`}
-            onPress={() => setTab('liked')}
+            active={tab === 'reminders'}
+            icon="🔔"
+            label={R[lang].tab}
+            badge={reminders?.due}
+            alert
+            onPress={() => setTab('reminders')}
           />
-        )}
+        ) : null}
         {showProfile ? (
-          <Tab c={c} active={tab === 'profile'} label={`👤 ${P[lang].tab}`} onPress={() => setTab('profile')} />
+          <Tab c={c} active={tab === 'profile'} icon="👤" label={P[lang].tab} onPress={() => setTab('profile')} />
         ) : null}
       </View>
 
@@ -627,7 +749,9 @@ function Main() {
         <ModalArea>
           {applying && tracker !== 'off' ? (
             <ApplySheet
-              key={applying.copy.id}
+              key={`${applying.copy.id}-${applying.preset?.kicker ?? ''}`}
+              preset={applying.preset}
+              onDone={applying.onDone}
               c={c}
               lang={lang}
               vacancy={applying.copy}
@@ -734,14 +858,6 @@ function LikedList(props: {
     />
   );
 }
-
-
-
-
-
-
-
-
 
 const styles = StyleSheet.create({
   logo: { fontSize: 22, fontWeight: '900', letterSpacing: -0.5 },

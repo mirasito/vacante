@@ -102,9 +102,28 @@ export function Round(props: {
   );
 }
 
-export function Tab({ c, active, label, onPress }: { c: Colors; active: boolean; label: string; onPress(): void }) {
+/**
+ * Вкладка внизу: значок, подпись под ним и счётчик на значке. alert — счётчик того, что пора
+ * сделать (красный), иначе это просто число (серый).
+ */
+export function Tab(props: { c: Colors; active: boolean; icon: string; label: string; badge?: number; alert?: boolean; onPress(): void }) {
+  const { c, active, icon, label, badge, alert, onPress } = props;
   return (
-    <Pressable onPress={onPress} style={styles.tab} accessibilityRole="tab" accessibilityState={{ selected: active }}>
+    <Pressable
+      onPress={onPress}
+      style={styles.tab}
+      accessibilityRole="tab"
+      aria-selected={active}
+      accessibilityLabel={badge ? `${label}: ${badge}` : label}
+    >
+      <View>
+        <Text style={[styles.tabIcon, !active && styles.tabIconQuiet]}>{icon}</Text>
+        {badge ? (
+          <View style={[styles.badge, { backgroundColor: alert ? c.skip : c.quiet, borderColor: c.card }]}>
+            <Text style={styles.badgeText}>{badge > 99 ? '99+' : badge}</Text>
+          </View>
+        ) : null}
+      </View>
       <Text style={[styles.tabText, { color: active ? c.accent : c.quiet }]} numberOfLines={1}>
         {label}
       </Text>
@@ -218,8 +237,23 @@ export const styles = StyleSheet.create({
   },
   roundText: { fontWeight: '700' },
   disabled: { opacity: 0.4 },
-  tab: { flex: 1, alignItems: 'center', paddingVertical: 14, paddingHorizontal: 4 },
-  tabText: { fontSize: 15, fontWeight: '700' },
+  tab: { flex: 1, alignItems: 'center', paddingTop: 8, paddingBottom: 6, paddingHorizontal: 2, gap: 2 },
+  tabIcon: { fontSize: 21, lineHeight: 26, textAlign: 'center' },
+  tabIconQuiet: { opacity: 0.55 },
+  tabText: { fontSize: 11, fontWeight: '700' },
+  badge: {
+    position: 'absolute',
+    top: -3,
+    left: 16,
+    minWidth: 18,
+    height: 18,
+    borderRadius: 9,
+    borderWidth: 2,
+    paddingHorizontal: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  badgeText: { color: '#fff', fontSize: 10, fontWeight: '800', lineHeight: 12 },
   button: {
     flexGrow: 1,
     alignItems: 'center',

@@ -15,7 +15,7 @@ import { A, dayLabel, whenRelative } from './texts';
 
 const DAY = 86_400_000;
 type Next = 'apply' | 'again' | 'contact' | 'setInterview' | 'how' | 'map' | 'setStart' | 'hired';
-type Focus = 'interview' | 'start' | 'how' | null;
+export type Focus = 'interview' | 'start' | 'how' | null;
 
 /** Одна кнопка следующего шага (иногда две), как в таблице стадий ТЗ. */
 export function nextSteps(a: Application, now: number): Next[] {
@@ -71,14 +71,25 @@ export function ApplicationsTab(props: {
   local: boolean;
   failed: boolean;
   onRetry(): void;
-  onApply(a: Application): void;
+  /** again — «Написать ещё раз»: вместо отклика вежливое напоминание о себе. */
+  onApply(a: Application, again?: boolean): void;
   onPatch(a: Application, patch: ApplicationPatch): Promise<Application>;
   onDelete(a: Application): Promise<void>;
   onMakeProfile(): void;
+  /** Открыть карточку отклика: из ссылки бота или кнопкой «Перенести» в напоминании. */
+  show?: { id: number; focus: Focus } | null;
+  onShown?(): void;
 }) {
-  const { c, lang, items, summary, local } = props;
+  const { c, lang, items, summary, local, show, onShown } = props;
   const t = A[lang];
   const [open, setOpen] = useState<{ a: Application; focus: Focus } | null>(null);
+
+  useEffect(() => {
+    if (!show || !items) return;
+    const a = items.find((x) => x.id === show.id);
+    if (a) setOpen({ a, focus: show.focus });
+    onShown?.();
+  }, [show, items, onShown]);
   const [showClosed, setShowClosed] = useState(false);
   const now = Date.now();
 
@@ -102,7 +113,7 @@ export function ApplicationsTab(props: {
 
   const act = (a: Application, step: Next) => {
     haptic();
-    if (step === 'apply' || step === 'again' || step === 'contact') return props.onApply(a);
+    if (step === 'apply' || step === 'again' || step === 'contact') return props.onApply(a, step === 'again');
     if (step === 'map' && a.vacancy.map) return openUrl(a.vacancy.map);
     if (step === 'hired') return void props.onPatch(a, { stage: 'hired' }).catch(() => undefined);
     setOpen({ a, focus: step === 'setInterview' ? 'interview' : step === 'setStart' ? 'start' : 'how' });
@@ -191,9 +202,9 @@ export function ApplicationsTab(props: {
               local={local}
               onClose={() => setOpen(null)}
               onPatch={props.onPatch}
-              onApply={(a) => {
+              onApply={(a, again) => {
                 setOpen(null);
-                props.onApply(a);
+                props.onApply(a, again);
               }}
               onDelete={async (a) => {
                 await props.onDelete(a);
@@ -250,7 +261,7 @@ function Row(props: { a: Application; c: Colors; lang: Lang; now: number; onOpen
 const pad = (n: number) => String(n).padStart(2, '0');
 
 /** Следующие n дней по времени Казахстана: значение ГГГГ-ММ-ДД и подпись «Сегодня», «Завтра», «Пт 6». */
-function days(n: number, lang: Lang, from = Date.now()) {
+export function days(n: number, lang: Lang, from = Date.now()) {
   const t = A[lang];
   return Array.from({ length: n }, (_, i) => {
     const d = almaty(from + i * DAY);
@@ -263,7 +274,7 @@ function days(n: number, lang: Lang, from = Date.now()) {
 const TIMES = Array.from({ length: 25 }, (_, i) => `${pad(8 + Math.floor(i / 2))}:${i % 2 ? '30' : '00'}`);
 
 /** День и время Казахстана → ISO в UTC. */
-const toIso = (day: string, time: string) => {
+export const toIso = (day: string, time: string) => {
   const [y, m, d] = day.split('-').map(Number) as [number, number, number];
   const [h, mi] = time.split(':').map(Number) as [number, number];
   return new Date(Date.UTC(y, m - 1, d, h, mi) - 5 * 3600_000).toISOString();
@@ -277,7 +288,7 @@ function Detail(props: {
   local: boolean;
   onClose(): void;
   onPatch(a: Application, patch: ApplicationPatch): Promise<Application>;
-  onApply(a: Application): void;
+  onApply(a: Application, again?: boolean): void;
   onDelete(a: Application): Promise<void>;
 }) {
   const { c, lang, local } = props;
@@ -359,7 +370,7 @@ function Detail(props: {
             {a.method ? <Text style={[s.small, { color: c.quiet }]}>{d.via(d.methods[a.method])}</Text> : null}
           </View>
           <Text style={[s.status, { color: c.quiet }]}>{status(a, lang, now)}</Text>
-          {steps.length ? <Button c={c} label={t.next[steps[0]!]} onPress={() => props.onApply(a)} /> : null}
+          {steps.length ? <Button c={c} label={t.next[steps[0]!]} onPress={() => props.onApply(a, steps[0] === 'again')} /> : null}
 
           {pastInterview || props.focus === 'how' ? (
             <View style={[s.box, { borderColor: c.line }]}>

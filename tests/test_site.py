@@ -179,6 +179,9 @@ def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
     # Отклики: номер работодателя берётся из поста в момент отклика и не хранится
     assert "<h2>Отклики</h2>" in ru and "Мы его не сохраняем" in ru and "работает 60 дней" in ru
     assert "<h2>Өтінімдер</h2>" in kk and "Біз оны сақтамаймыз" in kk and "60 күн жұмыс істейді" in kk
+    # Напоминания: не больше двух в день с 9 до 21, номер для кнопок тоже не хранится
+    assert "<h2>Напоминания</h2>" in ru and "не больше двух напоминаний в день" in ru and "и не сохраняет" in ru
+    assert "<h2>Еске салғыштар</h2>" in kk and "күніне екіден көп емес" in kk and "сақтамайды" in kk
     home = (out / "index.html").read_text("utf-8")
     assert 'href="/privacy/"' in home and 'href="/app/"' in home
     assert 'href="/kk/privacy/"' in (out / "kk" / "index.html").read_text("utf-8")

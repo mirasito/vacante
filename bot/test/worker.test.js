@@ -480,3 +480,46 @@ test("кружок, /start video и кнопки «v:» ведёт сервер,
   assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM dialogs WHERE chat_id = 500").n, 0);
 });
 
+test("/otkliki, /napominaniya и кнопки под напоминаниями отвечает сервер", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  const telegram = fakeFetch(calls);
+  let up = true;
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://api.vacante.kz/")) {
+      calls.push({ method: "server", body: JSON.parse(init.body) });
+      if (!up) throw new TypeError("fetch failed");
+      return Response.json({ ok: true, handled: true });
+    }
+    return telegram(url, init);
+  };
+  const seeker = user(600, "Айгерим");
+  const relayed = () => calls.filter((c) => c.method === "server");
+
+  await say(env, seeker, "/vacancy");
+  await say(env, seeker, "/otkliki");
+  await say(env, seeker, "/napominaniya@vacantekz_bot");
+  await press(env, seeker, "r:12:invited", 43);
+  assert.deepEqual(
+    relayed().map((c) => c.body.message?.text ?? c.body.callback_query.data),
+    ["/otkliki", "/napominaniya@vacantekz_bot", "r:12:invited"],
+  );
+  // Команда прерывает анкету, а отвечает на неё сервер
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM dialogs WHERE chat_id = 600").n, 0);
+  assert.equal(sentTo(calls, 600).length, 1); // только первый вопрос анкеты
+  assert.equal(calls.filter((c) => c.method === "answerCallbackQuery").length, 0);
+
+  // Сервер недоступен: так и говорим
+  up = false;
+  await say(env, seeker, "/otkliki");
+  assert.match(sentTo(calls, 600).at(-1).body.text, /Профиль сейчас недоступен/);
+  await press(env, seeker, "r:12:invited", 44);
+  assert.match(calls.filter((c) => c.method === "answerCallbackQuery").at(-1).body.text, /Профиль сейчас недоступен/);
+
+  // Похожие команды остаются боту
+  up = true;
+  const before = relayed().length;
+  await say(env, seeker, "/otkliki_all");
+  assert.equal(relayed().length, before);
+});
+

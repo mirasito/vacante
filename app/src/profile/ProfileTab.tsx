@@ -4,7 +4,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import * as i18n from '../i18n';
-import { canRequestContact, confirm, haptic, onAppVisible, requestContact, shareLink, whatsapp } from '../platform';
+import {
+  canRequestContact,
+  confirm,
+  haptic,
+  onAppVisible,
+  requestContact,
+  requestWriteAccess,
+  shareLink,
+  whatsapp,
+} from '../platform';
+import { RemindersSection } from '../reminders/RemindersSection';
 import {
   askPhone,
   cancelPhone,
@@ -19,6 +29,7 @@ import {
   type Profile,
   type ProfileView,
   type ProfileViewEvent,
+  type Reminders,
   type Tip,
 } from '../server';
 import type { Colors } from '../theme';
@@ -29,6 +40,7 @@ import { useVideoRecording, VideoSection } from './Video';
 import { Wizard } from './Wizard';
 
 type Mode = 'card' | 'wizard' | 'extras';
+type RemindersProps = { data: Reminders | null; onChange(next: Reminders): void; onOpenAll(): void };
 
 export function ProfileTab(props: {
   c: Colors;
@@ -39,6 +51,8 @@ export function ProfileTab(props: {
   backRef: { current: (() => boolean) | null };
   /** Профиль создан или удалён: отклики переезжают на сервер или остаются на телефоне. */
   onProfile?(has: boolean): void;
+  /** Ближайшие напоминания и их настройки (есть, когда профиль на сервере). */
+  reminders?: RemindersProps;
 }) {
   const { c, lang, index, backRef } = props;
   const t = P[lang];
@@ -123,6 +137,7 @@ export function ProfileTab(props: {
         setView(null);
         props.onProfile?.(false);
       }}
+      reminders={props.reminders}
     />
   );
 }
@@ -311,8 +326,9 @@ function Card(props: {
   onEdit(): void;
   onExtras(): void;
   onDeleted(): void;
+  reminders?: RemindersProps;
 }) {
-  const { c, lang, index, view, onChange, onEdit, onExtras, onDeleted } = props;
+  const { c, lang, index, view, onChange, onEdit, onExtras, onDeleted, reminders } = props;
   const t = P[lang];
   const p = view.profile!;
   const [views, setViews] = useState<ProfileViewEvent[] | null>(null);
@@ -430,6 +446,20 @@ function Card(props: {
       ) : null}
 
       <Check c={c} checked={view.seeker.base} label={t.baseTitle} hint={t.baseHint} onPress={toggleBase} />
+
+      {reminders ? (
+        <RemindersSection
+          c={c}
+          lang={lang}
+          data={reminders.data}
+          writeAccess={view.seeker.write_access}
+          onChange={reminders.onChange}
+          onOpenAll={reminders.onOpenAll}
+          onAllowBot={async () => {
+            if (await requestWriteAccess()) onChange(await patchMe({ write_access: true }).catch(() => view));
+          }}
+        />
+      ) : null}
 
       <Text style={[s.section, { color: c.ink }]}>👀 {t.viewsTitle}</Text>
       {views === null ? null : views.length ? (

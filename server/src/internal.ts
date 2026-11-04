@@ -1,7 +1,8 @@
 // Обновления Telegram, которые бот на Cloudflare передаёт серверу: всё, что касается профиля.
 // Бот сам ничего о людях не хранит, он только пересылает обновление на /internal/telegram
 // с общим ключом (internalKey: считается из токена бота, отдельный секрет не нужен).
-// Сейчас это номер из окна «Поделиться номером», кружок для профиля, /start video и кнопки «v:…».
+// Сейчас это номер из окна «Поделиться номером», кружок для профиля, /start video, кнопки «v:…»
+// под кружком, кнопки «r:…» под напоминаниями и команды /otkliki и /napominaniya (reminder-bot.ts).
 import { timingSafeEqual } from "node:crypto";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -9,6 +10,7 @@ import { join } from "node:path";
 import type { Ctx } from "./app.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import { normalizePhone } from "./profile.ts";
+import { applicationsMessage, pressReminder, remindersMessage } from "./reminder-bot.ts";
 import {
   dropVideo,
   getSeeker,
@@ -107,6 +109,9 @@ type Texts = (typeof TEXT)["ru"];
 
 /** /start video: кнопка «Записать кружок» в приложении открывает чат бота с этой командой. */
 const VIDEO_START = /^\/start(@\w+)?\s+video$/;
+/** Отклики и напоминания списком, для тех, кто не открывает приложение. */
+const APPLICATIONS = /^\/otkliki(@\w+)?$/;
+const REMINDERS = /^\/napominaniya(@\w+)?$/;
 
 export function internalRoutes(ctx: Ctx): Route[] {
   const key = Buffer.from(internalKey(ctx.config.botToken));
@@ -210,6 +215,12 @@ export function internalRoutes(ctx: Ctx): Route[] {
 
   async function onCallback(q: TgCallback) {
     const data = q.data ?? "";
+    if (data.startsWith("r:")) {
+      // Кнопка под напоминанием. «Опаздываю» ищет номер в посте, а бот ждёт ответа сервера
+      // всего 4 секунды, поэтому отвечаем сразу, а нажатие разбираем после ответа
+      ctx.background(pressReminder(ctx, q, { videoPrompt: (chatId, lang) => reply(chatId, TEXT[lang].videoPrompt) }));
+      return true;
+    }
     if (!data.startsWith("v:")) return false;
     const t = textsFor(q.from);
     const [, action, unique] = data.split(":");
@@ -247,6 +258,13 @@ export function internalRoutes(ctx: Ctx): Route[] {
           const t = textsFor(m.from);
           if (!hasProfile(m.from.id)) await reply(m.chat.id, t.videoNoProfile, [[appButton(t)]]);
           else await reply(m.chat.id, t.videoPrompt);
+          handled = true;
+        } else if (APPLICATIONS.test(m.text?.trim() ?? "") || REMINDERS.test(m.text?.trim() ?? "")) {
+          const lang = m.from.language_code === "kk" ? "kk" : "ru";
+          const message = APPLICATIONS.test(m.text!.trim())
+            ? applicationsMessage(ctx, m.from.id, lang)
+            : remindersMessage(ctx, m.from.id, lang);
+          await reply(m.chat.id, message.text, message.keyboard);
           handled = true;
         } else if (m.video && hasProfile(m.from.id)) {
           // Обычное видео от человека с профилем — почти наверняка попытка добавить кружок.

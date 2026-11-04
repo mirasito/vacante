@@ -2006,6 +2006,13 @@
   "v": 3,
   "checked_at": "2026-11-03T20:46:04+00:00"
  },
+ "almaty:alexandr": {
+  "name": "Alexandr",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
+ },
  "almaty:alg company": {
   "name": "ALG Company",
   "city": "almaty",
@@ -3439,6 +3446,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:dac": {
+  "name": "DAC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "almaty:dala brand": {
   "name": "Dala Brand",
@@ -5618,6 +5632,13 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "almaty:magnetic": {
+  "name": "Magnetic",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
+ },
  "almaty:magnum": {
   "name": "MAGNUM",
   "city": "almaty",
@@ -5871,6 +5892,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:motor land": {
+  "name": "Motor Land",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "instagram": "motorland.kz",
+  "website": "https://motor-land.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001113073701",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a0adf0ca555ecdb9.jpg",
+  "avatar_source": "website"
  },
  "almaty:mountain view hotels": {
   "name": "Mountain View Hotels",
@@ -6728,6 +6765,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "almaty:resurs ysyraptama": {
+  "name": "RESURS YSYRAPTAMA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "website": "https://resurs-ysyraptama.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001091853473",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:retail master group": {
   "name": "Retail Master Group",
@@ -8414,6 +8464,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:азамат": {
+  "name": "Азамат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "almaty:азия см": {
   "name": "АЗИЯ-СМ",
@@ -11077,6 +11134,20 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:макидонск": {
+  "name": "Макидонск",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "instagram": "makidonsk.kz",
+  "website": "https://www.makidonsk.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037112438",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:мама знает": {
   "name": "Мама знает",
   "city": "almaty",
@@ -11696,6 +11767,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:полтавцева": {
+  "name": "Полтавцева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "almaty:предприятие": {
   "name": "Предприятие",
@@ -17247,6 +17325,13 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "astana:wse": {
+  "name": "WSE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
+ },
  "astana:wsteel kz": {
   "name": "WSTEEL.KZ",
   "city": "astana",
@@ -18616,6 +18701,20 @@
   "v": 3,
   "checked_at": "2026-11-03T11:44:54+00:00"
  },
+ "astana:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "instagram": "intertopkz",
+  "website": "https://www.intertop.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018296410",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:исмурзина с у": {
   "name": "Исмурзина С У",
   "city": "astana",
@@ -18650,6 +18749,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
+ },
+ "astana:кавказская пленница": {
+  "name": "Кавказская пленница",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "instagram": "kavkazskaya_plennica.astana",
+  "source": "https://2gis.kz/astana/firm/70000001018097054"
  },
  "astana:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
@@ -19537,6 +19645,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "astana:отель": {
+  "name": "Отель",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "astana:охранная компания": {
   "name": "Тоо охранная компания",
@@ -22434,6 +22549,13 @@
   "instagram": "alidi.kazakhstan",
   "source": "https://www.instagram.com/alidi.kazakhstan/"
  },
+ "karaganda:алтайбурмаш": {
+  "name": "Алтайбурмаш",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
+ },
  "karaganda:алып 2008": {
   "name": "Алып-2008",
   "city": "karaganda",
@@ -23193,6 +23315,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "karaganda:экспресс транспорт": {
+  "name": "ЭКСПРЕСС ТРАНСПОРТ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
+ },
  "karaganda:энергия плюс караганда": {
   "name": "Энергия плюс Караганда",
   "city": "karaganda",
@@ -23523,6 +23652,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T18:45:16+00:00"
+ },
+ "kokshetau:промбезтехнологии": {
+  "name": "Промбезтехнологии",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "kokshetau:тех эксперт сервис": {
   "name": "Тех.Эксперт Сервис",
@@ -25153,6 +25289,20 @@
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
  },
+ "pavlodar:деп": {
+  "name": "ДЕП",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "instagram": "dep_pvl",
+  "website": "http://dep.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001023952389",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
   "city": "pavlodar",
@@ -25549,6 +25699,22 @@
   "checked_at": "2026-10-29T19:43:27+00:00",
   "instagram": "a1comag",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001116651230"
+ },
+ "petropavlovsk:aster автомобили": {
+  "name": "ASTER Автомобили",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "instagram": "aster_kz",
+  "website": "https://aster.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001076227342",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "34dc00d40a49d6aa.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:bhk agro ag": {
   "name": "BHK Agro AG",
@@ -25965,6 +26131,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "petropavlovsk:петромашзавод": {
+  "name": "ПетроМашЗавод",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00",
+  "website": "http://pmz.asia/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001046012262",
+  "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:петропавловская нефтебаза": {
   "name": "Петропавловская нефтебаза",
@@ -27440,6 +27619,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
+ },
+ "shymkent:бес кара": {
+  "name": "Бес Кара",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "shymkent:биримтаева а б": {
   "name": "БИРИМТАЕВА А.Б.",
@@ -29587,6 +29773,13 @@
   ],
   "avatar": "981caf62fded0454.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:аманат": {
+  "name": "Аманат",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T04:44:51+00:00"
  },
  "ust-kamenogorsk:антоненко и в": {
   "name": "Антоненко И. В",

@@ -3,13 +3,25 @@
 # Повторный запуск ничего не ломает: ставит недостающее и обновляет настройки из репозитория.
 # Подходит для Ubuntu 22.04/24.04 и Debian 12.
 set -euo pipefail
-export DEBIAN_FRONTEND=noninteractive
+# C.UTF-8 есть в любой Ubuntu и Debian: так apt и perl не ругаются, даже если язык системы сломан
+export DEBIAN_FRONTEND=noninteractive LC_ALL=C.UTF-8
 
 here=$(cd "$(dirname "$0")" && pwd)
 NODE_MAJOR=24
 SSH_PORT=${SSH_PORT:-22}
 
 log() { printf '\n== %s\n' "$*"; }
+
+log "Язык системы"
+# Если в /etc/default/locale названа локаль, которой на сервере нет (так было на сервере после
+# другого проекта), программы на каждом шагу ругаются. Тогда ставим обычную для облачной Ubuntu C.UTF-8
+broken=$(env -i bash -c 'set -a; . /etc/default/locale 2>/dev/null; locale 2>&1 >/dev/null; true')
+if [ -n "$broken" ]; then
+  printf 'LANG=C.UTF-8\n' > /etc/default/locale
+  echo "Была локаль, которой на сервере нет, теперь C.UTF-8"
+else
+  echo "В порядке"
+fi
 
 log "Пакеты и автоматические обновления безопасности"
 apt-get update -q

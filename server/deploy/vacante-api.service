@@ -10,6 +10,9 @@ Group=vacante
 # Токен бота и ключ резервных копий: файл пишет выкладка из GitHub Secrets, читать его может только root
 EnvironmentFile=/etc/vacante/env
 Environment=NODE_ENV=production DATA_DIR=/var/lib/vacante HOST=127.0.0.1 PORT=8080
+# Профили пока создают только тестировщики (t.me/vacantekz_bot?startapp=beta). Когда юрист проверит
+# текст согласия, здесь ставится 1, и вкладка «Профиль» появится у всех
+Environment=PROFILES_OPEN=0
 WorkingDirectory=/opt/vacante/current/server
 ExecStart=/usr/local/bin/node --disable-warning=ExperimentalWarning src/main.ts
 Restart=always

@@ -5,6 +5,9 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import { hostOf, type Config } from "./config.ts";
 import type { Db } from "./db.ts";
 import { HttpError, makeRequest, route, send, type Reply, type Request, type Route, type Site } from "./http.ts";
+import { internalRoutes } from "./internal.ts";
+import { meRoutes } from "./me.ts";
+import { pageRoutes } from "./page.ts";
 import { verifyInitData, type Bot, type InitData } from "./telegram.ts";
 
 export interface Deps {
@@ -55,7 +58,7 @@ export function createApp(deps: Deps) {
           headers: {
             ...cors,
             "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE",
-            "Access-Control-Allow-Headers": "Authorization, Content-Type",
+            "Access-Control-Allow-Headers": "Authorization, Content-Type, X-Vacante-Beta",
             "Access-Control-Max-Age": "86400",
           },
         });
@@ -88,7 +91,7 @@ function match(routes: Route[], method: string, site: Site, path: string) {
 }
 
 function withHeaders(reply: Reply, site: Site, cors: Record<string, string>): Reply {
-  const extra: Record<string, string> = { ...cors };
+  const extra: Record<string, string | string[]> = { ...cors };
   if (!reply.headers?.["Cache-Control"]) extra["Cache-Control"] = "no-store";
   if (site === "profile") {
     // Страницы профиля не для поисковиков и не передают адрес дальше по ссылкам
@@ -104,10 +107,8 @@ function buildRoutes(ctx: Ctx): Route[] {
       ctx.db.prepare("SELECT 1").get();
       return { json: { ok: true, version: ctx.config.version } };
     }),
-    // Кто вошёл: этап 0 только проверяет подпись Telegram и ничего не записывает
-    route("GET", "api", "/me", (req) => {
-      const { user } = ctx.auth(req);
-      return { json: { user: { id: user.id, first_name: user.first_name, language_code: user.language_code } } };
-    }),
+    ...meRoutes(ctx),
+    ...internalRoutes(ctx),
+    ...pageRoutes(ctx),
   ];
 }

@@ -150,6 +150,10 @@ def test_build_writes_app_feed_by_city(tmp_path):
     import json
     index = json.loads((out / "app" / "data" / "index.json").read_text("utf-8"))
     assert index["cities"] == [{"slug": "astana", "name": "Астана", "name_kk": "Астана", "count": 1}]
+    # Профессии для анкеты: частые в вакансиях первыми, с казахскими названиями
+    assert index["roles"][0] == {"title": "Бариста", "title_kk": "Бариста", "category": "horeca"}
+    assert {"title": "Официант", "title_kk": "Даяшы", "category": "horeca"} in index["roles"]
+    assert len({r["title"] for r in index["roles"]}) == len(index["roles"])
     feed = json.loads((out / "app" / "data" / "astana.json").read_text("utf-8"))
     card = feed["vacancies"][0]
     assert card["title"] == "Бариста" and card["url"] == "https://vacante.kz/v/chan-9/"
@@ -166,6 +170,9 @@ def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
     kk = (out / "kk" / "privacy" / "index.html").read_text("utf-8")
     assert "<h1>Политика конфиденциальности</h1>" in ru and "только на вашем устройстве" in ru
     assert "<h1>Құпиялылық саясаты</h1>" in kk and '<html lang="kk">' in kk
+    # Профиль соискателя хранится на сервере в Казахстане, а не на устройстве
+    assert "<h2>Профиль соискателя</h2>" in ru and "на сервере Vacante в Казахстане" in ru
+    assert "<h2>Үміткер профилі</h2>" in kk and "Қазақстандағы Vacante серверінде" in kk
     home = (out / "index.html").read_text("utf-8")
     assert 'href="/privacy/"' in home and 'href="/app/"' in home
     assert 'href="/kk/privacy/"' in (out / "kk" / "index.html").read_text("utf-8")

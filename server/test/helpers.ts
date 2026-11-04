@@ -56,8 +56,8 @@ export interface TestServer {
   close(): Promise<void>;
 }
 
-export async function startServer(overrides: Partial<Deps> = {}): Promise<TestServer> {
-  const config = loadConfig({ TELEGRAM_BOT_TOKEN: TOKEN, VACANTE_VERSION: "test" });
+export async function startServer(overrides: Partial<Deps> = {}, env: Record<string, string> = {}): Promise<TestServer> {
+  const config = loadConfig({ TELEGRAM_BOT_TOKEN: TOKEN, VACANTE_VERSION: "test", ...env });
   const db = openDb(":memory:");
   const sent: Sent[] = [];
   const server: Server = createServer(createApp({ config, db, bot: fakeBot(sent), now: () => NOW, ...overrides }));
@@ -109,3 +109,9 @@ export async function startServer(overrides: Partial<Deps> = {}): Promise<TestSe
       }),
   };
 }
+
+/** Одно число из базы: SELECT COUNT(*) AS n … */
+export const count = (s: { db: Db }, sql: string, ...args: (string | number)[]) =>
+  Number((s.db.prepare(sql).get(...args) as { n: number }).n);
+
+export const BROWSER = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148";

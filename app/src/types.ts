@@ -36,10 +36,19 @@ export interface Category {
   name_kk: string;
 }
 
+/** Профессия для анкеты «Кем хочу работать». */
+export interface Role {
+  title: string;
+  title_kk: string;
+  category: string;
+}
+
 export interface Index {
   updated_at: string;
   cities: City[];
   categories: Category[];
+  /** Профессии, частые в вакансиях первыми (с ноября 2026). */
+  roles?: Role[];
 }
 
 export interface Liked extends Vacancy {

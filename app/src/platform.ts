@@ -153,6 +153,30 @@ export function launchCity(): string | undefined {
   return value && value !== 'beta' && /^[a-z][a-z-]{1,30}$/.test(value) ? value : undefined;
 }
 
+/** Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile. */
+export function launchTab(): 'profile' | undefined {
+  if (!isWeb) return undefined;
+  return new URLSearchParams(window.location.search).get('tab') === 'profile' ? 'profile' : undefined;
+}
+
+/**
+ * Человек вернулся в приложение: из чата бота, из другой программы или развернул свёрнутое окно
+ * (событие activated есть в Telegram 8.0+). Возвращает отписку.
+ */
+export function onAppVisible(callback: () => void): () => void {
+  if (!isWeb || typeof document === 'undefined') return () => undefined;
+  const app = telegram();
+  const visible = () => {
+    if (document.visibilityState === 'visible') callback();
+  };
+  document.addEventListener('visibilitychange', visible);
+  app?.onEvent?.('activated', callback);
+  return () => {
+    document.removeEventListener('visibilitychange', visible);
+    app?.offEvent?.('activated', callback);
+  };
+}
+
 /** Открыть чат с ботом; в Telegram 7.0+ приложение при этом не закрывается. */
 export const openBot = (start?: string) => openUrl(`https://t.me/${BOT}${start ? `?start=${start}` : ''}`);
 

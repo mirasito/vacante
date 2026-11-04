@@ -40,7 +40,8 @@ export interface Profile {
 export interface ProfileView {
   seeker: { first_name: string; lang: 'ru' | 'kk'; consent_at: string; base: boolean; write_access: boolean };
   profile: Profile | null;
-  video: { duration: number; recorded_at: string; ready: boolean } | null;
+  /** Кружок: poster — есть ли обложка (Telegram присылает её не всегда). */
+  video: { duration: number; recorded_at: string; ready: boolean; poster: boolean } | null;
   strength: { percent: number; next: Tip | null } | null;
   link: { code: string; url: string } | null;
 }
@@ -69,15 +70,19 @@ export const setBeta = (on: boolean) => {
   beta = on;
 };
 
+const authHeaders = (auth: string): Record<string, string> => ({
+  Authorization: `tma ${auth}`,
+  ...(beta ? { 'X-Vacante-Beta': '1' } : {}),
+});
+
 export async function api<T>(path: string, init: { method?: string; body?: unknown } = {}): Promise<T> {
   const auth = initData();
   if (!auth) throw new ApiError(0, 'not in Telegram');
   const res = await fetch(`${API_URL}${path}`, {
     method: init.method ?? 'GET',
     headers: {
-      Authorization: `tma ${auth}`,
+      ...authHeaders(auth),
       ...(init.body !== undefined ? { 'Content-Type': 'application/json' } : {}),
-      ...(beta ? { 'X-Vacante-Beta': '1' } : {}),
     },
     body: init.body === undefined ? undefined : JSON.stringify(init.body),
   });
@@ -128,3 +133,23 @@ export const deleteMe = () => api<{ deleted: boolean }>('/me', { method: 'DELETE
 export const newLink = () => api<{ code: string; url: string }>('/me/link', { method: 'POST' });
 export const dropLink = () => api<{ ok: boolean }>('/me/link', { method: 'DELETE' });
 export const getViews = async () => (await api<{ views: ProfileViewEvent[] }>('/me/views')).views;
+
+/** Убрать кружок из профиля. */
+export const deleteVideo = () => api<ProfileView>('/me/video', { method: 'DELETE' });
+
+/**
+ * Свой кружок или его обложка как адрес blob:… для <video> и <Image>. Файлы закрыты входом
+ * Telegram, а заголовок Authorization тегу не передать, поэтому скачиваем сами.
+ * null, если файла нет, сервер недоступен или это не браузер.
+ */
+export async function mediaUrl(path: '/me/video' | '/me/video/poster'): Promise<string | null> {
+  const auth = initData();
+  if (!auth || typeof URL === 'undefined' || typeof URL.createObjectURL !== 'function') return null;
+  try {
+    const res = await fetch(`${API_URL}${path}`, { headers: authHeaders(auth) });
+    if (!res.ok) return null;
+    return URL.createObjectURL(await res.blob());
+  } catch {
+    return null;
+  }
+}

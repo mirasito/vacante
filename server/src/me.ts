@@ -8,7 +8,9 @@ import {
   createSeeker,
   deleteSeeker,
   dropSharedLink,
+  dropVideo,
   getSeeker,
+  getVideo,
   listViews,
   newSharedLink,
   profileView,
@@ -19,6 +21,8 @@ import {
   PHONE_ASK_MINUTES,
 } from "./seekers.ts";
 import { tx } from "./db.ts";
+import { fileReply } from "./video.ts";
+import { join } from "node:path";
 
 type Lang = "ru" | "kk";
 const langOf = (value: unknown, fallback?: string): Lang => (value === "kk" || (value === undefined && fallback === "kk") ? "kk" : "ru");
@@ -99,6 +103,25 @@ export function meRoutes(ctx: Ctx): Route[] {
       const seeker = seekerOf(req);
       deleteSeeker(ctx.db, seeker.id, ctx.config.videosDir);
       return { json: { deleted: true } };
+    }),
+
+    // Свой кружок в приложении: файл и обложка (запись — в чате бота, internal.ts)
+    route("GET", "api", "/me/video", (req) => {
+      const video = getVideo(ctx.db, seekerOf(req).id);
+      if (!video?.file) throw new HttpError(404, "Кружка нет");
+      return fileReply(req, join(ctx.config.videosDir, video.file), "video/mp4");
+    }),
+
+    route("GET", "api", "/me/video/poster", (req) => {
+      const video = getVideo(ctx.db, seekerOf(req).id);
+      if (!video?.poster) throw new HttpError(404, "Обложки нет");
+      return fileReply(req, join(ctx.config.videosDir, video.poster), "image/jpeg");
+    }),
+
+    route("DELETE", "api", "/me/video", (req) => {
+      const seeker = seekerOf(req);
+      dropVideo(ctx.db, seeker.id, ctx.config.videosDir);
+      return { json: profileView(ctx.db, seeker.id, ctx.config.profileOrigin) };
     }),
 
     // Приложение сейчас откроет окно Telegram «Поделиться номером»: номер придёт боту сообщением,

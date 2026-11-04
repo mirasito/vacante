@@ -15,10 +15,13 @@ export interface Deps {
   db: Db;
   bot: Bot;
   now?: () => number;
+  /** Работа после ответа на запрос (скачать кружок из Telegram). Тесты её дожидаются. */
+  background?: (task: Promise<unknown>) => void;
 }
 
 export interface Ctx extends Deps {
   now: () => number;
+  background: (task: Promise<unknown>) => void;
   /** Кто открыл Mini App: проверяет подпись Telegram в заголовке Authorization: tma <initData>. */
   auth(req: Request): InitData;
 }
@@ -27,6 +30,7 @@ export function createApp(deps: Deps) {
   const ctx: Ctx = {
     ...deps,
     now: deps.now ?? Date.now,
+    background: deps.background ?? ((task) => void task.catch((err) => console.error(err))),
     auth(req) {
       const header = req.header("authorization") ?? "";
       const raw = header.startsWith("tma ") ? header.slice(4) : "";

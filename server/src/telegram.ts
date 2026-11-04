@@ -95,4 +95,30 @@ export class Bot {
     if (!data.ok) throw new TelegramError(method, data.error_code ?? res.status, data.description ?? "");
     return data.result as T;
   }
+
+  /** Скачивает файл, который человек прислал боту (getFile, затем /file/bot…). Не больше maxBytes. */
+  async download(fileId: string, maxBytes: number): Promise<Buffer> {
+    const file = await this.call<TgFile>("getFile", { file_id: fileId });
+    if (!file.file_path) throw new TelegramError("getFile", 400, "нет file_path");
+    if ((file.file_size ?? 0) > maxBytes) throw new TelegramError("getFile", 413, `файл ${file.file_size} байт`);
+    const res = await this.fetch(`https://api.telegram.org/file/bot${this.token}/${file.file_path}`, {
+      signal: AbortSignal.timeout(60_000),
+    });
+    if (!res.ok || !res.body) throw new TelegramError("file", res.status, res.statusText);
+    const chunks: Buffer[] = [];
+    let size = 0;
+    for await (const chunk of res.body as unknown as AsyncIterable<Uint8Array>) {
+      size += chunk.length;
+      if (size > maxBytes) throw new TelegramError("file", 413, `больше ${maxBytes} байт`);
+      chunks.push(Buffer.from(chunk));
+    }
+    return Buffer.concat(chunks);
+  }
+}
+
+export interface TgFile {
+  file_id: string;
+  file_unique_id: string;
+  file_size?: number;
+  file_path?: string;
 }

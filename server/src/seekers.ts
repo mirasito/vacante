@@ -17,7 +17,7 @@ export function randomCode(): string {
   return code;
 }
 
-const iso = (ms: number) => new Date(ms).toISOString().replace(/\.\d{3}Z$/, "Z");
+export const iso = (ms: number) => new Date(ms).toISOString().replace(/\.\d{3}Z$/, "Z");
 
 export interface Seeker {
   id: number;
@@ -214,13 +214,57 @@ export function listViews(db: Db, id: number, limit = 50): View[] {
   }));
 }
 
+export function removeFiles(dir: string, files: (string | null | undefined)[]) {
+  for (const file of files) if (file) rmSync(join(dir, file), { force: true });
+}
+
+export interface NewVideo {
+  file_id: string;
+  file_unique_id: string;
+  /** Имена файлов в папке кружков. */
+  file: string;
+  poster: string | null;
+  duration: number;
+  size: number;
+  /** Когда кружок отправлен в чат бота. */
+  recorded_at: string;
+}
+
+/**
+ * Кладёт скачанный кружок в профиль вместо прежнего. Возвращает файлы прежнего кружка, которые
+ * пора удалить, или null, если этот кружок уже не нужен: профиль удалили, пока он скачивался,
+ * или за это время пришёл кружок новее.
+ */
+export function putVideo(db: Db, id: number, v: NewVideo): string[] | null {
+  return tx(db, () => {
+    if (!db.prepare("SELECT 1 FROM profiles WHERE seeker_id = ?").get(id)) return null;
+    const old = getVideo(db, id);
+    if (old && old.recorded_at > v.recorded_at) return null;
+    db.prepare(
+      `INSERT INTO videos (seeker_id, file_id, file_unique_id, file, poster, duration, size, recorded_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(seeker_id) DO UPDATE SET file_id = excluded.file_id, file_unique_id = excluded.file_unique_id,
+         file = excluded.file, poster = excluded.poster, duration = excluded.duration, size = excluded.size,
+         recorded_at = excluded.recorded_at`,
+    ).run(id, v.file_id, v.file_unique_id, v.file, v.poster, v.duration, v.size, v.recorded_at);
+    return old ? [old.file, old.poster].filter((f): f is string => !!f) : [];
+  });
+}
+
+/** «Удалить кружок»: строка и файлы. false, если кружка не было. */
+export function dropVideo(db: Db, id: number, videosDir: string): boolean {
+  const old = getVideo(db, id);
+  if (!old) return false;
+  db.prepare("DELETE FROM videos WHERE seeker_id = ?").run(id);
+  removeFiles(videosDir, [old.file, old.poster]);
+  return true;
+}
+
 /** «Удалить профиль»: сразу стирает анкету, кружок, ссылки и просмотры, файлы кружка тоже. */
 export function deleteSeeker(db: Db, id: number, videosDir: string) {
   const video = getVideo(db, id);
   db.prepare("DELETE FROM seekers WHERE id = ?").run(id);
-  for (const file of [video?.file, video?.poster]) {
-    if (file) rmSync(join(videosDir, file), { force: true });
-  }
+  removeFiles(videosDir, [video?.file, video?.poster]);
 }
 
 /** Всё о профиле для самого соискателя (GET /me/profile). */
@@ -239,7 +283,7 @@ export function profileView(db: Db, id: number, profileOrigin: string) {
       write_access: seeker.write_access === 1,
     },
     profile,
-    video: video ? { duration: video.duration, recorded_at: video.recorded_at, ready: !!video.file } : null,
+    video: video ? { duration: video.duration, recorded_at: video.recorded_at, ready: !!video.file, poster: !!video.poster } : null,
     strength: profile ? strength(profile, !!video?.file) : null,
     link: link ? { code: link.code, url: `${profileOrigin}/${link.code}` } : null,
   };

@@ -181,3 +181,45 @@ def test_bilingual_title_goes_russian_with_kazakh_kept():
     v = hh.to_vacancy(item(9, name="Сату менеджер/менеджер по продажам ZERFARM"))
     assert (v.title, v.title_kk) == ("Менеджер по продажам ZERFARM", "Сату менеджер")
     assert hh.to_vacancy(item(10)).title_kk is None
+
+
+def test_point_from_hh_address_only_inside_the_city():
+    almaty = {"raw": "Алматы, улица Жибек Жолы, 65", "lat": 43.2614321, "lng": 76.9452789}
+    v = hh.to_vacancy(item(12, address=almaty))
+    assert (v.lat, v.lon) == (43.2614, 76.9453)
+    # Адрес в Астане у вакансии Алматы, перепутанные широта и долгота, точки нет
+    for address in ({"raw": "Астана", "lat": 51.128, "lng": 71.43}, {"raw": "x", "lat": 76.94, "lng": 43.26},
+                    {"raw": "x", "lat": None, "lng": None}, {"raw": "x", "lat": "43.26", "lng": "76.94"}, None):
+        v = hh.to_vacancy(item(13, address=address))
+        assert (v.lat, v.lon) == (None, None), address
+
+
+def test_backfill_rereads_two_weeks_once_for_points(monkeypatch):
+    monkeypatch.setenv("HH_SOURCE_ENABLED", "true")
+    seen = []
+
+    def handler(request):
+        seen.append(request.url.params["date_from"])
+        return httpx.Response(200, json={"found": 1, "pages": 1, "items": [item(14)]})
+
+    # Сбор уже шёл до точек: один раз берём две недели, дальше как обычно
+    state = {"hh_checked_at": (NOW - timedelta(hours=1)).isoformat()}
+    hh.collect(state, NOW, client(handler), no_sleep)
+    assert seen[0] == (NOW - hh.BACKFILL).isoformat() and state["hh_backfill"] == hh.BACKFILL_TAG
+    hh.collect(state, NOW + timedelta(hours=1), client(handler), no_sleep)
+    assert seen[1] == (NOW - hh.OVERLAP).isoformat()
+
+
+def test_reread_vacancy_brings_its_point_to_the_saved_card(tmp_path):
+    config = tmp_path / "channels.yaml"
+    config.write_text("channels: []\n", "utf-8")
+    data = tmp_path / "data"
+    old = hh.to_vacancy(item(15, address={"raw": "Алматы, Абая, 150"}))
+    collect.run(config, data, fetch=None, now=NOW, from_hh=lambda state, now: [old])
+    again = hh.to_vacancy(item(15, address={"raw": "Алматы, Абая, 150", "lat": 43.2389, "lng": 76.9123}))
+    collect.run(config, data, fetch=None, now=NOW, from_hh=lambda state, now: [again])
+    [saved] = load_vacancies(data)
+    assert (saved.lat, saved.lon) == (43.2389, 76.9123)
+    # Следующий прогон без точки её не стирает
+    collect.run(config, data, fetch=None, now=NOW, from_hh=lambda state, now: [old])
+    assert (load_vacancies(data)[0].lat, load_vacancies(data)[0].lon) == (43.2389, 76.9123)

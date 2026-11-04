@@ -5,8 +5,9 @@
 запуске по секретам HH_CLIENT_ID и HH_CLIENT_SECRET приложения с dev.hh.ru. Без них запросы идут анонимно.
 Если hh отвечает 403, источник пропускает этот запуск с понятным логом, остальной сбор идёт как обычно.
 
-Берём из поисковой выдачи только саму вакансию: название, компанию, зарплату, город, адрес, короткое
-описание и ссылку на hh.kz. Карточку вакансии с контактами рекрутера не запрашиваем и контакты не храним.
+Берём из поисковой выдачи только саму вакансию: название, компанию, зарплату, город, адрес и его точку
+на карте, короткое описание и ссылку на hh.kz. Карточку вакансии с контактами рекрутера не запрашиваем
+и контакты не храним.
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ from datetime import datetime, timedelta, timezone
 
 import httpx
 
+from vacante.geo import city_point
 from vacante.models import Vacancy
 from vacante.parse import (CITIES, WHITE_COLLAR, _LIMITS, clean_text, detect_city, detect_titles, fingerprint,
                            parse_perks, split_title, works_abroad)
@@ -37,6 +39,10 @@ PAUSE = 0.35  # секунд между запросами
 RETRIES = 5
 FIRST_RUN = timedelta(days=3)  # при первом запуске берём вакансии за последние три дня
 OVERLAP = timedelta(hours=1)  # окно следующего запуска начинается чуть раньше, чтобы ничего не потерять
+# Один раз перечитываем выдачу за две недели (столько вакансия живёт на сайте), чтобы уже собранным
+# вакансиям достались точки на карте. Новое значение BACKFILL_TAG — ещё одно такое перечитывание
+BACKFILL = timedelta(days=14)
+BACKFILL_TAG = "points"
 USER_AGENT = "vacante.kz/1.0 (+https://vacante.kz)"
 PERIODS = {"MONTH": "month", "SHIFT": "day", "HOUR": "hour"}
 _TAG = re.compile(r"<[^>]+>")
@@ -165,6 +171,12 @@ def _address(item: dict, city: str) -> str | None:
     return raw or None
 
 
+def _point(item: dict, city: str) -> tuple[float | None, float | None]:
+    """Точка, которую hh ставит по адресу работодателя, если она в городе вакансии."""
+    address = item.get("address") or {}
+    return city_point(city, address.get("lat"), address.get("lng")) or (None, None)
+
+
 def to_vacancy(item: dict) -> Vacancy | None:
     """Вакансия из поисковой выдачи или None, если она не для vacante.kz (офис, другой город, не рабочая)."""
     name = (item.get("name") or "").strip()
@@ -182,6 +194,7 @@ def to_vacancy(item: dict) -> Vacancy | None:
     published = datetime.fromisoformat(item["published_at"]).astimezone(timezone.utc)
     # «Сату менеджер/Менеджер по продажам»: на сайте и в каналах по-русски, казахское для казахской версии
     title, title_kk = split_title(name[:1].upper() + name[1:])
+    lat, lon = _point(item, city)
     return Vacancy(
         id=f"{SOURCE}-{item['id']}",
         title=title,
@@ -200,6 +213,8 @@ def to_vacancy(item: dict) -> Vacancy | None:
         posted_at=published.isoformat(),
         fingerprint=fingerprint(f"{name}\n{text}"),
         address=_address(item, city),
+        lat=lat,
+        lon=lon,
     )
 
 
@@ -221,6 +236,9 @@ def collect(state: dict, now: datetime, client: httpx.Client | None = None,
         client = make_client(token, os.environ.get("HH_USER_AGENT") or None)
     last = state.get("hh_checked_at")
     date_from = datetime.fromisoformat(last) - OVERLAP if last else now - FIRST_RUN
+    if last and state.get("hh_backfill") != BACKFILL_TAG:
+        date_from = min(date_from, now - BACKFILL)
+        log.info("hh: перечитываем выдачу за %s дн., чтобы у собранных вакансий были точки", BACKFILL.days)
     try:
         items = search(client, date_from, now, sleep)
     except Forbidden as exc:
@@ -235,6 +253,8 @@ def collect(state: dict, now: datetime, client: httpx.Client | None = None,
         if own:
             client.close()
     state["hh_checked_at"] = now.isoformat()
+    state["hh_backfill"] = BACKFILL_TAG
     vacancies = {v.id: v for v in map(to_vacancy, items) if v is not None}
-    log.info("hh: %s вакансий в выдаче, %s подходят", len(items), len(vacancies))
+    log.info("hh: %s вакансий в выдаче, %s подходят, у %s есть точка", len(items), len(vacancies),
+             sum(v.lat is not None for v in vacancies.values()))
     return list(vacancies.values())

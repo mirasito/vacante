@@ -1,3 +1,4 @@
+import type { Point } from './geo';
 import { telegram } from './platform';
 
 // Сервер Vacante в Казахстане (server/ в репозитории): профили, отклики, напоминания.
@@ -11,7 +12,14 @@ export interface Account {
   open: boolean;
   /** Профиль уже создан. */
   profile: boolean;
+  /** Дом из анкеты (округлён до 300–500 м): лента показывает по нему, далеко ли работа. */
+  home: Point | null;
 }
+
+const pointOf = (value: unknown): Point | null => {
+  const p = value as Partial<Point> | null | undefined;
+  return p && typeof p.lat === 'number' && typeof p.lon === 'number' ? { lat: p.lat, lon: p.lon } : null;
+};
 
 export type Experience = 'none' | 'lt1' | '1to3' | 'gt3';
 export type Employment = 'full' | 'shifts' | 'night' | 'flexible' | 'part' | 'weekends' | 'rotation';
@@ -105,10 +113,13 @@ export async function api<T>(path: string, init: { method?: string; body?: unkno
 export async function whoAmI(): Promise<Account | null> {
   if (!initData()) return null;
   try {
-    const { user, open, profile } = await api<{ user: { id: number; first_name: string }; open: boolean; profile: boolean }>(
-      '/me',
-    );
-    return { id: user.id, first_name: user.first_name, open, profile };
+    const { user, open, profile, home } = await api<{
+      user: { id: number; first_name: string };
+      open: boolean;
+      profile: boolean;
+      home?: unknown;
+    }>('/me');
+    return { id: user.id, first_name: user.first_name, open, profile, home: pointOf(home) };
   } catch {
     return null;
   }

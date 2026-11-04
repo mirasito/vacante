@@ -56,6 +56,9 @@ def merge(existing: list[Vacancy], incoming: list[Vacancy]) -> list[Vacancy]:
             known = by_id[new.id]
             if known.id == new.id and not known.contact and new.contact:
                 known.contact = new.contact
+            # hh отдал вакансию ещё раз (перечитывание за две недели): точка на карте берётся свежая
+            if known.id == new.id and new.lat is not None:
+                known.lat, known.lon = new.lat, new.lon
             continue
         twin = by_fp.get(new.fingerprint)
         if twin is None:

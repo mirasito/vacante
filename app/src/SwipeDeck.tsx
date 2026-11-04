@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 
+import type { Point } from './geo';
 import * as i18n from './i18n';
 import type { Colors } from './theme';
 import type { Lang, Vacancy } from './types';
@@ -22,13 +23,15 @@ type Props = {
   items: Vacancy[];
   lang: Lang;
   c: Colors;
+  /** Дом из профиля: на карточках видно, далеко ли работа. */
+  home?: Point | null;
   onSwipe(v: Vacancy, dir: Dir): void;
   onOpen(v: Vacancy): void;
   ref?: Ref<DeckHandle>;
 };
 
 /** Стопка карточек: верхнюю тянут пальцем, следующая уже видна под ней. */
-export function SwipeDeck({ items, lang, c, onSwipe, onOpen, ref }: Props) {
+export function SwipeDeck({ items, lang, c, home, onSwipe, onOpen, ref }: Props) {
   const { width } = useWindowDimensions();
   const span = Math.min(width, 480);
   const pos = useRef(new Animated.ValueXY()).current;
@@ -94,7 +97,7 @@ export function SwipeDeck({ items, lang, c, onSwipe, onOpen, ref }: Props) {
     <View style={styles.deck}>
       {next ? (
         <Animated.View key={next.id} style={[cardStyle, { transform: [{ scale: nextScale }] }]}>
-          <VacancyCard v={next} lang={lang} c={c} />
+          <VacancyCard v={next} lang={lang} c={c} home={home} />
         </Animated.View>
       ) : null}
       {top ? (
@@ -104,7 +107,7 @@ export function SwipeDeck({ items, lang, c, onSwipe, onOpen, ref }: Props) {
           {...pan.panHandlers}
         >
           <Pressable style={styles.fill} onPress={() => onOpen(top)}>
-            <VacancyCard v={top} lang={lang} c={c} />
+            <VacancyCard v={top} lang={lang} c={c} home={home} />
           </Pressable>
           <Animated.View style={[styles.stamp, styles.likeStamp, { borderColor: c.like, opacity: likeOpacity }]}>
             <Text style={[styles.stampText, { color: c.like }]}>{i18n.t(lang, 'like').toUpperCase()}</Text>

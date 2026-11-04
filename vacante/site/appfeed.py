@@ -44,6 +44,9 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
         "perks_kk": [i18n.perk(p, "kk") for p in v.perks],
         "address": v.address,
         "map": twogis_url(v),
+        # Точка адреса работы: приложение само считает, далеко ли она от дома человека
+        "lat": v.lat,
+        "lon": v.lon,
         "posted_at": v.posted_at,
         "top": v.is_top(now),
         "url": f"{base_url}/v/{v.id}/",

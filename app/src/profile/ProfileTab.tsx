@@ -1,4 +1,4 @@
-// Вкладка «Профиль»: профиль так, как его видит работодатель, сила профиля, ссылка,
+// Вкладка «Профиль»: профиль так, как его видит работодатель, сила профиля, фото, дом, ссылка,
 // «Кто смотрел профиль», база кандидатов и удаление. Без профиля — приглашение его создать.
 import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -36,11 +36,13 @@ import {
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, Loading, Retry, styles as ui } from '../ui';
+import { HomeStep, type HomeDraft } from './Home';
+import { Avatar, PhotoSection, usePhotoUpload, usePhotoUrl } from './Photo';
 import { EMPLOYMENT, EXPERIENCE, label, LANGUAGES, money, P, phoneLabel, START, when } from './texts';
 import { useVideoRecording, VideoSection } from './Video';
 import { Wizard } from './Wizard';
 
-type Mode = 'card' | 'wizard' | 'extras';
+type Mode = 'card' | 'wizard' | 'extras' | 'home';
 type RemindersProps = { data: Reminders | null; onChange(next: Reminders): void; onOpenAll(): void };
 
 export function ProfileTab(props: {
@@ -97,7 +99,7 @@ export function ProfileTab(props: {
     [],
   );
 
-  if (mode !== 'wizard') backRef.current = mode === 'extras' ? () => (setMode('card'), true) : null;
+  if (mode !== 'wizard') backRef.current = mode === 'extras' || mode === 'home' ? () => (setMode('card'), true) : null;
 
   if (failed) return <Retry c={c} lang={lang} text={t.notAvailable} onRetry={() => setAttempt((n) => n + 1)} />;
   if (view === undefined) return <Loading c={c} text="" />;
@@ -125,6 +127,9 @@ export function ProfileTab(props: {
   if (mode === 'extras') {
     return <Extras c={c} lang={lang} view={view} onSaved={(v) => (setView(v), setMode('card'))} onChange={setView} />;
   }
+  if (mode === 'home') {
+    return <HomeEdit c={c} lang={lang} view={view} onSaved={(v) => (setView(v), setMode('card'))} />;
+  }
   return (
     <Card
       c={c}
@@ -134,6 +139,7 @@ export function ProfileTab(props: {
       onChange={setView}
       onEdit={() => setMode('wizard')}
       onExtras={() => setMode('extras')}
+      onHome={() => setMode('home')}
       onDeleted={() => {
         setView(null);
         props.onProfile?.(false);
@@ -188,6 +194,37 @@ async function phoneFromTelegram(): Promise<ProfileView | null> {
   return waitForPhone();
 }
 
+/** «Где вы живёте?» из профиля: тот же экран, что в анкете, и «Сохранить». */
+function HomeEdit({ c, lang, view, onSaved }: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: ProfileView): void }) {
+  const t = P[lang];
+  const profile = view.profile!;
+  const [place, setPlace] = useState<HomeDraft>({ home: profile.home, label: '' });
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const save = async () => {
+    setBusy(true);
+    setError('');
+    try {
+      onSaved(await saveProfile({ ...profile, home: place.home }, lang));
+    } catch {
+      setError(t.saveError);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <View style={ui.flex}>
+      <ScrollView contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">
+        <HomeStep c={c} lang={lang} value={place} onChange={setPlace} />
+        {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
+      </ScrollView>
+      <View style={s.foot}>
+        <Button c={c} label={t.save} busy={busy} onPress={save} />
+      </View>
+    </View>
+  );
+}
+
 function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: ProfileView): void; onChange(v: ProfileView): void }) {
   const { c, lang, view, onSaved, onChange } = props;
   const t = P[lang];
@@ -201,6 +238,7 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const rec = useVideoRecording(view, onChange);
+  const photo = usePhotoUpload(lang, onChange);
 
   const fromTelegram = async () => {
     haptic();
@@ -236,6 +274,7 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
         <Text style={[s.title, { color: c.ink }]}>{t.readyTitle}</Text>
         <Strength c={c} lang={lang} view={view} />
         <Text style={[s.text, { color: c.quiet }]}>{t.readyText}</Text>
+        <PhotoSection c={c} lang={lang} view={view} photo={photo} />
         <VideoSection c={c} lang={lang} view={view} rec={rec} onChange={onChange} />
 
         <Text style={[s.section, { color: c.ink }]}>{t.phone}</Text>
@@ -326,16 +365,19 @@ function Card(props: {
   onChange(v: ProfileView): void;
   onEdit(): void;
   onExtras(): void;
+  onHome(): void;
   onDeleted(): void;
   reminders?: RemindersProps;
 }) {
-  const { c, lang, index, view, onChange, onEdit, onExtras, onDeleted, reminders } = props;
+  const { c, lang, index, view, onChange, onEdit, onExtras, onHome, onDeleted, reminders } = props;
   const t = P[lang];
   const p = view.profile!;
   const [views, setViews] = useState<ProfileViewEvent[] | null>(null);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState('');
   const rec = useVideoRecording(view, onChange);
+  const photo = usePhotoUpload(lang, onChange);
+  const photoUrl = usePhotoUrl(view);
 
   const loadViews = useCallback(() => {
     getViews().then(setViews, () => setViews([]));
@@ -392,6 +434,8 @@ function Card(props: {
 
   const onTip = async (tip: Tip) => {
     if (tip === 'video') return rec.start();
+    // Окно выбора фото открывается только прямо из нажатия, поэтому до любых await
+    if (tip === 'photo') return photo.upload();
     const v = tip === 'phone' ? await phoneFromTelegram() : null;
     if (v) onChange(v);
     else onExtras();
@@ -405,9 +449,7 @@ function Card(props: {
       <Text style={[s.caption, { color: c.quiet }]}>{t.asEmployer}</Text>
       <View style={[s.card, { backgroundColor: c.card, borderColor: c.line }]}>
         <View style={s.who}>
-          <View style={[s.avatar, { backgroundColor: c.pill }]}>
-            <Text style={[s.initials, { color: c.accent }]}>{initials(p.name)}</Text>
-          </View>
+          <Avatar c={c} name={p.name} url={photoUrl} size={64} />
           <View style={ui.flex}>
             <Text style={[s.name, { color: c.ink }]}>{p.name}</Text>
             <Text style={{ color: c.quiet }}>{place}</Text>
@@ -431,6 +473,14 @@ function Card(props: {
         {p.about ? <Fact c={c} k={t.about} v={p.about} /> : null}
         {p.phone ? <Fact c={c} k={t.phone} v={phoneLabel(p.phone)} hint={t.phoneHidden} /> : null}
       </View>
+
+      {photo.busy || photo.error ? (
+        <Text style={[s.small, { color: photo.error ? c.skip : c.quiet }]}>{photo.error || t.photoUploading}</Text>
+      ) : null}
+      <Pressable onPress={onHome} hitSlop={8} style={s.homeRow}>
+        <Text style={[s.small, ui.flex, { color: p.home ? c.quiet : c.ink }]}>{p.home ? t.homeCard : t.homeAsk}</Text>
+        <Text style={[s.small, { color: c.accent, fontWeight: '600' }]}>{t.homeChange}</Text>
+      </Pressable>
 
       <Button c={c} ghost label={t.edit} onPress={onEdit} />
       <Button c={c} ghost label={t.more} onPress={onExtras} />
@@ -498,14 +548,6 @@ function Fact({ c, k, v, hint }: { c: Colors; k: string; v: string; hint?: strin
   );
 }
 
-const initials = (name: string) =>
-  name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0]?.toUpperCase())
-    .join('');
-
 const s = StyleSheet.create({
   body: { padding: 16, gap: 12, paddingBottom: 32 },
   wide: { alignSelf: 'stretch', marginTop: 8 },
@@ -524,8 +566,7 @@ const s = StyleSheet.create({
   caption: { fontSize: 13, marginTop: 4 },
   card: { borderWidth: 1, borderRadius: 18, padding: 16, gap: 10 },
   who: { flexDirection: 'row', gap: 14, alignItems: 'center' },
-  avatar: { width: 64, height: 64, borderRadius: 32, alignItems: 'center', justifyContent: 'center' },
-  initials: { fontSize: 24, fontWeight: '800' },
+  homeRow: { flexDirection: 'row', gap: 8, alignItems: 'center' },
   name: { fontSize: 22, fontWeight: '800' },
   pill: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 12, overflow: 'hidden', fontWeight: '600' },
   factKey: { fontSize: 12 },

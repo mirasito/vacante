@@ -18,7 +18,7 @@ const ANKETA = {
   start: "today",
   languages: [],
 };
-const CONSENT = { version: "2026-11-04", adult: true, base: false };
+const CONSENT = { version: "2026-11-04.2", adult: true, base: false };
 
 let s: TestServer;
 before(async () => {
@@ -84,10 +84,10 @@ test("кружок из бота: скачивается в профиль, ра
   // Город из профиля: на новом устройстве приложение не спросит его заново
   assert.equal(saved.reply_markup.inline_keyboard[1][0].web_app.url, "https://vacante.kz/app/?tab=profile&city=astana");
 
-  // Сила профиля: анкета 50 + кружок 30
+  // Сила профиля: анкета 45 + кружок 25
   const view = (await s.call("GET", "/me/profile", { headers: auth(user) })).json;
   assert.deepEqual(view.video, { duration: 42, recorded_at: "2026-11-04T06:00:00Z", ready: true, poster: true });
-  assert.equal(view.strength.percent, 80);
+  assert.equal(view.strength.percent, 70);
 
   // Своё видео в приложении
   const mine = await s.call("GET", "/me/video", { headers: auth(user) });

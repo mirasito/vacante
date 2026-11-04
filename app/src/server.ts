@@ -18,12 +18,21 @@ export type Employment = 'full' | 'shifts' | 'night' | 'flexible' | 'part' | 'we
 export type Start = 'today' | 'week' | '2weeks' | 'later';
 export type PayPeriod = 'month' | 'shift';
 export type Language = 'kk' | 'ru' | 'en';
-export type Tip = 'video' | 'phone' | 'about' | 'docs';
+export type Tip = 'video' | 'photo' | 'phone' | 'about' | 'docs';
+
+/** Где живёт человек: точка, округлённая сервером до 300–500 метров. Работодатель её не видит. */
+export interface Home {
+  lat: number;
+  lon: number;
+  source: 'phone' | '2gis';
+}
 
 export interface Profile {
   name: string;
   city: string;
+  /** Район из прежней анкеты: новое приложение вместо него спрашивает, где дом. */
   district: string | null;
+  home: Home | null;
   roles: string[];
   experience: Experience;
   employment: Employment[];
@@ -42,6 +51,7 @@ export interface ProfileView {
   profile: Profile | null;
   /** Кружок: poster — есть ли обложка (Telegram присылает её не всегда). */
   video: { duration: number; recorded_at: string; ready: boolean; poster: boolean } | null;
+  photo: { width: number; height: number; uploaded_at: string } | null;
   strength: { percent: number; next: Tip | null } | null;
   link: { code: string; url: string } | null;
 }
@@ -114,7 +124,7 @@ export async function getProfile(): Promise<ProfileView | null> {
   }
 }
 
-export const CONSENT_VERSION = '2026-11-04';
+export const CONSENT_VERSION = '2026-11-04.2';
 
 export const saveProfile = (profile: Profile, lang: 'ru' | 'kk', consent?: { adult: boolean; base: boolean }) =>
   api<ProfileView>('/me/profile', {
@@ -137,12 +147,32 @@ export const getViews = async () => (await api<{ views: ProfileViewEvent[] }>('/
 /** Убрать кружок из профиля. */
 export const deleteVideo = () => api<ProfileView>('/me/video', { method: 'DELETE' });
 
+/** Фото в профиль: JPEG, уже уменьшенный на телефоне (profile/photo.ts). */
+export async function putPhoto(photo: Blob): Promise<ProfileView> {
+  const auth = initData();
+  if (!auth) throw new ApiError(0, 'not in Telegram');
+  const res = await fetch(`${API_URL}/me/photo`, {
+    method: 'PUT',
+    headers: { ...authHeaders(auth), 'Content-Type': 'image/jpeg' },
+    body: photo,
+  });
+  const data = (await res.json().catch(() => ({}))) as ProfileView & { error?: string };
+  if (!res.ok) throw new ApiError(res.status, data.error ?? `HTTP ${res.status}`);
+  return data;
+}
+
+export const deletePhoto = () => api<ProfileView>('/me/photo', { method: 'DELETE' });
+
+/** Дом по ссылке из 2ГИС: точка и подпись 2ГИС, чтобы человек проверил, его ли это дом. Ничего не сохраняет. */
+export const homeFromLink = (link: string) =>
+  api<Home & { label: string | null }>('/me/home/link', { method: 'POST', body: { link } });
+
 /**
- * Свой кружок или его обложка как адрес blob:… для <video> и <Image>. Файлы закрыты входом
+ * Свой кружок, его обложка или фото как адрес blob:… для <video> и <Image>. Файлы закрыты входом
  * Telegram, а заголовок Authorization тегу не передать, поэтому скачиваем сами.
  * null, если файла нет, сервер недоступен или это не браузер.
  */
-export async function mediaUrl(path: '/me/video' | '/me/video/poster'): Promise<string | null> {
+export async function mediaUrl(path: '/me/video' | '/me/video/poster' | '/me/photo'): Promise<string | null> {
   const auth = initData();
   if (!auth || typeof URL === 'undefined' || typeof URL.createObjectURL !== 'function') return null;
   try {

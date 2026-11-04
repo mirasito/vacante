@@ -27,7 +27,18 @@ import {
 import type { Profile } from "./profile.ts";
 import { RateLimit } from "./limits.ts";
 import { sendNews } from "./notify.ts";
-import { CODE_RE, findLink, getProfile, getVideo, iso, profileUpdatedAt, recordView, type Link, type Video } from "./seekers.ts";
+import {
+  CODE_RE,
+  findLink,
+  getPhoto,
+  getProfile,
+  getVideo,
+  iso,
+  profileUpdatedAt,
+  recordView,
+  type Link,
+  type Video,
+} from "./seekers.ts";
 import { dateTimeLabel, DAY_MS, fromLocal, toLocalInput } from "./time.ts";
 import { duration, fileReply } from "./video.ts";
 import { join } from "node:path";
@@ -120,7 +131,8 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
 .kicker{color:var(--quiet);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin:0 0 12px}
 .who{display:flex;gap:16px;align-items:center;margin-bottom:16px}
-.avatar{width:84px;height:84px;border-radius:50%;background:var(--pill);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--accent);flex:none;overflow:hidden}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--pill);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--accent);flex:none;overflow:hidden;text-decoration:none}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
 .circle{display:block;position:relative;width:220px;height:220px;margin:0 auto 18px;border-radius:50%;overflow:hidden;background:#101012;text-decoration:none}
 .circle img{width:100%;height:100%;object-fit:cover;display:block}
 .play{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.62);color:#fff;font-weight:700;font-size:15px;border-radius:999px;padding:6px 14px;white-space:nowrap}
@@ -182,6 +194,7 @@ function profileBody(
   link: Link,
   p: Profile,
   video: Video | undefined,
+  photo: boolean,
   lang: Lang,
   showPhone: boolean,
   updatedAt: string,
@@ -208,7 +221,11 @@ function profileBody(
   return html`<section class="card">
 <p class="kicker">${application ? t.forVacancy(application.title) : t.candidate}</p>
 ${video?.file ? circle(link.code, video, t.watch) : ""}
-<div class="who"><div class="avatar" aria-hidden="true">${initials(p.name)}</div>
+<div class="who">${
+    photo
+      ? html`<a class="avatar" href="/${link.code}/photo.jpg"><img src="/${link.code}/photo.jpg" alt="${p.name}"></a>`
+      : html`<div class="avatar" aria-hidden="true">${initials(p.name)}</div>`
+  }
 <div><h1>${p.name}</h1><p class="place">${place}</p></div></div>
 <dl>
 <dt>${t.wants}</dt><dd><div class="chips">${p.roles.map((r) => html`<span class="chip">${r}</span>`)}</div></dd>
@@ -266,13 +283,17 @@ export function pageRoutes(ctx: Ctx): Route[] {
   const limit = new RateLimit();
   const clientOf = (req: Request) => (req.header("x-forwarded-for") ?? "").split(",")[0]?.trim() || "local";
 
-  const media = (req: Request, kind: "file" | "poster", type: string): Reply => {
+  const media = (req: Request, kind: "file" | "poster" | "photo", type: string): Reply => {
     const now = ctx.now();
     const client = clientOf(req);
     if (!limit.take(client, now)) throw new HttpError(429, "Слишком много запросов, попробуйте через минуту");
     const code = req.params.code ?? "";
     const link = CODE_RE.test(code) ? findLink(ctx.db, code, now) : undefined;
-    const name = link ? getVideo(ctx.db, link.seeker_id)?.[kind] : undefined;
+    const name = !link
+      ? undefined
+      : kind === "photo"
+        ? getPhoto(ctx.db, link.seeker_id)?.file
+        : getVideo(ctx.db, link.seeker_id)?.[kind];
     if (!name) {
       limit.take(client, now, 4);
       throw new HttpError(404, "Нет файла");
@@ -287,10 +308,11 @@ export function pageRoutes(ctx: Ctx): Route[] {
       body: Buffer.from("User-agent: *\nDisallow: /\n"),
     })),
 
-    // Кружок и обложка по той же ссылке: выключили ссылку или удалили кружок — файла больше нет.
+    // Кружок, обложка и фото по той же ссылке: выключили ссылку или удалили файл — его больше нет.
     // Просмотром не считаются, это делает сама страница
     route("GET", "profile", "/:code/video.mp4", (req) => media(req, "file", "video/mp4")),
     route("GET", "profile", "/:code/poster.jpg", (req) => media(req, "poster", "image/jpeg")),
+    route("GET", "profile", "/:code/photo.jpg", (req) => media(req, "photo", "image/jpeg")),
 
     // Ответ работодателя кнопкой: кандидат сразу получает сообщение, стадия отклика меняется сама
     route("POST", "profile", "/:code/answer", async (req) => {
@@ -375,8 +397,9 @@ export function pageRoutes(ctx: Ctx): Route[] {
           }
         : undefined;
       const video = getVideo(ctx.db, link.seeker_id);
+      const photo = !!getPhoto(ctx.db, link.seeker_id);
       return {
-        html: page(lang, profileBody(ctx, link, profile, video, lang, showPhone, updatedAt, application), other),
+        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application), other),
         headers: {
           "Content-Security-Policy":
             "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",

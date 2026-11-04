@@ -1,4 +1,4 @@
-// Соискатели в базе: создание после согласия, анкета, ссылки на профиль, просмотры и удаление.
+// Соискатели в базе: создание после согласия, анкета, фото, ссылки на профиль, просмотры и удаление.
 import { randomInt } from "node:crypto";
 import { rmSync } from "node:fs";
 import { join } from "node:path";
@@ -41,6 +41,14 @@ export interface Video {
   recorded_at: string;
 }
 
+export interface Photo {
+  file: string;
+  width: number;
+  height: number;
+  size: number;
+  uploaded_at: string;
+}
+
 export function getSeeker(db: Db, id: number): Seeker | undefined {
   return db.prepare("SELECT * FROM seekers WHERE id = ?").get(id) as Seeker | undefined;
 }
@@ -59,6 +67,10 @@ export function getVideo(db: Db, id: number): Video | undefined {
   return db.prepare("SELECT * FROM videos WHERE seeker_id = ?").get(id) as Video | undefined;
 }
 
+export function getPhoto(db: Db, id: number): Photo | undefined {
+  return db.prepare("SELECT file, width, height, size, uploaded_at FROM photos WHERE seeker_id = ?").get(id) as Photo | undefined;
+}
+
 export function createSeeker(
   db: Db,
   s: { id: number; first_name: string; lang: "ru" | "kk"; consent_version: string; base: boolean; now: number },
@@ -71,17 +83,19 @@ export function createSeeker(
 
 export function saveProfile(db: Db, id: number, p: Profile, now: number) {
   db.prepare(
-    `INSERT INTO profiles (seeker_id, name, city, district, roles, experience, employment, pay_from, pay_period, start,
-       phone, languages, about, med_book, driver, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `INSERT INTO profiles (seeker_id, name, city, district, home_lat, home_lon, home_source, roles, experience, employment,
+       pay_from, pay_period, start, phone, languages, about, med_book, driver, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT (seeker_id) DO UPDATE SET name = excluded.name, city = excluded.city, district = excluded.district,
+       home_lat = excluded.home_lat, home_lon = excluded.home_lon, home_source = excluded.home_source,
        roles = excluded.roles, experience = excluded.experience, employment = excluded.employment,
        pay_from = excluded.pay_from, pay_period = excluded.pay_period, start = excluded.start, phone = excluded.phone,
        languages = excluded.languages, about = excluded.about, med_book = excluded.med_book, driver = excluded.driver,
        updated_at = excluded.updated_at`,
   ).run(
-    id, p.name, p.city, p.district, JSON.stringify(p.roles), p.experience, JSON.stringify(p.employment), p.pay_from,
-    p.pay_period, p.start, p.phone, JSON.stringify(p.languages), p.about, p.med_book ? 1 : 0, p.driver ? 1 : 0, iso(now),
+    id, p.name, p.city, p.district, p.home?.lat ?? null, p.home?.lon ?? null, p.home?.source ?? null,
+    JSON.stringify(p.roles), p.experience, JSON.stringify(p.employment), p.pay_from, p.pay_period, p.start, p.phone,
+    JSON.stringify(p.languages), p.about, p.med_book ? 1 : 0, p.driver ? 1 : 0, iso(now),
   );
 }
 
@@ -251,6 +265,32 @@ export function putVideo(db: Db, id: number, v: NewVideo): string[] | null {
   });
 }
 
+/**
+ * Кладёт новое фото в профиль вместо прежнего. Возвращает файл прежнего фото, который пора удалить
+ * (или null, если его не было), либо false, если профиля нет: фото без анкеты не нужно.
+ */
+export function putPhoto(db: Db, id: number, photo: Omit<Photo, "uploaded_at">, now: number): string | null | false {
+  return tx(db, () => {
+    if (!db.prepare("SELECT 1 FROM profiles WHERE seeker_id = ?").get(id)) return false;
+    const old = getPhoto(db, id);
+    db.prepare(
+      `INSERT INTO photos (seeker_id, file, width, height, size, uploaded_at) VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(seeker_id) DO UPDATE SET file = excluded.file, width = excluded.width, height = excluded.height,
+         size = excluded.size, uploaded_at = excluded.uploaded_at`,
+    ).run(id, photo.file, photo.width, photo.height, photo.size, iso(now));
+    return old?.file ?? null;
+  });
+}
+
+/** «Удалить фото»: строка и файл. false, если фото не было. */
+export function dropPhoto(db: Db, id: number, dir: string): boolean {
+  const old = getPhoto(db, id);
+  if (!old) return false;
+  db.prepare("DELETE FROM photos WHERE seeker_id = ?").run(id);
+  removeFiles(dir, [old.file]);
+  return true;
+}
+
 /** «Удалить кружок»: строка и файлы. false, если кружка не было. */
 export function dropVideo(db: Db, id: number, videosDir: string): boolean {
   const old = getVideo(db, id);
@@ -260,11 +300,12 @@ export function dropVideo(db: Db, id: number, videosDir: string): boolean {
   return true;
 }
 
-/** «Удалить профиль»: сразу стирает анкету, кружок, ссылки и просмотры, файлы кружка тоже. */
+/** «Удалить профиль»: сразу стирает анкету, кружок, фото, ссылки и просмотры, файлы тоже. */
 export function deleteSeeker(db: Db, id: number, videosDir: string) {
   const video = getVideo(db, id);
+  const photo = getPhoto(db, id);
   db.prepare("DELETE FROM seekers WHERE id = ?").run(id);
-  removeFiles(videosDir, [video?.file, video?.poster]);
+  removeFiles(videosDir, [video?.file, video?.poster, photo?.file]);
 }
 
 /** Всё о профиле для самого соискателя (GET /me/profile). */
@@ -273,6 +314,7 @@ export function profileView(db: Db, id: number, profileOrigin: string) {
   if (!seeker) return null;
   const profile = getProfile(db, id) ?? null;
   const video = getVideo(db, id);
+  const photo = getPhoto(db, id);
   const link = sharedLink(db, id);
   return {
     seeker: {
@@ -284,7 +326,8 @@ export function profileView(db: Db, id: number, profileOrigin: string) {
     },
     profile,
     video: video ? { duration: video.duration, recorded_at: video.recorded_at, ready: !!video.file, poster: !!video.poster } : null,
-    strength: profile ? strength(profile, !!video?.file) : null,
+    photo: photo ? { width: photo.width, height: photo.height, uploaded_at: photo.uploaded_at } : null,
+    strength: profile ? strength(profile, { video: !!video?.file, photo: !!photo }) : null,
     link: link ? { code: link.code, url: `${profileOrigin}/${link.code}` } : null,
   };
 }

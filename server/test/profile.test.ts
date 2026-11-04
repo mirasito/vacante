@@ -16,7 +16,7 @@ const ANKETA = {
   start: "week",
   languages: ["kk", "ru"],
 };
-const CONSENT = { version: "2026-11-04", adult: true, base: false };
+const CONSENT = { version: "2026-11-04.2", adult: true, base: false };
 
 const auth = (user: Record<string, unknown> = AIGERIM) => ({ authorization: `tma ${initDataFor(user)}` });
 const beta = (user: Record<string, unknown> = AIGERIM) => ({ ...auth(user), "x-vacante-beta": "1" });
@@ -62,14 +62,13 @@ test("анкета проверяется и чистится", () => {
   assert.throws(() => parseProfile({ ...ANKETA, pay_from: -5 }), /Зарплата/);
 });
 
-test("сила профиля: анкета 50, кружок 30, телефон 10, о себе и документы по 5", () => {
+test("сила профиля: анкета 45, кружок 25, фото и телефон по 10, о себе и документы по 5", () => {
   const p = parseProfile(ANKETA) as Profile;
-  assert.deepEqual(strength(p, false), { percent: 50, next: "video" });
-  assert.deepEqual(strength({ ...p, phone: "+77012345678" }, true), { percent: 90, next: "about" });
-  assert.deepEqual(strength({ ...p, phone: "+77012345678", about: "Люблю кофе", driver: true }, true), {
-    percent: 100,
-    next: null,
-  });
+  assert.deepEqual(strength(p, { video: false, photo: false }), { percent: 45, next: "video" });
+  assert.deepEqual(strength({ ...p, phone: "+77012345678" }, { video: true, photo: false }), { percent: 80, next: "photo" });
+  assert.deepEqual(strength({ ...p, phone: "+77012345678" }, { video: true, photo: true }), { percent: 90, next: "about" });
+  const full = { ...p, phone: "+77012345678", about: "Люблю кофе", driver: true };
+  assert.deepEqual(strength(full, { video: true, photo: true }), { percent: 100, next: null });
 });
 
 test("профиль без согласия, без 18 лет или до открытия профилей не создаётся", async () => {
@@ -95,11 +94,11 @@ test("профиль без согласия, без 18 лет или до от�
 test("тестировщик создаёт профиль, потом правит его", async () => {
   const created = await createProfile();
   assert.equal(created.profile.name, "Айгерим");
-  assert.deepEqual(created.strength, { percent: 50, next: "video" });
+  assert.deepEqual(created.strength, { percent: 45, next: "video" });
   assert.equal(created.seeker.base, false);
   assert.equal(created.link, null);
   const consent = s.db.prepare("SELECT consent_version, consent_at FROM seekers WHERE id = ?").get(AIGERIM.id) as Record<string, string>;
-  assert.equal(consent.consent_version, "2026-11-04");
+  assert.equal(consent.consent_version, "2026-11-04.2");
   assert.equal(consent.consent_at, "2026-11-04T06:00:00Z");
 
   // Правка уже без согласия и без пометки тестировщика
@@ -109,7 +108,7 @@ test("тестировщик создаёт профиль, потом прав�
   });
   assert.equal(edited.status, 200);
   assert.equal(edited.json.profile.phone, "+77012345678");
-  assert.equal(edited.json.strength.percent, 70);
+  assert.equal(edited.json.strength.percent, 65);
 
   const me = await s.call("GET", "/me", { headers: auth() });
   assert.equal(me.json.profile, true);

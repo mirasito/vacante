@@ -1,4 +1,4 @@
-// Создание и правка профиля: согласие и шесть экранов с кнопками.
+// Создание и правка профиля: согласие и семь экранов с кнопками.
 // Экраны с одним ответом переходят дальше сами, чтобы анкета занимала пару минут.
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -19,16 +19,17 @@ import {
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, styles as ui } from '../ui';
+import { HomeStep, type HomeDraft } from './Home';
 import { CONSENT, EMPLOYMENT, EXPERIENCE, money, P, PAY_PERIOD, PAY_PRESETS, START } from './texts';
 
-type Step = 'consent' | 'place' | 'roles' | 'experience' | 'employment' | 'pay' | 'start';
-const STEPS: Step[] = ['place', 'roles', 'experience', 'employment', 'pay', 'start'];
+type Step = 'consent' | 'place' | 'home' | 'roles' | 'experience' | 'employment' | 'pay' | 'start';
+const STEPS: Step[] = ['place', 'home', 'roles', 'experience', 'employment', 'pay', 'start'];
 const MAX_ROLES = 3;
 
 interface Draft {
   name: string;
   city: string;
-  district: string;
+  place: HomeDraft;
   roles: string[];
   experience: Experience | null;
   employment: Employment[];
@@ -41,7 +42,7 @@ function draftOf(existing: Profile | null, name: string, city: string | undefine
   return {
     name: existing?.name ?? name,
     city: existing?.city ?? city ?? '',
-    district: existing?.district ?? '',
+    place: { home: existing?.home ?? null, label: '' },
     roles: existing?.roles ?? [],
     experience: existing?.experience ?? null,
     employment: existing?.employment ?? [],
@@ -105,7 +106,9 @@ export function Wizard(props: {
     const profile: Profile = {
       name: final.name.trim(),
       city: final.city,
-      district: final.district.trim() || null,
+      // Вместо района теперь дом: прежний район уходит из анкеты при первой правке
+      district: null,
+      home: final.place.home,
       roles: final.roles,
       experience: final.experience!,
       employment: final.employment,
@@ -153,6 +156,8 @@ export function Wizard(props: {
           <Consent c={c} lang={lang} adult={adult} agree={agree} base={base} onAdult={setAdult} onAgree={setAgree} onBase={setBase} />
         ) : step === 'place' ? (
           <Place c={c} lang={lang} index={index} draft={draft} set={set} />
+        ) : step === 'home' ? (
+          <HomeStep c={c} lang={lang} value={draft.place} onChange={(place) => set({ place })} />
         ) : step === 'roles' ? (
           <Roles c={c} lang={lang} index={index} draft={draft} set={set} />
         ) : step === 'experience' ? (
@@ -222,7 +227,15 @@ export function Wizard(props: {
         <View style={s.foot}>
           <Button
             c={c}
-            label={step === 'consent' ? t.create : step === 'pay' && !draft.pay ? t.payAny : t.next}
+            label={
+              step === 'consent'
+                ? t.create
+                : step === 'pay' && !draft.pay
+                  ? t.payAny
+                  : step === 'home' && !draft.place.home
+                    ? t.skip
+                    : t.next
+            }
             disabled={!ready(step, draft, adult && agree)}
             onPress={next}
           />
@@ -291,14 +304,6 @@ function Place({ c, lang, index, draft, set }: { c: Colors; lang: Lang; index: I
           <Chip key={ct.slug} c={c} active={draft.city === ct.slug} label={i18n.cityName(ct, lang)} onPress={() => set({ city: ct.slug })} />
         ))}
       </View>
-      <Field
-        c={c}
-        label={t.district}
-        placeholder={t.districtHint}
-        value={draft.district}
-        onChangeText={(district) => set({ district })}
-        maxLength={60}
-      />
     </>
   );
 }

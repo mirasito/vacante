@@ -66,7 +66,7 @@ def test_address_is_asked_once_and_then_comes_from_the_cache(tmp_path):
     asked, client = nominatim({"ул. Сыганак, 2, Алматы": place(*HOUSE)})
     first = [vacancy("chan_a-1", "ул. Сыганак, 2"), vacancy("chan_b-7", "Ул. Сыганак, 2")]
     stats = locate(first, tmp_path, client)
-    assert len(asked) == 1 and stats == {"addresses": 1, "cached": 0, "asked": 1, "found": 1}
+    assert len(asked) == 1 and stats == {"addresses": 1, "cached": 0, "asked": 1, "found": 1, "failed": 0}
     assert [(v.lat, v.lon, v.geo) for v in first] == [(*HOUSE, "osm")] * 2
     params = asked[0].url.params
     assert (params["countrycodes"], params["bounded"], params["format"]) == ("kz", "1", "jsonv2")
@@ -115,7 +115,7 @@ def test_nominatim_refusal_stops_the_run(tmp_path, caplog):
     items = [vacancy("a-1", "ул. Абая 1"), vacancy("a-2", "ул. Абая 2")]
     with caplog.at_level(logging.WARNING):
         stats = locate(items, tmp_path, client)
-    assert len(asked) == 1 and stats["asked"] == 0 and "HTTP 429" in caplog.text
+    assert len(asked) == 1 and stats["asked"] == 0 and stats["stopped"] == "HTTP 429" and "HTTP 429" in caplog.text
     assert json.loads((tmp_path / "geocode.json").read_text("utf-8")) == {}  # спросим в следующий прогон
 
 
@@ -125,7 +125,7 @@ def test_zero_limit_uses_the_cache_without_network(tmp_path, monkeypatch):
     monkeypatch.setattr(httpx, "Client", None)  # клиент не создаётся
     items = [vacancy("a-1", "ул. Абая 1"), vacancy("a-2", "ул. Абая 2")]
     stats = geocode.locate(items, tmp_path, NOW)
-    assert stats == {"addresses": 2, "cached": 1, "asked": 0, "found": 1}
+    assert stats == {"addresses": 2, "cached": 1, "asked": 0, "found": 1, "failed": 0}
     assert (items[0].lat, items[1].lat) == (HOUSE[0], None)
 
 
@@ -185,3 +185,59 @@ def test_hh_vacancy_without_point_keeps_the_osm_one_until_hh_gives_its_own(tmp_p
     assert run(None) == (*HOUSE, "osm") and len(asked) == 1  # hh не разбирается заново: точка лежит в карточке
     own = {**raw, "address": {"raw": "Алматы, улица Абая, 150", "lat": 43.2401, "lng": 76.9156}}
     assert run([hh.to_vacancy(own)]) == (43.2401, 76.9156, "hh")  # точка самого hh главнее
+
+
+def flaky(answers):
+    """Клиент, у которого ответы по очереди: Response, исключение httpx или функция от запроса."""
+    asked = []
+
+    def handle(request):
+        asked.append(request.url.params["q"])
+        answer = answers.pop(0)
+        if isinstance(answer, Exception):
+            raise answer
+        return answer
+
+    return asked, httpx.Client(transport=httpx.MockTransport(handle))
+
+
+def test_timeout_is_retried_once_and_then_left_for_the_next_run(tmp_path):
+    waits = []
+    timeout = httpx.ReadTimeout("slow")
+    asked, client = flaky([timeout, timeout, httpx.Response(200, json=place(*HOUSE))])
+    items = [vacancy("a-1", "ул. Абая 1", posted="2026-11-04T11:00:00+00:00"), vacancy("a-2", "ул. Абая 2")]
+    stats = geocode.locate(items, tmp_path, NOW, client=client, sleep=waits.append, limit=60)
+    assert asked == ["ул. Абая 1, Алматы", "ул. Абая 1, Алматы", "ул. Абая 2, Алматы"]
+    assert waits == [geocode.PAUSE, geocode.RETRY_AFTER, geocode.PAUSE]
+    assert (stats["asked"], stats["failed"], stats["found"], "stopped" in stats) == (1, 1, 1, False)
+    assert (items[0].lat, items[1].lat) == (None, HOUSE[0])
+    assert list(json.loads((tmp_path / "geocode.json").read_text("utf-8"))) == ["ул. абая 2, алматы"]
+
+
+def test_server_error_then_answer_counts_as_asked(tmp_path):
+    asked, client = flaky([httpx.Response(503), httpx.Response(200, json=place(*HOUSE))])
+    items = [vacancy("a-1", "ул. Абая 1")]
+    stats = locate(items, tmp_path, client)
+    assert len(asked) == 2 and (stats["asked"], stats["failed"]) == (1, 0) and items[0].lat == HOUSE[0]
+
+
+def test_nominatim_down_for_three_addresses_stops_the_run(tmp_path, caplog):
+    asked, client = flaky([httpx.Response(502)] * 6)
+    items = [vacancy(f"a-{n}", f"ул. Абая {n}") for n in range(1, 6)]
+    with caplog.at_level(logging.WARNING):
+        stats = locate(items, tmp_path, client)
+    assert len(asked) == 6 and stats["failed"] == 3 and stats["stopped"] == "HTTP 502 у 3 адресов подряд"
+    assert "HTTP 502" in caplog.text and json.loads((tmp_path / "geocode.json").read_text("utf-8")) == {}
+
+
+def test_bad_request_is_a_miss(tmp_path):
+    asked, client = flaky([httpx.Response(400, json={"error": "bad"})])
+    stats = locate([vacancy("a-1", "ул. Абая 1")], tmp_path, client)
+    assert len(asked) == 1 and stats["asked"] == 1
+    assert json.loads((tmp_path / "geocode.json").read_text("utf-8"))["ул. абая 1, алматы"]["p"] is None
+
+
+def test_summary_for_the_run_annotation():
+    stats = {"addresses": 5, "cached": 2, "asked": 2, "found": 3, "failed": 1}
+    assert geocode.summary(stats) == "адресов 5, из кеша 2, запросов 2, с точкой 3, без ответа 1"
+    assert geocode.summary({**stats, "stopped": "HTTP 429"}).endswith("; остановлен: HTTP 429")

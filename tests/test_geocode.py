@@ -6,6 +6,7 @@ import httpx
 
 from vacante import collect, geocode
 from vacante.models import RawPost, Vacancy
+from vacante.sources import hh
 from vacante.site import appfeed
 
 NOW = datetime(2026, 11, 4, 12, tzinfo=timezone.utc)
@@ -54,10 +55,11 @@ def test_nothing_to_look_up():
     assert geocode.query(vacancy("a", "Есильский район", city="astana")) is None  # ни дома, ни ТЦ: точки нет
     assert geocode.query(vacancy("a", None)) is None
     assert geocode.query(vacancy("a", "ул. Сыганак, 2", city=None)) is None
-    assert geocode.query(vacancy("hh-1", "Абая, 150", source="hh")) is None  # у hh точку ставит сам hh
-    placed = vacancy("a", "ул. Сыганак, 2")
-    placed.lat, placed.lon = HOUSE
+    placed = vacancy("hh-1", "улица Абая, 150", source="hh")
+    placed.lat, placed.lon = HOUSE  # точку поставил сам hh
     assert geocode.query(placed) is None
+    # hh точку не поставил: ищем по адресу, как у вакансий из каналов
+    assert geocode.query(vacancy("hh-2", "улица Абая, 150", source="hh")) == "улица Абая, 150, Алматы"
 
 
 def test_address_is_asked_once_and_then_comes_from_the_cache(tmp_path):
@@ -163,3 +165,23 @@ def test_channel_vacancy_keeps_its_point_through_collect_runs(tmp_path):
     assert len(asked) == 1 and [(v.id, v.lat, v.lon, v.geo) for v in saved] == [("chan_a-1", *HOUSE, "osm")]
     data = appfeed.item(saved[0], "https://vacante.kz", NOW, {})
     assert (data["lat"], data["lon"], data["osm"]) == (*HOUSE, True)
+
+
+def test_hh_vacancy_without_point_keeps_the_osm_one_until_hh_gives_its_own(tmp_path):
+    config = tmp_path / "channels.yaml"
+    config.write_text("channels: []\n", "utf-8")
+    raw = {"id": "15", "name": "Официант", "area": {"id": "160", "name": "Алматы"},
+           "published_at": "2026-11-04T10:00:00+0500", "alternate_url": "https://hh.kz/vacancy/15",
+           "address": {"raw": "Алматы, улица Абая, 150"}}
+    asked, client = nominatim({"улица Абая, 150, Алматы": place(*HOUSE)})
+
+    def run(found):
+        collect.run(config, tmp_path / "data", fetch=None, now=NOW, from_hh=lambda state, now: found,
+                    locate=lambda vs, d, now: locate(vs, d, client, now=now))
+        [saved] = [Vacancy.from_dict(v) for v in json.loads((tmp_path / "data" / "vacancies.json").read_text("utf-8"))]
+        return saved.lat, saved.lon, saved.geo
+
+    assert run([hh.to_vacancy(raw)]) == (*HOUSE, "osm")
+    assert run(None) == (*HOUSE, "osm") and len(asked) == 1  # hh не разбирается заново: точка лежит в карточке
+    own = {**raw, "address": {"raw": "Алматы, улица Абая, 150", "lat": 43.2401, "lng": 76.9156}}
+    assert run([hh.to_vacancy(own)]) == (43.2401, 76.9156, "hh")  # точка самого hh главнее

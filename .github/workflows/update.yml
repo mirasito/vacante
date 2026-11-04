@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
+    inputs:
+      geocode_limit:
+        description: "Сколько адресов искать на карте в этот прогон (пусто — как обычно, 60)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -58,8 +63,9 @@ jobs:
           HH_CLIENT_ID: ${{ secrets.HH_CLIENT_ID }}
           HH_CLIENT_SECRET: ${{ secrets.HH_CLIENT_SECRET }}
           HH_USER_AGENT: ${{ vars.HH_USER_AGENT }}
-          # Точки адресов вакансий из каналов по OpenStreetMap (vacante/geocode.py): запросов за прогон, 0 выключает
-          GEOCODE_LIMIT: ${{ vars.GEOCODE_LIMIT || '60' }}
+          # Точки адресов вакансий по OpenStreetMap (vacante/geocode.py): запросов за прогон, 0 выключает.
+          # Разово больше — поле geocode_limit при ручном запуске; запросы всё равно не чаще раза в секунду
+          GEOCODE_LIMIT: ${{ inputs.geocode_limit || vars.GEOCODE_LIMIT || '60' }}
         run: python -m vacante collect --data-dir data
 
       # Адрес сайта из настроек Pages: <owner>.github.io/<repo>, а после подключения домена сам домен

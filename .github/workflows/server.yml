@@ -1,8 +1,12 @@
 # Сервер Vacante в Казахстане (server/): профили соискателей, отклики, напоминания.
 # На каждый PR проверяет типы, тесты и скрипты, а после push в main выкладывает сервер,
-# если есть секреты SERVER_HOST (IP сервера) и SERVER_PASSWORD (пароль root из письма хостинга).
-# Первая выкладка входит по паролю, кладёт ключ выкладки и выключает вход по паролю.
-# Дальше вход только по ключу; ключ каждый раз выводится из того же секрета (server/deploy/keys.py).
+# если есть секрет SERVER_HOST (IP сервера) и способ первого входа:
+# - SERVER_PASSWORD: пароль root из письма хостинга;
+# - или SERVER_SSH_KEY (закрытый ключ пользователя ubuntu, как в Yandex Cloud; другой пользователь —
+#   переменная SERVER_USER) и SERVER_SECRET (длинная случайная строка, из неё выводятся ключи).
+# Первая выкладка кладёт ключ выкладки и выключает вход по паролю, а ключ из SERVER_SSH_KEY убирает
+# с сервера. Дальше вход только по ключу выкладки; он каждый раз выводится из того же секрета
+# (server/deploy/keys.py), поэтому секрет после первой выкладки не меняют.
 name: Сервер
 
 on:
@@ -47,16 +51,23 @@ jobs:
     env:
       SERVER_HOST: ${{ secrets.SERVER_HOST }}
       SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+      SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+      SERVER_SECRET: ${{ secrets.SERVER_SECRET }}
+      SERVER_USER: ${{ vars.SERVER_USER || 'ubuntu' }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       KEYS: ${{ github.workspace }}/.keys
     steps:
       - name: Проверить секреты
         id: secrets
         run: |
-          if [ -n "$SERVER_HOST" ] && [ -n "$SERVER_PASSWORD" ] && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
+          if [ -n "$SERVER_SSH_KEY" ] && [ -z "$SERVER_SECRET" ]; then
+            echo "::error::Для первого входа по ключу нужен ещё секрет SERVER_SECRET: длинная случайная строка, из неё выводятся ключи выкладки и резервных копий"
+            exit 1
+          fi
+          if [ -n "$SERVER_HOST" ] && { [ -n "$SERVER_PASSWORD" ] || [ -n "$SERVER_SSH_KEY" ]; } && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
             echo "ready=true" >> "$GITHUB_OUTPUT"
           else
-            echo "::notice::Нет секретов SERVER_HOST и SERVER_PASSWORD, выкладку сервера пропускаю"
+            echo "::notice::Нет секретов SERVER_HOST и SERVER_PASSWORD (или SERVER_SSH_KEY), выкладку сервера пропускаю"
           fi
 
       - uses: actions/checkout@v4
@@ -74,6 +85,10 @@ jobs:
             echo "::error::В секрете SERVER_HOST должен быть только IP-адрес сервера, например 185.22.67.10"
             exit 1
           fi
+          if [[ ! $SERVER_USER =~ ^[a-z_][a-z0-9_-]*$ ]]; then
+            echo "::error::В переменной SERVER_USER должно быть имя пользователя, например ubuntu"
+            exit 1
+          fi
           pip install --quiet "cryptography>=42"
           backup_key=$(python server/deploy/keys.py "$KEYS" "$SERVER_HOST")
           echo "::add-mask::$backup_key"
@@ -86,6 +101,13 @@ jobs:
             "root@$SERVER_HOST" "\$@"
           EOF
           chmod 700 "$KEYS/ssh"
+          if [ -n "$SERVER_SSH_KEY" ]; then
+            (umask 077 && printf '%s\n' "$SERVER_SSH_KEY" > "$KEYS/first_key")
+            if ! ssh-keygen -y -P '' -f "$KEYS/first_key" > "$KEYS/first_key.pub"; then
+              echo "::error::В секрете SERVER_SSH_KEY не закрытый ключ SSH без пароля. Нужен весь ключ, от -----BEGIN до -----END"
+              exit 1
+            fi
+          fi
 
       - name: Доступ к серверу
         if: steps.secrets.outputs.ready
@@ -94,49 +116,63 @@ jobs:
             echo "Вход по ключу работает"
             exit 0
           fi
-          echo "Первый вход: по паролю кладу ключ выкладки, потом выключаю вход по паролю"
-          sudo apt-get update -q >/dev/null
-          sudo apt-get install -y -q sshpass >/dev/null
-          export SSHPASS="$SERVER_PASSWORD"
           first=(-o UserKnownHostsFile="$KEYS/known_hosts.first" -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20)
           with_key=(-i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes "${first[@]}")
-          password_only=(-o PubkeyAuthentication=no -o "PreferredAuthentications=password,keyboard-interactive")
-          if ! sshpass -e ssh "${first[@]}" "${password_only[@]}" "root@$SERVER_HOST" \
-              'umask 077; mkdir -p /root/.ssh; key=$(cat); touch /root/.ssh/authorized_keys; grep -qxF "$key" /root/.ssh/authorized_keys || printf "%s\n" "$key" >> /root/.ssh/authorized_keys' \
-              < "$KEYS/deploy_ed25519.pub"; then
-            echo "::error::Не получилось войти на сервер как root по паролю. Проверьте секреты SERVER_HOST и SERVER_PASSWORD (пароль root из письма хостинга)"
-            exit 1
+          # Ключ выкладки, ключ сервера и настройки SSH ставит server/deploy/ssh-setup.sh
+          tar -C "$KEYS" -cf "$KEYS/setup.tar" deploy_ed25519.pub host_ed25519 host_ed25519.pub \
+            -C "$GITHUB_WORKSPACE/server/deploy" 01-vacante.conf ssh-setup.sh
+          # shellcheck disable=SC2016 # переменные раскрываются на сервере
+          setup='d=$(mktemp -d) && tar -xf - -C "$d" && $SUDO bash "$d/ssh-setup.sh" "$d"; s=$?; rm -rf "$d"; exit $s'
+          if [ -n "$SERVER_SSH_KEY" ]; then
+            echo "Первый вход: по ключу из SERVER_SSH_KEY как $SERVER_USER ставлю ключ выкладки для root"
+            boot=(-i "$KEYS/first_key" -o IdentitiesOnly=yes -o BatchMode=yes "${first[@]}")
+            if ! ssh "${boot[@]}" "$SERVER_USER@$SERVER_HOST" "SUDO='sudo -n'; $setup" < "$KEYS/setup.tar"; then
+              echo "::error::Не получилось войти как $SERVER_USER по ключу из SERVER_SSH_KEY или выполнить sudo. Проверьте SERVER_HOST и SERVER_SSH_KEY"
+              exit 1
+            fi
+          else
+            echo "Первый вход: по паролю кладу ключ выкладки, потом выключаю вход по паролю"
+            sudo apt-get update -q >/dev/null
+            sudo apt-get install -y -q sshpass >/dev/null
+            export SSHPASS="$SERVER_PASSWORD"
+            password_only=(-o PubkeyAuthentication=no -o "PreferredAuthentications=password,keyboard-interactive")
+            if ! sshpass -e ssh "${first[@]}" "${password_only[@]}" "root@$SERVER_HOST" \
+                'umask 077; mkdir -p /root/.ssh; key=$(cat); touch /root/.ssh/authorized_keys; grep -qxF "$key" /root/.ssh/authorized_keys || printf "%s\n" "$key" >> /root/.ssh/authorized_keys' \
+                < "$KEYS/deploy_ed25519.pub"; then
+              echo "::error::Не получилось войти на сервер как root по паролю. Проверьте секреты SERVER_HOST и SERVER_PASSWORD (пароль root из письма хостинга)"
+              exit 1
+            fi
+            # Ключ должен работать до того, как выключим пароли, иначе можно потерять доступ
+            if ! ssh "${with_key[@]}" "root@$SERVER_HOST" true; then
+              echo "::error::Ключ выкладки положен, но вход по нему не работает. Вход по паролю не трогал"
+              exit 1
+            fi
+            ssh "${with_key[@]}" "root@$SERVER_HOST" "SUDO=; $setup" < "$KEYS/setup.tar"
           fi
-          # Ключ должен работать до того, как выключим пароли, иначе можно потерять доступ
-          if ! ssh "${with_key[@]}" "root@$SERVER_HOST" true; then
-            echo "::error::Ключ выкладки положен, но вход по нему не работает. Вход по паролю не трогал"
-            exit 1
-          fi
-          tar -C "$KEYS" -cf - host_ed25519 host_ed25519.pub -C "$GITHUB_WORKSPACE/server/deploy" 01-vacante.conf \
-            | ssh "${with_key[@]}" "root@$SERVER_HOST" 'set -e
-              d=$(mktemp -d); tar -xf - -C "$d"
-              cp -a /etc/ssh/ssh_host_ed25519_key "$d/old" 2>/dev/null || true
-              cp -a /etc/ssh/ssh_host_ed25519_key.pub "$d/old.pub" 2>/dev/null || true
-              install -m 600 "$d/host_ed25519" /etc/ssh/ssh_host_ed25519_key
-              install -m 644 "$d/host_ed25519.pub" /etc/ssh/ssh_host_ed25519_key.pub
-              install -m 644 "$d/01-vacante.conf" /etc/ssh/sshd_config.d/01-vacante.conf
-              mkdir -p /run/sshd
-              if ! sshd -t; then
-                rm -f /etc/ssh/sshd_config.d/01-vacante.conf
-                if [ -f "$d/old" ]; then cp -a "$d/old" /etc/ssh/ssh_host_ed25519_key; cp -a "$d/old.pub" /etc/ssh/ssh_host_ed25519_key.pub; fi
-                rm -rf "$d"
-                echo "Новые настройки SSH не прошли проверку, вернул прежние" >&2
-                exit 1
-              fi
-              rm -rf "$d"
-              systemctl restart ssh 2>/dev/null || systemctl restart sshd'
           sleep 3
-          "$KEYS/ssh" true
-          if sshpass -e ssh -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+          if ! "$KEYS/ssh" true; then
+            echo "::error::Настройки SSH поставлены, но root не входит по ключу выкладки. Ключ из SERVER_SSH_KEY не трогал"
+            exit 1
+          fi
+          if [ -z "$SERVER_SSH_KEY" ] && sshpass -e ssh -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
               "${password_only[@]}" "root@$SERVER_HOST" true 2>/dev/null; then
             echo "::warning::Вход по паролю всё ещё работает: настройки хостинга перекрывают наши. Напишите Claude в тред"
           fi
-          echo "Готово: вход по паролю выключен, ключ сервера закреплён"
+          echo "Готово: вход только по ключу выкладки, ключ сервера закреплён"
+
+      - name: Убрать ключ первого входа
+        if: steps.secrets.outputs.ready && env.SERVER_SSH_KEY != ''
+        run: |
+          # Ключ из SERVER_SSH_KEY выкладке больше не нужен и мог засветиться: убираем его у всех
+          # пользователей сервера. Каждый раз, пока секрет есть: шаг ничего не ломает, если ключа уже нет
+          awk '{ print $1 " " $2 }' "$KEYS/first_key.pub" | "$KEYS/ssh" 'key=$(cat)
+            for f in /root/.ssh/authorized_keys /home/*/.ssh/authorized_keys; do
+              [ -f "$f" ] || continue
+              grep -vF "$key" "$f" > "$f.new" || true
+              cat "$f.new" > "$f"
+              rm -f "$f.new"
+            done'
+          echo "Ключа из SERVER_SSH_KEY на сервере нет, секрет SERVER_SSH_KEY можно удалить"
 
       - name: Установка и обновление системы
         if: steps.secrets.outputs.ready

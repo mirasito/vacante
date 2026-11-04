@@ -264,6 +264,13 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktau:raw": {
+  "name": "Raw",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "aktau:renaissance by sulo": {
   "name": "Renaissance by Sulo",
   "city": "aktau",
@@ -552,6 +559,20 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "aktau:дина": {
+  "name": "ДИНА",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00",
+  "instagram": "dinamarket_aktau",
+  "website": "http://dinamarket.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001028893673",
+  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:ділдә": {
   "name": "Ділдә",
   "city": "aktau",
@@ -708,6 +729,13 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "mir_kosmetiki_aktau_",
   "source": "https://2gis.kz/aktau/firm/70000001039732611"
+ },
+ "aktau:мотерм": {
+  "name": "МОТЕРМ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
  },
  "aktau:мята": {
   "name": "МЯТА",
@@ -3498,6 +3526,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:demi calze деми калзе": {
+  "name": "Demi Calze (Деми Калзе)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
  },
  "almaty:deus tour": {
   "name": "DEUS TOUR",
@@ -8954,6 +8989,13 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "almaty:байсат": {
+  "name": "Байсат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "almaty:байтукенова": {
   "name": "БАЙТУКЕНОВА",
   "city": "almaty",
@@ -10781,6 +10823,13 @@
    "website"
   ]
  },
+ "almaty:ма юник": {
+  "name": "МА Юник",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "almaty:мадина": {
   "name": "Мадина",
   "city": "almaty",
@@ -11656,6 +11705,20 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "almaty:рустам": {
+  "name": "Рустам",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
+ "almaty:садыков": {
+  "name": "Садыков",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "almaty:сак савромат тараз": {
   "name": "САК-САВРОМАТ-ТАРАЗ",
   "city": "almaty",
@@ -12372,6 +12435,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
+ },
+ "almaty:у тети гули": {
+  "name": "У тети Гули",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
  },
  "almaty:университет синергия казахстан": {
   "name": "Университет Синергия Казахстан",
@@ -13534,6 +13604,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:best chicken astana": {
+  "name": "BEST CHICKEN ASTANA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00",
+  "instagram": "best_chicken_astana",
+  "source": "https://2gis.kz/astana/firm/70000001082029286"
  },
  "astana:bfuria": {
   "name": "BFuria",
@@ -16651,6 +16730,13 @@
   "avatar": "aef0f8cad7edc525.jpg",
   "avatar_source": "website"
  },
+ "astana:trifolium ns": {
+  "name": "Trifolium NS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "astana:true trade": {
   "name": "True Trade",
   "city": "astana",
@@ -19348,6 +19434,13 @@
    "website"
   ]
  },
+ "astana:сакеновна": {
+  "name": "Сакеновна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "astana:салават": {
   "name": "Салават",
   "city": "astana",
@@ -21087,6 +21180,13 @@
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
  },
+ "atyrau:нурай термо": {
+  "name": "НУРАЙ ТЕРМО",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "atyrau:продавец консультант с": {
   "name": "ПРОДАВЕЦ-консультант. С",
   "city": "atyrau",
@@ -21214,6 +21314,19 @@
   ],
   "avatar": "989c4c0eddcffd25.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:arbuz group арбуз груп": {
+  "name": "Arbuz Group (Арбуз Груп)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00",
+  "website": "https://arbuz.kz/",
+  "source": "https://mergr.com/company/arbuz-group",
+  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:arcada": {
   "name": "ARCADA",
@@ -21590,6 +21703,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
+ },
+ "karaganda:newton kazakhstan": {
+  "name": "Newton Kazakhstan",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00",
+  "instagram": "newton.kazakhstan",
+  "website": "https://newtonacademy.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001084302568",
+  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:oxflo": {
   "name": "OXFLO",
@@ -25423,6 +25550,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "petropavlovsk:фронт агро": {
+  "name": "Фронт Агро",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "petropavlovsk:фурманова светлана евгеньевна": {
   "name": "Фурманова Светлана Евгеньевна",
   "city": "petropavlovsk",
@@ -27864,6 +27998,15 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "uralsk:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00",
+  "instagram": "kfc_kz",
+  "source": "https://2gis.kz/uralsk/firm/70000001030272754"
+ },
  "uralsk:caspian offshore construction realty": {
   "name": "Caspian Offshore Construction Realty",
   "city": "uralsk",
@@ -28547,6 +28690,27 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:freedom telecom operations": {
+  "name": "Freedom Telecom Operations",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00",
+  "instagram": "ftelecomkz",
+  "website": "https://business.ftel.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001054928316",
+  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "ust-kamenogorsk:golden trade": {
+  "name": "GOLDEN TRADE",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
+ },
  "ust-kamenogorsk:green house limited": {
   "name": "Green House Limited",
   "city": "ust-kamenogorsk",
@@ -28973,6 +29137,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:евразийский банк ао": {
+  "name": "Евразийский банк, АО",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T00:43:58+00:00"
  },
  "ust-kamenogorsk:заман": {
   "name": "Заман",

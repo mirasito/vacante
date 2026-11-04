@@ -52,6 +52,10 @@ def merge(existing: list[Vacancy], incoming: list[Vacancy]) -> list[Vacancy]:
     words = {v.id: word_set(v.text) for v in result}
     for new in incoming:
         if new.id in by_id:
+            # Пост перечитали заново: сохранённой до поиска контактов карточке достаются его контакты
+            known = by_id[new.id]
+            if known.id == new.id and not known.contact and new.contact:
+                known.contact = new.contact
             continue
         twin = by_fp.get(new.fingerprint)
         if twin is None:

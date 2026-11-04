@@ -1,7 +1,7 @@
 // Общие кусочки интерфейса: экран, кнопки, чипы, флажки, поля ввода.
 import type { ReactNode } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View, type TextInputProps } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { ActivityIndicator, Platform, Pressable, StyleSheet, Text, TextInput, View, type TextInputProps } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import * as i18n from './i18n';
 import type { Colors } from './theme';
@@ -13,6 +13,12 @@ export function Screen({ c, children }: { c: Colors; children: ReactNode }) {
       <View style={styles.column}>{children}</View>
     </SafeAreaView>
   );
+}
+
+/** Отступы внутри Modal. На телефоне окну нужен свой провайдер. В вебе свой провайдер мерит себя
+ *  посреди выезда окна и даёт снизу отступ в высоту экрана, поэтому там берём внешний. */
+export function ModalArea({ children }: { children: ReactNode }) {
+  return Platform.OS === 'web' ? <>{children}</> : <SafeAreaProvider>{children}</SafeAreaProvider>;
 }
 
 export function Loading({ c, text }: { c: Colors; text: string }) {

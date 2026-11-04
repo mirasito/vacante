@@ -1,3 +1,5 @@
+import type { ApplicationPatch, ContactKind, Method } from './server';
+
 export type Lang = 'ru' | 'kk';
 
 export interface Vacancy {
@@ -21,6 +23,8 @@ export interface Vacancy {
   source_url?: string;
   text?: string;
   avatar?: string;
+  /** Какие контакты есть в исходном посте: по ним окно «Как откликнуться?» показывает кнопки. */
+  contact?: ContactKind[];
 }
 
 export interface City {
@@ -51,7 +55,13 @@ export interface Index {
   roles?: Role[];
 }
 
-export interface Liked extends Vacancy {
+/**
+ * Понравившаяся вакансия на телефоне. Без профиля это и есть отклик: стадия, способ и заметка
+ * живут только здесь, а с профилем всё переезжает на сервер (server.importApplications).
+ */
+export interface Liked extends Vacancy, ApplicationPatch {
   city: string;
   liked_at: string;
+  method?: Method | null;
+  sent_at?: string | null;
 }

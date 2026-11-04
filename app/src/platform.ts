@@ -93,6 +93,12 @@ export function haptic(kind: 'light' | 'medium' = 'light') {
 }
 
 export function openUrl(url: string) {
+  // Звонок: Telegram открывает только http(s), поэтому tel: отдаём самому окну
+  if (/^tel:/.test(url)) {
+    if (isWeb) window.location.href = url;
+    else Linking.openURL(url).catch(() => undefined);
+    return;
+  }
   const app = telegram();
   if (app) {
     if (/^https:\/\/t\.me\//.test(url)) app.openTelegramLink(url);
@@ -126,6 +132,40 @@ export async function shareLink(text: string, url: string) {
   await Share.share({ message: `${text}\n${url}` }).catch(() => undefined);
 }
 
+/**
+ * Копирует текст. Вызывать прямо в обработчике нажатия: браузеры разрешают запись в буфер
+ * только в ответ на действие человека. true, если получилось.
+ */
+export function copyText(text: string): boolean {
+  if (!isWeb) return false;
+  try {
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).catch(() => copyByCommand(text));
+      return true;
+    }
+  } catch {
+    // ниже запасной способ
+  }
+  return copyByCommand(text);
+}
+
+function copyByCommand(text: string): boolean {
+  try {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    const ok = document.execCommand('copy');
+    area.remove();
+    return ok;
+  } catch {
+    return false;
+  }
+}
+
 export const whatsapp = (text: string, url: string) =>
   openUrl(`https://wa.me/?text=${encodeURIComponent(`${text}\n${url}`)}`);
 
@@ -153,10 +193,14 @@ export function launchCity(): string | undefined {
   return value && value !== 'beta' && /^[a-z][a-z-]{1,30}$/.test(value) ? value : undefined;
 }
 
-/** Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile. */
-export function launchTab(): 'profile' | undefined {
+/**
+ * Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile,
+ * а сообщения об откликах — с ?tab=applications.
+ */
+export function launchTab(): 'profile' | 'applications' | undefined {
   if (!isWeb) return undefined;
-  return new URLSearchParams(window.location.search).get('tab') === 'profile' ? 'profile' : undefined;
+  const tab = new URLSearchParams(window.location.search).get('tab');
+  return tab === 'profile' || tab === 'applications' ? tab : undefined;
 }
 
 /**

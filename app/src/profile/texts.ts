@@ -284,26 +284,23 @@ const MONTHS: Record<Lang, string[]> = {
   kk: ['қаңтар', 'ақпан', 'наурыз', 'сәуір', 'мамыр', 'маусым', 'шілде', 'тамыз', 'қыркүйек', 'қазан', 'қараша', 'желтоқсан'],
 };
 
-/** День, месяц и время в Алматы. Если в Intl нет часовых поясов, считаем по UTC+5. */
-function almaty(ms: number) {
-  try {
-    const parts = new Intl.DateTimeFormat('en-GB', {
-      timeZone: 'Asia/Almaty',
-      day: 'numeric',
-      month: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hourCycle: 'h23',
-    }).formatToParts(new Date(ms));
-    const get = (type: string) => Number(parts.find((p) => p.type === type)?.value);
-    const out = { day: get('day'), month: get('month') - 1, hour: get('hour'), minute: get('minute') };
-    if (Object.values(out).every(Number.isFinite)) return out;
-  } catch {
-    // ниже запасной вариант
-  }
+/**
+ * День, месяц и время в Казахстане. С 1 марта 2024 года вся страна живёт по UTC+5 круглый год,
+ * поэтому считаем сдвигом, а не через Intl: в старых телефонах база поясов ещё помнит Алматы на UTC+6.
+ */
+export function almaty(ms: number) {
   const d = new Date(ms + 5 * 3600_000);
-  return { day: d.getUTCDate(), month: d.getUTCMonth(), hour: d.getUTCHours(), minute: d.getUTCMinutes() };
+  return {
+    year: d.getUTCFullYear(),
+    month: d.getUTCMonth(),
+    day: d.getUTCDate(),
+    weekday: d.getUTCDay(),
+    hour: d.getUTCHours(),
+    minute: d.getUTCMinutes(),
+  };
 }
+
+export { MONTHS };
 
 /** «4 ноября, 11:00». Названия месяцев свои: казахских в Intl часто нет, вместо них выходит «M11». */
 export function when(iso: string, lang: Lang): string {

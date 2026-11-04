@@ -11,7 +11,7 @@ import httpx
 import yaml
 
 from vacante import direct as direct_jobs
-from vacante import parse, quality
+from vacante import contacts, parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain, split_title
@@ -22,8 +22,15 @@ log = logging.getLogger(__name__)
 
 
 def parser_version() -> str:
-    """Меняется при любой правке правил разбора."""
-    return hashlib.sha1(Path(parse.__file__).read_bytes()).hexdigest()[:12]
+    """Меняется при любой правке правил разбора или поиска контактов: тогда каналы перечитываются."""
+    rules = Path(parse.__file__).read_bytes() + Path(contacts.__file__).read_bytes()
+    return hashlib.sha1(rules).hexdigest()[:12]
+
+
+def with_contact(vacancy: Vacancy, post: RawPost) -> Vacancy:
+    """Виды контактов берём из исходного поста: в сохранённом тексте номеров и ссылок уже нет."""
+    vacancy.contact = contacts.kinds(post.text, post.links, post.channel)
+    return vacancy
 
 
 def load_channels(config_path: Path) -> list[dict]:
@@ -49,6 +56,7 @@ def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
                 dropped[old.id] = reason
             continue
         new.posted_at, new.fingerprint, new.also_seen_in = old.posted_at, old.fingerprint, old.also_seen_in
+        new.contact = old.contact  # из очищенного текста контакты не узнать, они были в исходном посте
         result.append(new)
     return result
 
@@ -92,7 +100,7 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
                 vacancy, reason = explain(post)
                 journal.add(post, vacancy, reason)
                 if vacancy:
-                    incoming.append(vacancy)
+                    incoming.append(with_contact(vacancy, post))
                 else:
                     item = quality.rejected_item(post, reason)
                     rejected[item["id"]] = item

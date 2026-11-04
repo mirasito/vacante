@@ -176,6 +176,9 @@ def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
     # Видеокружок: что хранится и как его убрать
     assert "Видеокружок до минуты" in ru and "«Удалить кружок»" in ru
     assert "бейнехабарды бот чатында" in kk and "«Бейнехабарды жою»" in kk
+    # Отклики: номер работодателя берётся из поста в момент отклика и не хранится
+    assert "<h2>Отклики</h2>" in ru and "Мы его не сохраняем" in ru and "работает 60 дней" in ru
+    assert "<h2>Өтінімдер</h2>" in kk and "Біз оны сақтамаймыз" in kk and "60 күн жұмыс істейді" in kk
     home = (out / "index.html").read_text("utf-8")
     assert 'href="/privacy/"' in home and 'href="/app/"' in home
     assert 'href="/kk/privacy/"' in (out / "kk" / "index.html").read_text("utf-8")

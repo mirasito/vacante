@@ -37,6 +37,8 @@ export function ProfileTab(props: {
   name: string;
   city?: string;
   backRef: { current: (() => boolean) | null };
+  /** Профиль создан или удалён: отклики переезжают на сервер или остаются на телефоне. */
+  onProfile?(has: boolean): void;
 }) {
   const { c, lang, index, backRef } = props;
   const t = P[lang];
@@ -98,6 +100,7 @@ export function ProfileTab(props: {
         onCancel={() => setMode('card')}
         onDone={(v, created) => {
           setView(v);
+          if (created) props.onProfile?.(true);
           setMode(created ? 'extras' : 'card');
         }}
       />
@@ -116,7 +119,10 @@ export function ProfileTab(props: {
       onChange={setView}
       onEdit={() => setMode('wizard')}
       onExtras={() => setMode('extras')}
-      onDeleted={() => setView(null)}
+      onDeleted={() => {
+        setView(null);
+        props.onProfile?.(false);
+      }}
     />
   );
 }

@@ -2,6 +2,15 @@
 // Превью ссылки в WhatsApp и Telegram видит только «Профиль кандидата в Vacante», без имени,
 // поисковики страницу не индексируют, сторонних скриптов и Метрики на ней нет.
 import type { Ctx } from "./app.ts";
+import {
+  answerable,
+  employerAnswer,
+  getApplication,
+  lastEmployerAnswer,
+  markSeen,
+  type Answer,
+  type ApplicationRow,
+} from "./applications.ts";
 import { html, raw, type Html } from "./html.ts";
 import { HttpError, route, type Reply, type Request, type Route } from "./http.ts";
 import {
@@ -16,7 +25,10 @@ import {
   type Lang,
 } from "./labels.ts";
 import type { Profile } from "./profile.ts";
-import { CODE_RE, findLink, getProfile, getVideo, profileUpdatedAt, recordView, type Link, type Video } from "./seekers.ts";
+import { RateLimit } from "./limits.ts";
+import { sendNews } from "./notify.ts";
+import { CODE_RE, findLink, getProfile, getVideo, iso, profileUpdatedAt, recordView, type Link, type Video } from "./seekers.ts";
+import { dateTimeLabel, DAY_MS, fromLocal, toLocalInput } from "./time.ts";
 import { duration, fileReply } from "./video.ts";
 import { join } from "node:path";
 
@@ -25,27 +37,6 @@ const PREVIEW_BOT =
   /bot|crawl|spider|preview|whatsapp|facebookexternalhit|facebot|vkshare|viber|skypeuripreview|slack|discord|embedly|yandex|google-|bingpreview|curl|wget|python|httpx|okhttp|java\//i;
 
 export const isPreviewBot = (ua: string | undefined) => !ua || PREVIEW_BOT.test(ua);
-
-/** Ограничение частоты по адресу, только в памяти: чужую ссылку не подобрать перебором. */
-export class RateLimit {
-  private hits = new Map<string, { start: number; points: number }>();
-  private readonly limit: number;
-  private readonly windowMs: number;
-  constructor(limit = 60, windowMs = 60_000) {
-    this.limit = limit;
-    this.windowMs = windowMs;
-  }
-  take(key: string, now: number, points = 1): boolean {
-    const hit = this.hits.get(key);
-    if (!hit || now - hit.start >= this.windowMs) {
-      if (this.hits.size > 10_000) this.hits.clear();
-      this.hits.set(key, { start: now, points });
-      return points <= this.limit;
-    }
-    hit.points += points;
-    return hit.points <= this.limit;
-  }
-}
 
 const T = {
   ru: {
@@ -71,6 +62,16 @@ const T = {
     updated: "Профиль обновлён",
     other: "Қазақша",
     watch: "▶ Смотреть кружок",
+    forVacancy: (title: string) => `Отклик на вакансию «${title}»`,
+    answerTitle: "Ответить кандидату",
+    answerAgain: "Изменить ответ",
+    when: "Дата и время собеседования, если уже знаете",
+    invite: "Пригласить на собеседование",
+    reject: "Не подходит",
+    answerNote: "Кандидат сразу получит ваш ответ в Telegram.",
+    invited: (when: string) => `✅ Вы пригласили кандидата на собеседование${when ? `: ${when}` : ""}.`,
+    rejected: "Вы ответили «Не подходит».",
+    badDate: "Проверьте дату: она уже прошла или слишком далеко.",
   },
   kk: {
     title: "Vacante-дегі үміткер профилі",
@@ -95,6 +96,16 @@ const T = {
     updated: "Профиль жаңартылды",
     other: "Русский",
     watch: "▶ Бейнехабарды көру",
+    forVacancy: (title: string) => `«${title}» бос орнына өтінім`,
+    answerTitle: "Үміткерге жауап беру",
+    answerAgain: "Жауапты өзгерту",
+    when: "Сұхбаттың күні мен уақыты, егер белгілі болса",
+    invite: "Сұхбатқа шақыру",
+    reject: "Сәйкес келмейді",
+    answerNote: "Үміткер жауабыңызды бірден Telegram-да алады.",
+    invited: (when: string) => `✅ Сіз үміткерді сұхбатқа шақырдыңыз${when ? `: ${when}` : ""}.`,
+    rejected: "Сіз «Сәйкес келмейді» деп жауап бердіңіз.",
+    badDate: "Күнін тексеріңіз: ол өтіп кеткен немесе тым алыс.",
   },
 };
 
@@ -123,6 +134,12 @@ dl{margin:0}dt{color:var(--quiet);font-size:13px;margin-top:10px}dd{margin:0;fon
 .phone{font-size:22px;font-weight:800;width:100%;margin:4px 0}
 .note{color:var(--quiet);font-size:14px}
 footer{margin:20px 4px;color:var(--quiet);font-size:14px}footer a{color:var(--accent)}
+.answer{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.field{display:block;margin:0 0 4px}.field span{display:block;color:var(--quiet);font-size:13px;margin-bottom:6px}
+.field input{width:100%;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+button.btn{cursor:pointer;font-family:inherit}
+.done{background:var(--pill);border-radius:14px;padding:12px 14px;font-weight:600;margin:16px 0 0}
+.error{color:#d33;font-weight:600}
 `);
 
 function page(lang: Lang, body: Html, other?: string): string {
@@ -168,6 +185,7 @@ function profileBody(
   lang: Lang,
   showPhone: boolean,
   updatedAt: string,
+  application?: { title: string; answer: Html },
 ): Html {
   const t = T[lang];
   const place = [cityName(p.city, lang), p.district].filter(Boolean).join(", ");
@@ -188,7 +206,7 @@ function profileBody(
 <a class="btn" href="tel:${p.phone}">${t.call}</a><a class="btn ghost" href="${wa}">WhatsApp</a>`
       : html`<a class="btn" href="${phoneUrl}" rel="nofollow">${t.showPhone}</a>`;
   return html`<section class="card">
-<p class="kicker">${t.candidate}</p>
+<p class="kicker">${application ? t.forVacancy(application.title) : t.candidate}</p>
 ${video?.file ? circle(link.code, video, t.watch) : ""}
 <div class="who"><div class="avatar" aria-hidden="true">${initials(p.name)}</div>
 <div><h1>${p.name}</h1><p class="place">${place}</p></div></div>
@@ -198,6 +216,7 @@ ${facts.map(([label, value]) => (value ? html`<dt>${label}</dt><dd>${value}</dd>
 ${p.about ? html`<dt>${t.about}</dt><dd class="about">${p.about}</dd>` : ""}
 </dl>
 <div class="contact" id="contact">${contact}</div>
+${application?.answer ?? ""}
 <p class="note">${t.updated}: ${updatedAt.slice(0, 10).split("-").reverse().join(".")}</p>
 </section>
 <footer><a href="https://t.me/${ctx.config.botUsername}?start=post">${t.post}</a></footer>`;
@@ -209,6 +228,30 @@ ${p.about ? html`<dt>${t.about}</dt><dd class="about">${p.about}</dd>` : ""}
  */
 function circle(code: string, video: Video, watch: string): Html {
   return html`<a class="circle" href="/${code}/video.mp4">${video.poster ? html`<img src="/${code}/poster.jpg" alt="">` : ""}<span class="play">${watch} · ${duration(video.duration)}</span></a>`;
+}
+
+/**
+ * Ответ работодателя без скриптов: обычная форма с полем даты и двумя кнопками.
+ * Время в поле — время Казахстана, как на телефоне работодателя.
+ */
+function answerBlock(code: string, app: ApplicationRow, last: { stage: string } | undefined, lang: Lang, now: number, error: boolean): Html {
+  const t = T[lang];
+  const done =
+    last?.stage === "rejected"
+      ? html`<p class="done">${t.rejected}</p>`
+      : last && (last.stage === "invited" || last.stage === "interview")
+        ? html`<p class="done">${t.invited(app.interview_at ? dateTimeLabel(Date.parse(app.interview_at), lang) : "")}</p>`
+        : "";
+  if (!answerable(app.stage)) return html`${done}`;
+  const action = `/${code}/answer${lang === "kk" ? "?lang=kk" : ""}`;
+  const value = app.interview_at && Date.parse(app.interview_at) > now ? toLocalInput(Date.parse(app.interview_at)) : "";
+  return html`${done}<form class="answer" id="answer" method="post" action="${action}">
+<p class="kicker">${done ? t.answerAgain : t.answerTitle}</p>
+${error ? html`<p class="error">${t.badDate}</p>` : ""}
+<label class="field"><span>${t.when}</span><input type="datetime-local" name="at" value="${value}" min="${toLocalInput(now)}" max="${toLocalInput(now + 90 * DAY_MS)}"></label>
+<div class="contact"><button class="btn" name="answer" value="invite">${t.invite}</button><button class="btn ghost" name="answer" value="reject">${t.reject}</button></div>
+<p class="note">${t.answerNote}</p>
+</form>`;
 }
 
 function gone(lang: Lang): Reply {
@@ -249,6 +292,39 @@ export function pageRoutes(ctx: Ctx): Route[] {
     route("GET", "profile", "/:code/video.mp4", (req) => media(req, "file", "video/mp4")),
     route("GET", "profile", "/:code/poster.jpg", (req) => media(req, "poster", "image/jpeg")),
 
+    // Ответ работодателя кнопкой: кандидат сразу получает сообщение, стадия отклика меняется сама
+    route("POST", "profile", "/:code/answer", async (req) => {
+      const lang = langOf(req);
+      const client = clientOf(req);
+      const now = ctx.now();
+      if (!limit.take(client, now)) throw new HttpError(429, "Слишком много запросов, попробуйте через минуту");
+      const code = req.params.code ?? "";
+      const link = CODE_RE.test(code) ? findLink(ctx.db, code, now) : undefined;
+      if (!link?.application_id) {
+        limit.take(client, now, 4);
+        return gone(lang);
+      }
+      const back = (extra: Record<string, string> = {}): Reply => {
+        const query = new URLSearchParams({ ...(lang === "kk" ? { lang } : {}), ...extra }).toString();
+        return { status: 303, headers: { Location: `/${code}${query ? `?${query}` : ""}#answer` } };
+      };
+      const form = await req.form();
+      const kind = form.get("answer");
+      if (kind !== "invite" && kind !== "reject") return back();
+      let at: string | null = null;
+      const raw = (form.get("at") ?? "").trim();
+      if (kind === "invite" && raw) {
+        const ms = fromLocal(raw);
+        // Собеседование не в прошлом (час на то, что форму заполняли не спеша) и не дальше трёх месяцев
+        if (ms === null || ms < now - 3_600_000 || ms > now + 90 * DAY_MS) return back({ error: "date" });
+        at = iso(ms);
+      }
+      const answer: Answer = kind === "invite" ? { kind: "invite", at } : { kind: "reject" };
+      const changed = employerAnswer(ctx.db, link.seeker_id, link.application_id, answer, now);
+      if (changed) ctx.background(sendNews(ctx, kind, changed));
+      return back();
+    }),
+
     route("GET", "profile", "/:code", (req) => {
       const lang = langOf(req);
       const client = clientOf(req);
@@ -268,6 +344,9 @@ export function pageRoutes(ctx: Ctx): Route[] {
         return { html: page(lang, html`<section class="card"><h1>${t.title}</h1><p class="note">${t.previewText}</p></section>`) };
       }
       const showPhone = req.query.get("phone") === "1" && !!profile.phone;
+      // Ссылка отклика: работодатель открыл профиль — отклик «Просмотрен», а кандидату пишет бот
+      const app = link.application_id ? getApplication(ctx.db, link.seeker_id, link.application_id) : undefined;
+      if (app && markSeen(ctx.db, app.id, now)) ctx.background(sendNews(ctx, "seen", app));
       const cookies = req.header("cookie") ?? "";
       const viewed = cookies.includes(`v_${code}=1`);
       const phoned = cookies.includes(`p_${code}=1`);
@@ -277,7 +356,7 @@ export function pageRoutes(ctx: Ctx): Route[] {
           seeker_id: link.seeker_id,
           link_code: code,
           application_id: link.application_id,
-          viewer: null,
+          viewer: app?.employer ?? null,
           phone: showPhone,
           now,
         });
@@ -288,8 +367,16 @@ export function pageRoutes(ctx: Ctx): Route[] {
       if (showPhone && !phoned) setCookies.push(cookie("p"));
       const updatedAt = profileUpdatedAt(ctx.db, link.seeker_id) ?? "";
       const other = `/${code}?lang=${lang === "kk" ? "ru" : "kk"}`;
+      const fresh = app && getApplication(ctx.db, link.seeker_id, app.id);
+      const application = fresh
+        ? {
+            title: (lang === "kk" && fresh.title_kk) || fresh.title,
+            answer: answerBlock(code, fresh, lastEmployerAnswer(ctx.db, fresh.id), lang, now, req.query.get("error") === "date"),
+          }
+        : undefined;
+      const video = getVideo(ctx.db, link.seeker_id);
       return {
-        html: page(lang, profileBody(ctx, link, profile, getVideo(ctx.db, link.seeker_id), lang, showPhone, updatedAt), other),
+        html: page(lang, profileBody(ctx, link, profile, video, lang, showPhone, updatedAt, application), other),
         headers: {
           "Content-Security-Policy":
             "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",

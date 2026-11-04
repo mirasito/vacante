@@ -157,7 +157,11 @@ function Main() {
 
   useEffect(() => {
     setError(false);
-    loadIndex().then(setIndex, () => setError(true));
+    loadIndex().then(setIndex, (err) => {
+      // Причина видна в консоли браузера и в журнале телефона (logcat) у сборки для Android
+      console.warn('Список городов не загрузился', err);
+      setError(true);
+    });
   }, [attempt]);
 
   // Города нет в ленте (старая ссылка или в нём не осталось вакансий): просим выбрать заново
@@ -186,7 +190,10 @@ function Main() {
         setHistory([]);
         setFeed(items);
       },
-      () => alive && setError(true),
+      (err) => {
+        console.warn(`Вакансии города ${city} не загрузились`, err);
+        if (alive) setError(true);
+      },
     );
     return () => {
       alive = false;

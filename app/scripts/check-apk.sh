@@ -29,23 +29,40 @@ fail() {
   adb logcat -d > "$out/logcat.txt" 2> /dev/null || true
   echo "--- Журнал телефона: падения и ошибки приложения ---"
   grep -E "AndroidRuntime|FATAL|ReactNativeJS|ReactNative|SoLoader|$pkg" "$out/logcat.txt" | tail -80 || true
+  echo "--- Видит ли эмулятор vacante.kz ---"
+  adb shell ping -c 1 -W 3 vacante.kz 2>&1 | head -2 || true
   echo "--- Текст на экране ---"
   screen > "$out/error.xml"
   texts "$out/error.xml" 40
   exit 1
 }
 
-# Ждёт до $2 секунд, пока на экране появится текст по шаблону $1; экран остаётся в $out/ui.xml
+# Нажимает на строку с текстом $1 в последнем снимке экрана $out/ui.xml: bounds="[x1,y1][x2,y2]"
+tap_text() {
+  local x1 y1 x2 y2
+  read -r x1 y1 x2 y2 < <(grep -o "text=\"$1\"[^>]*bounds=\"\\[[0-9]*,[0-9]*\\]\\[[0-9]*,[0-9]*\\]\"" "$out/ui.xml" \
+    | head -1 | sed -E 's/.*bounds="\[([0-9]+),([0-9]+)\]\[([0-9]+),([0-9]+)\]"/\1 \2 \3 \4/') \
+    || fail "не нашлось, где на экране «$1»"
+  adb shell input tap $(((x1 + x2) / 2)) $(((y1 + y2) / 2))
+}
+
+# Ждёт до $2 секунд, пока на экране появится текст по шаблону $1; экран остаётся в $out/ui.xml.
+# «Нет связи с сервером» сразу после включения эмулятора бывает, пока у него не поднялась сеть:
+# тогда нажимает «Попробовать снова», как сделал бы человек, и только после пяти неудач сдаётся
 wait_for() {
-  local pattern=$1 seconds=$2
+  local pattern=$1 seconds=$2 retries=0
   local deadline=$((SECONDS + seconds))
   while ((SECONDS < deadline)); do
     screen > "$out/ui.xml"
-    if grep -q 'Нет связи с сервером' "$out/ui.xml"; then
-      fail "приложение не загрузило вакансии: на экране «Нет связи с сервером»"
-    fi
     if grep -qE "$pattern" "$out/ui.xml"; then
       return 0
+    fi
+    if grep -q 'Нет связи с сервером' "$out/ui.xml"; then
+      retries=$((retries + 1))
+      ((retries <= 5)) || fail "приложение не загрузило вакансии: на экране «Нет связи с сервером»"
+      echo "На экране «Нет связи с сервером», нажимаю «Попробовать снова» ($retries)"
+      sleep 5
+      tap_text "Попробовать снова"
     fi
     adb shell pidof "$pkg" > /dev/null || fail "приложение закрылось"
     sleep 3
@@ -53,6 +70,20 @@ wait_for() {
   return 1
 }
 
+# Есть ли у эмулятора интернет: Android сам проверяет его и помечает сеть VALIDATED
+wait_network() {
+  local deadline=$((SECONDS + 90))
+  while ((SECONDS < deadline)); do
+    if adb shell dumpsys connectivity 2> /dev/null | grep -q VALIDATED; then
+      echo "Сеть на эмуляторе есть"
+      return 0
+    fi
+    sleep 3
+  done
+  echo "::warning::Тестовый APK: эмулятор за 90 секунд не подтвердил выход в интернет"
+}
+
+wait_network
 adb install -r "$apk" > /dev/null
 adb logcat -c
 adb shell monkey -p "$pkg" -c android.intent.category.LAUNCHER 1 > /dev/null 2>&1
@@ -69,11 +100,7 @@ adb exec-out screencap -p > "$out/1-cities.png"
 echo "Выбор города показан:"
 texts "$out/ui.xml" 12
 
-# Середина строки «Алматы»: bounds="[x1,y1][x2,y2]"
-read -r x1 y1 x2 y2 < <(grep -o 'text="Алматы"[^>]*bounds="\[[0-9]*,[0-9]*\]\[[0-9]*,[0-9]*\]"' "$out/ui.xml" \
-  | head -1 | sed -E 's/.*bounds="\[([0-9]+),([0-9]+)\]\[([0-9]+),([0-9]+)\]"/\1 \2 \3 \4/') \
-  || fail "не нашлось, где на экране строка «Алматы»"
-adb shell input tap $(((x1 + x2) / 2)) $(((y1 + y2) / 2))
+tap_text "Алматы"
 
 wait_for 'Нравится|Мимо|Понятно' 90 || fail "после выбора Алматы не открылась лента вакансий"
 sleep 3

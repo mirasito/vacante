@@ -463,6 +463,15 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "aktau:бота": {
+  "name": "Бота",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "bota_coffee_breakfast",
+  "source": "https://2gis.kz/aktau/firm/70000001101215500"
+ },
  "aktau:в актау": {
   "name": "В АКТАУ",
   "city": "aktau",
@@ -2701,6 +2710,22 @@
   "checked_at": "2026-10-29T00:43:40+00:00",
   "instagram": "aura02_coffee",
   "source": "https://2gis.kz/almaty/firm/70000001118736147"
+ },
+ "almaty:aura barbershop": {
+  "name": "Aura Barbershop",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "aura_barbershop02",
+  "website": "http://zapis.kz/aura",
+  "source": "https://2gis.kz/almaty/firm/70000001111051509",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ba9893194465ccfe.jpg",
+  "avatar_source": "website"
  },
  "almaty:auris group": {
   "name": "AURIS Group",
@@ -5054,6 +5079,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "almaty:imun pharma": {
+  "name": "IMUN Pharma",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
+ },
  "almaty:inditex kazakhstan": {
   "name": "INDITEX Kazakhstan",
   "city": "almaty",
@@ -5140,6 +5172,13 @@
   ],
   "avatar": "30449f0f2207679f.jpg",
   "avatar_source": "website"
+ },
+ "almaty:inzhu": {
+  "name": "INZHU",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "almaty:iron grill": {
   "name": "Iron Grill",
@@ -5863,7 +5902,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040103024",
-  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6538,6 +6577,20 @@
   "website": "https://ortalyqdarihana.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001088800986",
   "avatar_checked_at": "2026-11-02T00:42:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:otr group kazakhstan": {
+  "name": "OTR GROUP KAZAKHSTAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "otrgroup_",
+  "website": "http://otr-group.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001046877131",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7395,6 +7448,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:skill hub": {
+  "name": "Skill Hub",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "almaty:skincare магазин косметики": {
   "name": "“Skincare” магазин косметики",
@@ -8942,6 +9002,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "almaty:алатау": {
+  "name": "Алатау",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
+ },
  "almaty:алатау плаза": {
   "name": "Алатау Плаза",
   "city": "almaty",
@@ -8955,6 +9022,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "almaty:албаев": {
+  "name": "Албаев",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "almaty:алвипи": {
   "name": "Алвипи",
@@ -11686,6 +11760,15 @@
   "instagram": "almatyinternationalairport",
   "source": "https://2gis.kz/almaty/firm/9429940000833020"
  },
+ "almaty:мекс стор mex store": {
+  "name": "МЕКС СТОР(MEX STORE)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "mex_store.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001115137169"
+ },
  "almaty:метешова ю в": {
   "name": "Метешова Ю.В.",
   "city": "almaty",
@@ -14151,6 +14234,13 @@
   "avatar": "f3a33af27da2b53f.jpg",
   "avatar_source": "website"
  },
+ "astana:alpecon one": {
+  "name": "Alpecon One",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
+ },
  "astana:alpha group machinery": {
   "name": "ALPHA GROUP MACHINERY",
   "city": "astana",
@@ -14908,6 +14998,22 @@
   "instagram": "croissant.factory",
   "source": "https://2gis.kz/astana/firm/70000001066937642"
  },
+ "astana:crystal study almaty": {
+  "name": "CRYSTAL STUDY ALMATY",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "crystalstudy.kz",
+  "website": "https://www.crystalstudy.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001028503131",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e6a69dcf58aee995.jpg",
+  "avatar_source": "website"
+ },
  "astana:cupedoor": {
   "name": "CUPEDOOR",
   "city": "astana",
@@ -15175,6 +15281,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
+ },
+ "astana:fashion retail kazakhstan": {
+  "name": "Fashion Retail Kazakhstan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "astana:fellow barber фэлоу барбер": {
   "name": "Fellow Barber (Фэлоу Барбер)",
@@ -16173,7 +16286,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040103024",
-  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16196,7 +16309,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040103024",
-  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16520,6 +16633,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
+ },
+ "astana:new era food almaty": {
+  "name": "NEW ERA FOOD ALMATY",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "la_creme_astana",
+  "source": "https://2gis.kz/astana/firm/70000001080624588"
  },
  "astana:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
@@ -18009,6 +18131,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
+ },
+ "astana:автономный кластерный фонд астана хаб": {
+  "name": "автономный кластерный фонд Астана Хаб",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "website": "https://astanahub.com/",
+  "source": "https://astanahub.com/en/article/astana-hub-kak-formiruetsia-budushchee-kazakhstana",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:автосвет & аксессуары": {
   "name": "АВТОСВЕТ & Аксессуары",
@@ -21790,7 +21925,7 @@
   "instagram": "etagi__astana",
   "website": "https://astana.etagi.com/",
   "source": "https://2gis.kz/astana/firm/70000001054048241",
-  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22417,6 +22552,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "atyrau:кульжанова с д": {
+  "name": "Кульжанова С.Д.",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "atyrau:кутюрина": {
   "name": "Кутюрина",
@@ -23258,6 +23400,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "karaganda:wood studio": {
+  "name": "Wood Studio",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "karaganda:zikeyev murat": {
   "name": "Zikeyev Murat",
@@ -24533,6 +24682,20 @@
    "website"
   ]
  },
+ "kostanay:alem agro holding алемагро холдинг": {
+  "name": "Alem Agro Holding (АлемАгро Холдинг)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "alemagro",
+  "website": "https://alemagro.com/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035747517",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:allur auto qostanay": {
   "name": "Allur Auto Qostanay",
   "city": "kostanay",
@@ -25039,6 +25202,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "kostanay:жасмин трейд": {
+  "name": "Жасмин Трейд",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "kostanay:инструмент": {
   "name": "Инструмент",
@@ -25735,7 +25905,7 @@
   "checked_at": "2026-10-28T10:43:31+00:00",
   "website": "https://erg.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001109725536",
-  "avatar_checked_at": "2026-10-28T10:43:31+00:00",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26427,6 +26597,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "pavlodar:сфера ltd": {
+  "name": "Сфера LTD",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00"
  },
  "pavlodar:ткачева екатерина юрьевна": {
   "name": "ТКАЧЁВА ЕКАТЕРИНА ЮРЬЕВНА",
@@ -30573,6 +30750,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "ust-kamenogorsk:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T10:44:35+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "http://qazaqoil.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018078163",
+  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "af0c6720e116897f.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:sigua on staff": {
   "name": "Sigua on Staff",

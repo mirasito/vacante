@@ -46,6 +46,10 @@ def main() -> None:
     p_quality.add_argument("--data-dir", type=Path, default=Path("data"))
     p_quality.add_argument("--days", type=int, default=7)
 
+    p_geocheck = sub.add_parser("geocheck", help="насколько точен поиск адресов: сверка с точками hh.kz")
+    p_geocheck.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_geocheck.add_argument("--sample", type=int, default=100, help="сколько адресов проверить")
+
     p_replay = sub.add_parser("replay", help="агенту-технологу: что изменит правка parse.py на сохранённых постах")
     p_replay.add_argument("--data-dir", type=Path, default=Path("data"))
     p_replay.add_argument("--base-ref", default="origin/main", help="с какой версией parse.py сравнивать")
@@ -77,6 +81,10 @@ def main() -> None:
             # Итог поиска адресов виден в сводке прогона и через REST API, без скачивания логов
             level = "warning" if geo.get("stopped") else "notice"
             print(f"::{level} title=Поиск адресов::{geocode.summary(geo).replace('%', '%25')}")
+    elif args.command == "geocheck":
+        lines = geocode.check_report(geocode.check(load_vacancies(args.data_dir), args.sample))
+        text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+        print(f"::notice title=Проверка поиска адресов::{text}")
     elif args.command == "quality":
         print(quality.report(args.data_dir, days=args.days))
     elif args.command == "replay":

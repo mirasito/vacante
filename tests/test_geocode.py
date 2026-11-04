@@ -66,14 +66,15 @@ def test_address_is_asked_once_and_then_comes_from_the_cache(tmp_path):
     asked, client = nominatim({"ул. Сыганак, 2, Алматы": place(*HOUSE)})
     first = [vacancy("chan_a-1", "ул. Сыганак, 2"), vacancy("chan_b-7", "Ул. Сыганак, 2")]
     stats = locate(first, tmp_path, client)
-    assert len(asked) == 1 and stats == {"addresses": 1, "cached": 0, "asked": 1, "found": 1, "approx": 0, "failed": 0}
+    assert len(asked) == 1 and stats == {"addresses": 1, "cached": 0, "asked": 1, "requests": 1, "found": 1,
+                                         "approx": 0, "failed": 0}
     assert [(v.lat, v.lon, v.geo, v.approx) for v in first] == [(*HOUSE, "osm", False)] * 2
     params = asked[0].url.params
     assert (params["countrycodes"], params["bounded"], params["format"]) == ("kz", "1", "jsonv2")
     west, north, east, south = map(float, params["viewbox"].split(","))
     assert south < HOUSE[0] < north and west < HOUSE[1] < east
     saved = json.loads((tmp_path / "geocode.json").read_text("utf-8"))
-    assert saved == {"ул. сыганак, 2, алматы": {"p": list(HOUSE), "at": TODAY, "v": 2, "used": TODAY}}
+    assert saved == {"ул. сыганак, 2, алматы": {"p": list(HOUSE), "at": TODAY, "v": geocode.VERSION, "used": TODAY}}
     # Следующий сбор разбирает посты заново: точка приходит из кеша, без запроса
     again = [vacancy("chan_a-1", "ул. Сыганак, 2")]
     stats = locate(again, tmp_path, client)
@@ -93,34 +94,109 @@ def test_street_or_microdistrict_gives_an_approximate_point(tmp_path):
     assert len(asked) == 1 and again[0].approx is True
 
 
-def test_nothing_found_is_asked_again_without_the_house_number(tmp_path):
-    asked, client = nominatim({"ул. Абая, Алматы": place(43.25, 76.93)})
+def test_nothing_found_is_asked_again_without_ul_and_then_without_the_house_number(tmp_path):
+    asked, client = nominatim({"Абая, Алматы": place(43.25, 76.93)})
     items = [vacancy("a-1", "ул. Абая 10")]
     stats = locate(items, tmp_path, client)
-    assert [r.url.params["q"] for r in asked] == ["ул. Абая 10, Алматы", "ул. Абая, Алматы"]
-    assert (items[0].lat, items[0].approx, stats["approx"]) == (43.25, True, 1)  # без номера дома — всегда примерно
+    assert [r.url.params["q"] for r in asked] == ["ул. Абая 10, Алматы", "Абая, 10, Алматы", "Абая, Алматы"]
+    # Запасные запросы — только среди адресов (не кафе «Абая») и с несколькими ответами для сверки
+    assert [(r.url.params.get("layer"), r.url.params["limit"]) for r in asked] == [
+        (None, "1"), ("address", "5"), ("address", "5")]
+    assert (items[0].lat, items[0].approx, stats["approx"], stats["requests"]) == (43.25, True, 1, 3)
+    entry = json.loads((tmp_path / "geocode.json").read_text("utf-8"))["ул. абая 10, алматы"]
+    assert (entry["a"], entry["by"]) == (True, "street")  # без номера дома — всегда примерно
+
+
+def test_avenue_written_as_ul_is_found_without_ul_and_district(tmp_path):
+    asked, client = nominatim({"Туран, 55/4, Астана": place(51.1009, 71.4189)})
+    items = [vacancy("a-1", "Есильский район, ул. Туран, 55/4, 2 этаж", city="astana")]
+    stats = locate(items, tmp_path, client)
+    assert [r.url.params["q"] for r in asked] == ["Есильский район, ул. Туран, 55/4, 2 этаж, Астана",
+                                                  "ул. Туран, 55/4, Астана", "Туран, 55/4, Астана"]
+    assert (items[0].lat, items[0].approx, stats["found"]) == (51.1009, False, 1)  # нашёлся сам дом: точно
+    entry = json.loads((tmp_path / "geocode.json").read_text("utf-8"))
+    assert entry["есильский район, ул. туран, 55/4, 2 этаж, астана"]["by"] == "bare"
+
+
+def test_answers_in_different_parts_of_the_city_give_no_point(tmp_path):
+    two = place(51.10, 71.42) + place(51.20, 71.55)  # «Туран, 5»: проспект и улица в пригороде, 13 км
+    asked, client = nominatim({"Туран, 5, Астана": two, "Туран, Астана": two})
+    items = [vacancy("a-1", "ул. Туран 5", city="astana")]
+    stats = locate(items, tmp_path, client)
+    assert len(asked) == 3 and stats["found"] == 0 and items[0].lat is None
+
+
+def test_mall_is_found_by_name_and_only_as_a_mall(tmp_path):
+    cafe = [{**place(51.15, 71.40)[0], "category": "amenity", "type": "cafe"}]
+    mall = [{**place(51.13, 71.43)[0], "category": "shop", "type": "mall"}]
+    asked, client = nominatim({"Аружан, Астана": cafe + mall, "Керуен, Астана": cafe})
+    items = [vacancy("a-1", "ТРЦ «Аружан», 2 этаж", city="astana"), vacancy("a-2", "ТРЦ Керуен", city="astana")]
+    locate(items, tmp_path, client)
+    assert [r.url.params["q"] for r in asked] == ["ТРЦ «Аружан», 2 этаж, Астана", "Аружан, Астана",
+                                                  "ТРЦ Керуен, Астана", "Керуен, Астана"]
+    assert (items[0].lat, items[0].approx, items[1].lat) == (51.13, False, None)  # кафе «Керуен» — не ТРЦ
+
+
+def test_limit_counts_every_request(tmp_path):
+    asked, client = nominatim()
+    items = [vacancy("a-1", "ул. Абая 1", posted="2026-11-04T11:00:00+00:00"), vacancy("a-2", "ул. Абая 2")]
+    stats = locate(items, tmp_path, client, limit=3)
+    assert len(asked) == 3 and (stats["asked"], stats["requests"]) == (1, 3)  # первый адрес и два запасных
 
 
 def test_too_vague_or_far_answer_is_no_point(tmp_path):
     district = place(43.25, 76.93, half=0.05)  # район или длинная улица: рамка больше 10 км
     astana = place(51.128, 71.43)  # нашёлся адрес в другом городе
-    asked, client = nominatim({"ул. Абая 10, Алматы": district, "ул. Сыганак, 2, Алматы": astana})
-    items = [vacancy("a-1", "ул. Абая 10"), vacancy("a-2", "ул. Сыганак, 2"), vacancy("a-3", "ТЦ Мега")]
+    asked, client = nominatim({"ул. Абая 10, Алматы": district, "Абая, Алматы": district,
+                               "ул. Сыганак, 2, Алматы": astana, "Сыганак, 2, Алматы": astana})
+    items = [vacancy("a-1", "ул. Абая 10"), vacancy("a-2", "ул. Сыганак, 2")]
     stats = locate(items, tmp_path, client)
-    # Найденное, но размытое, без номера дома не переспрашиваем; ТЦ без номера тоже
-    assert len(asked) == 3 and stats["found"] == 0 and all(v.lat is None and v.geo is None for v in items)
+    assert len(asked) == 6 and stats["found"] == 0 and all(v.lat is None and v.geo is None for v in items)
     cache = json.loads((tmp_path / "geocode.json").read_text("utf-8"))
     assert {e["p"] for e in cache.values()} == {None}
 
 
-def test_street_query_drops_only_the_house_number():
-    assert geocode.street_query("ул. Абая 10, Алматы") == "ул. Абая, Алматы"
-    assert geocode.street_query("ул. Казыбек би, 139, Алматы") == "ул. Казыбек би, Алматы"
-    assert geocode.street_query("Гоголя 203/73, Алматы") == "Гоголя, Алматы"
-    assert geocode.street_query("28 мкр, дом 47, Актау") == "28 мкр, Актау"
-    assert geocode.street_query("Ақсай-5, 25а, Алматы") == "Ақсай-5, Алматы"
-    assert geocode.street_query("микрорайон 8, Алматы") is None  # восьмёрка — имя микрорайона
-    assert geocode.street_query("ТЦ Мега, Алматы") is None  # номера нет
+def queries(q, city="almaty"):
+    return [(step, text) for step, text, _ in geocode.fallbacks(q, city)]
+
+
+def test_fallbacks_drop_what_stops_nominatim():
+    assert queries("Есильский район, ул. Туран, 55/4, 2 этаж, Астана", "astana") == [
+        ("clean", "ул. Туран, 55/4, Астана"), ("bare", "Туран, 55/4, Астана"), ("street", "Туран, Астана")]
+    assert queries("проспект Турара Рыскулова, 234, Алматы") == [
+        ("bare", "Рыскулова, 234, Алматы"), ("street", "Рыскулова, Алматы")]
+    assert queries("ул. Ж. Жабаева, 190а, Петропавловск", "petropavlovsk")[0] == ("bare", "Жабаева, 190а, Петропавловск")
+    assert queries("ул. Кабанбай батыра, 5/1, Астана", "astana")[0] == ("bare", "Кабанбай батыра, 5/1, Астана")
+    assert queries("ул. Казыбек би, 139, Алматы")[0] == ("bare", "Казыбек би, 139, Алматы")
+    assert queries("Курмангазы, 76, столовая 120 гимназии, Алматы") == [
+        ("clean", "Курмангазы, 76, Алматы"), ("street", "Курмангазы, Алматы")]
+    assert queries("ЖК «Тау Шатыр» ул.Каппарова 6, Алматы")[:2] == [
+        ("clean", "ул. Каппарова, 6, Алматы"), ("bare", "Каппарова, 6, Алматы")]
+    assert queries("Гоголя 203/73, Алматы") == [("street", "Гоголя, Алматы")]  # без лишнего — тот же адрес
+
+
+def test_fallbacks_for_microdistricts_and_malls():
+    assert queries("12мкр 79/4, Актау", "aktau") == [
+        ("clean", "12 микрорайон, 79/4, Актау"), ("street", "12 микрорайон, Актау")]
+    assert queries("16-мкр., 85 үй, Актау", "aktau")[0] == ("clean", "16 микрорайон, 85, Актау")
+    assert queries("28 мкр, дом 47, ЖК «Гранд Авеню», Актау", "aktau")[0] == ("clean", "28 микрорайон, 47, Актау")
+    assert queries("мкр. Самал 2 д. 111, Алматы")[0] == ("clean", "микрорайон Самал 2, 111, Алматы")
+    assert queries("Ақсай-5, 25а, Алматы") == []  # микрорайон без слова «микрорайон»: только сам адрес
+    assert queries("микрорайон 8, Алматы") == []  # восьмёрка — имя микрорайона, а не дом
+    assert queries("Бағанашыл шағын ауданы Подгорная көшесі, 19, Алматы")[1] == (
+        "bare", "Бағанашыл микрорайон, Подгорная, 19, Алматы")
+    assert queries("мкр. Коянкус ул. Момыш улы 200, Алматы")[1] == ("bare", "микрорайон Коянкус, Момыш улы, 200, Алматы")
+    assert queries("ТРЦ «Аружан», Астана", "astana") == [("mall", "Аружан, Астана")]
+    assert queries("ТРЦ Forum, Mega, Алматы") == []  # два центра: непонятно, какой
+
+
+def test_no_fallbacks_for_another_city_or_a_village():
+    assert queries("Алматы, проспект Абылай хана, 53, Шымкент", "shymkent") == []  # адрес в другом городе
+    assert queries("село Отеген батыр, переулок Жарык, 1, Алматы") == []
+    assert queries("Талгар, улица Райымбека, 62, Алматы") == []  # перед улицей непонятное место
+    assert queries("Козья ферма, 75 км от Астаны, Астана", "astana") == []
+    assert queries("Алматинская область, Кульджинский тракт, 601, Алматы") == []
+    assert queries("Нур-Султан, улица Бейбитшилик, 23, Астана", "astana")[0] == ("clean", "улица Бейбитшилик, 23, Астана")
 
 
 def test_misses_from_the_old_cache_are_asked_again(tmp_path):
@@ -137,19 +213,18 @@ def test_miss_is_asked_again_only_after_a_month(tmp_path):
     asked, client = nominatim()
     locate([vacancy("a-1", "ТЦ Мега")], tmp_path, client)
     locate([vacancy("a-1", "ТЦ Мега")], tmp_path, client, now=NOW + timedelta(days=10))
-    assert len(asked) == 1
+    assert [r.url.params["q"] for r in asked] == ["ТЦ Мега, Алматы", "Мега, Алматы"]
     locate([vacancy("a-1", "ТЦ Мега")], tmp_path, client, now=NOW + timedelta(days=31))
-    assert len(asked) == 2
+    assert len(asked) == 4
 
 
 def test_budget_goes_to_the_freshest_vacancies(tmp_path):
-    asked, client = nominatim()
+    asked, client = nominatim({f"ул. Абая {n}, Алматы": place(*HOUSE) for n in (1, 2, 3)})
     items = [vacancy("a-1", "ул. Абая 1", posted="2026-11-01T10:00:00+00:00"),
              vacancy("a-2", "ул. Абая 2", posted="2026-11-04T10:00:00+00:00"),
              vacancy("a-3", "ул. Абая 3", posted="2026-11-03T10:00:00+00:00")]
     stats = locate(items, tmp_path, client, limit=2)
-    asked = [r.url.params["q"] for r in asked if r.url.params["q"] != "ул. Абая, Алматы"]  # без номера дома
-    assert asked == ["ул. Абая 2, Алматы", "ул. Абая 3, Алматы"]
+    assert [r.url.params["q"] for r in asked] == ["ул. Абая 2, Алматы", "ул. Абая 3, Алматы"]
     assert stats["asked"] == 2 and "ул. абая 1, алматы" not in json.loads((tmp_path / "geocode.json").read_text())
 
 
@@ -168,7 +243,7 @@ def test_zero_limit_uses_the_cache_without_network(tmp_path, monkeypatch):
     monkeypatch.setattr(httpx, "Client", None)  # клиент не создаётся
     items = [vacancy("a-1", "ул. Абая 1"), vacancy("a-2", "ул. Абая 2")]
     stats = geocode.locate(items, tmp_path, NOW)
-    assert stats == {"addresses": 2, "cached": 1, "asked": 0, "found": 1, "approx": 0, "failed": 0}
+    assert stats == {"addresses": 2, "cached": 1, "asked": 0, "requests": 0, "found": 1, "approx": 0, "failed": 0}
     assert (items[0].lat, items[1].lat) == (HOUSE[0], None)
 
 
@@ -276,13 +351,47 @@ def test_nominatim_down_for_three_addresses_stops_the_run(tmp_path, caplog):
 
 
 def test_bad_request_is_a_miss(tmp_path):
-    asked, client = flaky([httpx.Response(400, json={"error": "bad"})])
+    asked, client = flaky([httpx.Response(400, json={"error": "bad"})] * 2)
     stats = locate([vacancy("a-1", "ТЦ Мега")], tmp_path, client)
-    assert len(asked) == 1 and stats["asked"] == 1
+    assert asked == ["ТЦ Мега, Алматы", "Мега, Алматы"] and stats["asked"] == 1
     assert json.loads((tmp_path / "geocode.json").read_text("utf-8"))["тц мега, алматы"]["p"] is None
 
 
 def test_summary_for_the_run_annotation():
-    stats = {"addresses": 5, "cached": 2, "asked": 2, "found": 3, "approx": 1, "failed": 1}
-    assert geocode.summary(stats) == "адресов 5, из кеша 2, запросов 2, с точкой 3 (примерной 1), без ответа 1"
+    stats = {"addresses": 5, "cached": 2, "asked": 2, "requests": 4, "found": 3, "approx": 1, "failed": 1}
+    assert geocode.summary(stats) == ("адресов 5, из кеша 2, спрошено 2 (запросов 4), с точкой 3 (примерной 1), "
+                                      "без ответа 1")
     assert geocode.summary({**stats, "stopped": "HTTP 429"}).endswith("; остановлен: HTTP 429")
+
+
+def test_check_compares_points_with_hh(tmp_path):
+    truth = (43.2400, 76.9100)
+    hh_ = vacancy("hh-1", "проспект Турара Рыскулова, 234", source="hh")
+    hh_.lat, hh_.lon, hh_.geo = *truth, "hh"
+    plain = vacancy("hh-2", "улица Абая, 150", source="hh")  # точки hh нет: проверять не с чем
+    asked, client = nominatim({"Рыскулова, 234, Алматы": place(43.2410, 76.9110),
+                               "Рыскулова, Алматы": place(43.2700, 76.9500, half=0.01)})
+    result = geocode.check([hh_, plain], 10, client=client, sleep=lambda s: None)
+    assert [r.url.params["q"] for r in asked] == ["проспект Турара Рыскулова, 234, Алматы",
+                                                  "Рыскулова, 234, Алматы", "Рыскулова, Алматы"]
+    assert result["addresses"] == 1 and result["requests"] == 3 and not (tmp_path / "geocode.json").exists()
+    assert result["steps"][""] == [None] and result["steps"]["bare"][0][0] < 0.2
+    street = result["steps"]["street"][0]
+    assert street[1] is True and 4 < street[0] < 6  # середина улицы — примерно
+    lines = geocode.check_report(result)
+    assert lines[0] == "адресов 1, запросов 3"
+    assert lines[1] == "адрес целиком: спрошено 1, нашлось 0 (примерных 0)"
+    assert lines[2].startswith("без «ул.» и имени: спрошено 1, нашлось 1 (примерных 0); от точки hh: медиана 0.1 км")
+    assert lines[-1].endswith("· улица без дома · проспект Турара Рыскулова, 234, Алматы")
+    assert "по цепочке, как в сборе: спрошено 1, нашлось 1" in lines[4]
+
+
+def test_check_stops_when_nominatim_is_down():
+    items = []
+    for n in range(1, 6):
+        v = vacancy(f"hh-{n}", f"проспект Абая, {n}", source="hh")
+        v.lat, v.lon, v.geo = *HOUSE, "hh"
+        items.append(v)
+    asked, client = flaky([httpx.Response(502)] * 6)
+    result = geocode.check(items, 5, client=client, sleep=lambda s: None)
+    assert len(asked) == 6 and result["addresses"] == 0 and result["stopped"] == "HTTP 502 у 3 адресов подряд"

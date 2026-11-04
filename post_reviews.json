@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T02:56:36+00:00",
+ "updated_at": "2026-11-04T03:56:44+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -25721,6 +25721,45 @@
     "perks": [
      "Обучение"
     ]
+   }
+  },
+  "hh-139125461": {
+   "verdict": "approve",
+   "at": "2026-11-04T03:56:44+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1 или 5/2, смены по 12 часов"
+   }
+  },
+  "hh-139127122": {
+   "verdict": "approve",
+   "at": "2026-11-04T03:56:44+00:00",
+   "fields": {
+    "title": "Горничная, уборщица",
+    "employer": "Royal Tulip Almaty",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2 или 2/2, смены 8 или 11 часов"
+   }
+  },
+  "hh-139094476": {
+   "verdict": "approve",
+   "at": "2026-11-04T03:56:44+00:00",
+   "fields": {}
+  },
+  "hh-139093130": {
+   "verdict": "approve",
+   "at": "2026-11-04T03:56:44+00:00",
+   "fields": {}
+  },
+  "hh-139127937": {
+   "verdict": "approve",
+   "at": "2026-11-04T03:56:44+00:00",
+   "fields": {
+    "salary_min": 435000,
+    "salary_max": null,
+    "salary_period": "month"
    }
   }
  }

@@ -1357,6 +1357,24 @@
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
  },
+ "aktobe:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "instagram": "fixprice.kazakhstan",
+  "telegram": "fixprice_kazakhstan",
+  "website": "https://fix-price.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001080246318",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "44ee0627aee4f826.jpg",
+  "avatar_source": "telegram"
+ },
  "aktobe:венера atd": {
   "name": "Венера ATD",
   "city": "aktobe",
@@ -1865,6 +1883,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "almaty:ak stroy": {
+  "name": "Ak STROY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
+ },
  "almaty:akdess": {
   "name": "AKDESS",
   "city": "almaty",
@@ -1892,6 +1917,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
+ },
+ "almaty:alaman ts": {
+  "name": "Alaman TS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
  },
  "almaty:alatau auto tech": {
   "name": "Alatau Auto Tech",
@@ -4759,6 +4791,13 @@
   "v": 3,
   "checked_at": "2026-11-03T13:44:33+00:00"
  },
+ "almaty:hulber group": {
+  "name": "Hulber Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
+ },
  "almaty:hydrosta kazakhstan": {
   "name": "Hydrosta Kazakhstan",
   "city": "almaty",
@@ -6758,6 +6797,20 @@
   ],
   "avatar": "70f1f0b170cc8298.jpg",
   "avatar_source": "website"
+ },
+ "almaty:royal tulip almaty ел таир": {
+  "name": "Royal Tulip Almaty (ЕЛ-ТАИР)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "instagram": "royaltulipalmaty",
+  "website": "https://royaltulipalmaty.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940000789806",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:rpc & co": {
   "name": "RPC & CO",
@@ -9344,6 +9397,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:в алматы": {
+  "name": "В АЛМАТЫ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
+ },
  "almaty:валерия": {
   "name": "Валерия",
   "city": "almaty",
@@ -10768,6 +10828,13 @@
    "website"
   ]
  },
+ "almaty:кыдырбекулы ш а": {
+  "name": "Кыдырбекулы Ш.А.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
+ },
  "almaty:лакоо": {
   "name": "Лакоо",
   "city": "almaty",
@@ -10919,6 +10986,20 @@
   "website": "https://www.lpgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001116104113",
   "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:м ломбард": {
+  "name": "М-Ломбард",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "instagram": "mlombard.kz",
+  "website": "http://m-lombard.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000828821",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11098,6 +11179,13 @@
   "checked_at": "2026-10-29T04:44:51+00:00",
   "instagram": "almatyinternationalairport",
   "source": "https://2gis.kz/almaty/firm/9429940000833020"
+ },
+ "almaty:метешова ю в": {
+  "name": "Метешова Ю.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
  },
  "almaty:микрофинансовая организация orda finance": {
   "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ORDA FINANCE",
@@ -11867,6 +11955,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "almaty:сапаров": {
+  "name": "Сапаров",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
  },
  "almaty:сарисунова м б": {
   "name": "Сарисунова М.Б.",
@@ -13031,6 +13126,19 @@
   "website": "http://egida.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001043425564",
   "avatar_checked_at": "2026-10-30T20:45:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:элигита азия": {
+  "name": "Элигита - Азия",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "website": "http://www.eligita.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001438004",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14721,6 +14829,22 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "astana:home group": {
+  "name": "HOME Group",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "instagram": "homegroup.kz",
+  "website": "https://1home.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001046955554",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d139295c2cb386ca.jpg",
+  "avatar_source": "website"
+ },
  "astana:home2car": {
   "name": "Home2Car",
   "city": "astana",
@@ -15191,6 +15315,19 @@
   "website": "https://lanzhou.kz/",
   "source": "https://2gis.kz/astana/firm/70000001104987225",
   "avatar_checked_at": "2026-10-31T09:42:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:laps management": {
+  "name": "LAPs management",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "website": "https://laps.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001118953394",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17725,6 +17862,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "astana:вираделис": {
+  "name": "ВИРАДЕЛИС",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "instagram": "jumbaktas",
+  "website": "http://www.jumbaktas.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018088367",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:вкусмарт": {
   "name": "ВКУСМАРТ",
@@ -21324,6 +21475,13 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "atyrau:насиха": {
+  "name": "НАСИХА",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
+ },
  "atyrau:нефтестройсервис лтд": {
   "name": "Нефтестройсервис ЛТД",
   "city": "atyrau",
@@ -22746,6 +22904,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
+ },
+ "karaganda:сапаров": {
+  "name": "Сапаров",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
  },
  "karaganda:сая констракшн": {
   "name": "САЯ КОНСТРАКШН",
@@ -24375,6 +24540,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "kyzylorda:полат": {
+  "name": "Полат",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
  },
  "kyzylorda:полежаев андрей валерьевич": {
   "name": "Полежаев Андрей Валерьевич",
@@ -26474,6 +26646,19 @@
   "instagram": "rixosborovoe",
   "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
  },
+ "shymkent:celviano": {
+  "name": "CELVIANO",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00",
+  "website": "http://celviano.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001105816419",
+  "avatar_checked_at": "2026-11-04T02:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:cinema operation": {
   "name": "Cinema operation",
   "city": "shymkent",
@@ -28005,6 +28190,13 @@
    "website"
   ]
  },
+ "taraz:новаснаб": {
+  "name": "НоваСнаб",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
+ },
  "taraz:прессбук": {
   "name": "ПрессБук",
   "city": "taraz",
@@ -28756,6 +28948,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T20:46:04+00:00"
+ },
+ "uralsk:уралметаллинвест": {
+  "name": "УралМеталлинвест",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T02:44:14+00:00"
  },
  "uralsk:филиал товарищества с ограниченной ответственностью schachtbau kasachstan шахтбау казахстан в городе уральск": {
   "name": "Филиал товарищества с ограниченной ответственностью SCHACHTBAU KASACHSTAN/ШАХТБАУ КАЗАХСТАН в городе Уральск",

@@ -11,7 +11,7 @@ import httpx
 import yaml
 
 from vacante import direct as direct_jobs
-from vacante import contacts, parse, quality
+from vacante import contacts, geocode, parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain, split_title
@@ -143,7 +143,12 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
         if v.id in dropped:
             rejected[v.id] = quality.dropped_item(v, dropped[v.id])
     if locate is not None:
-        # Посты из каналов разбираются заново каждый прогон: точки приходят из кеша геокодера
+        # Точку из OpenStreetMap каждый прогон ставит заново кеш геокодера: посты из каналов и так разбираются
+        # заново, а сохранённым вакансиям hh и от работодателей так доходит пересчёт точки в кеше
+        for v in vacancies:
+            if v.geo == geocode.SOURCE:
+                v.lat = v.lon = v.geo = None
+                v.approx = False
         stats["geocode"] = locate(vacancies, data_dir, now)
     save_vacancies(data_dir, vacancies)
     save_state(data_dir, state)

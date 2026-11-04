@@ -10,17 +10,18 @@ geocode_limit при ручном запуске «Обновления вака
 пишет «© OpenStreetMap» рядом с расстоянием.
 
 Точный ответ — дом, здание или заведение: рамка найденного не больше 1,5 км по диагонали. Если точно не
-нашлось, берём примерную точку: середину найденной улицы, микрорайона или ЖК, если они не больше 5 км. Такая
-точка помечена примерной (approx), и приложение пишет «Примерно N км от дома». Точка всегда не дальше 50 км от
-центра города вакансии. Адрес без номера дома и без ТЦ, БЦ или ЖК («Есильский район») не ищем: точки у такого
-адреса нет.
+нашлось, берём примерную точку: середину микрорайона или ЖК, а у улицы — середину всей улицы (street_point),
+если они не больше 5 км. Не найдя дома, Nominatim отдаёт один кусок улицы, а середина куска длинного проспекта
+бывает в 14 км от работы. Такая точка помечена примерной (approx), и приложение пишет «Примерно N км от дома».
+Точка всегда не дальше 50 км от центра города вакансии. Адрес без номера дома и без ТЦ, БЦ или ЖК
+(«Есильский район») не ищем: точки у такого адреса нет.
 
 Nominatim ищет все слова запроса, поэтому адрес из объявления часто не находится целиком: мешают район, этаж
 или заведение («Есильский район, ул. Туран, 55, 2 этаж»), «ул.» у проспекта, имя в названии улицы («Турара
 Рыскулова» у проспекта Рыскулова) или «мкр» вместо «микрорайон». Тогда спрашиваем запасные запросы
-(fallbacks): адрес без лишнего, улицу без «ул.» и имени, улицу без номера дома (точка примерная), торговый
-центр по названию. Адрес в другом городе или в селе запасных запросов не получает. Насколько они точны,
-показывает `vacante geocheck` на вакансиях hh.kz, где точку поставил сам hh.
+(fallbacks): адрес без лишнего, улицу без «ул.» и имени, улицу или микрорайон без номера дома (точка
+примерная), торговый центр по названию. Адрес в другом городе или в селе запасных запросов не получает.
+Насколько они точны, показывает `vacante geocheck` на вакансиях hh.kz, где точку поставил сам hh.
 """
 
 from __future__ import annotations
@@ -33,7 +34,7 @@ import os
 import re
 import statistics
 import time
-from collections.abc import Callable
+from collections.abc import Callable, Iterable
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -55,12 +56,17 @@ RETRY_MISS = timedelta(days=30)
 KEEP = timedelta(days=60)  # запись кеша, которой давно не пользовались, уходит
 MAX_BOX_KM = 1.5  # точный ответ: дом, здание, заведение
 APPROX_BOX_KM = 5.0  # примерный: улица, микрорайон, ЖК — точка посередине, расстояние «примерно»
-# С версии 2 кеш знает примерные точки, с 3 — запасные запросы: ненайденное прошлыми версиями спрашиваем заново
-VERSION = 3
+# Версия кеша: со 2-й он знает примерные точки, с 3-й — запасные запросы, с 4-й примерная точка улицы — середина
+# всей улицы. Промахи версий до MISS_SINCE и примерные точки до APPROX_SINCE спрашиваем заново: новая версия их
+# найдёт или поправит. Промахи 3-й версии 4-я не найдёт: она только строже к улицам
+VERSION = 4
+MISS_SINCE = 3
+APPROX_SINCE = 4
 BOX = (0.3, 0.45)  # окно поиска вокруг центра города: ±0,3° широты и ±0,45° долготы, около 35 км
 RETRY_AFTER = 5.0  # секунд до повтора запроса, на который Nominatim не ответил (таймаут, обрыв, 5xx)
 MAX_FAILURES = 3  # столько адресов подряд без ответа и после повтора: Nominatim нездоров, хватит на этот прогон
 RESULTS = 5  # ответов на запасной запрос: если подходящие в разных концах города, адрес не понять
+STREET_RESULTS = 40  # кусков улицы без номера дома, больше Nominatim не отдаёт: по ним видно, длинная ли она
 _PARENS = re.compile(r"\s*\([^)]*\)?|…")
 _SPACES = re.compile(r"\s+")
 
@@ -258,8 +264,8 @@ def fallbacks(q: str, city: str) -> list[tuple[str, str, str | None]]:
     """Запасные запросы, если адрес целиком не нашёлся: (шаг, запрос, слой Nominatim).
 
     clean — адрес без района, этажа и заведения; bare — улица без «ул.» и имени, и только среди адресов
-    (layer=address), чтобы вместо проспекта Туран не найти кафе «Туран»; street — улица или микрорайон без
-    номера дома, точка всегда примерная; mall — торговый или бизнес-центр по названию."""
+    (layer=address), чтобы вместо проспекта Туран не найти кафе «Туран»; street — улица без номера дома, area —
+    микрорайон без номера дома (точка у обоих всегда примерная); mall — торговый или бизнес-центр по названию."""
     cleaned = _clean(q, city) if city in CITIES else None
     if cleaned is None:
         return []
@@ -282,7 +288,10 @@ def fallbacks(q: str, city: str) -> list[tuple[str, str, str | None]]:
         add("clean", [*places, house], None)
         add("bare", [*bare, house], "address")
     # Микрорайон бывает и местом, и жилым кварталом (landuse), а улицу ищем только среди адресов
-    add("street", bare, None if all("микрорайон" in p for p in places) else "address")
+    if all("микрорайон" in p for p in places):
+        add("area", bare, None)
+    else:
+        add("street", bare, "address")
     return steps
 
 
@@ -298,8 +307,9 @@ def save(data_dir: Path, cache: dict[str, dict]) -> None:
 
 
 def search(client: httpx.Client, q: str, city: str, sleep: Callable[[float], None] = time.sleep, *,
-           layer: str | None = None, limit: int = 1, stats: dict | None = None) -> list[dict]:
+           layer: str | None = None, limit: int = 1, dedupe: bool = True, stats: dict | None = None) -> list[dict]:
     """Ответы Nominatim, лучший первым; пустой список, если он ничего не нашёл. stats["requests"] считает запросы.
+    dedupe=False — все куски улицы, а не один: Nominatim режет улицу на куски по OSM.
 
     Таймаут, обрыв или сбой сервера повторяем один раз, а не вышло — Skip: адрес спросим в следующий прогон.
     429 и 403 — Stop: дальше в этот прогон не спрашивать."""
@@ -309,6 +319,8 @@ def search(client: httpx.Client, q: str, city: str, sleep: Callable[[float], Non
               "viewbox": f"{lon0 - dlon},{lat0 + dlat},{lon0 + dlon},{lat0 - dlat}", "bounded": 1}
     if layer:
         params["layer"] = layer
+    if not dedupe:
+        params["dedupe"] = 0
     failure = ""
     for wait in (PAUSE, RETRY_AFTER):
         sleep(wait)
@@ -364,18 +376,73 @@ def pick(found: list[dict], city: str, mall: bool = False) -> tuple[tuple[float,
     return points[0]
 
 
+def street_point(found: list[dict], city: str) -> tuple[float, float] | None:
+    """Середина всей улицы: рамка всех её кусков вместе (ответ с dedupe=0). None, если вместе они больше
+    APPROX_BOX_KM (длинный проспект или одноимённые улицы в разных концах города) или ответов полная страница:
+    тогда кусков, может быть, ещё больше. У одного куска середина своя, и у проспекта Райымбека она бывает
+    в 14 км от работы."""
+    if len(found) >= STREET_RESULTS:
+        return None
+    boxes = []
+    for r in found:
+        try:
+            boxes.append([float(x) for x in r["boundingbox"]])
+        except (KeyError, TypeError, ValueError):
+            continue
+    if not boxes:
+        return None
+    south, north = min(b[0] for b in boxes), max(b[1] for b in boxes)
+    west, east = min(b[2] for b in boxes), max(b[3] for b in boxes)
+    if distance_km((south, west), (north, east)) > APPROX_BOX_KM:
+        return None
+    return city_point(city, (south + north) / 2, (west + east) / 2)
+
+
+def ask(client: httpx.Client, step: str, text: str, layer: str | None, city: str,
+        sleep: Callable[[float], None] = time.sleep, stats: dict | None = None
+        ) -> tuple[tuple[float, float], bool] | None:
+    """Точка одного запроса цепочки и примерная ли она: у шага street — середина всей улицы, у остальных —
+    первый подходящий ответ. Без номера дома (street и area) точка всегда примерная."""
+    if step == "street":
+        found = search(client, text, city, sleep, layer=layer, limit=STREET_RESULTS, dedupe=False, stats=stats)
+        point = street_point(found, city)
+        return (point, True) if point is not None else None
+    found = search(client, text, city, sleep, layer=layer, limit=RESULTS if step else 1, stats=stats)
+    got = pick(found, city, mall=step == "mall")
+    return (got[0], True) if got is not None and step == "area" else got
+
+
+def choose(outcomes: Iterable[tuple[str, tuple[tuple[float, float], bool] | None]]
+           ) -> tuple[tuple[float, float], bool, str] | None:
+    """Какую точку взять из ответов цепочки по порядку: первую точную. Примерную точку адреса с номером дома
+    (Nominatim нашёл улицу, а не дом) решает шаг street: она середина одного куска, поэтому берём середину всей
+    улицы, а если улица длинная или не нашлась, точки нет. Без шага street (микрорайон, торговый центр) —
+    первая примерная: микрорайон Nominatim на куски не режет."""
+    candidate = None
+    for step, point in outcomes:
+        if step == "street":
+            return (point[0], True, step) if point is not None else None
+        if point is not None and not point[1]:
+            return point[0], False, step
+        if point is not None and candidate is None:
+            candidate = (point[0], True, step)
+    return candidate
+
+
 def lookup(client: httpx.Client, q: str, city: str, sleep: Callable[[float], None] = time.sleep,
            stats: dict | None = None) -> tuple[tuple[float, float], bool, str] | None:
     """Точка адреса, примерная ли она и каким запасным запросом нашлась ("" — самим адресом), или None.
+    Запросы идут по одному, пока choose не решит."""
+    tries = [("", q, None), *fallbacks(q, city)]
+    return choose((step, ask(client, step, text, layer, city, sleep, stats)) for step, text, layer in tries)
 
-    Точка улицы или микрорайона без номера дома (шаг street) всегда примерная."""
-    if (point := pick(search(client, q, city, sleep, stats=stats), city)) is not None:
-        return point[0], point[1], ""
-    for step, text, layer in fallbacks(q, city):
-        found = search(client, text, city, sleep, layer=layer, limit=RESULTS, stats=stats)
-        if (point := pick(found, city, mall=step == "mall")) is not None:
-            return point[0], point[1] or step == "street", step
-    return None
+
+def fresh(entry: dict, retry_before: str) -> bool:
+    """Запись кеша годится без нового запроса: точная точка, примерная с версии APPROX_SINCE или промах с версии
+    MISS_SINCE не старше месяца."""
+    if entry.get("p") is not None:
+        return not entry.get("a") or entry.get("v", 0) >= APPROX_SINCE
+    return entry.get("v", 0) >= MISS_SINCE and entry.get("at", "") >= retry_before
 
 
 def limit_from_env() -> int:
@@ -407,8 +474,7 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
         for key in order:
             q, city, items = wanted[key]
             entry = cache.get(key)
-            if entry is not None and (entry.get("p") is not None
-                                      or (entry.get("v") == VERSION and entry.get("at", "") >= retry_before)):
+            if entry is not None and fresh(entry, retry_before):
                 stats["cached"] += 1
             elif client is not None and stopped is None and stats["requests"] < limit:
                 try:
@@ -418,18 +484,19 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
                     failures += 1
                     if failures >= MAX_FAILURES:
                         stopped = f"{exc} у {failures} адресов подряд"
-                    continue
                 except Stop as exc:
                     stopped = str(exc)
-                    continue
-                failures = 0
-                stats["asked"] += 1
-                entry = cache[key] = {"p": list(result[0]) if result else None, "at": today, "v": VERSION}
-                if result and result[1]:
-                    entry["a"] = True  # примерная точка
-                if result and result[2]:
-                    entry["by"] = result[2]  # каким запасным запросом нашлась
-            else:
+                else:
+                    failures = 0
+                    stats["asked"] += 1
+                    entry = cache[key] = {"p": list(result[0]) if result else None, "at": today, "v": VERSION}
+                    if result and result[1]:
+                        entry["a"] = True  # примерная точка
+                    if result and result[2]:
+                        entry["by"] = result[2]  # каким запасным запросом нашлась
+            elif entry is not None:
+                stats["cached"] += 1  # старую запись не успели спросить заново: до тех пор служит она
+            if entry is None:
                 continue
             entry["used"] = today
             if entry.get("p"):
@@ -460,7 +527,7 @@ def summary(stats: dict) -> str:
 
 
 STEPS = {"": "адрес целиком", "clean": "без лишнего", "bare": "без «ул.» и имени", "street": "улица без дома",
-         "mall": "торговый центр"}
+         "area": "микрорайон без дома", "mall": "торговый центр"}
 
 
 def check(vacancies: list[Vacancy], sample: int, client: httpx.Client | None = None,
@@ -485,13 +552,10 @@ def check(vacancies: list[Vacancy], sample: int, client: httpx.Client | None = N
         for key in keys:
             q, city, truth = picked[key]
             tries: list[tuple[str, str, str | None]] = [("", q, None), *fallbacks(q, city)]
-            outcome: dict[str, tuple[float, bool] | None] = {}
+            points: dict[str, tuple[tuple[float, float], bool] | None] = {}
             try:
                 for step, text, layer in tries:
-                    found = search(client, text, city, sleep, layer=layer, limit=RESULTS if step else 1,
-                                   stats=result)
-                    point = pick(found, city, mall=step == "mall")
-                    outcome[step] = (distance_km(point[0], truth), point[1] or step == "street") if point else None
+                    points[step] = ask(client, step, text, layer, city, sleep, result)
             except Skip as exc:
                 failures += 1
                 if failures >= MAX_FAILURES:
@@ -503,12 +567,13 @@ def check(vacancies: list[Vacancy], sample: int, client: httpx.Client | None = N
                 break
             failures = 0
             result["addresses"] += 1
-            for step, got in outcome.items():
+            for step, point in points.items():
+                got = (distance_km(point[0], truth), point[1]) if point is not None else None
                 result["steps"].setdefault(step, []).append(got)
                 if got is not None and got[0] > 3:
                     result["worst"].append((round(got[0], 1), step, q))
-            first = next((got for step, _, _ in tries if (got := outcome.get(step)) is not None), None)
-            result["ladder"].append(first)
+            chosen = choose((step, points[step]) for step, _, _ in tries)
+            result["ladder"].append((distance_km(chosen[0], truth), chosen[1]) if chosen is not None else None)
     finally:
         if own and client is not None:
             client.close()

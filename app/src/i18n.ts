@@ -79,6 +79,10 @@ export type Key = keyof typeof UI.ru;
 
 export const t = (lang: Lang, key: Key) => UI[lang][key];
 
+/** «Вы вошли как Айгерим»: в казахском имя стоит в начале. */
+export const signedIn = (lang: Lang, name: string) =>
+  lang === 'kk' ? `${name} ретінде кірдіңіз` : `Вы вошли как ${name}`;
+
 export const title = (v: Vacancy, lang: Lang) => (lang === 'kk' && v.title_kk) || v.title;
 export const pay = (v: Vacancy, lang: Lang) => (lang === 'kk' ? v.pay_kk : v.pay) ?? v.pay;
 export const monthly = (v: Vacancy, lang: Lang) => (lang === 'kk' ? v.monthly_kk : v.monthly) ?? v.monthly;

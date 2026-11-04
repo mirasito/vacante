@@ -1,0 +1,177 @@
+# Сервер Vacante в Казахстане (server/): профили соискателей, отклики, напоминания.
+# На каждый PR проверяет типы, тесты и скрипты, а после push в main выкладывает сервер,
+# если есть секреты SERVER_HOST (IP сервера) и SERVER_PASSWORD (пароль root из письма хостинга).
+# Первая выкладка входит по паролю, кладёт ключ выкладки и выключает вход по паролю.
+# Дальше вход только по ключу; ключ каждый раз выводится из того же секрета (server/deploy/keys.py).
+name: Сервер
+
+on:
+  push:
+    branches: [main]
+    paths: ["server/**", ".github/workflows/server.yml"]
+  pull_request:
+    paths: ["server/**", ".github/workflows/server.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: server-${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci --no-audit --no-fund
+      - name: Типы
+        run: npm run typecheck
+      - name: Тесты
+        run: npm test
+      - name: Скрипты установки
+        run: |
+          bash -n deploy/*.sh
+          shellcheck deploy/*.sh
+          python3 -m py_compile deploy/keys.py
+
+  deploy:
+    needs: test
+    # Выкладываем только main, даже если workflow запустили вручную с другой ветки
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      KEYS: ${{ github.workspace }}/.keys
+    steps:
+      - name: Проверить секреты
+        id: secrets
+        run: |
+          if [ -n "$SERVER_HOST" ] && [ -n "$SERVER_PASSWORD" ] && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Нет секретов SERVER_HOST и SERVER_PASSWORD, выкладку сервера пропускаю"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.secrets.outputs.ready
+
+      - uses: actions/setup-python@v5
+        if: steps.secrets.outputs.ready
+        with:
+          python-version: "3.12"
+
+      - name: Ключи выкладки
+        if: steps.secrets.outputs.ready
+        run: |
+          if [[ ! $SERVER_HOST =~ ^[A-Za-z0-9.:-]+$ ]]; then
+            echo "::error::В секрете SERVER_HOST должен быть только IP-адрес сервера, например 185.22.67.10"
+            exit 1
+          fi
+          pip install --quiet "cryptography>=42"
+          backup_key=$(python server/deploy/keys.py "$KEYS" "$SERVER_HOST")
+          echo "::add-mask::$backup_key"
+          echo "BACKUP_KEY=$backup_key" >> "$GITHUB_ENV"
+          # Вход на сервер для следующих шагов: только по ключу и только к серверу с известным ключом
+          cat > "$KEYS/ssh" <<EOF
+          #!/usr/bin/env bash
+          exec ssh -i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20 \
+            -o ServerAliveInterval=15 -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes \
+            "root@$SERVER_HOST" "\$@"
+          EOF
+          chmod 700 "$KEYS/ssh"
+
+      - name: Доступ к серверу
+        if: steps.secrets.outputs.ready
+        run: |
+          if "$KEYS/ssh" true 2>/dev/null; then
+            echo "Вход по ключу работает"
+            exit 0
+          fi
+          echo "Первый вход: по паролю кладу ключ выкладки, потом выключаю вход по паролю"
+          sudo apt-get update -q >/dev/null
+          sudo apt-get install -y -q sshpass >/dev/null
+          export SSHPASS="$SERVER_PASSWORD"
+          first=(-o UserKnownHostsFile="$KEYS/known_hosts.first" -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20)
+          with_key=(-i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes "${first[@]}")
+          password_only=(-o PubkeyAuthentication=no -o "PreferredAuthentications=password,keyboard-interactive")
+          if ! sshpass -e ssh "${first[@]}" "${password_only[@]}" "root@$SERVER_HOST" \
+              'umask 077; mkdir -p /root/.ssh; key=$(cat); touch /root/.ssh/authorized_keys; grep -qxF "$key" /root/.ssh/authorized_keys || printf "%s\n" "$key" >> /root/.ssh/authorized_keys' \
+              < "$KEYS/deploy_ed25519.pub"; then
+            echo "::error::Не получилось войти на сервер как root по паролю. Проверьте секреты SERVER_HOST и SERVER_PASSWORD (пароль root из письма хостинга)"
+            exit 1
+          fi
+          # Ключ должен работать до того, как выключим пароли, иначе можно потерять доступ
+          if ! ssh "${with_key[@]}" "root@$SERVER_HOST" true; then
+            echo "::error::Ключ выкладки положен, но вход по нему не работает. Вход по паролю не трогал"
+            exit 1
+          fi
+          tar -C "$KEYS" -cf - host_ed25519 host_ed25519.pub -C "$GITHUB_WORKSPACE/server/deploy" 01-vacante.conf \
+            | ssh "${with_key[@]}" "root@$SERVER_HOST" 'set -e
+              d=$(mktemp -d); tar -xf - -C "$d"
+              cp -a /etc/ssh/ssh_host_ed25519_key "$d/old" 2>/dev/null || true
+              cp -a /etc/ssh/ssh_host_ed25519_key.pub "$d/old.pub" 2>/dev/null || true
+              install -m 600 "$d/host_ed25519" /etc/ssh/ssh_host_ed25519_key
+              install -m 644 "$d/host_ed25519.pub" /etc/ssh/ssh_host_ed25519_key.pub
+              install -m 644 "$d/01-vacante.conf" /etc/ssh/sshd_config.d/01-vacante.conf
+              mkdir -p /run/sshd
+              if ! sshd -t; then
+                rm -f /etc/ssh/sshd_config.d/01-vacante.conf
+                if [ -f "$d/old" ]; then cp -a "$d/old" /etc/ssh/ssh_host_ed25519_key; cp -a "$d/old.pub" /etc/ssh/ssh_host_ed25519_key.pub; fi
+                rm -rf "$d"
+                echo "Новые настройки SSH не прошли проверку, вернул прежние" >&2
+                exit 1
+              fi
+              rm -rf "$d"
+              systemctl restart ssh 2>/dev/null || systemctl restart sshd'
+          sleep 3
+          "$KEYS/ssh" true
+          if sshpass -e ssh -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+              "${password_only[@]}" "root@$SERVER_HOST" true 2>/dev/null; then
+            echo "::warning::Вход по паролю всё ещё работает: настройки хостинга перекрывают наши. Напишите Claude в тред"
+          fi
+          echo "Готово: вход по паролю выключен, ключ сервера закреплён"
+
+      - name: Установка и обновление системы
+        if: steps.secrets.outputs.ready
+        run: |
+          tar -C server/deploy -czf - . | "$KEYS/ssh" \
+            'rm -rf /root/vacante-deploy && mkdir -p /root/vacante-deploy && tar -xzf - -C /root/vacante-deploy && bash /root/vacante-deploy/install.sh'
+
+      - name: Секреты на сервере
+        if: steps.secrets.outputs.ready
+        run: |
+          printf 'TELEGRAM_BOT_TOKEN=%s\nBACKUP_KEY=%s\n' "$TELEGRAM_BOT_TOKEN" "$BACKUP_KEY" \
+            | "$KEYS/ssh" 'umask 077; cat > /etc/vacante/env.new && mv /etc/vacante/env.new /etc/vacante/env'
+
+      - name: Выкладка
+        if: steps.secrets.outputs.ready
+        run: |
+          tar -czf - server/package.json server/src server/migrations config/telegram_channels.yaml \
+            | "$KEYS/ssh" "cat > /root/vacante-release.tgz && bash /root/vacante-deploy/release.sh $GITHUB_SHA /root/vacante-release.tgz"
+
+      - name: Проверка HTTPS
+        if: steps.secrets.outputs.ready
+        run: |
+          for host in api.vacante.kz p.vacante.kz; do
+            ip=$(getent ahostsv4 "$host" | awk 'NR == 1 { print $1 }' || true)
+            if [ "$ip" != "$SERVER_HOST" ]; then
+              echo "::warning::Запись DNS для $host ещё не указывает на сервер. Добавьте в PS.kz запись A: ${host%%.*} → IP сервера"
+              continue
+            fi
+            if curl -fsS --max-time 20 --retry 6 --retry-delay 10 --retry-all-errors "https://$host/health"; then
+              echo " ← https://$host работает"
+            else
+              echo "::warning::https://$host пока не отвечает: сертификат выпускается в первые минуты после появления записи DNS. Запустите workflow ещё раз через 10 минут"
+            fi
+          done
+
+      - name: Убрать ключи
+        if: always()
+        run: rm -rf "$KEYS"

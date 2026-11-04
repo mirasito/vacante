@@ -1,0 +1,15 @@
+# Caddy на сервере Vacante: HTTPS для API и страниц профиля, сертификаты Let's Encrypt
+# выпускаются и продлеваются сами, как только записи api и p в DNS указывают на этот сервер.
+# Журнал запросов не ведём: в нём были бы IP-адреса посетителей.
+
+api.vacante.kz, p.vacante.kz {
+	encode zstd gzip
+	request_body {
+		max_size 1MB
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+	reverse_proxy 127.0.0.1:8080
+}

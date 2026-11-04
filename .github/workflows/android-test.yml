@@ -1,0 +1,155 @@
+# Тестовый APK для Android. Собирается здесь же, на GitHub, без аккаунтов Expo и Google Play,
+# и после push в main (или запуска вручную: Actions → «Тестовый APK» → Run workflow) лежит
+# в пре-релизе app-test по постоянной ссылке:
+#   https://github.com/mirasito/vacante/releases/download/app-test/vacante-test.apk
+# Перед выкладкой APK ставится на эмулятор Android: приложение должно показать города и ленту
+# вакансий (app/scripts/check-apk.sh), снимки экрана лежат в артефакте прогона apk-check.
+# Пакет kz.vacante.app.test и название «Vacante тест» (app/app.config.js), поэтому тестовая
+# версия встаёт рядом с будущей из Google Play. Подписан общим тестовым ключом из шаблона
+# React Native: новая сборка ставится поверх прежней, но в Google Play с таким ключом нельзя,
+# сборка для стора в android.yml.
+name: Тестовый APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - ".github/workflows/android-test.yml"
+  # На PR только изменения, которые меняют сборку для телефона: она идёт около получаса
+  pull_request:
+    paths:
+      - "app/package.json"
+      - "app/package-lock.json"
+      - "app/app.json"
+      - "app/app.config.js"
+      - "app/scripts/check-apk.sh"
+      - ".github/workflows/android-test.yml"
+
+concurrency:
+  group: android-test-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  apk:
+    name: Сборка и проверка на эмуляторе
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      VACANTE_TEST_BUILD: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Проверка скрипта
+        run: shellcheck app/scripts/check-apk.sh
+
+      # Сборке Android и образу эмулятора нужно место: убираем то, что ей не нужно
+      - name: Место на диске
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/share/boost "$AGENT_TOOLSDIRECTORY/CodeQL"
+          df -h / | tail -1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Зависимости
+        working-directory: app
+        run: npm ci
+
+      - name: Проект Android (expo prebuild)
+        working-directory: app
+        run: npx expo prebuild -p android --no-install
+
+      - name: Сборка APK
+        working-directory: app/android
+        run: >-
+          ./gradlew assembleRelease
+          -PreactNativeArchitectures=armeabi-v7a,arm64-v8a,x86_64
+          -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=1g"
+
+      - name: Файл APK
+        run: |
+          cp app/android/app/build/outputs/apk/release/app-release.apk vacante-test.apk
+          echo "Сборка $VACANTE_TEST_BUILD, размер $(du -h vacante-test.apk | cut -f1)"
+
+      - name: KVM для эмулятора
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Проверка на эмуляторе
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          script: bash app/scripts/check-apk.sh vacante-test.apk apk-check kz.vacante.app.test
+
+      - name: Снимки экрана и журнал телефона
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-check
+          path: apk-check/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: vacante-test.apk
+          retention-days: 14
+          compression-level: 0
+
+  publish:
+    name: Пре-релиз app-test
+    needs: apk
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      BUILD: ${{ github.run_number }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: apk
+
+      - name: Выложить APK
+        run: |
+          url="https://github.com/$GH_REPO/releases/download/app-test/vacante-test.apk"
+          title="Тестовый APK для Android, сборка $BUILD"
+          cat > notes.md <<EOF
+          Тестовая сборка приложения Vacante для Android: сборка $BUILD, коммит ${GITHUB_SHA::7}.
+
+          **Как поставить.** Откройте на телефоне ссылку $url, скачайте файл и, когда телефон спросит, разрешите браузеру устанавливать приложения. Новая сборка ставится поверх прежней. На экране телефона приложение называется «Vacante тест».
+
+          Вход, профиль, отклики и напоминания пока работают только в Telegram: t.me/vacantekz_bot?startapp=beta
+          EOF
+          if gh release view app-test > /dev/null 2>&1; then
+            gh api -X PATCH "repos/$GH_REPO/git/refs/tags/app-test" -f sha="$GITHUB_SHA" -F force=true > /dev/null
+            gh release edit app-test --title "$title" --notes-file notes.md --prerelease
+            gh release upload app-test vacante-test.apk --clobber
+          else
+            gh release create app-test vacante-test.apk --prerelease --target "$GITHUB_SHA" \
+              --title "$title" --notes-file notes.md
+          fi
+          { echo "### $title"; echo; echo "$url"; } >> "$GITHUB_STEP_SUMMARY"

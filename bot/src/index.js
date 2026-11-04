@@ -5,10 +5,12 @@
 // Telegram присылает обновления вебхуком на /telegram. Всё хранится в D1,
 // а подборки каждый час рассылает `python -m vacante digest` из GitHub Actions.
 // Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
+// Профили соискателей хранит сервер в Казахстане: что касается профиля, бот передаёт ему (server.js).
 import { dispatchUpdate, wakeUpdate } from "./cron.js";
 import { crmApi, jobsApi } from "./crm.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
+import { relayToServer } from "./server.js";
 
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
@@ -52,7 +54,13 @@ export default {
 };
 
 async function handle(update, env, ctx) {
-  if (update.message && update.message.chat.type === "private") return onMessage(update.message, env);
+  const m = update.message;
+  if (m && m.chat.type === "private") {
+    // Номер из окна «Поделиться номером» в приложении: сервер кладёт его в профиль, если приложение
+    // его только что попросило. Иначе это ответ в отклике, и его ведёт бот, как раньше
+    if (m.contact && (await relayToServer(env, update))) return;
+    return onMessage(m, env);
+  }
   const q = update.callback_query;
   if (!q || !q.message) return;
   const data = q.data || "";

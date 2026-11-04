@@ -29,7 +29,8 @@ export interface Request {
 
 export interface Reply {
   status?: number;
-  headers?: Record<string, string>;
+  /** Несколько значений одного заголовка (Set-Cookie) передаются списком. */
+  headers?: Record<string, string | string[]>;
   json?: unknown;
   html?: string;
   /** Отдать готовые байты (например, кусок видео). */
@@ -93,7 +94,7 @@ export function makeRequest(raw: IncomingMessage, site: Site, params: Record<str
 }
 
 export function send(res: ServerResponse, reply: Reply) {
-  const headers: Record<string, string> = { "X-Content-Type-Options": "nosniff", ...reply.headers };
+  const headers: Record<string, string | string[]> = { "X-Content-Type-Options": "nosniff", ...reply.headers };
   let payload: Buffer | Uint8Array | string = "";
   if (reply.json !== undefined) {
     headers["Content-Type"] ??= "application/json; charset=utf-8";

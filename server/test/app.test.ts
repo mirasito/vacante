@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { after, before, test } from "node:test";
 
-import { AIGERIM, initDataFor, startServer, type TestServer } from "./helpers.ts";
+import { AIGERIM, count, initDataFor, startServer, type TestServer } from "./helpers.ts";
 
 let s: TestServer;
 before(async () => {
@@ -34,8 +34,10 @@ test("/me называет вошедшего и ничего не записы�
   assert.equal(r.status, 200);
   assert.equal(r.json.user.first_name, "Айгерим");
   assert.equal(r.json.user.id, 7001);
-  const tables = s.db.prepare("SELECT name FROM sqlite_master WHERE type = 'table'").all() as { name: string }[];
-  assert.deepEqual(tables.map((t) => t.name).sort(), ["meta", "migrations"]);
+  assert.equal(r.json.profile, false);
+  assert.equal(r.json.open, false);
+  // До согласия о человеке ничего не записываем
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM seekers"), 0);
 });
 
 test("CORS только для сайта, где лежит Mini App", async () => {

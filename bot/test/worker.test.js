@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHmac } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
@@ -29,7 +30,13 @@ function testDB() {
 }
 
 function fakeEnv() {
-  return { DB: testDB(), TELEGRAM_BOT_TOKEN: "1:test", SITE_URL: "https://vacante.kz", CHANNELS: "@vacanteastana,@vacantealmaty" };
+  return {
+    DB: testDB(),
+    TELEGRAM_BOT_TOKEN: "1:test",
+    SITE_URL: "https://vacante.kz",
+    SERVER_URL: "https://api.vacante.kz",
+    CHANNELS: "@vacanteastana,@vacantealmaty",
+  };
 }
 
 // Поддельный Telegram: запоминает вызовы, админом канала считается только пользователь 900
@@ -38,6 +45,11 @@ function fakeFetch(calls) {
   return async (url, init) => {
     if (String(url).endsWith("/feed.json")) {
       return Response.json({ vacancies: [{ id: "a", city: "almaty", category: "horeca", perks: [], pay: 0, html: "<b>Бариста</b>" }] });
+    }
+    // Сервер в Казахстане: номер в профиль он берёт, только если приложение его попросило
+    if (String(url).startsWith("https://api.vacante.kz/")) {
+      calls.push({ method: "server", url: String(url), auth: init.headers.authorization, body: JSON.parse(init.body) });
+      return Response.json({ ok: true, handled: false });
     }
     if (String(url).startsWith("https://api.github.com/")) {
       calls.push({ method: "github", url: String(url) });
@@ -166,6 +178,7 @@ test("работодатель размещает вакансию, модера
   assert.match(intro.text, /Отклик на вакансию/);
   assert.equal(intro.reply_markup.keyboard[0][0].request_contact, true);
   await post(env, { message: { chat: { id: 300, type: "private" }, from: candidate, contact: { phone_number: "+77010000000" } } });
+  assert.equal(calls.filter((c) => c.method === "server").length, 1); // сервер номер не ждал: он для отклика
   const application = sentTo(calls, 100).at(-1).body.text;
   assert.match(application, /Отклик на «Официант»/);
   assert.match(application, /Ерлан, 📱 \+77010000000/);
@@ -356,4 +369,46 @@ test("без реквизитов Kaspi кнопок «Поднять» нет",
   assert.deepEqual(sentTo(calls, 100).at(-1).body.reply_markup.inline_keyboard.map((r) => r[0].callback_data), ["close:1"]);
   await press(env, boss, "paid:1");
   assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM payments").n, 0);
+});
+
+test("номер из окна Telegram в приложении уходит серверу, остальное бот ведёт сам", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  const telegram = fakeFetch(calls);
+  let server = "handled";
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://api.vacante.kz/") && server !== "mine") {
+      calls.push({ method: "server", url: String(url), auth: init.headers.authorization, body: JSON.parse(init.body) });
+      if (server === "down") throw new TypeError("fetch failed");
+      return Response.json({ ok: true, handled: true });
+    }
+    return telegram(url, init);
+  };
+  const seeker = user(400, "Айгерим");
+  const update = { message: { chat: { id: 400, type: "private" }, from: seeker, contact: { phone_number: "+77015556677", user_id: 400 } } };
+
+  // Сервер положил номер в профиль и ответил сам: бот молчит
+  await post(env, update);
+  const relayed = calls.filter((c) => c.method === "server");
+  assert.equal(relayed.length, 1);
+  assert.equal(relayed[0].url, "https://api.vacante.kz/internal/telegram");
+  // Ключ тот же, что считает сервер: HMAC-SHA256 от токена бота (server/src/telegram.ts)
+  const key = createHmac("sha256", env.TELEGRAM_BOT_TOKEN).update("vacante-server-internal").digest("hex");
+  assert.equal(relayed[0].auth, `Bearer ${key}`);
+  assert.deepEqual(relayed[0].body, update);
+  assert.equal(sentTo(calls, 400).length, 0);
+
+  // Сервер недоступен или номер не ждал: бот отвечает, как раньше
+  server = "down";
+  await post(env, update);
+  assert.match(sentTo(calls, 400).at(-1).body.text, /Я присылаю новые вакансии/);
+  server = "mine";
+  await post(env, update);
+  assert.equal(sentTo(calls, 400).length, 2);
+
+  // Без адреса сервера и для обычных сообщений бот к серверу не ходит
+  const before = calls.filter((c) => c.method === "server").length;
+  await post({ ...env, SERVER_URL: "" }, update);
+  await say(env, seeker, "привет");
+  assert.equal(calls.filter((c) => c.method === "server").length, before);
 });

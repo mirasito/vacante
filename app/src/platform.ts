@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Linking, Platform, Share } from 'react-native';
+import { Alert, Linking, Platform, Share } from 'react-native';
 
 // Внутри Telegram приложение открывается как Mini App: окно Telegram.WebApp даёт тему,
 // вибрацию и ссылки, которые открываются, не закрывая приложение.
@@ -28,6 +28,11 @@ type WebApp = {
     offClick(callback: () => void): void;
   };
   addToHomeScreen?(): void;
+  /** Окно Telegram «Поделиться номером»: номер приходит боту сообщением-контактом (Bot API 6.9). */
+  requestContact?(callback: (shared: boolean) => void): void;
+  /** Окно Telegram «Разрешить боту писать вам» (Bot API 6.9). */
+  requestWriteAccess?(callback: (allowed: boolean) => void): void;
+  showConfirm?(message: string, callback: (ok: boolean) => void): void;
   checkHomeScreenStatus?(callback: (status: HomeScreen) => void): void;
   HapticFeedback?: {
     impactOccurred(style: 'light' | 'medium' | 'heavy'): void;
@@ -125,20 +130,71 @@ export const whatsapp = (text: string, url: string) =>
   openUrl(`https://wa.me/?text=${encodeURIComponent(`${text}\n${url}`)}`);
 
 
+export const BOT = 'vacantekz_bot';
+
+/** start_param ссылки t.me/vacantekz_bot?startapp=… */
+function startParam(): string | undefined {
+  if (!isWeb) return undefined;
+  const query = new URLSearchParams(window.location.search);
+  const hash = new URLSearchParams(window.location.hash.slice(1));
+  return telegram()?.initDataUnsafe?.start_param ?? query.get('tgWebAppStartParam') ?? hash.get('tgWebAppStartParam') ?? undefined;
+}
+
+/** Тестовая ссылка t.me/vacantekz_bot?startapp=beta: профиль до общего запуска. */
+export const launchBeta = () => startParam() === 'beta';
+
 /**
  * Город из ссылки, по которой открыли приложение: кнопка бота добавляет ?city=almaty,
  * а ссылка t.me/vacantekz_bot?startapp=almaty передаёт его в start_param.
  */
 export function launchCity(): string | undefined {
   if (!isWeb) return undefined;
-  const query = new URLSearchParams(window.location.search);
-  const hash = new URLSearchParams(window.location.hash.slice(1));
-  const value =
-    query.get('city') ??
-    telegram()?.initDataUnsafe?.start_param ??
-    query.get('tgWebAppStartParam') ??
-    hash.get('tgWebAppStartParam');
-  return value && /^[a-z][a-z-]{1,30}$/.test(value) ? value : undefined;
+  const value = new URLSearchParams(window.location.search).get('city') ?? startParam();
+  return value && value !== 'beta' && /^[a-z][a-z-]{1,30}$/.test(value) ? value : undefined;
+}
+
+/** Открыть чат с ботом; в Telegram 7.0+ приложение при этом не закрывается. */
+export const openBot = (start?: string) => openUrl(`https://t.me/${BOT}${start ? `?start=${start}` : ''}`);
+
+/** Есть ли окно Telegram «Поделиться номером» (Telegram 6.9+). */
+export const canRequestContact = () => {
+  const app = telegram();
+  return supports(app, '6.9') && !!app.requestContact;
+};
+
+/** Номер из Telegram одной кнопкой. true, если человек поделился. */
+export function requestContact(): Promise<boolean> {
+  const app = telegram();
+  if (!canRequestContact() || !app?.requestContact) return Promise.resolve(false);
+  return new Promise((resolve) => {
+    try {
+      app.requestContact!((shared) => resolve(!!shared));
+    } catch {
+      resolve(false); // окно уже открыто
+    }
+  });
+}
+
+/** Разрешение боту писать первым: без него напоминания в бот не дойдут. */
+export function requestWriteAccess(): Promise<boolean> {
+  const app = telegram();
+  if (!supports(app, '6.9') || !app.requestWriteAccess) return Promise.resolve(false);
+  return new Promise((resolve) => app.requestWriteAccess!((allowed) => resolve(!!allowed)));
+}
+
+/** Вопрос «Да / Нет» окном Telegram, браузера или телефона. */
+export function confirm(message: string, yes: string, no: string): Promise<boolean> {
+  const app = telegram();
+  if (supports(app, '6.2') && app.showConfirm) {
+    return new Promise((resolve) => app.showConfirm!(message, (ok) => resolve(!!ok)));
+  }
+  if (isWeb) return Promise.resolve(window.confirm(message));
+  return new Promise((resolve) =>
+    Alert.alert('', message, [
+      { text: no, style: 'cancel', onPress: () => resolve(false) },
+      { text: yes, style: 'destructive', onPress: () => resolve(true) },
+    ]),
+  );
 }
 
 /**

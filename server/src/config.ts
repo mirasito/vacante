@@ -6,6 +6,8 @@ export interface Config {
   botToken: string;
   /** Папка с базой и кружками. */
   dataDir: string;
+  /** Папка с файлами кружков (внутри dataDir). */
+  videosDir: string;
   host: string;
   port: number;
   /** Адрес API, например https://api.vacante.kz. */
@@ -18,6 +20,11 @@ export interface Config {
   botUsername: string;
   /** Коммит, из которого собран сервер. */
   version: string;
+  /**
+   * Можно ли всем создавать профили. Пока юрист не проверил текст согласия, профили
+   * создают только тестировщики: они открывают приложение по ссылке t.me/vacantekz_bot?startapp=beta.
+   */
+  profilesOpen: boolean;
 }
 
 type Env = Record<string, string | undefined>;
@@ -27,9 +34,11 @@ export function loadConfig(env: Env = process.env): Config {
   if (!/^\d+:[\w-]{20,}$/.test(botToken)) {
     throw new Error("Нет TELEGRAM_BOT_TOKEN: без него не проверить вход через Telegram");
   }
+  const dataDir = env.DATA_DIR ?? "./data";
   return {
     botToken,
-    dataDir: env.DATA_DIR ?? "./data",
+    dataDir,
+    videosDir: `${dataDir}/videos`,
     host: env.HOST ?? "127.0.0.1",
     port: Number(env.PORT ?? 8080),
     apiOrigin: env.API_ORIGIN ?? "https://api.vacante.kz",
@@ -41,6 +50,7 @@ export function loadConfig(env: Env = process.env): Config {
     siteUrl: env.SITE_URL ?? "https://vacante.kz",
     botUsername: env.BOT_USERNAME ?? "vacantekz_bot",
     version: env.VACANTE_VERSION ?? releaseVersion(),
+    profilesOpen: env.PROFILES_OPEN === "1",
   };
 }
 

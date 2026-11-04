@@ -1,16 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import {
-  ActivityIndicator,
-  BackHandler,
-  FlatList,
-  Modal,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { BackHandler, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { loadCity, loadIndex } from './src/api';
@@ -20,6 +10,7 @@ import {
   haptic,
   homeScreenStatus,
   initTelegram,
+  launchBeta,
   launchCity,
   openUrl,
   shareLink,
@@ -28,15 +19,20 @@ import {
   whatsapp,
   type HomeScreen,
 } from './src/platform';
-import { whoAmI, type Account } from './src/server';
+import { ProfileTab } from './src/profile/ProfileTab';
+import { P } from './src/profile/texts';
+import { setBeta, whoAmI, type Account } from './src/server';
 import { read, write } from './src/storage';
 import { SwipeDeck, type DeckHandle, type Dir } from './src/SwipeDeck';
 import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
+import { Button, Chip, LangSwitch, Loading, Retry, Round, Screen, Tab, styles as ui } from './src/ui';
 import { VacancyCard } from './src/VacancyCard';
 
-// hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили
-type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean; home?: boolean };
+// hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
+// beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска
+type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean; home?: boolean; beta?: boolean };
+type TabName = 'feed' | 'liked' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
 
 const MAX_LIKED = 300;
@@ -61,7 +57,7 @@ function Main() {
   const [liked, setLiked] = useState<Liked[]>([]);
   const [history, setHistory] = useState<string[]>([]);
   const [error, setError] = useState(false);
-  const [tab, setTab] = useState<'feed' | 'liked'>('feed');
+  const [tab, setTab] = useState<TabName>('feed');
   const [picking, setPicking] = useState(false);
   const [open, setOpen] = useState<Vacancy | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -69,6 +65,8 @@ function Main() {
   const [account, setAccount] = useState<Account | null>(null);
   const deck = useRef<DeckHandle>(null);
   const seenCity = useRef<string | null>(null);
+  // Шаг назад внутри вкладки «Профиль» (анкета); null — назад некуда, уходим в ленту
+  const profileBack = useRef<(() => boolean) | null>(null);
 
   const lang: Lang = prefs.lang ?? 'ru';
   const city = prefs.city;
@@ -85,7 +83,14 @@ function Main() {
       const tgLang = app?.initDataUnsafe?.user?.language_code === 'kk' ? 'kk' : undefined;
       // Открыли по кнопке из подборки бота: сразу город этой подборки
       const linkCity = launchCity();
-      setPrefs({ ...stored, lang: stored.lang ?? tgLang ?? 'ru', ...(linkCity ? { city: linkCity } : {}) });
+      const beta = stored.beta || launchBeta();
+      setBeta(beta);
+      setPrefs({
+        ...stored,
+        lang: stored.lang ?? tgLang ?? 'ru',
+        ...(linkCity ? { city: linkCity } : {}),
+        ...(beta ? { beta: true } : {}),
+      });
       setLiked(storedLiked);
       setBooted(true);
       if (app) {
@@ -156,7 +161,8 @@ function Main() {
         setPicking(false);
         return true;
       }
-      if (tab === 'liked') {
+      if (tab === 'profile' && profileBack.current?.()) return true;
+      if (tab !== 'feed') {
         setTab('feed');
         return true;
       }
@@ -166,11 +172,15 @@ function Main() {
   }, [picking, city, tab]);
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
-  useBackButton(!!open || (picking && !!city) || tab === 'liked', () => {
+  useBackButton(!!open || (picking && !!city) || tab !== 'feed', () => {
     if (open) setOpen(null);
     else if (picking && city) setPicking(false);
+    else if (tab === 'profile' && profileBack.current?.()) return;
     else setTab('feed');
   });
+
+  // Вкладка «Профиль» видна, когда сервер ответил и профили открыты (или это тестировщик)
+  const showProfile = !!account && (account.open || !!prefs.beta);
 
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),
@@ -227,7 +237,7 @@ function Main() {
         {account ? (
           <Text style={[styles.account, { color: c.quiet }]}>✓ {i18n.signedIn(lang, account.first_name)}</Text>
         ) : null}
-        <Text style={[styles.h1, { color: c.ink }]}>{t('chooseCity')}</Text>
+        <Text style={[ui.h1, { color: c.ink }]}>{t('chooseCity')}</Text>
         {index ? (
           <ScrollView contentContainerStyle={styles.cityList}>
             {index.cities.map((ct) => (
@@ -304,10 +314,10 @@ function Main() {
             ) : cards.length ? (
               <SwipeDeck ref={deck} items={cards} lang={lang} c={c} onSwipe={onSwipe} onOpen={setOpen} />
             ) : (
-              <View style={styles.center}>
-                <Text style={styles.big}>🎉</Text>
-                <Text style={[styles.h2, { color: c.ink }]}>{t('endTitle')}</Text>
-                <Text style={[styles.note, { color: c.quiet }]}>{t('endText')}</Text>
+              <View style={ui.center}>
+                <Text style={ui.big}>🎉</Text>
+                <Text style={[ui.h2, { color: c.ink }]}>{t('endTitle')}</Text>
+                <Text style={[ui.note, { color: c.quiet }]}>{t('endText')}</Text>
                 {skipped ? <Button c={c} label={t('showSkipped')} onPress={showSkipped} /> : null}
               </View>
             )}
@@ -359,6 +369,15 @@ function Main() {
             </Text>
           ) : null}
         </>
+      ) : tab === 'profile' && showProfile ? (
+        <ProfileTab
+          c={c}
+          lang={lang}
+          index={index}
+          name={account.first_name}
+          city={city}
+          backRef={profileBack}
+        />
       ) : (
         <LikedList
           items={liked}
@@ -377,6 +396,9 @@ function Main() {
           label={`♥ ${t('liked')}${liked.length ? ` · ${liked.length}` : ''}`}
           onPress={() => setTab('liked')}
         />
+        {showProfile ? (
+          <Tab c={c} active={tab === 'profile'} label={`👤 ${P[lang].tab}`} onPress={() => setTab('profile')} />
+        ) : null}
       </View>
 
       <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)} transparent>
@@ -405,16 +427,16 @@ function Details({ v, lang, c, onClose }: { v: Vacancy; lang: Lang; c: Colors; o
         <Pressable onPress={onClose} style={styles.close} hitSlop={12}>
           <Text style={[styles.closeText, { color: c.quiet }]}>✕</Text>
         </Pressable>
-        <View style={styles.flex}>
+        <View style={ui.flex}>
           <VacancyCard v={v} lang={lang} c={c} full />
         </View>
         <View style={styles.sheetActions}>
           <Button c={c} label={t('apply')} onPress={() => openUrl(v.source_url ?? v.url)} />
-          <View style={styles.row}>
+          <View style={ui.row}>
             <Button c={c} ghost label={`↗ ${t('share')}`} onPress={() => shareVacancy(v, lang, 'any')} />
             <Button c={c} ghost label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
           </View>
-          <View style={styles.row}>
+          <View style={ui.row}>
             {v.map ? <Button c={c} ghost label={`🗺 ${t('onMap')}`} onPress={() => openUrl(v.map!)} /> : null}
             <Button c={c} ghost label={t('onSite')} onPress={() => openUrl(v.url)} />
           </View>
@@ -435,9 +457,9 @@ function LikedList(props: {
   const t = (key: i18n.Key) => i18n.t(lang, key);
   if (!items.length) {
     return (
-      <View style={styles.center}>
-        <Text style={styles.big}>♥</Text>
-        <Text style={[styles.note, { color: c.quiet }]}>{t('emptyLiked')}</Text>
+      <View style={ui.center}>
+        <Text style={ui.big}>♥</Text>
+        <Text style={[ui.note, { color: c.quiet }]}>{t('emptyLiked')}</Text>
       </View>
     );
   }
@@ -460,7 +482,7 @@ function LikedList(props: {
           {i18n.pay(v, lang) ? (
             <Text style={[styles.likedPay, { color: c.accent }]}>{i18n.pay(v, lang)}</Text>
           ) : null}
-          <View style={styles.row}>
+          <View style={ui.row}>
             <Button c={c} small label={t('apply')} onPress={() => openUrl(v.source_url ?? v.url)} />
             <Button c={c} small ghost label={t('share')} onPress={() => shareVacancy(v, lang, 'any')} />
             <Button c={c} small ghost label={t('remove')} onPress={() => onRemove(v.id)} />
@@ -471,125 +493,15 @@ function LikedList(props: {
   );
 }
 
-function Screen({ c, children }: { c: Colors; children: ReactNode }) {
-  return (
-    <SafeAreaView style={[styles.screen, { backgroundColor: c.bg }]}>
-      <View style={styles.column}>{children}</View>
-    </SafeAreaView>
-  );
-}
 
-function Loading({ c, text }: { c: Colors; text: string }) {
-  return (
-    <View style={[styles.center, { backgroundColor: c.bg }]}>
-      <ActivityIndicator color={c.accent} />
-      {text ? <Text style={[styles.note, { color: c.quiet }]}>{text}</Text> : null}
-    </View>
-  );
-}
 
-function Retry({ c, lang, onRetry }: { c: Colors; lang: Lang; onRetry(): void }) {
-  return (
-    <View style={styles.center}>
-      <Text style={[styles.note, { color: c.quiet }]}>{i18n.t(lang, 'error')}</Text>
-      <Button c={c} label={i18n.t(lang, 'retry')} onPress={onRetry} />
-    </View>
-  );
-}
 
-function LangSwitch({ lang, c, onChange }: { lang: Lang; c: Colors; onChange(l: Lang): void }) {
-  return (
-    <View style={[styles.langs, { borderColor: c.line }]}>
-      {(['ru', 'kk'] as const).map((l) => (
-        <Pressable
-          key={l}
-          onPress={() => onChange(l)}
-          style={[styles.lang, l === lang && { backgroundColor: c.accent }]}
-        >
-          <Text style={[styles.langText, { color: l === lang ? '#fff' : c.quiet }]}>
-            {l === 'ru' ? 'RU' : 'KZ'}
-          </Text>
-        </Pressable>
-      ))}
-    </View>
-  );
-}
 
-function Chip(props: { c: Colors; active: boolean; label: string; onPress(): void }) {
-  const { c, active, label, onPress } = props;
-  return (
-    <Pressable
-      onPress={onPress}
-      style={[styles.chip, { backgroundColor: active ? c.accent : c.card, borderColor: active ? c.accent : c.line }]}
-    >
-      <Text style={[styles.chipText, { color: active ? '#fff' : c.ink }]}>{label}</Text>
-    </Pressable>
-  );
-}
 
-function Round(props: {
-  c: Colors;
-  color: string;
-  label: string;
-  title: string;
-  small?: boolean;
-  disabled?: boolean;
-  onPress(): void;
-}) {
-  const { c, color, label, title, small, disabled, onPress } = props;
-  const size = small ? 48 : 64;
-  return (
-    <Pressable
-      onPress={onPress}
-      disabled={disabled}
-      accessibilityLabel={title}
-      style={[
-        styles.round,
-        { width: size, height: size, borderRadius: size / 2, backgroundColor: c.card, borderColor: c.line },
-        disabled && styles.disabled,
-      ]}
-    >
-      <Text style={[styles.roundText, { color, fontSize: small ? 22 : 30 }]}>{label}</Text>
-    </Pressable>
-  );
-}
 
-function Tab({ c, active, label, onPress }: { c: Colors; active: boolean; label: string; onPress(): void }) {
-  return (
-    <Pressable onPress={onPress} style={styles.tab}>
-      <Text style={[styles.tabText, { color: active ? c.accent : c.quiet }]}>{label}</Text>
-    </Pressable>
-  );
-}
 
-function Button(props: { c: Colors; label: string; ghost?: boolean; small?: boolean; onPress(): void }) {
-  const { c, label, ghost, small, onPress } = props;
-  return (
-    <Pressable
-      onPress={onPress}
-      style={[
-        styles.button,
-        small && styles.buttonSmall,
-        ghost ? { borderColor: c.line, borderWidth: 1 } : { backgroundColor: c.accent },
-      ]}
-    >
-      <Text style={[styles.buttonText, small && styles.buttonTextSmall, { color: ghost ? c.ink : '#fff' }]}>
-        {label}
-      </Text>
-    </Pressable>
-  );
-}
 
 const styles = StyleSheet.create({
-  screen: { flex: 1 },
-  column: { flex: 1, width: '100%', maxWidth: 520, alignSelf: 'center' },
-  flex: { flex: 1 },
-  row: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 12 },
-  big: { fontSize: 48 },
-  h1: { fontSize: 28, fontWeight: '800', paddingHorizontal: 16, marginBottom: 12 },
-  h2: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
-  note: { fontSize: 15, textAlign: 'center', lineHeight: 21 },
   logo: { fontSize: 22, fontWeight: '900', letterSpacing: -0.5 },
   pickerHead: {
     flexDirection: 'row',
@@ -618,13 +530,8 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
   },
   cityButton: { fontSize: 18, fontWeight: '700' },
-  langs: { flexDirection: 'row', borderWidth: 1, borderRadius: 10, overflow: 'hidden' },
-  lang: { paddingHorizontal: 10, paddingVertical: 5 },
-  langText: { fontSize: 13, fontWeight: '700' },
   cats: { flexGrow: 0 },
   catsRow: { paddingHorizontal: 16, paddingVertical: 8, gap: 6 },
-  chip: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 16, borderWidth: 1 },
-  chipText: { fontSize: 14, fontWeight: '600' },
   deckArea: { flex: 1, marginHorizontal: 16, marginTop: 4 },
   hint: {
     position: 'absolute',
@@ -646,22 +553,8 @@ const styles = StyleSheet.create({
     gap: 24,
     paddingTop: 14,
   },
-  round: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 2,
-  },
-  roundText: { fontWeight: '700' },
-  disabled: { opacity: 0.35 },
   left: { textAlign: 'center', fontSize: 12, paddingVertical: 6 },
   tabs: { flexDirection: 'row', borderTopWidth: 1 },
-  tab: { flex: 1, alignItems: 'center', paddingVertical: 14 },
-  tabText: { fontSize: 15, fontWeight: '700' },
   likedList: { padding: 16, gap: 10 },
   likedRow: { padding: 16, borderRadius: 16, borderWidth: 1, gap: 4 },
   likedTitle: { fontSize: 17, fontWeight: '700' },
@@ -679,15 +572,4 @@ const styles = StyleSheet.create({
   close: { position: 'absolute', top: 14, right: 18, zIndex: 2 },
   closeText: { fontSize: 22 },
   sheetActions: { padding: 16, gap: 8 },
-  button: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-    borderRadius: 14,
-  },
-  buttonSmall: { flexGrow: 0, paddingVertical: 8, paddingHorizontal: 12, borderRadius: 10 },
-  buttonText: { fontSize: 16, fontWeight: '700' },
-  buttonTextSmall: { fontSize: 14 },
 });

@@ -1,19 +1,20 @@
 """Данные для приложения со свайпами (Expo: Telegram Mini App, Android, iOS).
 
-Приложение читает статичные JSON с сайта: app/data/index.json (города и сферы) и
-app/data/<город>.json (свежие вакансии города). Подписи сразу на двух языках, чтобы
+Приложение читает статичные JSON с сайта: app/data/index.json (города, сферы и профессии
+для анкеты соискателя) и app/data/<город>.json (свежие вакансии города). Подписи сразу на двух языках, чтобы
 приложению не нужно было знать правила сайта: ключи без суффикса по-русски, с «_kk» по-казахски.
 """
 
 from __future__ import annotations
 
 import json
+from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
 from vacante import venues as venue_store
 from vacante.models import Vacancy
-from vacante.parse import CATEGORIES, CITIES
+from vacante.parse import CATEGORIES, CITIES, PROFESSIONS
 from vacante.site import i18n
 
 # Сколько вакансий города попадает в ленту: свежие первыми, этого хватает на много дней свайпов,
@@ -54,6 +55,15 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
     return {k: val for k, val in data.items() if val not in (None, [], "")}
 
 
+def roles(vacancies: list[Vacancy]) -> list[dict]:
+    """Профессии для анкеты «Кем хочу работать»: те же, что знает разбор, частые первыми."""
+    counts = Counter(part for v in vacancies for part in v.title.split(", "))
+    seen: dict[str, dict] = {}
+    for _, title, category in PROFESSIONS:
+        seen.setdefault(title, {"title": title, "title_kk": i18n.TITLES_KK.get(title, title), "category": category})
+    return sorted(seen.values(), key=lambda r: -counts[r["title"]])
+
+
 def write(out: Path, vacancies: list[Vacancy], base_url: str, now: datetime, venues: dict) -> None:
     """vacancies уже отсортированы: «🔥 Срочно» первыми, дальше по новизне."""
     folder = out / DIR
@@ -74,5 +84,6 @@ def write(out: Path, vacancies: list[Vacancy], base_url: str, now: datetime, ven
                    if slug in by_city],
         "categories": [{"slug": slug, "name": name, "name_kk": i18n.CATEGORIES_KK.get(slug, name)}
                        for slug, name in CATEGORIES.items()],
+        "roles": roles(vacancies),
     }
     (folder / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), "utf-8")

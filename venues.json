@@ -803,6 +803,13 @@
   "instagram": "istanbul_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001028530873"
  },
+ "aktau:суендыков": {
+  "name": "СУЕНДЫКОВ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
+ },
  "aktau:сүбе": {
   "name": "СҮБЕ",
   "city": "aktau",
@@ -1199,6 +1206,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
+ },
+ "aktobe:trading house b i profit": {
+  "name": "TRADING HOUSE B.I.PROFIT",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "biprofit_kz",
+  "website": "https://biprofit.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001060272202",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6619313f882d69ae.jpg",
+  "avatar_source": "website"
  },
  "aktobe:uya": {
   "name": "UYA",
@@ -2215,6 +2238,13 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "almaty:aqua star group": {
+  "name": "AQUA STAR GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
+ },
  "almaty:aquapolis": {
   "name": "AQUAPOLIS",
   "city": "almaty",
@@ -2566,6 +2596,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:avital kz": {
+  "name": "Avital.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "avital_deluxe",
+  "source": "https://2gis.kz/almaty/firm/70000001044909633"
  },
  "almaty:avrora": {
   "name": "AVRORA",
@@ -4934,6 +4973,15 @@
   "instagram": "janamen.health",
   "source": "https://www.instagram.com/janamen.health/"
  },
+ "almaty:jessica": {
+  "name": "Jessica",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "studio.jessica.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001118083398"
+ },
  "almaty:jet finance тоо mogo kazakhstan": {
   "name": "Jet Finance (ТОО Mogo Kazakhstan)",
   "city": "almaty",
@@ -6193,6 +6241,20 @@
    "website"
   ]
  },
+ "almaty:ozyurt": {
+  "name": "OZYURT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "ozyurt.kz",
+  "website": "https://www.ozyurt.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001040725589",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ozze group оззе групп": {
   "name": "OZZE GROUP (ОЗЗЕ ГРУПП )",
   "city": "almaty",
@@ -6609,6 +6671,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
+ },
+ "almaty:retail master group": {
+  "name": "Retail Master Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "coffeestore_kz",
+  "website": "https://coffeestore.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001038001583",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "400b33cbfdc81544.jpg",
+  "avatar_source": "website"
  },
  "almaty:rg brands kazakhstan": {
   "name": "RG Brands Kazakhstan",
@@ -7372,6 +7450,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:teploazii kz": {
+  "name": "TeploAzii KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "website": "https://teploazii.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001064203359",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "16234c52d4db4c84.jpg",
+  "avatar_source": "website"
  },
  "almaty:teplostil": {
   "name": "TEPLOSTIL",
@@ -8144,6 +8237,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "almaty:автодом м": {
+  "name": "Автодом-М",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
  },
  "almaty:автоимперия 8 миля": {
   "name": "Автоимперия 8 Миля",
@@ -12037,6 +12137,13 @@
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
  },
+ "almaty:столичный хлеб": {
+  "name": "Столичный хлеб",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
+ },
  "almaty:столовая": {
   "name": "Столовая",
   "city": "almaty",
@@ -12138,6 +12245,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "almaty:тави павлодар": {
+  "name": "Тави Павлодар",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "tavi_group",
+  "website": "https://www.tavigroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043605281",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c84e82887b469975.jpg",
+  "avatar_source": "website"
  },
  "almaty:тайсейко": {
   "name": "Тайсейко",
@@ -20599,6 +20722,20 @@
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
  },
+ "astana:ятаган": {
+  "name": "Ятаган",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "yataghan_kz",
+  "website": "https://yataghan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018128817",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:қызмет": {
   "name": "Қызмет",
   "city": "astana",
@@ -20868,6 +21005,13 @@
   "instagram": "nes_restaurant",
   "source": "https://2gis.kz/atyrau/firm/70000001095535105"
  },
+ "atyrau:ny group kz": {
+  "name": "NY Group KZ",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
+ },
  "atyrau:qsr тм burger king": {
   "name": "“QSR” ,ТМ BURGER KING",
   "city": "atyrau",
@@ -21084,6 +21228,13 @@
   "checked_at": "2026-11-03T14:44:03+00:00",
   "instagram": "dana_market_atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001117128961"
+ },
+ "atyrau:даньяров е д": {
+  "name": "Даньяров Е.Д.",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
  },
  "atyrau:даулетов н а акжелкен": {
   "name": "Даулетов Н.А. АкЖелкен",
@@ -22100,6 +22251,22 @@
    "website"
   ]
  },
+ "karaganda:гидротехснаб астана": {
+  "name": "ГидроТехСнаб Астана",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "ironplastgroup",
+  "website": "https://karaganda.ironplast.group/",
+  "source": "https://2gis.kz/karaganda/firm/70000001035555677",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "42364fe332a8bb89.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:глория джинс каспиан": {
   "name": "Глория Джинс Каспиан",
   "city": "karaganda",
@@ -22943,6 +23110,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "kokshetau:uac": {
+  "name": "UAC",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
  },
  "kokshetau:агро курс": {
   "name": "Агро Курс",
@@ -25186,6 +25360,20 @@
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001062151780",
   "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "petropavlovsk:mechta kz tm тоо мечта маркет": {
+  "name": "Mechta.kz TM ( ТОО Мечта Маркет )",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "mechta.kz",
+  "website": "https://mechta.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038349790",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28204,6 +28392,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "uralsk:taral": {
+  "name": "TARAL",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
+ },
  "uralsk:taza group": {
   "name": "Taza group",
   "city": "uralsk",
@@ -28332,6 +28527,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "uralsk:атриум": {
+  "name": "Атриум",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00"
  },
  "uralsk:батыс продукт": {
   "name": "Батыс-Продукт",
@@ -28627,6 +28829,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "ust-kamenogorsk:beeline тм": {
+  "name": "Beeline, ТМ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T01:44:23+00:00",
+  "instagram": "beeline_kz",
+  "website": "https://beeline.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721316247",
+  "avatar_checked_at": "2026-11-04T01:44:24+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:building realty": {
   "name": "BUILDING REALTY",

@@ -44,6 +44,9 @@ class Vacancy:
     title_kk: str | None = None  # казахская часть двуязычного названия с hh.kz, для казахской версии сайта
     # Какие контакты есть в исходном посте (vacante.contacts.KINDS), без самих номеров и имён
     contact: list[str] = field(default_factory=list)
+    # Точка адреса работы (vacante.geo.city_point): по ней приложение показывает, далеко ли от дома
+    lat: float | None = None
+    lon: float | None = None
 
     def is_top(self, now: datetime) -> bool:
         return self.top_until is not None and datetime.fromisoformat(self.top_until) > now

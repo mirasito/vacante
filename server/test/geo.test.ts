@@ -150,6 +150,12 @@ test("дом в профиле: округлён, виден только сам
   assert.match(page.text, /Асель/);
   assert.doesNotMatch(page.text, /43\.2|76\.9|home/);
 
+  // Лента приложения узнаёт дом из /me, чтобы показать, далеко ли работа
+  const me = await s.call("GET", "/me", { headers: auth() });
+  assert.deepEqual(me.json.home, { lat: 43.24, lon: 76.91 });
+  const stranger = await s.call("GET", "/me", { headers: auth({ id: 7402, first_name: "Ерлан" }) });
+  assert.equal(stranger.json.home, null);
+
   // Приложение до этой версии про дом не знает: точка остаётся
   const old = await s.call("PUT", "/me/profile", { headers: auth(), body: { profile: { ...ANKETA, about: "Люблю готовить" } } });
   assert.equal(old.status, 200);
@@ -158,6 +164,7 @@ test("дом в профиле: округлён, виден только сам
   // Убрать дом
   const cleared = await s.call("PUT", "/me/profile", { headers: auth(), body: { profile: { ...ANKETA, home: null } } });
   assert.equal(cleared.json.profile.home, null);
+  assert.equal((await s.call("GET", "/me", { headers: auth() })).json.home, null);
 
   // Точка не в Казахстане и мусор вместо точки
   for (const home of [{ lat: 25.28, lon: 55.17, source: "phone" }, { lat: "43", lon: 76, source: "phone" }, { lat: 43.2, lon: 76.9, source: "gps" }]) {

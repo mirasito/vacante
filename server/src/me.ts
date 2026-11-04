@@ -103,11 +103,14 @@ export function meRoutes(ctx: Ctx): Route[] {
       const { user } = ctx.auth(req);
       const seeker = getSeeker(ctx.db, user.id);
       if (seeker) touchSeeker(ctx.db, user.id, { first_name: user.first_name }, ctx.now());
+      const home = seeker ? getProfile(ctx.db, user.id)?.home : null;
       return {
         json: {
           user: { id: user.id, first_name: user.first_name, language_code: user.language_code },
           open: ctx.config.profilesOpen,
           profile: !!seeker,
+          // Дом из анкеты, округлённый до 300–500 м: лента считает по нему, далеко ли работа. Только самому человеку
+          home: home ? { lat: home.lat, lon: home.lon } : null,
         },
       };
     }),

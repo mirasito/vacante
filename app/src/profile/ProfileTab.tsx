@@ -1,8 +1,9 @@
 // Вкладка «Профиль»: профиль так, как его видит работодатель, сила профиля, фото, дом, ссылка,
 // «Кто смотрел профиль», база кандидатов и удаление. Без профиля — приглашение его создать.
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import type { Point } from '../geo';
 import * as i18n from '../i18n';
 import {
   canRequestContact,
@@ -54,6 +55,10 @@ export function ProfileTab(props: {
   backRef: { current: (() => boolean) | null };
   /** Профиль создан или удалён: отклики переезжают на сервер или остаются на телефоне. */
   onProfile?(has: boolean): void;
+  /** Дом из профиля, как только он известен и после каждой правки: лента считает по нему расстояния. */
+  onHome?(home: Point | null): void;
+  /** С какого экрана открыть: 'home' — сразу «Где вы живёте?» (кнопка «Рядом с домом» в ленте). */
+  start?: 'home';
   /** Ближайшие напоминания и их настройки (есть, когда профиль на сервере). */
   reminders?: RemindersProps;
 }) {
@@ -61,8 +66,19 @@ export function ProfileTab(props: {
   const t = P[lang];
   const [view, setView] = useState<ProfileView | null | undefined>(undefined);
   const [failed, setFailed] = useState(false);
-  const [mode, setMode] = useState<Mode>('card');
+  const [mode, setMode] = useState<Mode>(props.start ?? 'card');
   const [attempt, setAttempt] = useState(0);
+
+  // Сообщаем ленте дом из профиля: при открытии вкладки и после каждой правки
+  const onHome = useRef(props.onHome);
+  onHome.current = props.onHome;
+  const homeLat = view?.profile?.home?.lat;
+  const homeLon = view?.profile?.home?.lon;
+  const loaded = view !== undefined;
+  useEffect(() => {
+    if (!loaded) return;
+    onHome.current?.(homeLat !== undefined && homeLon !== undefined ? { lat: homeLat, lon: homeLon } : null);
+  }, [loaded, homeLat, homeLon]);
 
   useEffect(() => {
     let alive = true;

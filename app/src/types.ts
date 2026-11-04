@@ -17,6 +17,9 @@ export interface Vacancy {
   perks_kk?: string[];
   address?: string;
   map?: string;
+  /** Точка адреса работы (пока у вакансий с hh.kz): по ней видно, далеко ли от дома. */
+  lat?: number;
+  lon?: number;
   posted_at: string;
   top?: boolean;
   url: string;

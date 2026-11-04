@@ -9,6 +9,7 @@ import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { Celebrate } from './src/applications/Celebrate';
 import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
+import { DEFAULT_NEAR, kmFromHome, NEAR_KM, type NearKm, type Point } from './src/geo';
 import * as i18n from './src/i18n';
 import {
   addToHomeScreen,
@@ -61,10 +62,21 @@ import { Button, Chip, LangSwitch, Loading, ModalArea, Retry, Round, Screen, Tab
 import { VacancyCard } from './src/VacancyCard';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
-// beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска
-type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean; home?: boolean; beta?: boolean };
+// beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска;
+// near: включён фильтр «Рядом с домом», радиус в километрах
+type Prefs = {
+  lang?: Lang;
+  city?: string;
+  cat?: string | null;
+  hint?: boolean;
+  home?: boolean;
+  beta?: boolean;
+  near?: NearKm | null;
+};
 type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
+
+const samePoint = (a: Point | null, b: Point | null) => a?.lat === b?.lat && a?.lon === b?.lon;
 
 const MAX_LIKED = 300;
 // Значок на экран телефона предлагаем один раз, когда человек уже полистал ленту
@@ -91,6 +103,8 @@ function Main() {
   const [tab, setTab] = useState<TabName>('feed');
   const [picking, setPicking] = useState(false);
   const [open, setOpen] = useState<Vacancy | null>(null);
+  // Профиль открыли кнопкой «Рядом с домом», а дома ещё нет: сразу шаг «Где вы живёте?»
+  const [profileStart, setProfileStart] = useState<'home' | null>(null);
   const [attempt, setAttempt] = useState(0);
   const [home, setHome] = useState<HomeScreen>('unsupported');
   const [account, setAccount] = useState<Account | null>(null);
@@ -217,6 +231,11 @@ function Main() {
     telegram()?.setHeaderColor?.(c.bg);
     telegram()?.setBackgroundColor?.(c.bg);
   }, [c.bg]);
+
+  // Ушли из профиля, так и не сохранив дом: в следующий раз профиль открывается как обычно
+  useEffect(() => {
+    if (tab !== 'profile') setProfileStart(null);
+  }, [tab]);
 
   // Кнопка «Назад» на Android сначала закрывает выбор города и «Избранное», а не всё приложение
   useEffect(() => {
@@ -479,11 +498,35 @@ function Main() {
           : undefined,
     });
   };
-  const cards = useMemo(
-    () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),
-    [feed, seen, prefs.cat],
+  // «Рядом с домом»: только вакансии с точкой не дальше радиуса. Дом знаем из профиля на сервере
+  const homePoint = account?.home ?? null;
+  const near = tracker === 'server' && homePoint && prefs.near ? prefs.near : null;
+  const isNear = useCallback(
+    (v: Vacancy) => {
+      if (!near) return true;
+      const km = kmFromHome(homePoint, v);
+      return km !== null && km <= near;
+    },
+    [near, homePoint],
   );
+  const inCategory = useCallback((v: Vacancy) => !prefs.cat || v.category === prefs.cat, [prefs.cat]);
+  const cards = useMemo(
+    () => (feed ?? []).filter((v) => !seen[v.id] && inCategory(v) && isNear(v)),
+    [feed, seen, inCategory, isNear],
+  );
+  // Рядом с домом есть вакансии, просто все уже просмотрены
+  const nearSeen = useMemo(() => !!near && (feed ?? []).some((v) => inCategory(v) && isNear(v)), [near, feed, inCategory, isNear]);
   const skipped = useMemo(() => Object.values(seen).some((d) => d === 'l'), [seen]);
+  const toggleNear = () => {
+    haptic();
+    if (near) setPref({ near: null });
+    else if (homePoint) setPref({ near: DEFAULT_NEAR });
+    else {
+      // Дома в профиле ещё нет: сначала «Где вы живёте?», после сохранения сразу назад в ленту
+      setProfileStart('home');
+      setTab('profile');
+    }
+  };
   const askHome =
     !prefs.home && (home === 'missed' || home === 'unknown') && Object.keys(seen).length >= HOME_AFTER;
 
@@ -603,6 +646,18 @@ function Main() {
               style={styles.cats}
               contentContainerStyle={styles.catsRow}
             >
+              {tracker === 'server' ? <Chip c={c} active={!!near} label={t('near')} onPress={toggleNear} /> : null}
+              {near
+                ? NEAR_KM.map((km) => (
+                    <Chip
+                      key={km}
+                      c={c}
+                      active={near === km}
+                      label={i18n.upToKm(km, lang)}
+                      onPress={() => setPref({ near: km })}
+                    />
+                  ))
+                : null}
               <Chip c={c} active={!prefs.cat} label={t('all')} onPress={() => setPref({ cat: null })} />
               {index.categories
                 .filter((cat) => feed?.some((v) => v.category === cat.slug))
@@ -624,13 +679,34 @@ function Main() {
             ) : !feed ? (
               <Loading c={c} text={t('loading')} />
             ) : cards.length ? (
-              <SwipeDeck ref={deck} items={cards} lang={lang} c={c} onSwipe={onSwipe} onOpen={setOpen} />
+              <SwipeDeck
+                ref={deck}
+                items={cards}
+                lang={lang}
+                c={c}
+                home={tracker === 'server' ? homePoint : null}
+                onSwipe={onSwipe}
+                onOpen={setOpen}
+              />
+            ) : near && !nearSeen ? (
+              <View style={ui.center}>
+                <Text style={ui.big}>🏠</Text>
+                <Text style={[ui.h2, { color: c.ink }]}>{t('nearEmptyTitle')}</Text>
+                <Text style={[ui.note, { color: c.quiet }]}>{t('nearEmptyText')}</Text>
+                <View style={styles.endActions}>
+                  <Button c={c} label={t('nearAll')} onPress={() => setPref({ near: null })} />
+                </View>
+              </View>
             ) : (
               <View style={ui.center}>
                 <Text style={ui.big}>🎉</Text>
                 <Text style={[ui.h2, { color: c.ink }]}>{t('endTitle')}</Text>
                 <Text style={[ui.note, { color: c.quiet }]}>{t('endText')}</Text>
-                {skipped ? <Button c={c} label={t('showSkipped')} onPress={showSkipped} /> : null}
+                {/* Кнопки растягиваются по ширине в ряду: здесь обёртка, чтобы не растянулись по высоте */}
+                <View style={styles.endActions}>
+                  {skipped ? <Button c={c} label={t('showSkipped')} onPress={showSkipped} /> : null}
+                  {near ? <Button c={c} ghost label={t('nearAll')} onPress={() => setPref({ near: null })} /> : null}
+                </View>
               </View>
             )}
             {feed && cards.length && !prefs.hint ? (
@@ -689,8 +765,18 @@ function Main() {
           name={account.first_name}
           city={city}
           backRef={profileBack}
+          start={profileStart ?? undefined}
+          onHome={(point) => {
+            setAccount((a) => (a && !samePoint(a.home, point) ? { ...a, home: point } : a));
+            // Дом сохранили после кнопки «Рядом с домом»: назад в ленту, фильтр уже включён
+            if (point && profileStart === 'home') {
+              setProfileStart(null);
+              setPref({ near: DEFAULT_NEAR });
+              setTab('feed');
+            }
+          }}
           onProfile={(has) => {
-            setAccount((a) => (a ? { ...a, profile: has } : a));
+            setAccount((a) => (a ? { ...a, profile: has, home: has ? a.home : null } : a));
             if (!has) {
               setApps(null);
               setSummary(null);
@@ -793,6 +879,7 @@ function Main() {
               v={open}
               lang={lang}
               c={c}
+              home={tracker === 'server' ? homePoint : null}
               onClose={() => setOpen(null)}
               onApply={
                 tracker !== 'off'
@@ -846,7 +933,14 @@ function shareVacancy(v: Vacancy, lang: Lang, via: 'any' | 'whatsapp') {
   return via === 'whatsapp' ? whatsapp(text, v.url) : shareLink(text, v.url);
 }
 
-function Details(props: { v: Vacancy; lang: Lang; c: Colors; onClose(): void; onApply?(): void }) {
+function Details(props: {
+  v: Vacancy;
+  lang: Lang;
+  c: Colors;
+  home: Point | null;
+  onClose(): void;
+  onApply?(): void;
+}) {
   const { v, lang, c, onClose } = props;
   const t = (key: i18n.Key) => i18n.t(lang, key);
   return (
@@ -856,7 +950,7 @@ function Details(props: { v: Vacancy; lang: Lang; c: Colors; onClose(): void; on
           <Text style={[styles.closeText, { color: c.quiet }]}>✕</Text>
         </Pressable>
         <View style={ui.flex}>
-          <VacancyCard v={v} lang={lang} c={c} full />
+          <VacancyCard v={v} lang={lang} c={c} full home={props.home} />
         </View>
         <View style={styles.sheetActions}>
           <Button c={c} label={t('apply')} onPress={props.onApply ?? (() => openUrl(v.source_url ?? v.url))} />
@@ -953,6 +1047,7 @@ const styles = StyleSheet.create({
   cats: { flexGrow: 0 },
   catsRow: { paddingHorizontal: 16, paddingVertical: 8, gap: 6 },
   deckArea: { flex: 1, marginHorizontal: 16, marginTop: 4 },
+  endActions: { alignSelf: 'stretch', gap: 10 },
   hint: {
     position: 'absolute',
     left: 12,

@@ -1,15 +1,18 @@
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { distanceLabel, kmFromHome, type Point } from './geo';
 import * as i18n from './i18n';
 import type { Colors } from './theme';
 import type { Lang, Vacancy } from './types';
 
-type Props = { v: Vacancy; lang: Lang; c: Colors; full?: boolean };
+/** home — дом из профиля: тогда на карточке видно, далеко ли работа. */
+type Props = { v: Vacancy; lang: Lang; c: Colors; full?: boolean; home?: Point | null };
 
 /** Лицо карточки: главное крупно, чтобы решить за две секунды. full — всё объявление целиком. */
-export function VacancyCard({ v, lang, c, full }: Props) {
+export function VacancyCard({ v, lang, c, full, home }: Props) {
   const pay = i18n.pay(v, lang);
   const monthly = i18n.monthly(v, lang);
+  const away = distanceLabel(kmFromHome(home, v), lang);
   const chips = [v.schedule, ...i18n.perks(v, lang)].filter(Boolean) as string[];
   const Body = full ? ScrollView : View;
   return (
@@ -43,8 +46,9 @@ export function VacancyCard({ v, lang, c, full }: Props) {
             ))}
           </View>
         ) : null}
+        {away ? <Text style={[styles.away, { color: c.ink }]}>🏠 {away}</Text> : null}
         {v.address ? (
-          <Text style={[styles.address, { color: c.quiet }]} numberOfLines={full ? undefined : 1}>
+          <Text style={[styles.address, away ? styles.addressNext : null, { color: c.quiet }]} numberOfLines={full ? undefined : 1}>
             📍 {v.address}
           </Text>
         ) : null}
@@ -98,6 +102,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: 'hidden',
   },
+  away: { fontSize: 14, fontWeight: '600', marginTop: 12 },
   address: { fontSize: 14, marginTop: 12 },
+  addressNext: { marginTop: 4 },
   text: { fontSize: 15, lineHeight: 21, marginTop: 14, overflow: 'hidden' },
 });

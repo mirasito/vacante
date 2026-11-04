@@ -127,7 +127,7 @@
   "city": "aktau",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "corneli.official",
   "source": "https://2gis.kz/aktau/firm/70000001093369545"
  },
@@ -2998,10 +2998,10 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "website": "https://aveco.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001092716526",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4661,7 +4661,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "almaty:fintend": {
   "name": "FINTEND",
@@ -5538,11 +5538,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "intercontinental_almaty",
-  "website": "http://interconti-almaty.kz/",
+  "website": "https://interconti-almaty.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000787810",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7430,11 +7430,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "qadam.corp",
   "website": "https://qadam-mgn.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001115643139",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8655,7 +8655,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "almaty:tnt": {
   "name": "TNT",
@@ -8993,15 +8993,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "website": "https://www.vivid.kz/",
-  "source": "https://2gis.kz/almaty/firm/70000001098645691",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "cb9003abead15c7a.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/almaty/firm/70000001098645691"
  },
  "almaty:vizodent": {
   "name": "VizoDent",
@@ -10907,7 +10903,7 @@
   "city": "almaty",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "almaty:григорян с м": {
   "name": "Григорян С М",
@@ -11348,7 +11344,7 @@
   "instagram": "zoopt.kz",
   "website": "https://zoopt.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001064797263",
-  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11494,11 +11490,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "infinityinc.group",
   "website": "https://infinityinc.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001027728889",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11991,7 +11987,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "almaty:компания santex компания сантекс": {
   "name": "Компания Santex (Компания Сантекс)",
@@ -15187,7 +15183,7 @@
   "instagram": "alemagro",
   "website": "http://alemagro.com/",
   "source": "https://2gis.kz/astana/firm/70000001041359427",
-  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -15602,10 +15598,12 @@
   "instagram": "big_m2_",
   "website": "https://bigm2.kz/",
   "source": "https://2gis.kz/astana/firm/70000001102939669",
-  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "2db009f5ec5b77fc.jpg",
+  "avatar_source": "website"
  },
  "astana:billow": {
   "name": "Billow",
@@ -16461,7 +16459,7 @@
   "instagram": "paul_kazakhstan",
   "website": "http://paul.kz/",
   "source": "https://2gis.kz/astana/firm/70000001051036239",
-  "avatar_checked_at": "2026-10-28T22:44:50+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19009,7 +19007,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "astana:tele2 altel": {
   "name": "Tele2/Altel",
@@ -19748,7 +19746,7 @@
   "city": "astana",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "astana:амк метиз": {
   "name": "АМК-Метиз",
@@ -22944,7 +22942,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "astana:турсунов ш и": {
   "name": "ТУРСУНОВ Ш.И.",
@@ -25888,7 +25886,7 @@
   "city": "karaganda",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "ekt_karaganda",
   "source": "https://2gis.kz/karaganda/firm/11822477302917308"
  },
@@ -26241,18 +26239,13 @@
   "city": "kokshetau",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "fixprice.kazakhstan",
   "telegram": "fixprice_kazakhstan",
   "website": "http://fix-price.kz/",
-  "source": "https://2gis.kz/kokshetau/firm/70000001055248373",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
-  "avatar_tried": [
-   "telegram",
-   "website"
-  ],
   "avatar": "9ca01095fac81d4e.jpg",
-  "avatar_source": "telegram"
+  "avatar_source": "telegram",
+  "source": "https://2gis.kz/kokshetau/firm/70000001055248373"
  },
  "kokshetau:деко": {
   "name": "Деко",
@@ -31512,7 +31505,7 @@
   "city": "taraz",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "taraz:коллекторское агентство seven": {
   "name": "Коллекторское агентство Seven",
@@ -32312,7 +32305,7 @@
   "city": "uralsk",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "uralsk:сапсан": {
   "name": "САПСАН",
@@ -32642,11 +32635,11 @@
   "city": "ust-kamenogorsk",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "kulanoil.kz",
   "website": "https://kulanoil.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001020107550",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33442,7 +33435,7 @@
   "city": "ust-kamenogorsk",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00"
+  "checked_at": "2026-11-04T23:43:42+00:00"
  },
  "ust-kamenogorsk:путинцева н м": {
   "name": "Путинцева Н.М.",
@@ -33606,11 +33599,11 @@
   "city": "ust-kamenogorsk",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-04T22:43:57+00:00",
+  "checked_at": "2026-11-04T23:43:42+00:00",
   "instagram": "tssp.kz",
-  "website": "https://tssp.kz/",
+  "website": "http://tssp.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001027118891",
-  "avatar_checked_at": "2026-11-04T22:43:57+00:00",
+  "avatar_checked_at": "2026-11-04T23:43:42+00:00",
   "avatar_tried": [
    "website"
   ]

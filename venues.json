@@ -294,6 +294,15 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "aktau:sandavinci": {
+  "name": "SanDaVinci",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "sandavinci_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001044841365"
+ },
  "aktau:sw auto aktau": {
   "name": "Sw Auto Aktau",
   "city": "aktau",
@@ -4934,6 +4943,15 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "almaty:intimno": {
+  "name": "INTIMNO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "intimno_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001078307362"
+ },
  "almaty:invitro тоо инвитро казахстан": {
   "name": "INVITRO (ТОО ИНВИТРО-Казахстан)",
   "city": "almaty",
@@ -8470,6 +8488,13 @@
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
  },
+ "almaty:айсафи": {
+  "name": "Айсафи",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
+ },
  "almaty:ак цент микросистемс": {
   "name": "АК Цент Микросистемс",
   "city": "almaty",
@@ -8720,6 +8745,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
+ },
+ "almaty:алматинский завод тяжелого машиностроения ао": {
+  "name": "Алматинский Завод Тяжелого Машиностроения, АО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "website": "http://www.aztm.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792220",
+  "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:алматинский продукт": {
   "name": "Алматинский продукт",
@@ -10235,6 +10273,13 @@
   "v": 3,
   "checked_at": "2026-11-02T11:44:06+00:00"
  },
+ "almaty:кабилтаев д б tm z service": {
+  "name": "Кабилтаев Д.Б. TM Z-Service",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
+ },
  "almaty:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
   "city": "almaty",
@@ -10626,6 +10671,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "almaty:коктем": {
+  "name": "Коктем",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
  },
  "almaty:коллекторское агентство id collect айди коллект": {
   "name": "КОЛЛЕКТОРСКОЕ АГЕНТСТВО ID COLLECT (АЙДИ КОЛЛЕКТ)",
@@ -11873,6 +11925,15 @@
   "instagram": "rozovoe_studio_",
   "source": "https://2gis.kz/almaty/firm/70000001059431751"
  },
+ "almaty:рой": {
+  "name": "Рой",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "roy_hostel",
+  "source": "https://2gis.kz/almaty/firm/70000001067863332"
+ },
  "almaty:ртс розничная торговая сеть": {
   "name": "РТС - Розничная Торговая Сеть",
   "city": "almaty",
@@ -12259,6 +12320,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T01:43:26+00:00"
+ },
+ "almaty:страховая компания amanat": {
+  "name": "Страховая компания Amanat",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "amanat_official",
+  "website": "http://www.amanat24.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001044959253",
+  "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:стройлогистика": {
   "name": "Стройлогистика",
@@ -13822,6 +13897,13 @@
   "instagram": "beau_monde_beauty_",
   "source": "https://2gis.kz/astana/firm/70000001117338871"
  },
+ "astana:beautiful health": {
+  "name": "Beautiful Health",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
+ },
  "astana:beeline тм": {
   "name": "Beeline, ТМ",
   "city": "astana",
@@ -15331,6 +15413,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:leader engineering kz": {
+  "name": "Leader Engineering KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
  },
  "astana:li kon пзм li con": {
   "name": "LI-KON (ПЗМ LI-CON)",
@@ -17706,6 +17795,15 @@
   "avatar": "770061b8ce07b854.jpg",
   "avatar_source": "website"
  },
+ "astana:беркутты бурабай парк": {
+  "name": "Беркутты Бурабай Парк",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "berkutty_burabay.park",
+  "source": "https://2gis.kz/kokshetau/firm/70000001068847248"
+ },
  "astana:бестерек": {
   "name": "Бестерек",
   "city": "astana",
@@ -17726,6 +17824,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:бидент": {
+  "name": "Бидент",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "bi_dent",
+  "source": "https://2gis.kz/astana/firm/70000001061740601"
  },
  "astana:бизнес центр": {
   "name": "Бизнес-центр",
@@ -20838,6 +20945,13 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "astana:эскулап": {
+  "name": "Эскулап",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
+ },
  "astana:этажи": {
   "name": "Этажи",
   "city": "astana",
@@ -21518,6 +21632,20 @@
   "checked_at": "2026-11-03T18:45:16+00:00",
   "instagram": "capone.kz",
   "source": "https://2gis.kz/atyrau/firm/70000001035682974"
+ },
+ "atyrau:рика": {
+  "name": "Рика",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "rika.express",
+  "website": "http://rika.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001039864284",
+  "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:самокат ооо изи лоджистик партнер сервиса": {
   "name": "Самокат (ООО ИЗИ Лоджистик — партнер сервиса)",
@@ -25716,6 +25844,13 @@
   "avatar": "af630713181a3cee.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:ирида комфорт": {
+  "name": "Ирида - комфорт",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
+ },
  "petropavlovsk:казахмедимпорт": {
   "name": "КазахМедИмпорт",
   "city": "petropavlovsk",
@@ -25843,6 +25978,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:премьерстройдизайн": {
+  "name": "ПремьерСтройДизайн",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00"
  },
  "petropavlovsk:прессбук": {
   "name": "ПрессБук",
@@ -27783,6 +27925,20 @@
   "instagram": "cdnie_neurolife",
   "source": "https://2gis.kz/shymkent/firm/70000001046302412"
  },
+ "shymkent:центр подготовки aiplus": {
+  "name": "Центр подготовки (AIPLUS)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "aiplus.kz",
+  "website": "http://aiplus.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001051514062",
+  "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:шымкентский пивоваренный завод": {
   "name": "Шымкентский пивоваренный завод",
   "city": "shymkent",
@@ -28970,6 +29126,20 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "uralsk:элсибо": {
+  "name": "ЭЛСИБО",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "elsibo_07",
+  "website": "http://elsibo.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001117823005",
+  "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:юбилейная": {
   "name": "Юбилейная",
   "city": "uralsk",
@@ -29021,6 +29191,22 @@
   "checked_at": "2026-11-02T23:44:16+00:00",
   "instagram": "akonar.kz",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001109504640"
+ },
+ "ust-kamenogorsk:altai mai": {
+  "name": "ALTAI MAI",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "altaimai.kz",
+  "website": "http://www.altaimai.com/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001047499508",
+  "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "45ca9aa2840e0e2a.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:asteco": {
   "name": "ASTECO",
@@ -29716,6 +29902,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:кондитер + тоо": {
+  "name": "Кондитер +,ТОО",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T03:44:25+00:00",
+  "instagram": "konditer.plus",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721361080"
  },
  "ust-kamenogorsk:крепеж опк": {
   "name": "Крепеж-ОПК",

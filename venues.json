@@ -243,6 +243,15 @@
   "avatar": "9ae6b7efc8e74d3a.jpg",
   "avatar_source": "website"
  },
+ "aktau:poplate": {
+  "name": "POPLATE",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "instagram": "poplate_utepia",
+  "source": "https://2gis.kz/aktau/firm/70000001094470066"
+ },
  "aktau:qazaq republic": {
   "name": "Qazaq Republic",
   "city": "aktau",
@@ -680,6 +689,13 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "aktau:корзинка": {
+  "name": "Корзинка",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
+ },
  "aktau:кр асель": {
   "name": "Кр Асель",
   "city": "aktau",
@@ -715,6 +731,13 @@
   "checked_at": "2026-10-31T01:43:11+00:00",
   "instagram": "manali_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001046862420"
+ },
+ "aktau:мангистау": {
+  "name": "Мангистау",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
  },
  "aktau:мангистау волна": {
   "name": "Мангистау-Волна",
@@ -3727,6 +3750,13 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "almaty:double k group": {
+  "name": "Double K Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
+ },
  "almaty:dr konisbaev лор орталығы": {
   "name": "Dr.Konisbaev ЛОР орталығы",
   "city": "almaty",
@@ -5407,6 +5437,20 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:kz recycling": {
+  "name": "KZ Recycling",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "instagram": "kz_recycling",
+  "website": "http://kagazy.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000788004",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kzburo": {
   "name": "KZBURO",
   "city": "almaty",
@@ -6744,6 +6788,13 @@
   ],
   "avatar": "6aecb8ada2b3d8be.jpg",
   "avatar_source": "website"
+ },
+ "almaty:recrutoman": {
+  "name": "Recrutoman",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
  },
  "almaty:red ocean": {
   "name": "RED OCEAN",
@@ -9708,6 +9759,21 @@
   "avatar": "dd7ecf45ef6b1ae5.jpg",
   "avatar_source": "website"
  },
+ "almaty:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "website": "https://gloria-jeans.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001033825593",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8a6461a9d4d1e53a.jpg",
+  "avatar_source": "website"
+ },
  "almaty:гордиюк а м basilic тм": {
   "name": "Гордиюк А.М , Basilic ТМ",
   "city": "almaty",
@@ -9757,6 +9823,19 @@
   "website": "https://all.accor.com/hotel/B5J5/index.en.shtml",
   "source": "https://2gis.kz/almaty/firm/70000001055753272",
   "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:государственное кредитное бюро": {
+  "name": "Государственное кредитное бюро",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "website": "https://www.mkb.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001028350",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11432,6 +11511,20 @@
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
  },
+ "almaty:мц сана": {
+  "name": "МЦ САНА",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "instagram": "mcsana.kz",
+  "website": "https://mcsana.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001084434340",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:мц эко": {
   "name": "МЦ ЭКО",
   "city": "almaty",
@@ -12080,6 +12173,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:самгау": {
+  "name": "Самгау",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
  },
  "almaty:санаторий каргалы": {
   "name": "Санаторий Каргалы",
@@ -13659,6 +13759,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:alemas group": {
+  "name": "Alemas group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
  },
  "astana:alloy group": {
   "name": "Alloy Group",
@@ -16442,6 +16549,13 @@
   "avatar": "ca92e86388631a92.jpg",
   "avatar_source": "website"
  },
+ "astana:qazbeergroup": {
+  "name": "QazBeerGroup",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
+ },
  "astana:qazmedbio казмедбио": {
   "name": "QazMedBio (КазМедБио)",
   "city": "astana",
@@ -17596,6 +17710,13 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "astana:алтайулы сырым": {
+  "name": "Алтайулы Сырым",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
+ },
  "astana:алтын адам": {
   "name": "Алтын Адам",
   "city": "astana",
@@ -18576,6 +18697,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "astana:жемчужина": {
+  "name": "Жемчужина",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "instagram": "zhem.kz",
+  "website": "http://zhem.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001061811465",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:жеті аспан супермаркет galmart": {
   "name": "Жеті Аспан (Супермаркет galmart)",
@@ -21170,6 +21305,20 @@
   "website": "https://applecity.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001051614192",
   "avatar_checked_at": "2026-10-30T00:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "atyrau:askona life kazakhstan аскона лайф казахстан": {
+  "name": "Askona Life Kazakhstan (Аскона Лайф Казахстан)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "instagram": "askona_official.kz",
+  "website": "http://askona.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001086797451",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26217,6 +26366,13 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "petropavlovsk:султан кондитерские изделия": {
+  "name": "Султан Кондитерские изделия",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
+ },
  "petropavlovsk:трибо": {
   "name": "Трибо",
   "city": "petropavlovsk",
@@ -26608,6 +26764,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
+ },
+ "semey:гелиос": {
+  "name": "Гелиос",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00",
+  "website": "https://helios.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001052564072",
+  "avatar_checked_at": "2026-11-04T05:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "semey:горно металлургическая компания васильевское": {
   "name": "Горно-металлургическая компания «Васильевское»",
@@ -27152,6 +27321,13 @@
   "checked_at": "2026-11-03T21:45:41+00:00",
   "instagram": "kazmebeltrade.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001099298669"
+ },
+ "shymkent:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
  },
  "shymkent:kub group": {
   "name": "KUB GROUP",
@@ -27940,6 +28116,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "shymkent:ромашова": {
+  "name": "Ромашова",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
+ },
  "shymkent:сапсан": {
   "name": "САПСАН",
   "city": "shymkent",
@@ -28207,6 +28390,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
+ },
+ "taldykorgan:кошкарев сергей владимирович bestmarket kz": {
+  "name": "КОШКАРЁВ СЕРГЕЙ ВЛАДИМИРОВИЧ Bestmarket.kz",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T05:44:16+00:00"
  },
  "taldykorgan:нұр шапағатқұрылыс": {
   "name": "НҰР-ШАПАҒАТҚҰРЫЛЫС",

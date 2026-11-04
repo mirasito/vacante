@@ -10,7 +10,11 @@ on:
   workflow_dispatch:
     inputs:
       geocode_limit:
-        description: "Сколько адресов искать на карте в этот прогон (пусто — как обычно, 60)"
+        description: "Сколько запросов к карте сделать в этот прогон (пусто — как обычно, 60)"
+        required: false
+        default: ""
+      geocode_check:
+        description: "Проверить поиск адресов на N вакансиях hh.kz, где точку поставил hh (пусто — не проверять)"
         required: false
         default: ""
 
@@ -67,6 +71,15 @@ jobs:
           # Разово больше — поле geocode_limit при ручном запуске; запросы всё равно не чаще раза в секунду
           GEOCODE_LIMIT: ${{ inputs.geocode_limit || vars.GEOCODE_LIMIT || '60' }}
         run: python -m vacante collect --data-dir data
+
+      # Разово, полем geocode_check при ручном запуске: насколько точны точки OpenStreetMap и запасные запросы
+      # по сравнению с точками hh.kz. После сбора, чтобы запросы к Nominatim не шли одновременно
+      - name: Проверить поиск адресов
+        if: inputs.geocode_check != ''
+        continue-on-error: true
+        env:
+          GEOCODE_CHECK: ${{ inputs.geocode_check }}
+        run: python -m vacante geocheck --data-dir data --sample "$GEOCODE_CHECK"
 
       # Адрес сайта из настроек Pages: <owner>.github.io/<repo>, а после подключения домена сам домен
       - id: pages

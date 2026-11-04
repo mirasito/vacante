@@ -1,4 +1,20 @@
 {
+ "aktau:adil fasad": {
+  "name": "Adil Fasad",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "adil_fasad",
+  "website": "https://adil-fasad.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001100535663",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "98a4bc729f58bf3b.jpg",
+  "avatar_source": "website"
+ },
  "aktau:ar line service": {
   "name": "Ar line service",
   "city": "aktau",
@@ -1119,6 +1135,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "aktobe:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "website": "https://ks-international.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001084544835",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a629bb6899f896f0.jpg",
+  "avatar_source": "website"
  },
  "aktobe:kcell": {
   "name": "Kcell",
@@ -4654,6 +4685,22 @@
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/almaty/firm/70000001024452567"
  },
+ "almaty:global automatic": {
+  "name": "Global Automatic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "global_avtomatic",
+  "website": "http://globall.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001092556253",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5e60eb418e33d464.jpg",
+  "avatar_source": "website"
+ },
  "almaty:global export shipping": {
   "name": "ТОО Global Export Shipping",
   "city": "almaty",
@@ -5877,6 +5924,15 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "almaty:ls concept": {
+  "name": "LS concept",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "ls.concept.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001068920460"
+ },
  "almaty:lumi garden детский развивающий центр": {
   "name": "Lumi Garden, детский развивающий центр",
   "city": "almaty",
@@ -6021,6 +6077,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:medcitykz": {
+  "name": "MedCitykz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00"
  },
  "almaty:medeu mart": {
   "name": "Medeu Mart",
@@ -9363,6 +9426,13 @@
   "avatar": "e83596376854b6f3.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:анта торговая компания алматы": {
+  "name": "Анта, торговая компания Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00"
+ },
  "almaty:антаев х м": {
   "name": "Антаев Х.М.",
   "city": "almaty",
@@ -11221,6 +11291,19 @@
    "website"
   ]
  },
+ "almaty:коллекторское агентство кредит коллекшн груп": {
+  "name": "Коллекторское агентство Кредит Коллекшн Груп",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "website": "https://ccg.com.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001092562284",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:компания santex компания сантекс": {
   "name": "Компания Santex (Компания Сантекс)",
   "city": "almaty",
@@ -12880,7 +12963,7 @@
   "instagram": "sportmaster_kz",
   "website": "https://sportmaster.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001077396025",
-  "avatar_checked_at": "2026-10-28T11:44:45+00:00",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13276,6 +13359,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:тм romeo flowers касымгалиев а а": {
+  "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "romeo.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001081063192"
  },
  "almaty:торговый дом rokos": {
   "name": "ТОРГОВЫЙ ДОМ ROKOS",
@@ -16074,6 +16166,21 @@
   "avatar": "b9fbabce7a9c6f29.jpg",
   "avatar_source": "website"
  },
+ "astana:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "website": "https://ks-international.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001084544835",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1de70ed44b5bfe54.jpg",
+  "avatar_source": "website"
+ },
  "astana:kedr & pikhta": {
   "name": "Kedr & Pikhta",
   "city": "astana",
@@ -16082,6 +16189,24 @@
   "checked_at": "2026-10-31T12:44:38+00:00",
   "instagram": "kedr_pikhta",
   "source": "https://2gis.kz/astana/firm/70000001082840889"
+ },
+ "astana:kerama marazzi kazakhstan": {
+  "name": "KERAMA MARAZZI KAZAKHSTAN",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "kerama_marazzi_kz",
+  "telegram": "kerama_marazzi_kz",
+  "website": "https://kerama-marazzi.com/",
+  "source": "https://2gis.kz/astana/firm/70000001116894189",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "c8b1f223fca03d72.jpg",
+  "avatar_source": "telegram"
  },
  "astana:khonna": {
   "name": "KhonNa",
@@ -16877,6 +17002,20 @@
   "instagram": "openhype_kaz",
   "source": "https://2gis.kz/astana/firm/70000001104513223"
  },
+ "astana:optim kz": {
+  "name": "OPTIM.KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "a.optim",
+  "website": "https://www.optim.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018061250",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:optimus kz": {
   "name": "Optimus kz",
   "city": "astana",
@@ -16906,6 +17045,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T07:45:36+00:00"
+ },
+ "astana:ortho dental clinic": {
+  "name": "Ortho Dental Clinic",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "ortho_dental_clinic_astana",
+  "source": "https://2gis.kz/astana/firm/70000001099459279"
  },
  "astana:ozon": {
   "name": "Ozon",
@@ -17942,6 +18090,15 @@
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
  },
+ "astana:top game": {
+  "name": "Top Game",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "topgame.astana",
+  "source": "https://2gis.kz/astana/firm/70000001104882979"
+ },
  "astana:torent": {
   "name": "TORENT",
   "city": "astana",
@@ -18489,6 +18646,15 @@
   ],
   "avatar": "c9760b0c25dff948.jpg",
   "avatar_source": "website"
+ },
+ "astana:алые паруса": {
+  "name": "Алые Паруса",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "alyeparusaa_astana",
+  "source": "https://2gis.kz/astana/firm/70000001061276094"
  },
  "astana:альфа кт": {
   "name": "Альфа-КТ",
@@ -19603,6 +19769,24 @@
   "v": 3,
   "checked_at": "2026-11-03T11:44:54+00:00"
  },
+ "astana:интер камень": {
+  "name": "Интер Камень",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "interstone.kz",
+  "telegram": "interstonekz2022",
+  "website": "http://interstone.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001069288729",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "92e9f89589537729.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "astana",
@@ -19923,6 +20107,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "astana:кондитерский цех": {
+  "name": "Кондитерский цех",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00"
  },
  "astana:кондитерский цех saniya bakery": {
   "name": "Кондитерский цех Saniya Bakery",
@@ -22822,6 +23013,20 @@
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
  },
+ "atyrau:сыдих сервис": {
+  "name": "Сыдих Сервис",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "sydikh_service",
+  "website": "https://www.sd-service.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035518388",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:тамаша": {
   "name": "Тамаша",
   "city": "atyrau",
@@ -23126,6 +23331,20 @@
    "website"
   ]
  },
+ "karaganda:hyundai premium qaragandy": {
+  "name": "Hyundai Premium Qaragandy",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00",
+  "instagram": "hyundai_premium_qaragandy",
+  "website": "https://hyundai-qaragandy.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001094259040",
+  "avatar_checked_at": "2026-11-04T12:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:ideal plintus qazaqstan": {
   "name": "IDEAL Plintus Qazaqstan",
   "city": "karaganda",
@@ -23346,6 +23565,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "karaganda:primeday international co ltd": {
+  "name": "PrimeDay International Co.,Ltd",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00"
  },
  "karaganda:profland rt": {
   "name": "Profland-RT",
@@ -29890,6 +30116,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "turkestan:кекс": {
+  "name": "Кекс",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T12:44:26+00:00"
  },
  "turkestan:нурлан": {
   "name": "Нурлан",

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T15:57:21+00:00",
+ "updated_at": "2026-11-04T16:58:05+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -29584,6 +29584,230 @@
    "at": "2026-11-04T15:57:21+00:00",
    "fields": {
     "schedule": null
+   }
+  },
+  "hh-139138678": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": "Свой проект",
+    "schedule": "5/2",
+    "address": "пр. Тауелсиздик, 22"
+   }
+  },
+  "rabota_astanakz-31271": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Горничная, официант, администратор ресепшн",
+    "employer": "Отель «Пекин Палас»",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "astana_job_vakansii-130179": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "Пн–Чт 18:30–22:00, Вс 15:00–20:00"
+   }
+  },
+  "rabota_astanakz-31241": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Мясник-заготовщик",
+    "employer": "Rabbit Canteen",
+    "schedule": "05:00–14:00"
+   }
+  },
+  "zhumys_astana_kz-17143": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Технический персонал (уборка полов)",
+    "schedule": "5/2, 07:00–17:00",
+    "address": "ул. Б. Момышулы, 1/1а"
+   }
+  },
+  "hh-138663617": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Продавец",
+    "address": "пр. Туран, 44Б"
+   }
+  },
+  "zhumys_astana_kz-17126": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "salary_min": 250000,
+    "salary_max": 270000,
+    "salary_period": "month",
+    "schedule": "5/2 или 2/2, 10:00–00:00"
+   }
+  },
+  "hh-138918525": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Mechta.kz",
+    "address": "ул. Амман, 14"
+   }
+  },
+  "zhumys_astana_kz-17114": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Упаковщик-раннер, повар-универсал",
+    "employer": "Mansur Cafe",
+    "schedule": "6/1, смены по 12 часов",
+    "address": "ул. Ұшқыштар, 11"
+   }
+  },
+  "zhumys_astana_kz-16909": {
+   "verdict": "reject",
+   "at": "2026-11-04T16:58:05+00:00",
+   "reason": "Повтор вакансии кассира и сборщика бургеров из этой же очереди"
+  },
+  "agashka_job_almaty-1062": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Кондитер-оформитель",
+    "employer": "Qaimaq Bakery"
+   }
+  },
+  "hh-139133893": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Менеджер по продажам",
+    "schedule": "5/2",
+    "address": "бульвар Бухар Жырау, 62Б"
+   }
+  },
+  "hh-139133842": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Оператор станка ЧПУ (гибка металла)",
+    "employer": "Казахстанская мануфактура ткани",
+    "schedule": "5/2",
+    "address": "пр. Сакена Сейфуллина, 402"
+   }
+  },
+  "hh-139133772": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "schedule": "5/2 или 6/1",
+    "address": "ул. Варламова, 27А"
+   }
+  },
+  "hh-139133734": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": "Караван",
+    "schedule": "5/2",
+    "address": "ул. Ангарская, 133В"
+   }
+  },
+  "hh-139130762": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "8-й мкр, 41/6"
+   }
+  },
+  "hh-139130548": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": "Manima",
+    "schedule": "5/2",
+    "address": "ул. Толе би, 155А"
+   }
+  },
+  "hh-139130354": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Кладовщик 1-й категории",
+    "employer": "Тойо Транс Центральная Азия",
+    "schedule": "5/2",
+    "address": "мкр Альмерек, ул. Бейбитшилик, 6"
+   }
+  },
+  "hh-138197993": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": "Комета",
+    "schedule": null,
+    "address": "ул. Наманганская, 43А"
+   }
+  },
+  "hh-139129891": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": "Ant Security",
+    "schedule": "1/2",
+    "address": "пр. Турара Рыскулова, 232/2"
+   }
+  },
+  "hh-139129708": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Курмангазы, 145"
+   }
+  },
+  "hh-139138824": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "employer": "Караоке-бар «Dauys»",
+    "schedule": "6/1, смены по 12 часов",
+    "address": "мкр Авангард-2, 22А",
+    "perks": []
+   }
+  },
+  "hh-139138761": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Водитель категорий C, D, E (ДОПОГ)",
+    "employer": "Транспортная компания «Бизнес Альянс»",
+    "schedule": null
+   }
+  },
+  "rabota_semey_official-6811": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Посудомойщица-уборщица",
+    "employer": "Қымызхана №1",
+    "schedule": "18:00–03:00",
+    "perks": [
+     "Развозка",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_semey_official-6809": {
+   "verdict": "approve",
+   "at": "2026-11-04T16:58:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Autosvet-Autolight",
+    "address": "авторынок «Восточный»"
    }
   }
  }

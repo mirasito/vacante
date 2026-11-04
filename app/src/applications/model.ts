@@ -47,8 +47,6 @@ export function methodsFor(v: VacancyCopy): Method[] {
 /** Нужен ли для способа номер или имя из поста (их даёт сервер в момент отклика). */
 export const needsContact = (m: Method) => m === 'whatsapp' || m === 'call' || m === 'telegram';
 
-export const waUrl = (phone: string, text: string) => `https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
-
 /** Вакансия, на которую ещё не откликнулись: просмотр и ответ работодателя двигают её вперёд. */
 export const CLOSED: Stage[] = ['rejected', 'no_answer', 'not_interested'];
 const SEARCH_OF: Record<Stage, number> = {

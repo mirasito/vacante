@@ -51,6 +51,12 @@ test("анкета проверяется и чистится", () => {
   assert.throws(() => parseProfile({ ...ANKETA, roles: ["a", "b", "c", "d"] }), /Не больше 3/);
   assert.throws(() => parseProfile({ ...ANKETA, city: "moscow" }), /city/);
   assert.throws(() => parseProfile({ ...ANKETA, employment: ["full", "remote"] }), /employment/);
+  // Порядок графиков всегда как в анкете, сколько бы их ни выбрали
+  assert.deepEqual(parseProfile({ ...ANKETA, employment: ["weekends", "night", "flexible"] }).employment, [
+    "night",
+    "flexible",
+    "weekends",
+  ]);
   assert.throws(() => parseProfile({ ...ANKETA, phone: "123" }), /Телефон/);
   assert.throws(() => parseProfile({ ...ANKETA, about: "x".repeat(301) }), /300/);
   assert.throws(() => parseProfile({ ...ANKETA, pay_from: -5 }), /Зарплата/);
@@ -176,6 +182,16 @@ test("данные из анкеты не превращаются в разме
   assert.doesNotMatch(page.text, /<script>alert/);
   assert.doesNotMatch(page.text, /<img src=x/);
   assert.match(page.text, /&lt;script&gt;/);
+});
+
+test("ночные смены, гибкий график и выходные видны работодателю на двух языках", async () => {
+  const user = { id: 7201, first_name: "Дана" };
+  await createProfile(user, { ...ANKETA, employment: ["night", "flexible", "weekends"] });
+  const { code } = (await s.call("POST", "/me/link", { headers: auth(user) })).json;
+  const ru = await s.call("GET", `/${code}`, { host: "p.vacante.kz", headers: { "user-agent": BROWSER } });
+  assert.match(ru.text, /ночные смены, гибкий график, по выходным/);
+  const kk = await s.call("GET", `/${code}?lang=kk`, { host: "p.vacante.kz", headers: { "user-agent": BROWSER } });
+  assert.match(kk.text, /түнгі ауысым, икемді кесте, демалыс күндері/);
 });
 
 test("перебор кодов упирается в ограничение", async () => {

@@ -10,7 +10,7 @@ export const CITIES = [
   "semey", "kostanay", "uralsk", "taraz", "turkestan", "petropavlovsk", "kyzylorda", "kokshetau", "taldykorgan",
 ] as const;
 export const EXPERIENCE = ["none", "lt1", "1to3", "gt3"] as const;
-export const EMPLOYMENT = ["full", "shifts", "part", "rotation"] as const;
+export const EMPLOYMENT = ["full", "shifts", "night", "flexible", "part", "weekends", "rotation"] as const;
 export const START = ["today", "week", "2weeks", "later"] as const;
 export const PAY_PERIOD = ["month", "shift"] as const;
 export const LANGUAGES = ["kk", "ru", "en"] as const;

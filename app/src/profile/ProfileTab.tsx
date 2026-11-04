@@ -7,6 +7,7 @@ import * as i18n from '../i18n';
 import {
   canRequestContact,
   confirm,
+  copyText,
   haptic,
   onAppVisible,
   requestContact,
@@ -333,6 +334,7 @@ function Card(props: {
   const p = view.profile!;
   const [views, setViews] = useState<ProfileViewEvent[] | null>(null);
   const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState('');
   const rec = useVideoRecording(view, onChange);
 
   const loadViews = useCallback(() => {
@@ -346,16 +348,20 @@ function Card(props: {
   const pay = p.pay_from ? t.payFrom(money(p.pay_from), p.pay_period === 'shift' ? t.perShift : t.perMonth) : null;
   const docs = [p.med_book ? t.medBook : null, p.driver ? t.driver : null].filter(Boolean).join(', ');
 
-  const share = async (via: 'telegram' | 'whatsapp') => {
+  const share = async (via: 'telegram' | 'whatsapp' | 'copy') => {
     haptic();
     setBusy(true);
+    setNotice('');
     try {
       let link = view.link;
       if (!link) {
         link = await newLink();
         onChange({ ...view, link });
       }
-      if (via === 'whatsapp') whatsapp(t.shareText, link.url);
+      // Буфер обмена открыт только сразу после нажатия: если ссылку пришлось сначала выпустить,
+      // копирование может не пройти, тогда второе нажатие скопирует уже готовую ссылку
+      if (via === 'copy') setNotice(copyText(link.url) ? t.linkCopied : t.copyAgain);
+      else if (via === 'whatsapp') whatsapp(t.shareText, link.url);
       else await shareLink(t.shareText, link.url);
     } finally {
       setBusy(false);
@@ -433,7 +439,9 @@ function Card(props: {
       <View style={ui.row}>
         <Button c={c} label="Telegram" busy={busy} onPress={() => share('telegram')} />
         <Button c={c} ghost label="WhatsApp" disabled={busy} onPress={() => share('whatsapp')} />
+        <Button c={c} ghost label={t.copyLink} disabled={busy} onPress={() => share('copy')} />
       </View>
+      {notice ? <Text style={[s.small, { color: c.quiet }]}>{notice}</Text> : null}
       {view.link ? (
         <View style={s.linkRow}>
           <Text style={[s.small, ui.flex, { color: c.quiet }]} numberOfLines={2}>

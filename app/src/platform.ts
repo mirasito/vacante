@@ -7,6 +7,8 @@ export type HomeScreen = 'unsupported' | 'unknown' | 'added' | 'missed';
 
 type WebApp = {
   version?: string;
+  /** ios, android, tdesktop, macos, web… */
+  platform?: string;
   isVersionAtLeast?(version: string): boolean;
   ready(): void;
   expand(): void;
@@ -126,7 +128,7 @@ export async function shareLink(text: string, url: string) {
       await nav.share({ text, url }).catch(() => undefined);
       return;
     }
-    openUrl(`https://wa.me/?text=${encodeURIComponent(`${text}\n${url}`)}`);
+    openWhatsapp(`${text}\n${url}`);
     return;
   }
   await Share.share({ message: `${text}\n${url}` }).catch(() => undefined);
@@ -166,9 +168,52 @@ function copyByCommand(text: string): boolean {
   }
 }
 
-export const whatsapp = (text: string, url: string) =>
-  openUrl(`https://wa.me/?text=${encodeURIComponent(`${text}\n${url}`)}`);
+/** Открыто на iPhone или iPad: в Telegram это говорит сам Telegram, в браузере — адрес браузера. */
+function onIos(): boolean {
+  const platform = telegram()?.platform;
+  if (platform) return platform === 'ios';
+  return isWeb && /iPhone|iPad|iPod/.test(navigator.userAgent);
+}
 
+/**
+ * WhatsApp с готовым текстом: с номером — сразу чат с ним, без номера — выбор, кому отправить.
+ * На iPhone ссылка https://wa.me из Telegram открывала WhatsApp без выбора чата, поэтому там
+ * сначала пробуем сам WhatsApp (whatsapp://send). Если за полторы секунды он не открылся
+ * (его нет или Telegram не пустил), открываем wa.me, как раньше.
+ */
+export function openWhatsapp(text: string, phone?: string) {
+  const digits = phone?.replace(/\D/g, '') ?? '';
+  const encoded = encodeURIComponent(text);
+  const web = `https://wa.me/${digits}?text=${encoded}`;
+  const app = `whatsapp://send?${digits ? `phone=${digits}&` : ''}text=${encoded}`;
+  if (!isWeb) {
+    Linking.openURL(app).catch(() => Linking.openURL(web).catch(() => undefined));
+    return;
+  }
+  if (!onIos()) {
+    openUrl(web);
+    return;
+  }
+  let away = false;
+  const leave = () => {
+    if (document.visibilityState === 'hidden') away = true;
+  };
+  const blur = () => {
+    away = true;
+  };
+  document.addEventListener('visibilitychange', leave);
+  window.addEventListener('pagehide', blur);
+  window.addEventListener('blur', blur);
+  window.location.href = app;
+  setTimeout(() => {
+    document.removeEventListener('visibilitychange', leave);
+    window.removeEventListener('pagehide', blur);
+    window.removeEventListener('blur', blur);
+    if (!away && document.visibilityState === 'visible') openUrl(web);
+  }, 1500);
+}
+
+export const whatsapp = (text: string, url: string) => openWhatsapp(`${text}\n${url}`);
 
 export const BOT = 'vacantekz_bot';
 

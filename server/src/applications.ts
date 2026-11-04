@@ -5,6 +5,7 @@ import { tx, type Db } from "./db.ts";
 import { HttpError } from "./http.ts";
 import type { Lang } from "./labels.ts";
 import { CITIES, type Profile } from "./profile.ts";
+import { achievements, goalView, type AchievementView, type GoalView } from "./progress.ts";
 import { applicationLink, iso } from "./seekers.ts";
 import { DAY_MS, weekStart } from "./time.ts";
 
@@ -490,6 +491,10 @@ export interface Summary {
   /** Ближайшее собеседование (или идущее сейчас). */
   next_interview: { id: number; at: string; title: string; employer: string | null; address: string | null } | null;
   counts: Record<Stage, number>;
+  /** Цель недели и серия недель. */
+  goal: GoalView;
+  /** Достижения: новые приложение показывает поздравлением. */
+  achievements: AchievementView[];
 }
 
 /** Сколько откликов отправлено, сколько из них открыли и скольких пригласили с from до to (UTC). */
@@ -531,6 +536,8 @@ export function summary(db: Db, seekerId: number, now: number): Summary {
       ? { id: soon.id, at: soon.interview_at!, title: soon.title, employer: soon.employer, address: soon.address }
       : null,
     counts,
+    goal: goalView(db, seekerId, now),
+    achievements: achievements(db, seekerId, now),
   };
 }
 

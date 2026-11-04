@@ -6,7 +6,8 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { loadCity, loadIndex } from './src/api';
 import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
 import { ApplySheet, type Preset } from './src/applications/ApplySheet';
-import { applyPatch, copyOf, fromLiked, localSummary, toImport } from './src/applications/model';
+import { Celebrate } from './src/applications/Celebrate';
+import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
 import * as i18n from './src/i18n';
 import {
@@ -34,14 +35,18 @@ import {
   actOnReminder,
   deleteApplication,
   importApplications,
+  importGoal,
   listApplications,
   listReminders,
   patchApplication,
+  putGoal,
+  seenAchievements,
   setBeta,
   whoAmI,
   type Account,
   type Application,
   type ApplicationPatch,
+  type GoalValue,
   type Method,
   type Reminder,
   type Reminders,
@@ -94,6 +99,10 @@ function Main() {
   const [summary, setSummary] = useState<Summary | null>(null);
   const [appsFailed, setAppsFailed] = useState(false);
   const [appsAttempt, setAppsAttempt] = useState(0);
+  // Цель недели без профиля: с какой недели какая цель, на телефоне
+  const [goalHistory, setGoalHistory] = useState<GoalHistory>([]);
+  // С какими достижениями уже поздравили в этом запуске: сервер узнает об этом чуть позже
+  const celebrated = useRef(new Set<string>());
   // Напоминания (только с профилем на сервере): что ждёт, история, счётчик и настройки
   const [reminders, setReminders] = useState<Reminders | null>(null);
   const [remindersFailed, setRemindersFailed] = useState(false);
@@ -117,9 +126,10 @@ function Main() {
   // Запуск: настройки с устройства, Telegram (язык пользователя), список городов
   useEffect(() => {
     (async () => {
-      const [stored, storedLiked, app] = await Promise.all([
+      const [stored, storedLiked, storedGoal, app] = await Promise.all([
         read<Prefs>('prefs', {}),
         read<Liked[]>('liked', []),
+        read<GoalHistory>('goal', []),
         initTelegram(),
       ]);
       const tgLang = app?.initDataUnsafe?.user?.language_code === 'kk' ? 'kk' : undefined;
@@ -135,6 +145,7 @@ function Main() {
         ...(beta ? { beta: true } : {}),
       });
       setLiked(storedLiked);
+      setGoalHistory(storedGoal);
       setBooted(true);
       if (app) {
         homeScreenStatus().then(setHome);
@@ -188,6 +199,9 @@ function Main() {
   useEffect(() => {
     if (booted) write('liked', liked);
   }, [liked, booted]);
+  useEffect(() => {
+    if (booted) write('goal', goalHistory);
+  }, [goalHistory, booted]);
   useEffect(() => {
     if (city && seenCity.current === city) write(`seen:${city}`, seen);
   }, [seen, city]);
@@ -278,6 +292,28 @@ function Main() {
     );
   }, [tracker, liked]);
 
+  // Цель с телефона переносим, когда отклики уже на сервере: по ним он считает прошлые недели серии
+  const movingGoal = useRef(false);
+  useEffect(() => {
+    if (tracker !== 'server' || !summary || liked.length || !goalHistory.length || movingGoal.current) return;
+    const goal = localGoal([], goalHistory).goal;
+    if (!goal) {
+      setGoalHistory([]);
+      return;
+    }
+    movingGoal.current = true;
+    importGoal(goal, goalHistory).then(
+      (r) => {
+        movingGoal.current = false;
+        setSummary(r.summary);
+        setGoalHistory([]);
+      },
+      () => {
+        movingGoal.current = false;
+      },
+    );
+  }, [tracker, summary, liked.length, goalHistory]);
+
   // Напоминания с сервера: при запуске, после изменений в откликах и при переходе на вкладку
   useEffect(() => {
     if (tracker !== 'server') {
@@ -323,7 +359,24 @@ function Main() {
   const clearShowApp = useCallback(() => setShowApp(null), []);
   const localItems = useMemo(() => liked.map(fromLiked), [liked]);
   const trackerItems = tracker === 'server' ? apps : localItems;
-  const trackerSummary = tracker === 'server' ? summary : localSummary(localItems);
+  const trackerSummary = tracker === 'server' ? summary : localSummary(localItems, goalHistory);
+
+  const onGoal = async (goal: GoalValue | null) => {
+    if (tracker === 'server') {
+      const r = await putGoal(goal);
+      setSummary(r.summary);
+      return;
+    }
+    setGoalHistory((h) => withGoal(h, goal));
+  };
+
+  // Новое достижение поздравляем один раз, когда не открыто другое окно
+  const fresh = tracker === 'server' && summary ? summary.achievements.filter((a) => !a.seen && !celebrated.current.has(a.kind)) : [];
+  const closeCelebrate = () => {
+    for (const a of fresh) celebrated.current.add(a.kind);
+    setSummary((s) => s && { ...s, achievements: s.achievements.map((a) => ({ ...a, seen: true })) });
+    seenAchievements().catch(() => undefined);
+  };
 
   /** Отклик без профиля (или сервер не ответил): на телефоне, с той же стадией. */
   const saveLocal = (copy: VacancyCopy, full: Vacancy | undefined, patch: ApplicationPatch) => {
@@ -680,6 +733,7 @@ function Main() {
           }
           onPatch={patchItem}
           onDelete={removeItem}
+          onGoal={onGoal}
           onMakeProfile={() => setTab('profile')}
           show={showApp}
           onShown={clearShowApp}
@@ -772,6 +826,7 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
+      {fresh.length && !applying && !open ? <Celebrate c={c} lang={lang} list={fresh} onClose={closeCelebrate} /> : null}
       <StatusBar style="auto" />
     </Screen>
   );

@@ -19,6 +19,7 @@ import { fetchPostContacts, LookupLimit, POST_URL } from "./contacts.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import { RateLimit } from "./limits.ts";
 import { CONSENT_VERSION, parseProfile } from "./profile.ts";
+import { achievementsSeen, importGoal, parseGoal, setGoal } from "./progress.ts";
 import {
   actOn,
   addCustom,
@@ -266,6 +267,28 @@ export function meRoutes(ctx: Ctx): Route[] {
       return {
         json: { application: applicationView(ctx.db, seeker.id, id, origin, now), summary: summary(ctx.db, seeker.id, now) },
       };
+    }),
+
+    // Цель недели: 3, 5 или 10 откликов, null выключает. Ответ — сводка с кольцом и серией
+    route("PUT", "api", "/me/goal", async (req) => {
+      const seeker = seekerOf(req);
+      const now = ctx.now();
+      setGoal(ctx.db, seeker.id, parseGoal(await req.json()), now);
+      return { json: { summary: summary(ctx.db, seeker.id, now) } };
+    }),
+
+    // Цель с телефона, заведённая до профиля: ложится, только если на сервере цели ещё не было
+    route("POST", "api", "/me/goal/import", async (req) => {
+      const seeker = seekerOf(req);
+      const now = ctx.now();
+      importGoal(ctx.db, seeker.id, await req.json(), now);
+      return { json: { summary: summary(ctx.db, seeker.id, now) } };
+    }),
+
+    // Приложение поздравило с новыми достижениями: второй раз не показываем
+    route("POST", "api", "/me/achievements/seen", (req) => {
+      achievementsSeen(ctx.db, seekerOf(req).id);
+      return { json: { ok: true } };
     }),
 
     // Удалить отклик: его ссылка на профиль сразу перестаёт открываться

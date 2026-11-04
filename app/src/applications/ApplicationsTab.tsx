@@ -1,15 +1,29 @@
-// Вкладка «Отклики»: общая стадия поиска полоской, сводка недели одной строкой, отклики по группам
-// с кнопкой следующего шага и карточка отклика: стадия, собеседование, день выхода, заметка, история.
+// Вкладка «Отклики»: общая стадия поиска полоской, сводка недели одной строкой, цель недели кольцом
+// с серией недель, достижения, отклики по группам с кнопкой следующего шага и карточка отклика:
+// стадия, собеседование, день выхода, заметка, история.
 import { useEffect, useMemo, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { confirm, haptic, openUrl } from '../platform';
 import { almaty, when } from '../profile/texts';
-import { getApplication, type Application, type ApplicationPatch, type Stage, type Summary } from '../server';
+import {
+  ACHIEVEMENTS,
+  getApplication,
+  GOALS,
+  type Achievement,
+  type AchievementKind,
+  type Application,
+  type ApplicationPatch,
+  type Goal,
+  type GoalValue,
+  type Stage,
+  type Summary,
+} from '../server';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
-import { Button, Chip, Field, Loading, ModalArea, Retry, styles as ui } from '../ui';
+import { Button, Chip, Field, Loading, ModalArea, Retry, Ring, styles as ui } from '../ui';
+import { ICONS } from './Celebrate';
 import { CLOSED, SEARCH } from './model';
 import { A, dayLabel, whenRelative } from './texts';
 
@@ -76,6 +90,8 @@ export function ApplicationsTab(props: {
   onPatch(a: Application, patch: ApplicationPatch): Promise<Application>;
   onDelete(a: Application): Promise<void>;
   onMakeProfile(): void;
+  /** Цель недели: 3, 5 или 10 откликов, null — без цели. */
+  onGoal(goal: GoalValue | null): Promise<void>;
   /** Открыть карточку отклика: из ссылки бота или кнопкой «Перенести» в напоминании. */
   show?: { id: number; focus: Focus } | null;
   onShown?(): void;
@@ -156,6 +172,9 @@ export function ApplicationsTab(props: {
           ) : null}
         </View>
 
+        {summary ? <GoalCard c={c} lang={lang} goal={summary.goal} onGoal={props.onGoal} /> : null}
+        {summary && !local ? <Achievements c={c} lang={lang} list={summary.achievements} /> : null}
+
         {local ? (
           <View style={[s.local, { backgroundColor: c.pill }]}>
             <Text style={[s.localTitle, { color: c.ink }]}>📱 {t.localTitle}</Text>
@@ -214,6 +233,123 @@ export function ApplicationsTab(props: {
           ) : null}
         </ModalArea>
       </Modal>
+    </View>
+  );
+}
+
+/** Цель недели: выбор 3, 5 или 10 откликов, потом кольцо прогресса и серия недель. */
+function GoalCard(props: { c: Colors; lang: Lang; goal: Goal; onGoal(goal: GoalValue | null): Promise<void> }) {
+  const { c, lang, goal } = props;
+  const t = A[lang].goal;
+  const [editing, setEditing] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const pick = async (value: GoalValue | null) => {
+    if (busy) return;
+    haptic();
+    setBusy(true);
+    setError('');
+    try {
+      await props.onGoal(value);
+      setEditing(false);
+    } catch {
+      setError(t.failed);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  if (!goal.goal || editing) {
+    return (
+      <View style={[s.top, { backgroundColor: c.card, borderColor: c.line }]}>
+        <Text style={[s.goalTitle, { color: c.ink }]}>{t.title}</Text>
+        <Text style={[s.small, { color: c.ink }]}>{t.ask}</Text>
+        <View style={ui.row}>
+          {GOALS.map((g) => (
+            <Chip key={g} c={c} big active={goal.goal === g} label={String(g)} onPress={() => void pick(g)} />
+          ))}
+          {goal.goal ? <Chip c={c} big active={false} label={t.off} onPress={() => void pick(null)} /> : null}
+        </View>
+        {editing ? (
+          <View style={ui.row}>
+            <Button c={c} small ghost label={t.cancel} onPress={() => setEditing(false)} />
+          </View>
+        ) : (
+          <Text style={[s.small, { color: c.quiet }]}>{t.hint}</Text>
+        )}
+        {error ? <Text style={[s.small, { color: c.skip }]}>{error}</Text> : null}
+      </View>
+    );
+  }
+
+  const done = goal.sent >= goal.goal;
+  return (
+    <View style={[s.top, s.goalRow, { backgroundColor: c.card, borderColor: c.line }]}>
+      <Ring
+        size={78}
+        width={9}
+        progress={goal.sent / goal.goal}
+        segments={goal.goal}
+        color={done ? c.like : c.accent}
+        track={c.line}
+        hole={c.card}
+      >
+        <Text style={[s.ringNumber, { color: c.ink }]}>
+          {goal.sent}/{goal.goal}
+        </Text>
+      </Ring>
+      <View style={s.goalText}>
+        <Text style={[s.goalTitle, { color: c.ink }]}>{t.of(goal.goal)}</Text>
+        <Text style={[s.small, done ? { color: c.like, fontWeight: '700' } : { color: c.quiet }]}>
+          {done ? t.done : t.left(goal.goal - goal.sent)}
+        </Text>
+        {goal.streak ? <Text style={[s.small, { color: c.ink, fontWeight: '600' }]}>{t.streak(goal.streak)}</Text> : null}
+        {goal.forgiven ? <Text style={[s.hint, { color: c.quiet }]}>{t.forgiven}</Text> : null}
+        <Pressable onPress={() => setEditing(true)} hitSlop={8} accessibilityRole="button">
+          <Text style={[s.link, { color: c.accent }]}>{t.change}</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+/** Пять достижений: каждое — настоящий шаг к работе. Нажатие подсказывает, как его получить. */
+function Achievements({ c, lang, list }: { c: Colors; lang: Lang; list: Achievement[] }) {
+  const t = A[lang].achievements;
+  const got = new Map(list.map((a) => [a.kind, a]));
+  const [hint, setHint] = useState<AchievementKind | null>(null);
+  const shown = hint ? got.get(hint) : undefined;
+  return (
+    <View style={[s.top, { backgroundColor: c.card, borderColor: c.line }]}>
+      <Text style={[s.groupTitle, s.flat, { color: c.quiet }]}>
+        {t.title} · {t.count(got.size, ACHIEVEMENTS.length)}
+      </Text>
+      <View style={s.badges}>
+        {ACHIEVEMENTS.map((kind) => {
+          const has = got.has(kind);
+          return (
+            <Pressable
+              key={kind}
+              style={s.badge}
+              onPress={() => setHint(hint === kind ? null : kind)}
+              accessibilityRole="button"
+              accessibilityLabel={has ? t.names[kind] : `${t.names[kind]}: ${t.how[kind]}`}
+            >
+              <View style={[s.badgeIcon, { backgroundColor: has ? c.pill : c.bg, borderColor: has ? c.accent : c.line }]}>
+                <Text style={[s.badgeEmoji, !has && s.locked]}>{ICONS[kind]}</Text>
+              </View>
+              <Text style={[s.badgeText, { color: has ? c.ink : c.quiet }]} numberOfLines={2}>
+                {t.names[kind]}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      {hint ? (
+        <Text style={[s.small, { color: c.quiet }]}>
+          {t.names[hint]}: {shown ? when(shown.at, lang) : t.how[hint]}
+        </Text>
+      ) : null}
     </View>
   );
 }
@@ -525,6 +661,19 @@ const s = StyleSheet.create({
   stageNext: { fontSize: 13 },
   week: { fontSize: 15, lineHeight: 21 },
   next: { fontSize: 15, fontWeight: '700', lineHeight: 21 },
+  goalRow: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  goalText: { flex: 1, gap: 3 },
+  goalTitle: { fontSize: 16, fontWeight: '700' },
+  ringNumber: { fontSize: 18, fontWeight: '800' },
+  hint: { fontSize: 13, lineHeight: 18 },
+  link: { fontSize: 14, fontWeight: '700', marginTop: 2 },
+  flat: { marginTop: 0 },
+  badges: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 12 },
+  badge: { width: '33.33%', alignItems: 'center', gap: 4, paddingHorizontal: 2 },
+  badgeIcon: { width: 46, height: 46, borderRadius: 23, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
+  badgeEmoji: { fontSize: 22 },
+  locked: { opacity: 0.35 },
+  badgeText: { fontSize: 12, lineHeight: 15, fontWeight: '600', textAlign: 'center' },
   local: { borderRadius: 16, padding: 14, gap: 8 },
   localTitle: { fontSize: 16, fontWeight: '700' },
   small: { fontSize: 14, lineHeight: 20 },

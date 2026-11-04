@@ -63,7 +63,7 @@ export function Chip(props: { c: Colors; active: boolean; label: string; onPress
     <Pressable
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityState={{ selected: active }}
+      aria-selected={active}
       style={[
         styles.chip,
         big && styles.chipBig,
@@ -171,7 +171,7 @@ export function Check(props: { c: Colors; checked: boolean; label: string; hint?
     <Pressable
       onPress={onPress}
       accessibilityRole="checkbox"
-      accessibilityState={{ checked }}
+      aria-checked={checked}
       style={[styles.check, { borderColor: checked ? c.accent : c.line, backgroundColor: c.card }]}
     >
       <View style={[styles.box, { borderColor: checked ? c.accent : c.quiet, backgroundColor: checked ? c.accent : 'transparent' }]}>
@@ -204,6 +204,105 @@ export function Bar({ c, value }: { c: Colors; value: number }) {
   return (
     <View style={[styles.bar, { backgroundColor: c.line }]}>
       <View style={[styles.barFill, { backgroundColor: c.accent, width: `${Math.max(0, Math.min(100, value))}%` }]} />
+    </View>
+  );
+}
+
+/**
+ * Кольцо прогресса из обычных View, без SVG: по половине круга поворачивается под маской
+ * каждой стороны. segments делит кольцо на доли, по одной на отклик цели.
+ */
+export function Ring(props: {
+  size: number;
+  width: number;
+  /** 0–1, с 12 часов по часовой стрелке. */
+  progress: number;
+  color: string;
+  track: string;
+  /** Цвет середины и промежутков между долями: фон карточки. */
+  hole: string;
+  segments?: number;
+  children?: ReactNode;
+}) {
+  const { size: d, width, color, track, hole, segments = 0 } = props;
+  const p = Math.max(0, Math.min(1, props.progress));
+  const r = d / 2;
+  const gap = 3;
+  // Правая половина заполняется с 12 до 6 часов, левая с 6 до 12
+  const right = Math.min(p, 0.5) * 360;
+  const left = Math.max(0, p - 0.5) * 360;
+  const half = (side: 'left' | 'right', angle: number) => (
+    <View style={{ position: 'absolute', top: 0, left: side === 'right' ? r : 0, width: r, height: d, overflow: 'hidden' }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: side === 'right' ? -r : 0,
+          width: d,
+          height: d,
+          transform: [{ rotate: `${angle}deg` }],
+        }}
+      >
+        {angle > 0 ? (
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: side === 'right' ? 0 : r,
+              width: r,
+              height: d,
+              backgroundColor: color,
+              ...(side === 'right'
+                ? { borderTopLeftRadius: r, borderBottomLeftRadius: r }
+                : { borderTopRightRadius: r, borderBottomRightRadius: r }),
+            }}
+          />
+        ) : null}
+      </View>
+    </View>
+  );
+  return (
+    <View
+      style={{ width: d, height: d, borderRadius: r, overflow: 'hidden', backgroundColor: p >= 1 ? color : track }}
+      accessibilityRole="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(p * 100)}
+    >
+      {p < 1 ? half('right', right) : null}
+      {p < 1 ? half('left', left) : null}
+      {segments > 1
+        ? Array.from({ length: segments }, (_, i) => (
+            <View
+              key={i}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: r - gap / 2,
+                width: gap,
+                height: d,
+                transform: [{ rotate: `${(360 / segments) * i}deg` }],
+              }}
+            >
+              <View style={{ width: gap, height: r, backgroundColor: hole }} />
+            </View>
+          ))
+        : null}
+      <View
+        style={{
+          position: 'absolute',
+          top: width,
+          left: width,
+          width: d - 2 * width,
+          height: d - 2 * width,
+          borderRadius: r - width,
+          backgroundColor: hole,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {props.children}
+      </View>
     </View>
   );
 }

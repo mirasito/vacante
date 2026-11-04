@@ -1,6 +1,6 @@
 // Отклики без интерфейса: откуда вакансия и какими способами на неё откликнуться,
 // отклики с телефона в том же виде, что с сервера, общая стадия поиска.
-import type { Application, ImportItem, Method, SearchStage, Stage, Summary, VacancyCopy } from '../server';
+import type { Application, Goal, GoalValue, ImportItem, Method, SearchStage, Stage, Summary, VacancyCopy } from '../server';
 import type { Liked, Vacancy } from '../types';
 
 export type Source = 'channel' | 'bot' | 'hh' | 'other';
@@ -103,8 +103,68 @@ export function weekStart(now: number): number {
   return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - sinceMonday) - 5 * 3600_000;
 }
 
+const WEEK = 7 * 86_400_000;
+/** Понедельник недели, ГГГГ-ММ-ДД по времени Казахстана: так недели называет сервер. */
+export const weekKey = (ms: number) => new Date(weekStart(ms) + 5 * 3600_000).toISOString().slice(0, 10);
+const weekMs = (key: string) => Date.parse(`${key}T00:00:00Z`) - 5 * 3600_000;
+
+/**
+ * Серия недель с выполненной целью, как на сервере (server/src/progress.ts): недели от старых к идущей.
+ * Идущая неделя прибавляет, когда цель уже выполнена, и не обрывает. Неделя без цели обрывает,
+ * невыполненная прощается, если в 3 соседние недели прощённых не было: один пропуск в месяц.
+ */
+export function streakOf(weeks: { goal: number; sent: number }[]): { streak: number; forgiven: boolean } {
+  const current = weeks.length - 1;
+  let streak = 0;
+  let pass: number | null = null;
+  let atLastWeek: number | null = null;
+  for (let i = current; i >= 0; i--) {
+    const w = weeks[i]!;
+    if (!w.goal) break;
+    if (w.sent >= w.goal) streak++;
+    else if (i === current) continue;
+    else if (pass === null || pass - i >= 4) {
+      pass = i;
+      if (i === current - 1) atLastWeek = streak;
+    } else break;
+  }
+  return { streak, forgiven: atLastWeek !== null && streak > atLastWeek };
+}
+
+/** Цель без профиля: с какой недели какая цель (0 — выключена). Хранится на телефоне. */
+export type GoalHistory = { week: string; goal: number }[];
+
+/** Цель с этой недели: прежняя запись этой недели заменяется. */
+export function withGoal(history: GoalHistory, goal: GoalValue | null, now = Date.now()): GoalHistory {
+  const week = weekKey(now);
+  return [...history.filter((h) => h.week < week), { week, goal: goal ?? 0 }].slice(-60);
+}
+
+/** Цель и серия по откликам с телефона. */
+export function localGoal(items: Application[], history: GoalHistory, now = Date.now()): Goal {
+  const counts = new Map<string, number>();
+  for (const a of items) {
+    if (!a.sent_at) continue;
+    const key = weekKey(Date.parse(a.sent_at));
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  const current = weekStart(now);
+  const sorted = [...history].sort((x, y) => (x.week < y.week ? -1 : 1));
+  if (!sorted.length) return { goal: null, sent: counts.get(weekKey(now)) ?? 0, streak: 0, forgiven: false };
+  const weeks: { goal: number; sent: number }[] = [];
+  let goal = 0;
+  let i = 0;
+  for (let w = Math.max(weekMs(sorted[0]!.week), current - 52 * WEEK); w <= current; w += WEEK) {
+    const key = weekKey(w);
+    while (i < sorted.length && sorted[i]!.week <= key) goal = sorted[i++]!.goal;
+    weeks.push({ goal, sent: counts.get(key) ?? 0 });
+  }
+  const thisWeek = weeks[weeks.length - 1]!;
+  return { goal: thisWeek.goal ? (thisWeek.goal as GoalValue) : null, sent: thisWeek.sent, ...streakOf(weeks) };
+}
+
 /** Сводка для откликов с телефона: без просмотров, их видит только сервер. */
-export function localSummary(items: Application[], now = Date.now()): Summary {
+export function localSummary(items: Application[], history: GoalHistory = [], now = Date.now()): Summary {
   const from = new Date(weekStart(now)).toISOString();
   const counts = Object.fromEntries(Object.keys(SEARCH_OF).map((s) => [s, 0])) as Record<Stage, number>;
   let furthest = 0;
@@ -127,6 +187,9 @@ export function localSummary(items: Application[], now = Date.now()): Summary {
       ? { id: soon.id, at: soon.interview_at!, title: soon.vacancy.title, employer: soon.vacancy.employer, address: soon.vacancy.address }
       : null,
     counts,
+    goal: localGoal(items, history, now),
+    // Достижения записывает сервер: без профиля их нет
+    achievements: [],
   };
 }
 

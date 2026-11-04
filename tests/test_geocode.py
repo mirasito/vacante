@@ -120,6 +120,32 @@ def test_full_page_of_street_pieces_gives_no_point(tmp_path):
     assert locate(items, tmp_path, client)["found"] == 0 and items[0].lat is None
 
 
+def named(name, answer):
+    return [{**r, "name": name} for r in answer]
+
+
+def test_namesake_street_is_not_taken_for_the_avenue(tmp_path):
+    # Проспект Райымбека в OpenStreetMap назван иначе, а «Райымбека» находит короткую улицу в пригороде
+    suburb = named("улица Райымбека", pieces(43.184, 43.186, lon=77.02))
+    asked, client = nominatim({"Райымбека, Алматы": suburb, "Абая, Костанай": named("проспект Абая", pieces(
+        53.21, 53.22, lon=63.62))})
+    items = [vacancy("a-1", "пр. Райымбека, 486-б"), vacancy("a-2", "ул. Райымбека 496а/7"),
+             vacancy("a-3", "ул. Райымбека 20"), vacancy("a-4", "пр-т Абая 10", city="kostanay")]
+    locate(items, tmp_path, client)
+    assert [r.url.params["q"] for r in asked if r.url.params.get("dedupe")] == [
+        "Райымбека, Алматы", "Райымбека, Алматы", "Райымбека, Алматы", "Абая, Костанай"]
+    # Проспект, а нашлась улица; дом 496 на улице в полкилометра не поместится; дом 20 и короткий проспект — да
+    assert [(v.lat, v.approx) for v in items] == [(None, False), (None, False), (43.185, True), (53.215, True)]
+
+
+def test_street_hints():
+    assert geocode.street_hints("пр. Райымбека, 486-б, Алматы", "almaty") == (None, True)
+    assert geocode.street_hints("ул. Райымбека 496а/7, Алматы", "almaty") == (496, False)
+    assert geocode.street_hints("даңғылы Абай 10, Алматы", "almaty") == (10, True)
+    assert geocode.street_hints("12мкр 79/4, Актау", "aktau") == (79, False)  # микрорайон — не проспект
+    assert geocode.street_hints("село Отеген батыр, переулок Жарык, 1, Алматы", "almaty") == (None, False)
+
+
 def test_microdistrict_gives_its_own_approximate_point(tmp_path):
     mkr = place(43.66, 51.15, half=0.01)  # 14 микрорайон целиком: дом не нашёлся
     small = place(43.67, 51.16, half=0.002)  # 12 микрорайон: меньше 1,5 км, но без дома всё равно примерно
@@ -467,7 +493,7 @@ def test_check_compares_points_with_hh(tmp_path):
     hh_.lat, hh_.lon, hh_.geo = *truth, "hh"
     plain = vacancy("hh-2", "улица Абая, 150", source="hh")  # точки hh нет: проверять не с чем
     asked, client = nominatim({"Рыскулова, 234, Алматы": place(43.2410, 76.9110),
-                               "Рыскулова, Алматы": place(43.2700, 76.9500, half=0.01)})
+                               "Рыскулова, Алматы": named("проспект Рыскулова", place(43.2700, 76.9500, half=0.01))})
     result = geocode.check([hh_, plain], 10, client=client, sleep=lambda s: None)
     assert [r.url.params["q"] for r in asked] == ["проспект Турара Рыскулова, 234, Алматы",
                                                   "Рыскулова, 234, Алматы", "Рыскулова, Алматы"]
@@ -489,7 +515,8 @@ def test_check_ladder_takes_the_whole_street_like_collect():
     hh_.lat, hh_.lon, hh_.geo = *truth, "hh"
     piece = place(43.27, 76.95, half=0.01)  # дом не нашёлся: кусок проспекта в 7 км от работы
     asked, client = nominatim({"проспект Райымбека, 312, Алматы": piece,
-                               "Райымбека, Алматы": pieces(43.27, lon=76.80) + pieces(43.27, lon=76.95)})
+                               "Райымбека, Алматы": named("проспект Райымбека", pieces(43.27, lon=76.80) + pieces(
+                                   43.27, lon=76.95))})
     result = geocode.check([hh_], 10, client=client, sleep=lambda s: None)
     assert result["requests"] == 3 and 7 < result["steps"][""][0][0] < 7.5 and result["steps"]["street"] == [None]
     assert result["ladder"] == [None]  # проспект длиннее 5 км: точки нет, как и в сборе

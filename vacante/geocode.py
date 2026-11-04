@@ -57,16 +57,22 @@ KEEP = timedelta(days=60)  # запись кеша, которой давно н
 MAX_BOX_KM = 1.5  # точный ответ: дом, здание, заведение
 APPROX_BOX_KM = 5.0  # примерный: улица, микрорайон, ЖК — точка посередине, расстояние «примерно»
 # Версия кеша: со 2-й он знает примерные точки, с 3-й — запасные запросы, с 4-й примерная точка улицы — середина
-# всей улицы. Промахи версий до MISS_SINCE и примерные точки до APPROX_SINCE спрашиваем заново: новая версия их
-# найдёт или поправит. Промахи 3-й версии 4-я не найдёт: она только строже к улицам
-VERSION = 4
+# всей улицы, с 5-й улица без номера дома сверяется с адресом (проспект, номер дома). Промахи версий до MISS_SINCE
+# и примерные точки до APPROX_SINCE спрашиваем заново: новая версия их найдёт или поправит. Промахи 3-й версии
+# новые не найдут: они только строже к улицам
+VERSION = 5
 MISS_SINCE = 3
-APPROX_SINCE = 4
+APPROX_SINCE = 5
 BOX = (0.3, 0.45)  # окно поиска вокруг центра города: ±0,3° широты и ±0,45° долготы, около 35 км
 RETRY_AFTER = 5.0  # секунд до повтора запроса, на который Nominatim не ответил (таймаут, обрыв, 5xx)
 MAX_FAILURES = 3  # столько адресов подряд без ответа и после повтора: Nominatim нездоров, хватит на этот прогон
 RESULTS = 5  # ответов на запасной запрос: если подходящие в разных концах города, адрес не понять
 STREET_RESULTS = 40  # кусков улицы без номера дома, больше Nominatim не отдаёт: по ним видно, длинная ли она
+# Улица без номера дома бывает одноимённой улицей в другом конце города: «улица Райымбека» в пригороде вместо
+# проспекта Райымбека, который в OpenStreetMap назван иначе. Такую улицу не берём, если в адресе проспект, а
+# нашёлся не он, или если номер дома не помещается на найденной улице: больше 40 и ещё 200 номеров на километр
+HOUSES_BASE = 40
+HOUSES_PER_KM = 200
 _PARENS = re.compile(r"\s*\([^)]*\)?|…")
 _SPACES = re.compile(r"\s+")
 
@@ -82,6 +88,8 @@ _MKR = re.compile(r"(?i)(?<![\w-])(?:мкр|мкрн|мик-н|м-н|м-он|м�
 _STREET = re.compile(r"(?i)(?<![\w-])(?:ул|улица|көшесі|көш|пр|пр-т|просп|проспект|даңғылы|даң|бульвар[ы]?|б-р|"
                      r"шоссе|тас\s*жолы|переулок|пер|тупик|тұйығы|проезд|тракт|трасса|набережная|площадь|алаңы|"
                      r"аллея)(?![\w-])\.?")
+_AVENUE = re.compile(r"(?i)(?<![\w-])(?:пр|пр-т|просп|проспект|даңғылы|даң)(?![\w-])\.?")
+_AVENUE_NAME = re.compile(r"(?i)проспект|даңғыл")
 _DISTRICT = re.compile(r"(?i)(?<![\w-])(?:район[а-я]*|аудан[ы]?|берег|жағалау[ы]?)(?![\w-])")
 # Село, посёлок или «75 км от Астаны»: работа за городом, улицу с тем же названием в городе брать нельзя
 _SETTLEMENT = re.compile(r"(?i)(?<![\w-])(?:село|селосы|с\.|пос[её]лок|п\.|пгт|аул|ауыл[ы]?|станция|ст\.|км|"
@@ -295,6 +303,18 @@ def fallbacks(q: str, city: str) -> list[tuple[str, str, str | None]]:
     return steps
 
 
+def street_hints(q: str, city: str) -> tuple[int | None, bool]:
+    """Номер дома (число в начале: «496а/7» → 496) и записана ли улица проспектом: по ним шаг street проверяет,
+    та ли улица нашлась."""
+    cleaned = _clean(q, city) if city in CITIES else None
+    if cleaned is None:
+        return None, False
+    places, house, _ = cleaned
+    number = re.match(r"\d+", house) if house else None
+    return (int(number.group()) if number else None,
+            any(_AVENUE.search(p) is not None for p in places if "микрорайон" not in p))
+
+
 def load(data_dir: Path) -> dict[str, dict]:
     path = data_dir / FILE
     return json.loads(path.read_text("utf-8")) if path.exists() else {}
@@ -376,12 +396,19 @@ def pick(found: list[dict], city: str, mall: bool = False) -> tuple[tuple[float,
     return points[0]
 
 
-def street_point(found: list[dict], city: str) -> tuple[float, float] | None:
+def street_point(found: list[dict], city: str, house: int | None = None, avenue: bool = False
+                 ) -> tuple[float, float] | None:
     """Середина всей улицы: рамка всех её кусков вместе (ответ с dedupe=0). None, если вместе они больше
     APPROX_BOX_KM (длинный проспект или одноимённые улицы в разных концах города) или ответов полная страница:
     тогда кусков, может быть, ещё больше. У одного куска середина своя, и у проспекта Райымбека она бывает
-    в 14 км от работы."""
+    в 14 км от работы.
+
+    Нашлась, может быть, не та улица: None и тогда, когда в адресе проспект (avenue), а среди ответов его нет,
+    или номер дома house не помещается на найденной улице."""
     if len(found) >= STREET_RESULTS:
+        return None
+    if avenue and not any(_AVENUE_NAME.search(str(r.get("name") or r.get("display_name") or "").split(",")[0])
+                          for r in found):
         return None
     boxes = []
     for r in found:
@@ -393,19 +420,20 @@ def street_point(found: list[dict], city: str) -> tuple[float, float] | None:
         return None
     south, north = min(b[0] for b in boxes), max(b[1] for b in boxes)
     west, east = min(b[2] for b in boxes), max(b[3] for b in boxes)
-    if distance_km((south, west), (north, east)) > APPROX_BOX_KM:
+    size = distance_km((south, west), (north, east))
+    if size > APPROX_BOX_KM or (house is not None and house > HOUSES_BASE + HOUSES_PER_KM * size):
         return None
     return city_point(city, (south + north) / 2, (west + east) / 2)
 
 
 def ask(client: httpx.Client, step: str, text: str, layer: str | None, city: str,
-        sleep: Callable[[float], None] = time.sleep, stats: dict | None = None
-        ) -> tuple[tuple[float, float], bool] | None:
-    """Точка одного запроса цепочки и примерная ли она: у шага street — середина всей улицы, у остальных —
-    первый подходящий ответ. Без номера дома (street и area) точка всегда примерная."""
+        sleep: Callable[[float], None] = time.sleep, stats: dict | None = None,
+        hints: tuple[int | None, bool] = (None, False)) -> tuple[tuple[float, float], bool] | None:
+    """Точка одного запроса цепочки и примерная ли она: у шага street — середина всей улицы (hints — из
+    street_hints), у остальных — первый подходящий ответ. Без номера дома (street и area) точка всегда примерная."""
     if step == "street":
         found = search(client, text, city, sleep, layer=layer, limit=STREET_RESULTS, dedupe=False, stats=stats)
-        point = street_point(found, city)
+        point = street_point(found, city, *hints)
         return (point, True) if point is not None else None
     found = search(client, text, city, sleep, layer=layer, limit=RESULTS if step else 1, stats=stats)
     got = pick(found, city, mall=step == "mall")
@@ -434,7 +462,8 @@ def lookup(client: httpx.Client, q: str, city: str, sleep: Callable[[float], Non
     """Точка адреса, примерная ли она и каким запасным запросом нашлась ("" — самим адресом), или None.
     Запросы идут по одному, пока choose не решит."""
     tries = [("", q, None), *fallbacks(q, city)]
-    return choose((step, ask(client, step, text, layer, city, sleep, stats)) for step, text, layer in tries)
+    hints = street_hints(q, city)
+    return choose((step, ask(client, step, text, layer, city, sleep, stats, hints)) for step, text, layer in tries)
 
 
 def fresh(entry: dict, retry_before: str) -> bool:
@@ -552,10 +581,11 @@ def check(vacancies: list[Vacancy], sample: int, client: httpx.Client | None = N
         for key in keys:
             q, city, truth = picked[key]
             tries: list[tuple[str, str, str | None]] = [("", q, None), *fallbacks(q, city)]
+            hints = street_hints(q, city)
             points: dict[str, tuple[tuple[float, float], bool] | None] = {}
             try:
                 for step, text, layer in tries:
-                    points[step] = ask(client, step, text, layer, city, sleep, result)
+                    points[step] = ask(client, step, text, layer, city, sleep, result, hints)
             except Skip as exc:
                 failures += 1
                 if failures >= MAX_FAILURES:

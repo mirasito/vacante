@@ -437,6 +437,11 @@ function Card(props: {
     onChange(await patchMe({ base: !view.seeker.base }).catch(() => view));
   };
 
+  const togglePreview = async () => {
+    haptic();
+    onChange(await patchMe({ preview: !view.seeker.preview }).catch(() => view));
+  };
+
   const remove = async () => {
     if (!(await confirm(t.removeAsk, t.yes, t.no))) return;
     setBusy(true);
@@ -518,6 +523,7 @@ function Card(props: {
           </Pressable>
         </View>
       ) : null}
+      <Check c={c} checked={!!view.seeker.preview} label={t.previewTitle} hint={t.previewHint} onPress={togglePreview} />
 
       <Check c={c} checked={view.seeker.base} label={t.baseTitle} hint={t.baseHint} onPress={toggleBase} />
 

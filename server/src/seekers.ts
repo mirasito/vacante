@@ -27,6 +27,8 @@ export interface Seeker {
   consent_at: string;
   base_consent_at: string | null;
   write_access: number;
+  /** Когда соискатель включил фото в превью ссылки; null — выключено. */
+  preview_at: string | null;
   created_at: string;
   seen_at: string;
 }
@@ -143,6 +145,15 @@ export function setBaseConsent(db: Db, id: number, base: boolean, now: number) {
   db.prepare(
     `UPDATE seekers SET base_consent_at = CASE WHEN ? THEN COALESCE(base_consent_at, ?) ELSE NULL END WHERE id = ?`,
   ).run(base ? 1 : 0, iso(now), id);
+}
+
+/** Галочка «Показывать фото в превью ссылки»: дата первого включения сохраняется, пока её не сняли. */
+export function setPreview(db: Db, id: number, on: boolean, now: number) {
+  db.prepare(`UPDATE seekers SET preview_at = CASE WHEN ? THEN COALESCE(preview_at, ?) ELSE NULL END WHERE id = ?`).run(
+    on ? 1 : 0,
+    iso(now),
+    id,
+  );
 }
 
 export function setWriteAccess(db: Db, id: number, allowed: boolean) {
@@ -323,6 +334,7 @@ export function profileView(db: Db, id: number, profileOrigin: string) {
       consent_at: seeker.consent_at,
       base: !!seeker.base_consent_at,
       write_access: seeker.write_access === 1,
+      preview: !!seeker.preview_at,
     },
     profile,
     video: video ? { duration: video.duration, recorded_at: video.recorded_at, ready: !!video.file, poster: !!video.poster } : null,

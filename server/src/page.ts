@@ -1,6 +1,7 @@
 // Страница профиля для работодателя: p.vacante.kz/<код>. Открывается в любом браузере без входа.
-// Превью ссылки в WhatsApp и Telegram видит только «Профиль кандидата в Vacante», без имени,
-// поисковики страницу не индексируют, сторонних скриптов и Метрики на ней нет.
+// Превью ссылки в WhatsApp и Telegram без имени и данных анкеты: «Профиль кандидата в Vacante»,
+// а если соискатель сам включил галочку, ещё фото (или кадр кружка) и «▶ Видео 0:42».
+// Поисковики страницу не индексируют, сторонних скриптов и Метрики на ней нет.
 import type { Ctx } from "./app.ts";
 import {
   answerable,
@@ -32,6 +33,7 @@ import {
   findLink,
   getPhoto,
   getProfile,
+  getSeeker,
   getVideo,
   iso,
   profileUpdatedAt,
@@ -53,6 +55,8 @@ const T = {
   ru: {
     title: "Профиль кандидата в Vacante",
     previewText: "Откройте ссылку, чтобы посмотреть профиль кандидата.",
+    previewVideo: (length: string) => `▶ Видео ${length} · Профиль кандидата`,
+    previewVideoText: "Откройте ссылку, чтобы посмотреть кружок и профиль кандидата.",
     candidate: "Профиль кандидата",
     wants: "Хочет работать",
     experience: "Опыт",
@@ -87,6 +91,8 @@ const T = {
   kk: {
     title: "Vacante-дегі үміткер профилі",
     previewText: "Үміткердің профилін көру үшін сілтемені ашыңыз.",
+    previewVideo: (length: string) => `▶ Бейнехабар ${length} · Үміткер профилі`,
+    previewVideoText: "Үміткердің бейнехабары мен профилін көру үшін сілтемені ашыңыз.",
     candidate: "Үміткер профилі",
     wants: "Қалайтын жұмысы",
     experience: "Тәжірибе",
@@ -154,7 +160,25 @@ button.btn{cursor:pointer;font-family:inherit}
 .error{color:#d33;font-weight:600}
 `);
 
-function page(lang: Lang, body: Html, other?: string): string {
+/** Что показать в превью ссылки сверх «Профиль кандидата в Vacante». */
+interface Preview {
+  title?: string;
+  text?: string;
+  image?: { url: string; width?: number; height?: number };
+}
+
+/** WhatsApp не показывает в превью картинку тяжелее ~300 КБ. */
+export const PREVIEW_MAX_BYTES = 300_000;
+
+/** Картинка превью; крупная, чтобы Telegram поставил её во всю ширину, а не значком сбоку. */
+const imageMeta = (image: NonNullable<Preview["image"]>) => html`<meta property="og:image" content="${image.url}">
+<meta property="og:image:type" content="image/jpeg">
+${image.width && image.height ? html`<meta property="og:image:width" content="${image.width}">
+<meta property="og:image:height" content="${image.height}">
+` : ""}<meta name="twitter:card" content="summary_large_image">
+`;
+
+function page(lang: Lang, body: Html, other?: string, preview: Preview = {}): string {
   const t = T[lang];
   return html`<!doctype html>
 <html lang="${lang}">
@@ -163,10 +187,10 @@ function page(lang: Lang, body: Html, other?: string): string {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>${t.title}</title>
-<meta property="og:title" content="${t.title}">
-<meta property="og:description" content="${t.previewText}">
+<meta property="og:title" content="${preview.title ?? t.title}">
+<meta property="og:description" content="${preview.text ?? t.previewText}">
 <meta property="og:site_name" content="Vacante">
-<style>${STYLE}</style>
+${preview.image ? imageMeta(preview.image) : ""}<style>${STYLE}</style>
 </head>
 <body><main>
 <header><a class="logo" href="https://vacante.kz">vacante</a>${other ? html`<a class="lang" href="${other}">${t.other}</a>` : ""}</header>
@@ -271,6 +295,30 @@ ${error ? html`<p class="error">${t.badDate}</p>` : ""}
 </form>`;
 }
 
+/**
+ * Превью ссылки, когда соискатель сам включил «Показывать фото в превью ссылки»: фото или кадр
+ * кружка и длина кружка. Имени и данных анкеты в превью нет и с галочкой.
+ */
+function previewOf(ctx: Ctx, link: Link, video: Video | undefined, lang: Lang): Preview {
+  if (!getSeeker(ctx.db, link.seeker_id)?.preview_at) return {};
+  const t = T[lang];
+  const base = `${ctx.config.profileOrigin}/${link.code}`;
+  // Новое фото или кружок — новый адрес картинки, иначе мессенджер покажет прежнюю из своего кэша
+  const version = (at: string) => Math.floor(Date.parse(at) / 1000).toString(36);
+  const photo = getPhoto(ctx.db, link.seeker_id);
+  const frame = video?.file && video.poster ? `${base}/poster.jpg?v=${version(video.recorded_at)}` : null;
+  // Тяжёлое фото из прежнего приложения WhatsApp не покажет: тогда лучше кадр кружка
+  const image =
+    photo && (photo.size <= PREVIEW_MAX_BYTES || !frame)
+      ? { url: `${base}/photo.jpg?v=${version(photo.uploaded_at)}`, width: photo.width, height: photo.height }
+      : frame
+        ? { url: frame }
+        : undefined;
+  return video?.file
+    ? { title: t.previewVideo(duration(video.duration)), text: t.previewVideoText, image }
+    : { image };
+}
+
 function gone(lang: Lang): Reply {
   const t = T[lang];
   return {
@@ -361,9 +409,13 @@ export function pageRoutes(ctx: Ctx): Route[] {
         return gone(lang);
       }
       const t = T[lang];
-      // Превью ссылки и проверки HEAD не считаются просмотром и не видят данных
+      const video = getVideo(ctx.db, link.seeker_id);
+      const preview = previewOf(ctx, link, video, lang);
+      // Превью ссылки и проверки HEAD не считаются просмотром и не видят данных анкеты
       if (req.method === "HEAD" || isPreviewBot(req.header("user-agent"))) {
-        return { html: page(lang, html`<section class="card"><h1>${t.title}</h1><p class="note">${t.previewText}</p></section>`) };
+        return {
+          html: page(lang, html`<section class="card"><h1>${t.title}</h1><p class="note">${t.previewText}</p></section>`, undefined, preview),
+        };
       }
       const showPhone = req.query.get("phone") === "1" && !!profile.phone;
       // Ссылка отклика: работодатель открыл профиль — отклик «Просмотрен», а кандидату пишет бот
@@ -396,10 +448,9 @@ export function pageRoutes(ctx: Ctx): Route[] {
             answer: answerBlock(code, fresh, lastEmployerAnswer(ctx.db, fresh.id), lang, now, req.query.get("error") === "date"),
           }
         : undefined;
-      const video = getVideo(ctx.db, link.seeker_id);
       const photo = !!getPhoto(ctx.db, link.seeker_id);
       return {
-        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application), other),
+        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application), other, preview),
         headers: {
           "Content-Security-Policy":
             "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",

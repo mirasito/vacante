@@ -1972,6 +1972,20 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "almaty:aitas kz": {
+  "name": "Aitas KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "aitaskz",
+  "website": "http://aitas.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001084082556",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ak stroy": {
   "name": "Ak STROY",
   "city": "almaty",
@@ -4199,6 +4213,13 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:ev group": {
+  "name": "EV GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
+ },
  "almaty:event plus": {
   "name": "Event Plus",
   "city": "almaty",
@@ -5400,6 +5421,20 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "almaty:kcell": {
+  "name": "Kcell",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "kcell.kz",
+  "website": "https://www.kcell.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001021329927",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kelet machine building plant": {
   "name": "KELET Machine-Building Plant",
   "city": "almaty",
@@ -5687,6 +5722,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
+ },
+ "almaty:lider group 2005": {
+  "name": "LIDER GROUP 2005",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "almaty:lider security": {
   "name": "Lider Security",
@@ -6578,6 +6620,24 @@
   "instagram": "percorso_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001062089129"
  },
+ "almaty:perfecto domo": {
+  "name": "PERFECTO DOMO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "perfecto_domo",
+  "telegram": "perfectodomo",
+  "website": "https://perfectodomo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001045602252",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "35b684dece8e69ec.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:pharmix": {
   "name": "PHARMIX",
   "city": "almaty",
@@ -6929,6 +6989,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
+ },
+ "almaty:red dragon kz": {
+  "name": "RED DRAGON KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "reddragon.kz",
+  "website": "https://reddragon.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001034593282",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:red ocean": {
   "name": "RED OCEAN",
@@ -8539,7 +8613,7 @@
   "instagram": "avatariya.almaty",
   "website": "https://avatariya.com/",
   "source": "https://2gis.kz/almaty/firm/70000001067380312",
-  "avatar_checked_at": "2026-10-28T09:43:33+00:00",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8794,6 +8868,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:аквасервис": {
+  "name": "Аквасервис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "almaty:акерке": {
   "name": "Акерке",
@@ -11871,6 +11952,13 @@
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
  },
+ "almaty:носкова алена николаевна": {
+  "name": "НОСКОВА АЛЕНА НИКОЛАЕВНА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
+ },
  "almaty:нур_пдр_сервис": {
   "name": "Нур_пдр_сервис",
   "city": "almaty",
@@ -13482,6 +13570,22 @@
    "website"
   ]
  },
+ "almaty:цой служба доставки еды nadom kz": {
+  "name": "Цой «Служба доставки еды Nadom.kz»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "nadomkz.almaty",
+  "website": "http://www.nadom.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001047645867",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1c4be1745c5b78d2.jpg",
+  "avatar_source": "website"
+ },
  "almaty:чайная": {
   "name": "Чайная",
   "city": "almaty",
@@ -13791,6 +13895,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
+ },
+ "almaty:ғаламтех": {
+  "name": "ҒаламТех",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "astana:12 месяцев": {
   "name": "12 Месяцев",
@@ -16516,6 +16627,13 @@
   "instagram": "oil_king_kz",
   "source": "https://2gis.kz/astana/firm/70000001060675194"
  },
+ "astana:oil центр": {
+  "name": "Oil центр",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
+ },
  "astana:omir collection": {
   "name": "OMIR COLLECTION",
   "city": "astana",
@@ -16825,6 +16943,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
+ },
+ "astana:proreklama kz": {
+  "name": "PROreklama.kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "proreklama.kz",
+  "website": "https://proreklama.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001038029504",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:qadam visa group": {
   "name": "QADAM VISA GROUP",
@@ -19985,6 +20117,22 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "astana:мой любимый доктор": {
+  "name": "Мой Любимый Доктор",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "my_lovely_doctor",
+  "website": "https://mld.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001043547832",
+  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4993faa228aef696.jpg",
+  "avatar_source": "website"
+ },
  "astana:молоснова мария алексеевна": {
   "name": "Молоснова Мария Алексеевна",
   "city": "astana",
@@ -20105,6 +20253,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "astana:нұрмұхамед": {
+  "name": "НҰРМҰХАМЕД",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "astana:общепит": {
   "name": "Общепит",
@@ -20930,6 +21085,13 @@
   ],
   "avatar": "24fd2d9268e3180c.jpg",
   "avatar_source": "website"
+ },
+ "astana:технопарк биоген": {
+  "name": "Технопарк Биоген",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "astana:техстройконтракт": {
   "name": "ТЕХСТРОЙКОНТРАКТ",
@@ -21921,6 +22083,13 @@
    "website"
   ]
  },
+ "atyrau:inmandi": {
+  "name": "InMandi",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
+ },
  "atyrau:janym soul": {
   "name": "JANYM SOUL",
   "city": "atyrau",
@@ -22377,6 +22546,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:сузакова": {
+  "name": "Сузакова",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "atyrau:тамаша": {
   "name": "Тамаша",
@@ -23832,6 +24008,13 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "karaganda:тыштыкбаева": {
+  "name": "Тыштыкбаева",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
+ },
  "karaganda:тэмпо казахстан": {
   "name": "ТЭМПО-Казахстан",
   "city": "karaganda",
@@ -24329,6 +24512,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:4 сезона": {
+  "name": "4 Сезона",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00"
  },
  "kostanay:agroservice kz": {
   "name": "AGROSERVICE KZ",
@@ -30131,6 +30321,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:doscar group": {
+  "name": "DOSCAR GROUP",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T09:46:47+00:00",
+  "instagram": "doscar_service_ukg",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001094244777"
  },
  "ust-kamenogorsk:dtj service": {
   "name": "DTJ SERVICE",

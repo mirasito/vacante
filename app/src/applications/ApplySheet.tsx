@@ -26,6 +26,17 @@ import { A } from './texts';
 
 type Step = 'choose' | 'contact' | 'confirm' | 'done';
 
+/**
+ * Готовый текст вместо отклика: «Написать ещё раз» или «Опаздываю» из напоминания.
+ * Отклик уже есть, поэтому после того, как человек открыл чат, окно просто закрывается.
+ */
+export interface Preset {
+  kicker: string;
+  text: string;
+  /** Добавить строку со ссылкой на профиль. */
+  link: boolean;
+}
+
 export function ApplySheet(props: {
   c: Colors;
   lang: Lang;
@@ -40,15 +51,19 @@ export function ApplySheet(props: {
   onClose(): void;
   onMakeProfile(): void;
   onOpenTracker(): void;
+  preset?: Preset;
+  /** С готовым текстом: человек открыл чат с работодателем. */
+  onDone?(): void;
 }) {
-  const { c, lang, vacancy, server } = props;
+  const { c, lang, vacancy, server, preset } = props;
   const t = A[lang];
   const title = (lang === 'kk' && vacancy.title_kk) || vacancy.title;
+  const short = preset?.text ?? t.shortText(title, props.name);
   const [app, setApp] = useState<Application | null>(null);
   const [message, setMessage] = useState<Message | null>(null);
   const [loading, setLoading] = useState(server);
-  const [text, setText] = useState(server ? '' : t.shortText(title, props.name));
-  const [withLink, setWithLink] = useState(true);
+  const [text, setText] = useState(server ? '' : short);
+  const [withLink, setWithLink] = useState(preset?.link ?? true);
   const [step, setStep] = useState<Step>('choose');
   const [method, setMethod] = useState<Method | null>(null);
   const [contact, setContact] = useState<PostContact | null>(null);
@@ -66,13 +81,13 @@ export function ApplySheet(props: {
         if (!alive) return;
         setApp(r.application);
         setMessage(r.message);
-        setText(r.message?.text ?? t.shortText(title, props.name));
+        setText(preset?.text ?? r.message?.text ?? short);
         setLoading(false);
         started.current(r.application);
       },
       () => {
         if (!alive) return;
-        setText(t.shortText(title, props.name));
+        setText(short);
         setLoading(false);
       },
     );
@@ -89,6 +104,11 @@ export function ApplySheet(props: {
   const other = sourceOf(vacancy.source_url) === 'other';
 
   const opened = (m: Method) => {
+    if (preset) {
+      props.onDone?.();
+      props.onClose();
+      return;
+    }
     setMethod(m);
     setStep('confirm');
   };
@@ -168,7 +188,7 @@ export function ApplySheet(props: {
           <Text style={[s.closeText, { color: c.quiet }]}>✕</Text>
         </Pressable>
         <ScrollView style={s.scroll} contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">
-          <Text style={[s.kicker, { color: c.quiet }]}>{t.sheetTitle}</Text>
+          <Text style={[s.kicker, { color: c.quiet }]}>{preset?.kicker ?? t.sheetTitle}</Text>
           <Text style={[s.title, { color: c.ink }]}>{title}</Text>
           {vacancy.employer ? <Text style={[s.employer, { color: c.quiet }]}>{vacancy.employer}</Text> : null}
 

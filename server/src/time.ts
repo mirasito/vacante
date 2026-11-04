@@ -13,6 +13,15 @@ export const localDay = (ms: number) => local(ms).toISOString().slice(0, 10);
 /** Час по времени Казахстана, 0–23. */
 export const localHour = (ms: number) => local(ms).getUTCHours();
 
+/** Полночь того же дня по времени Казахстана, миллисекунды UTC. */
+export function localDayStart(ms: number): number {
+  const d = local(ms);
+  return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) - OFFSET_MS;
+}
+
+/** Полночь дня «ГГГГ-ММ-ДД» по времени Казахстана, миллисекунды UTC. */
+export const dayStartOf = (day: string) => Date.parse(`${day}T00:00:00Z`) - OFFSET_MS;
+
 /** Начало недели: понедельник 00:00 по времени Казахстана. */
 export function weekStart(ms: number): number {
   const d = local(ms);
@@ -45,12 +54,29 @@ const MONTHS: Record<Lang, string[]> = {
   kk: ["қаңтар", "ақпан", "наурыз", "сәуір", "мамыр", "маусым", "шілде", "тамыз", "қыркүйек", "қазан", "қараша", "желтоқсан"],
 };
 
+/** «15:00» по времени Казахстана. */
+export function timeLabel(ms: number): string {
+  const d = local(ms);
+  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
+}
+
+/** «5 ноября» или «5 қараша». */
+export function dateLabel(ms: number, lang: Lang): string {
+  const d = local(ms);
+  return `${d.getUTCDate()} ${MONTHS[lang][d.getUTCMonth()]}`;
+}
+
 /** «5 ноября в 15:00» или «5 қараша, 15:00». */
 export function dateTimeLabel(ms: number, lang: Lang): string {
-  const d = local(ms);
-  const day = `${d.getUTCDate()} ${MONTHS[lang][d.getUTCMonth()]}`;
-  const time = `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
-  return lang === "kk" ? `${day}, ${time}` : `${day} в ${time}`;
+  return lang === "kk" ? `${dateLabel(ms, lang)}, ${timeLabel(ms)}` : `${dateLabel(ms, lang)} в ${timeLabel(ms)}`;
+}
+
+const SOON: Record<Lang, [string, string]> = { ru: ["сегодня", "завтра"], kk: ["бүгін", "ертең"] };
+
+/** «сегодня», «завтра» или «5 ноября»: день ms относительно now. */
+export function dayWord(ms: number, now: number, lang: Lang): string {
+  const days = Math.round((localDayStart(ms) - localDayStart(now)) / DAY_MS);
+  return days === 0 ? SOON[lang][0] : days === 1 ? SOON[lang][1] : dateLabel(ms, lang);
 }
 
 /** Тихие часы бота: с 21:00 до 9:00 сообщения приходят без звука. */

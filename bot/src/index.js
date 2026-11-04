@@ -27,6 +27,8 @@ const JOB_CLOSED = "Эта вакансия уже закрыта. Новые в
 const PROFILE_DOWN = "Профиль сейчас недоступен, попробуйте через несколько минут.";
 // Кнопка «Записать кружок» в приложении открывает чат с ботом командой /start video
 const VIDEO_START = /^\/start(@\w+)?\s+video$/;
+// Отклики и напоминания списком: они хранятся в профиле, поэтому отвечает сервер
+const SERVER_COMMAND = /^\/(otkliki|napominaniya)(@\w+)?$/;
 const NO_KEYBOARD = { remove_keyboard: true };
 
 export default {
@@ -61,22 +63,24 @@ async function handle(update, env, ctx) {
   if (m && m.chat.type === "private") {
     // Номер из окна «Поделиться номером» в приложении сервер кладёт в профиль, если приложение
     // его только что попросило, иначе это ответ в отклике, и его ведёт бот, как раньше.
-    // Кружок и /start video целиком на сервере: он хранит профили. Обычное видео сервер берёт,
-    // только если у человека есть профиль (подскажет записать кружок), иначе оно остаётся боту
-    const start = VIDEO_START.test((m.text || "").trim());
-    const circle = !!m.video_note || start;
-    if (start) await endDialog(env, m.chat.id); // команда прерывает анкету или отклик, как любая другая
-    if (m.contact || m.video || circle) {
+    // Кружок, /start video, /otkliki и /napominaniya целиком на сервере: он хранит профили.
+    // Обычное видео сервер берёт, только если у человека есть профиль (подскажет записать кружок),
+    // иначе оно остаётся боту
+    const text = (m.text || "").trim();
+    const command = VIDEO_START.test(text) || SERVER_COMMAND.test(text);
+    const profile = !!m.video_note || command;
+    if (command) await endDialog(env, m.chat.id); // команда прерывает анкету или отклик, как любая другая
+    if (m.contact || m.video || profile) {
       if (await relayToServer(env, update)) return;
-      if (circle) return send(env, m.chat.id, PROFILE_DOWN);
+      if (profile) return send(env, m.chat.id, PROFILE_DOWN);
     }
     return onMessage(m, env);
   }
   const q = update.callback_query;
   if (!q || !q.message) return;
   const data = q.data || "";
-  // Кнопки под сообщениями сервера о кружке («Убрать из профиля»)
-  if (data.startsWith("v:")) {
+  // Кнопки под сообщениями сервера: о кружке («Убрать из профиля») и под напоминаниями
+  if (data.startsWith("v:") || data.startsWith("r:")) {
     if (await relayToServer(env, update)) return;
     return answerCallback(env, q, PROFILE_DOWN);
   }

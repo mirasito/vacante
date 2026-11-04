@@ -195,12 +195,19 @@ export function launchCity(): string | undefined {
 
 /**
  * Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile,
- * а сообщения об откликах — с ?tab=applications.
+ * сообщения об откликах — с ?tab=applications, напоминания — с ?tab=reminders.
  */
-export function launchTab(): 'profile' | 'applications' | undefined {
+export function launchTab(): 'profile' | 'applications' | 'reminders' | undefined {
   if (!isWeb) return undefined;
   const tab = new URLSearchParams(window.location.search).get('tab');
-  return tab === 'profile' || tab === 'applications' ? tab : undefined;
+  return tab === 'profile' || tab === 'applications' || tab === 'reminders' ? tab : undefined;
+}
+
+/** Отклик из ссылки: кнопка «Перенести» под напоминанием о собеседовании открывает ?tab=applications&app=12. */
+export function launchApp(): number | undefined {
+  if (!isWeb) return undefined;
+  const id = Number(new URLSearchParams(window.location.search).get('app'));
+  return Number.isSafeInteger(id) && id > 0 ? id : undefined;
 }
 
 /**

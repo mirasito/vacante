@@ -265,3 +265,72 @@ export interface PostContact {
 
 export const lookupContact = (vacancyId: string, sourceUrl: string) =>
   api<PostContact>('/me/contact', { method: 'POST', body: { vacancy_id: vacancyId, source_url: sourceUrl } });
+
+// Напоминания: системные сервер сам выводит из откликов и профиля, свои человек заводит сам
+// (server/src/reminders.ts). В бот они приходят с 9:00 до 21:00 и не больше двух в день
+export type ReminderKind =
+  | 'write_again'
+  | 'status_check'
+  | 'interview_eve'
+  | 'interview_soon'
+  | 'how_was_it'
+  | 'start_eve'
+  | 'profile'
+  | 'week'
+  | 'custom';
+/** Группы, которые включают и выключают в профиле. Свои напоминания не выключаются. */
+export type ReminderGroup = 'applications' | 'interviews' | 'start' | 'profile' | 'week';
+export const REMINDER_GROUPS: ReminderGroup[] = ['applications', 'interviews', 'start', 'profile', 'week'];
+
+export interface Reminder {
+  id: number;
+  kind: ReminderKind;
+  /** Текст своего напоминания. */
+  text: string | null;
+  due_at: string;
+  expires_at: string | null;
+  status: 'waiting' | 'sent' | 'done' | 'dismissed';
+  closed_by: 'seeker' | 'system' | null;
+  sent_at: string | null;
+  /** Ещё ждёт действия: не сделано, не убрано и не прошло. */
+  active: boolean;
+  application:
+    | (Omit<VacancyCopy, 'id'> & {
+        id: number;
+        vacancy_id: string;
+        method: Method | null;
+        stage: Stage;
+        interview_at: string | null;
+        start_at: string | null;
+      })
+    | null;
+  /** У итога недели: цифры прошлой недели. */
+  week?: { sent: number; seen: number; invited: number };
+}
+
+export interface ReminderSettings {
+  off: ReminderGroup[];
+  /** Присылать ли в чат бота. В приложении напоминания видны всегда. */
+  bot: boolean;
+}
+
+export interface Reminders {
+  /** Сначала то, что ждёт, по времени, потом история за 30 дней. */
+  reminders: Reminder[];
+  /** Сколько пора сделать сегодня: счётчик на вкладке. */
+  due: number;
+  settings: ReminderSettings;
+}
+
+export const listReminders = () => api<Reminders>('/me/reminders');
+
+/** «Добавить своё»: at — время в UTC. */
+export const addReminder = (text: string, at: string) =>
+  api<Reminders & { id: number }>('/me/reminders', { method: 'POST', body: { text, at } });
+
+/** «Готово», «Убрать» или «Отложить» (без until — на час, в окне с 9 до 21). */
+export const actOnReminder = (id: number, action: 'done' | 'dismiss' | 'snooze', until?: string) =>
+  api<Reminders>(`/me/reminders/${id}`, { method: 'PATCH', body: { action, ...(until ? { until } : {}) } });
+
+export const saveReminderSettings = (settings: ReminderSettings) =>
+  api<Reminders>('/me/reminders/settings', { method: 'PUT', body: settings });

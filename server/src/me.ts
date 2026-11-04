@@ -20,6 +20,17 @@ import { HttpError, route, type Request, type Route } from "./http.ts";
 import { RateLimit } from "./limits.ts";
 import { CONSENT_VERSION, parseProfile } from "./profile.ts";
 import {
+  actOn,
+  addCustom,
+  getSettings,
+  listReminders,
+  parseAction,
+  parseCustom,
+  parseSettings,
+  planReminders,
+  saveSettings,
+} from "./reminders.ts";
+import {
   askPhone,
   cancelPhoneAsk,
   createSeeker,
@@ -58,6 +69,16 @@ export function meRoutes(ctx: Ctx): Route[] {
     if (!Number.isSafeInteger(id) || id <= 0) throw new HttpError(404, "Отклика нет");
     return id;
   };
+  const reminderId = (req: Request) => {
+    const id = Number(req.params.id);
+    if (!Number.isSafeInteger(id) || id <= 0) throw new HttpError(404, "Напоминания нет");
+    return id;
+  };
+  /** Вкладка «Напоминания» целиком: что ждёт, история, счётчик и настройки. */
+  const reminders = (seekerId: number, now: number) => ({
+    ...listReminders(ctx.db, seekerId, now),
+    settings: getSettings(ctx.db, seekerId),
+  });
   const origin = ctx.config.profileOrigin;
   // Номера из постов: 30 разных вакансий в день и не больше 6 запросов в минуту на человека
   const lookups = new LookupLimit(30);
@@ -240,6 +261,8 @@ export function meRoutes(ctx: Ctx): Route[] {
       const now = ctx.now();
       const patch = parsePatch(await req.json(), now);
       if (!patchApplication(ctx.db, seeker.id, id, patch, "seeker", now)) throw new HttpError(404, "Отклика нет");
+      // Новая дата собеседования сразу даёт новые напоминания, а прежние о нём отменяются
+      planReminders(ctx.db, seeker.id, now);
       return {
         json: { application: applicationView(ctx.db, seeker.id, id, origin, now), summary: summary(ctx.db, seeker.id, now) },
       };
@@ -250,6 +273,39 @@ export function meRoutes(ctx: Ctx): Route[] {
       const seeker = seekerOf(req);
       if (!deleteApplication(ctx.db, seeker.id, appId(req))) throw new HttpError(404, "Отклика нет");
       return { json: { deleted: true, summary: summary(ctx.db, seeker.id, ctx.now()) } };
+    }),
+
+    // Напоминания: системные сервер сверяет с откликами и профилем при каждом запросе
+    route("GET", "api", "/me/reminders", (req) => {
+      const seeker = seekerOf(req);
+      const now = ctx.now();
+      planReminders(ctx.db, seeker.id, now);
+      return { json: reminders(seeker.id, now) };
+    }),
+
+    // «Добавить своё»: текст и время
+    route("POST", "api", "/me/reminders", async (req) => {
+      const seeker = seekerOf(req);
+      const now = ctx.now();
+      const id = addCustom(ctx.db, seeker.id, parseCustom(await req.json(), now), now);
+      return { status: 201, json: { id, ...reminders(seeker.id, now) } };
+    }),
+
+    // Какие напоминания присылать и присылать ли их в бот
+    route("PUT", "api", "/me/reminders/settings", async (req) => {
+      const seeker = seekerOf(req);
+      const now = ctx.now();
+      saveSettings(ctx.db, seeker.id, parseSettings(await req.json()), now);
+      return { json: reminders(seeker.id, now) };
+    }),
+
+    // «Готово», «Отложить» или «Убрать»
+    route("PATCH", "api", "/me/reminders/:id", async (req) => {
+      const seeker = seekerOf(req);
+      const id = reminderId(req);
+      const now = ctx.now();
+      if (!actOn(ctx.db, seeker.id, id, parseAction(await req.json(), now), now)) throw new HttpError(404, "Напоминания нет");
+      return { json: reminders(seeker.id, now) };
     }),
 
     // Номер для WhatsApp и звонка или имя в Telegram из исходного поста, только в момент отклика.

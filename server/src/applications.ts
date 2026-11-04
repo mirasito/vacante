@@ -6,7 +6,7 @@ import { HttpError } from "./http.ts";
 import type { Lang } from "./labels.ts";
 import { CITIES, type Profile } from "./profile.ts";
 import { applicationLink, iso } from "./seekers.ts";
-import { weekStart } from "./time.ts";
+import { DAY_MS, weekStart } from "./time.ts";
 
 export const STAGES = [
   "liked", "sent", "seen", "invited", "interview", "offer", "hired", "rejected", "no_answer", "not_interested",
@@ -492,6 +492,22 @@ export interface Summary {
   counts: Record<Stage, number>;
 }
 
+/** Сколько откликов отправлено, сколько из них открыли и скольких пригласили с from до to (UTC). */
+export function weekNumbers(db: Db, seekerId: number, from: string, to: string): { sent: number; seen: number; invited: number } {
+  const one = (sql: string) => Number((db.prepare(sql).get(seekerId, from, to) as { n: number }).n);
+  return {
+    sent: one("SELECT COUNT(*) AS n FROM applications WHERE seeker_id = ? AND sent_at >= ? AND sent_at < ?"),
+    seen: one(
+      `SELECT COUNT(DISTINCT v.application_id) AS n FROM views v JOIN applications a ON a.id = v.application_id
+       WHERE a.seeker_id = ? AND v.at >= ? AND v.at < ?`,
+    ),
+    invited: one(
+      `SELECT COUNT(DISTINCT e.application_id) AS n FROM application_events e JOIN applications a ON a.id = e.application_id
+       WHERE a.seeker_id = ? AND e.at >= ? AND e.at < ? AND e.stage IN ('invited', 'interview', 'offer')`,
+    ),
+  };
+}
+
 export function summary(db: Db, seekerId: number, now: number): Summary {
   const rows = db
     .prepare("SELECT id, stage, sent_at, interview_at, title, employer, address FROM applications WHERE seeker_id = ?")
@@ -503,22 +519,14 @@ export function summary(db: Db, seekerId: number, now: number): Summary {
     counts[r.stage]++;
     if (!CLOSED.includes(r.stage)) furthest = Math.max(furthest, SEARCH_OF[r.stage]);
   }
-  const one = (sql: string) => Number((db.prepare(sql).get(seekerId, from) as { n: number }).n);
-  const seen = one(
-    `SELECT COUNT(DISTINCT v.application_id) AS n FROM views v JOIN applications a ON a.id = v.application_id
-     WHERE a.seeker_id = ? AND v.at >= ?`,
-  );
-  const invited = one(
-    `SELECT COUNT(DISTINCT e.application_id) AS n FROM application_events e JOIN applications a ON a.id = e.application_id
-     WHERE a.seeker_id = ? AND e.at >= ? AND e.stage IN ('invited', 'interview', 'offer')`,
-  );
+  const week = weekNumbers(db, seekerId, from, iso(weekStart(now) + 7 * DAY_MS));
   // Собеседование, которое идёт прямо сейчас, ещё показываем: два часа после начала
   const soon = rows
     .filter((r) => r.stage === "interview" && r.interview_at && Date.parse(r.interview_at) > now - 2 * 3_600_000)
     .sort((a, b) => (a.interview_at! < b.interview_at! ? -1 : 1))[0];
   return {
     stage: SEARCH_STAGES[furthest] ?? "looking",
-    week: { from, sent: rows.filter((r) => r.sent_at && r.sent_at >= from).length, seen, invited },
+    week: { from, ...week },
     next_interview: soon
       ? { id: soon.id, at: soon.interview_at!, title: soon.title, employer: soon.employer, address: soon.address }
       : null,

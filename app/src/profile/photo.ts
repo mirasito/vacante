@@ -4,12 +4,17 @@
 import { Platform } from 'react-native';
 
 const MAX_SIDE = 1280;
-/** Сервер принимает до 1 МБ: если снимок вышел больше, сжимаем сильнее и уменьшаем. */
+/**
+ * Фото тяжелее ~300 КБ WhatsApp не показывает в превью ссылки: если снимок вышел больше 290 КБ,
+ * сжимаем сильнее и уменьшаем. Сервер принимает до 1 МБ, так что годится и снимок между ними.
+ */
+const TARGET_BYTES = 290_000;
 const MAX_BYTES = 900_000;
 const TRIES: [side: number, quality: number][] = [
   [MAX_SIDE, 0.85],
   [MAX_SIDE, 0.7],
   [960, 0.7],
+  [800, 0.6],
 ];
 
 export const canPickPhoto = () => Platform.OS === 'web' && typeof document !== 'undefined';
@@ -49,7 +54,7 @@ export async function shrinkPhoto(file: Blob): Promise<Blob | null> {
     let blob: Blob | null = null;
     for (const [side, quality] of TRIES) {
       blob = await draw(img, side, quality);
-      if (!blob || blob.size <= MAX_BYTES) break;
+      if (!blob || blob.size <= TARGET_BYTES) break;
     }
     return blob && blob.size <= MAX_BYTES ? blob : null;
   } catch {

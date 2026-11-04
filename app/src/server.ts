@@ -55,7 +55,8 @@ export interface Profile {
 }
 
 export interface ProfileView {
-  seeker: { first_name: string; lang: 'ru' | 'kk'; consent_at: string; base: boolean; write_access: boolean };
+  /** preview — фото или кадр кружка в превью ссылки (сервер до 2026-11-05 его не присылает). */
+  seeker: { first_name: string; lang: 'ru' | 'kk'; consent_at: string; base: boolean; write_access: boolean; preview?: boolean };
   profile: Profile | null;
   /** Кружок: poster — есть ли обложка (Telegram присылает её не всегда). */
   video: { duration: number; recorded_at: string; ready: boolean; poster: boolean } | null;
@@ -143,7 +144,7 @@ export const saveProfile = (profile: Profile, lang: 'ru' | 'kk', consent?: { adu
     body: { profile, lang, ...(consent ? { consent: { version: CONSENT_VERSION, ...consent } } : {}) },
   });
 
-export const patchMe = (patch: { lang?: 'ru' | 'kk'; base?: boolean; write_access?: boolean }) =>
+export const patchMe = (patch: { lang?: 'ru' | 'kk'; base?: boolean; write_access?: boolean; preview?: boolean }) =>
   api<ProfileView>('/me', { method: 'PATCH', body: patch });
 
 /** Сейчас откроется окно Telegram «Поделиться номером»: контакт, пришедший боту, относится к профилю. */

@@ -53,6 +53,7 @@ import {
   removeFiles,
   saveProfile,
   setBaseConsent,
+  setPreview,
   setWriteAccess,
   touchSeeker,
   PHONE_ASK_MINUTES,
@@ -153,13 +154,14 @@ export function meRoutes(ctx: Ctx): Route[] {
       return { status: existing ? 200 : 201, json: profileView(ctx.db, user.id, ctx.config.profileOrigin) };
     }),
 
-    // Мелкие настройки: язык, база кандидатов, разрешение боту писать
+    // Мелкие настройки: язык, база кандидатов, фото в превью ссылки, разрешение боту писать
     route("PATCH", "api", "/me", async (req) => {
       const seeker = seekerOf(req);
       const body = (await req.json<Record<string, unknown>>()) ?? {};
       const now = ctx.now();
       if (body.lang !== undefined) touchSeeker(ctx.db, seeker.id, { lang: langOf(body.lang) }, now);
       if (typeof body.base === "boolean") setBaseConsent(ctx.db, seeker.id, body.base, now);
+      if (typeof body.preview === "boolean") setPreview(ctx.db, seeker.id, body.preview, now);
       if (typeof body.write_access === "boolean") setWriteAccess(ctx.db, seeker.id, body.write_access);
       return { json: profileView(ctx.db, seeker.id, ctx.config.profileOrigin) };
     }),

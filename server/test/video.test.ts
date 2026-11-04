@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { after, before, test } from "node:test";
 
 import { putVideo } from "../src/seekers.ts";
@@ -199,6 +199,59 @@ test("кружок не скачался: человеку пишем, файл�
   assert.match(lastSent().text, /Не получилось сохранить кружок/);
   assert.equal(count(s, "SELECT COUNT(*) AS n FROM videos WHERE seeker_id = ?", user.id), 0);
   assert.equal(videoFiles().filter((f) => f.startsWith("8200-")).length, 0);
+});
+
+test("превью ссылки по галочке: фото или кадр кружка и «▶ Видео», без имени и просмотров", async () => {
+  const user = { id: 8050, first_name: "Ерлан" };
+  await createProfile(user);
+  s.files.set("pv1", bytes(1000, 5));
+  s.files.set("pv1-thumb", bytes(300, 6));
+  await relay(note(user, "pv1", "AgPV1"));
+  await s.idle();
+  const { code } = (await s.call("POST", "/me/link", { headers: auth(user) })).json;
+  const robot = { host: "p.vacante.kz", headers: { "user-agent": "TelegramBot (like TwitterBot)" } };
+  const preview = async (query = "") => (await s.call("GET", `/${code}${query}`, robot)).text;
+  const image = (text: string) => /<meta property="og:image" content="([^"]+)">/.exec(text)?.[1];
+  const setPreview = (on: boolean) => s.call("PATCH", "/me", { headers: auth(user), body: { preview: on } });
+
+  // Без галочки, как раньше: ни картинки, ни кружка
+  const off = await preview();
+  assert.equal(image(off), undefined);
+  assert.match(off, /<meta property="og:title" content="Профиль кандидата в Vacante">/);
+  assert.doesNotMatch(off, /Видео|poster/);
+
+  // С галочкой: кадр кружка и его длина, а имени и анкеты по-прежнему нет
+  assert.equal((await setPreview(true)).json.seeker.preview, true);
+  const on = await preview();
+  assert.match(on, /<meta property="og:title" content="▶ Видео 0:42 · Профиль кандидата">/);
+  assert.match(on, /<meta property="og:description" content="Откройте ссылку, чтобы посмотреть кружок и профиль кандидата.">/);
+  assert.match(image(on)!, new RegExp(`^https://p\\.vacante\\.kz/${code}/poster\\.jpg\\?v=[0-9a-z]+$`));
+  assert.doesNotMatch(on, /Ерлан|Повар/);
+  assert.match(await preview("?lang=kk"), /<meta property="og:title" content="▶ Бейнехабар 0:42 · Үміткер профилі">/);
+  // Картинка из превью открывается, а превью и картинка просмотрами не считаются
+  const url = new URL(image(on)!);
+  const frame = await s.call("GET", url.pathname + url.search, robot);
+  assert.equal(frame.status, 200);
+  assert.equal(frame.headers["content-type"], "image/jpeg");
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM views WHERE seeker_id = ?", user.id), 0);
+
+  // Есть фото: в превью оно, с размером
+  const photo = readFileSync(new URL("./fixtures/photo-exif.jpg", import.meta.url));
+  const up = await s.call("PUT", "/me/photo", { headers: { ...auth(user), "content-type": "image/jpeg" }, body: photo });
+  assert.equal(up.status, 200, up.text);
+  const withPhoto = await preview();
+  assert.match(image(withPhoto)!, new RegExp(`/${code}/photo\\.jpg\\?v=[0-9a-z]+$`));
+  assert.match(withPhoto, /<meta property="og:image:width" content="240">\n<meta property="og:image:height" content="320">/);
+  // Тяжёлое фото из прежнего приложения WhatsApp не покажет: тогда кадр кружка
+  s.db.prepare("UPDATE photos SET size = 400000 WHERE seeker_id = ?").run(user.id);
+  assert.match(image(await preview())!, /\/poster\.jpg\?v=/);
+
+  // Дата первого включения хранится, пока галочку не сняли
+  const at = () => (s.db.prepare("SELECT preview_at AS at FROM seekers WHERE id = ?").get(user.id) as { at: string | null }).at;
+  assert.equal(at(), "2026-11-04T06:00:00Z");
+  assert.equal((await setPreview(false)).json.seeker.preview, false);
+  assert.equal(at(), null);
+  assert.equal(image(await preview()), undefined);
 });
 
 test("удалить кружок из приложения и вместе с профилем", async () => {

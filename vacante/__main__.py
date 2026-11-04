@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, channels, collect, digest, direct, instagram, quality, review, venues
+from vacante import autopost, channels, collect, digest, direct, geocode, instagram, quality, review, venues
 from vacante.site import build
 from vacante.store import load_vacancies
 
@@ -68,7 +68,8 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)  # иначе в лог попадают адреса запросов, а в них токен бота
     if args.command == "collect":
-        stats = collect.run(args.config, args.data_dir, args.max_age_days, direct=direct_vacancies(args.data_dir))
+        stats = collect.run(args.config, args.data_dir, args.max_age_days, direct=direct_vacancies(args.data_dir),
+                            locate=geocode.locate)
         stats["venues_queue"] = venues.write_queue(args.data_dir, load_vacancies(args.data_dir))
         stats["post_queue"] = autopost.write_review_queue(args.data_dir)
         logging.info("сбор: %s", stats)

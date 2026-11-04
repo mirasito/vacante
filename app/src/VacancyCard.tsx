@@ -2,8 +2,11 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { distanceLabel, kmFromHome, type Point } from './geo';
 import * as i18n from './i18n';
+import { openUrl } from './platform';
 import type { Colors } from './theme';
 import type { Lang, Vacancy } from './types';
+
+const OSM_COPYRIGHT = 'https://www.openstreetmap.org/copyright';
 
 /** home — дом из профиля: тогда на карточке видно, далеко ли работа. */
 type Props = { v: Vacancy; lang: Lang; c: Colors; full?: boolean; home?: Point | null };
@@ -46,7 +49,20 @@ export function VacancyCard({ v, lang, c, full, home }: Props) {
             ))}
           </View>
         ) : null}
-        {away ? <Text style={[styles.away, { color: c.ink }]}>🏠 {away}</Text> : null}
+        {away ? (
+          <Text style={[styles.away, { color: c.ink }]}>
+            🏠 {away}
+            {/* Точку нашёл OpenStreetMap: лицензия ODbL просит подпись рядом, в полном объявлении она ссылка */}
+            {v.osm ? (
+              <Text
+                style={[styles.credit, { color: c.quiet }]}
+                onPress={full ? () => openUrl(OSM_COPYRIGHT) : undefined}
+              >
+                {' · © OpenStreetMap'}
+              </Text>
+            ) : null}
+          </Text>
+        ) : null}
         {v.address ? (
           <Text style={[styles.address, away ? styles.addressNext : null, { color: c.quiet }]} numberOfLines={full ? undefined : 1}>
             📍 {v.address}
@@ -103,6 +119,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   away: { fontSize: 14, fontWeight: '600', marginTop: 12 },
+  credit: { fontSize: 12, fontWeight: '400' },
   address: { fontSize: 14, marginTop: 12 },
   addressNext: { marginTop: 4 },
   text: { fontSize: 15, lineHeight: 21, marginTop: 14, overflow: 'hidden' },

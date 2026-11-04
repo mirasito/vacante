@@ -8,7 +8,11 @@
 
 from __future__ import annotations
 
+import re
 from math import asin, cos, radians, sin, sqrt
+
+# Адрес, который можно найти на карте: с номером дома или торговым, бизнес- или жилым центром
+MAP_WORTHY = re.compile(r"(?i)\d|\b(?:трц|трк|тц|тд|бц|жк)\b")
 
 # Центры городов vacante.kz (те же ключи, что в parse.CITIES): широта, долгота
 CENTRES: dict[str, tuple[float, float]] = {

@@ -62,10 +62,12 @@ def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
 
 
 def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegram.fetch_channel,
-        now: datetime | None = None, direct: list[Vacancy] | None = None, from_hh=hh.collect) -> dict:
+        now: datetime | None = None, direct: list[Vacancy] | None = None, from_hh=hh.collect,
+        locate=None) -> dict:
     """direct: одобренные вакансии от работодателей из бота (vacante.direct). None значит, что базу бота
     прочитать не удалось или её нет: тогда такие вакансии на сайте остаются как были.
-    from_hh: новые вакансии hh.kz (vacante.sources.hh), None — источник выключен или недоступен."""
+    from_hh: новые вакансии hh.kz (vacante.sources.hh), None — источник выключен или недоступен.
+    locate: точки по адресам для вакансий без точки (vacante.geocode.locate); None — без них, как в тестах."""
     now = now or datetime.now(timezone.utc)
     channels = load_channels(config_path)
     state = load_state(data_dir)
@@ -132,12 +134,17 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     for v in from_hh_saved:
         if v.title_kk is None:  # сохранённые до разделения двуязычных названий
             v.title, v.title_kk = split_title(v.title)
+        if v.lat is not None and v.geo is None:  # точки, сохранённые до поля geo, поставил hh
+            v.geo = hh.SOURCE
     # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
     vacancies = expire(merge(from_bot + existing + from_hh_saved, incoming), max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)
     for v in saved:
         if v.id in dropped:
             rejected[v.id] = quality.dropped_item(v, dropped[v.id])
+    if locate is not None:
+        # Посты из каналов разбираются заново каждый прогон: точки приходят из кеша геокодера
+        stats["geocode"] = locate(vacancies, data_dir, now)
     save_vacancies(data_dir, vacancies)
     save_state(data_dir, state)
     journal.save(data_dir)

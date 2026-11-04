@@ -58,7 +58,7 @@ def merge(existing: list[Vacancy], incoming: list[Vacancy]) -> list[Vacancy]:
                 known.contact = new.contact
             # hh отдал вакансию ещё раз (перечитывание за две недели): точка на карте берётся свежая
             if known.id == new.id and new.lat is not None:
-                known.lat, known.lon, known.geo = new.lat, new.lon, new.geo
+                known.lat, known.lon, known.geo, known.approx = new.lat, new.lon, new.geo, new.approx
             continue
         twin = by_fp.get(new.fingerprint)
         if twin is None:

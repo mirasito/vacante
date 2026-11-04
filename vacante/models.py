@@ -49,6 +49,8 @@ class Vacancy:
     lat: float | None = None
     lon: float | None = None
     geo: str | None = None
+    # Точка примерная: адрес не нашёлся точно, точка посередине улицы, микрорайона или ЖК (vacante.geocode)
+    approx: bool = False
 
     def is_top(self, now: datetime) -> bool:
         return self.top_until is not None and datetime.fromisoformat(self.top_until) > now

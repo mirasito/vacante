@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T08:57:54+00:00",
+ "updated_at": "2026-11-04T09:58:01+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -27644,6 +27644,279 @@
    "fields": {
     "schedule": "5/2"
    }
+  },
+  "rabotaaktau-142205": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "Вакансия из Актау (18А мкр), а не из Астаны"
+  },
+  "hh-139133602": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-139133513": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Нұрмұхамед",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139133447": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "hh-139133165": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Сборщик заказов, грузчик",
+    "employer": "Oil центр",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139132211": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "Офисная должность: продажи консалтинга"
+  },
+  "hh-139132139": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "Офисная должность: продажи образовательных курсов"
+  },
+  "hh-139131934": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "hh-138157057": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Keruen Management",
+    "schedule": "5/2"
+   }
+  },
+  "hh-138579080": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": null
+   }
+  },
+  "hh-139133469": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Perfecto Domo",
+    "schedule": "5/2",
+    "perks": []
+   }
+  },
+  "hh-139133515": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "В тексте почти нет информации о работе"
+  },
+  "hh-139133498": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Продавец-консультант в Kcell Store",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139133437": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-139133428": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Белорусский продукт",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139133420": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "hh-139133295": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Продавец в фастфуд",
+    "employer": "Red Dragon KZ",
+    "schedule": "2/2",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139133280": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Nadom.kz",
+    "schedule": "4/2"
+   }
+  },
+  "hh-139133195": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "Офисная должность: администратор учебного центра"
+  },
+  "hh-139133179": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "EV Group",
+    "schedule": "5/2"
+   }
+  },
+  "hh-137926850": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139132900": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Lider Group 2005",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139132859": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Уборщица",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139130888": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2"
+   }
+  },
+  "hh-138194718": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-139133148": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Оператор мебельного станка",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139132876": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Pet Solutions",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139132875": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Фудмарт",
+    "schedule": "5/2"
+   }
+  },
+  "hh-138110765": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Продавец-консультант в зоомагазин",
+    "employer": "Пет Маркет"
+   }
+  },
+  "hh-139133282": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": null
+   }
+  },
+  "hh-139133421": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Шеф-повар",
+    "employer": null,
+    "schedule": "6/1",
+    "perks": []
+   }
+  },
+  "hh-139133419": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "rabotaaktau-142204": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-142203": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "title": "Помощник воспитателя (няня)",
+    "employer": "Детский сад «Рабиға-Ана»"
+   }
+  },
+  "rabotaaktau-142206": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–18:00"
+   }
+  },
+  "hh-139133460": {
+   "verdict": "approve",
+   "at": "2026-11-04T09:58:01+00:00",
+   "fields": {
+    "employer": "Doscar Group",
+    "schedule": "4/2"
+   }
+  },
+  "hh-139133269": {
+   "verdict": "reject",
+   "at": "2026-11-04T09:58:01+00:00",
+   "reason": "Рейсы в Россию"
   }
  }
 }

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T14:57:42+00:00",
+ "updated_at": "2026-11-04T15:57:21+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -29402,6 +29402,188 @@
    "fields": {
     "title": "Водитель фронтального погрузчика",
     "address": "г. Житикара"
+   }
+  },
+  "hh-139093166": {
+   "verdict": "reject",
+   "at": "2026-11-04T15:57:21+00:00",
+   "reason": "Офисные продажи ПО (B2B)"
+  },
+  "hh-139092717": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Продавец-консультант в детский книжный магазин",
+    "employer": "Cocobee",
+    "address": "район Нура, ЖК «Амстердам»"
+   }
+  },
+  "hh-137870503": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Менеджер по продажам в образовательный центр",
+    "employer": "Goals Lab"
+   }
+  },
+  "astana_job_vakansii-130079": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Повар, кассир, техперсонал",
+    "schedule": "6/1, по 12 часов",
+    "address": null,
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Спецодежда"
+    ]
+   }
+  },
+  "astana_job_vakansii-130190": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": "Ya Ya Chicken",
+    "salary_min": 8000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "5/2, 12:00–00:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota_astanakz-31243": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Охранник на строительный объект",
+    "salary_min": 200000,
+    "salary_max": 250000,
+    "salary_period": "month",
+    "schedule": "Суточный график",
+    "address": "Есильский район, ул. Улы Дала"
+   }
+  },
+  "hh-139138594": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": "Магазин «Спортивное Топливо»",
+    "schedule": "2/2, по 12 часов",
+    "perks": []
+   }
+  },
+  "hh-139138524": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": "YM Company",
+    "address": "пр. Аль-Фараби, 105, блок 3",
+    "perks": []
+   }
+  },
+  "hh-139138611": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2 или 6/1",
+    "address": "ул. Афцинао, 3А"
+   }
+  },
+  "hh-139136629": {
+   "verdict": "reject",
+   "at": "2026-11-04T15:57:21+00:00",
+   "reason": "Продажи недвижимости, офисная должность"
+  },
+  "hh-139135097": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "schedule": "5/2 или 2/2, по 8 часов",
+    "address": "ул. Керима Мынбаева, 50"
+   }
+  },
+  "hh-139135055": {
+   "verdict": "reject",
+   "at": "2026-11-04T15:57:21+00:00",
+   "reason": "Офисная IT-должность (B2B аккаунт-менеджер)"
+  },
+  "hh-139135053": {
+   "verdict": "reject",
+   "at": "2026-11-04T15:57:21+00:00",
+   "reason": "Офисные B2B-продажи по телефону"
+  },
+  "hh-139135013": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Менеджер по продажам в клинику",
+    "employer": "Клиника DLife",
+    "schedule": "2/2, по 11 часов"
+   }
+  },
+  "hh-139134934": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Менеджер по продажам, менеджер зала",
+    "employer": "Салон мебели «Elements»",
+    "schedule": "2/2, по 12 часов",
+    "address": "пр. Аль-Фараби, 77/8"
+   }
+  },
+  "hh-139134589": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, по 12 часов",
+    "address": "пр. Ермека Серкебаева, 76"
+   }
+  },
+  "hh-139134525": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "title": "Электрик (сборка электрощитов)",
+    "employer": "Завод «Горэлтех»"
+   }
+  },
+  "hh-139134324": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": "Arbuz Group",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "rabota4almaty-6142": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": "Кафе «ATEA»",
+    "schedule": "2/2, 09:00–23:00"
+   }
+  },
+  "hh-139134029": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "employer": "Green House"
+   }
+  },
+  "hh-138903697": {
+   "verdict": "approve",
+   "at": "2026-11-04T15:57:21+00:00",
+   "fields": {
+    "schedule": null
    }
   }
  }

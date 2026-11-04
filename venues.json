@@ -2481,6 +2481,22 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "almaty:arsi group": {
+  "name": "Arsi Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "arsi_group",
+  "website": "https://www.arsi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001018311056",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "80b16f6a446e448d.jpg",
+  "avatar_source": "website"
+ },
  "almaty:asai clinic": {
   "name": "ASAI-CLINIC",
   "city": "almaty",
@@ -3208,6 +3224,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:bqmedia inc әбжатов б б": {
+  "name": "BQMEDIA INC (ӘБЖАТОВ Б Б)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
  },
  "almaty:breezy": {
   "name": "Breezy",
@@ -5005,6 +5028,13 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "almaty:hunter": {
+  "name": "HUNTER",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "almaty:hydrosta kazakhstan": {
   "name": "Hydrosta Kazakhstan",
   "city": "almaty",
@@ -5140,6 +5170,13 @@
   ],
   "avatar": "d71217686c173b38.jpg",
   "avatar_source": "website"
+ },
+ "almaty:interauto": {
+  "name": "INTERAUTO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
  },
  "almaty:international almaty": {
   "name": "INTERNATIONAL ALMATY",
@@ -10338,6 +10375,13 @@
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
  },
+ "almaty:достык плаза": {
+  "name": "Достык Плаза",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "almaty:дудар": {
   "name": "Дудар",
   "city": "almaty",
@@ -11954,6 +11998,13 @@
   "v": 3,
   "checked_at": "2026-11-03T23:44:09+00:00"
  },
+ "almaty:налоговая консультация республики казахстан": {
+  "name": "Налоговая консультация Республики Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "almaty:нао университет нархоз": {
   "name": "НАО Университет Нархоз",
   "city": "almaty",
@@ -12498,6 +12549,19 @@
   "checked_at": "2026-11-04T03:44:25+00:00",
   "instagram": "roy_hostel",
   "source": "https://2gis.kz/almaty/firm/70000001067863332"
+ },
+ "almaty:рост": {
+  "name": "Рост",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "website": "https://rostadv.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001105345015",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:ртс розничная торговая сеть": {
   "name": "РТС - Розничная Торговая Сеть",
@@ -15222,6 +15286,22 @@
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
  },
+ "astana:elite finance": {
+  "name": "Elite Finance",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "elitefin.kz",
+  "website": "https://elitefin.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001088953075",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8b2342393d98c5c6.jpg",
+  "avatar_source": "website"
+ },
  "astana:en trade эн трейд": {
   "name": "EN TRADE (ЭН ТРЕЙД)",
   "city": "astana",
@@ -16418,6 +16498,13 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "astana:medicom and company": {
+  "name": "MEDICOM AND COMPANY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "astana:mega center management": {
   "name": "Mega Center Management",
   "city": "astana",
@@ -17449,6 +17536,13 @@
   "instagram": "slon_astana",
   "source": "https://2gis.kz/astana/firm/70000001078512582"
  },
+ "astana:sls retail group": {
+  "name": "SLS Retail Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "astana:sm minerals": {
   "name": "SM Minerals",
   "city": "astana",
@@ -18118,6 +18212,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "astana:абсадыкова с а": {
+  "name": "Абсадыкова С.А.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "astana:августа": {
   "name": "Августа",
   "city": "astana",
@@ -18167,6 +18268,22 @@
   "checked_at": "2026-10-30T07:43:20+00:00",
   "instagram": "perekrestok_astana",
   "source": "https://2gis.kz/astana/firm/70000001091768466"
+ },
+ "astana:автошкола төре": {
+  "name": "Автошкола ТӨРЕ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "avtoshkola_tore",
+  "website": "http://taplink.cc/autoschooltore",
+  "source": "https://2gis.kz/astana/firm/70000001068898550",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a89ed4b752264e43.jpg",
+  "avatar_source": "website"
  },
  "astana:агентство недвижимости fortuna": {
   "name": "Агентство недвижимости FORTUNA",
@@ -18294,6 +18411,15 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "astana_activ_zoloto",
   "source": "https://www.instagram.com/astana_activ_zoloto/"
+ },
+ "astana:алдияр": {
+  "name": "Алдияр",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "kafe_aldiyar",
+  "source": "https://2gis.kz/astana/firm/70000001114397342"
  },
  "astana:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
@@ -22783,6 +22909,20 @@
   "avatar": "989c4c0eddcffd25.jpg",
   "avatar_source": "website"
  },
+ "karaganda:aitas kz": {
+  "name": "Aitas KZ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "aitaskz",
+  "website": "https://aitas.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001082445383",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
   "city": "karaganda",
@@ -27058,6 +27198,15 @@
    "website"
   ]
  },
+ "petropavlovsk:максимальный размах corporation": {
+  "name": "Максимальный размах corporation",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "maxrazmah_official",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001089189267"
+ },
  "petropavlovsk:масло дел": {
   "name": "Масло-Дел",
   "city": "petropavlovsk",
@@ -29152,6 +29301,22 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "shymkent:французский дом bsb": {
+  "name": "Французский Дом BSB",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "frenchhouse_kazakhstan",
+  "website": "https://french-house.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025765456",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "91336037393b3ee6.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:центр детской неврологии и эпилепсии neurolife": {
   "name": "Центр детской неврологии и эпилепсии Neurolife",
   "city": "shymkent",
@@ -30190,6 +30355,13 @@
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
  },
+ "uralsk:женской обуви": {
+  "name": "ЖЕНСКОЙ ОБУВИ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
+ },
  "uralsk:жұмыс тәжірибем бар": {
   "name": "Жұмыс тәжірибем бар",
   "city": "uralsk",
@@ -30240,6 +30412,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
+ },
+ "uralsk:күзетші": {
+  "name": "КҮЗЕТШІ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
  },
  "uralsk:люстр": {
   "name": "ЛЮСТР",
@@ -30773,6 +30952,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "ust-kamenogorsk:silk road resources ltd": {
+  "name": "Silk Road Resources Ltd.",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00"
  },
  "ust-kamenogorsk:skill hub": {
   "name": "Skill Hub",
@@ -31607,6 +31793,20 @@
   "website": "http://ukteplo.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721312844",
   "avatar_checked_at": "2026-10-28T13:48:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "ust-kamenogorsk:этажи ип привальцев а а": {
+  "name": "ЭТАЖИ (ИП Привальцев А.А.)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T11:44:39+00:00",
+  "instagram": "etagi.oskemen",
+  "website": "https://ust-kamenogorsk.etagi.com/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001063160188",
+  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
   "avatar_tried": [
    "website"
   ]

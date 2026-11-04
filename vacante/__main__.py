@@ -73,6 +73,10 @@ def main() -> None:
         stats["venues_queue"] = venues.write_queue(args.data_dir, load_vacancies(args.data_dir))
         stats["post_queue"] = autopost.write_review_queue(args.data_dir)
         logging.info("сбор: %s", stats)
+        if geo := stats.get("geocode"):
+            # Итог поиска адресов виден в сводке прогона и через REST API, без скачивания логов
+            level = "warning" if geo.get("stopped") else "notice"
+            print(f"::{level} title=Поиск адресов::{geocode.summary(geo).replace('%', '%25')}")
     elif args.command == "quality":
         print(quality.report(args.data_dir, days=args.days))
     elif args.command == "replay":

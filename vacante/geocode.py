@@ -43,12 +43,18 @@ RETRY_MISS = timedelta(days=30)
 KEEP = timedelta(days=60)  # запись кеша, которой давно не пользовались, уходит
 MAX_BOX_KM = 1.5
 BOX = (0.3, 0.45)  # окно поиска вокруг центра города: ±0,3° широты и ±0,45° долготы, около 35 км
+RETRY_AFTER = 5.0  # секунд до повтора запроса, на который Nominatim не ответил (таймаут, обрыв, 5xx)
+MAX_FAILURES = 3  # столько адресов подряд без ответа и после повтора: Nominatim нездоров, хватит на этот прогон
 _PARENS = re.compile(r"\s*\([^)]*\)?|…")
 _SPACES = re.compile(r"\s+")
 
 
 class Stop(Exception):
-    """Nominatim недоступен или просит подождать (429, 403): остальные адреса в следующий прогон."""
+    """Nominatim просит подождать или закрыл доступ (429, 403): остальные адреса в следующий прогон."""
+
+
+class Skip(Exception):
+    """Nominatim не ответил на этот адрес и после повтора: спросим его в следующий прогон."""
 
 
 def query(v: Vacancy) -> str | None:
@@ -77,22 +83,37 @@ def save(data_dir: Path, cache: dict[str, dict]) -> None:
 
 def lookup(client: httpx.Client, q: str, city: str, sleep: Callable[[float], None] = time.sleep
            ) -> tuple[float, float] | None:
-    """Точка адреса или None, если Nominatim не знает его точно. Stop — дальше в этот прогон не спрашивать."""
+    """Точка адреса или None, если Nominatim не знает его точно.
+
+    Таймаут, обрыв или сбой сервера повторяем один раз, а не вышло — Skip: адрес спросим в следующий прогон.
+    429 и 403 — Stop: дальше в этот прогон не спрашивать."""
     lat0, lon0 = CENTRES[city]
     dlat, dlon = BOX
     params = {"q": q, "format": "jsonv2", "limit": 1, "countrycodes": "kz", "accept-language": "ru",
               "viewbox": f"{lon0 - dlon},{lat0 + dlat},{lon0 + dlon},{lat0 - dlat}", "bounded": 1}
-    sleep(PAUSE)
-    try:
-        r = client.get(URL, params=params)
-    except httpx.HTTPError as exc:
-        raise Stop(type(exc).__name__) from exc
-    if r.status_code != 200:
-        raise Stop(f"HTTP {r.status_code}")
-    try:
-        found = r.json()
-    except ValueError as exc:
-        raise Stop("ответ не JSON") from exc
+    failure = ""
+    for wait in (PAUSE, RETRY_AFTER):
+        sleep(wait)
+        try:
+            r = client.get(URL, params=params)
+        except httpx.HTTPError as exc:
+            failure = type(exc).__name__
+            continue
+        if r.status_code in (403, 429):
+            raise Stop(f"HTTP {r.status_code}")
+        if r.status_code >= 500:
+            failure = f"HTTP {r.status_code}"
+            continue
+        if r.status_code != 200:
+            return None  # запрос Nominatim не понял (400 и т.п.): так адрес не найти
+        try:
+            found = r.json()
+        except ValueError:
+            failure = "ответ не JSON"
+            continue
+        break
+    else:
+        raise Skip(failure)
     if not isinstance(found, list) or not found or not isinstance(found[0], dict):
         return None
     try:
@@ -124,23 +145,31 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
         if (q := query(v)) is not None:
             wanted.setdefault(q.lower(), (q, v.city or "", []))[2].append(v)
     order = sorted(wanted, key=lambda k: max(v.posted_at for v in wanted[k][2]), reverse=True)
-    stats = {"addresses": len(wanted), "cached": 0, "asked": 0, "found": 0}
+    stats = {"addresses": len(wanted), "cached": 0, "asked": 0, "found": 0, "failed": 0}
     own = client is None and limit > 0
     if own:
         client = httpx.Client(headers={"User-Agent": USER_AGENT}, timeout=20)
     stopped = None
+    failures = 0  # адресов подряд без ответа
     try:
         for key in order:
             q, city, items = wanted[key]
             entry = cache.get(key)
             if entry is not None and (entry.get("p") is not None or entry.get("at", "") >= retry_before):
                 stats["cached"] += 1
-            elif client is not None and stopped is None and stats["asked"] < limit:
+            elif client is not None and stopped is None and stats["asked"] + stats["failed"] < limit:
                 try:
                     point = lookup(client, q, city, sleep)
+                except Skip as exc:
+                    stats["failed"] += 1
+                    failures += 1
+                    if failures >= MAX_FAILURES:
+                        stopped = f"{exc} у {failures} адресов подряд"
+                    continue
                 except Stop as exc:
                     stopped = str(exc)
                     continue
+                failures = 0
                 stats["asked"] += 1
                 entry = cache[key] = {"p": list(point) if point else None, "at": today}
             else:
@@ -158,7 +187,13 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
     cache = {k: e for k, e in cache.items() if e.get("used", e.get("at", "")) >= keep_after}
     save(data_dir, cache)
     if stopped:
+        stats["stopped"] = stopped
         log.warning("геокодер: Nominatim ответил %s, остальные адреса в следующий прогон", stopped)
-    log.info("геокодер: адресов %s, из кеша %s, запросов %s, с точкой %s", stats["addresses"], stats["cached"],
-             stats["asked"], stats["found"])
+    log.info("геокодер: %s", summary(stats))
     return stats
+
+
+def summary(stats: dict) -> str:
+    text = (f"адресов {stats['addresses']}, из кеша {stats['cached']}, запросов {stats['asked']}, "
+            f"с точкой {stats['found']}, без ответа {stats['failed']}")
+    return text + (f"; остановлен: {stats['stopped']}" if stats.get("stopped") else "")

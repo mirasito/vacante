@@ -17,11 +17,14 @@ export interface Deps {
   now?: () => number;
   /** Работа после ответа на запрос (скачать кружок из Telegram). Тесты её дожидаются. */
   background?: (task: Promise<unknown>) => void;
+  /** Запросы наружу, кроме Bot API: исходный пост на t.me в момент отклика. */
+  fetch?: typeof fetch;
 }
 
 export interface Ctx extends Deps {
   now: () => number;
   background: (task: Promise<unknown>) => void;
+  fetch: typeof fetch;
   /** Кто открыл Mini App: проверяет подпись Telegram в заголовке Authorization: tma <initData>. */
   auth(req: Request): InitData;
 }
@@ -31,6 +34,7 @@ export function createApp(deps: Deps) {
     ...deps,
     now: deps.now ?? Date.now,
     background: deps.background ?? ((task) => void task.catch((err) => console.error(err))),
+    fetch: deps.fetch ?? fetch,
     auth(req) {
       const header = req.header("authorization") ?? "";
       const raw = header.startsWith("tma ") ? header.slice(4) : "";

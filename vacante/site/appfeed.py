@@ -49,6 +49,8 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
         "url": f"{base_url}/v/{v.id}/",
         "source_url": v.source_url,
         "text": v.text[:TEXT_SIZE],
+        # Виды контактов в исходном посте (whatsapp, phone, telegram): кнопки окна «Как откликнуться?»
+        "contact": v.contact,
     }
     if venue and venue.get("avatar"):
         data["avatar"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"

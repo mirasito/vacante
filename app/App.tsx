@@ -4,6 +4,10 @@ import { BackHandler, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, 
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { loadCity, loadIndex } from './src/api';
+import { ApplicationsTab } from './src/applications/ApplicationsTab';
+import { ApplySheet } from './src/applications/ApplySheet';
+import { applyPatch, copyOf, fromLiked, localSummary, toImport } from './src/applications/model';
+import { A } from './src/applications/texts';
 import * as i18n from './src/i18n';
 import {
   addToHomeScreen,
@@ -13,6 +17,7 @@ import {
   launchBeta,
   launchCity,
   launchTab,
+  onAppVisible,
   openUrl,
   shareLink,
   telegram,
@@ -22,18 +27,31 @@ import {
 } from './src/platform';
 import { ProfileTab } from './src/profile/ProfileTab';
 import { P } from './src/profile/texts';
-import { setBeta, whoAmI, type Account } from './src/server';
+import {
+  deleteApplication,
+  importApplications,
+  listApplications,
+  patchApplication,
+  setBeta,
+  whoAmI,
+  type Account,
+  type Application,
+  type ApplicationPatch,
+  type Method,
+  type Summary,
+  type VacancyCopy,
+} from './src/server';
 import { read, write } from './src/storage';
 import { SwipeDeck, type DeckHandle, type Dir } from './src/SwipeDeck';
 import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
-import { Button, Chip, LangSwitch, Loading, Retry, Round, Screen, Tab, styles as ui } from './src/ui';
+import { Button, Chip, LangSwitch, Loading, ModalArea, Retry, Round, Screen, Tab, styles as ui } from './src/ui';
 import { VacancyCard } from './src/VacancyCard';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
 // beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска
 type Prefs = { lang?: Lang; city?: string; cat?: string | null; hint?: boolean; home?: boolean; beta?: boolean };
-type TabName = 'feed' | 'liked' | 'profile';
+type TabName = 'feed' | 'liked' | 'applications' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
 
 const MAX_LIKED = 300;
@@ -64,6 +82,13 @@ function Main() {
   const [attempt, setAttempt] = useState(0);
   const [home, setHome] = useState<HomeScreen>('unsupported');
   const [account, setAccount] = useState<Account | null>(null);
+  // Отклики на сервере (когда есть профиль) и сводка недели
+  const [apps, setApps] = useState<Application[] | null>(null);
+  const [summary, setSummary] = useState<Summary | null>(null);
+  const [appsFailed, setAppsFailed] = useState(false);
+  const [appsAttempt, setAppsAttempt] = useState(0);
+  // Окно «Как откликнуться?»: копия вакансии и, если есть, вакансия из ленты целиком
+  const [applying, setApplying] = useState<{ copy: VacancyCopy; full?: Vacancy } | null>(null);
   const deck = useRef<DeckHandle>(null);
   const seenCity = useRef<string | null>(null);
   // Шаг назад внутри вкладки «Профиль» (анкета); null — назад некуда, уходим в ленту
@@ -174,8 +199,9 @@ function Main() {
   }, [picking, city, tab]);
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
-  useBackButton(!!open || (picking && !!city) || tab !== 'feed', () => {
-    if (open) setOpen(null);
+  useBackButton(!!applying || !!open || (picking && !!city) || tab !== 'feed', () => {
+    if (applying) setApplying(null);
+    else if (open) setOpen(null);
     else if (picking && city) setPicking(false);
     else if (tab === 'profile' && profileBack.current?.()) return;
     else setTab('feed');
@@ -183,14 +209,134 @@ function Main() {
 
   // Вкладка «Профиль» видна, когда сервер ответил и профили открыты (или это тестировщик)
   const showProfile = !!account && (account.open || !!prefs.beta);
+  // Отклики: на сервере, когда есть профиль; без профиля — на телефоне; без сервера — просто «Избранное»
+  const tracker: 'off' | 'local' | 'server' = !showProfile ? 'off' : account.profile ? 'server' : 'local';
 
-  // Открыли кнопкой бота «Открыть профиль» (?tab=profile): один раз сразу на эту вкладку
+  // Открыли кнопкой бота «Открыть профиль» (?tab=profile) или из сообщения об отклике (?tab=applications)
   const launched = useRef(false);
   useEffect(() => {
     if (!showProfile || launched.current) return;
     launched.current = true;
-    if (launchTab() === 'profile') setTab('profile');
+    const want = launchTab();
+    if (want) setTab(want);
   }, [showProfile]);
+
+  // Отклики с сервера; заодно переносим туда то, что накопилось на телефоне до профиля
+  useEffect(() => {
+    if (tracker !== 'server') return;
+    let alive = true;
+    setAppsFailed(false);
+    listApplications().then(
+      (r) => {
+        if (!alive) return;
+        setApps(r.applications);
+        setSummary(r.summary);
+      },
+      () => alive && setAppsFailed(true),
+    );
+    return () => {
+      alive = false;
+    };
+  }, [tracker, appsAttempt]);
+
+  const moving = useRef(false);
+  useEffect(() => {
+    if (tracker !== 'server' || !liked.length || moving.current) return;
+    moving.current = true;
+    const batch = liked.slice(0, 300);
+    importApplications(batch.map(toImport)).then(
+      (r) => {
+        moving.current = false;
+        setApps(r.applications);
+        setSummary(r.summary);
+        const done = new Set(batch.map((l) => l.id));
+        setLiked((list) => list.filter((l) => !done.has(l.id)));
+      },
+      () => {
+        moving.current = false;
+      },
+    );
+  }, [tracker, liked]);
+
+  // Вернулись в приложение: работодатель мог открыть профиль или ответить
+  useEffect(() => {
+    if (tracker !== 'server') return;
+    return onAppVisible(() => setAppsAttempt((n) => n + 1));
+  }, [tracker]);
+
+  const putApp = useCallback((a: Application, next?: Summary) => {
+    setApps((list) => [a, ...(list ?? []).filter((x) => x.id !== a.id)]);
+    if (next) setSummary(next);
+  }, []);
+
+  const localItems = useMemo(() => liked.map(fromLiked), [liked]);
+  const trackerItems = tracker === 'server' ? apps : localItems;
+  const trackerSummary = tracker === 'server' ? summary : localSummary(localItems);
+
+  /** Отклик без профиля (или сервер не ответил): на телефоне, с той же стадией. */
+  const saveLocal = (copy: VacancyCopy, full: Vacancy | undefined, patch: ApplicationPatch) => {
+    const now = new Date().toISOString();
+    setLiked((list) => {
+      const known = list.find((x) => x.id === copy.id);
+      const base: Liked = known ?? {
+        ...(full ?? {
+          id: copy.id,
+          title: copy.title,
+          title_kk: copy.title_kk ?? undefined,
+          employer: copy.employer ?? undefined,
+          address: copy.address ?? undefined,
+          map: copy.map ?? undefined,
+          url: copy.url ?? '',
+          source_url: copy.source_url ?? undefined,
+          contact: copy.contact,
+          category: 'other',
+          posted_at: now,
+        }),
+        city: copy.city ?? city ?? '',
+        liked_at: now,
+      };
+      return [applyPatch(base, patch, now), ...list.filter((x) => x.id !== copy.id)].slice(0, MAX_LIKED);
+    });
+  };
+
+  const onSent = async (method: Method, app: Application | null) => {
+    if (!applying) return;
+    if (tracker === 'server' && app) {
+      // «Написать ещё раз» не отматывает стадию назад
+      const patch: ApplicationPatch = app.stage === 'liked' ? { stage: 'sent', method } : { method };
+      const r = await patchApplication(app.id, patch);
+      putApp(r.application, r.summary);
+      return;
+    }
+    const known = liked.find((x) => x.id === applying.copy.id);
+    saveLocal(applying.copy, applying.full, !known?.stage || known.stage === 'liked' ? { stage: 'sent', method } : { method });
+  };
+
+  const patchItem = async (a: Application, patch: ApplicationPatch): Promise<Application> => {
+    if (a.id > 0) {
+      const r = await patchApplication(a.id, patch);
+      putApp(r.application, r.summary);
+      return r.application;
+    }
+    const i = liked.findIndex((x) => x.id === a.vacancy.id);
+    const item = liked[i];
+    if (!item) return a;
+    const next = applyPatch(item, patch);
+    setLiked((list) => list.map((x) => (x.id === item.id ? next : x)));
+    return fromLiked(next, i);
+  };
+
+  const removeItem = async (a: Application) => {
+    if (a.id > 0) {
+      const r = await deleteApplication(a.id);
+      setApps((list) => (list ?? []).filter((x) => x.id !== a.id));
+      setSummary(r.summary);
+      return;
+    }
+    setLiked((list) => list.filter((x) => x.id !== a.vacancy.id));
+  };
+
+  const startApply = (v: Vacancy) => city && setApplying({ copy: copyOf(v, city), full: v });
 
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),
@@ -206,15 +352,19 @@ function Main() {
       setSeen((s) => ({ ...s, [v.id]: dir === 'right' ? 'r' : 'l' }));
       setHistory((h) => [...h.slice(-49), v.id]);
       if (dir === 'right' && city) {
-        setLiked((list) =>
-          [{ ...v, city, liked_at: new Date().toISOString() }, ...list.filter((x) => x.id !== v.id)].slice(
-            0,
-            MAX_LIKED,
-          ),
-        );
+        // С профилем лайк сразу становится откликом на сервере (окно «Как откликнуться?» его заводит)
+        if (tracker !== 'server') {
+          setLiked((list) =>
+            [{ ...v, city, liked_at: new Date().toISOString() }, ...list.filter((x) => x.id !== v.id)].slice(
+              0,
+              MAX_LIKED,
+            ),
+          );
+        }
+        if (tracker !== 'off') setApplying({ copy: copyOf(v, city), full: v });
       }
     },
-    [city],
+    [city, tracker],
   );
 
   const undo = () => {
@@ -227,6 +377,17 @@ function Main() {
       return rest;
     });
     setLiked((list) => list.filter((x) => x.id !== id));
+    // Лайк с профилем уже на сервере: убираем, если откликнуться не успели
+    const app = apps?.find((a) => a.vacancy.id === id);
+    if (app?.stage === 'liked') {
+      deleteApplication(app.id).then(
+        (r) => {
+          setApps((list) => (list ?? []).filter((x) => x.id !== app.id));
+          setSummary(r.summary);
+        },
+        () => undefined,
+      );
+    }
   };
 
   const showSkipped = () =>
@@ -387,6 +548,27 @@ function Main() {
           name={account.first_name}
           city={city}
           backRef={profileBack}
+          onProfile={(has) => {
+            setAccount((a) => (a ? { ...a, profile: has } : a));
+            if (!has) {
+              setApps(null);
+              setSummary(null);
+            }
+          }}
+        />
+      ) : tracker !== 'off' ? (
+        <ApplicationsTab
+          c={c}
+          lang={lang}
+          items={trackerItems}
+          summary={trackerSummary}
+          local={tracker === 'local'}
+          failed={appsFailed}
+          onRetry={() => setAppsAttempt((n) => n + 1)}
+          onApply={(a) => setApplying({ copy: a.vacancy })}
+          onPatch={patchItem}
+          onDelete={removeItem}
+          onMakeProfile={() => setTab('profile')}
         />
       ) : (
         <LikedList
@@ -400,12 +582,21 @@ function Main() {
 
       <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]}>
         <Tab c={c} active={tab === 'feed'} label={`🃏 ${t('feed')}`} onPress={() => setTab('feed')} />
-        <Tab
-          c={c}
-          active={tab === 'liked'}
-          label={`♥ ${t('liked')}${liked.length ? ` · ${liked.length}` : ''}`}
-          onPress={() => setTab('liked')}
-        />
+        {tracker !== 'off' ? (
+          <Tab
+            c={c}
+            active={tab === 'applications' || tab === 'liked'}
+            label={`📋 ${A[lang].tab}${trackerItems?.length ? ` · ${trackerItems.length}` : ''}`}
+            onPress={() => setTab('applications')}
+          />
+        ) : (
+          <Tab
+            c={c}
+            active={tab === 'liked'}
+            label={`♥ ${t('liked')}${liked.length ? ` · ${liked.length}` : ''}`}
+            onPress={() => setTab('liked')}
+          />
+        )}
         {showProfile ? (
           <Tab c={c} active={tab === 'profile'} label={`👤 ${P[lang].tab}`} onPress={() => setTab('profile')} />
         ) : null}
@@ -413,9 +604,49 @@ function Main() {
 
       <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)} transparent>
         {/* У модального окна своя иерархия view: отступы под вырез экрана считаем заново */}
-        <SafeAreaProvider>
-          {open ? <Details v={open} lang={lang} c={c} onClose={() => setOpen(null)} /> : null}
-        </SafeAreaProvider>
+        <ModalArea>
+          {open ? (
+            <Details
+              v={open}
+              lang={lang}
+              c={c}
+              onClose={() => setOpen(null)}
+              onApply={
+                tracker !== 'off'
+                  ? () => {
+                      setOpen(null);
+                      startApply(open);
+                    }
+                  : undefined
+              }
+            />
+          ) : null}
+        </ModalArea>
+      </Modal>
+      <Modal visible={!!applying} animationType="slide" onRequestClose={() => setApplying(null)} transparent>
+        <ModalArea>
+          {applying && tracker !== 'off' ? (
+            <ApplySheet
+              key={applying.copy.id}
+              c={c}
+              lang={lang}
+              vacancy={applying.copy}
+              server={tracker === 'server'}
+              name={account?.first_name ?? ''}
+              onStarted={(a) => putApp(a)}
+              onSent={onSent}
+              onClose={() => setApplying(null)}
+              onMakeProfile={() => {
+                setApplying(null);
+                setTab('profile');
+              }}
+              onOpenTracker={() => {
+                setApplying(null);
+                setTab('applications');
+              }}
+            />
+          ) : null}
+        </ModalArea>
       </Modal>
       <StatusBar style="auto" />
     </Screen>
@@ -429,7 +660,8 @@ function shareVacancy(v: Vacancy, lang: Lang, via: 'any' | 'whatsapp') {
   return via === 'whatsapp' ? whatsapp(text, v.url) : shareLink(text, v.url);
 }
 
-function Details({ v, lang, c, onClose }: { v: Vacancy; lang: Lang; c: Colors; onClose(): void }) {
+function Details(props: { v: Vacancy; lang: Lang; c: Colors; onClose(): void; onApply?(): void }) {
+  const { v, lang, c, onClose } = props;
   const t = (key: i18n.Key) => i18n.t(lang, key);
   return (
     <View style={styles.backdrop}>
@@ -441,7 +673,7 @@ function Details({ v, lang, c, onClose }: { v: Vacancy; lang: Lang; c: Colors; o
           <VacancyCard v={v} lang={lang} c={c} full />
         </View>
         <View style={styles.sheetActions}>
-          <Button c={c} label={t('apply')} onPress={() => openUrl(v.source_url ?? v.url)} />
+          <Button c={c} label={t('apply')} onPress={props.onApply ?? (() => openUrl(v.source_url ?? v.url))} />
           <View style={ui.row}>
             <Button c={c} ghost label={`↗ ${t('share')}`} onPress={() => shareVacancy(v, lang, 'any')} />
             <Button c={c} ghost label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />

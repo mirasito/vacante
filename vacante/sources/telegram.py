@@ -13,6 +13,7 @@ from datetime import datetime, timedelta, timezone
 import httpx
 from bs4 import BeautifulSoup
 
+from vacante import contacts
 from vacante.models import RawPost
 
 log = logging.getLogger(__name__)
@@ -32,6 +33,8 @@ def parse_channel_page(html: str, channel: str, default_city: str | None = None)
             continue
         for br in text_node.find_all("br"):
             br.replace_with("\n")
+        # Адреса ссылок: номер WhatsApp часто спрятан за подписью «Написать в WhatsApp»
+        links = [a["href"] for a in text_node.find_all("a", href=True) if not contacts.PROMO.search(a.get_text())]
         text = text_node.get_text().strip()
         if not text:
             continue
@@ -46,6 +49,7 @@ def parse_channel_page(html: str, channel: str, default_city: str | None = None)
                 text=text,
                 posted_at=datetime.fromisoformat(time_node["datetime"]).astimezone(timezone.utc),
                 default_city=default_city,
+                links=links,
             )
         )
     return posts

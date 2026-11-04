@@ -153,3 +153,115 @@ export async function mediaUrl(path: '/me/video' | '/me/video/poster'): Promise<
     return null;
   }
 }
+
+// Отклики: стадии, способ, своя ссылка на профиль у каждого (server/src/applications.ts)
+export type Stage =
+  | 'liked'
+  | 'sent'
+  | 'seen'
+  | 'invited'
+  | 'interview'
+  | 'offer'
+  | 'hired'
+  | 'rejected'
+  | 'no_answer'
+  | 'not_interested';
+export type Method = 'whatsapp' | 'telegram' | 'call' | 'hh' | 'bot' | 'post';
+export type SearchStage = 'looking' | 'applying' | 'interviews' | 'choosing' | 'working';
+export type ContactKind = 'whatsapp' | 'phone' | 'telegram';
+
+/** Копия вакансии в отклике: то, что было в ленте на момент отклика. */
+export interface VacancyCopy {
+  id: string;
+  title: string;
+  title_kk: string | null;
+  employer: string | null;
+  city: string | null;
+  address: string | null;
+  /** Адрес в 2ГИС. */
+  map: string | null;
+  url: string | null;
+  source_url: string | null;
+  contact: ContactKind[];
+}
+
+export interface ApplicationEvent {
+  stage: Stage;
+  by: 'seeker' | 'employer' | 'system';
+  at: string;
+}
+
+export interface Application {
+  id: number;
+  vacancy: VacancyCopy;
+  method: Method | null;
+  stage: Stage;
+  interview_at: string | null;
+  start_at: string | null;
+  note: string | null;
+  created_at: string;
+  updated_at: string;
+  sent_at: string | null;
+  /** Когда работодатель впервые открыл ссылку отклика и сколько раз открывал. */
+  seen_at: string | null;
+  views: number;
+  link: { code: string; url: string } | null;
+  events?: ApplicationEvent[];
+}
+
+export interface Summary {
+  stage: SearchStage;
+  week: { from: string; sent: number; seen: number; invited: number };
+  next_interview: { id: number; at: string; title: string; employer: string | null; address: string | null } | null;
+  counts: Record<Stage, number>;
+}
+
+/** Готовый текст отклика и отдельно строка со ссылкой на профиль. */
+export interface Message {
+  text: string;
+  link_text: string;
+}
+
+export type ApplicationPatch = Partial<Pick<Application, 'stage' | 'method' | 'interview_at' | 'start_at' | 'note'>>;
+
+/** Лайк или отклик, сделанный на телефоне до профиля. */
+export interface ImportItem extends ApplicationPatch {
+  vacancy: VacancyCopy;
+  liked_at: string;
+  sent_at?: string | null;
+}
+
+export const listApplications = () => api<{ applications: Application[]; summary: Summary }>('/me/applications');
+
+/** «Хочу сюда»: отклик со стадией «Нравится», его ссылка и готовый текст. Для той же вакансии — тот же отклик. */
+export const startApplication = (vacancy: VacancyCopy, lang: 'ru' | 'kk') =>
+  api<{ application: Application; message: Message | null }>('/me/applications', {
+    method: 'POST',
+    body: { vacancy, lang },
+  });
+
+export const importApplications = (items: ImportItem[]) =>
+  api<{ imported: number; applications: Application[]; summary: Summary }>('/me/applications/import', {
+    method: 'POST',
+    body: { items },
+  });
+
+export const getApplication = (id: number) => api<Application>(`/me/applications/${id}`);
+
+export const patchApplication = (id: number, patch: ApplicationPatch) =>
+  api<{ application: Application; summary: Summary }>(`/me/applications/${id}`, { method: 'PATCH', body: patch });
+
+export const deleteApplication = (id: number) =>
+  api<{ deleted: boolean; summary: Summary }>(`/me/applications/${id}`, { method: 'DELETE' });
+
+/** Контакт работодателя из исходного поста: сервер берёт его в момент запроса и не хранит. */
+export interface PostContact {
+  whatsapp: string | null;
+  phone: string | null;
+  telegram: string | null;
+  /** Сколько ещё вакансий с номером можно открыть сегодня. */
+  left: number;
+}
+
+export const lookupContact = (vacancyId: string, sourceUrl: string) =>
+  api<PostContact>('/me/contact', { method: 'POST', body: { vacancy_id: vacancyId, source_url: sourceUrl } });

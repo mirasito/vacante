@@ -26,3 +26,19 @@ def test_server_city_names_match_site():
         if slug in CITIES
     )
     assert names == {slug: (CITIES[slug][0], CITIES_KK[slug]) for slug in CITIES}
+
+
+def test_server_contact_rules_match_parser():
+    """Номер из поста сервер ищет теми же правилами, по которым разбор отмечает виды контактов."""
+    from vacante import contacts
+
+    source = (ROOT / "server" / "src" / "contacts.ts").read_text("utf-8")
+
+    def pattern(name: str) -> str:
+        found = re.search(rf"^const {name} = /(.*)/[a-z]*;$", source, re.M)
+        assert found, f"в server/src/contacts.ts нет {name}"
+        # В JavaScript \w без кириллицы, поэтому там [\p{L}\p{N}_]
+        return found.group(1).replace(r"\p{L}\p{N}_", r"\w").replace(r"[\w]", r"\w").replace(r"\/", "/")
+
+    for name in ("PHONE", "WHATSAPP", "USERNAME", "PROMO"):
+        assert pattern(name) == getattr(contacts, name).pattern, name

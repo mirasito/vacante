@@ -15,6 +15,8 @@ class RawPost:
     text: str
     posted_at: datetime
     default_city: str | None = None
+    # Адреса ссылок поста: wa.me, tel:, t.me/… (в тексте видна только подпись ссылки)
+    links: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -40,6 +42,8 @@ class Vacancy:
     address: str | None = None  # без города: «ул. Сыганак, 2»
     top_until: str | None = None  # до когда оплачено «🔥 Срочно» (ISO 8601, UTC), только у вакансий из бота
     title_kk: str | None = None  # казахская часть двуязычного названия с hh.kz, для казахской версии сайта
+    # Какие контакты есть в исходном посте (vacante.contacts.KINDS), без самих номеров и имён
+    contact: list[str] = field(default_factory=list)
 
     def is_top(self, now: datetime) -> bool:
         return self.top_until is not None and datetime.fromisoformat(self.top_until) > now

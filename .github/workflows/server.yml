@@ -7,6 +7,7 @@
 # Первая выкладка кладёт ключ выкладки и выключает вход по паролю, а ключ из SERVER_SSH_KEY убирает
 # с сервера. Дальше вход только по ключу выкладки; он каждый раз выводится из того же секрета
 # (server/deploy/keys.py), поэтому секрет после первой выкладки не меняют.
+# Сервер из WIPE_ONCE перед первой установкой стирается до системы (server/deploy/wipe.sh).
 name: Сервер
 
 on:
@@ -56,6 +57,8 @@ jobs:
       SERVER_USER: ${{ vars.SERVER_USER || 'ubuntu' }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       KEYS: ${{ github.workspace }}/.keys
+      # Сервер, который раньше работал под другой проект: перед первой установкой его стирают
+      WIPE_ONCE: "94.131.93.0"
     steps:
       - name: Проверить секреты
         id: secrets
@@ -173,6 +176,48 @@ jobs:
               rm -f "$f.new"
             done'
           echo "Ключа из SERVER_SSH_KEY на сервере нет, секрет SERVER_SSH_KEY можно удалить"
+
+      - name: Очистка сервера (один раз)
+        if: steps.secrets.outputs.ready && env.SERVER_HOST == env.WIPE_ONCE
+        run: |
+          # Сервер из WIPE_ONCE раньше работал под другой проект: до первой установки Vacante стираем
+          # на нём всё, кроме системы (server/deploy/wipe.sh), обновляем систему и перезагружаем.
+          # Когда Vacante уже стоит, шаг ничего не делает
+          if "$KEYS/ssh" test -e /etc/vacante; then
+            echo "Vacante уже установлен, очистка не нужна"
+            exit 0
+          fi
+          read -r type key _ < "$KEYS/deploy_ed25519.pub"
+          "$KEYS/ssh" 'umask 077; cat > /run/vacante-wipe.sh' < server/deploy/wipe.sh
+          # Очистка идёт отдельной службой: если связь оборвётся или при обновлении перезапустится SSH,
+          # она всё равно дойдёт до конца. Итог и код выхода складывает в /run
+          "$KEYS/ssh" "rm -f /run/vacante-wipe.out /run/vacante-wipe.rc; systemctl reset-failed vacante-wipe 2>/dev/null; \
+            systemd-run --unit=vacante-wipe --quiet sh -c 'bash /run/vacante-wipe.sh $SERVER_USER $type $key > /run/vacante-wipe.out 2>&1; echo \$? > /run/vacante-wipe.rc'"
+          echo "Очистка идёт, обычно 5–15 минут"
+          rc=
+          for _ in $(seq 180); do
+            sleep 10
+            rc=$("$KEYS/ssh" 'cat /run/vacante-wipe.rc 2>/dev/null' || true)
+            [ -z "$rc" ] || break
+          done
+          "$KEYS/ssh" 'cat /run/vacante-wipe.out' || true
+          if [ "$rc" != 0 ]; then
+            echo "::error::Очистка не закончилась${rc:+ (код $rc)}, дальше сервер не трогаю. Напишите Claude в тред"
+            exit 1
+          fi
+          boot=$("$KEYS/ssh" cat /proc/sys/kernel/random/boot_id)
+          "$KEYS/ssh" 'systemd-run --on-active=5 --quiet systemctl reboot'
+          echo "Перезагружаю сервер после обновления системы"
+          for _ in $(seq 60); do
+            sleep 10
+            now=$("$KEYS/ssh" cat /proc/sys/kernel/random/boot_id 2>/dev/null || true)
+            if [ -n "$now" ] && [ "$now" != "$boot" ]; then
+              echo "Сервер перезагрузился"
+              exit 0
+            fi
+          done
+          echo "::error::Сервер не вернулся после перезагрузки за 10 минут. Посмотрите ВМ в консоли Yandex Cloud"
+          exit 1
 
       - name: Установка и обновление системы
         if: steps.secrets.outputs.ready

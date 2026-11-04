@@ -12,6 +12,7 @@ import {
   initTelegram,
   launchBeta,
   launchCity,
+  launchTab,
   openUrl,
   shareLink,
   telegram,
@@ -81,8 +82,9 @@ function Main() {
         initTelegram(),
       ]);
       const tgLang = app?.initDataUnsafe?.user?.language_code === 'kk' ? 'kk' : undefined;
-      // Открыли по кнопке из подборки бота: сразу город этой подборки
-      const linkCity = launchCity();
+      // Открыли по кнопке из подборки бота: сразу город этой подборки. Кнопка «Открыть профиль»
+      // передаёт город профиля только на случай, если на этом устройстве город ещё не выбран
+      const linkCity = launchTab() === 'profile' && stored.city ? undefined : launchCity();
       const beta = stored.beta || launchBeta();
       setBeta(beta);
       setPrefs({
@@ -181,6 +183,14 @@ function Main() {
 
   // Вкладка «Профиль» видна, когда сервер ответил и профили открыты (или это тестировщик)
   const showProfile = !!account && (account.open || !!prefs.beta);
+
+  // Открыли кнопкой бота «Открыть профиль» (?tab=profile): один раз сразу на эту вкладку
+  const launched = useRef(false);
+  useEffect(() => {
+    if (!showProfile || launched.current) return;
+    launched.current = true;
+    if (launchTab() === 'profile') setTab('profile');
+  }, [showProfile]);
 
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat)),

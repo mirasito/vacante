@@ -16,7 +16,9 @@ import {
   type Lang,
 } from "./labels.ts";
 import type { Profile } from "./profile.ts";
-import { CODE_RE, findLink, getProfile, profileUpdatedAt, recordView, type Link } from "./seekers.ts";
+import { CODE_RE, findLink, getProfile, getVideo, profileUpdatedAt, recordView, type Link, type Video } from "./seekers.ts";
+import { duration, fileReply } from "./video.ts";
+import { join } from "node:path";
 
 /** Программы, которые открывают ссылку ради превью или индекса, а не человек. */
 const PREVIEW_BOT =
@@ -68,6 +70,7 @@ const T = {
     post: "Ищете сотрудников? Разместите вакансию бесплатно в боте Vacante",
     updated: "Профиль обновлён",
     other: "Қазақша",
+    watch: "▶ Смотреть кружок",
   },
   kk: {
     title: "Vacante-дегі үміткер профилі",
@@ -91,6 +94,7 @@ const T = {
     post: "Қызметкер іздейсіз бе? Vacante ботында бос орынды тегін орналастырыңыз",
     updated: "Профиль жаңартылды",
     other: "Русский",
+    watch: "▶ Бейнехабарды көру",
   },
 };
 
@@ -106,7 +110,9 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
 .kicker{color:var(--quiet);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin:0 0 12px}
 .who{display:flex;gap:16px;align-items:center;margin-bottom:16px}
 .avatar{width:84px;height:84px;border-radius:50%;background:var(--pill);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--accent);flex:none;overflow:hidden}
-.avatar video,.avatar img{width:100%;height:100%;object-fit:cover}
+.circle{display:block;position:relative;width:220px;height:220px;margin:0 auto 18px;border-radius:50%;overflow:hidden;background:#101012;text-decoration:none}
+.circle img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.62);color:#fff;font-weight:700;font-size:15px;border-radius:999px;padding:6px 14px;white-space:nowrap}
 h1{font-size:26px;margin:0}.place{color:var(--quiet);margin:2px 0 0}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}.chip{background:var(--pill);border-radius:12px;padding:4px 10px;font-weight:600}
 dl{margin:0}dt{color:var(--quiet);font-size:13px;margin-top:10px}dd{margin:0;font-weight:600}
@@ -154,7 +160,15 @@ const initials = (name: string) =>
     .map((w) => w[0]?.toUpperCase())
     .join("");
 
-function profileBody(ctx: Ctx, link: Link, p: Profile, lang: Lang, showPhone: boolean, updatedAt: string): Html {
+function profileBody(
+  ctx: Ctx,
+  link: Link,
+  p: Profile,
+  video: Video | undefined,
+  lang: Lang,
+  showPhone: boolean,
+  updatedAt: string,
+): Html {
   const t = T[lang];
   const place = [cityName(p.city, lang), p.district].filter(Boolean).join(", ");
   const facts: [string, string | null][] = [
@@ -175,6 +189,7 @@ function profileBody(ctx: Ctx, link: Link, p: Profile, lang: Lang, showPhone: bo
       : html`<a class="btn" href="${phoneUrl}" rel="nofollow">${t.showPhone}</a>`;
   return html`<section class="card">
 <p class="kicker">${t.candidate}</p>
+${video?.file ? circle(link.code, video, t.watch) : ""}
 <div class="who"><div class="avatar" aria-hidden="true">${initials(p.name)}</div>
 <div><h1>${p.name}</h1><p class="place">${place}</p></div></div>
 <dl>
@@ -186,6 +201,14 @@ ${p.about ? html`<dt>${t.about}</dt><dd class="about">${p.about}</dd>` : ""}
 <p class="note">${t.updated}: ${updatedAt.slice(0, 10).split("-").reverse().join(".")}</p>
 </section>
 <footer><a href="https://t.me/${ctx.config.botUsername}?start=post">${t.post}</a></footer>`;
+}
+
+/**
+ * Кружок без скриптов: обложка в круге, нажатие открывает видео встроенным плеером браузера.
+ * Так он работает и во встроенных браузерах WhatsApp и Telegram.
+ */
+function circle(code: string, video: Video, watch: string): Html {
+  return html`<a class="circle" href="/${code}/video.mp4">${video.poster ? html`<img src="/${code}/poster.jpg" alt="">` : ""}<span class="play">${watch} · ${duration(video.duration)}</span></a>`;
 }
 
 function gone(lang: Lang): Reply {
@@ -200,12 +223,31 @@ export function pageRoutes(ctx: Ctx): Route[] {
   const limit = new RateLimit();
   const clientOf = (req: Request) => (req.header("x-forwarded-for") ?? "").split(",")[0]?.trim() || "local";
 
+  const media = (req: Request, kind: "file" | "poster", type: string): Reply => {
+    const now = ctx.now();
+    const client = clientOf(req);
+    if (!limit.take(client, now)) throw new HttpError(429, "Слишком много запросов, попробуйте через минуту");
+    const code = req.params.code ?? "";
+    const link = CODE_RE.test(code) ? findLink(ctx.db, code, now) : undefined;
+    const name = link ? getVideo(ctx.db, link.seeker_id)?.[kind] : undefined;
+    if (!name) {
+      limit.take(client, now, 4);
+      throw new HttpError(404, "Нет файла");
+    }
+    return fileReply(req, join(ctx.config.videosDir, name), type);
+  };
+
   return [
     route("GET", "profile", "/", () => ({ status: 302, headers: { Location: ctx.config.siteUrl } })),
     route("GET", "profile", "/robots.txt", () => ({
       headers: { "Content-Type": "text/plain; charset=utf-8" },
       body: Buffer.from("User-agent: *\nDisallow: /\n"),
     })),
+
+    // Кружок и обложка по той же ссылке: выключили ссылку или удалили кружок — файла больше нет.
+    // Просмотром не считаются, это делает сама страница
+    route("GET", "profile", "/:code/video.mp4", (req) => media(req, "file", "video/mp4")),
+    route("GET", "profile", "/:code/poster.jpg", (req) => media(req, "poster", "image/jpeg")),
 
     route("GET", "profile", "/:code", (req) => {
       const lang = langOf(req);
@@ -247,7 +289,7 @@ export function pageRoutes(ctx: Ctx): Route[] {
       const updatedAt = profileUpdatedAt(ctx.db, link.seeker_id) ?? "";
       const other = `/${code}?lang=${lang === "kk" ? "ru" : "kk"}`;
       return {
-        html: page(lang, profileBody(ctx, link, profile, lang, showPhone, updatedAt), other),
+        html: page(lang, profileBody(ctx, link, profile, getVideo(ctx.db, link.seeker_id), lang, showPhone, updatedAt), other),
         headers: {
           "Content-Security-Policy":
             "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",

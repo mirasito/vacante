@@ -1,5 +1,6 @@
 // Маленький роутер поверх node:http: без фреймворков, чтобы на сервере не было
 // сторонних зависимостей. Ответ обработчика описывается объектом Reply.
+import { createReadStream } from "node:fs";
 import type { IncomingHttpHeaders, IncomingMessage, ServerResponse } from "node:http";
 
 export class HttpError extends Error {
@@ -33,8 +34,10 @@ export interface Reply {
   headers?: Record<string, string | string[]>;
   json?: unknown;
   html?: string;
-  /** Отдать готовые байты (например, кусок видео). */
+  /** Отдать готовые байты. */
   body?: Buffer | Uint8Array;
+  /** Отдать кусок файла с диска потоком, байты с start по end включительно (кружок). */
+  file?: { path: string; start: number; end: number };
 }
 
 export type Handler = (req: Request) => Promise<Reply> | Reply;
@@ -95,6 +98,16 @@ export function makeRequest(raw: IncomingMessage, site: Site, params: Record<str
 
 export function send(res: ServerResponse, reply: Reply) {
   const headers: Record<string, string | string[]> = { "X-Content-Type-Options": "nosniff", ...reply.headers };
+  if (reply.file) {
+    const { path, start, end } = reply.file;
+    headers["Content-Length"] = String(end - start + 1);
+    res.writeHead(reply.status ?? 200, headers);
+    if (res.req?.method === "HEAD" || end < start) return res.end();
+    const stream = createReadStream(path, { start, end });
+    stream.on("error", () => res.destroy());
+    stream.pipe(res);
+    return;
+  }
   let payload: Buffer | Uint8Array | string = "";
   if (reply.json !== undefined) {
     headers["Content-Type"] ??= "application/json; charset=utf-8";

@@ -1,5 +1,8 @@
 // Общие заготовки тестов: сервер на случайном порту с базой в памяти и подписанный вход Telegram.
 import { createHmac } from "node:crypto";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { request as httpRequest, createServer, type Server } from "node:http";
 import type { AddressInfo } from "node:net";
 
@@ -33,11 +36,27 @@ export interface Sent {
   body: Record<string, unknown>;
 }
 
-/** Bot API, который ничего не отправляет, а запоминает вызовы. */
-export function fakeBot(sent: Sent[] = []): Bot {
+/**
+ * Bot API, который ничего не отправляет, а запоминает вызовы. Файлы, которые «прислали боту»,
+ * лежат в files по file_id: getFile и скачивание отдают их, как настоящий Telegram.
+ */
+export function fakeBot(sent: Sent[] = [], files: Map<string, Buffer> = new Map()): Bot {
   const fetchImpl = (async (url: string | URL, init?: RequestInit) => {
-    const method = String(url).split("/").pop() ?? "";
-    sent.push({ method, body: JSON.parse(String(init?.body ?? "{}")) });
+    const href = String(url);
+    const download = /\/file\/bot[^/]+\/f\/(.+)$/.exec(href);
+    if (download) {
+      const bytes = files.get(decodeURIComponent(download[1]!));
+      return bytes ? new Response(new Uint8Array(bytes)) : new Response("Not Found", { status: 404 });
+    }
+    const method = href.split("/").pop() ?? "";
+    const body = JSON.parse(String(init?.body ?? "{}"));
+    sent.push({ method, body });
+    if (method === "getFile") {
+      const bytes = files.get(body.file_id);
+      if (!bytes) return new Response(JSON.stringify({ ok: false, error_code: 400, description: "Bad Request: invalid file_id" }));
+      const result = { file_id: body.file_id, file_unique_id: `u${body.file_id}`, file_size: bytes.length, file_path: `f/${body.file_id}` };
+      return new Response(JSON.stringify({ ok: true, result }));
+    }
     return new Response(JSON.stringify({ ok: true, result: { message_id: sent.length } }));
   }) as typeof fetch;
   return new Bot(TOKEN, fetchImpl);
@@ -47,26 +66,51 @@ export interface TestServer {
   db: Db;
   config: Config;
   sent: Sent[];
+  /** Файлы, которые бот «получил»: file_id → байты. */
+  files: Map<string, Buffer>;
+  /** Дождаться фоновой работы сервера (скачивание кружков). */
+  idle(): Promise<void>;
   call(method: string, path: string, opts?: { host?: string; headers?: Record<string, string>; body?: unknown }): Promise<{
     status: number;
     headers: Record<string, string | string[] | undefined>;
     text: string;
     json: any;
+    body: Buffer;
   }>;
   close(): Promise<void>;
 }
 
 export async function startServer(overrides: Partial<Deps> = {}, env: Record<string, string> = {}): Promise<TestServer> {
-  const config = loadConfig({ TELEGRAM_BOT_TOKEN: TOKEN, VACANTE_VERSION: "test", ...env });
+  const config = loadConfig({
+    TELEGRAM_BOT_TOKEN: TOKEN,
+    VACANTE_VERSION: "test",
+    DATA_DIR: mkdtempSync(join(tmpdir(), "vacante-test-")),
+    ...env,
+  });
   const db = openDb(":memory:");
   const sent: Sent[] = [];
-  const server: Server = createServer(createApp({ config, db, bot: fakeBot(sent), now: () => NOW, ...overrides }));
+  const files = new Map<string, Buffer>();
+  const tasks: Promise<unknown>[] = [];
+  const server: Server = createServer(
+    createApp({
+      config,
+      db,
+      bot: fakeBot(sent, files),
+      now: () => NOW,
+      background: (task) => void tasks.push(task),
+      ...overrides,
+    }),
+  );
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
   const { port } = server.address() as AddressInfo;
   return {
     db,
     config,
     sent,
+    files,
+    async idle() {
+      while (tasks.length) await Promise.all(tasks.splice(0));
+    },
     call(method, path, opts = {}) {
       const body = opts.body === undefined ? undefined : typeof opts.body === "string" ? opts.body : JSON.stringify(opts.body);
       return new Promise((resolve, reject) => {
@@ -86,14 +130,15 @@ export async function startServer(overrides: Partial<Deps> = {}, env: Record<str
             const chunks: Buffer[] = [];
             res.on("data", (c: Buffer) => chunks.push(c));
             res.on("end", () => {
-              const text = Buffer.concat(chunks).toString("utf8");
+              const raw = Buffer.concat(chunks);
+              const text = raw.toString("utf8");
               let json: unknown;
               try {
                 json = JSON.parse(text);
               } catch {
                 json = undefined;
               }
-              resolve({ status: res.statusCode ?? 0, headers: res.headers, text, json });
+              resolve({ status: res.statusCode ?? 0, headers: res.headers, text, json, body: raw });
             });
           },
         );
@@ -106,6 +151,7 @@ export async function startServer(overrides: Partial<Deps> = {}, env: Record<str
         server.closeAllConnections();
         server.close(() => resolve());
         db.close();
+        rmSync(config.dataDir, { recursive: true, force: true });
       }),
   };
 }

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import * as i18n from '../i18n';
-import { canRequestContact, confirm, haptic, requestContact, shareLink, whatsapp } from '../platform';
+import { canRequestContact, confirm, haptic, onAppVisible, requestContact, shareLink, whatsapp } from '../platform';
 import {
   askPhone,
   cancelPhone,
@@ -25,10 +25,8 @@ import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, Loading, Retry, styles as ui } from '../ui';
 import { EMPLOYMENT, EXPERIENCE, label, LANGUAGES, money, P, phoneLabel, START, when } from './texts';
+import { useVideoRecording, VideoSection } from './Video';
 import { Wizard } from './Wizard';
-
-// Кружок записывается в чате бота; кнопка появится вместе с этой частью сервера
-const VIDEO_READY = false;
 
 type Mode = 'card' | 'wizard' | 'extras';
 
@@ -72,6 +70,15 @@ export function ProfileTab(props: {
       alive = false;
     };
   }, [lang, seekerLang]);
+
+  // Вернулись из чата бота: там могли записать или убрать кружок, прислать номер
+  useEffect(
+    () =>
+      onAppVisible(() => {
+        getProfile().then(setView, () => undefined);
+      }),
+    [],
+  );
 
   if (mode !== 'wizard') backRef.current = mode === 'extras' ? () => (setMode('card'), true) : null;
 
@@ -171,6 +178,7 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
   const [driver, setDriver] = useState(profile.driver);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const rec = useVideoRecording(view, onChange);
 
   const fromTelegram = async () => {
     haptic();
@@ -206,6 +214,7 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
         <Text style={[s.title, { color: c.ink }]}>{t.readyTitle}</Text>
         <Strength c={c} lang={lang} view={view} />
         <Text style={[s.text, { color: c.quiet }]}>{t.readyText}</Text>
+        <VideoSection c={c} lang={lang} view={view} rec={rec} onChange={onChange} />
 
         <Text style={[s.section, { color: c.ink }]}>{t.phone}</Text>
         {profile.phone ? (
@@ -269,10 +278,7 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
 
 function Strength({ c, lang, view, onTip }: { c: Colors; lang: Lang; view: ProfileView; onTip?(tip: Tip): void }) {
   const t = P[lang];
-  const strength = view.strength!;
-  // Пока кружок записать нельзя, подсказываем следующее, что можно сделать уже сейчас
-  const next = !VIDEO_READY && strength.next === 'video' ? nextWithoutVideo(view.profile!) : strength.next;
-  const percent = strength.percent;
+  const { next, percent } = view.strength!;
   return (
     <View style={s.strength}>
       <View style={s.strengthHead}>
@@ -290,13 +296,6 @@ function Strength({ c, lang, view, onTip }: { c: Colors; lang: Lang; view: Profi
   );
 }
 
-function nextWithoutVideo(p: Profile): Tip | null {
-  if (!p.phone) return 'phone';
-  if (!p.about) return 'about';
-  if (!p.med_book && !p.driver) return 'docs';
-  return null;
-}
-
 function Card(props: {
   c: Colors;
   lang: Lang;
@@ -312,6 +311,7 @@ function Card(props: {
   const p = view.profile!;
   const [views, setViews] = useState<ProfileViewEvent[] | null>(null);
   const [busy, setBusy] = useState(false);
+  const rec = useVideoRecording(view, onChange);
 
   const loadViews = useCallback(() => {
     getViews().then(setViews, () => setViews([]));
@@ -363,6 +363,7 @@ function Card(props: {
   };
 
   const onTip = async (tip: Tip) => {
+    if (tip === 'video') return rec.start();
     const v = tip === 'phone' ? await phoneFromTelegram() : null;
     if (v) onChange(v);
     else onExtras();
@@ -371,6 +372,7 @@ function Card(props: {
   return (
     <ScrollView contentContainerStyle={s.body}>
       <Strength c={c} lang={lang} view={view} onTip={onTip} />
+      <VideoSection c={c} lang={lang} view={view} rec={rec} onChange={onChange} />
 
       <Text style={[s.caption, { color: c.quiet }]}>{t.asEmployer}</Text>
       <View style={[s.card, { backgroundColor: c.card, borderColor: c.line }]}>

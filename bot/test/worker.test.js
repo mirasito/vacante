@@ -412,3 +412,71 @@ test("номер из окна Telegram в приложении уходит с�
   await say(env, seeker, "привет");
   assert.equal(calls.filter((c) => c.method === "server").length, before);
 });
+
+test("кружок, /start video и кнопки «v:» ведёт сервер, без него бот так и отвечает", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  const telegram = fakeFetch(calls);
+  let up = true;
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://api.vacante.kz/")) {
+      calls.push({ method: "server", body: JSON.parse(init.body) });
+      if (!up) throw new TypeError("fetch failed");
+      return Response.json({ ok: true, handled: true });
+    }
+    return telegram(url, init);
+  };
+  const seeker = user(500, "Ерлан");
+  const chat = { id: 500, type: "private" };
+  const circle = { message: { chat, from: seeker, video_note: { file_id: "vn", file_unique_id: "AgAD", duration: 30 } } };
+  const relayed = () => calls.filter((c) => c.method === "server");
+
+  // Сервер принял: бот молчит, ответит сам сервер
+  await post(env, circle);
+  await say(env, seeker, "/start video");
+  await press(env, seeker, "v:del:AgAD", 41);
+  assert.equal(relayed().length, 3);
+  assert.equal(relayed()[1].body.message.text, "/start video");
+  assert.equal(relayed()[2].body.callback_query.data, "v:del:AgAD");
+  assert.equal(sentTo(calls, 500).length, 0);
+  assert.equal(calls.filter((c) => c.method === "answerCallbackQuery").length, 0);
+
+  // Сервер недоступен: честно говорим, что профиль недоступен, а не показываем справку или приветствие
+  up = false;
+  await post(env, circle);
+  assert.match(sentTo(calls, 500).at(-1).body.text, /Профиль сейчас недоступен/);
+  await say(env, seeker, "/start video");
+  assert.match(sentTo(calls, 500).at(-1).body.text, /Профиль сейчас недоступен/);
+  await press(env, seeker, "v:del:AgAD", 42);
+  assert.match(calls.filter((c) => c.method === "answerCallbackQuery").at(-1).body.text, /Профиль сейчас недоступен/);
+
+  // Обычный /start серверу не передаётся
+  const before = relayed().length;
+  await say(env, seeker, "/start");
+  assert.equal(relayed().length, before);
+  assert.match(sentTo(calls, 500).at(-2).body.text, /Привет! Это бот vacante.kz/);
+
+  // Обычное видео: сервер берёт его, только если у человека есть профиль, иначе отвечает бот
+  const plain = { message: { chat, from: seeker, video: { file_id: "v", duration: 20 } } };
+  up = true;
+  await post(env, plain);
+  assert.equal(relayed().at(-1).body.message.video.file_id, "v");
+  const quiet = sentTo(calls, 500).length;
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://api.vacante.kz/")) {
+      calls.push({ method: "server", body: JSON.parse(init.body) });
+      return Response.json({ ok: true, handled: false });
+    }
+    return telegram(url, init);
+  };
+  await post(env, plain);
+  assert.equal(sentTo(calls, 500).length, quiet + 1);
+  assert.doesNotMatch(sentTo(calls, 500).at(-1).body.text, /Профиль сейчас недоступен/);
+
+  // /start video, как любая команда, прерывает анкету вакансии
+  await say(env, seeker, "/vacancy");
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM dialogs WHERE chat_id = 500").n, 1);
+  await say(env, seeker, "/start video");
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM dialogs WHERE chat_id = 500").n, 0);
+});
+

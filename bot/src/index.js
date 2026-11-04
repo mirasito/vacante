@@ -24,6 +24,9 @@ const POST_INTRO =
   "Разместим вакансию бесплатно: на vacante.kz и в подборках подписчикам бота. " +
   "Отклики кандидатов придут вам сюда. Ответьте на несколько вопросов, это пара минут.";
 const JOB_CLOSED = "Эта вакансия уже закрыта. Новые вакансии могу присылать сюда: /start";
+const PROFILE_DOWN = "Профиль сейчас недоступен, попробуйте через несколько минут.";
+// Кнопка «Записать кружок» в приложении открывает чат с ботом командой /start video
+const VIDEO_START = /^\/start(@\w+)?\s+video$/;
 const NO_KEYBOARD = { remove_keyboard: true };
 
 export default {
@@ -56,14 +59,27 @@ export default {
 async function handle(update, env, ctx) {
   const m = update.message;
   if (m && m.chat.type === "private") {
-    // Номер из окна «Поделиться номером» в приложении: сервер кладёт его в профиль, если приложение
-    // его только что попросило. Иначе это ответ в отклике, и его ведёт бот, как раньше
-    if (m.contact && (await relayToServer(env, update))) return;
+    // Номер из окна «Поделиться номером» в приложении сервер кладёт в профиль, если приложение
+    // его только что попросило, иначе это ответ в отклике, и его ведёт бот, как раньше.
+    // Кружок и /start video целиком на сервере: он хранит профили. Обычное видео сервер берёт,
+    // только если у человека есть профиль (подскажет записать кружок), иначе оно остаётся боту
+    const start = VIDEO_START.test((m.text || "").trim());
+    const circle = !!m.video_note || start;
+    if (start) await endDialog(env, m.chat.id); // команда прерывает анкету или отклик, как любая другая
+    if (m.contact || m.video || circle) {
+      if (await relayToServer(env, update)) return;
+      if (circle) return send(env, m.chat.id, PROFILE_DOWN);
+    }
     return onMessage(m, env);
   }
   const q = update.callback_query;
   if (!q || !q.message) return;
   const data = q.data || "";
+  // Кнопки под сообщениями сервера о кружке («Убрать из профиля»)
+  if (data.startsWith("v:")) {
+    if (await relayToServer(env, update)) return;
+    return answerCallback(env, q, PROFILE_DOWN);
+  }
   if (data.startsWith("mod:")) return moderate(env, q, ctx);
   if (data.startsWith("close:")) return closeJob(env, q);
   if (data.startsWith("boost:")) return boostJob(env, q);

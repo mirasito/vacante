@@ -1435,6 +1435,21 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "aktobe:детский мир казахстан": {
+  "name": "детский мир казахстан",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "website": "https://detmir.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001098905476",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "be81acdde64ba59e.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:достык": {
   "name": "Достык",
   "city": "aktobe",
@@ -3346,6 +3361,13 @@
   "avatar": "5d1081036c02e00d.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:choco рядом": {
+  "name": "choco рядом",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
+ },
  "almaty:choco тоо chocofamily": {
   "name": "Choco (ТОО Chocofamily)",
   "city": "almaty",
@@ -3411,6 +3433,13 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "almaty:coffee group company": {
+  "name": "Coffee Group Company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
+ },
  "almaty:coffeevarka kz": {
   "name": "Coffeevarka kz",
   "city": "almaty",
@@ -3469,6 +3498,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:cu central asia": {
+  "name": "CU Central Asia",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "instagram": "cu_kazakhstan",
+  "source": "https://2gis.kz/almaty/firm/70000001093695256"
  },
  "almaty:dac": {
   "name": "DAC",
@@ -5365,6 +5403,21 @@
   "avatar": "1cc6b11504274c09.jpg",
   "avatar_source": "website"
  },
+ "almaty:kolesa ао колеса": {
+  "name": "Kolesa (АО Колеса)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "website": "https://kolesa.kz/",
+  "source": "https://kolesa.kz/content/about/",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "675563414e5c5582.jpg",
+  "avatar_source": "website"
+ },
  "almaty:konsel trade": {
   "name": "KONSEL Trade",
   "city": "almaty",
@@ -7121,6 +7174,13 @@
   "checked_at": "2026-10-31T18:42:42+00:00",
   "instagram": "she.brand.kz",
   "source": "https://2gis.kz/almaty/firm/70000001098311815"
+ },
+ "almaty:sheron cosmetics": {
+  "name": "sheron cosmetics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
  },
  "almaty:shoqan": {
   "name": "SHOQAN",
@@ -11252,6 +11312,24 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "almaty:марк формэль": {
+  "name": "Марк Формэль",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "instagram": "markformelle",
+  "telegram": "markformelle_official",
+  "website": "https://markformelle.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001067423193",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "fae0115a921f78b7.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:масло дел": {
   "name": "Масло-Дел",
   "city": "almaty",
@@ -12752,6 +12830,22 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "almaty:техноgrad": {
+  "name": "ТехноGRAD",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "instagram": "tgrad.kz",
+  "website": "https://tgrad.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001543661",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cb620f997c8dbef4.jpg",
+  "avatar_source": "website"
+ },
  "almaty:технокоминвест": {
   "name": "ТЕХНОКОМИНВЕСТ",
   "city": "almaty",
@@ -13295,6 +13389,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "almaty:шате м плюс": {
+  "name": "шате м плюс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "website": "https://shate-m.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060451074",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2145275038975a5a.jpg",
+  "avatar_source": "website"
  },
  "almaty:шевцов богдан васильевич": {
   "name": "Шевцов Богдан Васильевич",
@@ -14665,6 +14774,21 @@
   "instagram": "dosso_dossi_kz",
   "source": "https://2gis.kz/astana/firm/70000001075433102"
  },
+ "astana:dpd kazakhstan": {
+  "name": "DPD Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "website": "https://dpd.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018065777",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "49962f4f48f448d8.jpg",
+  "avatar_source": "website"
+ },
  "astana:drink tea": {
   "name": "Drink tea",
   "city": "astana",
@@ -14768,6 +14892,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
+ },
+ "astana:faqtor labs": {
+  "name": "faqtor labs",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
  },
  "astana:fashion retail group": {
   "name": "Fashion Retail Group",
@@ -15423,6 +15554,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:kazger": {
+  "name": "KazGer",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
  },
  "astana:kazpan казпан": {
   "name": "KazPan (КазПан)",
@@ -17659,6 +17797,13 @@
   "instagram": "aurum_astana",
   "source": "https://2gis.kz/astana/firm/70000001117640041"
  },
+ "astana:акжан шаяхметова": {
+  "name": "Акжан Шаяхметова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
+ },
  "astana:акмолинский автоцентр": {
   "name": "АКМОЛИНСКИЙ АВТОЦЕНТР",
   "city": "astana",
@@ -18748,6 +18893,20 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "astana:завод абк бетон": {
+  "name": "Завод АБК-Бетон",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "instagram": "zavodabkbeton",
+  "website": "https://abk-beton.kz/",
+  "source": "https://2gis.kz/kosshy/firm/70000001075885262",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:заммлер казахстан": {
   "name": "ЗАММЛЕР КАЗАХСТАН",
   "city": "astana",
@@ -18900,6 +19059,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
+ },
+ "astana:кадровое агентство гарант": {
+  "name": "Кадровое агентство Гарант",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
  },
  "astana:казахстан мед дез": {
   "name": "КАЗАХСТАН-МЕД ДЕЗ",
@@ -21045,6 +21211,21 @@
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
  },
+ "astana:шате м плюс": {
+  "name": "шате м плюс",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "website": "https://shate-m.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060451074",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a111b245c2987ef9.jpg",
+  "avatar_source": "website"
+ },
  "astana:шимшикова айгерим": {
   "name": "Шимшикова Айгерим",
   "city": "astana",
@@ -21951,6 +22132,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
+ },
+ "atyrau:техноgrad": {
+  "name": "техноgrad",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00",
+  "instagram": "tgrad.kz",
+  "website": "https://tgrad.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001047755118",
+  "avatar_checked_at": "2026-11-04T06:45:00+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bcc473a03a6e9bf2.jpg",
+  "avatar_source": "website"
  },
  "atyrau:филиал компании powerchina sepco1 electric power construction co ltd в республике казахстан": {
   "name": "Филиал компании POWERCHINA SEPCO1 Electric Power Construction Co.Ltd в Республике Казахстан",
@@ -25459,6 +25656,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "pavlodar:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
+ },
  "pavlodar:дом пекаря": {
   "name": "Дом Пекаря",
   "city": "pavlodar",
@@ -27448,6 +27652,13 @@
   ],
   "avatar": "a0cb91befe135f67.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:moonline": {
+  "name": "MOONLINE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
  },
  "shymkent:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
@@ -30310,6 +30521,13 @@
   ],
   "avatar": "5dd8faa21b99bdc3.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:курмыш лтд": {
+  "name": "курмыш лтд",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T06:44:59+00:00"
  },
  "ust-kamenogorsk:көпбай р м": {
   "name": "Көпбай Р.М.",

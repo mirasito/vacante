@@ -6,10 +6,27 @@ import type { Index, Vacancy } from './types';
 // в /app/ и берёт их со своего адреса, приложения из сторов — с vacante.kz.
 export const DATA_URL = Platform.OS === 'web' ? '/app/data' : 'https://vacante.kz/app/data';
 
+/**
+ * Сразу после запуска сеть телефона иногда отвечает не с первого раза (так было на эмуляторе
+ * Android): если запрос не дошёл, ещё две попытки через 1 и 3 секунды, и только потом
+ * «Нет связи с сервером». Ответ сервера с ошибкой не повторяем.
+ */
+const RETRY_MS = [1000, 3000];
+
 async function getJson<T>(path: string): Promise<T> {
-  const res = await fetch(`${DATA_URL}/${path}`, { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return (await res.json()) as T;
+  for (let attempt = 0; ; attempt++) {
+    let res: Response;
+    try {
+      res = await fetch(`${DATA_URL}/${path}`, { cache: 'no-cache' });
+    } catch (err) {
+      const wait = RETRY_MS[attempt];
+      if (wait === undefined) throw err;
+      await new Promise((resolve) => setTimeout(resolve, wait));
+      continue;
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()) as T;
+  }
 }
 
 export const loadIndex = () => getJson<Index>('index.json');

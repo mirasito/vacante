@@ -1300,6 +1300,20 @@
   "instagram": "boschcarservice_aqtobe",
   "source": "https://2gis.kz/aktobe/firm/70000001047665826"
  },
+ "aktobe:агентство недвижимости ансар ип умарова д к": {
+  "name": "Агентство недвижимости Ансар (ИП Умарова Д.К)",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "aktobe_kvartira_ansar",
+  "website": "http://ansar.pro/",
+  "source": "https://2gis.kz/aktobe/firm/70000001046171871",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
   "city": "aktobe",
@@ -1344,6 +1358,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
+ },
+ "aktobe:алиди казахстан": {
+  "name": "АЛИДИ Казахстан",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "alidi.kazakhstan",
+  "website": "http://alidi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001030531973",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:алтын алма": {
   "name": "Алтын Алма",
@@ -1693,6 +1721,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
+ },
+ "aktobe:шевцов богдан васильевич": {
+  "name": "Шевцов Богдан Васильевич",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
  },
  "aktobe:шинторг центр": {
   "name": "Шинторг-центр",
@@ -2408,6 +2443,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
+ },
+ "almaty:arlan logistics group": {
+  "name": "ARLAN LOGISTICS GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
  },
  "almaty:armandar": {
   "name": "ARMANDAR",
@@ -4797,6 +4839,20 @@
    "website"
   ]
  },
+ "almaty:health food зоров в time service": {
+  "name": "Health Food (Зоров В. Time Service)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "health_food.kz",
+  "website": "http://healthfood.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037323186",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:hella good taxi": {
   "name": "Hella Good Taxi",
   "city": "almaty",
@@ -5461,7 +5517,7 @@
   "instagram": "kulikov_kz",
   "website": "https://kulikov.com/",
   "source": "https://2gis.kz/almaty/firm/70000001111152934",
-  "avatar_checked_at": "2026-10-28T07:59:01+00:00",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7073,6 +7129,13 @@
    "website"
   ]
  },
+ "almaty:sam place": {
+  "name": "SAM PLACE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
+ },
  "almaty:samgay": {
   "name": "Samgay",
   "city": "almaty",
@@ -7595,6 +7658,13 @@
   ],
   "avatar": "39c314e379664a36.jpg",
   "avatar_source": "website"
+ },
+ "almaty:sun group": {
+  "name": "Sun Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
  },
  "almaty:svydis astana": {
   "name": "Svydis Astana",
@@ -9743,7 +9813,7 @@
   "instagram": "galereya.novostroek",
   "website": "https://galereya.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001094712170",
-  "avatar_checked_at": "2026-10-28T08:43:39+00:00",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10230,6 +10300,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:жана пост": {
+  "name": "Жана Пост",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "janapost.kazakhstan",
+  "website": "https://www.janapost.kz/ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001075806068",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f8057c6904b2a6e2.jpg",
+  "avatar_source": "website"
  },
  "almaty:жанайхан": {
   "name": "ИП Жанайхан",
@@ -10909,6 +10995,13 @@
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
  },
+ "almaty:ковчий": {
+  "name": "Ковчий",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
+ },
  "almaty:коктем": {
   "name": "Коктем",
   "city": "almaty",
@@ -11213,6 +11306,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:ломбард lit евролит алматы": {
+  "name": "Ломбард €lit Евролит Алматы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "elite_zoloto_almaty",
+  "telegram": "elite_lombard_group",
+  "website": "http://elitelombard.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089022125",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "almaty:ломбард белый tm": {
   "name": "Ломбард Белый TM",
@@ -11844,7 +11953,7 @@
   "telegram": "ordoholding",
   "website": "http://ordo.education/l/popovicha45",
   "source": "https://2gis.kz/almaty/firm/70000001053871312",
-  "avatar_checked_at": "2026-10-28T08:43:39+00:00",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -13692,7 +13801,7 @@
   "instagram": "12_mesyacev_kz",
   "website": "http://12.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018060889",
-  "avatar_checked_at": "2026-10-28T08:43:39+00:00",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14633,6 +14742,13 @@
    "website"
   ]
  },
+ "astana:consult biz": {
+  "name": "Consult-biz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
+ },
  "astana:consumer trade company": {
   "name": "Consumer Trade Company",
   "city": "astana",
@@ -14860,6 +14976,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "astana:eat&fit": {
+  "name": "Eat&Fit",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "eat.and.fit",
+  "website": "https://eatandfit.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001028666491",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:ecotara": {
   "name": "EcoTara",
@@ -15182,6 +15312,15 @@
   "v": 3,
   "checked_at": "2026-11-03T20:46:04+00:00"
  },
+ "astana:grand prix": {
+  "name": "Grand Prix",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "grandprixclub",
+  "source": "https://2gis.kz/astana/firm/70000001024023081"
+ },
  "astana:gresso kz": {
   "name": "GRESSO KZ",
   "city": "astana",
@@ -15436,6 +15575,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
+ },
+ "astana:iq chess": {
+  "name": "IQ CHESS",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "iq.chess",
+  "source": "https://2gis.kz/astana/firm/70000001116016357"
  },
  "astana:iron club": {
   "name": "Iron club",
@@ -16453,7 +16601,7 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "website": "https://pako.kz/",
   "source": "https://2gis.kz/astana/firm/70000001042876961",
-  "avatar_checked_at": "2026-10-28T07:59:01+00:00",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16838,6 +16986,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:sabaq online": {
+  "name": "Sabaq Online",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "sabaq.online",
+  "source": "https://www.instagram.com/sabaq.online/"
  },
  "astana:salieri": {
   "name": "SALIERI",
@@ -21555,6 +21712,22 @@
   "v": 3,
   "checked_at": "2026-11-02T11:44:06+00:00"
  },
+ "atyrau:altra tyres": {
+  "name": "ALTRA TYRES",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "altraauto.kz",
+  "website": "https://altraauto.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001065546595",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f921cc6f6be703d7.jpg",
+  "avatar_source": "website"
+ },
  "atyrau:apple city corps": {
   "name": "Apple City Corps",
   "city": "atyrau",
@@ -22466,6 +22639,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:focus on": {
+  "name": "Focus On",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
  },
  "karaganda:germes": {
   "name": "GERMES",
@@ -25700,6 +25880,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "pavlodar:гелиос": {
+  "name": "Гелиос",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00"
+ },
  "pavlodar:гламаздин istudy go": {
   "name": "ГЛАМАЗДИН Istudy GO",
   "city": "pavlodar",
@@ -26613,6 +26800,15 @@
   "instagram": "severpivo",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001053413580"
  },
+ "petropavlovsk:северный": {
+  "name": "Северный",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "severnyi.kz",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001081602936"
+ },
  "petropavlovsk:северный 4": {
   "name": "Северный 4",
   "city": "petropavlovsk",
@@ -26648,6 +26844,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
+ },
+ "petropavlovsk:ско top motors kz": {
+  "name": "СКО TOP MOTORS KZ",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T08:45:38+00:00",
+  "instagram": "chevrolet.petropavlovsk",
+  "website": "https://top-motors-petropavl.chevrolet-auto.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001093683524",
+  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:султан кондитерские изделия": {
   "name": "Султан Кондитерские изделия",

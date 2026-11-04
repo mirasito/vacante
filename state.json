@@ -14,7 +14,7 @@
   "zhumys_astana_kz": 17169,
   "Astana_rabota": 90149,
   "astana_hh": 1845,
-  "rabota_Astanakz": 31270,
+  "rabota_Astanakz": 31271,
   "rabota_astana": 15653,
   "astana_rabota_jumys": 15116,
   "rabota_v_nursultane1": 12866,
@@ -56,5 +56,6 @@
   "tengiz_vahta": 937
  },
  "parser": "ccfa42954e51",
- "hh_checked_at": "2026-11-04T14:54:50.679510+00:00"
+ "hh_checked_at": "2026-11-04T15:13:22.410667+00:00",
+ "hh_backfill": "points"
 }

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T13:57:28+00:00",
+ "updated_at": "2026-11-04T14:57:42+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -29093,6 +29093,315 @@
    "fields": {
     "employer": "Es Group",
     "address": "5-й мкр, 5"
+   }
+  },
+  "astana_job_vakansii-130045": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "KZ Stock",
+    "schedule": "6/1, 10:00–19:00"
+   }
+  },
+  "rabota_astanakz-31267": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Помощник повара, помощник пекаря, лепщица, грузчик, уборщица",
+    "salary_min": 200000,
+    "salary_max": 230000,
+    "salary_period": "month",
+    "schedule": "2/2, 07:00–18:00"
+   }
+  },
+  "astana_job_vakansii-130209": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Продавец-консультант парфюмерии",
+    "employer": "Pure Parfum",
+    "schedule": "2/2 или 3/4, 10:00–22:00"
+   }
+  },
+  "astana_job_vakansii-130093": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "Алкомаркет «Солод»",
+    "salary_period": null,
+    "schedule": "7/7, 09:45–23:00",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ],
+    "salary_min": null,
+    "salary_max": null
+   }
+  },
+  "hh-139137780": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Офисные продажи"
+  },
+  "hh-138271980": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Офисная должность"
+  },
+  "rabota_astanakz-31221": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "Duty Free Astana",
+    "schedule": "сменный, дневные и ночные смены",
+    "address": "Аэропорт Астаны, магазин Duty Free"
+   }
+  },
+  "rabota_astanakz-31260": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "Магазин «NAMYS»",
+    "schedule": "10:00–22:00"
+   }
+  },
+  "astana_job_vakansii-130203": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {}
+  },
+  "hh-137906838": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "employer": "Strong Tea"
+   }
+  },
+  "hh-138001944": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Продавец-консультант, стилист"
+   }
+  },
+  "rabota_astanakz-31252": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Повар горячего цеха",
+    "schedule": "5/2, 05:00–14:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Спецодежда"
+    ]
+   }
+  },
+  "astana_job_vakansii-130196": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "schedule": "2/2, 09:00–21:00 или 21:00–09:00",
+    "perks": []
+   }
+  },
+  "hh-139137975": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Руководящая должность"
+  },
+  "hh-138080636": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {}
+  },
+  "hh-139137920": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Администратор гостиницы",
+    "schedule": "сутки через двое",
+    "perks": []
+   }
+  },
+  "rabota4almaty-6161": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Рабочий склада",
+    "employer": "ТОО «Дудар»",
+    "address": "ул. Немировича-Данченко, 51Б"
+   }
+  },
+  "hh-139138156": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Руководящая должность"
+  },
+  "hh-138853355": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Руководящая должность"
+  },
+  "hh-139138023": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "hh-139138012": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Рейсы за границу (Китай – Европа)"
+  },
+  "hh-139137824": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Менеджер по продажам автозапчастей",
+    "employer": null,
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "hh-139137821": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Парикмахер-универсал, барбер",
+    "employer": "BarbarossA Almaty"
+   }
+  },
+  "rabota4almaty-6157": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Помощник пекаря",
+    "employer": null,
+    "schedule": "5/2, 07:00–19:00",
+    "address": "Алмалинский район, ул. Толе би",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-134869280": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Нет описания, завышенная зарплата"
+  },
+  "hh-138256931": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {}
+  },
+  "hh-139136639": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Продажи недвижимости, офисная должность"
+  },
+  "hh-136867948": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {}
+  },
+  "hh-139135234": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Лепщица, лепщик чебуреков"
+   }
+  },
+  "vakansii_rabota_atyrau-50013": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "Частный детский сад",
+    "schedule": "08:30–18:15"
+   }
+  },
+  "vakansii_rabota_atyrau-50012": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "Ресторан «Мейман»",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139137785": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-142232": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Кассир в фастфуд",
+    "schedule": "2/2, 11:00–24:00 или 12:30–01:30",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139137807": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "employer": "Romantic Pavlodar"
+   }
+  },
+  "rabota_v_pavlodare-7327": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Пекарь, тестовод, помощник пекаря",
+    "schedule": "сутки через двое",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota_v_semee-7896": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Повар горячего цеха",
+    "schedule": "5/2, 08:00–17:00",
+    "address": "ТД «Комфорт», 2 этаж"
+   }
+  },
+  "rabota_v_semee-7885": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Вахта без места работы и зарплаты"
+  },
+  "rabota_v_semee-7933": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Газоэлектросварщик"
+   }
+  },
+  "rabota_v_semee-7935": {
+   "verdict": "reject",
+   "at": "2026-11-04T14:57:42+00:00",
+   "reason": "Разовый заказ, не вакансия"
+  },
+  "hh-139138431": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {}
+  },
+  "hh-139137941": {
+   "verdict": "approve",
+   "at": "2026-11-04T14:57:42+00:00",
+   "fields": {
+    "title": "Водитель фронтального погрузчика",
+    "address": "г. Житикара"
    }
   }
  }

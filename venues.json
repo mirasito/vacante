@@ -502,6 +502,13 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "aktau:база арыстан": {
+  "name": "База-Арыстан",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
+ },
  "aktau:бота": {
   "name": "Бота",
   "city": "aktau",
@@ -1230,6 +1237,13 @@
    "website"
   ]
  },
+ "aktobe:medicom and company": {
+  "name": "MEDICOM AND COMPANY",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
+ },
  "aktobe:minestone": {
   "name": "MINESTONE",
   "city": "aktobe",
@@ -1569,6 +1583,13 @@
   ],
   "avatar": "ff24a3f3363f3d34.jpg",
   "avatar_source": "website"
+ },
+ "aktobe:жалын 2040": {
+  "name": "Жалын 2040",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "aktobe:запказ авто": {
   "name": "ЗапКаз-Авто",
@@ -4438,6 +4459,22 @@
    "website"
   ]
  },
+ "almaty:fashion retail kazakhstan": {
+  "name": "Fashion Retail Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "fashionretailkz",
+  "telegram": "fashionretailkz",
+  "source": "https://2gis.kz/almaty/firm/9429940000929722",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "a6a7ff73d83a9be6.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:fast meals and goods": {
   "name": "Fast Meals and Goods",
   "city": "almaty",
@@ -7120,6 +7157,15 @@
    "website"
   ]
  },
+ "almaty:qaimaq bakery": {
+  "name": "QAIMAQ BAKERY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "qaimaq_bakery",
+  "source": "https://2gis.kz/almaty/firm/70000001089668520"
+ },
  "almaty:qazaq parfum": {
   "name": "QAZAQ PARFUM",
   "city": "almaty",
@@ -8811,7 +8857,7 @@
   "instagram": "yes_exchange",
   "website": "http://almaty1.yes-exchange.com/",
   "source": "https://2gis.kz/almaty/firm/70000001094342527",
-  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10832,6 +10878,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "almaty:жкх байланыс": {
+  "name": "ЖКХ БАЙЛАНЫС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
+ },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
   "city": "almaty",
@@ -10842,7 +10895,7 @@
   "telegram": "renioncity",
   "website": "http://renion.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001030378233",
-  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -13300,6 +13353,15 @@
    "website"
   ]
  },
+ "almaty:сталь сервис": {
+  "name": "Сталь Сервис",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "stalservis.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001041065067"
+ },
  "almaty:старыгина": {
   "name": "Старыгина",
   "city": "almaty",
@@ -14758,6 +14820,13 @@
   "checked_at": "2026-10-29T12:47:32+00:00",
   "instagram": "aramit_billiard_club",
   "source": "https://2gis.kz/astana/firm/70000001090756901"
+ },
+ "astana:araymed араймед": {
+  "name": "ARAYMED (АРАЙМЕД)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "astana:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
@@ -16346,6 +16415,22 @@
    "website"
   ]
  },
+ "astana:iteca": {
+  "name": "Iteca",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "iteca.events",
+  "website": "https://iteca.events/",
+  "source": "https://2gis.kz/almaty/firm/9429940000787928",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "405ae08683900636.jpg",
+  "avatar_source": "website"
+ },
  "astana:ivi express": {
   "name": "IVI EXPRESS",
   "city": "astana",
@@ -17375,6 +17460,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "astana:orchestra fashion": {
+  "name": "Orchestra Fashion",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "orchestrakz",
+  "website": "https://www.orchestra.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001028263036",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ed56cdece0801722.jpg",
+  "avatar_source": "website"
  },
  "astana:orta development group": {
   "name": "ORTA DEVELOPMENT GROUP",
@@ -20897,6 +20998,20 @@
   "avatar": "f57656f075df6f0a.jpg",
   "avatar_source": "website"
  },
+ "astana:мастер кондитер": {
+  "name": "Мастер Кондитер",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "masterkonditertoo",
+  "website": "https://maskon.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018299908",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:мастор": {
   "name": "Мастор",
   "city": "astana",
@@ -21191,6 +21306,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "astana:отан групп лтд": {
+  "name": "Отан Групп ЛТД",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "astana:отель": {
   "name": "Отель",
@@ -21547,6 +21669,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "astana:свой проект": {
+  "name": "СВОЙ ПРОЕКТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "astana:себет маркет": {
   "name": "Себет маркет",
@@ -23296,6 +23425,15 @@
   "v": 3,
   "checked_at": "2026-11-03T13:44:33+00:00"
  },
+ "atyrau:караоке бар dauys bokhayeva n": {
+  "name": "Караоке-бар Dauys (Bokhayeva N.)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "dauys_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001056675202"
+ },
  "atyrau:кари кз": {
   "name": "КАРИ КЗ",
   "city": "atyrau",
@@ -23495,6 +23633,13 @@
   ],
   "avatar": "bcc473a03a6e9bf2.jpg",
   "avatar_source": "website"
+ },
+ "atyrau:транспортная компания бизнес альянс": {
+  "name": "Транспортная Компания БИЗНЕС АЛЬЯНС",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "atyrau:филиал компании powerchina sepco1 electric power construction co ltd в республике казахстан": {
   "name": "Филиал компании POWERCHINA SEPCO1 Electric Power Construction Co.Ltd в Республике Казахстан",
@@ -24312,6 +24457,13 @@
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
  },
+ "karaganda:амир": {
+  "name": "АМИР",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
+ },
  "karaganda:ангел": {
   "name": "Ангел",
   "city": "karaganda",
@@ -24334,6 +24486,13 @@
   ],
   "avatar": "d77cf2b29092c529.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:базис ст": {
+  "name": "БАЗИС-СТ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "karaganda:байбеков": {
   "name": "БАЙБЕКОВ",
@@ -25939,6 +26098,13 @@
   ],
   "avatar": "2160e0bd36b5c429.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:гришкова жаннета": {
+  "name": "ГРИШКОВА ЖАННЕТА",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
  },
  "kostanay:группа компаний аллюр allur": {
   "name": "Группа компаний Аллюр (Allur)",
@@ -27646,7 +27812,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001062151780",
-  "avatar_checked_at": "2026-10-28T15:44:53+00:00",
+  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28483,6 +28649,13 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "semey:восточный": {
+  "name": "Восточный",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00"
+ },
  "semey:гелиос": {
   "name": "Гелиос",
   "city": "semey",
@@ -28708,6 +28881,15 @@
   ],
   "avatar": "29febd9f06cfba54.jpg",
   "avatar_source": "website"
+ },
+ "semey:қымызхана 1": {
+  "name": "ҚЫМЫЗХАНА #1",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T16:44:09+00:00",
+  "instagram": "kymyzkhana_semey1",
+  "source": "https://2gis.kz/semej/firm/70000001105596412"
  },
  "shymkent:altyn bala kz": {
   "name": "Altyn-bala.kz",

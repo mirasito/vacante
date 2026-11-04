@@ -22,6 +22,8 @@ export interface Vacancy {
   lon?: number;
   /** Точка из OpenStreetMap: рядом с расстоянием пишем «© OpenStreetMap» (так требует лицензия ODbL). */
   osm?: boolean;
+  /** Точка примерная: адрес не нашёлся точно, она посередине улицы или микрорайона. */
+  approx?: boolean;
   posted_at: string;
   top?: boolean;
   url: string;

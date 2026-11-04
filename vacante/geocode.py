@@ -9,9 +9,11 @@ geocode.json в ветке data, ненайденный адрес спраши�
 geocode_limit при ручном запуске «Обновления вакансий»). Данные OpenStreetMap под лицензией ODbL: приложение
 пишет «© OpenStreetMap» рядом с расстоянием.
 
-Берём только точный ответ: дом, здание, заведение или небольшой микрорайон (рамка ответа не больше 1,5 км
-по диагонали) и не дальше 50 км от центра города вакансии. Адрес без номера дома и без ТЦ, БЦ или ЖК
-(«Есильский район») не ищем: точки у такого адреса нет.
+Точный ответ — дом, здание или заведение: рамка найденного не больше 1,5 км по диагонали. Если точно не
+нашлось, берём примерную точку: середину найденной улицы, микрорайона или ЖК, если они не больше 5 км, а когда
+по адресу нет ничего, ищем ещё раз без номера дома. Такая точка помечена примерной (approx), и приложение пишет
+«Примерно N км от дома». Точка всегда не дальше 50 км от центра города вакансии. Адрес без номера дома и без
+ТЦ, БЦ или ЖК («Есильский район») не ищем: точки у такого адреса нет.
 """
 
 from __future__ import annotations
@@ -41,12 +43,18 @@ LIMIT = 60  # запросов за прогон сбора: около мину
 PAUSE = 1.1  # секунд перед каждым запросом
 RETRY_MISS = timedelta(days=30)
 KEEP = timedelta(days=60)  # запись кеша, которой давно не пользовались, уходит
-MAX_BOX_KM = 1.5
+MAX_BOX_KM = 1.5  # точный ответ: дом, здание, заведение
+APPROX_BOX_KM = 5.0  # примерный: улица, микрорайон, ЖК — точка посередине, расстояние «примерно»
+VERSION = 2  # с этой версии кеш знает примерные точки: ненайденные адреса прошлых версий спрашиваем заново
 BOX = (0.3, 0.45)  # окно поиска вокруг центра города: ±0,3° широты и ±0,45° долготы, около 35 км
 RETRY_AFTER = 5.0  # секунд до повтора запроса, на который Nominatim не ответил (таймаут, обрыв, 5xx)
 MAX_FAILURES = 3  # столько адресов подряд без ответа и после повтора: Nominatim нездоров, хватит на этот прогон
 _PARENS = re.compile(r"\s*\([^)]*\)?|…")
 _SPACES = re.compile(r"\s+")
+# Номер дома в конце адреса: «Абая 10», «Казыбек би, 139», «Гоголя 203/73», «дом 47», «Нокина34е»
+_HOUSE = re.compile(r"(?i)[\s,]*(?:(?:дом|д\.|здание)\s*)?№?\s*\d+\s*[а-яёa-z]?(?:\s*[/\\-]\s*\d+\s*[а-яёa-z]?)*[\s,.]*$")
+# Если после них число, это имя места, а не дом: «микрорайон 8», «мкр 5»
+_NUMBERED = re.compile(r"(?i)(?:мкр|мкрн|микрорайон|квартал|блок)\.?$")
 
 
 class Stop(Exception):
@@ -70,6 +78,17 @@ def query(v: Vacancy) -> str | None:
     return _SPACES.sub(" ", f"{address}, {name}")
 
 
+def street_query(q: str) -> str | None:
+    """Тот же запрос без номера дома: «ул. Абая 10, Алматы» → «ул. Абая, Алматы». None, если номера нет."""
+    address, _, city = q.rpartition(", ")
+    street = _HOUSE.sub("", address).strip(" ,.")
+    if street == address or not re.search(r"[^\W\d_]{3}", street):
+        return None
+    if _NUMBERED.search(street) and not re.search(r"\d", street):
+        return None  # «микрорайон 8» без восьмёрки — уже не адрес
+    return f"{street}, {city}"
+
+
 def load(data_dir: Path) -> dict[str, dict]:
     path = data_dir / FILE
     return json.loads(path.read_text("utf-8")) if path.exists() else {}
@@ -81,9 +100,8 @@ def save(data_dir: Path, cache: dict[str, dict]) -> None:
     (data_dir / FILE).write_text(payload + "\n", "utf-8")
 
 
-def lookup(client: httpx.Client, q: str, city: str, sleep: Callable[[float], None] = time.sleep
-           ) -> tuple[float, float] | None:
-    """Точка адреса или None, если Nominatim не знает его точно.
+def search(client: httpx.Client, q: str, city: str, sleep: Callable[[float], None] = time.sleep) -> dict | None:
+    """Первый ответ Nominatim или None, если он ничего не нашёл.
 
     Таймаут, обрыв или сбой сервера повторяем один раз, а не вышло — Skip: адрес спросим в следующий прогон.
     429 и 403 — Stop: дальше в этот прогон не спрашивать."""
@@ -114,16 +132,36 @@ def lookup(client: httpx.Client, q: str, city: str, sleep: Callable[[float], Non
         break
     else:
         raise Skip(failure)
-    if not isinstance(found, list) or not found or not isinstance(found[0], dict):
-        return None
+    return found[0] if isinstance(found, list) and found and isinstance(found[0], dict) else None
+
+
+def place_point(found: dict, city: str) -> tuple[tuple[float, float], bool] | None:
+    """Точка ответа Nominatim и примерная ли она, или None, если ответ слишком размытый или не в городе.
+
+    Точка Nominatim — середина найденного места: у дома сам дом, у улицы её середина, у микрорайона центр."""
     try:
-        lat, lon = float(found[0]["lat"]), float(found[0]["lon"])
-        south, north, west, east = (float(x) for x in found[0]["boundingbox"])
+        lat, lon = float(found["lat"]), float(found["lon"])
+        south, north, west, east = (float(x) for x in found["boundingbox"])
     except (KeyError, TypeError, ValueError):
         return None
-    if distance_km((south, west), (north, east)) > MAX_BOX_KM:
-        return None  # улица целиком, район или весь город: где работа, не понять
-    return city_point(city, lat, lon)
+    box = distance_km((south, west), (north, east))
+    if box > APPROX_BOX_KM:
+        return None  # длинная улица, район или весь город: где работа, не понять даже примерно
+    point = city_point(city, lat, lon)
+    return (point, box > MAX_BOX_KM) if point else None
+
+
+def lookup(client: httpx.Client, q: str, city: str, sleep: Callable[[float], None] = time.sleep
+           ) -> tuple[tuple[float, float], bool] | None:
+    """Точка адреса и примерная ли она, или None. Если по адресу ничего нет, ищем его без номера дома:
+    такая точка, середина улицы, всегда примерная."""
+    found = search(client, q, city, sleep)
+    if found is None and (street := street_query(q)) is not None:
+        if (found := search(client, street, city, sleep)) is None:
+            return None
+        point = place_point(found, city)
+        return (point[0], True) if point else None
+    return place_point(found, city) if found is not None else None
 
 
 def limit_from_env() -> int:
@@ -145,7 +183,7 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
         if (q := query(v)) is not None:
             wanted.setdefault(q.lower(), (q, v.city or "", []))[2].append(v)
     order = sorted(wanted, key=lambda k: max(v.posted_at for v in wanted[k][2]), reverse=True)
-    stats = {"addresses": len(wanted), "cached": 0, "asked": 0, "found": 0, "failed": 0}
+    stats = {"addresses": len(wanted), "cached": 0, "asked": 0, "found": 0, "approx": 0, "failed": 0}
     own = client is None and limit > 0
     if own:
         client = httpx.Client(headers={"User-Agent": USER_AGENT}, timeout=20)
@@ -155,11 +193,12 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
         for key in order:
             q, city, items = wanted[key]
             entry = cache.get(key)
-            if entry is not None and (entry.get("p") is not None or entry.get("at", "") >= retry_before):
+            if entry is not None and (entry.get("p") is not None
+                                      or (entry.get("v") == VERSION and entry.get("at", "") >= retry_before)):
                 stats["cached"] += 1
             elif client is not None and stopped is None and stats["asked"] + stats["failed"] < limit:
                 try:
-                    point = lookup(client, q, city, sleep)
+                    result = lookup(client, q, city, sleep)
                 except Skip as exc:
                     stats["failed"] += 1
                     failures += 1
@@ -171,15 +210,19 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
                     continue
                 failures = 0
                 stats["asked"] += 1
-                entry = cache[key] = {"p": list(point) if point else None, "at": today}
+                entry = cache[key] = {"p": list(result[0]) if result else None, "at": today, "v": VERSION}
+                if result and result[1]:
+                    entry["a"] = True  # примерная точка
             else:
                 continue
             entry["used"] = today
             if entry.get("p"):
                 stats["found"] += 1
+                stats["approx"] += bool(entry.get("a"))
                 for v in items:
                     v.lat, v.lon = entry["p"]
                     v.geo = SOURCE
+                    v.approx = bool(entry.get("a"))
     finally:
         if own and client is not None:
             client.close()
@@ -195,5 +238,5 @@ def locate(vacancies: list[Vacancy], data_dir: Path, now: datetime, client: http
 
 def summary(stats: dict) -> str:
     text = (f"адресов {stats['addresses']}, из кеша {stats['cached']}, запросов {stats['asked']}, "
-            f"с точкой {stats['found']}, без ответа {stats['failed']}")
+            f"с точкой {stats['found']} (примерной {stats['approx']}), без ответа {stats['failed']}")
     return text + (f"; остановлен: {stats['stopped']}" if stats.get("stopped") else "")

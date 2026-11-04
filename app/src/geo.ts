@@ -30,10 +30,15 @@ export function kmFromHome(home: Point | null | undefined, v: Vacancy): number |
 
 /**
  * «2,4 км от дома». Дом округлён до 300–500 метров, поэтому ближе километра пишем «меньше 1 км»,
- * а дальше 10 км — целыми. null, если расстояния нет или дом в другом городе.
+ * а дальше 10 км — целыми. approx — точка работы примерная (середина улицы или микрорайона):
+ * «Примерно 3 км от дома», целыми. null, если расстояния нет или дом в другом городе.
  */
-export function distanceLabel(km: number | null, lang: Lang): string | null {
+export function distanceLabel(km: number | null, lang: Lang, approx = false): string | null {
   if (km === null || km > SHOW_KM) return null;
+  if (approx) {
+    const n = Math.max(1, Math.round(km));
+    return lang === 'kk' ? `Үйден шамамен ${n} км` : `Примерно ${n} км от дома`;
+  }
   if (km < 1) return lang === 'kk' ? 'Үйден 1 км-ден жақын' : 'Меньше 1 км от дома';
   const n = km < 10 ? (Math.round(km * 10) / 10).toString().replace('.', ',') : String(Math.round(km));
   return lang === 'kk' ? `Үйден ${n} км` : `${n} км от дома`;

@@ -15,7 +15,7 @@ type Props = { v: Vacancy; lang: Lang; c: Colors; full?: boolean; home?: Point |
 export function VacancyCard({ v, lang, c, full, home }: Props) {
   const pay = i18n.pay(v, lang);
   const monthly = i18n.monthly(v, lang);
-  const away = distanceLabel(kmFromHome(home, v), lang);
+  const away = distanceLabel(kmFromHome(home, v), lang, v.approx);
   const chips = [v.schedule, ...i18n.perks(v, lang)].filter(Boolean) as string[];
   const Body = full ? ScrollView : View;
   return (

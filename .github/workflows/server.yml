@@ -6,7 +6,8 @@
 #   переменная SERVER_USER) и SERVER_SECRET (длинная случайная строка, из неё выводятся ключи).
 # Первая выкладка кладёт ключ выкладки и выключает вход по паролю, а ключ из SERVER_SSH_KEY убирает
 # с сервера. Дальше вход только по ключу выкладки; он каждый раз выводится из того же секрета
-# (server/deploy/keys.py), поэтому секрет после первой выкладки не меняют.
+# (server/deploy/keys.py), поэтому секрет после первой выкладки не меняют, а SERVER_SSH_KEY можно удалить.
+# После выкладки проверяет /health и вход из приложения (server/deploy/smoke.py).
 # Сервер из WIPE_ONCE перед первой установкой стирается до системы (server/deploy/wipe.sh).
 name: Сервер
 
@@ -42,7 +43,7 @@ jobs:
         run: |
           bash -n deploy/*.sh
           shellcheck deploy/*.sh
-          python3 -m py_compile deploy/keys.py deploy/first_key.py
+          python3 -m py_compile deploy/keys.py deploy/first_key.py deploy/smoke.py
           python3 deploy/first_key.py --self-test
 
   deploy:
@@ -68,10 +69,12 @@ jobs:
             echo "::error::Для первого входа по ключу нужен ещё секрет SERVER_SECRET: длинная случайная строка, из неё выводятся ключи выкладки и резервных копий"
             exit 1
           fi
-          if [ -n "$SERVER_HOST" ] && { [ -n "$SERVER_PASSWORD" ] || [ -n "$SERVER_SSH_KEY" ]; } && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
+          # Ключи выкладки выводятся из SERVER_SECRET или SERVER_PASSWORD, поэтому после первой выкладки
+          # секрет SERVER_SSH_KEY можно удалить: выкладка идёт дальше без него
+          if [ -n "$SERVER_HOST" ] && { [ -n "$SERVER_PASSWORD" ] || [ -n "$SERVER_SECRET" ]; } && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
             echo "ready=true" >> "$GITHUB_OUTPUT"
           else
-            echo "::notice::Нет секретов SERVER_HOST и SERVER_PASSWORD (или SERVER_SSH_KEY), выкладку сервера пропускаю"
+            echo "::notice::Нет секретов SERVER_HOST и SERVER_PASSWORD (или SERVER_SSH_KEY и SERVER_SECRET), выкладку сервера пропускаю"
           fi
 
       - uses: actions/checkout@v4
@@ -122,6 +125,10 @@ jobs:
           if "$KEYS/ssh" true 2>/dev/null; then
             echo "Вход по ключу работает"
             exit 0
+          fi
+          if [ -z "$SERVER_SSH_KEY" ] && [ -z "$SERVER_PASSWORD" ]; then
+            echo "::error::Ключ выкладки к серверу не подходит, а для первого входа нет секрета SERVER_SSH_KEY или SERVER_PASSWORD. Если сервер новый, добавьте один из них"
+            exit 1
           fi
           first=(-o UserKnownHostsFile="$KEYS/known_hosts.first" -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20)
           with_key=(-i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes "${first[@]}")
@@ -244,6 +251,7 @@ jobs:
       - name: Проверка HTTPS
         if: steps.secrets.outputs.ready
         run: |
+          api=
           for host in api.vacante.kz p.vacante.kz; do
             ip=$(getent ahostsv4 "$host" | awk 'NR == 1 { print $1 }' || true)
             if [ "$ip" != "$SERVER_HOST" ]; then
@@ -252,10 +260,15 @@ jobs:
             fi
             if curl -fsS --max-time 20 --retry 6 --retry-delay 10 --retry-all-errors "https://$host/health"; then
               echo " ← https://$host работает"
+              [ "$host" != api.vacante.kz ] || api=1
             else
               echo "::warning::https://$host пока не отвечает: сертификат выпускается в первые минуты после появления записи DNS. Запустите workflow ещё раз через 10 минут"
             fi
           done
+          # Вход из приложения: подпись Telegram и CORS для vacante.kz (server/deploy/smoke.py)
+          if [ -n "$api" ]; then
+            python3 server/deploy/smoke.py https://api.vacante.kz
+          fi
 
       - name: Убрать ключи
         if: always()

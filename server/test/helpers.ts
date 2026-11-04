@@ -65,6 +65,8 @@ export function fakeBot(sent: Sent[] = [], files: Map<string, Buffer> = new Map(
 export interface TestServer {
   db: Db;
   config: Config;
+  /** Порт на 127.0.0.1: для проверок, которые ходят к серверу сами (deploy/smoke.py). */
+  port: number;
   sent: Sent[];
   /** Файлы, которые бот «получил»: file_id → байты. */
   files: Map<string, Buffer>;
@@ -106,6 +108,7 @@ export async function startServer(overrides: Partial<Deps> = {}, env: Record<str
   return {
     db,
     config,
+    port,
     sent,
     files,
     async idle() {

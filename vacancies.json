@@ -1,5 +1,33 @@
 [
  {
+  "id": "bot-9",
+  "title": "Аниматор",
+  "category": "other",
+  "city": "ust-kamenogorsk",
+  "salary_min": 5000,
+  "salary_max": 15000,
+  "salary_period": "day",
+  "schedule": "5/2",
+  "perks": [
+   "Обучение"
+  ],
+  "employer": "Фантазия детство",
+  "text": "Обязанности\n— Участие в детских спектаклях в костюмах ростовых кукол\n— Выступления в детских садах и школах\n— Разучивание сценария и участие в репетициях\n— Общение с детьми, создание весёлой и праздничной атмосферы\nТребования\n— Ответственность, пунктуальность и активность\n— Артистичность, позитивность и любовь к детям\n— Готовность работать в команде\n— Опыт работы не обязателен, всему научим\nУсловия\n— Работа в творческом коллективе «Фантазия детства»\n— Гибкий график по предварительной договорённости\n— Оплата сдельная, зависит от количества выступлений\n— Работа в Усть-Каменогорске и ближайших районах\n— Обучение и репетиции перед выступлениями",
+  "source": "bot",
+  "source_url": "https://t.me/vacantekz_bot?start=apply_9",
+  "posted_at": "2026-11-04T19:30:49+00:00",
+  "fingerprint": "a3e499a4c8dfeb67",
+  "also_seen_in": [],
+  "address": "Назарбаева 51",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 49.9747,
+  "lon": 82.5867,
+  "geo": "osm",
+  "approx": false
+ },
+ {
   "id": "hh-139139836",
   "title": "Помощник Флориста (\"Тех Флорист\")",
   "category": "retail",
@@ -16966,9 +16994,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 43.2267,
+  "lon": 76.9006,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -17100,9 +17128,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 43.2547,
+  "lon": 76.8388,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -17296,9 +17324,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1036,
+  "lon": 71.4237,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -17624,9 +17652,9 @@
   "contact": [
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1804,
+  "lon": 71.4618,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -17997,9 +18025,9 @@
   "contact": [
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1327,
+  "lon": 71.418,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -19169,9 +19197,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1603,
+  "lon": 71.4842,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -19788,9 +19816,9 @@
    "whatsapp",
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.2344,
+  "lon": 71.3734,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -20765,9 +20793,9 @@
    "whatsapp",
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1812,
+  "lon": 71.379,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -21009,9 +21037,9 @@
   "contact": [
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 43.2476,
+  "lon": 76.8543,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -21065,9 +21093,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 43.2334,
+  "lon": 76.9568,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -22190,9 +22218,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1893,
+  "lon": 71.4965,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -22357,9 +22385,9 @@
    "whatsapp",
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 43.6469,
+  "lon": 51.1485,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -23619,9 +23647,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1084,
+  "lon": 71.4305,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -23958,9 +23986,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.0891,
+  "lon": 71.4073,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -89363,9 +89391,9 @@
    "whatsapp",
    "phone"
   ],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 43.2334,
+  "lon": 76.9568,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -120667,9 +120695,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1812,
+  "lon": 71.379,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -222473,9 +222501,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1893,
+  "lon": 71.4965,
+  "geo": "osm",
   "approx": false
  },
  {
@@ -222499,9 +222527,9 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
+  "lat": 51.1893,
+  "lon": 71.4965,
+  "geo": "osm",
   "approx": false
  },
  {

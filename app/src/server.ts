@@ -14,7 +14,7 @@ export interface Account {
 }
 
 export type Experience = 'none' | 'lt1' | '1to3' | 'gt3';
-export type Employment = 'full' | 'shifts' | 'part' | 'rotation';
+export type Employment = 'full' | 'shifts' | 'night' | 'flexible' | 'part' | 'weekends' | 'rotation';
 export type Start = 'today' | 'week' | '2weeks' | 'later';
 export type PayPeriod = 'month' | 'shift';
 export type Language = 'kk' | 'ru' | 'en';

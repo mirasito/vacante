@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { copyText, haptic, openUrl } from '../platform';
+import { copyText, haptic, openUrl, openWhatsapp } from '../platform';
 import { phoneLabel } from '../profile/texts';
 import {
   ApiError,
@@ -21,7 +21,7 @@ import {
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
 import { Button, Check, styles as ui } from '../ui';
-import { methodsFor, needsContact, sourceOf, waUrl } from './model';
+import { methodsFor, needsContact, sourceOf } from './model';
 import { A } from './texts';
 
 type Step = 'choose' | 'contact' | 'confirm' | 'done';
@@ -143,7 +143,7 @@ export function ApplySheet(props: {
   const toWhatsapp = () => {
     if (!contact?.whatsapp) return;
     haptic();
-    openUrl(waUrl(contact.whatsapp, full()));
+    openWhatsapp(full(), contact.whatsapp);
     opened('whatsapp');
   };
 

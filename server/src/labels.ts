@@ -35,7 +35,10 @@ const EXPERIENCE: Record<Profile["experience"], [string, string]> = {
 const EMPLOYMENT: Record<Profile["employment"][number], [string, string]> = {
   full: ["полный день", "толық күн"],
   shifts: ["смены", "ауысым"],
+  night: ["ночные смены", "түнгі ауысым"],
+  flexible: ["гибкий график", "икемді кесте"],
   part: ["подработка", "қосымша жұмыс"],
+  weekends: ["по выходным", "демалыс күндері"],
   rotation: ["вахта", "вахта"],
 };
 

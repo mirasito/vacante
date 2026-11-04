@@ -63342,10 +63342,10 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": 51.0952,
-  "lon": 71.4347,
-  "geo": "osm",
-  "approx": true
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false
  },
  {
   "id": "rabotaaktau-142085",
@@ -121984,10 +121984,10 @@
   "contact": [
    "phone"
   ],
-  "lat": 43.2205,
-  "lon": 76.6305,
-  "geo": "osm",
-  "approx": true
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false
  },
  {
   "id": "hh-138981716",
@@ -182511,10 +182511,10 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": 43.1849,
-  "lon": 77.0215,
-  "geo": "osm",
-  "approx": true
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false
  },
  {
   "id": "hh-138580948",
@@ -185718,10 +185718,10 @@
   "top_until": null,
   "title_kk": null,
   "contact": [],
-  "lat": 43.2096,
-  "lon": 76.8408,
-  "geo": "osm",
-  "approx": true
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false
  },
  {
   "id": "hh-127598044",

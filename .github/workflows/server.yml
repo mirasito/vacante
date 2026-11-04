@@ -42,7 +42,7 @@ jobs:
         run: |
           bash -n deploy/*.sh
           shellcheck deploy/*.sh
-          python3 -m py_compile deploy/keys.py
+          python3 -m py_compile deploy/keys.py deploy/first_key.py
 
   deploy:
     needs: test
@@ -105,7 +105,9 @@ jobs:
           EOF
           chmod 700 "$KEYS/ssh"
           if [ -n "$SERVER_SSH_KEY" ]; then
-            (umask 077 && printf '%s\n' "$SERVER_SSH_KEY" > "$KEYS/first_key")
+            # Ключ часто портится при копировании (переводы строк Windows, пробелы вместо переводов
+            # строк): first_key.py собирает его заново из текста между -----BEGIN и -----END
+            python3 server/deploy/first_key.py "$KEYS/first_key"
             if ! ssh-keygen -y -P '' -f "$KEYS/first_key" > "$KEYS/first_key.pub"; then
               echo "::error::В секрете SERVER_SSH_KEY не закрытый ключ SSH без пароля. Нужен весь ключ, от -----BEGIN до -----END"
               exit 1

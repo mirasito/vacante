@@ -1244,6 +1244,13 @@
   "instagram": "reny_aktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001109863379"
  },
+ "aktobe:saya thermal": {
+  "name": "SAYA THERMAL",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "aktobe:sms group kazakhstan": {
   "name": "SMS group Kazakhstan",
   "city": "aktobe",
@@ -2011,6 +2018,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
+ },
+ "almaty:ais__team": {
+  "name": "Ais__team",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00",
+  "instagram": "ais__team",
+  "source": "https://2gis.kz/almaty/firm/70000001083691267"
  },
  "almaty:aitas kz": {
   "name": "Aitas KZ",
@@ -2818,6 +2834,13 @@
    "website"
   ]
  },
+ "almaty:avenue танатаров а м": {
+  "name": "Avenue (ТАНАТАРОВ А.М)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "almaty:avital kz": {
   "name": "Avital.kz",
   "city": "almaty",
@@ -3313,6 +3336,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:bsg invest qazaqstan": {
+  "name": "BSG Invest Qazaqstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "almaty:bta almaty airport services": {
   "name": "BTA Almaty - Airport Services",
@@ -5097,6 +5127,13 @@
   ],
   "avatar": "06adba46dc480da2.jpg",
   "avatar_source": "website"
+ },
+ "almaty:hyundai auto almaty": {
+  "name": "Hyundai Auto Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "almaty:hyundai premium batys": {
   "name": "Hyundai Premium Batys",
@@ -7754,6 +7791,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "almaty:sportico vostok": {
+  "name": "SPORTICO VOSTOK",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "almaty:sporttrade": {
   "name": "ТОО SPORTTRADE",
   "city": "almaty",
@@ -9988,6 +10032,13 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "almaty:вассу": {
+  "name": "ИП Вассу",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "almaty:виктория": {
   "name": "Виктория",
   "city": "almaty",
@@ -10051,6 +10102,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:гавайи фитнес": {
+  "name": "Гавайи Фитнес",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "almaty:гайдаров": {
   "name": "Гайдаров",
@@ -12307,6 +12365,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:охранное агентство": {
+  "name": "Охранное агентство",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "almaty:парасат": {
   "name": "Парасат",
@@ -14600,6 +14665,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "astana:asylym": {
+  "name": "Asylym",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "astana:atamiras s": {
   "name": "ATAMIRAS.S",
@@ -17526,6 +17598,13 @@
   "instagram": "saniya.bakery",
   "source": "https://2gis.kz/astana/firm/70000001027000250"
  },
+ "astana:sauda innovations": {
+  "name": "Sauda Innovations",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "astana:sbc group": {
   "name": "SBC Group",
   "city": "astana",
@@ -18222,6 +18301,20 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "astana:vm premium astana": {
+  "name": "VM Premium Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00",
+  "instagram": "changan_vmpremium.astana",
+  "website": "http://www.changan-vmpremium.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001101708661",
+  "avatar_checked_at": "2026-11-04T13:44:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:vvcg": {
   "name": "Vvcg",
   "city": "astana",
@@ -18341,12 +18434,26 @@
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
  },
+ "astana:zan_pro kz": {
+  "name": "zan_pro.kz",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "astana:zanger": {
   "name": "ZANGER",
   "city": "astana",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "astana:zmt invest": {
+  "name": "ZMT Invest",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "astana:абат сервис ltd": {
   "name": "Абат сервис LTD",
@@ -19631,6 +19738,13 @@
    "website"
   ]
  },
+ "astana:женский молодежный отдел": {
+  "name": "Женский молодежный отдел",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "astana:жеті аспан супермаркет galmart": {
   "name": "Жеті Аспан (Супермаркет galmart)",
   "city": "astana",
@@ -19996,6 +20110,13 @@
   ],
   "avatar": "1d6b15fcaa547248.jpg",
   "avatar_source": "website"
+ },
+ "astana:кгу центр социального обслуживания жәрдем акимата города астаны": {
+  "name": "КГУ Центр социального обслуживания Жәрдем акимата города Астаны",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "astana:керуен": {
   "name": "Керуен",
@@ -22261,6 +22382,13 @@
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
  },
+ "astana:юридическая компания нцб": {
+  "name": "ЮРИДИЧЕСКАЯ КОМПАНИЯ НЦБ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
+ },
  "astana:яндекс": {
   "name": "Яндекс",
   "city": "astana",
@@ -24145,6 +24273,15 @@
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
  },
+ "karaganda:каз тим комир": {
+  "name": "Каз Тим Комир",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00",
+  "instagram": "ugol_karaganda_komir",
+  "source": "https://2gis.kz/karaganda/firm/70000001103693800"
+ },
  "karaganda:казахмедимпорт": {
   "name": "КазахМедИмпорт",
   "city": "karaganda",
@@ -25137,6 +25274,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
+ },
+ "kostanay:es group": {
+  "name": "Es group",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "kostanay:goldman astana": {
   "name": "Goldman Astana",
@@ -28370,6 +28514,13 @@
   "checked_at": "2026-11-02T11:44:06+00:00",
   "instagram": "rixosborovoe",
   "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
+ },
+ "shymkent:cac казахстан": {
+  "name": "CAC Казахстан",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-04T13:44:39+00:00"
  },
  "shymkent:celviano": {
   "name": "CELVIANO",

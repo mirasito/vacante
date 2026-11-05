@@ -2515,6 +2515,22 @@
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
  },
+ "almaty:almaly travel": {
+  "name": "ALMALY-TRAVEL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "instagram": "travelalmaly.world",
+  "website": "https://almalytravel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117309239",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dc39acf380b65a17.jpg",
+  "avatar_source": "website"
+ },
  "almaty:almata_lenta": {
   "name": "almata_lenta",
   "city": "almaty",
@@ -6293,6 +6309,15 @@
    "website"
   ]
  },
+ "almaty:koreansklad_kz": {
+  "name": "KOREANSKLAD_KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "instagram": "koreansklad_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001105024046"
+ },
  "almaty:koton textile котон текстиль": {
   "name": "KOTON TEXTILE (КОТОН Текстиль)",
   "city": "almaty",
@@ -6955,6 +6980,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:moonline": {
+  "name": "MOONLINE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
  },
  "almaty:moore studio": {
   "name": "Moore Studio",
@@ -10075,6 +10107,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "almaty:акжаркын": {
+  "name": "Акжаркын",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
+ },
  "almaty:акишев а д": {
   "name": "Акишев А.Д.",
   "city": "almaty",
@@ -12901,6 +12940,19 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "almaty:мад мастер": {
+  "name": "Мад Мастер",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "website": "https://mudmaster.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001041844274",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:мадина": {
   "name": "Мадина",
   "city": "almaty",
@@ -14898,6 +14950,19 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "almaty:тссп казахстан": {
+  "name": "ТССП Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "website": "https://www.tssp.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001091786685",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:турецкой": {
   "name": "Турецкой",
   "city": "almaty",
@@ -15592,6 +15657,21 @@
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
  },
+ "almaty:яндекс еда": {
+  "name": "Яндекс.Еда",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "website": "https://eda.yandex/",
+  "source": "https://2gis.kz/almaty/firm/70000001038999051",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4ccfc5300d64bad2.jpg",
+  "avatar_source": "website"
+ },
  "almaty:яндекс такси": {
   "name": "Яндекс Такси",
   "city": "almaty",
@@ -16005,6 +16085,15 @@
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
  },
+ "astana:arzan mix": {
+  "name": "Arzan Mix",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "instagram": "arzanmix.kz",
+  "source": "https://2gis.kz/astana/firm/70000001030814289"
+ },
  "astana:asai clinic": {
   "name": "ASAI-CLINIC",
   "city": "astana",
@@ -16353,6 +16442,13 @@
   ],
   "avatar": "eb531deb9802e070.jpg",
   "avatar_source": "website"
+ },
+ "astana:br building": {
+  "name": "BR BUILDING",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
  },
  "astana:brand": {
   "name": "Brand",
@@ -17332,6 +17428,13 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "astana:gs shanyrak group": {
+  "name": "GS SHANYRAK GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
+ },
  "astana:gsco group": {
   "name": "GSCO Group",
   "city": "astana",
@@ -17597,6 +17700,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "astana:interkom company": {
+  "name": "Interkom Company",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "instagram": "interkom.kz",
+  "telegram": "interkomkz",
+  "source": "https://2gis.kz/astana/firm/70000001019502823",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "33db996fd7c52229.jpg",
+  "avatar_source": "telegram"
  },
  "astana:intermode интермоде": {
   "name": "Intermode (Интермоде)",
@@ -20284,6 +20403,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
+ },
+ "astana:zerdeli global studies": {
+  "name": "Zerdeli Global Studies",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
  },
  "astana:zerdeli world": {
   "name": "ZERDELI-WORLD",
@@ -25638,6 +25764,19 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "karaganda:erg kazakhstan": {
+  "name": "ERG Kazakhstan",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "website": "https://www.erg.kz/",
+  "source": "https://www.erg.kz/en/about",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:eurasian machinery евразиан машинери": {
   "name": "Eurasian Machinery (Евразиан Машинери)",
   "city": "karaganda",
@@ -25681,6 +25820,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:flsmidth флсмидс": {
+  "name": "FLSmidth (ФЛСмидс)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "website": "https://www.flsmidth.com/",
+  "source": "https://2gis.kz/karaganda/firm/70000001047393105",
+  "avatar_checked_at": "2026-11-05T09:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0095aebda7dee0af.jpg",
+  "avatar_source": "website"
  },
  "karaganda:focus on": {
   "name": "Focus On",
@@ -27762,6 +27916,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
+ },
+ "kostanay:glasman trade": {
+  "name": "GLASMAN TRADE",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00",
+  "instagram": "glasman.kz",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035190134"
  },
  "kostanay:goldman astana": {
   "name": "Goldman Astana",
@@ -30741,6 +30904,13 @@
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
  },
+ "semey:svt group": {
+  "name": "SVT Group",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
+ },
  "semey:tamyr": {
   "name": "TAMYR",
   "city": "semey",
@@ -30962,6 +31132,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "semey:лентелефонстрой ум": {
+  "name": "Лентелефонстрой-УМ",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
  },
  "semey:мереке": {
   "name": "Мереке",
@@ -33248,6 +33425,13 @@
   "v": 3,
   "checked_at": "2026-11-04T12:44:26+00:00"
  },
+ "turkestan:лукманова": {
+  "name": "Лукманова",
+  "city": "turkestan",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
+ },
  "turkestan:нурлан": {
   "name": "Нурлан",
   "city": "turkestan",
@@ -34382,6 +34566,13 @@
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
  },
+ "ust-kamenogorsk:nayman qurylys": {
+  "name": "NAYMAN Qurylys",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
+ },
  "ust-kamenogorsk:oskemenagroprodukt": {
   "name": "OskemenAgroProdukt",
   "city": "ust-kamenogorsk",
@@ -34789,6 +34980,13 @@
   ],
   "avatar": "f85f7dae75dcac7c.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:исмаилов д в": {
+  "name": "Исмаилов Д.В.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T09:44:32+00:00"
  },
  "ust-kamenogorsk:казахские домашние сети": {
   "name": "Казахские Домашние Сети",

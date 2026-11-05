@@ -247,6 +247,13 @@
   "instagram": "cafe.garden.aktau",
   "source": "https://2gis.kz/aktau/firm/70000001061020502"
  },
+ "aktau:green house limited": {
+  "name": "Green House Limited",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
+ },
  "aktau:jamesburger 29мкр 229зд": {
   "name": "Jamesburger 29мкр 229зд",
   "city": "aktau",
@@ -979,6 +986,15 @@
   "instagram": "svezhak_bar_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001028524104"
  },
+ "aktau:сезон": {
+  "name": "СЕЗОН",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "sezon.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001091826269"
+ },
  "aktau:смак": {
   "name": "Смак",
   "city": "aktau",
@@ -1147,6 +1163,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "aktobe:askona life kazakhstan аскона лайф казахстан": {
+  "name": "Askona Life Kazakhstan (Аскона Лайф Казахстан)",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "askona_official.kz",
+  "website": "https://askona.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001105697533",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
@@ -3750,6 +3780,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "almaty:central optic": {
+  "name": "CENTRAL OPTIC",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "almaty.optica",
+  "telegram": "almatyoptica1965",
+  "website": "http://almatyoptica.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117353348",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "1c4ed6b2276ac319.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:centrion": {
   "name": "CENTRION",
@@ -7516,6 +7564,15 @@
   "avatar": "06908eb210823849.jpg",
   "avatar_source": "website"
  },
+ "almaty:power sport": {
+  "name": "Power Sport",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "power.sports.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001027664132"
+ },
  "almaty:pozitiv energy": {
   "name": "Pozitiv Energy",
   "city": "almaty",
@@ -9940,7 +9997,7 @@
   "instagram": "aksaynan",
   "website": "http://aksaynan.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000836798",
-  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12823,6 +12880,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
+ },
+ "almaty:медилэнд": {
+  "name": "МЕДИЛЭНД",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "medilend.almaty",
+  "website": "http://medilend.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001090536713",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8eba3cc8c550ec7f.jpg",
+  "avatar_source": "website"
  },
  "almaty:медина": {
   "name": "Медина",
@@ -15874,12 +15947,28 @@
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
  },
+ "astana:atametgroup": {
+  "name": "AtametGroup",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
+ },
  "astana:atamiras s": {
   "name": "ATAMIRAS.S",
   "city": "astana",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "astana:atlant estate": {
+  "name": "ATLANT ESTATE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "atlant_estate.kz",
+  "source": "https://2gis.kz/astana/firm/70000001113258575"
  },
  "astana:auto center astana motor llp": {
   "name": "Auto Center Astana Motor LLP",
@@ -16603,6 +16692,13 @@
   "avatar": "49962f4f48f448d8.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/astana/firm/70000001018065777"
+ },
+ "astana:dream 1986": {
+  "name": "Dream-1986",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
  },
  "astana:drink tea": {
   "name": "Drink tea",
@@ -17953,6 +18049,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "astana:mb group kz": {
+  "name": "MB GROUP KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
  },
  "astana:meat point": {
   "name": "MEAT POINT",
@@ -21511,7 +21614,7 @@
   "instagram": "kazakhstan_med_dez",
   "website": "http://kazmeddez.kz/",
   "source": "https://2gis.kz/astana/firm/70000001020461045",
-  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24421,6 +24524,15 @@
    "website"
   ]
  },
+ "atyrau:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "mango",
+  "source": "https://2gis.kz/atyrau/firm/70000001034778630"
+ },
  "atyrau:lift capital": {
   "name": "Lift Capital",
   "city": "atyrau",
@@ -25865,6 +25977,20 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "karaganda:банк центркредит": {
+  "name": "Банк ЦентрКредит",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "centercreditkz",
+  "website": "https://www.bcc.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302848547",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:белый ветер kz": {
   "name": "Белый Ветер KZ",
   "city": "karaganda",
@@ -26348,6 +26474,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:микрофинансовая организация r finance": {
+  "name": "Микрофинансовая организация «R-Finance»",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "rfinance_mfo",
+  "website": "https://r-finance.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001088025998",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6581cd5b38eb2012.jpg",
+  "avatar_source": "website"
  },
  "karaganda:мина н с": {
   "name": "Мина Н.С.",
@@ -26853,6 +26995,22 @@
   "instagram": "too.agrokurs",
   "source": "https://2gis.kz/kostanaj/firm/70000001066707739"
  },
+ "kokshetau:агромашхолдинг kz": {
+  "name": "Агромашхолдинг KZ",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00",
+  "instagram": "amh.kz",
+  "website": "https://amh.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001034490865",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0600229501a6b0e3.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:азенов самат": {
   "name": "Азенов Самат",
   "city": "kokshetau",
@@ -26985,6 +27143,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T18:45:16+00:00"
+ },
+ "kokshetau:мк агропродукт": {
+  "name": "МК Агропродукт",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
  },
  "kokshetau:промбезтехнологии": {
   "name": "Промбезтехнологии",
@@ -27397,6 +27562,13 @@
   "avatar": "ca31b3eb6c81d9c1.jpg",
   "avatar_source": "website"
  },
+ "kostanay:акпан кост": {
+  "name": "Акпан-Кост",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
+ },
  "kostanay:алтын алма": {
   "name": "Алтын Алма",
   "city": "kostanay",
@@ -27454,6 +27626,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "kostanay:белкин а с": {
+  "name": "БЕЛКИН А.С.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
  },
  "kostanay:бостан": {
   "name": "Бостан",
@@ -28258,6 +28437,13 @@
   "checked_at": "2026-11-02T18:01:00+00:00",
   "instagram": "foodmaster_kz",
   "source": "https://2gis.kz/kyzylorda/firm/70000001076718765"
+ },
+ "kyzylorda:харвест агро холдинг": {
+  "name": "Харвест Агро Холдинг",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
  },
  "kyzylorda:чк hong tu mining group co ltd": {
   "name": "ЧК HONG TU MINING GROUP CO., LTD.",
@@ -30237,6 +30423,13 @@
    "website"
   ]
  },
+ "semey:гордорстрой": {
+  "name": "ГОРДОРСТРОЙ",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
+ },
  "semey:горно металлургическая компания васильевское": {
   "name": "Горно-металлургическая компания «Васильевское»",
   "city": "semey",
@@ -30488,6 +30681,13 @@
   "checked_at": "2026-11-04T16:44:09+00:00",
   "instagram": "kymyzkhana_semey1",
   "source": "https://2gis.kz/semej/firm/70000001105596412"
+ },
+ "shymkent:akmaral sayahat": {
+  "name": "AKMARAL SAYAHAT",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T05:44:48+00:00"
  },
  "shymkent:altyn bala kz": {
   "name": "Altyn-bala.kz",
@@ -32900,7 +33100,7 @@
   "instagram": "too_aksuat",
   "website": "http://www.tooaksuat.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001024976446",
-  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33107,7 +33307,7 @@
   "instagram": "nurzhanar.kz",
   "website": "http://nurzhanar.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001025525977",
-  "avatar_checked_at": "2026-10-29T04:44:52+00:00",
+  "avatar_checked_at": "2026-11-05T05:44:49+00:00",
   "avatar_tried": [
    "website"
   ]

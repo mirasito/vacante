@@ -1,5 +1,5 @@
 // Лист «Фильтры» из макета vacante 2.0: роль, график, зарплата от, расстояние, без опыта.
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -55,6 +55,10 @@ export function Filters(props: {
   canNear: boolean;
   /** Вакансии с учётом сферы и уже просмотренных: по ним считаем число на кнопке. */
   pool: Vacancy[];
+  /** То же вместе с вакансиями профессий по всему городу: по нему считаем, когда выбрана профессия. */
+  rolePool: Vacancy[];
+  /** Подгрузить вакансии выбранных профессий по всему городу. */
+  onRoles(titles: string[] | undefined): void;
   isNear(v: Vacancy, km: NearKm | null): boolean;
   onLocate(): void;
   onApply(f: Filter, near: NearKm | null): void;
@@ -72,7 +76,12 @@ export function Filters(props: {
     const r = props.index?.roles?.find((x) => x.title === title);
     return r && lang === 'kk' ? r.title_kk : title;
   };
-  const count = useMemo(() => pool.filter((v) => matches(v, f) && props.isNear(v, near)).length, [pool, f, near, props]);
+  const { onRoles, rolePool } = props;
+  useEffect(() => onRoles(f.roles), [f.roles, onRoles]);
+  const count = useMemo(
+    () => (f.roles?.length ? rolePool : pool).filter((v) => matches(v, f) && props.isNear(v, near)).length,
+    [pool, rolePool, f, near, props],
+  );
   const toggle = <T extends string>(list: T[] | undefined, x: T) => {
     const l = list ?? [];
     return l.includes(x) ? l.filter((y) => y !== x) : [...l, x];

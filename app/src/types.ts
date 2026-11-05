@@ -56,6 +56,8 @@ export interface Role {
   title: string;
   title_kk: string;
   category: string;
+  /** Файл всех вакансий этой профессии в городе (app/data/<город>/<key>.json), если они не влезли в ленту. */
+  key?: string;
 }
 
 export interface Index {

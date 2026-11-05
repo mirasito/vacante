@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { BackHandler, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import { loadCity, loadIndex } from './src/api';
+import { loadCity, loadIndex, loadRole } from './src/api';
 import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
 import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { Celebrate } from './src/applications/Celebrate';
@@ -126,6 +126,9 @@ function Main() {
   const [prefs, setPrefs] = useState<Prefs>({});
   const [index, setIndex] = useState<Index | null>(null);
   const [feed, setFeed] = useState<Vacancy[] | null>(null);
+  /** Вакансии профессий по всему городу, сверх ленты: по названию профессии. */
+  const [extra, setExtra] = useState<Record<string, Vacancy[]>>({});
+  const extraCity = useRef<string | null>(null);
   const [seen, setSeen] = useState<Seen>({});
   const [liked, setLiked] = useState<Liked[]>([]);
   const [history, setHistory] = useState<string[]>([]);
@@ -231,6 +234,8 @@ function Main() {
     if (!city) return;
     let alive = true;
     setFeed(null);
+    setExtra({});
+    extraCity.current = city;
     setError(false);
     seenCity.current = null;
     Promise.all([loadCity(city), read<Seen>(`seen:${city}`, {})]).then(
@@ -589,10 +594,41 @@ function Main() {
   );
   const isNear = useCallback((v: Vacancy) => withinKm(v, near), [withinKm, near]);
   const filter = useMemo(() => prefs.filter ?? {}, [prefs.filter]);
+  /** Подгружает файлы выбранных профессий, которых ещё нет. */
+  const loadRoles = useCallback(
+    (titles: string[] | undefined) => {
+      if (!city || !titles?.length) return;
+      for (const title of titles) {
+        const key = index?.roles?.find((r) => r.title === title)?.key;
+        if (!key || extra[title]) continue;
+        setExtra((x) => ({ ...x, [title]: x[title] ?? [] }));
+        void loadRole(city, key).then((items) => {
+          if (extraCity.current === city) setExtra((x) => ({ ...x, [title]: items }));
+        });
+      }
+    },
+    [city, index, extra],
+  );
+  useEffect(() => loadRoles(filter.roles), [filter.roles, loadRoles]);
+  /** Лента вместе с подгруженными вакансиями профессий: свежие из ленты первыми, остальные после. */
+  const withExtra = useMemo(() => {
+    const all = feed ?? [];
+    const lists = Object.values(extra).filter((l) => l.length);
+    if (!lists.length) return all;
+    const ids = new Set(all.map((v) => v.id));
+    const more: Vacancy[] = [];
+    for (const v of lists.flat()) {
+      if (ids.has(v.id)) continue;
+      ids.add(v.id);
+      more.push(v);
+    }
+    more.sort((a, b) => (b.posted_at ?? '').localeCompare(a.posted_at ?? ''));
+    return [...all, ...more];
+  }, [feed, extra]);
   const inCategory = useCallback((v: Vacancy) => (!prefs.cat || v.category === prefs.cat) && matches(v, filter), [prefs.cat, filter]);
   const cards = useMemo(
-    () => (feed ?? []).filter((v) => !seen[v.id] && inCategory(v) && isNear(v)),
-    [feed, seen, inCategory, isNear],
+    () => (filter.roles?.length ? withExtra : (feed ?? [])).filter((v) => !seen[v.id] && inCategory(v) && isNear(v)),
+    [feed, withExtra, filter.roles, seen, inCategory, isNear],
   );
   const filters = filterCount(filter);
   const reason = useCallback((v: Vacancy) => why(v, prefs.want, kmFromHome(homePoint, v), lang), [prefs.want, homePoint, lang]);
@@ -1086,6 +1122,8 @@ function Main() {
               near={near}
               canNear={!!homePoint}
               pool={(feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat))}
+              rolePool={withExtra.filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat))}
+              onRoles={loadRoles}
               isNear={withinKm}
               onLocate={() => void locateNear()}
               onApply={(f, km) => {

@@ -15,7 +15,7 @@ from vacante import contacts, geocode, parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain, split_title
-from vacante.sources import hh, telegram
+from vacante.sources import hh, olx, telegram
 from vacante.store import expire, load_state, load_vacancies, merge, save_state, save_vacancies
 
 log = logging.getLogger(__name__)
@@ -63,10 +63,11 @@ def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
 
 def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegram.fetch_channel,
         now: datetime | None = None, direct: list[Vacancy] | None = None, from_hh=hh.collect,
-        locate=None) -> dict:
+        locate=None, from_olx=olx.collect) -> dict:
     """direct: одобренные вакансии от работодателей из бота (vacante.direct). None значит, что базу бота
     прочитать не удалось или её нет: тогда такие вакансии на сайте остаются как были.
     from_hh: новые вакансии hh.kz (vacante.sources.hh), None — источник выключен или недоступен.
+    from_olx: новые вакансии OLX.kz (vacante.sources.olx), None — источник выключен или OLX не отдал данные.
     locate: точки по адресам для вакансий без точки (vacante.geocode.locate); None — без них, как в тестах."""
     now = now or datetime.now(timezone.utc)
     channels = load_channels(config_path)
@@ -113,6 +114,9 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     if (hh_vacancies := from_hh(state, now)) is not None:
         stats["hh"] = len(hh_vacancies)
         incoming += hh_vacancies
+    if (olx_vacancies := from_olx(state, now)) is not None:
+        stats["olx"] = len(olx_vacancies)
+        incoming += olx_vacancies
     incoming.sort(key=lambda v: v.posted_at)
     cities = {ch["username"].lower(): ch.get("city") for ch in channels}
     dropped: dict[str, str] = {}
@@ -131,13 +135,14 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     # Правилами заново разбираем только посты из каналов: у вакансий hh поля уже разложены по полочкам
     existing = reparse([v for v in saved if v.source == "telegram"], cities, dropped)
     from_hh_saved = [v for v in saved if v.source == hh.SOURCE]
+    from_olx_saved = [v for v in saved if v.source == olx.SOURCE]
     for v in from_hh_saved:
         if v.title_kk is None:  # сохранённые до разделения двуязычных названий
             v.title, v.title_kk = split_title(v.title)
         if v.lat is not None and v.geo is None:  # точки, сохранённые до поля geo, поставил hh
             v.geo = hh.SOURCE
     # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
-    vacancies = expire(merge(from_bot + existing + from_hh_saved, incoming), max_age_days, now)
+    vacancies = expire(merge(from_bot + existing + from_hh_saved + from_olx_saved, incoming), max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)
     for v in saved:
         if v.id in dropped:

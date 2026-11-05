@@ -2463,6 +2463,13 @@
   "instagram": "ais__team",
   "source": "https://2gis.kz/almaty/firm/70000001083691267"
  },
+ "almaty:aisha nurtay": {
+  "name": "Aisha Nurtay",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "almaty:aitas kz": {
   "name": "Aitas KZ",
   "city": "almaty",
@@ -4445,6 +4452,13 @@
   "instagram": "dayinfood.kz",
   "source": "https://2gis.kz/almaty/firm/70000001039997490"
  },
+ "almaty:dayspring": {
+  "name": "Dayspring",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "almaty:decathlon": {
   "name": "Decathlon",
   "city": "almaty",
@@ -5138,6 +5152,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:farmreserv фармрезерв": {
+  "name": "FarmReserv (ФармРезерв)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "almaty:fashion retail group": {
   "name": "Fashion Retail Group",
@@ -6354,6 +6375,15 @@
    "telegram",
    "website"
   ]
+ },
+ "almaty:jtb kz туризм": {
+  "name": "JTB.kz Туризм",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00",
+  "instagram": "jtb.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001112595442"
  },
  "almaty:k&k gmbh": {
   "name": "K&K GmbH",
@@ -10007,6 +10037,13 @@
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
  },
+ "almaty:warden yard": {
+  "name": "Warden Yard",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "almaty:wb": {
   "name": "WB",
   "city": "almaty",
@@ -10038,7 +10075,7 @@
   "checked_at": "2026-10-29T19:43:27+00:00",
   "website": "https://www.ws-group.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001020654656",
-  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_checked_at": "2026-11-05T19:43:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11488,6 +11525,13 @@
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
  },
+ "almaty:биг продаст компани": {
+  "name": "БИГ ПРОДАСТ компани",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "almaty:бизнес парк станица": {
   "name": "Бизнес парк Станица",
   "city": "almaty",
@@ -12335,6 +12379,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "almaty:жантулина а б": {
+  "name": "ЖАНТУЛИНА А.Б.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "almaty:жапаров": {
   "name": "Жапаров",
@@ -13429,7 +13480,7 @@
   "instagram": "lika.furniture",
   "website": "http://lika-mebel.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001044772108",
-  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_checked_at": "2026-11-05T19:43:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19926,7 +19977,7 @@
   "instagram": "paradiegma.kz",
   "website": "http://paradiegma.kz/",
   "source": "https://2gis.kz/astana/firm/70000001066895850",
-  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_checked_at": "2026-11-05T19:43:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20089,6 +20140,13 @@
   "checked_at": "2026-11-03T01:44:22+00:00",
   "instagram": "profftime_astana",
   "source": "https://2gis.kz/astana/firm/70000001117766192"
+ },
+ "astana:profi consulting": {
+  "name": "PROFI CONSULTING",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "astana:proflowers": {
   "name": "PROFLOWERS",
@@ -20792,6 +20850,13 @@
   "instagram": "steklove.ast",
   "source": "https://2gis.kz/astana/firm/70000001112346984"
  },
+ "astana:steppe works": {
+  "name": "STEPPE WORKS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "astana:stratera": {
   "name": "STRATERA",
   "city": "astana",
@@ -20978,7 +21043,7 @@
   "instagram": "chevrolet__terramotors",
   "website": "https://terra.chevrolet-auto.kz/",
   "source": "https://2gis.kz/astana/firm/70000001055596697",
-  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_checked_at": "2026-11-05T19:43:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24074,6 +24139,13 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "astana:ода строй 1": {
+  "name": "Ода Строй-1",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "astana:ойл": {
   "name": "ОЙЛ",
   "city": "astana",
@@ -24618,6 +24690,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T18:44:42+00:00"
+ },
+ "astana:сеть быстрого питания wok lagman": {
+  "name": "Сеть быстрого питания Wok Lagman",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00",
+  "instagram": "woklagman_astana",
+  "website": "http://woklagman.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001038000538",
+  "avatar_checked_at": "2026-11-05T19:43:28+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "17781278ea04eb66.jpg",
+  "avatar_source": "website"
  },
  "astana:сеть детских магазинов orchestra": {
   "name": "Сеть детских магазинов ORCHESTRA",
@@ -26230,7 +26318,7 @@
   "instagram": "hydroserv_ca",
   "website": "http://hydroservgroup.com/",
   "source": "https://2gis.kz/atyrau/firm/70000001103318820",
-  "avatar_checked_at": "2026-10-29T19:43:27+00:00",
+  "avatar_checked_at": "2026-11-05T19:43:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26751,6 +26839,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "atyrau:сапсан": {
+  "name": "САПСАН",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "atyrau:сон": {
   "name": "Сон",
@@ -29275,6 +29370,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "kostanay:campusone": {
+  "name": "CAMPUSONE",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "kostanay:caspian steel qz": {
   "name": "Caspian Steel QZ",
   "city": "kostanay",
@@ -30630,6 +30732,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:impulse": {
+  "name": "IMPULSE",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00",
+  "instagram": "impulse_kazakhstan",
+  "source": "https://2gis.kz/pavlodar/firm/70000001092516590"
  },
  "pavlodar:k&k gmbh": {
   "name": "K&K GmbH",
@@ -32302,6 +32413,13 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "semey:imas group": {
+  "name": "iMAS GROUP",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
+ },
  "semey:istanbul picnic": {
   "name": "ISTANBUL PICNIC",
   "city": "semey",
@@ -32559,6 +32677,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "semey:бостан": {
+  "name": "Бостан",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "semey:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
@@ -33842,6 +33967,13 @@
   ],
   "avatar": "bb836f628adc40bd.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:айдарстройгрупп": {
+  "name": "АйдарСтройГрупп",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "shymkent:айсаров б а": {
   "name": "АЙСАРОВ Б.А.",
@@ -36443,6 +36575,15 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:алле": {
+  "name": "Алле",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00",
+  "instagram": "alle_ukg",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001034692436"
+ },
  "ust-kamenogorsk:аманат": {
   "name": "Аманат",
   "city": "ust-kamenogorsk",
@@ -36544,6 +36685,13 @@
   ],
   "avatar": "c8dfac18331d4e83.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:восток сталь kz": {
+  "name": "Восток-Сталь KZ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "ust-kamenogorsk:востокцветмет": {
   "name": "Востокцветмет",
@@ -37104,6 +37252,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:спрут 1": {
+  "name": "СПРУТ-1",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T19:43:27+00:00"
  },
  "ust-kamenogorsk:сторк казахстан": {
   "name": "СТОРК-КАЗАХСТАН",

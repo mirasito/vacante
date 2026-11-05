@@ -58,6 +58,8 @@ jobs:
       SERVER_SECRET: ${{ secrets.SERVER_SECRET }}
       SERVER_USER: ${{ vars.SERVER_USER || 'ubuntu' }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      # Из пароля админки выводится ключ закладки «Забрать в vacante» для объявлений OLX (server/src/olx-import.ts)
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
       KEYS: ${{ github.workspace }}/.keys
       # Сервер, который раньше работал под другой проект: перед первой установкой его стирают
       WIPE_ONCE: "94.131.93.0"
@@ -239,7 +241,15 @@ jobs:
       - name: Секреты на сервере
         if: steps.secrets.outputs.ready
         run: |
-          printf 'TELEGRAM_BOT_TOKEN=%s\nBACKUP_KEY=%s\n' "$TELEGRAM_BOT_TOKEN" "$BACKUP_KEY" \
+          OLX_IMPORT_KEY=
+          if [ -n "$ADMIN_PASSWORD" ]; then
+            # Сам пароль на сервер не попадает: только sha256("olx:" + пароль), им страница /olx/ подписывает импорт
+            OLX_IMPORT_KEY=$(printf 'olx:%s' "$ADMIN_PASSWORD" | sha256sum | cut -d ' ' -f 1)
+            echo "::add-mask::$OLX_IMPORT_KEY"
+          else
+            echo "::notice::Нет секрета ADMIN_PASSWORD: закладка «Забрать в vacante» для OLX (api.vacante.kz/olx/) работать не будет"
+          fi
+          printf 'TELEGRAM_BOT_TOKEN=%s\nBACKUP_KEY=%s\nOLX_IMPORT_KEY=%s\n' "$TELEGRAM_BOT_TOKEN" "$BACKUP_KEY" "$OLX_IMPORT_KEY" \
             | "$KEYS/ssh" 'umask 077; cat > /etc/vacante/env.new && mv /etc/vacante/env.new /etc/vacante/env'
 
       - name: Выкладка

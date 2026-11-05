@@ -136,3 +136,33 @@ def test_via_own_server_reads_olx_status(monkeypatch):
     ok = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(
         lambda r: httpx.Response(200, headers={"X-Olx-Status": "200"}, json={"data": []})))
     assert olx.get(ok, "/api/v1/categories/", None, no_sleep) == {"data": []}
+
+
+def test_imports_from_own_server_even_when_olx_blocks(monkeypatch):
+    monkeypatch.setenv("OLX_SOURCE_ENABLED", "true")
+    monkeypatch.setenv("OLX_VIA", "https://api.vacante.kz")
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "123:abc")
+    monkeypatch.setenv("OLX_CATEGORY_ID", "6")
+    asked = []
+
+    def handler(request):
+        if request.url.path.endswith("/internal/olx/imports"):
+            asked.append(request.url.params["since"])
+            item = offer(11, created="2026-11-04T05:00:00.000Z", imported_at="2026-11-05T07:00:00.000Z")
+            return httpx.Response(200, json={"data": [item]})
+        return httpx.Response(200, headers={"X-Olx-Status": "403"}, text="denied")  # выдача OLX роботу закрыта
+
+    via = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(handler))
+    state = {}
+    found = olx.collect(state, NOW, via, no_sleep)
+    assert [v.id for v in found] == ["olx-11"] and found[0].posted_at == "2026-11-04T05:00:00+00:00"
+    assert state["olx_status"].startswith("blocked") and "olx_checked_at" not in state
+    assert state["olx_imports_at"] == NOW.isoformat()
+    assert asked == [(NOW - olx.IMPORTS_FIRST).isoformat(timespec="seconds")]
+    olx.collect(state, NOW + timedelta(hours=1), via, no_sleep)
+    assert asked[1] == (NOW - olx.OVERLAP).isoformat(timespec="seconds")
+
+    # Сервер не отдал объявления (например, не тот ключ) и OLX закрыт: источник пропускает запуск
+    denied = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(
+        lambda r: httpx.Response(403)))
+    assert olx.collect(dict(state), NOW, denied, no_sleep) is None

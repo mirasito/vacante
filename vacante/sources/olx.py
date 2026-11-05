@@ -7,7 +7,10 @@
 - не чаще одного запроса в PAUSE секунд и не больше MAX_PAGES страниц за запуск;
 - если OLX отвечает 403/429, капчей или не JSON, источник молча пропускает запуск и не пытается обойти защиту.
 С серверов GitHub OLX отвечает 403, поэтому по решению Мираса запросы идут с его сервера в Казахстане
-(OLX_VIA, server/src/olx.ts): тот же User-Agent, один адрес, без подделки и смены адресов.
+(OLX_VIA, server/src/olx.ts): тот же User-Agent, один адрес, без подделки и смены адресов. OLX отвечает 403
+и оттуда, и маскироваться под браузер мы не будем. Поэтому страницы OLX смотрит сам Мирас: закладка
+«Забрать в vacante» (api.vacante.kz/olx/, server/src/olx-import.ts) передаёт объявления с открытой страницы
+на его сервер, а сбор забирает их оттуда (imports) и разбирает тем же кодом, что и выдачу OLX.
 
 Берём только саму вакансию: название, текст без телефонов и ссылок (parse.clean_text), зарплату, город, точку
 на карте, если OLX показывает её точно, и ссылку на объявление на OLX.kz, где человек и откликается.
@@ -41,6 +44,7 @@ LIMIT = 50  # объявлений на страницу
 MAX_PAGES = 20  # не больше 1000 объявлений за запуск: глубже OLX выдачу и не отдаёт
 PAUSE = 3.0  # секунд между запросами
 FIRST_RUN = timedelta(days=3)
+IMPORTS_FIRST = timedelta(days=14)  # при первом запуске берём всё, что забрано закладкой за две недели
 OVERLAP = timedelta(hours=1)
 PERIODS = {"monthly": "month", "month": "month", "daily": "day", "day": "day", "hourly": "hour", "hour": "hour"}
 _TAG = re.compile(r"<[^>]+>")
@@ -55,15 +59,20 @@ def enabled() -> bool:
     return os.environ.get("OLX_SOURCE_ENABLED", "").strip().lower() in ("1", "true", "yes")
 
 
+def via_server() -> bool:
+    """Запросы идут через свой сервер (OLX_VIA): тогда у него же забираем объявления из браузера Мираса."""
+    return bool(os.environ.get("OLX_VIA", "").strip() and os.environ.get("TELEGRAM_BOT_TOKEN", "").strip())
+
+
 def make_client() -> httpx.Client:
     """Прямо к OLX или, если задан OLX_VIA (https://api.vacante.kz), через свой сервер в Казахстане:
     он берёт страницы OLX сам, тем же честным User-Agent (server/src/olx.ts). Ключ — как у бота к серверу,
     HMAC от токена бота, отдельный секрет не нужен."""
     headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
     via = os.environ.get("OLX_VIA", "").strip().rstrip("/")
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    if via and token:
-        key = hmac.new(token.encode(), b"vacante-server-internal", hashlib.sha256).hexdigest()
+    if via_server():
+        key = hmac.new(os.environ["TELEGRAM_BOT_TOKEN"].strip().encode(), b"vacante-server-internal",
+                       hashlib.sha256).hexdigest()
         headers["Authorization"] = f"Bearer {key}"
         return httpx.Client(base_url=f"{via}/internal/olx", timeout=60, follow_redirects=False, headers=headers)
     return httpx.Client(base_url=BASE, timeout=30, follow_redirects=False, headers=headers)
@@ -127,6 +136,13 @@ def search(client: httpx.Client, category: int, since: datetime,
     return items
 
 
+def imports(client: httpx.Client, since: datetime, sleep: Callable[[float], None] = time.sleep) -> list[dict]:
+    """Объявления, которые Мирас забрал из OLX в своём браузере закладкой «Забрать в vacante» после since.
+    Сервер (server/src/olx-import.ts) отдаёт их в формате выдачи OLX, так что разбор общий (to_vacancy)."""
+    data = get(client, "/imports", {"since": since.isoformat(timespec="seconds")}, sleep)
+    return [x for x in data.get("data") or [] if isinstance(x, dict)]
+
+
 def _text(item: dict) -> str:
     raw = _BR.sub("\n", item.get("description") or "")
     return html.unescape(_TAG.sub("", raw)).strip()
@@ -183,34 +199,52 @@ def to_vacancy(item: dict) -> Vacancy | None:
 
 def collect(state: dict, now: datetime, client: httpx.Client | None = None,
             sleep: Callable[[float], None] = time.sleep) -> list[Vacancy] | None:
-    """Новые вакансии OLX с прошлого запуска. None, если источник выключен или OLX не отдал данные."""
+    """Новые вакансии OLX с прошлого запуска: из выдачи OLX (пока OLX отвечает роботу 403, ничего) и из
+    объявлений, которые Мирас забрал в браузере (только через свой сервер, OLX_VIA).
+    None, если источник выключен или ни один из путей не дал ответа."""
     if not enabled():
         return None
     own = client is None
     client = client or make_client()
-    last = state.get("olx_checked_at")
-    since = datetime.fromisoformat(last) - OVERLAP if last else now - FIRST_RUN
+    items: list[dict] = []
+    answered = False
     try:
-        category = job_category(client, sleep)
-        if category is None:
-            log.warning("olx: не нашли рубрику «Работа» в /api/v1/categories/, задайте OLX_CATEGORY_ID")
-            state["olx_status"] = "no_category"
-            return None
-        items = search(client, category, since, sleep)
-    except Blocked as exc:
-        log.warning("olx: OLX не отдаёт данные роботу (%s). Защиту не обходим, источник пропускает запуск", exc)
-        state["olx_status"] = f"blocked: {exc}"
-        return None
-    except httpx.HTTPError as exc:
-        log.warning("olx: %s, источник пропускает этот запуск", exc if isinstance(exc, httpx.HTTPStatusError)
-                    else type(exc).__name__)
-        state["olx_status"] = f"error: {type(exc).__name__}"
-        return None
+        last = state.get("olx_checked_at")
+        since = datetime.fromisoformat(last) - OVERLAP if last else now - FIRST_RUN
+        try:
+            category = job_category(client, sleep)
+            if category is None:
+                log.warning("olx: не нашли рубрику «Работа» в /api/v1/categories/, задайте OLX_CATEGORY_ID")
+                state["olx_status"] = "no_category"
+            else:
+                items += search(client, category, since, sleep)
+                state["olx_checked_at"] = now.isoformat()
+                state["olx_status"] = "ok"
+                answered = True
+        except Blocked as exc:
+            log.warning("olx: OLX не отдаёт данные роботу (%s). Защиту не обходим, выдачу пропускаем", exc)
+            state["olx_status"] = f"blocked: {exc}"
+        except httpx.HTTPError as exc:
+            log.warning("olx: %s, выдачу пропускаем", exc if isinstance(exc, httpx.HTTPStatusError)
+                        else type(exc).__name__)
+            state["olx_status"] = f"error: {type(exc).__name__}"
+        if via_server():
+            last = state.get("olx_imports_at")
+            since = datetime.fromisoformat(last) - OVERLAP if last else now - IMPORTS_FIRST
+            try:
+                imported = imports(client, since, sleep)
+            except (Blocked, httpx.HTTPError) as exc:
+                log.warning("olx: объявления из браузера с сервера не получены (%s)", exc)
+            else:
+                items += imported
+                state["olx_imports_at"] = now.isoformat()
+                answered = True
+                log.info("olx: %s объявлений забрано закладкой с %s", len(imported), since.isoformat(timespec="minutes"))
     finally:
         if own:
             client.close()
-    state["olx_checked_at"] = now.isoformat()
-    state["olx_status"] = "ok"
+    if not answered:
+        return None
     vacancies = {v.id: v for v in map(to_vacancy, items) if v is not None}
-    log.info("olx: %s объявлений в выдаче, %s подходят", len(items), len(vacancies))
+    log.info("olx: %s объявлений, %s подходят", len(items), len(vacancies))
     return list(vacancies.values())

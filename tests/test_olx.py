@@ -118,3 +118,21 @@ def test_pipeline_keeps_olx_vacancies(tmp_path):
 def test_honest_user_agent():
     with olx.make_client() as c:
         assert c.headers["User-Agent"].startswith("vacante.kz/") and "vacante.kz" in olx.USER_AGENT
+
+
+def test_via_own_server_reads_olx_status(monkeypatch):
+    monkeypatch.setenv("OLX_VIA", "https://api.vacante.kz/")
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "123:abc")
+    with olx.make_client() as c:
+        assert str(c.base_url) == "https://api.vacante.kz/internal/olx/"
+        assert c.headers["Authorization"].startswith("Bearer ") and len(c.headers["Authorization"]) == 71
+    via = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(
+        lambda r: httpx.Response(200, headers={"X-Olx-Status": "403"}, text="denied")))
+    try:
+        olx.get(via, "/api/v1/categories/", None, no_sleep)
+        raise AssertionError("ждали Blocked")
+    except olx.Blocked as exc:
+        assert "403" in str(exc)
+    ok = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(
+        lambda r: httpx.Response(200, headers={"X-Olx-Status": "200"}, json={"data": []})))
+    assert olx.get(ok, "/api/v1/categories/", None, no_sleep) == {"data": []}

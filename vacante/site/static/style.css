@@ -1,17 +1,20 @@
 :root {
-  --ink: #1d1d1f; --quiet: #6b6b70; --line: #e4e4e7; --bg: #ffffff;
-  --hero: #161616; --accent: #0a8ff0; --pill: #e3f1fd; --radius: 16px;
+  /* Стиль логотипа «.вакантэ»: графит и голубая точка */
+  --ink: #1B2023; --quiet: #5C666C; --line: #E3E6E8; --bg: #ffffff;
+  --hero: #1B2023; --accent: #1B2023; --on-accent: #ffffff; --brand: #0A8CA8; --pill: #E8F7FB; --radius: 16px;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --ink: #f2f2f3; --quiet: #a1a1a8; --line: #2c2c30; --bg: #0f0f10; --hero: #1d1d20; --pill: #12304a; }
+  :root { --ink: #F2F5F6; --quiet: #A3ADB3; --line: #323B40; --bg: #1B2023; --hero: #22292D; --accent: #8AF0FF; --on-accent: #1B2023; --brand: #8AF0FF; --pill: #263A40; }
 }
 * { box-sizing: border-box; }
 body { margin: 0; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
 a { color: inherit; }
 .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
 .topbar { display: flex; align-items: baseline; gap: 16px; padding: 16px; max-width: 920px; margin: 0 auto; }
-.logo { font-weight: 800; font-size: 28px; text-decoration: none; letter-spacing: -0.5px; }
-.logo .dot { color: var(--accent); }
+.logo { display: inline-flex; align-self: center; text-decoration: none; }
+.logo img { height: 30px; width: auto; display: block; }
+.logo .on-dark { display: none; }
+@media (prefers-color-scheme: dark) { .logo .on-light { display: none; } .logo .on-dark { display: block; } }
 .tagline { color: var(--quiet); font-size: 14px; }
 .post-job { margin-left: auto; font-size: 14px; font-weight: 600; white-space: nowrap; }
 /* Переключатель языка: Рус · Қаз */
@@ -28,7 +31,7 @@ a { color: inherit; }
 .subscribe { display: block; background: var(--pill); border-radius: 12px; padding: 12px 16px; text-decoration: none; font-weight: 600; margin-bottom: 16px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .filters select, .toggle { font: inherit; font-size: 15px; font-weight: 600; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
-.toggle[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.toggle[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .note { color: var(--quiet); font-size: 13px; margin: 0 0 8px; }
 .note[hidden], .empty[hidden] { display: none; }
 .count { color: var(--quiet); font-weight: 600; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
@@ -60,11 +63,11 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 18px 0; }
 .facts dt { color: var(--quiet); }
 .facts dd { margin: 0; font-weight: 600; }
-.apply { display: block; text-align: center; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 16px; border-radius: 999px; margin: 20px 0; }
+.apply { display: block; text-align: center; background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 700; padding: 16px; border-radius: 999px; margin: 20px 0; }
 .text { white-space: pre-line; }
 .also, .source, .direct { color: var(--quiet); font-size: 14px; word-break: break-all; }
 .direct { word-break: normal; margin-top: -8px; }
-.pill.direct-pill { background: var(--accent); color: #fff; }
+.pill.direct-pill { background: var(--accent); color: var(--on-accent); }
 .pill.top-pill { background: #e8590c; color: #fff; font-weight: 600; }
 .card.top { background: rgba(232, 89, 12, 0.08); border-left: 3px solid #e8590c; padding-left: 12px; padding-right: 12px; }
 .empty { color: var(--quiet); padding: 24px 0; }

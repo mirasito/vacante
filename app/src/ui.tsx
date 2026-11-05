@@ -1,12 +1,24 @@
 // Общие кусочки интерфейса: экран, кнопки, чипы, флажки, поля ввода.
 import type { ReactNode } from 'react';
-import { ActivityIndicator, Platform, Pressable, StyleSheet, Text, TextInput, View, type TextInputProps } from 'react-native';
+import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, TextInput, View, type TextInputProps } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon, type IconName } from './icons';
 import * as i18n from './i18n';
 import type { Colors } from './theme';
 import type { Lang } from './types';
+
+/** Логотип «.вакантэ» с поварским колпаком: тёмный на светлой теме, белый на тёмной. */
+export function Logo({ c, height = 28 }: { c: Colors; height?: number }) {
+  return (
+    <Image
+      source={c.mode === 'dark' ? require('../assets/logo-light.png') : require('../assets/logo-dark.png')}
+      style={{ height, width: Math.round((height * 516) / 124) }}
+      resizeMode="contain"
+      accessibilityLabel="вакантэ"
+    />
+  );
+}
 
 export function Screen({ c, children }: { c: Colors; children: ReactNode }) {
   return (
@@ -137,7 +149,7 @@ export function Tab(props: { c: Colors; active: boolean; icon: IconName; label: 
         <Icon name={icon} color={color} />
         {badge ? (
           <View style={[styles.badge, { backgroundColor: alert ? c.accent : c.quiet, borderColor: c.card }]}>
-            <Text style={styles.badgeText}>{badge > 99 ? '99+' : badge}</Text>
+            <Text style={[styles.badgeText, { color: alert ? c.onAccent : '#fff' }]}>{badge > 99 ? '99+' : badge}</Text>
           </View>
         ) : null}
       </View>
@@ -160,7 +172,7 @@ export function Button(props: {
   onPress(): void;
 }) {
   const { c, label, ghost, small, danger, disabled, busy, icon, onPress } = props;
-  const color = danger ? c.skip : ghost ? c.ink : '#fff';
+  const color = danger ? c.skip : ghost ? c.ink : c.onAccent;
   return (
     <Pressable
       onPress={onPress}
@@ -233,7 +245,7 @@ export function Field(props: TextInputProps & { c: Colors; label?: string }) {
 export function Bar({ c, value }: { c: Colors; value: number }) {
   return (
     <View style={[styles.bar, { backgroundColor: c.line }]}>
-      <View style={[styles.barFill, { backgroundColor: c.accent, width: `${Math.max(0, Math.min(100, value))}%` }]} />
+      <View style={[styles.barFill, { backgroundColor: c.brand, width: `${Math.max(0, Math.min(100, value))}%` }]} />
     </View>
   );
 }

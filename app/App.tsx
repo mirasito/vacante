@@ -9,7 +9,7 @@ import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { Celebrate } from './src/applications/Celebrate';
 import { Booking } from './src/Booking';
 import { ChatsTab } from './src/Chats';
-import { InviteSheet, ReliabilityCard, ReliabilityPage, ReportSheet } from './src/Extras';
+import { InviteSheet, Locked, ReliabilityCard, ReliabilityPage, ReportSheet } from './src/Extras';
 import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
 import { filterCount, matches, subscribeLink, why, type Filter, type Want } from './src/feed';
@@ -75,7 +75,7 @@ import { read, write } from './src/storage';
 import { Settings } from './src/Settings';
 import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
-import { Button, Chip, IconCircle, LangSwitch, Loading, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
+import { Button, Chip, IconCircle, LangSwitch, Loading, Logo, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
 import { Avatar, VacancyFull } from './src/VacancyCard';
 import { V } from './src/v2texts';
 import { sameEmployer, VenueView } from './src/Venue';
@@ -317,7 +317,8 @@ function Main() {
   // Вкладка «Профиль» видна, когда сервер ответил и профили открыты (или это тестировщик)
   const showProfile = !!account && (account.open || !!prefs.beta);
   // Отклики: на сервере, когда есть профиль; без профиля — на телефоне; без сервера — просто «Избранное»
-  const tracker: 'off' | 'local' | 'server' = !showProfile ? 'off' : account.profile ? 'server' : 'local';
+  // «Мои» есть у всех: без профиля отклики и стадии хранятся на телефоне
+  const tracker: 'off' | 'local' | 'server' = account?.profile ? 'server' : 'local';
 
   // Открыли кнопкой бота «Открыть профиль» (?tab=profile), из сообщения об отклике (?tab=applications)
   // или из напоминания (?tab=reminders; «Перенести» добавляет &app=<id>: сразу дата собеседования)
@@ -641,7 +642,7 @@ function Main() {
             ),
           );
         }
-        if (tracker !== 'off') setApplying({ copy: copyOf(v, city), full: v });
+        setApplying({ copy: copyOf(v, city), full: v });
       }
     },
     [city, tracker],
@@ -682,7 +683,7 @@ function Main() {
     return (
       <Screen c={c}>
         <View style={styles.pickerHead}>
-          <Text style={[styles.logo, { color: c.accent }]}>vacante</Text>
+          <Logo c={c} height={30} />
           <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
         </View>
         {account ? (
@@ -849,7 +850,7 @@ function Main() {
                 tip={!prefs.hint}
                 onSwipe={onSwipe}
                 onOpen={setOpen}
-                onApply={(v) => (tracker !== 'off' ? startApply(v) : openUrl(v.source_url ?? v.url))}
+                onApply={startApply}
                 header={
                   <View style={styles.countRow}>
                     <Text style={[styles.count, { color: c.quiet }]}>
@@ -878,7 +879,7 @@ function Main() {
               <View style={[styles.hint, { backgroundColor: c.strong }]}>
                 <Text style={[styles.hintText, { color: c.onStrong }]}>{t('hint')}</Text>
                 <Pressable onPress={() => setPref({ hint: true })} hitSlop={8}>
-                  <Text style={[styles.hintOk, { color: c.accent }]}>{t('hintOk')}</Text>
+                  <Text style={[styles.hintOk, { color: c.onStrong }]}>{t('hintOk')}</Text>
                 </Pressable>
               </View>
             ) : askHome && cards.length ? (
@@ -892,7 +893,7 @@ function Main() {
                   }}
                   hitSlop={8}
                 >
-                  <Text style={[styles.hintOk, { color: c.accent }]}>{t('homeAdd')}</Text>
+                  <Text style={[styles.hintOk, { color: c.onStrong }]}>{t('homeAdd')}</Text>
                 </Pressable>
                 <Pressable onPress={() => setPref({ home: true })} hitSlop={8} accessibilityLabel={t('close')}>
                   <Icon name="close" color={c.faint} size={20} />
@@ -944,6 +945,17 @@ function Main() {
         />
       ) : tab === 'chats' && tracker === 'server' ? (
         <ChatsTab c={c} lang={lang} open={chat} onOpen={setChat} onUnread={onUnread} />
+      ) : tab === 'chats' || (tab === 'profile' && !showProfile) ? (
+        <Locked
+          c={c}
+          lang={lang}
+          what={tab === 'chats' ? 'chats' : 'profile'}
+          where={!telegram() ? 'browser' : showProfile ? 'ready' : account ? 'closed' : 'offline'}
+          onProfile={() => setTab('profile')}
+          openUrl={openUrl}
+          city={city}
+          subscribeUrl={subscribeUrl}
+        />
       ) : tab === 'reminders' && tracker === 'server' ? (
         <RemindersTab
           c={c}
@@ -964,7 +976,7 @@ function Main() {
           onRecord={() => setTab('profile')}
           onTab={setTab}
         />
-      ) : tracker !== 'off' ? (
+      ) : tab !== 'liked' ? (
         <ApplicationsTab
           c={c}
           lang={lang}
@@ -999,24 +1011,16 @@ function Main() {
 
       <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]}>
         <Tab c={c} active={tab === 'feed'} icon="pin" label={t('feed')} onPress={() => setTab('feed')} />
-        {tracker !== 'off' ? (
-          <Tab
-            c={c}
-            active={tab === 'applications' || tab === 'liked'}
-            icon="calendar"
-            label={A[lang].tab}
-            badge={trackerItems?.length}
-            onPress={() => setTab('applications')}
-          />
-        ) : (
-          <Tab c={c} active={tab === 'liked'} icon="heart" label={t('liked')} badge={liked.length} onPress={() => setTab('liked')} />
-        )}
-        {tracker === 'server' ? (
-          <Tab c={c} active={tab === 'chats'} icon="chat" label={V[lang].chats} badge={unread} alert onPress={() => setTab('chats')} />
-        ) : null}
-        {showProfile ? (
-          <Tab c={c} active={tab === 'profile'} icon="user" label={P[lang].tab} onPress={() => setTab('profile')} />
-        ) : null}
+        <Tab
+          c={c}
+          active={tab === 'applications' || tab === 'liked'}
+          icon="calendar"
+          label={A[lang].tab}
+          badge={trackerItems?.length}
+          onPress={() => setTab('applications')}
+        />
+        <Tab c={c} active={tab === 'chats'} icon="chat" label={V[lang].chats} badge={unread} alert onPress={() => setTab('chats')} />
+        <Tab c={c} active={tab === 'profile'} icon="user" label={P[lang].tab} onPress={() => setTab('profile')} />
       </View>
 
       <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)}>
@@ -1036,21 +1040,17 @@ function Main() {
                 setOpen(null);
                 onSwipe(open, 'right');
               }}
-              onApply={
-                tracker !== 'off'
-                  ? () => {
-                      setOpen(null);
-                      startApply(open);
-                    }
-                  : undefined
-              }
+              onApply={() => {
+                setOpen(null);
+                startApply(open);
+              }}
             />
           ) : null}
         </ModalArea>
       </Modal>
       <Modal visible={!!applying} animationType="slide" onRequestClose={() => setApplying(null)} transparent>
         <ModalArea>
-          {applying && tracker !== 'off' ? (
+          {applying ? (
             <ApplySheet
               key={`${applying.copy.id}-${applying.preset?.kicker ?? ''}`}
               preset={applying.preset}
@@ -1394,7 +1394,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   hintText: { flex: 1, fontSize: 14, lineHeight: 19 },
-  hintOk: { fontSize: 15, fontWeight: '700' },
+  hintOk: { fontSize: 15, fontWeight: '800', textDecorationLine: 'underline' },
   tabs: { flexDirection: 'row', borderTopWidth: 1, paddingHorizontal: 8 },
   listTitle: { paddingHorizontal: 0, marginTop: 4 },
   likedList: { paddingHorizontal: 20, paddingBottom: 24, gap: 12 },

@@ -102,7 +102,13 @@ texts "$out/ui.xml" 12
 
 tap_text "Алматы"
 
-wait_for 'Откликнуться|Понятно' 90 || fail "после выбора Алматы не открылась лента вакансий"
+# С vacante 2.0 после города спрашивают «Кем работаешь»: пропускаем, как сделал бы спешащий человек
+wait_for 'Откликнуться|Понятно|Пропустить' 90 || fail "после выбора Алматы не открылась лента вакансий"
+if grep -q 'text="Пропустить"' "$out/ui.xml"; then
+  adb exec-out screencap -p > "$out/1b-onboarding.png"
+  tap_text "Пропустить"
+  wait_for 'Откликнуться|Понятно' 60 || fail "после стартовых вопросов не открылась лента вакансий"
+fi
 sleep 3
 adb exec-out screencap -p > "$out/2-feed.png"
 screen > "$out/ui.xml"

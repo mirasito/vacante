@@ -11,7 +11,7 @@ import type { Located } from './platform';
 import { EMPLOYMENT, EXPERIENCE } from './profile/texts';
 import type { Colors } from './theme';
 import type { Index, Lang } from './types';
-import { Button, Chip, LangSwitch, Screen } from './ui';
+import { Button, Chip, LangSwitch, Logo, Screen } from './ui';
 
 const T = {
   ru: {
@@ -123,7 +123,7 @@ export function Onboarding(props: {
             <Icon name="back" color={c.ink} />
           </Pressable>
         ) : (
-          <Text style={[styles.logo, { color: c.accent }]}>vacante</Text>
+          <Logo c={c} height={26} />
         )}
         <View style={styles.topRight}>
           <Pressable onPress={finish} hitSlop={8} accessibilityRole="button">

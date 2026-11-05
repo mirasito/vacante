@@ -58,7 +58,18 @@ import {
   unanswered,
   type Message,
 } from "./v2.ts";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
+
+/** Логотип «.вакантэ» прямо в странице (data:), чтобы не ослаблять CSP. Нет файла — просто текст. */
+function logoData(name: string): string | null {
+  try {
+    return `data:image/png;base64,${readFileSync(new URL(`../assets/${name}`, import.meta.url)).toString("base64")}`;
+  } catch {
+    return null;
+  }
+}
+const LOGO = { dark: logoData("logo-dark.png"), light: logoData("logo-light.png") };
 
 /** Программы, которые открывают ссылку ради превью или индекса, а не человек. */
 const PREVIEW_BOT =
@@ -176,17 +187,19 @@ const T = {
 };
 
 const STYLE = raw(`
-:root{--bg:#f4f4f6;--card:#fff;--ink:#1d1d1f;--quiet:#6b6b70;--line:#e4e4e7;--accent:#0a8ff0;--pill:#e3f1fd}
-@media (prefers-color-scheme:dark){:root{--bg:#0f0f10;--card:#1d1d20;--ink:#f2f2f3;--quiet:#a1a1a8;--line:#2c2c30;--accent:#3aa5f5;--pill:#12304a}}
+:root{--bg:#f4f6f7;--card:#fff;--ink:#1B2023;--quiet:#5C666C;--line:#E3E6E8;--accent:#1B2023;--on-accent:#fff;--brand:#0A8CA8;--pill:#E8F7FB}
+@media (prefers-color-scheme:dark){:root{--bg:#1B2023;--card:#22292D;--ink:#F2F5F6;--quiet:#A3ADB3;--line:#323B40;--accent:#8AF0FF;--on-accent:#1B2023;--brand:#8AF0FF;--pill:#263A40}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
 main{max-width:520px;margin:0 auto;padding:16px}
 header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.logo{font-weight:900;font-size:20px;letter-spacing:-.5px;color:var(--ink);text-decoration:none}
+.logo{font-weight:900;font-size:20px;letter-spacing:-.5px;color:var(--ink);text-decoration:none;display:inline-flex}
+.logo img{height:26px;width:auto;display:block}.logo .on-dark{display:none}
+@media (prefers-color-scheme:dark){.logo .on-light{display:none}.logo .on-dark{display:block}}
 .lang{color:var(--quiet);font-size:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
 .kicker{color:var(--quiet);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin:0 0 12px}
 .who{display:flex;gap:16px;align-items:center;margin-bottom:16px}
-.avatar{width:84px;height:84px;border-radius:50%;background:var(--pill);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--accent);flex:none;overflow:hidden;text-decoration:none}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--pill);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--brand);flex:none;overflow:hidden;text-decoration:none}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
 .circle{display:block;position:relative;width:220px;height:220px;margin:0 auto 18px;border-radius:50%;overflow:hidden;background:#101012;text-decoration:none}
 .circle img{width:100%;height:100%;object-fit:cover;display:block}
@@ -196,11 +209,11 @@ h1{font-size:26px;margin:0}.place{color:var(--quiet);margin:2px 0 0}
 dl{margin:0}dt{color:var(--quiet);font-size:13px;margin-top:10px}dd{margin:0;font-weight:600}
 .about{white-space:pre-line;font-weight:400}
 .contact{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
-.btn{flex:1 1 auto;display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 16px;border-radius:14px;border:0;font-size:16px}
+.btn{flex:1 1 auto;display:block;text-align:center;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;padding:14px 16px;border-radius:14px;border:0;font-size:16px}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .phone{font-size:22px;font-weight:800;width:100%;margin:4px 0}
 .note{color:var(--quiet);font-size:14px}
-footer{margin:20px 4px;color:var(--quiet);font-size:14px}footer a{color:var(--accent)}
+footer{margin:20px 4px;color:var(--quiet);font-size:14px}footer a{color:var(--brand)}
 .answer{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
 .field{display:block;margin:0 0 4px}.field span{display:block;color:var(--quiet);font-size:13px;margin-bottom:6px}
 .field input{width:100%;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
@@ -211,7 +224,7 @@ button.btn{cursor:pointer;font-family:inherit}
 .badge{display:inline-block;background:var(--pill);border-radius:12px;padding:4px 10px;font-weight:700;font-size:14px;margin:0 0 12px}
 .msgs{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
 .msg{max-width:85%;border-radius:16px;padding:8px 12px;white-space:pre-line}
-.msg.them{background:var(--pill);align-self:flex-start}.msg.me{background:var(--accent);color:#fff;align-self:flex-end}
+.msg.them{background:var(--pill);align-self:flex-start}.msg.me{background:var(--accent);color:var(--on-accent);align-self:flex-end}
 .msg small{display:block;opacity:.7;font-size:12px;margin-top:2px}
 textarea{width:100%;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:84px;resize:vertical}
 `);
@@ -276,7 +289,7 @@ function page(lang: Lang, body: Html, other?: string, preview: Preview = {}): st
 ${mediaMeta(preview)}<style>${STYLE}</style>
 </head>
 <body><main>
-<header><a class="logo" href="https://vacante.kz">vacante</a>${other ? html`<a class="lang" href="${other}">${t.other}</a>` : ""}</header>
+<header><a class="logo" href="https://vacante.kz" aria-label="vacante.kz">${LOGO.dark && LOGO.light ? html`<img class="on-light" src="${LOGO.dark}" alt="вакантэ"><img class="on-dark" src="${LOGO.light}" alt="">` : "vacante"}</a>${other ? html`<a class="lang" href="${other}">${t.other}</a>` : ""}</header>
 ${body}
 </main></body>
 </html>`.value;

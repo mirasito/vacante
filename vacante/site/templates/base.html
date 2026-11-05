@@ -14,13 +14,17 @@
 <link rel="alternate" hreflang="x-default" href="{{ base_url }}/{{ page ~ '/' if page else '' }}">
 {% endif %}
 <link rel="stylesheet" href="{{ root }}/static/style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ root }}/static/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ root }}/static/icon-192.png">
+<link rel="apple-touch-icon" href="{{ root }}/static/apple-touch-icon.png">
+<meta name="theme-color" content="#1B2023">
 {% if google_verification %}<meta name="google-site-verification" content="{{ google_verification }}">{% endif %}
 {% if yandex_verification %}<meta name="yandex-verification" content="{{ yandex_verification }}">{% endif %}
 {% block head %}{% endblock %}
 </head>
 <body>
 <header class="topbar">
-  <a class="logo" href="{{ home }}/"><span class="dot">.</span>vacante</a>
+  <a class="logo" href="{{ home }}/" aria-label="vacante.kz"><img class="on-light" src="{{ root }}/static/logo-dark.png" alt="вакантэ" width="125" height="30"><img class="on-dark" src="{{ root }}/static/logo-light.png" alt="" width="125" height="30"></a>
   <span class="tagline">{{ t("работа рядом с домом") }}</span>
   {% if page != "404" and page != "admin" %}
   <nav class="langs" aria-label="Тіл / Язык">

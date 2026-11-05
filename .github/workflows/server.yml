@@ -255,7 +255,7 @@ jobs:
       - name: Выкладка
         if: steps.secrets.outputs.ready
         run: |
-          tar -czf - server/package.json server/src server/migrations config/telegram_channels.yaml \
+          tar -czf - server/package.json server/src server/migrations server/assets config/telegram_channels.yaml \
             | "$KEYS/ssh" "cat > /root/vacante-release.tgz && bash /root/vacante-deploy/release.sh $GITHUB_SHA /root/vacante-release.tgz"
 
       - name: Проверка HTTPS

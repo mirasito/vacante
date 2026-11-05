@@ -94,7 +94,7 @@ export function ChatsTab(props: {
           </View>
           {a.unread ? (
             <View style={[s.unread, { backgroundColor: c.accent }]}>
-              <Text style={s.unreadText}>{a.unread}</Text>
+              <Text style={[s.unreadText, { color: c.onAccent }]}>{a.unread}</Text>
             </View>
           ) : null}
         </Pressable>
@@ -186,8 +186,8 @@ export function ChatView(props: { c: Colors; lang: Lang; id: number; onBack(): v
             const mine = m.by === 'seeker';
             return (
               <View key={m.id} style={[s.bubble, mine ? s.mine : s.theirs, { backgroundColor: mine ? c.accent : c.pill }]}>
-                <Text style={[s.bubbleText, { color: mine ? '#fff' : c.ink }]}>{m.text}</Text>
-                <Text style={[s.bubbleTime, { color: mine ? 'rgba(255,255,255,0.75)' : c.quiet }]}>
+                <Text style={[s.bubbleText, { color: mine ? c.onAccent : c.ink }]}>{m.text}</Text>
+                <Text style={[s.bubbleTime, { color: mine ? c.onAccent : c.quiet, opacity: mine ? 0.75 : 1 }]}>
                   {when(m.at, lang)}
                   {mine && m.read_at ? ' · ✓✓' : ''}
                 </Text>
@@ -215,7 +215,7 @@ export function ChatView(props: { c: Colors; lang: Lang; id: number; onBack(): v
           accessibilityLabel={t.send}
           style={[s.send, { backgroundColor: c.accent }, (!text.trim() || busy) && ui.disabled]}
         >
-          <Icon name="next" color="#fff" size={22} />
+          <Icon name="next" color={c.onAccent} size={22} />
         </Pressable>
       </View>
     </View>

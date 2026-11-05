@@ -67,6 +67,9 @@ jobs:
           HH_CLIENT_ID: ${{ secrets.HH_CLIENT_ID }}
           HH_CLIENT_SECRET: ${{ secrets.HH_CLIENT_SECRET }}
           HH_USER_AGENT: ${{ vars.HH_USER_AGENT }}
+          # Рубрика «Работа» OLX.kz (vacante/sources/olx.py). Включена; OLX_SOURCE_ENABLED=false в Variables выключает
+          OLX_SOURCE_ENABLED: ${{ vars.OLX_SOURCE_ENABLED || 'true' }}
+          OLX_CATEGORY_ID: ${{ vars.OLX_CATEGORY_ID }}
           # Точки адресов вакансий по OpenStreetMap (vacante/geocode.py): запросов за прогон, 0 выключает.
           # Разово больше — поле geocode_limit при ручном запуске; запросы всё равно не чаще раза в секунду
           GEOCODE_LIMIT: ${{ inputs.geocode_limit || vars.GEOCODE_LIMIT || '60' }}

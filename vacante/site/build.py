@@ -39,8 +39,8 @@ def telegram_channels(data_dir: Path) -> dict[str, str]:
     """Работающие свои каналы vacante по городам: кнопка подписки на страницах города."""
     return {city: f"https://t.me/{chat.lstrip('@')}" for city, chat in channels.live(data_dir).items()}
 
-# Ссылки «Ещё вакансии» на поиск hh.kz и рубрику «Работа» OLX: только переход на их сайт, их данные
-# мы не собираем (правила hh.kz запрещают автоматический сбор, OLX закрывает рубрику от ботов).
+# Ссылки «Ещё вакансии» на поиск hh.kz и рубрику «Работа» OLX: переход на их сайт ко всем вакансиям города
+# (часть вакансий hh и OLX мы и сами собираем: vacante/sources/hh.py и olx.py).
 # Коды городов hh из справочника api.hh.ru/areas/40, адреса городов OLX из olx.kz/sitemap-locations.xml;
 # для остальных городов ссылка ведёт на весь Казахстан.
 HH_AREAS = {"almaty": 160, "astana": 159, "aktobe": 154, "atyrau": 153, "semey": 185, "ust-kamenogorsk": 194,

@@ -31,8 +31,15 @@ async function getJson<T>(path: string): Promise<T> {
 
 export const loadIndex = () => getJson<Index>('index.json');
 
-export const loadCity = async (slug: string) =>
-  (await getJson<{ vacancies: Vacancy[] }>(`${slug}.json`)).vacancies;
+/** Первая страница вакансий города (400 свежих), сколько их всего и сколько страниц. */
+export const loadCity = async (slug: string) => {
+  const r = await getJson<{ vacancies: Vacancy[]; total?: number; pages?: number }>(`${slug}.json`);
+  return { items: r.vacancies, total: r.total ?? r.vacancies.length, pages: r.pages ?? 1 };
+};
+
+/** Следующие страницы города: app/data/<город>/p2.json, p3.json… */
+export const loadPage = async (slug: string, n: number) =>
+  (await getJson<{ vacancies: Vacancy[] }>(`${slug}/p${n}.json`)).vacancies;
 
 /**
  * Вакансии одной профессии по всему городу: лента города держит только 400 свежих, а фильтр

@@ -4669,6 +4669,13 @@
   "avatar": "443769ab581372b5.jpg",
   "avatar_source": "website"
  },
+ "almaty:elite business group": {
+  "name": "Elite Business Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
+ },
  "almaty:elite personnel": {
   "name": "Elite personnel",
   "city": "almaty",
@@ -7323,6 +7330,15 @@
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
  },
+ "almaty:new rich inc": {
+  "name": "New Rich Inc",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "cottonshop_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001061798808"
+ },
  "almaty:newera group": {
   "name": "NewEra Group",
   "city": "almaty",
@@ -9562,6 +9578,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
+ },
+ "almaty:vast flow": {
+  "name": "VAST FLOW",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
  },
  "almaty:veda s": {
   "name": "Veda S",
@@ -11868,6 +11891,21 @@
    "website"
   ]
  },
+ "almaty:европос тоо": {
+  "name": "Европос, ТОО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "website": "https://europos.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035144499",
+  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fac012b123d4b4a7.jpg",
+  "avatar_source": "website"
+ },
  "almaty:елемесов": {
   "name": "Елемесов",
   "city": "almaty",
@@ -12301,6 +12339,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "almaty:казанцев": {
+  "name": "Казанцев",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
  },
  "almaty:казахский ордена знак почета научно исследовательский институт глазных болезней": {
   "name": "Казахский ордена Знак почета научно-исследовательский институт глазных болезней",
@@ -15230,6 +15275,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
+ },
+ "almaty:тянь шань": {
+  "name": "Тянь-Шань",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
  },
  "almaty:у тети гули": {
   "name": "У тети Гули",
@@ -18397,6 +18449,22 @@
   "avatar": "979bac8f4384ab9b.jpg",
   "avatar_source": "telegram"
  },
+ "astana:lamaro": {
+  "name": "LAMARO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "lamaro.astana",
+  "website": "https://lamaro.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001033055594",
+  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "180b92ccc17ae867.jpg",
+  "avatar_source": "website"
+ },
  "astana:lamoda kz мода с доставкой тоо": {
   "name": "Lamoda.kz (Мода с доставкой, ТОО)",
   "city": "astana",
@@ -19833,6 +19901,13 @@
   "instagram": "sdelkaplus.kz",
   "source": "https://2gis.kz/astana/firm/70000001029993701"
  },
+ "astana:searchinform": {
+  "name": "SearchInform",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
+ },
  "astana:senim staff": {
   "name": "Senim Staff",
   "city": "astana",
@@ -20484,6 +20559,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "astana:ulydala brewery": {
+  "name": "UlyDala Brewery",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "ulydala_brewery",
+  "source": "https://2gis.kz/astana/firm/70000001116312875"
  },
  "astana:um partner": {
   "name": "Um Partner",
@@ -21929,6 +22013,13 @@
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
  },
+ "astana:дюсенов болат": {
+  "name": "Дюсенов Болат",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
+ },
  "astana:дюсова": {
   "name": "Дюсова",
   "city": "astana",
@@ -22757,6 +22848,13 @@
   "v": 3,
   "checked_at": "2026-11-03T07:45:16+00:00"
  },
+ "astana:кумисбекова": {
+  "name": "Кумисбекова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
+ },
  "astana:курылыс тан сервис": {
   "name": "Курылыс тан сервис",
   "city": "astana",
@@ -22964,6 +23062,15 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "steakhouse.mangal",
   "source": "https://2gis.kz/astana/firm/70000001089777153"
+ },
+ "astana:манго маркет": {
+  "name": "Манго Маркет",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "mango_market_kz",
+  "source": "https://2gis.kz/astana/firm/70000001077815386"
  },
  "astana:марал": {
   "name": "Марал",
@@ -23355,6 +23462,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "astana:от донер": {
+  "name": "От донер",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
  },
  "astana:отан групп лтд": {
   "name": "Отан Групп ЛТД",
@@ -24620,6 +24734,13 @@
   "checked_at": "2026-10-29T18:43:51+00:00",
   "instagram": "xo_magazin",
   "source": "https://2gis.kz/astana/firm/70000001082358340"
+ },
+ "astana:хакима": {
+  "name": "ХАКИМА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
  },
  "astana:халал ресторан турецкой кухни ozyurt": {
   "name": "Халал ресторан турецкой кухни Ozyurt",
@@ -27292,7 +27413,7 @@
   "instagram": "stroydecor_karaganda",
   "website": "http://stroydecor.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302834900",
-  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27478,6 +27599,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
+ },
+ "karaganda:проф стиль": {
+  "name": "Проф-Стиль",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "prof_style.kz",
+  "website": "https://www.prof-style.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001075298315",
+  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "456c8b7a399586f1.jpg",
+  "avatar_source": "website"
  },
  "karaganda:резинотехника": {
   "name": "Резинотехника",
@@ -28829,6 +28966,15 @@
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
  },
+ "kostanay:жас канат 2006": {
+  "name": "Жас-Канат 2006",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "trademark_koko",
+  "source": "https://2gis.kz/kostanaj/firm/70000001044055046"
+ },
  "kostanay:жасмин трейд": {
   "name": "Жасмин Трейд",
   "city": "kostanay",
@@ -29850,6 +29996,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
+ },
+ "pavlodar:restaurant velvet": {
+  "name": "Restaurant Velvet",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "velvet_rest_pvl",
+  "source": "https://2gis.kz/pavlodar/firm/70000001117225303"
  },
  "pavlodar:rpv trade company": {
   "name": "RPV-TRADE Company",
@@ -32010,6 +32165,13 @@
    "website"
   ]
  },
+ "shymkent:bigbro сервис": {
+  "name": "BigBro Сервис",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00"
+ },
  "shymkent:burabay hotel management отель rixos borovoe": {
   "name": "Burabay Hotel Management (Отель Rixos Borovoe)",
   "city": "shymkent",
@@ -32614,6 +32776,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T20:46:04+00:00"
+ },
+ "shymkent:teez": {
+  "name": "Teez",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "teezkz",
+  "telegram": "teezkz",
+  "website": "https://teez.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001094190610",
+  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "9341649d51d47002.jpg",
+  "avatar_source": "telegram"
  },
  "shymkent:telecontact": {
   "name": "Telecontact",
@@ -34020,6 +34200,15 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "uralsk:brew": {
+  "name": "BREW",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T13:44:20+00:00",
+  "instagram": "brew.uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001100733016"
+ },
  "uralsk:caspian international restaurants company": {
   "name": "Caspian International Restaurants company",
   "city": "uralsk",
@@ -34242,10 +34431,12 @@
   "instagram": "uralsk_karcher",
   "website": "http://tazagroup.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001035249910",
-  "avatar_checked_at": "2026-10-29T12:47:32+00:00",
+  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "c32e276b9ffd6d68.jpg",
+  "avatar_source": "website"
  },
  "uralsk:two friends": {
   "name": "TWO FRIENDS",

@@ -1786,6 +1786,13 @@
    "website"
   ]
  },
+ "aktobe:зорбаев": {
+  "name": "Зорбаев",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "aktobe:интер камень": {
   "name": "Интер Камень",
   "city": "aktobe",
@@ -2078,7 +2085,7 @@
   "checked_at": "2026-10-29T05:44:59+00:00",
   "website": "https://585zolotoy.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001117713477",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -3551,6 +3558,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
+ },
+ "almaty:bolatova beauty салон красоты": {
+  "name": "Bolatova beauty, салон красоты",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00",
+  "instagram": "bolatova_beauty",
+  "source": "https://2gis.kz/almaty/firm/70000001097014190"
  },
  "almaty:bolme apartments": {
   "name": "Bolme apartments",
@@ -6253,7 +6269,7 @@
   "instagram": "kulikov_kz",
   "website": "https://kulikov.com/",
   "source": "https://2gis.kz/almaty/firm/70000001095711376",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8208,6 +8224,13 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "almaty:sauda lux": {
+  "name": "Sauda lux",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "almaty:sb dental clinic": {
   "name": "SB dental clinic",
   "city": "almaty",
@@ -9924,7 +9947,7 @@
   "instagram": "akcentmicrosystems",
   "website": "https://www.ak-cent.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000791812",
-  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12020,7 +12043,7 @@
   "instagram": "tookazdorzapchast",
   "website": "http://saimanpro.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001028046693",
-  "avatar_checked_at": "2026-10-29T06:44:07+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13229,10 +13252,12 @@
   "instagram": "narxozkz",
   "website": "https://narxoz.edu.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796151",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "9bf247100072add2.jpg",
+  "avatar_source": "website"
  },
  "almaty:наргиз": {
   "name": "Наргиз",
@@ -13835,6 +13860,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:роял мид казахстан": {
+  "name": "Роял Мид Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "almaty:ртс розничная торговая сеть": {
   "name": "РТС - Розничная Торговая Сеть",
@@ -14772,6 +14804,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T20:44:13+00:00"
+ },
+ "almaty:ультра мода казахстан": {
+  "name": "Ультра Мода Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "almaty:университет синергия казахстан": {
   "name": "Университет Синергия Казахстан",
@@ -15824,6 +15863,13 @@
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
  },
+ "astana:arystan product": {
+  "name": "Arystan Product",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "astana:asai clinic": {
   "name": "ASAI-CLINIC",
   "city": "astana",
@@ -15990,6 +16036,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:av master wash": {
+  "name": "AV Master Wash",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "astana:avenue танатаров а м": {
   "name": "Avenue (ТАНАТАРОВ А.М)",
@@ -16878,7 +16931,7 @@
   "instagram": "fitnesspalace_astana",
   "website": "https://fitness-palace.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018062580",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17831,6 +17884,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T03:44:25+00:00"
+ },
+ "astana:lf group": {
+  "name": "LF Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "astana:li kon пзм li con": {
   "name": "LI-KON (ПЗМ LI-CON)",
@@ -20006,6 +20066,13 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "astana:zebracall": {
+  "name": "ZebraCall",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "astana:zerdeli world": {
   "name": "ZERDELI-WORLD",
   "city": "astana",
@@ -20077,6 +20144,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
+ },
+ "astana:автоматические котлы": {
+  "name": "Автоматические Котлы",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "astana:автономный кластерный фонд астана хаб": {
   "name": "автономный кластерный фонд Астана Хаб",
@@ -21387,7 +21461,7 @@
   "telegram": "galmartsupermarket",
   "website": "https://galmart.kz/",
   "source": "https://2gis.kz/astana/firm/70000001021282201",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -22211,6 +22285,13 @@
   "checked_at": "2026-10-31T00:43:30+00:00",
   "instagram": "marinad_astana01",
   "source": "https://2gis.kz/astana/firm/70000001096234941"
+ },
+ "astana:мария": {
+  "name": "Мария",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "astana:марк формэль": {
   "name": "Марк Формэль",
@@ -23956,6 +24037,13 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "astana:чк asam holding limited": {
+  "name": "ЧК ASAM HOLDING LIMITED",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "astana:чк freedom lifestyle ltd": {
   "name": "ЧК FREEDOM LIFESTYLE LTD.",
   "city": "astana",
@@ -24046,6 +24134,13 @@
   "checked_at": "2026-11-03T12:44:30+00:00",
   "instagram": "shtab_lounge_",
   "source": "https://2gis.kz/astana/firm/70000001100331311"
+ },
+ "astana:шторк центральная азия": {
+  "name": "Шторк Центральная Азия",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "astana:щелково агрохим kz": {
   "name": "Щелково Агрохим - KZ",
@@ -24742,6 +24837,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "atyrau:аманова а с": {
+  "name": "АМАНОВА А.С.",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "atyrau:атыраутехинвест": {
   "name": "АтырауТехИнвест",
@@ -26197,6 +26299,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "karaganda:едамаркет": {
+  "name": "Едамаркет",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00",
+  "instagram": "edamarket_kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001045553783"
  },
  "karaganda:ертайлаков р ж": {
   "name": "ЕРТАЙЛАКОВ Р. Ж",
@@ -28210,6 +28321,13 @@
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
  },
+ "kostanay:уэс": {
+  "name": "УЭС",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "kostanay:фирма стс бетон": {
   "name": "ФИРМА СТС-Бетон",
   "city": "kostanay",
@@ -29183,7 +29301,7 @@
   "checked_at": "2026-10-29T05:44:59+00:00",
   "website": "https://www.greenwich-pvl.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001024174628",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29249,6 +29367,13 @@
   "checked_at": "2026-11-01T19:44:04+00:00",
   "instagram": "steklocenterpvl",
   "source": "https://2gis.kz/pavlodar/firm/70000001047987840"
+ },
+ "pavlodar:строительная компания ангара": {
+  "name": "Строительная Компания Ангара",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
  },
  "pavlodar:стройлогистика": {
   "name": "Стройлогистика",
@@ -30564,6 +30689,15 @@
   ],
   "avatar": "092c4103099fda39.jpg",
   "avatar_source": "website"
+ },
+ "semey:сладкая жизнь": {
+  "name": "СЛАДКАЯ ЖИЗНЬ",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00",
+  "instagram": "sladkaya_jizn_semey",
+  "source": "https://2gis.kz/semej/firm/70000001051550402"
  },
  "semey:стропальщик": {
   "name": "Стропальщик",
@@ -31960,6 +32094,13 @@
    "website"
   ]
  },
+ "shymkent:ситимед": {
+  "name": "СитиМед",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00"
+ },
  "shymkent:смартер казахстан": {
   "name": "Смартер Казахстан",
   "city": "shymkent",
@@ -33128,7 +33269,7 @@
   "instagram": "altyndar_market",
   "website": "http://xn--80aal1akuk6e.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001032444856",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33772,7 +33913,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001061383574",
-  "avatar_checked_at": "2026-10-29T05:44:59+00:00",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34798,6 +34939,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
+ },
+ "ust-kamenogorsk:филиал тоо казсвет group в городе усть каменогорск": {
+  "name": "Филиал ТОО КазСвет Group в городе Усть-Каменогорск.",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T06:45:01+00:00",
+  "website": "https://kazsvet.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721316125",
+  "avatar_checked_at": "2026-11-05T06:45:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:фирма нкг": {
   "name": "Фирма НКГ",

@@ -936,6 +936,7 @@ function Main() {
                         lang,
                       )}
                       {near ? ` · ${t('near').toLowerCase()}` : ''}
+                      {filters ? (lang === 'kk' ? ' · сүзгі бойынша' : ' · по фильтрам') : ''}
                     </Text>
                     {history.length ? <Chip c={c} active={false} icon="undo" label={t('undo')} onPress={undo} /> : null}
                   </View>

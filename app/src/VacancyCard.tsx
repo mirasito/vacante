@@ -53,10 +53,17 @@ export function VacancyCard(props: Props & { reason?: string | null; onOpen(): v
           <Text style={[styles.pay, { color: c.ink }]}>{pay}</Text>
           {monthly ? <Text style={[styles.sub, { color: c.quiet }]}>{monthly}</Text> : null}
         </View>
-      ) : null}
+      ) : (
+        <Text style={[styles.noPay, { color: c.quiet }]}>{i18n.t(lang, 'noPay')}</Text>
+      )}
       {v.schedule || away ? (
         <View style={styles.facts}>
-          {v.schedule ? <Text style={[styles.fact, { color: c.ink }]}>{v.schedule}</Text> : null}
+          {v.schedule ? (
+            <View style={styles.factRow}>
+              <Icon name="clock" color={c.quiet} size={16} />
+              <Text style={[styles.fact, { color: c.ink }]}>{v.schedule}</Text>
+            </View>
+          ) : null}
           {away ? <Text style={[styles.fact, { color: c.brand }]}>{away}</Text> : null}
         </View>
       ) : null}
@@ -156,13 +163,25 @@ export function VacancyFull({ v, lang, c, home }: Props) {
   );
 }
 
+/** Цвет значка по сфере, как на картинках постов в Telegram (vacante/card.py COLORS). */
+const CATEGORY_COLORS: Record<string, string> = {
+  horeca: '#e8590c',
+  retail: '#0a8ff0',
+  warehouse: '#7048e8',
+  delivery: '#2b8a3e',
+  service: '#0c8599',
+  construction: '#e67700',
+  callcenter: '#d6336c',
+  other: '#495057',
+};
+
 export function Avatar({ v, c, size }: { v: Vacancy; c: Colors; size: number }) {
   const box = { width: size, height: size, borderRadius: Math.round(size * 0.29) };
   if (v.avatar) return <Image source={{ uri: v.avatar }} style={[styles.avatar, box]} />;
-  const letter = (v.employer || v.title).trim().charAt(0).toUpperCase();
+  const letter = [...(v.employer || v.title)].find((ch) => /[\p{L}\p{N}]/u.test(ch))?.toUpperCase() ?? 'V';
   return (
-    <View style={[styles.avatar, box, { backgroundColor: c.strong }]}>
-      <Text style={[styles.letter, { color: c.onStrong, fontSize: Math.round(size * 0.4) }]}>{letter}</Text>
+    <View style={[styles.avatar, box, { backgroundColor: CATEGORY_COLORS[v.category ?? ''] ?? c.strong }]}>
+      <Text style={[styles.letter, { color: '#ffffff', fontSize: Math.round(size * 0.42) }]}>{letter}</Text>
     </View>
   );
 }
@@ -177,6 +196,8 @@ const styles = StyleSheet.create({
   sub: { fontSize: 13, lineHeight: 18 },
   why: { fontStyle: 'italic' },
   pay: { fontSize: 22, fontWeight: '800', letterSpacing: -0.3 },
+  noPay: { fontSize: 15, fontWeight: '600' },
+  factRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
   facts: { flexDirection: 'row', flexWrap: 'wrap', columnGap: 12, rowGap: 2 },
   fact: { fontSize: 14, fontWeight: '600' },
   badges: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },

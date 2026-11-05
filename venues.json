@@ -1685,6 +1685,13 @@
   "avatar": "ff24a3f3363f3d34.jpg",
   "avatar_source": "website"
  },
+ "aktobe:евразия билд групп": {
+  "name": "ЕВРАЗИЯ БИЛД ГРУПП",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "aktobe:жалын 2040": {
   "name": "Жалын 2040",
   "city": "aktobe",
@@ -5303,11 +5310,13 @@
   "telegram": "highleveleducation",
   "website": "https://highlevel.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000918908",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "telegram",
    "website"
-  ]
+  ],
+  "avatar": "d4f0168ecffbca0b.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:hightower": {
   "name": "HIGHTOWER",
@@ -5539,6 +5548,19 @@
   ],
   "avatar": "aa202d8a3a7bda0d.jpg",
   "avatar_source": "website"
+ },
+ "almaty:insight solutions kazakhstan": {
+  "name": "INSIGHT SOLUTIONS KAZAKHSTAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00",
+  "website": "https://insightsi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001102858791",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:inspire international": {
   "name": "Inspire International",
@@ -6043,6 +6065,22 @@
   "instagram": "kotonkazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001041693626"
  },
+ "almaty:koula almaty": {
+  "name": "KOULA ALMATY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00",
+  "instagram": "koula.almaty",
+  "website": "https://koula.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082613075",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1d8a4011a85ec43a.jpg",
+  "avatar_source": "website"
+ },
  "almaty:kulikov": {
   "name": "Kulikov",
   "city": "almaty",
@@ -6195,6 +6233,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T05:44:23+00:00"
+ },
+ "almaty:lb one": {
+  "name": "LB ONE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "almaty:leader agro": {
   "name": "Leader AGRO",
@@ -6631,6 +6676,13 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "almaty:mix market trade": {
+  "name": "MIX MARKET TRADE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "almaty:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
   "city": "almaty",
@@ -6709,7 +6761,7 @@
   "instagram": "mountainviewhotels",
   "website": "https://mvhotels.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000842241",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7038,7 +7090,7 @@
   "instagram": "officeexpert",
   "website": "https://oe.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001065669201",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8547,6 +8599,13 @@
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
  },
+ "almaty:tau_barys": {
+  "name": "Tau_barys",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "almaty:taurus gss": {
   "name": "Taurus GSS",
   "city": "almaty",
@@ -9350,6 +9409,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
+ },
+ "almaty:zontex": {
+  "name": "Zontex",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00",
+  "instagram": "zon.tex",
+  "website": "http://zontex.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055795652",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:zoomlion central asia": {
   "name": "ZOOMLION CENTRAL ASIA",
@@ -10526,6 +10599,13 @@
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
  },
+ "almaty:бета хай скул": {
+  "name": "Бета Хай скул",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "almaty:бизнес парк станица": {
   "name": "Бизнес парк Станица",
   "city": "almaty",
@@ -10859,7 +10939,7 @@
   "checked_at": "2026-10-29T01:44:16+00:00",
   "website": "https://globalmedical.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001082842168",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12485,7 +12565,7 @@
   "instagram": "lpgroup.kz",
   "website": "https://www.lpgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001116104113",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12722,6 +12802,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
+ },
+ "almaty:микрофинансовая организация business finance": {
+  "name": "Микрофинансовая организация Business Finance",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "almaty:микрофинансовая организация orda finance": {
   "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ORDA FINANCE",
@@ -13564,6 +13651,13 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "almaty:рыжкова м в": {
+  "name": "Рыжкова М.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "almaty:садыков": {
   "name": "Садыков",
   "city": "almaty",
@@ -13761,6 +13855,13 @@
   "checked_at": "2026-10-31T22:43:53+00:00",
   "instagram": "workoutgym.kz",
   "source": "https://2gis.kz/almaty/firm/70000001031662234"
+ },
+ "almaty:сиезбаева": {
+  "name": "Сиезбаева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "almaty:сила харизмы": {
   "name": "Сила Харизмы",
@@ -14143,6 +14244,13 @@
    "website"
   ]
  },
+ "almaty:тарасов": {
+  "name": "Тарасов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "almaty:тарган тул": {
   "name": "ТАРГАН ТУЛ",
   "city": "almaty",
@@ -14283,7 +14391,7 @@
   "checked_at": "2026-10-29T01:44:16+00:00",
   "website": "https://www.pichevik.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000801232",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14301,6 +14409,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:тк трейд транс": {
+  "name": "ТК ТРЕЙД ТРАНС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "almaty:тм romeo flowers касымгалиев а а": {
   "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
@@ -14685,6 +14800,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
+ },
+ "almaty:холдинговая компания успех": {
+  "name": "Холдинговая компания Успех",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "almaty:холидей": {
   "name": "Холидей",
@@ -16214,6 +16336,13 @@
    "website"
   ]
  },
+ "astana:datapax": {
+  "name": "DATAPAX",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "astana:deal": {
   "name": "Deal",
   "city": "astana",
@@ -16675,10 +16804,12 @@
   "instagram": "goals_lab_gl",
   "website": "https://goalslab.tilda.ws/",
   "source": "https://2gis.kz/astana/firm/70000001065233426",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "23edf9c7784624b4.jpg",
+  "avatar_source": "website"
  },
  "astana:goldman astana": {
   "name": "Goldman Astana",
@@ -22689,6 +22820,19 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "astana:скулбас": {
+  "name": "Скулбас",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00",
+  "website": "https://schoolbus.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018114833",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:служба доставки суши": {
   "name": "Служба доставки суши",
   "city": "astana",
@@ -23052,6 +23196,13 @@
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
  },
+ "astana:толенгутова с т": {
+  "name": "ТОЛЕНГУТОВА С.Т.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
+ },
  "astana:торговая компания": {
   "name": "Торговая компания",
   "city": "astana",
@@ -23256,7 +23407,7 @@
   "checked_at": "2026-10-29T01:44:16+00:00",
   "website": "https://forum-auto.kz/",
   "source": "https://2gis.kz/astana/firm/70000001087662656",
-  "avatar_checked_at": "2026-10-29T01:44:16+00:00",
+  "avatar_checked_at": "2026-11-05T02:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24609,6 +24760,15 @@
    "website"
   ]
  },
+ "atyrau:шашлык от дяди гадима": {
+  "name": "Шашлык от дяди Гадима",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00",
+  "instagram": "gadim_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001067516867"
+ },
  "atyrau:щадилов м в": {
   "name": "Щадилов М.В.",
   "city": "atyrau",
@@ -25603,6 +25763,13 @@
   ],
   "avatar": "a4b0a08058a29957.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "karaganda:дудар": {
   "name": "Дудар",
@@ -30213,6 +30380,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T03:45:14+00:00"
+ },
+ "shymkent:cit hi tech interior": {
+  "name": "CIT Hi-Tech interior",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T02:43:49+00:00"
  },
  "shymkent:consumer trade company": {
   "name": "Consumer Trade Company",

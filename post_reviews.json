@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-05T05:57:15+00:00",
+ "updated_at": "2026-11-05T06:58:27+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -30662,6 +30662,490 @@
    "verdict": "reject",
    "at": "2026-11-05T05:57:15+00:00",
    "reason": "Офисные продажи, холодные звонки"
+  },
+  "hh-139149987": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Менеджер по продажам"
+   }
+  },
+  "hh-139148085": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139147699": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139147066": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-138154524": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "rabota_astanakz-31287": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Автомеханик-ходовщик",
+    "employer": "Автосервис ИП Алимбаев",
+    "schedule": "Полный день",
+    "perks": [
+     "Жильё",
+     "Официально",
+     "Бонусы",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139144333": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": "Больница МЦ Управления делами Президента РК"
+   }
+  },
+  "hh-139144140": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139113316": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Оператор доставки, сборщик заказов",
+    "employer": "Японский ресторан «Тануки»"
+   }
+  },
+  "rabota_astanakz-31285": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Помощник повара",
+    "schedule": "10:00–02:00",
+    "perks": []
+   }
+  },
+  "hh-137904956": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-138374557": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Менеджер по продажам котлов и насосов"
+   }
+  },
+  "hh-138061739": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "rabota_astanakz-31289": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "zhumys_astana_kz-17146": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": "5/2, 07:00–17:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Спецодежда"
+    ]
+   }
+  },
+  "astana_job_vakansii-130216": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": "2/2, 10:00–21:00"
+   }
+  },
+  "almaty_rabota_work-31812": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, 10:00–20:00",
+    "perks": [
+     "Ежедневная оплата",
+     "Бонусы",
+     "Можно студентам",
+     "Без опыта"
+    ]
+   }
+  },
+  "almaty_rabota_work-31811": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Фасовщица, охранник",
+    "schedule": "5/2, 07:00–17:00",
+    "salary_min": 200000,
+    "salary_max": 300000,
+    "salary_period": "month"
+   }
+  },
+  "hh-139149015": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-138667697": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Оператор колл-центра в стоматологию"
+   }
+  },
+  "hh-139148956": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139148293": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Продавец-консультант японской косметики"
+   }
+  },
+  "hh-139147700": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139147598": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139147550": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Продавец-консультант Levi's"
+   }
+  },
+  "hh-131065933": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": "Beeline"
+   }
+  },
+  "hh-139147242": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139146968": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "almaty_rabota01-26029": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Шоколатье",
+    "employer": "ZakaZBuketov"
+   }
+  },
+  "hh-138358517": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Упаковщик продукции на чайный завод «Tealand»"
+   }
+  },
+  "hh-139146164": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": "2/2"
+   }
+  },
+  "hh-139145826": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139149046": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Менеджер по продажам мебели"
+   }
+  },
+  "hh-139146918": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139146306": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139146236": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Администратор торгового зала"
+   }
+  },
+  "hh-138747702": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Офисная B2B-продажа, без зарплаты"
+  },
+  "hh-139150612": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-137234202": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Похоже на вахту в Россию (Крайний Север)"
+  },
+  "hh-139144887": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139148637": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139146042": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139150311": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": null
+   }
+  },
+  "hh-139150190": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Разнорабочий в пельменный цех",
+    "employer": "Global Master Group",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139148246": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": null
+   }
+  },
+  "hh-139147224": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139146519": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139106510": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Контролёр-охранник в супермаркет «Дастархан»"
+   }
+  },
+  "hh-138067311": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "vakansii_rabota_atyrau-49829": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": "Family Stories"
+   }
+  },
+  "vakansii_rabota_atyrau-50019": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": "5/2, 09:00–19:00"
+   }
+  },
+  "vakansii_rabota_atyrau-50018": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": "2/2, 09:00–22:30"
+   }
+  },
+  "vakansii_rabota_atyrau-50023": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": "Sulpak",
+    "address": "ТЦ «Лимон»"
+   }
+  },
+  "hh-138103205": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Продавец-консультант оптики",
+    "employer": "Nomad Exclusive Eyewear",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "rabotaaktau-142243": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-142157": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": "08:00–20:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "hh-139146137": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Офисная B2B-продажа с английским"
+  },
+  "rabotaaktau-142235": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Домработница, няня",
+    "schedule": "08:00–20:00",
+    "perks": [
+     "Питание",
+     "Жильё"
+    ]
+   }
+  },
+  "rabotaaktau-142234": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": "Bar&Grill «Pinta»",
+    "address": "5 мкр, 5А"
+   }
+  },
+  "rabotaaktau-142237": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Почти нет информации: ни заведения, ни условий"
+  },
+  "rabotaaktau-142236": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Пилингист в баню"
+   }
+  },
+  "hh-139146703": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Кладовщик (FUNDAY, ТРЦ «Батыр Молл»)",
+    "employer": "O'stin",
+    "schedule": null,
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139147139": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139147597": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Офисная B2B-продажа, тендеры"
+  },
+  "hh-139145697": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "schedule": null
+   }
+  },
+  "hh-138198763": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Похоже на вахту в Россию (Крайний Север)"
+  },
+  "vakansii_oskemen-9256": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "title": "Менеджер по продажам компьютерной техники"
+   }
+  },
+  "rabota_semey_official-6815": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {
+    "employer": "Кафе «Сладкая жизнь»",
+    "schedule": "Будни, 08:00–22:00"
+   }
+  },
+  "hh-139150781": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139146348": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139145910": {
+   "verdict": "approve",
+   "at": "2026-11-05T06:58:27+00:00",
+   "fields": {}
+  },
+  "hh-139148725": {
+   "verdict": "reject",
+   "at": "2026-11-05T06:58:27+00:00",
+   "reason": "Работа в России (Амурская область)"
   }
  }
 }

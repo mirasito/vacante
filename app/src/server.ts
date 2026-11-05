@@ -55,7 +55,7 @@ export interface Profile {
 }
 
 export interface ProfileView {
-  /** preview — фото или кадр кружка в превью ссылки (сервер до 2026-11-05 его не присылает). */
+  /** preview — фото и кружок в превью ссылки (сервер до 2026-11-05 его не присылает). */
   seeker: { first_name: string; lang: 'ru' | 'kk'; consent_at: string; base: boolean; write_access: boolean; preview?: boolean };
   profile: Profile | null;
   /** Кружок: poster — есть ли обложка (Telegram присылает её не всегда). */

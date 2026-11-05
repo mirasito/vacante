@@ -201,7 +201,7 @@ test("кружок не скачался: человеку пишем, файл�
   assert.equal(videoFiles().filter((f) => f.startsWith("8200-")).length, 0);
 });
 
-test("превью ссылки по галочке: фото или кадр кружка и «▶ Видео», без имени и просмотров", async () => {
+test("превью ссылки по галочке: фото или кадр кружка, «▶ Видео» и сам кружок, без имени и просмотров", async () => {
   const user = { id: 8050, first_name: "Ерлан" };
   await createProfile(user);
   s.files.set("pv1", bytes(1000, 5));
@@ -212,13 +212,14 @@ test("превью ссылки по галочке: фото или кадр к
   const robot = { host: "p.vacante.kz", headers: { "user-agent": "TelegramBot (like TwitterBot)" } };
   const preview = async (query = "") => (await s.call("GET", `/${code}${query}`, robot)).text;
   const image = (text: string) => /<meta property="og:image" content="([^"]+)">/.exec(text)?.[1];
+  const meta = (text: string, name: string) => new RegExp(`<meta property="${name}" content="([^"]+)">`).exec(text)?.[1];
   const setPreview = (on: boolean) => s.call("PATCH", "/me", { headers: auth(user), body: { preview: on } });
 
   // Без галочки, как раньше: ни картинки, ни кружка
   const off = await preview();
   assert.equal(image(off), undefined);
   assert.match(off, /<meta property="og:title" content="Профиль кандидата в Vacante">/);
-  assert.doesNotMatch(off, /Видео|poster/);
+  assert.doesNotMatch(off, /Видео|poster|video\.mp4|og:video|twitter:/);
 
   // С галочкой: кадр кружка и его длина, а имени и анкеты по-прежнему нет
   assert.equal((await setPreview(true)).json.seeker.preview, true);
@@ -227,6 +228,18 @@ test("превью ссылки по галочке: фото или кадр к
   assert.match(on, /<meta property="og:description" content="Откройте ссылку, чтобы посмотреть кружок и профиль кандидата.">/);
   assert.match(image(on)!, new RegExp(`^https://p\\.vacante\\.kz/${code}/poster\\.jpg\\?v=[0-9a-z]+$`));
   assert.doesNotMatch(on, /Ерлан|Повар/);
+  // Сам кружок: по этим меткам Telegram проигрывает видео прямо в превью
+  const video = meta(on, "og:video")!;
+  assert.match(video, new RegExp(`^https://p\\.vacante\\.kz/${code}/video\\.mp4\\?v=[0-9a-z]+$`));
+  assert.equal(meta(on, "og:video:secure_url"), video);
+  assert.equal(meta(on, "og:video:type"), "video/mp4");
+  assert.equal(meta(on, "og:video:width"), "640");
+  assert.equal(meta(on, "twitter:player:stream"), video);
+  assert.equal(meta(on, "twitter:card"), "player");
+  const played = await s.call("GET", new URL(video).pathname + new URL(video).search, robot);
+  assert.equal(played.status, 200);
+  assert.equal(played.headers["content-type"], "video/mp4");
+  assert.deepEqual(played.body, s.files.get("pv1"));
   assert.match(await preview("?lang=kk"), /<meta property="og:title" content="▶ Бейнехабар 0:42 · Үміткер профилі">/);
   // Картинка из превью открывается, а превью и картинка просмотрами не считаются
   const url = new URL(image(on)!);
@@ -245,6 +258,15 @@ test("превью ссылки по галочке: фото или кадр к
   // Тяжёлое фото из прежнего приложения WhatsApp не покажет: тогда кадр кружка
   s.db.prepare("UPDATE photos SET size = 400000 WHERE seeker_id = ?").run(user.id);
   assert.match(image(await preview())!, /\/poster\.jpg\?v=/);
+  s.db.prepare("UPDATE photos SET size = 1000 WHERE seeker_id = ?").run(user.id);
+
+  // Кружок удалили: в превью только фото, без «▶ Видео» и без плеера
+  assert.equal((await s.call("DELETE", "/me/video", { headers: auth(user) })).status, 200);
+  const photoOnly = await preview();
+  assert.match(image(photoOnly)!, /\/photo\.jpg\?v=/);
+  assert.equal(meta(photoOnly, "og:video"), undefined);
+  assert.equal(meta(photoOnly, "twitter:card"), "summary_large_image");
+  assert.match(photoOnly, /<meta property="og:title" content="Профиль кандидата в Vacante">/);
 
   // Дата первого включения хранится, пока галочку не сняли
   const at = () => (s.db.prepare("SELECT preview_at AS at FROM seekers WHERE id = ?").get(user.id) as { at: string | null }).at;

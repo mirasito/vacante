@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-05T15:57:04+00:00",
+ "updated_at": "2026-11-05T16:56:39+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -33349,6 +33349,185 @@
    "verdict": "reject",
    "at": "2026-11-05T15:57:04+00:00",
    "reason": "Несколько должностей в одном объявлении, неясная оплата (1000 ₸ за смену)"
+  },
+  "hh-139180590": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": "English Education Group",
+    "address": "ул. Азильхана Нуршайыкова, 10, блок 2",
+    "perks": []
+   }
+  },
+  "hh-139181062": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "schedule": "4/2 или 2/2, по 12 часов",
+    "address": "пр. Улы Дала, 39"
+   }
+  },
+  "hh-138639544": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Менеджер по продажам",
+    "employer": "ASAI-Clinic",
+    "address": "ул. Достык, 20"
+   }
+  },
+  "rabota_astanakz-31309": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "08:00–19:00",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31298": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Помощник повара",
+    "employer": "Wok Lagman",
+    "schedule": "10:00–02:00",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31310": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Мастер по замене масла"
+   }
+  },
+  "astana_job_vakansii-130257": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": "«Манго Маркет»",
+    "address": "Левый берег",
+    "schedule": "день 08:00–20:00 или ночь 20:00–08:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "astana_job_vakansii-130254": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Официант",
+    "schedule": "4/3 или 5/2, 15:30–01:00"
+   }
+  },
+  "hh-137959096": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": "Dosso Dossi",
+    "address": "ул. Петрова, 24"
+   }
+  },
+  "hh-139180726": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": "W8Shipping KZ",
+    "address": "мкр. Мамыр-1, 1"
+   }
+  },
+  "rabota4almaty-6211": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "almatyrabota1-21326": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": "Кофейня «Eva Coffee»",
+    "schedule": "11:00–23:00"
+   }
+  },
+  "hh-139169181": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2",
+    "address": "ул. Иосифа Бродского, 37Б"
+   }
+  },
+  "hh-139127981": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Упаковщик",
+    "address": "пр. Рыскулова, 82"
+   }
+  },
+  "hh-138579379": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "employer": "DPSP Epilier"
+   }
+  },
+  "almaty_rabota01-26038": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Хаус-мастер",
+    "employer": "«Макаронная»",
+    "schedule": "5/2, 09:00–18:00 или 10:00–19:00"
+   }
+  },
+  "hh-139168141": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Уборщик, посудомойщик",
+    "employer": "Кофейня «Marrone Rosso»",
+    "salary_min": 190000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2",
+    "address": "пр. Назарбаева, 149"
+   }
+  },
+  "hh-139180786": {
+   "verdict": "reject",
+   "at": "2026-11-05T16:56:39+00:00",
+   "reason": "Руководящая должность (управляющий магазином)"
+  },
+  "hh-138878004": {
+   "verdict": "reject",
+   "at": "2026-11-05T16:56:39+00:00",
+   "reason": "Офисная работа с английским, без зарплаты"
+  },
+  "hh-139180629": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Сервисный консультант",
+    "address": "пр. Санкибай батыра, 16К"
+   }
+  },
+  "hh-139180663": {
+   "verdict": "approve",
+   "at": "2026-11-05T16:56:39+00:00",
+   "fields": {
+    "title": "Продавец-консультант косметики",
+    "employer": null
+   }
   }
  }
 }

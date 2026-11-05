@@ -960,6 +960,13 @@
   "v": 3,
   "checked_at": "2026-11-04T20:44:13+00:00"
  },
+ "aktau:наша клиника": {
+  "name": "НАША КЛИНИКА",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
+ },
  "aktau:оазис": {
   "name": "Оазис",
   "city": "aktau",
@@ -2482,6 +2489,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
+ },
+ "almaty:alfa link": {
+  "name": "Alfa Link",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "almaty:alg company": {
   "name": "ALG Company",
@@ -5991,6 +6005,20 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "almaty:is express": {
+  "name": "IS EXPRESS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "isexpress",
+  "website": "https://isexpress.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028801413",
+  "avatar_checked_at": "2026-11-05T12:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ista management": {
   "name": "ISTA Management",
   "city": "almaty",
@@ -6187,6 +6215,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
+ },
+ "almaty:kazbeef processing казбиф процессинг": {
+  "name": "KazBeef Processing (КазБиф Процессинг)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "kazbeef_shop",
+  "website": "https://kazbeefshop.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001064400036",
+  "avatar_checked_at": "2026-11-05T12:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:kazdeal t": {
   "name": "KAZDEAL T",
@@ -6654,6 +6696,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:led lighting central asia ltd лэд лайтинг центральная азия лтд": {
+  "name": "Led Lighting Central Asia Ltd (Лэд Лайтинг Центральная Азия Лтд)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "llca_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001100343144"
  },
  "almaty:left side": {
   "name": "Left Side",
@@ -7202,6 +7253,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:muscat almaty": {
+  "name": "Muscat Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "almaty:mv": {
   "name": "MV",
@@ -8244,6 +8302,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:rider": {
+  "name": "Rider”",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "almaty:right contact": {
   "name": "Right Contact",
@@ -13603,6 +13668,21 @@
   "avatar": "847ffbe84170f9a8.jpg",
   "avatar_source": "website"
  },
+ "almaty:национальная транспортная компания мир": {
+  "name": "Национальная Транспортная Компания МИР",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "website": "https://ntk-mir.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001115210054",
+  "avatar_checked_at": "2026-11-05T12:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6bc693477a848586.jpg",
+  "avatar_source": "website"
+ },
  "almaty:национальной": {
   "name": "Национальной",
   "city": "almaty",
@@ -14872,6 +14952,13 @@
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
  },
+ "almaty:ташкенбаева акмарал": {
+  "name": "Ташкенбаева Акмарал",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
+ },
  "almaty:тбм казахстан": {
   "name": "ТБМ - Казахстан",
   "city": "almaty",
@@ -15511,6 +15598,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:церинг": {
+  "name": "Церинг",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "almaty:цой служба доставки еды nadom kz": {
   "name": "Цой «Служба доставки еды Nadom.kz»",
@@ -18877,6 +18971,13 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "astana:nazzvanie production": {
+  "name": "Nazzvanie production",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
+ },
  "astana:nbs company": {
   "name": "NBS Company",
   "city": "astana",
@@ -19302,6 +19403,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
+ },
+ "astana:ppr service": {
+  "name": "PPR service",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "ppr_service.kz",
+  "website": "https://ppr-service.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001115467665",
+  "avatar_checked_at": "2026-11-05T12:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:premium": {
   "name": "Premium",
@@ -20574,6 +20689,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
+ },
+ "astana:yourhealth family clinic йор хелс фэмили клиник": {
+  "name": "YourHealth Family Clinic (Йор Хелс Фэмили Клиник)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "astana:zan_pro kz": {
   "name": "zan_pro.kz",
@@ -22469,6 +22591,20 @@
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
  },
+ "astana:компания стройдекор тм": {
+  "name": "Компания СтройДекор, ТМ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "stroydecor_astana",
+  "website": "https://stroydecor.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001022551145",
+  "avatar_checked_at": "2026-11-05T12:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:компьютерный клуб bro": {
   "name": "Компьютерный клуб BRO",
   "city": "astana",
@@ -23178,6 +23314,13 @@
    "website"
   ]
  },
+ "astana:окан мерей": {
+  "name": "Окан Мерей",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
+ },
  "astana:олександра": {
   "name": "Олександра",
   "city": "astana",
@@ -23561,6 +23704,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:сап ин вэст": {
+  "name": "САП-ИН-ВЭСТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "astana:сауна": {
   "name": "Сауна",
@@ -26528,6 +26678,15 @@
   "avatar": "3375d5225918e679.jpg",
   "avatar_source": "website"
  },
+ "karaganda:svn company": {
+  "name": "SVN company",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "svn_stroy",
+  "source": "https://2gis.kz/karaganda/firm/70000001060703095"
+ },
  "karaganda:tm logistic": {
   "name": "TM-LOGISTIC",
   "city": "karaganda",
@@ -27465,6 +27624,13 @@
   "avatar": "f68041a8bce3750e.jpg",
   "avatar_source": "website"
  },
+ "karaganda:феталиев ю а": {
+  "name": "ФЕТАЛИЕВ Ю.А.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
+ },
  "karaganda:филиал тоо торговый дом электрокомплект в городе караганда": {
   "name": "ФИЛИАЛ ТОО ТОРГОВЫЙ ДОМ ЭЛЕКТРОКОМПЛЕКТ В ГОРОДЕ КАРАГАНДА",
   "city": "karaganda",
@@ -27568,6 +27734,13 @@
   ],
   "avatar": "e84331c5c8225df3.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:apex route": {
+  "name": "Apex Route",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00"
  },
  "kokshetau:autocity karaganda": {
   "name": "AutoCity Karaganda",
@@ -35009,6 +35182,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
+ },
+ "ust-kamenogorsk:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T12:44:14+00:00",
+  "instagram": "technodomkz",
+  "website": "https://www.technodom.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721318015",
+  "avatar_checked_at": "2026-11-05T12:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:the banka": {
   "name": "The Banka",

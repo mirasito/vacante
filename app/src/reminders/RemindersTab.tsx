@@ -11,7 +11,7 @@ import { almaty, when } from '../profile/texts';
 import { actOnReminder, addReminder, type Reminder, type Reminders, type Stage } from '../server';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
-import { Button, Chip, Field, Loading, ModalArea, Retry, styles as ui } from '../ui';
+import { Button, Chip, Field, IconCircle, Loading, ModalArea, Retry, styles as ui } from '../ui';
 import { R } from './texts';
 
 const DAY = 86_400_000;
@@ -122,7 +122,7 @@ export function RemindersTab(props: {
         {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
         {nothing ? (
           <View style={s.empty}>
-            <Text style={ui.big}>🔔</Text>
+            <IconCircle c={c} icon="bell" />
             <Text style={[ui.note, { color: c.quiet }]}>{t.empty}</Text>
           </View>
         ) : null}

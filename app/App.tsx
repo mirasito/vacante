@@ -9,8 +9,10 @@ import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { Celebrate } from './src/applications/Celebrate';
 import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
+import { FeedList, type Dir } from './src/FeedList';
 import { DEFAULT_NEAR, kmFromHome, NEAR_KM, type NearKm, type Point } from './src/geo';
 import * as i18n from './src/i18n';
+import { Icon, type IconName } from './src/icons';
 import {
   addToHomeScreen,
   haptic,
@@ -20,6 +22,7 @@ import {
   launchBeta,
   launchCity,
   launchTab,
+  loadWebFont,
   onAppVisible,
   openUrl,
   shareLink,
@@ -55,11 +58,10 @@ import {
   type VacancyCopy,
 } from './src/server';
 import { read, write } from './src/storage';
-import { SwipeDeck, type DeckHandle, type Dir } from './src/SwipeDeck';
 import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
-import { Button, Chip, LangSwitch, Loading, ModalArea, Retry, Round, Screen, Tab, styles as ui } from './src/ui';
-import { VacancyCard } from './src/VacancyCard';
+import { Button, Chip, IconCircle, LangSwitch, Loading, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
+import { Avatar, VacancyFull } from './src/VacancyCard';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
 // beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска;
@@ -81,6 +83,9 @@ const samePoint = (a: Point | null, b: Point | null) => a?.lat === b?.lat && a?.
 const MAX_LIKED = 300;
 // Значок на экран телефона предлагаем один раз, когда человек уже полистал ленту
 const HOME_AFTER = 5;
+
+// Шрифт Manrope в вебе и Mini App
+loadWebFont();
 
 export default function App() {
   return (
@@ -128,7 +133,6 @@ function Main() {
   const [applying, setApplying] = useState<{ copy: VacancyCopy; full?: Vacancy; preset?: Preset; onDone?(): void } | null>(
     null,
   );
-  const deck = useRef<DeckHandle>(null);
   const seenCity = useRef<string | null>(null);
   // Шаг назад внутри вкладки «Профиль» (анкета); null — назад некуда, уходим в ленту
   const profileBack = useRef<(() => boolean) | null>(null);
@@ -586,7 +590,7 @@ function Main() {
     return (
       <Screen c={c}>
         <View style={styles.pickerHead}>
-          <Text style={[styles.logo, { color: c.ink }]}>vacante</Text>
+          <Text style={[styles.logo, { color: c.accent }]}>vacante</Text>
           <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
         </View>
         {account ? (
@@ -606,13 +610,14 @@ function Main() {
                 }}
                 style={[
                   styles.cityRow,
-                  { backgroundColor: c.card, borderColor: ct.slug === city ? c.accent : c.line },
+                  { backgroundColor: c.card, borderColor: ct.slug === city ? c.strong : c.line },
                 ]}
               >
-                <Text style={[styles.cityName, { color: c.ink }]}>{i18n.cityName(ct, lang)}</Text>
-                <Text style={{ color: c.quiet }}>
-                  {ct.count} {t('vacancies')}
-                </Text>
+                <View style={styles.cityLeft}>
+                  <Icon name="pin" color={ct.slug === city ? c.accent : c.faint} size={20} />
+                  <Text style={[styles.cityName, { color: c.ink }]}>{i18n.cityName(ct, lang)}</Text>
+                </View>
+                <Text style={[styles.cityCount, { color: c.quiet }]}>{i18n.count(ct.count, lang)}</Text>
               </Pressable>
             ))}
           </ScrollView>
@@ -629,10 +634,19 @@ function Main() {
   return (
     <Screen c={c}>
       <View style={styles.header}>
-        <Pressable onPress={() => setPicking(true)} hitSlop={8}>
-          <Text style={[styles.cityButton, { color: c.ink }]}>
-            📍 {cityInfo ? i18n.cityName(cityInfo, lang) : city} ▾
+        <Pressable
+          onPress={() => setPicking(true)}
+          hitSlop={8}
+          style={styles.cityButton}
+          accessibilityRole="button"
+          accessibilityLabel={t('chooseCity')}
+        >
+          <Icon name="pin" color={c.accent} />
+          <Text style={[styles.cityText, { color: c.ink }]} numberOfLines={1}>
+            {cityInfo ? i18n.cityName(cityInfo, lang) : city}
+            {near ? ` · ${i18n.upToKm(near, lang)}` : ''}
           </Text>
+          <Icon name="down" color={c.faint} />
         </Pressable>
         <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
       </View>
@@ -646,7 +660,7 @@ function Main() {
               style={styles.cats}
               contentContainerStyle={styles.catsRow}
             >
-              {tracker === 'server' ? <Chip c={c} active={!!near} label={t('near')} onPress={toggleNear} /> : null}
+              {tracker === 'server' ? <Chip c={c} active={!!near} icon="home" label={t('near')} onPress={toggleNear} /> : null}
               {near
                 ? NEAR_KM.map((km) => (
                     <Chip
@@ -679,46 +693,46 @@ function Main() {
             ) : !feed ? (
               <Loading c={c} text={t('loading')} />
             ) : cards.length ? (
-              <SwipeDeck
-                ref={deck}
+              <FeedList
                 items={cards}
                 lang={lang}
                 c={c}
                 home={tracker === 'server' ? homePoint : null}
+                tip={!prefs.hint}
                 onSwipe={onSwipe}
                 onOpen={setOpen}
+                onApply={(v) => (tracker !== 'off' ? startApply(v) : openUrl(v.source_url ?? v.url))}
+                header={
+                  <View style={styles.countRow}>
+                    <Text style={[styles.count, { color: c.quiet }]}>
+                      {i18n.count(cards.length, lang)}
+                      {near ? ` · ${t('near').toLowerCase()}` : ''}
+                    </Text>
+                    {history.length ? <Chip c={c} active={false} icon="undo" label={t('undo')} onPress={undo} /> : null}
+                  </View>
+                }
               />
             ) : near && !nearSeen ? (
-              <View style={ui.center}>
-                <Text style={ui.big}>🏠</Text>
-                <Text style={[ui.h2, { color: c.ink }]}>{t('nearEmptyTitle')}</Text>
-                <Text style={[ui.note, { color: c.quiet }]}>{t('nearEmptyText')}</Text>
-                <View style={styles.endActions}>
-                  <Button c={c} label={t('nearAll')} onPress={() => setPref({ near: null })} />
-                </View>
-              </View>
+              <Empty c={c} icon="home" title={t('nearEmptyTitle')} text={t('nearEmptyText')}>
+                <Button c={c} label={t('nearAll')} onPress={() => setPref({ near: null })} />
+              </Empty>
             ) : (
-              <View style={ui.center}>
-                <Text style={ui.big}>🎉</Text>
-                <Text style={[ui.h2, { color: c.ink }]}>{t('endTitle')}</Text>
-                <Text style={[ui.note, { color: c.quiet }]}>{t('endText')}</Text>
-                {/* Кнопки растягиваются по ширине в ряду: здесь обёртка, чтобы не растянулись по высоте */}
-                <View style={styles.endActions}>
-                  {skipped ? <Button c={c} label={t('showSkipped')} onPress={showSkipped} /> : null}
-                  {near ? <Button c={c} ghost label={t('nearAll')} onPress={() => setPref({ near: null })} /> : null}
-                </View>
-              </View>
+              <Empty c={c} icon="search" title={t('endTitle')} text={t('endText')}>
+                {skipped ? <Button c={c} label={t('showSkipped')} onPress={showSkipped} /> : null}
+                {near ? <Button c={c} ghost label={t('nearAll')} onPress={() => setPref({ near: null })} /> : null}
+                {history.length ? <Button c={c} ghost icon="undo" label={t('undo')} onPress={undo} /> : null}
+              </Empty>
             )}
             {feed && cards.length && !prefs.hint ? (
-              <View style={[styles.hint, { backgroundColor: c.ink }]}>
-                <Text style={[styles.hintText, { color: c.bg }]}>{t('hint')}</Text>
+              <View style={[styles.hint, { backgroundColor: c.strong }]}>
+                <Text style={[styles.hintText, { color: c.onStrong }]}>{t('hint')}</Text>
                 <Pressable onPress={() => setPref({ hint: true })} hitSlop={8}>
                   <Text style={[styles.hintOk, { color: c.accent }]}>{t('hintOk')}</Text>
                 </Pressable>
               </View>
             ) : askHome && cards.length ? (
-              <View style={[styles.hint, { backgroundColor: c.ink }]}>
-                <Text style={[styles.hintText, { color: c.bg }]}>{t('homeText')}</Text>
+              <View style={[styles.hint, { backgroundColor: c.strong }]}>
+                <Text style={[styles.hintText, { color: c.onStrong }]}>{t('homeText')}</Text>
                 <Pressable
                   onPress={() => {
                     haptic();
@@ -730,32 +744,11 @@ function Main() {
                   <Text style={[styles.hintOk, { color: c.accent }]}>{t('homeAdd')}</Text>
                 </Pressable>
                 <Pressable onPress={() => setPref({ home: true })} hitSlop={8} accessibilityLabel={t('close')}>
-                  <Text style={[styles.hintOk, { color: c.quiet }]}>✕</Text>
+                  <Icon name="close" color={c.faint} size={20} />
                 </Pressable>
               </View>
             ) : null}
           </View>
-
-          {feed && cards.length ? (
-            <View style={styles.actions}>
-              <Round c={c} color={c.skip} label="✕" title={t('skip')} onPress={() => deck.current?.swipe('left')} />
-              <Round
-                c={c}
-                color={c.quiet}
-                label="↺"
-                small
-                title={t('undo')}
-                disabled={!history.length}
-                onPress={undo}
-              />
-              <Round c={c} color={c.like} label="♥" title={t('like')} onPress={() => deck.current?.swipe('right')} />
-            </View>
-          ) : null}
-          {feed && cards.length ? (
-            <Text style={[styles.left, { color: c.quiet }]}>
-              {t('left')}: {cards.length}
-            </Text>
-          ) : null}
         </>
       ) : tab === 'profile' && showProfile ? (
         <ProfileTab
@@ -842,24 +835,24 @@ function Main() {
       )}
 
       <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]}>
-        <Tab c={c} active={tab === 'feed'} icon="🃏" label={t('feed')} onPress={() => setTab('feed')} />
+        <Tab c={c} active={tab === 'feed'} icon="pin" label={t('feed')} onPress={() => setTab('feed')} />
         {tracker !== 'off' ? (
           <Tab
             c={c}
             active={tab === 'applications' || tab === 'liked'}
-            icon="📋"
+            icon="calendar"
             label={A[lang].tab}
             badge={trackerItems?.length}
             onPress={() => setTab('applications')}
           />
         ) : (
-          <Tab c={c} active={tab === 'liked'} icon="♥" label={t('liked')} badge={liked.length} onPress={() => setTab('liked')} />
+          <Tab c={c} active={tab === 'liked'} icon="heart" label={t('liked')} badge={liked.length} onPress={() => setTab('liked')} />
         )}
         {tracker === 'server' ? (
           <Tab
             c={c}
             active={tab === 'reminders'}
-            icon="🔔"
+            icon="bell"
             label={R[lang].tab}
             badge={reminders?.due}
             alert
@@ -867,11 +860,11 @@ function Main() {
           />
         ) : null}
         {showProfile ? (
-          <Tab c={c} active={tab === 'profile'} icon="👤" label={P[lang].tab} onPress={() => setTab('profile')} />
+          <Tab c={c} active={tab === 'profile'} icon="user" label={P[lang].tab} onPress={() => setTab('profile')} />
         ) : null}
       </View>
 
-      <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)} transparent>
+      <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)}>
         {/* У модального окна своя иерархия view: отступы под вырез экрана считаем заново */}
         <ModalArea>
           {open ? (
@@ -881,6 +874,10 @@ function Main() {
               c={c}
               home={tracker === 'server' ? homePoint : null}
               onClose={() => setOpen(null)}
+              onSave={() => {
+                setOpen(null);
+                onSwipe(open, 'right');
+              }}
               onApply={
                 tracker !== 'off'
                   ? () => {
@@ -933,37 +930,59 @@ function shareVacancy(v: Vacancy, lang: Lang, via: 'any' | 'whatsapp') {
   return via === 'whatsapp' ? whatsapp(text, v.url) : shareLink(text, v.url);
 }
 
+/** Страница вакансии из макета: назад, «Поделиться» и «Сохранить» сверху, отклик снизу. */
 function Details(props: {
   v: Vacancy;
   lang: Lang;
   c: Colors;
   home: Point | null;
   onClose(): void;
+  onSave(): void;
   onApply?(): void;
 }) {
   const { v, lang, c, onClose } = props;
   const t = (key: i18n.Key) => i18n.t(lang, key);
+  const iconButton = (icon: IconName, label: string, onPress: () => void) => (
+    <Pressable onPress={onPress} hitSlop={10} accessibilityRole="button" accessibilityLabel={label} style={styles.iconButton}>
+      <Icon name={icon} color={c.ink} />
+    </Pressable>
+  );
   return (
-    <View style={styles.backdrop}>
-      <SafeAreaView style={[styles.sheet, { backgroundColor: c.card }]} edges={['bottom']}>
-        <Pressable onPress={onClose} style={styles.close} hitSlop={12}>
-          <Text style={[styles.closeText, { color: c.quiet }]}>✕</Text>
-        </Pressable>
-        <View style={ui.flex}>
-          <VacancyCard v={v} lang={lang} c={c} full home={props.home} />
+    <SafeAreaView style={[styles.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
+      <View style={ui.column}>
+        <View style={styles.pageTop}>
+          {iconButton('back', t('back'), onClose)}
+          <View style={styles.pageTopRight}>
+            {iconButton('share', t('share'), () => shareVacancy(v, lang, 'any'))}
+            {iconButton('heart', t('like'), props.onSave)}
+          </View>
         </View>
-        <View style={styles.sheetActions}>
+        <ScrollView style={ui.flex}>
+          <VacancyFull v={v} lang={lang} c={c} home={props.home} />
+        </ScrollView>
+        <View style={[styles.pageActions, { borderColor: c.line }]}>
           <Button c={c} label={t('apply')} onPress={props.onApply ?? (() => openUrl(v.source_url ?? v.url))} />
-          <View style={ui.row}>
-            <Button c={c} ghost label={`↗ ${t('share')}`} onPress={() => shareVacancy(v, lang, 'any')} />
-            <Button c={c} ghost label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
-          </View>
-          <View style={ui.row}>
-            {v.map ? <Button c={c} ghost label={`🗺 ${t('onMap')}`} onPress={() => openUrl(v.map!)} /> : null}
-            <Button c={c} ghost label={t('onSite')} onPress={() => openUrl(v.url)} />
+          <View style={styles.pageLinks}>
+            <Button c={c} small ghost icon="chat" label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
+            {v.map ? <Button c={c} small ghost icon="map" label={t('onMap')} onPress={() => openUrl(v.map!)} /> : null}
+            <Button c={c} small ghost icon="link" label={t('onSite')} onPress={() => openUrl(v.url)} />
           </View>
         </View>
-      </SafeAreaView>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+/** Пустая лента: значок в сером круге, заголовок, пояснение и кнопки. */
+function Empty(props: { c: Colors; icon: IconName; title: string; text: string; children?: ReactNode }) {
+  const { c } = props;
+  return (
+    <View style={ui.center}>
+      <IconCircle c={c} icon={props.icon} />
+      <Text style={[ui.h2, { color: c.ink }]}>{props.title}</Text>
+      <Text style={[ui.note, { color: c.quiet }]}>{props.text}</Text>
+      {/* Кнопки растягиваются по ширине в ряду: здесь обёртка, чтобы не растянулись по высоте */}
+      <View style={styles.endActions}>{props.children}</View>
     </View>
   );
 }
@@ -977,33 +996,30 @@ function LikedList(props: {
 }) {
   const { items, lang, c, onOpen, onRemove } = props;
   const t = (key: i18n.Key) => i18n.t(lang, key);
-  if (!items.length) {
-    return (
-      <View style={ui.center}>
-        <Text style={ui.big}>♥</Text>
-        <Text style={[ui.note, { color: c.quiet }]}>{t('emptyLiked')}</Text>
-      </View>
-    );
-  }
+  if (!items.length) return <Empty c={c} icon="heart" title={t('liked')} text={t('emptyLiked')} />;
   return (
     <FlatList
       data={items}
       keyExtractor={(v) => v.id}
+      ListHeaderComponent={<Text style={[ui.h1, styles.listTitle, { color: c.ink }]}>{t('liked')}</Text>}
       contentContainerStyle={styles.likedList}
       renderItem={({ item: v }) => (
         <Pressable
           onPress={() => onOpen(v)}
           style={[styles.likedRow, { backgroundColor: c.card, borderColor: c.line }]}
         >
-          <Text style={[styles.likedTitle, { color: c.ink }]} numberOfLines={2}>
-            {i18n.title(v, lang)}
-          </Text>
-          <Text style={{ color: c.quiet }} numberOfLines={1}>
-            {[v.employer, i18n.age(v.posted_at, lang)].filter(Boolean).join(' · ')}
-          </Text>
-          {i18n.pay(v, lang) ? (
-            <Text style={[styles.likedPay, { color: c.accent }]}>{i18n.pay(v, lang)}</Text>
-          ) : null}
+          <View style={styles.likedHead}>
+            <Avatar v={v} c={c} size={40} />
+            <View style={ui.flex}>
+              <Text style={[styles.likedTitle, { color: c.ink }]} numberOfLines={2}>
+                {i18n.title(v, lang)}
+              </Text>
+              <Text style={[styles.likedSub, { color: c.quiet }]} numberOfLines={1}>
+                {[v.employer, i18n.age(v.posted_at, lang)].filter(Boolean).join(' · ')}
+              </Text>
+            </View>
+          </View>
+          {i18n.pay(v, lang) ? <Text style={[styles.likedPay, { color: c.ink }]}>{i18n.pay(v, lang)}</Text> : null}
           <View style={ui.row}>
             <Button c={c} small label={t('apply')} onPress={() => openUrl(v.source_url ?? v.url)} />
             <Button c={c} small ghost label={t('share')} onPress={() => shareVacancy(v, lang, 'any')} />
@@ -1016,44 +1032,52 @@ function LikedList(props: {
 }
 
 const styles = StyleSheet.create({
-  logo: { fontSize: 22, fontWeight: '900', letterSpacing: -0.5 },
+  logo: { fontSize: 22, fontWeight: '800', letterSpacing: -0.5 },
   pickerHead: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 20,
+    paddingTop: 16,
+    paddingBottom: 12,
   },
-  account: { fontSize: 13, paddingHorizontal: 16, marginTop: -4, marginBottom: 8 },
-  cityList: { paddingHorizontal: 16, paddingBottom: 24, gap: 8 },
+  account: { fontSize: 13, paddingHorizontal: 20, marginTop: -4, marginBottom: 8 },
+  cityList: { paddingHorizontal: 20, paddingBottom: 24, gap: 8 },
   cityRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 16,
+    paddingHorizontal: 16,
+    minHeight: 56,
     borderRadius: 14,
     borderWidth: 1,
   },
-  cityName: { fontSize: 17, fontWeight: '600' },
+  cityLeft: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  cityName: { fontSize: 16, fontWeight: '700' },
+  cityCount: { fontSize: 13, fontWeight: '600' },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingTop: 8,
-    paddingBottom: 4,
+    gap: 12,
+    paddingHorizontal: 20,
+    paddingTop: 16,
+    paddingBottom: 8,
   },
-  cityButton: { fontSize: 18, fontWeight: '700' },
+  cityButton: { flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1, minHeight: 44 },
+  cityText: { fontSize: 15, fontWeight: '700', flexShrink: 1 },
   cats: { flexGrow: 0 },
-  catsRow: { paddingHorizontal: 16, paddingVertical: 8, gap: 6 },
-  deckArea: { flex: 1, marginHorizontal: 16, marginTop: 4 },
+  catsRow: { paddingHorizontal: 20, paddingTop: 4, paddingBottom: 8, gap: 8 },
+  deckArea: { flex: 1 },
+  countRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 36 },
+  count: { fontSize: 13, fontWeight: '600' },
   endActions: { alignSelf: 'stretch', gap: 10 },
   hint: {
     position: 'absolute',
-    left: 12,
-    right: 12,
+    left: 16,
+    right: 16,
     bottom: 12,
-    borderRadius: 14,
+    borderRadius: 16,
     padding: 14,
     flexDirection: 'row',
     alignItems: 'center',
@@ -1061,30 +1085,18 @@ const styles = StyleSheet.create({
   },
   hintText: { flex: 1, fontSize: 14, lineHeight: 19 },
   hintOk: { fontSize: 15, fontWeight: '700' },
-  actions: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 24,
-    paddingTop: 14,
-  },
-  left: { textAlign: 'center', fontSize: 12, paddingVertical: 6 },
-  tabs: { flexDirection: 'row', borderTopWidth: 1 },
-  likedList: { padding: 16, gap: 10 },
-  likedRow: { padding: 16, borderRadius: 16, borderWidth: 1, gap: 4 },
-  likedTitle: { fontSize: 17, fontWeight: '700' },
-  likedPay: { fontSize: 16, fontWeight: '700', marginBottom: 6 },
-  backdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'flex-end' },
-  sheet: {
-    height: '92%',
-    width: '100%',
-    maxWidth: 520,
-    alignSelf: 'center',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    overflow: 'hidden',
-  },
-  close: { position: 'absolute', top: 14, right: 18, zIndex: 2 },
-  closeText: { fontSize: 22 },
-  sheetActions: { padding: 16, gap: 8 },
+  tabs: { flexDirection: 'row', borderTopWidth: 1, paddingHorizontal: 8 },
+  listTitle: { paddingHorizontal: 0, marginTop: 4 },
+  likedList: { paddingHorizontal: 20, paddingBottom: 24, gap: 12 },
+  likedRow: { padding: 16, borderRadius: 16, borderWidth: 1, gap: 10 },
+  likedHead: { flexDirection: 'row', gap: 12, alignItems: 'flex-start' },
+  likedTitle: { fontSize: 18, fontWeight: '700', lineHeight: 23 },
+  likedSub: { fontSize: 13, marginTop: 2 },
+  likedPay: { fontSize: 20, fontWeight: '800', letterSpacing: -0.3 },
+  page: { flex: 1 },
+  pageTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 8 },
+  pageTopRight: { flexDirection: 'row', gap: 4 },
+  iconButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  pageActions: { paddingHorizontal: 20, paddingTop: 12, paddingBottom: 16, gap: 10, borderTopWidth: 1 },
+  pageLinks: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
 });

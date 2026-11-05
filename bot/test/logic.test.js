@@ -64,3 +64,13 @@ test("секрет вебхука совпадает с тем, что став�
   const expected = createHash("sha256").update(token).digest("hex").slice(0, 32);
   assert.equal(await bot.webhookSecret(token), expected);
 });
+
+test("подписка по ссылке из приложения", () => {
+  assert.deepEqual(bot.fromLink("sub_almaty_horeca_250000"), {
+    city: "almaty", categories: ["horeca"], perks: [], min_pay: 250000, active: 1,
+  });
+  assert.deepEqual(bot.fromLink("sub_astana_all_0").categories, []);
+  assert.equal(bot.fromLink("sub_mars_all_0"), null);
+  assert.equal(bot.fromLink("sub_almaty_nope_0"), null);
+  assert.equal(bot.fromLink("apply_5"), null);
+});

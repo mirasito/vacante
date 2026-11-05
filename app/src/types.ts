@@ -12,6 +12,8 @@ export interface Vacancy {
   pay_kk?: string;
   monthly?: string;
   monthly_kk?: string;
+  /** Верх вилки в месяц, ₸: фильтр «Зарплата от». */
+  pay_month?: number;
   schedule?: string;
   perks?: string[];
   perks_kk?: string[];
@@ -30,6 +32,8 @@ export interface Vacancy {
   source_url?: string;
   text?: string;
   avatar?: string;
+  /** Ссылки заведения (если оно найдено): для страницы заведения. */
+  venue?: { instagram?: string; website?: string; gis?: string };
   /** Какие контакты есть в исходном посте: по ним окно «Как откликнуться?» показывает кнопки. */
   contact?: ContactKind[];
 }

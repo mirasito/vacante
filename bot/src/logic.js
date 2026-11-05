@@ -25,6 +25,16 @@ export function toRow(sub) {
   return [sub.city, sub.categories.join(","), sub.perks.join("|"), sub.min_pay, sub.active];
 }
 
+/**
+ * Подписка из приложения: t.me/vacantekz_bot?start=sub_<город>_<сфера|all>_<зарплата от>.
+ * Кнопка «Пришлём, когда появится» в ленте, когда подходящих вакансий нет. null, если ссылка битая.
+ */
+export function fromLink(arg) {
+  const m = /^sub_([a-z-]+)_([a-z]+)_(\d{1,7})$/.exec(arg || "");
+  if (!m || !CITY[m[1]] || (m[2] !== "all" && !CATEGORY[m[2]])) return null;
+  return { city: m[1], categories: m[2] === "all" ? [] : [m[2]], perks: [], min_pay: Number(m[3]), active: 1 };
+}
+
 export function money(n) {
   return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

@@ -158,6 +158,8 @@ def test_build_writes_app_feed_by_city(tmp_path):
     card = feed["vacancies"][0]
     assert card["title"] == "Бариста" and card["url"] == "https://vacante.kz/v/chan-9/"
     assert card["pay"].replace("\xa0", " ") == "от 250 000 ₸/мес" and "Тамақ" in card["perks_kk"]
+    # Число для фильтра «Зарплата от»
+    assert card["pay_month"] == 250000
 
 
 def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):

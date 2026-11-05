@@ -26,7 +26,7 @@ DIR = "app/data"
 
 
 def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
-    from vacante.site.build import monthly_label, salary_label, twogis_url  # build импортирует этот модуль
+    from vacante.site.build import monthly_label, monthly_pay, salary_label, twogis_url  # build импортирует этот модуль
 
     venue = venue_store.lookup(venues, v)
     data = {
@@ -39,6 +39,8 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
         "pay_kk": salary_label(v, "kk"),
         "monthly": monthly_label(v, "ru"),
         "monthly_kk": monthly_label(v, "kk"),
+        # Верх вилки в пересчёте на месяц, ₸: фильтр «Зарплата от» в приложении
+        "pay_month": monthly_pay(v),
         "schedule": v.schedule,
         "perks": v.perks,
         "perks_kk": [i18n.perk(p, "kk") for p in v.perks],
@@ -61,6 +63,13 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
     }
     if venue and venue.get("avatar"):
         data["avatar"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"
+    if venue:
+        # Ссылки заведения для его страницы в приложении: Instagram, сайт, карточка 2ГИС
+        links = {"instagram": venue.get("instagram"), "website": venue.get("website"),
+                 "gis": venue.get("source") if "2gis." in (venue.get("source") or "") else None}
+        links = {k: val for k, val in links.items() if val}
+        if links:
+            data["venue"] = links
     return {k: val for k, val in data.items() if val not in (None, [], "")}
 
 

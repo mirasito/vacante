@@ -22,7 +22,7 @@ import {
 } from '../server';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
-import { Button, Chip, Field, IconCircle, Loading, ModalArea, Retry, Ring, styles as ui } from '../ui';
+import { Button, Chip, Field, IconCircle, Loading, ModalArea, Retry, Ring, Seg, styles as ui } from '../ui';
 import { ICONS } from './Celebrate';
 import { CLOSED, SEARCH } from './model';
 import { A, dayLabel, whenRelative } from './texts';
@@ -76,6 +76,15 @@ const GROUPS: { key: keyof (typeof A)['ru']['groups']; stages: Stage[] }[] = [
   { key: 'closed', stages: CLOSED },
 ];
 
+type Part = 'active' | 'saved' | 'history';
+const PART: Record<(typeof GROUPS)[number]['key'], Part> = {
+  interviews: 'active',
+  work: 'active',
+  waiting: 'active',
+  liked: 'saved',
+  closed: 'history',
+};
+
 export function ApplicationsTab(props: {
   c: Colors;
   lang: Lang;
@@ -106,7 +115,8 @@ export function ApplicationsTab(props: {
     if (a) setOpen({ a, focus: show.focus });
     onShown?.();
   }, [show, items, onShown]);
-  const [showClosed, setShowClosed] = useState(false);
+  // Вкладки из макета vacante 2.0: в работе, сохранённые (ещё без отклика) и завершённые
+  const [part, setPart] = useState<Part>('active');
   const now = Date.now();
 
   const groups = useMemo(
@@ -137,11 +147,23 @@ export function ApplicationsTab(props: {
 
   const current = summary ? SEARCH.indexOf(summary.stage) : 0;
   const next = summary?.next_interview;
-  const closedCount = groups.find((g) => g.key === 'closed')?.items.length ?? 0;
+  const count = (p: Part) => groups.filter((g) => PART[g.key] === p).reduce((n, g) => n + g.items.length, 0);
+  const shown = groups.filter((g) => PART[g.key] === part && g.items.length);
 
   return (
     <View style={ui.flex}>
       <ScrollView contentContainerStyle={s.body}>
+        <Seg<Part>
+          c={c}
+          value={part}
+          onChange={setPart}
+          options={(['active', 'saved', 'history'] as const).map((p) => ({
+            value: p,
+            label: count(p) ? `${t.segments[p]} · ${count(p)}` : t.segments[p],
+          }))}
+        />
+        {part === 'active' ? (
+        <>
         <View style={[s.top, { backgroundColor: c.card, borderColor: c.line }]}>
           <View style={s.bar}>
             {SEARCH.map((stage, i) => (
@@ -185,15 +207,19 @@ export function ApplicationsTab(props: {
           </View>
         ) : null}
 
-        {!items.length ? (
+        </>
+        ) : null}
+
+        {!shown.length ? (
           <View style={s.empty}>
-            <IconCircle c={c} icon="heart" />
-            <Text style={[ui.note, { color: c.quiet }]}>{t.empty}</Text>
+            <IconCircle c={c} icon={part === 'history' ? 'clock' : 'heart'} />
+            <Text style={[ui.note, { color: c.quiet }]}>
+              {part === 'saved' ? t.emptySaved : part === 'history' ? t.emptyHistory : t.empty}
+            </Text>
           </View>
         ) : null}
 
-        {groups.map((g) =>
-          !g.items.length || (g.key === 'closed' && !showClosed) ? null : (
+        {shown.map((g) => (
             <View key={g.key} style={s.group}>
               <Text style={[s.groupTitle, { color: c.quiet }]}>
                 {t.groups[g.key]} · {g.items.length}
@@ -202,11 +228,7 @@ export function ApplicationsTab(props: {
                 <Row key={a.id} a={a} c={c} lang={lang} now={now} onOpen={() => setOpen({ a, focus: null })} onAct={act} />
               ))}
             </View>
-          ),
-        )}
-        {closedCount ? (
-          <Button c={c} ghost small label={showClosed ? t.hideClosed : t.showClosed(closedCount)} onPress={() => setShowClosed((v) => !v)} />
-        ) : null}
+        ))}
       </ScrollView>
 
       <Modal visible={!!open} animationType="slide" transparent onRequestClose={() => setOpen(null)}>

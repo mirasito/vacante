@@ -44,6 +44,20 @@ import {
 } from "./seekers.ts";
 import { dateTimeLabel, DAY_MS, fromLocal, toLocalInput } from "./time.ts";
 import { duration, fileReply } from "./video.ts";
+import {
+  addMessage,
+  canMark,
+  cleanMessage,
+  futureSlots,
+  listMessages,
+  markAttended,
+  markRead,
+  MAX_MESSAGE,
+  MAX_UNANSWERED,
+  reliability,
+  unanswered,
+  type Message,
+} from "./v2.ts";
 import { join } from "node:path";
 
 /** Программы, которые открывают ссылку ради превью или индекса, а не человек. */
@@ -88,6 +102,23 @@ const T = {
     invited: (when: string) => `✅ Вы пригласили кандидата на собеседование${when ? `: ${when}` : ""}.`,
     rejected: "Вы ответили «Не подходит».",
     badDate: "Проверьте дату: она уже прошла или слишком далеко.",
+    slots: "Кандидату удобно",
+    slot: (when: string) => `Пригласить: ${when}`,
+    orOther: "Или своё время",
+    cancelled: "Кандидат предупредил, что не сможет прийти. Предложите другое время.",
+    attendTitle: "Кандидат пришёл на собеседование?",
+    came: "Пришёл",
+    missed: "Не пришёл",
+    attendNote: "Отметка влияет на надёжность кандидата в Vacante.",
+    attendDone: (yes: boolean) => (yes ? "Вы отметили: кандидат пришёл." : "Вы отметили: кандидат не пришёл."),
+    chat: "Переписка",
+    you: "Вы",
+    write: "Написать кандидату",
+    send: "Отправить",
+    chatNote: "Кандидат получит сообщение в Telegram и ответит здесь же. Откройте эту ссылку снова, чтобы увидеть ответ.",
+    tooMany: "Дождитесь ответа кандидата.",
+    level: { bronze: "Бронза", silver: "Серебро", gold: "Золото" } as Record<string, string>,
+    reliable: (level: string, came: number) => `Надёжность: ${level} · пришёл на ${came} собеседован${came % 10 === 1 && came % 100 !== 11 ? "ие" : came % 10 >= 2 && came % 10 <= 4 && (came % 100 < 12 || came % 100 > 14) ? "ия" : "ий"}`,
   },
   kk: {
     title: "Vacante-дегі үміткер профилі",
@@ -124,6 +155,23 @@ const T = {
     invited: (when: string) => `✅ Сіз үміткерді сұхбатқа шақырдыңыз${when ? `: ${when}` : ""}.`,
     rejected: "Сіз «Сәйкес келмейді» деп жауап бердіңіз.",
     badDate: "Күнін тексеріңіз: ол өтіп кеткен немесе тым алыс.",
+    slots: "Үміткерге ыңғайлы",
+    slot: (when: string) => `Шақыру: ${when}`,
+    orOther: "Немесе басқа уақыт",
+    cancelled: "Үміткер келе алмайтынын ескертті. Басқа уақыт ұсыныңыз.",
+    attendTitle: "Үміткер сұхбатқа келді ме?",
+    came: "Келді",
+    missed: "Келмеді",
+    attendNote: "Белгі үміткердің Vacante-дегі сенімділігіне әсер етеді.",
+    attendDone: (yes: boolean) => (yes ? "Сіз белгіледіңіз: үміткер келді." : "Сіз белгіледіңіз: үміткер келмеді."),
+    chat: "Хат алмасу",
+    you: "Сіз",
+    write: "Үміткерге жазу",
+    send: "Жіберу",
+    chatNote: "Үміткер хабарды Telegram-да алып, осында жауап береді. Жауапты көру үшін сілтемені қайта ашыңыз.",
+    tooMany: "Үміткердің жауабын күтіңіз.",
+    level: { bronze: "Қола", silver: "Күміс", gold: "Алтын" } as Record<string, string>,
+    reliable: (level: string, came: number) => `Сенімділік: ${level} · ${came} сұхбатқа келді`,
   },
 };
 
@@ -159,6 +207,13 @@ footer{margin:20px 4px;color:var(--quiet);font-size:14px}footer a{color:var(--ac
 button.btn{cursor:pointer;font-family:inherit}
 .done{background:var(--pill);border-radius:14px;padding:12px 14px;font-weight:600;margin:16px 0 0}
 .error{color:#d33;font-weight:600}
+.slots{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
+.badge{display:inline-block;background:var(--pill);border-radius:12px;padding:4px 10px;font-weight:700;font-size:14px;margin:0 0 12px}
+.msgs{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
+.msg{max-width:85%;border-radius:16px;padding:8px 12px;white-space:pre-line}
+.msg.them{background:var(--pill);align-self:flex-start}.msg.me{background:var(--accent);color:#fff;align-self:flex-end}
+.msg small{display:block;opacity:.7;font-size:12px;margin-top:2px}
+textarea{width:100%;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:84px;resize:vertical}
 `);
 
 /** Что показать в превью ссылки сверх «Профиль кандидата в Vacante». */
@@ -251,6 +306,7 @@ function profileBody(
   showPhone: boolean,
   updatedAt: string,
   application?: { title: string; answer: Html },
+  badge?: string,
 ): Html {
   const t = T[lang];
   const place = [cityName(p.city, lang), p.district].filter(Boolean).join(", ");
@@ -279,6 +335,7 @@ ${video?.file ? circle(link.code, video, t.watch) : ""}
       : html`<div class="avatar" aria-hidden="true">${initials(p.name)}</div>`
   }
 <div><h1>${p.name}</h1><p class="place">${place}</p></div></div>
+${badge ? html`<p class="badge">${badge}</p>` : ""}
 <dl>
 <dt>${t.wants}</dt><dd><div class="chips">${p.roles.map((r) => html`<span class="chip">${r}</span>`)}</div></dd>
 ${facts.map(([label, value]) => (value ? html`<dt>${label}</dt><dd>${value}</dd>` : ""))}
@@ -305,21 +362,50 @@ function circle(code: string, video: Video, watch: string): Html {
  */
 function answerBlock(code: string, app: ApplicationRow, last: { stage: string } | undefined, lang: Lang, now: number, error: boolean): Html {
   const t = T[lang];
+  const slots = futureSlots(app, now);
   const done =
     last?.stage === "rejected"
       ? html`<p class="done">${t.rejected}</p>`
       : last && (last.stage === "invited" || last.stage === "interview")
         ? html`<p class="done">${t.invited(app.interview_at ? dateTimeLabel(Date.parse(app.interview_at), lang) : "")}</p>`
         : "";
-  if (!answerable(app.stage)) return html`${done}`;
+  if (!answerable(app.stage)) return html`${done}${attendBlock(code, app, lang, now)}`;
   const action = `/${code}/answer${lang === "kk" ? "?lang=kk" : ""}`;
   const value = app.interview_at && Date.parse(app.interview_at) > now ? toLocalInput(Date.parse(app.interview_at)) : "";
-  return html`${done}<form class="answer" id="answer" method="post" action="${action}">
+  return html`${done}${attendBlock(code, app, lang, now)}<form class="answer" id="answer" method="post" action="${action}">
 <p class="kicker">${done ? t.answerAgain : t.answerTitle}</p>
+${app.cancelled_at && !app.interview_at ? html`<p class="done">${t.cancelled}</p>` : ""}
 ${error ? html`<p class="error">${t.badDate}</p>` : ""}
-<label class="field"><span>${t.when}</span><input type="datetime-local" name="at" value="${value}" min="${toLocalInput(now)}" max="${toLocalInput(now + 90 * DAY_MS)}"></label>
+${slots.length ? html`<p class="note">${t.slots}</p><div class="slots">${slots.map((s) => html`<button class="btn ghost" name="slot" value="${s}">${t.slot(dateTimeLabel(Date.parse(s), lang))}</button>`)}</div>` : ""}
+<label class="field"><span>${slots.length ? t.orOther : t.when}</span><input type="datetime-local" name="at" value="${value}" min="${toLocalInput(now)}" max="${toLocalInput(now + 90 * DAY_MS)}"></label>
 <div class="contact"><button class="btn" name="answer" value="invite">${t.invite}</button><button class="btn ghost" name="answer" value="reject">${t.reject}</button></div>
 <p class="note">${t.answerNote}</p>
+</form>`;
+}
+
+/** «Пришёл / не пришёл» после начала собеседования. */
+function attendBlock(code: string, app: ApplicationRow, lang: Lang, now: number): Html | "" {
+  if (!canMark(app, now)) return "";
+  const t = T[lang];
+  if (app.attended_by === "employer") return html`<p class="done">${t.attendDone(app.attended === "yes")}</p>`;
+  return html`<form class="answer" method="post" action="/${code}/attended${lang === "kk" ? "?lang=kk" : ""}">
+<p class="kicker">${t.attendTitle}</p>
+<div class="contact"><button class="btn" name="attended" value="yes">${t.came}</button><button class="btn ghost" name="attended" value="no">${t.missed}</button></div>
+<p class="note">${t.attendNote}</p>
+</form>`;
+}
+
+/** Переписка с кандидатом без скриптов: сообщения и обычная форма. */
+function chatBlock(code: string, messages: Message[], lang: Lang, error: string | null): Html {
+  const t = T[lang];
+  const time = (at: string) => dateTimeLabel(Date.parse(at), lang);
+  return html`<form class="answer" id="chat" method="post" action="/${code}/message${lang === "kk" ? "?lang=kk" : ""}">
+<p class="kicker">${messages.length ? t.chat : t.write}</p>
+${messages.length ? html`<div class="msgs">${messages.map((m) => html`<div class="msg ${m.by === "employer" ? "me" : "them"}">${m.text}<small>${m.by === "employer" ? `${t.you} · ` : ""}${time(m.at)}</small></div>`)}</div>` : ""}
+${error === "many" ? html`<p class="error">${t.tooMany}</p>` : ""}
+<textarea name="text" maxlength="${MAX_MESSAGE}" required aria-label="${t.write}"></textarea>
+<div class="contact"><button class="btn" name="send" value="1">${t.send}</button></div>
+<p class="note">${t.chatNote}</p>
 </form>`;
 }
 
@@ -412,11 +498,16 @@ export function pageRoutes(ctx: Ctx): Route[] {
         return { status: 303, headers: { Location: `/${code}${query ? `?${query}` : ""}#answer` } };
       };
       const form = await req.form();
-      const kind = form.get("answer");
+      // Кнопка удобного времени — тоже приглашение
+      const kind = form.get("slot") ? "invite" : form.get("answer");
       if (kind !== "invite" && kind !== "reject") return back();
       let at: string | null = null;
       const raw = (form.get("at") ?? "").trim();
-      if (kind === "invite" && raw) {
+      const slot = form.get("slot") ?? "";
+      const app = getApplication(ctx.db, link.seeker_id, link.application_id);
+      if (kind === "invite" && app && futureSlots(app, now).includes(slot)) {
+        at = slot;
+      } else if (kind === "invite" && raw) {
         const ms = fromLocal(raw);
         // Собеседование не в прошлом (час на то, что форму заполняли не спеша) и не дальше трёх месяцев
         if (ms === null || ms < now - 3_600_000 || ms > now + 90 * DAY_MS) return back({ error: "date" });
@@ -425,6 +516,53 @@ export function pageRoutes(ctx: Ctx): Route[] {
       const answer: Answer = kind === "invite" ? { kind: "invite", at } : { kind: "reject" };
       const changed = employerAnswer(ctx.db, link.seeker_id, link.application_id, answer, now);
       if (changed) ctx.background(sendNews(ctx, kind, changed));
+      return back();
+    }),
+
+    // «Пришёл / не пришёл»: после начала собеседования
+    route("POST", "profile", "/:code/attended", async (req) => {
+      const lang = langOf(req);
+      const now = ctx.now();
+      const client = clientOf(req);
+      if (!limit.take(client, now)) throw new HttpError(429, "Слишком много запросов, попробуйте через минуту");
+      const code = req.params.code ?? "";
+      const link = CODE_RE.test(code) ? findLink(ctx.db, code, now) : undefined;
+      const app = link?.application_id ? getApplication(ctx.db, link.seeker_id, link.application_id) : undefined;
+      if (!app) {
+        limit.take(client, now, 4);
+        return gone(lang);
+      }
+      const value = (await req.form()).get("attended");
+      if (value === "yes" || value === "no") markAttended(ctx.db, app, value, "employer", now);
+      return { status: 303, headers: { Location: `/${code}${lang === "kk" ? "?lang=kk" : ""}#answer` } };
+    }),
+
+    // Сообщение кандидату: он получит его в Telegram и ответит в приложении
+    route("POST", "profile", "/:code/message", async (req) => {
+      const lang = langOf(req);
+      const now = ctx.now();
+      const client = clientOf(req);
+      if (!limit.take(client, now)) throw new HttpError(429, "Слишком много запросов, попробуйте через минуту");
+      const code = req.params.code ?? "";
+      const link = CODE_RE.test(code) ? findLink(ctx.db, code, now) : undefined;
+      const app = link?.application_id ? getApplication(ctx.db, link.seeker_id, link.application_id) : undefined;
+      if (!app) {
+        limit.take(client, now, 4);
+        return gone(lang);
+      }
+      const back = (extra = "") => ({
+        status: 303,
+        headers: { Location: `/${code}?${new URLSearchParams({ ...(lang === "kk" ? { lang } : {}), ...(extra ? { error: extra } : {}) })}#chat` },
+      });
+      let text: string;
+      try {
+        text = cleanMessage((await req.form()).get("text"));
+      } catch {
+        return back();
+      }
+      if (unanswered(ctx.db, app.id, "employer") >= MAX_UNANSWERED) return back("many");
+      addMessage(ctx.db, app.id, "employer", text, now);
+      ctx.background(sendNews(ctx, "message", app, text));
       return back();
     }),
 
@@ -475,15 +613,18 @@ export function pageRoutes(ctx: Ctx): Route[] {
       const updatedAt = profileUpdatedAt(ctx.db, link.seeker_id) ?? "";
       const other = `/${code}?lang=${lang === "kk" ? "ru" : "kk"}`;
       const fresh = app && getApplication(ctx.db, link.seeker_id, app.id);
+      if (fresh) markRead(ctx.db, fresh.id, "seeker", now);
       const application = fresh
         ? {
             title: (lang === "kk" && fresh.title_kk) || fresh.title,
-            answer: answerBlock(code, fresh, lastEmployerAnswer(ctx.db, fresh.id), lang, now, req.query.get("error") === "date"),
+            answer: html`${answerBlock(code, fresh, lastEmployerAnswer(ctx.db, fresh.id), lang, now, req.query.get("error") === "date")}${chatBlock(code, listMessages(ctx.db, fresh.id), lang, req.query.get("error"))}`,
           }
         : undefined;
+      const rel = reliability(ctx.db, link.seeker_id);
+      const badge = rel.level ? t.reliable(t.level[rel.level]!, rel.attended) : undefined;
       const photo = !!getPhoto(ctx.db, link.seeker_id);
       return {
-        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application), other, preview),
+        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application, badge), other, preview),
         headers: {
           "Content-Security-Policy":
             "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",

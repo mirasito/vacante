@@ -17,6 +17,8 @@ const T = {
     reject: (title: string, who: string) =>
       `Ответ по отклику «${title}»${who}: пока не подходит. Так бывает, в ленте есть и другие вакансии.`,
     open: "📋 Мои отклики",
+    message: (title: string, who: string, text: string) => `💬 Ответ по отклику «${title}»${who}:\n\n${text}`,
+    reply: "💬 Ответить",
   },
   kk: {
     seen: (title: string, who: string) =>
@@ -28,15 +30,18 @@ const T = {
     reject: (title: string, who: string) =>
       `«${title}» өтінімі бойынша жауап${who}: әзірге сәйкес келмейді. Бұлай болады, лентада басқа бос орындар да бар.`,
     open: "📋 Менің өтінімдерім",
+    message: (title: string, who: string, text: string) => `💬 «${title}» өтінімі бойынша жауап${who}:\n\n${text}`,
+    reply: "💬 Жауап беру",
   },
 };
 
-export type ApplicationNews = "seen" | "invite" | "reject";
+export type ApplicationNews = "seen" | "invite" | "reject" | "message";
 
-export function newsText(kind: ApplicationNews, app: ApplicationRow, lang: Lang): string {
+export function newsText(kind: ApplicationNews, app: ApplicationRow, lang: Lang, text = ""): string {
   const t = T[lang];
   const title = lang === "kk" && app.title_kk ? app.title_kk : app.title;
   const who = app.employer ? ` (${app.employer})` : "";
+  if (kind === "message") return t.message(title, who, text);
   if (kind === "seen") return t.seen(title, who);
   if (kind === "reject") return t.reject(title, who);
   const lines = [t.invite(title, who)];
@@ -50,17 +55,22 @@ export function newsText(kind: ApplicationNews, app: ApplicationRow, lang: Lang)
 }
 
 /** Пишет соискателю в чат бота. Не дошло (человек не запускал бота или заблокировал его) — не беда. */
-export async function sendNews(ctx: Ctx, kind: ApplicationNews, app: ApplicationRow): Promise<void> {
+export async function sendNews(ctx: Ctx, kind: ApplicationNews, app: ApplicationRow, text = ""): Promise<void> {
   const seeker = getSeeker(ctx.db, app.seeker_id);
   if (!seeker) return;
   const lang = seeker.lang;
-  const query = new URLSearchParams({ tab: "applications", ...(app.city ? { city: app.city } : {}) });
+  // Сообщение работодателя открывает переписку по этому отклику, остальное — «Мои»
+  const query = new URLSearchParams({
+    tab: kind === "message" ? "chats" : "applications",
+    ...(kind === "message" ? { chat: String(app.id) } : {}),
+    ...(app.city ? { city: app.city } : {}),
+  });
   try {
     await ctx.bot.call("sendMessage", {
       chat_id: seeker.id,
-      text: newsText(kind, app, lang),
+      text: newsText(kind, app, lang, text),
       disable_notification: quietHours(ctx.now()),
-      reply_markup: { inline_keyboard: [[{ text: T[lang].open, web_app: { url: `${ctx.config.siteUrl}/app/?${query}` } }]] },
+      reply_markup: { inline_keyboard: [[{ text: kind === "message" ? T[lang].reply : T[lang].open, web_app: { url: `${ctx.config.siteUrl}/app/?${query}` } }]] },
     });
   } catch (err) {
     console.warn(`отклик ${app.id}: сообщение не ушло: ${err instanceof Error ? err.message : err}`);

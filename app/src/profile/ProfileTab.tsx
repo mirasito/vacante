@@ -1,6 +1,6 @@
 // Вкладка «Профиль»: профиль так, как его видит работодатель, сила профиля, фото, дом, ссылка,
 // «Кто смотрел профиль», база кандидатов и удаление. Без профиля — приглашение его создать.
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import type { Point } from '../geo';
@@ -64,6 +64,8 @@ export function ProfileTab(props: {
   want?: Want;
   /** Ближайшие напоминания и их настройки (есть, когда профиль на сервере). */
   reminders?: RemindersProps;
+  /** Блоки vacante 2.0 над напоминаниями: «Надёжность» и «Пригласить друга». */
+  extra?: ReactNode;
 }) {
   const { c, lang, index, backRef } = props;
   const t = P[lang];
@@ -165,6 +167,7 @@ export function ProfileTab(props: {
         props.onProfile?.(false);
       }}
       reminders={props.reminders}
+      extra={props.extra}
     />
   );
 }
@@ -388,6 +391,7 @@ function Card(props: {
   onHome(): void;
   onDeleted(): void;
   reminders?: RemindersProps;
+  extra?: ReactNode;
 }) {
   const { c, lang, index, view, onChange, onEdit, onExtras, onHome, onDeleted, reminders } = props;
   const t = P[lang];
@@ -530,6 +534,8 @@ function Card(props: {
       <Check c={c} checked={!!view.seeker.preview} label={t.previewTitle} hint={t.previewHint} onPress={togglePreview} />
 
       <Check c={c} checked={view.seeker.base} label={t.baseTitle} hint={t.baseHint} onPress={toggleBase} />
+
+      {props.extra}
 
       {reminders ? (
         <RemindersSection

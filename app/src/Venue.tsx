@@ -1,5 +1,7 @@
 // Страница заведения из макета vacante 2.0: аватар, ссылки, адреса и все открытые вакансии
-// этого работодателя в ленте города. Отзывы и рейтинг появятся, когда их оставят работники.
+// этого работодателя в ленте города. Рейтинг из отзывов работников после собеседований: только
+// средняя оценка и частые метки, и только когда отзывов три и больше.
+import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import * as i18n from './i18n';
@@ -7,7 +9,9 @@ import { Icon } from './icons';
 import { openUrl } from './platform';
 import type { Colors } from './theme';
 import type { Lang, Vacancy } from './types';
+import { venueReviews, type VenueReviews } from './server';
 import { Button } from './ui';
+import { V } from './v2texts';
 import { Avatar } from './VacancyCard';
 
 const T = {
@@ -17,6 +21,8 @@ const T = {
     site: 'Сайт',
     gis: '2ГИС',
     reviews: 'Отзывов работников пока нет. Они появятся после первых собеседований через Vacante.',
+    few: (n: number) => `Отзывов пока ${n}. Рейтинг покажем, когда их будет три.`,
+    rating: (n: number) => `по ${n} отзывам работников`,
   },
   kk: {
     addresses: 'Мекенжайлар',
@@ -24,6 +30,8 @@ const T = {
     site: 'Сайт',
     gis: '2ГИС',
     reviews: 'Қызметкерлердің пікірлері әзірге жоқ. Олар Vacante арқылы алғашқы сұхбаттардан кейін пайда болады.',
+    few: (n: number) => `Әзірге ${n} пікір. Рейтингті үш пікір болғанда көрсетеміз.`,
+    rating: (n: number) => `қызметкерлердің ${n} пікірі бойынша`,
   },
 };
 
@@ -38,6 +46,10 @@ export function VenueView(props: { v: Vacancy; all: Vacancy[]; lang: Lang; c: Co
   if (!list.some((x) => x.id === v.id)) list.unshift(v);
   const addresses = [...new Set(list.map((x) => x.address).filter(Boolean) as string[])];
   const links = list.find((x) => x.venue)?.venue;
+  const [reviews, setReviews] = useState<VenueReviews | null>(null);
+  useEffect(() => {
+    if (v.employer) venueReviews(v.employer).then(setReviews);
+  }, [v.employer]);
   return (
     <ScrollView contentContainerStyle={styles.body}>
       <View style={styles.head}>
@@ -60,10 +72,28 @@ export function VenueView(props: { v: Vacancy; all: Vacancy[]; lang: Lang; c: Co
           {links.gis ? <Button c={c} small ghost icon="map" label={t.gis} onPress={() => openUrl(links.gis!)} /> : null}
         </View>
       ) : null}
-      <View style={[styles.note, { backgroundColor: c.soft }]}>
-        <Icon name="chat" color={c.quiet} size={20} />
-        <Text style={[styles.noteText, { color: c.quiet }]}>{t.reviews}</Text>
-      </View>
+      {reviews?.stars ? (
+        <View style={[styles.rating, { backgroundColor: c.soft }]}>
+          <View style={styles.ratingHead}>
+            <Text style={[styles.ratingNum, { color: c.ink }]}>★ {reviews.stars.toFixed(1)}</Text>
+            <Text style={[styles.noteText, { color: c.quiet }]}>{t.rating(reviews.count)}</Text>
+          </View>
+          <View style={styles.links}>
+            {reviews.tags.map((x) => (
+              <View key={x.tag} style={[styles.tag, { borderColor: c.line }]}>
+                <Text style={[styles.tagText, { color: c.ink }]}>
+                  {V[lang].tags[x.tag]} · {x.n}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      ) : (
+        <View style={[styles.note, { backgroundColor: c.soft }]}>
+          <Icon name="chat" color={c.quiet} size={20} />
+          <Text style={[styles.noteText, { color: c.quiet }]}>{reviews?.count ? t.few(reviews.count) : t.reviews}</Text>
+        </View>
+      )}
       <Text style={[styles.h3, { color: c.ink }]}>{t.open(list.length)}</Text>
       <View>
         {list.map((x, i) => (
@@ -102,6 +132,11 @@ const styles = StyleSheet.create({
   links: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   note: { flexDirection: 'row', gap: 10, borderRadius: 14, padding: 14, alignItems: 'flex-start' },
   noteText: { flex: 1, fontSize: 13, lineHeight: 18 },
+  rating: { borderRadius: 14, padding: 14, gap: 10 },
+  ratingHead: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  ratingNum: { fontSize: 22, fontWeight: '800' },
+  tag: { borderWidth: 1, borderRadius: 14, paddingHorizontal: 10, paddingVertical: 4 },
+  tagText: { fontSize: 13, fontWeight: '600' },
   line: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, borderBottomWidth: 1 },
   last: { borderBottomWidth: 0 },
   lineTitle: { fontSize: 15, fontWeight: '700' },

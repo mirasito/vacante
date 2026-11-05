@@ -104,6 +104,8 @@ export function ApplicationsTab(props: {
   /** Открыть карточку отклика: из ссылки бота или кнопкой «Перенести» в напоминании. */
   show?: { id: number; focus: Focus } | null;
   onShown?(): void;
+  /** Экран «Запись» vacante 2.0 (только с профилем на сервере). */
+  onBooking?(a: Application): void;
 }) {
   const { c, lang, items, summary, local, show, onShown } = props;
   const t = A[lang];
@@ -142,6 +144,8 @@ export function ApplicationsTab(props: {
     if (step === 'apply' || step === 'again' || step === 'contact') return props.onApply(a, step === 'again');
     if (step === 'map' && a.vacancy.map) return openUrl(a.vacancy.map);
     if (step === 'hired') return void props.onPatch(a, { stage: 'hired' }).catch(() => undefined);
+    // С профилем время, собеседование и «Как прошло?» живут на экране «Запись»
+    if (props.onBooking && a.id > 0 && (step === 'setInterview' || step === 'how')) return props.onBooking(a);
     setOpen({ a, focus: step === 'setInterview' ? 'interview' : step === 'setStart' ? 'start' : 'how' });
   };
 
@@ -183,7 +187,8 @@ export function ApplicationsTab(props: {
             <Pressable
               onPress={() => {
                 const a = items.find((x) => x.id === next.id);
-                if (a) setOpen({ a, focus: null });
+                if (a && props.onBooking) props.onBooking(a);
+                else if (a) setOpen({ a, focus: null });
               }}
             >
               <Text style={[s.next, { color: c.ink }]}>
@@ -405,6 +410,7 @@ function Row(props: { a: Application; c: Colors; lang: Lang; now: number; onOpen
         </Text>
       ) : null}
       <Text style={[s.status, { color: c.quiet }]}>{status(a, lang, now)}</Text>
+      {a.unread ? <Text style={[s.status, { color: c.accent, fontWeight: '700' }]}>💬 {a.unread}</Text> : null}
       {steps.length ? (
         <View style={ui.row}>
           {steps.map((step, i) => (

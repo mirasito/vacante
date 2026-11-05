@@ -523,3 +523,28 @@ test("/otkliki, /napominaniya и кнопки под напоминаниями 
   assert.equal(relayed().length, before);
 });
 
+
+test("жалоба из приложения: только с ключом сервера, уходит всем модераторам", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  env.DB.prepare("INSERT INTO admins (chat_id) VALUES (?)").bind(900).run();
+  const { serverKey } = await import("../src/server.js");
+  const report = (key) =>
+    worker.fetch(
+      new Request("https://bot.example/internal/report", {
+        method: "POST",
+        headers: { authorization: `Bearer ${key}` },
+        body: JSON.stringify({ vacancy_id: "x-1", title: "Бариста <b>", reason: "prepay", from: 7001 }),
+      }),
+      env,
+      ctx,
+    );
+  assert.equal((await report("nope")).status, 403);
+  const ok = await report(await serverKey(env.TELEGRAM_BOT_TOKEN));
+  assert.equal(ok.status, 200);
+  const msg = calls.find((c) => c.method === "sendMessage");
+  assert.equal(msg.body.chat_id, 900);
+  assert.match(msg.body.text, /просят предоплату/);
+  assert.match(msg.body.text, /Бариста &lt;b&gt;/);
+});

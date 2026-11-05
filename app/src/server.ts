@@ -248,6 +248,14 @@ export interface Application {
   seen_at: string | null;
   views: number;
   link: { code: string; url: string } | null;
+  /** vacante 2.0 (сервер до 2026-11-05 этих полей не присылает). */
+  slots?: string[];
+  attended?: 'yes' | 'no' | null;
+  attended_by?: 'seeker' | 'employer' | null;
+  cancelled_at?: string | null;
+  messages?: number;
+  unread?: number;
+  review?: number | null;
   events?: ApplicationEvent[];
 }
 
@@ -413,3 +421,89 @@ export const actOnReminder = (id: number, action: 'done' | 'dismiss' | 'snooze',
 
 export const saveReminderSettings = (settings: ReminderSettings) =>
   api<Reminders>('/me/reminders/settings', { method: 'PUT', body: settings });
+
+/* ---------- vacante 2.0: запись, чаты, надёжность, отзывы, приглашения, выгрузка, жалобы ---------- */
+
+/** Удобное время для собеседования: до трёх вариантов, работодатель увидит их кнопками. */
+export const putSlots = (id: number, slots: string[]) =>
+  api<{ application: Application }>(`/me/applications/${id}/slots`, { method: 'PUT', body: { slots } });
+
+/** «Не смогу прийти»: собеседование снимается, работодатель получит текст в переписке. */
+export const cancelInterview = (id: number, text: string) =>
+  api<{ application: Application }>(`/me/applications/${id}/cancel`, { method: 'POST', body: { text } });
+
+export type Level = 'bronze' | 'silver' | 'gold';
+export interface Reliability {
+  level: Level | null;
+  attended: number;
+  missed: number;
+  cancelled: number;
+  next: { level: Level; need: number } | null;
+}
+
+export const markAttended = (id: number, attended: 'yes' | 'no') =>
+  api<{ application: Application; reliability: Reliability }>(`/me/applications/${id}/attended`, {
+    method: 'PUT',
+    body: { attended },
+  });
+
+export const getReliability = () => api<Reliability>('/me/reliability');
+
+export interface ChatMessage {
+  id: number;
+  by: 'seeker' | 'employer';
+  text: string;
+  at: string;
+  read_at: string | null;
+}
+
+export interface Chat {
+  application: Application;
+  last: { by: 'seeker' | 'employer'; text: string; at: string } | null;
+}
+
+export const listChats = () => api<{ chats: Chat[]; unread: number }>('/me/chats');
+export const getMessages = (id: number) =>
+  api<{ messages: ChatMessage[]; application: Application }>(`/me/applications/${id}/messages`);
+export const sendMessage = (id: number, text: string) =>
+  api<{ message: ChatMessage; link: string }>(`/me/applications/${id}/messages`, { method: 'POST', body: { text } });
+
+export const REVIEW_TAGS = ['polite', 'on_time', 'as_described', 'clean', 'late', 'rude', 'different_pay'] as const;
+export type ReviewTag = (typeof REVIEW_TAGS)[number];
+
+export const putReview = (id: number, review: { stars: number; tags: ReviewTag[]; text: string }) =>
+  api<{ application: Application }>(`/me/applications/${id}/review`, { method: 'PUT', body: review });
+
+export interface VenueReviews {
+  count: number;
+  stars: number | null;
+  tags: { tag: ReviewTag; n: number }[];
+}
+
+/** Сводка отзывов о заведении: без входа, только числа. null, если сервер недоступен. */
+export async function venueReviews(name: string): Promise<VenueReviews | null> {
+  try {
+    const res = await fetch(`${API_URL}/venues/reviews?name=${encodeURIComponent(name)}`);
+    return res.ok ? ((await res.json()) as VenueReviews) : null;
+  } catch {
+    return null;
+  }
+}
+
+export const getReferral = () => api<{ code: string; url: string; invited: number }>('/me/referral');
+export const useReferral = (code: string) => api<{ ok: boolean }>('/me/referral', { method: 'POST', body: { code } });
+
+/** Ссылка на файл со всеми своими данными: живёт 10 минут. */
+export const exportData = () => api<{ url: string }>('/me/export', { method: 'POST' });
+
+export const REPORT_REASONS = ['fraud', 'prepay', 'contacts', 'closed', 'wrong', 'other'] as const;
+export type ReportReason = (typeof REPORT_REASONS)[number];
+
+export const reportVacancy = (report: {
+  vacancy_id: string;
+  title: string;
+  employer: string | null;
+  url: string | null;
+  reason: ReportReason;
+  text: string;
+}) => api<{ ok: boolean }>('/me/report', { method: 'POST', body: report });

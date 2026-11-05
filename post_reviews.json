@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T20:56:31+00:00",
+ "updated_at": "2026-11-05T03:56:22+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -29977,6 +29977,57 @@
    "verdict": "approve",
    "at": "2026-11-04T20:56:31+00:00",
    "fields": {}
+  },
+  "hh-139140050": {
+   "verdict": "approve",
+   "at": "2026-11-05T03:56:22+00:00",
+   "fields": {
+    "employer": "Hammer Legend",
+    "schedule": "2/2"
+   }
+  },
+  "hh-139139365": {
+   "verdict": "reject",
+   "at": "2026-11-05T03:56:22+00:00",
+   "reason": "Промо-модель в барах с продажей алкоголя, неясная работа"
+  },
+  "astana_job_vakansii-130211": {
+   "verdict": "approve",
+   "at": "2026-11-05T03:56:22+00:00",
+   "fields": {
+    "employer": "People’s Lounge Bar"
+   }
+  },
+  "hh-137275080": {
+   "verdict": "approve",
+   "at": "2026-11-05T03:56:22+00:00",
+   "fields": {
+    "employer": "Дары Природы",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139142005": {
+   "verdict": "approve",
+   "at": "2026-11-05T03:56:22+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Mix Market Trade"
+   }
+  },
+  "hh-139142000": {
+   "verdict": "reject",
+   "at": "2026-11-05T03:56:22+00:00",
+   "reason": "Офисные B2B-продажи логистики"
+  },
+  "hh-139141751": {
+   "verdict": "approve",
+   "at": "2026-11-05T03:56:22+00:00",
+   "fields": {
+    "employer": "Холдинговая компания «Успех»"
+   }
   }
  }
 }

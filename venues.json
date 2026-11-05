@@ -1197,6 +1197,20 @@
    "website"
   ]
  },
+ "aktobe:ansar": {
+  "name": "ANSAR",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "aktobe_kvartira_ansar",
+  "website": "https://ansar.pro/",
+  "source": "https://2gis.kz/aktobe/firm/70000001056307449",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:arzan shop": {
   "name": "Arzan Shop",
   "city": "aktobe",
@@ -1958,6 +1972,15 @@
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
  },
+ "aktobe:нурдаулет": {
+  "name": "Нурдаулет",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "nurdaulet_td",
+  "source": "https://2gis.kz/aktobe/firm/70000001032174444"
+ },
  "aktobe:олжа": {
   "name": "ОЛЖА",
   "city": "aktobe",
@@ -2426,6 +2449,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
+ },
+ "almaty:alan solutions": {
+  "name": "Alan Solutions",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
  },
  "almaty:alatau auto tech": {
   "name": "Alatau Auto Tech",
@@ -4921,6 +4951,22 @@
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
  },
+ "almaty:eva coffee": {
+  "name": "EVA COFFEE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "eva.coffeehouse",
+  "website": "https://tapter.one/eva.coffeehouse",
+  "source": "https://2gis.kz/almaty/firm/70000001065133624",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a7425dea0f12f569.jpg",
+  "avatar_source": "website"
+ },
  "almaty:eva restaurants": {
   "name": "Eva Restaurants",
   "city": "almaty",
@@ -6889,6 +6935,13 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "almaty:lux flowers": {
+  "name": "LUX FLOWERS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
+ },
  "almaty:m manzoni ип мавлитов е": {
   "name": "M.Manzoni ( ИП Мавлитов Е)",
   "city": "almaty",
@@ -7026,6 +7079,13 @@
   "checked_at": "2026-11-04T18:44:42+00:00",
   "instagram": "mausym_couture",
   "source": "https://2gis.kz/almaty/firm/70000001046141071"
+ },
+ "almaty:maxx": {
+  "name": "maxx",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
  },
  "almaty:mebitex group": {
   "name": "Mebitex Group",
@@ -9041,6 +9101,13 @@
    "website"
   ]
  },
+ "almaty:steel security management": {
+  "name": "Steel Security Management",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
+ },
  "almaty:stom dautovy": {
   "name": "Stom-Dautovy",
   "city": "almaty",
@@ -10876,7 +10943,7 @@
   "instagram": "artinsight.kz",
   "website": "https://artinsight.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001044727010",
-  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11356,6 +11423,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "almaty:в mvp barbershop": {
+  "name": "В MVP BARBERSHOP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "m.v.p.barbershop",
+  "source": "https://2gis.kz/almaty/firm/70000001086860470"
  },
  "almaty:в алматы": {
   "name": "В АЛМАТЫ",
@@ -12075,6 +12151,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "almaty:жилисбаева а т": {
+  "name": "Жилисбаева А.Т",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
+ },
  "almaty:жкх байланыс": {
   "name": "ЖКХ БАЙЛАНЫС",
   "city": "almaty",
@@ -12589,7 +12672,7 @@
   "instagram": "kps_snab",
   "website": "https://kps-snab.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001022720996",
-  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14245,6 +14328,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
+ },
+ "almaty:раимкулова с б": {
+  "name": "Раимкулова С.Б",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
  },
  "almaty:рауза аде": {
   "name": "Рауза АДЕ",
@@ -16226,6 +16316,15 @@
   "instagram": "barbershop.4bro",
   "source": "https://2gis.kz/astana/firm/70000001077727092"
  },
+ "astana:5th ugol": {
+  "name": "5th UGOL",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "5th.ugol",
+  "source": "https://2gis.kz/astana/firm/70000001110382750"
+ },
  "astana:abylai and co": {
   "name": "Abylai and Co",
   "city": "astana",
@@ -18128,7 +18227,7 @@
   "checked_at": "2026-10-29T15:45:22+00:00",
   "website": "https://ingri.ru/",
   "source": "https://2gis.kz/astana/firm/70000001018120711",
-  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18682,7 +18781,7 @@
   "instagram": "liftmaster.kz",
   "website": "https://www.lift-master.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018069625",
-  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21223,6 +21322,13 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "astana:алина сат": {
+  "name": "Алина Сат",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
+ },
  "astana:алмаз холдинг тоо аргента": {
   "name": "Алмаз-Холдинг (ТОО Аргента)",
   "city": "astana",
@@ -22027,6 +22133,21 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "astana:детский мир": {
+  "name": "Детский Мир",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "website": "https://detmir.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040902934",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "07ce21aa974cf2b2.jpg",
+  "avatar_source": "website"
  },
  "astana:детский мир казахстан": {
   "name": "Детский мир - Казахстан",
@@ -24172,6 +24293,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
+ },
+ "astana:сити центр": {
+  "name": "Сити Центр",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
  },
  "astana:сквирская екатерина евгеньевна": {
   "name": "Сквирская Екатерина Евгеньевна",
@@ -29954,6 +30082,19 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "pavlodar:gungir": {
+  "name": "GUNGIR",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "website": "https://loftpark.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001100237946",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "pavlodar",
@@ -31215,6 +31356,20 @@
   "instagram": "maxrazmah_official",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001089189267"
  },
+ "petropavlovsk:маляров р а milavitsa": {
+  "name": "Маляров Р.А. (Milavitsa)",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "milavitsaofficial.kz",
+  "website": "https://milavitsa-shop.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001079231726",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:масло дел": {
   "name": "Масло-Дел",
   "city": "petropavlovsk",
@@ -31702,6 +31857,15 @@
   ],
   "avatar": "45f01bb1a9d8c238.jpg",
   "avatar_source": "website"
+ },
+ "semey:rabbit": {
+  "name": "RABBIT",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "extreme_rabbit_semey",
+  "source": "https://2gis.kz/semej/firm/70000001077121151"
  },
  "semey:sandyq world": {
   "name": "Sandyq World",
@@ -33002,6 +33166,20 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "shymkent:trd energy": {
+  "name": "TRD Energy",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "trd_energy",
+  "website": "https://www.trd-energy.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001102627787",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:womans time": {
   "name": "Woman’s time",
   "city": "shymkent",
@@ -33263,6 +33441,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "shymkent:жұманова ақерке": {
+  "name": "Жұманова Ақерке",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00"
+ },
  "shymkent:завод триумф м м с": {
   "name": "Завод Триумф М.М.С",
   "city": "shymkent",
@@ -33369,7 +33554,7 @@
   "checked_at": "2026-10-29T15:45:22+00:00",
   "website": "https://idcollect.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055520546",
-  "avatar_checked_at": "2026-10-29T15:45:22+00:00",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33997,7 +34182,7 @@
   "instagram": "lamoda_kz",
   "website": "https://lamoda.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001057589314",
-  "avatar_checked_at": "2026-10-29T14:46:23+00:00",
+  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34655,6 +34840,15 @@
   ],
   "avatar": "9fdbeac31d12d0a2.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:yuki": {
+  "name": "YUKI",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T15:45:29+00:00",
+  "instagram": "yuki_uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001103886625"
  },
  "uralsk:zhayik motors": {
   "name": "ZHAYIK MOTORS",

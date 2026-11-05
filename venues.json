@@ -247,6 +247,22 @@
   "instagram": "cafe.garden.aktau",
   "source": "https://2gis.kz/aktau/firm/70000001061020502"
  },
+ "aktau:gatin group": {
+  "name": "GATIN group",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "instagram": "gatin.kz",
+  "website": "https://gatin.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001029265537",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "43ae35c1b78473d1.jpg",
+  "avatar_source": "website"
+ },
  "aktau:green house limited": {
   "name": "Green House Limited",
   "city": "aktau",
@@ -2247,7 +2263,7 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "website": "http://adal.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001202724",
-  "avatar_checked_at": "2026-10-29T14:10:25+00:00",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2505,7 +2521,7 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "website": "https://algroup.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001297074",
-  "avatar_checked_at": "2026-10-29T14:10:25+00:00",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4300,6 +4316,13 @@
    "website"
   ]
  },
+ "almaty:dass & partners": {
+  "name": "DASS & Partners",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
+ },
  "almaty:daua pharma": {
   "name": "DAUA Pharma",
   "city": "almaty",
@@ -4898,6 +4921,13 @@
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
  },
+ "almaty:eva restaurants": {
+  "name": "Eva Restaurants",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
+ },
  "almaty:event plus": {
   "name": "Event Plus",
   "city": "almaty",
@@ -5211,6 +5241,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T21:44:03+00:00"
+ },
+ "almaty:galafood": {
+  "name": "GalaFood",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
  },
  "almaty:galamat company": {
   "name": "Galamat Company",
@@ -7053,6 +7090,13 @@
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
  },
+ "almaty:meister": {
+  "name": "Meister",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
+ },
  "almaty:memorial clinic": {
   "name": "Memorial clinic",
   "city": "almaty",
@@ -7126,6 +7170,13 @@
   "checked_at": "2026-11-04T21:44:03+00:00",
   "instagram": "mirakids_kz",
   "source": "https://2gis.kz/almaty/firm/70000001116431517"
+ },
+ "almaty:miraskids_optom": {
+  "name": "miraskids_optom",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
  },
  "almaty:miromed ltd": {
   "name": "Miromed Ltd",
@@ -10548,6 +10599,13 @@
    "website"
   ]
  },
+ "almaty:алмамебли": {
+  "name": "АлмаМебли",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
+ },
  "almaty:алмас": {
   "name": "Алмас",
   "city": "almaty",
@@ -10750,6 +10808,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "almaty:антал бизнес решения тм antal kazakhstan": {
+  "name": "АНТАЛ БИЗНЕС РЕШЕНИЯ (ТМ Antal Kazakhstan)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
  },
  "almaty:аптекаплюс": {
   "name": "АПТЕКАПЛЮС",
@@ -11943,6 +12008,13 @@
   "v": 3,
   "checked_at": "2026-11-02T19:45:07+00:00"
  },
+ "almaty:жайлауов бекнур": {
+  "name": "Жайлауов Бекнур",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
+ },
  "almaty:жайлы сай": {
   "name": "Жайлы Сай",
   "city": "almaty",
@@ -12135,6 +12207,13 @@
   "checked_at": "2026-10-28T20:44:33+00:00",
   "instagram": "yvesrocherkz",
   "source": "https://2gis.kz/almaty/firm/70000001113860458"
+ },
+ "almaty:игорь": {
+  "name": "Игорь",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
  },
  "almaty:илс": {
   "name": "ИЛС",
@@ -12749,7 +12828,7 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "website": "http://idcollect.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055520546",
-  "avatar_checked_at": "2026-10-29T14:10:25+00:00",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13793,6 +13872,21 @@
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
  },
+ "almaty:нью йоркер ритейл каз": {
+  "name": "НЬЮ ЙОРКЕР Ритейл КАЗ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "website": "https://newyorker.de/",
+  "source": "https://2gis.kz/almaty/firm/9429940000902021",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b40f95fa3fabfa3f.jpg",
+  "avatar_source": "website"
+ },
  "almaty:оздоровительный центр айкуне": {
   "name": "Оздоровительный центр «Айкуне»",
   "city": "almaty",
@@ -14395,6 +14489,13 @@
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
  },
+ "almaty:санжар": {
+  "name": "Санжар",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
+ },
  "almaty:санни смайл дентал": {
   "name": "Санни Смайл Дентал",
   "city": "almaty",
@@ -14849,6 +14950,13 @@
   "checked_at": "2026-11-03T15:44:31+00:00",
   "instagram": "suncar.kz",
   "source": "https://2gis.kz/almaty/firm/70000001045594307"
+ },
+ "almaty:суық қоңырау": {
+  "name": "Суық қоңырау",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00"
  },
  "almaty:сынар групп": {
   "name": "Сынар Групп",
@@ -15701,6 +15809,24 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
+ },
+ "almaty:частная школа пифагор": {
+  "name": "Частная Школа Пифагор",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "instagram": "pifagorschool.kz",
+  "telegram": "pifagorkz",
+  "website": "https://pifagor.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089067412",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "4c6e33207d1c0ba2.jpg",
+  "avatar_source": "website"
  },
  "almaty:чековая лента": {
   "name": "Чековая лента",
@@ -20709,6 +20835,20 @@
   "avatar": "a437aabbf3ebc36b.jpg",
   "avatar_source": "website"
  },
+ "astana:wolt technologieskazakhstan вольт технолоджис казахстан": {
+  "name": "Wolt TechnologiesKazakhstan (Вольт Технолоджис Казахстан)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "instagram": "wolt.kazakhstan",
+  "website": "https://wolt.com/ru/kaz/nur-sultan",
+  "source": "https://2gis.kz/astana/firm/70000001041019928",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:worldwide trade": {
   "name": "WorldWide Trade",
   "city": "astana",
@@ -23392,6 +23532,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "astana:нью йоркер ритейл каз": {
+  "name": "НЬЮ ЙОРКЕР Ритейл КАЗ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "instagram": "newyorkeronline",
+  "website": "https://newyorker.de/",
+  "source": "https://2gis.kz/astana/firm/70000001018070947",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a11b2514622986c4.jpg",
+  "avatar_source": "website"
  },
  "astana:нұрмұхамед": {
   "name": "НҰРМҰХАМЕД",
@@ -31591,6 +31747,20 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "semey:wolt technologieskazakhstan вольт технолоджис казахстан": {
+  "name": "Wolt TechnologiesKazakhstan (Вольт Технолоджис Казахстан)",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "instagram": "wolt.kazakhstan",
+  "website": "https://wolt.com/",
+  "source": "https://2gis.kz/astana/firm/70000001041019928",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "semey:yniti": {
   "name": "YNITI",
   "city": "semey",
@@ -34200,6 +34370,15 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "uralsk:barmarket": {
+  "name": "BarMarket",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "instagram": "barmarket07",
+  "source": "https://2gis.kz/uralsk/firm/70000001116730581"
+ },
  "uralsk:brew": {
   "name": "BREW",
   "city": "uralsk",
@@ -35316,6 +35495,19 @@
   ],
   "avatar": "af0c6720e116897f.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:qsr тм burger king": {
+  "name": "“QSR” ,ТМ BURGER KING",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T14:43:38+00:00",
+  "website": "https://burgerking.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001105771876",
+  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:sigua on staff": {
   "name": "Sigua on Staff",

@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
 
-import { migrate, openDb } from "../src/db.ts";
+import { migrate, MIGRATIONS, openDb } from "../src/db.ts";
 
 const tables = (db: DatabaseSync) =>
   (db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name").all() as { name: string }[]).map(
@@ -39,6 +39,25 @@ test("сломанная миграция откатывается целико�
     assert.deepEqual(tables(db), ["a", "migrations"]);
     const done = (db.prepare("SELECT name FROM migrations").all() as { name: string }[]).map((r) => r.name);
     assert.deepEqual(done, ["0001_ok.sql"]);
+    db.close();
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("галочку превью, включённую до кружка в превью, снимает миграция 0008", () => {
+  const dir = mkdtempSync(join(tmpdir(), "vacante-mig-"));
+  try {
+    const all = readdirSync(MIGRATIONS).filter((f) => f.endsWith(".sql")).sort();
+    for (const name of all.filter((f) => f < "0008")) copyFileSync(join(MIGRATIONS, name), join(dir, name));
+    const db = new DatabaseSync(":memory:");
+    migrate(db, dir);
+    db.prepare(
+      "INSERT INTO seekers (id, first_name, consent_version, consent_at, preview_at) VALUES (1, 'Дана', 'v', '2026-11-04T23:00:00Z', '2026-11-04T23:00:00Z')",
+    ).run();
+    copyFileSync(join(MIGRATIONS, "0008_preview_video.sql"), join(dir, "0008_preview_video.sql"));
+    assert.deepEqual(migrate(db, dir), ["0008_preview_video.sql"]);
+    assert.equal((db.prepare("SELECT preview_at AS at FROM seekers WHERE id = 1").get() as { at: string | null }).at, null);
     db.close();
   } finally {
     rmSync(dir, { recursive: true, force: true });

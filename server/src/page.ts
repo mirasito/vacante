@@ -1,6 +1,7 @@
 // Страница профиля для работодателя: p.vacante.kz/<код>. Открывается в любом браузере без входа.
 // Превью ссылки в WhatsApp и Telegram без имени и данных анкеты: «Профиль кандидата в Vacante»,
-// а если соискатель сам включил галочку, ещё фото (или кадр кружка) и «▶ Видео 0:42».
+// а если соискатель сам включил галочку, ещё фото (или кадр кружка) и «▶ Видео 0:42», и Telegram
+// может проиграть сам кружок прямо в превью.
 // Поисковики страницу не индексируют, сторонних скриптов и Метрики на ней нет.
 import type { Ctx } from "./app.ts";
 import {
@@ -165,18 +166,45 @@ interface Preview {
   title?: string;
   text?: string;
   image?: { url: string; width?: number; height?: number };
+  /** Адрес кружка: Telegram проигрывает его прямо в превью, WhatsApp показывает только картинку. */
+  video?: string;
 }
 
 /** WhatsApp не показывает в превью картинку тяжелее ~300 КБ. */
 export const PREVIEW_MAX_BYTES = 300_000;
+/** Кружок квадратный: из размера Telegram берёт пропорции и величину плеера в превью. */
+const CIRCLE_SIDE = 640;
 
-/** Картинка превью; крупная, чтобы Telegram поставил её во всю ширину, а не значком сбоку. */
-const imageMeta = (image: NonNullable<Preview["image"]>) => html`<meta property="og:image" content="${image.url}">
+/**
+ * Картинка и кружок для превью. Картинка крупная, чтобы Telegram поставил её во всю ширину, а не
+ * значком сбоку. Кружок описан теми же метками, по которым Telegram проигрывает видео других сайтов.
+ */
+function mediaMeta({ image, video }: Preview): Html | "" {
+  if (!image && !video) return "";
+  return html`${
+    image
+      ? html`<meta property="og:image" content="${image.url}">
 <meta property="og:image:type" content="image/jpeg">
 ${image.width && image.height ? html`<meta property="og:image:width" content="${image.width}">
 <meta property="og:image:height" content="${image.height}">
-` : ""}<meta name="twitter:card" content="summary_large_image">
+` : ""}`
+      : ""
+  }${
+    video
+      ? html`<meta property="og:video" content="${video}">
+<meta property="og:video:secure_url" content="${video}">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="${CIRCLE_SIDE}">
+<meta property="og:video:height" content="${CIRCLE_SIDE}">
+<meta property="twitter:player:stream" content="${video}">
+<meta property="twitter:player:stream:content_type" content="video/mp4">
+<meta property="twitter:player:width" content="${CIRCLE_SIDE}">
+<meta property="twitter:player:height" content="${CIRCLE_SIDE}">
+`
+      : ""
+  }<meta property="twitter:card" content="${video ? "player" : "summary_large_image"}">
 `;
+}
 
 function page(lang: Lang, body: Html, other?: string, preview: Preview = {}): string {
   const t = T[lang];
@@ -190,7 +218,7 @@ function page(lang: Lang, body: Html, other?: string, preview: Preview = {}): st
 <meta property="og:title" content="${preview.title ?? t.title}">
 <meta property="og:description" content="${preview.text ?? t.previewText}">
 <meta property="og:site_name" content="Vacante">
-${preview.image ? imageMeta(preview.image) : ""}<style>${STYLE}</style>
+${mediaMeta(preview)}<style>${STYLE}</style>
 </head>
 <body><main>
 <header><a class="logo" href="https://vacante.kz">vacante</a>${other ? html`<a class="lang" href="${other}">${t.other}</a>` : ""}</header>
@@ -296,8 +324,8 @@ ${error ? html`<p class="error">${t.badDate}</p>` : ""}
 }
 
 /**
- * Превью ссылки, когда соискатель сам включил «Показывать фото в превью ссылки»: фото или кадр
- * кружка и длина кружка. Имени и данных анкеты в превью нет и с галочкой.
+ * Превью ссылки, когда соискатель сам включил «Показывать фото и кружок в превью ссылки»: фото или
+ * кадр кружка, длина кружка и сам кружок для Telegram. Имени и данных анкеты в превью нет и с галочкой.
  */
 function previewOf(ctx: Ctx, link: Link, video: Video | undefined, lang: Lang): Preview {
   if (!getSeeker(ctx.db, link.seeker_id)?.preview_at) return {};
@@ -315,7 +343,12 @@ function previewOf(ctx: Ctx, link: Link, video: Video | undefined, lang: Lang): 
         ? { url: frame }
         : undefined;
   return video?.file
-    ? { title: t.previewVideo(duration(video.duration)), text: t.previewVideoText, image }
+    ? {
+        title: t.previewVideo(duration(video.duration)),
+        text: t.previewVideoText,
+        image,
+        video: `${base}/video.mp4?v=${version(video.recorded_at)}`,
+      }
     : { image };
 }
 

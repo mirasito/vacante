@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-05T16:56:39+00:00",
+ "updated_at": "2026-11-05T17:57:05+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -33527,6 +33527,159 @@
    "fields": {
     "title": "Продавец-консультант косметики",
     "employer": null
+   }
+  },
+  "astana_rabota-90157": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Продавец",
+    "employer": "Магазин сладостей «EuroDam»",
+    "salary_min": 10000,
+    "salary_max": 20000,
+    "salary_period": "day",
+    "schedule": "2/2 или 3/1, 09:30–22:00",
+    "perks": [
+     "Официально",
+     "Без опыта"
+    ]
+   }
+  },
+  "zhumys_astana_kz-17202": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Повар на раздачу, раннер, упаковщица",
+    "salary_min": 1000,
+    "salary_max": 1100,
+    "salary_period": "hour",
+    "schedule": "2/2 или 6/1, 09:00–21:00",
+    "address": "ул. Тлендиева, 153",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Официально"
+    ]
+   }
+  },
+  "zhumys_astana_kz-17201": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Мойщица посуды, пекарь, официант, раннер",
+    "employer": "RUMI",
+    "salary_min": 8000,
+    "salary_max": 16000,
+    "salary_period": "day",
+    "schedule": "10:00–00:00",
+    "address": "ТРЦ «Mega Silk Way», пр. Кабанбай батыра, 62",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-130244": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Официант, повар горячего цеха, повар холодного цеха",
+    "employer": "Гриль-бар «Brewery»",
+    "salary_min": 19100,
+    "salary_max": 19800,
+    "salary_period": "day",
+    "schedule": "2/2, 10:00–00:00",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "rabota_astanakz-31299": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Моторист по ремонту спецтехники",
+    "employer": "Абат Сервис LTD"
+   }
+  },
+  "hh-138413335": {
+   "verdict": "reject",
+   "at": "2026-11-05T17:57:05+00:00",
+   "reason": "Офисная должность (B2B-продажи недвижимости, высшее образование)"
+  },
+  "astana_job_vakansii-130237": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "employer": "Tevix Kazakhstan",
+    "schedule": "6/1, 11:00–21:00"
+   }
+  },
+  "hh-139170329": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Старший бармен",
+    "employer": "Fruit Republic",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139167910": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Водитель с личным грузовым автомобилем",
+    "schedule": null
+   }
+  },
+  "hh-139167698": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "employer": "Daryndy Bala",
+    "schedule": "Свободный график",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139166964": {
+   "verdict": "reject",
+   "at": "2026-11-05T17:57:05+00:00",
+   "reason": "Офисная должность (делопроизводитель, высшее образование)"
+  },
+  "hh-139164374": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "employer": "IMUN Pharma",
+    "schedule": null
+   }
+  },
+  "hh-139164231": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Кассир",
+    "employer": "Ресторан «Рыба Пила»",
+    "address": "пр. Достык, 280"
+   }
+  },
+  "hh-139164230": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {}
+  },
+  "vakansii_rabota_atyrau-50033": {
+   "verdict": "approve",
+   "at": "2026-11-05T17:57:05+00:00",
+   "fields": {
+    "title": "Официант, ночной менеджер, бармен",
+    "employer": "Караоке-бар «Janym Soul»",
+    "schedule": "5/2 или 4/2, 17:00–05:00"
    }
   }
  }

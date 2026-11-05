@@ -25,6 +25,11 @@ export interface Config {
    * создают только тестировщики: они открывают приложение по ссылке t.me/vacantekz_bot?startapp=beta.
    */
   profilesOpen: boolean;
+  /**
+   * Ключ закладки «Забрать в vacante» для объявлений OLX (server/src/olx-import.ts): sha256("olx:" + пароль
+   * админки) в hex, его считает выкладка из секрета ADMIN_PASSWORD. Пусто — импорт выключен.
+   */
+  olxImportKey: string;
 }
 
 type Env = Record<string, string | undefined>;
@@ -51,6 +56,7 @@ export function loadConfig(env: Env = process.env): Config {
     botUsername: env.BOT_USERNAME ?? "vacantekz_bot",
     version: env.VACANTE_VERSION ?? releaseVersion(),
     profilesOpen: env.PROFILES_OPEN === "1",
+    olxImportKey: /^[0-9a-f]{64}$/i.test(env.OLX_IMPORT_KEY ?? "") ? (env.OLX_IMPORT_KEY as string).toLowerCase() : "",
   };
 }
 

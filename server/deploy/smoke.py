@@ -85,6 +85,12 @@ def check(api: str, token: str) -> None:
         fail("у проверочного пользователя оказался профиль")
     print(f"Вход из приложения работает: {api} принимает подпись Telegram и отвечает сайту {SITE}")
 
+    # Страница с закладкой «Забрать в vacante» для объявлений OLX (server/src/olx-import.ts)
+    status, _, body = call(f"{api}/olx/", "GET", {})
+    if status != 200 or b"javascript:" not in body:
+        fail(f"GET /olx/ ответил {status}: страницы закладки для OLX нет")
+    print(f"Страница закладки для OLX открывается: {api}/olx/")
+
 
 def main() -> None:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "")

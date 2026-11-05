@@ -7,6 +7,7 @@ import type { Db } from "./db.ts";
 import { HttpError, makeRequest, route, send, type Reply, type Request, type Route, type Site } from "./http.ts";
 import { internalRoutes } from "./internal.ts";
 import { meRoutes } from "./me.ts";
+import { olxImportRoutes } from "./olx-import.ts";
 import { olxRoutes } from "./olx.ts";
 import { pageRoutes } from "./page.ts";
 import { verifyInitData, type Bot, type InitData } from "./telegram.ts";
@@ -119,6 +120,7 @@ function buildRoutes(ctx: Ctx): Route[] {
     ...meRoutes(ctx),
     ...internalRoutes(ctx),
     ...olxRoutes(ctx),
+    ...olxImportRoutes(ctx),
     ...pageRoutes(ctx),
   ];
 }

@@ -35,6 +35,8 @@ test("страница /olx/ с закладкой: закладка ничег�
     assert.equal(page.headers["x-robots-tag"], "noindex, nofollow");
     assert.match(page.text, /href="javascript:/);
     assert.match(page.text, /PRERENDERED_STATE/);
+    assert.match(page.text, /id="paste" contenteditable="true"/); // путь без закладки: скопированная страница
+    assert.match(page.text, /window\.vacanteFromHtml = fromHtml/);
     const code = decodeURIComponent(bookmarklet("https://api.vacante.kz/olx/").slice("javascript:".length));
     assert.match(code, /const PAGE = "https:\/\/api\.vacante\.kz\/olx\/", ORIGIN = "https:\/\/api\.vacante\.kz"/);
     assert.match(code, /window\.open\(PAGE, "vacante-olx"\)/);

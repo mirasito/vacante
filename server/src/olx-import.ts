@@ -272,25 +272,75 @@ function importPage(page: string) {
       const n = (v) => Number(v).toLocaleString("ru-RU");
       return (s.from !== undefined && s.to !== undefined ? n(s.from) + "–" + n(s.to) : s.from !== undefined ? "от " + n(s.from) : "до " + n(s.to)) + " " + (s.currency || "KZT");
     };
-    window.addEventListener("message", async (e) => {
-      if (!${JSON.stringify(OLX_ORIGINS)}.includes(e.origin)) return;
-      const data = e.data;
-      if (!data || data.v !== 1 || !Array.isArray(data.items)) return;
-      const items = data.items.slice(0, 300);
+    const submit = async (items, page) => {
       $("list").innerHTML = items.map((a) => "<li><a href=\\"" + esc(a.url) + "\\" rel=\\"noopener\\" target=\\"_blank\\">" + esc(a.title || a.url) + "</a>" +
         (a.city ? " · " + esc(a.city) : "") + (salaryText(a.salary) ? " · " + esc(salaryText(a.salary)) : "") + "</li>").join("");
       $("result").hidden = false;
-      if (!key()) { status("Сначала введите пароль админки выше, потом нажмите закладку ещё раз.", "err"); return; }
+      if (!key()) { status("Сначала введите пароль админки выше, потом повторите.", "err"); return; }
       status("Отправляю " + items.length + " объявлений…");
       try {
         const r = await fetch("/olx/import", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + key() },
-          body: JSON.stringify({ items, page: data.page }) });
+          body: JSON.stringify({ items, page }) });
         const j = await r.json();
         if (!r.ok) { status("Не отправлено: " + (j.error || r.status), "err"); return; }
         status("Принято " + j.stored + " из " + j.received + (j.skipped ? " (" + j.skipped + " пропущено: не объявления OLX или резюме)" : "") +
           ". На сервере " + j.total + " объявлений за 30 дней. На сайте подходящие появятся после ближайшего часового сбора (в :17), " +
           "остаются только рабочие профессии и известные города.", "ok");
       } catch (err) { status("Не отправлено: " + err, "err"); }
+    };
+    window.addEventListener("message", (e) => {
+      if (!${JSON.stringify(OLX_ORIGINS)}.includes(e.origin)) return;
+      const data = e.data;
+      if (!data || data.v !== 1 || !Array.isArray(data.items)) return;
+      submit(data.items.slice(0, 300), data.page);
+    });
+    // Скопированная страница OLX (Ctrl+A, Ctrl+C на странице, Ctrl+V здесь): в буфере лежит разметка страницы,
+    // из неё берём ссылки на объявления, названия, цены и города. Страницу у OLX при этом никто не запрашивает
+    const fromHtml = (text) => {
+      const doc = new DOMParser().parseFromString(text, "text/html");
+      const seen = new Map();
+      for (const a of doc.querySelectorAll('a[href*="obyavlenie"]')) {
+        let url;
+        try { url = new URL(a.getAttribute("href"), "https://www.olx.kz/").href; } catch (e) { continue; }
+        url = url.split("#")[0].split("?")[0];
+        if (!url.startsWith("https://www.olx.kz/") || !/\\.html$/.test(url)) continue;
+        let card = a.closest('[data-cy="l-card"]');
+        if (!card) {
+          let el = a;
+          card = a.parentElement || a;
+          for (let i = 0; i < 6 && el.parentElement && el.parentElement !== doc.body; i++) {
+            el = el.parentElement;
+            if (/\\d\\s*(тг|₸|KZT)|Договорная/i.test(el.textContent) && el.querySelectorAll('a[href*="obyavlenie"]').length <= 2) { card = el; break; }
+          }
+        }
+        const m = /-ID([A-Za-z0-9]+)\\.html$/.exec(url);
+        const id = Number(card.id) || (m ? parseInt(m[1], 36) : 0);
+        if (!id) continue;
+        const h = card.querySelector("h1,h2,h3,h4,h5,h6");
+        let title = (h ? h.textContent : a.textContent).replace(/\\s+/g, " ").trim();
+        if (title.length > 120) title = a.textContent.replace(/\\s+/g, " ").trim().slice(0, 120);
+        const priceEl = card.querySelector('[data-testid="ad-price"]');
+        const price = priceEl ? priceEl.textContent : (/(\\d[\\d\\s\\u00a0]{2,}\\s*(?:тг|₸|KZT)\\.?)/i.exec(card.textContent) || [])[1];
+        const locEl = card.querySelector('[data-testid="location-date"]');
+        const city = locEl ? locEl.textContent.split(/[,\\-–]/)[0].trim() : "";
+        const prev = seen.get(url);
+        if (prev && prev.title && !title) continue;
+        seen.set(url, { id, url, title, description: price ? "Зарплата: " + price.replace(/\\s+/g, " ").trim() : "", city: city || null });
+      }
+      return [...seen.values()].filter((x) => x.title);
+    };
+    window.vacanteFromHtml = fromHtml;
+    document.addEventListener("paste", (e) => {
+      if (e.target === $("pwd")) return;
+      e.preventDefault();
+      const h = e.clipboardData && e.clipboardData.getData("text/html");
+      $("result").hidden = false;
+      if (!h) { status("В буфере нет страницы. Откройте список на OLX, нажмите Ctrl+A и Ctrl+C, потом вставьте здесь.", "err"); return; }
+      const items = fromHtml(h).slice(0, 300);
+      const fallback = $("city").value;
+      if (fallback) for (const x of items) if (!x.city) x.city = fallback;
+      if (!items.length) { status("В скопированном не нашёл объявлений OLX. Скопируйте список рубрики «Работа» целиком: Ctrl+A на странице OLX, потом Ctrl+C.", "err"); return; }
+      submit(items, "paste");
     });
     if (window.opener) window.opener.postMessage("vacante-ready", "*");
   `;
@@ -311,6 +361,10 @@ function importPage(page: string) {
   .note { color: #555; font-size: 14px; }
   #status.ok { color: #137333; } #status.err { color: #b3261e; }
   #list { padding-left: 20px; font-size: 14px; }
+  h2 { font-size: 18px; margin-top: 28px; }
+  select { font: inherit; padding: 6px; }
+  #paste { min-height: 72px; border: 2px dashed #9aa4b2; border-radius: 8px; padding: 12px; color: #555; outline: none; }
+  #paste:empty::before { content: attr(data-placeholder); }
 </style>
 </head>
 <body>
@@ -326,6 +380,10 @@ function importPage(page: string) {
   <li>Перетащите кнопку на панель закладок браузера: <a class="bm" href="${bookmarklet(page)}" onclick="alert('Перетащите эту кнопку на панель закладок, а нажимайте её уже на странице OLX');return false">Забрать в vacante</a></li>
   <li>Откройте на OLX рубрику «Работа» своего города (можно с фильтрами и на любой странице списка), дождитесь списка и нажмите закладку. Откроется эта страница с итогом.</li>
 </ol>
+<h2>Или без закладки: скопировать страницу</h2>
+<p class="note">На странице OLX нажмите Ctrl+A (выделить всё) и Ctrl+C, вернитесь сюда и нажмите Ctrl+V. Так берутся названия, цены, города и ссылки, без текстов объявлений.</p>
+<p><label>Город, если в объявлении он не указан: <select id="city"><option value="">не ставить</option><option>Алматы</option><option>Астана</option><option>Шымкент</option><option>Караганда</option><option>Актобе</option><option>Атырау</option><option>Актау</option><option>Павлодар</option><option>Усть-Каменогорск</option><option>Семей</option><option>Костанай</option><option>Уральск</option><option>Тараз</option><option>Туркестан</option><option>Петропавловск</option></select></label></p>
+<div id="paste" contenteditable="true" data-placeholder="Вставьте сюда скопированную страницу OLX (Ctrl+V)"></div>
 <div id="result" hidden>
   <p id="status"></p>
   <ul id="list"></ul>

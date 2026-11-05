@@ -526,6 +526,20 @@
   "avatar": "9a69b77e5f3529d0.jpg",
   "avatar_source": "website"
  },
+ "aktau:travelers": {
+  "name": "Traveler’s",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "travelers_coffee_aktau",
+  "website": "http://travelers-coffee.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001028550245",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:vinyl": {
   "name": "Vinyl",
   "city": "aktau",
@@ -1591,6 +1605,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "aktobe:sw auto aktobe": {
+  "name": "SW Auto Aktobe",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
  },
  "aktobe:taza group": {
   "name": "Taza group",
@@ -6011,6 +6032,13 @@
   "v": 3,
   "checked_at": "2026-11-04T11:44:39+00:00"
  },
+ "almaty:husl": {
+  "name": "HUSL",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
+ },
  "almaty:hydrosta kazakhstan": {
   "name": "Hydrosta Kazakhstan",
   "city": "almaty",
@@ -6357,6 +6385,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:jg khan tengri": {
+  "name": "JG Khan Tengri",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "jumpingoat.coffee",
+  "source": "https://2gis.kz/almaty/firm/70000001021307438"
  },
  "almaty:joldostar": {
   "name": "JOLDOSTAR",
@@ -7600,6 +7637,24 @@
   "avatar": "eaf19c31fb17a1c0.jpg",
   "avatar_source": "website"
  },
+ "almaty:mycar raiymbek": {
+  "name": "Mycar Raiymbek",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "mycar_raiymbek",
+  "telegram": "mycarkz",
+  "website": "https://mycar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037448069",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "6a8a984eaaac1c17.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:nakama group": {
   "name": "Nakama group",
   "city": "almaty",
@@ -8805,6 +8860,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "almaty:rus&co financial group": {
+  "name": "Rus&Co Financial Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "website": "https://rfg.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001034325931",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:rwb wildberries & russ": {
   "name": "RWB (Wildberries & Russ)",
@@ -13123,6 +13191,13 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "almaty:керемет": {
+  "name": "Керемет",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
+ },
  "almaty:керемет су ске": {
   "name": "Керемет Су СКЕ",
   "city": "almaty",
@@ -15026,6 +15101,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:сеитов а к": {
+  "name": "Сеитов А.К.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
  },
  "almaty:сейдакулова т с": {
   "name": "ИП Сейдакулова Т.С",
@@ -19859,6 +19941,13 @@
    "website"
   ]
  },
+ "astana:nur astana kurylys": {
+  "name": "Nur Astana Kurylys",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
+ },
  "astana:of corp": {
   "name": "OF Corp",
   "city": "astana",
@@ -23579,6 +23668,20 @@
    "website"
   ]
  },
+ "astana:компания эврика": {
+  "name": "Компания ЭВРИКА",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "evrika.kazakhstan",
+  "website": "https://evrika.com/",
+  "source": "https://2gis.kz/astana/firm/70000001088025771",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:компьютерный клуб bro": {
   "name": "Компьютерный клуб BRO",
   "city": "astana",
@@ -25969,6 +26072,15 @@
   "avatar": "a01e00cabb8c337f.jpg",
   "avatar_source": "website"
  },
+ "astana:шаг вперед kz": {
+  "name": "Шаг Вперед KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "shag_vpered.astana",
+  "source": "https://2gis.kz/astana/firm/70000001041137962"
+ },
  "astana:шакабаев м р": {
   "name": "ШАКАБАЕВ М.Р.",
   "city": "astana",
@@ -26418,6 +26530,20 @@
   "checked_at": "2026-10-31T03:43:12+00:00",
   "instagram": "bereke.market.atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001035163008"
+ },
+ "atyrau:bolashak atyrau": {
+  "name": "Bolashak Atyrau",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "bolashak_group",
+  "website": "https://www.bolashak.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035494093",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:caspian offshore construction realty": {
   "name": "Caspian Offshore Construction Realty",
@@ -27796,7 +27922,7 @@
   "checked_at": "2026-10-29T22:43:35+00:00",
   "website": "https://krg.rossko.ru/",
   "source": "https://2gis.kz/karaganda/firm/70000001055973317",
-  "avatar_checked_at": "2026-10-29T22:43:35+00:00",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28767,6 +28893,20 @@
    "website"
   ]
  },
+ "karaganda:рика": {
+  "name": "Рика",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "rika.express",
+  "website": "https://www.rika.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302834238",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:рыбный день": {
   "name": "Рыбный день",
   "city": "karaganda",
@@ -29219,6 +29359,22 @@
   "v": 3,
   "checked_at": "2026-11-04T01:44:23+00:00"
  },
+ "kokshetau:автоматические котлы": {
+  "name": "Автоматические Котлы",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "autokotly",
+  "website": "https://autokotly.com/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001055601501",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6e1347c4ae0bf5dd.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:агро курс": {
   "name": "Агро Курс",
   "city": "kokshetau",
@@ -29404,6 +29560,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
+ },
+ "kokshetau:промвзрыв": {
+  "name": "Промвзрыв",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "website": "https://promvzryv.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001035438",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "915f7901fd45030e.jpg",
+  "avatar_source": "website"
  },
  "kokshetau:радуга тоо компания raduga kdr": {
   "name": "Радуга, ТОО (Компания Raduga KDR)",
@@ -30614,6 +30785,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
+ },
+ "kostanay:февит": {
+  "name": "ФЕВИТ",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
  },
  "kostanay:фирма стс бетон": {
   "name": "ФИРМА СТС-Бетон",
@@ -33665,6 +33843,13 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "shymkent:hd project": {
+  "name": "HD Project",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
+ },
  "shymkent:insoft": {
   "name": "INSOFT",
   "city": "shymkent",
@@ -33736,6 +33921,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
+ },
+ "shymkent:line pac": {
+  "name": "Line Pac",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00",
+  "instagram": "linepac_kz",
+  "website": "http://toolinepac.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001037159885",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:lpp kazakhstan лпп казахстан": {
   "name": "LPP Kazakhstan (ЛПП Казахстан)",
@@ -34072,6 +34271,13 @@
    "website"
   ]
  },
+ "shymkent:shym auto шым авто": {
+  "name": "Shym Auto (Шым Авто)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
+ },
  "shymkent:silver con": {
   "name": "SILVER CON",
   "city": "shymkent",
@@ -34095,10 +34301,12 @@
   "instagram": "study_on_shym",
   "website": "http://study-on.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001093718196",
-  "avatar_checked_at": "2026-10-29T22:43:35+00:00",
+  "avatar_checked_at": "2026-11-05T22:44:19+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "11e842cafd55c005.jpg",
+  "avatar_source": "website"
  },
  "shymkent:tau mart": {
   "name": "TAU MART",
@@ -36078,6 +36286,13 @@
   "checked_at": "2026-10-31T01:43:11+00:00",
   "instagram": "imperia_potolkov_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001025274101"
+ },
+ "uralsk:ирс": {
+  "name": "ИРС",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T22:44:19+00:00"
  },
  "uralsk:казбеков": {
   "name": "КАЗБЕКОВ",

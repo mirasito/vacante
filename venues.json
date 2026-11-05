@@ -1796,6 +1796,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "aktobe:монолог": {
+  "name": "Монолог",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "aktobe:мтс торг": {
   "name": "МТС-ТОРГ",
   "city": "aktobe",
@@ -6402,6 +6409,20 @@
   "v": 3,
   "checked_at": "2026-11-02T11:44:06+00:00"
  },
+ "almaty:manima": {
+  "name": "MANIMA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "manima.kz",
+  "website": "https://manima.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001091289722",
+  "avatar_checked_at": "2026-11-05T01:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:marden property": {
   "name": "ТОО Marden Property",
   "city": "almaty",
@@ -9371,6 +9392,13 @@
    "website"
   ]
  },
+ "almaty:аббасова": {
+  "name": "Аббасова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "almaty:абдыкадырова г и": {
   "name": "Абдыкадырова Г.И.",
   "city": "almaty",
@@ -12054,6 +12082,13 @@
    "website"
   ]
  },
+ "almaty:комета": {
+  "name": "Комета",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "almaty:комик": {
   "name": "КомиК",
   "city": "almaty",
@@ -14276,6 +14311,13 @@
   "instagram": "romeo.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001081063192"
  },
+ "almaty:тойо транс центральная азия": {
+  "name": "Тойо Транс Центральная Азия",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "almaty:торговый дом rokos": {
   "name": "ТОРГОВЫЙ ДОМ ROKOS",
   "city": "almaty",
@@ -15359,6 +15401,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
+ },
+ "astana:annisa beauty": {
+  "name": "Annisa beauty",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
  },
  "astana:apodit clinic": {
   "name": "APODIT CLINIC",
@@ -17289,6 +17338,13 @@
   "instagram": "koz_in_optica",
   "source": "https://2gis.kz/astana/firm/70000001053564239"
  },
+ "astana:kulan oil": {
+  "name": "Kulan Oil",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "astana:kultura diktuet": {
   "name": "KULTURA DIKTUET",
   "city": "astana",
@@ -18201,6 +18257,22 @@
    "website"
   ]
  },
+ "astana:peekaboo kz": {
+  "name": "Peekaboo.kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "peekaboo.kz",
+  "website": "https://peekaboo.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001111845505",
+  "avatar_checked_at": "2026-11-05T01:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c7a086f1522e5275.jpg",
+  "avatar_source": "website"
+ },
  "astana:pet": {
   "name": "PET",
   "city": "astana",
@@ -18488,6 +18560,13 @@
   "v": 3,
   "checked_at": "2026-11-03T07:45:16+00:00"
  },
+ "astana:rabbit canteen школьная столовая": {
+  "name": "Rabbit Canteen (школьная столовая)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "astana:rapidregqz": {
   "name": "RapidRegQz",
   "city": "astana",
@@ -18547,6 +18626,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
+ },
+ "astana:rusoft company": {
+  "name": "RuSoft company",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "rusoft.kz",
+  "website": "https://www.rusoft.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018119394",
+  "avatar_checked_at": "2026-11-05T01:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:rwb wildberries & russ": {
   "name": "RWB (Wildberries & Russ)",
@@ -19548,6 +19641,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T11:44:39+00:00"
+ },
+ "astana:авангард сауда": {
+  "name": "АВАНГАРД САУДА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
  },
  "astana:августа": {
   "name": "Августа",
@@ -21240,6 +21340,13 @@
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
  },
+ "astana:клин продактс": {
+  "name": "Клин Продактс",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "astana:клиника джуматаева": {
   "name": "КЛИНИКА ДЖУМАТАЕВА",
   "city": "astana",
@@ -21948,6 +22055,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "astana:наша дача": {
+  "name": "Наша Дача",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "nasha_dacha_astana",
+  "source": "https://2gis.kz/astana/firm/70000001036027241"
  },
  "astana:нуртазина": {
   "name": "Нуртазина",
@@ -26385,6 +26501,22 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "kokshetau:детский мир казахстан": {
+  "name": "Детский мир - Казахстан",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "detmir_kokshetau",
+  "website": "https://detmir.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001035097711",
+  "avatar_checked_at": "2026-11-05T01:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "567d0e9f878518ba.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:завод казагромаш": {
   "name": "ЗАВОД КАЗАГРОМАШ",
   "city": "kokshetau",
@@ -26626,6 +26758,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
+ },
+ "kostanay:caspian steel qz": {
+  "name": "Caspian Steel QZ",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
  },
  "kostanay:dynamic group": {
   "name": "Dynamic Group",
@@ -27476,6 +27615,13 @@
   "avatar": "4a42ac3356557c41.jpg",
   "avatar_source": "website"
  },
+ "kostanay:тэкера": {
+  "name": "тэкера",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "kostanay:фирма стс бетон": {
   "name": "ФИРМА СТС-Бетон",
   "city": "kostanay",
@@ -27544,6 +27690,20 @@
   "checked_at": "2026-11-03T13:44:33+00:00",
   "instagram": "auto_house_kzo",
   "source": "https://2gis.kz/kyzylorda/firm/70000001101711600"
+ },
+ "kyzylorda:belostan kz": {
+  "name": "BELOSTAN.KZ",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "belostan.kz",
+  "website": "https://belostan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001117989053",
+  "avatar_checked_at": "2026-11-05T01:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kyzylorda:common market corporation": {
   "name": "Common Market Corporation",
@@ -29700,6 +29860,13 @@
    "website"
   ]
  },
+ "semey:омарова д б": {
+  "name": "Омарова Д. Б.",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
+ },
  "semey:промстрой": {
   "name": "Промстрой",
   "city": "semey",
@@ -29989,6 +30156,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "shymkent:belostan kz": {
+  "name": "BELOSTAN.KZ",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00",
+  "instagram": "belostan.kz",
+  "website": "https://belostan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001117989053",
+  "avatar_checked_at": "2026-11-05T01:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:burabay hotel management отель rixos borovoe": {
   "name": "Burabay Hotel Management (Отель Rixos Borovoe)",
@@ -32605,6 +32786,13 @@
   "checked_at": "2026-11-02T23:44:16+00:00",
   "instagram": "akonar.kz",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001109504640"
+ },
+ "ust-kamenogorsk:alan motors": {
+  "name": "ALAN MOTORS",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T01:43:37+00:00"
  },
  "ust-kamenogorsk:altai mai": {
   "name": "ALTAI MAI",

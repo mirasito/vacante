@@ -1178,6 +1178,13 @@
    "website"
   ]
  },
+ "aktobe:ava2022": {
+  "name": "AVA2022",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
+ },
  "aktobe:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
   "city": "aktobe",
@@ -1281,6 +1288,13 @@
   "checked_at": "2026-10-31T23:43:38+00:00",
   "instagram": "glasman.kz",
   "source": "https://www.instagram.com/glasman.kz/"
+ },
+ "aktobe:global master group глобал мастер групп": {
+  "name": "GLOBAL MASTER GROUP /ГЛОБАЛ МАСТЕР ГРУПП/",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "aktobe:gungir": {
   "name": "GUNGIR",
@@ -1993,6 +2007,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "aktobe:управляющая компания keruen management": {
+  "name": "Управляющая компания Keruen Management",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "keruencity_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001031819119"
  },
  "aktobe:центр красоты и здоровья айгерим тоо цкиз айгерим": {
   "name": "Центр красоты и здоровья Айгерим ТОО ЦКиЗ «Айгерим»",
@@ -2710,6 +2733,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:aquastars спортивный комплекс": {
+  "name": "Aquastars, спортивный комплекс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "aquastars.yassaui",
+  "website": "http://assc.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000982514",
+  "avatar_checked_at": "2026-11-05T07:45:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "19ec5366b2d86116.jpg",
+  "avatar_source": "website"
  },
  "almaty:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
@@ -5551,6 +5590,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T07:44:30+00:00"
+ },
+ "almaty:hr times": {
+  "name": "HR Times",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "almaty:hr партнер": {
   "name": "HR Партнёр",
@@ -10685,6 +10731,13 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "almaty:байшешек": {
+  "name": "Байшешек",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
+ },
  "almaty:бакорда": {
   "name": "Бакорда",
   "city": "almaty",
@@ -13965,6 +14018,20 @@
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
  },
+ "almaty:санни смайл дентал": {
+  "name": "Санни Смайл Дентал",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "sunnysmile.kz",
+  "website": "http://sunnysmile.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001066551263",
+  "avatar_checked_at": "2026-11-05T07:45:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:сапаров": {
   "name": "Сапаров",
   "city": "almaty",
@@ -14115,6 +14182,13 @@
   "checked_at": "2026-10-31T18:42:42+00:00",
   "instagram": "sila.harizmy.kz",
   "source": "https://2gis.kz/almaty/firm/70000001112465963"
+ },
+ "almaty:симонович шолпан абиловна": {
+  "name": "Симонович Шолпан Абиловна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "almaty:синсерити казахстан": {
   "name": "Синсерити Казахстан",
@@ -16818,6 +16892,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "astana:education for you": {
+  "name": "Education for you",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
+ },
  "astana:eea group": {
   "name": "EEA GROUP",
   "city": "astana",
@@ -19109,6 +19190,20 @@
    "website"
   ]
  },
+ "astana:rutek group": {
+  "name": "RUTEK GROUP",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "rutektd",
+  "website": "https://rutek-group.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001092704440",
+  "avatar_checked_at": "2026-11-05T07:45:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:rwb wildberries & russ": {
   "name": "RWB (Wildberries & Russ)",
   "city": "astana",
@@ -20495,6 +20590,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "astana:арман": {
+  "name": "Арман",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "astana:аружан": {
   "name": "Аружан",
@@ -22140,6 +22242,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:лентелефонстрой ум": {
+  "name": "Лентелефонстрой-УМ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "astana:лига полис": {
   "name": "Лига Полис",
@@ -23964,6 +24073,20 @@
   "checked_at": "2026-11-02T21:44:39+00:00",
   "instagram": "center_ipoteki_astana",
   "source": "https://2gis.kz/astana/firm/70000001048093458"
+ },
+ "astana:центр пласт": {
+  "name": "Центр Пласт",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "centerplast_astana",
+  "website": "http://centerplast.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001069156815",
+  "avatar_checked_at": "2026-11-05T07:45:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:цех мясных полуфабрикатов": {
   "name": "Цех мясных полуфабрикатов",
@@ -28314,6 +28437,22 @@
   "avatar": "4a42ac3356557c41.jpg",
   "avatar_source": "website"
  },
+ "kostanay:торговый дом мир сантехники": {
+  "name": "Торговый дом Мир Сантехники",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "mirsantehniki.kst",
+  "website": "http://mirs.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036309819",
+  "avatar_checked_at": "2026-11-05T07:45:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ee67c0e394525193.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:тэкера": {
   "name": "тэкера",
   "city": "kostanay",
@@ -29584,6 +29723,15 @@
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
  },
+ "petropavlovsk:glasman trade": {
+  "name": "GLASMAN TRADE",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "glasman.kz",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001039298489"
+ },
  "petropavlovsk:kazcrane engineering": {
   "name": "KazCrane Engineering",
   "city": "petropavlovsk",
@@ -29959,6 +30107,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
+ },
+ "petropavlovsk:остин казахстан ostin тм": {
+  "name": "Остин Казахстан (O'stin ТМ)",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00",
+  "instagram": "ostin.kz",
+  "website": "http://ostin.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038351065",
+  "avatar_checked_at": "2026-11-05T07:45:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:патер сервис": {
   "name": "Патер Сервис",
@@ -30815,6 +30977,13 @@
   "checked_at": "2026-11-04T16:44:09+00:00",
   "instagram": "kymyzkhana_semey1",
   "source": "https://2gis.kz/semej/firm/70000001105596412"
+ },
+ "shymkent:1991": {
+  "name": "1991",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "shymkent:akmaral sayahat": {
   "name": "AKMARAL SAYAHAT",
@@ -31725,6 +31894,13 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "shymkent:аширбеков д м": {
+  "name": "АШИРБЕКОВ Д.М.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
+ },
  "shymkent:белэкспорт": {
   "name": "Белэкспорт",
   "city": "shymkent",
@@ -32016,6 +32192,13 @@
   "checked_at": "2026-11-03T23:44:09+00:00",
   "instagram": "ladushki.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001034110972"
+ },
+ "shymkent:лентелефонстрой ум": {
+  "name": "Лентелефонстрой-УМ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "shymkent:ломбард серт а": {
   "name": "Ломбард Серт А",
@@ -34531,6 +34714,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "ust-kamenogorsk:лентелефонстрой ум": {
+  "name": "Лентелефонстрой-УМ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T07:45:13+00:00"
  },
  "ust-kamenogorsk:лысоконь сергей": {
   "name": "Лысоконь Сергей",

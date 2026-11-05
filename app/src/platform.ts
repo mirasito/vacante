@@ -70,6 +70,30 @@ export const inTelegram = () =>
 const supports = (app: WebApp | undefined, version: string): app is WebApp =>
   !!app && !!app.isVersionAtLeast?.(version);
 
+// Шрифт Manrope из макета vacante 2.0. Файлы лежат рядом с приложением (public/fonts, лицензия OFL),
+// без запросов к Google. Только в вебе и Mini App: в сборках для телефонов остаётся системный шрифт.
+// Путь от корня сайта: приложение живёт в /app (experiments.baseUrl в app.json).
+const FONT_FILES: [string, string][] = [
+  ['latin', 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD'],
+  ['latin-ext', 'U+0100-02BA,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF'],
+  ['cyrillic', 'U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116'],
+  ['cyrillic-ext', 'U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F'],
+];
+
+export function loadWebFont() {
+  if (!isWeb || typeof document === 'undefined' || document.getElementById('vacante-font')) return;
+  const faces = FONT_FILES.map(
+    ([name, range]) =>
+      `@font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:swap;` +
+      `src:url(/app/fonts/manrope-${name}-wght-normal.woff2) format('woff2');unicode-range:${range}}`,
+  ).join('');
+  const style = document.createElement('style');
+  style.id = 'vacante-font';
+  // У каждого текста React Native Web свой класс со шрифтом, поэтому !important
+  style.textContent = `${faces}body,body *{font-family:Manrope,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif!important;-webkit-font-smoothing:antialiased}`;
+  document.head.appendChild(style);
+}
+
 let started: Promise<WebApp | undefined> | undefined;
 
 /** Подключает telegram-web-app.js один раз, сколько бы раз его ни ждали. */

@@ -22,7 +22,7 @@ import {
 } from '../server';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
-import { Button, Chip, Field, Loading, ModalArea, Retry, Ring, styles as ui } from '../ui';
+import { Button, Chip, Field, IconCircle, Loading, ModalArea, Retry, Ring, styles as ui } from '../ui';
 import { ICONS } from './Celebrate';
 import { CLOSED, SEARCH } from './model';
 import { A, dayLabel, whenRelative } from './texts';
@@ -187,7 +187,7 @@ export function ApplicationsTab(props: {
 
         {!items.length ? (
           <View style={s.empty}>
-            <Text style={ui.big}>♥</Text>
+            <IconCircle c={c} icon="heart" />
             <Text style={[ui.note, { color: c.quiet }]}>{t.empty}</Text>
           </View>
         ) : null}

@@ -102,7 +102,7 @@ texts "$out/ui.xml" 12
 
 tap_text "Алматы"
 
-wait_for 'Нравится|Мимо|Понятно' 90 || fail "после выбора Алматы не открылась лента вакансий"
+wait_for 'Откликнуться|Понятно' 90 || fail "после выбора Алматы не открылась лента вакансий"
 sleep 3
 adb exec-out screencap -p > "$out/2-feed.png"
 screen > "$out/ui.xml"

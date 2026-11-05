@@ -914,6 +914,22 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "aktau:м стройтранс": {
+  "name": "М-СтройТранс",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "too.mst",
+  "website": "https://m-st.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001044468395",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "658f32ff2826a982.jpg",
+  "avatar_source": "website"
+ },
  "aktau:манали": {
   "name": "МАНАЛИ",
   "city": "aktau",
@@ -4369,6 +4385,13 @@
    "website"
   ]
  },
+ "almaty:daryndy bala": {
+  "name": "DARYNDY BALA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
+ },
  "almaty:dass & partners": {
   "name": "DASS & Partners",
   "city": "almaty",
@@ -4564,6 +4587,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
+ },
+ "almaty:dpsp epilier": {
+  "name": "DPSP EPILIER",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
  },
  "almaty:dr konisbaev лор орталығы": {
   "name": "Dr.Konisbaev ЛОР орталығы",
@@ -4861,7 +4891,7 @@
   "checked_at": "2026-10-29T17:43:26+00:00",
   "website": "http://eqvi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001117168405",
-  "avatar_checked_at": "2026-10-29T17:43:26+00:00",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8078,6 +8108,13 @@
   ],
   "avatar": "06908eb210823849.jpg",
   "avatar_source": "website"
+ },
+ "almaty:poseidon co": {
+  "name": "POSEIDON CO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
  },
  "almaty:power sport": {
   "name": "Power Sport",
@@ -13463,6 +13500,15 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "almaty:макаронная": {
+  "name": "Макаронная",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "macaronnaya.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001095208587"
+ },
  "almaty:макаронная by sabina temiralieva": {
   "name": "Макаронная by Sabina Temiralieva",
   "city": "almaty",
@@ -16321,6 +16367,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "almaty:ғабитова": {
+  "name": "ҒАБИТОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
+ },
  "almaty:ғаламтех": {
   "name": "ҒаламТех",
   "city": "almaty",
@@ -17765,6 +17818,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "astana:eurodam": {
+  "name": "EuroDam",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
+ },
  "astana:evs construction": {
   "name": "EVS Construction",
   "city": "astana",
@@ -19088,6 +19148,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "astana:maxsat bm": {
+  "name": "Maxsat-BM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "maxsat_bm",
+  "source": "https://2gis.kz/astana/firm/70000001079916673"
  },
  "astana:mb group kz": {
   "name": "MB GROUP KZ",
@@ -20512,6 +20581,19 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "astana:soudal": {
+  "name": "Soudal",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "website": "https://www.soudal.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001043917330",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:spa салон": {
   "name": "SPA-салон",
   "city": "astana",
@@ -21225,6 +21307,20 @@
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
  },
+ "astana:абдуллина р и": {
+  "name": "Абдуллина Р.И.",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "da.clinic",
+  "website": "https://daclinic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001044689112",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:абдыкадыр": {
   "name": "ИП Абдыкадыр",
   "city": "astana",
@@ -21870,6 +21966,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "astana:близко": {
+  "name": "Близко",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
  },
  "astana:бмшпед": {
   "name": "БМшпед",
@@ -22520,6 +22623,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
+ },
+ "astana:енай групп": {
+  "name": "ЕНАЙ ГРУПП",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
  },
  "astana:ермекбаев": {
   "name": "Ермекбаев",
@@ -24003,6 +24113,24 @@
   "avatar": "f216c63e8b21a07c.jpg",
   "avatar_source": "website"
  },
+ "astana:первый бит": {
+  "name": "Первый БИТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "1_bit_kazakhstan",
+  "telegram": "bit_it_official",
+  "website": "https://astana.1cbit.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018118450",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3f44934d82858f9a.jpg",
+  "avatar_source": "website"
+ },
  "astana:перекресток": {
   "name": "Перекрёсток",
   "city": "astana",
@@ -25415,6 +25543,20 @@
   "avatar": "a111b245c2987ef9.jpg",
   "avatar_source": "website"
  },
+ "astana:шашлыкоff": {
+  "name": "ШашлыкоFF",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "shashlikoff_kz",
+  "website": "https://www.shashlikoff.com/",
+  "source": "https://2gis.kz/astana/firm/70000001046104600",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:шевцов богдан васильевич": {
   "name": "Шевцов Богдан Васильевич",
   "city": "astana",
@@ -25699,6 +25841,19 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "atyrau:adidas kazakhstan": {
+  "name": "adidas Kazakhstan",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "website": "https://adidas.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001086795821",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:adona ltd": {
   "name": "Adona ltd",
   "city": "atyrau",
@@ -25937,6 +26092,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
+ },
+ "atyrau:integra construction kz": {
+  "name": "Integra Construction KZ",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "website": "https://inconkz.com/",
+  "source": "https://2gis.kz/astana/firm/70000001018100481",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:janym soul": {
   "name": "JANYM SOUL",
@@ -27721,6 +27889,13 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "karaganda:кадровое агентство prohr ип байбалин": {
+  "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
+ },
  "karaganda:кадры 24": {
   "name": "КАДРЫ 24",
   "city": "karaganda",
@@ -27746,7 +27921,7 @@
   "instagram": "kazahmedimport.kz",
   "website": "https://kazahmedimport.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001038555096",
-  "avatar_checked_at": "2026-10-29T17:43:26+00:00",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31830,6 +32005,15 @@
    "website"
   ]
  },
+ "semey:adal supermarket": {
+  "name": "ADAL SUPERMARKET",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "instagram": "supermarket_adal_semey",
+  "source": "https://2gis.kz/semej/firm/70000001052444174"
+ },
  "semey:almawine": {
   "name": "ALMAWINE",
   "city": "semey",
@@ -33117,6 +33301,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
+ },
+ "shymkent:phyto apipharm": {
+  "name": "PHYTO-APIPHARM",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00",
+  "website": "https://www.phyto-apipharm.com/",
+  "source": "https://2gis.kz/shymkent/firm/70000001032285898",
+  "avatar_checked_at": "2026-11-05T17:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:prima distribution": {
   "name": "Prima Distribution",
@@ -35438,6 +35635,13 @@
   ],
   "avatar": "66c515510c8f40a4.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:хорошилов": {
+  "name": "Хорошилов",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-05T17:43:42+00:00"
  },
  "uralsk:ширявсков": {
   "name": "Ширявсков",

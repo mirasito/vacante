@@ -151,8 +151,10 @@ def test_build_writes_app_feed_by_city(tmp_path):
     index = json.loads((out / "app" / "data" / "index.json").read_text("utf-8"))
     assert index["cities"] == [{"slug": "astana", "name": "Астана", "name_kk": "Астана", "count": 1}]
     # Профессии для анкеты: частые в вакансиях первыми, с казахскими названиями
-    assert index["roles"][0] == {"title": "Бариста", "title_kk": "Бариста", "category": "horeca"}
-    assert {"title": "Официант", "title_kk": "Даяшы", "category": "horeca"} in index["roles"]
+    assert index["roles"][0] == {"title": "Бариста", "title_kk": "Бариста", "category": "horeca",
+                                 "key": site.appfeed.role_key("Бариста")}
+    assert {"title": "Официант", "title_kk": "Даяшы", "category": "horeca",
+            "key": site.appfeed.role_key("Официант")} in index["roles"]
     assert len({r["title"] for r in index["roles"]}) == len(index["roles"])
     feed = json.loads((out / "app" / "data" / "astana.json").read_text("utf-8"))
     card = feed["vacancies"][0]
@@ -160,6 +162,26 @@ def test_build_writes_app_feed_by_city(tmp_path):
     assert card["pay"].replace("\xa0", " ") == "от 250 000 ₸/мес" and "Тамақ" in card["perks_kk"]
     # Число для фильтра «Зарплата от»
     assert card["pay_month"] == 250000
+
+
+def test_app_feed_writes_role_files_beyond_city_feed(tmp_path, monkeypatch):
+    import json
+    from vacante.site import appfeed
+    from vacante.models import Vacancy
+    monkeypatch.setattr(appfeed, "PER_CITY", 2)
+    now = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
+    texts = ["Требуется повар, 300 000 тг", "Требуется кассир", "Требуется официант", "Требуется официант, 200 000 тг",
+             "Требуется бармен-официант"]
+    vs = [parse_post(RawPost("telegram", "chan", i, f"https://t.me/chan/{i}", t, now, "almaty"))
+          for i, t in enumerate(texts)]
+    appfeed.write(tmp_path, vs, "https://vacante.kz", now, {})
+    data = tmp_path / "app" / "data"
+    assert len(json.loads((data / "almaty.json").read_text("utf-8"))["vacancies"]) == 2
+    # Официанты дальше первых двух: файл профессии со всеми ними; повар и кассир уже в ленте, файла нет
+    waiters = json.loads((data / "almaty" / f"{appfeed.role_key('Официант')}.json").read_text("utf-8"))
+    assert waiters["role"] == "Официант" and len(waiters["vacancies"]) >= 2
+    assert all("Официант" in v["title"].split(", ") for v in waiters["vacancies"])
+    assert not (data / "almaty" / f"{appfeed.role_key('Повар')}.json").exists()
 
 
 def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):

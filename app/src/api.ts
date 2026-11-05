@@ -33,3 +33,15 @@ export const loadIndex = () => getJson<Index>('index.json');
 
 export const loadCity = async (slug: string) =>
   (await getJson<{ vacancies: Vacancy[] }>(`${slug}.json`)).vacancies;
+
+/**
+ * Вакансии одной профессии по всему городу: лента города держит только 400 свежих, а фильтр
+ * «Профессия» должен находить все. Файла нет, если все вакансии профессии уже в ленте: тогда пусто.
+ */
+export const loadRole = async (city: string, key: string) => {
+  try {
+    return (await getJson<{ vacancies: Vacancy[] }>(`${city}/${key}.json`)).vacancies;
+  } catch {
+    return [];
+  }
+};

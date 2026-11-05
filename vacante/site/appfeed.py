@@ -7,6 +7,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from collections import Counter
 from datetime import datetime
@@ -23,6 +24,14 @@ PER_CITY = 400
 # Начало текста объявления на обороте карточки
 TEXT_SIZE = 600
 DIR = "app/data"
+# Фильтр «Профессия» ищет по всему городу, а не только по 400 свежим: для каждой профессии, у которой
+# в городе есть вакансии дальше первых PER_CITY, отдельный файл app/data/<город>/<key>.json
+PER_ROLE = 300
+
+
+def role_key(title: str) -> str:
+    """Короткое имя файла профессии: одинаковое в каждой сборке, приложение берёт его из index.json."""
+    return hashlib.sha1(title.encode()).hexdigest()[:10]
 
 
 def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
@@ -78,7 +87,8 @@ def roles(vacancies: list[Vacancy]) -> list[dict]:
     counts = Counter(part for v in vacancies for part in v.title.split(", "))
     seen: dict[str, dict] = {}
     for _, title, category in PROFESSIONS:
-        seen.setdefault(title, {"title": title, "title_kk": i18n.TITLES_KK.get(title, title), "category": category})
+        seen.setdefault(title, {"title": title, "title_kk": i18n.TITLES_KK.get(title, title), "category": category,
+                                "key": role_key(title)})
     return sorted(seen.values(), key=lambda r: -counts[r["title"]])
 
 
@@ -94,6 +104,7 @@ def write(out: Path, vacancies: list[Vacancy], base_url: str, now: datetime, ven
         payload = {"city": slug, "updated_at": now.isoformat(timespec="seconds"),
                    "vacancies": [item(v, base_url, now, venues) for v in items[:PER_CITY]]}
         (folder / f"{slug}.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        write_roles(folder / slug, items, base_url, now, venues)
     index = {
         "updated_at": now.isoformat(timespec="seconds"),
         "cities": [{"slug": slug, "name": name, "name_kk": i18n.CITIES_KK.get(slug, name),
@@ -105,3 +116,20 @@ def write(out: Path, vacancies: list[Vacancy], base_url: str, now: datetime, ven
         "roles": roles(vacancies),
     }
     (folder / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), "utf-8")
+
+
+def write_roles(folder: Path, items: list[Vacancy], base_url: str, now: datetime, venues: dict) -> None:
+    """Файлы профессий города: только тех, чьи вакансии не все поместились в ленту города."""
+    known = {title for _, title, _ in PROFESSIONS}
+    beyond = {part for v in items[PER_CITY:] for part in v.title.split(", ") if part in known}
+    by_role: dict[str, list[Vacancy]] = {}
+    for v in items:
+        for part in v.title.split(", "):
+            if part in beyond:
+                by_role.setdefault(part, []).append(v)
+    if by_role:
+        folder.mkdir(parents=True, exist_ok=True)
+    for title, vs in by_role.items():
+        payload = {"role": title, "vacancies": [item(v, base_url, now, venues) for v in vs[:PER_ROLE]]}
+        (folder / f"{role_key(title)}.json").write_text(
+            json.dumps(payload, ensure_ascii=False, separators=(",", ":")), "utf-8")

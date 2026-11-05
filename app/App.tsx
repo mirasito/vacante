@@ -7,6 +7,9 @@ import { loadCity, loadIndex } from './src/api';
 import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
 import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { Celebrate } from './src/applications/Celebrate';
+import { Booking } from './src/Booking';
+import { ChatsTab } from './src/Chats';
+import { InviteSheet, ReliabilityCard, ReliabilityPage, ReportSheet } from './src/Extras';
 import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
 import { filterCount, matches, subscribeLink, why, type Filter, type Want } from './src/feed';
@@ -17,12 +20,15 @@ import * as i18n from './src/i18n';
 import { Icon, type IconName } from './src/icons';
 import {
   addToHomeScreen,
+  downloadFile,
   haptic,
   homeScreenStatus,
   initTelegram,
   launchApp,
   launchBeta,
+  launchChat,
   launchCity,
+  launchRef,
   launchTab,
   loadWebFont,
   onAppVisible,
@@ -42,6 +48,8 @@ import { R } from './src/reminders/texts';
 import {
   actOnReminder,
   deleteApplication,
+  exportData,
+  getReliability,
   importApplications,
   importGoal,
   listApplications,
@@ -50,12 +58,14 @@ import {
   putGoal,
   seenAchievements,
   setBeta,
+  useReferral,
   whoAmI,
   type Account,
   type Application,
   type ApplicationPatch,
   type GoalValue,
   type Method,
+  type Reliability,
   type Reminder,
   type Reminders,
   type Summary,
@@ -67,6 +77,7 @@ import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
 import { Button, Chip, IconCircle, LangSwitch, Loading, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
 import { Avatar, VacancyFull } from './src/VacancyCard';
+import { V } from './src/v2texts';
 import { sameEmployer, VenueView } from './src/Venue';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
@@ -86,8 +97,10 @@ type Prefs = {
   /** Где был телефон, когда нажали «Рядом со мной» (округлено, только на телефоне). */
   here?: Point;
   filter?: Filter;
+  /** Код друга из ссылки ?startapp=ref_…: уходит на сервер, когда появится профиль. */
+  ref?: string;
 };
-type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'profile';
+type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'chats' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
 
 const samePoint = (a: Point | null, b: Point | null) => a?.lat === b?.lat && a?.lon === b?.lon;
@@ -148,6 +161,13 @@ function Main() {
   const [applying, setApplying] = useState<{ copy: VacancyCopy; full?: Vacancy; preset?: Preset; onDone?(): void } | null>(
     null,
   );
+  // vacante 2.0: открытая переписка, экран «Запись», надёжность, «Пригласить друга», жалоба
+  const [chat, setChat] = useState<number | null>(null);
+  const [booking, setBooking] = useState<Application | null>(null);
+  const [reliability, setReliability] = useState<Reliability | null>(null);
+  const [reliabilityOpen, setReliabilityOpen] = useState(false);
+  const [inviteOpen, setInviteOpen] = useState(false);
+  const [reportFor, setReportFor] = useState<Vacancy | null>(null);
   const seenCity = useRef<string | null>(null);
   // Шаг назад внутри вкладки «Профиль» (анкета); null — назад некуда, уходим в ленту
   const profileBack = useRef<(() => boolean) | null>(null);
@@ -170,12 +190,14 @@ function Main() {
       // передаёт город профиля только на случай, если на этом устройстве город ещё не выбран
       const linkCity = launchTab() === 'profile' && stored.city ? undefined : launchCity();
       const beta = stored.beta || launchBeta();
+      const ref = launchRef();
       setBeta(beta);
       setPrefs({
         ...stored,
         lang: stored.lang ?? tgLang ?? 'ru',
         ...(linkCity ? { city: linkCity } : {}),
         ...(beta ? { beta: true } : {}),
+        ...(ref && !stored.ref ? { ref } : {}),
       });
       setLiked(storedLiked);
       setGoalHistory(storedGoal);
@@ -274,15 +296,23 @@ function Main() {
   }, [picking, city, tab]);
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
-  useBackButton(!!applying || !!open || filtersOpen || settingsOpen || (picking && !!city) || tab !== 'feed', () => {
-    if (filtersOpen) setFiltersOpen(false);
+  useBackButton(
+    !!applying || !!open || filtersOpen || settingsOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
+    () => {
+    if (reportFor) setReportFor(null);
+    else if (inviteOpen) setInviteOpen(false);
+    else if (reliabilityOpen) setReliabilityOpen(false);
+    else if (booking) setBooking(null);
+    else if (tab === 'chats' && chat) setChat(null);
+    else if (filtersOpen) setFiltersOpen(false);
     else if (settingsOpen) setSettingsOpen(false);
     else if (applying) setApplying(null);
     else if (open) setOpen(null);
     else if (picking && city) setPicking(false);
     else if (tab === 'profile' && profileBack.current?.()) return;
     else setTab('feed');
-  });
+    },
+  );
 
   // Вкладка «Профиль» видна, когда сервер ответил и профили открыты (или это тестировщик)
   const showProfile = !!account && (account.open || !!prefs.beta);
@@ -296,8 +326,9 @@ function Main() {
     if (!showProfile || launched.current) return;
     launched.current = true;
     const want = launchTab();
-    if (want === 'reminders' && !account.profile) return;
+    if ((want === 'reminders' || want === 'chats') && !account.profile) return;
     if (want) setTab(want);
+    if (want === 'chats') setChat(launchChat() ?? null);
     const app = launchApp();
     if (want === 'applications' && app) setShowApp({ id: app, focus: 'interview' });
   }, [showProfile, account]);
@@ -378,10 +409,34 @@ function Main() {
     };
   }, [tracker, remindersAttempt]);
   const refreshReminders = useCallback(() => setRemindersAttempt((n) => n + 1), []);
+
+  // Друг пригласил по ссылке: сервер запишет это один раз, когда появится профиль
+  useEffect(() => {
+    if (tracker !== 'server' || !prefs.ref) return;
+    useReferral(prefs.ref).then(
+      () => setPrefs((p) => ({ ...p, ref: undefined })),
+      () => undefined,
+    );
+  }, [tracker, prefs.ref]);
+
+  // Надёжность для карточки в профиле: при входе на вкладку и после отметки явки
+  useEffect(() => {
+    if (tracker !== 'server' || tab !== 'profile') return;
+    getReliability().then(setReliability, () => undefined);
+  }, [tracker, tab]);
+
+  const unread = (apps ?? []).reduce((n, a) => n + (a.unread ?? 0), 0);
+  const unreadRef = useRef(unread);
+  unreadRef.current = unread;
+  // Чаты прочитали или пришёл ответ: обновим отклики, чтобы значок на вкладке был верным
+  const onUnread = useCallback((n: number) => {
+    if (n !== unreadRef.current) setAppsAttempt((x) => x + 1);
+  }, []);
   // На вкладке свежее: кнопки в боте меняют и напоминания, и стадии откликов
   useEffect(() => {
     if (tab === 'reminders' || tab === 'profile') refreshReminders();
     if (tab === 'applications') setAppsAttempt((n) => n + 1);
+    if (tab !== 'chats') setChat(null);
   }, [tab, refreshReminders]);
 
   // Вернулись в приложение: работодатель мог открыть профиль или ответить, а в боте могли нажать кнопку
@@ -718,6 +773,22 @@ function Main() {
         </Pressable>
         <View style={styles.headerRight}>
           <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
+          {tracker === 'server' ? (
+            <Pressable
+              onPress={() => setTab('reminders')}
+              hitSlop={8}
+              style={styles.gear}
+              accessibilityRole="button"
+              accessibilityLabel={V[lang].reminders}
+            >
+              <Icon name="bell" color={tab === 'reminders' ? c.accent : c.ink} />
+              {reminders?.due ? (
+                <View style={[styles.dot, { backgroundColor: c.skip, borderColor: c.bg }]}>
+                  <Text style={styles.dotText}>{reminders.due}</Text>
+                </View>
+              ) : null}
+            </Pressable>
+          ) : null}
           <Pressable
             onPress={() => setSettingsOpen(true)}
             hitSlop={8}
@@ -862,7 +933,17 @@ function Main() {
               ? { data: reminders, onChange: setReminders, onOpenAll: () => setTab('reminders') }
               : undefined
           }
+          extra={
+            tracker === 'server' ? (
+              <View style={styles.extra}>
+                <ReliabilityCard c={c} lang={lang} data={reliability} onOpen={() => setReliabilityOpen(true)} />
+                <Button c={c} ghost icon="user" label={V[lang].invite} onPress={() => setInviteOpen(true)} />
+              </View>
+            ) : undefined
+          }
         />
+      ) : tab === 'chats' && tracker === 'server' ? (
+        <ChatsTab c={c} lang={lang} open={chat} onOpen={setChat} onUnread={onUnread} />
       ) : tab === 'reminders' && tracker === 'server' ? (
         <RemindersTab
           c={c}
@@ -904,6 +985,7 @@ function Main() {
           onMakeProfile={() => setTab('profile')}
           show={showApp}
           onShown={clearShowApp}
+          onBooking={tracker === 'server' ? setBooking : undefined}
         />
       ) : (
         <LikedList
@@ -930,15 +1012,7 @@ function Main() {
           <Tab c={c} active={tab === 'liked'} icon="heart" label={t('liked')} badge={liked.length} onPress={() => setTab('liked')} />
         )}
         {tracker === 'server' ? (
-          <Tab
-            c={c}
-            active={tab === 'reminders'}
-            icon="bell"
-            label={R[lang].tab}
-            badge={reminders?.due}
-            alert
-            onPress={() => setTab('reminders')}
-          />
+          <Tab c={c} active={tab === 'chats'} icon="chat" label={V[lang].chats} badge={unread} alert onPress={() => setTab('chats')} />
         ) : null}
         {showProfile ? (
           <Tab c={c} active={tab === 'profile'} icon="user" label={P[lang].tab} onPress={() => setTab('profile')} />
@@ -956,6 +1030,7 @@ function Main() {
               home={homePoint}
               all={feed ?? []}
               onOther={setOpen}
+              onReport={account ? () => setReportFor(open) : undefined}
               onClose={() => setOpen(null)}
               onSave={() => {
                 setOpen(null);
@@ -1051,6 +1126,62 @@ function Main() {
                 setPrefs((p) => ({ lang: p.lang, city: p.city, beta: p.beta }));
               }}
               onClose={() => setSettingsOpen(false)}
+              onInvite={() => setInviteOpen(true)}
+              onExport={async () => {
+                const { url } = await exportData();
+                downloadFile(url, 'vacante-data.json');
+              }}
+            />
+          ) : null}
+        </ModalArea>
+      </Modal>
+      <Modal visible={!!booking} animationType="slide" onRequestClose={() => setBooking(null)}>
+        <ModalArea>
+          {booking ? (
+            <Booking
+              key={`${booking.id}-${booking.updated_at}`}
+              c={c}
+              lang={lang}
+              app={booking}
+              onClose={() => setBooking(null)}
+              onChange={(a, rel) => {
+                putApp(a);
+                setBooking(a);
+                if (rel) setReliability(rel);
+              }}
+              onChat={() => {
+                setChat(booking.id);
+                setBooking(null);
+                setTab('chats');
+              }}
+              onSetTime={() => {
+                setShowApp({ id: booking.id, focus: 'interview' });
+                setBooking(null);
+                setTab('applications');
+              }}
+            />
+          ) : null}
+        </ModalArea>
+      </Modal>
+      <Modal visible={reliabilityOpen} animationType="slide" onRequestClose={() => setReliabilityOpen(false)}>
+        <ModalArea>{reliabilityOpen ? <ReliabilityPage c={c} lang={lang} onClose={() => setReliabilityOpen(false)} /> : null}</ModalArea>
+      </Modal>
+      <Modal visible={inviteOpen} animationType="slide" transparent onRequestClose={() => setInviteOpen(false)}>
+        <ModalArea>{inviteOpen ? <InviteSheet c={c} lang={lang} onClose={() => setInviteOpen(false)} /> : null}</ModalArea>
+      </Modal>
+      <Modal visible={!!reportFor} animationType="slide" transparent onRequestClose={() => setReportFor(null)}>
+        <ModalArea>
+          {reportFor ? (
+            <ReportSheet
+              c={c}
+              lang={lang}
+              v={reportFor}
+              onClose={() => setReportFor(null)}
+              onSent={() => {
+                // Вакансию, на которую пожаловались, в ленте больше не показываем
+                setSeen((x) => ({ ...x, [reportFor.id]: 'l' }));
+                setOpen(null);
+              }}
             />
           ) : null}
         </ModalArea>
@@ -1080,6 +1211,8 @@ function Details(props: {
   onClose(): void;
   onSave(): void;
   onApply?(): void;
+  /** «Пожаловаться»: только когда вошли через Telegram (жалоба уходит модератору с аккаунтом). */
+  onReport?(): void;
 }) {
   const { v, lang, c, onClose } = props;
   const t = (key: i18n.Key) => i18n.t(lang, key);
@@ -1140,6 +1273,7 @@ function Details(props: {
                 <Button c={c} small ghost icon="chat" label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
                 {v.map ? <Button c={c} small ghost icon="map" label={t('onMap')} onPress={() => openUrl(v.map!)} /> : null}
                 <Button c={c} small ghost icon="link" label={t('onSite')} onPress={() => openUrl(v.url)} />
+                {props.onReport ? <Button c={c} small ghost icon="shield" label={V[lang].report} onPress={props.onReport} /> : null}
               </View>
             </View>
           </>
@@ -1275,6 +1409,20 @@ const styles = StyleSheet.create({
   iconButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   headerRight: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   gear: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
+  dot: {
+    position: 'absolute',
+    top: 2,
+    right: 0,
+    minWidth: 18,
+    height: 18,
+    borderRadius: 9,
+    borderWidth: 2,
+    paddingHorizontal: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dotText: { color: '#fff', fontSize: 10, fontWeight: '800', lineHeight: 12 },
+  extra: { gap: 10 },
   locError: { fontSize: 13, paddingHorizontal: 20, paddingBottom: 6 },
   venueCard: {
     marginHorizontal: 20,

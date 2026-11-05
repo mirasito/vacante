@@ -10,7 +10,7 @@ import { dispatchUpdate, wakeUpdate } from "./cron.js";
 import { crmApi, jobsApi } from "./crm.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
-import { relayToServer } from "./server.js";
+import { relayToServer, serverKey } from "./server.js";
 
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
@@ -37,6 +37,7 @@ export default {
     if (request.method === "POST" && url.pathname === "/api/moderate") return moderationApi(request, env, ctx);
     if (url.pathname === "/api/crm") return crmApi(request, env);  // CRM заведений в админке сайта
     if (url.pathname === "/api/jobs") return jobsApi(request, env);  // кто размещал вакансии, там же
+    if (request.method === "POST" && url.pathname === "/internal/report") return reportApi(request, env);  // жалобы из приложения
     if (request.method !== "POST" || url.pathname !== "/telegram") {
       return new Response("vacante.kz bot", { status: 200 });
     }
@@ -516,6 +517,35 @@ const screen = ({ text, keyboard }) => [text, keyboard];
 function markup(keyboard) {
   if (Array.isArray(keyboard)) return keyboard.length ? { inline_keyboard: keyboard } : undefined;
   return keyboard;
+}
+
+const REPORT_REASONS = {
+  fraud: "мошенничество",
+  prepay: "просят предоплату",
+  contacts: "не отвечают по контактам",
+  closed: "вакансия уже закрыта",
+  wrong: "неверные данные",
+  other: "другое",
+};
+
+// Жалоба соискателя на вакансию: сервер проверил вход через Telegram и передаёт её сюда, а бот
+// пишет всем модераторам. Имя жалобщика не передаём, только его номер в Telegram для связи
+async function reportApi(request, env) {
+  if (request.headers.get("authorization") !== `Bearer ${await serverKey(env.TELEGRAM_BOT_TOKEN)}`) {
+    return new Response("forbidden", { status: 403 });
+  }
+  const r = await request.json().catch(() => ({}));
+  const esc = (v) => String(v ?? "").slice(0, 500).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const lines = [
+    `🚩 Жалоба на вакансию: ${esc(REPORT_REASONS[r.reason] ?? REPORT_REASONS.other)}`,
+    `<b>${esc(r.title) || esc(r.vacancy_id)}</b>${r.employer ? ` · ${esc(r.employer)}` : ""}`,
+  ];
+  if (r.text) lines.push(`«${esc(r.text)}»`);
+  if (r.url) lines.push(esc(r.url));
+  lines.push(`id: ${esc(r.vacancy_id)} · от tg://user?id=${Number(r.from) || 0}`);
+  const { results } = await env.DB.prepare("SELECT chat_id FROM admins").all();
+  for (const admin of results) await send(env, admin.chat_id, lines.join("\n"));
+  return Response.json({ ok: true, sent: results.length });
 }
 
 function send(env, chatId, text, keyboard) {

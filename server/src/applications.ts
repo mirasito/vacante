@@ -62,6 +62,11 @@ export interface ApplicationRow {
   created_at: string;
   updated_at: string;
   sent_at: string | null;
+  /** JSON: удобное соискателю время, до трёх моментов UTC. */
+  slots: string;
+  attended: "yes" | "no" | null;
+  attended_by: "seeker" | "employer" | null;
+  cancelled_at: string | null;
 }
 
 const bad = (message: string) => new HttpError(400, message);
@@ -308,10 +313,20 @@ export function patchApplication(
       sent_at: row.sent_at ?? (stage !== "liked" && !CLOSED.includes(stage) ? at : null),
       updated_at: at,
     };
+    // Новое время собеседования: прежняя отмена и отметка «пришёл/не пришёл» к нему не относятся
+    if (next.interview_at && next.interview_at !== row.interview_at) {
+      next.cancelled_at = null;
+      next.attended = null;
+      next.attended_by = null;
+    }
     db.prepare(
-      `UPDATE applications SET stage = ?, method = ?, interview_at = ?, start_at = ?, note = ?, sent_at = ?, updated_at = ?
+      `UPDATE applications SET stage = ?, method = ?, interview_at = ?, start_at = ?, note = ?, sent_at = ?, updated_at = ?,
+         cancelled_at = ?, attended = ?, attended_by = ?
        WHERE id = ?`,
-    ).run(next.stage, next.method, next.interview_at, next.start_at, next.note, next.sent_at, next.updated_at, id);
+    ).run(
+      next.stage, next.method, next.interview_at, next.start_at, next.note, next.sent_at, next.updated_at,
+      next.cancelled_at, next.attended, next.attended_by, id,
+    );
     if (next.stage !== row.stage) addEvent(db, id, next.stage, by, at);
     return next;
   });
@@ -406,17 +421,46 @@ export interface ApplicationView {
   seen_at: string | null;
   views: number;
   link: { code: string; url: string } | null;
+  /** Удобное время, которое соискатель предложил работодателю. */
+  slots: string[];
+  attended: "yes" | "no" | null;
+  attended_by: "seeker" | "employer" | null;
+  cancelled_at: string | null;
+  /** Переписка: сколько всего сообщений и сколько новых от работодателя. */
+  messages: number;
+  unread: number;
+  /** Оценка заведению, если соискатель её уже поставил. */
+  review: number | null;
   events?: { stage: Stage; by: By; at: string }[];
 }
 
-type ListRow = ApplicationRow & { seen_at: string | null; views: number; link_code: string | null };
+type ListRow = ApplicationRow & {
+  seen_at: string | null;
+  views: number;
+  link_code: string | null;
+  messages: number;
+  unread: number;
+  review: number | null;
+};
 
 const LIST_SQL = `SELECT a.*,
     (SELECT MIN(at) FROM views v WHERE v.application_id = a.id) AS seen_at,
     (SELECT COUNT(*) FROM views v WHERE v.application_id = a.id) AS views,
     (SELECT code FROM links l WHERE l.application_id = a.id AND l.active = 1 AND (l.expires_at IS NULL OR l.expires_at > ?)
-       ORDER BY l.created_at DESC LIMIT 1) AS link_code
+       ORDER BY l.created_at DESC LIMIT 1) AS link_code,
+    (SELECT COUNT(*) FROM messages m WHERE m.application_id = a.id) AS messages,
+    (SELECT COUNT(*) FROM messages m WHERE m.application_id = a.id AND m.by = 'employer' AND m.read_at IS NULL) AS unread,
+    (SELECT stars FROM reviews r WHERE r.application_id = a.id) AS review
   FROM applications a`;
+
+export function parseSlots(json: string): string[] {
+  try {
+    const list = JSON.parse(json);
+    return Array.isArray(list) ? list.filter((x): x is string => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
+}
 
 function toView(row: ListRow, profileOrigin: string): ApplicationView {
   let contact: string[] = [];
@@ -450,6 +494,13 @@ function toView(row: ListRow, profileOrigin: string): ApplicationView {
     seen_at: row.seen_at,
     views: Number(row.views),
     link: row.link_code ? { code: row.link_code, url: `${profileOrigin}/${row.link_code}` } : null,
+    slots: parseSlots(row.slots),
+    attended: row.attended,
+    attended_by: row.attended_by,
+    cancelled_at: row.cancelled_at,
+    messages: Number(row.messages),
+    unread: Number(row.unread),
+    review: row.review === null ? null : Number(row.review),
   };
 }
 

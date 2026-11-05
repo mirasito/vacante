@@ -1,4 +1,5 @@
 // «Настройки и данные» из макета vacante 2.0: язык, уведомления в боте, данные и согласия.
+import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -7,6 +8,7 @@ import { confirm, openUrl } from './platform';
 import type { Colors } from './theme';
 import type { Lang } from './types';
 import { Seg, styles as ui } from './ui';
+import { V } from './v2texts';
 
 const T = {
   ru: {
@@ -75,9 +77,13 @@ export function Settings(props: {
   onRestart(): void;
   onClear(): void;
   onClose(): void;
+  /** vacante 2.0, только с профилем: «Скачать мои данные» и «Пригласить друга». */
+  onExport?(): Promise<void>;
+  onInvite?(): void;
 }) {
   const { c, lang } = props;
   const t = T[lang];
+  const [exportError, setExportError] = useState('');
   const row = (title: string, hint: string | null, onPress: (() => void) | null, opts: { danger?: boolean; last?: boolean } = {}) => (
     <Pressable
       onPress={onPress ?? undefined}
@@ -127,6 +133,17 @@ export function Settings(props: {
             {row(t.why, t.whyHint, null)}
             {row(t.restart, null, props.onRestart)}
             {props.server ? row(t.profile, t.profileHint, props.onProfile) : null}
+            {props.server && props.onInvite ? row(V[lang].invite, null, props.onInvite) : null}
+            {props.server && props.onExport
+              ? row(V[lang].export, exportError || V[lang].exportHint, async () => {
+                  setExportError('');
+                  try {
+                    await props.onExport!();
+                  } catch {
+                    setExportError(V[lang].error);
+                  }
+                })
+              : null}
             {row(
               t.clear,
               t.clearHint,

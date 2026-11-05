@@ -272,14 +272,41 @@ export function launchCity(): string | undefined {
   return value && value !== 'beta' && /^[a-z][a-z-]{1,30}$/.test(value) ? value : undefined;
 }
 
+/** Код приглашения из ссылки друга t.me/vacantekz_bot?startapp=ref_abc123. */
+export function launchRef(): string | undefined {
+  const m = /^ref_([a-z0-9]{6})$/.exec(startParam() ?? '');
+  return m?.[1];
+}
+
+/** Переписка из сообщения бота «Ответ по отклику»: ?tab=chats&chat=12. */
+export function launchChat(): number | undefined {
+  if (!isWeb) return undefined;
+  const id = Number(new URLSearchParams(window.location.search).get('chat'));
+  return Number.isSafeInteger(id) && id > 0 ? id : undefined;
+}
+
+/** Скачать файл: в Telegram 8.0+ его окном загрузки, иначе ссылкой в браузере. */
+export function downloadFile(url: string, name: string) {
+  const app = telegram() as (WebApp & { downloadFile?(p: { url: string; file_name: string }): void }) | undefined;
+  if (app?.downloadFile && supports(app, '8.0')) {
+    try {
+      app.downloadFile({ url, file_name: name });
+      return;
+    } catch {
+      // старый клиент: откроем ссылкой
+    }
+  }
+  openUrl(url);
+}
+
 /**
  * Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile,
  * сообщения об откликах — с ?tab=applications, напоминания — с ?tab=reminders.
  */
-export function launchTab(): 'profile' | 'applications' | 'reminders' | undefined {
+export function launchTab(): 'profile' | 'applications' | 'reminders' | 'chats' | undefined {
   if (!isWeb) return undefined;
   const tab = new URLSearchParams(window.location.search).get('tab');
-  return tab === 'profile' || tab === 'applications' || tab === 'reminders' ? tab : undefined;
+  return tab === 'profile' || tab === 'applications' || tab === 'reminders' || tab === 'chats' ? tab : undefined;
 }
 
 /** Отклик из ссылки: кнопка «Перенести» под напоминанием о собеседовании открывает ?tab=applications&app=12. */

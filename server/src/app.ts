@@ -10,6 +10,7 @@ import { meRoutes } from "./me.ts";
 import { olxImportRoutes } from "./olx-import.ts";
 import { olxRoutes } from "./olx.ts";
 import { pageRoutes } from "./page.ts";
+import { v2Routes } from "./v2.ts";
 import { verifyInitData, type Bot, type InitData } from "./telegram.ts";
 
 export interface Deps {
@@ -118,6 +119,7 @@ function buildRoutes(ctx: Ctx): Route[] {
       return { json: { ok: true, version: ctx.config.version } };
     }),
     ...meRoutes(ctx),
+    ...v2Routes(ctx),
     ...internalRoutes(ctx),
     ...olxRoutes(ctx),
     ...olxImportRoutes(ctx),

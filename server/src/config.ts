@@ -18,6 +18,8 @@ export interface Config {
   appOrigins: string[];
   siteUrl: string;
   botUsername: string;
+  /** Бот на Cloudflare: ему сервер передаёт жалобы на вакансии, у него список модераторов. */
+  botUrl: string;
   /** Коммит, из которого собран сервер. */
   version: string;
   /**
@@ -54,6 +56,7 @@ export function loadConfig(env: Env = process.env): Config {
       .filter(Boolean),
     siteUrl: env.SITE_URL ?? "https://vacante.kz",
     botUsername: env.BOT_USERNAME ?? "vacantekz_bot",
+    botUrl: env.BOT_URL ?? "https://vacante-bot.vacante-kz.workers.dev",
     version: env.VACANTE_VERSION ?? releaseVersion(),
     profilesOpen: env.PROFILES_OPEN === "1",
     olxImportKey: /^[0-9a-f]{64}$/i.test(env.OLX_IMPORT_KEY ?? "") ? (env.OLX_IMPORT_KEY as string).toLowerCase() : "",

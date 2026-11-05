@@ -6,6 +6,8 @@
 - ходит только по путям, которые robots.txt OLX.kz разрешает (/api/v1/offers/ и /api/v1/categories/);
 - не чаще одного запроса в PAUSE секунд и не больше MAX_PAGES страниц за запуск;
 - если OLX отвечает 403/429, капчей или не JSON, источник молча пропускает запуск и не пытается обойти защиту.
+С серверов GitHub OLX отвечает 403, поэтому по решению Мираса запросы идут с его сервера в Казахстане
+(OLX_VIA, server/src/olx.ts): тот же User-Agent, один адрес, без подделки и смены адресов.
 
 Берём только саму вакансию: название, текст без телефонов и ссылок (parse.clean_text), зарплату, город, точку
 на карте, если OLX показывает её точно, и ссылку на объявление на OLX.kz, где человек и откликается.
@@ -14,6 +16,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import hmac
 import html
 import logging
 import os
@@ -52,15 +56,30 @@ def enabled() -> bool:
 
 
 def make_client() -> httpx.Client:
-    return httpx.Client(base_url=BASE, timeout=30, follow_redirects=False,
-                        headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+    """Прямо к OLX или, если задан OLX_VIA (https://api.vacante.kz), через свой сервер в Казахстане:
+    он берёт страницы OLX сам, тем же честным User-Agent (server/src/olx.ts). Ключ — как у бота к серверу,
+    HMAC от токена бота, отдельный секрет не нужен."""
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+    via = os.environ.get("OLX_VIA", "").strip().rstrip("/")
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if via and token:
+        key = hmac.new(token.encode(), b"vacante-server-internal", hashlib.sha256).hexdigest()
+        headers["Authorization"] = f"Bearer {key}"
+        return httpx.Client(base_url=f"{via}/internal/olx", timeout=60, follow_redirects=False, headers=headers)
+    return httpx.Client(base_url=BASE, timeout=30, follow_redirects=False, headers=headers)
 
 
 def get(client: httpx.Client, path: str, params: dict | None = None,
         sleep: Callable[[float], None] = time.sleep) -> dict:
     sleep(PAUSE)
     r = client.get(path, params=params)
-    if r.status_code in (401, 403, 429, 451) or 300 <= r.status_code < 400:
+    if r.status_code == 200 and "x-olx-status" in r.headers:  # ответ через свой сервер: статус самого OLX
+        status = int(r.headers["x-olx-status"])
+        if status in (401, 403, 429, 451) or 300 <= status < 400:
+            raise Blocked(f"HTTP {status} (через сервер vacante)")
+        if status != 200:
+            raise httpx.HTTPStatusError(f"OLX ответил {status}", request=r.request, response=r)
+    elif r.status_code in (401, 403, 429, 451) or 300 <= r.status_code < 400:
         raise Blocked(f"HTTP {r.status_code}")
     r.raise_for_status()
     try:

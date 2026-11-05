@@ -26,9 +26,11 @@ type Props = {
   onSwipe(v: Vacancy, dir: Dir): void;
   onOpen(v: Vacancy): void;
   onApply(v: Vacancy): void;
+  /** Конец ленты близко: догрузить следующую страницу города. */
+  onEnd?(): void;
 };
 
-export function FeedList({ items, lang, c, home, header, tip, reason, onSwipe, onOpen, onApply }: Props) {
+export function FeedList({ items, lang, c, home, header, tip, reason, onSwipe, onOpen, onApply, onEnd }: Props) {
   return (
     <FlatList
       data={items}
@@ -36,6 +38,8 @@ export function FeedList({ items, lang, c, home, header, tip, reason, onSwipe, o
       ListHeaderComponent={header}
       contentContainerStyle={styles.list}
       initialNumToRender={6}
+      onEndReached={onEnd}
+      onEndReachedThreshold={3}
       windowSize={7}
       renderItem={({ item: v, index }) => (
         <>

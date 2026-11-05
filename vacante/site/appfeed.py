@@ -101,9 +101,18 @@ def write(out: Path, vacancies: list[Vacancy], base_url: str, now: datetime, ven
         if v.city in CITIES:
             by_city.setdefault(v.city, []).append(v)
     for slug, items in by_city.items():
-        payload = {"city": slug, "updated_at": now.isoformat(timespec="seconds"),
+        # Остальные вакансии города страницами по PER_CITY: app/data/<город>/p2.json, p3.json…
+        # Приложение догружает их при прокрутке ленты и когда включены фильтры
+        pages = max(1, -(-len(items) // PER_CITY))
+        payload = {"city": slug, "updated_at": now.isoformat(timespec="seconds"), "total": len(items), "pages": pages,
                    "vacancies": [item(v, base_url, now, venues) for v in items[:PER_CITY]]}
         (folder / f"{slug}.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        if pages > 1:
+            (folder / slug).mkdir(parents=True, exist_ok=True)
+        for n in range(2, pages + 1):
+            chunk = items[(n - 1) * PER_CITY:n * PER_CITY]
+            page = {"city": slug, "page": n, "vacancies": [item(v, base_url, now, venues) for v in chunk]}
+            (folder / slug / f"p{n}.json").write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")), "utf-8")
         write_roles(folder / slug, items, base_url, now, venues)
     index = {
         "updated_at": now.isoformat(timespec="seconds"),

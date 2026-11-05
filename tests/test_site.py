@@ -176,7 +176,11 @@ def test_app_feed_writes_role_files_beyond_city_feed(tmp_path, monkeypatch):
           for i, t in enumerate(texts)]
     appfeed.write(tmp_path, vs, "https://vacante.kz", now, {})
     data = tmp_path / "app" / "data"
-    assert len(json.loads((data / "almaty.json").read_text("utf-8"))["vacancies"]) == 2
+    city = json.loads((data / "almaty.json").read_text("utf-8"))
+    assert len(city["vacancies"]) == 2 and city["total"] == 5 and city["pages"] == 3
+    # Остальные страницами: p2 и p3, вместе со страницей города все 5 без повторов
+    rest = [v["id"] for n in (2, 3) for v in json.loads((data / "almaty" / f"p{n}.json").read_text("utf-8"))["vacancies"]]
+    assert sorted(rest + [v["id"] for v in city["vacancies"]]) == sorted(v.id for v in vs)
     # Официанты дальше первых двух: файл профессии со всеми ними; повар и кассир уже в ленте, файла нет
     waiters = json.loads((data / "almaty" / f"{appfeed.role_key('Официант')}.json").read_text("utf-8"))
     assert waiters["role"] == "Официант" and len(waiters["vacancies"]) >= 2

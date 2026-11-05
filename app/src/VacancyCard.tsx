@@ -18,7 +18,7 @@ type Props = { v: Vacancy; lang: Lang; c: Colors; home?: Point | null };
  * Карточка в ленте: должность, заведение и адрес, зарплата крупно, график и путь от дома,
  * условия бейджами и кнопка отклика. Нажатие открывает вакансию целиком.
  */
-export function VacancyCard(props: Props & { onOpen(): void; onSave(): void; onApply(): void }) {
+export function VacancyCard(props: Props & { reason?: string | null; onOpen(): void; onSave(): void; onApply(): void }) {
   const { v, lang, c, home } = props;
   const pay = i18n.pay(v, lang);
   const monthly = i18n.monthly(v, lang);
@@ -68,6 +68,7 @@ export function VacancyCard(props: Props & { onOpen(): void; onSave(): void; onA
           ))}
         </View>
       ) : null}
+      {props.reason ? <Text style={[styles.sub, styles.why, { color: c.quiet }]}>{props.reason}</Text> : null}
       <View style={styles.foot}>
         <Text style={[styles.sub, { color: c.quiet }]}>{i18n.age(v.posted_at, lang)}</Text>
         <Button c={c} small label={i18n.t(lang, 'apply')} onPress={props.onApply} />
@@ -174,6 +175,7 @@ const styles = StyleSheet.create({
   letter: { fontWeight: '800' },
   title: { fontSize: 18, fontWeight: '700', lineHeight: 23 },
   sub: { fontSize: 13, lineHeight: 18 },
+  why: { fontStyle: 'italic' },
   pay: { fontSize: 22, fontWeight: '800', letterSpacing: -0.3 },
   facts: { flexDirection: 'row', flexWrap: 'wrap', columnGap: 12, rowGap: 2 },
   fact: { fontSize: 14, fontWeight: '600' },

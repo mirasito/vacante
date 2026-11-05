@@ -108,6 +108,12 @@ async function onMessage(m, env) {
   const name = command.split("@")[0];
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
   if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
+  if (name === "/start" && bot.fromLink(arg)) {
+    // Кнопка «Пришлём, когда появится» из приложения: подписка сразу с городом, сферой и зарплатой
+    const sub = bot.fromLink(arg);
+    await save(env, chatId, sub);
+    return send(env, chatId, `✅ Подписка включена: ${bot.summary(sub)}.\n\nНовые вакансии пришлю сюда. Изменить: /settings, отписаться: /stop`);
+  }
   if (name === "/myjobs") return send(env, chatId, ...screen(job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env))));
   if (name === "/admin") return becomeAdmin(env, m);
   if (name === "/start" || name === "/settings") {

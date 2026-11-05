@@ -21,12 +21,14 @@ type Props = {
   header?: ReactElement;
   /** Подсказка под первой карточкой. */
   tip?: boolean;
+  /** «Почему вам: …» под карточкой. */
+  reason?(v: Vacancy): string | null;
   onSwipe(v: Vacancy, dir: Dir): void;
   onOpen(v: Vacancy): void;
   onApply(v: Vacancy): void;
 };
 
-export function FeedList({ items, lang, c, home, header, tip, onSwipe, onOpen, onApply }: Props) {
+export function FeedList({ items, lang, c, home, header, tip, reason, onSwipe, onOpen, onApply }: Props) {
   return (
     <FlatList
       data={items}
@@ -43,6 +45,7 @@ export function FeedList({ items, lang, c, home, header, tip, onSwipe, onOpen, o
               lang={lang}
               c={c}
               home={home}
+              reason={reason?.(v)}
               onOpen={() => onOpen(v)}
               onSave={() => onSwipe(v, 'right')}
               onApply={() => onApply(v)}

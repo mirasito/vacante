@@ -9,8 +9,10 @@ import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { Celebrate } from './src/applications/Celebrate';
 import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
+import { filterCount, matches, subscribeLink, why, type Filter, type Want } from './src/feed';
 import { FeedList, type Dir } from './src/FeedList';
-import { DEFAULT_NEAR, kmFromHome, NEAR_KM, type NearKm, type Point } from './src/geo';
+import { Filters } from './src/Filters';
+import { DEFAULT_NEAR, kmFromHome, type NearKm, type Point } from './src/geo';
 import * as i18n from './src/i18n';
 import { Icon, type IconName } from './src/icons';
 import {
@@ -24,6 +26,7 @@ import {
   launchTab,
   loadWebFont,
   onAppVisible,
+  phoneLocation,
   openUrl,
   shareLink,
   telegram,
@@ -31,6 +34,7 @@ import {
   whatsapp,
   type HomeScreen,
 } from './src/platform';
+import { Onboarding } from './src/Onboarding';
 import { ProfileTab } from './src/profile/ProfileTab';
 import { almaty, P } from './src/profile/texts';
 import { RemindersTab, type Write } from './src/reminders/RemindersTab';
@@ -58,10 +62,12 @@ import {
   type VacancyCopy,
 } from './src/server';
 import { read, write } from './src/storage';
+import { Settings } from './src/Settings';
 import { useColors, type Colors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
 import { Button, Chip, IconCircle, LangSwitch, Loading, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
 import { Avatar, VacancyFull } from './src/VacancyCard';
+import { sameEmployer, VenueView } from './src/Venue';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
 // beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска;
@@ -74,6 +80,12 @@ type Prefs = {
   home?: boolean;
   beta?: boolean;
   near?: NearKm | null;
+  /** Ответы стартовых экранов «Кем работаешь» и «Где и когда»; onboarded — старт пройден или пропущен. */
+  want?: Want;
+  onboarded?: boolean;
+  /** Где был телефон, когда нажали «Рядом со мной» (округлено, только на телефоне). */
+  here?: Point;
+  filter?: Filter;
 };
 type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
@@ -108,6 +120,9 @@ function Main() {
   const [tab, setTab] = useState<TabName>('feed');
   const [picking, setPicking] = useState(false);
   const [open, setOpen] = useState<Vacancy | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [locError, setLocError] = useState('');
   // Профиль открыли кнопкой «Рядом с домом», а дома ещё нет: сразу шаг «Где вы живёте?»
   const [profileStart, setProfileStart] = useState<'home' | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -259,8 +274,10 @@ function Main() {
   }, [picking, city, tab]);
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
-  useBackButton(!!applying || !!open || (picking && !!city) || tab !== 'feed', () => {
-    if (applying) setApplying(null);
+  useBackButton(!!applying || !!open || filtersOpen || settingsOpen || (picking && !!city) || tab !== 'feed', () => {
+    if (filtersOpen) setFiltersOpen(false);
+    else if (settingsOpen) setSettingsOpen(false);
+    else if (applying) setApplying(null);
     else if (open) setOpen(null);
     else if (picking && city) setPicking(false);
     else if (tab === 'profile' && profileBack.current?.()) return;
@@ -502,22 +519,42 @@ function Main() {
           : undefined,
     });
   };
-  // «Рядом с домом»: только вакансии с точкой не дальше радиуса. Дом знаем из профиля на сервере
-  const homePoint = account?.home ?? null;
-  const near = tracker === 'server' && homePoint && prefs.near ? prefs.near : null;
-  const isNear = useCallback(
-    (v: Vacancy) => {
-      if (!near) return true;
-      const km = kmFromHome(homePoint, v);
-      return km !== null && km <= near;
+  // «Рядом»: только вакансии с точкой не дальше радиуса. Точка — дом из профиля на сервере
+  // или место, где человек нажал «Рядом со мной» (хранится только на телефоне)
+  const homePoint = account?.home ?? prefs.here ?? null;
+  const near = homePoint && prefs.near ? prefs.near : null;
+  const withinKm = useCallback(
+    (v: Vacancy, km: NearKm | null) => {
+      if (!km) return true;
+      const d = kmFromHome(homePoint, v);
+      return d !== null && d <= km;
     },
-    [near, homePoint],
+    [homePoint],
   );
-  const inCategory = useCallback((v: Vacancy) => !prefs.cat || v.category === prefs.cat, [prefs.cat]);
+  const isNear = useCallback((v: Vacancy) => withinKm(v, near), [withinKm, near]);
+  const filter = useMemo(() => prefs.filter ?? {}, [prefs.filter]);
+  const inCategory = useCallback((v: Vacancy) => (!prefs.cat || v.category === prefs.cat) && matches(v, filter), [prefs.cat, filter]);
   const cards = useMemo(
     () => (feed ?? []).filter((v) => !seen[v.id] && inCategory(v) && isNear(v)),
     [feed, seen, inCategory, isNear],
   );
+  const filters = filterCount(filter);
+  const reason = useCallback((v: Vacancy) => why(v, prefs.want, kmFromHome(homePoint, v), lang), [prefs.want, homePoint, lang]);
+
+  /** «Рядом со мной»: место телефона, округлённое до ~100 м, остаётся только на телефоне. */
+  const locate = async () => {
+    const r = await phoneLocation();
+    if (typeof r === 'string') return r;
+    const point = { lat: Math.round(r.lat * 1000) / 1000, lon: Math.round(r.lon * 1000) / 1000 };
+    setPref({ here: point });
+    return point;
+  };
+  const locateNear = async () => {
+    setLocError('');
+    const r = await locate();
+    if (typeof r === 'string') setLocError(t(r === 'denied' ? 'locDenied' : 'locFailed'));
+    else setPref({ near: DEFAULT_NEAR });
+  };
   // Рядом с домом есть вакансии, просто все уже просмотрены
   const nearSeen = useMemo(() => !!near && (feed ?? []).some((v) => inCategory(v) && isNear(v)), [near, feed, inCategory, isNear]);
   const skipped = useMemo(() => Object.values(seen).some((d) => d === 'l'), [seen]);
@@ -525,11 +562,11 @@ function Main() {
     haptic();
     if (near) setPref({ near: null });
     else if (homePoint) setPref({ near: DEFAULT_NEAR });
-    else {
+    else if (tracker === 'server') {
       // Дома в профиле ещё нет: сначала «Где вы живёте?», после сохранения сразу назад в ленту
       setProfileStart('home');
       setTab('profile');
-    }
+    } else void locateNear();
   };
   const askHome =
     !prefs.home && (home === 'missed' || home === 'unknown') && Object.keys(seen).length >= HOME_AFTER;
@@ -630,7 +667,38 @@ function Main() {
     );
   }
 
+  // Старт из макета: «Кем работаешь» и «Где и когда». Один раз; у кого профиль, тем не нужен
+  if (!prefs.onboarded && !account?.profile) {
+    return (
+      <Onboarding
+        c={c}
+        lang={lang}
+        index={index}
+        initial={prefs.want}
+        here={prefs.here ?? null}
+        near={prefs.near ?? null}
+        onLang={(l) => setPref({ lang: l })}
+        locate={async () => {
+          const r = await locate();
+          return r;
+        }}
+        onDone={(want, here, km) => {
+          haptic();
+          setPref({
+            want,
+            onboarded: true,
+            ...(here ? { here } : {}),
+            near: here ? km : null,
+            filter: { ...(prefs.filter ?? {}), roles: want.roles },
+          });
+          setTab('feed');
+        }}
+      />
+    );
+  }
+
   const cityInfo = index?.cities.find((ct) => ct.slug === city);
+  const subscribeUrl = city ? subscribeLink(city, prefs.cat, filter.payFrom) : null;
   return (
     <Screen c={c}>
       <View style={styles.header}>
@@ -648,7 +716,18 @@ function Main() {
           </Text>
           <Icon name="down" color={c.faint} />
         </Pressable>
-        <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
+        <View style={styles.headerRight}>
+          <LangSwitch lang={lang} c={c} onChange={(l) => setPref({ lang: l })} />
+          <Pressable
+            onPress={() => setSettingsOpen(true)}
+            hitSlop={8}
+            style={styles.gear}
+            accessibilityRole="button"
+            accessibilityLabel={t('settings')}
+          >
+            <Icon name="settings" color={c.ink} />
+          </Pressable>
+        </View>
       </View>
 
       {tab === 'feed' ? (
@@ -660,18 +739,14 @@ function Main() {
               style={styles.cats}
               contentContainerStyle={styles.catsRow}
             >
-              {tracker === 'server' ? <Chip c={c} active={!!near} icon="home" label={t('near')} onPress={toggleNear} /> : null}
-              {near
-                ? NEAR_KM.map((km) => (
-                    <Chip
-                      key={km}
-                      c={c}
-                      active={near === km}
-                      label={i18n.upToKm(km, lang)}
-                      onPress={() => setPref({ near: km })}
-                    />
-                  ))
-                : null}
+              <Chip
+                c={c}
+                active={!!filters}
+                icon="sliders"
+                label={filters ? `${t('filters')} · ${filters}` : t('filters')}
+                onPress={() => setFiltersOpen(true)}
+              />
+              <Chip c={c} active={!!near} icon="home" label={near ? i18n.upToKm(near, lang) : t('near')} onPress={toggleNear} />
               <Chip c={c} active={!prefs.cat} label={t('all')} onPress={() => setPref({ cat: null })} />
               {index.categories
                 .filter((cat) => feed?.some((v) => v.category === cat.slug))
@@ -686,6 +761,7 @@ function Main() {
                 ))}
             </ScrollView>
           ) : null}
+          {locError ? <Text style={[styles.locError, { color: c.skip }]}>{locError}</Text> : null}
 
           <View style={styles.deckArea}>
             {error ? (
@@ -697,7 +773,8 @@ function Main() {
                 items={cards}
                 lang={lang}
                 c={c}
-                home={tracker === 'server' ? homePoint : null}
+                home={homePoint}
+                reason={reason}
                 tip={!prefs.hint}
                 onSwipe={onSwipe}
                 onOpen={setOpen}
@@ -715,10 +792,13 @@ function Main() {
             ) : near && !nearSeen ? (
               <Empty c={c} icon="home" title={t('nearEmptyTitle')} text={t('nearEmptyText')}>
                 <Button c={c} label={t('nearAll')} onPress={() => setPref({ near: null })} />
+                {subscribeUrl ? <Button c={c} ghost icon="bell" label={t('subscribe')} onPress={() => openUrl(subscribeUrl)} /> : null}
               </Empty>
             ) : (
-              <Empty c={c} icon="search" title={t('endTitle')} text={t('endText')}>
-                {skipped ? <Button c={c} label={t('showSkipped')} onPress={showSkipped} /> : null}
+              <Empty c={c} icon="search" title={t(filters ? 'noneTitle' : 'endTitle')} text={t(filters ? 'noneText' : 'endText')}>
+                {subscribeUrl ? <Button c={c} icon="bell" label={t('subscribe')} onPress={() => openUrl(subscribeUrl)} /> : null}
+                {filters ? <Button c={c} ghost label={t('resetFilters')} onPress={() => setPref({ filter: {} })} /> : null}
+                {skipped ? <Button c={c} ghost label={t('showSkipped')} onPress={showSkipped} /> : null}
                 {near ? <Button c={c} ghost label={t('nearAll')} onPress={() => setPref({ near: null })} /> : null}
                 {history.length ? <Button c={c} ghost icon="undo" label={t('undo')} onPress={undo} /> : null}
               </Empty>
@@ -759,6 +839,7 @@ function Main() {
           city={city}
           backRef={profileBack}
           start={profileStart ?? undefined}
+          want={prefs.want}
           onHome={(point) => {
             setAccount((a) => (a && !samePoint(a.home, point) ? { ...a, home: point } : a));
             // Дом сохранили после кнопки «Рядом с домом»: назад в ленту, фильтр уже включён
@@ -872,7 +953,9 @@ function Main() {
               v={open}
               lang={lang}
               c={c}
-              home={tracker === 'server' ? homePoint : null}
+              home={homePoint}
+              all={feed ?? []}
+              onOther={setOpen}
               onClose={() => setOpen(null)}
               onSave={() => {
                 setOpen(null);
@@ -917,6 +1000,61 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
+      <Modal visible={filtersOpen} animationType="slide" transparent onRequestClose={() => setFiltersOpen(false)}>
+        <ModalArea>
+          {filtersOpen ? (
+            <Filters
+              c={c}
+              lang={lang}
+              index={index}
+              value={filter}
+              near={near}
+              canNear={!!homePoint}
+              pool={(feed ?? []).filter((v) => !seen[v.id] && (!prefs.cat || v.category === prefs.cat))}
+              isNear={withinKm}
+              onLocate={() => void locateNear()}
+              onApply={(f, km) => {
+                setPref({ filter: f, near: km });
+                setFiltersOpen(false);
+              }}
+              onClose={() => setFiltersOpen(false)}
+            />
+          ) : null}
+        </ModalArea>
+      </Modal>
+      <Modal visible={settingsOpen} animationType="slide" onRequestClose={() => setSettingsOpen(false)}>
+        <ModalArea>
+          {settingsOpen ? (
+            <Settings
+              c={c}
+              lang={lang}
+              subscribeUrl={subscribeUrl}
+              server={tracker === 'server'}
+              onLang={(l) => setPref({ lang: l })}
+              onReminders={() => {
+                setSettingsOpen(false);
+                setTab('reminders');
+              }}
+              onProfile={() => {
+                setSettingsOpen(false);
+                setTab('profile');
+              }}
+              onRestart={() => {
+                setSettingsOpen(false);
+                setPref({ onboarded: false });
+              }}
+              onClear={() => {
+                setSettingsOpen(false);
+                setLiked([]);
+                setSeen({});
+                setHistory([]);
+                setPrefs((p) => ({ lang: p.lang, city: p.city, beta: p.beta }));
+              }}
+              onClose={() => setSettingsOpen(false)}
+            />
+          ) : null}
+        </ModalArea>
+      </Modal>
       {fresh.length && !applying && !open ? <Celebrate c={c} lang={lang} list={fresh} onClose={closeCelebrate} /> : null}
       <StatusBar style="auto" />
     </Screen>
@@ -936,12 +1074,17 @@ function Details(props: {
   lang: Lang;
   c: Colors;
   home: Point | null;
+  /** Вакансии города: для страницы заведения. */
+  all: Vacancy[];
+  onOther(v: Vacancy): void;
   onClose(): void;
   onSave(): void;
   onApply?(): void;
 }) {
   const { v, lang, c, onClose } = props;
   const t = (key: i18n.Key) => i18n.t(lang, key);
+  const [venue, setVenue] = useState(false);
+  const others = v.employer ? props.all.filter((x) => sameEmployer(x, v)).length : 0;
   const iconButton = (icon: IconName, label: string, onPress: () => void) => (
     <Pressable onPress={onPress} hitSlop={10} accessibilityRole="button" accessibilityLabel={label} style={styles.iconButton}>
       <Icon name={icon} color={c.ink} />
@@ -951,23 +1094,56 @@ function Details(props: {
     <SafeAreaView style={[styles.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
       <View style={ui.column}>
         <View style={styles.pageTop}>
-          {iconButton('back', t('back'), onClose)}
-          <View style={styles.pageTopRight}>
-            {iconButton('share', t('share'), () => shareVacancy(v, lang, 'any'))}
-            {iconButton('heart', t('like'), props.onSave)}
-          </View>
+          {iconButton('back', t('back'), venue ? () => setVenue(false) : onClose)}
+          {venue ? null : (
+            <View style={styles.pageTopRight}>
+              {iconButton('share', t('share'), () => shareVacancy(v, lang, 'any'))}
+              {iconButton('heart', t('like'), props.onSave)}
+            </View>
+          )}
         </View>
-        <ScrollView style={ui.flex}>
-          <VacancyFull v={v} lang={lang} c={c} home={props.home} />
-        </ScrollView>
-        <View style={[styles.pageActions, { borderColor: c.line }]}>
-          <Button c={c} label={t('apply')} onPress={props.onApply ?? (() => openUrl(v.source_url ?? v.url))} />
-          <View style={styles.pageLinks}>
-            <Button c={c} small ghost icon="chat" label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
-            {v.map ? <Button c={c} small ghost icon="map" label={t('onMap')} onPress={() => openUrl(v.map!)} /> : null}
-            <Button c={c} small ghost icon="link" label={t('onSite')} onPress={() => openUrl(v.url)} />
-          </View>
-        </View>
+        {venue ? (
+          <VenueView
+            v={v}
+            all={props.all}
+            lang={lang}
+            c={c}
+            onOpen={(x) => {
+              setVenue(false);
+              props.onOther(x);
+            }}
+          />
+        ) : (
+          <>
+            <ScrollView style={ui.flex}>
+              <VacancyFull v={v} lang={lang} c={c} home={props.home} />
+              {v.employer ? (
+                <Pressable
+                  onPress={() => setVenue(true)}
+                  accessibilityRole="button"
+                  style={[styles.venueCard, { borderColor: c.line, backgroundColor: c.card }]}
+                >
+                  <View style={ui.flex}>
+                    <Text style={[styles.venueTitle, { color: c.ink }]}>{t('aboutVenue')}</Text>
+                    <Text style={[styles.venueSub, { color: c.quiet }]} numberOfLines={1}>
+                      {v.employer}
+                      {others > 1 ? ` · ${i18n.count(others, lang)}` : ''}
+                    </Text>
+                  </View>
+                  <Icon name="next" color={c.faint} size={20} />
+                </Pressable>
+              ) : null}
+            </ScrollView>
+            <View style={[styles.pageActions, { borderColor: c.line }]}>
+              <Button c={c} label={t('apply')} onPress={props.onApply ?? (() => openUrl(v.source_url ?? v.url))} />
+              <View style={styles.pageLinks}>
+                <Button c={c} small ghost icon="chat" label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
+                {v.map ? <Button c={c} small ghost icon="map" label={t('onMap')} onPress={() => openUrl(v.map!)} /> : null}
+                <Button c={c} small ghost icon="link" label={t('onSite')} onPress={() => openUrl(v.url)} />
+              </View>
+            </View>
+          </>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -1097,6 +1273,21 @@ const styles = StyleSheet.create({
   pageTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 8 },
   pageTopRight: { flexDirection: 'row', gap: 4 },
   iconButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  headerRight: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  gear: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
+  locError: { fontSize: 13, paddingHorizontal: 20, paddingBottom: 6 },
+  venueCard: {
+    marginHorizontal: 20,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  venueTitle: { fontSize: 15, fontWeight: '700' },
+  venueSub: { fontSize: 13, marginTop: 2 },
   pageActions: { paddingHorizontal: 20, paddingTop: 12, paddingBottom: 16, gap: 10, borderTopWidth: 1 },
   pageLinks: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
 });

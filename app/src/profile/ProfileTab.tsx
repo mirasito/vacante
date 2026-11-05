@@ -34,6 +34,7 @@ import {
   type Reminders,
   type Tip,
 } from '../server';
+import type { Want } from '../feed';
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, Loading, Retry, styles as ui } from '../ui';
@@ -59,6 +60,8 @@ export function ProfileTab(props: {
   onHome?(home: Point | null): void;
   /** С какого экрана открыть: 'home' — сразу «Где вы живёте?» (кнопка «Рядом с домом» в ленте). */
   start?: 'home';
+  /** Ответы стартовых экранов: подсказка для новой анкеты. */
+  want?: Want;
   /** Ближайшие напоминания и их настройки (есть, когда профиль на сервере). */
   reminders?: RemindersProps;
 }) {
@@ -129,6 +132,7 @@ export function ProfileTab(props: {
         name={props.name}
         city={props.city}
         existing={view?.profile ?? null}
+        seed={props.want}
         backRef={backRef}
         onCancel={() => setMode('card')}
         onDone={(v, created) => {

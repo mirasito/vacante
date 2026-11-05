@@ -16,6 +16,7 @@ import {
   type ProfileView,
   type Start,
 } from '../server';
+import type { Want } from '../feed';
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, styles as ui } from '../ui';
@@ -38,14 +39,15 @@ interface Draft {
   start: Start | null;
 }
 
-function draftOf(existing: Profile | null, name: string, city: string | undefined): Draft {
+function draftOf(existing: Profile | null, name: string, city: string | undefined, seed?: Want): Draft {
   return {
     name: existing?.name ?? name,
     city: existing?.city ?? city ?? '',
     place: { home: existing?.home ?? null, label: '' },
-    roles: existing?.roles ?? [],
-    experience: existing?.experience ?? null,
-    employment: existing?.employment ?? [],
+    // Без профиля подставляем ответы со старта («Кем работаешь», «Где и когда»)
+    roles: existing?.roles ?? seed?.roles ?? [],
+    experience: existing?.experience ?? seed?.experience ?? null,
+    employment: existing?.employment ?? seed?.employment ?? [],
     pay: existing?.pay_from ? String(existing.pay_from) : '',
     pay_period: existing?.pay_period ?? 'month',
     start: existing?.start ?? null,
@@ -60,6 +62,8 @@ export function Wizard(props: {
   city?: string;
   /** Правка существующего профиля: без согласия, поля по желанию сохраняются как были. */
   existing: Profile | null;
+  /** Ответы стартовых экранов: подсказка для новой анкеты. */
+  seed?: Want;
   onDone(view: ProfileView, created: boolean): void;
   onCancel(): void;
   /** Кнопка «Назад» Telegram и Android: шаг назад; false, если шагать некуда. */
@@ -68,7 +72,7 @@ export function Wizard(props: {
   const { c, lang, index, existing, onDone, onCancel, backRef } = props;
   const t = P[lang];
   const [step, setStep] = useState<Step>(existing ? 'place' : 'consent');
-  const [draft, setDraft] = useState<Draft>(() => draftOf(existing, props.name, props.city));
+  const [draft, setDraft] = useState<Draft>(() => draftOf(existing, props.name, props.city, props.seed));
   const [adult, setAdult] = useState(false);
   const [agree, setAgree] = useState(false);
   const [base, setBase] = useState(false);

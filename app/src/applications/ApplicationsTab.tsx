@@ -171,7 +171,7 @@ export function ApplicationsTab(props: {
         <View style={[s.top, { backgroundColor: c.card, borderColor: c.line }]}>
           <View style={s.bar}>
             {SEARCH.map((stage, i) => (
-              <View key={stage} style={[s.segment, { backgroundColor: i <= current ? c.accent : c.line }]} />
+              <View key={stage} style={[s.segment, { backgroundColor: i <= current ? c.brand : c.line }]} />
             ))}
           </View>
           <View style={s.barLabels}>

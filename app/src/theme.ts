@@ -3,17 +3,25 @@ import { useColorScheme } from 'react-native';
 
 import { onThemeChanged, telegram } from './platform';
 
-// Цвета vacante 2.0 (макет «vacante 2.0 — макеты экранов»): белый фон, карточки с тонкой рамкой,
-// терракотовый акцент, тёмные выбранные чипы, зелёный «хорошо» и янтарный «внимание».
+// Цвета vacante в стиле логотипа «.вакантэ»: графит #1B2023 и голубая точка #8AF0FF.
+// Светлая тема: белый фон, графитовые кнопки и выбранные чипы, голубой — для точечных акцентов.
+// Тёмная тема — как сам логотип: графитовый фон и голубые кнопки с графитовым текстом.
 const light = {
+  /** Какая версия логотипа: тёмные буквы на светлом или белые на тёмном. */
+  mode: 'light' as 'light' | 'dark',
   bg: '#ffffff',
   card: '#ffffff',
-  ink: '#141413',
+  ink: '#1B2023',
   quiet: '#5C6066',
   /** Значки и стрелки, которые не надо читать. */
   faint: '#9AA0A8',
   line: '#E3E5E9',
-  accent: '#C2410C',
+  /** Главные кнопки, активная вкладка, выделенный текст. */
+  accent: '#1B2023',
+  /** Текст и значки на accent. */
+  onAccent: '#ffffff',
+  /** Голубая точка логотипа: счётчики, полоски прогресса, маленькие акценты. */
+  brand: '#0A8CA8',
   /** Серый фон: вторичные кнопки, бейджи, переключатель. */
   pill: '#F0F2F5',
   /** Плашки фактов о вакансии. */
@@ -27,20 +35,23 @@ const light = {
   warnLine: '#F5D9A8',
   warnInk: '#7A4A08',
   /** Выбранный чип и тёмные карточки: фон и текст на нём. */
-  strong: '#141413',
+  strong: '#1B2023',
   onStrong: '#ffffff',
 };
 
 const dark: typeof light = {
-  bg: '#0f0f10',
-  card: '#18181a',
-  ink: '#f2f2f3',
-  quiet: '#a1a1a8',
-  faint: '#6b6b70',
-  line: '#2c2c30',
-  accent: '#D24A12',
-  pill: '#26262a',
-  soft: '#1f1f22',
+  mode: 'dark',
+  bg: '#1B2023',
+  card: '#22292D',
+  ink: '#F2F5F6',
+  quiet: '#A3ADB3',
+  faint: '#6B767C',
+  line: '#323B40',
+  accent: '#8AF0FF',
+  onAccent: '#1B2023',
+  brand: '#8AF0FF',
+  pill: '#2B3337',
+  soft: '#252D31',
   like: '#4ade80',
   skip: '#f87171',
   hot: '#fbbf24',
@@ -49,8 +60,8 @@ const dark: typeof light = {
   warnBg: '#33260f',
   warnLine: '#5c4413',
   warnInk: '#fcd9a0',
-  strong: '#f2f2f3',
-  onStrong: '#141413',
+  strong: '#F2F5F6',
+  onStrong: '#1B2023',
 };
 
 export type Colors = typeof light;

@@ -57,7 +57,7 @@ export function VacancyCard(props: Props & { reason?: string | null; onOpen(): v
       {v.schedule || away ? (
         <View style={styles.facts}>
           {v.schedule ? <Text style={[styles.fact, { color: c.ink }]}>{v.schedule}</Text> : null}
-          {away ? <Text style={[styles.fact, { color: c.accent }]}>{away}</Text> : null}
+          {away ? <Text style={[styles.fact, { color: c.brand }]}>{away}</Text> : null}
         </View>
       ) : null}
       {v.top || perks.length ? (
@@ -112,13 +112,13 @@ export function VacancyFull({ v, lang, c, home }: Props) {
         {facts.map((f) => (
           <View key={f.label} style={[styles.cell, { backgroundColor: c.soft }]}>
             <Text style={[styles.sub, { color: c.quiet }]}>{f.label}</Text>
-            <Text style={[styles.cellValue, { color: f.accent ? c.accent : c.ink }]}>{f.value}</Text>
+            <Text style={[styles.cellValue, { color: f.accent ? c.brand : c.ink }]}>{f.value}</Text>
           </View>
         ))}
       </View>
       {v.address ? (
         <View style={styles.line}>
-          <Icon name="pin" color={c.accent} size={20} />
+          <Icon name="pin" color={c.brand} size={20} />
           <Text style={[styles.lineText, { color: c.ink }]}>
             {v.address}
             {/* Точку нашёл OpenStreetMap: лицензия ODbL просит подпись рядом */}

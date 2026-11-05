@@ -18,7 +18,7 @@
     "android": {
       "package": "kz.vacante.app",
       "adaptiveIcon": {
-        "backgroundColor": "#0a8ff0",
+        "backgroundColor": "#1B2023",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -35,7 +35,7 @@
       "name": "Vacante — вакансии свайпами",
       "shortName": "Vacante",
       "lang": "ru",
-      "themeColor": "#C2410C",
+      "themeColor": "#1B2023",
       "backgroundColor": "#ffffff",
       "favicon": "./assets/favicon.png",
       "output": "single"

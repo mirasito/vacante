@@ -9,8 +9,59 @@ import { haptic, shareLink, whatsapp } from './platform';
 import { getReferral, getReliability, REPORT_REASONS, reportVacancy, type Reliability, type ReportReason } from './server';
 import type { Colors } from './theme';
 import type { Lang, Vacancy } from './types';
-import { Button, Loading, styles as ui } from './ui';
+import { Button, IconCircle, Loading, styles as ui } from './ui';
 import { V } from './v2texts';
+
+/**
+ * «Чаты» и «Профиль» без профиля на сервере: что это и как туда попасть. Вне Telegram — открыть
+ * в Telegram (вход без пароля), профили закрыты — объяснить и предложить подписку, профиль можно
+ * создать — кнопка «Создать профиль».
+ */
+export function Locked(props: {
+  c: Colors;
+  lang: Lang;
+  what: 'chats' | 'profile';
+  where: 'browser' | 'ready' | 'closed' | 'offline';
+  city?: string;
+  subscribeUrl: string | null;
+  onProfile(): void;
+  openUrl(url: string): void;
+}) {
+  const { c, lang, what, where } = props;
+  const t = V[lang].locked;
+  const title = what === 'chats' ? t.chatsTitle : t.profileTitle;
+  const text = what === 'chats' ? t.chatsText : t.profileText;
+  return (
+    <ScrollView contentContainerStyle={s.locked}>
+      <IconCircle c={c} icon={what === 'chats' ? 'chat' : 'user'} />
+      <Text style={[s.lockedTitle, { color: c.ink }]}>{title}</Text>
+      <Text style={[s.lockedText, { color: c.quiet }]}>{text}</Text>
+      <View style={s.points}>
+        {t.points.map((p) => (
+          <View key={p} style={s.point}>
+            <Text style={[s.pointDot, { color: c.brand }]}>●</Text>
+            <Text style={[s.pointText, { color: c.ink }]}>{p}</Text>
+          </View>
+        ))}
+      </View>
+      <View style={[s.lockedNote, { backgroundColor: c.soft }]}>
+        <Text style={[s.small, { color: c.ink }]}>{t[where]}</Text>
+      </View>
+      {where === 'browser' ? (
+        <Button
+          c={c}
+          icon="link"
+          label={t.openTelegram}
+          onPress={() => props.openUrl(`https://t.me/vacantekz_bot?startapp=${props.city ?? 'app'}`)}
+        />
+      ) : where === 'ready' ? (
+        <Button c={c} icon="user" label={t.create} onPress={props.onProfile} />
+      ) : props.subscribeUrl ? (
+        <Button c={c} icon="bell" label={t.subscribe} onPress={() => props.openUrl(props.subscribeUrl!)} />
+      ) : null}
+    </ScrollView>
+  );
+}
 
 const MEDAL: Record<string, string> = { bronze: '🥉', silver: '🥈', gold: '🥇' };
 
@@ -192,6 +243,14 @@ export function ReportSheet(props: { c: Colors; lang: Lang; v: Vacancy; onClose(
 }
 
 const s = StyleSheet.create({
+  locked: { padding: 24, gap: 14, alignItems: 'stretch', maxWidth: 520, width: '100%', alignSelf: 'center' },
+  lockedTitle: { fontSize: 22, fontWeight: '800', letterSpacing: -0.3, textAlign: 'center' },
+  lockedText: { fontSize: 15, lineHeight: 21, textAlign: 'center' },
+  points: { gap: 8 },
+  point: { flexDirection: 'row', gap: 10, alignItems: 'flex-start' },
+  pointDot: { fontSize: 10, lineHeight: 21 },
+  pointText: { flex: 1, fontSize: 15, lineHeight: 21, fontWeight: '600' },
+  lockedNote: { borderRadius: 14, padding: 14 },
   page: { flex: 1 },
   top: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 8 },
   back: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },

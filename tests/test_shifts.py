@@ -100,3 +100,24 @@ def test_channel_shifts_digest_needs_three_and_lists_slots_first():
     assert "📅 сб, 07.11, 10:00–22:00" in text
     assert "start=smena" in text
     assert autopost.shifts_digest(items, "almaty", "https://vacante.kz", now, lambda v: False) is None
+
+
+def test_shift_funnel_on_bot_migrations():
+    import sqlite3
+    from pathlib import Path
+    db = sqlite3.connect(":memory:")
+    db.row_factory = sqlite3.Row
+    for f in sorted((Path(__file__).parents[1] / "bot" / "migrations").glob("*.sql")):
+        db.executescript(f.read_text("utf-8"))
+    db.execute("INSERT INTO jobs (employer_chat, status, kind) VALUES (1, 'approved', 'shift'), (1, 'closed', 'shift'), "
+               "(1, 'draft', 'shift'), (1, 'approved', 'vacancy')")
+    db.execute("INSERT INTO jobs (employer_chat, status, kind, created_at) VALUES (1, 'closed', 'shift', '2026-01-01')")
+    db.execute("INSERT INTO applications (job_id, chat_id, status, attended) VALUES (1, 5, 'asked', NULL), "
+               "(2, 6, 'confirmed', 1), (2, 7, 'confirmed', 0), (2, 8, 'cancelled', NULL), (4, 9, NULL, NULL)")
+    db.execute("INSERT INTO subscribers (chat_id, perks, active) VALUES (5, 'Питание|Смены и подработка', 1), "
+               "(6, 'Смены и подработка', 0), (7, '', 1)")
+    query = lambda sql, params: [dict(r) for r in db.execute(sql, params or [])]  # noqa: E731
+    f = digest.shift_funnel(query)
+    assert f["week"] == {"posted": 2, "live": 1, "published": 2, "asked": 4, "confirmed": 3, "cancelled": 1,
+                         "came": 1, "missed": 1}
+    assert f["all"]["posted"] == 3 and f["subscribers"] == 1

@@ -150,6 +150,28 @@ def _morning(vacancies: list[Vacancy], subs: list[Subscription], base_url: str, 
             stats["morning"] = stats.get("morning", 0) + 1
 
 
+def shift_funnel(query: Callable[[str, list | None], list[dict]]) -> dict:
+    """Воронка смен из базы бота для админки: всего и за последние 7 дней.
+
+    posted — отправлены на проверку, live — опубликованы сейчас, asked — нажали «Беру смену»,
+    confirmed — работодатель подтвердил (включая потом отменивших), cancelled — сами отменили,
+    came / missed — отметки «пришёл / не пришёл», subscribers — активные подписчики на смены."""
+    out = {}
+    for name, since in (("all", "1970-01-01"), ("week", None)):
+        cut = "datetime('now', '-7 days')" if since is None else f"'{since}'"
+        jobs = query("SELECT COUNT(*) AS posted, COALESCE(SUM(status = 'approved'), 0) AS live, "
+                     f"COALESCE(SUM(status IN ('approved', 'closed')), 0) AS published FROM jobs "
+                     f"WHERE kind = 'shift' AND status != 'draft' AND created_at >= {cut}", None)[0]
+        apps = query("SELECT COUNT(*) AS asked, COALESCE(SUM(a.status IN ('confirmed', 'cancelled')), 0) AS confirmed, "
+                     "COALESCE(SUM(a.status = 'cancelled'), 0) AS cancelled, COALESCE(SUM(a.attended = 1), 0) AS came, "
+                     "COALESCE(SUM(a.attended = 0), 0) AS missed FROM applications a JOIN jobs j ON j.id = a.job_id "
+                     f"WHERE j.kind = 'shift' AND a.created_at >= {cut}", None)[0]
+        out[name] = {k: int(v or 0) for k, v in {**jobs, **apps}.items()}
+    out["subscribers"] = int(query("SELECT COUNT(*) AS n FROM subscribers WHERE active = 1 AND perks LIKE ?",
+                                   [f"%{shifts.SHIFT}%"])[0]["n"])
+    return out
+
+
 class D1:
     """Запросы к базе бота в Cloudflare D1 через REST API."""
 
@@ -205,6 +227,10 @@ class D1:
             paid = self.query("SELECT COUNT(*) AS n, COALESCE(SUM(amount), 0) AS total FROM payments "
                               "WHERE status = 'confirmed'")[0]
             counts["paid"], counts["revenue"] = int(paid["n"]), int(paid["total"])
+        except (httpx.HTTPError, RuntimeError):
+            pass
+        try:  # смены (миграция 0006): воронка «разместили → попросились → взяли → пришли», всего и за 7 дней
+            counts["shifts"] = shift_funnel(self.query)
         except (httpx.HTTPError, RuntimeError):
             pass
         return counts

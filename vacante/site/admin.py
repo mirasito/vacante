@@ -17,6 +17,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from vacante import shifts
 from vacante import venues as venue_links
 from vacante.direct import SOURCE as DIRECT
 from vacante.journal import ACCEPTED, DUPLICATE, GONE, REJECTED
@@ -100,6 +101,9 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
     totals = {
         "on_site": len(vacancies),
         "direct": sum(1 for v in vacancies if v.source == DIRECT),
+        # Раздел «Подработка и смены»: всего и смены на день от работодателей (vacante.shifts)
+        "shifts": sum(1 for v in vacancies if shifts.is_shift(v)),
+        "shift_slots": sum(1 for v in vacancies if v.shift_date),
         "new_24h": sum(1 for p in posts if p["status"] == ACCEPTED and p["posted_at"] >= day_ago),
         "posts": len(posts),
         "accepted": statuses[ACCEPTED],

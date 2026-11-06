@@ -104,7 +104,8 @@ jobs:
               {command: "stop", description: "Остановить рассылку"},
               {command: "vacancy", description: "Работодателям: разместить вакансию"},
               {command: "smena", description: "Работодателям: найти людей на смену"},
-              {command: "myjobs", description: "Работодателям: мои вакансии и отклики"}]}' \
+              {command: "myjobs", description: "Работодателям: мои вакансии и отклики"},
+              {command: "company", description: "Работодателям: профиль компании и заведения"}]}' \
             | curl -fsS "$tg/setMyCommands" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
           # Кнопка слева от поля ввода открывает приложение со свайпами (app/, выложено на сайте в /app/)
           jq -n '{menu_button: {type: "web_app", text: "Вакансии", web_app: {url: "https://vacante.kz/app/"}}}' \

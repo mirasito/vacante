@@ -20,7 +20,8 @@ const GREETING =
 const HELP =
   "Я присылаю новые вакансии с vacante.kz.\n/settings: изменить подписку\n/stop: остановить\n\n" +
   "⚡ /smeny: присылать смены и подработку\n\n" +
-  "Работодателям:\n/vacancy: разместить вакансию\n/smena: найти людей на смену\n/myjobs: мои вакансии и смены";
+  "Работодателям:\n/vacancy: разместить вакансию\n/smena: найти людей на смену\n/myjobs: мои вакансии и смены\n" +
+  "/company: профиль компании и заведения";
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
 const postIntro = (price) =>
   `Разместим вакансию${price ? ` за ${job.money(price)}` : ""}: на vacante.kz, в приложении и в подборках подписчикам бота. ` +
@@ -30,7 +31,10 @@ const PROFILE_DOWN = "Профиль сейчас недоступен, попр
 // Кнопка «Записать кружок» в приложении открывает чат с ботом командой /start video
 const VIDEO_START = /^\/start(@\w+)?\s+video$/;
 // Отклики и напоминания списком: они хранятся в профиле, поэтому отвечает сервер
-const SERVER_COMMAND = /^\/(otkliki|napominaniya)(@\w+)?$/;
+// Профиль работодателя /company тоже на сервере: там CRM работодателей и их заведения (server/src/crm-bot.ts)
+const SERVER_COMMAND = /^\/(otkliki|napominaniya|company)(@\w+)?$/;
+// Ответы на вопросы сервера о компании: «🏠 Новое заведение» и «🔎 Поиск компании»
+const SERVER_REPLY = /^(🏠 Новое заведение|🔎 Поиск компании)/;
 const NO_KEYBOARD = { remove_keyboard: true };
 
 export default {
@@ -73,7 +77,8 @@ async function handle(update, env, ctx) {
     // иначе оно остаётся боту
     const text = (m.text || "").trim();
     const command = VIDEO_START.test(text) || SERVER_COMMAND.test(text);
-    const profile = !!m.video_note || command;
+    const answer = !!text && SERVER_REPLY.test(m.reply_to_message?.text || "");
+    const profile = !!m.video_note || command || answer;
     if (command) await endDialog(env, m.chat.id); // команда прерывает анкету или отклик, как любая другая
     if (m.contact || m.video || profile) {
       if (await relayToServer(env, update)) return;
@@ -85,7 +90,7 @@ async function handle(update, env, ctx) {
   if (!q || !q.message) return;
   const data = q.data || "";
   // Кнопки под сообщениями сервера: о кружке («Убрать из профиля») и под напоминаниями
-  if (data.startsWith("v:") || data.startsWith("r:")) {
+  if (data.startsWith("v:") || data.startsWith("r:") || data.startsWith("c:")) {
     if (await relayToServer(env, update)) return;
     return answerCallback(env, q, PROFILE_DOWN);
   }

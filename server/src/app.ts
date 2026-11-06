@@ -9,6 +9,7 @@ import { internalRoutes } from "./internal.ts";
 import { meRoutes } from "./me.ts";
 import { olxImportRoutes } from "./olx-import.ts";
 import { crmRoutes } from "./crm.ts";
+import { createCrmBot, type CrmBot } from "./crm-bot.ts";
 import { olxRoutes } from "./olx.ts";
 import { pageRoutes } from "./page.ts";
 import { v2Routes } from "./v2.ts";
@@ -31,6 +32,8 @@ export interface Ctx extends Deps {
   fetch: typeof fetch;
   /** Кто открыл Mini App: проверяет подпись Telegram в заголовке Authorization: tma <initData>. */
   auth(req: Request): InitData;
+  /** Профиль работодателя в боте (/company), CRM работодателей. */
+  crmBot?: CrmBot;
 }
 
 export function createApp(deps: Deps) {
@@ -47,6 +50,7 @@ export function createApp(deps: Deps) {
       return data;
     },
   };
+  ctx.crmBot = createCrmBot(ctx);
   const routes = buildRoutes(ctx);
   const apiHost = hostOf(deps.config.apiOrigin);
   const profileHost = hostOf(deps.config.profileOrigin);

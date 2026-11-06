@@ -700,3 +700,29 @@ test("смена: /smena, «Беру смену», подтверждение, �
   await shiftCron(env, new Date(end.getTime() + 2 * 3600e3));
   assert.equal(sentTo(calls, 100).filter((c) => /Отметьте, кто пришёл/.test(c.body.text)).length, 1);
 });
+
+test("профиль компании /company, ответы на вопросы о компании и кнопки «c:» ведёт сервер", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  const telegram = fakeFetch(calls);
+  globalThis.fetch = async (url, init) => {
+    if (String(url).startsWith("https://api.vacante.kz/")) {
+      calls.push({ method: "server", body: JSON.parse(init.body) });
+      return Response.json({ ok: true, handled: true });
+    }
+    return telegram(url, init);
+  };
+  const boss = user(600, "Айгерим");
+  const chat = { id: 600, type: "private" };
+  const relayed = () => calls.filter((c) => c.method === "server");
+  await say(env, boss, "/company");
+  await post(env, { message: { chat, from: boss, text: "Greenwich, пр. Достык 111", reply_to_message: { text: "🏠 Новое заведение · Алматы\n…" } } });
+  await press(env, boss, "c:add:5", 43);
+  assert.equal(relayed().length, 3);
+  assert.equal(relayed()[1].body.message.reply_to_message.text.slice(0, 2), "🏠");
+  assert.equal(relayed()[2].body.callback_query.data, "c:add:5");
+  assert.equal(sentTo(calls, 600).length, 0);
+  // Ответ на другое сообщение бота — не серверу
+  await post(env, { message: { chat, from: boss, text: "привет", reply_to_message: { text: "Как вас зовут?" } } });
+  assert.equal(relayed().length, 3);
+});

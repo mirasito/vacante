@@ -56,6 +56,8 @@ class Vacancy:
     shift_date: str | None = None
     shift_time: str | None = None
     need: int | None = None
+    # id работодателя на hh.kz (vacante.sources.hh): по нему CRM работодателей берёт логотип и описание компании
+    employer_hh: str | None = None
 
     def is_top(self, now: datetime) -> bool:
         return self.top_until is not None and datetime.fromisoformat(self.top_until) > now

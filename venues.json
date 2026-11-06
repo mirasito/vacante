@@ -1502,6 +1502,15 @@
    "website"
   ]
  },
+ "aktobe:jadyras": {
+  "name": "JadyraS",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "jadyra.s",
+  "source": "https://2gis.kz/aktobe/firm/70000001098553626"
+ },
  "aktobe:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "aktobe",
@@ -2200,6 +2209,15 @@
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
  },
+ "aktobe:сеть супермаркетов суровский ип едаменко андрей александрович": {
+  "name": "Сеть супермаркетов Суровский, ИП Едаменко Андрей Александрович",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "surovskiy.uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001024811403"
+ },
  "aktobe:спецпром invest": {
   "name": "СпецПром INVEST",
   "city": "aktobe",
@@ -2471,6 +2489,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:admix sport адмикс спорт": {
+  "name": "Admix Sport (Адмикс спорт)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
  },
  "almaty:adrenaline fitness адреналин фитнес": {
   "name": "Adrenaline Fitness (Адреналин Фитнес)",
@@ -8452,6 +8477,20 @@
   "instagram": "procoffee.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001097293522"
  },
+ "almaty:professional service almaty": {
+  "name": "Professional Service Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "professional_service_almaty",
+  "website": "https://ps-almaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032382249",
+  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:profi kz": {
   "name": "PROFI KZ",
   "city": "almaty",
@@ -10213,6 +10252,13 @@
    "website"
   ]
  },
+ "almaty:volcom": {
+  "name": "VolCom",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
+ },
  "almaty:volvo group kazakhstan": {
   "name": "Volvo Group Kazakhstan",
   "city": "almaty",
@@ -10490,6 +10536,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
+ },
+ "almaty:zhulduz spar": {
+  "name": "Zhulduz Spar",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
  },
  "almaty:zontex": {
   "name": "Zontex",
@@ -12824,6 +12877,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
  },
+ "almaty:имя пользователя": {
+  "name": "Имя пользователя",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
+ },
  "almaty:инжиниринговая компания казгипронефтетранс": {
   "name": "ИНЖИНИРИНГОВАЯ КОМПАНИЯ КАЗГИПРОНЕФТЕТРАНС",
   "city": "almaty",
@@ -13622,6 +13682,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "almaty:кузет 24 7": {
+  "name": "Кузет 24/7",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "website": "http://k24.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001047863826",
+  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:кузет сенім": {
   "name": "Кузет Сенім",
@@ -14592,6 +14665,13 @@
    "telegram",
    "website"
   ]
+ },
+ "almaty:оси": {
+  "name": "ОСИ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
  },
  "almaty:осоо дерма лазер": {
   "name": "ОсОО Дерма Лазер",
@@ -15813,6 +15893,13 @@
   "instagram": "teplica_almaty",
   "source": "https://2gis.kz/almaty/firm/9429940001141548"
  },
+ "almaty:терминал астана": {
+  "name": "Терминал Астана",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
+ },
  "almaty:терракота": {
   "name": "Терракота",
   "city": "almaty",
@@ -16888,6 +16975,15 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "3itime_bar",
   "source": "https://2gis.kz/astana/firm/70000001114798147"
+ },
+ "astana:323": {
+  "name": "323",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "323cafe",
+  "source": "https://2gis.kz/uralsk/firm/70000001076466650"
  },
  "astana:35 health clubs kazakhstan": {
   "name": "35 HEALTH CLUBS KAZAKHSTAN",
@@ -22219,6 +22315,13 @@
   "avatar": "c9760b0c25dff948.jpg",
   "avatar_source": "website"
  },
+ "astana:алтындар": {
+  "name": "Алтындар",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
+ },
  "astana:алые паруса": {
   "name": "Алые Паруса",
   "city": "astana",
@@ -22435,7 +22538,7 @@
   "instagram": "ayan_supermarket",
   "website": "http://ayan.kz/",
   "source": "https://2gis.kz/astana/firm/70000001035282583",
-  "avatar_checked_at": "2026-10-30T02:43:42+00:00",
+  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25490,6 +25593,13 @@
   ],
   "avatar": "3b58cc225e41fd91.jpg",
   "avatar_source": "website"
+ },
+ "astana:табачный бренд": {
+  "name": "Табачный бренд",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
  },
  "astana:табер трейд кз сеть магазинов подружка": {
   "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",
@@ -29525,6 +29635,15 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "kokshetau:lifefood company": {
+  "name": "LifeFOOD Company",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "life_food_kz",
+  "source": "https://2gis.kz/kokshetau/firm/70000001097440674"
+ },
  "kokshetau:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "kokshetau",
@@ -30858,6 +30977,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
+ },
+ "kostanay:одак": {
+  "name": "Одак",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
  },
  "kostanay:олжа агро": {
   "name": "Олжа Агро",
@@ -32277,6 +32403,13 @@
   "instagram": "a1comag",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001116651230"
  },
+ "petropavlovsk:alt seeds trade": {
+  "name": "ALT-Seeds Trade",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
+ },
  "petropavlovsk:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "petropavlovsk",
@@ -33293,6 +33426,20 @@
   "checked_at": "2026-11-02T06:43:30+00:00",
   "instagram": "tamyr_restaurant",
   "source": "https://2gis.kz/semej/firm/70000001110331350"
+ },
+ "semey:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "technodomkz",
+  "website": "https://technodom.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001051546946",
+  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "semey:trans alliance service": {
   "name": "Trans Alliance Service",
@@ -35014,6 +35161,20 @@
   "avatar": "a252b47b8b028442.jpg",
   "avatar_source": "website"
  },
+ "shymkent:ив роше казахстан": {
+  "name": "Ив Роше Казахстан",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00",
+  "instagram": "yvesrocherkz",
+  "website": "https://www.yves-rocher.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026613716",
+  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "shymkent",
@@ -36206,6 +36367,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
+ },
+ "uralsk:food city": {
+  "name": "FOOD CITY",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T02:44:46+00:00"
  },
  "uralsk:hazar ls": {
   "name": "HAZAR LS",

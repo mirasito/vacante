@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T15:56:36+00:00",
+ "updated_at": "2026-11-06T16:56:33+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -37435,6 +37435,210 @@
      "Официально"
     ]
    }
+  },
+  "hh-139219611": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Кладовщик-водитель",
+    "employer": "Arlan Voltrix Group",
+    "schedule": "5/2, 8 часов",
+    "address": "мкр Юго-Восток (правая сторона), ул. Аршын, 13"
+   }
+  },
+  "rabota_astanakz-31332": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Водитель погрузчика, водитель, чабан",
+    "employer": null,
+    "schedule": null,
+    "address": "Откормочная база, 100 км от Астаны",
+    "perks": [
+     "Питание",
+     "Жильё"
+    ]
+   }
+  },
+  "hh-139172313": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Бариста",
+    "schedule": "6/1, 8 часов",
+    "address": "пр. Тауелсиздик, 34/6"
+   }
+  },
+  "astana_hh-1849": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Пекарь",
+    "schedule": "6/1, 08:00–19:00",
+    "perks": []
+   }
+  },
+  "rabota_astana-15659": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "employer": "Магазин «Bizon»",
+    "salary_min": 250000,
+    "salary_max": 300000,
+    "salary_period": "month",
+    "schedule": "6/1, 10:00–21:00",
+    "address": "ул. Сейфуллина, 35",
+    "perks": [
+     "Бонусы",
+     "Без опыта"
+    ]
+   }
+  },
+  "astana_job_vakansii-130268": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "employer": "Doner на Абая",
+    "address": "ТРЦ «Мега», Аль-Фараби, Акмешит, Ильяс Омарова, ТРЦ «Аружан»"
+   }
+  },
+  "astana_job_vakansii-130159": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "employer": "Milky Cake",
+    "schedule": "2/2, 08:00–21:00"
+   }
+  },
+  "zhumys_astana_kz-17122": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "schedule": "2/2, ночные смены, 20:00–08:00",
+    "address": "Туран, 50/3"
+   }
+  },
+  "astana_job_vakansii-130223": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "employer": "TAQ Collection",
+    "schedule": "5/2 или 2/2",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "olx-402645048": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Грузчик-сортировщик",
+    "salary_min": 10000,
+    "salary_max": 18000,
+    "salary_period": "day",
+    "schedule": "дневные, ночные смены или полдня",
+    "perks": []
+   }
+  },
+  "hh-139219266": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "employer": "Сәрсенбаев",
+    "address": "ул. Керима Мынбаева, 47В"
+   }
+  },
+  "hh-139218986": {
+   "verdict": "reject",
+   "at": "2026-11-06T16:56:33+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "hh-139218862": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Администратор салона",
+    "address": "пр. Достык, 109А"
+   }
+  },
+  "hh-139218769": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "address": "мкр Мирас, 2/30"
+   }
+  },
+  "hh-139218725": {
+   "verdict": "reject",
+   "at": "2026-11-06T16:56:33+00:00",
+   "reason": "Офисная работа: онлайн-продажи через переписку"
+  },
+  "hh-139191779": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "employer": "Tan Group",
+    "schedule": null,
+    "address": "ул. Калининградская, 45"
+   }
+  },
+  "hh-139191762": {
+   "verdict": "reject",
+   "at": "2026-11-06T16:56:33+00:00",
+   "reason": "Офисная должность: B2B-продажи спецтехники"
+  },
+  "hh-139187986": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "address": "пр. Райымбека, 496А"
+   }
+  },
+  "hh-139187044": {
+   "verdict": "reject",
+   "at": "2026-11-06T16:56:33+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "hh-139187041": {
+   "verdict": "reject",
+   "at": "2026-11-06T16:56:33+00:00",
+   "reason": "Офисная должность: помощник руководителя"
+  },
+  "hh-139187011": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Повар-пиццер",
+    "schedule": "4/2, 2/2",
+    "address": "пр. Достык, 87А"
+   }
+  },
+  "almaty_rabota_work-31822": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Хаусмастер",
+    "employer": "SOFA.bz",
+    "schedule": "5/2, 12:00–20:00"
+   }
+  },
+  "olx-402654579": {
+   "verdict": "approve",
+   "at": "2026-11-06T16:56:33+00:00",
+   "fields": {
+    "title": "Упаковщик мяса",
+    "salary_min": 650000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "10/1, дневные и ночные смены"
+   }
+  },
+  "olx-402665778": {
+   "verdict": "reject",
+   "at": "2026-11-06T16:56:33+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   }
  }
 }

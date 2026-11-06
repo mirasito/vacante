@@ -20,10 +20,10 @@ const GREETING =
 const HELP =
   "Я присылаю новые вакансии с vacante.kz.\n/settings: изменить подписку\n/stop: остановить\n\n" +
   "⚡ /smeny: присылать смены и подработку\n\n" +
-  "Работодателям:\n/vacancy: разместить вакансию бесплатно\n/smena: найти людей на смену\n/myjobs: мои вакансии и смены";
+  "Работодателям:\n/vacancy: разместить вакансию\n/smena: найти людей на смену\n/myjobs: мои вакансии и смены";
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
-const POST_INTRO =
-  "Разместим вакансию бесплатно: на vacante.kz и в подборках подписчикам бота. " +
+const postIntro = (price) =>
+  `Разместим вакансию${price ? ` за ${job.money(price)}` : ""}: на vacante.kz, в приложении и в подборках подписчикам бота. ` +
   "Отклики кандидатов придут вам сюда. Ответьте на несколько вопросов, это пара минут.";
 const JOB_CLOSED = "Эта вакансия уже закрыта. Новые вакансии могу присылать сюда: /start";
 const PROFILE_DOWN = "Профиль сейчас недоступен, попробуйте через несколько минут.";
@@ -96,6 +96,9 @@ async function handle(update, env, ctx) {
   if (data.startsWith("boost:")) return boostJob(env, q);
   if (data.startsWith("paid:")) return paid(env, q);
   if (data.startsWith("pay:")) return confirmPayment(env, q, ctx);
+  if (data.startsWith("postpay:")) return postPay(env, q);
+  if (data.startsWith("postpaid:")) return postPaid(env, q);
+  if (data.startsWith("postlater:")) return postLater(env, q);
   if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q, ctx);
   return subscriptionButton(env, q);
 }
@@ -175,11 +178,11 @@ async function subscriptionButton(env, q) {
 
 async function startPost(env, m, kind = "vacancy") {
   const chatId = m.chat.id;
-  const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status = 'pending'")
+  const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status IN ('pending', 'payment')")
     .bind(chatId)
     .first("n");
   if (pending >= job.MAX_PENDING) {
-    return send(env, chatId, `У вас уже ${pending} вакансии на проверке. Дождитесь ответа, обычно это пара часов: /myjobs`);
+    return send(env, chatId, `У вас уже ${pending} вакансии ждут оплаты или проверки. Оплатите или закройте их: /myjobs`);
   }
   await env.DB.prepare("DELETE FROM jobs WHERE employer_chat = ? AND status = 'draft'").bind(chatId).run();
   const { meta } = await env.DB.prepare("INSERT INTO jobs (employer_chat, employer_name, step, kind) VALUES (?, ?, 'city', ?)")
@@ -187,7 +190,16 @@ async function startPost(env, m, kind = "vacancy") {
     .run();
   await setDialog(env, chatId, "post", meta.last_row_id);
   const { text, keyboard } = job.askScreen(job.stepsFor({ kind })[0]);
-  return send(env, chatId, `${kind === "shift" ? shift.SHIFT_INTRO : POST_INTRO}\n\n${text}`, keyboard);
+  const price = await postPriceFor(env, chatId);
+  return send(env, chatId, `${kind === "shift" ? shift.shiftIntro(price) : postIntro(price)}\n\n${text}`, keyboard);
+}
+
+// Цена размещения для этого работодателя: модераторы (админы каналов) размещают бесплатно
+async function postPriceFor(env, chatId) {
+  const price = job.postPrice(job.boostOffer(env));
+  if (!price) return 0;
+  const admin = await env.DB.prepare("SELECT chat_id FROM admins WHERE chat_id = ?").bind(chatId).first();
+  return admin ? 0 : price;
 }
 
 async function postAnswer(env, m, d) {
@@ -197,7 +209,7 @@ async function postAnswer(env, m, d) {
     await endDialog(env, chatId);
     return send(env, chatId, HELP);
   }
-  if (!draft.step) return send(env, chatId, ...screen(job.previewScreen(draft))); // анкета заполнена, ждём кнопку
+  if (!draft.step) return send(env, chatId, ...screen(job.previewScreen(draft, await postPriceFor(env, chatId)))); // анкета заполнена, ждём кнопку
   const { job: next, error } = job.answer(draft, draft.step, m.text);
   if (error) return send(env, chatId, error, job.askScreen(job.stepsFor(draft).find((s) => s.field === draft.step)).keyboard);
   return advance(env, chatId, next);
@@ -233,11 +245,17 @@ async function advance(env, chatId, draft, messageId) {
     .bind(draft.step, draft.city, draft.title, draft.company, draft.salary, draft.schedule, draft.address, draft.details,
       draft.shift_date ?? null, draft.shift_start ?? null, draft.shift_end ?? null, draft.need ?? null, draft.id)
     .run();
-  const { text, keyboard } = step ? job.askScreen(step) : job.previewScreen(draft);
+  const { text, keyboard } = step ? job.askScreen(step) : job.previewScreen(draft, await postPriceFor(env, chatId));
   return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
 }
 
 async function submit(env, chatId, messageId, draft, ctx) {
+  if (await postPriceFor(env, chatId)) {
+    // Платное размещение: сначала оплата, на проверку вакансия уйдёт после подтверждения перевода
+    await env.DB.prepare("UPDATE jobs SET status = 'payment', updated_at = datetime('now') WHERE id = ?").bind(draft.id).run();
+    await endDialog(env, chatId);
+    return edit(env, chatId, messageId, ...screen(job.postPayScreen({ ...draft, status: "payment" }, job.boostOffer(env))));
+  }
   await env.DB.prepare("UPDATE jobs SET status = 'pending', updated_at = datetime('now') WHERE id = ?").bind(draft.id).run();
   await endDialog(env, chatId);
   await edit(env, chatId, messageId, `${job.card(draft)}\n\n⏳ Отправили на проверку, обычно это до часа. Напишу, когда опубликуем. Ваши вакансии: /myjobs`);
@@ -284,7 +302,7 @@ async function closeJob(env, q) {
   const id = Number(q.data.split(":")[1]);
   const { meta } = await env.DB.prepare(
     `UPDATE jobs SET status = 'closed', updated_at = datetime('now')
-     WHERE id = ? AND employer_chat = ? AND status IN ('pending', 'approved')`,
+     WHERE id = ? AND employer_chat = ? AND status IN ('payment', 'pending', 'approved')`,
   )
     .bind(id, chatId)
     .run();
@@ -320,7 +338,11 @@ async function paid(env, q) {
     .bind(found.id, found.employer_chat, job.offerFor(boost, found).price, job.offerFor(boost, found).days)
     .run();
   await edit(env, q.message.chat.id, q.message.message_id, job.paymentWaitText(found));
-  const payment = await getPayment(env, meta.last_row_id);
+  await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
+}
+
+// Карточка оплаты всем модераторам; запоминаем сообщения, чтобы обновить их после решения
+async function notifyPayment(env, payment, found) {
   const { results } = await env.DB.prepare("SELECT chat_id FROM admins").all();
   for (const admin of results) {
     const r = await send(env, admin.chat_id, ...screen(job.paymentScreen(payment, found)));
@@ -344,7 +366,14 @@ async function confirmPayment(env, q, ctx) {
   )
     .bind(ok ? "confirmed" : "rejected", job.employerName(q.from), payment.id)
     .run();
-  if (meta.changes && ok) {
+  if (meta.changes && ok && payment.kind === "post") {
+    // Размещение оплачено: вакансия уходит на проверку (даже если её успели закрыть, за неё заплатили)
+    await env.DB.prepare(
+      `UPDATE jobs SET status = 'pending', post_paid = ?, updated_at = datetime('now') WHERE id = ? AND status IN ('payment', 'closed')`,
+    )
+      .bind(payment.amount, payment.job_id)
+      .run();
+  } else if (meta.changes && ok) {
     // Продление считаем от конца текущего «Срочно», если оно ещё идёт
     await env.DB.prepare(
       `UPDATE jobs SET boost_until = datetime(MAX(COALESCE(boost_until, datetime('now')), datetime('now')), '+' || ? || ' days'),
@@ -359,8 +388,51 @@ async function confirmPayment(env, q, ctx) {
   const card = job.paymentScreen(now, found);
   for (const n of results) await edit(env, n.chat_id, n.message_id, card.text, card.keyboard);
   if (!meta.changes) return;
+  if (payment.kind === "post") {
+    await send(env, found.employer_chat, ok ? job.postPaidText(found) : job.paymentRejectedText(found, "post"));
+    if (!ok || found.status !== "pending") return;
+    const { results: admins } = await env.DB.prepare("SELECT chat_id FROM admins").all();
+    for (const a of admins) await sendNotice(env, a.chat_id, found);
+    return wakeSite(env, ctx);  // очередь на проверку (moderation.json) для агента
+  }
   await send(env, found.employer_chat, ok ? job.boostedText(found) : job.paymentRejectedText(found));
   if (ok) wakeSite(env, ctx);
+}
+
+// Платное размещение: вакансия в статусе «ждёт оплаты», работодатель переводит на Kaspi и жмёт «Я оплатил»
+
+async function ownUnpaid(env, q) {
+  const found = await getJob(env, Number(q.data.split(":")[1]));
+  return found && found.employer_chat === q.message.chat.id && found.status === "payment" ? found : null;
+}
+
+async function postPay(env, q) {
+  const boost = job.boostOffer(env);
+  const found = job.postPrice(boost) && (await ownUnpaid(env, q));
+  if (!found) return answerCallback(env, q, "Эта вакансия уже не ждёт оплаты: /myjobs");
+  await answerCallback(env, q);
+  return send(env, q.message.chat.id, ...screen(job.postPayScreen(found, boost)));
+}
+
+async function postPaid(env, q) {
+  const boost = job.boostOffer(env);
+  const found = job.postPrice(boost) && (await ownUnpaid(env, q));
+  if (!found) return answerCallback(env, q, "Эта вакансия уже не ждёт оплаты: /myjobs");
+  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE job_id = ? AND kind = 'post' AND status = 'pending'")
+    .bind(found.id).first();
+  if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод, напишу, как только придёт");
+  await answerCallback(env, q);
+  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days, kind) VALUES (?, ?, ?, 0, 'post')")
+    .bind(found.id, found.employer_chat, job.postPrice(boost))
+    .run();
+  await edit(env, q.message.chat.id, q.message.message_id, job.postWaitText(found));
+  await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
+}
+
+async function postLater(env, q) {
+  const found = await ownUnpaid(env, q);
+  await answerCallback(env, q);
+  if (found) return edit(env, q.message.chat.id, q.message.message_id, job.postLaterText(found));
 }
 
 function getPayment(env, id) {

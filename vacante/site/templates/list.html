@@ -78,9 +78,9 @@
   {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
 </p>
 {% if shifts_page %}
-<a class="employer" href="{{ shift_post_url }}" rel="nofollow">{{ t("Нужны люди на смену сегодня или завтра? Разместите смену бесплатно за минуту через бота: кандидаты нажмут «Беру смену», а вы подтвердите →") }}</a>
+<a class="employer" href="{{ shift_post_url }}" rel="nofollow">{{ t("Нужны люди на смену сегодня или завтра? Разместите смену за 900 ₸ через бота: кандидаты нажмут «Беру смену», а вы подтвердите →") }}</a>
 {% endif %}
-<a class="employer" href="{{ employer_url }}" rel="nofollow">{{ t("Нанимаете? Разместите вакансию бесплатно через бота: она появится здесь и в подборках соискателям →") }}</a>
+<a class="employer" href="{{ employer_url }}" rel="nofollow">{{ t("Нанимаете? Разместите вакансию за 900 ₸ через бота: она появится здесь, в приложении и в подборках соискателям →") }}</a>
 {% if city and not category and category_counts %}
 <nav class="by-category">
   <h2>{{ t("Вакансии по сферам") }}</h2>

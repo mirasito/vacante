@@ -295,9 +295,9 @@ td.nowrap { white-space: nowrap; }
   function jobsLine(jobs) {
     if (!jobs) return "";
     const n = (k) => num(jobs[k] || 0);
-    return `<p>Вакансии от работодателей: на проверке ${n("pending")}, опубликовано ${n("approved")}, ` +
+    return `<p>Вакансии от работодателей: ждут оплаты ${n("payment")}, на проверке ${n("pending")}, опубликовано ${n("approved")}, ` +
       `закрыто ${n("closed")}, отклонено ${n("rejected")}. Откликов: ${n("applications")}. ` +
-      (jobs.paid ? `<b>Оплачено «🔥 Срочно»: ${n("paid")} на ${n("revenue")} ₸.</b> ` : "") +
+      (jobs.paid ? `<b>Оплат (размещение и «🔥 Срочно»): ${n("paid")} на ${n("revenue")} ₸.</b> ` : "") +
       `<span class="quiet">Проверять в боте командой /admin.</span></p>` + shiftsLine(jobs.shifts);
   }
 
@@ -483,7 +483,7 @@ td.nowrap { white-space: nowrap; }
   }
 
   // Работодатели из бота (bot/src/crm.js, /api/jobs): время в D1 в UTC вида «2026-11-01 13:27:32»
-  const JOB_STATUS = { draft: "Черновик", pending: "На проверке", approved: "Опубликована", rejected: "Отклонена", closed: "Закрыта" };
+  const JOB_STATUS = { draft: "Черновик", payment: "Ждёт оплаты", pending: "На проверке", approved: "Опубликована", rejected: "Отклонена", closed: "Закрыта" };
   const sqlTime = (t) => (t ? t.replace(" ", "T") + "Z" : null);
   function sender(j) {
     const name = j.employer_name || "без имени";

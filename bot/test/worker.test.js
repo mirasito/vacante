@@ -211,7 +211,7 @@ test("вакансии до /admin ждут модератора, лимит н�
   for (let i = 0; i < 3; i++) await fill();
   assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE status = 'pending'").n, 3);
   await say(env, boss, "/vacancy");
-  assert.match(sentTo(calls, 100).at(-1).body.text, /уже 3 вакансии на проверке/);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /уже 3 вакансии ждут оплаты или проверки/);
 
   // Модератор появился позже: получает всё, что ждёт проверки
   await say(env, user(900, "Мирас"), "/admin");
@@ -354,6 +354,68 @@ test("«Срочно»: работодатель платит на Kaspi, мод
   const mine = sentTo(calls, 100).at(-1).body;
   assert.match(mine.text, /🔥 срочно до \d\d\.\d\d/);
   assert.match(mine.reply_markup.inline_keyboard[0][0].text, /Продлить «Срочно» №1: 3 000 ₸/);
+});
+
+test("платное размещение: оплата на Kaspi, потом проверка; модератор размещает бесплатно; при отказе вернуть деньги", async () => {
+  const env = { ...fakeEnv(), KASPI_DETAILS: "+7 700 000 00 00, Мирас Б.", POST_PRICE: "900" };
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(100, "Дана", "dana_cafe");
+  const admin = user(900, "Мирас");
+  await say(env, admin, "/admin");
+
+  await say(env, boss, "/vacancy");
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Разместим вакансию за 900 ₸/);
+  await press(env, boss, "jobcity:astana", 11);
+  await say(env, boss, "Повар");
+  await say(env, boss, "Кафе");
+  await say(env, boss, "300 000 ₸");
+  await press(env, boss, "skip:schedule", 12);
+  await press(env, boss, "skip:address", 12);
+  await press(env, boss, "skip:details", 12);
+  const preview = calls.at(-1).body;
+  assert.match(preview.text, /Размещение стоит <b>900 ₸<\/b>/);
+  assert.match(preview.reply_markup.inline_keyboard[0][0].text, /к оплате: 900 ₸/);
+
+  // «К оплате»: вакансия ждёт оплаты, модераторам пока ничего
+  const before = sentTo(calls, 900).length;
+  await press(env, boss, "jobsend", 12);
+  assert.equal(env.DB.get("SELECT status FROM jobs").status, "payment");
+  assert.match(calls.at(-1).body.text, /переведите <b>900 ₸<\/b> на Kaspi\n\+7 700 000 00 00, Мирас Б\.[\s\S]*«№1»/);
+  assert.equal(sentTo(calls, 900).length, before);
+  await press(env, boss, "postlater:1", 12);
+  await say(env, boss, "/myjobs");
+  const mine = sentTo(calls, 100).at(-1).body;
+  assert.match(mine.text, /ждёт оплаты/);
+  assert.equal(mine.reply_markup.inline_keyboard[0][0].callback_data, "postpay:1");
+
+  await press(env, user(555, "Хитрец"), "postpaid:1");
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM payments").n, 0);
+  await press(env, boss, "postpaid:1", 13);
+  await press(env, boss, "postpaid:1", 13); // второй раз: уже сверяем
+  assert.deepEqual(env.DB.get("SELECT kind, amount, status FROM payments"), { kind: "post", amount: 900, status: "pending" });
+  assert.match(sentTo(calls, 900).at(-1).body.text, /Оплата размещения №1: <b>900 ₸<\/b>\n/);
+
+  // Перевод не нашли: вакансия так и ждёт оплаты
+  await press(env, admin, "pay:no:1", 41);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /не нашли перевод за размещение/);
+  assert.equal(env.DB.get("SELECT status FROM jobs").status, "payment");
+
+  // Деньги пришли: вакансия на проверке, модераторы получают карточку
+  await press(env, boss, "postpaid:1", 14);
+  await press(env, admin, "pay:ok:2", 42);
+  assert.deepEqual(env.DB.get("SELECT status, post_paid FROM jobs"), { status: "pending", post_paid: 900 });
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Оплата получена[\s\S]*на проверке/);
+  assert.deepEqual(sentTo(calls, 900).at(-1).body.reply_markup.inline_keyboard[0].map((b) => b.callback_data), ["mod:ok:1", "mod:no:1"]);
+
+  // Отказ после оплаты: работодателю обещаем вернуть деньги, модераторам напоминаем
+  await press(env, admin, "mod:no:1", 51);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /вернём на ваш Kaspi/);
+  assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /заплатил 900 ₸ за размещение: верните перевод/);
+
+  // Модератор размещает сам без оплаты
+  await say(env, admin, "/vacancy");
+  assert.doesNotMatch(sentTo(calls, 900).at(-1).body.text, /900 ₸/);
 });
 
 test("без реквизитов Kaspi кнопок «Поднять» нет", async () => {

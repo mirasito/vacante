@@ -28,7 +28,7 @@ export const STEPS = [
 ];
 const FIELDS = STEPS.map((s) => s.field);
 
-export const STATUS = { draft: "черновик", pending: "на проверке", approved: "опубликована", rejected: "отклонена", closed: "закрыта" };
+export const STATUS = { draft: "черновик", payment: "ждёт оплаты", pending: "на проверке", approved: "опубликована", rejected: "отклонена", closed: "закрыта" };
 
 // Анкета вакансии или смены (kind = 'shift', см. shift.js)
 export const stepsFor = (job) => (job && job.kind === "shift" ? SHIFT_STEPS : STEPS);
@@ -100,13 +100,19 @@ export function card(job) {
   return lines.join("\n");
 }
 
-export function previewScreen(job) {
+// price: цена размещения (postPrice) или 0, если размещение бесплатное (модератору или без реквизитов)
+export function previewScreen(job, price = 0) {
+  const where = job.kind === "shift"
+    ? "смена появится на vacante.kz в разделе «Подработка и смены» и в подборках"
+    : "вакансия появится на vacante.kz и в подборках подписчикам бота";
+  const text = price
+    ? `Проверьте ${job.kind === "shift" ? "смену" : "вакансию"}:\n\n${card(job)}\n\nРазмещение стоит <b>${money(price)}</b>. ` +
+      `Если всё верно, переходите к оплате. После оплаты и проверки (обычно до часа) ${where}.`
+    : `Проверьте ${job.kind === "shift" ? "смену" : "вакансию"}:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку, это до часа. Потом ${where}.`;
   return {
-    text: job.kind === "shift"
-      ? `Проверьте смену:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку, это до часа. Потом смена появится на vacante.kz в разделе «Подработка и смены» и в подборках.`
-      : `Проверьте вакансию:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку. После проверки вакансия появится на vacante.kz и в подборках подписчикам бота.`,
+    text,
     keyboard: [
-      [{ text: "✅ Отправить на проверку", callback_data: "jobsend" }],
+      [{ text: price ? `💳 Всё верно, к оплате: ${money(price)}` : "✅ Отправить на проверку", callback_data: "jobsend" }],
       [{ text: "Заполнить заново", callback_data: "jobredo" }, CANCEL],
     ],
   };
@@ -167,14 +173,17 @@ export function rejectedText(job, reason) {
   const why = reason
     ? `Причина: ${esc(reason)}`
     : "Мы размещаем только настоящие вакансии с понятной зарплатой и условиями, без предоплат и «работы в интернете».";
-  return `Вакансию «${esc(job.title)}» не опубликовали. ${why}\n\nМожно исправить и отправить снова: /vacancy`;
+  const refund = job.post_paid ? `\n\nОплату за размещение (${money(job.post_paid)}) вернём на ваш Kaspi в течение дня.` : "";
+  return `Вакансию «${esc(job.title)}» не опубликовали. ${why}${refund}\n\nМожно исправить и отправить снова: /vacancy`;
 }
 
 // Строка под карточкой у модераторов после решения
 export function decisionLine(job) {
   const by = job.decided_by ? `: ${esc(job.decided_by)}` : "";
   if (job.status === "approved") return `✅ Опубликована${by}`;
-  if (job.status === "rejected") return `❌ Отклонена${by}`;
+  if (job.status === "rejected") {
+    return `❌ Отклонена${by}` + (job.post_paid ? `\n💸 Работодатель заплатил ${money(job.post_paid)} за размещение: верните перевод.` : "");
+  }
   return `Уже ${STATUS[job.status]}`;
 }
 
@@ -250,8 +259,9 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
       : j.status === "approved" ? `, откликов: ${j.applications}` : "") +
     (j.status === "approved" && isBoosted(j, now) ? `, 🔥 срочно до ${localDate(j.boost_until)}` : ""));
   const keyboard = [];
-  for (const j of jobs.filter((j) => j.status === "approved" || j.status === "pending")) {
+  for (const j of jobs.filter((j) => ["approved", "pending", "payment"].includes(j.status))) {
     if (boost && j.status === "approved") keyboard.push([boostButton(j, offerFor(boost, j, now), now)]);
+    if (j.status === "payment") keyboard.push([{ text: `💳 Оплатить №${j.id}: ${money(postPrice(boost))}`, callback_data: `postpay:${j.id}` }]);
     keyboard.push([{ text: `Закрыть №${j.id} ${j.title}`.slice(0, 60), callback_data: `close:${j.id}` }]);
   }
   return { text: `Ваши вакансии:\n\n${lines.join("\n")}\n\nНовая вакансия: /vacancy`, keyboard };
@@ -263,8 +273,43 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
 export function boostOffer(env) {
   const kaspi = String(env.KASPI_DETAILS || "").trim();
   if (!kaspi) return null;
-  return { price: Number(env.BOOST_PRICE) || 3000, days: Number(env.BOOST_DAYS) || 7, kaspi,
-    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 1000 };
+  return { price: Number(env.BOOST_PRICE) || 2500, days: Number(env.BOOST_DAYS) || 7, kaspi,
+    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 2500, postPrice: env.POST_PRICE === undefined ? 900 : Number(env.POST_PRICE) || 0 };
+}
+
+// Платное размещение (POST_PRICE, по умолчанию 900 ₸): вакансия или смена уходит на проверку только после
+// оплаты. Без реквизитов Kaspi или с POST_PRICE = "0" размещение бесплатное, как раньше.
+export const postPrice = (boost) => (boost && boost.postPrice > 0 ? boost.postPrice : 0);
+
+export function postPayScreen(j, boost) {
+  const price = postPrice(boost);
+  const what = j.kind === "shift" ? "смены" : "вакансии";
+  return {
+    text:
+      `💳 <b>Размещение ${what} за ${money(price)}</b>\n\n${card(j)}\n\n` +
+      `Как оплатить: переведите <b>${money(price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
+      `В комментарии к переводу напишите «№${j.id}». Потом нажмите кнопку ниже: мы сверим перевод и отправим ` +
+      `${j.kind === "shift" ? "смену" : "вакансию"} на проверку. Если не пропустим, деньги вернём.`,
+    keyboard: [[{ text: "✅ Я оплатил", callback_data: `postpaid:${j.id}` }], [{ text: "Оплачу позже", callback_data: `postlater:${j.id}` }]],
+  };
+}
+
+export function postWaitText(j) {
+  return (
+    `⏳ Сверяем перевод за размещение №${j.id} «${esc(j.title)}». Обычно это до пары часов днём. ` +
+    "Как только деньги придут, отправим на проверку и напишу. Ваши вакансии: /myjobs"
+  );
+}
+
+export function postLaterText(j) {
+  return `Хорошо. ${j.kind === "shift" ? "Смена ждёт" : "Вакансия ждёт"} оплаты: оплатить можно в /myjobs, кнопка «💳 Оплатить №${j.id}».`;
+}
+
+export function postPaidText(j) {
+  return (
+    `💳 Оплата получена, спасибо! «${esc(j.title)}» на проверке, обычно это до часа. ` +
+    "Напишу, когда опубликуем. Ваши вакансии: /myjobs"
+  );
 }
 
 // «Срочно» для смены дешевле и действует до дня смены включительно (не меньше суток)
@@ -274,7 +319,7 @@ export function offerFor(boost, j, now = new Date()) {
   return { ...boost, price: boost.shiftPrice, days, shift: true };
 }
 
-const money = (n) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₸`;
+export const money = (n) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₸`;
 const sqliteTime = (s) => new Date(`${String(s).replace(" ", "T")}Z`);  // datetime('now') в D1 — это UTC
 
 export function isBoosted(j, now = new Date()) {
@@ -310,8 +355,9 @@ export const PAYMENT_STATUS = { pending: "ждёт проверки", confirmed:
 
 // Карточка оплаты у модераторов: пока ждёт, с кнопками, потом с решением
 export function paymentScreen(p, j) {
+  const what = p.kind === "post" ? "Оплата размещения" : "Оплата «Срочно»";
   const head =
-    `💳 Оплата «Срочно» №${p.id}: <b>${money(p.amount)}</b> на ${p.days} дней\n` +
+    `💳 ${what} №${p.id}: <b>${money(p.amount)}</b>${p.kind === "post" ? "" : ` на ${p.days} дней`}\n` +
     `Вакансия №${j.id} «${esc(j.title)}», ${esc(j.company)}\nОт: ${esc(j.employer_name)}\n\n`;
   if (p.status !== "pending") {
     const by = p.decided_by ? `: ${esc(p.decided_by)}` : "";
@@ -339,10 +385,10 @@ export function boostedText(j) {
   );
 }
 
-export function paymentRejectedText(j) {
+export function paymentRejectedText(j, kind = "boost") {
   return (
-    `Мы не нашли перевод за вакансию №${j.id} «${esc(j.title)}». Если вы уже переводили, проверьте сумму и комментарий ` +
-    "и нажмите «Я оплатил» ещё раз: /myjobs"
+    `Мы не нашли перевод за ${kind === "post" ? "размещение" : "вакансию"} №${j.id} «${esc(j.title)}». ` +
+    "Если вы уже переводили, проверьте сумму и комментарий и нажмите «Я оплатил» ещё раз: /myjobs"
   );
 }
 

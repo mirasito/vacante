@@ -54,6 +54,20 @@
    "website"
   ]
  },
+ "aktau:apple city corps": {
+  "name": "Apple City Corps",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00",
+  "instagram": "applecity_careers",
+  "website": "https://applecity.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000785505",
+  "avatar_checked_at": "2026-11-06T15:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:ar line service": {
   "name": "Ar line service",
   "city": "aktau",
@@ -1938,6 +1952,13 @@
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
  },
+ "aktobe:альтернатива": {
+  "name": "Альтернатива",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "aktobe:аслан": {
   "name": "АСЛАН",
   "city": "aktobe",
@@ -3798,6 +3819,13 @@
   "checked_at": "2026-10-29T02:44:24+00:00",
   "instagram": "bakha.potolok",
   "source": "https://2gis.kz/almaty/firm/70000001098071424"
+ },
+ "almaty:baldáuren balabaqshasy": {
+  "name": "Baldáuren balabaqshasy",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "almaty:baraka 1": {
   "name": "BARAKA №1",
@@ -6456,6 +6484,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:infoprof": {
+  "name": "InfoProf",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00",
+  "website": "https://infoprof.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001041577132",
+  "avatar_checked_at": "2026-11-06T15:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:informconsulting": {
   "name": "InformConsulting",
@@ -11146,6 +11187,13 @@
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
  },
+ "almaty:абди км": {
+  "name": "АБДИ КМ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "almaty:абдыкадырова г и": {
   "name": "Абдыкадырова Г.И.",
   "city": "almaty",
@@ -13348,6 +13396,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "almaty:жас": {
+  "name": "Жас",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "almaty:жибек жолы": {
   "name": "Жибек жолы",
   "city": "almaty",
@@ -14655,6 +14710,13 @@
    "website"
   ]
  },
+ "almaty:люстр": {
+  "name": "Люстр",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "almaty:м ломбард": {
   "name": "М-Ломбард",
   "city": "almaty",
@@ -15825,6 +15887,13 @@
   ],
   "avatar": "d8364f9715378789.jpg",
   "avatar_source": "website"
+ },
+ "almaty:республиканское государственное предприятие на праве хозяйственного ведения казахский научный центр дерматологии и инфекционных заболеваний": {
+  "name": "Республиканское государственное предприятие на праве хозяйственного ведения Казахский научный центр дерматологии и инфекционных заболеваний",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "almaty:ресурс плюс kz": {
   "name": "Ресурс Плюс KZ",
@@ -17613,6 +17682,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:эльдарұлы елжан": {
+  "name": "Эльдарұлы Елжан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "almaty:энергострой": {
   "name": "ЭнергоСтрой",
   "city": "almaty",
@@ -17878,6 +17954,20 @@
   "checked_at": "2026-11-05T15:45:29+00:00",
   "instagram": "5th.ugol",
   "source": "https://2gis.kz/astana/firm/70000001110382750"
+ },
+ "astana:ab restaurants": {
+  "name": "AB Restaurants",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
+ "astana:abris distribution kazakhstan филиал компании в казахстане": {
+  "name": "Abris Distribution Kazakhstan, Филиал Компании в Казахстане",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "astana:abylai and co": {
   "name": "Abylai and Co",
@@ -18192,6 +18282,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
+ },
+ "astana:artunion": {
+  "name": "ArtUnion",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "astana:arystan product": {
   "name": "Arystan Product",
@@ -22703,6 +22800,15 @@
   "avatar": "aef0f8cad7edc525.jpg",
   "avatar_source": "website"
  },
+ "astana:trattoria margarita": {
+  "name": "Trattoria Margarita",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00",
+  "instagram": "trattoria.highvill",
+  "source": "https://2gis.kz/astana/firm/70000001019652502"
+ },
  "astana:trifolium ns": {
   "name": "Trifolium NS",
   "city": "astana",
@@ -23397,6 +23503,19 @@
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
  },
+ "astana:алтем трейд": {
+  "name": "Алтем Трейд",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00",
+  "website": "https://altemtrade.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001032892834",
+  "avatar_checked_at": "2026-11-06T15:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:алтын адам": {
   "name": "Алтын Адам",
   "city": "astana",
@@ -23814,6 +23933,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T17:43:42+00:00"
+ },
+ "astana:блинова елена владимировна": {
+  "name": "Блинова Елена Владимировна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "astana:бмшпед": {
   "name": "БМшпед",
@@ -28449,6 +28575,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T01:44:23+00:00"
+ },
+ "atyrau:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "atyrau:qsr тм burger king": {
   "name": "“QSR” ,ТМ BURGER KING",
@@ -34399,6 +34532,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "petropavlovsk:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "petropavlovsk:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
   "city": "petropavlovsk",
@@ -34769,6 +34909,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "petropavlovsk:публичная компания freedom finance global plc": {
+  "name": "Публичная Компания «Freedom Finance Global PLC»",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00",
+  "website": "https://fbroker.kz/",
+  "source": "https://fbroker.kz/en/about",
+  "avatar_checked_at": "2026-11-06T15:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c2c14445b47b3b77.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:север": {
   "name": "Север",
@@ -37615,6 +37770,13 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "taldykorgan:алтын алма": {
+  "name": "Алтын Алма",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
+ },
  "taldykorgan:астра лoмбард": {
   "name": "Астра-Лoмбард",
   "city": "taldykorgan",
@@ -39226,6 +39388,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "ust-kamenogorsk:axis": {
+  "name": "AXIS",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T15:43:20+00:00"
  },
  "ust-kamenogorsk:beeline тм": {
   "name": "Beeline, ТМ",

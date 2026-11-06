@@ -298,7 +298,22 @@ td.nowrap { white-space: nowrap; }
     return `<p>Вакансии от работодателей: на проверке ${n("pending")}, опубликовано ${n("approved")}, ` +
       `закрыто ${n("closed")}, отклонено ${n("rejected")}. Откликов: ${n("applications")}. ` +
       (jobs.paid ? `<b>Оплачено «🔥 Срочно»: ${n("paid")} на ${n("revenue")} ₸.</b> ` : "") +
-      `<span class="quiet">Проверять в боте командой /admin.</span></p>`;
+      `<span class="quiet">Проверять в боте командой /admin.</span></p>` + shiftsLine(jobs.shifts);
+  }
+
+  // Смены (bot/src/shift.js): разместили → попросились → взяли → пришли, всего и за 7 дней
+  function shiftsLine(s) {
+    if (!s) return "";
+    const row = (label, r) => `<tr><td>${label}</td><td class="n">${num(r.posted)}</td><td class="n">${num(r.published)}</td>` +
+      `<td class="n">${num(r.asked)}</td><td class="n">${num(r.confirmed)}</td><td class="n">${num(r.cancelled)}</td>` +
+      `<td class="n">${num(r.came)}</td><td class="n">${num(r.missed)}</td>` +
+      `<td class="n">${r.came + r.missed ? Math.round((100 * r.came) / (r.came + r.missed)) + "%" : "—"}</td></tr>`;
+    return `<h3>Смены</h3>
+      <p class="quiet">Подписаны на смены и подработку: ${num(s.subscribers)}. Сейчас открыто смен: ${num(s.all.live)}.</p>
+      <div class="scroll"><table><thead><tr><th></th><th class="n">Разместили</th><th class="n">Опубликовали</th>
+      <th class="n">«Беру смену»</th><th class="n">Взяли</th><th class="n">Отменили</th><th class="n">Пришли</th>
+      <th class="n">Не пришли</th><th class="n">Явка</th></tr></thead>
+      <tbody>${row("За 7 дней", s.week)}${row("Всего", s.all)}</tbody></table></div>`;
   }
 
   function render(data) {
@@ -317,6 +332,7 @@ td.nowrap { white-space: nowrap; }
     ];
     if (subs !== null) tiles.push([num(subs), "подписчиков бота"]);
     tiles.push([num(t.direct || 0), "на сайте от работодателей"]);
+    if (t.shifts !== undefined) tiles.push([`${num(t.shifts)} <small class="quiet">${num(t.shift_slots || 0)} на день</small>`, "смен и подработки на сайте"]);
     $("#tiles").innerHTML = tiles.map(([b, s]) => `<div class="tile"><b>${b}</b><span>${s}</span></div>`).join("");
 
     // Источники

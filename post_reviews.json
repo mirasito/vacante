@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T04:56:50+00:00",
+ "updated_at": "2026-11-06T05:57:26+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -34007,6 +34007,328 @@
     "employer": "ГКП «Костанай-Су»",
     "schedule": "5/2, 8 часов",
     "address": "пр. Абая, 19"
+   }
+  },
+  "astana_job_vakansii-130260": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Gamma D’oro",
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "rabota_astanakz-31315": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "ТОО «Топаз-5»",
+    "schedule": "сутки через трое"
+   }
+  },
+  "astana_job_vakansii-130228": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Магазин «Имран»",
+    "schedule": "2/2, 09:00–21:00",
+    "address": "ул. Орынбор, 1",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139188560": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Адрес в Караганде, а не в Астане"
+  },
+  "hh-139188532": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Водитель-курьер с личным автомобилем",
+    "employer": "KENAT GROUP",
+    "address": "ул. Александра Пушкина, 53"
+   }
+  },
+  "hh-139188453": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2",
+    "address": "ул. Анет баба, 3"
+   }
+  },
+  "hh-139188314": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Няня",
+    "employer": null,
+    "address": "ул. Алихана Бокейхана, 3Б"
+   }
+  },
+  "rabota_astanakz-31317": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Водитель такси",
+    "employer": "Таксопарк «Drive Life»",
+    "schedule": "6/1, 10:00–22:00 или 22:00–10:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-31316": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Повар холодного цеха, повар-заготовщик, пекарь",
+    "employer": null,
+    "salary_min": 14000,
+    "salary_max": 19000,
+    "salary_period": "day",
+    "schedule": "2/2 и 5/2"
+   }
+  },
+  "hh-138462551": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Грузчик-мерчендайзер",
+    "employer": "KC Интернейшнл",
+    "address": "ул. Кенесары хана, 119"
+   }
+  },
+  "hh-139188512": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Офисная должность"
+  },
+  "hh-139188507": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Администратор зала",
+    "employer": "Хамдан",
+    "schedule": "2/2",
+    "address": "пр. Сакена Сейфуллина, 617"
+   }
+  },
+  "hh-139188418": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Офисная должность"
+  },
+  "hh-139188377": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "585 Золотой",
+    "address": "ул. Рихарда Зорге, 18/4"
+   }
+  },
+  "hh-139188322": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": null,
+    "address": "ул. Шолохова, 1"
+   }
+  },
+  "hh-139187993": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Руководящая офисная должность"
+  },
+  "hh-139187916": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "address": "мкр Акбулак, ул. Касыма Шарипова, 163"
+   }
+  },
+  "hh-138456792": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "schedule": null,
+    "address": "ул. Ю. Ратушного, 88В"
+   }
+  },
+  "hh-139187505": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Грузчик на завод металлопроката",
+    "address": "мкр Кемел, ул. Казанат, 4"
+   }
+  },
+  "rabota4almaty-6217": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "через день, по 5 часов",
+    "address": "ул. Жандосова, 28"
+   }
+  },
+  "hh-139187076": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "address": "мкр Таскен, 697А"
+   }
+  },
+  "hh-139188223": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Magnum",
+    "address": "пр. Бухар жырау, 86"
+   }
+  },
+  "hh-139188239": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Санитар, санитарка",
+    "address": "ул. Касыма Аманжолова, 76/3"
+   }
+  },
+  "hh-138844468": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "ПАКТ",
+    "address": "ул. Ермекова, 59"
+   }
+  },
+  "hh-139187858": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": null,
+    "address": "Казахстанская ул., 18",
+    "schedule": "6/1, 9 часов"
+   }
+  },
+  "hh-139187592": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Автоцентр «Бахус»",
+    "schedule": null,
+    "address": "ул. Карибоза Шектыбаева, с40"
+   }
+  },
+  "hh-134112441": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Продавец-консультант электроники Huawei",
+    "employer": "Huawei",
+    "address": "пр. Бухар жырау, 76/1"
+   }
+  },
+  "hh-139187645": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Продавец-кассир, продавец-консультант",
+    "employer": "H&M",
+    "salary_min": 1415,
+    "salary_max": null,
+    "salary_period": "hour",
+    "schedule": "5/2, смены 4–8 часов",
+    "address": "ул. Маншук Маметовой, 4, ТРЦ «Keruen City»"
+   }
+  },
+  "aktobevakansii-44404": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Нет описания вакансии"
+  },
+  "hh-139187818": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Офисная должность"
+  },
+  "rabotaaktau-142244": {
+   "verdict": "reject",
+   "at": "2026-11-06T05:57:26+00:00",
+   "reason": "Непонятно, кого ищут"
+  },
+  "hh-139187187": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Назарбаев Интеллектуальные школы",
+    "address": "мкр Усольский, ул. Ткачёва, 16/2"
+   }
+  },
+  "hh-134836141": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Eurasia Group Kazakhstan"
+   }
+  },
+  "hh-129780178": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Magnum",
+    "schedule": "2/2, 12 часов"
+   }
+  },
+  "vakansii_oskemen-9257": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Резчик на полиграфическое производство"
+   }
+  },
+  "rabota_semey_official-6824": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "Мини-маркет «Мичуринский»",
+    "schedule": "2/2, 08:00–23:00"
+   }
+  },
+  "hh-139188258": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Водитель большегруза 6-го разряда",
+    "employer": "Эверест-Auto",
+    "schedule": "смены по 11 часов"
+   }
+  },
+  "rabota_semey_official-6823": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "title": "Повар, помощник повара, кухонный работник, грузчик",
+    "employer": "Столовая войсковой части"
+   }
+  },
+  "hh-139187206": {
+   "verdict": "approve",
+   "at": "2026-11-06T05:57:26+00:00",
+   "fields": {
+    "employer": "DPD Kazakhstan",
+    "address": "ул. Карбышева, 36/1",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
    }
   }
  }

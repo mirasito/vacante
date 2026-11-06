@@ -3869,7 +3869,7 @@
   "checked_at": "2026-10-30T11:43:44+00:00",
   "website": "https://beeline.kz/",
   "source": "https://beeline.kz/ru/about",
-  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4094,7 +4094,7 @@
   "instagram": "breezy_kaz",
   "website": "https://breezy.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001086801365",
-  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -5309,6 +5309,13 @@
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
  },
+ "almaty:experience production": {
+  "name": "Experience Production",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "almaty:expert logistic kazakhstan": {
   "name": "Expert Logistic Kazakhstan",
   "city": "almaty",
@@ -6046,7 +6053,7 @@
   "instagram": "haval_alfarabi",
   "website": "https://haval-al-farabi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001090698915",
-  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7009,6 +7016,13 @@
   "avatar": "1d8a4011a85ec43a.jpg",
   "avatar_source": "website"
  },
+ "almaty:ksengineering ксинжиниринг": {
+  "name": "KSENGINEERING (КСИНЖИНИРИНГ)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "almaty:kulikov": {
   "name": "Kulikov",
   "city": "almaty",
@@ -7366,6 +7380,24 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "almaty:lpride": {
+  "name": "Lpride",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00",
+  "instagram": "tipografiya.kz",
+  "telegram": "tipografiyakz",
+  "website": "http://tipografiya.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000788477",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "7a9a3e44ba875bb2.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:ls concept": {
   "name": "LS concept",
   "city": "almaty",
@@ -7630,6 +7662,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "almaty:mega center management": {
+  "name": "Mega Center Management",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00",
+  "instagram": "mega_center",
+  "telegram": "megalive",
+  "website": "http://mega.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000788684",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2563a46bf44471f0.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:mehkaz": {
   "name": "MehKaz",
@@ -8338,6 +8388,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "almaty:orion facilities": {
+  "name": "ORION facilities",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "almaty:ortalyq аптека": {
   "name": "ORTALYQ АПТЕКА",
@@ -10677,6 +10734,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
+ },
+ "almaty:your personal agent": {
+  "name": "Your Personal Agent",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "almaty:ys kazakhstan": {
   "name": "YS-KAZAKHSTAN",
@@ -17785,7 +17849,7 @@
   "instagram": "arbuz_kz",
   "website": "https://arbuz.kz/",
   "source": "https://2gis.kz/astana/firm/70000001114687647",
-  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18187,6 +18251,20 @@
   "checked_at": "2026-11-02T13:55:32+00:00",
   "instagram": "bodrumcoffee_ast",
   "source": "https://2gis.kz/astana/firm/70000001097608311"
+ },
+ "astana:boshanov dental clinic": {
+  "name": "BOSHANOV DENTAL CLINIC",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00",
+  "instagram": "boshanov_dent",
+  "website": "http://boshanov-dental-clinic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001112844670",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:bounty shop глазкова м б": {
   "name": "BOUNTY SHOP (ГЛАЗКОВА М.Б)",
@@ -24923,7 +25001,7 @@
   "checked_at": "2026-10-30T11:43:44+00:00",
   "website": "https://lombard-b.kz/",
   "source": "https://2gis.kz/astana/firm/70000001046165610",
-  "avatar_checked_at": "2026-10-30T11:43:45+00:00",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25156,6 +25234,13 @@
   "instagram": "salon_merci_a",
   "source": "https://2gis.kz/astana/firm/70000001018131004"
  },
+ "astana:металлосклад": {
+  "name": "Металлосклад",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "astana:мечта маркет": {
   "name": "Мечта Маркет",
   "city": "astana",
@@ -25359,6 +25444,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
+ },
+ "astana:нурбанк": {
+  "name": "Нурбанк",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00",
+  "instagram": "nurbank",
+  "telegram": "nurbank_kz",
+  "website": "http://www.nurbank.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001020717456",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "ff1a0d88c253098d.jpg",
+  "avatar_source": "telegram"
  },
  "astana:нуртазина": {
   "name": "Нуртазина",
@@ -28183,6 +28286,13 @@
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
  },
+ "atyrau:казбеков": {
+  "name": "КАЗБЕКОВ",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "atyrau:капитал": {
   "name": "КАПИТАЛ",
   "city": "atyrau",
@@ -28269,6 +28379,13 @@
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "atyrau:май тау": {
+  "name": "Май Тау",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "atyrau:марк формэль": {
   "name": "Марк Формэль",
@@ -29031,6 +29148,13 @@
   "checked_at": "2026-11-05T03:44:22+00:00",
   "instagram": "nurahome.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001060234638"
+ },
+ "karaganda:oilprofi ойлпрофи": {
+  "name": "OilProfi (ОйлПрофи)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "karaganda:olymp medical group": {
   "name": "Olymp Medical Group",
@@ -31285,6 +31409,13 @@
   "checked_at": "2026-10-28T23:45:40+00:00",
   "instagram": "osp_agro",
   "source": "https://2gis.kz/kostanaj/firm/70000001056268423"
+ },
+ "kostanay:qqq qazaqstan qamqor qyzmet": {
+  "name": "QQQ - Qazaqstan Qamqor Qyzmet",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "kostanay:rzv trans": {
   "name": "RZV TRANS",
@@ -34183,6 +34314,19 @@
   "avatar": "75ece3884bfa4c4d.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:трест средазэнергомонтаж ао": {
+  "name": "Трест Средазэнергомонтаж, АО",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00",
+  "website": "http://saem.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001039333687",
+  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:трибо": {
   "name": "Трибо",
   "city": "petropavlovsk",
@@ -34920,6 +35064,13 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "semey:сфера ltd": {
+  "name": "Сфера LTD",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "semey:танирбергенова арайлым бакытбековна": {
   "name": "ИП ТАНИРБЕРГЕНОВА АРАЙЛЫМ БАКЫТБЕКОВНА",
   "city": "semey",
@@ -35090,6 +35241,13 @@
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
  },
+ "shymkent:aknazar holding": {
+  "name": "AKNAZAR HOLDING",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "shymkent:altyn bala kz": {
   "name": "Altyn-bala.kz",
   "city": "shymkent",
@@ -35103,6 +35261,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "shymkent:aqua life": {
+  "name": "AQUA LIFE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "shymkent:ar line service": {
   "name": "Ar line service",
@@ -36030,6 +36195,13 @@
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
  },
+ "shymkent:youcars": {
+  "name": "YOUCARS",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
+ },
  "shymkent:zoomlion central asia": {
   "name": "ZOOMLION CENTRAL ASIA",
   "city": "shymkent",
@@ -36212,6 +36384,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "shymkent:витрина плюс": {
+  "name": "Витрина плюс",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "shymkent:восточный базар ип чернов с в": {
   "name": "Восточный Базар (ИП Чернов С.В.)",
@@ -39042,6 +39221,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:атырауэнергосервис": {
+  "name": "АтырауЭнергоСервис",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T11:44:26+00:00"
  },
  "ust-kamenogorsk:беакрис": {
   "name": "Беакрис",

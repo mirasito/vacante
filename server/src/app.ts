@@ -8,6 +8,7 @@ import { HttpError, makeRequest, route, send, type Reply, type Request, type Rou
 import { internalRoutes } from "./internal.ts";
 import { meRoutes } from "./me.ts";
 import { olxImportRoutes } from "./olx-import.ts";
+import { crmRoutes } from "./crm.ts";
 import { olxRoutes } from "./olx.ts";
 import { pageRoutes } from "./page.ts";
 import { v2Routes } from "./v2.ts";
@@ -123,6 +124,7 @@ function buildRoutes(ctx: Ctx): Route[] {
     ...internalRoutes(ctx),
     ...olxRoutes(ctx),
     ...olxImportRoutes(ctx),
+    ...crmRoutes(ctx),
     ...pageRoutes(ctx),
   ];
 }

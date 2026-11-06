@@ -32,6 +32,11 @@ export interface Config {
    * админки) в hex, его считает выкладка из секрета ADMIN_PASSWORD. Пусто — импорт выключен.
    */
   olxImportKey: string;
+  /**
+   * Ключ админки к CRM работодателей (server/src/crm.ts): sha256("crm:" + пароль админки) в hex, как у CRM
+   * в воркере бота. Его считает выкладка из секрета ADMIN_PASSWORD. Пусто — CRM в админке не открывается.
+   */
+  crmKey: string;
 }
 
 type Env = Record<string, string | undefined>;
@@ -60,6 +65,7 @@ export function loadConfig(env: Env = process.env): Config {
     version: env.VACANTE_VERSION ?? releaseVersion(),
     profilesOpen: env.PROFILES_OPEN === "1",
     olxImportKey: /^[0-9a-f]{64}$/i.test(env.OLX_IMPORT_KEY ?? "") ? (env.OLX_IMPORT_KEY as string).toLowerCase() : "",
+    crmKey: /^[0-9a-f]{64}$/i.test(env.CRM_KEY ?? "") ? (env.CRM_KEY as string).toLowerCase() : "",
   };
 }
 

@@ -63,6 +63,9 @@ def main() -> None:
     p_ig.add_argument("--plan", type=Path, help="publish: файл плана (по умолчанию <out>/ig/plan.json)")
     p_ig.add_argument("--base-url", default="https://vacante.kz")
 
+    p_crm = sub.add_parser("crm", help="отправить работодателей, заведения и вакансии в CRM на сервере api.vacante.kz")
+    p_crm.add_argument("--data-dir", type=Path, default=Path("data"))
+
     p_build = sub.add_parser("build", help="собрать статический сайт")
     p_build.add_argument("--data-dir", type=Path, default=Path("data"))
     p_build.add_argument("--out", type=Path, default=Path("public"))
@@ -106,6 +109,10 @@ def main() -> None:
                                  pin=autopost.telegram_pinner(client, token), live=live,
                                  send_text=autopost.telegram_text_sender(client, token))
         logging.info("автопостинг: %s", stats)
+    elif args.command == "crm":
+        from vacante import crm_sync
+        stats = crm_sync.run(args.data_dir, load_vacancies(args.data_dir))
+        logging.info("CRM: %s", stats)
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
         if not all(env.values()):

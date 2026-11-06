@@ -1,7 +1,7 @@
 // Подбор ленты «Рядом»: что человек выбрал на старте («Кем работаешь», «Где и когда»),
 // фильтры из листа «Фильтры» и строка «Почему вам» на карточке. Всё хранится только на телефоне.
 import type { Employment, Experience } from './server';
-import type { Lang, Vacancy } from './types';
+import type { Lang, ShiftKind, Vacancy } from './types';
 
 /** Ответы стартовых экранов. */
 export interface Want {
@@ -16,6 +16,17 @@ export interface Filter {
   sched?: Sched[];
   payFrom?: number | null;
   noExp?: boolean;
+  /** Только смены и подработка (кнопка «Смены» в ленте). */
+  shift?: boolean;
+}
+
+/** Подпись значка смены на карточке. */
+export function shiftLabel(k: ShiftKind, lang: Lang) {
+  const kk = lang === 'kk';
+  if (k === 'part') return kk ? '⚡ Қосымша жұмыс' : '⚡ Подработка';
+  if (k === 'hour') return kk ? '⚡ Сағаттық төлем' : '⚡ Почасовая';
+  if (k === 'daily') return kk ? '⚡ Күнделікті төлем' : '⚡ Оплата каждый день';
+  return kk ? '⚡ Ауысымға төлем' : '⚡ Оплата за смену';
 }
 
 export const SCHEDS = ['2/2', '5/2', '6/1', 'night'] as const;
@@ -23,6 +34,8 @@ export type Sched = (typeof SCHEDS)[number];
 export const PAY_FROM = [150000, 200000, 250000, 300000] as const;
 
 const NIGHT = /ноч|түн/i;
+/** Ответы «Где и когда», кому подходят смены и подработка. */
+const PART_TIME: Employment[] = ['shifts', 'part', 'weekends', 'flexible'];
 
 export function schedLabel(s: Sched, lang: Lang) {
   if (s === 'night') return lang === 'kk' ? 'Түнгі' : 'Ночные';
@@ -41,6 +54,7 @@ export function matches(v: Vacancy, f: Filter): boolean {
   }
   if (f.payFrom && !(v.pay_month && v.pay_month >= f.payFrom)) return false;
   if (f.noExp && !(v.perks ?? []).includes('Без опыта')) return false;
+  if (f.shift && !v.shift) return false;
   return true;
 }
 
@@ -59,10 +73,16 @@ export function why(v: Vacancy, want: Want | undefined, km: number | null, lang:
   if (km !== null && km <= 3) out.push(kk ? 'жақын жерде' : 'рядом');
   if (want?.experience === 'none' && (v.perks ?? []).includes('Без опыта')) out.push(kk ? 'тәжірибесіз болады' : 'можно без опыта');
   if (want?.employment.includes('night') && NIGHT.test(v.schedule ?? '')) out.push(kk ? 'түнгі ауысым' : 'ночные смены');
+  else if (v.shift && want?.employment.some((e) => PART_TIME.includes(e)))
+    out.push(v.shift === 'part' ? (kk ? 'қосымша жұмыс' : 'подработка') : kk ? 'ауысымдық төлем' : 'оплата за смену');
   if (!out.length) return null;
   return `${kk ? 'Неге сізге' : 'Почему вам'}: ${out.join(', ')}`;
 }
 
 /** Ссылка на бота: подписка на новые вакансии по городу, сфере и зарплате (bot/src/logic.js fromLink). */
-export const subscribeLink = (city: string, category: string | null | undefined, payFrom: number | null | undefined) =>
-  `https://t.me/vacantekz_bot?start=sub_${city}_${category || 'all'}_${payFrom ?? 0}`;
+export const subscribeLink = (
+  city: string,
+  category: string | null | undefined,
+  payFrom: number | null | undefined,
+  shift?: boolean,
+) => `https://t.me/vacantekz_bot?start=sub_${city}_${category || 'all'}_${payFrom ?? 0}${shift ? '_s' : ''}`;

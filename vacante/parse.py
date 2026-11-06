@@ -467,6 +467,12 @@ def _line_at(text: str, pos: int) -> str:
     return text[text.rfind("\n", 0, pos) + 1: end if end != -1 else len(text)]
 
 
+# Подработка: прямо так и написано, разовая или временная работа, смены по выходным.
+# «Не подработка», «временная работа не рассматривается» не считаем (_offered)
+_PART_TIME = re.compile(r"подработ\w*|разов\w* (?:работ|выход|смен)\w*|временн\w* работ\w*|"
+                        r"(?:работа|смены) (?:по|на) выходн\w*|в свободное от учё?е?бы")
+
+
 def parse_schedule(text: str) -> str | None:
     low = _lower(text)
     parts = []
@@ -483,7 +489,7 @@ def parse_schedule(text: str) -> str | None:
         parts.append("вахта")
     if re.search(r"ночн\w* смен", low):
         parts.append("ночные смены")
-    if "подработ" in low:
+    if _offered(_PART_TIME, low):
         parts.append("подработка")
     return ", ".join(parts) or None
 

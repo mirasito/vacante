@@ -18,7 +18,7 @@ from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from vacante import channels
+from vacante import channels, shifts
 from vacante import venues as venue_store
 from vacante.direct import POST_URL
 from vacante.geo import MAP_WORTHY
@@ -32,7 +32,7 @@ HERE = Path(__file__).parent
 # Для фильтра «Зарплата от …»: смены и часы пересчитываем в полный месяц.
 PER_MONTH = {"month": 1, "day": 22, "hour": 176}
 # Условия, по которым можно отфильтровать список; «С зарплатой» проверяется отдельно.
-FILTER_PERKS = ["Без опыта", "Питание", "Развозка", "Жильё", "Ежедневная оплата", "Можно студентам", "Официально"]
+FILTER_PERKS = ["Без опыта", "Питание", "Развозка", "Жильё", "Ежедневная оплата", "Можно студентам", "Официально", shifts.SHIFT]
 
 
 def telegram_channels(data_dir: Path) -> dict[str, str]:
@@ -175,7 +175,8 @@ def _env(lang: str = "ru") -> Environment:
     env.globals.update(city_name=lambda slug: city_name(slug, lang), cat_name=lambda c: category_name(c, lang),
                        salary_label=lambda v: salary_label(v, lang), twogis_url=twogis_url,
                        monthly_pay=monthly_pay, monthly_label=lambda v: monthly_label(v, lang),
-                       search_text=lambda v: search_text(v, lang), money=money,
+                       search_text=lambda v: search_text(v, lang), money=money, perks_of=shifts.perks,
+                       SHIFTS=shifts.SLUG,
                        FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url,
                        site_name=site_name, more_links=more_links, initial=initial, lang=lang, LANGS=i18n.LANGS,
                        LANG_NAME=i18n.LANG_NAME, t=lambda text, **kw: i18n.t(lang, text, **kw),
@@ -287,6 +288,9 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
         if v.city:
             by_city[v.city].append(v)
     city_counts = sorted(((slug, len(items)) for slug, items in by_city.items()), key=lambda x: -x[1])
+    shift_cities = {slug for slug, items in by_city.items() if any(shifts.is_shift(v) for v in items)}
+    for lang_env in envs.values():
+        lang_env.globals["shift_cities"] = shift_cities
 
     # На страницах списка все вакансии: фильтры и сортировка работают в браузере и должны видеть каждую
     write("", "list.html", heading=lambda lang: i18n.t(lang, "Вакансии"), vacancies=vacancies, total=len(vacancies),
@@ -305,6 +309,17 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                   heading=lambda lang: category_heading(cat, slug, lang),
                   vacancies=cat_items, total=len(cat_items), city=slug, category=cat, city_counts=city_counts,
                   category_counts=_category_counts(items), channels=tg_channels)
+        # «Подработка и смены в Алматы»: оплата за смену или час, ежедневная оплата, подработка (vacante.shifts)
+        shift_items = [v for v in items if shifts.is_shift(v)]
+        if shift_items:
+            write(f"{slug}/{shifts.SLUG}", "list.html", heading=lambda lang: shifts_heading(slug, lang),
+                  vacancies=shift_items, total=len(shift_items), city=slug, category=None, shifts_page=True,
+                  city_counts=city_counts, category_counts=_category_counts(shift_items), channels=tg_channels)
+
+    all_shifts = [v for v in vacancies if shifts.is_shift(v)]
+    write(shifts.SLUG, "list.html", heading=lambda lang: shifts_heading(None, lang), vacancies=all_shifts,
+          total=len(all_shifts), city=None, category=None, shifts_page=True, city_counts=city_counts,
+          category_counts=_category_counts(all_shifts), channels=tg_channels)
 
     # Политика конфиденциальности: на неё ссылаются подвал сайта и страница приложения в Google Play
     write("privacy", "privacy.html")
@@ -316,7 +331,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404"), "utf-8")
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки
-    feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": v.perks, "pay": monthly_pay(v) or 0,
+    feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": shifts.perks(v), "pay": monthly_pay(v) or 0,
              "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
     (out / "feed.json").write_text(json.dumps({"vacancies": feed}, ensure_ascii=False), "utf-8")
     # Лента приложения со свайпами (app/ в репозитории): вакансии по городам
@@ -361,6 +376,13 @@ def city_heading(slug: str, lang: str) -> str:
     if lang == "kk":
         return f"{i18n.CITIES_KK_IN.get(slug, city_name(slug, lang))} жұмыс"
     return f"Работа в {_locative(slug)}"
+
+
+def shifts_heading(slug: str | None, lang: str) -> str:
+    """«Подработка и смены в Алматы» / «Алматыдағы қосымша жұмыс және ауысымдар»."""
+    if lang == "kk":
+        return f"{i18n.CITIES_KK_IN.get(slug, city_name(slug, lang)) if slug else 'Қазақстандағы'} қосымша жұмыс және ауысымдар"
+    return f"Подработка и смены в {_locative(slug)}" if slug else "Подработка и смены в Казахстане"
 
 
 def category_heading(cat: str, slug: str, lang: str) -> str:

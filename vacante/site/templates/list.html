@@ -7,12 +7,18 @@
   <div class="search">
     <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" autocomplete="off">
   </div>
+  {% set tail = SHIFTS ~ "/" if shifts_page else "" %}
   <nav class="chips">
-    <a class="chip{% if not city %} on{% endif %}" href="{{ home }}/">{{ t("Все города") }}</a>
+    <a class="chip{% if not city %} on{% endif %}" href="{{ home }}/{{ tail }}">{{ t("Все города") }}</a>
     {% for slug, n in city_counts[:8] %}
-    <a class="chip{% if city == slug %} on{% endif %}" href="{{ home }}/{{ slug }}/">{{ city_name(slug) }} <small>{{ n }}</small></a>
+    <a class="chip{% if city == slug %} on{% endif %}" href="{{ home }}/{{ slug }}/{% if slug in shift_cities %}{{ tail }}{% endif %}">{{ city_name(slug) }}{% if not shifts_page %} <small>{{ n }}</small>{% endif %}</a>
     {% endfor %}
   </nav>
+  {% if not category and (not city or city in shift_cities) %}
+  <nav class="chips">
+    <a class="chip shifts{% if shifts_page %} on{% endif %}" href="{{ home }}/{% if city %}{{ city }}/{% endif %}{% if not shifts_page %}{{ SHIFTS }}/{% endif %}">⚡ {{ t("Подработка и смены") }}</a>
+  </nav>
+  {% endif %}
   {% if category %}
   <nav class="chips">
     {% for cat, n in category_counts %}

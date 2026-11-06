@@ -25,14 +25,18 @@ export function toRow(sub) {
   return [sub.city, sub.categories.join(","), sub.perks.join("|"), sub.min_pay, sub.active];
 }
 
+// Условие «Смены и подработка» (vacante/shifts.py): последнее в options.perks, чтобы номера кнопок старых условий не сдвинулись
+export const SHIFT = "Смены и подработка";
+
 /**
- * Подписка из приложения: t.me/vacantekz_bot?start=sub_<город>_<сфера|all>_<зарплата от>.
+ * Подписка из приложения: t.me/vacantekz_bot?start=sub_<город>_<сфера|all>_<зарплата от>[_s].
+ * _s в конце — только смены и подработка (кнопка «Смены» в ленте приложения).
  * Кнопка «Пришлём, когда появится» в ленте, когда подходящих вакансий нет. null, если ссылка битая.
  */
 export function fromLink(arg) {
-  const m = /^sub_([a-z-]+)_([a-z]+)_(\d{1,7})$/.exec(arg || "");
+  const m = /^sub_([a-z-]+)_([a-z]+)_(\d{1,7})(_s)?$/.exec(arg || "");
   if (!m || !CITY[m[1]] || (m[2] !== "all" && !CATEGORY[m[2]])) return null;
-  return { city: m[1], categories: m[2] === "all" ? [] : [m[2]], perks: [], min_pay: Number(m[3]), active: 1 };
+  return { city: m[1], categories: m[2] === "all" ? [] : [m[2]], perks: m[4] ? [SHIFT] : [], min_pay: Number(m[3]), active: 1 };
 }
 
 export function money(n) {

@@ -18,6 +18,7 @@ from pathlib import Path
 
 import httpx
 
+from vacante import shifts
 from vacante.models import Vacancy
 from vacante.site.build import bot_item, monthly_pay
 from vacante.store import load_vacancies
@@ -56,7 +57,7 @@ def matches(sub: Subscription, v: Vacancy) -> bool:
     return ((not sub.city or v.city == sub.city)
             and (not sub.categories or v.category in sub.categories)
             and pay >= sub.min_pay
-            and all(pay > 0 if p == SALARY else p in v.perks for p in sub.perks))
+            and all(pay > 0 if p == SALARY else p in shifts.perks(v) for p in sub.perks))
 
 
 def format_digest(hits: list[Vacancy], base_url: str) -> str:

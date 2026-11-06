@@ -155,11 +155,15 @@ def _text(item: dict) -> str:
 
 
 def _schedule(item: dict) -> str | None:
-    """График: старое поле schedule или новые work_schedule_by_days («5/2») и working_hours («8 часов»)."""
-    if name := ((item.get("schedule") or {}).get("name") or "").strip():
-        return name
-    parts = [(x or {}).get("name", "").strip() for key in ("work_schedule_by_days", "working_hours")
-             for x in item.get(key) or []]
+    """График: старое поле schedule или новые work_schedule_by_days («5/2») и working_hours («8 часов»),
+    плюс «подработка» при частичной занятости."""
+    parts = [((item.get("schedule") or {}).get("name") or "").strip()]
+    if not parts[0]:
+        parts = [(x or {}).get("name", "").strip() for key in ("work_schedule_by_days", "working_hours")
+                 for x in item.get(key) or []]
+    # Частичная занятость: в раздел «Смены и подработка» (vacante.shifts)
+    if (item.get("employment") or {}).get("id") == "part" or (item.get("employment_form") or {}).get("id") == "PART":
+        parts.append("подработка")
     return ", ".join(p for p in parts if p) or None
 
 

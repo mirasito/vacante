@@ -666,7 +666,9 @@ function Main() {
     () => (filter.roles?.length ? withExtra : (feed ?? [])).filter((v) => !seen[v.id] && inCategory(v) && isNear(v)),
     [feed, withExtra, filter.roles, seen, inCategory, isNear],
   );
-  const filters = filterCount(filter);
+  // Кнопка «Смены» стоит отдельно от «Фильтров», но тоже сужает ленту
+  const filters = filterCount(filter) + (filter.shift ? 1 : 0);
+  const sheetFilters = filterCount(filter);
   // С фильтром, сферой или «Рядом с домом» ищем по всему городу, а не по загруженным страницам
   useEffect(() => {
     if (total && (filtersOpen || filters || near || prefs.cat)) void loadAll();
@@ -830,7 +832,7 @@ function Main() {
   }
 
   const cityInfo = index?.cities.find((ct) => ct.slug === city);
-  const subscribeUrl = city ? subscribeLink(city, prefs.cat, filter.payFrom) : null;
+  const subscribeUrl = city ? subscribeLink(city, prefs.cat, filter.payFrom, filter.shift) : null;
   return (
     <Screen c={c}>
       <View style={styles.header}>
@@ -889,10 +891,16 @@ function Main() {
             >
               <Chip
                 c={c}
-                active={!!filters}
+                active={!!sheetFilters}
                 icon="sliders"
-                label={filters ? `${t('filters')} · ${filters}` : t('filters')}
+                label={sheetFilters ? `${t('filters')} · ${sheetFilters}` : t('filters')}
                 onPress={() => setFiltersOpen(true)}
+              />
+              <Chip
+                c={c}
+                active={!!filter.shift}
+                label={lang === 'kk' ? '⚡ Ауысымдар' : '⚡ Смены'}
+                onPress={() => setPref({ filter: { ...filter, shift: !filter.shift || undefined } })}
               />
               <Chip c={c} active={!!near} icon="home" label={near ? i18n.upToKm(near, lang) : t('near')} onPress={toggleNear} />
               <Chip c={c} active={!prefs.cat} label={t('all')} onPress={() => setPref({ cat: null })} />

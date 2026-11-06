@@ -73,4 +73,5 @@ test("подписка по ссылке из приложения", () => {
   assert.equal(bot.fromLink("sub_mars_all_0"), null);
   assert.equal(bot.fromLink("sub_almaty_nope_0"), null);
   assert.equal(bot.fromLink("apply_5"), null);
+  assert.deepEqual(bot.fromLink("sub_almaty_all_0_s").perks, ["Смены и подработка"]);
 });

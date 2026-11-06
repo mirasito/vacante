@@ -91,6 +91,13 @@ def _score(v: Vacancy, known: set[str]) -> float:
             + (v.category != "other"))
 
 
+def filled(v: Vacancy) -> bool:
+    """Есть что показать на карточке поста: зарплата, заведение или адрес. Без всего этого карточка в канале
+    выходит пустой (только должность и город), такие вакансии остаются на сайте, но в канал не идут."""
+    return (v.salary_min is not None or v.salary_max is not None or bool((v.employer or "").strip())
+            or bool((v.address or "").strip()))
+
+
 def dup_keys(v: Vacancy) -> set[str]:
     """По чему узнаём повтор: заведение, а без него должность с зарплатой."""
     if v.employer and v.employer.strip():
@@ -140,6 +147,7 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
     candidates = [
         v for v in vacancies
         if v.city == city and v.id not in seen and v.posted_at >= cutoff and v.title not in recent_titles
+        and filled(v)
         and not (keys_of.get(v.id) or dup_keys(v)) & recent
     ]
 

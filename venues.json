@@ -6043,6 +6043,13 @@
   "avatar": "e285d49cff68b8dc.jpg",
   "avatar_source": "website"
  },
+ "almaty:globalexim trade": {
+  "name": "Globalexim trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "almaty:globalink": {
   "name": "Globalink",
   "city": "almaty",
@@ -6066,7 +6073,7 @@
   "instagram": "globus_machinery",
   "website": "https://globusmachinery.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001082986184",
-  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6690,6 +6697,13 @@
   "checked_at": "2026-11-04T03:44:25+00:00",
   "instagram": "intimno_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001078307362"
+ },
+ "almaty:intop": {
+  "name": "InTOP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "almaty:invitro тоо инвитро казахстан": {
   "name": "INVITRO (ТОО ИНВИТРО-Казахстан)",
@@ -9297,6 +9311,13 @@
   "instagram": "qonys__group",
   "source": "https://2gis.kz/almaty/firm/70000001114431674"
  },
+ "almaty:qorgan elite": {
+  "name": "QORGAN ELITE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "almaty:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
   "city": "almaty",
@@ -9865,6 +9886,15 @@
   "instagram": "she.brand.kz",
   "source": "https://2gis.kz/almaty/firm/70000001098311815"
  },
+ "almaty:shecker coffee": {
+  "name": "Shecker Coffee",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00",
+  "instagram": "shecker.coffee",
+  "source": "https://2gis.kz/almaty/firm/70000001064341819"
+ },
  "almaty:sheron cosmetics": {
   "name": "sheron cosmetics",
   "city": "almaty",
@@ -10165,6 +10195,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "almaty:staffboy": {
+  "name": "STAFFBOY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "almaty:star brands asia стар брэндс азия": {
   "name": "Star Brands Asia (Стар Брэндс Азия)",
@@ -12550,7 +12587,7 @@
   "instagram": "centercreditkz",
   "website": "https://bcc.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000824139",
-  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16580,6 +16617,13 @@
   "avatar": "57be832f5b4499d0.jpg",
   "avatar_source": "website"
  },
+ "almaty:сказка": {
+  "name": "ИП сказка",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "almaty:смакополис": {
   "name": "Смакополис",
   "city": "almaty",
@@ -18713,6 +18757,13 @@
   "avatar": "6c5045fafa6ff2aa.jpg",
   "avatar_source": "website"
  },
+ "astana:aster kz": {
+  "name": "ASTER-KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "astana:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "astana",
@@ -19999,6 +20050,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
+ },
+ "astana:garden cafe": {
+  "name": "Garden cafe",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "astana:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -21350,6 +21408,20 @@
   "avatar": "10ffe3c0c0876bb6.jpg",
   "avatar_source": "website"
  },
+ "astana:metaltrade kazakhstan": {
+  "name": "MetalTrade Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00",
+  "instagram": "metaltradekazakhstan",
+  "website": "https://metaltrade.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001082576383",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:meyram group distribution": {
   "name": "Meyram group distribution",
   "city": "astana",
@@ -21740,6 +21812,21 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "one_filter.kz",
   "source": "https://2gis.kz/astana/firm/70000001102913204"
+ },
+ "astana:oneshott coffee": {
+  "name": "ONESHOTT COFFEE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00",
+  "website": "https://oneshott.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001104548089",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "eae368ecdb43c26c.jpg",
+  "avatar_source": "website"
  },
  "astana:opatra london опатра лондон": {
   "name": "OPATRA LONDON (ОПАТРА ЛОНДОН)",
@@ -22541,6 +22628,13 @@
   ],
   "avatar": "4879293c6775deb2.jpg",
   "avatar_source": "website"
+ },
+ "astana:sezim": {
+  "name": "Sezim",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "astana:sg beton завод": {
   "name": "SG Beton завод",
@@ -23566,6 +23660,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
+ },
+ "astana:ztown development": {
+  "name": "Ztown Development",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00",
+  "website": "https://zdflex.com/",
+  "source": "https://2gis.kz/astana/firm/70000001029215513",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:абат сервис ltd": {
   "name": "Абат сервис LTD",
@@ -26176,6 +26283,13 @@
    "website"
   ]
  },
+ "astana:мелочь": {
+  "name": "Мелочь",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "astana:мерси": {
   "name": "Мерси",
   "city": "astana",
@@ -26435,6 +26549,13 @@
   ],
   "avatar": "ff1a0d88c253098d.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:нурлановна": {
+  "name": "НУРЛАНОВНА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "astana:нуртазина": {
   "name": "Нуртазина",
@@ -27275,6 +27396,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "astana:снежный барс": {
+  "name": "СНЕЖНЫЙ БАРС",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "astana:солнечный дар": {
   "name": "Солнечный дар",
@@ -28540,6 +28668,13 @@
    "website"
   ]
  },
+ "astana:эталон": {
+  "name": "Эталон",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "astana:юникс": {
   "name": "Юникс",
   "city": "astana",
@@ -29234,6 +29369,15 @@
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
  },
+ "atyrau:аргус атырау": {
+  "name": "Аргус-Атырау",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00",
+  "instagram": "argus_atyrau_guw",
+  "source": "https://2gis.kz/atyrau/firm/70000001035393663"
+ },
  "atyrau:арман": {
   "name": "АРМАН",
   "city": "atyrau",
@@ -29432,6 +29576,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
+ },
+ "atyrau:мансар 2": {
+  "name": "МАНСАР 2",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
  },
  "atyrau:марк формэль": {
   "name": "Марк Формэль",
@@ -33370,7 +33521,7 @@
   "instagram": "ffins.kz",
   "website": "https://ffins.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001089274087",
-  "avatar_checked_at": "2026-10-30T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37297,6 +37448,13 @@
   "avatar": "11e842cafd55c005.jpg",
   "avatar_source": "website"
  },
+ "shymkent:svu group": {
+  "name": "SVU Group",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00"
+ },
  "shymkent:tau mart": {
   "name": "TAU MART",
   "city": "shymkent",
@@ -40629,6 +40787,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "ust-kamenogorsk:галирад": {
+  "name": "Галирад",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T19:43:58+00:00",
+  "instagram": "hotel_galirad",
+  "website": "https://galirad.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313225",
+  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:гелиос": {
   "name": "Гелиос",

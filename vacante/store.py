@@ -58,6 +58,9 @@ def merge(existing: list[Vacancy], incoming: list[Vacancy]) -> list[Vacancy]:
                 known.contact = new.contact
             if known.id == new.id and not known.contact and new.contact:
                 known.contact = new.contact
+            # Сохранённой раньше вакансии hh достаётся id работодателя на hh (для карточки компании в CRM)
+            if known.id == new.id and new.employer_hh and not known.employer_hh:
+                known.employer_hh = new.employer_hh
             # hh отдал вакансию ещё раз (перечитывание за две недели): точка на карте берётся свежая
             if known.id == new.id and new.lat is not None:
                 known.lat, known.lon, known.geo, known.approx = new.lat, new.lon, new.geo, new.approx

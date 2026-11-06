@@ -187,6 +187,7 @@ def run(data_dir: Path, vacancies: list[Vacancy], now: datetime | None = None) -
                                "User-Agent": "vacante.kz/1.0 (+https://vacante.kz)"}) as client:
         stats = send(client, employers, now or datetime.now(timezone.utc), extra)
         missing = stats.pop("hh_missing", []) or []
+        stats["hh_missing"] = len(missing)
         if missing:
             try:
                 hh_token = hh.token_from_env()

@@ -56,3 +56,9 @@ def test_reparse_applies_parser_fixes_to_stored_cards():
     assert result[0].employer == "Зерно"
     assert result[0].also_seen_in == ["https://t.me/chan_b/7"]
     assert result[0].posted_at.startswith("2026-10-25")
+
+
+def test_merge_fills_hh_employer_id_on_known_vacancy():
+    old = make("chan_a", 1)
+    again = replace(make("chan_a", 1), employer_hh="12345")
+    assert merge([old], [again])[0].employer_hh == "12345"

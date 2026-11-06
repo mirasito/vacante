@@ -216,9 +216,11 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
       if (!same(bearer(req), internal)) throw new HttpError(403, "Нет доступа");
       const since = Date.parse(req.query.get("since") ?? "");
       const from = Number.isFinite(since) ? new Date(since).toISOString() : "";
+      const afterId = Number(req.query.get("after_id") ?? 0);
+      if (!Number.isSafeInteger(afterId) || afterId < 0) throw new HttpError(400, "Некорректный курсор");
       const rows = ctx.db
-        .prepare("SELECT * FROM olx_ads WHERE imported_at >= ? ORDER BY imported_at, id LIMIT 1000")
-        .all(from) as unknown as Row[];
+        .prepare("SELECT * FROM olx_ads WHERE (imported_at, id) > (?, ?) ORDER BY imported_at, id LIMIT 1000")
+        .all(from, afterId) as unknown as Row[];
       return { json: { data: rows.map(asOffer) } };
     }),
   ];

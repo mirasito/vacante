@@ -241,6 +241,26 @@ def collect(state: dict, now: datetime) -> list[Vacancy] | None:
     from vacante.sources.olx_web import collect_web
     if via_server():
         with make_client() as server:
-            return collect_web(state, now, server, server, via=True)
+            # Облачный агент уже передал объявления в таблицу сервера.
+            since = _time(state.get("olx_imports_at")) or now - IMPORTS_FIRST
+            try:
+                cursor = ((since - OVERLAP).isoformat(timespec="seconds"), 0)
+                items = []
+                while True:
+                    page = get(server, "/imports", {"since": cursor[0], "after_id": cursor[1]})["data"]
+                    items.extend(page)
+                    if len(page) < 1000:
+                        break
+                    following = (page[-1]["imported_at"], page[-1]["id"])
+                    if following == cursor:
+                        raise Blocked("Сервер импорта не продвинул курсор")
+                    cursor = following
+            except (Blocked, httpx.HTTPError) as exc:
+                state["olx_status"] = f"import error: {type(exc).__name__}"
+                return None
+            vacancies = [v for item in items if (v := to_vacancy(item)) is not None]
+            state["olx_imports_at"] = now.isoformat()
+            state.update(olx_status="inbox", olx_candidates=len(vacancies), olx_checked_at=now.isoformat())
+            return vacancies
     with httpx.Client(headers={"User-Agent": USER_AGENT, "Accept": "text/html"}, timeout=30) as public:
         return collect_web(state, now, public, None)

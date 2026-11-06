@@ -1,38 +1,44 @@
-name: Проверить доступ к выдаче OLX
+name: Импорт облачной выдачи OLX
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Сервер"]
-    types: [completed]
-    branches: [main]
+  push:
+    branches: [main, olx-cloud-inbox]
+    paths:
+      - olx-inbox.sealed
+      - vacante/sources/olx_cloud.py
+      - .github/workflows/olx-check.yml
 permissions:
   contents: read
 jobs:
-  read-listing:
-    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+  import:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install .
-      - name: Проверить две страницы без публикации
+      - name: Show receiver public key
+        if: github.ref_name == 'main'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python -m vacante.sources.olx_cloud public-key
+      - uses: actions/checkout@v4
+        if: github.ref_name == 'olx-cloud-inbox'
+        with:
+          ref: ${{ github.sha }}
+          path: incoming
+          sparse-checkout: olx-inbox.sealed
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Import encrypted jobs
+        if: github.ref_name == 'olx-cloud-inbox'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           OLX_VIA: ${{ vars.OLX_VIA || 'https://api.vacante.kz' }}
-        run: |
-          python - <<'PY'
-          from datetime import datetime, timezone
-          from vacante.sources.olx import make_client, via_server
-          from vacante.sources.olx_web import collect_web
-          state = {}
-          assert via_server(), "Требуется настроенный сервер Vacante"
-          with make_client() as client:
-              collect_web(state, datetime.now(timezone.utc), client, None, max_pages=2, via=True)
-          print(state)
-          if state["olx_status"] != "ok":
-              raise SystemExit(1)
-          PY
+        run: python -m vacante.sources.olx_cloud deliver --file incoming/olx-inbox.sealed

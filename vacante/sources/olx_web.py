@@ -49,7 +49,7 @@ def parse_ad(ad, now):
     return (row, vacancy) if vacancy else None
 
 
-def collect_web(state, now, public, private, sleep=time.sleep, max_pages=MAX_PAGES, *, via=False):
+def collect_web(state, now, public, private, sleep=time.sleep, max_pages=MAX_PAGES, *, via=False, on_batch=None):
     found = {}
     pages = 0
     status = "ok"
@@ -81,6 +81,8 @@ def collect_web(state, now, public, private, sleep=time.sleep, max_pages=MAX_PAG
                 if row["id"] not in found:
                     found[row["id"]] = vacancy
                     batch.append(row)
+        if batch and on_batch is not None:
+            on_batch(batch)
         if batch and contacts_ok:
             try:
                 saved = private.post("batch", json={"items": batch})

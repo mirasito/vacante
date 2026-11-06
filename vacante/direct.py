@@ -7,18 +7,28 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from vacante.models import Vacancy
 from vacante.parse import CITIES, clean_text, detect_titles, fingerprint, parse_perks, parse_salary
 
 BOT_USERNAME = "vacantekz_bot"
+LOCAL = timezone(timedelta(hours=5))  # время Казахстана: день смены считаем по нему
 SOURCE = "bot"
 POST_URL = f"https://t.me/{BOT_USERNAME}?start=post"
 
 
 def apply_url(job_id: int) -> str:
     return f"https://t.me/{BOT_USERNAME}?start=apply_{job_id}"
+
+
+def take_url(job_id: int) -> str:
+    """«Беру смену»: бот просит номер и передаёт работодателю (bot/src/shift.js)."""
+    return f"https://t.me/{BOT_USERNAME}?start=take_{job_id}"
+
+
+def is_shift(job: dict) -> bool:
+    return job.get("kind") == "shift" and bool(job.get("shift_date"))
 
 
 def _iso(sqlite_time: str) -> str:
@@ -32,7 +42,7 @@ def queue_item(job: dict) -> dict:
     Без имени работодателя, телефонов и ссылок: только то, что и так пойдёт на сайт.
     """
     item = {k: job.get(k) for k in ("id", "status", "reviewed_at", "created_at", "city", "title", "company", "salary",
-                                    "schedule", "address")}
+                                    "schedule", "address", "kind")}
     item["city_name"] = CITIES[job["city"]][0] if job.get("city") in CITIES else None
     item["details"] = clean_text(job.get("details") or "")
     return item
@@ -52,6 +62,9 @@ def to_vacancy(job: dict) -> Vacancy:
         lines.append(f"Зарплата: {job['salary']}")  # «договорная» и подобное покажем как есть
     text = "\n\n".join(lines)
     titles = detect_titles(title) or detect_titles(details)
+    shift = is_shift(job)
+    if shift and period is None and salary_min is None:
+        salary_min, salary_max, period = parse_salary(f"Оплата за смену: {job['salary']}")
     return Vacancy(
         id=f"{SOURCE}-{job['id']}",
         title=title,
@@ -65,9 +78,12 @@ def to_vacancy(job: dict) -> Vacancy:
         employer=job["company"].strip(),
         text=text,
         source=SOURCE,
-        source_url=apply_url(job["id"]),
+        source_url=take_url(job["id"]) if shift else apply_url(job["id"]),
         posted_at=_iso(job["approved_at"]),
         fingerprint=fingerprint(text),
         address=job.get("address") or None,
         top_until=_iso(job["boost_until"]) if job.get("boost_until") else None,
+        shift_date=job["shift_date"] if shift else None,
+        shift_time=f"{job['shift_start']}–{job['shift_end']}" if shift and job.get("shift_start") else None,
+        need=job.get("need") if shift else None,
     )

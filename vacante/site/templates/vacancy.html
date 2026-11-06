@@ -15,14 +15,19 @@
   <dl class="facts">
     {% set s = salary_label(v) %}
     {% if s %}<dt>{{ t("Зарплата") }}</dt><dd>{{ s }}</dd>{% endif %}
-    {% if v.schedule %}<dt>{{ t("График") }}</dt><dd>{{ v.schedule }}</dd>{% endif %}
+    {% if v.shift_date %}<dt>{{ t("Смена") }}</dt><dd>{{ shift_day(v) }}, {{ v.shift_time }}</dd>
+    {% if v.need %}<dt>{{ t("Нужно людей") }}</dt><dd>{{ v.need }}</dd>{% endif %}
+    {% elif v.schedule %}<dt>{{ t("График") }}</dt><dd>{{ v.schedule }}</dd>{% endif %}
     {% set ig = instagram_url(place) %}
     {% if ig %}<dt>Instagram</dt><dd><a href="{{ ig }}" rel="nofollow noopener" target="_blank">@{{ place.instagram }}</a></dd>{% endif %}
     {% if place and place.telegram %}<dt>Telegram</dt><dd><a href="https://t.me/{{ place.telegram }}" rel="nofollow noopener" target="_blank">@{{ place.telegram }}</a></dd>{% endif %}
     {% if place and place.website %}<dt>{{ t("Сайт") }}</dt><dd><a href="{{ place.website }}" rel="nofollow noopener" target="_blank">{{ site_name(place.website) }}</a></dd>{% endif %}
     {% if v.address %}<dt>{{ t("Адрес") }}</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t("в 2ГИС") }}</a>{% endif %}</dd>{% endif %}
   </dl>
-  {% if v.source == "bot" %}
+  {% if v.shift_date %}
+  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("⚡ Беру смену") }}</a>
+  <p class="direct">{{ t("Смену разместил сам работодатель. Нажмите кнопку: бот попросит номер, работодатель подтвердит, а перед сменой бот напомнит.") }}</p>
+  {% elif v.source == "bot" %}
   <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в Telegram") }}</a>
   <p class="direct">{{ t("Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.") }}</p>
   {% elif v.source == "olx" %}

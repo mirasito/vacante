@@ -11,6 +11,7 @@ import { crmApi, jobsApi } from "./crm.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
 import { relayToServer, serverKey } from "./server.js";
+import * as shift from "./shift.js";
 
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
@@ -18,7 +19,8 @@ const GREETING =
   "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.";
 const HELP =
   "Я присылаю новые вакансии с vacante.kz.\n/settings: изменить подписку\n/stop: остановить\n\n" +
-  "Работодателям:\n/vacancy: разместить вакансию бесплатно\n/myjobs: мои вакансии";
+  "⚡ /smeny: присылать смены и подработку\n\n" +
+  "Работодателям:\n/vacancy: разместить вакансию бесплатно\n/smena: найти людей на смену\n/myjobs: мои вакансии и смены";
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
 const POST_INTRO =
   "Разместим вакансию бесплатно: на vacante.kz и в подборках подписчикам бота. " +
@@ -56,6 +58,8 @@ export default {
   // Раз в час (crons в wrangler.toml): подстраховка расписания GitHub, см. cron.js
   async scheduled(event, env, ctx) {
     ctx.waitUntil(wakeUpdate(env).then((result) => console.log(`update.yml: ${result}`)));
+    // Смены: напоминания, вопрос «кто пришёл» и закрытие прошедших
+    ctx.waitUntil(shiftCron(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },
 };
 
@@ -86,6 +90,8 @@ async function handle(update, env, ctx) {
     return answerCallback(env, q, PROFILE_DOWN);
   }
   if (data.startsWith("mod:")) return moderate(env, q, ctx);
+  if (data.startsWith("sh:")) return shiftDecision(env, q, ctx);
+  if (data.startsWith("att:")) return attendance(env, q);
   if (data.startsWith("close:")) return closeJob(env, q);
   if (data.startsWith("boost:")) return boostJob(env, q);
   if (data.startsWith("paid:")) return paid(env, q);
@@ -103,12 +109,16 @@ async function onMessage(m, env) {
     const d = await env.DB.prepare("SELECT * FROM dialogs WHERE chat_id = ?").bind(chatId).first();
     if (d && d.mode === "post") return postAnswer(env, m, d);
     if (d && d.mode === "apply") return applyAnswer(env, m, d);
+    if (d && d.mode === "take") return takeAnswer(env, m, d);
     return send(env, chatId, HELP);
   }
   await endDialog(env, chatId); // любая команда прерывает анкету или отклик
   const name = command.split("@")[0];
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
+  if (name === "/start" && arg.startsWith("take_")) return startTake(env, m, Number(arg.slice(5)));
   if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
+  if ((name === "/start" && arg === "smena") || name === "/smena") return startPost(env, m, "shift");
+  if ((name === "/start" && arg === "smeny") || name === "/smeny") return subscribeShifts(env, chatId);
   if (name === "/start" && bot.fromLink(arg)) {
     // Кнопка «Пришлём, когда появится» из приложения: подписка сразу с городом, сферой и зарплатой
     const sub = bot.fromLink(arg);
@@ -163,7 +173,7 @@ async function subscriptionButton(env, q) {
 
 // Работодатель: анкета вакансии
 
-async function startPost(env, m) {
+async function startPost(env, m, kind = "vacancy") {
   const chatId = m.chat.id;
   const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status = 'pending'")
     .bind(chatId)
@@ -172,12 +182,12 @@ async function startPost(env, m) {
     return send(env, chatId, `У вас уже ${pending} вакансии на проверке. Дождитесь ответа, обычно это пара часов: /myjobs`);
   }
   await env.DB.prepare("DELETE FROM jobs WHERE employer_chat = ? AND status = 'draft'").bind(chatId).run();
-  const { meta } = await env.DB.prepare("INSERT INTO jobs (employer_chat, employer_name, step) VALUES (?, ?, 'city')")
-    .bind(chatId, job.employerName(m.from))
+  const { meta } = await env.DB.prepare("INSERT INTO jobs (employer_chat, employer_name, step, kind) VALUES (?, ?, 'city', ?)")
+    .bind(chatId, job.employerName(m.from), kind)
     .run();
   await setDialog(env, chatId, "post", meta.last_row_id);
-  const { text, keyboard } = job.askScreen(job.STEPS[0]);
-  return send(env, chatId, `${POST_INTRO}\n\n${text}`, keyboard);
+  const { text, keyboard } = job.askScreen(job.stepsFor({ kind })[0]);
+  return send(env, chatId, `${kind === "shift" ? shift.SHIFT_INTRO : POST_INTRO}\n\n${text}`, keyboard);
 }
 
 async function postAnswer(env, m, d) {
@@ -189,7 +199,7 @@ async function postAnswer(env, m, d) {
   }
   if (!draft.step) return send(env, chatId, ...screen(job.previewScreen(draft))); // анкета заполнена, ждём кнопку
   const { job: next, error } = job.answer(draft, draft.step, m.text);
-  if (error) return send(env, chatId, error, job.askScreen(job.STEPS.find((s) => s.field === draft.step)).keyboard);
+  if (error) return send(env, chatId, error, job.askScreen(job.stepsFor(draft).find((s) => s.field === draft.step)).keyboard);
   return advance(env, chatId, next);
 }
 
@@ -214,11 +224,14 @@ async function postButton(env, q, ctx) {
 async function advance(env, chatId, draft, messageId) {
   const step = job.nextStep(draft);
   draft = { ...draft, step: step ? step.field : null };
+  // У смены график — это её день и время: «Смена 07.11, 10:00–22:00»
+  if (draft.kind === "shift") draft.schedule = draft.shift_date && draft.shift_start ? shift.scheduleText(draft) : null;
   await env.DB.prepare(
     `UPDATE jobs SET step = ?, city = ?, title = ?, company = ?, salary = ?, schedule = ?, address = ?, details = ?,
-       updated_at = datetime('now') WHERE id = ?`,
+       shift_date = ?, shift_start = ?, shift_end = ?, need = ?, updated_at = datetime('now') WHERE id = ?`,
   )
-    .bind(draft.step, draft.city, draft.title, draft.company, draft.salary, draft.schedule, draft.address, draft.details, draft.id)
+    .bind(draft.step, draft.city, draft.title, draft.company, draft.salary, draft.schedule, draft.address, draft.details,
+      draft.shift_date ?? null, draft.shift_start ?? null, draft.shift_end ?? null, draft.need ?? null, draft.id)
     .run();
   const { text, keyboard } = step ? job.askScreen(step) : job.previewScreen(draft);
   return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
@@ -257,7 +270,8 @@ function wakeSite(env, ctx) {
 
 async function myJobs(env, chatId) {
   const { results } = await env.DB.prepare(
-    `SELECT j.*, (SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id) AS applications
+    `SELECT j.*, (SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id) AS applications,
+       (SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id AND a.status = 'confirmed') AS confirmed
      FROM jobs j WHERE employer_chat = ? AND status != 'draft' ORDER BY id DESC LIMIT 10`,
   )
     .bind(chatId)
@@ -303,7 +317,7 @@ async function paid(env, q) {
   if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод, напишу, как только поднимем");
   await answerCallback(env, q);
   const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days) VALUES (?, ?, ?, ?)")
-    .bind(found.id, found.employer_chat, boost.price, boost.days)
+    .bind(found.id, found.employer_chat, job.offerFor(boost, found).price, job.offerFor(boost, found).days)
     .run();
   await edit(env, q.message.chat.id, q.message.message_id, job.paymentWaitText(found));
   const payment = await getPayment(env, meta.last_row_id);
@@ -453,6 +467,7 @@ async function review(env, d) {
 async function startApply(env, m, id) {
   const chatId = m.chat.id;
   const found = id ? await getJob(env, id) : null;
+  if (found && found.kind === "shift") return startTake(env, m, id);
   if (!found || found.status !== "approved") return send(env, chatId, JOB_CLOSED);
   const applied = await env.DB.prepare("SELECT id FROM applications WHERE job_id = ? AND chat_id = ?").bind(id, chatId).first();
   if (applied) return send(env, chatId, "Вы уже откликнулись на эту вакансию, работодатель получил отклик и свяжется с вами сам.");
@@ -475,6 +490,174 @@ async function applyAnswer(env, m, d) {
     "✅ Отклик отправлен работодателю, он свяжется с вами сам.\n\nХотите получать новые вакансии по своему городу? /start",
     NO_KEYBOARD,
   );
+}
+
+// Смены (shift.js): «Беру смену» по ссылке t.me/vacantekz_bot?start=take_<id> с сайта, из приложения или канала
+
+const SHIFT_GONE = "Эта смена уже закрыта или набрана. Другие смены и подработка: /smeny";
+
+function shiftOpen(found, now = new Date()) {
+  return found && found.kind === "shift" && found.status === "approved" && shift.shiftTimes(found).start > now;
+}
+
+// Надёжность соискателя: сколько смен отметили и на скольких он был
+async function reliabilityOf(env, chatId) {
+  const r = await env.DB.prepare(
+    "SELECT COUNT(*) AS total, COALESCE(SUM(attended), 0) AS came FROM applications WHERE chat_id = ? AND attended IS NOT NULL",
+  )
+    .bind(chatId)
+    .first();
+  return { total: Number(r.total), came: Number(r.came) };
+}
+
+async function startTake(env, m, id) {
+  const chatId = m.chat.id;
+  const found = id ? await getJob(env, id) : null;
+  if (!shiftOpen(found)) return send(env, chatId, SHIFT_GONE);
+  if (found.employer_chat === chatId) return send(env, chatId, "Это ваша смена. Просьбы кандидатов придут сюда, список: /myjobs");
+  const mine = await env.DB.prepare("SELECT status FROM applications WHERE job_id = ? AND chat_id = ? AND status != 'cancelled'")
+    .bind(id, chatId)
+    .first();
+  if (mine && mine.status === "confirmed") return send(env, chatId, "Вас уже ждут на этой смене. Если не сможете прийти, нажмите «Не смогу прийти» в сообщении о подтверждении.");
+  if (mine) return send(env, chatId, "Вы уже попросились на эту смену. Работодатель ответит здесь, обычно в течение пары часов.");
+  await setDialog(env, chatId, "take", id);
+  return send(env, chatId, shift.takeIntro(found), job.CONTACT_KEYBOARD);
+}
+
+async function takeAnswer(env, m, d) {
+  const chatId = m.chat.id;
+  const phone = m.contact ? m.contact.phone_number : null;
+  if (!m.text && !phone) return send(env, chatId, "Отправьте номер кнопкой внизу или напишите о себе текстом.");
+  await endDialog(env, chatId);
+  const found = await getJob(env, d.job_id);
+  if (!shiftOpen(found)) return send(env, chatId, SHIFT_GONE, NO_KEYBOARD);
+  const { meta } = await env.DB.prepare("INSERT INTO applications (job_id, chat_id, status, name) VALUES (?, ?, 'asked', ?)")
+    .bind(found.id, chatId, [m.from.first_name, m.from.last_name].filter(Boolean).join(" ").slice(0, 60))
+    .run();
+  const rel = await reliabilityOf(env, chatId);
+  await send(env, found.employer_chat, ...screen(shift.takeRequest(found, { id: meta.last_row_id }, m.from, m.text, phone, rel)));
+  return send(
+    env,
+    chatId,
+    "✅ Попросились на смену. Работодатель подтвердит здесь, обычно в течение пары часов.\n\nПрисылать новые смены и подработку: /smeny",
+    NO_KEYBOARD,
+  );
+}
+
+async function getApplication(env, id) {
+  return env.DB.prepare("SELECT * FROM applications WHERE id = ?").bind(id).first();
+}
+
+async function confirmedCount(env, jobId) {
+  return Number(await env.DB.prepare("SELECT COUNT(*) AS n FROM applications WHERE job_id = ? AND status = 'confirmed'").bind(jobId).first("n"));
+}
+
+// Кнопки «✅ Беру / Не подходит» у работодателя и «Не смогу прийти» у соискателя
+async function shiftDecision(env, q, ctx) {
+  const [, verdict, id] = q.data.split(":");
+  const chatId = q.message.chat.id;
+  const a = await getApplication(env, Number(id));
+  const found = a && (await getJob(env, a.job_id));
+  if (!found) return answerCallback(env, q, "Смена не найдена");
+  if (verdict === "cancel") {
+    if (a.chat_id !== chatId) return answerCallback(env, q);
+    const { meta } = await env.DB.prepare("UPDATE applications SET status = 'cancelled' WHERE id = ? AND status = 'confirmed'").bind(a.id).run();
+    await answerCallback(env, q, meta.changes ? "Предупредили работодателя" : undefined);
+    if (!meta.changes) return;
+    await edit(env, chatId, q.message.message_id, "Отменили: работодатель знает, что вы не придёте. Другие смены: /smeny");
+    // Набранная смена снова открывается, если до неё ещё есть время
+    if (found.status === "closed" && found.closed_full && shift.shiftTimes(found).start > new Date()) {
+      await env.DB.prepare("UPDATE jobs SET status = 'approved', closed_full = 0, updated_at = datetime('now') WHERE id = ?").bind(found.id).run();
+      wakeSite(env, ctx);
+    }
+    return send(env, found.employer_chat, shift.cancelledText(found, q.from));
+  }
+  if (found.employer_chat !== chatId) return answerCallback(env, q);
+  const ok = verdict === "ok";
+  if (ok && found.need && (await confirmedCount(env, found.id)) >= found.need) {
+    return answerCallback(env, q, `Уже набрали ${found.need} ${shift.people(found.need)}`);
+  }
+  const { meta } = await env.DB.prepare("UPDATE applications SET status = ? WHERE id = ? AND status = 'asked'")
+    .bind(ok ? "confirmed" : "declined", a.id)
+    .run();
+  await answerCallback(env, q);
+  const now = await getApplication(env, a.id);
+  const text = `${q.message.text || ""}\n\n${shift.decidedLine(now.status)}`.trim();
+  await tg(env, "editMessageText", { chat_id: chatId, message_id: q.message.message_id, text, disable_web_page_preview: true });
+  if (!meta.changes) return;
+  if (!ok) return send(env, a.chat_id, shift.declinedText(found, env.SITE_URL));
+  await send(env, a.chat_id, shift.confirmedText(found, job.BOT_USERNAME).text, shift.cancelButton(a));
+  // Набрали всех: смена уходит с сайта, остальным просящим вежливо отвечаем
+  if (found.need && (await confirmedCount(env, found.id)) >= found.need && found.status === "approved") {
+    await env.DB.prepare("UPDATE jobs SET status = 'closed', closed_full = 1, updated_at = datetime('now') WHERE id = ?").bind(found.id).run();
+    await send(env, found.employer_chat, shift.fullText(found));
+    wakeSite(env, ctx);
+  }
+}
+
+// Отметка «пришёл / не пришёл» после смены
+async function attendance(env, q) {
+  const [, value, id] = q.data.split(":");
+  if (value === "done") return answerCallback(env, q, "Уже отмечено");
+  const a = await getApplication(env, Number(id));
+  const found = a && (await getJob(env, a.job_id));
+  if (!found || found.employer_chat !== q.message.chat.id) return answerCallback(env, q);
+  const { meta } = await env.DB.prepare("UPDATE applications SET attended = ? WHERE id = ? AND status = 'confirmed' AND attended IS NULL")
+    .bind(value === "1" ? 1 : 0, a.id)
+    .run();
+  await answerCallback(env, q);
+  const { results } = await env.DB.prepare("SELECT id, name, attended FROM applications WHERE job_id = ? AND status = 'confirmed' ORDER BY id")
+    .bind(found.id)
+    .all();
+  await edit(env, q.message.chat.id, q.message.message_id, ...screen(shift.attendanceScreen(found, results)));
+  if (meta.changes && value === "1") await send(env, a.chat_id, shift.attendedText(found, await reliabilityOf(env, a.chat_id)));
+}
+
+// /smeny: подписка на смены и подработку в своём городе
+async function subscribeShifts(env, chatId) {
+  const sub = await load(env, chatId);
+  const next = { ...sub, perks: sub.perks.includes(bot.SHIFT) ? sub.perks : [...sub.perks, bot.SHIFT] };
+  if (!next.city) {
+    await save(env, chatId, { ...next, active: 0 });
+    return send(env, chatId, "⚡ Буду присылать смены и подработку. Где ищете?", bot.screen("city", next).keyboard);
+  }
+  await save(env, chatId, { ...next, active: 1 });
+  return send(
+    env,
+    chatId,
+    `⚡ Готово: присылаю смены и подработку (${bot.summary(next)}).\n\nВсе смены сейчас: ${env.SITE_URL}/${next.city}/smeny/\nИзменить: /settings`,
+  );
+}
+
+// Будильник раз в час: напоминание за несколько часов до смены, после смены вопрос «кто пришёл»,
+// закрытие прошедших смен (с сайта они уходят при следующем обновлении)
+export async function shiftCron(env, now = new Date()) {
+  const { results: jobs } = await env.DB.prepare(
+    "SELECT * FROM jobs WHERE kind = 'shift' AND status IN ('approved', 'closed') AND attendance_asked = 0 AND shift_date >= ?",
+  )
+    .bind(shift.localDay(now, -2))
+    .all();
+  for (const j of jobs) {
+    const { start, end } = shift.shiftTimes(j);
+    const { results: apps } = await env.DB.prepare("SELECT * FROM applications WHERE job_id = ? AND status = 'confirmed' ORDER BY id")
+      .bind(j.id)
+      .all();
+    if (start > now && start - now <= shift.REMIND_HOURS * 3600e3) {
+      for (const a of apps.filter((x) => !x.reminded)) {
+        await env.DB.prepare("UPDATE applications SET reminded = 1 WHERE id = ?").bind(a.id).run();
+        await send(env, a.chat_id, shift.remindText(j, now), shift.cancelButton(a));
+      }
+    }
+    if (start <= now && j.status === "approved") {
+      await env.DB.prepare("UPDATE jobs SET status = 'closed', updated_at = datetime('now') WHERE id = ?").bind(j.id).run();
+      // Кто попросился, но не дождался ответа
+      await env.DB.prepare("UPDATE applications SET status = 'declined' WHERE job_id = ? AND status = 'asked'").bind(j.id).run();
+    }
+    if (end <= now) {
+      await env.DB.prepare("UPDATE jobs SET attendance_asked = 1 WHERE id = ?").bind(j.id).run();
+      if (apps.length) await send(env, j.employer_chat, ...screen(shift.attendanceScreen(j, apps, now)));
+    }
+  }
 }
 
 // База и Telegram

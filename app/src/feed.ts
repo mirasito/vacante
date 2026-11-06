@@ -21,8 +21,10 @@ export interface Filter {
 }
 
 /** Подпись значка смены на карточке. */
-export function shiftLabel(k: ShiftKind, lang: Lang) {
+export function shiftLabel(k: ShiftKind, lang: Lang, v?: Vacancy) {
   const kk = lang === 'kk';
+  if (k === 'slot' && v?.shift_day) return `⚡ ${(kk ? v.shift_day_kk : null) ?? v.shift_day}, ${v.shift_time ?? ''}`.trim();
+  if (k === 'slot') return kk ? '⚡ Бір күндік ауысым' : '⚡ Смена на день';
   if (k === 'part') return kk ? '⚡ Қосымша жұмыс' : '⚡ Подработка';
   if (k === 'hour') return kk ? '⚡ Сағаттық төлем' : '⚡ Почасовая';
   if (k === 'daily') return kk ? '⚡ Күнделікті төлем' : '⚡ Оплата каждый день';

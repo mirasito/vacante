@@ -1,6 +1,7 @@
 // Вакансии от работодателей: анкета в боте, проверка модератором и отклики кандидатов.
 // Здесь только тексты и разбор ответов, без сети и базы, чтобы всё проверялось тестами.
 import options from "./options.json" with { type: "json" };
+import { NEED, parseTime, SHIFT_STEPS, shiftButtons, shiftCard, validDate } from "./shift.js";
 
 const CITY = Object.fromEntries(options.cities);
 export const BOT_USERNAME = "vacantekz_bot";
@@ -29,13 +30,20 @@ const FIELDS = STEPS.map((s) => s.field);
 
 export const STATUS = { draft: "черновик", pending: "на проверке", approved: "опубликована", rejected: "отклонена", closed: "закрыта" };
 
-export function newJob() {
-  return Object.fromEntries(FIELDS.map((f) => [f, null]));
+// Анкета вакансии или смены (kind = 'shift', см. shift.js)
+export const stepsFor = (job) => (job && job.kind === "shift" ? SHIFT_STEPS : STEPS);
+
+export function newJob(kind = "vacancy") {
+  const fields = kind === "shift" ? [...SHIFT_STEPS.map((s) => s.field), "shift_end"] : FIELDS;
+  return Object.fromEntries(fields.map((f) => [f, null]));
 }
 
 export function nextStep(job) {
-  return STEPS.find((s) => job[s.field] == null) || null;
+  return stepsFor(job).find((s) => job[s.field] == null) || null;
 }
+
+// Вопросы, на которые отвечают только кнопками
+const BUTTON_FIELDS = ["city", "shift_date", "need"];
 
 function rows(buttons, perRow) {
   const out = [];
@@ -46,7 +54,8 @@ function rows(buttons, perRow) {
 const CANCEL = { text: "Отменить", callback_data: "jobcancel" };
 
 // Экран вопроса анкеты
-export function askScreen(step) {
+export function askScreen(step, now = new Date()) {
+  if (step.field === "shift_date" || step.field === "need") return { text: step.ask, keyboard: [...shiftButtons(step.field, now), [CANCEL]] };
   if (step.field === "city") {
     const cities = options.cities.map(([slug, title]) => ({ text: title, callback_data: `jobcity:${slug}` }));
     return { text: step.ask, keyboard: [...rows(cities, 3), [CANCEL]] };
@@ -57,25 +66,33 @@ export function askScreen(step) {
 
 // Ответ текстом на текущий вопрос → обновлённая вакансия или ошибка
 export function answer(job, field, text) {
-  const step = STEPS.find((s) => s.field === field);
-  if (!step || field === "city") return { error: "Выберите город кнопкой." };
+  const step = stepsFor(job).find((s) => s.field === field);
+  if (!step || BUTTON_FIELDS.includes(field)) return { error: field === "city" || !step ? "Выберите город кнопкой." : "Выберите кнопкой." };
   const value = String(text ?? "").trim().replace(/\s+\n/g, "\n");
   if (!value) return { error: "Напишите ответ текстом." };
   if (value.length > step.max) return { error: `Слишком длинно: ${value.length} символов. Сократите до ${step.max}, пожалуйста.` };
+  if (field === "shift_start") {
+    const t = parseTime(value);
+    if (!t) return { error: "Не понял время. Напишите начало и конец, например «10:00–22:00» или «с 9 до 18»." };
+    return { job: { ...job, shift_start: t.start, shift_end: t.end } };
+  }
   return { job: { ...job, [field]: value } };
 }
 
 // Нажатие кнопки анкеты → обновлённая вакансия, или null, если кнопка из старого сообщения
-export function pressed(job, data) {
+export function pressed(job, data, now = new Date()) {
   const [action, value] = data.split(":");
-  if (action === "jobredo") return { ...job, ...newJob() };
+  if (action === "jobredo") return { ...job, ...newJob(job.kind) };
   if (action === "jobcity") return job.step === "city" && CITY[value] ? { ...job, city: value } : null;
-  const step = STEPS.find((s) => s.field === value);
+  if (action === "jobdate") return job.step === "shift_date" && validDate(value, now) ? { ...job, shift_date: value } : null;
+  if (action === "jobneed") return job.step === "need" && NEED.includes(Number(value)) ? { ...job, need: Number(value) } : null;
+  const step = stepsFor(job).find((s) => s.field === value);
   if (action === "skip" && step?.optional && job.step === value) return { ...job, [value]: "" };
   return null;
 }
 
 export function card(job) {
+  if (job.kind === "shift") return shiftCard(job);
   const place = [CITY[job.city] || "Казахстан", job.address].filter(Boolean).join(", ");
   const lines = [`<b>${esc(job.title)}</b>`, `🏢 ${esc(job.company)}`, `📍 ${esc(place)}`, `💰 <b>${esc(job.salary)}</b>`];
   if (job.schedule) lines.push(`🕒 ${esc(job.schedule)}`);
@@ -85,7 +102,9 @@ export function card(job) {
 
 export function previewScreen(job) {
   return {
-    text: `Проверьте вакансию:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку. После проверки вакансия появится на vacante.kz и в подборках подписчикам бота.`,
+    text: job.kind === "shift"
+      ? `Проверьте смену:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку, это до часа. Потом смена появится на vacante.kz в разделе «Подработка и смены» и в подборках.`
+      : `Проверьте вакансию:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку. После проверки вакансия появится на vacante.kz и в подборках подписчикам бота.`,
     keyboard: [
       [{ text: "✅ Отправить на проверку", callback_data: "jobsend" }],
       [{ text: "Заполнить заново", callback_data: "jobredo" }, CANCEL],
@@ -115,8 +134,13 @@ export function moderationScreen(job) {
 }
 
 // boost: если включена услуга «Срочно», под сообщением кнопка поднять вакансию
-export function approvedScreen(job, boost = null) {
+export function approvedScreen(job, boost = null, now = new Date()) {
+  boost = offerFor(boost, job, now);
   if (!boost) return { text: approvedText(job), keyboard: [] };
+  if (boost.shift) {
+    const more = `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: смена первой в разделе «Подработка и смены» города до её начала и закреплённый пост в канале.`;
+    return { text: approvedText(job) + more, keyboard: [[boostButton(job, boost)]] };
+  }
   const more =
     `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: ${boost.days} дней первой в списке города на сайте ` +
     "с яркой пометкой и закреплённый пост в канале.";
@@ -124,6 +148,14 @@ export function approvedScreen(job, boost = null) {
 }
 
 export function approvedText(job) {
+  if (job.kind === "shift") {
+    return (
+      `✅ Смена прошла проверку и публикуется:\n\n${card(job)}\n\n` +
+      "Через несколько минут она будет на vacante.kz в разделе «Подработка и смены», в приложении и в подборках тем, " +
+      "кто ищет подработку. Кто захочет выйти, нажмёт «Беру смену»: просьба придёт сюда, вы подтвердите одной кнопкой. " +
+      "Когда наберёте всех, смена сама уйдёт с сайта.\n\nВаши смены: /myjobs"
+    );
+  }
   return (
     `✅ Вакансия прошла проверку и публикуется:\n\n${card(job)}\n\n` +
     "Через несколько минут она будет на vacante.kz и в подборках подписчикам бота, а вакансии Астаны и Алматы " +
@@ -154,6 +186,7 @@ export function reviewFields(job, fields = {}) {
   const next = { ...job };
   for (const step of STEPS.filter((s) => s.field !== "city")) {
     if (fields[step.field] === undefined) continue;
+    if (job.kind === "shift" && step.field === "schedule") continue; // день и время смены задаёт сам работодатель кнопками
     const value = String(fields[step.field] ?? "").trim();
     if (!value && !step.optional) return { error: `${step.field}: пусто` };
     if (value.length > step.max) return { error: `${step.field}: длиннее ${step.max}` };
@@ -211,12 +244,14 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
   if (!jobs.length) {
     return { text: "У вас пока нет вакансий. Разместить: /vacancy", keyboard: [] };
   }
-  const lines = jobs.map((j) => `№${j.id} <b>${esc(j.title)}</b>, ${esc(CITY[j.city] || "")}: ${STATUS[j.status]}` +
-    (j.status === "approved" ? `, откликов: ${j.applications}` : "") +
+  const lines = jobs.map((j) => `№${j.id} ${j.kind === "shift" ? "⚡ " : ""}<b>${esc(j.title)}</b>, ${esc(CITY[j.city] || "")}` +
+    (j.kind === "shift" && j.shift_date ? ` ${j.shift_date.slice(8, 10)}.${j.shift_date.slice(5, 7)}` : "") + `: ${STATUS[j.status]}` +
+    (j.kind === "shift" && j.status !== "draft" ? `, взяли ${j.confirmed ?? 0} из ${j.need ?? "?"}, просились: ${j.applications}`
+      : j.status === "approved" ? `, откликов: ${j.applications}` : "") +
     (j.status === "approved" && isBoosted(j, now) ? `, 🔥 срочно до ${localDate(j.boost_until)}` : ""));
   const keyboard = [];
   for (const j of jobs.filter((j) => j.status === "approved" || j.status === "pending")) {
-    if (boost && j.status === "approved") keyboard.push([boostButton(j, boost, now)]);
+    if (boost && j.status === "approved") keyboard.push([boostButton(j, offerFor(boost, j, now), now)]);
     keyboard.push([{ text: `Закрыть №${j.id} ${j.title}`.slice(0, 60), callback_data: `close:${j.id}` }]);
   }
   return { text: `Ваши вакансии:\n\n${lines.join("\n")}\n\nНовая вакансия: /vacancy`, keyboard };
@@ -228,7 +263,15 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
 export function boostOffer(env) {
   const kaspi = String(env.KASPI_DETAILS || "").trim();
   if (!kaspi) return null;
-  return { price: Number(env.BOOST_PRICE) || 3000, days: Number(env.BOOST_DAYS) || 7, kaspi };
+  return { price: Number(env.BOOST_PRICE) || 3000, days: Number(env.BOOST_DAYS) || 7, kaspi,
+    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 1000 };
+}
+
+// «Срочно» для смены дешевле и действует до дня смены включительно (не меньше суток)
+export function offerFor(boost, j, now = new Date()) {
+  if (!boost || j.kind !== "shift" || !j.shift_date) return boost;
+  const days = Math.max(1, Math.ceil((Date.parse(`${j.shift_date}T19:00:00Z`) - now.getTime()) / 86400e3));
+  return { ...boost, price: boost.shiftPrice, days, shift: true };
 }
 
 const money = (n) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₸`;
@@ -249,11 +292,13 @@ export function boostButton(j, boost, now = new Date()) {
   return { text: `${what} №${j.id}: ${money(boost.price)}`, callback_data: `boost:${j.id}` };
 }
 
-export function boostScreen(j, boost) {
+export function boostScreen(j, boost, now = new Date()) {
+  boost = offerFor(boost, j, now);
   const channel = ["astana", "almaty"].includes(j.city) ? `\n2. Пост в нашем канале ${CITY[j.city]} с той же пометкой, закреплённый наверху канала на все ${boost.days} дней.` : "";
   return {
     text:
-      `🔥 <b>«Срочно» на ${boost.days} дней за ${money(boost.price)}</b>\n\n${card(j)}\n\n` +
+      (boost.shift ? `🔥 <b>«Срочно» до начала смены за ${money(boost.price)}</b>\n\n${card(j)}\n\n`
+        : `🔥 <b>«Срочно» на ${boost.days} дней за ${money(boost.price)}</b>\n\n${card(j)}\n\n`) +
       `1. Вакансия первой в списке города на vacante.kz с пометкой «🔥 Срочно».${channel}\n\n` +
       `Как оплатить: переведите <b>${money(boost.price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
       `В комментарии к переводу напишите «№${j.id}». Потом нажмите кнопку ниже: мы сверим перевод и поднимем вакансию.`,

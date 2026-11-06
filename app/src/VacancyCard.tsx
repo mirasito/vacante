@@ -71,7 +71,7 @@ export function VacancyCard(props: Props & { reason?: string | null; onOpen(): v
       {v.top || v.shift || perks.length ? (
         <View style={styles.badges}>
           {v.top ? <Badge c={c} tone="warn" label={i18n.t(lang, 'urgent')} /> : null}
-          {v.shift ? <Badge c={c} tone="ok" label={shiftLabel(v.shift, lang)} /> : null}
+          {v.shift ? <Badge c={c} tone="ok" label={shiftLabel(v.shift, lang, v)} /> : null}
           {perks.slice(0, 4).map((p) => (
             <Badge key={p} c={c} label={p} />
           ))}
@@ -80,7 +80,12 @@ export function VacancyCard(props: Props & { reason?: string | null; onOpen(): v
       {props.reason ? <Text style={[styles.sub, styles.why, { color: c.quiet }]}>{props.reason}</Text> : null}
       <View style={styles.foot}>
         <Text style={[styles.sub, { color: c.quiet }]}>{i18n.age(v.posted_at, lang)}</Text>
-        <Button c={c} small label={i18n.t(lang, 'apply')} onPress={props.onApply} />
+        <Button
+          c={c}
+          small
+          label={v.shift === 'slot' ? (lang === 'kk' ? 'Ауысымды аламын' : 'Беру смену') : i18n.t(lang, 'apply')}
+          onPress={props.onApply}
+        />
       </View>
     </Pressable>
   );

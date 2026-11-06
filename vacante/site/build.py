@@ -20,7 +20,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from vacante import channels, shifts
 from vacante import venues as venue_store
-from vacante.direct import POST_URL
+from vacante.direct import BOT_USERNAME, POST_URL
 from vacante.geo import MAP_WORTHY
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
@@ -69,6 +69,8 @@ def money(value: int) -> str:
 
 def _range(lo: int | None, hi: int | None, unit: str, lang: str) -> str:
     """«от 200 000 ₸/мес» по-русски, «200 000 ₸/ай бастап» по-казахски."""
+    if lo is not None and lo == hi:
+        return f"{money(lo)} {unit}"  # hh пишет «19 000 – 19 000»
     if lo is not None and hi is not None:
         return f"{money(lo)} – {money(hi)} {unit}"
     if lang == "kk":
@@ -176,7 +178,8 @@ def _env(lang: str = "ru") -> Environment:
                        salary_label=lambda v: salary_label(v, lang), twogis_url=twogis_url,
                        monthly_pay=monthly_pay, monthly_label=lambda v: monthly_label(v, lang),
                        search_text=lambda v: search_text(v, lang), money=money, perks_of=shifts.perks,
-                       SHIFTS=shifts.SLUG,
+                       shift_day=lambda v: shifts.day_label(v.shift_date, lang),
+                       SHIFTS=shifts.SLUG, shift_post_url=f"https://t.me/{BOT_USERNAME}?start=smena",
                        FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url,
                        site_name=site_name, more_links=more_links, initial=initial, lang=lang, LANGS=i18n.LANGS,
                        LANG_NAME=i18n.LANG_NAME, t=lambda text, **kw: i18n.t(lang, text, **kw),
@@ -310,13 +313,13 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                   vacancies=cat_items, total=len(cat_items), city=slug, category=cat, city_counts=city_counts,
                   category_counts=_category_counts(items), channels=tg_channels)
         # «Подработка и смены в Алматы»: оплата за смену или час, ежедневная оплата, подработка (vacante.shifts)
-        shift_items = [v for v in items if shifts.is_shift(v)]
+        shift_items = shifts.ordered([v for v in items if shifts.is_shift(v)])
         if shift_items:
             write(f"{slug}/{shifts.SLUG}", "list.html", heading=lambda lang: shifts_heading(slug, lang),
                   vacancies=shift_items, total=len(shift_items), city=slug, category=None, shifts_page=True,
                   city_counts=city_counts, category_counts=_category_counts(shift_items), channels=tg_channels)
 
-    all_shifts = [v for v in vacancies if shifts.is_shift(v)]
+    all_shifts = shifts.ordered([v for v in vacancies if shifts.is_shift(v)])
     write(shifts.SLUG, "list.html", heading=lambda lang: shifts_heading(None, lang), vacancies=all_shifts,
           total=len(all_shifts), city=None, category=None, shifts_page=True, city_counts=city_counts,
           category_counts=_category_counts(all_shifts), channels=tg_channels)

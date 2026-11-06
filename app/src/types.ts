@@ -38,9 +38,15 @@ export interface Vacancy {
   contact?: ContactKind[];
   /** Смена или подработка: part — подработка, day — оплата за смену, hour — почасовая, daily — платят каждый день. */
   shift?: ShiftKind;
+  /** Смена на день от работодателя (shift = slot): «сб, 07.11», «10:00–22:00», сколько человек нужно. */
+  shift_day?: string;
+  shift_day_kk?: string;
+  shift_time?: string;
+  need?: number;
 }
 
-export type ShiftKind = 'part' | 'day' | 'hour' | 'daily';
+/** slot — смена на конкретный день от работодателя, «Беру смену» в боте. */
+export type ShiftKind = 'slot' | 'part' | 'day' | 'hour' | 'daily';
 
 export interface City {
   slug: string;

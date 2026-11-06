@@ -29,6 +29,8 @@ LOCAL = timezone(timedelta(hours=5))
 SEND_HOURS = range(8, 22)  # с 8:00 до 21:59 по времени Казахстана
 MAX_ITEMS = 10  # вакансий в одном сообщении, остальные на сайте
 SALARY = "salary"  # условие «С зарплатой» в подписке
+# Утренняя подборка смен тем, кто подписан на «Смены и подработка»: раз в день в этот час
+MORNING_HOUR = 8
 
 Sender = Callable[[int, str, list], None]
 
@@ -68,6 +70,22 @@ def format_digest(hits: list[Vacancy], base_url: str) -> str:
     return "\n\n".join(parts)
 
 
+def format_morning(hits: list[Vacancy], base_url: str, city: str | None) -> str:
+    head = f"☀️ Доброе утро! Смены и подработка на сегодня: {len(hits)}"
+    parts = [head] + [bot_item(v, base_url) + (f"\n📅 Смена: {shifts.day_label(v.shift_date)}, {v.shift_time}"
+                                              if v.shift_date else "") for v in hits[:MAX_ITEMS]]
+    where = f"{base_url}/{city}/{shifts.SLUG}/" if city else f"{base_url}/{shifts.SLUG}/"
+    parts.append(f"Все смены: {where}")
+    return "\n\n".join(parts)
+
+
+def morning(sub: Subscription, vacancies: list[Vacancy], now: datetime) -> list[Vacancy]:
+    """Смены для утренней подборки подписчика: сегодня и завтра от работодателей, свежие за сутки."""
+    if shifts.SHIFT not in sub.perks:
+        return []
+    return [v for v in shifts.upcoming(vacancies, now, hours=24, days=1) if matches(sub, v)]
+
+
 def buttons(sub: Subscription, base_url: str) -> list:
     site = f"{base_url}/{sub.city}/" if sub.city else f"{base_url}/"
     rows = [[{"text": "Все вакансии на сайте", "url": site}, {"text": "⚙️ Настроить", "callback_data": "settings"}]]
@@ -85,10 +103,15 @@ def run(data_dir: Path, base_url: str, subscriptions: Callable[[], list[Subscrip
     vacancies = load_vacancies(data_dir)
     state_path = data_dir / "digest.json"
     stats = {"new": 0, "sent": 0, "failed": 0, "blocked": []}
-    if state_path.exists():
+    state = json.loads(state_path.read_text("utf-8")) if state_path.exists() else {}
+    if state:
         if now.astimezone(LOCAL).hour not in SEND_HOURS:
             return stats
-        seen = set(json.loads(state_path.read_text("utf-8"))["seen"])
+        seen = set(state["seen"])
+        today = now.astimezone(LOCAL).date().isoformat()
+        if now.astimezone(LOCAL).hour >= MORNING_HOUR and state.get("morning") != today:
+            state["morning"] = today
+            _morning(vacancies, subscriptions(), base_url, send, now, stats)
         new = sorted((v for v in vacancies if v.id not in seen), key=lambda v: v.posted_at, reverse=True)
         stats["new"] = len(new)
         for sub in subscriptions() if new else []:  # без новых вакансий базу не трогаем
@@ -105,8 +128,26 @@ def run(data_dir: Path, base_url: str, subscriptions: Callable[[], list[Subscrip
             else:
                 stats["sent"] += 1
     # При первом запуске просто запоминаем, что уже есть: старые вакансии не рассылаем
-    state_path.write_text(json.dumps({"seen": sorted(v.id for v in vacancies)}) + "\n", "utf-8")
+    state["seen"] = sorted(v.id for v in vacancies)
+    state_path.write_text(json.dumps(state) + "\n", "utf-8")
     return stats
+
+
+def _morning(vacancies: list[Vacancy], subs: list[Subscription], base_url: str, send: Sender, now: datetime,
+             stats: dict) -> None:
+    for sub in subs:
+        hits = morning(sub, vacancies, now)
+        if not hits:
+            continue
+        try:
+            send(sub.chat_id, format_morning(hits, base_url, sub.city), buttons(sub, base_url))
+        except Blocked:
+            stats["blocked"].append(sub.chat_id)
+        except (httpx.HTTPError, RuntimeError) as exc:
+            log.warning("утренние смены %s: %s", sub.chat_id, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+            stats["failed"] += 1
+        else:
+            stats["morning"] = stats.get("morning", 0) + 1
 
 
 class D1:
@@ -146,8 +187,8 @@ class D1:
 
     def approved_jobs(self) -> list[dict]:
         """Вакансии от работодателей, одобренные модератором и не закрытые (vacante.direct)."""
-        return self.query("SELECT id, city, title, company, salary, schedule, address, details, approved_at, "
-                          "salary_min, salary_max, salary_period, boost_until FROM jobs WHERE status = 'approved'")
+        # SELECT *: новые поля (смены, миграция 0006) появляются без правки запроса
+        return self.query("SELECT * FROM jobs WHERE status = 'approved'")
 
     def review_queue(self) -> list[dict]:
         """Что ждёт агента-модератора: вакансии на проверке и опубликованные модератором без оформления."""

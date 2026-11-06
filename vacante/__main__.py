@@ -103,7 +103,8 @@ def main() -> None:
         with httpx.Client(timeout=30) as client:
             live = channels.refresh(args.data_dir, channels.telegram_checker(client, token), datetime.now(timezone.utc))
             stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token),
-                                 pin=autopost.telegram_pinner(client, token), live=live)
+                                 pin=autopost.telegram_pinner(client, token), live=live,
+                                 send_text=autopost.telegram_text_sender(client, token))
         logging.info("автопостинг: %s", stats)
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
@@ -219,7 +220,10 @@ def direct_vacancies(data_dir: Path) -> list | None:
                      "jobs": [direct.queue_item(job) for job in d1.review_queue()]}
             data_dir.mkdir(parents=True, exist_ok=True)
             (data_dir / "moderation.json").write_text(json.dumps(queue, ensure_ascii=False, indent=1) + "\n", "utf-8")
-            return [direct.to_vacancy(job) for job in d1.approved_jobs()]
+            today = datetime.now(direct.LOCAL).date().isoformat()
+            # Прошедшие смены бот закрывает сам, но до его будильника они не должны висеть на сайте
+            return [direct.to_vacancy(job) for job in d1.approved_jobs()
+                    if not (direct.is_shift(job) and job["shift_date"] < today)]
     except (httpx.HTTPError, RuntimeError) as exc:
         logging.warning("вакансии от работодателей: %s", exc if isinstance(exc, RuntimeError) else type(exc).__name__)
         return None

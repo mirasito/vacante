@@ -18,9 +18,9 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, channels, direct, review, venues
+from vacante import card, channels, direct, review, shifts, venues
 from vacante.models import Vacancy
-from vacante.site.build import instagram_url, twogis_url
+from vacante.site.build import city_heading, instagram_url, salary_label, twogis_url
 from vacante.store import load_vacancies
 
 log = logging.getLogger(__name__)
@@ -60,6 +60,12 @@ class Post:
 
 
 Sender = Callable[[str, Post], "int | None"]  # возвращает message_id поста, если Telegram его сообщил
+TextSender = Callable[[str, str], None]  # (канал, текст в HTML-разметке)
+
+# Вечерняя подборка «⚡ Подработка и смены на завтра» в каждый канал, раз в день в этот час по Казахстану
+SHIFTS_HOUR = 19
+SHIFTS_MAX = 10
+SHIFTS_MIN = 3  # меньше трёх смен: подборку в этот день не публикуем
 Pinner = Callable[[str, int, bool], None]  # (канал, message_id, закрепить или открепить)
 
 
@@ -293,8 +299,39 @@ def write_review_queue(data_dir: Path, now: datetime | None = None) -> int:
     return len(items)
 
 
+def shifts_digest(vacancies: list[Vacancy], city: str, base_url: str, now: datetime,
+                  allowed: Callable[[Vacancy], bool]) -> str | None:
+    """Текст вечерней подборки смен города или None, если смен мало. allowed: что можно показывать в канале
+    (из бота, с hh или проверенное агентом)."""
+    e = html.escape
+    items = [v for v in shifts.upcoming([v for v in vacancies if v.city == city], now, hours=36, days=1) if allowed(v)]
+    if len(items) < SHIFTS_MIN:
+        return None
+    where = city_heading(city, "ru").removeprefix("Работа ")
+    lines = [f"⚡ <b>Подработка и смены {e(where)}: на завтра</b>", ""]
+    for v in items[:SHIFTS_MAX]:
+        facts = [e(v.employer)] if v.employer else []
+        if pay := salary_label(v):
+            facts.append(e(pay))
+        line = f'• <a href="{base_url}/v/{v.id}/">{e(v.title)}</a>' + (f" · {' · '.join(facts)}" if facts else "")
+        if v.shift_date:
+            line += f"\n   📅 {shifts.day_label(v.shift_date)}, {e(v.shift_time or '')}"
+        lines.append(line)
+    lines += ["", f'Все смены и подработка: <a href="{base_url}/{city}/{shifts.SLUG}/">vacante.kz/{city}/{shifts.SLUG}</a>',
+              f'Нужны люди на смену? <a href="https://t.me/{direct.BOT_USERNAME}?start=smena">Разместите бесплатно за минуту</a>',
+              "Перешлите другу, который ищет подработку 🙌", "", "#подработка #смены"]
+    return "\n".join(lines)
+
+
+def telegram_text_sender(client: httpx.Client, token: str) -> TextSender:
+    def send(chat: str, text: str) -> None:
+        _check(client.post(f"https://api.telegram.org/bot{token}/sendMessage",
+                           json={"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True}))
+    return send
+
+
 def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None, pin: Pinner | None = None,
-        live: dict[str, str] | None = None) -> dict:
+        live: dict[str, str] | None = None, send_text: TextSender | None = None) -> dict:
     """live: работающие каналы, город → @username; по умолчанию из channels.json."""
     now = now or datetime.now(timezone.utc)
     live = channels.live(data_dir) if live is None else live
@@ -328,6 +365,17 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
                     state["tops"] = (state.get("tops", []) + [top_key(v)])[-KEEP:]
                     if pin and message_id:
                         _pin(chat, v, message_id, state, pin, stats)
+        today = now.astimezone(LOCAL).date().isoformat()
+        if send_text and now.astimezone(LOCAL).hour == SHIFTS_HOUR and state.get("shifts_on") != today:
+            state["shifts_on"] = today  # и если смен мало: второй раз за вечер не пробуем
+            text = shifts_digest(list(original.values()), city, base_url, now,
+                                 lambda v: v.source in (direct.SOURCE, "hh") or v.id in approved_at)
+            if text:
+                try:
+                    send_text(chat, text)
+                    stats["shifts"] = stats.get("shifts", 0) + 1
+                except (httpx.HTTPError, RuntimeError) as exc:
+                    log.warning("смены в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
         if not is_due(state["last_at"], now):
             continue
         v = pick(vacancies, city, state, now, known, keys_of, approved_at)

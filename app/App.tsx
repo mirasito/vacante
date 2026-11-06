@@ -555,7 +555,9 @@ function Main() {
     setLiked((list) => list.filter((x) => x.id !== a.vacancy.id));
   };
 
-  const startApply = (v: Vacancy) => city && setApplying({ copy: copyOf(v, city), full: v });
+  // Смена на день: «Беру смену» сразу в боте, там номер, подтверждение работодателя и напоминание
+  const startApply = (v: Vacancy) =>
+    v.shift === 'slot' && v.source_url ? openUrl(v.source_url) : city && setApplying({ copy: copyOf(v, city), full: v });
 
   /** Готовый текст работодателю из напоминания или «Написать ещё раз» в отклике. */
   const presetFor = (kind: Write, title: string, interviewAt?: string | null): Preset => {

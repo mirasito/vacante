@@ -100,8 +100,10 @@ jobs:
           jq -n '{commands: [
               {command: "start", description: "Подписаться на новые вакансии"},
               {command: "settings", description: "Изменить город, сферу и условия"},
+              {command: "smeny", description: "Присылать смены и подработку"},
               {command: "stop", description: "Остановить рассылку"},
               {command: "vacancy", description: "Работодателям: разместить вакансию"},
+              {command: "smena", description: "Работодателям: найти людей на смену"},
               {command: "myjobs", description: "Работодателям: мои вакансии и отклики"}]}' \
             | curl -fsS "$tg/setMyCommands" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
           # Кнопка слева от поля ввода открывает приложение со свайпами (app/, выложено на сайте в /app/)

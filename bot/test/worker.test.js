@@ -548,3 +548,93 @@ test("жалоба из приложения: только с ключом се�
   assert.match(msg.body.text, /просят предоплату/);
   assert.match(msg.body.text, /Бариста &lt;b&gt;/);
 });
+
+test("смена: /smena, «Беру смену», подтверждение, набор, отмена, напоминание и «кто пришёл»", async () => {
+  const { shiftCron } = await import("../src/index.js");
+  const shift = await import("../src/shift.js");
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(100, "Дана", "dana_cafe");
+  const admin = user(900, "Мирас");
+  const seeker = user(300, "Ерлан");
+  const other = user(301, "Асель");
+  await say(env, admin, "/admin");
+  await say(env, boss, "/smena");
+  assert.match(sentTo(calls, 100).at(-1).body.text, /людей на смену/);
+  await press(env, boss, "jobcity:almaty");
+  await say(env, boss, "Официант");
+  await say(env, boss, "Кафе «Зерно»");
+  const tomorrow = shift.localDay(new Date(), 1);
+  const dates = sentTo(calls, 100).at(-1).body.reply_markup.inline_keyboard.flat().map((b) => b.callback_data);
+  assert.ok(dates.includes(`jobdate:${tomorrow}`));
+  await press(env, boss, "jobdate:2020-01-01"); // не из списка: ничего не меняет
+  await press(env, boss, `jobdate:${tomorrow}`);
+  await say(env, boss, "когда удобно");
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Не понял время/);
+  await say(env, boss, "с 10 до 22");
+  await say(env, boss, "12 000 ₸ за смену");
+  await press(env, boss, "jobneed:1");
+  await say(env, boss, "Абая, 10");
+  await press(env, boss, "skip:details");
+  const preview = calls.filter((c) => c.method === "editMessageText").at(-1).body.text;
+  assert.match(preview, /Проверьте смену/);
+  assert.match(preview, /⚡ <b>Смена: Официант<\/b>/);
+  assert.match(preview, /10:00–22:00/);
+  assert.match(preview, /👥 Нужно: 1 человек/);
+  await press(env, boss, "jobsend");
+  const saved = env.DB.get("SELECT * FROM jobs");
+  assert.equal(saved.kind, "shift");
+  assert.equal(saved.schedule, `Смена ${tomorrow.slice(8, 10)}.${tomorrow.slice(5, 7)}, 10:00–22:00`);
+  assert.deepEqual([saved.shift_date, saved.shift_start, saved.shift_end, saved.need], [tomorrow, "10:00", "22:00", 1]);
+  await press(env, admin, `mod:ok:${saved.id}`);
+
+  // Кандидат берёт смену: номер кнопкой, работодатель видит надёжность и подтверждает
+  await say(env, seeker, `/start take_${saved.id}`);
+  assert.equal(sentTo(calls, 300).at(-1).body.reply_markup.keyboard[0][0].request_contact, true);
+  await post(env, { message: { chat: { id: 300, type: "private" }, from: seeker, contact: { phone_number: "+77010000000" } } });
+  const ask = sentTo(calls, 100).at(-1).body;
+  assert.match(ask.text, /Хочет выйти на смену «Официант»/);
+  assert.match(ask.text, /Ерлан, 📱 \+77010000000/);
+  assert.match(ask.text, /новичок на vacante/);
+  const appId = env.DB.get("SELECT id FROM applications").id;
+  assert.equal(env.DB.get("SELECT name FROM pragma_table_info('applications') WHERE name = 'phone'"), null); // номер не храним
+  await say(env, other, `/start take_${saved.id}`);
+  await say(env, other, "Асель, 20 лет, +77020000000");
+  const otherId = env.DB.get("SELECT id FROM applications WHERE chat_id = 301").id;
+
+  await press(env, seeker, `sh:ok:${appId}`); // кандидат не может подтвердить сам себя
+  assert.equal(env.DB.get("SELECT status FROM applications WHERE id = ?", appId).status, "asked");
+  await press(env, boss, `sh:ok:${appId}`);
+  assert.match(sentTo(calls, 300).at(-1).body.text, /Вас ждут на смене/);
+  assert.match(sentTo(calls, 300).at(-1).body.text, /start=take_/);
+  assert.equal(env.DB.get("SELECT status, closed_full FROM jobs").status, "closed"); // набрали 1 из 1
+  assert.match(sentTo(calls, 100).at(-1).body.text, /набрали всех/);
+  await press(env, boss, `sh:ok:${otherId}`);
+  assert.equal(env.DB.get("SELECT status FROM applications WHERE id = ?", otherId).status, "asked");
+  await say(env, user(302, "Нурлан"), `/start take_${saved.id}`);
+  assert.match(sentTo(calls, 302).at(-1).body.text, /закрыта или набрана/);
+
+  // Кандидат отменяет: смена снова открыта, работодатель предупреждён; второй подтверждён
+  await press(env, seeker, `sh:cancel:${appId}`);
+  assert.equal(env.DB.get("SELECT status FROM jobs").status, "approved");
+  assert.match(sentTo(calls, 100).at(-1).body.text, /не сможет прийти/);
+  await press(env, boss, `sh:ok:${otherId}`);
+  assert.equal(env.DB.get("SELECT status FROM jobs").status, "closed");
+
+  // Будильник: напоминание за 3 часа, после смены вопрос «кто пришёл»
+  const { start, end } = shift.shiftTimes(saved);
+  await shiftCron(env, new Date(start.getTime() - 2 * 3600e3));
+  assert.match(sentTo(calls, 301).at(-1).body.text, /скоро смена/);
+  const reminders = sentTo(calls, 301).length;
+  await shiftCron(env, new Date(start.getTime() - 1 * 3600e3));
+  assert.equal(sentTo(calls, 301).length, reminders); // второй раз не напоминаем
+  await shiftCron(env, new Date(end.getTime() + 60e3));
+  const att = sentTo(calls, 100).at(-1).body;
+  assert.match(att.text, /Отметьте, кто пришёл/);
+  assert.deepEqual(att.reply_markup.inline_keyboard[0].map((b) => b.callback_data), [`att:1:${otherId}`, `att:0:${otherId}`]);
+  await press(env, boss, `att:1:${otherId}`);
+  assert.match(sentTo(calls, 301).at(-1).body.text, /засчитана! Ваша надёжность: вышел на 1 из 1 смены/);
+  await shiftCron(env, new Date(end.getTime() + 2 * 3600e3));
+  assert.equal(sentTo(calls, 100).filter((c) => /Отметьте, кто пришёл/.test(c.body.text)).length, 1);
+});

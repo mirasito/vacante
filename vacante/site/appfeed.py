@@ -72,6 +72,11 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
         "contact": v.contact,
         # Смена или подработка (vacante.shifts.kind): кнопка «Смены» в ленте и значок на карточке
         "shift": shifts.kind(v),
+        # Смена на день от работодателя: «сб, 07.11», «10:00–22:00», сколько человек нужно
+        "shift_day": shifts.day_label(v.shift_date) if v.shift_date else None,
+        "shift_day_kk": shifts.day_label(v.shift_date, "kk") if v.shift_date else None,
+        "shift_time": v.shift_time,
+        "need": v.need,
     }
     if venue and venue.get("avatar"):
         data["avatar"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"

@@ -1305,6 +1305,13 @@
    "website"
   ]
  },
+ "aktobe:altyn bala kz": {
+  "name": "Altyn-bala.kz",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "aktobe:ansar": {
   "name": "ANSAR",
   "city": "aktobe",
@@ -1862,6 +1869,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "aktobe:байтурин а ж": {
+  "name": "Байтурин А.Ж.",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "aktobe:балкан курылыс": {
   "name": "Балкан Курылыс",
   "city": "aktobe",
@@ -2171,6 +2185,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
+ },
+ "aktobe:первый пивзавод": {
+  "name": "ПЕРВЫЙ ПИВЗАВОД",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
  },
  "aktobe:планета инструментов актобе": {
   "name": "ПЛАНЕТА ИНСТРУМЕНТОВ-АКТОБЕ",
@@ -11183,7 +11204,7 @@
   "checked_at": "2026-10-30T03:43:38+00:00",
   "website": "https://a-product.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792248",
-  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11249,6 +11270,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "almaty:алтынбекова": {
+  "name": "АЛТЫНБЕКОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
  },
  "almaty:альфа кт": {
   "name": "Альфа-КТ",
@@ -12132,7 +12160,7 @@
   "instagram": "geokurs",
   "website": "https://geokurs.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000794395",
-  "avatar_checked_at": "2026-10-30T03:43:39+00:00",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13303,6 +13331,13 @@
   "avatar": "be2ef08ca35a5fc3.jpg",
   "avatar_source": "website"
  },
+ "almaty:касымбекова": {
+  "name": "Касымбекова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "almaty:касымова": {
   "name": "КАСЫМОВА",
   "city": "almaty",
@@ -14386,6 +14421,13 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:мырзакирова а м": {
+  "name": "МЫРЗАКИРОВА А.М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "almaty:мясная продукция": {
   "name": "Мясная продукция",
   "city": "almaty",
@@ -14723,6 +14765,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
+ },
+ "almaty:пак о т": {
+  "name": "Пак О.Т.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
  },
  "almaty:парасат": {
   "name": "Парасат",
@@ -16589,6 +16638,13 @@
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
  },
+ "almaty:чк freedom lifestyle ltd": {
+  "name": "ЧК FREEDOM LIFESTYLE LTD.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "almaty:чл": {
   "name": "ЧЛ",
   "city": "almaty",
@@ -16718,6 +16774,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:эйкос": {
+  "name": "ЭЙКОС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "instagram": "aikos.kz",
+  "website": "http://aikos.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001082757",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a81c7152264ebcc6.jpg",
+  "avatar_source": "website"
  },
  "almaty:эксперт ремонта": {
   "name": "Эксперт ремонта",
@@ -18936,6 +19008,15 @@
   ],
   "avatar": "43ce9d7a642cd248.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:iddi dm group": {
+  "name": "IDDI (DM GROUP)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "instagram": "iddi_kz",
+  "source": "https://2gis.kz/astana/firm/70000001104008397"
  },
  "astana:imperia dent": {
   "name": "IMPERIA DENT",
@@ -22073,6 +22154,20 @@
   "instagram": "perekrestok_astana",
   "source": "https://2gis.kz/astana/firm/70000001091768466"
  },
+ "astana:автотрейд": {
+  "name": "Автотрейд",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "instagram": "autotrade_kz",
+  "website": "http://autotrade.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001044705737",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:автошкола төре": {
   "name": "Автошкола ТӨРЕ",
   "city": "astana",
@@ -22745,6 +22840,21 @@
   "avatar": "e1b9377707bba64b.jpg",
   "avatar_source": "website"
  },
+ "astana:бьюти ретейлер золотое яблоко": {
+  "name": "Бьюти-ретейлер Золотое Яблоко",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "website": "https://goldapple.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001076226512",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5c6ae58fad3fdcc4.jpg",
+  "avatar_source": "website"
+ },
  "astana:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "astana",
@@ -23066,6 +23176,13 @@
   "checked_at": "2026-10-28T11:44:45+00:00",
   "instagram": "allur.kz",
   "source": "https://www.instagram.com/allur.kz/"
+ },
+ "astana:гурмэ академия": {
+  "name": "Гурмэ Академия",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
  },
  "astana:давлетов а х": {
   "name": "Давлетов А.Х.",
@@ -26768,6 +26885,13 @@
   "avatar": "f921cc6f6be703d7.jpg",
   "avatar_source": "website"
  },
+ "atyrau:altyn bala kz": {
+  "name": "Altyn-bala.kz",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "atyrau:apple city corps": {
   "name": "Apple City Corps",
   "city": "atyrau",
@@ -29605,6 +29729,20 @@
   "avatar": "6f80523a6fe53a42.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:kaz tech сельмаш": {
+  "name": "Kaz Tech СЕЛЬМАШ",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "instagram": "kaztech.selmash",
+  "website": "http://kaztechselmash.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001063756903",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:kazauto03": {
   "name": "KAZAUTO03",
   "city": "kokshetau",
@@ -29695,6 +29833,19 @@
   "website": "http://qazaqrepublic.com/",
   "source": "https://2gis.kz/astana/firm/70000001045454055",
   "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "kokshetau:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "website": "https://www.technodom.kz/",
+  "source": "https://cyclowiki.org/wiki/Technodom",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29845,6 +29996,13 @@
   ],
   "avatar": "567d0e9f878518ba.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:ергосаев о б": {
+  "name": "Ергосаев О.Б.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
  },
  "kokshetau:завод казагромаш": {
   "name": "ЗАВОД КАЗАГРОМАШ",
@@ -30168,6 +30326,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
+ },
+ "kostanay:coffee boom": {
+  "name": "Coffee Boom",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00",
+  "instagram": "coffeeboom.kostanay",
+  "website": "http://coffeeboom.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001111843345",
+  "avatar_checked_at": "2026-11-06T03:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dfd60fad6304ca26.jpg",
+  "avatar_source": "website"
  },
  "kostanay:dynamic group": {
   "name": "Dynamic Group",
@@ -35507,6 +35681,13 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "shymkent:торговый дом райян": {
+  "name": "Торговый дом Райян",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
+ },
  "shymkent:тымакбаева": {
   "name": "Тымакбаева",
   "city": "shymkent",
@@ -37276,6 +37457,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:geo kz": {
+  "name": "GEO.KZ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T03:43:44+00:00"
  },
  "ust-kamenogorsk:golden trade": {
   "name": "GOLDEN TRADE",

@@ -5,10 +5,12 @@
 // (window.__PRERENDERED_STATE__ или карточки списка), ничего у OLX не запрашивая, и передаёт их
 // на эту же страницу через postMessage. Страница шлёт их на POST /olx/import с ключом из пароля админки
 // (sha256("olx:" + ADMIN_PASSWORD), его считает выкладка в server.yml и кладёт в OLX_IMPORT_KEY).
-// Сервер хранит объявления 30 дней без имени автора и телефонов, а часовой сбор на GitHub забирает
+// Сервер хранит объявления 30 дней; телефон из описания хранится отдельно от очищенного текста, а часовой сбор на GitHub забирает
 // новые через GET /internal/olx/imports (vacante/sources/olx.py) и показывает на сайте со ссылкой на OLX.
 import { timingSafeEqual } from "node:crypto";
 
+import { normalizePhone } from "./profile.ts";
+import type { Db } from "./db.ts";
 import type { Ctx } from "./app.ts";
 import { html, raw } from "./html.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
@@ -19,7 +21,7 @@ const OLX_URL = "https://www.olx.kz/";
 const MAX_ITEMS = 300;
 const BODY_LIMIT = 4 * 1024 * 1024;
 const KEEP_DAYS = 30;
-const PHONE = /(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}/g;
+const PHONE = /(?<!\d)(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}(?!\d)/g;
 const EMAIL = /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
 
 export interface OlxSalary {
@@ -35,6 +37,7 @@ interface Row {
   url: string;
   title: string;
   description: string;
+  phone: string | null;
   salary: string | null;
   city: string | null;
   lat: number | null;
@@ -56,7 +59,7 @@ function when(v: unknown, now: number): string | null {
   return new Date(t).toISOString();
 }
 
-/** Чистит объявление из браузера: только нужные поля, без телефонов и почты. null — не объявление OLX. */
+/** Чистит объявление из браузера: телефон из текста отдельно, почту и имя автора не сохраняет. null — не объявление OLX. */
 export function cleanAd(input: unknown, now: number): Omit<Row, "imported_at"> | null {
   if (!input || typeof input !== "object") return null;
   const a = input as Record<string, unknown>;
@@ -66,9 +69,12 @@ export function cleanAd(input: unknown, now: number): Omit<Row, "imported_at"> |
   if (!Number.isInteger(id) || id <= 0 || id > Number.MAX_SAFE_INTEGER) return null;
   if (!url.startsWith(OLX_URL) || url.length > 300 || /\s/.test(url)) return null;
   if (!title || a.offer_type === "seek") return null;
-  const description = (typeof a.description === "string" ? a.description : "")
+  const body = (typeof a.description === "string" ? a.description : "")
     .replace(/<\s*(?:br|\/p|\/li|\/div)\s*\/?\s*>/gi, "\n")
     .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;|&#160;/gi, " ");
+  const phone = [...body.matchAll(PHONE)].map((m) => normalizePhone(m[0])).find(Boolean) ?? null;
+  const description = body
     .replace(PHONE, "")
     .replace(EMAIL, "")
     .replace(/[ \t]{2,}/g, " ")
@@ -102,6 +108,7 @@ export function cleanAd(input: unknown, now: number): Omit<Row, "imported_at"> |
     url,
     title,
     description,
+    phone,
     salary: salary ? JSON.stringify(salary) : null,
     city: str(a.city, 60) || null,
     lat,
@@ -120,6 +127,7 @@ function asOffer(r: Row) {
     url: r.url,
     title: r.title,
     description: r.description,
+    has_phone: Boolean(r.phone),
     created_time: r.created_time ?? r.imported_at,
     last_refresh_time: r.refreshed_time,
     offer_type: "offer",
@@ -128,6 +136,17 @@ function asOffer(r: Row) {
     map: r.lat !== null && r.lon !== null ? { lat: r.lat, lon: r.lon, show_detailed: r.detailed === 1 } : null,
     imported_at: r.imported_at,
   };
+}
+
+/** Only an imported ad with the matching URL and a fresh contact can disclose a number. */
+export const OLX_JOB_URL = /^https:\/\/www\.olx\.kz\/(?:d\/obyavlenie\/|obyavlenie\/rabota\/)[^?#\s]+\.html$/;
+
+export function importedPhone(db: Db, vacancyId: string, url: string, now: number): string | null {
+  const id = /^olx-(\d+)$/.exec(vacancyId)?.[1];
+  if (!id || !OLX_JOB_URL.test(url)) return null;
+  const row = db.prepare("SELECT phone FROM olx_ads WHERE id = ? AND url = ? AND imported_at >= ?")
+    .get(Number(id), url, new Date(now - 14 * 86_400_000).toISOString()) as { phone: string | null } | undefined;
+  return row?.phone ?? null;
 }
 
 export function olxImportRoutes(ctx: Ctx): Route[] {
@@ -160,12 +179,12 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
       const now = ctx.now();
       const at = new Date(now).toISOString();
       const upsert = ctx.db.prepare(
-        `INSERT INTO olx_ads (id, url, title, description, salary, city, lat, lon, detailed, created_time, refreshed_time, imported_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `INSERT INTO olx_ads (id, url, title, description, salary, city, lat, lon, detailed, created_time, refreshed_time, imported_at, phone)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
          ON CONFLICT (id) DO UPDATE SET url = excluded.url, title = excluded.title, description = excluded.description,
            salary = excluded.salary, city = excluded.city, lat = excluded.lat, lon = excluded.lon, detailed = excluded.detailed,
            created_time = COALESCE(olx_ads.created_time, excluded.created_time), refreshed_time = excluded.refreshed_time,
-           imported_at = excluded.imported_at`,
+           imported_at = excluded.imported_at, phone = excluded.phone`,
       );
       let stored = 0;
       const seen = new Set<number>();
@@ -173,7 +192,7 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
         const ad = cleanAd(item, now);
         if (!ad || seen.has(ad.id)) continue;
         seen.add(ad.id);
-        upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at);
+        upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at, ad.phone);
         stored++;
       }
       const old = new Date(now - KEEP_DAYS * 86_400_000).toISOString();
@@ -198,7 +217,7 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
 /**
  * Закладка. Работает на открытой странице OLX: читает объявления, которые страница уже загрузила
  * (сначала window.__PRERENDERED_STATE__, иначе карточки списка), никаких запросов к OLX не делает,
- * открывает страницу /olx/ и передаёт ей список через postMessage. Имя автора и контакты не берёт.
+ * открывает страницу /olx/ и передаёт ей список через postMessage. Телефон извлекает сервер из описания.
  */
 export function bookmarklet(page: string): string {
   const origin = new URL(page).origin;
@@ -236,8 +255,28 @@ export function bookmarklet(page: string): string {
           description: price ? "Зарплата: " + price.textContent.trim() : "", city: place.split(/[,\\-–]/)[0].trim() || null });
       }
     }
+    const currentUrl = location.href.split("?")[0].split("#")[0];
+    if (/\\/obyavlenie\\/rabota\\/[^/]+\\.html$/.test(currentUrl)) {
+      const title = document.querySelector("h1");
+      const heading = [...document.querySelectorAll("h2")].find((e) => /^описание$/i.test(e.textContent.trim()));
+      const body = heading && heading.nextElementSibling;
+      const idMatch = /\\bID:\\s*(\\d+)/.exec(document.body.innerText);
+      const id = idMatch ? Number(idMatch[1]) : 0;
+      const existing = seen.get(id);
+      seen.clear();
+      if (id && title && body) {
+        const field = (label) => {
+          const el = [...document.querySelectorAll("p")].find((e) => e.textContent.trim().toLowerCase() === label);
+          return el && el.nextElementSibling ? el.nextElementSibling.textContent.trim() : "";
+        };
+        const salary = field("зарплата (тг.)");
+        const city = field("местоположение").split(",")[0].trim();
+        seen.set(id, { ...existing, id, url: currentUrl, title: title.textContent.trim(),
+          description: body.innerText + (salary ? "\\nЗарплата: " + salary : ""), city: city || (existing && existing.city) || null });
+      }
+    }
     const items = [...seen.values()];
-    if (!items.length) { alert("vacante: на этой странице не нашёл объявлений OLX. Откройте рубрику «Работа» и дождитесь списка."); return; }
+    if (!items.length) { alert("vacante: на этой странице не нашёл объявлений OLX. Откройте рубрику «Работа» или отдельную вакансию и дождитесь загрузки."); return; }
     const w = window.open(PAGE, "vacante-olx");
     if (!w) { alert("vacante: браузер не дал открыть окно. Разрешите всплывающие окна для olx.kz."); return; }
     const payload = { v: 1, page: location.href, items };
@@ -369,7 +408,7 @@ function importPage(page: string) {
 </head>
 <body>
 <h1>Вакансии с OLX → vacante.kz</h1>
-<p class="note">OLX не пускает нашего робота, поэтому страницы OLX смотрите вы сами. Закладка читает только то, что уже видно на открытой странице, ничего у OLX не запрашивает и передаёт объявления сюда. Имена и телефоны не сохраняются.</p>
+<p class="note">OLX не пускает нашего робота, поэтому страницы OLX смотрите вы сами. Закладка читает только то, что уже видно на открытой странице, ничего у OLX не запрашивает и передаёт объявления сюда. Телефон из описания сохраняется для кнопки звонка в Vacante. Если номер скрыт за кнопкой OLX, импорт его не открывает.</p>
 <ol>
   <li>
     <form id="pwd-form">

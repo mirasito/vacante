@@ -166,3 +166,14 @@ def test_imports_from_own_server_even_when_olx_blocks(monkeypatch):
     denied = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(
         lambda r: httpx.Response(403)))
     assert olx.collect(dict(state), NOW, denied, no_sleep) is None
+
+
+def test_imported_phone_flag_only_and_removal():
+    from vacante.store import merge
+    v = olx.to_vacancy(offer(123, has_phone=True))
+    assert v.contact == ["phone"]
+    assert "777" not in json.dumps(v.to_dict())
+    # The raw API phone availability flag alone cannot promise a retrievable contact.
+    assert olx.to_vacancy(offer(124)).contact == []
+    updated = olx.to_vacancy(offer(123, has_phone=False))
+    assert merge([v], [updated])[0].contact == []

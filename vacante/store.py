@@ -54,6 +54,8 @@ def merge(existing: list[Vacancy], incoming: list[Vacancy]) -> list[Vacancy]:
         if new.id in by_id:
             # Пост перечитали заново: сохранённой до поиска контактов карточке достаются его контакты
             known = by_id[new.id]
+            if known.id == new.id and new.source == "olx":
+                known.contact = new.contact
             if known.id == new.id and not known.contact and new.contact:
                 known.contact = new.contact
             # hh отдал вакансию ещё раз (перечитывание за две недели): точка на карте берётся свежая

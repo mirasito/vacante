@@ -14,7 +14,8 @@
 
 Берём только саму вакансию: название, текст без телефонов и ссылок (parse.clean_text), зарплату, город, точку
 на карте, если OLX показывает её точно, и ссылку на объявление на OLX.kz, где человек и откликается.
-Имя автора, телефон и прочие контакты не запрашиваем и не храним.
+Телефон из описания импортированной вакансии хранится только на сервере.
+В открытые данные передаётся лишь has_phone; скрытые контакты не запрашиваем.
 """
 
 from __future__ import annotations
@@ -187,6 +188,7 @@ def to_vacancy(item: dict) -> Vacancy | None:
     if vacancy is None or (city_name and city is None):
         return None  # город OLX нам неизвестен или объявление не вакансия рабочей профессии
     vacancy.id = f"{SOURCE}-{item['id']}"
+    vacancy.contact = ["phone"] if item.get("has_phone") is True else []
     vacancy.city = city or vacancy.city
     salary = _salary(item)
     if salary[2] is not None:

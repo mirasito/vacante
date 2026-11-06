@@ -33,6 +33,9 @@ export function methodsFor(v: VacancyCopy): Method[] {
   const source = sourceOf(v.source_url);
   if (source === 'bot') return ['bot'];
   if (source === 'hh') return ['hh'];
+  if (/^https:\/\/www\.olx\.kz\//.test(v.source_url ?? '')) {
+    return v.contact.includes('phone') ? ['call', 'post'] : ['post'];
+  }
   if (source !== 'channel') return ['post'];
   const kinds = v.contact;
   const out: Method[] = [];

@@ -1,4 +1,5 @@
 // Адреса /me: только свои данные и только после входа через Telegram (заголовок Authorization: tma …).
+import { importedPhone, OLX_JOB_URL } from "./olx-import.ts";
 import type { Ctx } from "./app.ts";
 import {
   applicationText,
@@ -403,20 +404,22 @@ export function meRoutes(ctx: Ctx): Route[] {
     }),
 
     // Номер для WhatsApp и звонка или имя в Telegram из исходного поста, только в момент отклика.
-    // Найденное сразу уходит в ответ и нигде не записывается. Профиль для этого не нужен
+    // Telegram читается на месте; OLX берет номер из защищенного импорта. Профиль не нужен
     route("POST", "api", "/me/contact", async (req) => {
       const { user } = ctx.auth(req);
       const body = (await req.json<Record<string, unknown>>()) ?? {};
       const vacancyId = typeof body.vacancy_id === "string" && VACANCY_ID.test(body.vacancy_id) ? body.vacancy_id : null;
-      const sourceUrl = typeof body.source_url === "string" && POST_URL.test(body.source_url) ? body.source_url : null;
-      if (!vacancyId || !sourceUrl) throw new HttpError(400, "Номер можно узнать только у поста из канала");
+      const sourceUrl = typeof body.source_url === "string" && (POST_URL.test(body.source_url) || OLX_JOB_URL.test(body.source_url)) ? body.source_url : null;
+      if (!vacancyId || !sourceUrl) throw new HttpError(400, "Номер доступен для поста из канала или импортированной вакансии OLX");
       const now = ctx.now();
       if (!burst.take(String(user.id), now)) throw new HttpError(429, "Слишком часто, подождите минуту");
       const quota = lookups.take(user.id, vacancyId, now);
       if (!quota.ok) throw new HttpError(429, `Не больше ${lookups.perDay} вакансий с номером в день`);
       let found;
       try {
-        found = await fetchPostContacts(ctx.fetch, sourceUrl);
+        found = OLX_JOB_URL.test(sourceUrl)
+          ? { phone: importedPhone(ctx.db, vacancyId, sourceUrl, now), whatsapp: null, telegram: null }
+          : await fetchPostContacts(ctx.fetch, sourceUrl);
       } catch (err) {
         lookups.refund(user.id, vacancyId);
         console.warn(`пост ${sourceUrl}: ${err instanceof Error ? err.message : err}`);

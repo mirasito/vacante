@@ -981,7 +981,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2675,6 +2675,13 @@
   "avatar": "1bc77bc08c695791.jpg",
   "avatar_source": "website"
  },
+ "almaty:agent24": {
+  "name": "Agent24",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
+ },
  "almaty:agrofood ltd": {
   "name": "AGROFOOD LTD",
   "city": "almaty",
@@ -2846,6 +2853,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "almaty:alem ltd wellness club luxor": {
+  "name": "ALEM LTD (Wellness Club LUXOR)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "luxor.kz",
+  "website": "https://www.luxor.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000793983",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:alexa": {
   "name": "Alexa",
@@ -3104,6 +3125,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:altynex company": {
+  "name": "AltynEx Company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
  },
  "almaty:aluminium of kazakhstan": {
   "name": "Aluminium of Kazakhstan",
@@ -5785,6 +5813,22 @@
    "website"
   ]
  },
+ "almaty:funsim international": {
+  "name": "Funsim international",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "funsim.kz",
+  "telegram": "funsim_kz",
+  "website": "https://funsim.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001079969167",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:g and g гламур": {
   "name": "G and G Гламур",
   "city": "almaty",
@@ -7296,6 +7340,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:kvmtech": {
+  "name": "Kvmtech",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
  },
  "almaty:kyndr": {
   "name": "Kyndr",
@@ -8878,6 +8929,20 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "almaty:pikapika": {
+  "name": "PikaPika",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "pikapika_kz",
+  "website": "https://pikapika.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001116548857",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:pinta": {
   "name": "Pinta",
   "city": "almaty",
@@ -9350,6 +9415,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:red geek рэд гик": {
+  "name": "RED GEEK (РЭД ГИК)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "redgeek.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001042698240"
  },
  "almaty:red ocean": {
   "name": "RED OCEAN",
@@ -11537,6 +11611,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "almaty:айгерим айсина": {
+  "name": "Айгерим Айсина",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
  },
  "almaty:айдын": {
   "name": "Айдын",
@@ -14206,6 +14287,13 @@
   "avatar": "be2ef08ca35a5fc3.jpg",
   "avatar_source": "website"
  },
+ "almaty:кассир": {
+  "name": "КАССИР",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
+ },
  "almaty:касымбекова": {
   "name": "Касымбекова",
   "city": "almaty",
@@ -15201,6 +15289,20 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "almaty:микрофинансовая организация финтехфинанс": {
+  "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ФИНТЕХФИНАНС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "moneymankz",
+  "website": "https://moneyman.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001083665040",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:минимаркет": {
   "name": "Минимаркет",
   "city": "almaty",
@@ -15600,6 +15702,15 @@
   "avatar": "b40f95fa3fabfa3f.jpg",
   "avatar_source": "website"
  },
+ "almaty:образовательный центр damina": {
+  "name": "Образовательный центр Damina",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "damina_montessori",
+  "source": "https://2gis.kz/almaty/firm/70000001019790438"
+ },
  "almaty:оздоровительный центр айкуне": {
   "name": "Оздоровительный центр «Айкуне»",
   "city": "almaty",
@@ -15893,6 +16004,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "almaty:продать": {
+  "name": "продать",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
  },
  "almaty:продуктовый магазин": {
   "name": "Продуктовый магазин",
@@ -23127,6 +23245,22 @@
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
  },
+ "astana:underground gym": {
+  "name": "Underground Gym",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "underground.astana",
+  "website": "https://undergroundgym.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001066947775",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5870fefd223ea3ec.jpg",
+  "avatar_source": "website"
+ },
  "astana:unilife": {
   "name": "UNILIFE",
   "city": "astana",
@@ -29229,7 +29363,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30883,6 +31017,13 @@
    "website"
   ]
  },
+ "karaganda:карагандинское горно строительное предприятие": {
+  "name": "Карагандинское горно-строительное предприятие",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
+ },
  "karaganda:карбон инвест": {
   "name": "Карбон-Инвест",
   "city": "karaganda",
@@ -30898,7 +31039,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31303,6 +31444,13 @@
   "checked_at": "2026-11-06T01:44:25+00:00",
   "instagram": "guljan_supermarket",
   "source": "https://2gis.kz/karaganda/firm/70000001059971395"
+ },
+ "karaganda:сфера продаж": {
+  "name": "Сфера продаж",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
  },
  "karaganda:счастье есть flowers": {
   "name": "Счастье Есть Flowers",
@@ -34195,7 +34343,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34802,6 +34950,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:medianasoft": {
+  "name": "MedianaSoft",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
  },
  "petropavlovsk:n v business group": {
   "name": "N.V.Business Group",
@@ -35952,7 +36107,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37119,6 +37274,13 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "shymkent:stroyholding kz": {
+  "name": "STROYHOLDING.KZ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
+ },
  "shymkent:studyon": {
   "name": "StudyON",
   "city": "shymkent",
@@ -38070,6 +38232,13 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "shymkent:әнуаров": {
+  "name": "Әнуаров",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00"
+ },
  "taldykorgan:2гис справочник двух столиц": {
   "name": "2ГИС-Справочник Двух Столиц",
   "city": "taldykorgan",
@@ -38690,7 +38859,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39935,6 +40104,19 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "ust-kamenogorsk:koton": {
+  "name": "KOTON",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "website": "https://koton.com/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001017408049",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "ust-kamenogorsk:kulan oil": {
   "name": "Kulan Oil",
   "city": "ust-kamenogorsk",
@@ -40404,6 +40586,22 @@
   "avatar": "c8dfac18331d4e83.jpg",
   "avatar_source": "website"
  },
+ "ust-kamenogorsk:возчиков р ф плюшка": {
+  "name": "Возчиков Р.Ф. (Плюшка)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T18:44:15+00:00",
+  "instagram": "plushka_coffee",
+  "website": "http://plushka.net/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001030332609",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3290bd79e4234f81.jpg",
+  "avatar_source": "website"
+ },
  "ust-kamenogorsk:восток сталь kz": {
   "name": "Восток-Сталь KZ",
   "city": "ust-kamenogorsk",
@@ -40627,7 +40825,7 @@
   "checked_at": "2026-10-30T18:42:57+00:00",
   "website": "https://kz.kari.com/",
   "source": "https://2gis.kz/pavlodar/firm/70000001067297048",
-  "avatar_checked_at": "2026-10-30T18:42:57+00:00",
+  "avatar_checked_at": "2026-11-06T18:44:16+00:00",
   "avatar_tried": [
    "website"
   ]

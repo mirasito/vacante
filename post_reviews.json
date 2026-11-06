@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T14:57:42+00:00",
+ "updated_at": "2026-11-06T15:56:36+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -37272,6 +37272,169 @@
    "verdict": "reject",
    "at": "2026-11-06T14:57:42+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139218068": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Уборщица, уборщик в школу",
+    "employer": "Казахстанский международный колледж",
+    "schedule": "5/2",
+    "address": "ул. Бигельдинова, 6"
+   }
+  },
+  "hh-139218184": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "employer": "AB Restaurants",
+    "schedule": "4/2 или 3/2, смены по 12 часов",
+    "address": "пр. Кабанбай батыра, 34"
+   }
+  },
+  "astana_job_vakansii-129793": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Водитель-курьер",
+    "employer": "Кондитерская «Happy Cake»",
+    "salary_min": 250000,
+    "salary_max": 350000,
+    "salary_period": "month",
+    "schedule": "5/2 или 6/1, 08:30–21:00",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "rabota_astanakz-31314": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Мастер по замене масла, ученик",
+    "schedule": "08:30–19:00"
+   }
+  },
+  "rabota_astanakz-31306": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "employer": "«Fix Price»",
+    "salary_min": 11000,
+    "salary_max": 13500,
+    "salary_period": "day",
+    "schedule": "2/2, 09:00–21:00 или 5/2, 12:00–21:00",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_rabota-90156": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Бутик «Dives»",
+    "schedule": "5/2, 10:00–20:00",
+    "address": "пр. Абая, 45, ТД «Окан Мерей», 1 этаж, бутик 101",
+    "perks": [
+     "Официально",
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_job_vakansii-130281": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "schedule": "6/1, 09:40–20:00",
+    "address": "ул. Сыганак, 1; ул. Абая, 19",
+    "perks": []
+   }
+  },
+  "hh-139218381": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "employer": "Almawine",
+    "schedule": "6/1 или 5/2",
+    "address": "ул. Красногорская, 71"
+   }
+  },
+  "hh-139198989": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Red Geek",
+    "schedule": "2/2, смены по 12 часов",
+    "address": "ул. Жандосова, 82"
+   }
+  },
+  "hh-139198193": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "employer": "Керемет Су",
+    "salary_min": 400000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2",
+    "address": "ул. Бартольда, 157Б"
+   }
+  },
+  "hh-139197453": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "employer": "Funsim International",
+    "schedule": "2/2, смены по 12 часов",
+    "address": "пр. Абая, 130/1"
+   }
+  },
+  "hh-139196897": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Оператор колл-центра",
+    "employer": "МФО «Финтехфинанс»",
+    "schedule": "5/2",
+    "address": "ул. Тулебаева, 38"
+   }
+  },
+  "hh-139196886": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "employer": "Wellness Club «Luxor»",
+    "schedule": "1/2, смены по 12 часов",
+    "address": "пр. Достык, 341"
+   }
+  },
+  "hh-139192741": {
+   "verdict": "reject",
+   "at": "2026-11-06T15:56:36+00:00",
+   "reason": "Офисная должность: B2B-продажи с опытом от 3 лет"
+  },
+  "hh-139192320": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "title": "Администратор студии",
+    "schedule": "5/2 или 2/2",
+    "address": "ул. Маметовой, 12"
+   }
+  },
+  "vakansii_rabota_atyrau-50052": {
+   "verdict": "approve",
+   "at": "2026-11-06T15:56:36+00:00",
+   "fields": {
+    "employer": "Школа-лицей «Silk Way»",
+    "perks": [
+     "Официально"
+    ]
+   }
   }
  }
 }

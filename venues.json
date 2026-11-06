@@ -1629,6 +1629,15 @@
    "website"
   ]
  },
+ "aktobe:ideal service": {
+  "name": "IDEAL SERVICE",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "ideal.service_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001110466948"
+ },
  "aktobe:jadyras": {
   "name": "JadyraS",
   "city": "aktobe",
@@ -2025,6 +2034,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
+ },
+ "aktobe:буртас": {
+  "name": "БУРТАС",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "aktobe:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
@@ -4789,7 +4805,7 @@
   "instagram": "daryn.online",
   "website": "https://daryn.online/",
   "source": "https://2gis.kz/almaty/firm/70000001042989664",
-  "avatar_checked_at": "2026-10-30T21:43:07+00:00",
+  "avatar_checked_at": "2026-11-06T21:44:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12406,6 +12422,13 @@
   "v": 3,
   "checked_at": "2026-11-06T10:45:16+00:00"
  },
+ "almaty:асапгрупп": {
+  "name": "АСАПГРУПП",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
+ },
  "almaty:асар медикус": {
   "name": "Асар Медикус",
   "city": "almaty",
@@ -12902,6 +12925,13 @@
   ],
   "avatar": "30cd2d0a5f61024d.jpg",
   "avatar_source": "website"
+ },
+ "almaty:бәкімжанов": {
+  "name": "Бәкімжанов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "almaty:в": {
   "name": "В",
@@ -13544,6 +13574,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:дом текстиля": {
+  "name": "Дом текстиля",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "almaty:домашка эдюкейшн": {
   "name": "ДОМАШКА Эдюкейшн",
@@ -15227,6 +15264,13 @@
   ],
   "avatar": "3089f66e2a9ebcc3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:мастерок": {
+  "name": "Мастерок",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "almaty:матпро": {
   "name": "МатПро",
@@ -18916,6 +18960,20 @@
   "instagram": "atlant_estate.kz",
   "source": "https://2gis.kz/astana/firm/70000001113258575"
  },
+ "astana:aulet architecture": {
+  "name": "AULET architecture",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "aulet_company",
+  "website": "https://auletcompany.com/",
+  "source": "https://2gis.kz/astana/firm/70000001028198175",
+  "avatar_checked_at": "2026-11-06T21:44:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:auto bus service": {
   "name": "Auto Bus Service",
   "city": "astana",
@@ -20338,6 +20396,13 @@
   "v": 3,
   "checked_at": "2026-11-03T05:44:23+00:00"
  },
+ "astana:hayat trans logistic": {
+  "name": "Hayat Trans Logistic",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
+ },
  "astana:healthy food": {
   "name": "Healthy Food",
   "city": "astana",
@@ -20449,6 +20514,15 @@
   ],
   "avatar": "43ce9d7a642cd248.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:icons beauty salon and school": {
+  "name": "ICONS BEAUTY SALON AND SCHOOL",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "icons_beautysalon",
+  "source": "https://2gis.kz/astana/firm/70000001057749217"
  },
  "astana:iddi dm group": {
   "name": "IDDI (DM GROUP)",
@@ -22521,6 +22595,15 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "regomed",
   "source": "https://2gis.kz/astana/firm/70000001059876860"
+ },
+ "astana:reklama 01kz": {
+  "name": "REKLAMA.01KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "reklama.01kz",
+  "source": "https://2gis.kz/astana/firm/70000001066154712"
  },
  "astana:rg brands kazakhstan": {
   "name": "RG Brands Kazakhstan",
@@ -26370,6 +26453,20 @@
    "website"
   ]
  },
+ "astana:медицинский консультационно диагностический центр бэби клиник тоо": {
+  "name": "Медицинский консультационно-диагностический центр Бэби Клиник, ТОО",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "babyclinic_astana",
+  "website": "http://babyclinics.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018393095",
+  "avatar_checked_at": "2026-11-06T21:44:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:мелочь": {
   "name": "Мелочь",
   "city": "astana",
@@ -29034,6 +29131,13 @@
    "website"
   ]
  },
+ "atyrau:caspian nitrogen industries": {
+  "name": "Caspian Nitrogen Industries",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
+ },
  "atyrau:caspian offshore construction realty": {
   "name": "Caspian Offshore Construction Realty",
   "city": "atyrau",
@@ -29517,6 +29621,13 @@
   "v": 3,
   "checked_at": "2026-11-04T20:44:13+00:00"
  },
+ "atyrau:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
+ },
  "atyrau:білім инновация": {
   "name": "БІЛІМ-ИННОВАЦИЯ",
   "city": "atyrau",
@@ -29586,6 +29697,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
+ },
+ "atyrau:казах кенсе": {
+  "name": "Казах Кенсе",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "atyrau:казбеков": {
   "name": "КАЗБЕКОВ",
@@ -32453,6 +32571,20 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "kokshetau:управляющая компания marden property": {
+  "name": "Управляющая компания Marden Property",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "mardenproperty",
+  "website": "http://marden.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018313008",
+  "avatar_checked_at": "2026-11-06T21:44:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:фирма строительный двор": {
   "name": "Фирма Строительный Двор",
   "city": "kokshetau",
@@ -34994,6 +35126,13 @@
   "avatar": "b8e93ecb37a73fd2.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:транзитавто пв": {
+  "name": "ТранзитАвто ПВ",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
+ },
  "pavlodar:транстелеком": {
   "name": "Транстелеком",
   "city": "pavlodar",
@@ -35343,6 +35482,13 @@
   ],
   "avatar": "e2850ad6049549da.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:ruslan ltd": {
+  "name": "ТОО Ruslan LTD",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "petropavlovsk:sardana": {
   "name": "SARDANA",
@@ -36075,6 +36221,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T00:44:08+00:00"
+ },
+ "semey:kc интернейшнл": {
+  "name": "KC Интернейшнл",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "semey:nango": {
   "name": "NANGO",
@@ -36864,6 +37017,13 @@
   ],
   "avatar": "ac418d7217426852.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:bbs trade": {
+  "name": "BBS TRADE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00"
  },
  "shymkent:beeline тм": {
   "name": "Beeline, ТМ",
@@ -38579,6 +38739,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
+ },
+ "taldykorgan:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "taldykorgan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T21:44:54+00:00",
+  "instagram": "kaspi.kz",
+  "website": "https://kaspi.kz/",
+  "source": "https://www.instagram.com/Kaspi.kz/",
+  "avatar_checked_at": "2026-11-06T21:44:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dbb6e11e0facab53.jpg",
+  "avatar_source": "website"
  },
  "taldykorgan:oktrening": {
   "name": "Oktrening",

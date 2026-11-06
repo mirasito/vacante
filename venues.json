@@ -144,6 +144,15 @@
    "website"
   ]
  },
+ "aktau:chefs": {
+  "name": "Chef’s",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "chefs_restaurant",
+  "source": "https://2gis.kz/aktau/firm/70000001035124214"
+ },
  "aktau:coffee mind": {
   "name": "Coffee Mind",
   "city": "aktau",
@@ -285,6 +294,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
+ },
+ "aktau:gungir": {
+  "name": "GUNGIR",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
  },
  "aktau:jamesburger 29мкр 229зд": {
   "name": "Jamesburger 29мкр 229зд",
@@ -3874,6 +3890,20 @@
   "instagram": "almaty_prokat_service",
   "source": "https://2gis.kz/almaty/firm/70000001086838075"
  },
+ "almaty:belostan kz": {
+  "name": "BELOSTAN.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "belostan.kz",
+  "website": "http://belostan.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001046741033",
+  "avatar_checked_at": "2026-11-06T07:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:bereke bank": {
   "name": "Bereke Bank",
   "city": "almaty",
@@ -4708,7 +4738,7 @@
   "instagram": "digitalenergy.group",
   "website": "https://digitalenergy.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001116808405",
-  "avatar_checked_at": "2026-10-30T07:43:20+00:00",
+  "avatar_checked_at": "2026-11-06T07:43:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -5332,6 +5362,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "almaty:family store ivi": {
+  "name": "FAMILY STORE(IVI)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "ivicity",
+  "website": "http://ivicity.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035503637",
+  "avatar_checked_at": "2026-11-06T07:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a3ccdf47b240306d.jpg",
+  "avatar_source": "website"
  },
  "almaty:farmreserv фармрезерв": {
   "name": "FarmReserv (ФармРезерв)",
@@ -10642,6 +10688,13 @@
   "v": 3,
   "checked_at": "2026-11-05T00:43:57+00:00"
  },
+ "almaty:zhayik motors almaty": {
+  "name": "Zhayik Motors Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
+ },
  "almaty:zhebe logistics": {
   "name": "Zhebe Logistics",
   "city": "almaty",
@@ -11241,7 +11294,7 @@
   "instagram": "almaty.hotel",
   "website": "http://hotelalmaty.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792321",
-  "avatar_checked_at": "2026-10-30T07:43:20+00:00",
+  "avatar_checked_at": "2026-11-06T07:43:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12419,6 +12472,13 @@
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
  },
+ "almaty:городская клиническая больница 8 уоз г алматы": {
+  "name": "Городская клиническая больница №8 УОЗ г.Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
+ },
  "almaty:гостиница": {
   "name": "гостиница",
   "city": "almaty",
@@ -12679,6 +12739,20 @@
   ],
   "avatar": "3242bfee90f876e0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:домашка эдюкейшн": {
+  "name": "ДОМАШКА Эдюкейшн",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "domashka.prodlenka",
+  "website": "http://domashkaalmaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117789872",
+  "avatar_checked_at": "2026-11-06T07:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:дон плюс": {
   "name": "Дон Плюс",
@@ -18374,6 +18448,15 @@
   "avatar": "b1e73e3b03e5dd73.jpg",
   "avatar_source": "website"
  },
+ "astana:cotton": {
+  "name": "COTTON",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "cotton_astana_kz",
+  "source": "https://2gis.kz/astana/firm/70000001082729560"
+ },
  "astana:counting group": {
   "name": "Counting Group",
   "city": "astana",
@@ -18456,6 +18539,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:datakajs": {
+  "name": "DatakaJS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
  },
  "astana:datapax": {
   "name": "DATAPAX",
@@ -19498,6 +19588,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
+ },
+ "astana:jkim": {
+  "name": "JKIM",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
  },
  "astana:js алматы": {
   "name": "JS Алматы",
@@ -20582,6 +20679,15 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "one_filter.kz",
   "source": "https://2gis.kz/astana/firm/70000001102913204"
+ },
+ "astana:opatra london опатра лондон": {
+  "name": "OPATRA LONDON (ОПАТРА ЛОНДОН)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "opatra.astana",
+  "source": "https://2gis.kz/astana/firm/70000001081318402"
  },
  "astana:openhype": {
   "name": "OpenHype",
@@ -25216,6 +25322,13 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "astana:паназиатский ресторан": {
+  "name": "Паназиатский ресторан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
+ },
  "astana:парадайс": {
   "name": "ПАРАДАЙС",
   "city": "astana",
@@ -28735,6 +28848,15 @@
   "v": 3,
   "checked_at": "2026-10-28T19:44:26+00:00"
  },
+ "karaganda:senur": {
+  "name": "SENUR",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "senur.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001051672116"
+ },
  "karaganda:sharmel": {
   "name": "SHARMel",
   "city": "karaganda",
@@ -30495,6 +30617,15 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "kokshetau:фирма строительный двор": {
+  "name": "Фирма Строительный Двор",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "instagram": "stroydvor_kokshetay",
+  "source": "https://2gis.kz/kokshetau/firm/70000001113072561"
+ },
  "kokshetau:хайрулина а т": {
   "name": "ХАЙРУЛИНА А. Т.",
   "city": "kokshetau",
@@ -31908,6 +32039,13 @@
   "v": 3,
   "checked_at": "2026-10-31T16:43:38+00:00"
  },
+ "kyzylorda:sweet city": {
+  "name": "Sweet City",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
+ },
  "kyzylorda:алменов а у": {
   "name": "Алменов А.У",
   "city": "kyzylorda",
@@ -32964,6 +33102,21 @@
    "website"
   ]
  },
+ "pavlodar:фудмастер тм": {
+  "name": "ФудМастер, ТМ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00",
+  "website": "http://foodmaster.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001024063890",
+  "avatar_checked_at": "2026-11-06T07:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c10b3cf15365846a.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:хан ли кз": {
   "name": "ХАН ЛИ КЗ",
   "city": "pavlodar",
@@ -33288,6 +33441,13 @@
   ],
   "avatar": "830d8231eb8a695b.jpg",
   "avatar_source": "telegram"
+ },
+ "petropavlovsk:trade ck": {
+  "name": "TRADE CK",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
  },
  "petropavlovsk:vipcompany": {
   "name": "VIPCOMPANY",
@@ -34847,6 +35007,13 @@
   "checked_at": "2026-11-03T19:44:10+00:00",
   "instagram": "defleur.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001041168183"
+ },
+ "shymkent:de support": {
+  "name": "DE Support",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
  },
  "shymkent:donix": {
   "name": "DONIX",
@@ -36656,6 +36823,13 @@
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
  },
+ "taraz:асылым": {
+  "name": "Асылым",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
+ },
  "taraz:аяна": {
   "name": "Аяна",
   "city": "taraz",
@@ -36850,6 +37024,13 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "inclair_cafe",
   "source": "https://2gis.kz/astana/firm/70000001051170179"
+ },
+ "turkestan:jasyl suyq qazaqstan": {
+  "name": "JASYL SUYQ QAZAQSTAN",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T07:43:53+00:00"
  },
  "turkestan:kazagrovision": {
   "name": "KazAgroVision",

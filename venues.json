@@ -1305,7 +1305,7 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "website": "https://ttc.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001028924180",
-  "avatar_checked_at": "2026-10-30T15:44:36+00:00",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -3993,6 +3993,13 @@
   "avatar": "d16e41150036dd86.jpg",
   "avatar_source": "website"
  },
+ "almaty:bereke stroy snab": {
+  "name": "Bereke Stroy Snab",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "almaty:best": {
   "name": "BEST",
   "city": "almaty",
@@ -5233,6 +5240,13 @@
    "website"
   ]
  },
+ "almaty:entrecote": {
+  "name": "Entrecote",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "almaty:eok": {
   "name": "EOK",
   "city": "almaty",
@@ -6067,7 +6081,7 @@
   "checked_at": "2026-10-30T16:42:48+00:00",
   "website": "https://grandlinelogistics.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110238116",
-  "avatar_checked_at": "2026-10-30T16:42:48+00:00",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6470,6 +6484,13 @@
   ],
   "avatar": "d8c2d90c5cb02fe1.jpg",
   "avatar_source": "website"
+ },
+ "almaty:imperial show": {
+  "name": "Imperial Show",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "almaty:imun pharma": {
   "name": "IMUN Pharma",
@@ -9046,6 +9067,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:protocol car rent": {
+  "name": "Protocol Car Rent",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00",
+  "instagram": "protocol_car_rent",
+  "source": "https://2gis.kz/almaty/firm/70000001084303896"
  },
  "almaty:q laboratory": {
   "name": "Q-Laboratory",
@@ -11681,6 +11711,13 @@
   "avatar": "e12a044e3f0265ba.jpg",
   "avatar_source": "website"
  },
+ "almaty:али бизнес холдинг": {
+  "name": "Али Бизнес Холдинг",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "almaty:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
   "city": "almaty",
@@ -11893,6 +11930,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "almaty:альянс газ": {
+  "name": "ТОО Альянс-Газ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "almaty:аманат": {
   "name": "Аманат",
   "city": "almaty",
@@ -12072,6 +12116,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:арука групп": {
+  "name": "Арука Групп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "almaty:архиметалл": {
   "name": "АрхиМеталл",
@@ -12540,6 +12591,13 @@
   "checked_at": "2026-11-03T23:44:09+00:00",
   "instagram": "bravyi_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001056285737"
+ },
+ "almaty:браус": {
+  "name": "Браус",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "almaty:буркит сэйфти": {
   "name": "Буркит Сэйфти",
@@ -13078,6 +13136,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:деп": {
+  "name": "ДЕП",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00",
+  "instagram": "dep_company",
+  "website": "https://dep.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001115178504",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:дергаев вячеслав александрович": {
   "name": "Дергаев Вячеслав Александрович",
@@ -13920,12 +13992,28 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "almaty:казмактрейд": {
+  "name": "КазМакТрейд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00",
+  "instagram": "kazmaktrade",
+  "source": "https://2gis.kz/almaty/firm/70000001055893664"
+ },
  "almaty:казоборонсервис": {
   "name": "КАЗОБОРОНСЕРВИС",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:каксвоим": {
+  "name": "КАКСВОИМ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "almaty:калюжная с в": {
   "name": "Калюжная С.В.",
@@ -15627,6 +15715,13 @@
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
  },
+ "almaty:пионер": {
+  "name": "Пионер",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "almaty:пласт продукт тм ахмерова ип": {
   "name": "Пласт продукт, ТМ (Ахмерова, ИП)",
   "city": "almaty",
@@ -16591,6 +16686,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
+ },
+ "almaty:сәрсенбаев": {
+  "name": "СӘРСЕНБАЕВ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "almaty:табер трейд кз сеть магазинов подружка": {
   "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",
@@ -18276,6 +18378,19 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "astana:arlan voltrix group": {
+  "name": "ARLAN VOLTRIX GROUP",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00",
+  "website": "https://voltrix.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001109834367",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:art vision": {
   "name": "ART VISION",
   "city": "astana",
@@ -18878,6 +18993,22 @@
    "telegram",
    "website"
   ]
+ },
+ "astana:champion fitness": {
+  "name": "Champion fitness",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00",
+  "instagram": "championfitness.kz",
+  "website": "https://championfitness.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001094540849",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a1bd96b967717d6b.jpg",
+  "avatar_source": "website"
  },
  "astana:chester": {
   "name": "Chester",
@@ -19614,7 +19745,7 @@
   "instagram": "bankffin.kz",
   "website": "http://freedombank.kz/",
   "source": "https://2gis.kz/astana/firm/70000001059385165",
-  "avatar_checked_at": "2026-10-30T15:44:36+00:00",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20161,7 +20292,7 @@
   "instagram": "iswimastana",
   "website": "http://iswim.kz/",
   "source": "https://2gis.kz/astana/firm/70000001118349809",
-  "avatar_checked_at": "2026-10-30T15:44:36+00:00",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21925,6 +22056,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T07:45:16+00:00"
+ },
+ "astana:qurmet industry": {
+  "name": "Qurmet Industry",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "astana:rabbit canteen школьная столовая": {
   "name": "Rabbit Canteen (школьная столовая)",
@@ -25147,6 +25285,20 @@
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
  },
+ "astana:келет": {
+  "name": "КЕЛЕТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00",
+  "instagram": "kelet.kz",
+  "website": "https://www.kelet.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018099257",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:керуен": {
   "name": "Керуен",
   "city": "astana",
@@ -26152,6 +26304,13 @@
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
  },
+ "astana:откормочная база транспортная компания": {
+  "name": "Откормочная база  Транспортная компания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "astana:охранная компания": {
   "name": "Тоо охранная компания",
   "city": "astana",
@@ -26661,7 +26820,7 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "website": "https://dodopizza.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001025209348",
-  "avatar_checked_at": "2026-10-30T15:44:36+00:00",
+  "avatar_checked_at": "2026-11-06T16:45:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27532,6 +27691,13 @@
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
  },
+ "astana:франшизатор групп": {
+  "name": "ФРАНШИЗАТОР ГРУПП",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
+ },
  "astana:фудкорт паназиатская кухня": {
   "name": "Фудкорт (Паназиатская кухня)",
   "city": "astana",
@@ -27900,6 +28066,13 @@
   "checked_at": "2026-11-02T18:01:00+00:00",
   "instagram": "robovalli.kz",
   "source": "https://2gis.kz/astana/firm/70000001103854709"
+ },
+ "astana:школа гимназия 22 г астаны": {
+  "name": "Школа-гимназия  22 г. Астаны",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T16:45:18+00:00"
  },
  "astana:штаб": {
   "name": "Штаб",

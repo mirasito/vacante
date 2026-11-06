@@ -3475,6 +3475,15 @@
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
  },
+ "almaty:aura": {
+  "name": "AURA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "aura02_coffee",
+  "source": "https://2gis.kz/almaty/firm/70000001118736147"
+ },
  "almaty:aura 02": {
   "name": "Aura 02",
   "city": "almaty",
@@ -8383,6 +8392,13 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "almaty:pcg expert": {
+  "name": "PCG Expert",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "almaty:percorso": {
   "name": "Percorso",
   "city": "almaty",
@@ -8813,6 +8829,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "almaty:rb brands": {
+  "name": "RB Brands",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "rbbrands.kz",
+  "website": "https://rbbrands.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028516464",
+  "avatar_checked_at": "2026-11-06T06:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6089b2693a2e328c.jpg",
+  "avatar_source": "website"
  },
  "almaty:real trade astana": {
   "name": "Real Trade Astana",
@@ -11310,6 +11342,19 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:алматыкітап баспасы": {
+  "name": "Алматыкітап баспасы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "website": "https://www.almatykitap.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792358",
+  "avatar_checked_at": "2026-11-06T06:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алонстелефонстрой": {
   "name": "Алонстелефонстрой",
   "city": "almaty",
@@ -12950,6 +12995,13 @@
    "website"
   ]
  },
+ "almaty:зубенко": {
+  "name": "Зубенко",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "almaty:зульфия": {
   "name": "Зульфия",
   "city": "almaty",
@@ -13237,6 +13289,13 @@
   "instagram": "kmtkani",
   "source": "https://2gis.kz/almaty/firm/70000001100396805"
  },
+ "almaty:казахстанский завод металлоконструкций": {
+  "name": "КАЗАХСТАНСКИЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "almaty:казахстанско российский медицинский университет": {
   "name": "КАЗАХСТАНСКО-РОССИЙСКИЙ МЕДИЦИНСКИЙ УНИВЕРСИТЕТ",
   "city": "almaty",
@@ -13475,6 +13534,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
+ },
+ "almaty:келдыбай beautybrands": {
+  "name": "Келдыбай (Beautybrands)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "beautybrands.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001065366149"
  },
  "almaty:келет": {
   "name": "КЕЛЕТ",
@@ -14123,6 +14191,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:макаронную by sabina temiralieva": {
+  "name": "Макаронную by Sabina Temiralieva",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "macaronnaya_lavka.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001079661882"
  },
  "almaty:макидонск": {
   "name": "Макидонск",
@@ -24874,6 +24951,13 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "astana:мусатаева а а": {
+  "name": "Мусатаева А. А.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "astana:мусатаева ж р meat & beer": {
   "name": "Мусатаева Ж.Р. (MEAT & BEER)",
   "city": "astana",
@@ -26910,6 +26994,13 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "astana:электромонтаж": {
+  "name": "Электромонтаж",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "astana:элитная баня": {
   "name": "Элитная баня",
   "city": "astana",
@@ -27285,6 +27376,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T01:44:25+00:00"
+ },
+ "atyrau:fircaspian": {
+  "name": "FIRCaspian",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "fircaspian",
+  "website": "https://fircaspian.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034789098",
+  "avatar_checked_at": "2026-11-06T06:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:floral partners": {
   "name": "Floral partners",
@@ -30911,6 +31016,15 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "kostanay:бейсембаев е у": {
+  "name": "БЕЙСЕМБАЕВ Е.У.",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "ayadil_kz",
+  "source": "https://2gis.kz/kostanaj/firm/70000001041829288"
+ },
  "kostanay:бекирова к а": {
   "name": "Бекирова К.А.",
   "city": "kostanay",
@@ -33897,6 +34011,13 @@
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
  },
+ "semey:semey motors toyota center semey": {
+  "name": "Semey Motors (Toyota Center Semey)",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "semey:smlab": {
   "name": "SMLAB",
   "city": "semey",
@@ -34014,6 +34135,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "semey:асоев к с": {
+  "name": "АСОЕВ К. С",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
  },
  "semey:ақ тұлпар": {
   "name": "АҚ ТҰЛПАР",
@@ -35139,6 +35267,13 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "shymkent:provideo": {
+  "name": "PROVIDEO",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "shymkent:q saiman": {
   "name": "Q-Saiman",
   "city": "shymkent",
@@ -36195,6 +36330,13 @@
   "v": 3,
   "checked_at": "2026-11-06T04:43:35+00:00"
  },
+ "taldykorgan:flexway cargo kz": {
+  "name": "Flexway Cargo KZ",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
+ },
  "taldykorgan:oktrening": {
   "name": "Oktrening",
   "city": "taldykorgan",
@@ -36708,6 +36850,13 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "inclair_cafe",
   "source": "https://2gis.kz/astana/firm/70000001051170179"
+ },
+ "turkestan:kazagrovision": {
+  "name": "KazAgroVision",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
  },
  "turkestan:lider group 2005": {
   "name": "LIDER GROUP 2005",
@@ -37272,6 +37421,24 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "uralsk:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "fixprice.kazakhstan",
+  "telegram": "fixprice_kazakhstan",
+  "website": "https://fix-price.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001076396751",
+  "avatar_checked_at": "2026-11-06T06:44:53+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "7a04659f141a298c.jpg",
+  "avatar_source": "telegram"
+ },
  "uralsk:ваша вахта": {
   "name": "Ваша вахта",
   "city": "uralsk",
@@ -37696,6 +37863,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
+ },
+ "ust-kamenogorsk:alina group": {
+  "name": "Alina Group",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00",
+  "instagram": "alinagroup.careers",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313333"
  },
  "ust-kamenogorsk:altai mai": {
   "name": "ALTAI MAI",
@@ -38241,6 +38417,13 @@
   "checked_at": "2026-11-05T19:43:27+00:00",
   "instagram": "alle_ukg",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001034692436"
+ },
+ "ust-kamenogorsk:алтын алма": {
+  "name": "Алтын Алма",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T06:44:52+00:00"
  },
  "ust-kamenogorsk:аманат": {
   "name": "Аманат",

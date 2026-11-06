@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T19:56:50+00:00",
+ "updated_at": "2026-11-06T20:56:56+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -37832,6 +37832,21 @@
    "at": "2026-11-06T19:56:50+00:00",
    "fields": {
     "title": "Повар восточной кухни"
+   }
+  },
+  "olx-402675810": {
+   "verdict": "approve",
+   "at": "2026-11-06T20:56:56+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "«Два пельменя»",
+    "salary_min": 15000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 09:00–21:00",
+    "perks": [
+     "Официально"
+    ]
    }
   }
  }

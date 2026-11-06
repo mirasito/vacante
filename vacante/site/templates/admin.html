@@ -79,6 +79,22 @@ td.nowrap { white-space: nowrap; }
 .crm-status { font: inherit; font-size: 13px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 6px; }
 .crm-note { font: inherit; font-size: 13px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 6px; width: 100%; min-width: 140px; margin-top: 4px; }
 .pill-direct { color: var(--ok); background: var(--ok-bg); }
+.emp-row { cursor: pointer; }
+.emp-row:hover td, .emp-row:focus td { background: var(--line); }
+.emp-ava { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; background: var(--line); display: inline-grid; place-items: center; font-weight: 700; color: var(--quiet); vertical-align: middle; margin-right: 8px; flex: none; }
+.emp-name { display: flex; align-items: center; }
+#emp-card[hidden] { display: none; }
+#emp-card { border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 12px 0 20px; }
+#emp-card .head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+#emp-card .head h3 { margin: 0; font-size: 20px; }
+#emp-card .close { margin-left: auto; }
+.venue-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 12px; }
+.venue { border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-width: 0; }
+.venue h4 { margin: 0; font-size: 15px; }
+.venue ul { list-style: none; padding: 0; margin: 8px 0 0; font-size: 13.5px; }
+.venue li { padding: 4px 0; border-top: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 8px; }
+.venue li span:last-child { color: var(--quiet); white-space: nowrap; }
+.venue details { margin-top: 6px; font-size: 13.5px; }
 @media (max-width: 640px) {
   .wrap { padding: 12px; }
   .tile b { font-size: 22px; }
@@ -104,6 +120,7 @@ td.nowrap { white-space: nowrap; }
 <div id="app" hidden>
   <nav class="tabs" role="tablist">
     <button type="button" role="tab" data-tab="stats" aria-selected="true">Сбор и посты</button>
+    <button type="button" role="tab" data-tab="emp" aria-selected="false">Работодатели</button>
     <button type="button" role="tab" data-tab="crm" aria-selected="false">CRM заведений</button>
     <button type="button" role="tab" data-tab="jobs" aria-selected="false">Работодатели в боте</button>
   </nav>
@@ -183,6 +200,28 @@ td.nowrap { white-space: nowrap; }
     <tbody></tbody>
   </table></div>
   <button type="button" class="more" id="crm-more" hidden>Показать ещё</button>
+  </div>
+
+  <div id="tab-emp" hidden>
+  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками и вакансиями, которые сейчас на сайте, и архивом снятых. Данные приходят с сервера api.vacante.kz и обновляются каждый час после сбора. Пока только просмотр: правка, добавление заведений и профили работодателей в боте будут следующими этапами.</p>
+  <p class="err" id="emp-error" hidden></p>
+  <div class="filters">
+    <div class="seg" id="emp-has">
+      <button type="button" data-v="" aria-pressed="true">Все</button>
+      <button type="button" data-v="active" aria-pressed="false">С вакансиями сейчас</button>
+      <button type="button" data-v="many" aria-pressed="false">Несколько заведений</button>
+      <button type="button" data-v="links" aria-pressed="false">Есть сайт или соцсети</button>
+    </div>
+    <select id="emp-city" aria-label="Город"><option value="">Все города</option></select>
+    <input id="emp-q" type="search" placeholder="Поиск работодателя" aria-label="Поиск работодателя">
+  </div>
+  <p class="quiet" id="emp-count">Загружаю…</p>
+  <section id="emp-card" hidden aria-live="polite"></section>
+  <div class="scroll"><table id="emp">
+    <thead><tr><th>Работодатель</th><th>Города</th><th class="n">Заведений</th><th class="n">Вакансий сейчас</th><th class="n">Всего</th><th>Последняя</th><th>Источники</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <button type="button" class="more" id="emp-more" hidden>Показать ещё</button>
   </div>
 
   <div id="tab-jobs" hidden>
@@ -451,11 +490,12 @@ td.nowrap { white-space: nowrap; }
     }
 
     renderCrm(data.crm || [], now, data.crm_api);
-    let jobsLoaded = false;
+    let jobsLoaded = false, empLoaded = false;
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
-      for (const tab of ["stats", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
+      for (const tab of ["stats", "emp", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
       if (b.dataset.tab === "jobs" && !jobsLoaded && data.jobs_api) { jobsLoaded = true; renderJobs(data.jobs_api, data.cities || {}); }
+      if (b.dataset.tab === "emp" && !empLoaded && data.employers_api) { empLoaded = true; renderEmployers(data.employers_api, data.cities || {}, data.crm_api); }
     }));
 
     $("#loading").hidden = true;
@@ -520,6 +560,91 @@ td.nowrap { white-space: nowrap; }
         <td class="nowrap">${j.paid ? num(j.paid) + " ₸" : "—"}${boost}</td>
       </tr>`;
     }).join("") || `<tr><td colspan="9" class="quiet">Пока никто не размещал</td></tr>`;
+  }
+
+
+  // Работодатели: список и карточки с сервера api.vacante.kz (server/src/crm.ts), ключ тот же, что у CRM заведений
+  const SOURCE = { hh: "hh.kz", telegram: "Telegram", olx: "OLX", bot: "наш бот" };
+  async function renderEmployers(api, cities, marksApi) {
+    const city = (slug) => cities[slug] || "Весь Казахстан";
+    const fail = (e) => { $("#emp-error").hidden = false; $("#emp-error").textContent = `Сервер не ответил (${e.message}). Попробуйте позже.`; $("#emp-count").textContent = ""; };
+    let rows, marks = {};
+    try { rows = (await crmFetch(api)).employers; } catch (e) { fail(e); return; }
+    try { marks = (await crmFetch(marksApi)).marks; } catch (e) { /* статусы переписки покажем, когда воркер ответит */ }
+    rows.sort((a, b) => b.active - a.active || b.venues - a.venues || String(b.last_posted).localeCompare(String(a.last_posted)));
+    for (const c of [...new Set(rows.flatMap((r) => r.cities))].sort((a, b) => city(a).localeCompare(city(b)))) {
+      $("#emp-city").insertAdjacentHTML("beforeend", `<option value="${esc(c)}">${esc(city(c))}</option>`);
+    }
+    let has = "", shown = PAGE;
+    const ava = (avatar, name) => avatar
+      ? `<img class="emp-ava" src="${ROOT}/venues/${esc(avatar)}" alt="" loading="lazy">`
+      : `<span class="emp-ava">${esc((name.match(/[\p{L}\p{N}]/u) || ["?"])[0].toUpperCase())}</span>`;
+    const links = (r) => [
+      r.website && `<a href="${esc(r.website)}" target="_blank" rel="noopener">сайт</a>`,
+      r.instagram && `<a href="https://www.instagram.com/${esc(r.instagram)}/" target="_blank" rel="noopener">Instagram</a>`,
+      r.telegram && `<a href="https://t.me/${esc(r.telegram)}" target="_blank" rel="noopener">Telegram</a>`,
+      r.twogis && `<a href="${esc(r.twogis)}" target="_blank" rel="noopener">2ГИС</a>`,
+    ].filter(Boolean).join("");
+    function filtered() {
+      const c = $("#emp-city").value, q = $("#emp-q").value.trim().toLowerCase();
+      return rows.filter((r) => (!c || r.cities.includes(c)) &&
+        (has !== "active" || r.active > 0) && (has !== "many" || r.venues > 1) &&
+        (has !== "links" || r.website || r.instagram || r.telegram) &&
+        (!q || r.name.toLowerCase().includes(q)));
+    }
+    function draw(reset) {
+      if (reset) shown = PAGE;
+      const list = filtered();
+      $("#emp-count").textContent = `Работодателей: ${num(list.length)} из ${num(rows.length)}. Заведений: ${num(list.reduce((a, r) => a + r.venues, 0))}.`;
+      $("#emp tbody").innerHTML = list.slice(0, shown).map((r) => `<tr class="emp-row" tabindex="0" data-id="${r.id}">
+          <td><span class="emp-name">${ava(r.avatar, r.name)}<b>${esc(r.name)}</b></span></td>
+          <td>${esc(r.cities.map(city).join(", "))}</td>
+          <td class="n">${num(r.venues)}</td>
+          <td class="n">${num(r.active)}</td>
+          <td class="n">${num(r.total)}</td>
+          <td class="nowrap">${r.last_posted ? when(r.last_posted) : "—"}</td>
+          <td>${esc(r.sources.map((x) => SOURCE[x] || x).join(", ")) || `<span class="quiet">снято</span>`}</td>
+        </tr>`).join("") || `<tr><td colspan="7" class="quiet">Ничего не найдено</td></tr>`;
+      $("#emp-more").hidden = list.length <= shown;
+    }
+    const vacancy = (v) => `<li><span><a href="${ROOT}/v/${esc(v.id)}/" target="_blank">${esc(v.title)}</a>${v.salary ? ` · ${esc(v.salary)}` : ""}</span><span>${esc(SOURCE[v.source] || v.source)} · ${when(v.posted_at)}</span></li>`;
+    const archived = (v) => `<li><span>${esc(v.title)}${v.salary ? ` · ${esc(v.salary)}` : ""}</span><span>${esc(SOURCE[v.source] || v.source)} · снята ${when(v.last_seen)}</span></li>`;
+    async function open(id) {
+      const box = $("#emp-card");
+      box.hidden = false;
+      box.innerHTML = `<p class="quiet">Загружаю карточку…</p>`;
+      box.scrollIntoView({ behavior: "smooth", block: "start" });
+      let card;
+      try { card = await crmFetch(`${api}/${id}`); } catch (e) { box.innerHTML = `<p class="err">Карточка не загрузилась (${esc(e.message)})</p>`; return; }
+      const { employer, venues } = card;
+      const active = venues.reduce((a, v) => a + v.vacancies.length, 0);
+      const firstAvatar = (venues.find((v) => v.avatar) || {}).avatar;
+      box.innerHTML = `<div class="head">${ava(firstAvatar, employer.name)}<div><h3>${esc(employer.name)}</h3>
+          <div class="snippet">${num(venues.length)} ${venues.length === 1 ? "заведение" : "заведений"} · вакансий сейчас: ${num(active)} · в базе с ${when(employer.first_seen)}</div></div>
+          <button type="button" class="more close" id="emp-close">Закрыть</button></div>
+        <div class="venue-grid">${venues.map((v) => {
+          const m = marks[v.key] || {};
+          return `<article class="venue">
+            <div class="emp-name">${ava(v.avatar, v.name)}<div><h4>${esc(v.name)}</h4><div class="snippet">${esc(city(v.city))}${v.address ? ", " + esc(v.address) : ""}</div></div></div>
+            <div class="links" style="margin-top:6px">${links(v) || `<span class="quiet">ссылок пока нет</span>`}</div>
+            ${m.status ? `<div class="snippet">CRM: ${esc(CRM_STATUS[m.status] || m.status)}${m.note ? " · " + esc(m.note) : ""}</div>` : ""}
+            <ul>${v.vacancies.map(vacancy).join("") || `<li><span class="quiet">Сейчас вакансий нет</span><span></span></li>`}</ul>
+            ${v.archived ? `<details><summary>Снятые: ${num(v.archived)}</summary><ul>${v.archive.map(archived).join("")}</ul></details>` : ""}
+          </article>`;
+        }).join("")}</div>`;
+      $("#emp-close").addEventListener("click", () => { box.hidden = true; });
+    }
+    $("#emp tbody").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) open(tr.dataset.id); });
+    $("#emp tbody").addEventListener("keydown", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(tr.dataset.id); } });
+    document.querySelectorAll("#emp-has button").forEach((b) => b.addEventListener("click", () => {
+      has = b.dataset.v;
+      document.querySelectorAll("#emp-has button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      draw(true);
+    }));
+    $("#emp-city").addEventListener("change", () => draw(true));
+    $("#emp-q").addEventListener("input", () => draw(true));
+    $("#emp-more").addEventListener("click", () => { shown += PAGE; draw(false); });
+    draw(true);
   }
 
   async function renderCrm(rows, now, api) {

@@ -28,6 +28,8 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 # Воркер бота: там CRM хранит статусы и заметки (bot/src/crm.js)
 BOT_URL = os.environ.get("BOT_URL") or "https://vacante-bot.vacante-kz.workers.dev"
+# Сервер в Казахстане: там CRM работодателей с заведениями (server/src/crm.ts)
+SERVER_URL = os.environ.get("SERVER_URL") or "https://api.vacante.kz"
 SILENT_DAYS = 3  # канал без новых постов дольше этого считаем замолчавшим
 RECENT_POSTED = 15
 
@@ -142,6 +144,7 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
         "bot": bot,
         "crm": crm(data_dir, vacancies),
         "crm_api": f"{BOT_URL}/api/crm",
+        "employers_api": f"{SERVER_URL}/admin/crm",
         "jobs_api": f"{BOT_URL}/api/jobs",  # кто размещал вакансии в боте: грузится из воркера, на GitHub не хранится
         "cities": {slug: names[0] for slug, names in CITIES.items()},
     }

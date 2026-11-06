@@ -121,6 +121,15 @@ jobs:
           done
           exit 1
 
+      # CRM работодателей в админке: снимок работодателей, их заведений и вакансий на сервер api.vacante.kz
+      # (vacante/crm_sync.py). Ошибка тут не мешает выкладке сайта
+      - name: CRM работодателей
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CRM_VIA: ${{ vars.CRM_VIA || 'https://api.vacante.kz' }}
+        run: python -m vacante crm --data-dir data
+
       - name: Собрать сайт
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}  # данные админки шифруются этим паролем

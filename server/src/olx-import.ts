@@ -158,6 +158,43 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
   const bearer = (req: Request) => (req.header("authorization") ?? "").replace(/^Bearer /, "");
   const page = `${ctx.config.apiOrigin}/olx/`;
 
+  async function storeAds(req: Request, automatic: boolean) {
+    let body: { items?: unknown };
+    try {
+      body = JSON.parse((await req.bytes(BODY_LIMIT)).toString("utf8") || "{}");
+    } catch {
+      throw new HttpError(400, "Тело запроса не JSON");
+    }
+    const items = Array.isArray(body?.items) ? body.items : null;
+    if (!items) throw new HttpError(400, "Нет списка объявлений");
+    if (items.length > MAX_ITEMS) throw new HttpError(400, `Не больше ${MAX_ITEMS} объявлений за раз`);
+    const now = ctx.now();
+    const at = new Date(now).toISOString();
+    const upsert = ctx.db.prepare(
+      `INSERT INTO olx_ads (id, url, title, description, salary, city, lat, lon, detailed, created_time, refreshed_time, imported_at, phone)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT (id) DO UPDATE SET url = excluded.url, title = excluded.title, description = excluded.description,
+         salary = excluded.salary, city = excluded.city, lat = excluded.lat, lon = excluded.lon, detailed = excluded.detailed,
+         created_time = COALESCE(olx_ads.created_time, excluded.created_time), refreshed_time = excluded.refreshed_time,
+         imported_at = excluded.imported_at, phone = excluded.phone`,
+    );
+    let stored = 0;
+    const phoneIds: number[] = [];
+    const seen = new Set<number>();
+    for (const item of items) {
+      const ad = cleanAd(item, now);
+      if (!ad || seen.has(ad.id)) continue;
+      seen.add(ad.id);
+      upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at, ad.phone);
+      if (ad.phone) phoneIds.push(ad.id);
+      stored++;
+    }
+    const old = new Date(now - KEEP_DAYS * 86_400_000).toISOString();
+    ctx.db.prepare("DELETE FROM olx_ads WHERE imported_at < ?").run(old);
+    const total = (ctx.db.prepare("SELECT count(*) AS n FROM olx_ads").get() as { n: number }).n;
+    return { json: { received: items.length, stored, skipped: items.length - stored, total, ...(automatic ? { phone_ids: phoneIds } : {}) } };
+  }
+
   return [
     route("GET", "api", "/olx/", () => ({
       headers: { "X-Robots-Tag": "noindex, nofollow", "Content-Security-Policy": "frame-ancestors 'none'" },
@@ -165,40 +202,13 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
     })),
 
     route("POST", "api", "/olx/import", async (req) => {
-      if (!ctx.config.olxImportKey) throw new HttpError(503, "На сервере нет ключа: нужен секрет ADMIN_PASSWORD в GitHub, после него выкладка сервера");
+      if (!ctx.config.olxImportKey) throw new HttpError(503, "Импорт через браузер не настроен");
       if (!same(bearer(req), Buffer.from(ctx.config.olxImportKey))) throw new HttpError(403, "Неверный пароль админки");
-      let body: { items?: unknown };
-      try {
-        body = JSON.parse((await req.bytes(BODY_LIMIT)).toString("utf8") || "{}");
-      } catch {
-        throw new HttpError(400, "Тело запроса не JSON");
-      }
-      const items = Array.isArray(body?.items) ? body.items : null;
-      if (!items) throw new HttpError(400, "Нет списка объявлений");
-      if (items.length > MAX_ITEMS) throw new HttpError(400, `Не больше ${MAX_ITEMS} объявлений за раз`);
-      const now = ctx.now();
-      const at = new Date(now).toISOString();
-      const upsert = ctx.db.prepare(
-        `INSERT INTO olx_ads (id, url, title, description, salary, city, lat, lon, detailed, created_time, refreshed_time, imported_at, phone)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-         ON CONFLICT (id) DO UPDATE SET url = excluded.url, title = excluded.title, description = excluded.description,
-           salary = excluded.salary, city = excluded.city, lat = excluded.lat, lon = excluded.lon, detailed = excluded.detailed,
-           created_time = COALESCE(olx_ads.created_time, excluded.created_time), refreshed_time = excluded.refreshed_time,
-           imported_at = excluded.imported_at, phone = excluded.phone`,
-      );
-      let stored = 0;
-      const seen = new Set<number>();
-      for (const item of items) {
-        const ad = cleanAd(item, now);
-        if (!ad || seen.has(ad.id)) continue;
-        seen.add(ad.id);
-        upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at, ad.phone);
-        stored++;
-      }
-      const old = new Date(now - KEEP_DAYS * 86_400_000).toISOString();
-      ctx.db.prepare("DELETE FROM olx_ads WHERE imported_at < ?").run(old);
-      const total = (ctx.db.prepare("SELECT count(*) AS n FROM olx_ads").get() as { n: number }).n;
-      return { json: { received: items.length, stored, skipped: items.length - stored, total } };
+      return storeAds(req, false);
+    }),
+    route("POST", "api", "/internal/olx/batch", async (req) => {
+      if (!same(bearer(req), internal)) throw new HttpError(403, "Нет доступа");
+      return storeAds(req, true);
     }),
 
     // Для часового сбора на GitHub: объявления, забранные после since, в формате выдачи OLX

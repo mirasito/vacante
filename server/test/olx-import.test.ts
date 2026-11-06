@@ -179,3 +179,16 @@ test("bookmarklet imports only current detail description, not related ads", () 
   assert.equal(sent.items[0].city, "Алматы");
   assert.match(sent.items[0].description, /701 000 00 00/);
 });
+
+test("hourly collector saves a description phone without an admin session", async () => {
+  const s = await startServer();
+  try {
+    const body = { items: [ad(1), ad(2, { description: "Отклик на OLX" })] };
+    assert.equal((await s.call("POST", "/internal/olx/batch", { body })).status, 403);
+    const headers = { authorization: `Bearer ${internalKey(TOKEN)}` };
+    const result = await s.call("POST", "/internal/olx/batch", { headers, body });
+    assert.equal(result.status, 200);
+    assert.deepEqual(result.json.phone_ids, [1]);
+    assert.doesNotMatch(result.text, /777/);
+  } finally { await s.close(); }
+});

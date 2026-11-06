@@ -1,22 +1,4 @@
-"""Вакансии из рубрики «Работа» OLX.kz через публичный JSON сайта (/api/v1/offers/).
-
-Решение Мираса (2026-11-05): брать вакансии OLX без отдельного разрешения OLX, риск по их правилам он берёт
-на себя. Поэтому источник ведёт себя как честный робот и ничего не обходит:
-- представляется своим User-Agent со ссылкой на vacante.kz, без подделки браузера, прокси и куки;
-- ходит только по путям, которые robots.txt OLX.kz разрешает (/api/v1/offers/ и /api/v1/categories/);
-- не чаще одного запроса в PAUSE секунд и не больше MAX_PAGES страниц за запуск;
-- если OLX отвечает 403/429, капчей или не JSON, источник молча пропускает запуск и не пытается обойти защиту.
-С серверов GitHub OLX отвечает 403, поэтому по решению Мираса запросы идут с его сервера в Казахстане
-(OLX_VIA, server/src/olx.ts): тот же User-Agent, один адрес, без подделки и смены адресов. OLX отвечает 403
-и оттуда, и маскироваться под браузер мы не будем. Поэтому страницы OLX смотрит сам Мирас: закладка
-«Забрать в vacante» (api.vacante.kz/olx/, server/src/olx-import.ts) передаёт объявления с открытой страницы
-на его сервер, а сбор забирает их оттуда (imports) и разбирает тем же кодом, что и выдачу OLX.
-
-Берём только саму вакансию: название, текст без телефонов и ссылок (parse.clean_text), зарплату, город, точку
-на карте, если OLX показывает её точно, и ссылку на объявление на OLX.kz, где человек и откликается.
-Телефон из описания импортированной вакансии хранится только на сервере.
-В открытые данные передаётся лишь has_phone; скрытые контакты не запрашиваем.
-"""
+"""Автосбор открытых страниц рубрики «Работа»; старый API доступен через OLX_SOURCE_MODE=api."""
 
 from __future__ import annotations
 
@@ -199,7 +181,7 @@ def to_vacancy(item: dict) -> Vacancy | None:
     return vacancy
 
 
-def collect(state: dict, now: datetime, client: httpx.Client | None = None,
+def collect_api(state: dict, now: datetime, client: httpx.Client | None = None,
             sleep: Callable[[float], None] = time.sleep) -> list[Vacancy] | None:
     """Новые вакансии OLX с прошлого запуска: из выдачи OLX (пока OLX отвечает роботу 403, ничего) и из
     объявлений, которые Мирас забрал в браузере (только через свой сервер, OLX_VIA).
@@ -250,3 +232,16 @@ def collect(state: dict, now: datetime, client: httpx.Client | None = None,
     vacancies = {v.id: v for v in map(to_vacancy, items) if v is not None}
     log.info("olx: %s объявлений, %s подходят", len(items), len(vacancies))
     return list(vacancies.values())
+
+def collect(state: dict, now: datetime) -> list[Vacancy] | None:
+    if not enabled():
+        return None
+    if os.environ.get("OLX_SOURCE_MODE") == "api":
+        return collect_api(state, now)
+    from vacante.sources.olx_web import collect_web
+    # Авторизация Vacante используется только для записи на наш сервер.
+    with httpx.Client(headers={"User-Agent": USER_AGENT, "Accept": "text/html"}, timeout=30) as public:
+        if via_server():
+            with make_client() as private:
+                return collect_web(state, now, public, private)
+        return collect_web(state, now, public, None)

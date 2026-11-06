@@ -1,0 +1,35 @@
+name: Проверить доступ к выдаче OLX
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - vacante/sources/olx_web.py
+      - .github/workflows/olx-check.yml
+permissions:
+  contents: read
+jobs:
+  read-listing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install .
+      - name: Проверить две страницы без публикации
+        run: |
+          python - <<'PY'
+          from datetime import datetime, timezone
+          import httpx
+          from vacante.sources.olx import USER_AGENT
+          from vacante.sources.olx_web import collect_web
+          state = {}
+          with httpx.Client(headers={"User-Agent": USER_AGENT, "Accept": "text/html"}, timeout=30) as client:
+              collect_web(state, datetime.now(timezone.utc), client, None, max_pages=2)
+          print(state)
+          if state["olx_status"] != "ok":
+              raise SystemExit(1)
+          PY

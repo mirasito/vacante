@@ -76,7 +76,7 @@ def test_collect_pages_until_window_and_remembers_it(monkeypatch):
         return httpx.Response(200, json={"data": pages[offset]})
 
     state = {}
-    found = olx.collect(state, NOW, client(handler), no_sleep)
+    found = olx.collect_api(state, NOW, client(handler), no_sleep)
     assert seen == [0, 2]  # дальше окна не листаем
     assert {v.id for v in found} == {"olx-1", "olx-2", "olx-3", "olx-4"}
     assert state["olx_checked_at"] == NOW.isoformat() and state["olx_status"] == "ok"
@@ -92,16 +92,16 @@ def test_blocked_is_skipped_not_bypassed(monkeypatch):
         return httpx.Response(200, text="<html>Подтвердите, что вы не робот</html>")
 
     state = {}
-    assert olx.collect(state, NOW, client(captcha), no_sleep) is None
+    assert olx.collect_api(state, NOW, client(captcha), no_sleep) is None
     assert len(calls) == 1 and state["olx_status"].startswith("blocked") and "olx_checked_at" not in state
 
     forbidden = client(lambda r: httpx.Response(403))
-    assert olx.collect(state, NOW, forbidden, no_sleep) is None
+    assert olx.collect_api(state, NOW, forbidden, no_sleep) is None
 
 
 def test_disabled_by_default(monkeypatch):
     monkeypatch.delenv("OLX_SOURCE_ENABLED", raising=False)
-    assert olx.collect({}, NOW, client(lambda r: 1 / 0), no_sleep) is None
+    assert olx.collect_api({}, NOW, client(lambda r: 1 / 0), no_sleep) is None
 
 
 def test_pipeline_keeps_olx_vacancies(tmp_path):
@@ -154,18 +154,18 @@ def test_imports_from_own_server_even_when_olx_blocks(monkeypatch):
 
     via = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(handler))
     state = {}
-    found = olx.collect(state, NOW, via, no_sleep)
+    found = olx.collect_api(state, NOW, via, no_sleep)
     assert [v.id for v in found] == ["olx-11"] and found[0].posted_at == "2026-11-04T05:00:00+00:00"
     assert state["olx_status"].startswith("blocked") and "olx_checked_at" not in state
     assert state["olx_imports_at"] == NOW.isoformat()
     assert asked == [(NOW - olx.IMPORTS_FIRST).isoformat(timespec="seconds")]
-    olx.collect(state, NOW + timedelta(hours=1), via, no_sleep)
+    olx.collect_api(state, NOW + timedelta(hours=1), via, no_sleep)
     assert asked[1] == (NOW - olx.OVERLAP).isoformat(timespec="seconds")
 
     # Сервер не отдал объявления (например, не тот ключ) и OLX закрыт: источник пропускает запуск
     denied = httpx.Client(base_url="https://api.vacante.kz/internal/olx", transport=httpx.MockTransport(
         lambda r: httpx.Response(403)))
-    assert olx.collect(dict(state), NOW, denied, no_sleep) is None
+    assert olx.collect_api(dict(state), NOW, denied, no_sleep) is None
 
 
 def test_imported_phone_flag_only_and_removal():

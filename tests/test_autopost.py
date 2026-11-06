@@ -24,7 +24,7 @@ def test_due_only_in_daytime_and_after_gap():
 
 
 def test_pick_prefers_complete_fresh_unposted_and_varies_titles():
-    bare = make(1, "Требуется грузчик на склад")
+    bare = make(1, "Требуется грузчик на склад, 200 000 тг")
     full = make(2, "Кафе «Зерно» ищет бариста, 2/2, 12 000 тг за смену, питание")
     other_city = make(3, "Кафе «Луна» ищет официанта, 300 000 тг", city="astana")
     old = make(4, "Ресторан «Сад» ищет повара, 400 000 тг", hour=5)
@@ -33,6 +33,14 @@ def test_pick_prefers_complete_fresh_unposted_and_varies_titles():
     assert autopost.pick(vacancies, "almaty", {}, NOON) is full
     assert autopost.pick(vacancies, "almaty", {"ids": [full.id]}, NOON) is bare
     assert autopost.pick(vacancies, "almaty", {"titles": ["Бариста"]}, NOON) is bare
+
+
+def test_pick_skips_vacancies_with_empty_card():
+    empty = make(11, "Ерлер киім дүкеніне сатушы қыз керек. График: 5/2")
+    assert not autopost.filled(empty)
+    assert autopost.pick([empty], "almaty", {}, NOON) is None
+    with_address = make(12, "Требуется продавец\n📍 Адрес: ул. Абая, 63")
+    assert autopost.pick([empty, with_address], "almaty", {}, NOON) is with_address
 
 
 def test_caption_has_the_rest_escaped():

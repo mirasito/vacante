@@ -1,6 +1,7 @@
 // Вакансия в виде vacante 2.0: карточка в ленте «Рядом» и полная страница вакансии.
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { shiftLabel } from './feed';
 import { distanceLabel, kmFromHome, type Point } from './geo';
 import * as i18n from './i18n';
 import { Icon } from './icons';
@@ -67,9 +68,10 @@ export function VacancyCard(props: Props & { reason?: string | null; onOpen(): v
           {away ? <Text style={[styles.fact, { color: c.brand }]}>{away}</Text> : null}
         </View>
       ) : null}
-      {v.top || perks.length ? (
+      {v.top || v.shift || perks.length ? (
         <View style={styles.badges}>
           {v.top ? <Badge c={c} tone="warn" label={i18n.t(lang, 'urgent')} /> : null}
+          {v.shift ? <Badge c={c} tone="ok" label={shiftLabel(v.shift, lang)} /> : null}
           {perks.slice(0, 4).map((p) => (
             <Badge key={p} c={c} label={p} />
           ))}

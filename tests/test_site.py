@@ -14,7 +14,9 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     out = tmp_path / "public"
     count = build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
-    assert count == 10  # главная, город, город+сфера, вакансия, конфиденциальность: по-русски и по-казахски
+    # главная, город, город+сфера, вакансия, конфиденциальность и две страницы «Подработка и смены» (оплата за смену):
+    # по-русски и по-казахски
+    assert count == 14
     page = (out / "v" / "chan-5" / "index.html").read_text("utf-8")
     assert "Официант" in page and "14 000 – 18 000 ₸/день" in page
     assert 'href="https://t.me/chan/5"' in page
@@ -56,7 +58,7 @@ def test_list_has_filters_and_counts_in_russian(tmp_path):
     home = (tmp_path / "public" / "index.html").read_text("utf-8")
     assert "<title>Вакансии — 1 вакансия | vacante.kz</title>" in home
     assert 'data-pay="396000"' in home  # 18 000 за смену × 22 смены
-    assert 'data-perks="Питание|Без опыта"' in home
+    assert 'data-perks="Питание|Без опыта|Смены и подработка"' in home  # оплата за смену
     assert 'data-perk="Без опыта"' in home and 'value="300000"' in home
     # Сортировка, свежесть и сфера; оплата за смену видна и в пересчёте на месяц
     assert 'id="sort"' in home and 'id="fresh"' in home and '<option value="horeca" data-label="Кафе и рестораны">' in home

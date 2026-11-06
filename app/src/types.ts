@@ -36,7 +36,11 @@ export interface Vacancy {
   venue?: { instagram?: string; website?: string; gis?: string };
   /** Какие контакты есть в исходном посте: по ним окно «Как откликнуться?» показывает кнопки. */
   contact?: ContactKind[];
+  /** Смена или подработка: part — подработка, day — оплата за смену, hour — почасовая, daily — платят каждый день. */
+  shift?: ShiftKind;
 }
+
+export type ShiftKind = 'part' | 'day' | 'hour' | 'daily';
 
 export interface City {
   slug: string;

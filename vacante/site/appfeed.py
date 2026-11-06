@@ -13,6 +13,7 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
+from vacante import shifts
 from vacante import venues as venue_store
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES, PROFESSIONS
@@ -69,6 +70,8 @@ def item(v: Vacancy, base_url: str, now: datetime, venues: dict) -> dict:
         "text": v.text[:TEXT_SIZE],
         # Виды контактов в исходном посте (whatsapp, phone, telegram): кнопки окна «Как откликнуться?»
         "contact": v.contact,
+        # Смена или подработка (vacante.shifts.kind): кнопка «Смены» в ленте и значок на карточке
+        "shift": shifts.kind(v),
     }
     if venue and venue.get("avatar"):
         data["avatar"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T03:56:55+00:00",
+ "updated_at": "2026-11-06T04:56:50+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -33771,6 +33771,242 @@
     "title": "Торговый представитель",
     "employer": "Первый пивзавод",
     "schedule": "5/2, 8 часов"
+   }
+  },
+  "hh-139186915": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, 12 часов"
+   }
+  },
+  "hh-138609450": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "rabota_astanakz-31312": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Магазин-бар «Alco&BeerPoint»",
+    "schedule": "2/2, 12:00–00:00"
+   }
+  },
+  "astana_job_vakansii-130224": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": "Orda Academy",
+    "schedule": "6/1, 13:00–21:00",
+    "perks": [
+     "Бонусы",
+     "Обучение",
+     "Без опыта",
+     "Можно студентам"
+    ]
+   }
+  },
+  "astana_job_vakansii-130259": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Технический персонал, помощник пекаря, курьер",
+    "employer": "Кондитерский дом «JANZETO»",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_period": null,
+    "schedule": "6/1",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "jobs_kazakhstan-287": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "6/1, 08:00–18:00",
+    "address": null,
+    "perks": []
+   }
+  },
+  "rabota_uralsk-74402": {
+   "verdict": "reject",
+   "at": "2026-11-06T04:56:50+00:00",
+   "reason": "Вакансия из Уральска (Зачаганск), не Астана"
+  },
+  "zhumys_astana_kz-17206": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "2/1, 07:30–19:30",
+    "address": "ул. Калдаякова, 25"
+   }
+  },
+  "zhumys_astana_kz-17203": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "5/2, 07:00–18:00",
+    "address": "ул. Кунаева, 6"
+   }
+  },
+  "astana_job_vakansii-130236": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Уборщица, уборщик",
+    "schedule": null,
+    "address": null
+   }
+  },
+  "hh-139144350": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "5/2, 8 часов"
+   }
+  },
+  "hh-139186662": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов"
+   }
+  },
+  "hh-139186513": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Повар",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "hh-139186442": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": "Халык-Лизинг",
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Алмалыкская, 54/4"
+   }
+  },
+  "rabota4almaty-6215": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "вахта 3/3 недели, 08:00–00:00"
+   }
+  },
+  "hh-139186321": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": "Азия Газ NG",
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "hh-139186239": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Водитель автобуса",
+    "schedule": "3/2 или 2/2",
+    "address": "ул. Бродского, 37г"
+   }
+  },
+  "hh-139186193": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Администратор стоматологии",
+    "schedule": "6/1, 8 часов",
+    "address": "ул. Ауэзова, 5"
+   }
+  },
+  "hh-139163678": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "2/2, 12 часов",
+    "address": "ул. Кабанбай батыра, 112"
+   }
+  },
+  "hh-139163607": {
+   "verdict": "reject",
+   "at": "2026-11-06T04:56:50+00:00",
+   "reason": "Продажи БАДов по телефону, вилка 100 000–1 000 000"
+  },
+  "hh-139186215": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Акжиек, 168"
+   }
+  },
+  "hh-139186932": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Центр цветов",
+    "schedule": "2/2, 12 часов",
+    "address": "ул. Карла Маркса, 5/1"
+   }
+  },
+  "hh-139186827": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Библиотечная, 1А"
+   }
+  },
+  "hh-139186783": {
+   "verdict": "reject",
+   "at": "2026-11-06T04:56:50+00:00",
+   "reason": "Офисная должность: высшее образование, аналитика рынка"
+  },
+  "hh-139186613": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Оператор-кассир",
+    "employer": "Дельта Капитал",
+    "schedule": "6/1 или 5/2"
+   }
+  },
+  "hh-139186584": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "title": "Монтажник-формовщик",
+    "employer": "НПК «Герат-УК»",
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Путевая, 23"
+   }
+  },
+  "hh-139186242": {
+   "verdict": "reject",
+   "at": "2026-11-06T04:56:50+00:00",
+   "reason": "Адрес в Алматы, место работы для Семея неясно"
+  },
+  "hh-139186232": {
+   "verdict": "approve",
+   "at": "2026-11-06T04:56:50+00:00",
+   "fields": {
+    "employer": "ГКП «Костанай-Су»",
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Абая, 19"
    }
   }
  }

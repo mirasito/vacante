@@ -239,9 +239,8 @@ def collect(state: dict, now: datetime) -> list[Vacancy] | None:
     if os.environ.get("OLX_SOURCE_MODE") == "api":
         return collect_api(state, now)
     from vacante.sources.olx_web import collect_web
-    # Авторизация Vacante используется только для записи на наш сервер.
+    if via_server():
+        with make_client() as server:
+            return collect_web(state, now, server, server, via=True)
     with httpx.Client(headers={"User-Agent": USER_AGENT, "Accept": "text/html"}, timeout=30) as public:
-        if via_server():
-            with make_client() as private:
-                return collect_web(state, now, public, private)
         return collect_web(state, now, public, None)

@@ -14,6 +14,7 @@ export const OLX = "https://www.olx.kz";
 export const USER_AGENT = "vacante.kz/1.0 (+https://vacante.kz; job aggregator, links back to olx.kz)";
 export const PAUSE_MS = 3000;
 const PATHS: Record<string, readonly string[]> = {
+  "/listing": ["page"],
   "/api/v1/categories/": [],
   "/api/v1/offers/": ["category_id", "offset", "limit", "sort_by"],
 };
@@ -32,14 +33,16 @@ export function olxRoutes(ctx: Ctx): Route[] {
       if (!allowed.includes(k) || !/^[\w:.-]{1,40}$/.test(v)) throw new HttpError(400, `Параметр ${k} не нужен`);
       query.set(k, v);
     }
+    const listing = path === "/listing";
+    if (listing && !/^(?:[1-9]|1[0-9]|2[0-5])$/.test(query.get("page") ?? "1")) throw new HttpError(400, "Неверная страница");
     const now = ctx.now();
     if (now - last < PAUSE_MS) throw new HttpError(429, "Не чаще запроса в 3 секунды");
     last = now;
-    const url = `${OLX}${path}${query.size ? `?${query}` : ""}`;
+    const url = `${OLX}${listing ? "/rabota/" : path}${query.size ? `?${query}` : ""}`;
     let res: Response;
     try {
       res = await ctx.fetch(url, {
-        headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+        headers: { "User-Agent": USER_AGENT, Accept: listing ? "text/html" : "application/json" },
         redirect: "manual",
         signal: AbortSignal.timeout(25_000),
       });

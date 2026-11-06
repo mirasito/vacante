@@ -39,3 +39,22 @@ test("сбор OLX: только с ключом, только два пути, 
     await s.close();
   }
 });
+
+test("scheduled listing route only fetches a fixed OLX jobs page without forwarding credentials", async () => {
+  let called = false;
+  const s = await startServer({ fetch: async (url, init) => {
+    assert.equal(String(url), "https://www.olx.kz/rabota/?page=2");
+    assert.equal(new Headers(init?.headers).get("authorization"), null);
+    assert.equal(new Headers(init?.headers).get("accept"), "text/html");
+    called = true;
+    return new Response("<html></html>", { headers: { "content-type": "text/html" } });
+  } });
+  try {
+    const headers = { authorization: `Bearer ${internalKey(TOKEN)}` };
+    assert.equal((await s.call("GET", "/internal/olx/listing?page=99", { headers })).status, 400);
+    const r = await s.call("GET", "/internal/olx/listing?page=2", { headers });
+    assert.ok(called);
+    assert.equal(r.headers["x-olx-status"], "200");
+    assert.equal(r.text, "<html></html>");
+  } finally { await s.close(); }
+});

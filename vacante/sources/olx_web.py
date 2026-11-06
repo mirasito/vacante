@@ -49,7 +49,7 @@ def parse_ad(ad, now):
     return (row, vacancy) if vacancy else None
 
 
-def collect_web(state, now, public, private, sleep=time.sleep, max_pages=MAX_PAGES):
+def collect_web(state, now, public, private, sleep=time.sleep, max_pages=MAX_PAGES, *, via=False):
     found = {}
     pages = 0
     status = "ok"
@@ -58,8 +58,14 @@ def collect_web(state, now, public, private, sleep=time.sleep, max_pages=MAX_PAG
         if number > 1:
             sleep(olx.PAUSE)
         try:
-            response = public.get(olx.BASE + "/rabota/", params={"page": number} if number > 1 else {})
+            response = public.get("listing" if via else olx.BASE + "/rabota/",
+                                  params={"page": number} if number > 1 else {})
             response.raise_for_status()
+            upstream = response.headers.get("x-olx-status", "200") if via else "200"
+            if upstream != "200":
+                status = f"HTTP {upstream}"
+                log.warning("olx: сервер получил %s на странице %s", status, number)
+                break
             data = listing(response.text, number)
             total = int(data["totalPages"])
         except (httpx.HTTPError, ValueError, TypeError, KeyError) as exc:

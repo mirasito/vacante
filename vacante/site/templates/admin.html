@@ -72,7 +72,8 @@ td.nowrap { white-space: nowrap; }
 #login button { font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; }
 #login button:disabled { opacity: 0.6; cursor: default; }
 #logout { font: inherit; font-size: 13px; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; margin-left: auto; }
-.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 16px; overflow-x: auto; }
+.tabs button { flex: none; }
 .tabs button { font: inherit; font-weight: 600; color: var(--quiet); background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer; }
 .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
 .links a { margin-right: 8px; white-space: nowrap; }
@@ -95,6 +96,35 @@ td.nowrap { white-space: nowrap; }
 .venue li { padding: 4px 0; border-top: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 8px; }
 .venue li span:last-child { color: var(--quiet); white-space: nowrap; }
 .venue details { margin-top: 6px; font-size: 13.5px; }
+.emp-ava.big { width: 56px; height: 56px; font-size: 22px; }
+#emp-card h4 { margin: 18px 0 8px; font-size: 15px; }
+#emp-card .about { margin: 10px 0 0; font-size: 14px; white-space: pre-line; }
+.emp-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 8px 24px; }
+.work { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; align-items: end; margin: 8px 0; }
+.work .wide { grid-column: 1 / -1; }
+.fld { display: grid; gap: 2px; font-size: 12px; color: var(--quiet); min-width: 0; }
+.fld input, .fld select, .fld textarea, .act-form input, .act-form select, .vmove input, #emp-merge input { font: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; padding: 5px 8px; min-width: 0; width: 100%; box-sizing: border-box; }
+.act { font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 999px; padding: 4px 12px; cursor: pointer; white-space: nowrap; }
+.act.ok { color: #fff; background: var(--accent); border-color: var(--accent); }
+.act:hover { border-color: var(--accent); }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.venue.pending { border-color: var(--dup); background: var(--dup-bg); }
+.review { margin-top: 8px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 8px; }
+.photos figure { margin: 0; position: relative; }
+.photos img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; display: block; }
+.photos .x { position: absolute; top: 2px; right: 2px; border: 0; border-radius: 50%; width: 20px; height: 20px; line-height: 18px; padding: 0; background: rgba(0,0,0,.6); color: #fff; cursor: pointer; }
+.vform, .vmove { margin-top: 8px; display: grid; gap: 6px; }
+.pick { list-style: none; padding: 0; margin: 6px 0 0; display: grid; gap: 4px; font-size: 13px; }
+.plain { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+.plain li { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.venues-head { display: flex; align-items: center; gap: 12px; }
+.venues-head h4 { margin-right: auto !important; }
+.act-form { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.act-form select { width: auto; }
+.act-form input { flex: 1 1 220px; width: auto; }
+.vform[hidden], .vmove[hidden], .work[hidden] { display: none; }
+#emp-card details > summary { cursor: pointer; font-weight: 600; margin-top: 10px; }
 @media (max-width: 640px) {
   .wrap { padding: 12px; }
   .tile b { font-size: 22px; }
@@ -203,7 +233,7 @@ td.nowrap { white-space: nowrap; }
   </div>
 
   <div id="tab-emp" hidden>
-  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками и вакансиями, которые сейчас на сайте, и архивом снятых. Данные приходят с сервера api.vacante.kz и обновляются каждый час после сбора. Пока только просмотр: правка, добавление заведений и профили работодателей в боте будут следующими этапами.</p>
+  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками, фото и вакансиями, которые сейчас на сайте, и архивом снятых. Сбор обновляет данные каждый час, ручные правки он не трогает. В карточке: статус и следующий шаг, история, профили работодателя в боте (/company), оплаты, склейка дублей. Хранится только на сервере api.vacante.kz.</p>
   <p class="err" id="emp-error" hidden></p>
   <div class="filters">
     <div class="seg" id="emp-has">
@@ -211,14 +241,18 @@ td.nowrap { white-space: nowrap; }
       <button type="button" data-v="active" aria-pressed="false">С вакансиями сейчас</button>
       <button type="button" data-v="many" aria-pressed="false">Несколько заведений</button>
       <button type="button" data-v="links" aria-pressed="false">Есть сайт или соцсети</button>
+      <button type="button" data-v="todo" aria-pressed="false">Заявки и проверки<span id="emp-todo-n"></span></button>
+      <button type="button" data-v="next" aria-pressed="false">Шаг на сегодня</button>
+      <button type="button" data-v="paid" aria-pressed="false">В боте и платили</button>
     </div>
+    <select id="emp-status" aria-label="Статус"><option value="">Все статусы</option></select>
     <select id="emp-city" aria-label="Город"><option value="">Все города</option></select>
     <input id="emp-q" type="search" placeholder="Поиск работодателя" aria-label="Поиск работодателя">
   </div>
   <p class="quiet" id="emp-count">Загружаю…</p>
   <section id="emp-card" hidden aria-live="polite"></section>
   <div class="scroll"><table id="emp">
-    <thead><tr><th>Работодатель</th><th>Города</th><th class="n">Заведений</th><th class="n">Вакансий сейчас</th><th class="n">Всего</th><th>Последняя</th><th>Источники</th></tr></thead>
+    <thead><tr><th>Работодатель</th><th>Статус</th><th>Города</th><th class="n">Заведений</th><th class="n">Вакансий сейчас</th><th class="n">Всего</th><th>Последняя</th><th>Источники</th><th class="n">Оплачено</th></tr></thead>
     <tbody></tbody>
   </table></div>
   <button type="button" class="more" id="emp-more" hidden>Показать ещё</button>
@@ -514,11 +548,17 @@ td.nowrap { white-space: nowrap; }
     const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("crm:" + adminPassword.normalize("NFKC")));
     return "Bearer " + [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
   }
-  async function crmFetch(api, body) {
+  async function crmFetch(api, body, method) {
     const headers = { Authorization: await crmAuth() };
-    const init = body ? { method: "POST", headers: { ...headers, "Content-Type": "application/json" }, body: JSON.stringify(body) } : { headers };
+    const init = { method: method || (body ? "POST" : "GET"), headers };
+    if (body instanceof Blob) { headers["Content-Type"] = body.type || "image/jpeg"; init.body = body; }
+    else if (body) { headers["Content-Type"] = "application/json"; init.body = JSON.stringify(body); }
     const r = await fetch(api, init);
-    if (!r.ok) throw new Error(r.status === 403 ? "сервер не принял пароль" : r.status === 503 ? "на сервере не задан пароль админки" : "ошибка " + r.status);
+    if (!r.ok) {
+      let text = "";
+      try { text = (await r.json()).error || ""; } catch (e) { /* не JSON */ }
+      throw new Error(r.status === 403 ? "сервер не принял пароль" : r.status === 503 ? "на сервере не задан пароль админки" : text || "ошибка " + r.status);
+    }
     return r.json();
   }
 
@@ -563,76 +603,306 @@ td.nowrap { white-space: nowrap; }
   }
 
 
-  // Работодатели: список и карточки с сервера api.vacante.kz (server/src/crm.ts), ключ тот же, что у CRM заведений
+  // Работодатели: список и карточки с сервера api.vacante.kz (server/src/crm.ts), ключ тот же, что у CRM заведений.
+  // Карточку можно править: поля, статус и следующий шаг, история, заведения с фото, склейка, заявки из бота.
   const SOURCE = { hh: "hh.kz", telegram: "Telegram", olx: "OLX", bot: "наш бот" };
+  const EMP_STATUS = { "": "Не писали", sent: "Написали", replied: "Ответили", client: "Клиент", no: "Отказ" };
+  const ACT_ICON = { note: "📝", call: "📞", message: "💬", status: "🏷️", venue: "🏠", merge: "🔗", member: "👤", payment: "💳" };
+  const PAY_KIND = { post: "размещение", boost: "«Срочно»" };
+  const PAY_STATUS = { confirmed: "оплачено", pending: "ждёт проверки", rejected: "отклонено" };
+  const EMP_FIELDS = [
+    ["name", "Название"], ["legal_name", "Юрлицо"], ["bin", "БИН"], ["category", "Сфера"],
+    ["website", "Сайт"], ["instagram", "Instagram"], ["telegram", "Telegram"],
+  ];
+  const VENUE_FIELDS = [["name", "Название"], ["address", "Адрес"], ["instagram", "Instagram"], ["telegram", "Telegram"], ["website", "Сайт"], ["twogis", "Ссылка 2ГИС"]];
+
+  // Фото уменьшаем в браузере до 1280 точек по длинной стороне и отправляем JPEG: сервер уберёт метаданные
+  async function photoJpeg(file) {
+    const img = await createImageBitmap(file);
+    const scale = Math.min(1, 1280 / Math.max(img.width, img.height));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round(img.width * scale);
+    canvas.height = Math.round(img.height * scale);
+    canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+    return new Promise((ok, bad) => canvas.toBlob((b) => (b ? ok(b) : bad(new Error("не получилось сжать фото"))), "image/jpeg", 0.85));
+  }
+
   async function renderEmployers(api, cities, marksApi) {
     const city = (slug) => cities[slug] || "Весь Казахстан";
     const fail = (e) => { $("#emp-error").hidden = false; $("#emp-error").textContent = `Сервер не ответил (${e.message}). Попробуйте позже.`; $("#emp-count").textContent = ""; };
+    const call = (path, method, body) => crmFetch(`${api}${path}`, body, method);
     let rows, marks = {};
     try { rows = (await crmFetch(api)).employers; } catch (e) { fail(e); return; }
-    try { marks = (await crmFetch(marksApi)).marks; } catch (e) { /* статусы переписки покажем, когда воркер ответит */ }
-    rows.sort((a, b) => b.active - a.active || b.venues - a.venues || String(b.last_posted).localeCompare(String(a.last_posted)));
+    try { marks = (await crmFetch(marksApi)).marks; } catch (e) { /* статусы старой CRM покажем, когда воркер ответит */ }
+    const sortRows = () => rows.sort((a, b) => (b.claims + b.pending_venues) - (a.claims + a.pending_venues) ||
+      b.active - a.active || b.venues - a.venues || String(b.last_posted).localeCompare(String(a.last_posted)));
+    sortRows();
     for (const c of [...new Set(rows.flatMap((r) => r.cities))].sort((a, b) => city(a).localeCompare(city(b)))) {
       $("#emp-city").insertAdjacentHTML("beforeend", `<option value="${esc(c)}">${esc(city(c))}</option>`);
     }
-    let has = "", shown = PAGE;
-    const ava = (avatar, name) => avatar
-      ? `<img class="emp-ava" src="${ROOT}/venues/${esc(avatar)}" alt="" loading="lazy">`
-      : `<span class="emp-ava">${esc((name.match(/[\p{L}\p{N}]/u) || ["?"])[0].toUpperCase())}</span>`;
+    for (const [k, label] of Object.entries(EMP_STATUS)) $("#emp-status").insertAdjacentHTML("beforeend", `<option value="${k || "none"}">${esc(label)}</option>`);
+    const today = new Date(Date.now() + 5 * 3600e3).toISOString().slice(0, 10); // по времени Казахстана
+    let has = "", shown = PAGE, current = null;
+    const initial = (name) => esc((String(name).match(/[\p{L}\p{N}]/u) || ["?"])[0].toUpperCase());
+    const ava = (src, name, big) => src
+      ? `<img class="emp-ava${big ? " big" : ""}" src="${esc(src)}" alt="" loading="lazy">`
+      : `<span class="emp-ava${big ? " big" : ""}">${initial(name)}</span>`;
+    const venueAva = (v) => (v.avatar ? `${ROOT}/venues/${v.avatar}` : (v.photos && v.photos[0] ? v.photos[0].url : null));
+    const rowAva = (r) => (r.avatar ? `${ROOT}/venues/${r.avatar}` : r.logo);
+    const href = (kind, value) => kind === "instagram" ? `https://www.instagram.com/${value}/` : kind === "telegram" ? `https://t.me/${value}` : value;
     const links = (r) => [
       r.website && `<a href="${esc(r.website)}" target="_blank" rel="noopener">сайт</a>`,
-      r.instagram && `<a href="https://www.instagram.com/${esc(r.instagram)}/" target="_blank" rel="noopener">Instagram</a>`,
-      r.telegram && `<a href="https://t.me/${esc(r.telegram)}" target="_blank" rel="noopener">Telegram</a>`,
+      r.instagram && `<a href="${esc(href("instagram", r.instagram))}" target="_blank" rel="noopener">Instagram</a>`,
+      r.telegram && `<a href="${esc(href("telegram", r.telegram))}" target="_blank" rel="noopener">Telegram</a>`,
       r.twogis && `<a href="${esc(r.twogis)}" target="_blank" rel="noopener">2ГИС</a>`,
     ].filter(Boolean).join("");
+    const plural = (n, one, few, many) => { const a = n % 10, b = n % 100; return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many; };
+    const day = (iso) => (iso ? new Date(iso).toLocaleDateString("ru-RU", { day: "numeric", month: "short", timeZone: "Asia/Almaty" }) : "");
+
     function filtered() {
-      const c = $("#emp-city").value, q = $("#emp-q").value.trim().toLowerCase();
+      const c = $("#emp-city").value, s = $("#emp-status").value, q = $("#emp-q").value.trim().toLowerCase();
       return rows.filter((r) => (!c || r.cities.includes(c)) &&
+        (!s || (s === "none" ? !r.status : r.status === s)) &&
         (has !== "active" || r.active > 0) && (has !== "many" || r.venues > 1) &&
         (has !== "links" || r.website || r.instagram || r.telegram) &&
+        (has !== "todo" || r.claims > 0 || r.pending_venues > 0) &&
+        (has !== "next" || (r.next_at && r.next_at <= today)) &&
+        (has !== "paid" || r.paid > 0 || r.members > 0) &&
         (!q || r.name.toLowerCase().includes(q)));
     }
     function draw(reset) {
       if (reset) shown = PAGE;
       const list = filtered();
+      const todo = rows.filter((r) => r.claims > 0 || r.pending_venues > 0).length;
+      $("#emp-todo-n").textContent = todo ? ` (${num(todo)})` : "";
       $("#emp-count").textContent = `Работодателей: ${num(list.length)} из ${num(rows.length)}. Заведений: ${num(list.reduce((a, r) => a + r.venues, 0))}.`;
-      $("#emp tbody").innerHTML = list.slice(0, shown).map((r) => `<tr class="emp-row" tabindex="0" data-id="${r.id}">
-          <td><span class="emp-name">${ava(r.avatar, r.name)}<b>${esc(r.name)}</b></span></td>
+      $("#emp tbody").innerHTML = list.slice(0, shown).map((r) => {
+        const flags = [
+          r.claims ? `<span class="badge duplicate">заявка</span>` : "",
+          r.pending_venues ? `<span class="badge duplicate">заведение на проверке</span>` : "",
+          r.members ? `<span class="badge accepted" title="Есть профиль в боте">в боте</span>` : "",
+        ].join(" ");
+        const next = r.next_at ? `<div class="snippet${r.next_at <= today ? " err" : ""}">шаг ${esc(day(r.next_at + "T12:00:00Z"))}</div>` : "";
+        return `<tr class="emp-row" tabindex="0" data-id="${r.id}">
+          <td><span class="emp-name">${ava(rowAva(r), r.name)}<span><b>${esc(r.name)}</b> ${flags}</span></span></td>
+          <td class="nowrap">${r.status ? esc(EMP_STATUS[r.status] || r.status) : `<span class="quiet">—</span>`}${next}</td>
           <td>${esc(r.cities.map(city).join(", "))}</td>
           <td class="n">${num(r.venues)}</td>
           <td class="n">${num(r.active)}</td>
           <td class="n">${num(r.total)}</td>
           <td class="nowrap">${r.last_posted ? when(r.last_posted) : "—"}</td>
           <td>${esc(r.sources.map((x) => SOURCE[x] || x).join(", ")) || `<span class="quiet">снято</span>`}</td>
-        </tr>`).join("") || `<tr><td colspan="7" class="quiet">Ничего не найдено</td></tr>`;
+          <td class="n">${r.paid ? num(r.paid) + " ₸" : "—"}</td>
+        </tr>`;
+      }).join("") || `<tr><td colspan="9" class="quiet">Ничего не найдено</td></tr>`;
       $("#emp-more").hidden = list.length <= shown;
     }
+    // Строка списка после правки карточки: без перезагрузки всего списка
+    function syncRow(card) {
+      const r = rows.find((x) => x.id === card.employer.id);
+      if (!r) return;
+      const e = card.employer, live = card.venues.filter((v) => v.review !== "rejected");
+      Object.assign(r, {
+        name: e.name, status: e.status, next_at: e.next_at, note: e.note, venues: live.length,
+        cities: [...new Set(live.map((v) => v.city).filter(Boolean))],
+        claims: card.members.filter((m) => !m.confirmed_at && !m.rejected_at).length,
+        members: card.members.filter((m) => m.confirmed_at).length,
+        pending_venues: card.venues.filter((v) => v.review === "pending").length,
+        paid: card.payments.filter((p) => p.status === "confirmed").reduce((a, p) => a + p.amount, 0),
+        logo: e.hh && e.hh.logo, website: e.website || r.website, instagram: e.instagram || r.instagram, telegram: e.telegram || r.telegram,
+      });
+      draw(false);
+    }
+
     const vacancy = (v) => `<li><span><a href="${ROOT}/v/${esc(v.id)}/" target="_blank">${esc(v.title)}</a>${v.salary ? ` · ${esc(v.salary)}` : ""}</span><span>${esc(SOURCE[v.source] || v.source)} · ${when(v.posted_at)}</span></li>`;
     const archived = (v) => `<li><span>${esc(v.title)}${v.salary ? ` · ${esc(v.salary)}` : ""}</span><span>${esc(SOURCE[v.source] || v.source)} · снята ${when(v.last_seen)}</span></li>`;
+    const field = (name, label, value, attrs = "") => `<label class="fld"><span>${esc(label)}</span><input name="${name}" value="${esc(value || "")}" ${attrs}></label>`;
+    const cityOptions = (sel) => `<option value="">Весь Казахстан</option>` + Object.entries(cities)
+      .sort((a, b) => a[1].localeCompare(b[1])).map(([k, n]) => `<option value="${esc(k)}"${k === sel ? " selected" : ""}>${esc(n)}</option>`).join("");
+    const formData = (form) => Object.fromEntries([...new FormData(form)].map(([k, v]) => [k, String(v).trim()]));
+
+    function venueCard(v) {
+      const m = marks[v.key] || {};
+      const review = v.review === "pending"
+        ? `<div class="review">Добавил работодатель в боте, ждёт проверки
+             <button type="button" class="act ok" data-do="approve">Одобрить</button>
+             <button type="button" class="act" data-do="reject">Отклонить</button></div>`
+        : v.review === "rejected" ? `<div class="snippet err">Отклонено</div>` : "";
+      const who = v.added_by === "employer" ? "добавил работодатель" : v.added_by === "admin" ? "добавили вручную" : "";
+      return `<article class="venue${v.review === "pending" ? " pending" : ""}" data-vid="${v.id}">
+        <div class="emp-name">${ava(venueAva(v), v.name)}<div><h4>${esc(v.name)}</h4><div class="snippet">${esc(city(v.city))}${v.address ? ", " + esc(v.address) : ""}${who ? ` · ${who}` : ""}</div></div></div>
+        ${review}
+        <div class="links" style="margin-top:6px">${links(v) || `<span class="quiet">ссылок пока нет</span>`}</div>
+        ${m.status ? `<div class="snippet">Старая CRM: ${esc(CRM_STATUS[m.status] || m.status)}${m.note ? " · " + esc(m.note) : ""}</div>` : ""}
+        ${v.photos.length ? `<div class="photos">${v.photos.map((p) => `<figure><a href="${esc(p.url)}" target="_blank"><img src="${esc(p.url)}" alt="" loading="lazy"></a><button type="button" class="x" data-do="unphoto" data-mid="${p.id}" aria-label="Удалить фото">×</button></figure>`).join("")}</div>` : ""}
+        <ul>${v.vacancies.map(vacancy).join("") || `<li><span class="quiet">Сейчас вакансий нет</span><span></span></li>`}</ul>
+        ${v.archived ? `<details><summary>Снятые: ${num(v.archived)}</summary><ul>${v.archive.map(archived).join("")}</ul></details>` : ""}
+        <div class="tools">
+          <button type="button" class="act" data-do="vedit">Править</button>
+          <label class="act">Фото<input type="file" accept="image/*" data-do="photo" hidden></label>
+          <button type="button" class="act" data-do="move">Перенести</button>
+          <button type="button" class="act" data-do="remove">Убрать</button>
+        </div>
+        <form class="vform" hidden>
+          ${VENUE_FIELDS.map(([f, l]) => field(f, l, v[f])).join("")}
+          <label class="fld"><span>Город</span><select name="city">${cityOptions(v.city)}</select></label>
+          <div class="tools"><button class="act ok">Сохранить</button><button type="button" class="act" data-do="vcancel">Отмена</button></div>
+        </form>
+        <div class="vmove" hidden>
+          <input type="search" placeholder="К какому работодателю" aria-label="Работодатель">
+          <ul class="pick"></ul>
+        </div>
+      </article>`;
+    }
+
+    function drawCard(card) {
+      current = card;
+      syncRow(card);
+      const box = $("#emp-card");
+      const { employer: e, venues, members, activities, payments } = card;
+      const live = venues.filter((v) => v.review !== "rejected");
+      const active = live.reduce((a, v) => a + v.vacancies.length, 0);
+      const cover = e.hh && e.hh.logo ? e.hh.logo : venueAva(live.find((v) => venueAva(v)) || {});
+      const paid = payments.filter((p) => p.status === "confirmed");
+      const revenue = paid.reduce((a, p) => a + p.amount, 0);
+      const statusOpts = Object.entries(EMP_STATUS).map(([k, l]) => `<option value="${k}"${k === e.status ? " selected" : ""}>${esc(l)}</option>`).join("");
+      const memberRow = (m) => {
+        const state = m.confirmed_at ? `<span class="badge accepted">подтверждён ${esc(day(m.confirmed_at))}</span>`
+          : m.rejected_at ? `<span class="badge rejected">отклонён</span>`
+          : `<span class="badge duplicate">заявка ${esc(day(m.claimed_at))}</span>`;
+        const name = m.name || "без имени";
+        const tg = (name.match(/@([A-Za-z0-9_]{4,})\)?$/) || [])[1];
+        const who = `<a href="${esc(tg ? `https://t.me/${tg}` : `tg://user?id=${m.tg_chat}`)}" target="_blank" rel="noopener">${esc(name)}</a>`;
+        const btn = !m.confirmed_at ? `<button type="button" class="act ok" data-do="confirm" data-mid="${m.id}">Подтвердить</button>` : "";
+        const no = !m.rejected_at ? `<button type="button" class="act" data-do="deny" data-mid="${m.id}">${m.confirmed_at ? "Отвязать" : "Отклонить"}</button>` : "";
+        return `<li><span>${who} ${state}</span><span>${btn} ${no}</span></li>`;
+      };
+      box.innerHTML = `<div class="head">${ava(cover, e.name, true)}<div><h3>${esc(e.name)}</h3>
+          <div class="snippet">${num(live.length)} ${plural(live.length, "заведение", "заведения", "заведений")} · вакансий сейчас: ${num(active)} · в базе с ${when(e.first_seen)}${e.legal_name ? ` · ${esc(e.legal_name)}` : ""}${e.bin ? ` · БИН ${esc(e.bin)}` : ""}</div>
+          <div class="links">${links(e)}${e.hh ? `<a href="https://hh.kz/employer/${esc(e.hh.id)}" target="_blank" rel="noopener">hh.kz</a>` : ""}${e.hh && e.hh.site && e.hh.site !== e.website ? `<a href="${esc(e.hh.site)}" target="_blank" rel="noopener">сайт по hh</a>` : ""}</div></div>
+          <button type="button" class="more close" id="emp-close">Закрыть</button></div>
+        ${e.about || (e.hh && e.hh.about) ? `<p class="about">${esc(e.about || e.hh.about)}${!e.about ? ` <span class="quiet">(описание с hh.kz)</span>` : ""}</p>` : ""}
+        <div class="emp-cols">
+          <section>
+            <h4>Работа с компанией</h4>
+            <form id="emp-work" class="work">
+              <label class="fld"><span>Статус</span><select name="status">${statusOpts}</select></label>
+              <label class="fld"><span>Следующий шаг</span><input type="date" name="next_at" value="${esc(e.next_at || "")}"></label>
+              <label class="fld wide"><span>Заметка</span><input name="note" value="${esc(e.note || "")}" maxlength="1000"></label>
+              <button class="act ok">Сохранить</button>
+            </form>
+            <details id="emp-edit"><summary>Данные компании${e.edited.length ? ` <span class="quiet">(поправлено: ${e.edited.length})</span>` : ""}</summary>
+              <form class="work">
+                ${EMP_FIELDS.map(([f, l]) => field(f, l, f === "name" ? (e.edited.includes("name") ? e.name : "") : e[f], f === "name" ? `placeholder="${esc(e.auto_name)}"` : f === "bin" ? `inputmode="numeric" maxlength="12"` : "")).join("")}
+                <label class="fld wide"><span>Описание</span><textarea name="about" rows="3" maxlength="2000">${esc(e.about || "")}</textarea></label>
+                <p class="quiet wide">Пустое поле возвращает то, что пришло со сбора. Ручные правки сбор не перезаписывает.</p>
+                <button class="act ok">Сохранить</button>
+              </form>
+            </details>
+            <details id="emp-merge"><summary>Склеить с другим работодателем</summary>
+              <p class="quiet">Все заведения, история и оплаты этой карточки перейдут в выбранную, а её название будет вести туда же при следующих сборах.</p>
+              <input type="search" placeholder="Название работодателя" aria-label="Работодатель для склейки">
+              <ul class="pick"></ul>
+            </details>
+          </section>
+          <section>
+            <h4>Профили в боте</h4>
+            <ul class="plain">${members.map(memberRow).join("") || `<li class="quiet">Пока никто не привязал компанию в боте (команда /company)</li>`}</ul>
+            <h4>Оплаты${revenue ? `: ${num(revenue)} ₸` : ""}</h4>
+            <ul class="plain">${payments.map((p) => `<li><span>${num(p.amount)} ₸ · ${esc(PAY_KIND[p.kind] || p.kind)} · <a href="${ROOT}/v/bot-${esc(p.job_id)}/" target="_blank">№${esc(p.job_id)}</a></span><span class="quiet">${esc(PAY_STATUS[p.status] || p.status)}${p.at ? " · " + when(p.at) : ""}</span></li>`).join("") || `<li class="quiet">Оплат пока нет</li>`}</ul>
+          </section>
+        </div>
+        <div class="venues-head"><h4>Заведения</h4><button type="button" class="act ok" id="emp-addv">+ Добавить заведение</button></div>
+        <form id="emp-newv" class="work" hidden>
+          ${VENUE_FIELDS.map(([f, l]) => field(f, l, "", f === "name" ? "required" : "")).join("")}
+          <label class="fld"><span>Город</span><select name="city">${cityOptions(live[0] ? live[0].city : "")}</select></label>
+          <button class="act ok">Добавить</button>
+        </form>
+        <div class="venue-grid">${live.map(venueCard).join("") || `<p class="quiet">Заведений нет</p>`}</div>
+        ${venues.length > live.length ? `<details><summary class="quiet">Отклонённые: ${venues.length - live.length}</summary><div class="venue-grid">${venues.filter((v) => v.review === "rejected").map(venueCard).join("")}</div></details>` : ""}
+        <h4>История</h4>
+        <form id="emp-act" class="act-form">
+          <select name="kind" aria-label="Что было"><option value="note">📝 Заметка</option><option value="call">📞 Звонок</option><option value="message">💬 Сообщение</option></select>
+          <input name="text" placeholder="Что было, о чём договорились" aria-label="Запись" maxlength="1000" required>
+          <button class="act ok">Записать</button>
+        </form>
+        <ul class="plain timeline">${activities.map((a) => `<li><span>${ACT_ICON[a.kind] || "•"} ${esc(a.text)}</span><span class="quiet">${when(a.at)}${a.by && a.by !== "admin" ? ` · ${a.by === "employer" ? "из бота" : "сбор"}` : ""}</span></li>`).join("") || `<li class="quiet">Пока пусто</li>`}</ul>
+        <p class="err" id="emp-card-err" hidden></p>`;
+      wireCard(box, e.id);
+    }
+
+    // Поиск работодателя среди загруженных: для склейки и переноса заведения
+    function picker(input, list, exclude, onPick) {
+      input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        const found = q.length < 2 ? [] : rows.filter((r) => r.id !== exclude && r.name.toLowerCase().includes(q)).slice(0, 8);
+        list.innerHTML = found.map((r) => `<li><button type="button" class="act" data-pick="${r.id}">${esc(r.name)}</button> <span class="quiet">${esc(r.cities.map(city).join(", "))} · ${num(r.venues)} зав.</span></li>`).join("");
+      });
+      list.addEventListener("click", (ev) => {
+        const b = ev.target.closest("[data-pick]");
+        if (b) onPick(rows.find((r) => r.id === Number(b.dataset.pick)));
+      });
+    }
+
+    function wireCard(box, id) {
+      const err = (e) => { const p = $("#emp-card-err"); p.hidden = false; p.textContent = `Не сохранилось: ${e.message}`; p.scrollIntoView({ block: "nearest" }); };
+      const run = async (fn) => { try { drawCard(await fn()); } catch (e) { err(e); } };
+      $("#emp-close").addEventListener("click", () => { box.hidden = true; current = null; });
+      $("#emp-work").addEventListener("submit", (ev) => { ev.preventDefault(); run(() => call(`/${id}`, "PATCH", formData(ev.target))); });
+      box.querySelector("#emp-edit form").addEventListener("submit", (ev) => { ev.preventDefault(); run(() => call(`/${id}`, "PATCH", formData(ev.target))); });
+      $("#emp-act").addEventListener("submit", (ev) => { ev.preventDefault(); run(() => call(`/${id}/activities`, "POST", formData(ev.target))); });
+      $("#emp-addv").addEventListener("click", () => { $("#emp-newv").hidden = !$("#emp-newv").hidden; });
+      $("#emp-newv").addEventListener("submit", (ev) => { ev.preventDefault(); run(() => call(`/${id}/venues`, "POST", formData(ev.target))); });
+      const merge = box.querySelector("#emp-merge");
+      picker(merge.querySelector("input"), merge.querySelector(".pick"), id, async (target) => {
+        if (!confirm(`Склеить «${current.employer.name}» с «${target.name}»? Карточка «${current.employer.name}» исчезнет, всё перейдёт в «${target.name}».`)) return;
+        try {
+          const card = await call(`/${id}/merge`, "POST", { into: target.id });
+          rows = rows.filter((r) => r.id !== id);
+          drawCard(card);
+        } catch (e) { err(e); }
+      });
+      box.querySelectorAll("[data-do=confirm],[data-do=deny]").forEach((b) => b.addEventListener("click", () =>
+        run(() => call(`/members/${b.dataset.mid}`, "POST", { action: b.dataset.do === "confirm" ? "confirm" : "reject" }))));
+      box.querySelectorAll("article.venue").forEach((art) => {
+        const vid = art.dataset.vid;
+        const patch = (data) => run(() => call(`/venues/${vid}`, "PATCH", data));
+        const on = (what, fn) => { const el = art.querySelector(`[data-do=${what}]`); if (el) el.addEventListener(el.type === "file" ? "change" : "click", fn); };
+        on("approve", () => patch({ review: "approved" }));
+        on("reject", () => patch({ review: "rejected" }));
+        on("remove", () => { if (confirm("Убрать заведение из карточки? Вакансии по нему перестанут сюда попадать.")) patch({ removed: true }); });
+        on("vedit", () => { art.querySelector(".vform").hidden = false; });
+        on("vcancel", () => { art.querySelector(".vform").hidden = true; });
+        on("move", () => { const m = art.querySelector(".vmove"); m.hidden = !m.hidden; m.querySelector("input").focus(); });
+        // Только изменённые поля: остальные продолжают обновляться со сбора
+        art.querySelector(".vform").addEventListener("submit", (ev) => {
+          ev.preventDefault();
+          const changed = Object.fromEntries([...ev.target.elements].filter((el) => el.name && (el.tagName === "SELECT"
+            ? !el.options[el.selectedIndex].defaultSelected : el.value !== el.defaultValue)).map((el) => [el.name, el.value.trim()]));
+          if (Object.keys(changed).length) patch(changed); else art.querySelector(".vform").hidden = true;
+        });
+        picker(art.querySelector(".vmove input"), art.querySelector(".vmove .pick"), id, (target) => {
+          if (confirm(`Перенести заведение к «${target.name}»?`)) {
+            run(async () => { await call(`/venues/${vid}`, "PATCH", { employer_id: target.id }); return call(`/${id}`); });
+          }
+        });
+        on("photo", async (ev) => {
+          const file = ev.target.files[0];
+          if (!file) return;
+          run(async () => call(`/venues/${vid}/photo`, "PUT", await photoJpeg(file)));
+        });
+        art.querySelectorAll("[data-do=unphoto]").forEach((b) => b.addEventListener("click", () => {
+          if (confirm("Удалить фото?")) run(() => call(`/media/${b.dataset.mid}`, "DELETE"));
+        }));
+      });
+    }
+
     async function open(id) {
       const box = $("#emp-card");
       box.hidden = false;
       box.innerHTML = `<p class="quiet">Загружаю карточку…</p>`;
       box.scrollIntoView({ behavior: "smooth", block: "start" });
-      let card;
-      try { card = await crmFetch(`${api}/${id}`); } catch (e) { box.innerHTML = `<p class="err">Карточка не загрузилась (${esc(e.message)})</p>`; return; }
-      const { employer, venues } = card;
-      const active = venues.reduce((a, v) => a + v.vacancies.length, 0);
-      const firstAvatar = (venues.find((v) => v.avatar) || {}).avatar;
-      box.innerHTML = `<div class="head">${ava(firstAvatar, employer.name)}<div><h3>${esc(employer.name)}</h3>
-          <div class="snippet">${num(venues.length)} ${venues.length === 1 ? "заведение" : "заведений"} · вакансий сейчас: ${num(active)} · в базе с ${when(employer.first_seen)}</div></div>
-          <button type="button" class="more close" id="emp-close">Закрыть</button></div>
-        <div class="venue-grid">${venues.map((v) => {
-          const m = marks[v.key] || {};
-          return `<article class="venue">
-            <div class="emp-name">${ava(v.avatar, v.name)}<div><h4>${esc(v.name)}</h4><div class="snippet">${esc(city(v.city))}${v.address ? ", " + esc(v.address) : ""}</div></div></div>
-            <div class="links" style="margin-top:6px">${links(v) || `<span class="quiet">ссылок пока нет</span>`}</div>
-            ${m.status ? `<div class="snippet">CRM: ${esc(CRM_STATUS[m.status] || m.status)}${m.note ? " · " + esc(m.note) : ""}</div>` : ""}
-            <ul>${v.vacancies.map(vacancy).join("") || `<li><span class="quiet">Сейчас вакансий нет</span><span></span></li>`}</ul>
-            ${v.archived ? `<details><summary>Снятые: ${num(v.archived)}</summary><ul>${v.archive.map(archived).join("")}</ul></details>` : ""}
-          </article>`;
-        }).join("")}</div>`;
-      $("#emp-close").addEventListener("click", () => { box.hidden = true; });
+      try { drawCard(await call(`/${id}`)); } catch (e) { box.innerHTML = `<p class="err">Карточка не загрузилась (${esc(e.message)})</p>`; }
     }
     $("#emp tbody").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) open(tr.dataset.id); });
     $("#emp tbody").addEventListener("keydown", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(tr.dataset.id); } });
@@ -642,6 +912,7 @@ td.nowrap { white-space: nowrap; }
       draw(true);
     }));
     $("#emp-city").addEventListener("change", () => draw(true));
+    $("#emp-status").addEventListener("change", () => draw(true));
     $("#emp-q").addEventListener("input", () => draw(true));
     $("#emp-more").addEventListener("click", () => { shown += PAGE; draw(false); });
     draw(true);

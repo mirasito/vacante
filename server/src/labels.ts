@@ -57,6 +57,9 @@ const LANGUAGE: Record<Profile["languages"][number], [string, string]> = {
 
 const pick = (pair: [string, string] | undefined, lang: Lang, fallback = "") => (pair ? pair[lang === "kk" ? 1 : 0] : fallback);
 
+/** Города по порядку, как в анкете. */
+export const CITY_SLUGS = Object.keys(CITY);
+
 export const cityName = (slug: string, lang: Lang) => pick(CITY[slug], lang, slug);
 export const experienceLabel = (p: Profile, lang: Lang) => pick(EXPERIENCE[p.experience], lang);
 export const employmentLabel = (p: Profile, lang: Lang) => p.employment.map((e) => pick(EMPLOYMENT[e], lang)).join(", ");

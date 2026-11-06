@@ -64,3 +64,49 @@ def test_send_archives_only_after_whole_snapshot(monkeypatch):
 def test_run_without_bot_token_does_nothing(tmp_path, monkeypatch):
     monkeypatch.delenv("TELEGRAM_BOT_TOKEN", raising=False)
     assert crm_sync.run(tmp_path, []) is None
+
+
+class FakeD1:
+    def __init__(self, crm_ok=True):
+        self.crm_ok = crm_ok
+
+    def query(self, sql, params=None):
+        if "FROM jobs" in sql:
+            return [{"id": 7, "employer_chat": 555, "employer_name": "Айгуль @aigul", "company": "ТОО «Greenwich»", "city": "almaty"},
+                    {"id": 8, "employer_chat": 556, "employer_name": None, "company": "", "city": "astana"}]
+        if "FROM payments" in sql:
+            return [{"id": 1, "job_id": 7, "kind": "post", "amount": 900, "status": "paid",
+                     "created_at": "2026-11-06 10:00:00", "decided_at": "2026-11-06 10:05:00",
+                     "company": "ТОО «Greenwich»", "city": "almaty"}]
+        if "FROM crm" in sql:
+            if not self.crm_ok:
+                raise RuntimeError("no such table: crm")
+            return [{"venue": "almaty:greenwich", "status": "contacted", "note": "звонили", "contacted_at": "2026-11-01 13:27:32"}]
+        raise AssertionError(sql)
+
+
+def test_from_bot_keys_jobs_and_payments_like_snapshot():
+    data = crm_sync.from_bot(FakeD1())
+    job = data["jobs"][0]
+    assert job["job_id"] == 7 and job["chat"] == 555
+    assert job["venue_key"] == "almaty:greenwich" and job["employer_key"] == "greenwich"
+    assert data["jobs"][1]["employer_key"] is None
+    pay = data["payments"][0]
+    assert pay["kind"] == "post" and pay["amount"] == 900 and pay["at"] == "2026-11-06T10:05:00+00:00"
+    assert data["marks"]["almaty:greenwich"]["contacted_at"] == "2026-11-01T13:27:32+00:00"
+    assert crm_sync.from_bot(FakeD1(crm_ok=False))["marks"] == {}
+
+
+def test_hh_companies_reads_logo_site_and_plain_about():
+    def handler(request):
+        if request.url.path.endswith("/1"):
+            return httpx.Response(200, json={"logo_urls": {"90": "https://img/90.png", "240": "https://img/240.png"},
+                                             "site_url": "https://greenwich.kz",
+                                             "description": "<p>Сеть&nbsp;кофеен &laquo;Greenwich&raquo;</p>\n<ul><li>Алматы</li></ul>"})
+        return httpx.Response(404, json={})
+
+    client = httpx.Client(base_url="https://api.hh.ru", transport=httpx.MockTransport(handler))
+    out = crm_sync.hh_companies(client, ["1", "2"])
+    assert out[0] == {"id": "1", "logo": "https://img/240.png", "site": "https://greenwich.kz",
+                      "about": "Сеть кофеен «Greenwich» Алматы"}
+    assert out[1] == {"id": "2"}

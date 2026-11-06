@@ -121,7 +121,8 @@ def main() -> None:
         logging.info("CRM: %s", stats)
         if stats:
             print(f"::notice title=CRM работодателей::работодателей {stats['employers']}, заведений {stats['venues']}, "
-                  f"вакансий сейчас {stats['active']}, в архив {stats['archived']}")
+                  f"вакансий сейчас {stats['active']}, в архив {stats['archived']}, из бота {stats.get('bot_jobs', 0)}, "
+                  f"оплат {stats.get('payments', 0)}, карточек hh {stats.get('hh', 0)}")
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
         if not all(env.values()):

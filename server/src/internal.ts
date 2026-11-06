@@ -32,6 +32,8 @@ export interface TgMessage {
   from?: { id: number; first_name: string; language_code?: string };
   chat: { id: number; type: string };
   text?: string;
+  /** Ответ на наше сообщение с принудительным ответом (CRM: «🏠 Новое заведение», «🔎 Поиск компании»). */
+  reply_to_message?: { text?: string };
   contact?: { phone_number: string; user_id?: number; first_name?: string };
   video_note?: {
     file_id: string;
@@ -47,7 +49,7 @@ export interface TgMessage {
 
 export interface TgCallback {
   id: string;
-  from: { id: number; first_name: string; language_code?: string };
+  from: { id: number; first_name: string; username?: string; language_code?: string };
   data?: string;
   message?: TgMessage;
 }
@@ -250,7 +252,8 @@ export function internalRoutes(ctx: Ctx): Route[] {
       let handled = false;
       if (m && m.chat.type === "private" && m.from) {
         const msg = m as TgMessage & { from: NonNullable<TgMessage["from"]> };
-        if (m.contact) handled = await onContact(m);
+        if (ctx.crmBot && (await ctx.crmBot.onMessage(msg))) handled = true;
+        else if (m.contact) handled = await onContact(m);
         else if (m.video_note) {
           await onVideoNote(msg);
           handled = true;
@@ -273,7 +276,8 @@ export function internalRoutes(ctx: Ctx): Route[] {
           handled = true;
         }
       } else if (update.callback_query) {
-        handled = await onCallback(update.callback_query);
+        const q = update.callback_query;
+        handled = q.data?.startsWith("c:") && ctx.crmBot ? await ctx.crmBot.onCallback(q) : await onCallback(q);
       }
       return { json: { ok: true, handled } };
     }),

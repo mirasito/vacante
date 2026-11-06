@@ -220,6 +220,7 @@ def to_vacancy(item: dict) -> Vacancy | None:
         lat=lat,
         lon=lon,
         geo=SOURCE if lat is not None else None,
+        employer_hh=str((item.get("employer") or {}).get("id") or "") or None,
     )
 
 

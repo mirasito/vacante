@@ -355,6 +355,15 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "aktau:nomad exclusive eyewear": {
+  "name": "«Nomad Exclusive Eyewear»",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "nomad_exclusive_eyewear",
+  "source": "https://2gis.kz/aktau/firm/70000001104498265"
+ },
  "aktau:omir": {
   "name": "Omir",
   "city": "aktau",
@@ -377,6 +386,13 @@
   ],
   "avatar": "9ae6b7efc8e74d3a.jpg",
   "avatar_source": "website"
+ },
+ "aktau:pg kazakhstan пг казахстан": {
+  "name": "PG Kazakhstan (ПГ Казахстан)",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
  },
  "aktau:pinta": {
   "name": "PINTA",
@@ -539,6 +555,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "aktau:vertical actualis": {
+  "name": "Vertical Actualis",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
  },
  "aktau:vinyl": {
   "name": "Vinyl",
@@ -1965,6 +1988,13 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "aktobe:иркиналинова з е": {
+  "name": "Иркиналинова З.Е.",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
+ },
  "aktobe:казснаблогистиксервис": {
   "name": "КазСнабЛогистикСервис",
   "city": "aktobe",
@@ -2795,6 +2825,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
+ },
+ "almaty:almaty merch": {
+  "name": "Almaty merch",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
  },
  "almaty:almaty motors premium": {
   "name": "Almaty Motors Premium",
@@ -5869,6 +5906,20 @@
    "website"
   ]
  },
+ "almaty:haval suyunbay автосалон": {
+  "name": "Haval Suyunbay, автосалон",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "haval_zhayik_suyunbay",
+  "website": "http://haval-suyunbay.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001105386512",
+  "avatar_checked_at": "2026-11-06T00:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:headhunter казахстан": {
   "name": "HeadHunter: Казахстан",
   "city": "almaty",
@@ -6491,6 +6542,13 @@
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
  },
+ "almaty:kazakhstan tg tools co ltd": {
+  "name": "Kazakhstan TG Tools Co., Ltd",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
+ },
  "almaty:kazbeef processing казбиф процессинг": {
   "name": "KazBeef Processing (КазБиф Процессинг)",
   "city": "almaty",
@@ -6969,6 +7027,20 @@
   "checked_at": "2026-11-05T10:44:37+00:00",
   "instagram": "linebrewreserve",
   "source": "https://2gis.kz/almaty/firm/70000001059505489"
+ },
+ "almaty:lc waikiki": {
+  "name": "LC Waikiki",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "lcwaikiki.cis",
+  "website": "https://lcwaikiki.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001045023418",
+  "avatar_checked_at": "2026-11-06T00:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:leader agro": {
   "name": "Leader AGRO",
@@ -16512,6 +16584,20 @@
    "website"
   ]
  },
+ "almaty:эксперт ремонта": {
+  "name": "Эксперт ремонта",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "expertt_remonta",
+  "website": "https://expertremonta.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001081518376",
+  "avatar_checked_at": "2026-11-06T00:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:элигита азия": {
   "name": "Элигита - Азия",
   "city": "almaty",
@@ -21984,6 +22070,13 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "astana:алимбаев автосервис": {
+  "name": "ИП Алимбаев (автосервис)",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
+ },
  "astana:алина сат": {
   "name": "Алина Сат",
   "city": "astana",
@@ -22401,6 +22494,13 @@
   "status": "skip",
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
+ },
+ "astana:бизнес эксперт консалт": {
+  "name": "Бизнес-Эксперт Консалт",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
  },
  "astana:бисенов": {
   "name": "Бисенов",
@@ -24753,6 +24853,13 @@
    "website"
   ]
  },
+ "astana:ргп больница медицинского центра управления делами президента республики казахстан на пхв": {
+  "name": "РГП Больница Медицинского центра Управления делами Президента Республики Казахстан на пхв",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
+ },
  "astana:рекрутинговое агентство change ип куприянова": {
   "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
   "city": "astana",
@@ -25808,6 +25915,20 @@
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
  },
+ "astana:фудкорт паназиатская кухня": {
+  "name": "Фудкорт (Паназиатская кухня)",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
+ },
+ "astana:фэмели клаб": {
+  "name": "Фэмели клаб",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
+ },
  "astana:х о иксо сеть магазинов товаров из южной кореи иксо": {
   "name": "Х.О.ИКСО (Сеть магазинов товаров из Южной Кореи ИКСО)",
   "city": "astana",
@@ -26450,7 +26571,7 @@
   "instagram": "applecity_careers",
   "website": "https://applecity.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001051614192",
-  "avatar_checked_at": "2026-10-30T00:43:00+00:00",
+  "avatar_checked_at": "2026-11-06T00:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28058,6 +28179,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "karaganda:westen 2023": {
+  "name": "WESTEN-2023",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
  },
  "karaganda:wood studio": {
   "name": "Wood Studio",
@@ -30657,6 +30785,22 @@
   "instagram": "itk_kostanay",
   "source": "https://2gis.kz/kostanaj/firm/70000001043875842"
  },
+ "kostanay:светотехника 1": {
+  "name": "Светотехника-1",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "ct1.kz",
+  "website": "https://www.ct-1.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036648060",
+  "avatar_checked_at": "2026-11-06T00:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dd41bdc87c15d255.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:сервисный центр ростсельмаш": {
   "name": "Сервисный центр Ростсельмаш",
   "city": "kostanay",
@@ -30707,6 +30851,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "kostanay:тда цвет сервис": {
+  "name": "ТДА Цвет Сервис",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "tsvetservis",
+  "source": "https://2gis.kz/kostanaj/firm/70000001036622048"
  },
  "kostanay:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
@@ -32906,6 +33059,13 @@
   ],
   "avatar": "4b568b0b7cf6db77.jpg",
   "avatar_source": "website"
+ },
+ "semey:kazinveststroy": {
+  "name": "KazInvestStroy",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00"
  },
  "semey:nango": {
   "name": "NANGO",
@@ -36038,6 +36198,15 @@
   "checked_at": "2026-10-29T12:47:32+00:00",
   "instagram": "two_friends_kz",
   "source": "https://2gis.kz/uralsk/firm/70000001110524989"
+ },
+ "uralsk:unigroup юг": {
+  "name": "UniGroup Юг",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T00:44:08+00:00",
+  "instagram": "unigroup.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001080246410"
  },
  "uralsk:wefind": {
   "name": "WeFind",

@@ -111,8 +111,17 @@ def main() -> None:
         logging.info("автопостинг: %s", stats)
     elif args.command == "crm":
         from vacante import crm_sync
-        stats = crm_sync.run(args.data_dir, load_vacancies(args.data_dir))
+        # Итог видно в аннотации «CRM работодателей» запуска, без чтения логов
+        try:
+            stats = crm_sync.run(args.data_dir, load_vacancies(args.data_dir))
+        except httpx.HTTPError as e:
+            status = f"HTTP {e.response.status_code}" if isinstance(e, httpx.HTTPStatusError) else type(e).__name__
+            print(f"::warning title=CRM работодателей::сервер не принял снимок: {status}")
+            raise
         logging.info("CRM: %s", stats)
+        if stats:
+            print(f"::notice title=CRM работодателей::работодателей {stats['employers']}, заведений {stats['venues']}, "
+                  f"вакансий сейчас {stats['active']}, в архив {stats['archived']}")
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
         if not all(env.values()):

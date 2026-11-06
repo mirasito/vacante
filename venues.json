@@ -7016,6 +7016,20 @@
   "avatar": "1d8a4011a85ec43a.jpg",
   "avatar_source": "website"
  },
+ "almaty:krin xxi": {
+  "name": "KRIN XXI",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "krinxxi",
+  "website": "https://krin.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000927202",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ksengineering ксинжиниринг": {
   "name": "KSENGINEERING (КСИНЖИНИРИНГ)",
   "city": "almaty",
@@ -7584,6 +7598,19 @@
   "instagram": "mausym_couture",
   "source": "https://2gis.kz/almaty/firm/70000001046141071"
  },
+ "almaty:maxwell distribution": {
+  "name": "MAXWELL DISTRIBUTION",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "website": "https://maxwell-distribution.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001068820037",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:maxx": {
   "name": "maxx",
   "city": "almaty",
@@ -7614,7 +7641,7 @@
   "instagram": "mechta.kz",
   "website": "http://mechta.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000836794",
-  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7701,6 +7728,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
+ },
+ "almaty:metahr": {
+  "name": "MetaHR",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "metahr_kz",
+  "website": "http://metahr.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001661542",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0a069db638dd32fc.jpg",
+  "avatar_source": "website"
  },
  "almaty:metawerk alliance": {
   "name": "Metawerk Alliance",
@@ -8074,6 +8117,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:nm 13": {
+  "name": "NM 13",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
  },
  "almaty:nobel home": {
   "name": "Nobel Home",
@@ -14622,6 +14672,22 @@
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
  },
+ "almaty:медцентр рахат": {
+  "name": "Медцентр Рахат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "rahat_clinic",
+  "website": "https://rklinik.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001039413357",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "983559d12a70bb13.jpg",
+  "avatar_source": "website"
+ },
  "almaty:медэверест": {
   "name": "МедЭверест",
   "city": "almaty",
@@ -18227,6 +18293,15 @@
   "v": 3,
   "checked_at": "2026-11-03T18:45:16+00:00"
  },
+ "astana:black rabbit": {
+  "name": "Black Rabbit",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "blackrabbit.coffee",
+  "source": "https://2gis.kz/astana/firm/70000001083355256"
+ },
  "astana:blizzko": {
   "name": "Blizzko",
   "city": "astana",
@@ -21135,6 +21210,13 @@
   "avatar": "c7a086f1522e5275.jpg",
   "avatar_source": "website"
  },
+ "astana:perfect e&a": {
+  "name": "Perfect E&A",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
+ },
  "astana:pet": {
   "name": "PET",
   "city": "astana",
@@ -21489,6 +21571,13 @@
   "avatar": "91be7d2bf2172b5e.jpg",
   "avatar_source": "website"
  },
+ "astana:rec a": {
+  "name": "REC-A",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
+ },
  "astana:regomed": {
   "name": "RegoMed",
   "city": "astana",
@@ -21570,6 +21659,20 @@
   "website": "https://wildberries.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001105605374",
   "avatar_checked_at": "2026-11-05T11:45:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:s parfum & cosmetics": {
+  "name": "S Parfum & Cosmetics",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "s_parfum_astana",
+  "website": "https://www.s-parfum.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001048402281",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25345,6 +25448,13 @@
   "v": 3,
   "checked_at": "2026-11-03T06:44:20+00:00"
  },
+ "astana:мужской магазин одежды": {
+  "name": "Мужской магазин одежды",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
+ },
  "astana:муратова": {
   "name": "Муратова",
   "city": "astana",
@@ -27216,6 +27326,13 @@
   "v": 3,
   "checked_at": "2026-11-03T12:44:30+00:00"
  },
+ "astana:чистый вкус": {
+  "name": "Чистый Вкус",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
+ },
  "astana:чк alkor kazakhstan ltd": {
   "name": "ЧК ALKOR KAZAKHSTAN LTD.",
   "city": "astana",
@@ -27776,7 +27893,7 @@
   "instagram": "cocrealty_hr",
   "website": "https://cocrealty.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001114811724",
-  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27802,6 +27919,15 @@
   ],
   "avatar": "05e3fcfddcf82a06.jpg",
   "avatar_source": "website"
+ },
+ "atyrau:dental angels": {
+  "name": "Dental Angels",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "dental.angels.atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001036016892"
  },
  "atyrau:doscar group": {
   "name": "DOSCAR GROUP",
@@ -28007,6 +28133,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "atyrau:royal bowling": {
+  "name": "ROYAL BOWLING",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "royal_bowling_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001113616074"
  },
  "atyrau:salamat service": {
   "name": "SALAMAT Service",
@@ -29119,6 +29254,15 @@
    "website"
   ]
  },
+ "karaganda:ms групп караганда": {
+  "name": "MS Групп Караганда",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "msgroupkrg",
+  "source": "https://2gis.kz/karaganda/firm/70000001098171954"
+ },
  "karaganda:nar global": {
   "name": "NAR GLOBAL",
   "city": "karaganda",
@@ -29626,6 +29770,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:власова е а": {
+  "name": "Власова Е.А",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
  },
  "karaganda:гелиос": {
   "name": "Гелиос",
@@ -30592,7 +30743,7 @@
   "instagram": "etalon_avto_03",
   "website": "https://etalonauto.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033494932",
-  "avatar_checked_at": "2026-10-30T12:44:25+00:00",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31807,6 +31958,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "kostanay:жакупов": {
+  "name": "Жакупов",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
  },
  "kostanay:жас канат 2006": {
   "name": "Жас-Канат 2006",
@@ -33603,6 +33761,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
+ },
+ "pavlodar:эверест auto": {
+  "name": "ЭВЕРЕСТ-AUTO",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
  },
  "petropavlovsk:alcomag": {
   "name": "AlcoMag",
@@ -35982,6 +36147,13 @@
   "avatar": "7083235d9af6f5ce.jpg",
   "avatar_source": "website"
  },
+ "shymkent:qqq qazaqstan qamqor qyzmet": {
+  "name": "QQQ - Qazaqstan Qamqor Qyzmet",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
+ },
  "shymkent:rossko": {
   "name": "ROSSKO",
   "city": "shymkent",
@@ -36755,6 +36927,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "shymkent:свс юг": {
+  "name": "СВС-Юг",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00",
+  "instagram": "euro.servis.shymkent",
+  "website": "http://volvo-shymkent.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001030046708",
+  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:секвойя сервис": {
   "name": "СЕКВОЙЯ СЕРВИС",
@@ -37665,6 +37851,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "uralsk:5 realov": {
+  "name": "5 REALOV",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T12:45:11+00:00"
  },
  "uralsk:a security": {
   "name": "A SECURITY",

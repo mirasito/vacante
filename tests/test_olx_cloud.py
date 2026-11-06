@@ -1,32 +1,33 @@
-from datetime import datetime, timedelta, timezone
-
+from datetime import datetime, timezone
+import hashlib
+import json
 import httpx
 import pytest
-from nacl.exceptions import CryptoError
-from nacl.public import PrivateKey
-
 from vacante.sources import olx_cloud
 
 
-def test_private_batch_delivery(tmp_path):
-    now = datetime.now(timezone.utc)
-    key = PrivateKey.generate()
-    rows = [{"id": i, "description": "Звоните +7 701 000 00 00"} for i in range(63)]
-    sealed = olx_cloud.pack(rows, now, key.public_key)
-    assert "701 000" not in sealed
-    with pytest.raises(CryptoError):
-        olx_cloud.unpack(sealed, now, PrivateKey.generate())
-    with pytest.raises(ValueError, match="Expired"):
-        olx_cloud.unpack(sealed, now + timedelta(hours=5), key)
-    p = tmp_path / "snapshot"
-    p.write_text(sealed)
-    saved = {}
-    def store(request):
-        import json
-        batch = json.loads(request.content)["items"]
-        saved.update((r["id"], r) for r in batch)
-        return httpx.Response(200, json={"stored": len(batch), "phone_ids": []})
-    with httpx.Client(base_url="https://api.vacante.kz/internal/olx/", transport=httpx.MockTransport(store)) as c:
-        for _ in range(2):
-            assert olx_cloud.deliver(p, c, key, now) == len(rows)
-            assert len(saved) == len(rows)
+def test_grant_contains_only_verifier(tmp_path):
+    olx_cloud.prepare(tmp_path, datetime.now(timezone.utc))
+    token = (tmp_path / "token").read_text()
+    grant = json.loads((tmp_path / "olx-grant.json").read_text())
+    assert set(grant) == {"sha256", "expires_at"}
+    assert hashlib.sha256(token.encode()).hexdigest() == grant["sha256"]
+    assert token not in str(grant)
+    assert (tmp_path / "token").stat().st_mode & 0o077 == 0
+    with pytest.raises(FileExistsError):
+        olx_cloud.prepare(tmp_path, datetime.now(timezone.utc))
+
+
+def test_worker_sends_only_to_vacante():
+    seen = set()
+    def save(req):
+        assert str(req.url) == olx_cloud.API
+        rows = json.loads(req.content)["items"]
+        ids = {r["id"] for r in rows}
+        new = len(ids - seen)
+        seen.update(ids)
+        return httpx.Response(200, json={"stored": len(rows), "inserted": new, "phone_ids": []})
+    with httpx.Client(transport=httpx.MockTransport(save)) as client:
+        rows = [{"id": i} for i in range(63)]
+        assert olx_cloud.upload(client, rows) == 63
+        assert olx_cloud.upload(client, rows) == 0

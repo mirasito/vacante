@@ -192,3 +192,24 @@ test("hourly collector saves a description phone without an admin session", asyn
     assert.doesNotMatch(result.text, /777/);
   } finally { await s.close(); }
 });
+
+test("worker token is import-only, expires and repeated batches insert no duplicate", async () => {
+  let clock = NOW;
+  const token = "a".repeat(64);
+  const s = await startServer({ now: () => clock, fetch: async (url, init) => {
+    assert.equal(String(url), "https://api.github.com/repos/mirasito/vacante/contents/olx-grant.json?ref=olx-cloud-inbox");
+    assert.equal(new Headers(init?.headers).get("authorization"), null);
+    return Response.json({ sha256: createHash("sha256").update(token).digest("hex"), expires_at: new Date(NOW + 600000).toISOString() });
+  } });
+  const headers = { authorization: "Bearer " + token };
+  const body = { items: [ad(1)] };
+  try {
+    assert.equal((await s.call("POST", "/olx/worker/import", { headers: { authorization: "Bearer " + "b".repeat(64) }, body })).status, 403);
+    const req = () => s.call("POST", "/olx/worker/import", { headers, body });
+    assert.equal((await req()).json.inserted, 1);
+    assert.equal((await req()).json.inserted, 0);
+    assert.equal((await s.call("GET", "/internal/olx/imports", { headers })).status, 403);
+    clock += 600001;
+    assert.equal((await req()).status, 403);
+  } finally { await s.close(); }
+});

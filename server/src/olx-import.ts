@@ -7,7 +7,7 @@
 // (sha256("olx:" + ADMIN_PASSWORD), его считает выкладка в server.yml и кладёт в OLX_IMPORT_KEY).
 // Сервер хранит объявления 30 дней; телефон из описания хранится отдельно от очищенного текста, а часовой сбор на GitHub забирает
 // новые через GET /internal/olx/imports (vacante/sources/olx.py) и показывает на сайте со ссылкой на OLX.
-import { timingSafeEqual } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 
 import { normalizePhone } from "./profile.ts";
 import type { Db } from "./db.ts";
@@ -158,6 +158,29 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
   const bearer = (req: Request) => (req.header("authorization") ?? "").replace(/^Bearer /, "");
   const page = `${ctx.config.apiOrigin}/olx/`;
 
+  // Only writers of this repository can publish a verifier. The bearer token
+  // never leaves the worker except over TLS to Vacante and can only import ads.
+  let grant: { sha256: string; expires: number } | null = null;
+  let nextRefresh = 0;
+  async function checkWorker(req: Request) {
+    const token = bearer(req);
+    if (!/^[a-f0-9]{64}$/.test(token)) throw new HttpError(403, "Нет доступа");
+    const now = ctx.now();
+    if (now >= nextRefresh) {
+      nextRefresh = now + 5000;
+      const url = "https://api.github.com/repos/mirasito/vacante/contents/olx-grant.json?ref=olx-cloud-inbox";
+      const res = await ctx.fetch(url, { headers: { Accept: "application/vnd.github.raw+json", "User-Agent": "vacante.kz" },
+        redirect: "error", signal: AbortSignal.timeout(8000) });
+      if (!res.ok) throw new HttpError(503, "Ключ сборщика недоступен");
+      const data = await res.json() as { sha256?: string; expires_at?: string };
+      const expires = Date.parse(data.expires_at ?? "");
+      grant = data.sha256 && /^[a-f0-9]{64}$/.test(data.sha256) && expires > now && expires <= now + 21 * 60_000
+        ? { sha256: data.sha256, expires } : null;
+    }
+    const digest = createHash("sha256").update(token).digest("hex");
+    if (!grant || grant.expires <= now || !same(digest, Buffer.from(grant.sha256))) throw new HttpError(403, "Нет доступа");
+  }
+
   async function storeAds(req: Request, automatic: boolean) {
     let body: { items?: unknown };
     try {
@@ -179,12 +202,15 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
          imported_at = excluded.imported_at, phone = excluded.phone`,
     );
     let stored = 0;
+    let inserted = 0;
+    const existing = ctx.db.prepare("SELECT 1 FROM olx_ads WHERE id = ?");
     const phoneIds: number[] = [];
     const seen = new Set<number>();
     for (const item of items) {
       const ad = cleanAd(item, now);
       if (!ad || seen.has(ad.id)) continue;
       seen.add(ad.id);
+      if (automatic && !existing.get(ad.id)) inserted++;
       upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at, ad.phone);
       if (ad.phone) phoneIds.push(ad.id);
       stored++;
@@ -192,7 +218,7 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
     const old = new Date(now - KEEP_DAYS * 86_400_000).toISOString();
     ctx.db.prepare("DELETE FROM olx_ads WHERE imported_at < ?").run(old);
     const total = (ctx.db.prepare("SELECT count(*) AS n FROM olx_ads").get() as { n: number }).n;
-    return { json: { received: items.length, stored, skipped: items.length - stored, total, ...(automatic ? { phone_ids: phoneIds } : {}) } };
+    return { json: { received: items.length, stored, skipped: items.length - stored, total, ...(automatic ? { phone_ids: phoneIds, inserted } : {}) } };
   }
 
   return [
@@ -205,6 +231,10 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
       if (!ctx.config.olxImportKey) throw new HttpError(503, "Импорт через браузер не настроен");
       if (!same(bearer(req), Buffer.from(ctx.config.olxImportKey))) throw new HttpError(403, "Неверный пароль админки");
       return storeAds(req, false);
+    }),
+    route("POST", "api", "/olx/worker/import", async (req) => {
+      await checkWorker(req);
+      return storeAds(req, true);
     }),
     route("POST", "api", "/internal/olx/batch", async (req) => {
       if (!same(bearer(req), internal)) throw new HttpError(403, "Нет доступа");

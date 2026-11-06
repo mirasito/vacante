@@ -733,6 +733,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "aktau:в нашу команду": {
+  "name": "В НАШУ КОМАНДУ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
+ },
  "aktau:виктория": {
   "name": "Виктория",
   "city": "aktau",
@@ -973,6 +980,15 @@
   "checked_at": "2026-11-02T15:09:09+00:00",
   "instagram": "kaheti_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001038417568"
+ },
+ "aktau:кендерли": {
+  "name": "Кендерли",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "kendirli_demalys",
+  "source": "https://2gis.kz/aktau/firm/70000001032467555"
  },
  "aktau:ком мунай": {
   "name": "КОМ-МУНАЙ",
@@ -1341,6 +1357,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T03:43:44+00:00"
+ },
+ "aktobe:amsterdam boutiqe hotel": {
+  "name": "Amsterdam Boutiqe Hotel",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "amsterdamhotel_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001032296621"
  },
  "aktobe:ansar": {
   "name": "ANSAR",
@@ -2469,6 +2494,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T10:44:37+00:00"
+ },
+ "almaty:abris distribution kazakhstan филиал компании в казахстане": {
+  "name": "Abris Distribution Kazakhstan, Филиал Компании в Казахстане",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "almaty:abt & e trans forwarding company": {
   "name": "ABT & E-trans Forwarding company",
@@ -4248,6 +4280,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:cdek analytics asia": {
+  "name": "CDEK-Analytics Asia",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
+ },
  "almaty:celviano": {
   "name": "CELVIANO",
   "city": "almaty",
@@ -4691,6 +4730,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "almaty:delivery staff": {
+  "name": "Delivery Staff",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "almaty:delta sport казахстан": {
   "name": "Delta Sport (Казахстан)",
@@ -6330,6 +6376,22 @@
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
  },
+ "almaty:imarketing": {
+  "name": "IMARKETING",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "i_marketing.kz",
+  "website": "https://i-marketing.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061030047",
+  "avatar_checked_at": "2026-11-06T13:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d8c2d90c5cb02fe1.jpg",
+  "avatar_source": "website"
+ },
  "almaty:imun pharma": {
   "name": "IMUN Pharma",
   "city": "almaty",
@@ -6700,6 +6762,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
+ },
+ "almaty:kayra logistik ve dis ticaret кайра логистик ве диш тикарет": {
+  "name": "KAYRA LOGISTIK ve DIS TICARET (КАЙРА ЛОГИСТИК ве ДИШ ТИКАРЕТ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "telegram": "kayra_logistik_ve_dis_ticaret",
+  "source": "https://2gis.kz/almaty/firm/70000001102918727",
+  "avatar_checked_at": "2026-11-06T13:44:27+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
  },
  "almaty:kazakhstan tg tools co ltd": {
   "name": "Kazakhstan TG Tools Co., Ltd",
@@ -8432,12 +8507,30 @@
   "v": 3,
   "checked_at": "2026-11-03T08:44:40+00:00"
  },
+ "almaty:orbis kazakhstan": {
+  "name": "ORBIS KAZAKHSTAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "lemont.shymbulak",
+  "source": "https://2gis.kz/almaty/firm/70000001095648280"
+ },
  "almaty:orbis machinery": {
   "name": "ORBIS MACHINERY",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "almaty:origo": {
+  "name": "Origo",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "origo.coffee",
+  "source": "https://2gis.kz/almaty/firm/70000001061381892"
  },
  "almaty:orion facilities": {
   "name": "ORION facilities",
@@ -8565,6 +8658,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
+ },
+ "almaty:people hub": {
+  "name": "People Hub",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "almaty:percorso": {
   "name": "Percorso",
@@ -13213,6 +13313,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:зарета": {
+  "name": "Зарета",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
+ },
  "almaty:зарплата": {
   "name": "Зарплата",
   "city": "almaty",
@@ -13475,6 +13582,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T14:44:03+00:00"
+ },
+ "almaty:искулова б ж": {
+  "name": "Искулова Б. Ж.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "almaty:ист вест казахстан": {
   "name": "Ист-Вест Казахстан",
@@ -16504,6 +16618,13 @@
    "website"
   ]
  },
+ "almaty:технологии и развитие": {
+  "name": "Технологии и развитие",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
+ },
  "almaty:техстройконтракт": {
   "name": "ТЕХСТРОЙКОНТРАКТ",
   "city": "almaty",
@@ -16958,6 +17079,13 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "instagram": "hadisha.sululyk",
   "source": "https://2gis.kz/almaty/firm/70000001118104076"
+ },
+ "almaty:халилов": {
+  "name": "Халилов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "almaty:халык life": {
   "name": "Халык-Life",
@@ -20004,6 +20132,22 @@
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
  },
+ "astana:kazmedeq kz": {
+  "name": "KAZMEDEQ.KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "kazmedeq.kz",
+  "website": "https://kazmedeq.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001024354976",
+  "avatar_checked_at": "2026-11-06T13:44:27+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "297ce0303646563c.jpg",
+  "avatar_source": "website"
+ },
  "astana:kazpan казпан": {
   "name": "KazPan (КазПан)",
   "city": "astana",
@@ -21193,6 +21337,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
+ },
+ "astana:peak ast": {
+  "name": "PEAK AST",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "instagram": "peak_buro",
+  "source": "https://2gis.kz/astana/firm/70000001089732543"
  },
  "astana:peekaboo kz": {
   "name": "Peekaboo.kz",
@@ -23151,6 +23304,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "astana:альфа монтаж": {
+  "name": "Альфа-Монтаж",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "astana:амангалиева": {
   "name": "АМАНГАЛИЕВА",
@@ -29004,6 +29164,23 @@
    "website"
   ]
  },
+ "karaganda:flip kz": {
+  "name": "Flip.kz",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00",
+  "telegram": "flip_kz",
+  "website": "https://flip.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302929862",
+  "avatar_checked_at": "2026-11-06T13:44:27+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "e6665906346d6dec.jpg",
+  "avatar_source": "telegram"
+ },
  "karaganda:flsmidth флсмидс": {
   "name": "FLSmidth (ФЛСмидс)",
   "city": "karaganda",
@@ -33258,6 +33435,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "pavlodar:газели": {
+  "name": "Газели",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T13:44:26+00:00"
  },
  "pavlodar:гелиос": {
   "name": "Гелиос",

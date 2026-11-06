@@ -8564,6 +8564,21 @@
   "avatar": "f7d26b3bb4f27765.jpg",
   "avatar_source": "website"
  },
+ "almaty:prealuxdss": {
+  "name": "PrealuxDSS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "website": "https://prealux.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001017971630",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "026e31437f060a51.jpg",
+  "avatar_source": "website"
+ },
  "almaty:premium logistic": {
   "name": "Premium Logistic",
   "city": "almaty",
@@ -9882,6 +9897,20 @@
    "website"
   ]
  },
+ "almaty:tehno altyn": {
+  "name": "TEHNO ALTYN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "tehnoaltyn_",
+  "website": "https://tehnoaltyn.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001097401134",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:tele2 altel": {
   "name": "Tele2/Altel",
   "city": "almaty",
@@ -10407,6 +10436,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:vogue": {
+  "name": "Vogue",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "vogue_hotel_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001096886659"
  },
  "almaty:volcom": {
   "name": "VolCom",
@@ -12373,6 +12411,13 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "almaty:гкп на пхв центр мониторинга и оперативного реагирования г алматы упр по мобилизационной подготовке территориальной и гражданской обороне г алматы": {
+  "name": "ГКП на ПХВ Центр мониторинга и оперативного реагирования г. Алматы Упр по мобилизационной подготовке, территориальной и гражданской обороне г.Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
+ },
  "almaty:глав денталь": {
   "name": "Глав Денталь",
   "city": "almaty",
@@ -12723,6 +12768,20 @@
   ],
   "avatar": "3242bfee90f876e0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:дом табличек": {
+  "name": "ДОМ ТАБЛИЧЕК",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "domtablichek",
+  "website": "https://domtablichek.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037458791",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:домашка эдюкейшн": {
   "name": "ДОМАШКА Эдюкейшн",
@@ -13883,6 +13942,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "almaty:косолапов": {
+  "name": "Косолапов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
+ },
  "almaty:котофей казахстан": {
   "name": "Котофей Казахстан",
   "city": "almaty",
@@ -14693,6 +14759,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T12:44:30+00:00"
+ },
+ "almaty:надежный сервис": {
+  "name": "Надежный Сервис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
  },
  "almaty:назарбаев интеллектуальные школы автономная организация образования": {
   "name": "Назарбаев интеллектуальные школы, Автономная организация образования",
@@ -19559,6 +19632,22 @@
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
  },
+ "astana:janzeto": {
+  "name": "JANZETO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "janzeto.kz",
+  "website": "https://janzeto.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001026978247",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8a328aa755f64df9.jpg",
+  "avatar_source": "website"
+ },
  "astana:jas education": {
   "name": "JAS EDUCATION",
   "city": "astana",
@@ -20894,7 +20983,7 @@
   "instagram": "pingwin_premium",
   "website": "http://pingwinbowling.kz/",
   "source": "https://2gis.kz/astana/firm/70000001100848208",
-  "avatar_checked_at": "2026-10-30T09:43:32+00:00",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22172,6 +22261,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "astana:vivid auto kazakhstan": {
+  "name": "Vivid Auto Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "website": "https://www.vivid.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098645691",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:vm premium astana": {
   "name": "VM Premium Astana",
@@ -24170,6 +24272,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T07:44:30+00:00"
+ },
+ "astana:казах кенсе": {
+  "name": "Казах Кенсе",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
  },
  "astana:казахстан мед дез": {
   "name": "КАЗАХСТАН-МЕД ДЕЗ",
@@ -26505,6 +26614,22 @@
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
  },
+ "astana:управляющая компания espresso day": {
+  "name": "УПРАВЛЯЮЩАЯ КОМПАНИЯ ESPRESSO DAY",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "espressoday_kz",
+  "website": "https://espressoday.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001113475084",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f0198ac34e7f6550.jpg",
+  "avatar_source": "website"
+ },
  "astana:управляющая компания keruen management": {
   "name": "Управляющая компания Keruen Management",
   "city": "astana",
@@ -27264,6 +27389,13 @@
    "website"
   ]
  },
+ "atyrau:adl group kz": {
+  "name": "ADL GROUP KZ",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
+ },
  "atyrau:adona ltd": {
   "name": "Adona ltd",
   "city": "atyrau",
@@ -27820,6 +27952,15 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "atyrau:алмаз холдинг тоо аргента": {
+  "name": "Алмаз-Холдинг (ТОО Аргента)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "almaz_holding",
+  "source": "https://2gis.kz/atyrau/firm/70000001034779698"
+ },
  "atyrau:аманова а с": {
   "name": "АМАНОВА А.С.",
   "city": "atyrau",
@@ -28005,6 +28146,24 @@
   "v": 2,
   "checked_at": "2026-10-28T07:43:20+00:00"
  },
+ "atyrau:марк формэль": {
+  "name": "Марк Формэль",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "markformelle",
+  "telegram": "formellekz",
+  "website": "https://markformelle.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001082569868",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "9cb9b7d2fc1d7004.jpg",
+  "avatar_source": "telegram"
+ },
  "atyrau:масло дел": {
   "name": "Масло-Дел",
   "city": "atyrau",
@@ -28069,6 +28228,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:рублевка и к": {
+  "name": "Рублёвка и К",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "rublevka_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001063742866"
  },
  "atyrau:самокат ооо изи лоджистик партнер сервиса": {
   "name": "Самокат (ООО ИЗИ Лоджистик — партнер сервиса)",
@@ -30257,6 +30425,21 @@
    "website"
   ],
   "avatar": "6aa4415f987e23f3.jpg",
+  "avatar_source": "website"
+ },
+ "kokshetau:n v business group": {
+  "name": "N.V.Business Group",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "website": "https://nv-businessgroup.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033563842",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5e3738e1581b20fb.jpg",
   "avatar_source": "website"
  },
  "kokshetau:nurlytau construction": {
@@ -36170,6 +36353,13 @@
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
  },
+ "shymkent:мира group ltd": {
+  "name": "МИРА GROUP LTD",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
+ },
  "shymkent:мирахметова дилбар бахтиер қизи": {
   "name": "МИРАХМЕТОВА ДИЛБАР БАХТИЁР ҚИЗИ",
   "city": "shymkent",
@@ -37367,6 +37557,13 @@
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
  },
+ "uralsk:qqq qazaqstan qamqor qyzmet": {
+  "name": "QQQ - Qazaqstan Qamqor Qyzmet",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
+ },
  "uralsk:sevalo engineering machinery kazakhstan": {
   "name": "Sevalo Engineering Machinery Kazakhstan",
   "city": "uralsk",
@@ -38010,7 +38207,7 @@
   "checked_at": "2026-10-30T09:43:32+00:00",
   "website": "https://aitas.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721385082",
-  "avatar_checked_at": "2026-10-30T09:43:32+00:00",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38055,6 +38252,20 @@
   ],
   "avatar": "45ca9aa2840e0e2a.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:askona life kazakhstan аскона лайф казахстан": {
+  "name": "Askona Life Kazakhstan (Аскона Лайф Казахстан)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00",
+  "instagram": "askona_official.kz",
+  "website": "https://askona.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001093653740",
+  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:asteco": {
   "name": "ASTECO",
@@ -38670,6 +38881,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
+ },
+ "ust-kamenogorsk:васик т в": {
+  "name": "Васик Т.В.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-06T09:44:08+00:00"
  },
  "ust-kamenogorsk:ваша вахта": {
   "name": "Ваша вахта",

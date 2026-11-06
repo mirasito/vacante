@@ -223,7 +223,7 @@ class D1:
         counts = {row["status"]: int(row["n"]) for row in
                   self.query("SELECT status, COUNT(*) AS n FROM jobs WHERE status != 'draft' GROUP BY status")}
         counts["applications"] = int(self.query("SELECT COUNT(*) AS n FROM applications")[0]["n"])
-        try:  # оплаты «🔥 Срочно» (миграция 0005)
+        try:  # оплаты «🔥 Срочно» и размещения (миграции 0005, 0007)
             paid = self.query("SELECT COUNT(*) AS n, COALESCE(SUM(amount), 0) AS total FROM payments "
                               "WHERE status = 'confirmed'")[0]
             counts["paid"], counts["revenue"] = int(paid["n"]), int(paid["total"])

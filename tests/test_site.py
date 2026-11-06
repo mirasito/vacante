@@ -100,7 +100,7 @@ def test_list_links_to_more_vacancies_elsewhere(tmp_path):
     assert 'href="https://www.olx.kz/rabota/"' in city
     horeca = (out / "almaty" / "horeca" / "index.html").read_text("utf-8")
     assert "area=160&amp;text=%D0%BE%D1%84" in horeca
-    assert "Разместите вакансию бесплатно" in city
+    assert "Разместите вакансию за 900 ₸" in city
     assert site.more_links("astana")[1] == ("OLX", "https://www.olx.kz/rabota/astana/")
     assert site.more_links(None)[0] == ("hh.kz", "https://hh.kz/search/vacancy?area=40")
 

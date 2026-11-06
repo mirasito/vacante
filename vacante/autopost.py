@@ -326,7 +326,7 @@ def shifts_digest(vacancies: list[Vacancy], city: str, base_url: str, now: datet
             line += f"\n   📅 {shifts.day_label(v.shift_date)}, {e(v.shift_time or '')}"
         lines.append(line)
     lines += ["", f'Все смены и подработка: <a href="{base_url}/{city}/{shifts.SLUG}/">vacante.kz/{city}/{shifts.SLUG}</a>',
-              f'Нужны люди на смену? <a href="https://t.me/{direct.BOT_USERNAME}?start=smena">Разместите бесплатно за минуту</a>',
+              f'Нужны люди на смену? <a href="https://t.me/{direct.BOT_USERNAME}?start=smena">Разместите за минуту</a>',
               "Перешлите другу, который ищет подработку 🙌", "", "#подработка #смены"]
     return "\n".join(lines)
 

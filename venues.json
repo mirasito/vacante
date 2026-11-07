@@ -10065,6 +10065,13 @@
   "instagram": "procoffee.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001097293522"
  },
+ "almaty:proexpert": {
+  "name": "ProExpert",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
+ },
  "almaty:professional service almaty": {
   "name": "Professional Service Almaty",
   "city": "almaty",
@@ -15485,6 +15492,13 @@
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
  },
+ "almaty:казавтотранс алматы": {
+  "name": "Казавтотранс Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
+ },
  "almaty:казанцев": {
   "name": "Казанцев",
   "city": "almaty",
@@ -15921,6 +15935,13 @@
   ],
   "avatar": "79068cc070db6a39.jpg",
   "avatar_source": "website"
+ },
+ "almaty:кисабекова": {
+  "name": "Кисабекова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "almaty:классик коммерц": {
   "name": "КЛАССИК КОММЕРЦ",
@@ -19627,6 +19648,15 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "almaty:шейх": {
+  "name": "Шейх",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00",
+  "instagram": "al.sheikh.parfums",
+  "source": "https://2gis.kz/almaty/firm/70000001068295712"
+ },
  "almaty:шерис": {
   "name": "ИП Шерис",
   "city": "almaty",
@@ -20586,6 +20616,13 @@
    "website"
   ]
  },
+ "astana:atlant dent": {
+  "name": "Atlant Dent",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
+ },
  "astana:atlant estate": {
   "name": "ATLANT ESTATE",
   "city": "astana",
@@ -20710,6 +20747,13 @@
   "checked_at": "2026-11-07T09:44:22+00:00",
   "instagram": "baghdad_barbershop.kz",
   "source": "https://2gis.kz/astana/firm/70000001077525309"
+ },
+ "astana:bakery street": {
+  "name": "Bakery Street",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "astana:bariton": {
   "name": "Bariton",
@@ -20992,6 +21036,13 @@
   "checked_at": "2026-11-03T19:44:10+00:00",
   "instagram": "burabayfoodkz",
   "source": "https://2gis.kz/astana/firm/70000001034196809"
+ },
+ "astana:busan": {
+  "name": "Busan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "astana:cafellini": {
   "name": "Cafellini",
@@ -23607,6 +23658,13 @@
   ],
   "avatar": "c8497e03a7c4be1a.jpg",
   "avatar_source": "website"
+ },
+ "astana:mylock": {
+  "name": "MYLOCK",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "astana:na batys group": {
   "name": "NA BATYS GROUP",
@@ -29348,6 +29406,19 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "astana:пожкабель": {
+  "name": "Пожкабель",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00",
+  "website": "https://pozhcable.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001101184066",
+  "avatar_checked_at": "2026-11-07T19:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:полезный продукт": {
   "name": "Полезный Продукт",
   "city": "astana",
@@ -31843,6 +31914,13 @@
   "v": 3,
   "checked_at": "2026-11-04T01:44:23+00:00"
  },
+ "atyrau:odd solution": {
+  "name": "ODD SOLUTION",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
+ },
  "atyrau:prima distribution": {
   "name": "Prima Distribution",
   "city": "atyrau",
@@ -32084,6 +32162,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:бакын": {
+  "name": "БАКЫН",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "atyrau:болашак атырау": {
   "name": "Болашак-Атырау",
@@ -34274,6 +34359,24 @@
   "avatar": "7e7aec08a0894782.jpg",
   "avatar_source": "website"
  },
+ "karaganda:народный банк казахстана": {
+  "name": "Народный банк Казахстана",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00",
+  "instagram": "halykbank.kz",
+  "telegram": "halykbankkaz",
+  "website": "https://www.halykbank.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302825987",
+  "avatar_checked_at": "2026-11-07T19:44:05+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "6e16a863580dfe5c.jpg",
+  "avatar_source": "telegram"
+ },
  "karaganda:ново тек": {
   "name": "НОВО ТЕК",
   "city": "karaganda",
@@ -35218,6 +35321,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T18:45:16+00:00"
+ },
+ "kokshetau:мирзаева г с": {
+  "name": "Мирзаева Г.С.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "kokshetau:мк агропродукт": {
   "name": "МК Агропродукт",
@@ -36935,6 +37045,13 @@
   "v": 3,
   "checked_at": "2026-11-06T08:44:35+00:00"
  },
+ "kyzylorda:алем транс жол": {
+  "name": "Алем Транс Жол",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
+ },
  "kyzylorda:алменов а у": {
   "name": "Алменов А.У",
   "city": "kyzylorda",
@@ -37057,6 +37174,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "kyzylorda:юникс": {
+  "name": "Юникс",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "kyzylorda:қызылорда мұнай өнімдері": {
   "name": "Қызылорда Мұнай Өнімдері",
@@ -37620,6 +37744,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "pavlodar:все для новоселов": {
+  "name": "Все для новоселов",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "pavlodar:газели": {
   "name": "Газели",
@@ -40130,6 +40261,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "shymkent:amir logistic group": {
+  "name": "AMIR LOGISTIC GROUP",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
  },
  "shymkent:ann global": {
   "name": "ANN GLOBAL",
@@ -43060,6 +43198,13 @@
   "instagram": "cosmoshop_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001039269973"
  },
+ "uralsk:easyspeak": {
+  "name": "EasySpeak",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00"
+ },
  "uralsk:floral express": {
   "name": "«Floral Express»",
   "city": "uralsk",
@@ -43797,6 +43942,22 @@
   "instagram": "sportmaster_kz",
   "source": "https://2gis.kz/uralsk/firm/70000001024984537"
  },
+ "uralsk:стекло сервис": {
+  "name": "Стекло-Сервис",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00",
+  "instagram": "steklo_service__uralsk",
+  "website": "https://steklo-service.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025056583",
+  "avatar_checked_at": "2026-11-07T19:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "384dec1174b15a56.jpg",
+  "avatar_source": "website"
+ },
  "uralsk:тат азс центр казахстан": {
   "name": "ТАТ АЗС Центр Казахстан",
   "city": "uralsk",
@@ -44324,6 +44485,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:lpp kazakhstan лпп казахстан": {
+  "name": "LPP Kazakhstan (ЛПП Казахстан)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T19:44:04+00:00",
+  "instagram": "sinsaykz",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001105098427"
  },
  "ust-kamenogorsk:m manzoni ип мавлитов е": {
   "name": "M.Manzoni ( ИП Мавлитов Е)",

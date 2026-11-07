@@ -1844,6 +1844,15 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "aktobe:nomad autotechnologies": {
+  "name": "Nomad Autotechnologies",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00",
+  "instagram": "nomad.autotech",
+  "source": "https://2gis.kz/aktobe/firm/70000001033925113"
+ },
  "aktobe:nova trade": {
   "name": "Nova-trade",
   "city": "aktobe",
@@ -2657,6 +2666,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "almaty:abdr": {
+  "name": "ABDR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "almaty:abl": {
   "name": "ABL.",
@@ -3812,6 +3828,13 @@
   "checked_at": "2026-11-03T06:44:20+00:00",
   "instagram": "auris_restobar_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001109861034"
+ },
+ "almaty:auto spa": {
+  "name": "Auto spa",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "almaty:auto trader": {
   "name": "Auto Trader",
@@ -8501,6 +8524,13 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:millennium astana": {
+  "name": "Millennium Astana",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
+ },
  "almaty:mindgate": {
   "name": "MindGate",
   "city": "almaty",
@@ -10280,6 +10310,22 @@
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
  },
+ "almaty:serdzhio barbershop": {
+  "name": "Serdzhio barbershop",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00",
+  "instagram": "serdzhio_barbershop",
+  "website": "https://serdzhiobarbershop.taplink.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001057645837",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "eb1129d98e8687c2.jpg",
+  "avatar_source": "website"
+ },
  "almaty:serebro pastel": {
   "name": "SEREBRO PASTEL",
   "city": "almaty",
@@ -10503,6 +10549,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "almaty:smartmed": {
+  "name": "Smartmed",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "almaty:snt enterprise": {
   "name": "SNT Enterprise",
@@ -13261,6 +13314,15 @@
   "avatar": "a7c44a91f14f39d1.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:бесказан": {
+  "name": "Бесказан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00",
+  "instagram": "besqazan_ryskulova",
+  "source": "https://2gis.kz/almaty/firm/70000001094447439"
+ },
  "almaty:бест импорт": {
   "name": "БЕСТ ИМПОРТ",
   "city": "almaty",
@@ -15035,7 +15097,7 @@
   "instagram": "kelet.kz",
   "website": "https://kelet.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796758",
-  "avatar_checked_at": "2026-10-31T06:44:38+00:00",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17300,6 +17362,13 @@
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
  },
+ "almaty:сеть ресторанов": {
+  "name": "Сеть ресторанов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
+ },
  "almaty:сеть фитнес клубов workout ип fb zharokova": {
   "name": "Сеть фитнес-клубов WORKOUT (ИП FB Zharokova)",
   "city": "almaty",
@@ -17433,6 +17502,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
+ },
+ "almaty:спецавтоковш": {
+  "name": "СпецАвтоКовш",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "almaty:специалист": {
   "name": "Специалист",
@@ -19595,6 +19671,19 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "astana:atk global": {
+  "name": "ATK Global",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00",
+  "website": "https://astana.atkglobal.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001093323985",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:atlant estate": {
   "name": "ATLANT ESTATE",
   "city": "astana",
@@ -20987,6 +21076,13 @@
   "checked_at": "2026-11-04T08:45:38+00:00",
   "instagram": "grandprixclub",
   "source": "https://2gis.kz/astana/firm/70000001024023081"
+ },
+ "astana:green house limited": {
+  "name": "Green House Limited",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "astana:gresso kz": {
   "name": "GRESSO KZ",
@@ -23362,6 +23458,20 @@
   "instagram": "reklama.01kz",
   "source": "https://2gis.kz/astana/firm/70000001066154712"
  },
+ "astana:resto invest group": {
+  "name": "Resto Invest Group",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00",
+  "instagram": "negroni_astana",
+  "website": "https://negroni.taptable.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001088744333",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:rg brands kazakhstan": {
   "name": "RG Brands Kazakhstan",
   "city": "astana",
@@ -23531,6 +23641,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T13:44:20+00:00"
+ },
+ "astana:segafredo": {
+  "name": "Segafredo",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "astana:senim staff": {
   "name": "Senim Staff",
@@ -24958,6 +25075,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "astana:алимбаев": {
+  "name": "ИП Алимбаев",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "astana:алимбаев автосервис": {
   "name": "ИП Алимбаев (автосервис)",
@@ -26598,6 +26722,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "astana:кайреденов а м": {
+  "name": "Кайреденов А.М",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "astana:кальянный магазин fox": {
   "name": "Кальянный магазин FOX",
@@ -30320,7 +30451,7 @@
   "instagram": "lift_capital",
   "website": "https://liftcapital.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001095550821",
-  "avatar_checked_at": "2026-10-31T07:43:27+00:00",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31149,6 +31280,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "karaganda:azimut holding": {
+  "name": "Azimut Holding",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "karaganda:beyosa kazakhstan": {
   "name": "beyosa Kazakhstan",
@@ -33791,7 +33929,7 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "website": "https://agro-s.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001042928156",
-  "avatar_checked_at": "2026-10-31T07:43:27+00:00",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -36779,6 +36917,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "petropavlovsk:yda inşaat sanayi ve ticaret anonim sirketi": {
+  "name": "YDA INŞAAT SANAYI VE TICARET ANONIM SIRKETI",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
+ },
  "petropavlovsk:азия": {
   "name": "Азия",
   "city": "petropavlovsk",
@@ -36827,6 +36972,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "petropavlovsk:в центре города": {
+  "name": "В ЦЕНТРЕ ГОРОДА",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
  },
  "petropavlovsk:глобал сервис": {
   "name": "Глобал Сервис",
@@ -39796,6 +39948,13 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "shymkent:нур": {
+  "name": "НУР",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00"
+ },
  "shymkent:нурлан": {
   "name": "Нурлан",
   "city": "shymkent",
@@ -40191,7 +40350,7 @@
   "checked_at": "2026-10-31T06:44:38+00:00",
   "website": "https://www.bcc.kz/",
   "source": "https://www.bcc.kz/llms.txt",
-  "avatar_checked_at": "2026-10-31T06:44:38+00:00",
+  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41073,6 +41232,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
+ },
+ "uralsk:lankon": {
+  "name": "LANKON",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T07:43:53+00:00",
+  "instagram": "lankon_07",
+  "source": "https://2gis.kz/uralsk/firm/70000001104638625"
  },
  "uralsk:maida": {
   "name": "MAIDA",

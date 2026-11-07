@@ -1942,12 +1942,34 @@
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
  },
+ "aktobe:outfit": {
+  "name": "Outfit",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "aktobe:parus mining": {
   "name": "PARUS MINING",
   "city": "aktobe",
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T20:46:04+00:00"
+ },
+ "aktobe:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "website": "http://prima-group.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001062722210",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "29cb20e1110af866.jpg",
+  "avatar_source": "website"
  },
  "aktobe:reny": {
   "name": "Reny",
@@ -7524,6 +7546,13 @@
   "avatar": "8797a20ceb123d58.jpg",
   "avatar_source": "website"
  },
+ "almaty:itm central asia": {
+  "name": "ITM Central Asia",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "almaty:jambull": {
   "name": "JamBull",
   "city": "almaty",
@@ -9239,6 +9268,13 @@
   "checked_at": "2026-11-04T21:44:03+00:00",
   "instagram": "newmedical_kz",
   "source": "https://2gis.kz/almaty/firm/70000001084095484"
+ },
+ "almaty:newtech electric": {
+  "name": "Newtech Electric",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
  },
  "almaty:next": {
   "name": "Next",
@@ -12233,6 +12269,13 @@
   "v": 3,
   "checked_at": "2026-11-05T19:43:27+00:00"
  },
+ "almaty:wave": {
+  "name": "Wave",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "almaty:wb": {
   "name": "WB",
   "city": "almaty",
@@ -13263,6 +13306,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:алматинский современный центр оздоровления": {
+  "name": "АЛМАТИНСКИЙ СОВРЕМЕННЫЙ ЦЕНТР ОЗДОРОВЛЕНИЯ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "moderncancerhospitalkz",
+  "source": "https://2gis.kz/almaty/firm/70000001103435638"
  },
  "almaty:алматы": {
   "name": "Алматы",
@@ -16923,6 +16975,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:мороз": {
+  "name": "Мороз",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
  },
  "almaty:москва": {
   "name": "Москва",
@@ -23831,6 +23890,13 @@
   "instagram": "opatra.astana",
   "source": "https://2gis.kz/astana/firm/70000001081318402"
  },
+ "astana:open systems development": {
+  "name": "OPEN SYSTEMS DEVELOPMENT",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "astana:openhype": {
   "name": "OpenHype",
   "city": "astana",
@@ -26354,7 +26420,7 @@
   "checked_at": "2026-10-31T18:42:42+00:00",
   "website": "http://f-okna.kz/",
   "source": "https://2gis.kz/astana/firm/70000001066155259",
-  "avatar_checked_at": "2026-10-31T18:42:42+00:00",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29296,6 +29362,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "astana:пробьюти": {
+  "name": "Пробьюти",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "astana:продуктовый магазин": {
   "name": "Продуктовый магазин",
   "city": "astana",
@@ -31410,6 +31483,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "atyrau:atyrau print": {
+  "name": "ATYRAU-PRINT",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "atyrauprint.kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001034798928"
  },
  "atyrau:avora group": {
   "name": "Avora Group",
@@ -36436,6 +36518,20 @@
   "avatar": "3c1ea3bfb9fdfbe7.jpg",
   "avatar_source": "telegram"
  },
+ "kostanay:остин казахстан ostin тм": {
+  "name": "Остин Казахстан (O'stin ТМ)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "ostin.kz",
+  "website": "https://ostin.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035192741",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:первый бит": {
   "name": "Первый БИТ",
   "city": "kostanay",
@@ -36640,6 +36736,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T23:44:29+00:00"
+ },
+ "kostanay:фермер лтд": {
+  "name": "Фермер ЛТД",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "website": "https://fermerltd.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035552059",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ad983f56cc667308.jpg",
+  "avatar_source": "website"
  },
  "kostanay:фирма стс бетон": {
   "name": "ФИРМА СТС-Бетон",
@@ -37484,6 +37595,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "pavlodar:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "fixprice.kazakhstan",
+  "telegram": "fixprice_kazakhstan",
+  "website": "https://fix-price.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001042902965",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "d8325e625c738414.jpg",
+  "avatar_source": "telegram"
  },
  "pavlodar:ваша вахта": {
   "name": "Ваша вахта",
@@ -38338,6 +38467,20 @@
   "avatar": "e2850ad6049549da.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:railways systems kz": {
+  "name": "Railways Systems KZ",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "railways_systems_kz",
+  "website": "https://railsystems.kz/",
+  "source": "https://2gis.kz/ekibastuz/firm/70000001089339959",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:ruslan ltd": {
   "name": "ТОО Ruslan LTD",
   "city": "petropavlovsk",
@@ -38558,6 +38701,22 @@
   "v": 3,
   "checked_at": "2026-11-04T03:44:25+00:00"
  },
+ "petropavlovsk:кавказские шашлыки": {
+  "name": "Кавказские шашлыки",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "kavkazgrill.kz",
+  "website": "http://shashlyki.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038273335",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ff01e8cf34c62f56.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:казахмедимпорт": {
   "name": "КазахМедИмпорт",
   "city": "petropavlovsk",
@@ -38765,6 +38924,19 @@
   "website": "http://pmz.asia/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001046012262",
   "avatar_checked_at": "2026-11-04T04:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "petropavlovsk:петропавл экспресс логистика": {
+  "name": "Петропавл Экспресс Логистика",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "website": "http://ptcom.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001039127460",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39682,7 +39854,7 @@
   "checked_at": "2026-10-31T18:42:42+00:00",
   "website": "http://besk.kz/ru/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721358523",
-  "avatar_checked_at": "2026-10-31T18:42:42+00:00",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41854,6 +42026,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "shymkent:юникс": {
+  "name": "Юникс",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "shymkent:юнифарм казахстан": {
   "name": "ЮНИФАРМ КАЗАХСТАН",
   "city": "shymkent",
@@ -42539,6 +42718,13 @@
    "website"
   ]
  },
+ "taraz:сапарбай м е": {
+  "name": "САПАРБАЙ М. Е.",
+  "city": "taraz",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00"
+ },
  "taraz:сейф ломбард": {
   "name": "Сейф-ломбард",
   "city": "taraz",
@@ -42961,6 +43147,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "uralsk:millenium": {
+  "name": "MILLENIUM",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "millenium_rest",
+  "source": "https://2gis.kz/uralsk/firm/70000001104403664"
  },
  "uralsk:moon spa": {
   "name": "MOON SPA",
@@ -43814,6 +44009,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "ust-kamenogorsk:aster автомобили": {
+  "name": "ASTER Автомобили",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T18:44:51+00:00",
+  "instagram": "aster_kz",
+  "website": "https://aster.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001051598295",
+  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0d0dcc9f88911806.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:auto trader": {
   "name": "Auto Trader",

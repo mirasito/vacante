@@ -1609,6 +1609,13 @@
   "avatar": "26757b6baed6acc7.jpg",
   "avatar_source": "website"
  },
+ "aktobe:asylym": {
+  "name": "Asylym",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "aktobe:ava2022": {
   "name": "AVA2022",
   "city": "aktobe",
@@ -8896,6 +8903,21 @@
   "avatar": "2563a46bf44471f0.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:mega network": {
+  "name": "Mega Network",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00",
+  "website": "https://meganetwork.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100590527",
+  "avatar_checked_at": "2026-11-07T20:43:41+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f59ea89c7b3eed8b.jpg",
+  "avatar_source": "website"
+ },
  "almaty:mega zakaz": {
   "name": "Mega zakaz",
   "city": "almaty",
@@ -11635,6 +11657,13 @@
    "website"
   ]
  },
+ "almaty:tenim english school": {
+  "name": "Tenim English School",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "almaty:teniz capital investment banking": {
   "name": "TENIZ CAPITAL INVESTMENT BANKING",
   "city": "almaty",
@@ -14153,6 +14182,13 @@
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
  },
+ "almaty:бурли": {
+  "name": "БУРЛИ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "almaty:буцик": {
   "name": "БУЦИК",
   "city": "almaty",
@@ -15259,6 +15295,13 @@
   "checked_at": "2026-10-28T20:44:33+00:00",
   "instagram": "yvesrocherkz",
   "source": "https://2gis.kz/almaty/firm/70000001113860458"
+ },
+ "almaty:игнатова ирина валерьевна": {
+  "name": "Игнатова Ирина Валерьевна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
  },
  "almaty:игорь": {
   "name": "Игорь",
@@ -17485,6 +17528,19 @@
   "v": 3,
   "checked_at": "2026-11-06T03:43:44+00:00"
  },
+ "almaty:панелао фм казахстан": {
+  "name": "Панелао ФМ Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00",
+  "website": "https://panelao.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001112809621",
+  "avatar_checked_at": "2026-11-07T20:43:41+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:парасат": {
   "name": "Парасат",
   "city": "almaty",
@@ -17924,6 +17980,13 @@
   "instagram": "roy_hostel",
   "source": "https://2gis.kz/almaty/firm/70000001067863332"
  },
+ "almaty:рокат": {
+  "name": "РОКАТ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "almaty:рост": {
   "name": "Рост",
   "city": "almaty",
@@ -18245,6 +18308,13 @@
   "checked_at": "2026-10-31T22:43:53+00:00",
   "instagram": "workoutgym.kz",
   "source": "https://2gis.kz/almaty/firm/70000001031662234"
+ },
+ "almaty:сеть футбольных школ alga bas баймуханова а а": {
+  "name": "Сеть футбольных школ ALGA BAS БАЙМУХАНОВА А. А",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
  },
  "almaty:сиезбаева": {
   "name": "Сиезбаева",
@@ -20809,6 +20879,22 @@
   "checked_at": "2026-11-06T22:44:17+00:00",
   "instagram": "beerloga.astana",
   "source": "https://2gis.kz/astana/firm/70000001037275839"
+ },
+ "astana:beksar consulting": {
+  "name": "BEKSAR consulting",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00",
+  "instagram": "beksar.kz",
+  "website": "https://beksar.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001054627543",
+  "avatar_checked_at": "2026-11-07T20:43:41+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bf7c7298db50bbb5.jpg",
+  "avatar_source": "website"
  },
  "astana:best chicken astana": {
   "name": "BEST CHICKEN ASTANA",
@@ -26708,6 +26794,13 @@
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
  },
+ "astana:бектемирова": {
+  "name": "Бектемирова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "astana:белый ветер kz": {
   "name": "Белый Ветер KZ",
   "city": "astana",
@@ -29215,6 +29308,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "astana:орысбаева назерке": {
+  "name": "Орысбаева Назерке",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
  },
  "astana:от донер": {
   "name": "От донер",
@@ -31907,6 +32007,13 @@
   "instagram": "nes_restaurant",
   "source": "https://2gis.kz/atyrau/firm/70000001095535105"
  },
+ "atyrau:north caspian development partners llp": {
+  "name": "North Caspian Development Partners LLP",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "atyrau:ny group kz": {
   "name": "NY Group KZ",
   "city": "atyrau",
@@ -32003,6 +32110,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:tenaz management": {
+  "name": "Tenaz Management",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00",
+  "instagram": "tenaz_management",
+  "website": "https://www.tenazmanagement.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001036099271",
+  "avatar_checked_at": "2026-11-07T20:43:41+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "65c6b438cb006851.jpg",
+  "avatar_source": "website"
  },
  "atyrau:union space tm тоо brand hub group": {
   "name": "Union Space`TM (ТОО Brand Hub Group)",
@@ -32214,6 +32337,20 @@
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
  },
+ "atyrau:грин лайт лтд green light ltd": {
+  "name": "ГРИН ЛАЙТ ЛТД/GREEN LIGHT LTD",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
+ "atyrau:даларо оверсиз лимитед": {
+  "name": "Даларо /Оверсиз/ Лимитед",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
+ },
  "atyrau:дана": {
   "name": "ДАНА",
   "city": "atyrau",
@@ -32253,6 +32390,13 @@
   ],
   "avatar": "342cc1d8a67576b2.jpg",
   "avatar_source": "website"
+ },
+ "atyrau:жемтранс": {
+  "name": "Жемтранс",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
  },
  "atyrau:интер карго системс астана": {
   "name": "Интер Карго Системс Астана",
@@ -33245,6 +33389,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
+ },
+ "karaganda:oktrening": {
+  "name": "Oktrening",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
  },
  "karaganda:olymp medical group": {
   "name": "Olymp Medical Group",
@@ -35277,6 +35428,24 @@
   ],
   "avatar": "dd822770eb0b05d1.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:интерполе": {
+  "name": "ИНТЕРПОЛЕ",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00",
+  "instagram": "agrotrak_interpole_kz",
+  "telegram": "interpole_official",
+  "website": "https://interpole.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033907029",
+  "avatar_checked_at": "2026-11-07T20:43:41+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "e051a42fbddb89d0.jpg",
+  "avatar_source": "telegram"
  },
  "kokshetau:итенова": {
   "name": "ИТЕНОВА",
@@ -37945,6 +38114,20 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "pavlodar:м ломбард": {
+  "name": "М-Ломбард",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00",
+  "instagram": "mlombard.kz",
+  "website": "https://m-lombard.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018939191",
+  "avatar_checked_at": "2026-11-07T20:43:41+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:максимальный размах corporation": {
   "name": "Максимальный размах corporation",
   "city": "pavlodar",
@@ -38159,6 +38342,13 @@
   "checked_at": "2026-11-01T19:44:04+00:00",
   "instagram": "steklocenterpvl",
   "source": "https://2gis.kz/pavlodar/firm/70000001047987840"
+ },
+ "pavlodar:стелл": {
+  "name": "Стелл",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T20:43:40+00:00"
  },
  "pavlodar:строительная компания ангара": {
   "name": "Строительная Компания Ангара",

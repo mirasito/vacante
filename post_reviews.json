@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T14:56:51+00:00",
+ "updated_at": "2026-11-07T15:57:11+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -40140,6 +40140,198 @@
     "salary_min": null,
     "salary_max": null
    }
+  },
+  "hh-139195275": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {}
+  },
+  "zhumys_astana_kz-17283": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Сушист-универсал"
+   }
+  },
+  "zhumys_astana_kz-17209": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Охранник",
+    "schedule": "дневные смены"
+   }
+  },
+  "hh-139206965": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "employer": "ОЙЛ"
+   }
+  },
+  "zhumys_astana_kz-17242": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Няня, помощница по дому",
+    "schedule": "10:00–19:00"
+   }
+  },
+  "rabota_astanakz-31329": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Плотник, дворник",
+    "employer": "Школа-гимназия № 22"
+   }
+  },
+  "hh-139204791": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Продавец-консультант"
+   }
+  },
+  "hh-139192946": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Продавец",
+    "employer": "Магазин «Мелочь»"
+   }
+  },
+  "hh-139227300": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {}
+  },
+  "hh-138105366": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {}
+  },
+  "hh-139225873": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "employer": "ИП Грамматикопуло К. И.",
+    "schedule": "4/2 или 2/2"
+   }
+  },
+  "agashka_job_almaty-1090": {
+   "verdict": "reject",
+   "at": "2026-11-07T15:57:11+00:00",
+   "reason": "Таксопарк, доход 50/50, а не оклад"
+  },
+  "agashka_job_almaty-1089": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Администратор фитнес-клуба",
+    "employer": "Фитнес-клуб «ProGym»",
+    "schedule": "6/1, утренние и вечерние смены"
+   }
+  },
+  "almaty_rabota05-11730": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Продавец в бутик",
+    "schedule": "6/1, 08:00–18:00",
+    "address": "рынок «Ожет», ул. Бекболата, 2а/7"
+   }
+  },
+  "almaty_rabota05-11718": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Уборщица в клинику",
+    "schedule": "6/1, 07:00–17:00",
+    "address": null,
+    "perks": []
+   }
+  },
+  "olx-402552078": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "salary_min": 200000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2, 07:00–14:00",
+    "address": "район Орбиты"
+   }
+  },
+  "rabotaalmatyyyy-15285": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Помощник на склад",
+    "schedule": "6/1, 08:00–17:00",
+    "address": "рынок «Ожет», ул. Бекболата, 1, блок С",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "agashka_job_almaty-1088": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Клинер",
+    "schedule": "свободный график, с 09:00",
+    "perks": [
+     "Без опыта",
+     "Ежедневная оплата",
+     "Спецодежда"
+    ]
+   }
+  },
+  "agashka_job_almaty-1087": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "schedule": "08:30–18:30, выходной в понедельник",
+    "address": "рынок «Кенжехан»"
+   }
+  },
+  "jumystap1-1534": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {}
+  },
+  "almaty_rabota05-11729": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "title": "Автослесарь, автоэлектрик, моторист",
+    "employer": "Автосервис",
+    "schedule": "6/1 или 5/2",
+    "address": "пер. Жангельдина, 4"
+   }
+  },
+  "vakansii_rabota_atyrau-50058": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {
+    "employer": "Учебный центр",
+    "schedule": "2/2, 09:00–18:00"
+   }
+  },
+  "vakansii_oskemen-9275": {
+   "verdict": "reject",
+   "at": "2026-11-07T15:57:11+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "vakansii_oskemen-9274": {
+   "verdict": "reject",
+   "at": "2026-11-07T15:57:11+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139227359": {
+   "verdict": "approve",
+   "at": "2026-11-07T15:57:11+00:00",
+   "fields": {}
   }
  }
 }

@@ -822,6 +822,13 @@
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
  },
+ "aktau:гк мамыр": {
+  "name": "ГК МАМЫР",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
+ },
  "aktau:глоббинг": {
   "name": "Глоббинг",
   "city": "aktau",
@@ -6180,6 +6187,22 @@
   "v": 3,
   "checked_at": "2026-10-31T16:43:38+00:00"
  },
+ "almaty:getex": {
+  "name": "GETEX",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "shtory_getex",
+  "website": "https://www.getex.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001033708016",
+  "avatar_checked_at": "2026-11-07T02:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9488ae25915b54a3.jpg",
+  "avatar_source": "website"
+ },
  "almaty:ginger sushi": {
   "name": "Ginger Sushi",
   "city": "almaty",
@@ -6981,6 +7004,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "almaty:ipoteka invest": {
+  "name": "Ipoteka Invest",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "ipotekainvest",
+  "source": "https://2gis.kz/almaty/firm/70000001093653697"
  },
  "almaty:iron grill": {
   "name": "Iron Grill",
@@ -11816,6 +11848,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "almaty:автомир ресурс каз": {
+  "name": "Автомир Ресурс Каз",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
+ },
  "almaty:автомойка денди": {
   "name": "Автомойка Денди",
   "city": "almaty",
@@ -15595,6 +15634,13 @@
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
  },
+ "almaty:медикал груп": {
+  "name": "Медикал груп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
+ },
  "almaty:медилэнд": {
   "name": "МЕДИЛЭНД",
   "city": "almaty",
@@ -16768,6 +16814,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:руслан": {
+  "name": "Руслан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
  },
  "almaty:рустам": {
   "name": "Рустам",
@@ -21749,6 +21802,20 @@
    "website"
   ]
  },
+ "astana:magnum cash&carry": {
+  "name": "Magnum Cash&Carry",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001024373331",
+  "avatar_checked_at": "2026-11-07T02:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:magnum e commerce": {
   "name": "Magnum e-commerce",
   "city": "astana",
@@ -23929,6 +23996,13 @@
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
  },
+ "astana:unique gr": {
+  "name": "Unique GR",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
+ },
  "astana:unity": {
   "name": "UNITY",
   "city": "astana",
@@ -24645,6 +24719,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T13:44:26+00:00"
+ },
+ "astana:альянсспорт": {
+  "name": "АльянсСпорт",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
  },
  "astana:амангалиева": {
   "name": "АМАНГАЛИЕВА",
@@ -30702,6 +30783,22 @@
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
  },
+ "karaganda:ecolos engineering": {
+  "name": "Ecolos Engineering",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "ecolos_kz",
+  "website": "https://www.ecolos.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001029766866",
+  "avatar_checked_at": "2026-11-07T02:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "30456a70a1a0d901.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:ekibastuzferroalloys": {
   "name": "EkibastuzFerroAlloys",
   "city": "karaganda",
@@ -33729,6 +33826,15 @@
   "instagram": "vetzashitaazia",
   "source": "https://2gis.kz/kostanaj/firm/70000001038110568"
  },
+ "kostanay:виниченко сто автостиль": {
+  "name": "Виниченко ( СТО Автостиль)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "autostylkst",
+  "source": "https://2gis.kz/kostanaj/firm/70000001037044211"
+ },
  "kostanay:гелиос": {
   "name": "Гелиос",
   "city": "kostanay",
@@ -35292,6 +35398,21 @@
   "v": 3,
   "checked_at": "2026-11-01T01:42:32+00:00"
  },
+ "pavlodar:дудар": {
+  "name": "Дудар",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "website": "https://dudar.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001083968685",
+  "avatar_checked_at": "2026-11-07T02:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dfbcd620c3f838d2.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:евразиан фудс корпорэйшн ао": {
   "name": "Евразиан Фудс Корпорэйшн, АО",
   "city": "pavlodar",
@@ -36162,6 +36283,22 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "petropavlovsk:демократ дент": {
+  "name": "Демократ-Дент",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "demokrat_petropavlovsk",
+  "website": "http://demokrat-petropavlovsk.com/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001094673857",
+  "avatar_checked_at": "2026-11-07T02:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "008881b43d1a941a.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:дудар": {
   "name": "Дудар",
   "city": "petropavlovsk",
@@ -36671,6 +36808,13 @@
   "instagram": "supermarket_adal_semey",
   "source": "https://2gis.kz/semej/firm/70000001052444174"
  },
+ "semey:aksenger ltd": {
+  "name": "Aksenger LTD",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
+ },
  "semey:alina group": {
   "name": "Alina Group",
   "city": "semey",
@@ -37150,6 +37294,13 @@
    "website"
   ]
  },
+ "semey:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
+ },
  "semey:гордорстрой": {
   "name": "ГОРДОРСТРОЙ",
   "city": "semey",
@@ -37170,6 +37321,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
+ },
+ "semey:казына": {
+  "name": "Казына",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
  },
  "semey:казына синема": {
   "name": "Казына Синема",
@@ -39578,6 +39736,15 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "taraz:dunyo": {
+  "name": "Dunyo",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "dunyo.kz",
+  "source": "https://2gis.kz/taraz/firm/70000001053546647"
+ },
  "taraz:expert авто": {
   "name": "EXPERT АВТО",
   "city": "taraz",
@@ -40005,6 +40172,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "turkestan:smlab": {
+  "name": "SMLAB",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00"
  },
  "turkestan:алем транс жол": {
   "name": "Алем Транс Жол",
@@ -41248,6 +41422,24 @@
   "avatar": "17c40eb2d1fb3e9b.jpg",
   "avatar_source": "website"
  },
+ "ust-kamenogorsk:home credit bank дб ао fortebank": {
+  "name": "Home Credit Bank (ДБ АО «ForteBank»)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "homecredit_kz",
+  "telegram": "homecreditbankkz",
+  "website": "https://home.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721338270",
+  "avatar_checked_at": "2026-11-07T02:43:55+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "4462b986fe2212fe.jpg",
+  "avatar_source": "telegram"
+ },
  "ust-kamenogorsk:indigo solutions": {
   "name": "Indigo Solutions",
   "city": "ust-kamenogorsk",
@@ -41948,6 +42140,15 @@
    "telegram",
    "website"
   ]
+ },
+ "ust-kamenogorsk:илмаз премиум": {
+  "name": "Илмаз премиум",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T02:43:54+00:00",
+  "instagram": "ilmaz_premium",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721395348"
  },
  "ust-kamenogorsk:илькон": {
   "name": "ИльКон",

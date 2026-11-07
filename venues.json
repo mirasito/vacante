@@ -190,6 +190,13 @@
   "avatar": "14534ea057697ede.jpg",
   "avatar_source": "website"
  },
+ "aktau:comfort m": {
+  "name": "COMFORT M",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
+ },
  "aktau:crn group": {
   "name": "CRN GROUP",
   "city": "aktau",
@@ -1960,6 +1967,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "aktobe:азимут трейд": {
+  "name": "Азимут- Трейд",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
  },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
@@ -5954,6 +5968,24 @@
   "instagram": "fort_vernyi",
   "source": "https://2gis.kz/almaty/firm/9429940000801811"
  },
+ "almaty:fortebank": {
+  "name": "ForteBank",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "fortebankkz",
+  "telegram": "forte",
+  "website": "https://forte.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001017843934",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "5de4b50e8a11656e.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:foton advertising": {
   "name": "Foton Advertising",
   "city": "almaty",
@@ -9830,7 +9862,7 @@
   "checked_at": "2026-10-31T03:43:12+00:00",
   "website": "http://brands.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001026759297",
-  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10567,10 +10599,12 @@
   "checked_at": "2026-10-31T02:43:59+00:00",
   "website": "https://steelgroupkz.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001053828060",
-  "avatar_checked_at": "2026-10-31T02:43:59+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "2d598c49fdc5f9b8.jpg",
+  "avatar_source": "website"
  },
  "almaty:steel security management": {
   "name": "Steel Security Management",
@@ -14561,7 +14595,7 @@
   "instagram": "kazbad.kz",
   "website": "http://kazbad.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001025068804",
-  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -15706,7 +15740,7 @@
   "instagram": "hakmedical",
   "website": "http://www.hakmedical.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000801882",
-  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17382,7 +17416,7 @@
   "instagram": "sumosankz",
   "website": "https://sumo-san.com/",
   "source": "https://2gis.kz/almaty/firm/9429940000800832",
-  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17877,6 +17911,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T20:44:13+00:00"
+ },
+ "almaty:ук меридиан капитал": {
+  "name": "УК Меридиан Капитал",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
  },
  "almaty:ультра мода казахстан": {
   "name": "Ультра Мода Казахстан",
@@ -22070,6 +22111,15 @@
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
  },
+ "astana:minestone": {
+  "name": "MINESTONE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "minestone.kz",
+  "source": "https://2gis.kz/astana/firm/70000001113926734"
+ },
  "astana:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "astana",
@@ -22230,6 +22280,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
+ },
+ "astana:nemo kz": {
+  "name": "Nemo.kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "nemo.kz",
+  "website": "https://nemo.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001081895050",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a8592970d7004f8b.jpg",
+  "avatar_source": "website"
  },
  "astana:neuro balance": {
   "name": "Neuro Balance",
@@ -23777,6 +23843,20 @@
    "website"
   ]
  },
+ "astana:terra pharm": {
+  "name": "Terra Pharm",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "best.terrapharm",
+  "website": "https://terrapharm.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001026663620",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:terra pro": {
   "name": "Terra Pro",
   "city": "astana",
@@ -23926,6 +24006,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:ts stom": {
+  "name": "TS-Stom",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
  },
  "astana:turan": {
   "name": "Turan",
@@ -25822,6 +25909,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "astana:жаилган астана": {
+  "name": "Жаилган-Астана",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
+ },
  "astana:жакенова": {
   "name": "Жакенова",
   "city": "astana",
@@ -26396,6 +26490,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:клининговая компания": {
+  "name": "Клининговая компания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
  },
  "astana:кожапова м а": {
   "name": "Кожапова М.А.",
@@ -27091,6 +27192,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "astana:мошеях": {
+  "name": "МОШЕЯХ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "mosheyah01",
+  "source": "https://2gis.kz/astana/firm/70000001018106041"
  },
  "astana:мтс торг": {
   "name": "МТС-ТОРГ",
@@ -29649,6 +29759,13 @@
   "instagram": "bereke.market.atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001035163008"
  },
+ "atyrau:bertys construction": {
+  "name": "BERTYS CONSTRUCTION",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
+ },
  "atyrau:bolashak atyrau": {
   "name": "Bolashak Atyrau",
   "city": "atyrau",
@@ -30141,7 +30258,7 @@
   "instagram": "atyrautechinvest.kz",
   "website": "http://atikz.com/",
   "source": "https://2gis.kz/atyrau/firm/70000001034849012",
-  "avatar_checked_at": "2026-10-31T02:43:59+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31145,6 +31262,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
+ },
+ "karaganda:nemo kz": {
+  "name": "Nemo.kz",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "nemo.kz",
+  "website": "https://nemo.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001052615712",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7e47cab66debc680.jpg",
+  "avatar_source": "website"
  },
  "karaganda:newton kazakhstan": {
   "name": "Newton Kazakhstan",
@@ -32582,6 +32715,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
+ },
+ "karaganda:шахтсервис": {
+  "name": "ШАХТСЕРВИС",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
  },
  "karaganda:эверест auto": {
   "name": "ЭВЕРЕСТ-AUTO",
@@ -36183,6 +36323,19 @@
   "instagram": "sardana.remont15",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001099157220"
  },
+ "petropavlovsk:servernet": {
+  "name": "ServerNet",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "website": "https://servernet.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001114837207",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:technodom operator технодом оператор": {
   "name": "TECHNODOM Operator (Технодом Оператор)",
   "city": "petropavlovsk",
@@ -36282,6 +36435,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "petropavlovsk:гоголь моголь": {
+  "name": "Гоголь-Моголь",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "sushi_gogol.petro",
+  "website": "https://gogol-mogol.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001046213360",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "53c9d28d2b5cedf2.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:демократ дент": {
   "name": "Демократ-Дент",
@@ -39320,7 +39489,7 @@
   "checked_at": "2026-10-31T03:43:12+00:00",
   "website": "https://www.tavrida.ru/",
   "source": "https://2gis.kz/shymkent/firm/70000001026626112",
-  "avatar_checked_at": "2026-10-31T03:43:12+00:00",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40487,6 +40656,13 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "uralsk:prospekt": {
+  "name": "Prospekt",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
+ },
  "uralsk:qazaqstan catering solutions ura": {
   "name": "Qazaqstan Catering Solutions URA",
   "city": "uralsk",
@@ -40891,6 +41067,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
+ },
+ "uralsk:ктк 888": {
+  "name": "КТК-888",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
  },
  "uralsk:күзетші": {
   "name": "КҮЗЕТШІ",
@@ -42258,6 +42441,13 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "ust-kamenogorsk:колос": {
+  "name": "Колос",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00"
+ },
  "ust-kamenogorsk:компания русский свет": {
   "name": "Компания Русский Свет",
   "city": "ust-kamenogorsk",
@@ -42824,6 +43014,22 @@
   "checked_at": "2026-11-02T04:43:55+00:00",
   "instagram": "zamena_masla_uka",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001105798500"
+ },
+ "ust-kamenogorsk:хуавей текнолоджиз казахстан": {
+  "name": "Хуавей Текнолоджиз Казахстан",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T03:44:24+00:00",
+  "instagram": "huawei",
+  "website": "https://www.huawei.com/",
+  "source": "https://2gis.kz/astana/firm/70000001020394812",
+  "avatar_checked_at": "2026-11-07T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2f228b9d72baebab.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:центр с": {
   "name": "ЦЕНТР-С",

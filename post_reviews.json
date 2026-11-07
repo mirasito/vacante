@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T12:57:46+00:00",
+ "updated_at": "2026-11-07T13:57:00+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -39799,6 +39799,216 @@
    "verdict": "reject",
    "at": "2026-11-07T12:57:46+00:00",
    "reason": "Офисная должность без работодателя"
+  },
+  "hh-139198190": {
+   "verdict": "reject",
+   "at": "2026-11-07T13:57:00+00:00",
+   "reason": "Офисная должность"
+  },
+  "rabota_astanakz-31352": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Кладовщик",
+    "employer": null,
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2, 09:00–18:00",
+    "address": "ул. Талапкер, 26А, каб. 103",
+    "perks": []
+   }
+  },
+  "hh-137599670": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "Заммлер Казахстан",
+    "address": "ш. Алаш, 69/1"
+   }
+  },
+  "astana_job_vakansii-130319": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "Ramen Lab",
+    "schedule": "10:30–22:00"
+   }
+  },
+  "rabota_astanakz-31354": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "Paradiegma Astana",
+    "schedule": "Пн–Пт 09:00–19:00, Сб 09:00–15:00"
+   }
+  },
+  "zhumys_astana_kz-16791": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "schedule": "6/1, 10:00–19:00"
+   }
+  },
+  "hh-139226665": {
+   "verdict": "reject",
+   "at": "2026-11-07T13:57:00+00:00",
+   "reason": "Работа не в Казахстане (Камчатский край)"
+  },
+  "rabota_astanakz-31335": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "schedule": "07:00–17:00, суббота короткий день"
+   }
+  },
+  "astana_rabota-90164": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Подсобный рабочий на монтаж бамбуковых панелей",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "olx-402698026": {
+   "verdict": "reject",
+   "at": "2026-11-07T13:57:00+00:00",
+   "reason": "Мало сведений: в тексте только должность"
+  },
+  "almaty_rabota_work-31850": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "ChickenEm",
+    "schedule": "ежедневно, 16:00–22:00",
+    "perks": [
+     "Питание",
+     "Обучение",
+     "Можно студентам"
+    ]
+   }
+  },
+  "hh-139226485": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Администратор-приёмщик в детейлинг",
+    "employer": "NAR",
+    "address": "пр. Сейфуллина, 617"
+   }
+  },
+  "hh-139226454": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Продавец-консультант, стилист",
+    "employer": "Grunge Space",
+    "address": "ул. Нурлана Каппарова, 404"
+   }
+  },
+  "hh-139134755": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "Interauto",
+    "address": "пр. Райымбека, 548/2"
+   }
+  },
+  "hh-138551606": {
+   "verdict": "reject",
+   "at": "2026-11-07T13:57:00+00:00",
+   "reason": "Офисная должность"
+  },
+  "rabota4almaty-6299": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Мастер по замене масла",
+    "employer": "Garage 56",
+    "address": "ул. Яссауи, 56"
+   }
+  },
+  "hh-138065966": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Оператор колл-центра",
+    "employer": "Кредит Коллекшн Груп",
+    "address": "мкр Таугуль-3, ул. Нагашабая Шайкенова, 24"
+   }
+  },
+  "rabota4almaty-6218": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "address": "пр. Абая, 109б"
+   }
+  },
+  "almatyrabota1-21327": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "Кафе «Деревяшка»",
+    "schedule": "сменный, полный день"
+   }
+  },
+  "hh-138034958": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Пиццамейкер",
+    "employer": "Dodo Pizza",
+    "address": "ул. Кенесары хана, 141"
+   }
+  },
+  "rabota4almaty-6216": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Кассир-закупщик",
+    "employer": "Медеу Маркет",
+    "schedule": "2/2, 08:00–23:00",
+    "address": "ул. Бегалина, 7"
+   }
+  },
+  "rabota4almaty-6213": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Няня в семью",
+    "employer": null
+   }
+  },
+  "rabota4almaty-6212": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "СС Груп"
+   }
+  },
+  "hh-139226689": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "title": "Раздатчик взрывчатых материалов",
+    "employer": "Энофэкс",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139226473": {
+   "verdict": "reject",
+   "at": "2026-11-07T13:57:00+00:00",
+   "reason": "Офисная должность"
+  },
+  "hh-139226617": {
+   "verdict": "approve",
+   "at": "2026-11-07T13:57:00+00:00",
+   "fields": {
+    "employer": "MSS",
+    "address": "ул. Физкультурная, 3"
+   }
   }
  }
 }

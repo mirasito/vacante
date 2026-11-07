@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T07:57:07+00:00",
+ "updated_at": "2026-11-07T08:56:48+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -38663,6 +38663,200 @@
    "verdict": "reject",
    "at": "2026-11-07T07:57:07+00:00",
    "reason": "Продажа страховок, нужен свой ноутбук и интернет, зарплата не указана"
+  },
+  "astana_job_vakansii-130306": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Официант, раннер, пекарь, повар",
+    "employer": "Ресторан «Grace»",
+    "schedule": "2/2, 4/2"
+   }
+  },
+  "rabota_astanakz-31337": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Уборщик, оператор поломоечной машины",
+    "schedule": "2/2, 15/15, полдня",
+    "address": "ТРЦ «Астана Молл», ТРЦ «Хан Шатыр» и другие объекты",
+    "perks": [
+     "Питание",
+     "Без опыта",
+     "Обучение",
+     "Можно студентам"
+    ]
+   }
+  },
+  "hh-139209433": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "rabota_astanakz-31302": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Продавец-кассир, специалист склада, пекарь, мясник-обвальщик",
+    "schedule": "5/2, 2/2"
+   }
+  },
+  "rabota_astanakz-31340": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Администратор, шеф-повар, повар, официант",
+    "employer": "Караоке-клуб «Bariton»",
+    "schedule": "ночные смены"
+   }
+  },
+  "astana_job_vakansii-130305": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Кассир, бармен",
+    "employer": "Магазин «Жана Градус»",
+    "schedule": "2/2, 10:00–23:00"
+   }
+  },
+  "hh-139223781": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-6279": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Дворник-садовник",
+    "employer": null,
+    "salary_min": 220000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2, 10:00–16:00, полдня",
+    "address": "ЖК «Тау Шатыр», ул. Каппарова, 6"
+   }
+  },
+  "hh-138779162": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "hh-139224067": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "hh-139223880": {
+   "verdict": "reject",
+   "at": "2026-11-07T08:56:48+00:00",
+   "reason": "Офисная должность: поиск клиентов и партнёров, B2B-продажи"
+  },
+  "rabota4almaty-6280": {
+   "verdict": "reject",
+   "at": "2026-11-07T08:56:48+00:00",
+   "reason": "Мало сведений: в тексте нет должности, зарплаты и заведения"
+  },
+  "rabota4almaty-6281": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Водитель фуры категории CE",
+    "employer": null
+   }
+  },
+  "hh-137668387": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-6246": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "ТОО «АБДИ КМ»"
+   }
+  },
+  "rabota4almaty-6244": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "employer": "Ресторан «Entrecote»",
+    "schedule": "2/2"
+   }
+  },
+  "hh-139223860": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "hh-139164124": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "vakansii_rabota_atyrau-50054": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "employer": "Dream Kids",
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "rabotaaktau-142323": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Кассир-оператор, официант",
+    "employer": "La Terrasse City Cafe",
+    "schedule": "1/2, 08:00–23:00"
+   }
+  },
+  "rabotaaktau-142327": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "employer": "Магазин «Каймак»",
+    "schedule": "2/2, 09:00–22:00",
+    "address": "19 мкр, 33 дом, ЖК «Beknur Delux»"
+   }
+  },
+  "rabotaaktau-142329": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "employer": "Кулинария «SMAK»"
+   }
+  },
+  "rabotaaktau-142320": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "employer": "Компьютерный клуб «16-38 Киберсайд»"
+   }
+  },
+  "rabotaaktau-142328": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {
+    "title": "Продавец, технический персонал",
+    "employer": "Супермаркет «Дана»",
+    "address": "28 мкр, 60 дом",
+    "perks": []
+   }
+  },
+  "hh-139223806": {
+   "verdict": "approve",
+   "at": "2026-11-07T08:56:48+00:00",
+   "fields": {}
+  },
+  "vakansiya_ukg-21773": {
+   "verdict": "reject",
+   "at": "2026-11-07T08:56:48+00:00",
+   "reason": "Это резюме, а не вакансия"
   }
  }
 }

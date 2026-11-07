@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T03:56:36+00:00",
+ "updated_at": "2026-11-07T04:56:47+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -37904,6 +37904,190 @@
     "salary_period": "month",
     "schedule": "6/1",
     "perks": []
+   }
+  },
+  "hh-139222639": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "hh-139222545": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "employer": "M-Group",
+    "schedule": "сменный график"
+   }
+  },
+  "hh-139221298": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Менеджер по продажам (выездной)",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139220551": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2"
+   }
+  },
+  "astana_job_vakansii-130058": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Бармен",
+    "employer": "Loft Park",
+    "address": "ул. Сарыарка, 5",
+    "schedule": "4/2, 09:00–21:00 или 21:00–09:00"
+   }
+  },
+  "astana_job_vakansii-130279": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Сушист, заготовщик",
+    "employer": "Mangosushi",
+    "schedule": "6/1 или 5/2, 11:00–00:00"
+   }
+  },
+  "zhumys_astana_kz-16809": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–18:00",
+    "address": "Кобда, 4/2"
+   }
+  },
+  "rabota_astanakz-31322": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Кассир, продавец-консультант",
+    "employer": "Магазин одежды «COTTON»",
+    "schedule": "6/1, 09:00–16:00 или 15:00–22:00",
+    "address": "ул. Кенесары, 74 или пр. Бауыржан Момышулы, 17",
+    "perks": [
+     "Бонусы",
+     "Можно студентам",
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "olx-402679604": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {}
+  },
+  "olx-402678301": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-6264": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Флорист, продавец",
+    "employer": null
+   }
+  },
+  "hh-139220828": {
+   "verdict": "reject",
+   "at": "2026-11-07T04:56:47+00:00",
+   "reason": "Офисные продажи логистических услуг, холодные звонки"
+  },
+  "hh-139220643": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Администратор, менеджер по продажам",
+    "schedule": "4/3"
+   }
+  },
+  "hh-139220641": {
+   "verdict": "reject",
+   "at": "2026-11-07T04:56:47+00:00",
+   "reason": "Офисные B2B-продажи с высоким чеком"
+  },
+  "hh-139220270": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "employer": null,
+    "address": null,
+    "schedule": "5/2"
+   }
+  },
+  "hh-139220131": {
+   "verdict": "reject",
+   "at": "2026-11-07T04:56:47+00:00",
+   "reason": "Работа в интернете, онлайн-продажи"
+  },
+  "hh-139159406": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2"
+   }
+  },
+  "hh-139159261": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "schedule": null
+   }
+  },
+  "hh-139158445": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Торговый представитель (ван селл)",
+    "employer": "HESS",
+    "address": "Кульджинский тракт, 601",
+    "schedule": "5/2"
+   }
+  },
+  "rabota4almaty-6262": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Кассир (универсал)",
+    "employer": "KFC",
+    "address": "ул. Ораза Жандосова, 162а",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "olx-402642478": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Рабочий склада"
+   }
+  },
+  "olx-402708555": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Повар холодного цеха",
+    "schedule": "08:00–20:00"
+   }
+  },
+  "olx-402708473": {
+   "verdict": "approve",
+   "at": "2026-11-07T04:56:47+00:00",
+   "fields": {
+    "title": "Посудомойщица, кухонный рабочий",
+    "schedule": "08:00–20:00"
    }
   }
  }

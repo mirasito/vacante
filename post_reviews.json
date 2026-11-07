@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T09:57:54+00:00",
+ "updated_at": "2026-11-07T10:57:04+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -39150,6 +39150,241 @@
    "fields": {
     "schedule": "5/2, 7 часов",
     "address": "пр. Аль-Фараби, 65"
+   }
+  },
+  "hh-139225422": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "employer": "Dolia Design",
+    "address": "пр. Туран, 55/13"
+   }
+  },
+  "hh-139225410": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "employer": "Golden Vein",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139225393": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Администратор учебного центра",
+    "employer": "Кузденбаева",
+    "schedule": null,
+    "address": "ул. Мусрепова, 15А"
+   }
+  },
+  "hh-139225217": {
+   "verdict": "reject",
+   "at": "2026-11-07T10:57:04+00:00",
+   "reason": "Удалённая работа, сомнительный работодатель (списание долгов)"
+  },
+  "rabota_astanakz-31345": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор на личном авто"
+   }
+  },
+  "zhumys_astana_kz-17277": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "employer": "All Off Burger",
+    "schedule": "11:30–23:00"
+   }
+  },
+  "astana_job_vakansii-130309": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "employer": "ATEA",
+    "schedule": "2/2, 09:30–23:00",
+    "address": "ТРЦ «Mega Silk Way»",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "zhumys_astana_kz-16793": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин женской одежды",
+    "employer": null,
+    "salary_min": 250000,
+    "salary_max": 450000,
+    "salary_period": "month",
+    "schedule": "5/2, 09:00–21:00",
+    "address": "пр. Мангилик Ел, 36",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "rabota_astanakz-31338": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "employer": "ТОО «Гормолзавод»",
+    "schedule": "6/1, 07:00–15:00",
+    "perks": []
+   }
+  },
+  "agashka_job_almaty-1086": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Продавец на ночную смену",
+    "employer": "Мини-маркет «Премьера»",
+    "schedule": "ночные смены, 21:00–09:00"
+   }
+  },
+  "hh-138256965": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Повар-кассир",
+    "employer": "KFC",
+    "schedule": "5/2",
+    "address": "ул. Розыбакиева, 247А",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139225206": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "schedule": "4/3 или 2/2",
+    "address": "ул. Жамакаева, 256А"
+   }
+  },
+  "hh-139225183": {
+   "verdict": "reject",
+   "at": "2026-11-07T10:57:04+00:00",
+   "reason": "Офисная должность (региональный менеджер, высшее образование)"
+  },
+  "hh-138330067": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "address": "мкр Таугуль, ул. Рыскулбекова, 16"
+   }
+  },
+  "rabota4almaty-6229": {
+   "verdict": "reject",
+   "at": "2026-11-07T10:57:04+00:00",
+   "reason": "Удалённая онлайн-работа"
+  },
+  "rabota4almaty-6079": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Сборщик мебели",
+    "employer": null
+   }
+  },
+  "rabota4almaty-6225": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Сантехник, оператор котельной",
+    "employer": "Банный комплекс «The Баня»",
+    "address": "мкр Аксай-4, 117/1"
+   }
+  },
+  "hh-137932817": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Персональный водитель",
+    "employer": "АО «Caspian Beverage Holding»",
+    "address": "ул. Гоголя, 211"
+   }
+  },
+  "hh-138031690": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Оператор call-центра",
+    "address": "ул. Жамакаева, 318/3"
+   }
+  },
+  "hh-138636427": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Администратор фитнес-зала"
+   }
+  },
+  "rabota4almaty-6223": {
+   "verdict": "reject",
+   "at": "2026-11-07T10:57:04+00:00",
+   "reason": "Сомнительно: массажный салон с завышенной зарплатой администратора"
+  },
+  "hh-138153197": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "employer": "«Бес Кара»",
+    "address": "мкр Катын Копыр, ул. Жансугурова, 66"
+   }
+  },
+  "hh-139225480": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Продавец",
+    "employer": "Магазин «Банный мир»",
+    "schedule": "5/2",
+    "address": "ул. Гоголя, 31"
+   }
+  },
+  "hh-133053926": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Слесарь по ремонту оборудования",
+    "schedule": "смены по 11 часов"
+   }
+  },
+  "hh-139225475": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "schedule": "6/1 или 5/2",
+    "address": null
+   }
+  },
+  "vakansii_oskemen-9271": {
+   "verdict": "reject",
+   "at": "2026-11-07T10:57:04+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139225503": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "title": "Продавец украшений и часов",
+    "schedule": "5/2",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "rabota_semey_official-6835": {
+   "verdict": "approve",
+   "at": "2026-11-07T10:57:04+00:00",
+   "fields": {
+    "employer": "«Блин & Coffee»",
+    "schedule": "17:00–02:00"
    }
   }
  }

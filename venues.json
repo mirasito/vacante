@@ -1,4 +1,11 @@
 {
+ "aktau:16 38 киберсайд": {
+  "name": "16-38 Киберсайд",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
+ },
  "aktau:adil fasad": {
   "name": "Adil Fasad",
   "city": "aktau",
@@ -3543,6 +3550,13 @@
   ],
   "avatar": "80b16f6a446e448d.jpg",
   "avatar_source": "website"
+ },
+ "almaty:art time": {
+  "name": "Art Time",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "almaty:asai clinic": {
   "name": "ASAI-CLINIC",
@@ -7251,6 +7265,13 @@
    "website"
   ]
  },
+ "almaty:jeti group": {
+  "name": "Jeti Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
+ },
  "almaty:jg khan tengri": {
   "name": "JG Khan Tengri",
   "city": "almaty",
@@ -8444,6 +8465,13 @@
   ],
   "avatar": "2563a46bf44471f0.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:mega zakaz": {
+  "name": "Mega zakaz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "almaty:mehkaz": {
   "name": "MehKaz",
@@ -10688,6 +10716,13 @@
   ],
   "avatar": "78b578ca56c301c0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:sport time": {
+  "name": "Sport Time",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "almaty:sportex ип савина": {
   "name": "SportEX (ИП Савина)",
@@ -14290,6 +14325,13 @@
   "v": 3,
   "checked_at": "2026-11-02T19:45:07+00:00"
  },
+ "almaty:ескермессов магжан": {
+  "name": "Ескермессов Магжан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
+ },
  "almaty:жайлауов бекнур": {
   "name": "Жайлауов Бекнур",
   "city": "almaty",
@@ -16964,6 +17006,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:рекламный цех": {
+  "name": "Рекламный цех",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "almaty:рекрутинговое агентство change ип куприянова": {
   "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
@@ -19800,6 +19849,15 @@
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
  },
+ "astana:bariton": {
+  "name": "Bariton",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00",
+  "instagram": "baritonkaraoke",
+  "source": "https://2gis.kz/astana/firm/70000001032443131"
+ },
  "astana:beat": {
   "name": "BEAT",
   "city": "astana",
@@ -20024,6 +20082,13 @@
   "avatar": "1588d4b16f15da26.jpg",
   "avatar_source": "telegram",
   "source": "https://2gis.kz/astana/firm/70000001117714705"
+ },
+ "astana:buildmarket": {
+  "name": "BuildMarket",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "astana:buildtrust": {
   "name": "BuildTrust",
@@ -21060,6 +21125,15 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "good_lombard_astana",
   "source": "https://2gis.kz/astana/firm/70000001039438500"
+ },
+ "astana:grace": {
+  "name": "Grace",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00",
+  "instagram": "grace__restaurant",
+  "source": "https://2gis.kz/astana/firm/70000001111524240"
  },
  "astana:grand 108 tchibo kazakhstan": {
   "name": "Grand 108 (Tchibo Kazakhstan)",
@@ -26780,6 +26854,15 @@
   "instagram": "kausar.astana.shayhana",
   "source": "https://2gis.kz/astana/firm/70000001100863596"
  },
+ "astana:каусар шайхана": {
+  "name": "Каусар Шайхана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00",
+  "instagram": "kausar.astana.shayhana",
+  "source": "https://2gis.kz/astana/firm/70000001092518472"
+ },
  "astana:кафе": {
   "name": "Кафе",
   "city": "astana",
@@ -26899,6 +26982,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
+ },
+ "astana:клининговая компания объекты magnum": {
+  "name": "Клининговая компания (объекты Magnum)",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "astana:кожапова м а": {
   "name": "Кожапова М.А.",
@@ -29332,6 +29422,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:филиал общества с ограниченной ответственностью лидер в городе астана": {
+  "name": "Филиал общества с ограниченной ответственностью Лидер в городе Астана",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "astana:филиал рдц клиника animed": {
   "name": "ФИЛИАЛ РДЦ- КЛИНИКА ANIMED",
@@ -32411,6 +32508,13 @@
   ],
   "avatar": "a4b0a08058a29957.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:диас": {
+  "name": "Диас",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "karaganda:дико&полезно": {
   "name": "Дико&Полезно",
@@ -39167,6 +39271,13 @@
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
  },
+ "shymkent:rencber fatma": {
+  "name": "Rencber Fatma",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
+ },
  "shymkent:rossko": {
   "name": "ROSSKO",
   "city": "shymkent",
@@ -39778,6 +39889,13 @@
   "v": 3,
   "checked_at": "2026-11-02T19:45:07+00:00"
  },
+ "shymkent:калиев": {
+  "name": "КАЛИЕВ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
+ },
  "shymkent:калменов ж к": {
   "name": "КАЛМЕНОВ Ж.К",
   "city": "shymkent",
@@ -39926,6 +40044,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
+ },
+ "shymkent:махмут бірғаным": {
+  "name": "Махмут Бірғаным",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "shymkent:мира group ltd": {
   "name": "МИРА GROUP LTD",
@@ -40807,6 +40932,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
+ },
+ "taraz:коллекторское агентство эксперт": {
+  "name": "Коллекторское агентство Эксперт",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
  },
  "taraz:компания эврика": {
   "name": "Компания ЭВРИКА",
@@ -41925,6 +42057,13 @@
   "avatar": "66c515510c8f40a4.jpg",
   "avatar_source": "website"
  },
+ "uralsk:хачапури": {
+  "name": "ХАЧАПУРИ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00"
+ },
  "uralsk:хорошилов": {
   "name": "Хорошилов",
   "city": "uralsk",
@@ -42448,6 +42587,15 @@
   ],
   "avatar": "3eeb6576911c1b31.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:modern house": {
+  "name": "Modern House",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T08:44:18+00:00",
+  "instagram": "modern_house_ukg",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001068924516"
  },
  "ust-kamenogorsk:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",

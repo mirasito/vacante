@@ -2557,6 +2557,13 @@
   "instagram": "keruencity_aktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001031819119"
  },
+ "aktobe:филлмаркт": {
+  "name": "Филлмаркт",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
+ },
  "aktobe:центр красоты и здоровья айгерим тоо цкиз айгерим": {
   "name": "Центр красоты и здоровья Айгерим ТОО ЦКиЗ «Айгерим»",
   "city": "aktobe",
@@ -8300,6 +8307,15 @@
   "instagram": "maiqazan",
   "source": "https://2gis.kz/almaty/firm/70000001038678879"
  },
+ "almaty:maison market мини маркет": {
+  "name": "Maison market, мини-маркет",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "instagram": "market_maison",
+  "source": "https://2gis.kz/almaty/firm/70000001088915233"
+ },
  "almaty:mak impex": {
   "name": "MAK ImpEx",
   "city": "almaty",
@@ -13210,6 +13226,13 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "almaty:аяжан": {
+  "name": "Аяжан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
+ },
  "almaty:аяла": {
   "name": "Аяла",
   "city": "almaty",
@@ -16749,6 +16772,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "almaty:откликнуться": {
+  "name": "Откликнуться",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
+ },
  "almaty:охранное агентство": {
   "name": "Охранное агентство",
   "city": "almaty",
@@ -16887,6 +16917,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
+ },
+ "almaty:премьера мини маркет": {
+  "name": "Премьера мини маркет",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "almaty:прессбук": {
   "name": "ПрессБук",
@@ -20282,7 +20319,7 @@
   "instagram": "caviarhouse.kz",
   "website": "http://caviarhouse.kz/",
   "source": "https://2gis.kz/astana/firm/70000001025428203",
-  "avatar_checked_at": "2026-10-31T10:43:49+00:00",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20674,6 +20711,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
+ },
+ "astana:dolia design": {
+  "name": "DOLIA DESIGN",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "astana:dora bakery": {
   "name": "DORA Bakery",
@@ -21189,6 +21233,13 @@
   ],
   "avatar": "23edf9c7784624b4.jpg",
   "avatar_source": "website"
+ },
+ "astana:golden vein": {
+  "name": "Golden vein",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "astana:goldman astana": {
   "name": "Goldman Astana",
@@ -23428,6 +23479,24 @@
    "website"
   ],
   "avatar": "5b2d641784ae92dd.jpg",
+  "avatar_source": "website"
+ },
+ "astana:progress center": {
+  "name": "Progress center",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "instagram": "progress_academy_kz",
+  "telegram": "progress_academy_kz",
+  "website": "https://progresscenter.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001062745886",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "b4176c13f66989ad.jpg",
   "avatar_source": "website"
  },
  "astana:promi kz": {
@@ -27296,6 +27365,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:кузденбаева": {
+  "name": "КУЗДЕНБАЕВА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "astana:кузет астана": {
   "name": "Кузет Астана",
@@ -32434,6 +32510,15 @@
    "website"
   ]
  },
+ "karaganda:банный мир": {
+  "name": "Банный мир",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "instagram": "bannyy_mir.karaganda",
+  "source": "https://2gis.kz/karaganda/firm/70000001022526613"
+ },
  "karaganda:батия": {
   "name": "БАТИЯ",
   "city": "karaganda",
@@ -33566,6 +33651,13 @@
    "website"
   ]
  },
+ "kokshetau:etalon group": {
+  "name": "Etalon Group",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
+ },
  "kokshetau:eurasia group kazakhstan": {
   "name": "Eurasia Group Kazakhstan",
   "city": "kokshetau",
@@ -33678,6 +33770,20 @@
   "checked_at": "2026-11-06T02:44:46+00:00",
   "instagram": "life_food_kz",
   "source": "https://2gis.kz/kokshetau/firm/70000001097440674"
+ },
+ "kokshetau:mechta kz tm тоо мечта маркет": {
+  "name": "Mechta.kz TM ( ТОО Мечта Маркет )",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "instagram": "mechta.kz",
+  "website": "https://mechta.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001034028148",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kokshetau:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
@@ -35762,6 +35868,21 @@
   "v": 3,
   "checked_at": "2026-11-06T10:45:16+00:00"
  },
+ "kz:degirmen": {
+  "name": "DEGIRMEN",
+  "city": "kz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "website": "https://degirmen.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029683266",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a5a19f2a504aa89d.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:2гис справочник двух столиц": {
   "name": "2ГИС-Справочник Двух Столиц",
   "city": "pavlodar",
@@ -35914,6 +36035,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:helios soft": {
+  "name": "Helios Soft",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "website": "https://fvr.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001104474116",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c9525627f1688b1d.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:impulse": {
   "name": "IMPULSE",
@@ -38213,6 +38349,22 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "semey:блин & coffee": {
+  "name": "БЛИН & COFFEE",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "instagram": "blin_coffee_project",
+  "telegram": "blin_coffee",
+  "website": "https://blin-coffee.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001054630421",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "semey:бостан": {
   "name": "Бостан",
   "city": "semey",
@@ -38572,6 +38724,13 @@
   "checked_at": "2026-11-05T21:44:29+00:00",
   "instagram": "hozmir_auezova39",
   "source": "https://2gis.kz/semej/firm/70000001091296806"
+ },
+ "semey:центр ювелир": {
+  "name": "Центр Ювелир",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "semey:шаурма shop": {
   "name": "ШАУРМА SHOP",
@@ -40570,6 +40729,21 @@
   "v": 3,
   "checked_at": "2026-11-06T04:43:35+00:00"
  },
+ "taldykorgan:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "taldykorgan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00",
+  "website": "https://www.kfc.kz/",
+  "source": "https://www.kfc.kz/en/page/halal-certificate",
+  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "72295c36b771ac25.jpg",
+  "avatar_source": "website"
+ },
  "taldykorgan:flexway cargo kz": {
   "name": "Flexway Cargo KZ",
   "city": "taldykorgan",
@@ -40592,6 +40766,13 @@
   ],
   "avatar": "dbb6e11e0facab53.jpg",
   "avatar_source": "website"
+ },
+ "taldykorgan:nazautotrans": {
+  "name": "NazAutoTrans",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "taldykorgan:oktrening": {
   "name": "Oktrening",
@@ -40647,6 +40828,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
+ },
+ "taldykorgan:жетысу сут": {
+  "name": "Жетысу Сут",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "taldykorgan:загоняем": {
   "name": "загоняем",
@@ -41121,6 +41309,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
+ },
+ "taraz:осипов": {
+  "name": "ОСИПОВ",
+  "city": "taraz",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T10:45:06+00:00"
  },
  "taraz:прессбук": {
   "name": "ПрессБук",

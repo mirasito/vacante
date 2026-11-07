@@ -1270,6 +1270,15 @@
   "instagram": "rabiga_ana_balabaqsha",
   "source": "https://2gis.kz/aktau/firm/70000001101458008"
  },
+ "aktau:рахат": {
+  "name": "Рахат",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "supermarket_rahat",
+  "source": "https://2gis.kz/aktau/firm/70000001104542195"
+ },
  "aktau:свежак": {
   "name": "СВЕЖАК",
   "city": "aktau",
@@ -4649,6 +4658,15 @@
   "instagram": "capito_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001074434988"
  },
+ "almaty:caravan beverage group караван бевередж груп": {
+  "name": "«CARAVAN BEVERAGE GROUP (КАРАВАН БЕВЕРЕДЖ ГРУП)»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "caravan_beverage",
+  "source": "https://2gis.kz/almaty/firm/9429940000842883"
+ },
  "almaty:caspian beverage holding ао": {
   "name": "CASPIAN beverage holding, АО",
   "city": "almaty",
@@ -6577,6 +6595,15 @@
    "website"
   ]
  },
+ "almaty:grand zina": {
+  "name": "GRAND ZINA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "grand_zina",
+  "source": "https://2gis.kz/almaty/firm/70000001042025828"
+ },
  "almaty:green house limited": {
   "name": "Green House Limited",
   "city": "almaty",
@@ -8108,6 +8135,22 @@
   "checked_at": "2026-10-29T06:44:07+00:00",
   "instagram": "lion.restaurants",
   "source": "https://2gis.kz/almaty/firm/70000001101025365"
+ },
+ "almaty:liqui moly eurasia": {
+  "name": "LIQUI MOLY EURASIA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "liqui_moly_eurasia",
+  "website": "http://www.liquimoly.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001022730147",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "aba86a32f84a43bb.jpg",
+  "avatar_source": "website"
  },
  "almaty:lmb clinic": {
   "name": "LMB Clinic",
@@ -9933,6 +9976,20 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "almaty:rai company": {
+  "name": "Rai-Company",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "rai_company",
+  "website": "http://rai-company.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035551354",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:rail trade": {
   "name": "Rail Trade",
   "city": "almaty",
@@ -11300,7 +11357,7 @@
   "instagram": "top.kz",
   "website": "https://top.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021055352",
-  "avatar_checked_at": "2026-10-31T11:43:29+00:00",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11809,6 +11866,13 @@
    "website"
   ]
  },
+ "almaty:winnerөнер спорт орталығы": {
+  "name": "Winnerөнер-спорт орталығы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "almaty:wn talents": {
   "name": "WN Talents",
   "city": "almaty",
@@ -12170,6 +12234,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "almaty:автомагазин": {
+  "name": "Автомагазин",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "almaty:автомир ресурс каз": {
   "name": "Автомир Ресурс Каз",
   "city": "almaty",
@@ -12204,6 +12275,13 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:автосервис": {
+  "name": "Автосервис",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "almaty:автосервис jonde": {
   "name": "Автосервис Jonde",
   "city": "almaty",
@@ -12224,6 +12302,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "almaty:автотехтрейд": {
+  "name": "АвтоТехТрейд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "att.kz_",
+  "telegram": "att_kzz",
+  "website": "http://att.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100828809",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "98f0dc02b855db60.jpg",
+  "avatar_source": "website"
  },
  "almaty:автотрейд": {
   "name": "Автотрейд",
@@ -14673,6 +14769,13 @@
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
  },
+ "almaty:индира": {
+  "name": "Индира",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "almaty:инжиниринговая компания казгипронефтетранс": {
   "name": "ИНЖИНИРИНГОВАЯ КОМПАНИЯ КАЗГИПРОНЕФТЕТРАНС",
   "city": "almaty",
@@ -16318,6 +16421,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
+ },
+ "almaty:монтажпроект": {
+  "name": "Монтажпроект",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "website": "http://www.montazhproekt.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000798229",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:москва": {
   "name": "Москва",
@@ -23917,6 +24033,15 @@
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
  },
+ "astana:seven": {
+  "name": "Seven",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00",
+  "instagram": "karaoke_7even2",
+  "source": "https://2gis.kz/astana/firm/70000001093322559"
+ },
  "astana:sezim": {
   "name": "Sezim",
   "city": "astana",
@@ -26476,6 +26601,13 @@
    "website"
   ]
  },
+ "astana:евразия 2": {
+  "name": "Евразия 2",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "astana:евразия 3": {
   "name": "Евразия 3",
   "city": "astana",
@@ -26973,6 +27105,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "astana:каирбай": {
+  "name": "Каирбай",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
  },
  "astana:кайреденов а м": {
   "name": "Кайреденов А.М",
@@ -28953,6 +29092,13 @@
   "instagram": "solod.astana",
   "source": "https://2gis.kz/astana/firm/70000001039844078"
  },
+ "astana:сотовые аксессуары": {
+  "name": "Сотовые аксессуары",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "astana:сотрудники": {
   "name": "СОТРУДНИКИ",
   "city": "astana",
@@ -30593,6 +30739,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T11:44:54+00:00"
+ },
+ "atyrau:en group": {
+  "name": "EN Group",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
  },
  "atyrau:eurasia support services": {
   "name": "Eurasia Support Services",
@@ -35175,6 +35328,13 @@
   "instagram": "krendel2030",
   "source": "https://2gis.kz/kostanaj/firm/70000001036374418"
  },
+ "kostanay:корзина kst": {
+  "name": "Корзина KST",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "kostanay:костанайская железнодорожная больница": {
   "name": "Костанайская железнодорожная больница",
   "city": "kostanay",
@@ -36688,7 +36848,7 @@
   "checked_at": "2026-10-31T11:43:29+00:00",
   "website": "https://pavlodarenergo.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018658154",
-  "avatar_checked_at": "2026-10-31T11:43:29+00:00",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40307,6 +40467,13 @@
   "v": 3,
   "checked_at": "2026-10-31T01:43:11+00:00"
  },
+ "shymkent:кудинов мастер лес": {
+  "name": "Кудинов (Мастер лес)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
+ },
  "shymkent:лаворо групп": {
   "name": "Лаворо групп",
   "city": "shymkent",
@@ -40863,6 +41030,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
+ },
+ "taldykorgan:мустафина mr market строй": {
+  "name": "Мустафина (Mr Market Строй)",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
  },
  "taldykorgan:мцфэр казахстан": {
   "name": "МЦФЭР-Казахстан",
@@ -41872,6 +42046,13 @@
   ],
   "avatar": "c32e276b9ffd6d68.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:toptecavto": {
+  "name": "TopTecAvto",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T11:45:05+00:00"
  },
  "uralsk:two friends": {
   "name": "TWO FRIENDS",
@@ -42914,7 +43095,7 @@
   "instagram": "mechta.kz",
   "website": "https://www.mechta.kz/",
   "source": "https://www.instagram.com/mechta.kz/",
-  "avatar_checked_at": "2026-10-31T11:43:29+00:00",
+  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
   "avatar_tried": [
    "website"
   ]

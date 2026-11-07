@@ -3450,6 +3450,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:anerss": {
+  "name": "ANERSS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
+ },
  "almaty:ant security": {
   "name": "ANT SECURITY",
   "city": "almaty",
@@ -5054,6 +5061,19 @@
   "v": 3,
   "checked_at": "2026-11-03T08:44:40+00:00"
  },
+ "almaty:colvir software solutions": {
+  "name": "Colvir Software Solutions",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00",
+  "website": "https://colvir.com/",
+  "source": "https://colvir.com/about_company",
+  "avatar_checked_at": "2026-11-07T16:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:common market corporation": {
   "name": "Common Market Corporation",
   "city": "almaty",
@@ -5344,6 +5364,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
+ },
+ "almaty:dianyo": {
+  "name": "DIANYO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "almaty:dias": {
   "name": "DIAS",
@@ -6988,6 +7015,13 @@
   "avatar": "d4f0168ecffbca0b.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:hightechdent хайтэкдент": {
+  "name": "HighTechDent» (ХайТэкДент)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
+ },
  "almaty:hightower": {
   "name": "HIGHTOWER",
   "city": "almaty",
@@ -7837,6 +7871,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "almaty:keremet holding": {
+  "name": "KEREMET Holding",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "almaty:kfc кафе быстрого питания": {
   "name": "KFC, кафе быстрого питания",
@@ -11978,6 +12019,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:virbena": {
+  "name": "VIRBENA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "almaty:vivid auto kazakhstan": {
   "name": "Vivid Auto Kazakhstan",
@@ -17743,6 +17791,13 @@
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
  },
+ "almaty:рысжанова ж т": {
+  "name": "Рысжанова Ж. Т",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
+ },
  "almaty:садыков": {
   "name": "Садыков",
   "city": "almaty",
@@ -21455,6 +21510,22 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "astana:eurasian machinery евразиан машинери": {
+  "name": "Eurasian Machinery (Евразиан Машинери)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00",
+  "instagram": "eurasianmachinery.kz",
+  "website": "https://www.eurasianmachinery.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001035240761",
+  "avatar_checked_at": "2026-11-07T16:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "82f70a62162f8e38.jpg",
+  "avatar_source": "website"
+ },
  "astana:eurodam": {
   "name": "EuroDam",
   "city": "astana",
@@ -22877,6 +22948,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
+ },
+ "astana:lugano restaurant": {
+  "name": "Lugano Restaurant",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00",
+  "instagram": "restaurant_lugano",
+  "source": "https://2gis.kz/astana/firm/70000001029784169"
  },
  "astana:luxury house тоо анвик": {
   "name": "LUXURY HOUSE (ТОО АНВИК)",
@@ -25555,6 +25635,13 @@
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
  },
+ "astana:za углом": {
+  "name": "Za Углом",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
+ },
  "astana:zan_pro kz": {
   "name": "zan_pro.kz",
   "city": "astana",
@@ -25618,6 +25705,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:абаева": {
+  "name": "Абаева",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "astana:абат сервис ltd": {
   "name": "Абат сервис LTD",
@@ -27988,6 +28082,22 @@
    "website"
   ]
  },
+ "astana:ксж standard life": {
+  "name": "КСЖ Standard Life",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00",
+  "instagram": "std.lifekz",
+  "website": "https://standardlife.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001039240187",
+  "avatar_checked_at": "2026-11-07T16:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ba4e67dd8486672a.jpg",
+  "avatar_source": "website"
+ },
  "astana:кузденбаева": {
   "name": "КУЗДЕНБАЕВА",
   "city": "astana",
@@ -29096,6 +29206,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
+ },
+ "astana:раимкулова а а": {
+  "name": "РАИМКУЛОВА А.А.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "astana:райбер": {
   "name": "РайБер",
@@ -32684,6 +32801,15 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "karaganda:log4": {
+  "name": "LOG4",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00",
+  "instagram": "log_krg",
+  "source": "https://2gis.kz/karaganda/firm/70000001032750163"
+ },
  "karaganda:magnum": {
   "name": "MAGNUM",
   "city": "karaganda",
@@ -35074,6 +35200,20 @@
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
  },
+ "kostanay:aura su kostanay": {
+  "name": "AURA SU KOSTANAY",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00",
+  "instagram": "aura_su_kostanay",
+  "website": "https://aurasu.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001054756774",
+  "avatar_checked_at": "2026-11-07T16:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:auto sila": {
   "name": "Auto Sila",
   "city": "kostanay",
@@ -35849,6 +35989,13 @@
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
  },
+ "kostanay:какимбек г у": {
+  "name": "Какимбек Г.У.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
+ },
  "kostanay:касарас": {
   "name": "Касарас",
   "city": "kostanay",
@@ -36615,6 +36762,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
+ },
+ "kyzylorda:цой а": {
+  "name": "Цой А",
+  "city": "kyzylorda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "kyzylorda:чк hong tu mining group co ltd": {
   "name": "ЧК HONG TU MINING GROUP CO., LTD.",
@@ -40234,6 +40388,13 @@
    "website"
   ]
  },
+ "shymkent:nomad insurance": {
+  "name": "NOMAD insurance",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
+ },
  "shymkent:nurtau distribution company": {
   "name": "NURTAU distribution company",
   "city": "shymkent",
@@ -42297,6 +42458,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "turkestan:ns 2gis": {
+  "name": "NS 2GIS",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "turkestan:otbasi group": {
   "name": "OTBASI GROUP",
@@ -45061,6 +45229,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
+ },
+ "ust-kamenogorsk:федотова о и": {
+  "name": "Федотова О.И.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T16:43:36+00:00"
  },
  "ust-kamenogorsk:филиал тоо казсвет group в городе усть каменогорск": {
   "name": "Филиал ТОО КазСвет Group в городе Усть-Каменогорск.",

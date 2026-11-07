@@ -332,6 +332,13 @@
   "v": 3,
   "checked_at": "2026-11-06T08:44:35+00:00"
  },
+ "aktau:haridus харидус": {
+  "name": "Haridus (Харидус)",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "aktau:jamesburger 29мкр 229зд": {
   "name": "Jamesburger 29мкр 229зд",
   "city": "aktau",
@@ -3470,6 +3477,13 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "almaty:arg kz": {
+  "name": "ARG KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "almaty:arhat holding": {
   "name": "ARHAT HOLDING",
   "city": "almaty",
@@ -3686,6 +3700,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:atasu global trans": {
+  "name": "Atasu Global Trans",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "almaty:atea": {
   "name": "ATEA",
@@ -7324,6 +7345,13 @@
   "avatar_tried": [
    "telegram"
   ]
+ },
+ "almaty:kaz group": {
+  "name": "Kaz Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "almaty:kazakhstan tg tools co ltd": {
   "name": "Kazakhstan TG Tools Co., Ltd",
@@ -11631,7 +11659,7 @@
   "checked_at": "2026-10-31T05:43:11+00:00",
   "website": "https://wildberries.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001033122288",
-  "avatar_checked_at": "2026-10-31T05:43:11+00:00",
+  "avatar_checked_at": "2026-11-07T06:43:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13435,6 +13463,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
+ },
+ "almaty:вервенко е м": {
+  "name": "ВЕРВЕНКО Е. М",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "almaty:виктория": {
   "name": "Виктория",
@@ -15670,6 +15705,13 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "almaty:магия чистоты": {
+  "name": "Магия Чистоты",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "almaty:мад мастер": {
   "name": "Мад Мастер",
   "city": "almaty",
@@ -16165,6 +16207,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:мцфэр казахстан": {
+  "name": "МЦФЭР-Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "almaty:мырзакирова а м": {
   "name": "МЫРЗАКИРОВА А.М.",
@@ -18007,6 +18056,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "almaty:трегубенко": {
+  "name": "Трегубенко",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "almaty:тссп казахстан": {
   "name": "ТССП Казахстан",
   "city": "almaty",
@@ -19730,6 +19786,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:big town intermedia": {
+  "name": "Big Town Intermedia",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "astana:bigm2": {
   "name": "BIGm2",
@@ -23935,6 +23998,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "astana:tanghuo kungfu": {
+  "name": "Tanghuo Kungfu",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "astana:taptatti retail": {
   "name": "TapTatti Retail",
@@ -28769,6 +28839,13 @@
    "website"
   ]
  },
+ "astana:тк сталь астана": {
+  "name": "ТК Сталь - Астана",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "astana:тм erzo property тоо transcapital": {
   "name": "ТМ ERZO.PROPERTY (ТОО TRANSCAPITAL)",
   "city": "astana",
@@ -30520,6 +30597,13 @@
   "v": 3,
   "checked_at": "2026-11-04T20:44:13+00:00"
  },
+ "atyrau:бостан": {
+  "name": "Бостан",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "atyrau:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "atyrau",
@@ -32123,6 +32207,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "karaganda:горно экономический консалтинг альфа": {
+  "name": "Горно-экономический консалтинг-Альфа",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "karaganda:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "karaganda",
@@ -33023,6 +33114,13 @@
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
  },
+ "kokshetau:aqjol agro kz": {
+  "name": "AQJOL Agro KZ",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "kokshetau:autocity karaganda": {
   "name": "AutoCity Karaganda",
   "city": "kokshetau",
@@ -33393,7 +33491,7 @@
   "telegram": "astralombard_kz",
   "website": "https://astra-lombard.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033357709",
-  "avatar_checked_at": "2026-10-31T05:43:11+00:00",
+  "avatar_checked_at": "2026-11-07T06:43:51+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -37626,6 +37724,13 @@
   "instagram": "supermarket_adal_semey",
   "source": "https://2gis.kz/semej/firm/70000001053104249"
  },
+ "semey:азия декор": {
+  "name": "Азия Декор",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "semey:айтимбетов асхат хамарьянович": {
   "name": "АЙТИМБЕТОВ АСХАТ ХАМАРЬЯНОВИЧ",
   "city": "semey",
@@ -38511,6 +38616,13 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "shymkent:haridus харидус": {
+  "name": "Haridus (Харидус)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "shymkent:hd project": {
   "name": "HD Project",
   "city": "shymkent",
@@ -38872,6 +38984,13 @@
   ],
   "avatar": "b0644599011f4c4f.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:qazaq ordasy": {
+  "name": "Qazaq ordasy",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
  },
  "shymkent:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
@@ -40112,6 +40231,13 @@
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
  },
+ "taldykorgan:мцфэр казахстан": {
+  "name": "МЦФЭР-Казахстан",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "taldykorgan:нұр шапағатқұрылыс": {
   "name": "НҰР-ШАПАҒАТҚҰРЫЛЫС",
   "city": "taldykorgan",
@@ -40263,6 +40389,13 @@
   "instagram": "greenhouse_limited",
   "source": "https://2gis.kz/shymkent/firm/70000001026666557"
  },
+ "taraz:haridus харидус": {
+  "name": "Haridus (Харидус)",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00"
+ },
  "taraz:home credit bank дб ао fortebank": {
   "name": "Home Credit Bank (ДБ АО «ForteBank»)",
   "city": "taraz",
@@ -40347,6 +40480,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "taraz:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T06:43:49+00:00",
+  "instagram": "minisokz",
+  "website": "https://miniso.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029200397",
+  "avatar_checked_at": "2026-11-07T06:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b7ded582a7c134d8.jpg",
+  "avatar_source": "website"
  },
  "taraz:nur ai": {
   "name": "Nur-Ai",

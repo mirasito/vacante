@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T04:56:47+00:00",
+ "updated_at": "2026-11-07T05:56:31+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -14797,11 +14797,6 @@
     "schedule": "1/2, сутки через двое"
    }
   },
-  "rabota_semey_official-6751": {
-   "verdict": "reject",
-   "at": "2026-11-01T07:57:05+00:00",
-   "reason": "Офисные должности (бухгалтер, SMM)"
-  },
   "hh-133853971": {
    "verdict": "approve",
    "at": "2026-11-01T08:56:30+00:00",
@@ -18831,11 +18826,6 @@
    "verdict": "reject",
    "at": "2026-11-02T09:57:58+00:00",
    "reason": "Офисные продажи недвижимости с оплатой только от сделок"
-  },
-  "rabotaaktau-142067": {
-   "verdict": "reject",
-   "at": "2026-11-02T09:57:58+00:00",
-   "reason": "Психолог и преподаватель домбры: не рабочие специальности"
   },
   "rabotaaktau-142064": {
    "verdict": "approve",
@@ -38089,6 +38079,201 @@
     "title": "Посудомойщица, кухонный рабочий",
     "schedule": "08:00–20:00"
    }
+  },
+  "astana_job_vakansii-130294": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Продавец парфюмерии",
+    "employer": "Metis Parfum"
+   }
+  },
+  "hh-139222475": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": "ИП Лигостаева К. Г.",
+    "schedule": "6/1 или 5/2, по 10–11 часов"
+   }
+  },
+  "hh-139148741": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31321": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": "Магазин «Blizzko»"
+   }
+  },
+  "astana_job_vakansii-130298": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": "Loft Park",
+    "schedule": "4/2, 09:00–21:00 или 21:00–09:00"
+   }
+  },
+  "astana_job_vakansii-130295": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Повар-универсал, официант",
+    "schedule": "5/2, 11:00–00:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "olx-402676937": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Мастер на производство"
+   }
+  },
+  "rabota4almaty-6268": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "ИП Сембина А.",
+    "schedule": "2/2, 07:30–20:30",
+    "address": "ул. Маметовой, 67"
+   }
+  },
+  "hh-138238515": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Ученик мастера по замене масла",
+    "employer": "GT Oil Service"
+   }
+  },
+  "hh-139167727": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Deli Lavka",
+    "schedule": "2/2, 3/3, 4/2 или 5/2, по 12 часов"
+   }
+  },
+  "rabota4almaty-6267": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Помощница по дому",
+    "employer": null,
+    "address": "пос. Бельбулак, ул. Шакарима"
+   }
+  },
+  "hh-137145535": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-6242": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Помощница по дому, няня",
+    "employer": null
+   }
+  },
+  "rabota4almaty-6241": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Водитель с личным авто",
+    "employer": "ТОО «Альянс-Газ»",
+    "schedule": "5/2",
+    "address": "ул. Омарова, 12в",
+    "perks": []
+   }
+  },
+  "rabota4almaty-6232": {
+   "verdict": "reject",
+   "at": "2026-11-07T05:56:31+00:00",
+   "reason": "Сомнительное предложение массажа без описания заведения"
+  },
+  "olx-402680783": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": "ТОО «Qorgan Elite»"
+   }
+  },
+  "olx-402675511": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": "Магазин «Добряк»",
+    "salary_period": null,
+    "schedule": "14/14, 10:00–05:00",
+    "salary_min": null,
+    "salary_max": null
+   }
+  },
+  "rabota4almaty-6195": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "employer": "Сеть магазинов «Белорусские продукты»"
+   }
+  },
+  "rabota4almaty-6186": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Помощница по дому",
+    "employer": null
+   }
+  },
+  "rabota4almaty-6182": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": null
+   }
+  },
+  "hh-139222701": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "employer": "«PROЦВЕТАЙ»",
+    "schedule": "2/2"
+   }
+  },
+  "aktobevakansii-44404": {
+   "verdict": "reject",
+   "at": "2026-11-07T05:56:31+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142284": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {
+    "title": "Оператор клуба виртуальной реальности",
+    "employer": "Клуб «Avatar Arena»"
+   }
+  },
+  "hh-138769921": {
+   "verdict": "approve",
+   "at": "2026-11-07T05:56:31+00:00",
+   "fields": {}
+  },
+  "vakansii_oskemen-9267": {
+   "verdict": "reject",
+   "at": "2026-11-07T05:56:31+00:00",
+   "reason": "Руководящая должность"
   }
  }
 }

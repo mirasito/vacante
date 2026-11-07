@@ -591,6 +591,15 @@
   "v": 3,
   "checked_at": "2026-11-03T23:44:09+00:00"
  },
+ "aktau:tandir house": {
+  "name": "TANDIR House",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "tandir_house_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001039069807"
+ },
  "aktau:tanym": {
   "name": "Tanym",
   "city": "aktau",
@@ -2379,6 +2388,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
+ },
+ "aktobe:клиника доктора мусагалиева": {
+  "name": "Клиника доктора Мусагалиева",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "dr.ym_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001032124981"
  },
  "aktobe:лентелефонстрой ум": {
   "name": "Лентелефонстрой-УМ",
@@ -4284,6 +4302,15 @@
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
  },
+ "almaty:beis spa hotel resort": {
+  "name": "Beis Spa Hotel Resort",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "beis_spa_hotel_resort",
+  "source": "https://2gis.kz/almaty/firm/9429940001323651"
+ },
  "almaty:bekzat": {
   "name": "BEKZAT",
   "city": "almaty",
@@ -6163,6 +6190,13 @@
   "instagram": "french_bakery_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001033669069"
  },
+ "almaty:fresh market": {
+  "name": "Fresh Market",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
+ },
  "almaty:fresh republic": {
   "name": "Fresh Republic",
   "city": "almaty",
@@ -6388,6 +6422,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:glamora": {
+  "name": "Glamora",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "glamora_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001116773333"
  },
  "almaty:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -6766,6 +6809,20 @@
   "website": "http://healthfood.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037323186",
   "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:hella good": {
+  "name": "Hella Good",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "hellagood_taxi",
+  "website": "https://hellagood.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043707108",
+  "avatar_checked_at": "2026-11-07T12:44:24+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7286,6 +7343,13 @@
   "checked_at": "2026-10-29T14:46:23+00:00",
   "instagram": "janamen.health",
   "source": "https://www.instagram.com/janamen.health/"
+ },
+ "almaty:japan trade almaty": {
+  "name": "Japan Trade Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
  },
  "almaty:jessica": {
   "name": "Jessica",
@@ -8126,6 +8190,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:lina group": {
+  "name": "LiNa Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
  },
  "almaty:lion restaurants лион рестораны": {
   "name": "LiON Restaurants (ЛиОН Рестораны)",
@@ -9191,6 +9262,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "almaty:omir collection": {
+  "name": "OMIR COLLECTION",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "omir_collection",
+  "source": "https://2gis.kz/almaty/firm/70000001093980963"
  },
  "almaty:one fitness": {
   "name": "ONE Fitness",
@@ -15571,6 +15651,13 @@
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
  },
+ "almaty:корейская кухня": {
+  "name": "Корейская кухня",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
+ },
  "almaty:корпорация gulfstream": {
   "name": "КОРПОРАЦИЯ GULFSTREAM",
   "city": "almaty",
@@ -19258,6 +19345,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "almaty:я&б лифтовая компания": {
+  "name": "Я&Б лифтовая компания",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
+ },
  "almaty:яндекс": {
   "name": "Яндекс",
   "city": "almaty",
@@ -21411,6 +21505,15 @@
   "checked_at": "2026-11-04T08:45:38+00:00",
   "instagram": "grandprixclub",
   "source": "https://2gis.kz/astana/firm/70000001024023081"
+ },
+ "astana:greek food": {
+  "name": "Greek Food",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "greek_food_astana",
+  "source": "https://2gis.kz/astana/firm/70000001119019256"
  },
  "astana:green house limited": {
   "name": "Green House Limited",
@@ -23762,6 +23865,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
+ },
+ "astana:rainbow babybox": {
+  "name": "Rainbow Babybox",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
  },
  "astana:rapidregqz": {
   "name": "RapidRegQz",
@@ -26212,6 +26322,13 @@
   "instagram": "gorkytheatre.kz",
   "source": "https://www.instagram.com/gorkytheatre.kz/"
  },
+ "astana:глазная клиника": {
+  "name": "Глазная клиника",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
+ },
  "astana:глобал логистик": {
   "name": "Глобал Логистик",
   "city": "astana",
@@ -27469,6 +27586,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
+ },
+ "astana:крендель": {
+  "name": "КРЕНДЕЛЬ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "krendel.astanaa",
+  "source": "https://2gis.kz/astana/firm/70000001075246355"
  },
  "astana:кристалл авто": {
   "name": "Кристалл Авто",
@@ -29860,6 +29986,13 @@
   "instagram": "xo_magazin",
   "source": "https://2gis.kz/astana/firm/70000001082358340"
  },
+ "astana:хайбулина е н": {
+  "name": "ХАЙБУЛИНА Е.Н.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
+ },
  "astana:хакима": {
   "name": "ХАКИМА",
   "city": "astana",
@@ -30905,6 +31038,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:manufacturers group": {
+  "name": "Manufacturers group",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "manufacturers_group",
+  "source": "https://2gis.kz/atyrau/firm/70000001100825229"
  },
  "atyrau:mr alliance": {
   "name": "MR ALLIANCE",
@@ -36337,6 +36479,13 @@
   "instagram": "megabron_pavlodar",
   "source": "https://2gis.kz/pavlodar/firm/70000001047526770"
  },
+ "pavlodar:mevico": {
+  "name": "Mevico",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
+ },
  "pavlodar:navi spa salon": {
   "name": "Navi spa salon",
   "city": "pavlodar",
@@ -37863,6 +38012,15 @@
   ],
   "avatar": "c2c14445b47b3b77.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:светофор": {
+  "name": "Светофор",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00",
+  "instagram": "mag.svetofor.__petropavlovsk",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038646315"
  },
  "petropavlovsk:север": {
   "name": "Север",
@@ -39998,6 +40156,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
+ },
+ "shymkent:абишев к т": {
+  "name": "Абишев К.Т.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T12:44:23+00:00"
  },
  "shymkent:автопитер кз": {
   "name": "Автопитер.кз",

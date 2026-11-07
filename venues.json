@@ -2964,6 +2964,13 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "almaty:aka oralbekov": {
+  "name": "Aka Oralbekov",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
+ },
  "almaty:akdess": {
   "name": "AKDESS",
   "city": "almaty",
@@ -2984,6 +2991,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "almaty:al collagen": {
+  "name": "AL COLLAGEN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "almaty:ala": {
   "name": "ALA",
@@ -3349,6 +3363,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "almaty:altyn bank": {
+  "name": "Altyn Bank",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "altynbank.kz",
+  "website": "https://altynbank.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000824333",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8193486177d1c975.jpg",
+  "avatar_source": "website"
  },
  "almaty:altyn engineering": {
   "name": "ALTYN ENGINEERING",
@@ -6098,6 +6128,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "almaty:fiesta by spice mantra": {
+  "name": "Fiesta by Spice Mantra",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "fiesta_ala_2023",
+  "website": "http://spicemantraonline.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001081673641",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5b745abfd55df960.jpg",
+  "avatar_source": "website"
  },
  "almaty:finport": {
   "name": "FinPort",
@@ -10488,6 +10534,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "almaty:rs enterprise": {
+  "name": "RS Enterprise",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
+ },
  "almaty:ruba technology": {
   "name": "Ruba Technology",
   "city": "almaty",
@@ -10813,6 +10866,13 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:sk company": {
+  "name": "SK company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
+ },
  "almaty:skill hub": {
   "name": "Skill Hub",
   "city": "almaty",
@@ -11129,6 +11189,13 @@
   ],
   "avatar": "23ef27b2ba532ccb.jpg",
   "avatar_source": "website"
+ },
+ "almaty:start english school": {
+  "name": "Start English School",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "almaty:steel group r": {
   "name": "STEEL GROUP R",
@@ -12319,7 +12386,7 @@
   "instagram": "zoomlion_kazakhstan",
   "website": "https://zoomlion.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001061693221",
-  "avatar_checked_at": "2026-10-31T15:43:32+00:00",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16015,7 +16082,7 @@
   "checked_at": "2026-10-31T15:43:32+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-10-31T15:43:32+00:00",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17382,6 +17449,20 @@
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
  },
+ "almaty:производственное объединение трубное решение алматы": {
+  "name": "Производственное объединение Трубное Решение Алматы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "trubnoereshenie_almaty",
+  "website": "https://almaty.truboproduct.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001095376731",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:пром техника": {
   "name": "Пром Техника",
   "city": "almaty",
@@ -18347,6 +18428,19 @@
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
  },
+ "almaty:тангенс": {
+  "name": "ТАНГЕНС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "website": "https://tangens.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001069923435",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:тануки японский ресторан": {
   "name": "Тануки, Японский ресторан",
   "city": "almaty",
@@ -18583,6 +18677,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
+ },
+ "almaty:торговая компания мегаполис казахстан": {
+  "name": "Торговая Компания Мегаполис-Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "almaty:торговый дом rokos": {
   "name": "ТОРГОВЫЙ ДОМ ROKOS",
@@ -19240,6 +19341,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "almaty:чубай р в": {
+  "name": "Чубай Р.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "almaty:чугаевой": {
   "name": "Чугаевой",
@@ -22520,6 +22628,15 @@
   "instagram": "koktem.bistro",
   "source": "https://2gis.kz/astana/firm/70000001100839755"
  },
+ "astana:korean home food": {
+  "name": "Korean Home Food",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "korean_home_food",
+  "source": "https://2gis.kz/astana/firm/70000001057187816"
+ },
  "astana:korean shop": {
   "name": "Korean Shop",
   "city": "astana",
@@ -22945,6 +23062,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
+ },
+ "astana:me group": {
+  "name": "ME Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "astana:meat point": {
   "name": "MEAT POINT",
@@ -28652,6 +28776,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "astana:онегели": {
+  "name": "ОНЕГЕЛИ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "onegeli.kz",
+  "website": "http://onegeli.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001094707651",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:онлайн видеонаблюдение": {
   "name": "Онлайн-Видеонаблюдение",
@@ -35012,6 +35150,13 @@
   "avatar": "dfd60fad6304ca26.jpg",
   "avatar_source": "website"
  },
+ "kostanay:delres": {
+  "name": "DelRes",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
+ },
  "kostanay:dpd kazakhstan": {
   "name": "DPD Kazakhstan",
   "city": "kostanay",
@@ -35233,6 +35378,13 @@
   "checked_at": "2026-11-07T09:44:22+00:00",
   "instagram": "uialy_kst",
   "source": "https://2gis.kz/kostanaj/firm/70000001088022737"
+ },
+ "kostanay:vis trade company": {
+  "name": "VIS TRADE COMPANY",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "kostanay:wowtop": {
   "name": "WOWTOP",
@@ -42229,6 +42381,13 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "turkestan:прессбук": {
+  "name": "ПрессБук",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
+ },
  "uralsk:2 база": {
   "name": "2 база",
   "city": "uralsk",
@@ -42823,6 +42982,15 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "uralsk:депо": {
+  "name": "ДЕПО",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "depo.uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001098948338"
+ },
  "uralsk:дико&полезно": {
   "name": "Дико&Полезно",
   "city": "uralsk",
@@ -43287,6 +43455,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "ust-kamenogorsk:auto trader": {
+  "name": "Auto Trader",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00",
+  "instagram": "geely.galaxy_autotrader.uk",
+  "website": "http://auto-trader-uk.geely-galaxy.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001114992959",
+  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "af1caa2098d61a2a.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:axis": {
   "name": "AXIS",
@@ -44842,6 +45026,13 @@
   ],
   "avatar": "2678815ffff51a52.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:усть каменогорский масло экстракционный комплекс": {
+  "name": "Усть-Каменогорский Масло-Экстракционный Комплекс",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T15:44:26+00:00"
  },
  "ust-kamenogorsk:усть каменогорский мукомольный комбинат": {
   "name": "Усть-Каменогорский мукомольный комбинат",

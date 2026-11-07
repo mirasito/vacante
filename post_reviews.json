@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T15:57:11+00:00",
+ "updated_at": "2026-11-07T16:57:12+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -40332,6 +40332,209 @@
    "verdict": "approve",
    "at": "2026-11-07T15:57:11+00:00",
    "fields": {}
+  },
+  "astana_hh-1855": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "5/2, 09:00–21:00"
+   }
+  },
+  "hh-139227407": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Администратор салона красоты",
+    "employer": "Салон красоты «The Pure»",
+    "schedule": "2/2",
+    "address": "пр. Туран, 43/5"
+   }
+  },
+  "hh-139192649": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "ул. Жаханши Досмухамедулы, 20/6"
+   }
+  },
+  "zhumys_astana_kz-17158": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Уборщица",
+    "schedule": "2/2, 08:00–19:00 и 08:00–15:00",
+    "address": "ул. Кабанбай батыра, 62, ТРЦ «Mega Silk Way»"
+   }
+  },
+  "hh-137033975": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Водитель самосвала с прицепом",
+    "employer": "Завод «АБК-Бетон»",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139181921": {
+   "verdict": "reject",
+   "at": "2026-11-07T16:57:12+00:00",
+   "reason": "Офисная должность"
+  },
+  "rabota_astanakz-31339": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Халал-кафе «Каусар Шайхана»",
+    "address": "пр. Туран, 39а, ЖК «Four Seasons»"
+   }
+  },
+  "astana_hh-1848": {
+   "verdict": "reject",
+   "at": "2026-11-07T16:57:12+00:00",
+   "reason": "Повтор вакансии кафе «Каусар» из этой же очереди"
+  },
+  "olx-402684665": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Сварщик-трубник",
+    "employer": "Строительная компания «Эталон»",
+    "address": "пос. Талапкер"
+   }
+  },
+  "rabota_astanakz-31311": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Магазин «Близко»",
+    "schedule": "Сменный график"
+   }
+  },
+  "hh-137888817": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "LB Dostyk",
+    "schedule": "2/2, 12 часов",
+    "address": "мкр. Самал-2, 111"
+   }
+  },
+  "hh-135192275": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Водитель-курьер на личном автомобиле",
+    "address": "ул. Толе би, 285",
+    "perks": []
+   }
+  },
+  "rabota4almaty-6308": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Virbena",
+    "address": "пр. Назарбаева, 275В"
+   }
+  },
+  "rabota4almaty-6307": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Машинист мини-экскаватора",
+    "employer": "Anerss",
+    "address": "ул. Радостовца, 152/6"
+   }
+  },
+  "almaty_rabota01-26046": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Shecker Coffee & Food",
+    "schedule": "2/2, 07:00–19:00 или 11:00–23:00"
+   }
+  },
+  "almaty_rabota01-26036": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Кассир-продавец",
+    "schedule": "2/2, 08:00–20:00 или 20:00–08:00"
+   }
+  },
+  "olx-402700979": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Няня-помощница",
+    "salary_min": 180000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "6/1, 13:00–23:00"
+   }
+  },
+  "almaty_rabota_work-31845": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Truezard",
+    "schedule": "2/2, 10:00–22:00",
+    "address": "ул. Сейфуллина, 617, ТРЦ «Forum», 2 этаж"
+   }
+  },
+  "hh-139212056": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Small",
+    "schedule": "2/2, 12 часов",
+    "address": "ул. Катаева, 189"
+   }
+  },
+  "hh-139211998": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Star Brands Asia",
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Николая Кассина, 133"
+   }
+  },
+  "vakansii_rabota_atyrau-50060": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "address": "Балыкши"
+   }
+  },
+  "vakansii_rabota_atyrau-50059": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "title": "Повар, шашлычник, кассир, официант",
+    "employer": "Халал-ресторан",
+    "schedule": "11:00–23:00 или 23:00–11:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139227520": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "schedule": "6/1, 8 часов",
+    "address": "ул. Павлова, 64"
+   }
+  },
+  "hh-139227488": {
+   "verdict": "approve",
+   "at": "2026-11-07T16:57:12+00:00",
+   "fields": {
+    "employer": "Aura Su Kostanay",
+    "schedule": "6/1"
+   }
   }
  }
 }

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T16:57:12+00:00",
+ "updated_at": "2026-11-07T17:57:08+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -40534,6 +40534,170 @@
    "fields": {
     "employer": "Aura Su Kostanay",
     "schedule": "6/1"
+   }
+  },
+  "hh-138014860": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "employer": "Strong Tea"
+   }
+  },
+  "rabota_astanakz-31327": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Официант, хостес",
+    "employer": "Халал-кафе «Каусар»"
+   }
+  },
+  "rabota_astana-15661": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Продавец в продуктовый магазин",
+    "employer": "Минимаркет «Наш»",
+    "salary_min": 13000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 09:00–23:00",
+    "address": "ул. С. Сейфуллина, 41"
+   }
+  },
+  "zhumys_astana_kz-17250": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "employer": "ТОО «Гормолзавод»",
+    "schedule": "6/1, 07:00–15:00",
+    "perks": []
+   }
+  },
+  "astana_job_vakansii-130286": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Администратор-приёмщик",
+    "schedule": "6/1, 08:00–18:00",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-17162": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Мастер по ремонту инструмента",
+    "address": "ул. Жумабаева, 31/1"
+   }
+  },
+  "astana_job_vakansii-130040": {
+   "verdict": "reject",
+   "at": "2026-11-07T17:57:08+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "zhumys_astana_kz-17058": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "5/2, 6/1, 10:00–21:00",
+    "address": "пр. Мангилик Ел, 38"
+   }
+  },
+  "zhumys_astana_kz-17272": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "Детский сад «AiKIDS»",
+    "schedule": "5/2, 08:00–18:00",
+    "address": "ул. Бокейхана, 27/4",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "hh-139227836": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Помощник по дому",
+    "employer": null,
+    "schedule": "5/2",
+    "address": "ул. Александра Суворова"
+   }
+  },
+  "olx-402685791": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Шашлычник",
+    "employer": "Craft Bar",
+    "salary_min": 20000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "12:00–03:00",
+    "address": "пр. Абая — ул. Ауэзова",
+    "perks": [
+     "Жильё",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139198422": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Кассир"
+   }
+  },
+  "hh-139198368": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Оператор чата поддержки"
+   }
+  },
+  "almaty_rabota_work-31834": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "employer": "Ресторан «PikaPika»",
+    "schedule": "2/2, 5/2, 09:00–22:00"
+   }
+  },
+  "almaty_rabota_work-31833": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Уборщик в фитнес-зал"
+   }
+  },
+  "almaty_rabota_work-31832": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "schedule": "2/2, 6/1, 07:30–19:00",
+    "address": "Рынок «Кенжехан», ТЦ «Тянь-Шань»"
+   }
+  },
+  "hh-138418535": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Администратор кафе",
+    "employer": null,
+    "schedule": "5/2, 2/2"
+   }
+  },
+  "hh-138911514": {
+   "verdict": "approve",
+   "at": "2026-11-07T17:57:08+00:00",
+   "fields": {
+    "title": "Водитель-инкассатор",
+    "address": null
    }
   }
  }

@@ -3036,6 +3036,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "almaty:alatrade_2020": {
+  "name": "ALATRADE_2020",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
+ },
  "almaty:albakov group": {
   "name": "Albakov Group",
   "city": "almaty",
@@ -3364,6 +3371,20 @@
   "v": 3,
   "checked_at": "2026-11-06T18:44:15+00:00"
  },
+ "almaty:alua food solutions": {
+  "name": "ALUA Food Solutions",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "instagram": "pfchangskz",
+  "website": "https://pfchangs-kazakhstan.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001063292141",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:aluminium of kazakhstan": {
   "name": "Aluminium of Kazakhstan",
   "city": "almaty",
@@ -3451,6 +3472,13 @@
   "checked_at": "2026-11-01T05:43:29+00:00",
   "instagram": "apodit_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001096911022"
+ },
+ "almaty:apple city": {
+  "name": "ТОО Apple city",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "almaty:apple city corps": {
   "name": "Apple City Corps",
@@ -4837,6 +4865,22 @@
   "avatar": "4169b556c727fb53.jpg",
   "avatar_source": "website"
  },
+ "almaty:charuel": {
+  "name": "Charuel",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "instagram": "charuel.kz",
+  "website": "http://www.charuel.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001099888350",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d3528047ca3f8b87.jpg",
+  "avatar_source": "website"
+ },
  "almaty:chickenem": {
   "name": "ChickenEm",
   "city": "almaty",
@@ -5490,6 +5534,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "almaty:dsb security": {
+  "name": "DSB Security",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "almaty:eagle eye construction": {
   "name": "Eagle Eye Construction",
@@ -8543,6 +8594,13 @@
   "instagram": "materia_kz",
   "source": "https://2gis.kz/almaty/firm/70000001091851902"
  },
+ "almaty:mathtime": {
+  "name": "MATHTIME",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
+ },
  "almaty:mausym fashion": {
   "name": "MausyM Fashion",
   "city": "almaty",
@@ -9603,6 +9661,13 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "almaty:pelagia kz": {
+  "name": "ИП Pelagia KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
+ },
  "almaty:people hub": {
   "name": "People Hub",
   "city": "almaty",
@@ -9643,6 +9708,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
+ },
+ "almaty:phaeton kz": {
+  "name": "Phaeton.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "website": "https://shop.phaeton.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001094364353",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:pharmix": {
   "name": "PHARMIX",
@@ -14572,6 +14650,20 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "almaty:евразийский банк ао": {
+  "name": "Евразийский банк, АО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "instagram": "eurasianbank",
+  "website": "http://eubank.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000884856",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:евразия ст": {
   "name": "Евразия СТ",
   "city": "almaty",
@@ -18826,7 +18918,7 @@
   "instagram": "aprofile_kz",
   "website": "https://a-profile.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792740",
-  "avatar_checked_at": "2026-10-31T14:43:47+00:00",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19191,6 +19283,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
+ },
+ "almaty:шерис": {
+  "name": "ИП Шерис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "almaty:шетенова г м": {
   "name": "ШЕТЕНОВА Г.М.",
@@ -20667,6 +20766,22 @@
   "avatar": "a1bd96b967717d6b.jpg",
   "avatar_source": "website"
  },
+ "astana:charuel": {
+  "name": "Charuel",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "instagram": "charuel.kz",
+  "website": "http://charuel.ru/",
+  "source": "https://2gis.kz/astana/firm/70000001118095883",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7ceabc5923a5ca8f.jpg",
+  "avatar_source": "website"
+ },
  "astana:chester": {
   "name": "Chester",
   "city": "astana",
@@ -21669,6 +21784,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
+ },
+ "astana:h2o": {
+  "name": "H2O",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "astana:hammer legend хамер лэджэнд": {
   "name": "Hammer Legend (Хамер Лэджэнд)",
@@ -25143,6 +25265,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:vostok beton": {
+  "name": "Vostok beton",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "instagram": "vostok_beton_01",
+  "source": "https://2gis.kz/astana/firm/70000001063413352"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -29422,6 +29553,13 @@
   "v": 3,
   "checked_at": "2026-11-01T01:42:32+00:00"
  },
+ "astana:студия наружной рекламы": {
+  "name": "Студия наружной рекламы",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
+ },
  "astana:ступаченко а в": {
   "name": "Ступаченко А.В.",
   "city": "astana",
@@ -32270,6 +32408,13 @@
   "avatar": "155ebf08f659512b.jpg",
   "avatar_source": "telegram"
  },
+ "karaganda:imgo llc": {
+  "name": "IMGO LLC",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
+ },
  "karaganda:izi": {
   "name": "IZI",
   "city": "karaganda",
@@ -33266,6 +33411,21 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "karaganda:ип эфес казахстан": {
+  "name": "АО ИП Эфес Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00",
+  "website": "http://www.efeskazakhstan.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302838177",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "35c32b3052b13ae6.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
   "city": "karaganda",
@@ -33316,6 +33476,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "karaganda:казфитингпласт": {
+  "name": "Казфитингпласт",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "karaganda:карагандинский драматический театр им к с станиславского": {
   "name": "Карагандинский драматический театр им. К.С. Станиславского",
@@ -37972,7 +38139,7 @@
   "checked_at": "2026-10-31T14:43:47+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-10-31T14:43:47+00:00",
+  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38244,6 +38411,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:стар карго казахстан": {
+  "name": "Стар-Карго Казахстан",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "petropavlovsk:султан кондитерские изделия": {
   "name": "Султан Кондитерские изделия",
@@ -41631,6 +41805,13 @@
    "website"
   ]
  },
+ "taraz:luco90": {
+  "name": "LUCO90",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
+ },
  "taraz:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "taraz",
@@ -43554,6 +43735,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:sevalo engineering machinery kazakhstan": {
+  "name": "Sevalo Engineering Machinery Kazakhstan",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T14:44:39+00:00"
  },
  "ust-kamenogorsk:sigua on staff": {
   "name": "Sigua on Staff",

@@ -2226,7 +2226,7 @@
   "city": "aktobe",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "aktobe:байтурин а ж": {
   "name": "Байтурин А.Ж.",
@@ -2715,11 +2715,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "instagram": "1_progress",
   "website": "https://www.1-progress.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001030043544",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4068,7 +4068,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "almaty:auris group": {
   "name": "AURIS Group",
@@ -5551,7 +5551,7 @@
   "telegram": "lovetsvrachey",
   "website": "https://doctorshunter.com/",
   "source": "https://2gis.kz/almaty/firm/70000001027601382",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -6961,11 +6961,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "instagram": "green_go_kz",
   "website": "https://ggoo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001102591754",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7993,7 +7993,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "almaty:kaztorgline": {
   "name": "KAZTORGLINE",
@@ -10785,16 +10785,12 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "instagram": "kixx.kz",
   "website": "https://www.kixx.kz/",
-  "source": "https://2gis.kz/almaty/firm/9429940000799900",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "25caa09904960c06.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/almaty/firm/9429940000799900"
  },
  "almaty:rr interiors": {
   "name": "RR INTERIORS",
@@ -10882,7 +10878,7 @@
   "instagram": "saharvosk_almaty",
   "website": "http://saharvosk.ru/almaty",
   "source": "https://2gis.kz/almaty/firm/70000001032892323",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11523,11 +11519,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "instagram": "stemsolutions.kz",
   "website": "https://stemsolutions.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001089790597",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12778,7 +12774,7 @@
   "checked_at": "2026-10-31T23:43:38+00:00",
   "website": "https://aaalogistics.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001118548638",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13240,11 +13236,11 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "instagram": "aksapowergen",
-  "website": "https://aksakz.kz/",
+  "website": "http://aksakz.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021900134",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14806,7 +14802,7 @@
   "city": "almaty",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "almaty:график": {
   "name": "График",
@@ -15806,7 +15802,7 @@
   "checked_at": "2026-10-31T23:43:38+00:00",
   "website": "https://www.kazbiotrans.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001075575750",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17284,7 +17280,7 @@
   "city": "almaty",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "almaty:мфо ломбард деньги населению": {
   "name": "МФО Ломбард Деньги населению",
@@ -18734,7 +18730,7 @@
   "instagram": "poehalisnami__kz",
   "website": "https://poehalisnami.kz/office/almaty/2213",
   "source": "https://2gis.kz/almaty/firm/70000001082031162",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19115,7 +19111,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "almaty:технокоминвест": {
   "name": "ТЕХНОКОМИНВЕСТ",
@@ -19540,6 +19536,13 @@
   ],
   "avatar": "19e405b78d420e43.jpg",
   "avatar_source": "website"
+ },
+ "almaty:финдирекция": {
+  "name": "Финдирекция",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "almaty:финтех": {
   "name": "финтех",
@@ -22350,7 +22353,7 @@
   "instagram": "glovo_kz",
   "website": "https://glovoapp.com/",
   "source": "https://2gis.kz/astana/firm/70000001039423066",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26336,7 +26339,7 @@
   "city": "astana",
   "status": "skip",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "astana:абильмажинова": {
   "name": "Абильмажинова",
@@ -26796,7 +26799,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "astana:ап импэкс": {
   "name": "АП-Импэкс",
@@ -29730,9 +29733,20 @@
  "astana:перкова е а ип este": {
   "name": "ПЕРКОВА Е.А. ИП «ESTE»",
   "city": "astana",
-  "status": "none",
+  "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00",
+  "instagram": "este_kz",
+  "telegram": "este_kz",
+  "website": "https://estefashion.com/",
+  "source": "https://2gis.kz/astana/firm/70000001080136994",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "95221b5ede30c524.jpg",
+  "avatar_source": "telegram"
  },
  "astana:пивная бухта": {
   "name": "Пивная бухта",
@@ -30430,10 +30444,10 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "website": "https://cpsholod.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018115465",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33497,7 +33511,7 @@
   "checked_at": "2026-10-31T23:43:38+00:00",
   "website": "https://karadel.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001112409197",
-  "avatar_checked_at": "2026-10-31T23:43:38+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33553,10 +33567,10 @@
   "city": "karaganda",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00",
+  "checked_at": "2026-11-07T23:44:10+00:00",
   "website": "https://www.kaztechpro.com/",
   "source": "https://2gis.kz/karaganda/firm/70000001117443193",
-  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_checked_at": "2026-11-07T23:44:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -35061,7 +35075,7 @@
   "city": "karaganda",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "karaganda:тм romeo flowers касымгалиев а а": {
   "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
@@ -38224,7 +38238,7 @@
   "city": "pavlodar",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
@@ -44624,7 +44638,7 @@
   "city": "uralsk",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-07T22:45:03+00:00"
+  "checked_at": "2026-11-07T23:44:10+00:00"
  },
  "uralsk:юбилейная": {
   "name": "Юбилейная",

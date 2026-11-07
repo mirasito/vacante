@@ -2221,6 +2221,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "aktobe:бажикбаев": {
+  "name": "Бажикбаев",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
+ },
  "aktobe:байтурин а ж": {
   "name": "Байтурин А.Ж.",
   "city": "aktobe",
@@ -2702,6 +2709,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "almaty:1 прогресс": {
+  "name": "1-Прогресс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "instagram": "1_progress",
+  "website": "https://www.1-progress.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001030043544",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:12 месяцев": {
   "name": "12 месяцев",
@@ -4041,6 +4062,13 @@
   ],
   "avatar": "ba9893194465ccfe.jpg",
   "avatar_source": "website"
+ },
+ "almaty:auralis aero": {
+  "name": "AURALIS AERO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "almaty:auris group": {
   "name": "AURIS Group",
@@ -6928,6 +6956,20 @@
   "avatar": "dd9ba8f9ad0b7c2d.jpg",
   "avatar_source": "website"
  },
+ "almaty:greengo": {
+  "name": "GreenGo",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "instagram": "green_go_kz",
+  "website": "https://ggoo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001102591754",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:grunge space ип байсбаева лн": {
   "name": "Grunge space (ИП Байсбаева ЛН)",
   "city": "almaty",
@@ -7945,6 +7987,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "almaty:kazteknolift казтекнолифт": {
+  "name": "KazTeknolift (КазТекнолифт)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "almaty:kaztorgline": {
   "name": "KAZTORGLINE",
@@ -10731,6 +10780,22 @@
   "v": 3,
   "checked_at": "2026-11-03T08:44:40+00:00"
  },
+ "almaty:rpm kazakhstan рпм казахстан": {
+  "name": "RPM - Kazakhstan (РПМ -Казахстан)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "instagram": "kixx.kz",
+  "website": "https://www.kixx.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000799900",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "25caa09904960c06.jpg",
+  "avatar_source": "website"
+ },
  "almaty:rr interiors": {
   "name": "RR INTERIORS",
   "city": "almaty",
@@ -11452,6 +11517,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
+ },
+ "almaty:stem solutions": {
+  "name": "Stem solutions",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "instagram": "stemsolutions.kz",
+  "website": "https://stemsolutions.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089790597",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:stilalmaty": {
   "name": "Stilalmaty",
@@ -13156,6 +13235,20 @@
   "avatar": "ea28fda38811f4fd.jpg",
   "avatar_source": "website"
  },
+ "almaty:акса казахстан лтд": {
+  "name": "Акса Казахстан Лтд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "instagram": "aksapowergen",
+  "website": "https://aksakz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001021900134",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:аксай нан хбк": {
   "name": "Аксай-Нан ХБК",
   "city": "almaty",
@@ -14707,6 +14800,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:гранд парк": {
+  "name": "Гранд Парк",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "almaty:график": {
   "name": "График",
@@ -17179,6 +17279,13 @@
   "v": 3,
   "checked_at": "2026-11-05T10:44:37+00:00"
  },
+ "almaty:муратова а ж": {
+  "name": "МУРАТОВА А. Ж",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
+ },
  "almaty:мфо ломбард деньги населению": {
   "name": "МФО Ломбард Деньги населению",
   "city": "almaty",
@@ -19002,6 +19109,13 @@
   "avatar": "cb620f997c8dbef4.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/almaty/firm/9429940001543661"
+ },
+ "almaty:техновид плюс": {
+  "name": "ТехнОВиД плюс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "almaty:технокоминвест": {
   "name": "ТЕХНОКОМИНВЕСТ",
@@ -23171,6 +23285,13 @@
   "avatar": "eb894e713f9d7879.jpg",
   "avatar_source": "website"
  },
+ "astana:ksengineering ксинжиниринг": {
+  "name": "KSENGINEERING (КСИНЖИНИРИНГ)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
+ },
  "astana:kulan oil": {
   "name": "Kulan Oil",
   "city": "astana",
@@ -26210,6 +26331,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "astana:абилов бауыржан": {
+  "name": "Абилов Бауыржан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
+ },
  "astana:абильмажинова": {
   "name": "Абильмажинова",
   "city": "astana",
@@ -26662,6 +26790,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "astana:ансар фарм 6131": {
+  "name": "Ансар- Фарм 6131",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "astana:ап импэкс": {
   "name": "АП-Импэкс",
@@ -28363,7 +28498,7 @@
   "instagram": "colibri.smile",
   "website": "https://www.colibri-smile.com/",
   "source": "https://2gis.kz/astana/firm/70000001018122675",
-  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29592,6 +29727,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "astana:перкова е а ип este": {
+  "name": "ПЕРКОВА Е.А. ИП «ESTE»",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
+ },
  "astana:пивная бухта": {
   "name": "Пивная бухта",
   "city": "astana",
@@ -30279,6 +30421,19 @@
   "website": "http://sportmaster.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018529780",
   "avatar_checked_at": "2026-11-04T14:44:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:спс холод астана": {
+  "name": "СПС-Холод Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "website": "https://cpsholod.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018115465",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33088,7 +33243,7 @@
   "checked_at": "2026-10-31T22:43:53+00:00",
   "website": "http://www.common.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001024663799",
-  "avatar_checked_at": "2026-10-31T22:43:53+00:00",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33392,6 +33547,19 @@
   ],
   "avatar": "8d6ae25a9f02b70c.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:kaztechpro": {
+  "name": "KazTechPro",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00",
+  "website": "https://www.kaztechpro.com/",
+  "source": "https://2gis.kz/karaganda/firm/70000001117443193",
+  "avatar_checked_at": "2026-11-07T22:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:kc интернейшнл": {
   "name": "KC Интернейшнл",
@@ -34887,6 +35055,13 @@
   "checked_at": "2026-11-05T20:43:06+00:00",
   "instagram": "schaste_est_flowers",
   "source": "https://2gis.kz/karaganda/firm/70000001088097755"
+ },
+ "karaganda:татлер": {
+  "name": "Татлер",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "karaganda:тм romeo flowers касымгалиев а а": {
   "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
@@ -38043,6 +38218,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:алиша": {
+  "name": "Алиша",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
@@ -44436,6 +44618,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:эпсилон": {
+  "name": "Эпсилон",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T22:45:03+00:00"
  },
  "uralsk:юбилейная": {
   "name": "Юбилейная",

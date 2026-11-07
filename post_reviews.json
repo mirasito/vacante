@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T11:56:40+00:00",
+ "updated_at": "2026-11-07T12:57:46+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -39607,6 +39607,198 @@
     "schedule": "2/2, 13:00–02:00",
     "address": "р-н Апрель, Мегастрой"
    }
+  },
+  "rabota_astanakz-31351": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "employer": "Крендель",
+    "schedule": "5/2, полный день"
+   }
+  },
+  "hh-139226447": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "employer": "Хайбулина Е. Н."
+   }
+  },
+  "hh-139226443": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин детской одежды"
+   }
+  },
+  "rabota_astanakz-31350": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "schedule": "2/2, 09:30–22:00"
+   }
+  },
+  "rabota_astanakz-31318": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Заправщик на АЗС",
+    "schedule": "сутки через двое, 08:00–08:00"
+   }
+  },
+  "astana_job_vakansii-130316": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "employer": "Hookah Place",
+    "schedule": "сменный, 11:00–02:00"
+   }
+  },
+  "astana_job_vakansii-130258": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "employer": "Sandi Collection",
+    "schedule": "10:00–22:00",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31344": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Водитель манипулятора"
+   }
+  },
+  "astana_job_vakansii-130307": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Mauretti",
+    "schedule": "10:00–22:00"
+   }
+  },
+  "rabota4almaty-6294": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "schedule": "2/2, 08:30–00:00"
+   }
+  },
+  "hh-139226400": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Водитель такси",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_period": null,
+    "perks": []
+   }
+  },
+  "hh-139226241": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Монтажник лифтов"
+   }
+  },
+  "hh-139226308": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {}
+  },
+  "hh-139226105": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "employer": "Omir Collection"
+   }
+  },
+  "hh-139194705": {
+   "verdict": "reject",
+   "at": "2026-11-07T12:57:46+00:00",
+   "reason": "Офисная должность: высшее образование, звонки, бухучёт"
+  },
+  "astana_job_vakansii-130250": {
+   "verdict": "reject",
+   "at": "2026-11-07T12:57:46+00:00",
+   "reason": "Адреса в Астане, а не в Алматы"
+  },
+  "rabota4almaty-6295": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-6297": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {}
+  },
+  "rabota4almaty-6224": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {}
+  },
+  "hh-139226087": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {}
+  },
+  "hh-139226414": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Администратор стоматологии"
+   }
+  },
+  "hh-139226368": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Машинист автокрана",
+    "schedule": "вахта"
+   }
+  },
+  "rabotaaktau-142344": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "employer": "Tandir House",
+    "schedule": "6/1, 14:00–02:00"
+   }
+  },
+  "rabotaaktau-142343": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "title": "Кассир-бариста",
+    "schedule": "2/2, 08:00–00:00"
+   }
+  },
+  "rabotaaktau-142347": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {
+    "employer": "Berry Bar",
+    "schedule": "2/1, 08:00–17:00 и 17:00–01:00"
+   }
+  },
+  "rabotaaktau-142345": {
+   "verdict": "reject",
+   "at": "2026-11-07T12:57:46+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139226373": {
+   "verdict": "approve",
+   "at": "2026-11-07T12:57:46+00:00",
+   "fields": {}
+  },
+  "vakansii_oskemen-9272": {
+   "verdict": "reject",
+   "at": "2026-11-07T12:57:46+00:00",
+   "reason": "Офисная должность без работодателя"
   }
  }
 }

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T02:56:54+00:00",
+ "updated_at": "2026-11-07T03:56:36+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -37853,6 +37853,58 @@
    "verdict": "approve",
    "at": "2026-11-07T02:56:54+00:00",
    "fields": {}
+  },
+  "olx-402701097": {
+   "verdict": "reject",
+   "at": "2026-11-07T03:56:36+00:00",
+   "reason": "Доход только с процентов, обещания завышены, должность не ясна"
+  },
+  "hh-139222431": {
+   "verdict": "approve",
+   "at": "2026-11-07T03:56:36+00:00",
+   "fields": {
+    "employer": "Minestone",
+    "schedule": "5/2"
+   }
+  },
+  "rabota_astanakz-31333": {
+   "verdict": "approve",
+   "at": "2026-11-07T03:56:36+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1, 08:00–17:00, суббота короткий день"
+   }
+  },
+  "hh-139220708": {
+   "verdict": "approve",
+   "at": "2026-11-07T03:56:36+00:00",
+   "fields": {
+    "title": "Менеджер по продажам в визовый центр",
+    "employer": "Kub Group",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139220801": {
+   "verdict": "approve",
+   "at": "2026-11-07T03:56:36+00:00",
+   "fields": {
+    "title": "Массажист",
+    "employer": null,
+    "schedule": "2/2",
+    "perks": []
+   }
+  },
+  "hh-139220556": {
+   "verdict": "approve",
+   "at": "2026-11-07T03:56:36+00:00",
+   "fields": {
+    "title": "Повар-бригадир",
+    "salary_min": 400000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "6/1",
+    "perks": []
+   }
   }
  }
 }

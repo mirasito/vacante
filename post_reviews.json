@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T08:56:48+00:00",
+ "updated_at": "2026-11-07T09:57:54+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -38857,6 +38857,300 @@
    "verdict": "reject",
    "at": "2026-11-07T08:56:48+00:00",
    "reason": "Это резюме, а не вакансия"
+  },
+  "rabota_astanakz-31342": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Салон мебельной фурнитуры «BRASS KZ»",
+    "schedule": "5/2, 10:00–19:00"
+   }
+  },
+  "hh-139225126": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Кафе «Точка»",
+    "schedule": "2/2",
+    "address": "ул. Сыганак, 58/1",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-138960303": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Акжол, 47/3"
+   }
+  },
+  "hh-139223534": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Zerdeli-World",
+    "schedule": "6/1",
+    "address": null,
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139187160": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "6/1 или 5/2, 8 часов",
+    "address": "ул. Орлыкол, 11"
+   }
+  },
+  "rabota_astanakz-31196": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, 08:00–23:00",
+    "address": "р-н Нура, ул. Ч. Айтматова, 53п"
+   }
+  },
+  "rabota_astana-15660": {
+   "verdict": "reject",
+   "at": "2026-11-07T09:57:54+00:00",
+   "reason": "Повтор вакансии rabota_astanakz-31196"
+  },
+  "astana_job_vakansii-130304": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Официант",
+    "schedule": "2/2, 09:00–22:00"
+   }
+  },
+  "astana_job_vakansii-130308": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Официант, бариста, повар",
+    "employer": "Ресторан «İSTANBUL»",
+    "salary_min": 5000,
+    "salary_max": 18000,
+    "salary_period": "day",
+    "schedule": "6/1 или 2/2, смены 12–14 часов",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-17265": {
+   "verdict": "reject",
+   "at": "2026-11-07T09:57:54+00:00",
+   "reason": "Офисные менеджеры, не курьеры"
+  },
+  "astana_job_vakansii-130303": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Повар горячего и холодного цеха",
+    "employer": "Кулинария «Milky Cake»",
+    "salary_min": 400000,
+    "salary_max": 460000,
+    "salary_period": "month",
+    "schedule": "5/2, 07:00–17:00"
+   }
+  },
+  "hh-139201075": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Грузчик на склад",
+    "schedule": "6/1, 8 часов",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139225084": {
+   "verdict": "reject",
+   "at": "2026-11-07T09:57:54+00:00",
+   "reason": "Офисная должность: B2B-продажи с высшим образованием"
+  },
+  "rabota4almaty-6282": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Сборщик-фасовщик",
+    "employer": "Asia Snab",
+    "salary_min": 300000,
+    "salary_max": 350000,
+    "salary_period": "month",
+    "schedule": "6/1, ночные смены, 23:00–09:00",
+    "address": "ул. Илтипат, 53"
+   }
+  },
+  "rabota4almaty-6283": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Магазин «Бриз»",
+    "schedule": "по согласованию",
+    "address": "ул. Жансугурова, 661"
+   }
+  },
+  "hh-139193598": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Суюнбая, 258В"
+   }
+  },
+  "hh-139186498": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "5/2 или 2/2",
+    "address": "ул. Желтоксан, 181"
+   }
+  },
+  "hh-139186313": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Мини-маркет «Барик»",
+    "schedule": null,
+    "address": "мкр Айнабулак-3, 143",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "almatyrabota1-21335": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "2/2, 10:00–22:00",
+    "address": "Алмагуль, 18а, 2 этаж"
+   }
+  },
+  "hh-137903566": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Менеджер-консультант в магазин электроинструмента",
+    "employer": "Techno Sector KZ",
+    "schedule": "5/2, 09:00–18:00",
+    "address": "ул. Брусиловского, 82"
+   }
+  },
+  "rabota4almaty-6243": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Каксвоим"
+   }
+  },
+  "hh-137999690": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "address": "ул. Литейная"
+   }
+  },
+  "rabota4almaty-6240": {
+   "verdict": "reject",
+   "at": "2026-11-07T09:57:54+00:00",
+   "reason": "Непонятно, кого ищут: офисный менеджер без описания"
+  },
+  "rabota4almaty-6238": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Мастер по раскрою МДФ, шпонщик",
+    "employer": null,
+    "address": "ул. Кокорай, 73/1"
+   }
+  },
+  "hh-139224861": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Leader Financial Group",
+    "schedule": "6/1, 9 часов"
+   }
+  },
+  "rabotaaktau-142335": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "Пекарня-кофейня «Landsby»",
+    "schedule": "смены по 14 часов",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "rabotaaktau-142336": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "title": "Сушист, заготовщик",
+    "salary_min": 7500,
+    "salary_max": 13000,
+    "salary_period": "day"
+   }
+  },
+  "rabotaaktau-142334": {
+   "verdict": "reject",
+   "at": "2026-11-07T09:57:54+00:00",
+   "reason": "Частное объявление сиделки с требованием по национальности, оплата не указана"
+  },
+  "rabotaaktau-142331": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Кафе «Kish Mish»",
+    "schedule": "09:00–21:00 или 12:00–00:00",
+    "perks": [
+     "Развозка",
+     "Питание"
+    ]
+   }
+  },
+  "rabotaaktau-142337": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "employer": "Ресторан «Шафран»",
+    "address": "17/54"
+   }
+  },
+  "rabotaaktau-142330": {
+   "verdict": "reject",
+   "at": "2026-11-07T09:57:54+00:00",
+   "reason": "Требуют обязательный депозит"
+  },
+  "hh-139167773": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "hh-139225124": {
+   "verdict": "approve",
+   "at": "2026-11-07T09:57:54+00:00",
+   "fields": {
+    "schedule": "5/2, 7 часов",
+    "address": "пр. Аль-Фараби, 65"
+   }
   }
  }
 }

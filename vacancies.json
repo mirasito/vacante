@@ -1,5 +1,132 @@
 [
  {
+  "id": "hh-138286943",
+  "title": "Сборщик заказов (Кульджинский тракт)",
+  "category": "warehouse",
+  "city": "almaty",
+  "salary_min": 250000,
+  "salary_max": 500000,
+  "salary_period": "month",
+  "schedule": null,
+  "perks": [
+   "Питание"
+  ],
+  "employer": "Magnum E-commerce Kazakhstan",
+  "text": "Обязанности: Проверять собранные заказы по списку(продукты питания/бытовая химия). ️Выдача заказа курьеру.",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138286943?tech_source=api",
+  "posted_at": "2026-11-07T18:17:21+00:00",
+  "fingerprint": "c0ff0c943b3b9f98",
+  "also_seen_in": [
+   "https://hh.ru/vacancy/138710058?tech_source=api",
+   "https://hh.kz/vacancy/138710058?tech_source=api",
+   "https://hh.kz/vacancy/138262446?tech_source=api",
+   "https://hh.kz/vacancy/138255139?tech_source=api"
+  ],
+  "address": "Кульджинский тракт, 22/6",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.292,
+  "lon": 77.0015,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": null
+ },
+ {
+  "id": "hh-139227927",
+  "title": "Бармен-кассир (островок мороженого, frozen yogurt PURE)",
+  "category": "horeca",
+  "city": "almaty",
+  "salary_min": 10000,
+  "salary_max": null,
+  "salary_period": "day",
+  "schedule": "6/1, 5/2, 4/3, 2/2, 6 часов, 8 часов, 10 часов, 12 часов",
+  "perks": [],
+  "employer": "Wave",
+  "text": "Обязанности: Готовить frozen yogurt и красивые десерты. Работать с кассой и помогать гостям с выбором вкусов и топпингов. Поддерживать чистоту и...\nТребования: Любишь общаться с людьми и умеешь находить общий язык с гостями. Очень чистоплотный, аккуратный и внимательный к деталям.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139227927?tech_source=api",
+  "posted_at": "2026-11-07T17:48:05+00:00",
+  "fingerprint": "1cf60622c3b14518",
+  "also_seen_in": [],
+  "address": "улица Абдуллы Розыбакиева, 247А",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.2024,
+  "lon": 76.892,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "12706796"
+ },
+ {
+  "id": "hh-139227920",
+  "title": "Газоэлектросварщик",
+  "category": "construction",
+  "city": "almaty",
+  "salary_min": 250000,
+  "salary_max": 350000,
+  "salary_period": "month",
+  "schedule": "5/2, 8 часов",
+  "perks": [],
+  "employer": "ALTYN ENGINEERING",
+  "text": "Обязанности: Наплавка детали,реставрационные работы,сварочные работы.Умение работать электросваркой,резаком,кемпингом. Соблюдение техники безопасности,содержать рабочее место у станка в надлежащем...\nТребования: Дисциплина,качество выполняемой работы.аккуратность,ответственность,внимательность.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139227920?tech_source=api",
+  "posted_at": "2026-11-07T17:46:29+00:00",
+  "fingerprint": "7326180c7f9d397c",
+  "also_seen_in": [],
+  "address": "улица Ермухана Бекмаханова, 463В",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.3497,
+  "lon": 76.9795,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "9877583"
+ },
+ {
+  "id": "hh-139227911",
+  "title": "Уборщик помещений столовой и кухни школы",
+  "category": "service",
+  "city": "almaty",
+  "salary_min": 250000,
+  "salary_max": 250000,
+  "salary_period": "month",
+  "schedule": "5/2, 8 часов",
+  "perks": [],
+  "employer": "InTOP",
+  "text": "Обязанности: Проведение ежедневной влажной и сухой уборки помещения столовой и кухни школы. Поддержание чистоты и порядка в закреплённых помещениях.\nТребования: Чистоплотность, аккуратность и ответственность. Добросовестное отношение к работе. Дисциплинированность и пунктуальность. Опыт работы приветствуется.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139227911?tech_source=api",
+  "posted_at": "2026-11-07T17:42:13+00:00",
+  "fingerprint": "9a1f7ff21fe79f67",
+  "also_seen_in": [],
+  "address": "бульвар Бухар Жырау, 36",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.2314,
+  "lon": 76.9174,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "1800966"
+ },
+ {
   "id": "hh-138418535",
   "title": "Администратор в кафе",
   "category": "service",
@@ -69780,7 +69907,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "5769993"
  },
  {
   "id": "rabota_semey_official-6811",
@@ -199121,7 +199248,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "1269398"
  },
  {
   "id": "almatyvacancies-11089",
@@ -225396,43 +225523,6 @@
   "employer_hh": null
  },
  {
-  "id": "hh-138286943",
-  "title": "Сборщик заказов (Кульджинский тракт)",
-  "category": "warehouse",
-  "city": "almaty",
-  "salary_min": 250000,
-  "salary_max": 500000,
-  "salary_period": "month",
-  "schedule": null,
-  "perks": [
-   "Питание"
-  ],
-  "employer": "Magnum E-commerce Kazakhstan",
-  "text": "Обязанности: Проверять собранные заказы по списку(продукты питания/бытовая химия). ️Выдача заказа курьеру.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138286943?tech_source=api",
-  "posted_at": "2026-10-29T04:04:01+00:00",
-  "fingerprint": "c0ff0c943b3b9f98",
-  "also_seen_in": [
-   "https://hh.ru/vacancy/138710058?tech_source=api",
-   "https://hh.kz/vacancy/138710058?tech_source=api",
-   "https://hh.kz/vacancy/138262446?tech_source=api",
-   "https://hh.kz/vacancy/138255139?tech_source=api"
-  ],
-  "address": "Кульджинский тракт, 22/6",
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": 43.292,
-  "lon": 77.0015,
-  "geo": "hh",
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": null
- },
- {
   "id": "hh-138947903",
   "title": "Менеджер по продажам автозапчастей КАМАЗ",
   "category": "retail",
@@ -240212,7 +240302,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "5575617"
  },
  {
   "id": "hh-138212325",
@@ -317932,7 +318022,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "13034147"
  },
  {
   "id": "hh-138492610",
@@ -317964,7 +318054,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "13016593"
  },
  {
   "id": "hh-138856562",
@@ -318118,7 +318208,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "11428761"
  },
  {
   "id": "hh-138075555",
@@ -318238,7 +318328,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "11831282"
  },
  {
   "id": "hh-138338261",
@@ -318268,7 +318358,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "12951131"
  },
  {
   "id": "hh-138856370",
@@ -328366,7 +328456,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "1974684"
  },
  {
   "id": "hh-137910820",

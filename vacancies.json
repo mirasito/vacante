@@ -1,5 +1,191 @@
 [
  {
+  "id": "hh-138418535",
+  "title": "Администратор в кафе",
+  "category": "service",
+  "city": "karaganda",
+  "salary_min": 350000,
+  "salary_max": 350000,
+  "salary_period": "month",
+  "schedule": "5/2, 2/2, 12 часов",
+  "perks": [],
+  "employer": "Тыштыкбаева",
+  "text": "Обязанности: Полное управление сменой и командой. — Организация и координация работы зала. — Составление и ведение графиков. — Открытие и закрытие смены. —\nТребования: Мы ищем сильного администратора с опытом в общепите, который умеет управлять командой, держать высокий уровень сервиса и контролировать все процессы...",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/138418535?tech_source=api",
+  "posted_at": "2026-11-07T17:17:01+00:00",
+  "fingerprint": "7b99ef54ec260c54",
+  "also_seen_in": [],
+  "address": "проспект Нуркена Абдирова, 38/2",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 49.8066,
+  "lon": 73.1045,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "9470779"
+ },
+ {
+  "id": "hh-139227836",
+  "title": "Помощница/помощник по дому",
+  "category": "service",
+  "city": "almaty",
+  "salary_min": 250000,
+  "salary_max": 300000,
+  "salary_period": "month",
+  "schedule": "5/2, 10 часов",
+  "perks": [],
+  "employer": "Джабарова Г.Т.",
+  "text": "Обязанности: Готовка еды. Уборка. Стирка одежды. Глажка одежды. Поддержание порядка в доме и во дворе.\nТребования: Чистоплотность. Аккуратность. Доброжелательность. Ответственность.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139227836?tech_source=api",
+  "posted_at": "2026-11-07T17:15:00+00:00",
+  "fingerprint": "9d68220082411c69",
+  "also_seen_in": [],
+  "address": "улица Александра Суворова",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.3482,
+  "lon": 76.9535,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "12109748"
+ },
+ {
+  "id": "hh-139227826",
+  "title": "Разнорабочий на кухню",
+  "category": "warehouse",
+  "city": "almaty",
+  "salary_min": 300000,
+  "salary_max": 300000,
+  "salary_period": "month",
+  "schedule": "5/2, 8 часов",
+  "perks": [],
+  "employer": "InTOP",
+  "text": "Обязанности: Очищать посуду от остатков пищи и передавать её на мойку. Доставлять на кухню овощи, фрукты и другие продукты.\nТребования: Ответственность, аккуратность и исполнительность. Готовность к физической работе. Умение работать в коллективе. Специальное образование и профессиональные навыки не требуются.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139227826?tech_source=api",
+  "posted_at": "2026-11-07T17:12:33+00:00",
+  "fingerprint": "92a2ebb023e3fe53",
+  "also_seen_in": [],
+  "address": "бульвар Бухар Жырау, 36",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.2314,
+  "lon": 76.9174,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "1800966"
+ },
+ {
+  "id": "hh-138911514",
+  "title": "Водитель-инкассатор в г. Караганда",
+  "category": "delivery",
+  "city": "karaganda",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [],
+  "employer": "Kaspi.kz",
+  "text": "Обязанности: Нести ответственность за сохранность перевозимых ценностей.\nТребования: Умение объективно оценивать ситуацию и быстро принимать правильные решения. Умение выполнять взятые на себя обязательства. Права категории В,С.",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138911514?tech_source=api",
+  "posted_at": "2026-11-07T17:00:31+00:00",
+  "fingerprint": "64b667e04941b031",
+  "also_seen_in": [
+   "https://hh.kz/vacancy/139004165?tech_source=api",
+   "https://hh.kz/vacancy/139227789?tech_source=api"
+  ],
+  "address": "городской акимат Караганда",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": null
+ },
+ {
+  "id": "hh-139227744",
+  "title": "Стилист-консультант в бутик Ushatava (Алматы)",
+  "category": "retail",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": "2/2, 11 часов, 12 часов",
+  "perks": [],
+  "employer": "Ushatava",
+  "text": "Обязанности: Работа с входящим потоком: продажа изделий модного Дома и обеспечение высокого уровня сервиса. Работа с клиентской базой: - осуществление и поддержание...\nТребования: Опыт работы в роли консультанта в fashion-ритейл от 2-х лет, опыт работы в сегменте middle и выше.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139227744?tech_source=api",
+  "posted_at": "2026-11-07T16:53:31+00:00",
+  "fingerprint": "833e0fa82a8de482",
+  "also_seen_in": [],
+  "address": "улица Кабанбай батыра, 104",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.2497,
+  "lon": 76.9483,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "3108223"
+ },
+ {
+  "id": "hh-138338081",
+  "title": "Менеджер по продажам образовательных услуг",
+  "category": "retail",
+  "city": "almaty",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": null,
+  "perks": [],
+  "employer": "BUSINESS PRO",
+  "text": "Обязанности: Менеджер по онлайн-продажам (High Ticket Sales). Основные направления продуктов — бизнес, финансы, предпринимательство и другие экспертные ниши. Свободный график — с...\nТребования: Преимущества работы. Опыт продажи дорогих инфопродуктов с чеком от 4 000 обязателен. Опыт продаж через диагностические консультации и личные онлайн...",
+  "source": "hh",
+  "source_url": "https://hh.ru/vacancy/138338081?tech_source=api",
+  "posted_at": "2026-11-07T16:13:00+00:00",
+  "fingerprint": "e0390cb71192fc07",
+  "also_seen_in": [
+   "https://hh.ru/vacancy/138338082?tech_source=api",
+   "https://hh.kz/vacancy/138338082?tech_source=api"
+  ],
+  "address": "Киев",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "2077200"
+ },
+ {
   "id": "astana_hh-1855",
   "title": "Продавец, Продавец-консультант",
   "category": "retail",
@@ -69597,39 +69783,6 @@
   "employer_hh": null
  },
  {
-  "id": "hh-138338081",
-  "title": "Менеджер по продажам образовательных услуг",
-  "category": "retail",
-  "city": "almaty",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [],
-  "employer": "BUSINESS PRO",
-  "text": "Обязанности: Менеджер по онлайн-продажам (High Ticket Sales). Основные направления продуктов — бизнес, финансы, предпринимательство и другие экспертные ниши. Свободный график — с...\nТребования: Преимущества работы. Опыт продажи дорогих инфопродуктов с чеком от 4 000 обязателен. Опыт продаж через диагностические консультации и личные онлайн...",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138338081?tech_source=api",
-  "posted_at": "2026-11-04T16:13:00+00:00",
-  "fingerprint": "e0390cb71192fc07",
-  "also_seen_in": [
-   "https://hh.ru/vacancy/138338082?tech_source=api",
-   "https://hh.kz/vacancy/138338082?tech_source=api"
-  ],
-  "address": "Киев",
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": null
- },
- {
   "id": "rabota_semey_official-6811",
   "title": "Посудомойщица, Уборщица",
   "category": "horeca",
@@ -69824,7 +69977,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "11236334"
  },
  {
   "id": "hh-139138724",
@@ -156316,7 +156469,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "4522287"
  },
  {
   "id": "hh-139035305",
@@ -186252,38 +186405,6 @@
   "employer_hh": null
  },
  {
-  "id": "hh-138911514",
-  "title": "Водитель-инкассатор в г. Караганда",
-  "category": "delivery",
-  "city": "karaganda",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": null,
-  "perks": [],
-  "employer": "Kaspi.kz",
-  "text": "Обязанности: Нести ответственность за сохранность перевозимых ценностей.\nТребования: Умение объективно оценивать ситуацию и быстро принимать правильные решения. Умение выполнять взятые на себя обязательства. Права категории В,С.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138911514?tech_source=api",
-  "posted_at": "2026-10-30T09:23:44+00:00",
-  "fingerprint": "64b667e04941b031",
-  "also_seen_in": [
-   "https://hh.kz/vacancy/139004165?tech_source=api"
-  ],
-  "address": "городской акимат Караганда",
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": null
- },
- {
   "id": "hh-139004132",
   "title": "Менеджер по продажам",
   "category": "retail",
@@ -200138,7 +200259,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "10610377"
  },
  {
   "id": "hh-138984297",
@@ -200230,7 +200351,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "13059996"
  },
  {
   "id": "hh-138984207",
@@ -318237,7 +318358,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "6174800"
  },
  {
   "id": "rabota4almaty-5724",
@@ -318419,7 +318540,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "13065885"
  },
  {
   "id": "hh-138144333",
@@ -318539,7 +318660,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "9389571"
  },
  {
   "id": "hh-138491923",
@@ -318569,7 +318690,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "10106941"
  },
  {
   "id": "rabota_semey_official-6689",
@@ -318629,7 +318750,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "13103991"
  },
  {
   "id": "hh-138855971",
@@ -318689,7 +318810,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "3056130"
  },
  {
   "id": "hh-138855957",
@@ -318749,7 +318870,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "6065325"
  },
  {
   "id": "hh-133880031",
@@ -318779,7 +318900,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "11523559"
  },
  {
   "id": "hh-138575271",
@@ -318809,7 +318930,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "12568328"
  },
  {
   "id": "hh-119372526",
@@ -318932,7 +319053,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "12598518"
  },
  {
   "id": "hh-138855733",
@@ -361734,36 +361855,6 @@
   "lat": 43.2043,
   "lon": 76.8908,
   "geo": "hh",
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": null
- },
- {
-  "id": "olx-402230022",
-  "title": "Посудомойщица",
-  "category": "horeca",
-  "city": "shymkent",
-  "salary_min": 180000,
-  "salary_max": 200000,
-  "salary_period": "month",
-  "schedule": "6/1",
-  "perks": [],
-  "employer": null,
-  "text": "Требуется посудомойщица в кофейню\nТребуется посудомойщица в кофейню. График с 09.00 до 08.00, 6/1.. Каратауский район, Нурсат. Оплата еженедельно",
-  "source": "olx",
-  "source_url": "https://www.olx.kz/obyavlenie/rabota/trebuetsya-posudomoyschitsa-v-kofeynyu-IDrdIp0.html",
-  "posted_at": "2026-10-24T16:51:38+00:00",
-  "fingerprint": "db67be74c9ae46fa",
-  "also_seen_in": [],
-  "address": null,
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
   "approx": false,
   "shift_date": null,
   "shift_time": null,

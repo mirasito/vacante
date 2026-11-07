@@ -1735,6 +1735,13 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "aktobe:kssz": {
+  "name": "KSSZ",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "aktobe:logycom": {
   "name": "Logycom",
   "city": "aktobe",
@@ -3382,6 +3389,13 @@
    "website"
   ]
  },
+ "almaty:arcada": {
+  "name": "ARCADA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "almaty:archimedes medical group": {
   "name": "Archimedes Medical Group",
   "city": "almaty",
@@ -4179,6 +4193,20 @@
   "website": "https://bpc.kz/",
   "source": "https://2gis.kz/astana/firm/70000001075928383",
   "avatar_checked_at": "2026-11-05T04:44:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:bi group": {
+  "name": "BI Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00",
+  "instagram": "bi.group.almaty",
+  "website": "http://bi.group/",
+  "source": "https://2gis.kz/almaty/firm/70000001036591131",
+  "avatar_checked_at": "2026-11-07T01:44:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6506,6 +6534,20 @@
   "website": "https://hh.kz/",
   "source": "https://hh.kz/article/15661",
   "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:health food": {
+  "name": "Health Food",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00",
+  "instagram": "health_food.kz",
+  "website": "https://healthfood.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037323186",
+  "avatar_checked_at": "2026-11-07T01:44:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10213,6 +10255,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
+ },
+ "almaty:skyhill": {
+  "name": "SkyHill",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
  },
  "almaty:small": {
   "name": "SMALL",
@@ -14535,6 +14584,13 @@
   "instagram": "kazmaktrade",
   "source": "https://2gis.kz/almaty/firm/70000001055893664"
  },
+ "almaty:казмонтаж строй лтд": {
+  "name": "КазМонтаж Строй ЛТД",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "almaty:казоборонсервис": {
   "name": "КАЗОБОРОНСЕРВИС",
   "city": "almaty",
@@ -18236,6 +18292,13 @@
   "avatar": "4c6e33207d1c0ba2.jpg",
   "avatar_source": "website"
  },
+ "almaty:частное домохозяйство": {
+  "name": "частное домохозяйство",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "almaty:чековая лента": {
   "name": "Чековая лента",
   "city": "almaty",
@@ -18803,6 +18866,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "astana:ai aru group": {
+  "name": "Ai-Aru Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
  },
  "astana:ai pro school": {
   "name": "AI Pro School",
@@ -22768,7 +22838,7 @@
   "instagram": "qadam.visa",
   "website": "https://qadamvisagroup.com/",
   "source": "https://2gis.kz/astana/firm/70000001115148580",
-  "avatar_checked_at": "2026-10-31T01:43:11+00:00",
+  "avatar_checked_at": "2026-11-07T01:44:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25050,6 +25120,13 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "astana:вайпоинг": {
+  "name": "Вайпоинг",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "astana:валиева": {
   "name": "Валиева",
   "city": "astana",
@@ -26726,6 +26803,13 @@
   "avatar": "2567f4c8ffcbc502.jpg",
   "avatar_source": "telegram"
  },
+ "astana:маркет инвест а": {
+  "name": "МАРКЕТ ИНВЕСТ - А",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "astana:мархабат": {
   "name": "Мархабат",
   "city": "astana",
@@ -27414,6 +27498,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "astana:производственный цех": {
+  "name": "Производственный цех",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
  },
  "astana:промышленный цех": {
   "name": "Промышленный цех",
@@ -32240,6 +32331,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "karaganda:торговая компания": {
+  "name": "Торговая Компания",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "karaganda:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
   "city": "karaganda",
@@ -32284,6 +32382,13 @@
   ],
   "avatar": "f68041a8bce3750e.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:успех лтд нс": {
+  "name": "Успех ЛТД НС",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
  },
  "karaganda:феталиев ю а": {
   "name": "ФЕТАЛИЕВ Ю.А.",
@@ -33264,6 +33369,13 @@
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/kostanaj/firm/70000001035190134"
  },
+ "kostanay:glovis kazakhstan гловис казахстан": {
+  "name": "GLOVIS KAZAKHSTAN (ГЛОВИС КАЗАХСТАН)",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "kostanay:goldman astana": {
   "name": "Goldman Astana",
   "city": "kostanay",
@@ -33651,6 +33763,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "kostanay:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00",
+  "instagram": "_gloriajeans_",
+  "source": "https://2gis.kz/kostanaj/firm/70000001038617126"
  },
  "kostanay:гостиница медео": {
   "name": "Гостиница Медео",
@@ -36180,6 +36301,13 @@
    "website"
   ]
  },
+ "petropavlovsk:масақ экспорт": {
+  "name": "МАСАҚ ЭКСПОРТ",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "petropavlovsk:масло дел": {
   "name": "Масло-Дел",
   "city": "petropavlovsk",
@@ -36542,6 +36670,15 @@
   "checked_at": "2026-11-05T17:43:42+00:00",
   "instagram": "supermarket_adal_semey",
   "source": "https://2gis.kz/semej/firm/70000001052444174"
+ },
+ "semey:alina group": {
+  "name": "Alina Group",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00",
+  "instagram": "alinagroup.careers",
+  "source": "https://2gis.kz/semej/firm/70000001053709076"
  },
  "semey:almawine": {
   "name": "ALMAWINE",
@@ -40939,6 +41076,13 @@
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
  },
+ "ust-kamenogorsk:baron food": {
+  "name": "Baron Food",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "ust-kamenogorsk:beeline тм": {
   "name": "Beeline, ТМ",
   "city": "ust-kamenogorsk",
@@ -42253,6 +42397,13 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:согринская тэц": {
+  "name": "Согринская ТЭЦ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00"
+ },
  "ust-kamenogorsk:спортмастер казахстан": {
   "name": "Спортмастер Казахстан",
   "city": "ust-kamenogorsk",
@@ -42507,6 +42658,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:эйкос": {
+  "name": "ЭЙКОС",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T01:44:11+00:00",
+  "instagram": "aikos.kz",
+  "website": "http://aikos.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721350075",
+  "avatar_checked_at": "2026-11-07T01:44:12+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f7165706bd938f56.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",

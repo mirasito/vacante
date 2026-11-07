@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T19:56:28+00:00",
+ "updated_at": "2026-11-07T20:56:13+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -40705,6 +40705,55 @@
    "at": "2026-11-07T19:56:28+00:00",
    "fields": {
     "schedule": "5/2, 11:30–00:00"
+   }
+  },
+  "tengiz_vahta-951": {
+   "verdict": "approve",
+   "at": "2026-11-07T20:56:13+00:00",
+   "fields": {
+    "title": "Водитель автомобиля 5-го разряда",
+    "employer": "Даларо Оверсиз Лимитед",
+    "schedule": "вахтовый метод",
+    "address": "Жылыойский район, Тенгиз, мкр. Каратон",
+    "perks": []
+   }
+  },
+  "tengiz_vahta-948": {
+   "verdict": "approve",
+   "at": "2026-11-07T20:56:13+00:00",
+   "fields": {
+    "title": "Уборщик промышленных помещений",
+    "employer": "North Caspian Development Partners",
+    "schedule": "вахтовый метод",
+    "address": "мкр. Сарыкамыс, ул. Алтыбакан, 33"
+   }
+  },
+  "tengiz_vahta-947": {
+   "verdict": "approve",
+   "at": "2026-11-07T20:56:13+00:00",
+   "fields": {
+    "employer": "Green Light Ltd",
+    "schedule": "вахтовый метод",
+    "address": "мкр. Мирас, ул. Турара Рыскулова, 8"
+   }
+  },
+  "tengiz_vahta-946": {
+   "verdict": "approve",
+   "at": "2026-11-07T20:56:13+00:00",
+   "fields": {
+    "title": "Подсобный рабочий",
+    "employer": "Жемтранс",
+    "schedule": "вахтовый метод",
+    "address": "Жылыойский район, ул. Айткула Жолдыбаева, 313"
+   }
+  },
+  "tengiz_vahta-945": {
+   "verdict": "approve",
+   "at": "2026-11-07T20:56:13+00:00",
+   "fields": {
+    "title": "Монтажник технологических трубопроводов",
+    "schedule": "вахтовый метод",
+    "address": "ул. Марата Темирханова, 6А"
    }
   }
  }

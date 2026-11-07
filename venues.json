@@ -106,6 +106,15 @@
   "instagram": "autostock_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001098470579"
  },
+ "aktau:avatar arena": {
+  "name": "Avatar arena",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00",
+  "instagram": "avatararena_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001104201148"
+ },
  "aktau:batyr": {
   "name": "Batyr",
   "city": "aktau",
@@ -2884,6 +2893,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
+ },
+ "almaty:alamonte": {
+  "name": "Alamonte",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "almaty:alan solutions": {
   "name": "Alan Solutions",
@@ -9703,6 +9719,13 @@
   "v": 3,
   "checked_at": "2026-10-31T16:43:38+00:00"
  },
+ "almaty:qdo": {
+  "name": "QDO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
  "almaty:qlife": {
   "name": "Qlife",
   "city": "almaty",
@@ -10467,6 +10490,15 @@
    "website"
   ]
  },
+ "almaty:so fresh": {
+  "name": "So fresh",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00",
+  "instagram": "sofresh.n.soclean_",
+  "source": "https://2gis.kz/almaty/firm/70000001094394430"
+ },
  "almaty:socar": {
   "name": "SOCAR",
   "city": "almaty",
@@ -10680,6 +10712,15 @@
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
  },
+ "almaty:stilalmaty": {
+  "name": "Stilalmaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00",
+  "instagram": "stilalmaty.kz",
+  "source": "https://www.instagram.com/stilalmaty.kz/"
+ },
  "almaty:stom dautovy": {
   "name": "Stom-Dautovy",
   "city": "almaty",
@@ -10845,6 +10886,13 @@
   "checked_at": "2026-10-29T14:46:23+00:00",
   "instagram": "taurus_grass_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001102013941"
+ },
+ "almaty:tawook almaty": {
+  "name": "Tawook Almaty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "almaty:tea house ти хаус": {
   "name": "Tea House (Ти Хаус)",
@@ -12046,6 +12094,13 @@
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
  },
+ "almaty:адрес": {
+  "name": "Адрес",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
  "almaty:адф логистик": {
   "name": "АДФ-ЛОГИСТИК",
   "city": "almaty",
@@ -12684,6 +12739,13 @@
   "avatar": "e83596376854b6f3.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:анна": {
+  "name": "АННА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
  "almaty:анта торговая компания алматы": {
   "name": "Анта, торговая компания Алматы",
   "city": "almaty",
@@ -13046,6 +13108,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T09:43:33+00:00"
+ },
+ "almaty:бакыткуль": {
+  "name": "Бакыткуль",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "almaty:банк bank rbk": {
   "name": "Банк Bank RBK",
@@ -13934,6 +14003,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "almaty:дмитрий": {
+  "name": "Дмитрий",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "almaty:днк тв dnk tv": {
   "name": "ДНК-ТВ/DNK-TV",
@@ -17118,6 +17194,13 @@
   ],
   "avatar": "460e73c2b79668ae.jpg",
   "avatar_source": "website"
+ },
+ "almaty:сембина а": {
+  "name": "ИП Сембина А",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "almaty:семь морей алматы": {
   "name": "Семь морей-Алматы",
@@ -24104,6 +24187,13 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "astana:tronia": {
+  "name": "Tronia",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
  "astana:true trade": {
   "name": "True Trade",
   "city": "astana",
@@ -26924,6 +27014,13 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "astana:лигостаева камила геннадьевна": {
+  "name": "ЛИГОСТАЕВА КАМИЛА ГЕННАДЬЕВНА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
  "astana:лихенок": {
   "name": "Лихенок",
   "city": "astana",
@@ -27013,6 +27110,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
+ },
+ "astana:малика": {
+  "name": "Малика",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
+ "astana:мамраева а б": {
+  "name": "МАМРАЕВА А. Б",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "astana:мамыр": {
   "name": "Мамыр",
@@ -27883,6 +27994,13 @@
   "checked_at": "2026-10-29T10:46:00+00:00",
   "instagram": "viaggio__shop",
   "source": "https://2gis.kz/astana/firm/70000001037590582"
+ },
+ "astana:рахметом": {
+  "name": "Рахметом",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "astana:рационал азия": {
   "name": "РАЦИОНАЛ Азия",
@@ -29392,6 +29510,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
+ },
+ "astana:шапагат": {
+  "name": "Шапагат",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "astana:шате м плюс": {
   "name": "шате м плюс",
@@ -31484,6 +31609,13 @@
   ],
   "avatar": "0597c25642753ac4.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:proцветай": {
+  "name": "PROЦВЕТАЙ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "karaganda:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
@@ -39429,6 +39561,13 @@
    "website"
   ]
  },
+ "shymkent:коллекторское агентство эксперт": {
+  "name": "Коллекторское агентство Эксперт",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
+ },
  "shymkent:компания шин line": {
   "name": "Компания Шин Line",
   "city": "shymkent",
@@ -41374,6 +41513,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "uralsk:руслан": {
+  "name": "РУСЛАН",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T05:43:00+00:00"
  },
  "uralsk:самига": {
   "name": "САМИГА",

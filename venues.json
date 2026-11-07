@@ -346,6 +346,13 @@
   "v": 3,
   "checked_at": "2026-11-07T06:43:49+00:00"
  },
+ "aktau:intersound интерсаунд": {
+  "name": "INTERSOUND (ИНТЕРСАУНД)",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
+ },
  "aktau:jamesburger 29мкр 229зд": {
   "name": "Jamesburger 29мкр 229зд",
   "city": "aktau",
@@ -1460,6 +1467,22 @@
   "checked_at": "2026-11-03T00:43:42+00:00",
   "instagram": "orken_sadik_shkola",
   "source": "https://2gis.kz/aktau/firm/70000001051301773"
+ },
+ "aktobe:1с франчайзи alterra утениязов с с": {
+  "name": "1С:Франчайзи ALTERRA (Утениязов С.С.)",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "instagram": "alterra_franchaizing_1c",
+  "website": "https://alterra.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001046351211",
+  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "de14851d27a42281.jpg",
+  "avatar_source": "website"
  },
  "aktobe:220 volt ип ашимова м м": {
   "name": "220 VOLT (ИП Ашимова М.М.)",
@@ -6320,6 +6343,13 @@
    "website"
   ]
  },
+ "almaty:garage 56": {
+  "name": "Garage 56",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
+ },
  "almaty:gauf group": {
   "name": "Gauf Group",
   "city": "almaty",
@@ -6671,6 +6701,15 @@
   ],
   "avatar": "dd9ba8f9ad0b7c2d.jpg",
   "avatar_source": "website"
+ },
+ "almaty:grunge space ип байсбаева лн": {
+  "name": "Grunge space (ИП Байсбаева ЛН)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "instagram": "grunge.spc",
+  "source": "https://2gis.kz/almaty/firm/70000001065282953"
  },
  "almaty:gt oil service": {
   "name": "GT oil service",
@@ -7196,6 +7235,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "almaty:intersound интерсаунд": {
+  "name": "INTERSOUND (ИНТЕРСАУНД)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
  },
  "almaty:intimno": {
   "name": "INTIMNO",
@@ -8948,6 +8994,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "almaty:nar": {
+  "name": "NAR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
+ },
  "almaty:nauryz": {
   "name": "Nauryz",
   "city": "almaty",
@@ -10277,6 +10330,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:rossko": {
+  "name": "ROSSKO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "website": "https://alm.rossko.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001069584939",
+  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:rotoprint": {
   "name": "ROTOPRINT",
@@ -14020,6 +14086,13 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "almaty:гкп на пвх талгарская центральная районная больница гу управление здравоохранения алматинской области": {
+  "name": "ГКП на ПВХ Талгарская центральная районная больница ГУ Управление здравоохранения Алматинской области",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
+ },
  "almaty:гкп на пхв центр мониторинга и оперативного реагирования г алматы упр по мобилизационной подготовке территориальной и гражданской обороне г алматы": {
   "name": "ГКП на ПХВ Центр мониторинга и оперативного реагирования г. Алматы Упр по мобилизационной подготовке, территориальной и гражданской обороне г.Алматы",
   "city": "almaty",
@@ -15467,6 +15540,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:киплукинг дистрибьюшн": {
+  "name": "Киплукинг дистрибьюшн",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "website": "https://goldapple.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060262873",
+  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "79068cc070db6a39.jpg",
+  "avatar_source": "website"
  },
  "almaty:классик коммерц": {
   "name": "КЛАССИК КОММЕРЦ",
@@ -21522,6 +21610,13 @@
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
  },
+ "astana:green mall": {
+  "name": "Green Mall",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
+ },
  "astana:gresso kz": {
   "name": "GRESSO KZ",
   "city": "astana",
@@ -22832,6 +22927,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:meyram company": {
+  "name": "MEYRAM COMPANY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
  },
  "astana:meyram group distribution": {
   "name": "Meyram group distribution",
@@ -30158,6 +30260,22 @@
   "instagram": "neomarketskz",
   "source": "https://www.instagram.com/neomarketskz/"
  },
+ "astana:частная компания pingwin karaoke ltd": {
+  "name": "Частная компания Pingwin Karaoke Ltd.",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "instagram": "pingwin_premium.karaoke",
+  "website": "https://pingwin.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001103264628",
+  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "13fa226c03fd5470.jpg",
+  "avatar_source": "website"
+ },
  "astana:частная компания relitalk ltd": {
   "name": "Частная компания Relitalk Ltd.",
   "city": "astana",
@@ -31163,6 +31281,15 @@
    "website"
   ]
  },
+ "atyrau:union space tm тоо brand hub group": {
+  "name": "Union Space`TM (ТОО Brand Hub Group)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "instagram": "colins.kazakhstan",
+  "source": "https://2gis.kz/atyrau/firm/70000001086771663"
+ },
  "atyrau:v i p clinic": {
   "name": "V.I.P. CLINIC",
   "city": "atyrau",
@@ -31747,7 +31874,7 @@
   "checked_at": "2026-10-31T12:44:38+00:00",
   "website": "http://en.sepco1.com/",
   "source": "https://2gis.kz/almaty/firm/70000001089659724",
-  "avatar_checked_at": "2026-10-31T12:44:38+00:00",
+  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33853,6 +33980,13 @@
   "avatar": "e84331c5c8225df3.jpg",
   "avatar_source": "website"
  },
+ "karaganda:энофэкс": {
+  "name": "ЭНОФЭКС",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
+ },
  "kokshetau:apex route": {
   "name": "Apex Route",
   "city": "kokshetau",
@@ -35335,6 +35469,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T06:44:20+00:00"
+ },
+ "kostanay:ип эфес казахстан": {
+  "name": "АО ИП Эфес Казахстан",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
  },
  "kostanay:каmlitkz": {
   "name": "КаmLitKZ",
@@ -36901,6 +37042,20 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "pavlodar:максимальный размах corporation": {
+  "name": "Максимальный размах corporation",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "instagram": "maxrazmah_official",
+  "website": "https://maxrazmah.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001089189059",
+  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:микs пв": {
   "name": "МИКS-ПВ",
   "city": "pavlodar",
@@ -38426,6 +38581,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T21:44:54+00:00"
+ },
+ "semey:mss": {
+  "name": "MSS",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
  },
  "semey:nango": {
   "name": "NANGO",
@@ -40426,6 +40588,15 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "shymkent:есть сыр сыроварня": {
+  "name": "“Есть сыр” сыроварня",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00",
+  "instagram": "est_syr",
+  "source": "https://2gis.kz/shymkent/firm/70000001052809988"
+ },
  "shymkent:жұманова ақерке": {
   "name": "Жұманова Ақерке",
   "city": "shymkent",
@@ -41283,6 +41454,13 @@
   ],
   "avatar": "ad006f400d8de145.jpg",
   "avatar_source": "website"
+ },
+ "taraz:art soffio": {
+  "name": "ART SOFFIO",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
  },
  "taraz:aster автомобили": {
   "name": "ASTER Автомобили",
@@ -42379,6 +42557,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
+ },
+ "uralsk:бег дос": {
+  "name": "БЕГ ДОС",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-07T13:43:51+00:00"
  },
  "uralsk:бейбарс газ": {
   "name": "БЕЙБАРС ГАЗ",

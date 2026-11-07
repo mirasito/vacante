@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T10:57:04+00:00",
+ "updated_at": "2026-11-07T11:56:40+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -39385,6 +39385,227 @@
    "fields": {
     "employer": "«Блин & Coffee»",
     "schedule": "17:00–02:00"
+   }
+  },
+  "astana_job_vakansii-130314": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Повар-универсал",
+    "employer": "Караоке «Seven»",
+    "salary_min": 17000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "17:00–04:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-31349": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "schedule": "6/1, 10:00–20:00"
+   }
+  },
+  "astana_job_vakansii-130313": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2 дня в неделю, 10:00–21:00",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-139225765": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин мужской одежды",
+    "schedule": "6/1, 5/2 или 2/2",
+    "address": "ул. Петрова, 24"
+   }
+  },
+  "rabota_astanakz-31348": {
+   "verdict": "reject",
+   "at": "2026-11-07T11:56:40+00:00",
+   "reason": "Таксопарк: похоже на аренду авто, оплата за 10 дней, условия неясны"
+  },
+  "astana_hh-1854": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Лепщик пельменей и мантов"
+   }
+  },
+  "hh-139019325": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "address": "пр. Кабанбай Батыра, 53к3А"
+   }
+  },
+  "olx-402687863": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "employer": "Fenix Car Wash",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_period": null,
+    "perks": [
+     "Жильё"
+    ]
+   }
+  },
+  "astana_job_vakansii-130184": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "schedule": "10:00–20:00"
+   }
+  },
+  "zhumys_astana_kz-16916": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "schedule": "2–3 дня в неделю по 8 часов"
+   }
+  },
+  "hh-139182193": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "address": "ул. Жошы хана, 1/1"
+   }
+  },
+  "hh-139226062": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Швея"
+   }
+  },
+  "hh-139226029": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "schedule": "1/2, подработка",
+    "address": "пр. Рыскулова, 232/2"
+   }
+  },
+  "rabota4almaty-6291": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "schedule": "5/2, 09:00–18:00",
+    "address": "ул. Емцова, 9А"
+   }
+  },
+  "hh-139225629": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Повар горячего цеха",
+    "address": "ул. Кабанбай батыра, 85"
+   }
+  },
+  "rabota4almaty-6293": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "employer": null
+   }
+  },
+  "rabota4almaty-6292": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Продавец автозапчастей",
+    "employer": null,
+    "schedule": "09:00–18:00, сб до 16:00",
+    "address": "пр. Рыскулова, 65/1",
+    "perks": [
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota4almaty-6290": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Мастер по ремонту автомобилей",
+    "employer": null,
+    "address": "пер. Жангельдина, 4"
+   }
+  },
+  "rabota4almaty-6221": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Оператор присадочного станка",
+    "employer": "Balym Group",
+    "address": "ул. Толе би, 301/4"
+   }
+  },
+  "hh-137318887": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Оператор колл-центра"
+   }
+  },
+  "almaty_rabota_work-31827": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "title": "Курьер на автомобиле компании",
+    "employer": "Expert Logistic Kazakhstan",
+    "perks": []
+   }
+  },
+  "rabota4almaty-6219": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "address": "ул. Кармысова, 64"
+   }
+  },
+  "rabota4almaty-6220": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "employer": "Balym Group",
+    "address": "ул. Толе би, 301/4"
+   }
+  },
+  "rabotaaktau-142340": {
+   "verdict": "reject",
+   "at": "2026-11-07T11:56:40+00:00",
+   "reason": "Сомнительно: сауна с массажем, без названия и адреса"
+  },
+  "rabotaaktau-142341": {
+   "verdict": "reject",
+   "at": "2026-11-07T11:56:40+00:00",
+   "reason": "Мало сведений: зарплата указана для оператора, у кладовщика нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142339": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "employer": "Супермаркет «Рахат»",
+    "address": "станция Мангышлак (Сары Рахат)"
+   }
+  },
+  "rabota_semey_official-6837": {
+   "verdict": "approve",
+   "at": "2026-11-07T11:56:40+00:00",
+   "fields": {
+    "schedule": "2/2, 13:00–02:00",
+    "address": "р-н Апрель, Мегастрой"
    }
   }
  }

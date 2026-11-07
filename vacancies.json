@@ -1,5 +1,37 @@
 [
  {
+  "id": "hh-139228071",
+  "title": "Оператор call-центра",
+  "category": "callcenter",
+  "city": "almaty",
+  "salary_min": 300000,
+  "salary_max": null,
+  "salary_period": "month",
+  "schedule": "2/2, 8 часов",
+  "perks": [
+   "Без опыта"
+  ],
+  "employer": "Шынай Групп",
+  "text": "Обязанности: Работать с потоком входящих заявок (теплые и горячие). - Общаться с клиентами по телефону и в WhatsApp. - Знакомить людей с услугами...\nТребования: Ты легко находишь общий язык с людьми. - Ответственно относишься к своим задачам. - Опыт не обязателен — мы готовы обучать!",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139228071?tech_source=api",
+  "posted_at": "2026-11-07T18:33:24+00:00",
+  "fingerprint": "c3021f8004bdcf40",
+  "also_seen_in": [],
+  "address": "проспект Назарбаева, 235",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 43.2305,
+  "lon": 76.9486,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "12338356"
+ },
+ {
   "id": "hh-138286943",
   "title": "Сборщик заказов (Кульджинский тракт)",
   "category": "warehouse",
@@ -199025,7 +199057,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "13115444"
  },
  {
   "id": "rabota_v_shymkente-1450",
@@ -317561,7 +317593,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "10778667"
  },
  {
   "id": "hh-138856815",
@@ -317687,7 +317719,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "12053562"
  },
  {
   "id": "almaty_rabota01-25973",
@@ -317752,7 +317784,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "12091260"
  },
  {
   "id": "hh-138279864",

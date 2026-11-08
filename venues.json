@@ -1924,6 +1924,13 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktobe:lpp kazakhstan лпп казахстан": {
+  "name": "LPP Kazakhstan (ЛПП Казахстан)",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
+ },
  "aktobe:magic aktobe": {
   "name": "MAGIC AKTOBE",
   "city": "aktobe",
@@ -2948,6 +2955,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
+ },
+ "almaty:acvee market": {
+  "name": "Acvee market",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "instagram": "acvee.market",
+  "website": "https://acveemarket.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001079802511",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5db7c4a1f137a728.jpg",
+  "avatar_source": "website"
  },
  "almaty:adal medpharm": {
   "name": "Adal MedPharm",
@@ -6367,6 +6390,19 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "almaty:exsolcom": {
+  "name": "ExSolCom",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "website": "https://www.exsolcom.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001266150",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:eywa terrace": {
   "name": "EYWA TERRACE",
   "city": "almaty",
@@ -9003,6 +9039,15 @@
   "instagram": "ls.concept.kz",
   "source": "https://2gis.kz/almaty/firm/70000001068920460"
  },
+ "almaty:ls liliya_lash_studio": {
+  "name": "LS liliya_lash_studio",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "instagram": "liliya_lash_studio",
+  "source": "https://www.instagram.com/liliya_lash_studio/"
+ },
  "almaty:ltc binst": {
   "name": "LTC-BINST",
   "city": "almaty",
@@ -9053,6 +9098,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:m&k plus": {
+  "name": "M&K plus",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "almaty:mad almaty": {
   "name": "MAD Almaty",
@@ -13206,6 +13258,15 @@
    "website"
   ]
  },
+ "almaty:zor tandyr": {
+  "name": "ZOR TANDYR",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "instagram": "zor_tandyr",
+  "source": "https://2gis.kz/almaty/firm/70000001100101261"
+ },
  "almaty:zr златарь": {
   "name": "ZR ЗЛАТАРЬ",
   "city": "almaty",
@@ -13408,6 +13469,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
+ },
+ "almaty:автостанция": {
+  "name": "Автостанция",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "almaty:автостарт кз": {
   "name": "Автостарт КЗ",
@@ -14430,6 +14498,13 @@
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
  },
+ "almaty:асхат": {
+  "name": "Асхат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
+ },
  "almaty:ателье": {
   "name": "Ателье",
   "city": "almaty",
@@ -14452,6 +14527,15 @@
   ],
   "avatar": "0663b9dded815a21.jpg",
   "avatar_source": "website"
+ },
+ "almaty:атлелье мебели маэстро": {
+  "name": "Атлелье мебели Маэстро",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "instagram": "mobilimaestro.kz",
+  "source": "https://2gis.kz/almaty/firm/9429940001684260"
  },
  "almaty:атри": {
   "name": "АТРИ",
@@ -15604,6 +15688,20 @@
   "v": 3,
   "checked_at": "2026-11-04T11:44:39+00:00"
  },
+ "almaty:достык синема": {
+  "name": "Достык Синема",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "instagram": "cinemax_kz",
+  "website": "http://cdm.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001617994",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:дудар": {
   "name": "Дудар",
   "city": "almaty",
@@ -16434,6 +16532,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:карада про": {
+  "name": "КАРАДА ПРО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "almaty:кари кз": {
   "name": "КАРИ КЗ",
@@ -18625,6 +18730,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:раф": {
+  "name": "Раф",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "almaty:рахымжанов": {
   "name": "ИП Рахымжанов",
@@ -26544,7 +26656,7 @@
   "checked_at": "2026-11-01T08:42:53+00:00",
   "website": "https://tele2.kz/",
   "source": "https://tele2.kz/about",
-  "avatar_checked_at": "2026-11-01T08:42:53+00:00",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27194,6 +27306,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "astana:абдрахманов": {
+  "name": "Абдрахманов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "astana:абдуллина р и": {
   "name": "Абдуллина Р.И.",
@@ -31040,6 +31159,13 @@
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
  },
+ "astana:сарыарка": {
+  "name": "Сарыарка",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
+ },
  "astana:сауна": {
   "name": "Сауна",
   "city": "astana",
@@ -31830,6 +31956,19 @@
   ],
   "avatar": "5df3670cc3055e35.jpg",
   "avatar_source": "website"
+ },
+ "astana:торговый дом кейэспи стил казахстан": {
+  "name": "ТОРГОВЫЙ ДОМ КЕЙЭСПИ СТИЛ-КАЗАХСТАН",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "website": "https://www.kspsteel.kz/ru/",
+  "source": "https://2gis.kz/astana/firm/70000001056000767",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:торговый дом лд": {
   "name": "ТОРГОВЫЙ ДОМ ЛД",
@@ -32875,6 +33014,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "astana:әдемау дошкольная организация образования академия": {
+  "name": "ӘДЕМАУ ДОШКОЛЬНАЯ ОРГАНИЗАЦИЯ ОБРАЗОВАНИЯ АКАДЕМИЯ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "astana:әлем плаза": {
   "name": "Әлем Плаза",
@@ -35076,6 +35222,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "karaganda:welldis": {
+  "name": "WellDis",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "karaganda:westen 2023": {
   "name": "WESTEN-2023",
@@ -39442,7 +39595,7 @@
   "checked_at": "2026-11-01T08:42:53+00:00",
   "website": "https://abc-steel.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018642820",
-  "avatar_checked_at": "2026-11-01T08:42:53+00:00",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41975,6 +42128,20 @@
   "v": 3,
   "checked_at": "2026-11-04T18:44:42+00:00"
  },
+ "semey:семаз": {
+  "name": "СемАз",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "instagram": "semaz.kz_01",
+  "website": "https://semaz.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001052322585",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "semey:семей": {
   "name": "Семей",
   "city": "semey",
@@ -42434,6 +42601,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:cemex engineering": {
+  "name": "CemEX Engineering",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00",
+  "website": "https://cemex.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001561715",
+  "avatar_checked_at": "2026-11-08T08:43:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "be89654e8df6d708.jpg",
+  "avatar_source": "website"
  },
  "shymkent:cinema operation": {
   "name": "Cinema operation",
@@ -42898,6 +43080,13 @@
   ],
   "avatar": "987d4183004a9027.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:omir shymkent 2025": {
+  "name": "OMIR SHYMKENT 2025",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T08:43:15+00:00"
  },
  "shymkent:optimus kz": {
   "name": "Optimus kz",

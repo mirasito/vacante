@@ -276927,7 +276927,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "9416819"
  },
  {
   "id": "hh-138897779",
@@ -359193,35 +359193,5 @@
   "shift_time": null,
   "need": null,
   "employer_hh": "11523559"
- },
- {
-  "id": "hh-138816606",
-  "title": "Хостес",
-  "category": "horeca",
-  "city": "astana",
-  "salary_min": 15000,
-  "salary_max": 15000,
-  "salary_period": "day",
-  "schedule": null,
-  "perks": [],
-  "employer": "Data Center Astana",
-  "text": "Обязанности: Хостес в грузинский ресторан. Чувство такта, сервиса и атмосферы гостеприимства. Встреча и сопровождение гостей. Создание тёплой, радушной атмосферы.\nТребования: Опрятный, ухоженный внешний вид. Опыт работы хостес обязателен. Грамотная речь, доброжелательность, улыбчивость. Умение легко находить контакт с гостями и персоналом.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/138816606?tech_source=api",
-  "posted_at": "2026-10-25T22:50:09+00:00",
-  "fingerprint": "89ad038a3d237932",
-  "also_seen_in": [],
-  "address": "просп. Женис 5, Астана 010000",
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": 51.1613,
-  "lon": 71.4146,
-  "geo": "hh",
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": null
  }
 ]

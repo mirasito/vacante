@@ -3736,6 +3736,13 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "almaty:amirkhan": {
+  "name": "AMIRKHAN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "almaty:anajer": {
   "name": "ANAJER",
   "city": "almaty",
@@ -8700,6 +8707,13 @@
   ],
   "avatar": "062bb53c98057cbc.jpg",
   "avatar_source": "website"
+ },
+ "almaty:kaztranscargoterminal": {
+  "name": "KazTransCargoTerminal",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
  },
  "almaty:kc интернейшнл": {
   "name": "KC Интернейшнл",
@@ -13749,6 +13763,20 @@
   "v": 3,
   "checked_at": "2026-11-06T17:44:18+00:00"
  },
+ "almaty:yellow clinic": {
+  "name": "Yellow clinic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "yellowclinic.kz",
+  "website": "https://taplink.cc/yellowcosmetology",
+  "source": "https://2gis.kz/almaty/firm/70000001040000842",
+  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:yes exchange": {
   "name": "YES EXCHANGE",
   "city": "almaty",
@@ -18767,6 +18795,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "almaty:мир чай": {
+  "name": "МИР. ЧАЙ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "almaty:мирахметов": {
   "name": "Мирахметов",
   "city": "almaty",
@@ -21766,6 +21801,13 @@
   "v": 3,
   "checked_at": "2026-11-07T01:44:11+00:00"
  },
+ "almaty:частный судебный исполнитель": {
+  "name": "Частный судебный исполнитель",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "almaty:чековая лента": {
   "name": "Чековая лента",
   "city": "almaty",
@@ -24723,6 +24765,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T14:43:58+00:00"
+ },
+ "astana:h2o sports club ozen fitness": {
+  "name": "H2O Sports Club (Ozen fitness)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "ozen.fitness",
+  "website": "http://ozenfitness.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001091825454",
+  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "873b7f0ff3d5ec77.jpg",
+  "avatar_source": "website"
  },
  "astana:hammer legend хамер лэджэнд": {
   "name": "Hammer Legend (Хамер Лэджэнд)",
@@ -29586,6 +29644,13 @@
   "instagram": "bauyrdaq_astana",
   "source": "https://2gis.kz/astana/firm/70000001068898146"
  },
+ "astana:беварт инжиниринг": {
+  "name": "Беварт Инжиниринг",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "astana:безалкогольный ресторан": {
   "name": "Безалкогольный ресторан",
   "city": "astana",
@@ -30233,6 +30298,13 @@
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
  },
+ "astana:диана": {
+  "name": "Диана",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "astana:дин ва кэс": {
   "name": "ДиН ВА-КЭС",
   "city": "astana",
@@ -30293,6 +30365,20 @@
   "checked_at": "2026-10-30T00:43:00+00:00",
   "instagram": "doner_na_abaya_astanaa",
   "source": "https://2gis.kz/astana/firm/70000001094949378"
+ },
+ "astana:достык синема": {
+  "name": "Достык Синема",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "eurasia_cinema7",
+  "website": "http://eurasia-cinema.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001028256423",
+  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:дошкольное воспитание и обучение": {
   "name": "Дошкольное воспитание и обучение",
@@ -30553,6 +30639,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "astana:жекпе жек": {
+  "name": "Жекпе-Жек",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
  },
  "astana:жемчужина": {
   "name": "Жемчужина",
@@ -31022,6 +31115,13 @@
   ],
   "avatar": "1d6b15fcaa547248.jpg",
   "avatar_source": "website"
+ },
+ "astana:квайти": {
+  "name": "Квайти",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
  },
  "astana:кгу центр социального обслуживания жәрдем акимата города астаны": {
   "name": "КГУ Центр социального обслуживания Жәрдем акимата города Астаны",
@@ -37950,6 +38050,15 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "karaganda:орматек": {
+  "name": "Орматек",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "ormatek_kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001094124124"
+ },
  "karaganda:пакт": {
   "name": "ПАКТ",
   "city": "karaganda",
@@ -38023,6 +38132,13 @@
   ],
   "avatar": "8bf623f06751b617.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:рекрутинг 360 ип ли ольга юриевна": {
+  "name": "Рекрутинг 360 (ИП Ли Ольга Юриевна)",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
  },
  "karaganda:ресторан мой тбилиси ип бурбуташвили н н": {
   "name": "Ресторан Мой Тбилиси (ИП Бурбуташвили Н.Н.)",
@@ -40637,6 +40753,13 @@
   ],
   "avatar": "d1896a947e34597d.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:хамидулин а р": {
+  "name": "ХАМИДУЛИН А.Р",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
  },
  "kostanay:центр диагностики и ремонта техэнерго": {
   "name": "Центр диагностики и ремонта Техэнерго",
@@ -45266,6 +45389,13 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "shymkent:rg brands kazakhstan": {
+  "name": "RG Brands Kazakhstan",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "shymkent:rossko": {
   "name": "ROSSKO",
   "city": "shymkent",
@@ -46133,6 +46263,15 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "shymkent:омыртқа орталығы 1": {
+  "name": "Омыртқа орталығы #1",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "omyrtqa_ortalygy1",
+  "source": "https://2gis.kz/shymkent/firm/70000001033685551"
+ },
  "shymkent:ордабасы кус": {
   "name": "Ордабасы Кус",
   "city": "shymkent",
@@ -46153,6 +46292,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T04:43:59+00:00"
+ },
+ "shymkent:примус корпорация": {
+  "name": "Примус Корпорация",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "primus.corporation",
+  "source": "https://2gis.kz/shymkent/firm/70000001094440136"
  },
  "shymkent:пфк ордабасы": {
   "name": "ПФК Ордабасы",
@@ -46447,6 +46595,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
+ },
+ "shymkent:эрсиджи": {
+  "name": "ЭРСИДЖИ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
  },
  "shymkent:юникс": {
   "name": "Юникс",
@@ -46979,6 +47134,13 @@
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
  },
+ "taraz:pik pik boom": {
+  "name": "Pik Pik Boom",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00"
+ },
  "taraz:ritm day": {
   "name": "Ritm Day",
   "city": "taraz",
@@ -46994,6 +47156,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
+ },
+ "taraz:tezber company": {
+  "name": "TEZBER Company",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T21:43:43+00:00",
+  "instagram": "tezber_resmi",
+  "website": "https://tezber.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001093104134",
+  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "taraz:tumar": {
   "name": "TUMAR",

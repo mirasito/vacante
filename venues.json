@@ -3637,6 +3637,19 @@
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
  },
+ "almaty:ap ltd": {
+  "name": "AP LTD",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "website": "https://apltd.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001718830",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:apex co": {
   "name": "Apex Co",
   "city": "almaty",
@@ -4688,6 +4701,22 @@
   "checked_at": "2026-10-31T20:44:52+00:00",
   "instagram": "bidai_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001112107009"
+ },
+ "almaty:big 7": {
+  "name": "BIG 7",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "big7_kazakhstan",
+  "website": "https://shop.big7.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001085335813",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9fe69a148b834089.jpg",
+  "avatar_source": "website"
  },
  "almaty:big business consulting": {
   "name": "Big Business Consulting",
@@ -7400,6 +7429,20 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "almaty:howe medical wear": {
+  "name": "HOWE medical wear",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "howe.qz",
+  "website": "https://howe.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001058928343",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:hr capital space": {
   "name": "HR CAPITAL SPACE",
   "city": "almaty",
@@ -7516,6 +7559,15 @@
   "avatar": "981bc7e2e37b1714.jpg",
   "avatar_source": "website"
  },
+ "almaty:ice konditer": {
+  "name": "Ice konditer",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "ice_konditer",
+  "source": "https://2gis.kz/almaty/firm/70000001044838640"
+ },
  "almaty:icecore": {
   "name": "IceCore",
   "city": "almaty",
@@ -7582,6 +7634,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "almaty:indigo solutions": {
+  "name": "Indigo Solutions",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "indigosolutions.kz",
+  "website": "https://indigosolutions.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001069353325",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c48d5deba92cdff9.jpg",
+  "avatar_source": "website"
  },
  "almaty:inditex kazakhstan": {
   "name": "INDITEX Kazakhstan",
@@ -7977,6 +8045,20 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:kami group ками групп": {
+  "name": "KAMI GROUP (КАМИ ГРУПП)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "kami.qr",
+  "website": "https://kamiqr.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100182233",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kampit": {
   "name": "Kampit",
   "city": "almaty",
@@ -8281,7 +8363,7 @@
   "checked_at": "2026-11-01T06:43:07+00:00",
   "website": "https://kingboost.net/",
   "source": "https://career.habr.com/companies/kingboost",
-  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12114,6 +12196,13 @@
   "avatar": "4ed80c863e2dc4ad.jpg",
   "avatar_source": "website"
  },
+ "almaty:terranova": {
+  "name": "TERRANOVA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
+ },
  "almaty:tesm company eye clinic": {
   "name": "TESM Company - Eye Clinic",
   "city": "almaty",
@@ -12761,6 +12850,13 @@
   ],
   "avatar": "209881adf06e1885.jpg",
   "avatar_source": "website"
+ },
+ "almaty:wei bo": {
+  "name": "“Wei Bo”",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
  },
  "almaty:wellness solutions": {
   "name": "WELLNESS SOLUTIONS",
@@ -16363,6 +16459,22 @@
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
  },
+ "almaty:кафе софт kz": {
+  "name": "Кафе Софт KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "kafesoft.kz",
+  "website": "https://kafesoft.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001034090450",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "950639b6a8b4f08b.jpg",
+  "avatar_source": "website"
+ },
  "almaty:кафе софт сервис": {
   "name": "Кафе Софт Сервис",
   "city": "almaty",
@@ -19684,6 +19796,22 @@
   "avatar": "66a063e8606ff526.jpg",
   "avatar_source": "website"
  },
+ "almaty:торговый дом seafood & global foods": {
+  "name": "Торговый дом Seafood & Global Foods",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "seafoodgroup.kz",
+  "website": "https://seafoodgroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028803296",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "73f29a21e39b6bb1.jpg",
+  "avatar_source": "website"
+ },
  "almaty:торговый дом автоклавного газоблока 1": {
   "name": "Торговый дом автоклавного газоблока №1",
   "city": "almaty",
@@ -21469,7 +21597,7 @@
   "instagram": "geely_autotrader_astana",
   "website": "https://geely-autotrader.kz/",
   "source": "https://2gis.kz/astana/firm/70000001097228776",
-  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22635,6 +22763,13 @@
   "avatar": "b96eca4dc5240994.jpg",
   "avatar_source": "website"
  },
+ "astana:expert logistic kazakhstan": {
+  "name": "Expert Logistic Kazakhstan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
+ },
  "astana:fade lab x": {
   "name": "Fade Lab X",
   "city": "astana",
@@ -23425,6 +23560,22 @@
    "website"
   ],
   "avatar": "ab1ba4aec901c44a.jpg",
+  "avatar_source": "website"
+ },
+ "astana:invictus highvill": {
+  "name": "INVICTUS HIGHVILL",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "invictusastana",
+  "website": "https://invictus.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001068269058",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "427015d803ddd134.jpg",
   "avatar_source": "website"
  },
  "astana:iotex": {
@@ -27127,6 +27278,20 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "instagram": "fortuna.group.ast",
   "source": "https://2gis.kz/astana/firm/70000001028660473"
+ },
+ "astana:адили текстиль": {
+  "name": "АДИЛИ ТЕКСТИЛЬ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "adili.kz",
+  "website": "https://shopadili.com/",
+  "source": "https://2gis.kz/astana/firm/70000001032952576",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:азия лайн": {
   "name": "Азия-Лайн",
@@ -31666,6 +31831,13 @@
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
  },
+ "astana:тусупбекова аа": {
+  "name": "Тусупбекова АА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
+ },
  "astana:тымакбаева": {
   "name": "Тымакбаева",
   "city": "astana",
@@ -31846,6 +32018,13 @@
   ],
   "avatar": "90f86449f49d53eb.jpg",
   "avatar_source": "website"
+ },
+ "astana:филиал тоо градусъ в г астана": {
+  "name": "ФИЛИАЛ ТОО ГРАДУСЪ В Г. АСТАНА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
  },
  "astana:филиал тоо китайская компания по строительству и развитию синьсин в республике казахстан": {
   "name": "Филиал ТОО Китайская Компания по строительству и развитию Синьсин в Республике Казахстан",
@@ -32198,6 +32377,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
+ },
+ "astana:чк pingwin friends ltd": {
+  "name": "ЧК PINGWIN FRIENDS LTD.",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "pingwin_friends",
+  "website": "https://pingwin.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001036758802",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4fab52b4bb683ac7.jpg",
+  "avatar_source": "website"
  },
  "astana:чк vitis capital ltd": {
   "name": "ЧК Vitis Capital Ltd.",
@@ -33137,7 +33332,7 @@
   "instagram": "stt_atyrau",
   "telegram": "streetshopatyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001044299604",
-  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -40807,6 +41002,13 @@
   "avatar": "75ece3884bfa4c4d.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:торговый комплекс сокол": {
+  "name": "Торговый комплекс Сокол",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
+ },
  "petropavlovsk:трест средазэнергомонтаж ао": {
   "name": "Трест Средазэнергомонтаж, АО",
   "city": "petropavlovsk",
@@ -42935,6 +43137,13 @@
   "instagram": "woowpack.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001094695107"
  },
+ "shymkent:world agro trade": {
+  "name": "WORLD AGRO TRADE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
+ },
  "shymkent:xgadget kz": {
   "name": "Xgadget.kz",
   "city": "shymkent",
@@ -44646,6 +44855,13 @@
   "v": 3,
   "checked_at": "2026-11-07T17:43:35+00:00"
  },
+ "taraz:эверест auto": {
+  "name": "ЭВЕРЕСТ-AUTO",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00"
+ },
  "taraz:электрострой сеть фирменных магазинов инструмента и крепежа": {
   "name": "ЭлектроСтрой - сеть фирменных магазинов инструмента и крепежа",
   "city": "taraz",
@@ -45045,6 +45261,15 @@
   "checked_at": "2026-11-03T08:44:40+00:00",
   "instagram": "maida_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001044029739"
+ },
+ "uralsk:maslenka": {
+  "name": "Maslenka",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T06:44:19+00:00",
+  "instagram": "maslenka_oilmarket",
+  "source": "https://2gis.kz/uralsk/firm/70000001055566190"
  },
  "uralsk:medina cosmetologyclinic": {
   "name": "Medina-cosmetologyclinic",
@@ -46939,7 +47164,7 @@
   "instagram": "injir_uka",
   "website": "https://dostavka.injir-rest.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001064093692",
-  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47046,7 +47271,7 @@
   "checked_at": "2026-11-01T06:43:07+00:00",
   "website": "https://russvet.ru/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721317545",
-  "avatar_checked_at": "2026-11-01T06:43:07+00:00",
+  "avatar_checked_at": "2026-11-08T06:44:21+00:00",
   "avatar_tried": [
    "website"
   ]

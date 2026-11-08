@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T06:57:03+00:00",
+ "updated_at": "2026-11-08T07:57:08+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -41365,6 +41365,187 @@
     "title": "Кондитер-шоколатье",
     "address": "19-й микрорайон"
    }
+  },
+  "rabotaaktau-142350": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Вакансия из Актау (18А мкр), а не из Астаны"
+  },
+  "rabota_astanakz-31356": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Кухонный работник",
+    "employer": "Кафе, ТОО «SD Realty»",
+    "schedule": "2/2, 10:30–23:30",
+    "address": "мкр. Чубары, ул. Кулынды, 12",
+    "perks": [
+     "Развозка"
+    ]
+   }
+  },
+  "hh-139229908": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "employer": "The Kitchen Group",
+    "schedule": "5/2",
+    "address": "пр. Туран, 18"
+   }
+  },
+  "rabota_astanakz-31357": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Автомеханик (моторист, ходовщик)",
+    "employer": "Автосервис «RemZona»"
+   }
+  },
+  "rabota_astana-15662": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Сотрудник игровой площадки",
+    "employer": "Игровая площадка «Канго Кидс»",
+    "schedule": "2/2 или 5/2, 09:00–22:00",
+    "address": "пр. Кабанбай батыра, 62, ТРЦ «Mega Silk Way», 2 этаж"
+   }
+  },
+  "astana_job_vakansii-130326": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Рабочий склада",
+    "schedule": "08:00–20:00"
+   }
+  },
+  "hh-139229744": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Администратор-кассир",
+    "employer": "Компьютерный клуб «F1 Cyber Club»",
+    "schedule": "2/2",
+    "address": "ул. Розыбакиева, 320"
+   }
+  },
+  "rabota4almaty-6324": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "employer": "ТОО «Karahan Trade»",
+    "address": "ул. Шерхана Муртазы, 90",
+    "schedule": "гибкий график"
+   }
+  },
+  "hh-138867122": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "Коммунальная ул."
+   }
+  },
+  "rabota4almaty-6321": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Диспетчер в жилой комплекс",
+    "employer": "ЖК «Олимпик Парк»",
+    "schedule": "сутки через двое",
+    "address": "Нуркент, 100"
+   }
+  },
+  "agashka_job_almaty-1094": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Продавец-консультант"
+   }
+  },
+  "agashka_job_almaty-1075": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Курьер-фельдъегерь",
+    "employer": "Казпочта"
+   }
+  },
+  "hh-139195916": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Непонятно место работы: село Малмыж, похоже на вахту"
+  },
+  "rabotaalmatyyyy-15304": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "10:00–20:00",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "hh-139227514": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Офисная должность (корпоративные продажи)"
+  },
+  "rabota4almaty-6303": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Официант, администратор",
+    "employer": "Ресторан «Fiesta by Spice Mantra»"
+   }
+  },
+  "hh-137121570": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Офисная должность (корреспонденция в банке)"
+  },
+  "almaty_rabota_work-31823": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Охранник в частный дом",
+    "schedule": "сутки через двое"
+   }
+  },
+  "hh-138933900": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "title": "Кассир-операционист",
+    "employer": "ASAI Clinic",
+    "schedule": "5/2",
+    "address": "мкр. Коктем-1, 50"
+   }
+  },
+  "hh-139224851": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Офисная должность (B2B-продажи)"
+  },
+  "hh-139229890": {
+   "verdict": "approve",
+   "at": "2026-11-08T07:57:08+00:00",
+   "fields": {
+    "employer": "Aime",
+    "schedule": "5/2 или 2/2",
+    "address": "пр. Назарбаева"
+   }
+  },
+  "vakansii_oskemen-9278": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139229804": {
+   "verdict": "reject",
+   "at": "2026-11-08T07:57:08+00:00",
+   "reason": "Офисная должность (менеджер по продажам в клинике)"
   }
  }
 }

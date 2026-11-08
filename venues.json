@@ -1036,6 +1036,13 @@
   "instagram": "zhanaotel",
   "source": "https://2gis.kz/aktau/firm/70000001028544286"
  },
+ "aktau:женской одежды": {
+  "name": "ЖЕНСКОЙ ОДЕЖДЫ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
+ },
  "aktau:жигер": {
   "name": "Жигер",
   "city": "aktau",
@@ -1152,6 +1159,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "aktau:красок": {
+  "name": "КРАСОК",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "aktau:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",
@@ -2413,6 +2427,13 @@
   ],
   "avatar": "be81acdde64ba59e.jpg",
   "avatar_source": "website"
+ },
+ "aktobe:детского мира": {
+  "name": "Детского мира",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "aktobe:джусупов с н": {
   "name": "ДЖУСУПОВ С.Н.",
@@ -3918,6 +3939,20 @@
   "v": 3,
   "checked_at": "2026-11-04T08:45:38+00:00"
  },
+ "almaty:arlan med": {
+  "name": "ARLAN MED",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "arlan.med",
+  "website": "https://arlan-med.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104459396",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:armandar": {
   "name": "ARMANDAR",
   "city": "almaty",
@@ -4376,6 +4411,13 @@
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
  },
+ "almaty:avtdim": {
+  "name": "Avtdim",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
+ },
  "almaty:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
   "city": "almaty",
@@ -4426,6 +4468,13 @@
   ],
   "avatar": "f7015e8f05051d26.jpg",
   "avatar_source": "website"
+ },
+ "almaty:az motors group": {
+  "name": "Az Motors Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "almaty:azimut solutions": {
   "name": "Azimut solutions",
@@ -7365,6 +7414,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T23:44:09+00:00"
+ },
+ "almaty:han doors": {
+  "name": "Han Doors",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "dveri_pol.kz",
+  "website": "https://handoors.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001056422463",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:haridus харидус": {
   "name": "Haridus (Харидус)",
@@ -12279,6 +12342,13 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "almaty:tasu kazakhstan": {
+  "name": "TASU KAZAKHSTAN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
+ },
  "almaty:tatiyna": {
   "name": "Tatiyna",
   "city": "almaty",
@@ -17055,6 +17125,13 @@
   "v": 3,
   "checked_at": "2026-11-04T08:45:38+00:00"
  },
+ "almaty:кокжанова": {
+  "name": "Кокжанова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
+ },
  "almaty:коктем": {
   "name": "Коктем",
   "city": "almaty",
@@ -18647,6 +18724,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
+ },
+ "almaty:пак а б": {
+  "name": "Пак А.Б",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "jmotors_kz",
+  "website": "http://jmotors.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035799218",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:пак о т": {
   "name": "Пак О.Т.",
@@ -20457,6 +20548,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:усербаева каламкас": {
+  "name": "Усербаева Каламкас",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "almaty:уткелов ж б": {
   "name": "Уткелов Ж.Б.",
@@ -26586,6 +26684,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "simple_ashana",
   "source": "https://2gis.kz/astana/firm/70000001076582201"
+ },
+ "astana:sinteks синтекс": {
+  "name": "Sinteks (Синтекс)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "astana:skill hub": {
   "name": "Skill Hub",
@@ -35836,6 +35941,13 @@
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
  },
+ "karaganda:альфарух logistic": {
+  "name": "Альфарух LOGISTIC",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
+ },
  "karaganda:амир": {
   "name": "АМИР",
   "city": "karaganda",
@@ -37435,6 +37547,20 @@
   "v": 3,
   "checked_at": "2026-11-04T01:44:23+00:00"
  },
+ "kokshetau:zoomlion central asia": {
+  "name": "ZOOMLION CENTRAL ASIA",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "zoomlion_kazakhstan",
+  "website": "https://zoomlion.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001117123914",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:автоматические котлы": {
   "name": "Автоматические Котлы",
   "city": "kokshetau",
@@ -37789,7 +37915,7 @@
   "instagram": "etagi_kokshetau",
   "website": "https://kokshetau.etagi.com/",
   "source": "https://2gis.kz/kokshetau/firm/70000001052632815",
-  "avatar_checked_at": "2026-11-01T12:43:29+00:00",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37892,6 +38018,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
+ },
+ "kostanay:and asia": {
+  "name": "AND Asia",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "kostanay:aura su kostanay": {
   "name": "AURA SU KOSTANAY",
@@ -38257,6 +38390,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "kostanay:zoomlion central asia": {
+  "name": "ZOOMLION CENTRAL ASIA",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "zoomlion_kazakhstan",
+  "website": "https://zoomlion.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001117123914",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:абди компани": {
   "name": "АБДИ Компани",
@@ -41752,7 +41899,7 @@
   "checked_at": "2026-11-01T12:43:29+00:00",
   "website": "https://sevkazenergo.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001069546790",
-  "avatar_checked_at": "2026-11-01T12:43:29+00:00",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42969,6 +43116,15 @@
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
  },
+ "shymkent:aqylbay auto market": {
+  "name": "AQYLBAY AUTO MARKET",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "aqylbay.automarket",
+  "source": "https://2gis.kz/shymkent/firm/70000001094336032"
+ },
  "shymkent:ar line service": {
   "name": "Ar line service",
   "city": "shymkent",
@@ -44010,6 +44166,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T03:44:40+00:00"
+ },
+ "shymkent:vseparki всепарки": {
+  "name": "VseParki (ВсеПарки)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
  },
  "shymkent:welldis": {
   "name": "WellDis",
@@ -46413,6 +46576,20 @@
    "website"
   ]
  },
+ "uralsk:zoomlion central asia": {
+  "name": "ZOOMLION CENTRAL ASIA",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00",
+  "instagram": "zoomlion_kazakhstan",
+  "website": "https://zoomlion.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001117123914",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:автозапчастей": {
   "name": "АВТОЗАПЧАСТЕЙ",
   "city": "uralsk",
@@ -47239,6 +47416,13 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "ust-kamenogorsk:eclat 1": {
+  "name": "ECLAT 1",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T12:43:42+00:00"
+ },
  "ust-kamenogorsk:eurasian minerals trade": {
   "name": "Eurasian minerals trade",
   "city": "ust-kamenogorsk",
@@ -47736,7 +47920,7 @@
   "checked_at": "2026-11-01T12:43:29+00:00",
   "website": "https://wildberries.kz/",
   "source": "https://2gis.kz/ustkam/firm/70000001088913472",
-  "avatar_checked_at": "2026-11-01T12:43:29+00:00",
+  "avatar_checked_at": "2026-11-08T12:43:43+00:00",
   "avatar_tried": [
    "website"
   ]

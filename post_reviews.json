@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T13:57:12+00:00",
+ "updated_at": "2026-11-08T14:57:00+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -42900,6 +42900,140 @@
    "verdict": "reject",
    "at": "2026-11-08T13:57:12+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "astana_job_vakansii-130267": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "employer": "ТОО «ADILET JOLY»",
+    "schedule": "5/2, 10:00–18:00"
+   }
+  },
+  "hh-139232628": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "title": "Барбер",
+    "employer": "Monke Barbershop",
+    "schedule": "6/1 или 5/2, смены по 11–12 часов",
+    "address": "ул. Ахмета Байтурсынова, 32/4"
+   }
+  },
+  "rabota_astanakz-31361": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "title": "Водитель категории D",
+    "employer": "ИП «Bus»",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31362": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "employer": "ТОО «H2O Plus»"
+   }
+  },
+  "hh-138855971": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "address": "р-н Нура"
+   }
+  },
+  "astana_job_vakansii-130351": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "employer": "Бургерная «FARШ»",
+    "address": "Abu Dhabi Plaza"
+   }
+  },
+  "rabota4almaty-6348": {
+   "verdict": "reject",
+   "at": "2026-11-08T14:57:00+00:00",
+   "reason": "Набор на разные должности, в основном инженерные и руководящие"
+  },
+  "almaty_rabota_work-31860": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "employer": "Unimag Perfume",
+    "address": "возле метро «Алатау»"
+   }
+  },
+  "hh-138123635": {
+   "verdict": "reject",
+   "at": "2026-11-08T14:57:00+00:00",
+   "reason": "Работа в Конаеве, в слот-зале, и нет зарплаты"
+  },
+  "almaty_rabota05-11731": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "employer": "Паб",
+    "schedule": "2/2, 11:00–01:00",
+    "address": "Пермские пруды, 11Б (Илийский район, п. Ащибулак)"
+   }
+  },
+  "almaty_rabota_work-31847": {
+   "verdict": "reject",
+   "at": "2026-11-08T14:57:00+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "almaty_rabota_work-31846": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "title": "Кондитер-оформитель, кондитер-заготовщик"
+   }
+  },
+  "hh-139232067": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "title": "Ночной кассир-универсал",
+    "schedule": "2/2, ночные смены",
+    "address": "мкр. Катынкопыр, ул. Аль-Фараби, 143"
+   }
+  },
+  "hh-139232623": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "schedule": "2/2",
+    "address": "мкр. Степной-2, 2/2"
+   }
+  },
+  "aktobevakansii-44433": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "title": "Кассир-бармен",
+    "employer": "Фастфуд в ТРЦ «Керуен Сити»",
+    "schedule": "6/1, 09:00–17:00",
+    "address": "ТРЦ «Керуен Сити», 3 этаж"
+   }
+  },
+  "aktobevakansii-44437": {
+   "verdict": "reject",
+   "at": "2026-11-08T14:57:00+00:00",
+   "reason": "Офисная должность: делопроизводитель с опытом в бухгалтерии"
+  },
+  "aktobevakansii-44435": {
+   "verdict": "reject",
+   "at": "2026-11-08T14:57:00+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_semey_official-6841": {
+   "verdict": "approve",
+   "at": "2026-11-08T14:57:00+00:00",
+   "fields": {
+    "employer": "Кафе «Camel»",
+    "address": "ул. Чайжунусова, 236"
+   }
   }
  }
 }

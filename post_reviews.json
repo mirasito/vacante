@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T07:57:08+00:00",
+ "updated_at": "2026-11-08T08:57:23+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -41546,6 +41546,252 @@
    "verdict": "reject",
    "at": "2026-11-08T07:57:08+00:00",
    "reason": "Офисная должность (менеджер по продажам в клинике)"
+  },
+  "hh-139230355": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Грузчик на тёплый склад",
+    "schedule": "6/1, 5/2 или 2/2, 11 часов"
+   }
+  },
+  "astana_job_vakansii-130331": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Фотограф в детский развлекательный центр",
+    "employer": "Premium Photography",
+    "schedule": "1/1, 2/2 или 3/3"
+   }
+  },
+  "astana_job_vakansii-130116": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "employer": "RAI Perfume",
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "rabota_astanakz-31353": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Кассир в кафе быстрого питания",
+    "employer": "Wok Lagman",
+    "address": "ул. Толе би, 46"
+   }
+  },
+  "hh-139213336": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "employer": "Arbuz Group"
+   }
+  },
+  "hh-139208596": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Водитель бензовоза (категории C, E)",
+    "employer": "ASAM Holding Limited",
+    "schedule": null
+   }
+  },
+  "hh-139204883": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Повар-сушист",
+    "employer": "Японский ресторан «Тануки»",
+    "schedule": "Сменный график, 12 часов",
+    "address": "пр. Кошкарбаева, 1/1"
+   }
+  },
+  "astana_job_vakansii-130328": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Оператор АГЗС",
+    "employer": "ИП «Абдрахманов»",
+    "schedule": "сутки через двое",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "astana_job_vakansii-130330": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Продавец-консультант, администратор",
+    "employer": "Магазин мужской одежды «Mauretti»",
+    "schedule": "10:00–22:00"
+   }
+  },
+  "hh-138002968": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "employer": "Rixos President Hotel Astana",
+    "address": "ул. Кунаева, 7"
+   }
+  },
+  "rabota4almaty-6325": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Водитель манипулятора",
+    "schedule": "6/1, 08:00–19:00"
+   }
+  },
+  "hh-129275095": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Бармен-кассир в кинотеатр",
+    "employer": "Кинотеатр «Lumiera Cinema»"
+   }
+  },
+  "hh-139229949": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {}
+  },
+  "hh-137988175": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Офисная должность (продажи недвижимости)"
+  },
+  "hh-136832666": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Офисная должность (продажи оборудования)"
+  },
+  "hh-138126292": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Другой город (Конаев)"
+  },
+  "hh-137121342": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Офисная должность в банке"
+  },
+  "hh-139224104": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {}
+  },
+  "hh-139223512": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "employer": "Бастық",
+    "schedule": "3/2 или 2/2"
+   }
+  },
+  "almaty_rabota05-11727": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Международные рейсы, зарплата не указана"
+  },
+  "hh-138638227": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-142357": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "employer": "Loft Park",
+    "address": "3А мкр., здание 6",
+    "perks": [
+     "Бонусы",
+     "Питание"
+    ]
+   }
+  },
+  "rabotaaktau-142355": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "2/2, 10:00–21:00",
+    "address": "ТЦ «Маңғыстау», 2 этаж, бутик 43"
+   }
+  },
+  "rabotaaktau-142356": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Помощник в фастфуд",
+    "schedule": "09:00–19:00",
+    "address": "село Кызылтобе",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "rabotaaktau-142353": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Другой город (Форт-Шевченко)"
+  },
+  "rabotaaktau-142363": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Продавец автозапчастей",
+    "employer": "Магазин автозапчастей «Standard»",
+    "perks": []
+   }
+  },
+  "rabotaaktau-142354": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Повтор вакансии Loft Park из этой очереди"
+  },
+  "rabotaaktau-142364": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Администратор-кассир, массажист, уборщица",
+    "employer": "Баня «Маңғышлақ»"
+   }
+  },
+  "rabotaaktau-142361": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142360": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "salary_min": 8000,
+    "salary_max": 10000,
+    "salary_period": "day",
+    "address": "мкр. Даулет"
+   }
+  },
+  "rabota_v_pavlodare-7332": {
+   "verdict": "approve",
+   "at": "2026-11-08T08:57:23+00:00",
+   "fields": {
+    "title": "Кочегар в банный комплекс"
+   }
+  },
+  "vakansii_oskemen-9279": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139229797": {
+   "verdict": "reject",
+   "at": "2026-11-08T08:57:23+00:00",
+   "reason": "Офисная должность (менеджер по продажам)"
   }
  }
 }

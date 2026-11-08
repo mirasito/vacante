@@ -5218,6 +5218,13 @@
   "instagram": "capito_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001074434988"
  },
+ "almaty:car id": {
+  "name": "CAR ID",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
+ },
  "almaty:caravan beverage group караван бевередж груп": {
   "name": "«CARAVAN BEVERAGE GROUP (КАРАВАН БЕВЕРЕДЖ ГРУП)»",
   "city": "almaty",
@@ -10890,6 +10897,13 @@
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
  },
+ "almaty:profix": {
+  "name": "ProFix",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
+ },
  "almaty:proflogistic": {
   "name": "Proflogistic",
   "city": "almaty",
@@ -11251,6 +11265,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T14:44:03+00:00"
+ },
+ "almaty:region kaz trade": {
+  "name": "Region Kaz Trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "almaty:reklamix": {
   "name": "REKLAMIX",
@@ -11674,6 +11695,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "almaty:satory company ltd": {
+  "name": "Satory Company LTD",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "almaty:sauda lux": {
   "name": "Sauda lux",
@@ -12749,6 +12777,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:top tier": {
+  "name": "Top Tier",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "instagram": "toptier_ielts",
+  "website": "http://toptier.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001066969314",
+  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "760dcf18bab55736.jpg",
+  "avatar_source": "website"
  },
  "almaty:top_mebel": {
   "name": "Top_Mebel",
@@ -15837,6 +15881,13 @@
   "v": 3,
   "checked_at": "2026-11-05T00:43:57+00:00"
  },
+ "almaty:дарын": {
+  "name": "Дарын",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
+ },
  "almaty:даулет": {
   "name": "Даулет",
   "city": "almaty",
@@ -17580,6 +17631,13 @@
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
  },
+ "almaty:кутелева ирина александровна": {
+  "name": "КУТЕЛЕВА ИРИНА АЛЕКСАНДРОВНА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
+ },
  "almaty:кутюрина": {
   "name": "Кутюрина",
   "city": "almaty",
@@ -18583,6 +18641,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "almaty:нарышева м": {
+  "name": "Нарышева М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
+ },
  "almaty:насыров uniflex": {
   "name": "Насыров (UNIFLEX)",
   "city": "almaty",
@@ -18746,6 +18811,22 @@
   "checked_at": "2026-11-06T18:44:15+00:00",
   "instagram": "damina_montessori",
   "source": "https://2gis.kz/almaty/firm/70000001019790438"
+ },
+ "almaty:образовательный центр эрудит": {
+  "name": "Образовательный центр ЭРУДИТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "instagram": "erudit.kz",
+  "website": "http://erudit.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001064075771",
+  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "44a09f52015ad6ad.jpg",
+  "avatar_source": "website"
  },
  "almaty:оздоровительный центр айкуне": {
   "name": "Оздоровительный центр «Айкуне»",
@@ -19606,6 +19687,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
+ },
+ "almaty:сас казахстан": {
+  "name": "САС Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "almaty:саулық": {
   "name": "Саулық",
@@ -20870,6 +20958,13 @@
   ],
   "avatar": "19e405b78d420e43.jpg",
   "avatar_source": "website"
+ },
+ "almaty:финансовый холдинг республика": {
+  "name": "«ФИНАНСОВЫЙ ХОЛДИНГ «РЕСПУБЛИКА»",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "almaty:финдирекция": {
   "name": "Финдирекция",
@@ -23584,6 +23679,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T04:43:59+00:00"
+ },
+ "astana:farш бургерная": {
+  "name": "FARШ (Бургерная)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "instagram": "farsh_burger_kz",
+  "telegram": "farshburgerskz",
+  "website": "https://farsh-burger.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001050092804",
+  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "957e4b497b2cfdbd.jpg",
+  "avatar_source": "website"
  },
  "astana:fashion retail group": {
   "name": "Fashion Retail Group",
@@ -28328,6 +28441,20 @@
   "instagram": "detskiy_magazin_aisultan",
   "source": "https://2gis.kz/astana/firm/70000001058956737"
  },
+ "astana:ак цент микросистемс норд": {
+  "name": "АК ЦЕНТ Микросистемс Норд",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "instagram": "akcentmicrosystems",
+  "website": "https://www.ak-cent.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000791812",
+  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:академия здоровья тоо беркут 2016": {
   "name": "Академия здоровья (ТОО БЕРКУТ-2016)",
   "city": "astana",
@@ -28543,6 +28670,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "astana:амангелді": {
+  "name": "АМАНГЕЛДІ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "astana:амир": {
   "name": "Амир",
@@ -31751,6 +31885,13 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "astana:профметалл астана": {
+  "name": "ПрофМеталл-Астана",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
+ },
  "astana:пулково казахстан": {
   "name": "ПУЛКОВО КАЗАХСТАН",
   "city": "astana",
@@ -31973,6 +32114,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:самокат ооо изи лоджистик партнер сервиса": {
+  "name": "Самокат (ООО ИЗИ Лоджистик — партнер сервиса)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "astana:сап ин вэст": {
   "name": "САП-ИН-ВЭСТ",
@@ -34413,6 +34561,19 @@
   "checked_at": "2026-11-06T12:45:11+00:00",
   "instagram": "royal_bowling_atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001113616074"
+ },
+ "atyrau:rwb wildberries & russ": {
+  "name": "RWB (Wildberries & Russ)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "website": "https://wildberries.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001038152697",
+  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:salamat service": {
   "name": "SALAMAT Service",
@@ -42940,6 +43101,15 @@
   "avatar": "caea51af2dcd2bfc.jpg",
   "avatar_source": "telegram"
  },
+ "semey:ваши бани": {
+  "name": "Ваши Бани",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "instagram": "vashi_bani_semey",
+  "source": "https://2gis.kz/semej/firm/70000001074527609"
+ },
  "semey:войсковой части": {
   "name": "ВОЙСКОВОЙ ЧАСТИ",
   "city": "semey",
@@ -43615,6 +43785,13 @@
   "checked_at": "2026-11-02T11:44:06+00:00",
   "instagram": "rixosborovoe",
   "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
+ },
+ "shymkent:business partner": {
+  "name": "Business partner",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00"
  },
  "shymkent:cac казахстан": {
   "name": "CAC Казахстан",
@@ -46779,6 +46956,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:silk road it силк роад айти": {
+  "name": "Silk Road IT (Силк Роад Айти)",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T15:44:05+00:00",
+  "instagram": "silkr.it",
+  "website": "https://silkroadit.net/",
+  "source": "https://2gis.kz/uralsk/firm/70000001064720059",
+  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d5453b257c8d5baf.jpg",
+  "avatar_source": "website"
  },
  "uralsk:simit": {
   "name": "SIMIT",

@@ -3484,6 +3484,22 @@
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
  },
+ "almaty:alma asia rest": {
+  "name": "Alma Asia Rest",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00",
+  "instagram": "lalialmaty",
+  "website": "http://lali.rest/lalialmaty",
+  "source": "https://2gis.kz/almaty/firm/70000001115346291",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cd04ed13ae42a8aa.jpg",
+  "avatar_source": "website"
+ },
  "almaty:almaly travel": {
   "name": "ALMALY-TRAVEL",
   "city": "almaty",
@@ -4440,6 +4456,13 @@
   "instagram": "avital_deluxe",
   "source": "https://2gis.kz/almaty/firm/70000001044909633"
  },
+ "almaty:avocado cleaning": {
+  "name": "Avocado cleaning",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:avrora": {
   "name": "AVRORA",
   "city": "almaty",
@@ -4612,6 +4635,19 @@
   "checked_at": "2026-11-01T02:42:54+00:00",
   "instagram": "baitau_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001117225518"
+ },
+ "almaty:baker tilly qazaqstan advisory бейкер тилли казахстан эдвайзори": {
+  "name": "Baker Tilly Qazaqstan Advisory (Бейкер Тилли Казахстан Эдвайзори)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00",
+  "website": "https://bakertilly-ca.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001067985765",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:bakerson kz": {
   "name": "BAKERSON.KZ",
@@ -7021,6 +7057,13 @@
   "avatar": "844778890062cb2f.jpg",
   "avatar_source": "website"
  },
+ "almaty:galira trade": {
+  "name": "GALIRA trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:game lounge игровой клуб": {
   "name": "Game Lounge, игровой клуб",
   "city": "almaty",
@@ -8531,6 +8574,13 @@
    "website"
   ]
  },
+ "almaty:kazhealth": {
+  "name": "KazHealth",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:kazkrom": {
   "name": "KazKrom",
   "city": "almaty",
@@ -8745,6 +8795,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "almaty:kl&k trans": {
+  "name": "KL&K Trans",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:klara fashion house": {
   "name": "Klara Fashion House",
   "city": "almaty",
@@ -8913,7 +8970,7 @@
   "instagram": "kulikov_kz",
   "website": "https://kulikov.com/",
   "source": "https://2gis.kz/almaty/firm/9429940001671404",
-  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11846,6 +11903,13 @@
   "v": 3,
   "checked_at": "2026-11-08T15:44:05+00:00"
  },
+ "almaty:sattar consulting": {
+  "name": "Sattar Consulting",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:sauda lux": {
   "name": "Sauda lux",
   "city": "almaty",
@@ -12239,6 +12303,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "almaty:sovz kz совз кз": {
+  "name": "Sovz kz (Совз кз)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
  },
  "almaty:sozo": {
   "name": "Sozo",
@@ -15837,6 +15908,13 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "almaty:гастромир": {
+  "name": "Гастромир",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:гелиос": {
   "name": "Гелиос",
   "city": "almaty",
@@ -16256,6 +16334,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:детский коррекционный центр jany altyn джамагарина д в": {
+  "name": "Детский коррекционный центр Jany Altyn (Джамагарина Д.В.)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
  },
  "almaty:детский магазин uti": {
   "name": "Детский магазин Uti",
@@ -16844,6 +16929,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
+ },
+ "almaty:инвестиционный дом ivm": {
+  "name": "Инвестиционный дом IVM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
  },
  "almaty:индира": {
   "name": "Индира",
@@ -21273,6 +21365,13 @@
   "v": 3,
   "checked_at": "2026-11-03T20:46:04+00:00"
  },
+ "almaty:филиал organosyn lifesciences fze в республике казахстан": {
+  "name": "Филиал ORGANOSYN LIFESCIENCES (FZE) в Республике Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:филиал рдц клиника animed": {
   "name": "ФИЛИАЛ РДЦ- КЛИНИКА ANIMED",
   "city": "almaty",
@@ -21566,6 +21665,24 @@
    "website"
   ]
  },
+ "almaty:центр эндокринной гинекологии": {
+  "name": "ЦЕНТР ЭНДОКРИННОЙ ГИНЕКОЛОГИИ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00",
+  "instagram": "ceg.kz",
+  "telegram": "cegalmaty",
+  "website": "http://gynendo.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001097315841",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3e1082713d29f738.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:церинг": {
   "name": "Церинг",
   "city": "almaty",
@@ -21727,6 +21844,13 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "almaty:шегирова": {
+  "name": "Шегирова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "almaty:шейх": {
   "name": "Шейх",
   "city": "almaty",
@@ -21742,6 +21866,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T14:44:39+00:00"
+ },
+ "almaty:шерғали": {
+  "name": "Шерғали",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
  },
  "almaty:шетенова г м": {
   "name": "ШЕТЕНОВА Г.М.",
@@ -24447,6 +24578,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T07:45:16+00:00"
+ },
+ "astana:goldmoon": {
+  "name": "Goldmoon",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
  },
  "astana:good project": {
   "name": "Good project",
@@ -30975,6 +31113,13 @@
    "website"
   ]
  },
+ "astana:клинин": {
+  "name": "Клинин",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "astana:клининговая компания": {
   "name": "Клининговая компания",
   "city": "astana",
@@ -35223,6 +35368,13 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "atyrau:vini": {
+  "name": "VINI",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "atyrau:west dala": {
   "name": "WEST DALA",
   "city": "atyrau",
@@ -37272,6 +37424,13 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "karaganda:дизендорф": {
+  "name": "ДИЗЕНДОРФ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
+ },
  "karaganda:дико&полезно": {
   "name": "Дико&Полезно",
   "city": "karaganda",
@@ -37628,7 +37787,7 @@
   "checked_at": "2026-11-01T20:43:30+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44645,10 +44804,12 @@
   "checked_at": "2026-11-01T20:43:30+00:00",
   "website": "https://www.galanz.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000935791",
-  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "6c3508829cbcf7e6.jpg",
+  "avatar_source": "website"
  },
  "shymkent:gmgroup 9": {
   "name": "GMGroup 9",
@@ -44735,6 +44896,13 @@
   ],
   "avatar": "cc0697ec4ec7da53.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:kоллекторское агентство smart recovery": {
+  "name": "Kоллекторское агентство «Smart Recovery",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T20:44:20+00:00"
  },
  "shymkent:la tomatina": {
   "name": "La Tomatina",
@@ -46039,7 +46207,7 @@
   "instagram": "sequoiaservice_kz",
   "website": "https://sequoia-service.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110980544",
-  "avatar_checked_at": "2026-11-01T20:43:30+00:00",
+  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
   "avatar_tried": [
    "website"
   ]

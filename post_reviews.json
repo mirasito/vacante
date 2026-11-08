@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T08:57:23+00:00",
+ "updated_at": "2026-11-08T09:57:05+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -41792,6 +41792,258 @@
    "verdict": "reject",
    "at": "2026-11-08T08:57:23+00:00",
    "reason": "Офисная должность (менеджер по продажам)"
+  },
+  "astana_job_vakansii-130335": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Ресторан «MARMELADE»",
+    "schedule": "5/2 или 6/1, 10:00–22:00 или 09:00–21:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139230817": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {}
+  },
+  "astana_job_vakansii-130338": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "«Мята»",
+    "address": "ул. Сауран, 10Б",
+    "schedule": "2/2, 12:00–02:00",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "hh-138086931": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Бармен (свежевыжатые соки и смузи)",
+    "employer": "Fruit Republic"
+   }
+  },
+  "zhumys_astana_kz-17273": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "«COCO WEAR»",
+    "schedule": "5/2, 09:30–18:30 или 12:00–21:00",
+    "address": "ТРЦ «Деловой дом Алма-Ата»"
+   }
+  },
+  "astana_job_vakansii-130339": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Повар-универсал",
+    "schedule": "6/1, 09:00–21:00"
+   }
+  },
+  "hh-139230606": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Тохтахунов"
+   }
+  },
+  "agashka_job_almaty-1095": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Ресторан «EYWA TERRACE»"
+   }
+  },
+  "hh-139230441": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Alastars",
+    "schedule": "2/2"
+   }
+  },
+  "hh-138088269": {
+   "verdict": "reject",
+   "at": "2026-11-08T09:57:05+00:00",
+   "reason": "Офисные продажи без понятного работодателя"
+  },
+  "hh-138547464": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин Nike",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "rabota4almaty-6332": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "«SPD Express»",
+    "address": "ул. Папанина, 2/2",
+    "schedule": "09:00–18:00"
+   }
+  },
+  "rabota4almaty-6329": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Мастер по обработке искусственного камня",
+    "employer": "«VarSof»",
+    "address": "ул. Емцова, 26",
+    "schedule": "09:00–18:00"
+   }
+  },
+  "rabota4almaty-6330": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Салон красоты «MiLash»",
+    "address": "ул. Кабдолова, 1/4, ТРЦ «Гранд Парк», 6 блок",
+    "schedule": "сменный график"
+   }
+  },
+  "hh-138126307": {
+   "verdict": "reject",
+   "at": "2026-11-08T09:57:05+00:00",
+   "reason": "Руководящая должность, работа в Конаеве"
+  },
+  "almaty_rabota_work-31855": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Антикафе",
+    "schedule": "1/2, сутки через двое, 10:00–10:00"
+   }
+  },
+  "almaty_rabota_work-31856": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Склад «Sortex Techno»",
+    "schedule": "09:00–18:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-138932034": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {}
+  },
+  "hh-139219712": {
+   "verdict": "reject",
+   "at": "2026-11-08T09:57:05+00:00",
+   "reason": "Офисная руководящая должность"
+  },
+  "hh-139213712": {
+   "verdict": "reject",
+   "at": "2026-11-08T09:57:05+00:00",
+   "reason": "Руководящая должность"
+  },
+  "olx-402314005": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Бизнес-центр «Almaty Towers»",
+    "salary_min": 25000,
+    "salary_max": null,
+    "salary_period": "day"
+   }
+  },
+  "aktobevakansii-44431": {
+   "verdict": "reject",
+   "at": "2026-11-08T09:57:05+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139230855": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "perks": []
+   }
+  },
+  "rabotaaktau-142367": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Технический флорист",
+    "employer": "«717 flowers»",
+    "schedule": "2/2, 13:00–01:00",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "rabotaaktau-142370": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "«QAZAQ RAMEN»",
+    "address": "9-й микрорайон, 19",
+    "schedule": "5/2, 17:30–01:00"
+   }
+  },
+  "rabotaaktau-142371": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Ресторан «Чайхана»",
+    "address": "19-й микрорайон, 43",
+    "schedule": "6/1, с 14:00",
+    "salary_min": 6000,
+    "salary_max": null,
+    "salary_period": "day",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Можно студентам"
+    ]
+   }
+  },
+  "rabotaaktau-142366": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "employer": "Цех «AIKO FOOD»",
+    "address": "дом 38-3, цокольный этаж",
+    "schedule": "09:00–19:00",
+    "salary_min": 10000,
+    "salary_max": null,
+    "salary_period": "day",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabotaaktau-142365": {
+   "verdict": "reject",
+   "at": "2026-11-08T09:57:05+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142369": {
+   "verdict": "approve",
+   "at": "2026-11-08T09:57:05+00:00",
+   "fields": {
+    "title": "Официант, администратор, уборщица",
+    "employer": "«OLIVA»"
+   }
   }
  }
 }

@@ -479,6 +479,22 @@
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
  },
+ "aktau:openservice kz": {
+  "name": "OPENSERVICE.KZ",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "instagram": "openservicekz",
+  "website": "https://openservice.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001116525400",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6970ef876faf8f98.jpg",
+  "avatar_source": "website"
+ },
  "aktau:orchestra": {
   "name": "Orchestra",
   "city": "aktau",
@@ -1959,6 +1975,21 @@
   "v": 3,
   "checked_at": "2026-11-07T01:44:11+00:00"
  },
+ "aktobe:kuchenland": {
+  "name": "KuchenLand",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "website": "https://kuchenland.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001089768562",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cee0d51c40b8c4b6.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:logycom": {
   "name": "Logycom",
   "city": "aktobe",
@@ -2498,6 +2529,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T18:43:51+00:00"
+ },
+ "aktobe:записочная ирина владимировна": {
+  "name": "Записочная Ирина Владимировна",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "aktobe:запказ авто": {
   "name": "ЗапКаз-Авто",
@@ -3304,6 +3342,22 @@
    "website"
   ],
   "avatar": "663a72cd8d686c6a.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:alatau city bank": {
+  "name": "Alatau City Bank",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "instagram": "alatau_city_bank",
+  "website": "https://alataucitybank.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055997371",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ccfd31ebb9f46dda.jpg",
   "avatar_source": "website"
  },
  "almaty:alatau grand qurylys": {
@@ -10203,6 +10257,13 @@
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
  },
+ "almaty:neu ltd re max kazakhstan": {
+  "name": "NEU LTD (RE/MAX Kazakhstan)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
+ },
  "almaty:new line": {
   "name": "New Line",
   "city": "almaty",
@@ -14191,6 +14252,13 @@
    "website"
   ]
  },
+ "almaty:автор": {
+  "name": "Автор",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
+ },
  "almaty:автора": {
   "name": "Автора",
   "city": "almaty",
@@ -15417,6 +15485,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
+ },
+ "almaty:байдосов абзал": {
+  "name": "Байдосов Абзал",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "almaty:байсат": {
   "name": "Байсат",
@@ -16964,6 +17039,20 @@
   "checked_at": "2026-10-28T20:44:33+00:00",
   "instagram": "yvesrocherkz",
   "source": "https://2gis.kz/almaty/firm/70000001113860458"
+ },
+ "almaty:ивушка сад": {
+  "name": "Ивушка сад",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "instagram": "ivushka_sadik",
+  "website": "https://ivushkasadik.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000795153",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:игнатова ирина валерьевна": {
   "name": "Игнатова Ирина Валерьевна",
@@ -18571,6 +18660,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
+ },
+ "almaty:мега инвест строй": {
+  "name": "ТОО мега инвест строй",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "almaty:медикал груп": {
   "name": "Медикал груп",
@@ -21428,7 +21524,7 @@
   "instagram": "herbion.kazakhstan",
   "website": "https://kz.herbion.com/",
   "source": "https://2gis.kz/almaty/firm/9429940000801720",
-  "avatar_checked_at": "2026-11-01T23:43:36+00:00",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22542,6 +22638,13 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "aiel_astana",
   "source": "https://2gis.kz/astana/firm/70000001103100650"
+ },
+ "astana:aim group": {
+  "name": "Aim Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "astana:aitas rtc": {
   "name": "Aitas RTC",
@@ -25052,6 +25155,13 @@
   ],
   "avatar": "43ce9d7a642cd248.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:i ser kz": {
+  "name": "I-SER.KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "astana:icons beauty salon and school": {
   "name": "ICONS BEAUTY SALON AND SCHOOL",
@@ -32320,6 +32430,13 @@
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
  },
+ "astana:нитэл": {
+  "name": "НИТЭЛ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
+ },
  "astana:нурбанк": {
   "name": "Нурбанк",
   "city": "astana",
@@ -34472,6 +34589,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:частный детский сад": {
+  "name": "Частный детский сад",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "astana:частный дом": {
   "name": "Частный дом",
@@ -37085,6 +37209,24 @@
   "avatar": "2857477625e89bed.jpg",
   "avatar_source": "website"
  },
+ "karaganda:rearden machines": {
+  "name": "Rearden machines",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "instagram": "rearden_machines",
+  "telegram": "reardenmachines",
+  "website": "https://rmkz.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001037963708",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "3382d50bae331c58.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:resto gamma": {
   "name": "Resto GAMMA",
   "city": "karaganda",
@@ -37351,6 +37493,21 @@
    "website"
   ],
   "avatar": "227db40867c4c7ef.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:аифcosmetic": {
+  "name": "АиФcosmetic",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "website": "https://aifcosmetic.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001059821777",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a30a5bbb2ea4c5cb.jpg",
   "avatar_source": "website"
  },
  "karaganda:аква мастер": {
@@ -40780,6 +40937,20 @@
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
  },
+ "kostanay:тарлан сервис": {
+  "name": "Тарлан Сервис",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "instagram": "tarlan.auto",
+  "website": "https://tarlan-auto.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035754650",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:тасмаганбетова а ж": {
   "name": "Тасмаганбетова А.Ж.",
   "city": "kostanay",
@@ -41011,6 +41182,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kyzylorda:centercontact kz ип лидер 2023": {
+  "name": "CenterContact.kz(ИП Лидер 2023)",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
  },
  "kyzylorda:common market corporation": {
   "name": "Common Market Corporation",
@@ -42512,6 +42690,13 @@
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
  },
+ "petropavlovsk:ar line service": {
+  "name": "Ar line service",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
+ },
  "petropavlovsk:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "petropavlovsk",
@@ -43640,6 +43825,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "semey:2gis semey": {
+  "name": "2GIS-SEMEY",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00",
+  "instagram": "2gissemey",
+  "source": "https://2gis.kz/semej/firm/70000001051510593"
  },
  "semey:adal supermarket": {
   "name": "ADAL SUPERMARKET",
@@ -45246,7 +45440,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001025991413",
-  "avatar_checked_at": "2026-11-01T23:43:36+00:00",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46611,6 +46805,13 @@
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
  },
+ "shymkent:темирова карима асиловна": {
+  "name": "Темирова Карима Асиловна",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T23:44:03+00:00"
+ },
  "shymkent:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
   "city": "shymkent",
@@ -46692,7 +46893,7 @@
   "instagram": "herbion.kazakhstan",
   "website": "https://kz.herbion.com/",
   "source": "https://2gis.kz/almaty/firm/9429940000801720",
-  "avatar_checked_at": "2026-11-01T23:43:36+00:00",
+  "avatar_checked_at": "2026-11-08T23:44:04+00:00",
   "avatar_tried": [
    "website"
   ]

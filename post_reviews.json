@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T10:56:35+00:00",
+ "updated_at": "2026-11-08T11:56:38+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -42249,6 +42249,171 @@
    "fields": {
     "employer": "«Бан Ролл»",
     "schedule": "1/1"
+   }
+  },
+  "astana_rabota-90175": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "employer": "HYLA Kazakhstan",
+    "schedule": "6/1, 10:00–19:00",
+    "address": "ул. Кенесары, 40, 5 этаж, офис 504"
+   }
+  },
+  "astana_job_vakansii-130344": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Кассир, пиццамейкер",
+    "employer": "Papa John's",
+    "schedule": "5/2, 10:00–00:00",
+    "address": "ул. Мангилик Ел, 40; пр. Республики, 10"
+   }
+  },
+  "hh-139231507": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Администратор студии йоги, менеджер по продажам",
+    "employer": "Atmosfera",
+    "schedule": "2/2, по 12 часов",
+    "address": "пр. Мангилик Ел, 40"
+   }
+  },
+  "astana_job_vakansii-130346": {
+   "verdict": "reject",
+   "at": "2026-11-08T11:56:38+00:00",
+   "reason": "Несколько разных вакансий без названия заведения и адреса"
+  },
+  "astana_job_vakansii-130345": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "schedule": "2/2, 10:00–22:00",
+    "address": "ТРЦ «Mega Silk Way»"
+   }
+  },
+  "astana_rabota-90173": {
+   "verdict": "reject",
+   "at": "2026-11-08T11:56:38+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139231697": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Комплектовщик, сборщик заказов, кладовщик",
+    "employer": "ИП Ахметова А. М.",
+    "schedule": "5/2, по 8 часов",
+    "address": "ул. Богенбай батыра, 148"
+   }
+  },
+  "hh-138305264": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "employer": "КФК «Medservice Plus»",
+    "schedule": "5/2, по 8 часов",
+    "address": "ул. Тюлькубасская, 4А"
+   }
+  },
+  "hh-139231570": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "schedule": "6/1, по 8 часов",
+    "address": "2-й микрорайон, 14А"
+   }
+  },
+  "hh-138369792": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Печатник офсетной печати",
+    "employer": "ALA Sintez",
+    "schedule": "2/2, по 12 часов",
+    "address": "ул. Бейсебаева, 153"
+   }
+  },
+  "rabota4almaty-6339": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Водитель-дальнобойщик категории CE",
+    "employer": "ТОО «Golden Bridge Logistics»"
+   }
+  },
+  "rabota4almaty-6337": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Мастер по ходовой на СТО",
+    "employer": "Центр рулевых реек",
+    "address": "ул. Рыскулова, 68Е"
+   }
+  },
+  "hh-138013430": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "employer": "Ломбард «Деньги населению»",
+    "address": "ул. Пушкина, 41"
+   }
+  },
+  "hh-139208993": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Массажист",
+    "employer": null,
+    "schedule": "2/2",
+    "address": "ул. Алишера Навои, 97"
+   }
+  },
+  "rabotaalmatyyyy-15166": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Магазин «Дария»",
+    "salary_min": 500000,
+    "salary_max": 700000,
+    "salary_period": "month",
+    "address": "ул. Ырысты, 46/2а, ТРЦ «Бақорда»",
+    "perks": [
+     "Без опыта",
+     "Можно студентам",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota4almaty-6334": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Ученик, помощник мастера на автосервис",
+    "employer": "Автосервис «Maxx»",
+    "address": "ул. Абдуллиных, 50",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "hh-139231340": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "title": "Менеджер по продажам автомобилей",
+    "schedule": "5/2, по 8 часов",
+    "address": "ул. Турара Рыскулова, 359/20"
+   }
+  },
+  "hh-139007514": {
+   "verdict": "approve",
+   "at": "2026-11-08T11:56:38+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов",
+    "address": "Северный промышленный район"
    }
   }
  }

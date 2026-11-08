@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T05:56:39+00:00",
+ "updated_at": "2026-11-08T06:57:03+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -41008,14 +41008,6 @@
     ]
    }
   },
-  "rabota_astanakz-31354": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "employer": "ТОО «Paradiegma Astana»",
-    "schedule": "Пн–Пт 09:00–19:00, Сб 09:00–15:00"
-   }
-  },
   "rabota_astanakz-31328": {
    "verdict": "approve",
    "at": "2026-11-08T05:56:39+00:00",
@@ -41170,11 +41162,6 @@
     "address": "ул. Байтурсынова, 18"
    }
   },
-  "aktobevakansii-44404": {
-   "verdict": "reject",
-   "at": "2026-11-08T05:56:39+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
   "rabotaaktau-142338": {
    "verdict": "approve",
    "at": "2026-11-08T05:56:39+00:00",
@@ -41198,6 +41185,185 @@
      "Питание",
      "Официально"
     ]
+   }
+  },
+  "hh-139229598": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Продавец детской одежды"
+   }
+  },
+  "hh-139229489": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Прачка (ночные смены)",
+    "employer": "Фитнес-клуб «Invictus Highvill»",
+    "schedule": "2/2, ночные смены, 12 часов",
+    "address": "ул. Ахмета Байтурсынова, 9"
+   }
+  },
+  "hh-139144909": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "address": "ул. Александра Пушкина, 67/1"
+   }
+  },
+  "astana_job_vakansii-130324": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Продавец-консультант, кассир, бармен",
+    "employer": "Алкомаркет «Градус»",
+    "schedule": "10:00–23:00",
+    "address": "ул. Керей Жанибек, 44/3"
+   }
+  },
+  "zhumys_astana_kz-17285": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Официант, бариста, пекарь",
+    "employer": "Oneshott Coffee",
+    "schedule": "2/2, 08:00–23:00",
+    "address": "ул. Пушкина, 11/1"
+   }
+  },
+  "hh-139229556": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "employer": "Сеть магазинов «Gaissina»",
+    "address": "пр. Кабанбай батыра, 62"
+   }
+  },
+  "hh-138688360": {
+   "verdict": "reject",
+   "at": "2026-11-08T06:57:03+00:00",
+   "reason": "Удалённая работа из дома со своим компьютером"
+  },
+  "astana_job_vakansii-130321": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Официант, раздатчица",
+    "schedule": "сменный график, дневные и ночные смены"
+   }
+  },
+  "agashka_job_almaty-1093": {
+   "verdict": "reject",
+   "at": "2026-11-08T06:57:03+00:00",
+   "reason": "Офисная должность"
+  },
+  "almatyrabota1-21330": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "schedule": "5/2, 08:00–16:00"
+   }
+  },
+  "hh-139229635": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "employer": "Wei Bo"
+   }
+  },
+  "hh-137727528": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Выездной бариста",
+    "employer": "Kulikov",
+    "schedule": "12 часов"
+   }
+  },
+  "rabota4almaty-6318": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Кассир, продавец-консультант",
+    "employer": "Ice Konditer",
+    "address": "ул. Розыбакиева, 33/1"
+   }
+  },
+  "rabota4almaty-6320": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Механик по ремонту вилочных погрузчиков",
+    "employer": "Liftparts",
+    "address": "ул. Тайбагар, 4"
+   }
+  },
+  "rabota4almaty-6317": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "employer": "Terranova",
+    "schedule": "09:00–19:00",
+    "address": "ул. Касыма Аманжолова, 53",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-138065998": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Слесарь по ремонту грузовых автомобилей"
+   }
+  },
+  "almaty_rabota_work-31854": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин игрушек",
+    "address": "ТРК «Atakent Mall»"
+   }
+  },
+  "agashka_job_almaty-1076": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Грузчик на склад",
+    "schedule": "дневные и ночные смены",
+    "perks": [
+     "Без опыта",
+     "Питание"
+    ]
+   }
+  },
+  "hh-139202611": {
+   "verdict": "reject",
+   "at": "2026-11-08T06:57:03+00:00",
+   "reason": "Руководящая должность (тренер-управляющий)"
+  },
+  "hh-138863279": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Оператор ТПА и экструзионного оборудования",
+    "employer": "World Agro Trade"
+   }
+  },
+  "rabotaaktau-142349": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Водитель с личным автомобилем",
+    "schedule": "6 дней в неделю, 10:00–19:00"
+   }
+  },
+  "rabotaaktau-142348": {
+   "verdict": "approve",
+   "at": "2026-11-08T06:57:03+00:00",
+   "fields": {
+    "title": "Кондитер-шоколатье",
+    "address": "19-й микрорайон"
    }
   }
  }

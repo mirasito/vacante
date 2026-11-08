@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T03:56:47+00:00",
+ "updated_at": "2026-11-08T04:56:56+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -40839,6 +40839,173 @@
    "fields": {
     "employer": "Фирма «Айгерим»",
     "address": "ул. Авроры"
+   }
+  },
+  "rabota_uralsk-74441": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Пост из уральского канала, город неясен; мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "olx-402677212": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Рабочий на кирпичный завод"
+   }
+  },
+  "astana_rabota-90170": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "employer": "Паб «Partizan»",
+    "schedule": "16:00–02:00",
+    "address": "ул. Майлина, 13/1"
+   }
+  },
+  "rabotaaktau-142346": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Другой город: Актау"
+  },
+  "rabotaaktau-142333": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Другой город: Актау"
+  },
+  "zhumys_astana_kz-16894": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "zhumys_astana_kz-16867": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Няня в детский сад",
+    "salary_min": 180000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "07:50–18:00"
+   }
+  },
+  "rabota_v_shymkente-1456": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Пост из шымкентского канала, не Астана"
+  },
+  "astana_job_vakansii-130253": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "employer": "Детский сад «Maral Kids Garden»"
+   }
+  },
+  "zhumys_astana_kz-17239": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "employer": "Шайхана «Халал Каусар»",
+    "address": "ул. Туран, 39а, ЖК «Four Seasons»"
+   }
+  },
+  "rabota4almaty-6312": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Техничка в фитнес-клуб",
+    "employer": "Фитнес-клуб «Тастак»",
+    "salary_min": 180000,
+    "salary_max": 210000,
+    "salary_period": "month",
+    "schedule": "сутки через двое",
+    "address": "ул. Толе би, 249",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "hh-139228324": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Офисная должность, удалённые продажи"
+  },
+  "hh-139227927": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Бармен-кассир",
+    "schedule": "сменный график, 6–12 часов",
+    "address": "ул. Розыбакиева, 247А"
+   }
+  },
+  "hh-139227920": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "employer": "Altyn Engineering",
+    "address": "ул. Бекмаханова, 463В"
+   }
+  },
+  "rabotaalmatyyyy-15302": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "schedule": "6/1, 10:00–19:00",
+    "address": "мкр. Таугуль-2, 37а"
+   }
+  },
+  "hh-139227744": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Стилист-консультант",
+    "schedule": "2/2",
+    "address": "ул. Кабанбай батыра, 104"
+   }
+  },
+  "almaty_rabota05-11725": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Сушист, пиццамейкер, повар",
+    "employer": "Okadzaki",
+    "schedule": "09:00–21:00 или 12:00–01:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Обучение"
+    ]
+   }
+  },
+  "almaty_rabota_work-31828": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Уборщица на АЗС",
+    "schedule": "5/2, 08:00–20:00"
+   }
+  },
+  "rabotaaty-38205": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Реклама набора курьеров без работодателя, «до 1 миллиона»"
+  },
+  "rabota4almaty-6263": {
+   "verdict": "reject",
+   "at": "2026-11-08T04:56:56+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "olx-402703298": {
+   "verdict": "approve",
+   "at": "2026-11-08T04:56:56+00:00",
+   "fields": {
+    "title": "Клинер",
+    "salary_min": 450000,
+    "salary_max": 500000,
+    "salary_period": "month",
+    "perks": [
+     "Ежедневная оплата"
+    ]
    }
   }
  }

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T09:57:05+00:00",
+ "updated_at": "2026-11-08T10:56:35+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -42043,6 +42043,212 @@
    "fields": {
     "title": "Официант, администратор, уборщица",
     "employer": "«OLIVA»"
+   }
+  },
+  "zhumys_astana_kz-17306": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "address": "рынок «Алаш»",
+    "schedule": "2/1, 06:00–14:00",
+    "perks": []
+   }
+  },
+  "zhumys_astana_kz-17267": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "schedule": "6/1, 10:00–21:00",
+    "address": "ул. Манаса, 5",
+    "perks": []
+   }
+  },
+  "hh-139231283": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {}
+  },
+  "zhumys_astana_kz-17305": {
+   "verdict": "reject",
+   "at": "2026-11-08T10:56:35+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "astana_job_vakansii-130334": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Кассир, продавец",
+    "schedule": "6/1, 10:00–22:00",
+    "address": "ул. Сагадат Нурмагамбетова, 21/1, продуктовый магазин"
+   }
+  },
+  "astana_job_vakansii-130333": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Оператор компьютерного клуба",
+    "employer": "Компьютерный клуб «BRO»",
+    "schedule": "смены по 12 часов, 08:00–20:00 или 20:00–08:00",
+    "address": "ул. Жубана Молдагалиева, 1"
+   }
+  },
+  "astana_job_vakansii-130332": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "schedule": "6/1, 20:00–08:00"
+   }
+  },
+  "zhumys_astana_kz-16812": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Водитель такси",
+    "schedule": "смены по 12 часов",
+    "perks": [
+     "Жильё",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "astana_job_vakansii-130341": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Официант, пекарь-кондитер, повар",
+    "employer": "Кафе «Vostok story»"
+   }
+  },
+  "astana_job_vakansii-129754": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Помощник повара, продавец-консультант",
+    "employer": "Кафе-магазин «Ramen Mart»"
+   }
+  },
+  "hh-139231329": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {}
+  },
+  "hh-139231172": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "schedule": "5/2, 4/2 или 2/2"
+   }
+  },
+  "hh-139058858": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {}
+  },
+  "hh-139210154": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Beerday bar",
+    "schedule": "2/2"
+   }
+  },
+  "rabota4almaty-6333": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Зооняня",
+    "employer": "ИП «Колибри»",
+    "address": "ул. Куйбышева, 14"
+   }
+  },
+  "rabotaalmatyyyy-15319": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "address": "ул. Нурпеисова, 269, кабинет 12",
+    "perks": [
+     "Питание",
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139212917": {
+   "verdict": "reject",
+   "at": "2026-11-08T10:56:35+00:00",
+   "reason": "Офисная должность: продажи IT-оборудования"
+  },
+  "almaty_rabota_work-31841": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "address": "ул. Кабанбай батыра, 85"
+   }
+  },
+  "agashka_job_almaty-1078": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "title": "Работник на ремонт поддонов",
+    "address": "пос. Боралдай, 71-й разъезд",
+    "perks": [
+     "Без опыта",
+     "Ежедневная оплата",
+     "Питание"
+    ]
+   }
+  },
+  "olx-402691143": {
+   "verdict": "reject",
+   "at": "2026-11-08T10:56:35+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса, нужен свой грузовик"
+  },
+  "rabotaaktau-142375": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "employer": "SALAM BRO",
+    "schedule": "2/2, 10:00–22:00"
+   }
+  },
+  "rabotaaktau-142378": {
+   "verdict": "reject",
+   "at": "2026-11-08T10:56:35+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142374": {
+   "verdict": "reject",
+   "at": "2026-11-08T10:56:35+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142376": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "schedule": "5/2, 08:00–18:00",
+    "address": "35-й микрорайон"
+   }
+  },
+  "hh-139231321": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {}
+  },
+  "rabota_semey_official-6839": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "employer": "Кафе «Халва»"
+   }
+  },
+  "rabota_semey_official-6840": {
+   "verdict": "approve",
+   "at": "2026-11-08T10:56:35+00:00",
+   "fields": {
+    "employer": "«Бан Ролл»",
+    "schedule": "1/1"
    }
   }
  }

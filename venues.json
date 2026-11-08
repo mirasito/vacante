@@ -898,6 +898,21 @@
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
  },
+ "aktau:глория джинс каспиан": {
+  "name": "Глория Джинс Каспиан",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "website": "https://gloria-jeans.ru/",
+  "source": "https://2gis.kz/aktau/firm/70000001046338051",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0c19fb43d40aa811.jpg",
+  "avatar_source": "website"
+ },
  "aktau:гранд авеню": {
   "name": "Гранд Авеню",
   "city": "aktau",
@@ -4670,6 +4685,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "almaty:blue sky taxi": {
+  "name": "Blue Sky Taxi",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "blue.skyenergy",
+  "website": "https://blueskyenergy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001048540082",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:bns group": {
   "name": "BNS Group",
@@ -8580,6 +8609,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
+ },
+ "almaty:log4": {
+  "name": "LOG4",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "log_kz",
+  "website": "http://logclubs.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001017274540",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0be8ed940e1378ba.jpg",
+  "avatar_source": "website"
  },
  "almaty:logilink logistics": {
   "name": "Logilink Logistics",
@@ -14263,6 +14308,13 @@
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
  },
+ "almaty:большая монета": {
+  "name": "Большая Монета",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "almaty:бостан": {
   "name": "Бостан",
   "city": "almaty",
@@ -14772,7 +14824,7 @@
   "instagram": "ibis_almatyjetisu",
   "website": "https://all.accor.com/hotel/B5J5/index.en.shtml",
   "source": "https://2gis.kz/almaty/firm/70000001055753272",
-  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17083,6 +17135,13 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "almaty:мечта": {
+  "name": "Мечта",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "almaty:микрофинансовая организация business finance": {
   "name": "Микрофинансовая организация Business Finance",
   "city": "almaty",
@@ -18382,6 +18441,13 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "almaty:саулық": {
+  "name": "Саулық",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "almaty:саяхат": {
   "name": "Саяхат",
   "city": "almaty",
@@ -18799,6 +18865,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:стрела": {
+  "name": "Стрела",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
  },
  "almaty:стройлогистика": {
   "name": "Стройлогистика",
@@ -21681,6 +21754,13 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "astana:crazhdin": {
+  "name": "CRAZHDIN",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "astana:creatura": {
   "name": "Creatura",
   "city": "astana",
@@ -23083,7 +23163,7 @@
   "checked_at": "2026-11-01T00:42:45+00:00",
   "website": "http://kpe.com.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018083058",
-  "avatar_checked_at": "2026-11-01T00:42:45+00:00",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26272,6 +26352,13 @@
   "instagram": "zerdeli.astana",
   "source": "https://2gis.kz/astana/firm/70000001117176008"
  },
+ "astana:zhetebaev": {
+  "name": "Zhetebaev",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "astana:zmt invest": {
   "name": "ZMT Invest",
   "city": "astana",
@@ -27166,6 +27253,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "astana:болысбаева": {
+  "name": "БОЛЫСБАЕВА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "astana:боранбаева": {
   "name": "Боранбаева",
   "city": "astana",
@@ -27954,6 +28048,13 @@
   "instagram": "trademark_koko",
   "source": "https://2gis.kz/kostanaj/firm/70000001044055046"
  },
+ "astana:жасмин": {
+  "name": "Жасмин",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "astana:жастар": {
   "name": "Жастар",
   "city": "astana",
@@ -28013,6 +28114,15 @@
    "telegram",
    "website"
   ]
+ },
+ "astana:жибек": {
+  "name": "Жибек",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "zebracoffee.kz",
+  "source": "https://2gis.kz/astana/firm/70000001045451336"
  },
  "astana:жибек жолы": {
   "name": "Жибек Жолы",
@@ -29207,6 +29317,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
+ },
+ "astana:мир подиум статус": {
+  "name": "МИР ПОДИУМ Статус",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "podiumstatus.kz",
+  "source": "https://2gis.kz/astana/firm/70000001018110047"
  },
  "astana:мир реабилитации": {
   "name": "МИР РЕАБИЛИТАЦИИ",
@@ -32589,6 +32708,15 @@
   "v": 3,
   "checked_at": "2026-11-06T10:45:16+00:00"
  },
+ "atyrau:атырау недвижка": {
+  "name": "Атырау Недвижка",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "atyrau.nedvizhka",
+  "source": "https://2gis.kz/atyrau/firm/70000001104878039"
+ },
  "atyrau:атыраутехинвест": {
   "name": "АтырауТехИнвест",
   "city": "atyrau",
@@ -33211,6 +33339,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
+ },
+ "karaganda:baby spa": {
+  "name": "Baby Spa",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "babyspa_09",
+  "source": "https://2gis.kz/karaganda/firm/70000001118607883"
  },
  "karaganda:beyosa kazakhstan": {
   "name": "beyosa Kazakhstan",
@@ -36305,6 +36442,22 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "kostanay:miniso kazakhstan": {
+  "name": "MINISO Kazakhstan",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "minisokz",
+  "website": "http://miniso.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001037561730",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7b7c7b8a3e635dd9.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:mir_ipoteki batys": {
   "name": "Mir_ipoteki.Batys",
   "city": "kostanay",
@@ -37857,6 +38010,19 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "pavlodar:format mach company": {
+  "name": "Format Mach Company",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "website": "https://fmcom.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001068990418",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:global media": {
   "name": "Global Media",
   "city": "pavlodar",
@@ -38379,6 +38545,24 @@
   ],
   "avatar": "a83173fe0131ef9d.jpg",
   "avatar_source": "website"
+ },
+ "pavlodar:инновационный евразийский университет инеу": {
+  "name": "Инновационный Евразийский Университет (ИнЕУ)",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "ineuofpage",
+  "telegram": "ineuedu",
+  "website": "https://ineu.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018654318",
+  "avatar_checked_at": "2026-11-08T00:45:11+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "9c80d578a4b13483.jpg",
+  "avatar_source": "telegram"
  },
  "pavlodar:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
@@ -44287,6 +44471,13 @@
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
  },
+ "uralsk:есмагулова а н": {
+  "name": "ЕСМАГУЛОВА А.Н.",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00"
+ },
  "uralsk:женской обуви": {
   "name": "ЖЕНСКОЙ ОБУВИ",
   "city": "uralsk",
@@ -46074,6 +46265,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
+ },
+ "ust-kamenogorsk:печатное издательство агентство рекламный дайджест": {
+  "name": "ПЕЧАТНОЕ ИЗДАТЕЛЬСТВО - АГЕНТСТВО РЕКЛАМНЫЙ ДАЙДЖЕСТ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T00:45:10+00:00",
+  "instagram": "r_daidgest",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001062140564"
  },
  "ust-kamenogorsk:полежаев андрей валерьевич": {
   "name": "Полежаев Андрей Валерьевич",

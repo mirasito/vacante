@@ -1152,6 +1152,19 @@
    "website"
   ]
  },
+ "aktau:ломбард белый tm": {
+  "name": "Ломбард Белый TM",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "website": "https://lombard-b.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001097617207",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:люкс уаш": {
   "name": "Люкс Уаш",
   "city": "aktau",
@@ -1903,6 +1916,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "aktobe:magnum e commerce kazakhstan": {
+  "name": "Magnum E-commerce Kazakhstan",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001103368530",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:maku clinic": {
   "name": "MAKU CLINIC",
@@ -6561,6 +6587,15 @@
   "v": 3,
   "checked_at": "2026-11-04T21:44:03+00:00"
  },
+ "almaty:g project almaty": {
+  "name": "G-Project Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "instagram": "g_project_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001099053798"
+ },
  "almaty:galafood": {
   "name": "GalaFood",
   "city": "almaty",
@@ -8349,6 +8384,13 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "almaty:l group": {
+  "name": "L-Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "almaty:la baia": {
   "name": "La Baia",
   "city": "almaty",
@@ -8656,10 +8698,12 @@
   "checked_at": "2026-11-01T01:42:32+00:00",
   "website": "https://logycom.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000818919",
-  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "6cbf1b916b483560.jpg",
+  "avatar_source": "website"
  },
  "almaty:longbo industry": {
   "name": "LONGBO-INDUSTRY",
@@ -10995,6 +11039,15 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "almaty:sass store": {
+  "name": "SASS STORE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "instagram": "sass.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001035292352"
+ },
  "almaty:satelco": {
   "name": "SATELCO",
   "city": "almaty",
@@ -11441,6 +11494,13 @@
   "avatar": "78b578ca56c301c0.jpg",
   "avatar_source": "website"
  },
+ "almaty:sport center": {
+  "name": "Sport Center",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "almaty:sport time": {
   "name": "Sport Time",
   "city": "almaty",
@@ -11536,6 +11596,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T15:44:26+00:00"
+ },
+ "almaty:status cars": {
+  "name": "Status Cars",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
  },
  "almaty:steel group r": {
   "name": "STEEL GROUP R",
@@ -17128,6 +17195,22 @@
   "instagram": "mex_store.kz",
   "source": "https://2gis.kz/almaty/firm/70000001115137169"
  },
+ "almaty:метако пф": {
+  "name": "Метако ПФ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "instagram": "metako.kz",
+  "website": "http://metako.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001045021625",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "51f8651468257c72.jpg",
+  "avatar_source": "website"
+ },
  "almaty:метешова ю в": {
   "name": "Метешова Ю.В.",
   "city": "almaty",
@@ -18476,7 +18559,7 @@
   "checked_at": "2026-11-01T01:42:32+00:00",
   "website": "https://cdek.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001067902858",
-  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19270,6 +19353,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
+ },
+ "almaty:тойота мотор казахстан": {
+  "name": "Тойота Мотор Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
  },
  "almaty:тоо персонал": {
   "name": "ТОО.Персонал",
@@ -22438,6 +22528,13 @@
    "website"
   ]
  },
+ "astana:gm stock": {
+  "name": "GM Stock",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "astana:goals lab": {
   "name": "Goals lab",
   "city": "astana",
@@ -25488,6 +25585,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T18:44:42+00:00"
+ },
+ "astana:space office": {
+  "name": "Space Office",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "instagram": "spaceoffice.kz",
+  "source": "https://2gis.kz/astana/firm/70000001110533454"
  },
  "astana:spark логистика": {
   "name": "Spark Логистика",
@@ -29950,6 +30056,13 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "astana:производственная фирма лик": {
+  "name": "Производственная фирма ЛиК",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "astana:производственный цех": {
   "name": "Производственный цех",
   "city": "astana",
@@ -32864,6 +32977,13 @@
   "v": 3,
   "checked_at": "2026-11-06T21:44:54+00:00"
  },
+ "atyrau:казахстанская топливная компания": {
+  "name": "Казахстанская топливная компания",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "atyrau:казбеков": {
   "name": "КАЗБЕКОВ",
   "city": "atyrau",
@@ -33348,6 +33468,22 @@
   "checked_at": "2026-11-08T00:45:10+00:00",
   "instagram": "babyspa_09",
   "source": "https://2gis.kz/karaganda/firm/70000001118607883"
+ },
+ "karaganda:bereke bank": {
+  "name": "Bereke Bank",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "instagram": "berekebank",
+  "website": "https://berekebank.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302878295",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "49b4a041c83e140d.jpg",
+  "avatar_source": "website"
  },
  "karaganda:beyosa kazakhstan": {
   "name": "beyosa Kazakhstan",
@@ -34504,7 +34640,7 @@
   "instagram": "deltamkz",
   "website": "https://delta-m.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001027688143",
-  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34665,6 +34801,13 @@
   ],
   "avatar": "35c32b3052b13ae6.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:ихсанова диана": {
+  "name": "Ихсанова Диана",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
  },
  "karaganda:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
@@ -37704,6 +37847,13 @@
    "website"
   ]
  },
+ "kyzylorda:orda cola": {
+  "name": "ORDA-COLA",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "kyzylorda:prima distribution": {
   "name": "Prima Distribution",
   "city": "kyzylorda",
@@ -39711,6 +39861,22 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "petropavlovsk:микрофинансовая организация r finance": {
+  "name": "Микрофинансовая организация «R-Finance»",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00",
+  "instagram": "rfinance_mfo",
+  "website": "https://r-finance.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038185788",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2c25d519ef86c031.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:молсервис": {
   "name": "Молсервис",
   "city": "petropavlovsk",
@@ -41277,6 +41443,13 @@
   "instagram": "desupport.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001040762380"
  },
+ "shymkent:don": {
+  "name": "DON",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
+ },
  "shymkent:donix": {
   "name": "DONIX",
   "city": "shymkent",
@@ -41845,7 +42018,7 @@
   "checked_at": "2026-11-01T01:42:32+00:00",
   "website": "https://senimg.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001076145154",
-  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41900,6 +42073,13 @@
   ],
   "avatar": "11e842cafd55c005.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:suraya uniform services": {
+  "name": "Suraya Uniform Services",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
  },
  "shymkent:svu group": {
   "name": "SVU Group",
@@ -43563,7 +43743,7 @@
   "instagram": "evrika.kazakhstan",
   "website": "https://evrika.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001052621978",
-  "avatar_checked_at": "2026-11-01T01:42:32+00:00",
+  "avatar_checked_at": "2026-11-08T01:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44752,6 +44932,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:ультроника": {
+  "name": "Ультроника",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T01:44:24+00:00"
  },
  "uralsk:уралметаллинвест": {
   "name": "УралМеталлинвест",

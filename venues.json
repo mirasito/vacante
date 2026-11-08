@@ -3797,6 +3797,22 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:ariba": {
+  "name": "ARIBA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "ariba.mebel",
+  "website": "http://ariba.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000817204",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6b0ebf619a3523c1.jpg",
+  "avatar_source": "website"
+ },
  "almaty:arlan logistics grop": {
   "name": "TOO Arlan logistics grop",
   "city": "almaty",
@@ -7165,6 +7181,13 @@
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
  },
+ "almaty:halal way": {
+  "name": "Halal Way",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
+ },
  "almaty:halyq soft": {
   "name": "Halyq Soft",
   "city": "almaty",
@@ -7500,6 +7523,22 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "almaty:ig trend": {
+  "name": "IG TREND",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "igtrend_kz",
+  "website": "http://igtrend.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001027729465",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f788f74f61c97d13.jpg",
+  "avatar_source": "website"
+ },
  "almaty:ile tau": {
   "name": "ILE TAU",
   "city": "almaty",
@@ -7550,6 +7589,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:individent": {
+  "name": "“individent”",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
  },
  "almaty:infoprof": {
   "name": "InfoProf",
@@ -8311,6 +8357,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:konya günaydin": {
+  "name": "KONYA GÜNAYDIN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
  },
  "almaty:koreansklad_kz": {
   "name": "KOREANSKLAD_KZ",
@@ -9099,6 +9152,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "almaty:medhouse kazakhstan": {
+  "name": "MedHouse Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "website": "https://medhouse.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018070263",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:medin security": {
   "name": "Medin Security",
@@ -10863,6 +10929,20 @@
    "website"
   ]
  },
+ "almaty:rixos almaty": {
+  "name": "Rixos Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "rixosalmaty",
+  "website": "https://all.accor.com/hotel/B1N9/index.ru.shtml",
+  "source": "https://2gis.kz/almaty/firm/9429940000789746",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:rixos almaty тоо solis ltd": {
   "name": "Rixos Almaty (ТОО Solis ltd)",
   "city": "almaty",
@@ -12381,6 +12461,13 @@
    "website"
   ]
  },
+ "almaty:union space tm тоо brand hub group": {
+  "name": "Union Space`TM (ТОО Brand Hub Group)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
+ },
  "almaty:union technology": {
   "name": "Union Technology",
   "city": "almaty",
@@ -12637,6 +12724,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T18:44:51+00:00"
+ },
+ "almaty:waw mebel": {
+  "name": "WAW MEBEL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "waw.mebel",
+  "website": "http://wawmebel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001101446891",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:wb": {
   "name": "WB",
@@ -13691,6 +13792,15 @@
    "website"
   ]
  },
+ "almaty:алматинский оконный сервис": {
+  "name": "Алматинский оконный сервис",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "remontokonalmaty_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001067791008"
+ },
  "almaty:алматинский продукт": {
   "name": "Алматинский продукт",
   "city": "almaty",
@@ -13944,6 +14054,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
+ },
+ "almaty:арбат": {
+  "name": "Арбат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
  },
  "almaty:арбуз фуд сервис": {
   "name": "Арбуз фуд сервис",
@@ -15078,6 +15195,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "almaty:данияр": {
+  "name": "TOO Данияр",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
  },
  "almaty:даньяров е д": {
   "name": "Даньяров Е.Д.",
@@ -19728,6 +19852,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
+ },
+ "almaty:управляющая компания marden property": {
+  "name": "Управляющая компания Marden Property",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "mardenproperty",
+  "website": "https://marden.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001039176770",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:урманов р а": {
   "name": "Урманов Р. А.",
@@ -25368,6 +25506,15 @@
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
  },
+ "astana:red chocoberry": {
+  "name": "Red Chocoberry",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "red_chocoberry",
+  "source": "https://2gis.kz/astana/firm/70000001055044021"
+ },
  "astana:regomed": {
   "name": "RegoMed",
   "city": "astana",
@@ -30955,6 +31102,15 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "astana:спец авто": {
+  "name": "Спец-Авто",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "spetsavto",
+  "source": "https://2gis.kz/astana/firm/70000001018115280"
+ },
  "astana:спортмастер": {
   "name": "Спортмастер",
   "city": "astana",
@@ -31011,6 +31167,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "astana:сто по ремонту радиаторов и автопечек": {
+  "name": "СТО по ремонту радиаторов и автопечек",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
  },
  "astana:столовая ханым": {
   "name": "Столовая Ханым",
@@ -37293,6 +37456,13 @@
   "instagram": "vetzashitaazia",
   "source": "https://2gis.kz/kostanaj/firm/70000001038110568"
  },
+ "kostanay:видеоспецмонтаж": {
+  "name": "Видеоспецмонтаж",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
+ },
  "kostanay:виниченко сто автостиль": {
   "name": "Виниченко ( СТО Автостиль)",
   "city": "kostanay",
@@ -37412,7 +37582,7 @@
   "instagram": "dep_company",
   "website": "https://dep.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001104159266",
-  "avatar_checked_at": "2026-11-01T05:43:29+00:00",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40379,6 +40549,24 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "petropavlovsk:нурбанк": {
+  "name": "Нурбанк",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "nurbank",
+  "telegram": "nurbank_kz",
+  "website": "https://nurbank.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038532561",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "75d315094fa2f96c.jpg",
+  "avatar_source": "telegram"
+ },
  "petropavlovsk:овсянникова елена ивановна": {
   "name": "Овсянникова Елена Ивановна",
   "city": "petropavlovsk",
@@ -41354,6 +41542,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T09:44:32+00:00"
+ },
+ "semey:маслосырбаза": {
+  "name": "Маслосырбаза",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00",
+  "instagram": "maslosirbaza",
+  "source": "https://2gis.kz/semej/firm/70000001051545598"
  },
  "semey:мереке": {
   "name": "Мереке",
@@ -43623,6 +43820,13 @@
   "avatar": "91336037393b3ee6.jpg",
   "avatar_source": "website"
  },
+ "shymkent:фронт лайн": {
+  "name": "Фронт - Лайн",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T05:44:03+00:00"
+ },
  "shymkent:центр детской неврологии и эпилепсии neurolife": {
   "name": "Центр детской неврологии и эпилепсии Neurolife",
   "city": "shymkent",
@@ -45057,7 +45261,7 @@
   "checked_at": "2026-11-01T05:43:29+00:00",
   "website": "https://www.zkmk.kz/",
   "source": "https://www.zkmk.kz/en/about-company/",
-  "avatar_checked_at": "2026-11-01T05:43:29+00:00",
+  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
   "avatar_tried": [
    "website"
   ]

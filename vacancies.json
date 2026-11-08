@@ -1,5 +1,35 @@
 [
  {
+  "id": "hh-139236074",
+  "title": "Администратор караоке бара",
+  "category": "service",
+  "city": "karaganda",
+  "salary_min": 20000,
+  "salary_max": 20000,
+  "salary_period": "day",
+  "schedule": "2/2, Другое",
+  "perks": [],
+  "employer": "GRM",
+  "text": "Обязанности: Тёплая и профессиональная встреча гостей, создание доброжелательной атмосферы. Контроль работы персонала зала: мотивация, дисциплина, качество обслуживания. Проверка чек-листов на...\nТребования: Командная работа и умение вести за собой команду. Грамотная речь, чёткая и уверенная коммуникация. Знание языков (русский, казахский, английский) — будет...",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139236074?tech_source=api",
+  "posted_at": "2026-11-08T22:14:32+00:00",
+  "fingerprint": "063ce2cc4794b6bc",
+  "also_seen_in": [],
+  "address": "проспект Бухар Жырау, 2/7",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 49.8235,
+  "lon": 73.074,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "11691770"
+ },
+ {
   "id": "hh-139234794",
   "title": "Барбер",
   "category": "service",
@@ -276927,7 +276957,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "9571765"
  },
  {
   "id": "hh-138897700",
@@ -276987,7 +277017,7 @@
   "shift_date": null,
   "shift_time": null,
   "need": null,
-  "employer_hh": null
+  "employer_hh": "11872728"
  },
  {
   "id": "hh-138897209",

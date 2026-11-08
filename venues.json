@@ -6,6 +6,13 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "aktau:adamant": {
+  "name": "Adamant",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
+ },
  "aktau:adil fasad": {
   "name": "Adil Fasad",
   "city": "aktau",
@@ -5843,6 +5850,13 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "almaty:deluxe сауда": {
+  "name": "DeLuxe Сауда",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
+ },
  "almaty:demi calze деми калзе": {
   "name": "Demi Calze (Деми Калзе)",
   "city": "almaty",
@@ -8399,6 +8413,15 @@
   "v": 3,
   "checked_at": "2026-11-08T07:43:16+00:00"
  },
+ "almaty:karalin": {
+  "name": "Karalin",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00",
+  "instagram": "karalin_lume",
+  "source": "https://2gis.kz/almaty/firm/70000001101321845"
+ },
  "almaty:karavan караван": {
   "name": "KARAVAN (КАРАВАН)",
   "city": "almaty",
@@ -10820,6 +10843,13 @@
   "avatar": "69f4b77d7cec98b5.jpg",
   "avatar_source": "website"
  },
+ "almaty:pixels": {
+  "name": "PIXELS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
+ },
  "almaty:plan b": {
   "name": "PLAN B",
   "city": "almaty",
@@ -11042,7 +11072,7 @@
   "instagram": "prosnab_service",
   "website": "https://prosnabservice.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001034446055",
-  "avatar_checked_at": "2026-11-01T19:44:04+00:00",
+  "avatar_checked_at": "2026-11-08T19:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11975,6 +12005,20 @@
   ],
   "avatar": "1a1b21fa7cde72d0.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:sigma center": {
+  "name": "SIGMA CENTER",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00",
+  "instagram": "sigmacenter.kz",
+  "website": "https://sigmacenter.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001067321620",
+  "avatar_checked_at": "2026-11-08T19:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:signtech kazakhstan": {
   "name": "SignTech Kazakhstan",
@@ -14657,6 +14701,19 @@
    "website"
   ]
  },
+ "almaty:алматынан": {
+  "name": "Алматынан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00",
+  "website": "https://almatynan.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792381",
+  "avatar_checked_at": "2026-11-08T19:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алонстелефонстрой": {
   "name": "Алонстелефонстрой",
   "city": "almaty",
@@ -15505,6 +15562,13 @@
   "checked_at": "2026-11-03T23:44:09+00:00",
   "instagram": "bravyi_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001056285737"
+ },
+ "almaty:брагин семен алексеевич": {
+  "name": "Брагин Семен Алексеевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "almaty:браус": {
   "name": "Браус",
@@ -16658,6 +16722,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T11:44:18+00:00"
+ },
+ "almaty:зенченко": {
+  "name": "Зенченко",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "almaty:зина групп": {
   "name": "Зина Групп",
@@ -19033,6 +19104,13 @@
   ],
   "avatar": "b40f95fa3fabfa3f.jpg",
   "avatar_source": "website"
+ },
+ "almaty:нұрекен д е": {
+  "name": "НҰРЕКЕН Д.Е.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "almaty:образовательная индустрия": {
   "name": "Образовательная Индустрия",
@@ -22948,6 +23026,15 @@
   "instagram": "best_chicken_astana",
   "source": "https://2gis.kz/astana/firm/70000001082029286"
  },
+ "astana:best_ luxx": {
+  "name": "Best_ Luxx",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00",
+  "instagram": "best_luxx",
+  "source": "https://2gis.kz/astana/firm/70000001118164480"
+ },
  "astana:bfuria": {
   "name": "BFuria",
   "city": "astana",
@@ -23633,6 +23720,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
+ },
+ "astana:ddd": {
+  "name": "DDD",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "astana:deal": {
   "name": "Deal",
@@ -26895,6 +26989,13 @@
   "instagram": "uzbechka1_kunaeva14g",
   "source": "https://2gis.kz/astana/firm/70000001084057591"
  },
+ "astana:qazaq kids": {
+  "name": "Qazaq kids",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
+ },
  "astana:qazaq republic": {
   "name": "Qazaq Republic",
   "city": "astana",
@@ -27537,6 +27638,13 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "astana:song yang international trading co ltd": {
+  "name": "SONG YANG International Trading Co.Ltd",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
+ },
  "astana:soudal": {
   "name": "Soudal",
   "city": "astana",
@@ -27578,6 +27686,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:sparrow moving company llc": {
+  "name": "Sparrow Moving Company LLC",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "astana:sq": {
   "name": "SQ",
@@ -27975,6 +28090,13 @@
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
  },
+ "astana:titan metall trade": {
+  "name": "TITAN METALL TRADE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
+ },
  "astana:titan security": {
   "name": "TITAN SECURITY",
   "city": "astana",
@@ -28192,6 +28314,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T12:44:30+00:00"
+ },
+ "astana:v oil": {
+  "name": "V-Oil",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "astana:vds": {
   "name": "VDS",
@@ -31452,6 +31581,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
+ },
+ "astana:машаев": {
+  "name": "ИП Машаев",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "astana:мақсат": {
   "name": "Мақсат",
@@ -39212,6 +39348,15 @@
   "instagram": "osp_agro",
   "source": "https://2gis.kz/kostanaj/firm/70000001056268423"
  },
+ "kostanay:proffood": {
+  "name": "PROFfood",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00",
+  "instagram": "proff_kst",
+  "source": "https://2gis.kz/kostanaj/firm/70000001111810449"
+ },
  "kostanay:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
   "city": "kostanay",
@@ -41562,6 +41707,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:налобнов максим валентинович": {
+  "name": "Налобнов Максим Валентинович",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00"
  },
  "pavlodar:остин казахстан ostin тм": {
   "name": "Остин Казахстан (O'stin ТМ)",
@@ -44200,6 +44352,15 @@
   ],
   "avatar": "ac418d7217426852.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:bali spa shymkent": {
+  "name": "Bali.spa.shymkent",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-08T19:44:34+00:00",
+  "instagram": "bali.spa.shymkent",
+  "source": "https://2gis.kz/shymkent/firm/70000001101564250"
  },
  "shymkent:bbs trade": {
   "name": "BBS TRADE",

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T17:57:52+00:00",
+ "updated_at": "2026-11-08T18:56:40+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -43317,6 +43317,40 @@
     "employer": null,
     "schedule": "2/2",
     "address": "ул. Еркегали Рахмадиева, 6"
+   }
+  },
+  "hh-139234462": {
+   "verdict": "approve",
+   "at": "2026-11-08T18:56:40+00:00",
+   "fields": {
+    "schedule": "6/1 или 5/2, смены по 11–12 часов"
+   }
+  },
+  "hh-139234092": {
+   "verdict": "approve",
+   "at": "2026-11-08T18:56:40+00:00",
+   "fields": {
+    "schedule": null,
+    "address": "ул. Байзакова, 223"
+   }
+  },
+  "rabotaalmatyyyy-15322": {
+   "verdict": "approve",
+   "at": "2026-11-08T18:56:40+00:00",
+   "fields": {
+    "employer": "Кафе «Боржоми»",
+    "schedule": "5/2, 10:00–01:00",
+    "address": "с. Кыргауылды, ул. Садовая, 1",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139234098": {
+   "verdict": "approve",
+   "at": "2026-11-08T18:56:40+00:00",
+   "fields": {
+    "schedule": "смены по 8 часов"
    }
   }
  }

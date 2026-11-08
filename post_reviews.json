@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T04:56:56+00:00",
+ "updated_at": "2026-11-08T05:56:39+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -41005,6 +41005,198 @@
     "salary_period": "month",
     "perks": [
      "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_astanakz-31354": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "ТОО «Paradiegma Astana»",
+    "schedule": "Пн–Пт 09:00–19:00, Сб 09:00–15:00"
+   }
+  },
+  "rabota_astanakz-31328": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Мастер СТО, ученик",
+    "employer": null,
+    "perks": []
+   }
+  },
+  "astana_job_vakansii-130311": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Помощник в производственный цех",
+    "schedule": "5/2, ночные смены, 20:00–08:00",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "astana_job_vakansii-129887": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Кафе «Fermento»",
+    "schedule": "2/2 или 5/2"
+   }
+  },
+  "astana_rabota-90172": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Red Chocoberry",
+    "salary_min": 300000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "6/1, 09:00–18:00",
+    "address": "ул. Толе би, 65"
+   }
+  },
+  "almaty_rabota05-11732": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Донерщик, техперсонал, бармен, кассир",
+    "employer": "Кафе «Konya Günaydın»",
+    "schedule": "1/1 или 2/2",
+    "address": "мкр. Алтай-1, 26"
+   }
+  },
+  "almaty_rabota_work-31853": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Магазин «Baqstroy»",
+    "perks": [
+     "Бонусы",
+     "Без опыта",
+     "Можно студентам"
+    ]
+   }
+  },
+  "almaty_rabota_work-31851": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Посудомойщик",
+    "employer": "Отель «Rixos Almaty»",
+    "schedule": "08:00–17:00, 15:00–00:00 или 22:00–08:00",
+    "perks": [
+     "Питание",
+     "Спецодежда"
+    ]
+   }
+  },
+  "almatyrabota1-21294": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Магазин «Stilalmaty»",
+    "schedule": "08:00–19:00",
+    "address": "ТД «Адем 3», сектор Е1"
+   }
+  },
+  "almatyrabota1-21338": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "выходные и праздничные дни, 10:00–21:00",
+    "address": "ул. Наурызбай батыра, 50, ТД «Арбат»"
+   }
+  },
+  "rabota4almaty-6316": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Водитель фуры",
+    "employer": "ТОО «Данияр»",
+    "address": "Алатауский район, Бакорда"
+   }
+  },
+  "rabota4almaty-6314": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Сборщик корпусной мебели",
+    "employer": "WAW Mebel",
+    "address": "пр. Назарбаева, 36"
+   }
+  },
+  "agashka_job_almaty-1092": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Курорт «Oi-Qaragai»",
+    "schedule": "08:00–17:00"
+   }
+  },
+  "jobkz_1-23168": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Оператор производственной линии",
+    "address": "Карасайский район, с. Елтай"
+   }
+  },
+  "olx-402698160": {
+   "verdict": "reject",
+   "at": "2026-11-08T05:56:39+00:00",
+   "reason": "Нет понятной зарплаты (оплата 50 на 50), скорее техническая должность"
+  },
+  "olx-402697616": {
+   "verdict": "reject",
+   "at": "2026-11-08T05:56:39+00:00",
+   "reason": "Мало сведений: непонятно, кого ищут, нет зарплаты и адреса"
+  },
+  "rabota4almaty-6245": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "schedule": "2/2",
+    "address": "ул. Сейфуллина, 14"
+   }
+  },
+  "hh-138257375": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Фронт-Лайн",
+    "address": "ул. Байтурсынова, 18"
+   }
+  },
+  "aktobevakansii-44404": {
+   "verdict": "reject",
+   "at": "2026-11-08T05:56:39+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142338": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "employer": "Игровой клуб «PS5 Plus»",
+    "schedule": "2/2, 12:00–04:00",
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "rabota_semey_official-6838": {
+   "verdict": "approve",
+   "at": "2026-11-08T05:56:39+00:00",
+   "fields": {
+    "title": "Сварщик-слесарь по отоплению",
+    "employer": "ТОО «Маслосырбаза»",
+    "schedule": "5/2, 08:00–17:00",
+    "address": "ул. Чехова, 81 (за Бизнес-колледжем)",
+    "perks": [
+     "Питание",
+     "Официально"
     ]
    }
   }

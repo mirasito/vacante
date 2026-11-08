@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T14:57:00+00:00",
+ "updated_at": "2026-11-08T15:56:55+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -43034,6 +43034,206 @@
     "employer": "Кафе «Camel»",
     "address": "ул. Чайжунусова, 236"
    }
+  },
+  "rabota_astanakz-31364": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "employer": "Бургерная «FARШ»",
+    "address": "ТРЦ «Abu Dhabi Plaza»"
+   }
+  },
+  "hh-139232949": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "employer": "Амангелді",
+    "schedule": "2/2"
+   }
+  },
+  "hh-132234377": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Работа в России (Новороссийск)"
+  },
+  "hh-138399019": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Офисная B2B-должность, адрес не в Казахстане"
+  },
+  "hh-139232974": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Офисные продажи онлайн-школы по телефону"
+  },
+  "hh-139232935": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "мкр. Самал-2, ул. Бектурова, 70"
+   }
+  },
+  "hh-139232917": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Помощник электрика",
+    "schedule": "6/1 или 5/2"
+   }
+  },
+  "hh-139232696": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Бариста",
+    "employer": "Кофе-бар «Doppio»",
+    "schedule": "2/2",
+    "address": "пр. Достык, 202"
+   }
+  },
+  "almatyvacancies-11136": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Повар горячего цеха",
+    "salary_min": 315000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2, 11:30–01:00"
+   }
+  },
+  "rabota4almaty-6352": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Кухонный рабочий",
+    "address": "ул. Казыбек би, 20А"
+   }
+  },
+  "hh-137936744": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "address": "пр. Аль-Фараби, 17к4Б"
+   }
+  },
+  "hh-137991259": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Офисная должность: продажи недвижимости"
+  },
+  "almatyvacancies-11131": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "perks": [
+     "Жильё",
+     "Питание"
+    ]
+   }
+  },
+  "almatyvacancies-11130": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "schedule": "10:00–00:00"
+   }
+  },
+  "rabota4almaty-6349": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Сантехник",
+    "employer": "ЖЭУ «Нурлы Дала»",
+    "address": "мкр. Мирас, 157"
+   }
+  },
+  "rabota4almaty-6350": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Повар горячих блюд",
+    "employer": "Caffe Kangnam International",
+    "address": "мкр. Таугуль-2, 38"
+   }
+  },
+  "almatyvacancies-11138": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "almatyvacancies-11122": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "almatyvacancies-11133": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "salary_min": 11000,
+    "salary_max": 14000,
+    "salary_period": "day",
+    "schedule": "08:00–20:00 или 08:00–17:00",
+    "address": "Райымбека – Байзакова"
+   }
+  },
+  "almatyvacancies-11132": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_v_aktobe-3015": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_v_aktobe-3016": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "vakansii_rabota_atyrau-50069": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "title": "Бармен-консультант, кассир-консультант",
+    "schedule": "2/2, 10:45–03:00"
+   }
+  },
+  "rabota_v_semee-7944": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "employer": "Банный комплекс «Ваши Бани»",
+    "schedule": "2/2, 11:00–02:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Бонусы"
+    ]
+   }
+  },
+  "olx-402459749": {
+   "verdict": "approve",
+   "at": "2026-11-08T15:56:55+00:00",
+   "fields": {
+    "salary_min": 14000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "10:00–00:00"
+   }
+  },
+  "rabota_v_semee-7945": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_v_semee-7942": {
+   "verdict": "reject",
+   "at": "2026-11-08T15:56:55+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   }
  }
 }

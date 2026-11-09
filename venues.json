@@ -7113,6 +7113,13 @@
    "website"
   ]
  },
+ "almaty:fun factory": {
+  "name": "FUN FACTORY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
+ },
  "almaty:funsim international": {
   "name": "Funsim international",
   "city": "almaty",
@@ -7289,6 +7296,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T04:43:59+00:00"
+ },
+ "almaty:gesso гессо": {
+  "name": "GESSO (ГЕССО)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "instagram": "gesso.kz",
+  "website": "http://gesso.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035673091",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:get education": {
   "name": "GET Education",
@@ -9991,6 +10012,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
+ },
+ "almaty:megapolis residence": {
+  "name": "Megapolis Residence",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
  },
  "almaty:mehkaz": {
   "name": "MehKaz",
@@ -13741,7 +13769,7 @@
   "instagram": "changan_vmpremium_almaty",
   "website": "http://changan-vmpremiumalmaty.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001111386609",
-  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16541,6 +16569,13 @@
   "v": 3,
   "checked_at": "2026-11-08T05:44:03+00:00"
  },
+ "almaty:данте": {
+  "name": "Данте",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
+ },
  "almaty:даньяров е д": {
   "name": "Даньяров Е.Д.",
   "city": "almaty",
@@ -17084,6 +17119,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T16:44:09+00:00"
+ },
+ "almaty:жсс": {
+  "name": "ЖСС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
  },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
@@ -19232,6 +19274,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T07:43:16+00:00"
+ },
+ "almaty:мкцр persona": {
+  "name": "МКЦР Persona",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "instagram": "persona_clinic",
+  "website": "http://persona-clinic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001022987069",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:мнацаканьян а с": {
   "name": "Мнацаканьян А.С.",
@@ -22536,6 +22592,13 @@
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
  },
+ "almaty:элит фурнитура": {
+  "name": "Элит-Фурнитура",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
+ },
  "almaty:эльдарұлы елжан": {
   "name": "Эльдарұлы Елжан",
   "city": "almaty",
@@ -23189,6 +23252,15 @@
   "instagram": "apodit_astana",
   "source": "https://2gis.kz/astana/firm/70000001091781283"
  },
+ "astana:aralas": {
+  "name": "ARALAS",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "instagram": "aralas.restaurant",
+  "source": "https://2gis.kz/astana/firm/70000001087557879"
+ },
  "astana:aramit": {
   "name": "Aramit",
   "city": "astana",
@@ -23778,6 +23850,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T18:43:51+00:00"
+ },
+ "astana:big infinity group": {
+  "name": "BIG INFINITY GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
  },
  "astana:big town intermedia": {
   "name": "Big Town Intermedia",
@@ -36515,6 +36594,15 @@
    "website"
   ]
  },
+ "atyrau:кафе marimo ип рысмендиева озкурт": {
+  "name": "кафе Marimo (ИП Рысмендиева-Озкурт)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "instagram": "marimo.atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001059808389"
+ },
  "atyrau:квартал": {
   "name": "КВАРТАЛ",
   "city": "atyrau",
@@ -37419,6 +37507,13 @@
   "avatar": "2a3bb5883cd61e35.jpg",
   "avatar_source": "website"
  },
+ "karaganda:kr astana": {
+  "name": "KR-ASTANA",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
+ },
  "karaganda:ksm": {
   "name": "KSM",
   "city": "karaganda",
@@ -37737,6 +37832,13 @@
   "checked_at": "2026-11-06T08:44:35+00:00",
   "instagram": "senur.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001051672116"
+ },
+ "karaganda:seyco group": {
+  "name": "SEYCO GROUP",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
  },
  "karaganda:sharmel": {
   "name": "SHARMel",
@@ -38550,6 +38652,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:картранссервис": {
+  "name": "КарТрансСервис",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
  },
  "karaganda:кастон": {
   "name": "КАСТОН",
@@ -39806,6 +39915,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T03:43:44+00:00"
+ },
+ "kokshetau:ефремов в ю": {
+  "name": "Ефремов В.Ю.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
  },
  "kokshetau:завод казагромаш": {
   "name": "ЗАВОД КАЗАГРОМАШ",
@@ -42721,6 +42837,20 @@
    "website"
   ]
  },
+ "pavlodar:компания нефтехим ltd": {
+  "name": "Компания Нефтехим LTD",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "instagram": "neftekhim_ltd",
+  "website": "http://nephtechim.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018662574",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:кулер": {
   "name": "КУЛЕР",
   "city": "pavlodar",
@@ -43797,6 +43927,23 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "telegram": "kariofficial",
+  "website": "https://kz.kari.com/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001040964075",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "8d956ea37dd8cb32.jpg",
+  "avatar_source": "telegram"
  },
  "petropavlovsk:кодерлайн": {
   "name": "Кодерлайн",
@@ -45998,6 +46145,13 @@
   "instagram": "main_energy_group_etl",
   "source": "https://2gis.kz/shymkent/firm/70000001103677001"
  },
+ "shymkent:marvik partners": {
+  "name": "MARVIK PARTNERS",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
+ },
  "shymkent:mds doors": {
   "name": "MDS DOORS",
   "city": "shymkent",
@@ -46989,6 +47143,13 @@
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
  },
+ "shymkent:камилов": {
+  "name": "КАМИЛОВ",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00"
+ },
  "shymkent:кари кз": {
   "name": "КАРИ КЗ",
   "city": "shymkent",
@@ -47817,7 +47978,7 @@
   "instagram": "alemagro",
   "website": "http://alemagro.com/",
   "source": "https://2gis.kz/almaty/firm/70000001035777558",
-  "avatar_checked_at": "2026-11-02T03:43:32+00:00",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -49589,6 +49750,19 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "uralsk:уральскагрореммаш ао": {
+  "name": "Уральскагрореммаш, АО",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "website": "http://oralrem.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001024982527",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:филиал товарищества с ограниченной ответственностью schachtbau kasachstan шахтбау казахстан в городе уральск": {
   "name": "Филиал товарищества с ограниченной ответственностью SCHACHTBAU KASACHSTAN/ШАХТБАУ КАЗАХСТАН в городе Уральск",
   "city": "uralsk",
@@ -49855,6 +50029,20 @@
   "avatar_checked_at": "2026-11-04T01:44:24+00:00",
   "avatar_tried": [
    "website"
+  ]
+ },
+ "ust-kamenogorsk:borusan cat казахстан": {
+  "name": "Borusan Cat Казахстан",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T03:44:14+00:00",
+  "instagram": "borusan_kazakhstan",
+  "telegram": "borusancatkazakhtsan",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721372273",
+  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_tried": [
+   "telegram"
   ]
  },
  "ust-kamenogorsk:building realty": {

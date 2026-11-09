@@ -7520,6 +7520,15 @@
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
  },
+ "almaty:goodvel": {
+  "name": "GoodVel",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "goodvel.kz",
+  "source": "https://2gis.kz/almaty/firm/9429940001661464"
+ },
  "almaty:gorelnik damu": {
   "name": "Gorelnik Damu",
   "city": "almaty",
@@ -7678,6 +7687,13 @@
   "v": 3,
   "checked_at": "2026-11-08T05:44:03+00:00"
  },
+ "almaty:halyk finservice": {
+  "name": "Halyk Finservice",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "almaty:halyq soft": {
   "name": "Halyq Soft",
   "city": "almaty",
@@ -7763,7 +7779,7 @@
   "checked_at": "2026-11-02T02:43:14+00:00",
   "website": "https://hh.kz/",
   "source": "https://hh.kz/article/15661",
-  "avatar_checked_at": "2026-11-02T02:43:14+00:00",
+  "avatar_checked_at": "2026-11-09T02:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8447,6 +8463,13 @@
   "v": 3,
   "checked_at": "2026-11-07T12:44:23+00:00"
  },
+ "almaty:jd group": {
+  "name": "JD GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "almaty:jessica": {
   "name": "Jessica",
   "city": "almaty",
@@ -8920,6 +8943,20 @@
   "avatar": "7a9509ca6a9d361b.jpg",
   "avatar_source": "website"
  },
+ "almaty:khan perfume": {
+  "name": "Khan perfume",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "khanperfume_kz",
+  "website": "https://khanparfume.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001086742631",
+  "avatar_checked_at": "2026-11-09T02:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kill house": {
   "name": "Kill House",
   "city": "almaty",
@@ -9317,6 +9354,15 @@
   "checked_at": "2026-11-05T10:44:37+00:00",
   "instagram": "linebrewreserve",
   "source": "https://2gis.kz/almaty/firm/70000001059505489"
+ },
+ "almaty:lc gulzar": {
+  "name": "LC Gulzar",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "gulzar_centre",
+  "source": "https://2gis.kz/almaty/firm/9429940001192936"
  },
  "almaty:lc waikiki": {
   "name": "LC Waikiki",
@@ -11721,6 +11767,13 @@
    "website"
   ]
  },
+ "almaty:retail group kz": {
+  "name": "Retail Group Kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "almaty:retail master group": {
   "name": "Retail Master Group",
   "city": "almaty",
@@ -12303,6 +12356,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:silk company kz": {
+  "name": "Silk Company.kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
  },
  "almaty:silk road resources ltd": {
   "name": "Silk Road Resources Ltd.",
@@ -14043,6 +14103,13 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "almaty:zet company": {
+  "name": "ZET Company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "almaty:zeta trade": {
   "name": "ZETA TRADE",
   "city": "almaty",
@@ -14135,6 +14202,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "almaty:zztuning": {
+  "name": "ZZTuning",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "zz_tuning",
+  "website": "https://zztuning.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001091212484",
+  "avatar_checked_at": "2026-11-09T02:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "225be7cec7d23ac2.jpg",
+  "avatar_source": "website"
  },
  "almaty:а транс": {
   "name": "А-Транс",
@@ -18322,6 +18405,13 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "almaty:кураметова айнур": {
+  "name": "Кураметова Айнур",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "almaty:куртмоллаева э э": {
   "name": "Куртмоллаева Э.Э.",
   "city": "almaty",
@@ -21462,6 +21552,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T07:45:36+00:00"
+ },
+ "almaty:торговый дом ордабасы кус алматы": {
+  "name": "Торговый дом Ордабасы - кус Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
  },
  "almaty:торговый дом элитфиш": {
   "name": "Торговый Дом ЭлитФиш",
@@ -27987,6 +28084,13 @@
   "checked_at": "2026-11-01T11:43:30+00:00",
   "instagram": "saniya.bakery",
   "source": "https://2gis.kz/astana/firm/70000001027000250"
+ },
+ "astana:sapashev": {
+  "name": "SAPASHEV",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
  },
  "astana:sauda innovations": {
   "name": "Sauda Innovations",
@@ -34652,6 +34756,13 @@
   "avatar": "62f6c55a72f8fae8.jpg",
   "avatar_source": "website"
  },
+ "astana:фирма райд": {
+  "name": "Фирма Райд",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "astana:фирма1": {
   "name": "Фирма1",
   "city": "astana",
@@ -36537,6 +36648,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
+ },
+ "atyrau:остин казахстан ostin тм": {
+  "name": "Остин Казахстан (O'stin ТМ)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "ostin.kz",
+  "website": "https://ostin.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000977705",
+  "avatar_checked_at": "2026-11-09T02:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:пауеден": {
   "name": "Пауеден",
@@ -39877,6 +40002,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
+ },
+ "kokshetau:швейная фабрика диас": {
+  "name": "Швейная фабрика ДИАС",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
  },
  "kokshetau:эйкос": {
   "name": "ЭЙКОС",
@@ -46163,6 +46295,24 @@
   "v": 3,
   "checked_at": "2026-11-08T21:43:43+00:00"
  },
+ "shymkent:rixos khadisha shymkent тм хадиша отель тоо": {
+  "name": "Rixos Khadisha Shymkent, ТМ (Хадиша Отель, ТОО)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "rixoskhadishashymkent",
+  "telegram": "rixosshymkent",
+  "website": "https://rixosshymkent.com/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025716610",
+  "avatar_checked_at": "2026-11-09T02:44:09+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "82f22e72f3bf2521.jpg",
+  "avatar_source": "telegram"
+ },
  "shymkent:rossko": {
   "name": "ROSSKO",
   "city": "shymkent",
@@ -47053,6 +47203,13 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "shymkent:оңтүстік құрылыс сервис": {
+  "name": "Оңтүстік-құрылыс сервис",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
+ },
  "shymkent:премьерстройдизайн": {
   "name": "ПремьерСтройДизайн",
   "city": "shymkent",
@@ -47091,6 +47248,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
+ },
+ "shymkent:рэд": {
+  "name": "РЭД",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
  },
  "shymkent:сапсан": {
   "name": "САПСАН",
@@ -49663,6 +49827,15 @@
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
  },
+ "ust-kamenogorsk:barcelona": {
+  "name": "BARCELONA",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00",
+  "instagram": "barcelona_restaurant_uka",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313412"
+ },
  "ust-kamenogorsk:baron food": {
   "name": "Baron Food",
   "city": "ust-kamenogorsk",
@@ -49756,6 +49929,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T12:43:42+00:00"
+ },
+ "ust-kamenogorsk:ecoton shygys": {
+  "name": "Ecoton-Shygys",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T02:44:07+00:00"
  },
  "ust-kamenogorsk:eurasian minerals trade": {
   "name": "Eurasian minerals trade",

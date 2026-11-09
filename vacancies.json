@@ -359161,37 +359161,5 @@
   "shift_time": null,
   "need": null,
   "employer_hh": "12938480"
- },
- {
-  "id": "hh-135342244",
-  "title": "Пеший курьер/Велокурьер по доставке заказов",
-  "category": "delivery",
-  "city": "aktau",
-  "salary_min": 500000,
-  "salary_max": 1000000,
-  "salary_period": "month",
-  "schedule": null,
-  "perks": [
-   "Без опыта"
-  ],
-  "employer": "Кутюрина",
-  "text": "Обязанности: Пеший курьер/Велокурьер по доставке собранных заказов. 2. Никто не распределяет смены и не следит по минутам. — Смартфон с интернетом.\nТребования: Без слoжныx coбесeдoваний и длинных aнкет. — Опыт не требуется — всё понятно уже в процессе. — Любой удобный способ передвижения.",
-  "source": "hh",
-  "source_url": "https://hh.ru/vacancy/135342244?tech_source=api",
-  "posted_at": "2026-10-26T00:51:25+00:00",
-  "fingerprint": "5a94eee033d3e7d9",
-  "also_seen_in": [],
-  "address": null,
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": 43.6356,
-  "lon": 51.1682,
-  "geo": "hh",
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": "11523559"
  }
 ]

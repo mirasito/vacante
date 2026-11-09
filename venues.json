@@ -2454,6 +2454,13 @@
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
  },
+ "aktobe:блинова елена владимировна": {
+  "name": "Блинова Елена Владимировна",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
+ },
  "aktobe:бриг": {
   "name": "Бриг",
   "city": "aktobe",
@@ -8837,6 +8844,22 @@
   "instagram": "jtb.kz",
   "source": "https://2gis.kz/almaty/firm/70000001112595442"
  },
+ "almaty:just retail": {
+  "name": "JUST RETAIL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "just2010.kz",
+  "telegram": "just2010_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001061943158",
+  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "14698dc478d2b1ba.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "almaty",
@@ -11278,6 +11301,15 @@
   "instagram": "owlwin_exchange",
   "source": "https://2gis.kz/almaty/firm/70000001054934652"
  },
+ "almaty:owly clinic": {
+  "name": "OWLY CLINIC",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "owly_cosmetology",
+  "source": "https://2gis.kz/almaty/firm/70000001066164955"
+ },
  "almaty:ozon": {
   "name": "Ozon",
   "city": "almaty",
@@ -12231,7 +12263,7 @@
   "instagram": "rixosalmaty",
   "website": "https://all.accor.com/hotel/B1N9/index.ru.shtml",
   "source": "https://2gis.kz/almaty/firm/9429940000789746",
-  "avatar_checked_at": "2026-11-02T15:09:10+00:00",
+  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12484,6 +12516,13 @@
   "checked_at": "2026-11-06T05:43:31+00:00",
   "instagram": "sladkidom.qz",
   "source": "https://2gis.kz/almaty/firm/70000001112633963"
+ },
+ "almaty:sara": {
+  "name": "SARA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "almaty:sary arka copper processing": {
   "name": "Sary-Arka Copper Processing",
@@ -16638,6 +16677,22 @@
   "v": 3,
   "checked_at": "2026-11-09T06:44:48+00:00"
  },
+ "almaty:вкайф": {
+  "name": "ВКАЙФ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "vkaif.kz",
+  "website": "https://vkaif.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117578352",
+  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "99dfbf042cb24d1c.jpg",
+  "avatar_source": "website"
+ },
  "almaty:возовоз": {
   "name": "Возовоз",
   "city": "almaty",
@@ -17284,6 +17339,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:джеткор": {
+  "name": "ДЖЕТКОР",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "jetqor",
+  "website": "https://jetqor.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001101462551",
+  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fd61dc0693707ca6.jpg",
+  "avatar_source": "website"
  },
  "almaty:диал строй": {
   "name": "Диал-Строй",
@@ -18644,7 +18715,7 @@
   "instagram": "kinopark_kz",
   "website": "http://kinopark.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000788177",
-  "avatar_checked_at": "2026-11-02T15:09:10+00:00",
+  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18890,6 +18961,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T12:44:23+00:00"
+ },
+ "almaty:корос груп": {
+  "name": "Корос Груп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "almaty:корпорация gulfstream": {
   "name": "КОРПОРАЦИЯ GULFSTREAM",
@@ -19361,6 +19439,13 @@
    "website"
   ]
  },
+ "almaty:лучшие дети на свете": {
+  "name": "Лучшие дети на свете",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
+ },
  "almaty:лхсн": {
   "name": "ЛХСН",
   "city": "almaty",
@@ -19738,6 +19823,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "almaty:международная логистика crct казахстан": {
+  "name": "“Международная логистика (CRCT) Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "almaty:международный аэропорт алматы ао": {
   "name": "Международный Аэропорт Алматы, АО",
@@ -20705,6 +20797,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "almaty:пластика плюс": {
+  "name": "Пластика Плюс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "almaty:платон аа": {
   "name": "Платон-АА",
@@ -23715,6 +23814,15 @@
   "instagram": "5th.ugol",
   "source": "https://2gis.kz/astana/firm/70000001110382750"
  },
+ "astana:a_gym astana": {
+  "name": "A_GYM ASTANA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "kinesis_a_gym",
+  "source": "https://2gis.kz/astana/firm/70000001046465109"
+ },
  "astana:ab restaurants": {
   "name": "AB Restaurants",
   "city": "astana",
@@ -26383,6 +26491,13 @@
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
  },
+ "astana:hhf": {
+  "name": "HHF",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
+ },
  "astana:hilondon": {
   "name": "HiLONDON",
   "city": "astana",
@@ -26740,6 +26855,13 @@
   ],
   "avatar": "427015d803ddd134.jpg",
   "avatar_source": "website"
+ },
+ "astana:inzhu style": {
+  "name": "Inzhu Style",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "astana:iotex": {
   "name": "IoTex",
@@ -30386,6 +30508,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:voke group": {
+  "name": "Voke Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "astana:voltec": {
   "name": "VOLTEC",
@@ -35903,6 +36032,13 @@
   "avatar": "8a067c2e11e5312f.jpg",
   "avatar_source": "website"
  },
+ "astana:трансмашхолдинг": {
+  "name": "ТрансМашХолдинг",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
+ },
  "astana:тритон кровля": {
   "name": "ТРИТОН КРОВЛЯ",
   "city": "astana",
@@ -36217,6 +36353,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
+ },
+ "astana:формат 2020": {
+  "name": "Формат 2020",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "astana:франшизатор групп": {
   "name": "ФРАНШИЗАТОР ГРУПП",
@@ -37899,6 +38042,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T19:44:04+00:00"
+ },
+ "atyrau:блинова елена владимировна": {
+  "name": "Блинова Елена Владимировна",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "atyrau:болашак атырау": {
   "name": "Болашак-Атырау",
@@ -46652,6 +46802,15 @@
   "instagram": "extreme_rabbit_semey",
   "source": "https://2gis.kz/semej/firm/70000001077121151"
  },
+ "semey:sakmed": {
+  "name": "SAKMED",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "sakmed.semey",
+  "source": "https://2gis.kz/semej/firm/70000001118969591"
+ },
  "semey:sandyq world": {
   "name": "Sandyq World",
   "city": "semey",
@@ -46978,6 +47137,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "semey:дарабоз": {
+  "name": "Дарабоз",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00"
  },
  "semey:зая на бисс": {
   "name": "ЗАЯ НА БИСС",
@@ -47423,6 +47589,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
+ },
+ "shymkent:alpen park hotel & karaoke": {
+  "name": "Alpen Park Hotel & Karaoke",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T15:44:24+00:00",
+  "instagram": "alpenpark_shymkent",
+  "source": "https://2gis.kz/shymkent/firm/70000001036981417"
  },
  "shymkent:altyn bala kz": {
   "name": "Altyn-bala.kz",

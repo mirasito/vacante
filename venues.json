@@ -1899,6 +1899,15 @@
   "instagram": "esetmontazh",
   "source": "https://2gis.kz/aktobe/firm/70000001066010857"
  },
+ "aktobe:gayaz brand": {
+  "name": "GAYAZ BRAND",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "gayaz_brand_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001083360989"
+ },
  "aktobe:glasman trade": {
   "name": "GLASMAN TRADE",
   "city": "aktobe",
@@ -3705,6 +3714,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:alma": {
+  "name": "ALMA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
  },
  "almaty:alma asia rest": {
   "name": "Alma Asia Rest",
@@ -6020,6 +6036,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
+ },
+ "almaty:crystal": {
+  "name": "ТОО Crystal",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "autospacrystal",
+  "source": "https://2gis.kz/almaty/firm/9429940001392498"
  },
  "almaty:cs seven": {
   "name": "CS Seven",
@@ -8383,6 +8408,13 @@
   "v": 3,
   "checked_at": "2026-11-03T13:44:33+00:00"
  },
+ "almaty:hr_unitrade": {
+  "name": "hr_unitrade",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
+ },
  "almaty:hulber group": {
   "name": "Hulber Group",
   "city": "almaty",
@@ -9948,7 +9980,7 @@
   "instagram": "lider101.kz",
   "website": "http://101almaty.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000941446",
-  "avatar_checked_at": "2026-11-02T20:42:53+00:00",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10005,6 +10037,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
+ },
+ "almaty:loft park": {
+  "name": "LOFT Park",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "website": "http://loftpark.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001081579259",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:log4": {
   "name": "LOG4",
@@ -15266,6 +15311,13 @@
   "v": 3,
   "checked_at": "2026-11-09T14:44:20+00:00"
  },
+ "almaty:агентство цифрового развития": {
+  "name": "АГЕНТСТВО ЦИФРОВОГО РАЗВИТИЯ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
+ },
  "almaty:агротехменеджмент": {
   "name": "АгроТехМенеджмент",
   "city": "almaty",
@@ -16906,6 +16958,13 @@
   "v": 3,
   "checked_at": "2026-11-07T06:43:49+00:00"
  },
+ "almaty:ветпром": {
+  "name": "Ветпром",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
+ },
  "almaty:виктория": {
   "name": "Виктория",
   "city": "almaty",
@@ -17351,6 +17410,19 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "almaty:гринпрайс": {
+  "name": "Гринпрайс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "website": "http://greenprice.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001055044008",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:групп четыре": {
   "name": "ГРУПП Четыре",
   "city": "almaty",
@@ -17400,6 +17472,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "almaty:д арыстан": {
+  "name": "Д Арыстан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
  },
  "almaty:данафлекс": {
   "name": "Данафлекс",
@@ -19294,6 +19373,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:коулмэн сервисиз казахстан": {
+  "name": "Коулмэн Сервисиз Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
+ },
  "almaty:кофелар групп": {
   "name": "Кофелар групп",
   "city": "almaty",
@@ -20898,6 +20984,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
+ },
+ "almaty:османов осман": {
+  "name": "Османов Осман",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
  },
  "almaty:осоо дерма лазер": {
   "name": "ОсОО Дерма Лазер",
@@ -28790,7 +28883,7 @@
   "instagram": "nrg.corp",
   "website": "https://www.nrg-corp.kz/",
   "source": "https://2gis.kz/astana/firm/70000001062445846",
-  "avatar_checked_at": "2026-11-02T20:42:53+00:00",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31603,6 +31696,22 @@
   "v": 3,
   "checked_at": "2026-11-04T07:44:30+00:00"
  },
+ "astana:аккумуляторная компания алатау tm voltman": {
+  "name": "Аккумуляторная компания Алатау ( TM Voltman )",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "voltman_official",
+  "website": "https://voltman.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001079585788",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b1542154c3923ecb.jpg",
+  "avatar_source": "website"
+ },
  "astana:акмолинский автоцентр": {
   "name": "АКМОЛИНСКИЙ АВТОЦЕНТР",
   "city": "astana",
@@ -32455,6 +32564,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
+ },
+ "astana:восточной кухни vostok": {
+  "name": "ВОСТОЧНОЙ КУХНИ VOSTOK",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "vostokstory",
+  "source": "https://2gis.kz/astana/firm/70000001117363217"
  },
  "astana:восхождение": {
   "name": "Восхождение",
@@ -36943,6 +37061,20 @@
   "v": 3,
   "checked_at": "2026-11-09T15:44:24+00:00"
  },
+ "astana:фотодело": {
+  "name": "ФОТОДЕЛО",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "photodelo.kz",
+  "website": "https://photodelo.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001020637107",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:франшизатор групп": {
   "name": "ФРАНШИЗАТОР ГРУПП",
   "city": "astana",
@@ -37909,6 +38041,13 @@
   "checked_at": "2026-10-28T23:45:40+00:00",
   "instagram": "avtomarket06",
   "source": "https://2gis.kz/atyrau/firm/70000001066531440"
+ },
+ "atyrau:avva technologies авва текнолоджиз": {
+  "name": "AVVA TECHNOLOGIES (АВВА ТЕКНОЛОДЖИЗ)",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
  },
  "atyrau:ayas safety": {
   "name": "AYAS Safety",
@@ -39095,6 +39234,22 @@
    "website"
   ]
  },
+ "atyrau:страховая компания халык до народного банка казахстана": {
+  "name": "Страховая компания Халык, ДО Народного Банка Казахстана",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "halyk.sk",
+  "website": "https://www.skhalyk.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035227173",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2f538802736132aa.jpg",
+  "avatar_source": "website"
+ },
  "atyrau:сузакова": {
   "name": "Сузакова",
   "city": "atyrau",
@@ -39923,6 +40078,13 @@
   ],
   "avatar": "7e47cab66debc680.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:neovox": {
+  "name": "Neovox",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
  },
  "karaganda:newton kazakhstan": {
   "name": "Newton Kazakhstan",
@@ -46826,6 +46988,13 @@
    "website"
   ]
  },
+ "petropavlovsk:мухаметжанов а": {
+  "name": "Мухаметжанов А.",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
+ },
  "petropavlovsk:настоящую пекарню": {
   "name": "НАСТОЯЩУЮ ПЕКАРНЮ",
   "city": "petropavlovsk",
@@ -48343,6 +48512,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "shymkent:aman trade group": {
+  "name": "Aman Trade Group",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00"
+ },
  "shymkent:amir logistic group": {
   "name": "AMIR LOGISTIC GROUP",
   "city": "shymkent",
@@ -49839,6 +50015,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "shymkent:галерея юг": {
+  "name": "Галерея Юг",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T20:44:15+00:00",
+  "instagram": "td_galereya",
+  "website": "https://www.gallery.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001025818773",
+  "avatar_checked_at": "2026-11-09T20:44:16+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ae7aa257807bedeb.jpg",
+  "avatar_source": "website"
  },
  "shymkent:гасыр энерджи констракшн": {
   "name": "Гасыр Энерджи Констракшн",

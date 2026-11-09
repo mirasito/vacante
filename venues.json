@@ -598,6 +598,13 @@
   "avatar": "91028f44d8367bb0.jpg",
   "avatar_source": "website"
  },
+ "aktau:riza group": {
+  "name": "Riza group",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "aktau:royal consulting 09": {
   "name": "Royal Consulting 09",
   "city": "aktau",
@@ -3377,6 +3384,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T19:43:27+00:00"
+ },
+ "almaty:aisulu": {
+  "name": "AISULU",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "aisulubeauty.kz",
+  "source": "https://2gis.kz/almaty/firm/9429940000791781"
  },
  "almaty:aitas kz": {
   "name": "Aitas KZ",
@@ -12774,6 +12790,22 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "almaty:sanstore trade": {
+  "name": "Sanstore-Trade",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "sanstore.kz",
+  "website": "https://www.sanstore.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000789909",
+  "avatar_checked_at": "2026-11-09T21:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b3b924b1027d6182.jpg",
+  "avatar_source": "website"
+ },
  "almaty:santrade": {
   "name": "SANTRADE",
   "city": "almaty",
@@ -13744,6 +13776,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T05:43:00+00:00"
+ },
+ "almaty:tb corp": {
+  "name": "TB corp",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "moodmart.kz",
+  "website": "https://taplink.cc/moodmart.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001048009551",
+  "avatar_checked_at": "2026-11-09T21:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2bf99ec4007af4ab.jpg",
+  "avatar_source": "website"
  },
  "almaty:tea house ти хаус": {
   "name": "Tea House (Ти Хаус)",
@@ -15338,6 +15386,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "almaty:аделина": {
+  "name": "Аделина",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
  },
  "almaty:адрес": {
   "name": "Адрес",
@@ -22437,6 +22492,20 @@
   "v": 3,
   "checked_at": "2026-11-06T16:45:18+00:00"
  },
+ "almaty:сәтті жұлдыз": {
+  "name": "Сәтті Жұлдыз",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "sattyzhuldyz",
+  "website": "https://sz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001082977708",
+  "avatar_checked_at": "2026-11-09T21:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:табер трейд кз сеть магазинов подружка": {
   "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",
   "city": "almaty",
@@ -23747,6 +23816,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T08:45:21+00:00"
+ },
+ "almaty:шашлычный двор кафе": {
+  "name": "Шашлычный двор, кафе",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "shashlychnyi_dvor_almaty_2",
+  "source": "https://2gis.kz/almaty/firm/70000001093106118"
  },
  "almaty:шевцов богдан васильевич": {
   "name": "Шевцов Богдан Васильевич",
@@ -26583,6 +26661,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T14:44:03+00:00"
+ },
+ "astana:fonet er tai ak mining": {
+  "name": "Fonet Er-Tai AK Mining",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
  },
  "astana:food retail pro": {
   "name": "Food Retail PRO",
@@ -29728,6 +29813,20 @@
   "instagram": "red_chocoberry",
   "source": "https://2gis.kz/astana/firm/70000001055044021"
  },
+ "astana:red panda": {
+  "name": "RED PANDA",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "redpandakz",
+  "website": "https://www.redpanda.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001067520759",
+  "avatar_checked_at": "2026-11-09T21:43:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:regomed": {
   "name": "RegoMed",
   "city": "astana",
@@ -31352,6 +31451,13 @@
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
  },
+ "astana:абдиров а с": {
+  "name": "АБДИРОВ А.С.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "astana:абдрахманов": {
   "name": "Абдрахманов",
   "city": "astana",
@@ -32047,6 +32153,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "astana:астана м": {
+  "name": "Астана-М",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
  },
  "astana:астанинский электротехнический завод": {
   "name": "Астанинский электротехнический завод",
@@ -33264,6 +33377,13 @@
   "instagram": "trademark_koko",
   "source": "https://2gis.kz/kostanaj/firm/70000001044055046"
  },
+ "astana:жасай аламын": {
+  "name": "жасай аламын",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "astana:жасмин": {
   "name": "Жасмин",
   "city": "astana",
@@ -33587,6 +33707,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
+ },
+ "astana:ищанов т н": {
+  "name": "Ищанов Т.Н.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
  },
  "astana:кавказская пленница": {
   "name": "Кавказская пленница",
@@ -34906,6 +35033,13 @@
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
  },
+ "astana:наполеон": {
+  "name": "Наполеон",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "astana:наумов никита валерьевич": {
   "name": "Наумов Никита Валерьевич",
   "city": "astana",
@@ -35200,6 +35334,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
+ },
+ "astana:отель 5 звезд": {
+  "name": "Отель 5 звезд",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
  },
  "astana:отель tengri hotel": {
   "name": "Отель Tengri Hotel",
@@ -40406,6 +40547,13 @@
   "instagram": "svn_stroy",
   "source": "https://2gis.kz/karaganda/firm/70000001060703095"
  },
+ "karaganda:the_limon": {
+  "name": "The_Limon",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "karaganda:tm logistic": {
   "name": "TM-LOGISTIC",
   "city": "karaganda",
@@ -42739,6 +42887,13 @@
   "instagram": "stroydvor_kokshetay",
   "source": "https://2gis.kz/kokshetau/firm/70000001113072561"
  },
+ "kokshetau:фмрус": {
+  "name": "ФМРУС",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "kokshetau:хайрулина а т": {
   "name": "ХАЙРУЛИНА А. Т.",
   "city": "kokshetau",
@@ -44342,6 +44497,13 @@
   "avatar": "ee67c0e394525193.jpg",
   "avatar_source": "website"
  },
+ "kostanay:торговый дом стройматериалов": {
+  "name": "Торговый дом стройматериалов",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
+ },
  "kostanay:транстелеком": {
   "name": "Транстелеком",
   "city": "kostanay",
@@ -44502,6 +44664,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "kyzylorda:altor group": {
+  "name": "ALTOR GROUP",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00"
  },
  "kyzylorda:auto house kzo": {
   "name": "AUTO HOUSE KZO",
@@ -53830,6 +53999,15 @@
   "checked_at": "2026-11-09T09:44:49+00:00",
   "instagram": "trbgas_kz",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001036015230"
+ },
+ "ust-kamenogorsk:umar perfume": {
+  "name": "Umar Perfume",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T21:43:37+00:00",
+  "instagram": "umar_perfume_uka",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001115205271"
  },
  "ust-kamenogorsk:vk development group": {
   "name": "VK development group",

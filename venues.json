@@ -5482,6 +5482,20 @@
   "instagram": "buta.group.kz",
   "source": "https://2gis.kz/almaty/firm/70000001114404438"
  },
+ "almaty:byd holding": {
+  "name": "BYD Holding",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00",
+  "instagram": "arenasunsetkz",
+  "website": "http://arenasunset.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001068807042",
+  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:c9 store": {
   "name": "C9 Store",
   "city": "almaty",
@@ -6470,6 +6484,13 @@
   ],
   "avatar": "6e0b1ab5f2945865.jpg",
   "avatar_source": "website"
+ },
+ "almaty:easy agency": {
+  "name": "Easy Agency",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "almaty:easy solution": {
   "name": "easy solution",
@@ -8423,6 +8444,20 @@
   ],
   "avatar": "d71217686c173b38.jpg",
   "avatar_source": "website"
+ },
+ "almaty:intellpack компания": {
+  "name": "INTELLPACK, компания",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00",
+  "instagram": "intellpack_family",
+  "website": "https://www.intellpack.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001374212",
+  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:interauto": {
   "name": "INTERAUTO",
@@ -11381,6 +11416,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
+ },
+ "almaty:platinum 2 0": {
+  "name": "PLATINUM 2.0",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "almaty:platinum travel kazakhstan": {
   "name": "Platinum Travel Kazakhstan",
@@ -16792,6 +16834,22 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "almaty:групп четыре": {
+  "name": "ГРУПП Четыре",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00",
+  "instagram": "groupp_4",
+  "website": "http://www.grp4.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000787275",
+  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "629d5274f63d68ad.jpg",
+  "avatar_source": "website"
+ },
  "almaty:группа компаний аллюр allur": {
   "name": "Группа компаний Аллюр (Allur)",
   "city": "almaty",
@@ -19481,6 +19539,13 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "almaty:метрополь": {
+  "name": "Метрополь",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
+ },
  "almaty:мечта": {
   "name": "Мечта",
   "city": "almaty",
@@ -20968,6 +21033,13 @@
    "website"
   ]
  },
+ "almaty:сантехника": {
+  "name": "ИП Сантехника",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
+ },
  "almaty:сапаргали": {
   "name": "САПАРГАЛИ",
   "city": "almaty",
@@ -21476,6 +21548,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
+ },
+ "almaty:строительные системы": {
+  "name": "Строительные Системы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "almaty:стройлогистика": {
   "name": "Стройлогистика",
@@ -24862,6 +24941,13 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "astana:continental logistics": {
+  "name": "ТОО Continental Logistics",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
+ },
  "astana:contineo": {
   "name": "CONTINEO",
   "city": "astana",
@@ -26702,6 +26788,13 @@
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
  },
+ "astana:kinglobal": {
+  "name": "KinGlobal",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
+ },
  "astana:kitchen": {
   "name": "Kitchen",
   "city": "astana",
@@ -27015,6 +27108,13 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "instagram": "lily__qz",
   "source": "https://2gis.kz/astana/firm/70000001097454374"
+ },
+ "astana:lima": {
+  "name": "LIMA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "astana:lk security": {
   "name": "LK-SECURITY",
@@ -31513,6 +31613,22 @@
    "website"
   ]
  },
+ "astana:гриль бар в дрова астана тоо рога и копыта": {
+  "name": "Гриль бар В Дрова Астана (ТОО Рога и Копыта)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00",
+  "instagram": "vdrova_astana",
+  "telegram": "vdrova_astana",
+  "website": "http://vdrova.taptable.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001022749691",
+  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "astana:группа компаний аллюр allur": {
   "name": "Группа компаний Аллюр (Allur)",
   "city": "astana",
@@ -32088,6 +32204,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
+ },
+ "astana:жәнібек д т": {
+  "name": "Жәнібек Д.Т.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "astana:завод абк бетон": {
   "name": "Завод АБК-Бетон",
@@ -34306,6 +34429,13 @@
    "website"
   ]
  },
+ "astana:сак 21": {
+  "name": "САК-21",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
+ },
  "astana:сакеновна": {
   "name": "Сакеновна",
   "city": "astana",
@@ -36154,6 +36284,22 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "astana:электронтест": {
+  "name": "Электронтест",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00",
+  "instagram": "electrontest",
+  "website": "https://electrontest.com.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001098185910",
+  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fc29842f9072f1c8.jpg",
+  "avatar_source": "website"
+ },
  "astana:элит фурнитура": {
   "name": "Элит-Фурнитура",
   "city": "astana",
@@ -36669,6 +36815,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
+ },
+ "atyrau:fssa": {
+  "name": "FSSA",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "atyrau:giansar company": {
   "name": "GIANSAR COMPANY",
@@ -42180,6 +42333,13 @@
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
  },
+ "kostanay:куприянюк л в": {
+  "name": "КУПРИЯНЮК Л.В.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
+ },
  "kostanay:лидер 2010": {
   "name": "Лидер-2010",
   "city": "kostanay",
@@ -45519,6 +45679,13 @@
   ],
   "avatar": "b74f9b1693dd99c6.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:электромонтаж": {
+  "name": "Электромонтаж",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "petropavlovsk:этажи": {
   "name": "Этажи",
@@ -49444,6 +49611,20 @@
   "instagram": "vici.kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001060647899"
  },
+ "taraz:vitallytaraz": {
+  "name": "VitallyTaraz",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00",
+  "instagram": "vitallylife.taraz",
+  "website": "https://vitallylife.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001117524039",
+  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "taraz:woowpack": {
   "name": "WOOWPACK",
   "city": "taraz",
@@ -49773,6 +49954,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T01:44:25+00:00"
+ },
+ "turkestan:recruit expert": {
+  "name": "Recruit expert",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T10:43:43+00:00"
  },
  "turkestan:sandyq world": {
   "name": "Sandyq World",

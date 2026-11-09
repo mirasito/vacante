@@ -1860,6 +1860,13 @@
   "avatar": "97b952a1caf24bb9.jpg",
   "avatar_source": "website"
  },
+ "aktobe:dostyk": {
+  "name": "DOSTYK",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "aktobe:dynamo": {
   "name": "Dynamo",
   "city": "aktobe",
@@ -8212,6 +8219,13 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "almaty:human capital group": {
+  "name": "HUMAN CAPITAL GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "almaty:hunter": {
   "name": "HUNTER",
   "city": "almaty",
@@ -10655,6 +10669,13 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "almaty:nanotech paints": {
+  "name": "Nanotech Paints",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "almaty:nar": {
   "name": "NAR",
   "city": "almaty",
@@ -10709,6 +10730,15 @@
   "checked_at": "2026-11-05T13:44:20+00:00",
   "instagram": "cottonshop_kz",
   "source": "https://2gis.kz/almaty/firm/70000001061798808"
+ },
+ "almaty:new six ип сатекова а э": {
+  "name": "NEW SIX (ИП Сатекова А. Э.)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00",
+  "instagram": "new__six",
+  "source": "https://2gis.kz/almaty/firm/70000001025413608"
  },
  "almaty:newera group": {
   "name": "NewEra Group",
@@ -12850,6 +12880,13 @@
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
  },
+ "almaty:snow king kazakhstan new silk road": {
+  "name": "SNOW KING (KAZAKHSTAN) NEW SILK ROAD",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "almaty:snt enterprise": {
   "name": "SNT Enterprise",
   "city": "almaty",
@@ -13459,6 +13496,19 @@
   "website": "https://tele2.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001060766658",
   "avatar_checked_at": "2026-11-05T08:45:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:teltonika телтоника": {
+  "name": "TELTONIKA (ТЕЛТОНИКА)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00",
+  "website": "https://teltonika-iot-group.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001060131866",
+  "avatar_checked_at": "2026-11-09T14:44:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14921,6 +14971,13 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "almaty:агентство недвижимости duplex": {
+  "name": "Агентство недвижимости DUPLEX",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "almaty:агротехменеджмент": {
   "name": "АгроТехМенеджмент",
   "city": "almaty",
@@ -14991,6 +15048,13 @@
   ],
   "avatar": "73ab94dc8fb7cd60.jpg",
   "avatar_source": "website"
+ },
+ "almaty:азиястальгрупп": {
+  "name": "АЗИЯСТАЛЬГРУПП",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
  },
  "almaty:азиястройклимат": {
   "name": "АзияСтройКлимат",
@@ -16104,6 +16168,13 @@
   "v": 3,
   "checked_at": "2026-11-08T23:44:03+00:00"
  },
+ "almaty:баймаканова": {
+  "name": "Баймаканова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "almaty:байсат": {
   "name": "Байсат",
   "city": "almaty",
@@ -16306,6 +16377,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:бизнес сити": {
+  "name": "Бизнес-Сити",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
  },
  "almaty:бимахимова": {
   "name": "БИМАХИМОВА",
@@ -16677,6 +16755,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
+ },
+ "almaty:гаранта груп": {
+  "name": "ГарантА Груп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
  },
  "almaty:гастромир": {
   "name": "Гастромир",
@@ -18906,6 +18991,13 @@
   "avatar": "863932499a95bcca.jpg",
   "avatar_source": "website"
  },
+ "almaty:ксф мкв": {
+  "name": "КСФ-МКВ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "almaty:ксэ казахстан": {
   "name": "КСЭ Казахстан",
   "city": "almaty",
@@ -19163,6 +19255,20 @@
   "website": "http://www.devline.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001103090761",
   "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:логистическая компания алиди": {
+  "name": "Логистическая компания АЛИДИ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00",
+  "instagram": "alidi.kazakhstan",
+  "website": "http://alidi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001030531973",
+  "avatar_checked_at": "2026-11-09T14:44:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24698,6 +24804,13 @@
   "avatar": "eb531deb9802e070.jpg",
   "avatar_source": "website"
  },
+ "astana:bp stom": {
+  "name": "BP-stom",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "astana:br building": {
   "name": "BR BUILDING",
   "city": "astana",
@@ -25262,6 +25375,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "astana:darix": {
+  "name": "Darix",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
  },
  "astana:darkside": {
   "name": "DarkSide",
@@ -30838,6 +30958,13 @@
   "instagram": "detskiy_magazin_aisultan",
   "source": "https://2gis.kz/astana/firm/70000001058956737"
  },
+ "astana:айсулу ателье": {
+  "name": "Айсулу Ателье",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
+ },
  "astana:ак цент микросистемс норд": {
   "name": "АК ЦЕНТ Микросистемс Норд",
   "city": "astana",
@@ -35606,7 +35733,7 @@
   "instagram": "hiltonastana",
   "website": "https://www3.hilton.com/en/hotels/kazakhstan/hilton-astana-TSEKAHI/",
   "source": "https://2gis.kz/astana/firm/70000001028852337",
-  "avatar_checked_at": "2026-11-02T13:55:35+00:00",
+  "avatar_checked_at": "2026-11-09T14:44:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38350,6 +38477,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T00:43:57+00:00"
+ },
+ "atyrau:щадилова е с": {
+  "name": "ЩАДИЛОВА Е С",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
  },
  "atyrau:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
@@ -46948,6 +47082,15 @@
   "v": 3,
   "checked_at": "2026-11-06T05:43:31+00:00"
  },
+ "semey:мужской одежды alligator": {
+  "name": "МУЖСКОЙ ОДЕЖДЫ ALLIGATOR",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00",
+  "instagram": "alligator.official_kz",
+  "source": "https://2gis.kz/semej/firm/70000001075302881"
+ },
  "semey:на левом берегу": {
   "name": "НА ЛЕВОМ БЕРЕГУ",
   "city": "semey",
@@ -48668,6 +48811,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
+ },
+ "shymkent:антипламя": {
+  "name": "Антипламя",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00",
+  "instagram": "antiplamia",
+  "source": "https://2gis.kz/shymkent/firm/70000001029515678"
  },
  "shymkent:аралова с в wok wok": {
   "name": "Аралова С.В. WOK WOK",
@@ -51281,6 +51433,13 @@
   ],
   "avatar": "6af57cd04a673a8e.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:глухов с в": {
+  "name": "Глухов С.В",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T14:44:20+00:00"
  },
  "uralsk:градус kz": {
   "name": "ГРАДУС KZ",

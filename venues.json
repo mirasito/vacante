@@ -3179,6 +3179,13 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "almaty:accent тм": {
+  "name": "AcCent, ТМ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
+ },
  "almaty:acvee market": {
   "name": "Acvee market",
   "city": "almaty",
@@ -4333,6 +4340,19 @@
   "instagram": "asiasnab.kz",
   "source": "https://2gis.kz/almaty/firm/70000001082637532"
  },
+ "almaty:asiageocentre kz азиягеоцентр кз": {
+  "name": "«AsiaGeoCentre-kz» (АзияГеоЦентр-кз)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "website": "https://www.asiageocentre.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001264028",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:asian solution partner invest": {
   "name": "Asian Solution Partner-INVEST",
   "city": "almaty",
@@ -4376,6 +4396,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:askservice": {
+  "name": "Askservice",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
  },
  "almaty:aspack": {
   "name": "Aspack",
@@ -7828,6 +7855,21 @@
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
  },
+ "almaty:gpspro kz": {
+  "name": "GPSPRO.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "website": "https://gpspro.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035384340",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1ee8cc0303ab6650.jpg",
+  "avatar_source": "website"
+ },
  "almaty:grand distribution kz": {
   "name": "Grand Distribution.kz",
   "city": "almaty",
@@ -7953,7 +7995,7 @@
   "instagram": "bonjour_almaty",
   "website": "https://bonjour-almaty.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037096128",
-  "avatar_checked_at": "2026-11-02T17:18:29+00:00",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8741,6 +8783,22 @@
    "telegram",
    "website"
   ]
+ },
+ "almaty:jana baspana": {
+  "name": "Jana Baspana",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "instagram": "janabaspana.kz",
+  "website": "http://janabaspana.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001074562083",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d421ec5f4bbf9149.jpg",
+  "avatar_source": "website"
  },
  "almaty:jana post": {
   "name": "Jana Post",
@@ -11691,6 +11749,22 @@
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
  },
+ "almaty:print house gerona": {
+  "name": "Print House Gerona",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "instagram": "gerona.kz",
+  "website": "https://www.gerona.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001105260",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5ea8da41e1ae6833.jpg",
+  "avatar_source": "website"
+ },
  "almaty:private school koktobe": {
   "name": "PRIVATE SCHOOL KOKTOBE",
   "city": "almaty",
@@ -11888,7 +11962,7 @@
   "instagram": "qazaqstroy_official",
   "website": "https://qazaqstroy.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001031809277",
-  "avatar_checked_at": "2026-11-02T17:18:29+00:00",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13823,7 +13897,7 @@
   "instagram": "top_service_group",
   "website": "http://topsg.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790681",
-  "avatar_checked_at": "2026-11-02T17:18:29+00:00",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16705,6 +16779,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
+ },
+ "almaty:велмимед": {
+  "name": "ВелмиМед",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
  },
  "almaty:вервенко е м": {
   "name": "ВЕРВЕНКО Е. М",
@@ -20709,6 +20790,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "almaty:отеп мади": {
+  "name": "Отеп Мади",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
+ },
  "almaty:откликнуться": {
   "name": "Откликнуться",
   "city": "almaty",
@@ -22986,6 +23074,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "almaty:фудкорт": {
+  "name": "Фудкорт",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
  },
  "almaty:хагай": {
   "name": "ХАГАЙ",
@@ -25380,6 +25475,15 @@
   "avatar": "a2a99f8de4292fb9.jpg",
   "avatar_source": "website"
  },
+ "astana:coco wear": {
+  "name": "Coco Wear",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "instagram": "cocowear.astana",
+  "source": "https://2gis.kz/astana/firm/70000001054517841"
+ },
  "astana:cocobeeastana": {
   "name": "COCOBEEASTANA",
   "city": "astana",
@@ -25588,6 +25692,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "astana:daratek": {
+  "name": "Daratek",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "website": "https://daratek.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001113580135",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0490eebd915d7e0c.jpg",
+  "avatar_source": "website"
  },
  "astana:darix": {
   "name": "Darix",
@@ -31723,6 +31842,13 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "astana:барс моторс": {
+  "name": "БАРС МОТОРС",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
+ },
  "astana:бассейн + спортивный комплекс": {
   "name": "Бассейн + Спортивный комплекс",
   "city": "astana",
@@ -33112,6 +33238,19 @@
   "v": 3,
   "checked_at": "2026-11-06T09:44:08+00:00"
  },
+ "astana:казахстан aselsan инжиниринг": {
+  "name": "Казахстан ASELSAN инжиниринг",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "website": "https://kae.com.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018513182",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:казахстан мед дез": {
   "name": "КАЗАХСТАН-МЕД ДЕЗ",
   "city": "astana",
@@ -33432,6 +33571,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "astana:компания владира": {
+  "name": "Компания ВладИра",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "instagram": "vladira_astana",
+  "website": "http://vladira.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001093479292",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:компания красивый дом": {
   "name": "Компания Красивый Дом",
@@ -35520,7 +35673,7 @@
   "instagram": "smartpicasso_app",
   "website": "http://smartpicasso.kz/",
   "source": "https://2gis.kz/astana/firm/70000001115364666",
-  "avatar_checked_at": "2026-11-02T17:18:29+00:00",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -36171,6 +36324,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
+ },
+ "astana:трц керуен build system": {
+  "name": "ТРЦ Керуен (Build SYSTEM)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "instagram": "keruen_kz",
+  "website": "http://keruen.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018099410",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:тулегенов ахлиддин": {
   "name": "ТУЛЕГЕНОВ АХЛИДДИН",
@@ -37714,7 +37881,7 @@
   "instagram": "janymsoul_guw",
   "website": "http://janymsoul.kz/atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001084338231",
-  "avatar_checked_at": "2026-11-02T17:18:29+00:00",
+  "avatar_checked_at": "2026-11-09T17:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42033,6 +42200,13 @@
   "v": 3,
   "checked_at": "2026-11-08T14:43:58+00:00"
  },
+ "kokshetau:сей нар": {
+  "name": "Сей-Нар",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
+ },
  "kokshetau:секвойя сервис": {
   "name": "СЕКВОЙЯ СЕРВИС",
   "city": "kokshetau",
@@ -43895,6 +44069,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T01:44:24+00:00"
+ },
+ "kyzylorda:payda": {
+  "name": "PAYDA",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
  },
  "kyzylorda:prima distribution": {
   "name": "Prima Distribution",
@@ -47992,6 +48173,15 @@
    "website"
   ]
  },
+ "shymkent:brew кофейня": {
+  "name": "Brew кофейня",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00",
+  "instagram": "brew_coffee_kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001092668270"
+ },
  "shymkent:burabay hotel management отель rixos borovoe": {
   "name": "Burabay Hotel Management (Отель Rixos Borovoe)",
   "city": "shymkent",
@@ -48142,6 +48332,13 @@
   "instagram": "desupport.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001040762380"
  },
+ "shymkent:dizzy": {
+  "name": "Dizzy",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
+ },
  "shymkent:don": {
   "name": "DON",
   "city": "shymkent",
@@ -48164,6 +48361,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
+ },
+ "shymkent:eco group kazakhstan эко групп казахстан": {
+  "name": "ECO GROUP KAZAKHSTAN (ЭКО ГРУПП КАЗАХСТАН)",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T17:44:21+00:00"
  },
  "shymkent:ek group": {
   "name": "EK GROUP",

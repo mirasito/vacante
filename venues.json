@@ -2117,6 +2117,13 @@
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
  },
+ "aktobe:mr logistic group": {
+  "name": "MR-Logistic Group",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "aktobe:nomad autotechnologies": {
   "name": "Nomad Autotechnologies",
   "city": "aktobe",
@@ -2161,6 +2168,13 @@
   ],
   "avatar": "29cb20e1110af866.jpg",
   "avatar_source": "website"
+ },
+ "aktobe:qosestek süt zauyty": {
+  "name": "QOSESTEK SÜT ZAUYTY",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
  },
  "aktobe:reny": {
   "name": "Reny",
@@ -6993,7 +7007,7 @@
   "checked_at": "2026-11-02T10:44:42+00:00",
   "website": "http://frgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001103021603",
-  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9776,6 +9790,13 @@
   "v": 3,
   "checked_at": "2026-11-03T23:44:09+00:00"
  },
+ "almaty:logitex": {
+  "name": "Logitex",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "almaty:logycom": {
   "name": "Logycom",
   "city": "almaty",
@@ -10838,7 +10859,7 @@
   "instagram": "novasvet.kz",
   "website": "https://novasvet.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000802535",
-  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12700,6 +12721,13 @@
   "instagram": "skincare.topbrands",
   "source": "https://2gis.kz/almaty/firm/70000001029864204"
  },
+ "almaty:sklad rent": {
+  "name": "Sklad-Rent",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "almaty:skybridge invest": {
   "name": "SkyBridge Invest",
   "city": "almaty",
@@ -13321,6 +13349,20 @@
   "website": "https://teahouse.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790535",
   "avatar_checked_at": "2026-11-04T18:44:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:techno power": {
+  "name": "TECHNO POWER",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "mirshlangov",
+  "website": "https://www.technopower.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001114314267",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16884,6 +16926,13 @@
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
  },
+ "almaty:данафлекс": {
+  "name": "Данафлекс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "almaty:данишевский е н": {
   "name": "Данишевский Е. Н.",
   "city": "almaty",
@@ -17201,6 +17250,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
+ },
+ "almaty:дос групп лимитед": {
+  "name": "ДОС-Групп лимитед",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
  },
  "almaty:достык плаза": {
   "name": "Достык Плаза",
@@ -22713,6 +22769,13 @@
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
  },
+ "almaty:центр наружной рекламы": {
+  "name": "Центр наружной рекламы",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "almaty:центр рулевых реек": {
   "name": "Центр Рулевых Реек",
   "city": "almaty",
@@ -24443,6 +24506,13 @@
   "instagram": "bingxue_kazakhstan",
   "source": "https://2gis.kz/astana/firm/70000001094214615"
  },
+ "astana:bitservice": {
+  "name": "BitService",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "astana:black rabbit": {
   "name": "Black Rabbit",
   "city": "astana",
@@ -24853,6 +24923,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T07:45:36+00:00"
+ },
+ "astana:coca cola i çecek kazakhstan тоо сп кока кола алматы боттлерс": {
+  "name": "Coca-Cola İçecek Kazakhstan  ( ТОО СП «Кока-Кола Алматы Боттлерс» )",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "cocacola_kaz",
+  "website": "https://www.coca-cola.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018099756",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a2a99f8de4292fb9.jpg",
+  "avatar_source": "website"
  },
  "astana:cocobeeastana": {
   "name": "COCOBEEASTANA",
@@ -26095,6 +26181,15 @@
   "instagram": "hookahplace_botanic",
   "source": "https://2gis.kz/astana/firm/70000001113657283"
  },
+ "astana:hot spot doner shop": {
+  "name": "Hot Spot Doner Shop",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "hotspotdonershop_",
+  "source": "https://2gis.kz/astana/firm/70000001117475613"
+ },
  "astana:hr 2 viр": {
   "name": "HR 2 VIР",
   "city": "astana",
@@ -26968,6 +27063,13 @@
   "v": 3,
   "checked_at": "2026-11-08T11:44:18+00:00"
  },
+ "astana:lady collection": {
+  "name": "LADY COLLECTION",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "astana:lamaro": {
   "name": "LAMARO",
   "city": "astana",
@@ -27222,6 +27324,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:m mart": {
+  "name": "M MART",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "m_mart_astana",
+  "source": "https://2gis.kz/astana/firm/70000001046539668"
  },
  "astana:m83": {
   "name": "M83",
@@ -28167,7 +28278,7 @@
   "instagram": "papajohns_astana",
   "website": "https://papajohns.kz/",
   "source": "https://2gis.kz/astana/firm/70000001084470346",
-  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28525,7 +28636,7 @@
   "instagram": "qazaq.republic",
   "website": "https://qazaqrepublic.com/",
   "source": "https://2gis.kz/astana/firm/70000001045454055",
-  "avatar_checked_at": "2026-11-02T11:44:07+00:00",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28624,6 +28735,13 @@
   "avatar_tried": [
    "telegram"
   ]
+ },
+ "astana:rami team": {
+  "name": "RAMI TEAM",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
  },
  "astana:rapidregqz": {
   "name": "RapidRegQz",
@@ -28856,6 +28974,22 @@
   "checked_at": "2026-11-01T11:43:30+00:00",
   "instagram": "saniya.bakery",
   "source": "https://2gis.kz/astana/firm/70000001027000250"
+ },
+ "astana:sanstore trade": {
+  "name": "Sanstore-Trade",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "sanstore.kz",
+  "website": "https://sanstore.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018514147",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "52ebd5b8838f42cc.jpg",
+  "avatar_source": "website"
  },
  "astana:sapashev": {
   "name": "SAPASHEV",
@@ -36876,7 +37010,7 @@
   "instagram": "hyundai_atyrau",
   "website": "https://atyrau.hyundai.kz/ru/",
   "source": "https://2gis.kz/atyrau/firm/70000001034937844",
-  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37116,7 +37250,7 @@
   "instagram": "technodomkz",
   "website": "https://www.technodom.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001035242988",
-  "avatar_checked_at": "2026-11-02T10:44:44+00:00",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39416,6 +39550,13 @@
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
  },
+ "karaganda:долголет": {
+  "name": "Долголет",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
+ },
  "karaganda:дудар": {
   "name": "Дудар",
   "city": "karaganda",
@@ -39804,6 +39945,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T00:43:54+00:00"
+ },
+ "karaganda:максимальный размах corporation": {
+  "name": "Максимальный размах corporation",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "maxrazmah_official",
+  "website": "https://maxrazmah.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001089188123",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:марк формэль": {
   "name": "Марк Формэль",
@@ -40227,6 +40382,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
+ },
+ "karaganda:транстелеком": {
+  "name": "Транстелеком",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "website": "https://ttc.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001061044461",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:тыштыкбаева": {
   "name": "Тыштыкбаева",
@@ -44935,6 +45103,22 @@
   "v": 3,
   "checked_at": "2026-11-02T00:42:59+00:00"
  },
+ "petropavlovsk:арида софт": {
+  "name": "Арида-Софт",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00",
+  "instagram": "aridasoft",
+  "website": "https://arida.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038461108",
+  "avatar_checked_at": "2026-11-09T11:44:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "52c59d0ed24c2d78.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:аушахметов т ш": {
   "name": "Аушахметов Т.Ш",
   "city": "petropavlovsk",
@@ -49143,6 +49327,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
+ },
+ "taldykorgan:жасар сауда": {
+  "name": "Жасар-Сауда",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T11:44:31+00:00"
  },
  "taldykorgan:жетысу сут": {
   "name": "Жетысу Сут",

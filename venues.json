@@ -3367,6 +3367,13 @@
   "v": 3,
   "checked_at": "2026-11-08T14:43:58+00:00"
  },
+ "almaty:alatau investment group": {
+  "name": "ALATAU INVESTMENT GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
+ },
  "almaty:alatau mill": {
   "name": "«ALATAU MILL»",
   "city": "almaty",
@@ -3754,6 +3761,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:alucon sw": {
+  "name": "ALUCON SW",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "instagram": "alucon.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001079798605"
  },
  "almaty:aluminium of kazakhstan": {
   "name": "Aluminium of Kazakhstan",
@@ -8873,7 +8889,7 @@
   "instagram": "kimep_university",
   "website": "http://kimep.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796820",
-  "avatar_checked_at": "2026-11-02T00:42:59+00:00",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10785,7 +10801,7 @@
   "instagram": "ortalyq.apteka",
   "website": "https://ortalyqdarihana.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001088800986",
-  "avatar_checked_at": "2026-11-02T00:42:59+00:00",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16590,6 +16606,22 @@
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
  },
+ "almaty:доктор слух": {
+  "name": "Доктор Слух",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "instagram": "doctor_sluh_almaty",
+  "telegram": "doctorsluh",
+  "website": "http://doctorsluh.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001059203714",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:дом табличек": {
   "name": "ДОМ ТАБЛИЧЕК",
   "city": "almaty",
@@ -16721,6 +16753,19 @@
   "website": "https://eurometall.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001084552861",
   "avatar_checked_at": "2026-11-03T11:44:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:европейский имплантационный центр": {
+  "name": "ЕВРОПЕЙСКИЙ ИМПЛАНТАЦИОННЫЙ ЦЕНТР",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "website": "https://euroimplant.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001109835505",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17031,6 +17076,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "almaty:ибрагимова": {
+  "name": "Ибрагимова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
+ },
  "almaty:ив роше казахстан": {
   "name": "Ив Роше Казахстан",
   "city": "almaty",
@@ -17118,6 +17170,21 @@
   "checked_at": "2026-10-28T21:46:06+00:00",
   "instagram": "kgnt.kz",
   "source": "https://2gis.kz/almaty/firm/9429940000796244"
+ },
+ "almaty:иноксазия": {
+  "name": "ИноксАзия",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "website": "https://inoxpoint.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035577591",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "75d418b036660281.jpg",
+  "avatar_source": "website"
  },
  "almaty:иностранное предприятие компания маолин": {
   "name": "ИНОСТРАННОЕ ПРЕДПРИЯТИЕ КОМПАНИЯ МАОЛИН",
@@ -17250,6 +17317,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T13:44:26+00:00"
+ },
+ "almaty:исмаилова": {
+  "name": "ИП Исмаилова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "almaty:ист вест казахстан": {
   "name": "Ист-Вест Казахстан",
@@ -19474,6 +19548,13 @@
    "website"
   ]
  },
+ "almaty:орбита дэнт": {
+  "name": "Орбита-Дэнт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
+ },
  "almaty:ордоген": {
   "name": "Ордоген",
   "city": "almaty",
@@ -19547,6 +19628,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T10:45:06+00:00"
+ },
+ "almaty:офис дом kz офис дом кз": {
+  "name": "Офис Дом.kz (Офис Дом.кз)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "website": "https://officedom.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001166904",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:охранное агентство": {
   "name": "Охранное агентство",
@@ -22219,6 +22313,20 @@
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
  },
+ "almaty:эльдорадо принт": {
+  "name": "Эльдорадо принт",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "instagram": "eldorado_print",
+  "website": "http://eldorado.com.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061215687",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:эльмар": {
   "name": "Эльмар",
   "city": "almaty",
@@ -22345,6 +22453,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "almaty:юсупова": {
+  "name": "Юсупова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "almaty:я&б лифтовая компания": {
   "name": "Я&Б лифтовая компания",
@@ -24066,7 +24181,7 @@
   "instagram": "darkside.bar",
   "website": "http://darkside.bar/",
   "source": "https://2gis.kz/astana/firm/70000001037354430",
-  "avatar_checked_at": "2026-11-02T00:42:59+00:00",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28250,6 +28365,13 @@
   "checked_at": "2026-11-02T10:44:42+00:00",
   "instagram": "sultani.astana",
   "source": "https://2gis.kz/astana/firm/70000001089434119"
+ },
+ "astana:swim kids": {
+  "name": "Swim Kids",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "astana:synergy cyberspace": {
   "name": "SYNERGY CYBERSPACE",
@@ -33106,6 +33228,13 @@
   "v": 3,
   "checked_at": "2026-11-01T00:42:45+00:00"
  },
+ "astana:сабитов": {
+  "name": "САБИТОВ",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
+ },
  "astana:сабитова к ж": {
   "name": "Сабитова К. Ж.",
   "city": "astana",
@@ -34070,6 +34199,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
+ },
+ "astana:тулегенов д а": {
+  "name": "ТУЛЕГЕНОВ Д. А",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "astana:тулеубеков": {
   "name": "Тулеубеков",
@@ -36089,6 +36225,13 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "atyrau:клинер": {
+  "name": "КЛИНЕР",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
+ },
  "atyrau:кульжанова с д": {
   "name": "Кульжанова С.Д.",
   "city": "atyrau",
@@ -36380,6 +36523,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:тулешев": {
+  "name": "ТУЛЕШЕВ",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "atyrau:филиал компании powerchina sepco1 electric power construction co ltd в республике казахстан": {
   "name": "Филиал компании POWERCHINA SEPCO1 Electric Power Construction Co.Ltd в Республике Казахстан",
@@ -38225,6 +38375,13 @@
    "website"
   ]
  },
+ "karaganda:максам казахстан": {
+  "name": "Максам Казахстан",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
+ },
  "karaganda:марк формэль": {
   "name": "Марк Формэль",
   "city": "karaganda",
@@ -39125,6 +39282,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kokshetau:qazaq union": {
+  "name": "Qazaq Union",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "kokshetau:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
@@ -40417,6 +40581,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
+ },
+ "kostanay:жаншурин бекзат": {
+  "name": "Жаншурин Бекзат",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00"
  },
  "kostanay:жас канат 2006": {
   "name": "Жас-Канат 2006",
@@ -42190,6 +42361,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
+ },
+ "pavlodar:коктем": {
+  "name": "Коктем",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T00:43:54+00:00",
+  "website": "https://www.koktem.org/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001028788563",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "pavlodar:компания troya": {
   "name": "Компания TROYA",
@@ -48347,7 +48531,7 @@
   "instagram": "sevalo.kz",
   "website": "https://sevalo.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001474390",
-  "avatar_checked_at": "2026-11-02T00:42:59+00:00",
+  "avatar_checked_at": "2026-11-09T00:43:55+00:00",
   "avatar_tried": [
    "website"
   ]

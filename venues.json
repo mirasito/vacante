@@ -1050,6 +1050,13 @@
   "instagram": "dildamarket",
   "source": "https://2gis.kz/aktau/firm/70000001063314916"
  },
+ "aktau:ерекешов": {
+  "name": "ЕРЕКЕШОВ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
+ },
  "aktau:жана отель": {
   "name": "Жана Отель",
   "city": "aktau",
@@ -16244,6 +16251,13 @@
    "website"
   ]
  },
+ "almaty:витамакс фарм": {
+  "name": "Витамакс Фарм",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
+ },
  "almaty:возовоз": {
   "name": "Возовоз",
   "city": "almaty",
@@ -17665,6 +17679,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T03:44:25+00:00"
+ },
+ "almaty:каганат": {
+  "name": "Каганат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "qaganat_kz",
+  "website": "http://qaganat24.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000824185",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:кадровое агентство prohr ип байбалин": {
   "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
@@ -20334,6 +20362,13 @@
   ],
   "avatar": "80df1adb856a5fa9.jpg",
   "avatar_source": "website"
+ },
+ "almaty:псн атырау 10": {
+  "name": "ПСН Атырау 10",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
  },
  "almaty:псф алонс": {
   "name": "ПСФ АЛОНС",
@@ -24705,6 +24740,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "astana:delta consulting group": {
+  "name": "Delta Consulting Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
+ },
  "astana:delta sport казахстан": {
   "name": "Delta Sport (Казахстан)",
   "city": "astana",
@@ -26379,6 +26421,21 @@
   "instagram": "koktem.bistro",
   "source": "https://2gis.kz/astana/firm/70000001100839755"
  },
+ "astana:kolesa ао колеса": {
+  "name": "Kolesa (АО Колеса)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "website": "https://kolesa.kz/",
+  "source": "https://ru.ruwiki.ru/wiki/Kolesa_Group",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b1400dce4ea082cd.jpg",
+  "avatar_source": "website"
+ },
  "astana:korean home food": {
   "name": "Korean Home Food",
   "city": "astana",
@@ -27582,6 +27639,20 @@
   "instagram": "ortho_dental_clinic_astana",
   "source": "https://2gis.kz/astana/firm/70000001099459279"
  },
+ "astana:osmar group": {
+  "name": "OSMAR Group",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "osmar.group",
+  "website": "https://osmar.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001080571240",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:osnova group": {
   "name": "Osnova Group",
   "city": "astana",
@@ -28111,6 +28182,20 @@
   "v": 3,
   "checked_at": "2026-11-07T12:44:23+00:00"
  },
+ "astana:rami": {
+  "name": "RAMI",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "rami__market",
+  "telegram": "rami_market",
+  "source": "https://2gis.kz/astana/firm/70000001101124890",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
+ },
  "astana:rapidregqz": {
   "name": "RapidRegQz",
   "city": "astana",
@@ -28319,6 +28404,13 @@
   "checked_at": "2026-10-29T11:44:49+00:00",
   "instagram": "samgepo",
   "source": "https://2gis.kz/astana/firm/70000001059726382"
+ },
+ "astana:sandybay": {
+  "name": "SANDYBAY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
  },
  "astana:sandyq world": {
   "name": "Sandyq World",
@@ -33325,6 +33417,20 @@
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
  },
+ "astana:отель tengri hotel": {
+  "name": "Отель Tengri Hotel",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "tengri_hotel",
+  "website": "http://www.tengrihotel.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018080224",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:откормочная база транспортная компания": {
   "name": "Откормочная база  Транспортная компания",
   "city": "astana",
@@ -34518,6 +34624,15 @@
   "avatar": "24fd2d9268e3180c.jpg",
   "avatar_source": "website"
  },
+ "astana:техноproff": {
+  "name": "ТЕХНОPROFF",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "technoproff.discount",
+  "source": "https://2gis.kz/astana/firm/70000001090702868"
+ },
  "astana:технопарк биоген": {
   "name": "Технопарк Биоген",
   "city": "astana",
@@ -35048,6 +35163,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
+ },
+ "astana:фирма траяна": {
+  "name": "Фирма Траяна",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
  },
  "astana:фирма1": {
   "name": "Фирма1",
@@ -36487,6 +36609,13 @@
    "website"
   ]
  },
+ "atyrau:ya fit atyrau": {
+  "name": "YA. FIT ATYRAU",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
+ },
  "atyrau:zerde сlinic": {
   "name": "ZERDE СLINIC",
   "city": "atyrau",
@@ -36913,6 +37042,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "atyrau:мейман": {
+  "name": "МЕЙМАН",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "meiman_atyrau",
+  "website": "https://meiman.taplink.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001106037806",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1d9c1f26fe7ec659.jpg",
+  "avatar_source": "website"
  },
  "atyrau:мята lounge": {
   "name": "МЯТА LOUNGE",
@@ -37999,6 +38144,22 @@
    "website"
   ],
   "avatar": "2857477625e89bed.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:qaztehna": {
+  "name": "QazTehna",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "qaztehna",
+  "website": "https://qaztehna.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001051314674",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3bd0a8a7cbfea107.jpg",
   "avatar_source": "website"
  },
  "karaganda:rearden machines": {
@@ -39545,6 +39706,20 @@
   "v": 3,
   "checked_at": "2026-11-06T22:44:17+00:00"
  },
+ "karaganda:цан": {
+  "name": "ЦАН",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "tsan_karaganda",
+  "website": "http://tsan.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302836101",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:центр цветов крг": {
   "name": "Центр Цветов Крг",
   "city": "karaganda",
@@ -41046,6 +41221,21 @@
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
  },
+ "kostanay:астыкжан костанай": {
+  "name": "Астыкжан Костанай",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "website": "http://astykzhan.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035235983",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "68c6dbb13d7154fc.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:ахметов": {
   "name": "АХМЕТОВ",
   "city": "kostanay",
@@ -42177,6 +42367,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T19:44:04+00:00"
+ },
+ "kyzylorda:алиди казахстан": {
+  "name": "АЛИДИ Казахстан",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
  },
  "kyzylorda:алменов а у": {
   "name": "Алменов А.У",
@@ -45158,6 +45355,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
+ },
+ "semey:small тм скиф трейд тоо": {
+  "name": "Small, ТМ (Скиф Трейд, ТОО)",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00",
+  "instagram": "smallkz_official",
+  "telegram": "smallkz",
+  "website": "https://small.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001051627453",
+  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "172a541258a3a2e7.jpg",
+  "avatar_source": "telegram"
  },
  "semey:smlab": {
   "name": "SMLAB",
@@ -48438,6 +48653,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
+ },
+ "taraz:dizzy": {
+  "name": "Dizzy",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T06:44:48+00:00"
  },
  "taraz:dunyo": {
   "name": "Dunyo",

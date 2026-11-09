@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-09T05:57:12+00:00",
+ "updated_at": "2026-11-09T06:58:54+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -44090,6 +44090,348 @@
    "at": "2026-11-09T05:57:12+00:00",
    "fields": {
     "title": "Водитель-экспедитор категории B"
+   }
+  },
+  "astana_job_vakansii-130037": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Алкомаркеты «Солод»",
+    "salary_period": null,
+    "schedule": "7/7, 10:00–23:00",
+    "address": null,
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ],
+    "salary_min": null,
+    "salary_max": null
+   }
+  },
+  "rabota_astanakz-31370": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "employer": "Отель «Tengri Hotel»",
+    "salary_min": 16000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "сутки через двое",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "astana_job_vakansii-130365": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Кассир, официант, технический персонал",
+    "employer": "Корейское кафе-магазин «RAMI»",
+    "schedule": "2/2, по 16 часов"
+   }
+  },
+  "hh-139245493": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "employer": "Фирма «Траяна»"
+   }
+  },
+  "hh-139245476": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "employer": "Компьютерный клуб «SANDYBAY»",
+    "address": "Есильский район, ул. Турара Рыскулова, 16/4"
+   }
+  },
+  "hh-139245251": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность в продажах, мало сведений"
+  },
+  "hh-139245176": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (B2B-продажи)"
+  },
+  "hh-139245120": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (продажи недвижимости)"
+  },
+  "hh-139244906": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (B2B-продажи)"
+  },
+  "hh-139243323": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (B2B-продажи оборудования)"
+  },
+  "almaty_rabota_work-31867": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Посудомойщица, раздатчица",
+    "employer": "Столовая «Каганат»",
+    "schedule": "5/2, 2/2"
+   }
+  },
+  "hh-139246162": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Уборщица в офис",
+    "address": "ул. Ангарская, 115Б"
+   }
+  },
+  "hh-139245586": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (медицинский представитель, B2B)"
+  },
+  "hh-139245562": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "employer": "Компания «Маолин»"
+   }
+  },
+  "hh-139244972": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (продажи туров)"
+  },
+  "hh-139244747": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Продавец-консультант техники Samsung",
+    "employer": "Human Capital Group",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139244602": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Консультант по продажам Ploom",
+    "employer": "Around Group",
+    "address": "с. Отеген батыра, ул. Жансугурова, 159"
+   }
+  },
+  "hh-139244586": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Водитель",
+    "employer": "Астра-Ломбард"
+   }
+  },
+  "hh-139245277": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (риелтор)"
+  },
+  "hh-139245270": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Маляр, маляр подготовительных и полировочных работ"
+   }
+  },
+  "hh-139243874": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Администратор гостиницы",
+    "schedule": "1/3, сутки",
+    "address": "ул. Терешковой, 16"
+   }
+  },
+  "hh-139243782": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Продавец-кассир, продавец-консультант",
+    "schedule": "5/2, 2/2"
+   }
+  },
+  "hh-138309865": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "address": "ул. Алимхана Ермекова, 59/3"
+   }
+  },
+  "hh-138406975": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (B2B-продажи)"
+  },
+  "hh-139246299": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Грузчик-мерчендайзер в супермаркет",
+    "address": "пр. Тауелсиздик, 11"
+   }
+  },
+  "hh-139245224": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность в продажах"
+  },
+  "hh-139244561": {
+   "verdict": "reject",
+   "at": "2026-11-09T06:58:54+00:00",
+   "reason": "Офисная должность (B2B-продажи IT)"
+  },
+  "hh-139243892": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Продавец-кассир Marc O’Polo",
+    "schedule": "5/2, 2/2",
+    "address": "ТРЦ «Infinity Mall», пр. Каныша Сатпаева, 43А"
+   }
+  },
+  "vakansii_rabota_atyrau-50075": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Су-шеф, повар горячего цеха",
+    "employer": "Халал-ресторан «Мейман»"
+   }
+  },
+  "vakansii_rabota_atyrau-50074": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Уборщица в караоке",
+    "address": "мкр Береке"
+   }
+  },
+  "vakansii_rabota_atyrau-50076": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Воспитатель, помощник воспитателя",
+    "salary_min": 130000,
+    "salary_max": 180000,
+    "salary_period": "month",
+    "schedule": "08:00–18:00",
+    "address": "мкр Нурсая",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "hh-139245304": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "schedule": null,
+    "perks": []
+   }
+  },
+  "rabotaaktau-142399": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Кассир, продавец",
+    "employer": "Супермаркет «Дана 9»",
+    "salary_min": 240000,
+    "salary_max": 250000,
+    "salary_period": "month",
+    "schedule": "6/1, ночные смены, 21:00–09:00",
+    "address": "9а мкр, Ардагер"
+   }
+  },
+  "rabotaaktau-142400": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Менеджер по продажам в цветочный магазин",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2, 09:00–01:00"
+   }
+  },
+  "hh-138689979": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "schedule": "5/2, 2/2"
+   }
+  },
+  "hh-139244867": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "employer": "VK Development Group"
+   }
+  },
+  "hh-139244835": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Техничка (уборщица)",
+    "employer": "Small"
+   }
+  },
+  "rabota_semey_official-6848": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Старший продавец, помощник продавца",
+    "salary_min": 8000,
+    "salary_max": 13000,
+    "salary_period": "day",
+    "schedule": "сутки через двое, 10:00–20:00",
+    "address": "ул. Просторная, 32"
+   }
+  },
+  "rabota_semey_official-6850": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "employer": "Кофейня «Discovery Coffee»",
+    "address": "ул. К. Мухамедханова, 45"
+   }
+  },
+  "rabota_semey_official-6849": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "title": "Машинист погрузчика, тракторист, водитель категории E",
+    "address": "р-н Дальняя, ул. Пржевальского, 80Б"
+   }
+  },
+  "hh-139245461": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "perks": [
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139245136": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {}
+  },
+  "hh-139244544": {
+   "verdict": "approve",
+   "at": "2026-11-09T06:58:54+00:00",
+   "fields": {
+    "schedule": null
    }
   }
  }

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-09T07:57:49+00:00",
+ "updated_at": "2026-11-09T08:57:14+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -44952,6 +44952,249 @@
     "employer": "Компания ALE",
     "schedule": "5/2, по 8 часов",
     "address": "ул. Киевская, 21/1"
+   }
+  },
+  "astana_job_vakansii-130378": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Горничная, официант, повар",
+    "employer": "Эко-парк «Лес»",
+    "address": "ул. Казыбек би, 50/3"
+   }
+  },
+  "astana_job_vakansii-130377": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Повар, донерщик, официант, администратор",
+    "employer": "Кафе «IZMIR»",
+    "address": "ул. Сыганак, 15"
+   }
+  },
+  "astana_hh-1861": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "schedule": "2/2, 10:30–23:00",
+    "address": "ул. Абая, 21",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Бонусы",
+     "Официально"
+    ]
+   }
+  },
+  "hh-139252785": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "трасса Астана – Караганда, 27"
+   }
+  },
+  "astana_job_vakansii-130375": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Кафе «Kakao dak»",
+    "schedule": "2/2, 10:00–23:00"
+   }
+  },
+  "hh-139253546": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Клиника «Экомед»",
+    "schedule": "6/1",
+    "address": "пр. Гагарина, 82"
+   }
+  },
+  "hh-139253411": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Restaurants & Bars",
+    "schedule": "4/3",
+    "address": "ул. Богенбай батыра, 102"
+   }
+  },
+  "hh-139253365": {
+   "verdict": "reject",
+   "at": "2026-11-09T08:57:14+00:00",
+   "reason": "Офисные продажи онлайн-курсов"
+  },
+  "hh-139253237": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Анна",
+    "schedule": "5/2",
+    "address": "ул. Бродского, 37Г"
+   }
+  },
+  "hh-139253234": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Askona",
+    "schedule": "2/2",
+    "address": "ул. Ырысты, 46/4"
+   }
+  },
+  "hh-139251909": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Зелёный дом KZ",
+    "schedule": "6/1",
+    "address": "ул. Немировича-Данченко, 51/1"
+   }
+  },
+  "hh-139251685": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "001KZ",
+    "salary_min": 530000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2",
+    "address": "пр. Суюнбая, 258/4"
+   }
+  },
+  "hh-139251402": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Администратор магазина",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "hh-139253709": {
+   "verdict": "reject",
+   "at": "2026-11-09T08:57:14+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "hh-139251829": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "ул. Космонавтов, 1/45"
+   }
+  },
+  "hh-139248044": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Blanco Coffee",
+    "schedule": null,
+    "address": "пр. Бухар жырау, 50А"
+   }
+  },
+  "hh-138079566": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Ресторан «Мой Тбилиси»",
+    "address": null
+   }
+  },
+  "hh-139252292": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Грузчик склада",
+    "employer": "Wildberries",
+    "schedule": "2/2 или 4/4, подработка",
+    "address": "мкр. Жулдыз-3, ул. Ахмета Айгалиева, 2А"
+   }
+  },
+  "vakansii_rabota_atyrau-50079": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Официант, раннер",
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Кулманова, 154а"
+   }
+  },
+  "rabotaaktau-142409": {
+   "verdict": "reject",
+   "at": "2026-11-09T08:57:14+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142421": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Помощник повара в детский сад",
+    "address": "31б мкр."
+   }
+  },
+  "rabotaaktau-142410": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Детский сад «Күншуақ Premium»",
+    "address": "18а-3"
+   }
+  },
+  "rabotaaktau-142403": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Продавец-кассир, уборщица",
+    "employer": "Гипермаркет «Waterfront»",
+    "schedule": "09:00–20:00",
+    "perks": [
+     "Питание",
+     "Жильё"
+    ]
+   }
+  },
+  "hh-139251915": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "employer": "Евразиан Фудс Корпорэйшн",
+    "schedule": "5/2",
+    "address": "ул. Торговая, 4"
+   }
+  },
+  "hh-139251804": {
+   "verdict": "reject",
+   "at": "2026-11-09T08:57:14+00:00",
+   "reason": "Офисные продажи по базе клиентов"
+  },
+  "vakansii_oskemen-9289": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Администратор SPA-комплекса"
+   }
+  },
+  "vakansiya_ukg-21784": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "title": "Кассир, продавец-кассир, работник склада",
+    "employer": "Magnum"
+   }
+  },
+  "vakansiya_ukg-21782": {
+   "verdict": "reject",
+   "at": "2026-11-09T08:57:14+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139253417": {
+   "verdict": "approve",
+   "at": "2026-11-09T08:57:14+00:00",
+   "fields": {
+    "schedule": null
    }
   }
  }

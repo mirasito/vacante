@@ -6270,6 +6270,13 @@
    "website"
   ]
  },
+ "almaty:dolce vita долче вита": {
+  "name": "Dolce Vita (Долче Вита)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
+ },
  "almaty:dominika курилова э с": {
   "name": "Dominika (Курилова Э.С)",
   "city": "almaty",
@@ -6667,6 +6674,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T05:44:23+00:00"
+ },
+ "almaty:empire manufacturing kazakhstan": {
+  "name": "Empire Manufacturing Kazakhstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
  },
  "almaty:en electronics": {
   "name": "EN Electronics",
@@ -19284,6 +19298,19 @@
    "website"
   ]
  },
+ "almaty:максимальный размах corporation": {
+  "name": "Максимальный размах corporation",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "website": "https://maxrazmah.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001089187430",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:маленькая италия": {
   "name": "Маленькая Италия",
   "city": "almaty",
@@ -25515,6 +25542,19 @@
   "v": 3,
   "checked_at": "2026-11-05T17:43:42+00:00"
  },
+ "astana:euroelectric kazakhstan": {
+  "name": "EUROELECTRIC Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "website": "https://site.euroelectric.kz/ru",
+  "source": "https://2gis.kz/astana/firm/70000001018066283",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:evs construction": {
   "name": "EVS Construction",
   "city": "astana",
@@ -25799,6 +25839,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T19:43:58+00:00"
+ },
+ "astana:get education": {
+  "name": "GET Education",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "instagram": "get.education",
+  "website": "https://get-edu.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040421836",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -28472,6 +28526,13 @@
   "v": 3,
   "checked_at": "2026-11-01T08:42:53+00:00"
  },
+ "astana:pro nina": {
+  "name": "PRO.NINA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
+ },
  "astana:prodom invest": {
   "name": "PRODOM INVEST",
   "city": "astana",
@@ -30404,6 +30465,13 @@
    "website"
   ]
  },
+ "astana:абдусаттаров г к": {
+  "name": "Абдусаттаров Г.К",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
+ },
  "astana:абдыкадыр": {
   "name": "ИП Абдыкадыр",
   "city": "astana",
@@ -31034,6 +31102,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "astana:астанинский электротехнический завод": {
+  "name": "Астанинский электротехнический завод",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "instagram": "aetz.kz",
+  "website": "https://www.aetz.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018083583",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:астория": {
   "name": "Астория",
@@ -33330,6 +33412,19 @@
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
  },
+ "astana:максимальный размах corporation": {
+  "name": "Максимальный размах corporation",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "website": "https://maxrazmah.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001089187430",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:малика": {
   "name": "Малика",
   "city": "astana",
@@ -33844,6 +33939,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T23:44:03+00:00"
+ },
+ "astana:новик л и": {
+  "name": "Новик Л.И",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
  },
  "astana:нурбанк": {
   "name": "Нурбанк",
@@ -34584,6 +34686,15 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "astana:самгау": {
+  "name": "Самгау",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "instagram": "samgau.rest",
+  "source": "https://2gis.kz/astana/firm/70000001080544508"
+ },
  "astana:самокат ооо изи лоджистик партнер сервиса": {
   "name": "Самокат (ООО ИЗИ Лоджистик — партнер сервиса)",
   "city": "astana",
@@ -35015,6 +35126,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T05:44:03+00:00"
+ },
+ "astana:столичный хлеб premium": {
+  "name": "Столичный хлеб Premium",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "instagram": "stolichnyi.premium",
+  "source": "https://2gis.kz/astana/firm/70000001098294983"
  },
  "astana:столовая ханым": {
   "name": "Столовая Ханым",
@@ -40612,6 +40732,22 @@
    "website"
   ]
  },
+ "kokshetau:alatau city bank": {
+  "name": "Alatau City Bank",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "instagram": "alatau_city_bank",
+  "website": "https://alataucitybank.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033466466",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "84bf6eeb7b5ae6f2.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:apex route": {
   "name": "Apex Route",
   "city": "kokshetau",
@@ -42707,6 +42843,13 @@
   ],
   "avatar": "17b034104a86ca4b.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:пк фарватер": {
+  "name": "ПК ФАРВАТЕР",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
  },
  "kostanay:премьерстройдизайн": {
   "name": "ПремьерСтройДизайн",
@@ -47028,6 +47171,13 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "shymkent:askar": {
+  "name": "Askar",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
+ },
  "shymkent:askona life kazakhstan аскона лайф казахстан": {
   "name": "Askona Life Kazakhstan (Аскона Лайф Казахстан)",
   "city": "shymkent",
@@ -48351,6 +48501,13 @@
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
  },
+ "shymkent:бексултан 2014": {
+  "name": "БЕКСУЛТАН-2014",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
+ },
  "shymkent:белэкспорт": {
   "name": "Белэкспорт",
   "city": "shymkent",
@@ -48371,6 +48528,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
+ },
+ "shymkent:блинова елена владимировна": {
+  "name": "Блинова Елена Владимировна",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
  },
  "shymkent:буравлев р в": {
   "name": "Буравлев Р.В",
@@ -48775,6 +48939,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
+ },
+ "shymkent:микрофинансовая организация финтехфинанс": {
+  "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ФИНТЕХФИНАНС",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
  },
  "shymkent:мира group ltd": {
   "name": "МИРА GROUP LTD",
@@ -51800,6 +51971,22 @@
   "avatar": "44d30644eb156cbc.jpg",
   "avatar_source": "telegram"
  },
+ "ust-kamenogorsk:kaz minerals management": {
+  "name": "KAZ Minerals Management",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00",
+  "instagram": "kazminerals_official",
+  "website": "https://kazminerals.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940001330162",
+  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "aa3075fc37c864bb.jpg",
+  "avatar_source": "website"
+ },
  "ust-kamenogorsk:kazdrill service": {
   "name": "KAZDRILL SERVICE",
   "city": "ust-kamenogorsk",
@@ -52220,6 +52407,13 @@
   "checked_at": "2026-11-05T19:43:27+00:00",
   "instagram": "alle_ukg",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001034692436"
+ },
+ "ust-kamenogorsk:алтай ойл": {
+  "name": "Алтай Ойл",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-09T12:45:04+00:00"
  },
  "ust-kamenogorsk:алтын алма": {
   "name": "Алтын Алма",

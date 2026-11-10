@@ -693,6 +693,19 @@
    "website"
   ]
  },
+ "aktau:teniz capital investment banking": {
+  "name": "TENIZ CAPITAL INVESTMENT BANKING",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "website": "https://tenizcap.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001105387386",
+  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:tethys coffee": {
   "name": "Tethys Coffee",
   "city": "aktau",
@@ -2532,6 +2545,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
+ },
+ "aktobe:айко": {
+  "name": "АйКо",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
  },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
@@ -7903,6 +7923,20 @@
   "instagram": "fitness_food_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001070146910"
  },
+ "almaty:flask coffee": {
+  "name": "FLASK COFFEE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "instagram": "flask_almt",
+  "website": "http://taplink.cc/flask_almt",
+  "source": "https://2gis.kz/almaty/firm/70000001036440155",
+  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:fleet pay": {
   "name": "FLEET PAY",
   "city": "almaty",
@@ -13147,6 +13181,13 @@
   "avatar": "b55e80403863d5d2.jpg",
   "avatar_source": "website"
  },
+ "almaty:quintessencia": {
+  "name": "Quintessencia",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "almaty:qulpynai bakery ип ай ханым": {
   "name": "Qulpynai Bakery ( ИП Ай-Ханым)",
   "city": "almaty",
@@ -15556,6 +15597,15 @@
    "website"
   ]
  },
+ "almaty:vestis asia": {
+  "name": "VESTIS ASIA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "instagram": "homecarpet.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001047929288"
+ },
  "almaty:vici kazakhstan": {
   "name": "VICI-KAZAKHSTAN",
   "city": "almaty",
@@ -16081,6 +16131,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "almaty:zhetysu olive oil company": {
+  "name": "zhetysu olive oil company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
  },
  "almaty:zhiger trade almaty": {
   "name": "Zhiger Trade Almaty",
@@ -19387,6 +19444,13 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "almaty:етт delivery тм aramex": {
+  "name": "ЕТТ delivery (ТМ, Aramex)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "almaty:жайлауов бекнур": {
   "name": "Жайлауов Бекнур",
   "city": "almaty",
@@ -21013,6 +21077,15 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "almaty:кумар алга": {
+  "name": "Кумар алга",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "instagram": "kumar_alga",
+  "source": "https://2gis.kz/almaty/firm/70000001102013222"
+ },
  "almaty:кураметова айнур": {
   "name": "Кураметова Айнур",
   "city": "almaty",
@@ -22152,6 +22225,13 @@
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
  },
+ "almaty:мфо юникредо": {
+  "name": "МФО ЮНИКРЕДО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "almaty:мц сана": {
   "name": "МЦ САНА",
   "city": "almaty",
@@ -22901,6 +22981,13 @@
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
  },
+ "almaty:петрищева": {
+  "name": "Петрищева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "almaty:пионер": {
   "name": "Пионер",
   "city": "almaty",
@@ -22935,6 +23022,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "almaty:плксистемы": {
+  "name": "ПЛКСистемы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
  },
  "almaty:погуляева": {
   "name": "Погуляева",
@@ -24430,6 +24524,13 @@
   "avatar": "2d8d9e50a5fed71f.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/almaty/firm/70000001028878789"
+ },
+ "almaty:тд алматы казэлектрокабель": {
+  "name": "ТД Алматы КазЭлектроКабель",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
  },
  "almaty:телс карго казахстан": {
   "name": "ТЕЛС КАРГО КАЗАХСТАН",
@@ -27575,6 +27676,13 @@
   "v": 3,
   "checked_at": "2026-11-07T19:44:04+00:00"
  },
+ "astana:bw&grafen": {
+  "name": "BW&Grafen",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "astana:cad системы": {
   "name": "CAD системы",
   "city": "astana",
@@ -28215,6 +28323,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:diamonds of tomiris": {
+  "name": "DIAMONDS OF TOMIRIS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
  },
  "astana:dincom": {
   "name": "Dincom",
@@ -41178,6 +41293,13 @@
    "website"
   ]
  },
+ "atyrau:as констракшн": {
+  "name": "AS Констракшн",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "atyrau:askona life kazakhstan аскона лайф казахстан": {
   "name": "Askona Life Kazakhstan (Аскона Лайф Казахстан)",
   "city": "atyrau",
@@ -51436,6 +51558,21 @@
    "website"
   ]
  },
+ "semey:galanz bottlers ао": {
+  "name": "Galanz Bottlers, АО",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "website": "http://www.galanz.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000935791",
+  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "dd5edafb313fe851.jpg",
+  "avatar_source": "website"
+ },
  "semey:green house limited": {
   "name": "GREEN HOUSE LIMITED",
   "city": "semey",
@@ -52685,6 +52822,22 @@
    "website"
   ],
   "avatar": "ac418d7217426852.jpg",
+  "avatar_source": "website"
+ },
+ "shymkent:balabi textile": {
+  "name": "Balabi Textile",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "instagram": "balabi_textile",
+  "website": "http://balabitextile.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001100208289",
+  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "86daf7d11f788c34.jpg",
   "avatar_source": "website"
  },
  "shymkent:bali spa shymkent": {
@@ -54322,6 +54475,13 @@
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
  },
+ "shymkent:казахстанская топливная компания": {
+  "name": "Казахстанская топливная компания",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "shymkent:казахстанский завод металлоконструкций": {
   "name": "КАЗАХСТАНСКИЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ",
   "city": "shymkent",
@@ -55940,6 +56100,13 @@
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
  },
+ "taraz:тастемиров": {
+  "name": "Тастемиров",
+  "city": "taraz",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00"
+ },
  "taraz:тсз": {
   "name": "ТСЗ",
   "city": "taraz",
@@ -57245,6 +57412,24 @@
   ],
   "avatar": "384dec1174b15a56.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:табер трейд кз сеть магазинов подружка": {
+  "name": "ТАБЕР ТРЕЙД КЗ (сеть магазинов Подружка)",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T21:43:51+00:00",
+  "instagram": "podrygkashop",
+  "telegram": "podrygka_ru",
+  "website": "http://podrygka.ru/",
+  "source": "https://2gis.kz/uralsk/firm/70000001092558338",
+  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "bc01095d47c7d160.jpg",
+  "avatar_source": "telegram"
  },
  "uralsk:тат азс центр казахстан": {
   "name": "ТАТ АЗС Центр Казахстан",

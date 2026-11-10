@@ -1497,6 +1497,13 @@
   "instagram": "supermarket_rahat",
   "source": "https://2gis.kz/aktau/firm/70000001104542195"
  },
+ "aktau:раяна": {
+  "name": "Раяна",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "aktau:сауда дистрибьюшн": {
   "name": "Сауда Дистрибьюшн",
   "city": "aktau",
@@ -1898,6 +1905,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T07:45:36+00:00"
+ },
+ "aktobe:coca cola i çecek kazakhstan тоо сп кока кола алматы боттлерс": {
+  "name": "Coca-Cola İçecek Kazakhstan  ( ТОО СП «Кока-Кола Алматы Боттлерс» )",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00",
+  "instagram": "cocacolaicecek",
+  "website": "https://coca-cola.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001093471985",
+  "avatar_checked_at": "2026-11-10T05:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "17d039d28bc846d7.jpg",
+  "avatar_source": "website"
  },
  "aktobe:common market corporation": {
   "name": "Common Market Corporation",
@@ -8664,6 +8687,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:iacademy kz": {
+  "name": "IAcademy.kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
  },
  "almaty:ic line тоо": {
   "name": "IC Line, ТОО",
@@ -21270,6 +21300,13 @@
   "instagram": "nur_auto_service",
   "source": "https://2gis.kz/almaty/firm/70000001075075181"
  },
+ "almaty:нурбек назерке": {
+  "name": "Нурбек Назерке",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "almaty:нуржума": {
   "name": "Нуржума",
   "city": "almaty",
@@ -23693,6 +23730,13 @@
    "website"
   ]
  },
+ "almaty:уралметаллинвест": {
+  "name": "УралМеталлинвест",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "almaty:урманов р а": {
   "name": "Урманов Р. А.",
   "city": "almaty",
@@ -25279,6 +25323,20 @@
   "checked_at": "2026-11-03T00:43:42+00:00",
   "instagram": "apodit_astana",
   "source": "https://2gis.kz/astana/firm/70000001091781283"
+ },
+ "astana:apple city corps": {
+  "name": "Apple City Corps",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00",
+  "instagram": "applecity_careers",
+  "website": "https://www.applecity.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018062386",
+  "avatar_checked_at": "2026-11-10T05:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:aralas": {
   "name": "ARALAS",
@@ -30453,6 +30511,13 @@
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
  },
+ "astana:recruit expert": {
+  "name": "Recruit expert",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "astana:red chocoberry": {
   "name": "Red Chocoberry",
   "city": "astana",
@@ -31931,6 +31996,13 @@
   "avatar": "1ef35b44ef5f46ed.jpg",
   "avatar_source": "website"
  },
+ "astana:welding company": {
+  "name": "WELDING COMPANY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "astana:welldis": {
   "name": "WellDis",
   "city": "astana",
@@ -32553,6 +32625,13 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "astana_activ_zoloto",
   "source": "https://www.instagram.com/astana_activ_zoloto/"
+ },
+ "astana:алаш001": {
+  "name": "АЛАШ001",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
  },
  "astana:алдияр": {
   "name": "Алдияр",
@@ -37193,6 +37272,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "astana:стаховец т е ип": {
+  "name": "Стаховец Т.Е., ИП",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "astana:сто по ремонту радиаторов и автопечек": {
   "name": "СТО по ремонту радиаторов и автопечек",
   "city": "astana",
@@ -39410,6 +39496,20 @@
   "website": "http://kgsolution.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001093380251",
   "avatar_checked_at": "2026-11-09T23:46:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "atyrau:kcell": {
+  "name": "Kcell",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00",
+  "instagram": "kcell.kz",
+  "website": "https://kcell.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035803328",
+  "avatar_checked_at": "2026-11-10T05:43:23+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -43121,6 +43221,13 @@
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
  },
+ "karaganda:штах е э": {
+  "name": "Штах Е.Э.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "karaganda:эверест auto": {
   "name": "ЭВЕРЕСТ-AUTO",
   "city": "karaganda",
@@ -43305,6 +43412,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kokshetau:ds trading company": {
+  "name": "DS Trading Company",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
  },
  "kokshetau:etalon auto": {
   "name": "Etalon Auto",
@@ -44481,6 +44595,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "kostanay:star brands asia стар брэндс азия": {
+  "name": "Star Brands Asia (Стар Брэндс Азия)",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
  },
  "kostanay:stk alfa online": {
   "name": "STK Alfa online",
@@ -52256,6 +52377,13 @@
   "v": 3,
   "checked_at": "2026-11-02T00:42:59+00:00"
  },
+ "shymkent:яхьяевич асылбек": {
+  "name": "Яхьяевич Асылбек",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "shymkent:әбдікаримов а а": {
   "name": "Әбдікаримов А.А.",
   "city": "shymkent",
@@ -52876,6 +53004,13 @@
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
  },
+ "taraz:up comfort": {
+  "name": "Up.comfort",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
+ },
  "taraz:valvena": {
   "name": "VALVENA",
   "city": "taraz",
@@ -53055,6 +53190,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "taraz:масло дел": {
+  "name": "Масло-Дел",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00",
+  "instagram": "maslodelkz",
+  "website": "https://maslodel.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001054719426",
+  "avatar_checked_at": "2026-11-10T05:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0a1a827fa74bb863.jpg",
+  "avatar_source": "website"
  },
  "taraz:новаснаб": {
   "name": "НоваСнаб",
@@ -54168,6 +54319,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
+ },
+ "uralsk:кассир": {
+  "name": "КАССИР",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00"
  },
  "uralsk:кассир операторлар": {
   "name": "КАССИР-ОПЕРАТОРЛАР",
@@ -55361,6 +55519,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T17:44:18+00:00"
+ },
+ "ust-kamenogorsk:агротехменеджмент": {
+  "name": "АгроТехМенеджмент",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T05:43:22+00:00",
+  "instagram": "ytotractor.kz",
+  "website": "https://ytotractor.kz/",
+  "source": "https://2gis.kz/ustkam/firm/70000001082762710",
+  "avatar_checked_at": "2026-11-10T05:43:23+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:азия см": {
   "name": "АЗИЯ-СМ",

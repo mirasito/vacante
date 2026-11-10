@@ -5488,6 +5488,13 @@
   "v": 3,
   "checked_at": "2026-10-28T14:47:20+00:00"
  },
+ "almaty:beauty trends": {
+  "name": "Beauty trends",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
+ },
  "almaty:bebetto": {
   "name": "Bebetto",
   "city": "almaty",
@@ -5641,6 +5648,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:biancos beauty": {
+  "name": "Bianco's beauty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "bianco_s_beauty",
+  "source": "https://2gis.kz/almaty/firm/9429940001684525"
  },
  "almaty:bidai": {
   "name": "Bidai",
@@ -9325,6 +9341,15 @@
   "avatar": "d71217686c173b38.jpg",
   "avatar_source": "website"
  },
+ "almaty:instaxminiqz": {
+  "name": "Instaxminiqz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "instaxmini.qz",
+  "source": "https://2gis.kz/almaty/firm/70000001047094099"
+ },
  "almaty:intellpack компания": {
   "name": "INTELLPACK, компания",
   "city": "almaty",
@@ -9868,6 +9893,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T06:43:49+00:00"
+ },
+ "almaty:kaz intake&service": {
+  "name": "KAZ INTAKE&SERVICE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "website": "https://kazintake.info/",
+  "source": "https://2gis.kz/almaty/firm/70000001098518628",
+  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:kazakhstan tg tools co ltd": {
   "name": "Kazakhstan TG Tools Co., Ltd",
@@ -14317,6 +14355,22 @@
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
  },
+ "almaty:sportik kz": {
+  "name": "Sportik.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "sportik.kz_almaty",
+  "website": "https://sportik.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001077371934",
+  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9f8e94ca848bd96b.jpg",
+  "avatar_source": "website"
+ },
  "almaty:sporttrade": {
   "name": "ТОО SPORTTRADE",
   "city": "almaty",
@@ -15615,6 +15669,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T11:44:54+00:00"
+ },
+ "almaty:we work kz": {
+  "name": "WE WORK KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
  },
  "almaty:wefind": {
   "name": "WeFind",
@@ -22391,6 +22452,13 @@
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
  },
+ "almaty:ооо divi group": {
+  "name": "ИП ООО DIVI GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
+ },
  "almaty:оптимус медика": {
   "name": "Оптимус Медика",
   "city": "almaty",
@@ -22799,6 +22867,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T21:44:03+00:00"
+ },
+ "almaty:прима дистрибьюшн": {
+  "name": "ТОО Прима Дистрибьюшн",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "primadestribution",
+  "source": "https://2gis.kz/almaty/firm/9429940000923999"
  },
  "almaty:примавера каз": {
   "name": "Примавера КАЗ",
@@ -28815,6 +28892,13 @@
   "v": 3,
   "checked_at": "2026-11-07T13:43:51+00:00"
  },
+ "astana:green start": {
+  "name": "Green Start",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
+ },
  "astana:gresso kz": {
   "name": "GRESSO KZ",
   "city": "astana",
@@ -30885,6 +30969,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:nrs": {
+  "name": "NRS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
  },
  "astana:ns fitness": {
   "name": "NS FITNESS",
@@ -34727,6 +34818,15 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "astana:брювэн": {
+  "name": "Брювэн",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "zebracoffee.kz",
+  "source": "https://2gis.kz/astana/firm/70000001045554424"
+ },
  "astana:будапешт": {
   "name": "Будапешт",
   "city": "astana",
@@ -34888,6 +34988,20 @@
   "website": "http://vkusmart.vmv.kz/",
   "source": "https://2gis.kz/astana/firm/70000001026980818",
   "avatar_checked_at": "2026-11-08T17:43:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:водометр": {
+  "name": "Водометр",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "vodometr_kz",
+  "website": "https://www.vodometr.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001032506791",
+  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -36047,6 +36161,19 @@
   "website": "http://kazmeddez.kz/",
   "source": "https://2gis.kz/astana/firm/70000001020461045",
   "avatar_checked_at": "2026-11-05T05:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:казахстанская топливная компания": {
+  "name": "Казахстанская топливная компания",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "website": "https://petrolcompany.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018076542",
+  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38684,6 +38811,13 @@
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
  },
+ "astana:ск рахат": {
+  "name": "СК Рахат",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
+ },
  "astana:ск стимул": {
   "name": "СК Стимул",
   "city": "astana",
@@ -40883,6 +41017,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:baldai unique": {
+  "name": "Baldai unique",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "baldai__unique",
+  "source": "https://2gis.kz/atyrau/firm/70000001086836725"
  },
  "atyrau:beeline тм": {
   "name": "Beeline, ТМ",
@@ -43146,6 +43289,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T22:43:08+00:00"
+ },
+ "karaganda:packplus": {
+  "name": "PackPlus",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
  },
  "karaganda:pet solutions": {
   "name": "PET SOLUTIONS",
@@ -47882,6 +48032,13 @@
    "website"
   ]
  },
+ "kyzylorda:crn group": {
+  "name": "CRN GROUP",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
+ },
  "kyzylorda:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "kyzylorda",
@@ -52605,6 +52762,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T23:44:29+00:00"
+ },
+ "shymkent:imperial show": {
+  "name": "Imperial Show",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
  },
  "shymkent:insoft": {
   "name": "INSOFT",
@@ -57567,6 +57731,13 @@
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
  },
+ "ust-kamenogorsk:product mix": {
+  "name": "Product-Mix",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00"
+ },
  "ust-kamenogorsk:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
   "city": "ust-kamenogorsk",
@@ -57680,6 +57851,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "ust-kamenogorsk:studylink oskemen": {
+  "name": "STUDYLINK OSKEMEN",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T18:43:51+00:00",
+  "instagram": "studylink.oskemen",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001117744902"
  },
  "ust-kamenogorsk:teamo": {
   "name": "TEAMO",

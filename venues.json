@@ -1283,6 +1283,13 @@
   "v": 3,
   "checked_at": "2026-11-08T12:43:42+00:00"
  },
+ "aktau:кутюрина": {
+  "name": "Кутюрина",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
+ },
  "aktau:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",
   "city": "aktau",
@@ -8149,6 +8156,13 @@
   "instagram": "greenhouse_limited",
   "source": "https://2gis.kz/almaty/firm/70000001115206938"
  },
+ "almaty:green ninja": {
+  "name": "Green ninja",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
+ },
  "almaty:greencity": {
   "name": "GreenCity",
   "city": "almaty",
@@ -8178,6 +8192,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:grin haus": {
+  "name": "Grin Haus",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
  },
  "almaty:grunge space ип байсбаева лн": {
   "name": "Grunge space (ИП Байсбаева ЛН)",
@@ -12891,6 +12912,22 @@
    "website"
   ]
  },
+ "almaty:sa": {
+  "name": "SA",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
+ },
+ "almaty:safart": {
+  "name": "SafArt",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "safart.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001037801147"
+ },
  "almaty:safia кондитерский дом safia coffee & bakery": {
   "name": "Safia Кондитерский дом (Safia Coffee & Bakery)",
   "city": "almaty",
@@ -14837,6 +14874,13 @@
   "v": 3,
   "checked_at": "2026-11-05T19:43:27+00:00"
  },
+ "almaty:warmpenguin435": {
+  "name": "WarmPenguin435",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
+ },
  "almaty:wave": {
   "name": "Wave",
   "city": "almaty",
@@ -15434,6 +15478,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T02:43:54+00:00"
+ },
+ "almaty:автомойка 22": {
+  "name": "Автомойка 22",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
  },
  "almaty:автомойка денди": {
   "name": "Автомойка Денди",
@@ -17732,6 +17783,13 @@
   "avatar_tried": [
    "telegram"
   ]
+ },
+ "almaty:гульсара": {
+  "name": "Гульсара",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
  },
  "almaty:гум": {
   "name": "ГУМ",
@@ -20168,6 +20226,22 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "almaty:магазин yagamii store": {
+  "name": "Магазин yagamii.store",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "yagamii.store",
+  "website": "http://yagamii.taplink.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001075008726",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e726e1f9ca9a26b5.jpg",
+  "avatar_source": "website"
+ },
  "almaty:магия чистоты": {
   "name": "Магия Чистоты",
   "city": "almaty",
@@ -20293,6 +20367,13 @@
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
  },
+ "almaty:мансур": {
+  "name": "ИП Мансур",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
+ },
  "almaty:мансұр": {
   "name": "МАНСҰР",
   "city": "almaty",
@@ -20372,6 +20453,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "almaty:мебель": {
+  "name": "Мебель",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
  },
  "almaty:мебель грация": {
   "name": "мебель грация",
@@ -22001,6 +22089,19 @@
    "website"
   ]
  },
+ "almaty:рост мир": {
+  "name": "Рост-Мир",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "website": "https://rostmir.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001084333639",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:роял мид казахстан": {
   "name": "Роял Мид Казахстан",
   "city": "almaty",
@@ -23264,6 +23365,22 @@
   "v": 3,
   "checked_at": "2026-11-02T07:45:36+00:00"
  },
+ "almaty:торговый дом инвольт": {
+  "name": "Торговый дом ИНВОЛЬТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "involt_almaty",
+  "website": "http://3334100.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001509428",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ae175bbfd47e450c.jpg",
+  "avatar_source": "website"
+ },
  "almaty:торговый дом костромской ювелирный завод": {
   "name": "Торговый Дом Костромской Ювелирный Завод",
   "city": "almaty",
@@ -23455,7 +23572,7 @@
   "telegram": "infosynergykz",
   "website": "http://synergyuniversity.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000798244",
-  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -31583,6 +31700,22 @@
    "website"
   ]
  },
+ "astana:vizavi company": {
+  "name": "Vizavi company",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "vizavicompany",
+  "website": "http://vizavi.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001116750736",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3f4b2f47734ef424.jpg",
+  "avatar_source": "website"
+ },
  "astana:vm premium astana": {
   "name": "VM Premium Astana",
   "city": "astana",
@@ -32427,6 +32560,13 @@
   "checked_at": "2026-11-04T12:44:26+00:00",
   "instagram": "alyeparusaa_astana",
   "source": "https://2gis.kz/astana/firm/70000001061276094"
+ },
+ "astana:алькор защита": {
+  "name": "Алькор Защита",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
  },
  "astana:альфа кт": {
   "name": "Альфа-КТ",
@@ -34724,7 +34864,7 @@
   "instagram": "chery.crystal.astana",
   "website": "http://chery-crystal-astana.kz/",
   "source": "https://2gis.kz/astana/firm/70000001103490706",
-  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37796,6 +37936,22 @@
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
  },
+ "astana:хилти казахстан": {
+  "name": "Хилти Казахстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "hilti_kazakhstan",
+  "website": "https://www.hilti.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001091279266",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1f4570a98e64b8c3.jpg",
+  "avatar_source": "website"
+ },
  "astana:хинкальная 1": {
   "name": "Хинкальная 1",
   "city": "astana",
@@ -38746,7 +38902,7 @@
   "instagram": "beeline_kz",
   "website": "https://www.beeline.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001060886068",
-  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39524,6 +39680,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "atyrau:вираж": {
+  "name": "Вираж",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "chevrolet_virazh_atyrau",
+  "website": "https://virazh-atyrau.chevrolet-auto.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035241223",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:грин лайт лтд green light ltd": {
   "name": "ГРИН ЛАЙТ ЛТД/GREEN LIGHT LTD",
@@ -43811,6 +43981,20 @@
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
  },
+ "kostanay:etalon auto": {
+  "name": "Etalon Auto",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "etalon_auto_kst",
+  "website": "http://etalon-kst.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035691321",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:glasman trade": {
   "name": "GLASMAN TRADE",
   "city": "kostanay",
@@ -44019,6 +44203,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "kostanay:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00",
+  "instagram": "technodomkz",
+  "website": "https://technodom.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001054918594",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:technologies and personnel": {
   "name": "TECHNOLOGIES AND PERSONNEL",
@@ -45201,6 +45399,13 @@
   ],
   "avatar": "ad983f56cc667308.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:филиал inkar в г костанай": {
+  "name": "Филиал INKAR в г. Костанай",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T02:45:03+00:00"
  },
  "kostanay:фирма арасан": {
   "name": "Фирма Арасан",
@@ -46941,7 +47146,7 @@
   "instagram": "tssp.kz",
   "website": "https://www.tssp.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001061940839",
-  "avatar_checked_at": "2026-11-03T02:44:11+00:00",
+  "avatar_checked_at": "2026-11-10T02:45:04+00:00",
   "avatar_tried": [
    "website"
   ]

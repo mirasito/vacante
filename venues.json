@@ -739,6 +739,15 @@
    "website"
   ]
  },
+ "aktau:uide": {
+  "name": "Uide",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "instagram": "antikafe_uide_aktau_19",
+  "source": "https://2gis.kz/aktau/firm/70000001077250035"
+ },
  "aktau:union space tm тоо brand hub group": {
   "name": "Union Space`TM (ТОО Brand Hub Group)",
   "city": "aktau",
@@ -1511,6 +1520,15 @@
   "v": 3,
   "checked_at": "2026-11-10T05:43:22+00:00"
  },
+ "aktau:ребра & шашлык": {
+  "name": "Ребра & Шашлык",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "instagram": "rebra_i_shashlyk",
+  "source": "https://2gis.kz/aktau/firm/70000001088944732"
+ },
  "aktau:сауда дистрибьюшн": {
   "name": "Сауда Дистрибьюшн",
   "city": "aktau",
@@ -1882,6 +1900,22 @@
   "checked_at": "2026-10-29T04:44:51+00:00",
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
+ },
+ "aktobe:bereke bank": {
+  "name": "Bereke Bank",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "instagram": "berekebank",
+  "website": "https://berekebank.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001031821692",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5f8c316e4c1795ee.jpg",
+  "avatar_source": "website"
  },
  "aktobe:big 7": {
   "name": "BIG 7",
@@ -2811,6 +2845,13 @@
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
  },
+ "aktobe:калиакпаров": {
+  "name": "КАЛИАКПАРОВ",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
+ },
  "aktobe:кари кз": {
   "name": "КАРИ КЗ",
   "city": "aktobe",
@@ -2985,6 +3026,13 @@
   "checked_at": "2026-11-03T01:44:22+00:00",
   "instagram": "riol.td",
   "source": "https://2gis.kz/aktobe/firm/70000001051998624"
+ },
+ "aktobe:сагимбаев с б": {
+  "name": "САГИМБАЕВ С.Б.",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "aktobe:сариев и к": {
   "name": "Сариев и К",
@@ -4570,6 +4618,13 @@
   ],
   "avatar": "b5d15bfef6700700.jpg",
   "avatar_source": "website"
+ },
+ "almaty:asia cailin technology": {
+  "name": "Asia Cailin Technology",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "almaty:asia it project": {
   "name": "Asia IT Project",
@@ -6531,6 +6586,19 @@
   ],
   "avatar": "df971ea3f28361ee.jpg",
   "avatar_source": "website"
+ },
+ "almaty:defacto retail store kz": {
+  "name": "Defacto Retail Store Kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "website": "https://www.defacto.com/ru-kz",
+  "source": "https://2gis.kz/almaty/firm/9429940001658020",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:deli lavka": {
   "name": "DELI LAVKA",
@@ -10881,6 +10949,13 @@
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
  },
+ "almaty:mbh central asia warehousing and logistics": {
+  "name": "MBH Central Asia Warehousing and Logistics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
+ },
  "almaty:mdg group kz": {
   "name": "MDG Group.kz",
   "city": "almaty",
@@ -11516,6 +11591,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "almaty:nk teck": {
+  "name": "NK-teck",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "almaty:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
@@ -15826,6 +15908,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "almaty:автомотив ассистанс альянс": {
+  "name": "Автомотив Ассистанс Альянс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "instagram": "3a.com.kz",
+  "website": "http://3a.com.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001056371367",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:автопитер кз": {
   "name": "Автопитер.кз",
@@ -21344,6 +21440,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T10:44:37+00:00"
+ },
+ "almaty:мураткызы": {
+  "name": "Мураткызы",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "almaty:муратова а ж": {
   "name": "МУРАТОВА А. Ж",
@@ -29489,7 +29592,7 @@
   "instagram": "manzoni.kz",
   "website": "https://mmanzoni.com/",
   "source": "https://2gis.kz/astana/firm/70000001076593215",
-  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -35504,6 +35607,13 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "astana:кокжанова": {
+  "name": "Кокжанова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
+ },
  "astana:коктал": {
   "name": "Коктал",
   "city": "astana",
@@ -36337,6 +36447,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
+ },
+ "astana:минимаркет": {
+  "name": "Минимаркет",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "astana:мир подиум статус": {
   "name": "МИР ПОДИУМ Статус",
@@ -39513,6 +39630,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:эм си баухеми": {
+  "name": "Эм-Си Баухеми",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "astana:эмити интернешнл": {
   "name": "ЭМИТИ Интернешнл",
@@ -43775,6 +43899,13 @@
   "v": 3,
   "checked_at": "2026-11-07T23:44:10+00:00"
  },
+ "karaganda:тектурмасские кварциты": {
+  "name": "Тектурмасские кварциты",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
+ },
  "karaganda:тм romeo flowers касымгалиев а а": {
   "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
   "city": "karaganda",
@@ -43957,6 +44088,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T20:45:35+00:00"
+ },
+ "karaganda:центрснабстрой": {
+  "name": "ЦентрСнабСтрой",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "instagram": "csscable.kz",
+  "website": "http://css-cable.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032287173",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1f666492ea4522d0.jpg",
+  "avatar_source": "website"
  },
  "karaganda:чайная фабрика unitea ип хасенов е ш": {
   "name": "Чайная фабрика UNITEA (ИП Хасенов Е. Ш.)",
@@ -44417,7 +44564,7 @@
   "instagram": "qazaq.republic",
   "website": "http://qazaqrepublic.com/",
   "source": "https://2gis.kz/astana/firm/70000001045454055",
-  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44533,6 +44680,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "kokshetau:акватис": {
+  "name": "Акватис",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "kokshetau:алма телекоммуникейшнс казахстан almaplus": {
   "name": "Алма Телекоммуникейшнс Казахстан (almaPLUS)",
@@ -45920,6 +46074,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "kostanay:игликов кайрат койшэевич": {
+  "name": "Игликов Кайрат Койшэевич",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00"
  },
  "kostanay:инструмент": {
   "name": "Инструмент",
@@ -53874,6 +54035,20 @@
   "v": 3,
   "checked_at": "2026-11-07T14:44:39+00:00"
  },
+ "taraz:magnum": {
+  "name": "MAGNUM",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "instagram": "magnum.kz",
+  "website": "https://magnum.kz/",
+  "source": "https://2gis.kz/taraz/firm/70000001051429260",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "taraz:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "taraz",
@@ -54958,7 +55133,7 @@
   "instagram": "haval_zhayikmotors",
   "website": "http://haval-uralsk.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001050836874",
-  "avatar_checked_at": "2026-11-03T10:44:19+00:00",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55636,6 +55811,19 @@
   "website": "http://elsibo.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001117823005",
   "avatar_checked_at": "2026-11-04T03:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "uralsk:энергомашстрой": {
+  "name": "ЭНЕРГОМАШСТРОЙ",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T11:44:07+00:00",
+  "website": "http://emsuralsk.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025248286",
+  "avatar_checked_at": "2026-11-10T11:44:09+00:00",
   "avatar_tried": [
    "website"
   ]

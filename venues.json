@@ -770,6 +770,13 @@
   "instagram": "vinyl.aktau",
   "source": "https://2gis.kz/aktau/firm/70000001054932017"
  },
+ "aktau:x communication": {
+  "name": "X-COMMUNICATION",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "aktau:zeta": {
   "name": "ZETA",
   "city": "aktau",
@@ -7055,6 +7062,22 @@
   "v": 3,
   "checked_at": "2026-11-09T12:45:04+00:00"
  },
+ "almaty:empire motors kazakhstan": {
+  "name": "Empire Motors Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00",
+  "instagram": "geely.galaxy_empire.motors",
+  "website": "http://empire-motors-almaty.geely-galaxy.kz/ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001112959883",
+  "avatar_checked_at": "2026-11-10T07:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "98aece369d171db7.jpg",
+  "avatar_source": "website"
+ },
  "almaty:en electronics": {
   "name": "EN Electronics",
   "city": "almaty",
@@ -11045,6 +11068,13 @@
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
  },
+ "almaty:modern technologies kz": {
+  "name": "Modern Technologies KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "almaty:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
   "city": "almaty",
@@ -12189,6 +12219,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
+ },
+ "almaty:primarada примарада": {
+  "name": "PRIMARADA (ПРИМАРАДА)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
  },
  "almaty:prime alco": {
   "name": "Prime Alco",
@@ -20855,6 +20892,13 @@
   "v": 3,
   "checked_at": "2026-11-01T14:43:23+00:00"
  },
+ "almaty:микрофинансовая организация бихайв финанс": {
+  "name": "Микрофинансовая организация Бихайв Финанс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "almaty:микрофинансовая организация финтехфинанс": {
   "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ФИНТЕХФИНАНС",
   "city": "almaty",
@@ -21898,6 +21942,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
+ },
+ "almaty:премиальный автосалон": {
+  "name": "Премиальный автосалон",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
  },
  "almaty:премьера мини маркет": {
   "name": "Премьера мини маркет",
@@ -25182,6 +25233,20 @@
   "v": 3,
   "checked_at": "2026-11-09T07:44:13+00:00"
  },
+ "astana:ait shoes ип коробкин с т": {
+  "name": "AIT Shoes (ИП Коробкин С.Т.)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00",
+  "instagram": "ait_shoes",
+  "website": "https://aitshoes.com/",
+  "source": "https://2gis.kz/astana/firm/70000001028209945",
+  "avatar_checked_at": "2026-11-10T07:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:aitas rtc": {
   "name": "Aitas RTC",
   "city": "astana",
@@ -26366,6 +26431,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "astana:cat qazaqstan": {
+  "name": "CAT Qazaqstan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
  },
  "astana:caviar house qazaqstan": {
   "name": "Caviar House Qazaqstan",
@@ -29646,6 +29718,13 @@
   "avatar": "a8592970d7004f8b.jpg",
   "avatar_source": "website"
  },
+ "astana:neo clean": {
+  "name": "Neo clean",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "astana:neuro balance": {
   "name": "Neuro Balance",
   "city": "astana",
@@ -30704,6 +30783,19 @@
   "checked_at": "2026-11-10T03:44:14+00:00",
   "instagram": "roman_avto_astana",
   "source": "https://2gis.kz/astana/firm/70000001091388864"
+ },
+ "astana:royalstroy development": {
+  "name": "RoyalStroy Development",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00",
+  "website": "https://royalstroy.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001111734882",
+  "avatar_checked_at": "2026-11-10T07:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:rs food": {
   "name": "RS FOOD",
@@ -39293,6 +39385,13 @@
   "instagram": "atyrauprint.kz",
   "source": "https://2gis.kz/atyrau/firm/70000001034798928"
  },
+ "atyrau:atyrau vine & spirits pro": {
+  "name": "Atyrau vine & spirits pro",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "atyrau:avora group": {
   "name": "Avora Group",
   "city": "atyrau",
@@ -40850,6 +40949,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:autotools": {
+  "name": "Autotools",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
  },
  "karaganda:av company": {
   "name": "AV Company",
@@ -43435,6 +43541,13 @@
    "website"
   ]
  },
+ "karaganda:әділ құрылыс": {
+  "name": "Әділ Құрылыс",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "kokshetau:adidas kazakhstan": {
   "name": "adidas Kazakhstan",
   "city": "kokshetau",
@@ -44759,6 +44872,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T05:43:22+00:00"
+ },
+ "kostanay:stellar auto": {
+  "name": "Stellar Auto",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00",
+  "instagram": "stellarauto.kst",
+  "telegram": "stellarautokz",
+  "source": "https://2gis.kz/kostanaj/firm/70000001089288778",
+  "avatar_checked_at": "2026-11-10T07:44:35+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "e29dc8d2389522a9.jpg",
+  "avatar_source": "telegram"
  },
  "kostanay:stk alfa online": {
   "name": "STK Alfa online",
@@ -48233,6 +48362,13 @@
   "v": 3,
   "checked_at": "2026-11-07T00:44:13+00:00"
  },
+ "petropavlovsk:акс и к": {
+  "name": "Акс и К",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "petropavlovsk:алтын алма": {
   "name": "Алтын Алма",
   "city": "petropavlovsk",
@@ -49782,6 +49918,13 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "semey:куникин о к": {
+  "name": "КУНИКИН О К",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
+ },
  "semey:куртыш лтд": {
   "name": "КУРТЫШ ЛТД",
   "city": "semey",
@@ -49872,6 +50015,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
+ },
+ "semey:поликлиника андромеда": {
+  "name": "Поликлиника АндроМеда",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00",
+  "instagram": "andromeda.semey",
+  "website": "https://www.androlog.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001053182613",
+  "avatar_checked_at": "2026-11-10T07:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "29ada0b77188187a.jpg",
+  "avatar_source": "website"
  },
  "semey:промстрой": {
   "name": "Промстрой",
@@ -51169,6 +51328,22 @@
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
  },
+ "shymkent:renaissance shik": {
+  "name": "Renaissance SHIK",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00",
+  "instagram": "renaissanceshik",
+  "website": "https://renisan.asia/",
+  "source": "https://2gis.kz/shymkent/firm/70000001068067612",
+  "avatar_checked_at": "2026-11-10T07:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1ab79154279513ae.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:rencber fatma": {
   "name": "Rencber Fatma",
   "city": "shymkent",
@@ -51294,6 +51469,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
+ },
+ "shymkent:staff up consulting group": {
+  "name": "Staff-UP Consulting Group",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
  },
  "shymkent:stels networks": {
   "name": "STELS Networks",
@@ -55609,6 +55791,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T17:43:35+00:00"
+ },
+ "ust-kamenogorsk:staff up consulting group": {
+  "name": "Staff-UP Consulting Group",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T07:44:34+00:00"
  },
  "ust-kamenogorsk:star brands asia стар брэндс азия": {
   "name": "Star Brands Asia (Стар Брэндс Азия)",

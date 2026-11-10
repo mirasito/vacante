@@ -86,7 +86,7 @@ PROFESSIONS: list[tuple[str, str, str]] = [
     (r"торгов\w* представител", "Торговый представитель", "retail"),
     (r"кассир", "Кассир", "retail"),
     (r"мерчендайзер", "Мерчендайзер", "retail"),
-    (r"помощни(?:ца|цу|к|ка) в (?:\w+ )?магазин|магазин\w* требу\w*\W{1,6}помощни(?:ца|цу|к)\b(?![^\S\n]*[а-я])|(?:дүкен|магазин)\w* к[өо]мекш[іи]", "Помощник по залу", "retail"),
+    (r"помощни(?:ца|цу|к|ка) в (?:\w+ )?магазин|магазин\w* требу\w*\W{1,6}помощни(?:ца|цу|к)\b(?![^\S\n]*[а-я])|(?:дүкен|магазин)\w*\s+к[өо]мекш[іи]", "Помощник по залу", "retail"),
     (r"администратор\w* магазин", "Администратор магазина", "retail"),
     (r"пункт\w* выдачи|\bпвз\b", "Сотрудник пункта выдачи", "retail"),
     (r"менеджер\w* по продаж|сату (?:менеджер|маман)", "Менеджер по продажам", "retail"),
@@ -193,7 +193,8 @@ PROFESSIONS: list[tuple[str, str, str]] = [
     (r"кровельщ", "Кровельщик", "construction"),
     (r"стропальщ", "Стропальщик", "construction"),
     (r"кочегар|оператор\w* котельн", "Кочегар", "construction"),
-    (r"мастер\w* (?:по )?детейлинг|оклейщ|пл[её]нщик|мастер\w* (?:по |на )?(?:пункт\w* )?замен\w* масла", "Автомастер", "construction"),
+    (r"мастер\w* (?:по )?детейлинг|оклейщ|пл[её]нщик|мастер\w* (?:по |на )?(?:пункт\w* )?замен\w* (?:автомобильн\w* |моторн\w* )?мас(?:ла|ел)"
+     r"|установщик\w* (?:авто ?|автомобильн\w* )?(?:сигнализац|магнитол)", "Автомастер", "construction"),
     # Колл-центр
     (r"оператор\w* (колл|call)|колл-центр|call-центр|кол-центр", "Оператор колл-центра", "callcenter"),
     # Прочие рабочие профессии
@@ -207,7 +208,15 @@ PROFESSIONS: list[tuple[str, str, str]] = [
     (r"(требу\w*|нуж\w+|ищ\w+)\s+(?:\w+\s+)?рабоч(?:ий|ие|их)\b", "Рабочий", "warehouse"),
 ]
 GENERIC_TITLE = "Сотрудник"
+# Запасные правила: срабатывают, только когда конкретной должности в тексте нет
+# (иначе «в магазин требуется девушка-кассир» превратится в «Продавец, Кассир»)
+FALLBACK_PROFESSIONS: list[tuple[str, str, str]] = [
+    # «В магазин одежды требуются девушки», «дүкеніне қыздар керек»: должность не названа, это продавец
+    (r"магазин\w*[^\n]{0,30}\s+\W*(?:ищ\w*|приглаша\w*|требу\w*)[^\n]{0,60}девуш"
+     r"|(?:дүкен|магазин)\w*[^\n]{0,15} қыз(?:дар)? (?:керек|қажет|қабылда)", "Продавец", "retail"),
+]
 _PROFESSIONS = [(re.compile(p), title, cat) for p, title, cat in PROFESSIONS]
+_FALLBACK = [(re.compile(p), title, cat) for p, title, cat in FALLBACK_PROFESSIONS]
 _TITLE_NAMES = {_t.lower() for _, _t, _ in PROFESSIONS}
 
 HIRING = re.compile(
@@ -358,7 +367,7 @@ def _not_vacancy_reason(text: str, low: str) -> str | None:
         return "not_vacancy"
     if SCAM.search(low):
         return "scam"
-    if not any(rx.search(low) for rx, _, _ in _PROFESSIONS):
+    if not any(rx.search(low) for rx, _, _ in _PROFESSIONS + _FALLBACK):
         return "no_profession"
     if not HIRING.search(low) and parse_salary(text)[0] is None:
         return "no_hiring"
@@ -376,6 +385,9 @@ def _title_hits(low: str) -> list[tuple[int, int, str, str]]:
         for m in rx.finditer(low):
             hits.append((m.start(), -(m.end() - m.start()), title, cat))
     specific = [h for h in hits if h[2] != GENERIC_TITLE]
+    if not specific:
+        specific = [(m.start(), -(m.end() - m.start()), title, cat)
+                    for rx, title, cat in _FALLBACK for m in rx.finditer(low)]
     return sorted(specific or hits)  # «Сотрудник» — только когда конкретной должности нет
 
 

@@ -378,6 +378,15 @@
   "instagram": "jamesburger.kz",
   "source": "https://www.instagram.com/jamesburger.kz/"
  },
+ "aktau:jamesburger ге": {
+  "name": "Jamesburger-ге",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "instagram": "jamesburger.kz",
+  "source": "https://2gis.kz/aktau/firm/70000001028700502"
+ },
  "aktau:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "aktau",
@@ -2528,6 +2537,13 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "aktobe:атэк актобе": {
+  "name": "АТЭК Актобе",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "aktobe:бажикбаев": {
   "name": "Бажикбаев",
   "city": "aktobe",
@@ -3622,6 +3638,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T14:43:58+00:00"
+ },
+ "almaty:alatau holding": {
+  "name": "Alatau Holding",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
  },
  "almaty:alatau investment group": {
   "name": "ALATAU INVESTMENT GROUP",
@@ -5006,7 +5029,7 @@
   "instagram": "aenergo.kz",
   "website": "https://a-energo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001039144545",
-  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10604,6 +10627,19 @@
   "v": 3,
   "checked_at": "2026-11-07T14:44:39+00:00"
  },
+ "almaty:matras kz": {
+  "name": "MATRAS.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "website": "https://centermatrasov.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098177827",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:mausym fashion": {
   "name": "MausyM Fashion",
   "city": "almaty",
@@ -13504,7 +13540,7 @@
   "checked_at": "2026-11-03T04:43:49+00:00",
   "website": "http://solidgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001027692871",
-  "avatar_checked_at": "2026-11-03T04:43:49+00:00",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17241,6 +17277,20 @@
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
  },
+ "almaty:вадим": {
+  "name": "Вадим",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
+ "almaty:валдис": {
+  "name": "валдис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "almaty:валерия": {
   "name": "Валерия",
   "city": "almaty",
@@ -19510,6 +19560,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "almaty:книга нв": {
+  "name": "Книга-НВ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "instagram": "bookcity.kz",
+  "telegram": "bookcitykz",
+  "website": "https://www.bookcity.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000828167",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "almaty:книжная полка": {
   "name": "Книжная полка",
@@ -29158,6 +29224,13 @@
   "instagram": "miarini_spa_astana",
   "source": "https://www.instagram.com/miarini_spa_astana/"
  },
+ "astana:migraline": {
+  "name": "MigraLine",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "astana:miko": {
   "name": "MIKO",
   "city": "astana",
@@ -33492,6 +33565,20 @@
   "avatar": "4615d0a6a4aa03c9.jpg",
   "avatar_source": "website"
  },
+ "astana:гордиюк а м basilic тм": {
+  "name": "Гордиюк А.М , Basilic ТМ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "instagram": "basilic_astana",
+  "website": "https://basilicastana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001033784498",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:гормолзавод": {
   "name": "Гормолзавод",
   "city": "astana",
@@ -37012,6 +37099,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "astana:спа комплекс": {
+  "name": "Спа-комплекс",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "astana:спец авто": {
   "name": "Спец-Авто",
   "city": "astana",
@@ -38644,7 +38738,7 @@
   "instagram": "elsnab_kz",
   "website": "http://elsnab.kz/",
   "source": "https://2gis.kz/astana/firm/70000001022630328",
-  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38689,6 +38783,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T03:44:25+00:00"
+ },
+ "astana:эстетикс групп aesthetics group": {
+  "name": "Эстетикс групп (Aesthetics Group)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "instagram": "ucg_kz",
+  "website": "https://ucg.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001113191477",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:этажи": {
   "name": "Этажи",
@@ -41059,6 +41167,19 @@
   "instagram": "magnumgo.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001110137174"
  },
+ "karaganda:matras kz": {
+  "name": "MATRAS.KZ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "website": "https://centermatrasov.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001054155088",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:miko karaganda": {
   "name": "Miko Karaganda",
   "city": "karaganda",
@@ -42876,6 +42997,13 @@
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
  },
+ "karaganda:филиал канал имени каныша сатпаева ргп на пхв казводхоз комитета водного хозяйства министерства водных ресурсов и ирригации республики казахстан": {
+  "name": "Филиал Канал имени Каныша Сатпаева РГП на ПХВ Казводхоз Комитета водного хозяйства Министерства водных ресурсов и ирригации Республики Казахстан",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "karaganda:филиал тоо торговый дом электрокомплект в городе караганда": {
   "name": "ФИЛИАЛ ТОО ТОРГОВЫЙ ДОМ ЭЛЕКТРОКОМПЛЕКТ В ГОРОДЕ КАРАГАНДА",
   "city": "karaganda",
@@ -43311,6 +43439,19 @@
   "checked_at": "2026-11-06T02:44:46+00:00",
   "instagram": "life_food_kz",
   "source": "https://2gis.kz/kokshetau/firm/70000001097440674"
+ },
+ "kokshetau:matras kz": {
+  "name": "MATRAS.KZ",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "website": "https://centermatrasov.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001054155088",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kokshetau:mechta kz tm тоо мечта маркет": {
   "name": "Mechta.kz TM ( ТОО Мечта Маркет )",
@@ -45842,6 +45983,13 @@
   "avatar": "75d538f92b1bd319.jpg",
   "avatar_source": "website"
  },
+ "kyzylorda:ербошаев б с": {
+  "name": "ЕРБОШАЕВ Б. С",
+  "city": "kyzylorda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "kyzylorda:карапуз": {
   "name": "Карапуз",
   "city": "kyzylorda",
@@ -45981,7 +46129,7 @@
   "instagram": "agrinur.kz",
   "website": "https://agrinur.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001059380374",
-  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48181,7 +48329,7 @@
   "instagram": "molservice",
   "website": "https://molservice.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001043865222",
-  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -50623,6 +50771,13 @@
    "website"
   ]
  },
+ "shymkent:pladis kazakhstan": {
+  "name": "pladis Kazakhstan",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "shymkent:prima distribution": {
   "name": "Prima Distribution",
   "city": "shymkent",
@@ -51482,7 +51637,7 @@
   "checked_at": "2026-11-03T03:45:14+00:00",
   "website": "https://kari.com/",
   "source": "https://2gis.kz/shymkent/firm/70000001067331652",
-  "avatar_checked_at": "2026-11-03T03:45:15+00:00",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -51905,6 +52060,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T23:44:03+00:00"
+ },
+ "shymkent:темірбетон өнімдері": {
+  "name": "Темірбетон өнімдері",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
  },
  "shymkent:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
@@ -52499,6 +52661,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T05:44:23+00:00"
+ },
+ "taraz:flexway kazakhstan": {
+  "name": "Flexway Kazakhstan",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
  },
  "taraz:golden compass jambul": {
   "name": "Golden Compass Jambul",
@@ -55015,6 +55184,13 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:sabotage": {
+  "name": "Sabotage",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00"
+ },
  "ust-kamenogorsk:service agro сервис агро": {
   "name": "Service Agro (Сервис Агро)",
   "city": "ust-kamenogorsk",
@@ -55823,6 +55999,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
+ },
+ "ust-kamenogorsk:мадам бижу": {
+  "name": "Мадам Бижу",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T04:44:15+00:00",
+  "instagram": "madamb_uka",
+  "telegram": "madamb_uka",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001017197185",
+  "avatar_checked_at": "2026-11-10T04:44:17+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "7d857c34e8e58c36.jpg",
+  "avatar_source": "telegram"
  },
  "ust-kamenogorsk:налобнов максим валентинович": {
   "name": "Налобнов Максим Валентинович",

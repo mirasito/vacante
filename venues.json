@@ -3025,6 +3025,13 @@
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
  },
+ "aktobe:прессбук": {
+  "name": "ПрессБук",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
+ },
  "aktobe:разумова светлана анатольевна": {
   "name": "Разумова Светлана Анатольевна",
   "city": "aktobe",
@@ -3301,6 +3308,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
+ },
+ "almaty:3d dental": {
+  "name": "3D Dental",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "instagram": "3d_dental.kz",
+  "website": "http://3ddental.kz/almaty/",
+  "source": "https://2gis.kz/almaty/firm/70000001067452996",
+  "avatar_checked_at": "2026-11-10T15:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7525fbfe8f2dee75.jpg",
+  "avatar_source": "website"
  },
  "almaty:4you": {
   "name": "4YOU",
@@ -4844,6 +4867,13 @@
   ],
   "avatar": "a392a2e192170608.jpg",
   "avatar_source": "website"
+ },
+ "almaty:asyl jihaz": {
+  "name": "Asyl Jihaz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "almaty:asyq": {
   "name": "ASYQ",
@@ -6442,6 +6472,20 @@
   "checked_at": "2026-11-04T07:44:30+00:00",
   "instagram": "cu_kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001093695256"
+ },
+ "almaty:d fitness": {
+  "name": "D-fitness",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "instagram": "dfitness_almaty",
+  "website": "https://www.dfitness.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001396013",
+  "avatar_checked_at": "2026-11-10T15:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:dac": {
   "name": "DAC",
@@ -9611,6 +9655,13 @@
    "website"
   ]
  },
+ "almaty:jt global": {
+  "name": "JT GLOBAL",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
+ },
  "almaty:jtb kz туризм": {
   "name": "JTB.kz Туризм",
   "city": "almaty",
@@ -11533,6 +11584,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:move": {
+  "name": "Move",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "almaty:mp solutions": {
   "name": "MP Solutions",
@@ -14091,6 +14149,13 @@
   ],
   "avatar": "b1b0facef3c114c8.jpg",
   "avatar_source": "website"
+ },
+ "almaty:sp500": {
+  "name": "SP500",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "almaty:space line": {
   "name": "SPACE LINE",
@@ -19271,6 +19336,13 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "almaty:зубная аптека": {
+  "name": "Зубная аптека",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
+ },
  "almaty:зульфия": {
   "name": "Зульфия",
   "city": "almaty",
@@ -20143,6 +20215,20 @@
   "website": "https://kinopark.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037363298",
   "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:кипер kz": {
+  "name": "Кипер.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "instagram": "r_keeper.ala",
+  "website": "http://r-keeper.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035052795",
+  "avatar_checked_at": "2026-11-10T15:43:44+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22146,6 +22232,13 @@
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
  },
+ "almaty:оо sport asset management": {
+  "name": "ОО SPORT ASSET MANAGEMENT",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
+ },
  "almaty:оо окп рк": {
   "name": "ОО ОКП РК",
   "city": "almaty",
@@ -24051,6 +24144,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T13:44:26+00:00"
+ },
+ "almaty:техснабказахстан": {
+  "name": "ТехСнабКазахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "almaty:техстройконтракт": {
   "name": "ТЕХСТРОЙКОНТРАКТ",
@@ -27860,6 +27960,13 @@
   ],
   "avatar": "5b62068c397115db.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:ekosystem": {
+  "name": "Ekosystem",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "astana:elc astana": {
   "name": "ELC Astana",
@@ -32185,6 +32292,21 @@
   "v": 3,
   "checked_at": "2026-10-28T07:59:01+00:00"
  },
+ "astana:stalt engineering": {
+  "name": "StalT Engineering",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "website": "https://stalt.com.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001088027000",
+  "avatar_checked_at": "2026-11-10T15:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8ec0f50d9c2846c4.jpg",
+  "avatar_source": "website"
+ },
  "astana:standartstroy kz": {
   "name": "StandartStroy KZ",
   "city": "astana",
@@ -34193,6 +34315,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T08:43:53+00:00"
+ },
+ "astana:бақытжан": {
+  "name": "Бақытжан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "astana:беварт инжиниринг": {
   "name": "Беварт Инжиниринг",
@@ -36860,6 +36989,22 @@
   "v": 3,
   "checked_at": "2026-11-10T11:44:07+00:00"
  },
+ "astana:мир золота": {
+  "name": "«Мир золота»",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "instagram": "mir.zolota.nursultan",
+  "telegram": "mirzolota_kz",
+  "source": "https://2gis.kz/astana/firm/70000001100223857",
+  "avatar_checked_at": "2026-11-10T15:43:44+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "a8d68df813992eec.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:мир подиум статус": {
   "name": "МИР ПОДИУМ Статус",
   "city": "astana",
@@ -36882,6 +37027,15 @@
   "avatar_tried": [
    "telegram"
   ]
+ },
+ "astana:мир цветов": {
+  "name": "Мир Цветов",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "instagram": "mir.cvetov.ast",
+  "source": "https://2gis.kz/astana/firm/70000001024414307"
  },
  "astana:мк корпорация": {
   "name": "«МК «Корпорация»",
@@ -37189,6 +37343,13 @@
   "v": 3,
   "checked_at": "2026-11-09T16:44:28+00:00"
  },
+ "astana:нуржигитов": {
+  "name": "Нуржигитов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
+ },
  "astana:нурлановна": {
   "name": "НУРЛАНОВНА",
   "city": "astana",
@@ -37332,6 +37493,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
+ },
+ "astana:орда": {
+  "name": "Орда",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "astana:орматек": {
   "name": "Орматек",
@@ -38346,6 +38514,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "astana:снабтехмет": {
+  "name": "СНАБТЕХМЕТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00",
+  "instagram": "snabtechmet",
+  "website": "http://snabtechmet.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001044430764",
+  "avatar_checked_at": "2026-11-10T15:43:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:снежный барс": {
   "name": "СНЕЖНЫЙ БАРС",
@@ -41831,6 +42013,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "atyrau:чппи казахстан": {
+  "name": "ЧППИ (Казахстан)",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T15:43:43+00:00"
  },
  "atyrau:шалкыма": {
   "name": "Шалкыма",

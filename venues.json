@@ -11761,6 +11761,13 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "almaty:patsha off road": {
+  "name": "Patsha Off-road",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
+ },
  "almaty:pcg expert": {
   "name": "PCG Expert",
   "city": "almaty",
@@ -12055,6 +12062,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T19:44:04+00:00"
+ },
+ "almaty:professional education company": {
+  "name": "Professional Education Company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "almaty:professional service almaty": {
   "name": "Professional Service Almaty",
@@ -15997,6 +16011,20 @@
    "website"
   ]
  },
+ "almaty:алмаз холдинг тоо аргента": {
+  "name": "Алмаз-Холдинг (ТОО Аргента)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00",
+  "instagram": "almaz_holding",
+  "website": "https://almazholding.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001118177099",
+  "avatar_checked_at": "2026-11-10T00:43:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:алмамебли": {
   "name": "АлмаМебли",
   "city": "almaty",
@@ -16824,7 +16852,7 @@
   "instagram": "bacchus.kz",
   "website": "https://www.bacchus.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000793508",
-  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_checked_at": "2026-11-10T00:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17250,6 +17278,13 @@
   "instagram": "vkalmaty",
   "source": "https://2gis.kz/almaty/firm/9429940000941052"
  },
+ "almaty:восхождение": {
+  "name": "Восхождение",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
+ },
  "almaty:высота алматы": {
   "name": "Высота Алматы",
   "city": "almaty",
@@ -17333,6 +17368,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T14:44:20+00:00"
+ },
+ "almaty:гаркавая елена": {
+  "name": "Гаркавая Елена",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "almaty:гастромир": {
   "name": "Гастромир",
@@ -18507,6 +18549,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T14:43:38+00:00"
+ },
+ "almaty:издательство jogary bilim": {
+  "name": "Издательство JOGARY BILIM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "almaty:илс": {
   "name": "ИЛС",
@@ -20191,6 +20240,13 @@
   "checked_at": "2026-11-02T17:18:29+00:00",
   "instagram": "maminy_polufabrikaty",
   "source": "https://2gis.kz/almaty/firm/70000001046997822"
+ },
+ "almaty:манеки": {
+  "name": "Манеки",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "almaty:мансұр": {
   "name": "МАНСҰР",
@@ -21942,6 +21998,13 @@
   "checked_at": "2026-11-08T03:44:40+00:00",
   "instagram": "redteam_coca_cola",
   "source": "https://2gis.kz/almaty/firm/70000001064760161"
+ },
+ "almaty:с": {
+  "name": "С",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "almaty:садыков": {
   "name": "Садыков",
@@ -24202,6 +24265,13 @@
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
  },
+ "almaty:эльвира": {
+  "name": "Эльвира",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
+ },
  "almaty:эльдарұлы елжан": {
   "name": "Эльдарұлы Елжан",
   "city": "almaty",
@@ -26022,7 +26092,7 @@
   "instagram": "chopchopastana",
   "website": "http://chopchop.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018121595",
-  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_checked_at": "2026-11-10T00:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29544,6 +29614,13 @@
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
  },
+ "astana:passionm": {
+  "name": "PassionM",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
+ },
  "astana:peak ast": {
   "name": "PEAK AST",
   "city": "astana",
@@ -29665,6 +29742,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "astana:prime consulting kz": {
+  "name": "PRIME CONSULTING KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "astana:prime era": {
   "name": "PRIME ERA",
@@ -34452,6 +34536,15 @@
   "instagram": "kontrol_expert",
   "source": "https://2gis.kz/astana/firm/70000001033704557"
  },
+ "astana:корея моторс": {
+  "name": "Корея Моторс",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00",
+  "instagram": "korea_motors_astana_syganak",
+  "source": "https://2gis.kz/astana/firm/70000001040542751"
+ },
  "astana:корме": {
   "name": "Корме",
   "city": "astana",
@@ -34732,6 +34825,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
+ },
+ "astana:людмила kz tm аян": {
+  "name": "Людмила-KZ TM Аян",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "astana:мc груп группа компаний": {
   "name": "МC-Груп, Группа компаний",
@@ -35778,7 +35878,7 @@
   "instagram": "pivnaya_buxta",
   "website": "https://taplink.cc/pivnaya_buxta",
   "source": "https://2gis.kz/astana/firm/70000001043897627",
-  "avatar_checked_at": "2026-11-03T00:43:43+00:00",
+  "avatar_checked_at": "2026-11-10T00:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38451,6 +38551,20 @@
   "v": 3,
   "checked_at": "2026-11-09T20:44:15+00:00"
  },
+ "atyrau:ayacom": {
+  "name": "AYACOM",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00",
+  "instagram": "ayacom.kz",
+  "website": "https://www.ayacom.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034989626",
+  "avatar_checked_at": "2026-11-10T00:43:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:ayas safety": {
   "name": "AYAS Safety",
   "city": "atyrau",
@@ -38965,6 +39079,13 @@
   ],
   "avatar": "65c6b438cb006851.jpg",
   "avatar_source": "website"
+ },
+ "atyrau:true trade": {
+  "name": "True Trade",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "atyrau:tuysqan": {
   "name": "TUYSQAN",
@@ -40879,6 +41000,13 @@
   "instagram": "trdelnikgo",
   "source": "https://2gis.kz/karaganda/firm/70000001114127998"
  },
+ "karaganda:true trade": {
+  "name": "True Trade",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
+ },
  "karaganda:vintar": {
   "name": "VINTAR",
   "city": "karaganda",
@@ -41548,6 +41676,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T14:44:39+00:00"
+ },
+ "karaganda:кандибулатов": {
+  "name": "Кандибулатов",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "karaganda:карагандинский драматический театр им к с станиславского": {
   "name": "Карагандинский драматический театр им. К.С. Станиславского",
@@ -43997,6 +44132,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:геострой": {
+  "name": "Геострой",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "kostanay:гкп костанай су": {
   "name": "ГКП Костанай-Су",
@@ -49398,6 +49540,15 @@
   "instagram": "desupport.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001040762380"
  },
+ "shymkent:defacto retail store kz": {
+  "name": "Defacto Retail Store Kz",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00",
+  "instagram": "defacto",
+  "source": "https://2gis.kz/shymkent/firm/70000001026046443"
+ },
  "shymkent:dizzy": {
   "name": "Dizzy",
   "city": "shymkent",
@@ -53543,6 +53694,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T17:43:21+00:00"
+ },
+ "uralsk:чудо": {
+  "name": "ЧУДО",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T00:43:46+00:00"
  },
  "uralsk:шаповалов в в": {
   "name": "Шаповалов В.В.",

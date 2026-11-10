@@ -5223,6 +5223,20 @@
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
  },
+ "almaty:ayvaz kazakhstan айваз казахстан": {
+  "name": "AYVAZ KAZAKHSTAN (АЙВАЗ КАЗАХСТАН)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "instagram": "ayvaz_kazakhstan",
+  "website": "https://ayvaz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043463657",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ayza stellazh": {
   "name": "AYZA Stellazh",
   "city": "almaty",
@@ -7125,7 +7139,7 @@
   "instagram": "dromos_group",
   "website": "http://dromosgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001102882439",
-  "avatar_checked_at": "2026-11-03T20:46:05+00:00",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9243,6 +9257,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "almaty:inbox group": {
+  "name": "Inbox Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "almaty:indigo solutions": {
   "name": "Indigo Solutions",
@@ -11480,6 +11501,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:micropigmentation studio of zhanar taizhanova": {
+  "name": "Micropigmentation studio of Zhanar Taizhanova",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "almaty:milash": {
   "name": "Milash",
@@ -14670,6 +14698,21 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "almaty:talent craft": {
+  "name": "Talent Craft",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "website": "https://talentcraft.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001102517663",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "313b105f70df303c.jpg",
+  "avatar_source": "website"
+ },
  "almaty:tan group": {
   "name": "TAN GROUP",
   "city": "almaty",
@@ -16783,6 +16826,15 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "almaty:алазани": {
+  "name": "Алазани",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "instagram": "alazani_almaty",
+  "source": "https://2gis.kz/almaty/firm/9429940000913724"
+ },
  "almaty:алатау": {
   "name": "Алатау",
   "city": "almaty",
@@ -17842,6 +17894,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:бейбарыс": {
+  "name": "БЕЙБАРЫС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "almaty:бекзат кулмырза": {
   "name": "БЕКЗАТ КУЛМЫРЗА",
@@ -19422,6 +19481,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T16:44:09+00:00"
+ },
+ "almaty:жомартұлы": {
+  "name": "ЖОМАРТҰЛЫ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "almaty:жсс": {
   "name": "ЖСС",
@@ -21878,7 +21944,7 @@
   "instagram": "mirparketa_kz",
   "website": "http://mirparketa.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001086706638",
-  "avatar_checked_at": "2026-11-03T20:46:05+00:00",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25268,6 +25334,13 @@
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
  },
+ "almaty:хозу 77": {
+  "name": "Хозу-77",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
+ },
  "almaty:хоккей плюс": {
   "name": "Хоккей плюс",
   "city": "almaty",
@@ -25840,6 +25913,19 @@
   "website": "https://aroundgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001082802485",
   "avatar_checked_at": "2026-11-04T19:44:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:эридон": {
+  "name": "Эридон",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "website": "https://eridon.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098493593",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27125,6 +27211,13 @@
   "checked_at": "2026-11-08T04:43:59+00:00",
   "instagram": "bauyrdaq_astana",
   "source": "https://www.instagram.com/bauyrdaq_astana/"
+ },
+ "astana:be happy astana": {
+  "name": "Be happy Astana",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "astana:beat": {
   "name": "BEAT",
@@ -30855,6 +30948,13 @@
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
  },
+ "astana:muzpartners": {
+  "name": "MuzPartners",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
+ },
  "astana:mycar astana": {
   "name": "Mycar Astana",
   "city": "astana",
@@ -31317,6 +31417,13 @@
   "checked_at": "2026-11-04T12:44:26+00:00",
   "instagram": "ortho_dental_clinic_astana",
   "source": "https://2gis.kz/astana/firm/70000001099459279"
+ },
+ "astana:oser group": {
+  "name": "OSER GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "astana:osmar group": {
   "name": "OSMAR Group",
@@ -35007,6 +35114,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "astana:бірімжан": {
+  "name": "Бірімжан",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "astana:в квадрате недвижимости": {
   "name": "В Квадрате недвижимости",
@@ -39395,6 +39509,13 @@
    "website"
   ]
  },
+ "astana:тд продсервис": {
+  "name": "ТД Продсервис",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
+ },
  "astana:тд электроцентр": {
   "name": "ТД Электроцентр",
   "city": "astana",
@@ -40841,6 +40962,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T19:43:58+00:00"
+ },
+ "astana:юникен": {
+  "name": "Юникен",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
  },
  "astana:юникс": {
   "name": "Юникс",
@@ -44240,6 +44368,22 @@
   "avatar": "ead5957cbfe33187.jpg",
   "avatar_source": "website"
  },
+ "karaganda:евро маркет комплект": {
+  "name": "Евро Маркет Комплект",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "instagram": "emc.kz",
+  "website": "http://em-c.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302830853",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fcf98020145ca1ae.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:еврогидросервис": {
   "name": "Еврогидросервис",
   "city": "karaganda",
@@ -46927,6 +47071,13 @@
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
  },
+ "kostanay:алиди казахстан": {
+  "name": "АЛИДИ Казахстан",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
+ },
  "kostanay:алтын алма": {
   "name": "Алтын Алма",
   "city": "kostanay",
@@ -48360,6 +48511,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
+ },
+ "kyzylorda:спортмастер казахстан": {
+  "name": "Спортмастер Казахстан",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "instagram": "sportmaster_kz",
+  "website": "https://sportmaster.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001062409004",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kyzylorda:стелл": {
   "name": "Стелл",
@@ -57900,6 +58065,13 @@
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
  },
+ "ust-kamenogorsk:ote damdi": {
+  "name": "OTE DAMDI",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00"
+ },
  "ust-kamenogorsk:product mix": {
   "name": "Product-Mix",
   "city": "ust-kamenogorsk",
@@ -57984,6 +58156,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "ust-kamenogorsk:smart innovations": {
+  "name": "Smart Innovations",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T20:46:07+00:00",
+  "website": "https://smartinnovations.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001032503880",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:sportex ип савина": {
   "name": "SportEX (ИП Савина)",
@@ -58244,7 +58429,7 @@
   "instagram": "akm_komatsu",
   "website": "http://ak-machinery.kz/",
   "source": "https://2gis.kz/astana/firm/70000001110480094",
-  "avatar_checked_at": "2026-11-03T20:46:05+00:00",
+  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
   "avatar_tried": [
    "website"
   ]

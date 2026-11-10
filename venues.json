@@ -6802,6 +6802,13 @@
   "avatar": "df971ea3f28361ee.jpg",
   "avatar_source": "website"
  },
+ "almaty:deco home": {
+  "name": "Deco Home",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "almaty:defacto retail store kz": {
   "name": "Defacto Retail Store Kz",
   "city": "almaty",
@@ -8973,6 +8980,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
+ },
+ "almaty:helpers city": {
+  "name": "Helpers City",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "almaty:high level хай левел": {
   "name": "High Level (Хай Левел)",
@@ -15098,6 +15112,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "almaty:th consulting kazakhstan тиэйч консалтинг казахстан": {
+  "name": "TH CONSULTING KAZAKHSTAN (ТИЭЙЧ КОНСАЛТИНГ КАЗАХСТАН)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "almaty:the good taste": {
   "name": "The Good Taste",
   "city": "almaty",
@@ -17971,6 +17992,13 @@
   "v": 3,
   "checked_at": "2026-11-10T09:46:44+00:00"
  },
+ "almaty:баня люкс": {
+  "name": "Баня люкс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "almaty:бариста": {
   "name": "Бариста",
   "city": "almaty",
@@ -20825,6 +20853,20 @@
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
  },
+ "almaty:кобеген кофейня travelers coffee 4you": {
+  "name": "Кобеген Кофейня Traveler’s Coffee 4YOU",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00",
+  "instagram": "travelers.coffee.almaty",
+  "website": "https://travelers-coffee.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001058769568",
+  "avatar_checked_at": "2026-11-10T23:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ковчий": {
   "name": "Ковчий",
   "city": "almaty",
@@ -21804,6 +21846,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
+ },
+ "almaty:мебельный цех": {
+  "name": "мебельный цех",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "almaty:мега инвест строй": {
   "name": "ТОО мега инвест строй",
@@ -22891,6 +22940,13 @@
   "checked_at": "2026-11-01T08:42:53+00:00",
   "instagram": "ostin.kz",
   "source": "https://www.instagram.com/ostin.kz/"
+ },
+ "almaty:осьминожка": {
+  "name": "Осьминожка",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "almaty:от зарплаты до зарплаты": {
   "name": "от зарплаты до зарплаты",
@@ -26087,6 +26143,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T16:46:43+00:00"
+ },
+ "almaty:эльмира о": {
+  "name": "Эльмира О.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "almaty:эмир": {
   "name": "Эмир",
@@ -30197,6 +30260,21 @@
   "avatar": "1de70ed44b5bfe54.jpg",
   "avatar_source": "website"
  },
+ "astana:kdv казахстан": {
+  "name": "KDV Казахстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00",
+  "website": "https://kdvonline.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001020042869",
+  "avatar_checked_at": "2026-11-10T23:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5c3d3747da36db04.jpg",
+  "avatar_source": "website"
+ },
  "astana:kedr & pikhta": {
   "name": "Kedr & Pikhta",
   "city": "astana",
@@ -32655,6 +32733,13 @@
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
  },
+ "astana:satty ipoteka": {
+  "name": "SATTY IPOTEKA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "astana:sauda innovations": {
   "name": "Sauda Innovations",
   "city": "astana",
@@ -32998,6 +33083,13 @@
   "checked_at": "2026-11-03T01:44:22+00:00",
   "instagram": "softfitness.kz",
   "source": "https://2gis.kz/astana/firm/70000001084095530"
+ },
+ "astana:soling and co": {
+  "name": "Soling and Co",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "astana:solmoryn": {
   "name": "SOLMORYN",
@@ -35167,6 +35259,13 @@
   "avatar": "770061b8ce07b854.jpg",
   "avatar_source": "website"
  },
+ "astana:береке aj 2050": {
+  "name": "БЕРЕКЕ AJ 2050",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "astana:беркутты бурабай парк": {
   "name": "Беркутты Бурабай Парк",
   "city": "astana",
@@ -35242,6 +35341,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T05:44:45+00:00"
+ },
+ "astana:бин бьюти": {
+  "name": "БИН бьюти",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "astana:бисенов": {
   "name": "Бисенов",
@@ -39695,6 +39801,13 @@
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
  },
+ "astana:таглимов": {
+  "name": "Таглимов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "astana:таксопарк комфорт+": {
   "name": "Таксопарк (Комфорт+)",
   "city": "astana",
@@ -42799,6 +42912,19 @@
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
  },
+ "atyrau:спец авто": {
+  "name": "Спец-Авто",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00",
+  "website": "https://spets-avto.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001068977762",
+  "avatar_checked_at": "2026-11-10T23:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:стадболт мануфактуринг": {
   "name": "Стадболт Мануфактуринг",
   "city": "atyrau",
@@ -44173,6 +44299,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "karaganda:zebra coffee krg": {
+  "name": "Zebra Coffee krg",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00",
+  "instagram": "zebracoffee.karaganda",
+  "source": "https://2gis.kz/karaganda/firm/70000001054596170"
  },
  "karaganda:zere 2016": {
   "name": "Zere-2016",
@@ -49805,6 +49940,13 @@
    "website"
   ]
  },
+ "pavlodar:крюков и о": {
+  "name": "Крюков И.О.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "pavlodar:кулер": {
   "name": "КУЛЕР",
   "city": "pavlodar",
@@ -52428,6 +52570,13 @@
   "checked_at": "2026-11-08T05:44:03+00:00",
   "instagram": "maslosirbaza",
   "source": "https://2gis.kz/semej/firm/70000001051545598"
+ },
+ "semey:медведь 54 ru": {
+  "name": "МЕДВЕДЬ 54.ru",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
  },
  "semey:мереке": {
   "name": "Мереке",
@@ -55282,6 +55431,13 @@
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
  },
+ "shymkent:формула чистоты групп": {
+  "name": "Формула Чистоты Групп",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00"
+ },
  "shymkent:французский дом bsb": {
   "name": "Французский Дом BSB",
   "city": "shymkent",
@@ -56162,6 +56318,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T20:45:35+00:00"
+ },
+ "taraz:казахстанская топливная компания": {
+  "name": "Казахстанская топливная компания",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T23:44:04+00:00",
+  "website": "https://petrolcompany.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018076542",
+  "avatar_checked_at": "2026-11-10T23:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "taraz:казахювелир ао": {
   "name": "Казахювелир, АО",

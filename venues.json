@@ -730,6 +730,21 @@
    "website"
   ]
  },
+ "aktau:union space tm тоо brand hub group": {
+  "name": "Union Space`TM (ТОО Brand Hub Group)",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "website": "https://union-space.com/",
+  "source": "https://2gis.kz/aktau/firm/70000001036980643",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ccf4266eb85e1279.jpg",
+  "avatar_source": "website"
+ },
  "aktau:vertical actualis": {
   "name": "Vertical Actualis",
   "city": "aktau",
@@ -2962,6 +2977,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "aktobe:страховая компания халык до народного банка казахстана": {
+  "name": "Страховая компания Халык, ДО Народного Банка Казахстана",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "halyk.insurance",
+  "source": "https://2gis.kz/aktobe/firm/70000001032399948"
  },
  "aktobe:таласбаева г б": {
   "name": "Таласбаева Г.Б.",
@@ -6305,6 +6329,13 @@
   "v": 3,
   "checked_at": "2026-11-05T17:43:42+00:00"
  },
+ "almaty:das sauda": {
+  "name": "DAS Sauda",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
+ },
  "almaty:dass & partners": {
   "name": "DASS & Partners",
   "city": "almaty",
@@ -9244,6 +9275,20 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "almaty:karvon logistic": {
+  "name": "Karvon Logistic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "karvon_logistic",
+  "website": "https://karvonlogistic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001111812303",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "almaty",
@@ -9357,7 +9402,7 @@
   "checked_at": "2026-11-03T01:44:22+00:00",
   "website": "https://kazgroupmetal.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001069486840",
-  "avatar_checked_at": "2026-11-03T01:44:23+00:00",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20963,6 +21008,13 @@
   "avatar": "847ffbe84170f9a8.jpg",
   "avatar_source": "website"
  },
+ "almaty:научно производственный центр univet": {
+  "name": "Научно-производственный центр UniVet",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
+ },
  "almaty:национальная транспортная компания мир": {
   "name": "Национальная Транспортная Компания МИР",
   "city": "almaty",
@@ -21399,6 +21451,20 @@
   "website": "https://dodopizza.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032793835",
   "avatar_checked_at": "2026-11-04T15:44:47+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:парк кок тобе": {
+  "name": "Парк Кок Тобе",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "koktobe.park",
+  "website": "https://www.koktobe.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001017272265",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22962,6 +23028,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:тетчер азия": {
+  "name": "ТЕТЧЕР АЗИЯ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "website": "https://tetchair.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001081331655",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:техно logic": {
   "name": "ИП Техно Logic",
@@ -26207,6 +26286,19 @@
   "website": "https://visahelp.kz/",
   "source": "https://2gis.kz/astana/firm/70000001099943367",
   "avatar_checked_at": "2026-11-05T11:45:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:construction plant kazconstructiongroup": {
+  "name": "Construction Plant KazConstructionGroup",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "website": "http://cpkcg.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001025265517",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30224,6 +30316,15 @@
   "v": 3,
   "checked_at": "2026-11-08T03:44:40+00:00"
  },
+ "astana:rumble": {
+  "name": "RUMBLE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "rumble.botanicalpark",
+  "source": "https://2gis.kz/astana/firm/70000001049708857"
+ },
  "astana:rusoft company": {
   "name": "RuSoft company",
   "city": "astana",
@@ -31165,6 +31266,20 @@
    "website"
   ]
  },
+ "astana:tion kz": {
+  "name": "TION.KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "tion_kz",
+  "website": "http://www.tion.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001020758387",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:tiss auto parts": {
   "name": "TISS AUTO PARTS",
   "city": "astana",
@@ -31504,6 +31619,13 @@
   "checked_at": "2026-11-07T14:44:39+00:00",
   "instagram": "vostok_beton_01",
   "source": "https://2gis.kz/astana/firm/70000001063413352"
+ },
+ "astana:vs invest паприка": {
+  "name": "VS Invest (Паприка)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
  },
  "astana:vvcg": {
   "name": "Vvcg",
@@ -34833,6 +34955,15 @@
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
  },
+ "astana:люкс астана": {
+  "name": "ЛЮКС АСТАНА",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "lux_complex",
+  "source": "https://2gis.kz/astana/firm/70000001036419074"
+ },
  "astana:мc груп группа компаний": {
   "name": "МC-Груп, Группа компаний",
   "city": "astana",
@@ -36681,6 +36812,27 @@
    "website"
   ]
  },
+ "astana:ставтрэк": {
+  "name": "Ставтрэк",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "stavtrack_online",
+  "website": "https://stavtrack.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001069278698",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:сталепромышленная компания": {
+  "name": "Сталепромышленная компания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
+ },
  "astana:стальдекор": {
   "name": "СтальДекор",
   "city": "astana",
@@ -37446,6 +37598,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
+ },
+ "astana:филиал nuctech co ltd in the aifc": {
+  "name": "Филиал Nuctech Co.,Ltd in the AIFC",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
  },
  "astana:филиал акционерного общества страховая компания freedom finance insurance по городу астана": {
   "name": "Филиал Акционерного общества Страховая компания Freedom Finance Insurance по городу Астана",
@@ -38929,6 +39088,13 @@
   "v": 3,
   "checked_at": "2026-11-07T20:43:40+00:00"
  },
+ "atyrau:ns 2gis": {
+  "name": "NS 2GIS",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
+ },
  "atyrau:ny group kz": {
   "name": "NY Group KZ",
   "city": "atyrau",
@@ -40347,6 +40513,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:iace": {
+  "name": "IACE",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00"
  },
  "karaganda:ideal plintus qazaqstan": {
   "name": "IDEAL Plintus Qazaqstan",
@@ -42612,6 +42785,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "kokshetau:best products company": {
+  "name": "Best Products Company",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "website": "https://www.bpc.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001105081551",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kokshetau:blic terminal": {
   "name": "BLIC TERMINAL",
@@ -47299,6 +47485,24 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
+ },
+ "petropavlovsk:вивага лада": {
+  "name": "ВиВаГа - Лада",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "instagram": "jac.vivaga.petropavlovsk",
+  "telegram": "jacvivaga",
+  "website": "https://jac-vivaga.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038602672",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "1b58c5ee501d456b.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:глобал сервис": {
   "name": "Глобал Сервис",
@@ -55661,6 +55865,19 @@
   "website": "https://uecm.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721318225",
   "avatar_checked_at": "2026-11-08T13:43:37+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "ust-kamenogorsk:усть каменогоркий конденсаторный завод": {
+  "name": "Усть-Каменогоркий конденсаторный завод",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T01:44:53+00:00",
+  "website": "https://ukkz.com/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721340019",
+  "avatar_checked_at": "2026-11-10T01:44:54+00:00",
   "avatar_tried": [
    "website"
   ]

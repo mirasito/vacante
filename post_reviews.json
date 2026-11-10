@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-10T07:58:23+00:00",
+ "updated_at": "2026-11-10T08:57:27+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -94,28 +94,6 @@
     "schedule": "5/2 или 2/2, 10:00–22:00",
     "address": "ТРЦ «Mart Village», ул. Рихарда Зорге, 18",
     "perks": []
-   }
-  },
-  "almaty_rabota_work-31695": {
-   "verdict": "approve",
-   "at": "2026-10-28T08:08:16+00:00",
-   "fields": {
-    "title": "Помощник пекаря",
-    "employer": null,
-    "schedule": "5/2, 07:00–18:00"
-   }
-  },
-  "rabota4almaty-5747": {
-   "verdict": "approve",
-   "at": "2026-10-28T08:08:16+00:00",
-   "fields": {
-    "title": "Помощник повара, механик холодильного оборудования",
-    "employer": "Гастроном «Столичный»",
-    "schedule": "5/2, 08:00–17:00",
-    "perks": [
-     "Без опыта",
-     "Официально"
-    ]
    }
   },
   "rabota_astanakz-31008": {
@@ -458,16 +436,6 @@
    "at": "2026-10-28T11:00:13+00:00",
    "fields": {
     "schedule": "4/3, 5/2 или 6/1, 11:00–23:00"
-   }
-  },
-  "astana_job_vakansii-129801": {
-   "verdict": "approve",
-   "at": "2026-10-28T11:00:13+00:00",
-   "fields": {
-    "title": "Курьер с личным автомобилем",
-    "employer": "Кондитерская «Аяшка»",
-    "schedule": "6/1, 08:45–18:00",
-    "perks": []
    }
   },
   "almatyrabota1-21272": {
@@ -2052,14 +2020,6 @@
    "at": "2026-10-29T01:56:35+00:00",
    "fields": {
     "title": "Комплектовщик с ТСД на склад маркетплейса"
-   }
-  },
-  "rabota_astanakz-30977": {
-   "verdict": "approve",
-   "at": "2026-10-29T01:56:35+00:00",
-   "fields": {
-    "employer": "Алкомаркет «РиК»",
-    "schedule": "14/14, 10:00–23:00"
    }
   },
   "hh-137942949": {
@@ -49499,6 +49459,369 @@
     "schedule": "2/2",
     "address": "пр. Абая, 123"
    }
+  },
+  "hh-139297918": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Офисные продажи 1С (B2B)"
+  },
+  "hh-139299990": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Gayaz Brand"
+   }
+  },
+  "hh-138643349": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Менеджер по продажам в цветочный магазин",
+    "schedule": "2/2"
+   }
+  },
+  "hh-138642314": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Кладовщик",
+    "employer": "Master Garden Kazakhstan",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31418": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "ОА «Баходур-А»",
+    "salary_min": 9000,
+    "salary_max": 12000,
+    "salary_period": "day",
+    "schedule": "1/2, 2/2, 2/1, суточные посты"
+   }
+  },
+  "hh-139299041": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "schedule": "2/2, 11 часов",
+    "employer": "Keruen Management"
+   }
+  },
+  "hh-139297416": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {}
+  },
+  "hh-139297280": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Fuller’s Pub & Wine"
+   }
+  },
+  "hh-139297234": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "АС-Трейд"
+   }
+  },
+  "hh-138644843": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "address": null
+   }
+  },
+  "hh-139297213": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {}
+  },
+  "hh-139256576": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Продавец в магазин одежды",
+    "employer": "Марк Формэль"
+   }
+  },
+  "hh-138382052": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Офисная работа диспетчера за ПК"
+  },
+  "hh-139300533": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Офисная должность: турменеджер и SMM"
+  },
+  "hh-139300214": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Продавец-консультант парфюмерии",
+    "employer": "Gamma D’Oro"
+   }
+  },
+  "hh-139299607": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {}
+  },
+  "hh-139299417": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Alatau Mill",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139299275": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {}
+  },
+  "hh-139299071": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Tisou",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "rabota4almaty-6416": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Пилингист-массажист",
+    "employer": "Баня «Люкс»",
+    "address": "ул. Кунаева, 22"
+   }
+  },
+  "hh-139297741": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Traveler’s Coffee",
+    "schedule": null
+   }
+  },
+  "agashka_job_almaty-1114": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Грузчик на строительный рынок",
+    "address": "строительный рынок «7 Курдас»",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139300841": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "МФО «Taj Finance»"
+   }
+  },
+  "hh-139299129": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Alemshop.kz",
+    "schedule": "6/1 или 5/2"
+   }
+  },
+  "hh-138829240": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Торговый представитель (бытовая химия)"
+   }
+  },
+  "hh-139299083": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Офисные продажи, нет зарплаты"
+  },
+  "hh-138514144": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Уборщица, уборщик"
+   }
+  },
+  "hh-139297755": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Кассир",
+    "employer": "Zebra Coffee",
+    "schedule": null
+   }
+  },
+  "hh-138460509": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Водитель погрузчика",
+    "employer": "СтройДекор"
+   }
+  },
+  "hh-137837655": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Торговый представитель (продукты питания)",
+    "perks": []
+   }
+  },
+  "aktobevakansii-44468": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Кассир, пиццамейкер",
+    "schedule": "2/2, 10:00–00:00",
+    "address": "район Батыс"
+   }
+  },
+  "aktobevakansii-44467": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "aktobevakansii-44466": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "vakansii_rabota_atyrau-50098": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Бариста, помощник бариста",
+    "employer": null,
+    "schedule": "2/2"
+   }
+  },
+  "hh-139297925": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Офисные B2B-продажи спецтехники"
+  },
+  "vakansii_rabota_atyrau-50099": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Кафе «Шалкыма»",
+    "salary_min": 10000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "6/1, 08:00–19:00"
+   }
+  },
+  "vakansii_rabota_atyrau-50097": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Администратор алкомаркета",
+    "employer": "Алкомаркет «Elixir»",
+    "address": "мкр. Байтақ"
+   }
+  },
+  "rabotaaktau-142492": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Сауна без названия и адреса, мало сведений"
+  },
+  "rabotaaktau-142491": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "ТЦ «Akkala Mal»",
+    "schedule": "2/2, 08:00–22:00"
+   }
+  },
+  "rabotaaktau-142493": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Кассир-продавец АЗС",
+    "employer": "Qazaq Oil",
+    "address": null,
+    "schedule": "гибкий график"
+   }
+  },
+  "hh-138464140": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Менеджер по продажам автозапчастей",
+    "schedule": "5/2"
+   }
+  },
+  "vakansiya_ukg-21798": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "salary_min": 8350,
+    "salary_max": 10000,
+    "salary_period": "day",
+    "schedule": "4/3, Чт–Пт 12:00–22:00, Сб–Вс 09:30–22:00",
+    "address": "ТРЦ «Maxi Mall», фуд-корт"
+   }
+  },
+  "vakansiya_ukg-21797": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Курьер на личном авто",
+    "schedule": "2/2, 10:00–22:00",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-138546479": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "employer": "Медведь"
+   }
+  },
+  "rabota_semey_official-6866": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Мало сведений: только «договорная»"
+  },
+  "hh-139299040": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Sinsay",
+    "address": "ТЦ «Asima», ул. Спартака, 1",
+    "schedule": null
+   }
+  },
+  "hh-138463446": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {}
+  },
+  "hh-139300698": {
+   "verdict": "approve",
+   "at": "2026-11-10T08:57:27+00:00",
+   "fields": {}
+  },
+  "hh-139299819": {
+   "verdict": "reject",
+   "at": "2026-11-10T08:57:27+00:00",
+   "reason": "Офисные B2B-продажи спецтехники"
   }
  }
 }

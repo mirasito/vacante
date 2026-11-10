@@ -2717,6 +2717,13 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "aktobe:городская реклама": {
+  "name": "Городская Реклама",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "aktobe:демиденко к а": {
   "name": "Демиденко К.А",
   "city": "aktobe",
@@ -5886,7 +5893,7 @@
   "instagram": "brusnikabrand.kz",
   "website": "https://brusnika.me/",
   "source": "https://2gis.kz/almaty/firm/70000001083025491",
-  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_checked_at": "2026-11-10T14:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8803,6 +8810,13 @@
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
  },
+ "almaty:hj platform heros journey": {
+  "name": "HJ Platform (Hero’s Journey)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "almaty:home credit bank дб ао fortebank": {
   "name": "Home Credit Bank (ДБ АО «ForteBank»)",
   "city": "almaty",
@@ -11139,6 +11153,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "almaty:medina": {
+  "name": "Medina",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "almaty:meditor company": {
   "name": "MEDITOR COMPANY",
   "city": "almaty",
@@ -11395,6 +11416,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:montelle": {
+  "name": "Montelle",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "montelle.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001113434104"
  },
  "almaty:monteva boutique hotel": {
   "name": "Monteva Boutique Hotel",
@@ -16751,6 +16781,13 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "almaty:алматы молл": {
+  "name": "Алматы Молл",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "almaty:алматы су": {
   "name": "Алматы Су",
   "city": "almaty",
@@ -17581,6 +17618,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
+ },
+ "almaty:бибекова": {
+  "name": "Бибекова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
  },
  "almaty:биг продаст компани": {
   "name": "БИГ ПРОДАСТ компани",
@@ -21196,6 +21240,13 @@
   "avatar": "09510372ed390f0d.jpg",
   "avatar_source": "website"
  },
+ "almaty:медицинские системы и технологии": {
+  "name": "Медицинские системы и технологии",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "almaty:медицинский центр emirmed": {
   "name": "Медицинский центр EMIRMED",
   "city": "almaty",
@@ -22771,6 +22822,13 @@
   "instagram": "remark_service",
   "source": "https://2gis.kz/almaty/firm/9429940000971288"
  },
+ "almaty:ремонт рулевых реек": {
+  "name": "ремонт рулевых реек",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "almaty:ренессанс": {
   "name": "Ренессанс",
   "city": "almaty",
@@ -23014,7 +23072,7 @@
   "instagram": "salonatmosfera.almaty",
   "website": "http://salonatmosfera.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001081895134",
-  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_checked_at": "2026-11-10T14:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28371,6 +28429,20 @@
   "v": 3,
   "checked_at": "2026-11-08T20:44:20+00:00"
  },
+ "astana:good night show astana": {
+  "name": "Good Night Show Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "goodnight.astana",
+  "website": "https://astana.goodnight.show/",
+  "source": "https://2gis.kz/astana/firm/70000001080254407",
+  "avatar_checked_at": "2026-11-10T14:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:good project": {
   "name": "Good project",
   "city": "astana",
@@ -29198,6 +29270,15 @@
   "checked_at": "2026-11-09T08:44:48+00:00",
   "instagram": "kakaodak_kz",
   "source": "https://2gis.kz/astana/firm/70000001039308458"
+ },
+ "astana:kamalini": {
+  "name": "Kamalini",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "atelier_kamalini",
+  "source": "https://2gis.kz/astana/firm/70000001081149742"
  },
  "astana:kango kids": {
   "name": "Kango Kids",
@@ -30747,6 +30828,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T01:43:39+00:00"
+ },
+ "astana:outfit": {
+  "name": "Outfit",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "outfit.ast.kz",
+  "source": "https://2gis.kz/astana/firm/70000001095213394"
  },
  "astana:oxyprop": {
   "name": "OXYPROP",
@@ -33128,6 +33218,15 @@
   "instagram": "zerdeli.astana",
   "source": "https://2gis.kz/astana/firm/70000001117176008"
  },
+ "astana:zhb gym": {
+  "name": "ZHB GYM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "zhb.gym",
+  "source": "https://2gis.kz/astana/firm/70000001117820307"
+ },
  "astana:zhetebaev": {
   "name": "Zhetebaev",
   "city": "astana",
@@ -33168,6 +33267,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T16:43:36+00:00"
+ },
+ "astana:абат kz": {
+  "name": "Абат KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
  },
  "astana:абат сервис ltd": {
   "name": "Абат сервис LTD",
@@ -34693,6 +34799,20 @@
    "website"
   ]
  },
+ "astana:гриль бар шашлыкоff": {
+  "name": "Гриль-бар ШашлыкоFF",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "shashlikoff_kz",
+  "website": "https://www.shashlikoff.com/",
+  "source": "https://2gis.kz/astana/firm/70000001046104600",
+  "avatar_checked_at": "2026-11-10T14:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:группа компаний аллюр allur": {
   "name": "Группа компаний Аллюр (Allur)",
   "city": "astana",
@@ -35666,6 +35786,13 @@
   "instagram": "kangojump_astana",
   "source": "https://2gis.kz/astana/firm/70000001026933143"
  },
+ "astana:кантуреева айганым галымжановна": {
+  "name": "КАНТУРЕЕВА АЙГАНЫМ ГАЛЫМЖАНОВНА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "astana:капи": {
   "name": "Капи",
   "city": "astana",
@@ -36329,6 +36456,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
+ },
+ "astana:лучший менеджер": {
+  "name": "Лучший менеджер",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
  },
  "astana:людмила kz tm аян": {
   "name": "Людмила-KZ TM Аян",
@@ -43820,6 +43954,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:миденко": {
+  "name": "МИДЕНКО",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
  },
  "karaganda:микрофинансовая организация r finance": {
   "name": "Микрофинансовая организация «R-Finance»",
@@ -51963,6 +52104,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "shymkent:jurgiz": {
+  "name": "JURGIZ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
+ },
  "shymkent:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "shymkent",
@@ -52956,6 +53104,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "shymkent:вnb hotel": {
+  "name": "ВnB hotel",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00",
+  "instagram": "bnb.shymkent",
+  "website": "https://bnb-hotel.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001069130382",
+  "avatar_checked_at": "2026-11-10T14:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:витрина плюс": {
   "name": "Витрина плюс",
@@ -56521,7 +56683,7 @@
   "instagram": "forward_school_kazakhstan",
   "website": "http://forwardschool.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721400565",
-  "avatar_checked_at": "2026-11-03T14:44:04+00:00",
+  "avatar_checked_at": "2026-11-10T14:44:22+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58144,6 +58306,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
+ },
+ "ust-kamenogorsk:товарищество с ограниченной ответственностью aurumstroy": {
+  "name": "Товарищество с ограниченной ответственностью AurumStroy",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T14:44:20+00:00"
  },
  "ust-kamenogorsk:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",

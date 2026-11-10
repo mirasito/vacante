@@ -1314,7 +1314,7 @@
   "checked_at": "2026-11-03T07:45:16+00:00",
   "website": "https://5-ballov.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001080072487",
-  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6627,6 +6627,13 @@
   "v": 3,
   "checked_at": "2026-11-09T16:44:28+00:00"
  },
+ "almaty:dm group": {
+  "name": "DM-Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
+ },
  "almaty:dmc": {
   "name": "DMC",
   "city": "almaty",
@@ -7888,6 +7895,13 @@
   ],
   "avatar": "cb1faee675bc053e.jpg",
   "avatar_source": "website"
+ },
+ "almaty:geo fresh meat": {
+  "name": "GEO FRESH MEAT",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "almaty:geo nan": {
   "name": "Geo Nan",
@@ -11270,6 +11284,20 @@
   "avatar_source": "telegram",
   "source": "https://2gis.kz/almaty/firm/70000001037448069"
  },
+ "almaty:mykhat": {
+  "name": "MYKHAT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "mykhat.kz",
+  "website": "https://www.mykhat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029818433",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:nakama group": {
   "name": "Nakama group",
   "city": "almaty",
@@ -11963,6 +11991,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "almaty:patisson": {
+  "name": "Patisson",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "almaty:patsha off road": {
   "name": "Patsha Off-road",
@@ -14402,6 +14437,15 @@
   "avatar": "5c7ba773bcf0a9ad.jpg",
   "avatar_source": "website"
  },
+ "almaty:tisou": {
+  "name": "TISOU",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "tisou.official",
+  "source": "https://2gis.kz/almaty/firm/70000001091754634"
+ },
  "almaty:tiss auto parts": {
   "name": "TISS AUTO PARTS",
   "city": "almaty",
@@ -15351,6 +15395,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "almaty:zhanar travel": {
+  "name": "Zhanar TRAVEL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "zhanartravel.almaty",
+  "website": "http://zhanar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001080778747",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:zhanel bolatova": {
   "name": "Zhanel Bolatova",
@@ -17928,6 +17986,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:грузовые перевозки": {
+  "name": "грузовые перевозки",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "almaty:групп четыре": {
   "name": "ГРУПП Четыре",
@@ -20863,6 +20928,21 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T02:44:14+00:00"
+ },
+ "almaty:метпрофснаб кз": {
+  "name": "МетПрофСнаб КЗ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "website": "https://metprofsnab.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098703560",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "78d9a5bfd3446e3f.jpg",
+  "avatar_source": "website"
  },
  "almaty:метрополь": {
   "name": "Метрополь",
@@ -27571,6 +27651,15 @@
   "v": 3,
   "checked_at": "2026-11-06T19:43:58+00:00"
  },
+ "astana:gayaz brand": {
+  "name": "GAYAZ BRAND",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "gayaz_brand",
+  "source": "https://2gis.kz/astana/firm/70000001045454440"
+ },
  "astana:get education": {
   "name": "GET Education",
   "city": "astana",
@@ -28823,7 +28912,7 @@
   "instagram": "kultura_diktuet",
   "website": "https://www.kulturadiktuet.com/",
   "source": "https://2gis.kz/astana/firm/70000001063901576",
-  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33338,6 +33427,13 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "instagram": "bauyrdaq_astana",
   "source": "https://2gis.kz/astana/firm/70000001068898146"
+ },
+ "astana:баходур а": {
+  "name": "Баходур-А",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "astana:беварт инжиниринг": {
   "name": "Беварт Инжиниринг",
@@ -40344,6 +40440,13 @@
   "v": 3,
   "checked_at": "2026-11-07T20:43:40+00:00"
  },
+ "atyrau:и помощник бариста": {
+  "name": "И ПОМОЩНИК БАРИСТА",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
+ },
  "atyrau:интер карго системс астана": {
   "name": "Интер Карго Системс Астана",
   "city": "atyrau",
@@ -40832,6 +40935,13 @@
    "website"
   ]
  },
+ "atyrau:шалкыма": {
+  "name": "Шалкыма",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
+ },
  "atyrau:шашлык от дяди гадима": {
   "name": "Шашлык от дяди Гадима",
   "city": "atyrau",
@@ -40949,6 +41059,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:aster автомобили": {
+  "name": "ASTER Автомобили",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "aster_kz",
+  "website": "https://aster.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001047452853",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ed1fd9ac949bb7ba.jpg",
+  "avatar_source": "website"
  },
  "karaganda:autotools": {
   "name": "Autotools",
@@ -42297,7 +42423,7 @@
   "checked_at": "2026-11-03T07:45:16+00:00",
   "website": "https://www.gsdm.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302830373",
-  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44793,6 +44919,22 @@
   "v": 3,
   "checked_at": "2026-11-01T21:43:44+00:00"
  },
+ "kostanay:nkb group kazakhstan": {
+  "name": "NKB Group Kazakhstan",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "nkb_kz",
+  "website": "https://nkbgroup.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001116716074",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "40df94d33560dda3.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:oil центр": {
   "name": "Oil центр",
   "city": "kostanay",
@@ -45141,6 +45283,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
+ },
+ "kostanay:борисов": {
+  "name": "Борисов",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "kostanay:бостан": {
   "name": "Бостан",
@@ -49411,6 +49560,15 @@
   "v": 3,
   "checked_at": "2026-11-06T21:44:54+00:00"
  },
+ "semey:lpp kazakhstan лпп казахстан": {
+  "name": "LPP Kazakhstan (ЛПП Казахстан)",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00",
+  "instagram": "sinsaykz",
+  "source": "https://2gis.kz/semej/firm/70000001109645275"
+ },
  "semey:mont blanc dental clinic": {
   "name": "MONT BLANC DENTAL CLINIC",
   "city": "semey",
@@ -49517,6 +49675,13 @@
   "checked_at": "2026-11-09T15:44:24+00:00",
   "instagram": "sakmed.semey",
   "source": "https://2gis.kz/semej/firm/70000001118969591"
+ },
+ "semey:samgau": {
+  "name": "SAMGAU",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "semey:sandyq world": {
   "name": "Sandyq World",
@@ -50333,6 +50498,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
+ },
+ "shymkent:al shardari": {
+  "name": "Al-Shardari",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
+ },
+ "shymkent:alemshop kz": {
+  "name": "Alemshop.kz",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "shymkent:alpen park hotel & karaoke": {
   "name": "Alpen Park Hotel & Karaoke",
@@ -51688,7 +51867,7 @@
   "checked_at": "2026-11-03T07:45:16+00:00",
   "website": "https://autopiter.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001093712167",
-  "avatar_checked_at": "2026-11-03T07:45:17+00:00",
+  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -52328,6 +52507,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "shymkent:мфо taj finance": {
+  "name": "МФО TAJ FINANCE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-10T08:43:53+00:00"
  },
  "shymkent:нур": {
   "name": "НУР",

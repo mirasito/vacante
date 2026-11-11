@@ -752,6 +752,13 @@
    "website"
   ]
  },
+ "aktau:turan": {
+  "name": "Turan",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "aktau:uide": {
   "name": "Uide",
   "city": "aktau",
@@ -2161,6 +2168,13 @@
   "checked_at": "2026-11-06T02:44:46+00:00",
   "instagram": "jadyra.s",
   "source": "https://2gis.kz/aktobe/firm/70000001098553626"
+ },
+ "aktobe:karavan караван": {
+  "name": "KARAVAN (КАРАВАН)",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
  },
  "aktobe:kaspi kz": {
   "name": "Kaspi.kz",
@@ -4037,6 +4051,15 @@
   "checked_at": "2026-10-30T23:43:10+00:00",
   "instagram": "ali_bi_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001099440809"
+ },
+ "almaty:ali dent kz": {
+  "name": "ALI-DENT.KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "instagram": "alidentkz",
+  "source": "https://2gis.kz/almaty/firm/70000001070549541"
  },
  "almaty:alil group": {
   "name": "Alil Group",
@@ -6172,6 +6195,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
+ },
+ "almaty:caelum flowers салон цветов": {
+  "name": "Caelum Flowers, салон цветов",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "instagram": "caelum.flowers",
+  "source": "https://2gis.kz/almaty/firm/70000001115058053"
  },
  "almaty:caffe del teatro": {
   "name": "CAFFE DEL TEATRO",
@@ -9865,6 +9897,20 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "almaty:jetpay kz": {
+  "name": "JetPay.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "instagram": "jetpay.kz",
+  "website": "http://jetpay.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001051350520",
+  "avatar_checked_at": "2026-11-11T04:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:jg khan tengri": {
   "name": "JG Khan Tengri",
   "city": "almaty",
@@ -13029,6 +13075,13 @@
   "v": 3,
   "checked_at": "2026-11-02T12:46:07+00:00"
  },
+ "almaty:prime kz": {
+  "name": "PRIME KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "almaty:print house gerona": {
   "name": "Print House Gerona",
   "city": "almaty",
@@ -15906,6 +15959,13 @@
   "avatar": "cb9003abead15c7a.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/almaty/firm/70000001098645691"
+ },
+ "almaty:vivid home ип сихимбаев ж с": {
+  "name": "VIVID HOME (ИП СИХИМБАЕВ Ж.С)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
  },
  "almaty:vizodent": {
   "name": "VizoDent",
@@ -23472,6 +23532,13 @@
   "v": 3,
   "checked_at": "2026-11-10T06:45:39+00:00"
  },
+ "almaty:поток 8": {
+  "name": "ПОТОК 8",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "almaty:предприятие": {
   "name": "Предприятие",
   "city": "almaty",
@@ -25594,6 +25661,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
+ },
+ "almaty:фарида": {
+  "name": "Фарида",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
  },
  "almaty:фармация юниверсал": {
   "name": "Фармация Юниверсал",
@@ -29118,6 +29192,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T23:46:11+00:00"
+ },
+ "astana:etalon holding": {
+  "name": "Etalon Holding",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "instagram": "etalon_holding",
+  "website": "https://etalon-holding.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001027608111",
+  "avatar_checked_at": "2026-11-11T04:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:eurasia klimat евразия климат": {
   "name": "EurAsia Klimat (ЕврАзия Климат)",
@@ -39421,6 +39509,13 @@
   "v": 3,
   "checked_at": "2026-11-08T15:44:05+00:00"
  },
+ "astana:птушко максим константинович": {
+  "name": "Птушко Максим Константинович",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "astana:пулково казахстан": {
   "name": "ПУЛКОВО КАЗАХСТАН",
   "city": "astana",
@@ -40498,6 +40593,19 @@
   "checked_at": "2026-11-01T10:43:41+00:00",
   "instagram": "teplo_v_astane",
   "source": "https://2gis.kz/astana/firm/70000001075020474"
+ },
+ "astana:тералайн телеком": {
+  "name": "Тералайн Телеком",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "website": "https://www.teraline-telecom.net/",
+  "source": "https://2gis.kz/astana/firm/70000001028908983",
+  "avatar_checked_at": "2026-11-11T04:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:техническое предприятие синтез": {
   "name": "Техническое предприятие Синтез",
@@ -43830,6 +43938,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:avtomarketkaraganda": {
+  "name": "AvtoMarketKaraganda",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
  },
  "karaganda:azimut holding": {
   "name": "Azimut Holding",
@@ -51080,6 +51195,20 @@
   "avatar": "7465f71d353e87e1.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:фирма стальной союз": {
+  "name": "Фирма Стальной союз",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "instagram": "stalnoy_soyuz",
+  "website": "http://stalsoyuz.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018635482",
+  "avatar_checked_at": "2026-11-11T04:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:фудмастер тм": {
   "name": "ФудМастер, ТМ",
   "city": "pavlodar",
@@ -54906,6 +55035,13 @@
   "v": 3,
   "checked_at": "2026-11-02T17:18:29+00:00"
  },
+ "shymkent:so yoqimli xaridlar": {
+  "name": "SO YOQIMLI XARIDLAR",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "shymkent:staff up consulting group": {
   "name": "Staff-UP Consulting Group",
   "city": "shymkent",
@@ -55266,6 +55402,13 @@
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
  },
+ "shymkent:бейсенбаева": {
+  "name": "Бейсенбаева",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "shymkent:бексултан 2014": {
   "name": "БЕКСУЛТАН-2014",
   "city": "shymkent",
@@ -55453,6 +55596,22 @@
   "checked_at": "2026-11-07T13:43:51+00:00",
   "instagram": "est_syr",
   "source": "https://2gis.kz/shymkent/firm/70000001052809988"
+ },
+ "shymkent:жилищный строительный сберегательный банк отбасы банк": {
+  "name": "Жилищный строительный сберегательный банк Отбасы банк",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00",
+  "instagram": "otbasybank__shymkent",
+  "website": "https://hcsbk.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026125907",
+  "avatar_checked_at": "2026-11-11T04:44:05+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4b773eab5249020c.jpg",
+  "avatar_source": "website"
  },
  "shymkent:жұманова ақерке": {
   "name": "Жұманова Ақерке",
@@ -58370,6 +58529,13 @@
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
  },
+ "uralsk:косметики": {
+  "name": "КОСМЕТИКИ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "uralsk:ктк 888": {
   "name": "КТК-888",
   "city": "uralsk",
@@ -59462,6 +59628,13 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:rating it компания рейтинг": {
+  "name": "Rating (IT-Компания Рейтинг)",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
+ },
  "ust-kamenogorsk:sabotage": {
   "name": "Sabotage",
   "city": "ust-kamenogorsk",
@@ -60173,6 +60346,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "ust-kamenogorsk:казпромэлектрогрупп": {
+  "name": "КАЗПРОМЭЛЕКТРОГРУПП",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T04:44:03+00:00"
  },
  "ust-kamenogorsk:казцинк": {
   "name": "Казцинк",

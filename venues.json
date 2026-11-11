@@ -6527,6 +6527,13 @@
   "instagram": "caravan_beverage",
   "source": "https://2gis.kz/almaty/firm/9429940000842883"
  },
+ "almaty:cargocross": {
+  "name": "CargoCross",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
+ },
  "almaty:carlsberg kazakhstan": {
   "name": "Carlsberg Kazakhstan",
   "city": "almaty",
@@ -9650,6 +9657,13 @@
   "v": 3,
   "checked_at": "2026-11-09T14:44:20+00:00"
  },
+ "almaty:humancode": {
+  "name": "HumanCode",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
+ },
  "almaty:hunter": {
   "name": "HUNTER",
   "city": "almaty",
@@ -11663,6 +11677,13 @@
    "website"
   ]
  },
+ "almaty:m trade": {
+  "name": "M-TRADE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
+ },
  "almaty:m&k plus": {
   "name": "M&K plus",
   "city": "almaty",
@@ -13636,6 +13657,13 @@
    "website"
   ]
  },
+ "almaty:prosvet group просвет груп": {
+  "name": "PROSvet Group (ПРОСвет Груп)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
+ },
  "almaty:protocol car rent": {
   "name": "Protocol Car Rent",
   "city": "almaty",
@@ -14907,6 +14935,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:sino railway transport almaty llp": {
+  "name": "SINO RAILWAY TRANSPORT (ALMATY) LLP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "website": "https://sinologistics.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001075071711",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:sinteks синтекс": {
   "name": "Sinteks (Синтекс)",
@@ -16864,7 +16905,7 @@
   "instagram": "yes_exchange",
   "website": "http://almaty1.yes-exchange.com/",
   "source": "https://2gis.kz/almaty/firm/70000001094342527",
-  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16944,6 +16985,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
+ },
+ "almaty:zaytun": {
+  "name": "ZAYTUN",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
  },
  "almaty:zerberg": {
   "name": "ZERBERG",
@@ -20525,7 +20573,7 @@
   "telegram": "renioncity",
   "website": "http://renion.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001030378233",
-  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -23785,6 +23833,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:омирзак": {
+  "name": "Омирзак",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
+ },
  "almaty:онгарбаева г а": {
   "name": "Онгарбаева Г.А.",
   "city": "almaty",
@@ -24351,6 +24406,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
+ },
+ "almaty:промет": {
+  "name": "ПРОМЕТ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "website": "https://promet-safe.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001084099335",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:промомед фарма": {
   "name": "ПРОМОМЕД-Фарма",
@@ -24928,6 +24996,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
+ },
+ "almaty:сары арка": {
+  "name": "Сары Арка",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
  },
  "almaty:сас казахстан": {
   "name": "САС Казахстан",
@@ -32648,6 +32723,13 @@
   "instagram": "monke__barbershop",
   "source": "https://2gis.kz/astana/firm/70000001093526525"
  },
+ "astana:mr &mrs shmidt agro": {
+  "name": "Mr.&Mrs.Shmidt Agro",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
+ },
  "astana:mr b global learning": {
   "name": "Mr. B Global Learning",
   "city": "astana",
@@ -33473,6 +33555,20 @@
    "website"
   ]
  },
+ "astana:premier astana dent": {
+  "name": "Premier Astana Dent",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "instagram": "premier_astana_stom",
+  "website": "http://premier-astana-dent.netlify.app/",
+  "source": "https://2gis.kz/astana/firm/70000001018547186",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:premium": {
   "name": "Premium",
   "city": "astana",
@@ -34026,6 +34122,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:rmk energy trade": {
+  "name": "RMK ENERGY TRADE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
  },
  "astana:roman avto": {
   "name": "ROMAN-AVTO",
@@ -35218,6 +35321,13 @@
   ],
   "avatar": "aef0f8cad7edc525.jpg",
   "avatar_source": "website"
+ },
+ "astana:transport logistics service center транспорт логитикс сервис центр": {
+  "name": "TRANSPORT LOGISTICS SERVICE CENTER (ТРАНСПОРТ ЛОГИТИКС СЕРВИС ЦЕНТР)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
  },
  "astana:trattoria margarita": {
   "name": "Trattoria Margarita",
@@ -39583,7 +39693,7 @@
   "instagram": "masterkonditertoo",
   "website": "https://maskon.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018299908",
-  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41838,6 +41948,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
+ },
+ "astana:темиргалиева": {
+  "name": "Темиргалиева",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
  },
  "astana:тепло": {
   "name": "ТЕПЛО",
@@ -47222,6 +47339,20 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "karaganda:казпромкран": {
+  "name": "КАЗПРОМКРАН",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "instagram": "kazpromkran",
+  "website": "http://xn--80aaukcljeikd.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032751465",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:казтранстехпром": {
   "name": "КазТрансТехПром",
   "city": "karaganda",
@@ -51304,6 +51435,20 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "kyzylorda:госконтакт": {
+  "name": "ГОСКонтакт",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "instagram": "goskontakt.kz",
+  "website": "https://goskontakt.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001079210244",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kyzylorda:дан стафф": {
   "name": "Дан-Стафф",
   "city": "kyzylorda",
@@ -53243,7 +53388,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001062151780",
-  "avatar_checked_at": "2026-11-04T16:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59942,6 +60087,15 @@
   "instagram": "moon_spa.url",
   "source": "https://2gis.kz/uralsk/firm/70000001089381649"
  },
+ "uralsk:myata": {
+  "name": "MYATA",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "instagram": "myata.07",
+  "source": "https://2gis.kz/kk/uralsk/firm/70000001063030173"
+ },
  "uralsk:nika company": {
   "name": "NIKA COMPANY",
   "city": "uralsk",
@@ -60270,6 +60424,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
+ },
+ "uralsk:астра лoмбард": {
+  "name": "Астра-Лoмбард",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "instagram": "astralombard.kz",
+  "telegram": "astralombard_kz",
+  "website": "https://astra-lombard.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025104307",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "uralsk:атриум": {
   "name": "Атриум",
@@ -61331,6 +61501,13 @@
   ],
   "avatar": "17c40eb2d1fb3e9b.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:holiday life": {
+  "name": "HOLIDAY LIFE",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00"
  },
  "ust-kamenogorsk:home credit bank дб ао fortebank": {
   "name": "Home Credit Bank (ДБ АО «ForteBank»)",
@@ -62459,6 +62636,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
+ },
+ "ust-kamenogorsk:комек машинери казахстан": {
+  "name": "КОМЕК МАШИНЕРИ Казахстан",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T16:44:32+00:00",
+  "instagram": "komek_machinery_kazakhstan",
+  "website": "https://www.komek.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018099939",
+  "avatar_checked_at": "2026-11-11T16:44:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:компания русский свет": {
   "name": "Компания Русский Свет",

@@ -18,7 +18,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, channels, direct, review, shifts, venues
+from vacante import card, channels, direct, promo, review, shifts, venues
 from vacante.models import Vacancy
 from vacante.site.build import city_heading, instagram_url, salary_label, twogis_url
 from vacante.store import load_vacancies
@@ -338,9 +338,23 @@ def telegram_text_sender(client: httpx.Client, token: str) -> TextSender:
     return send
 
 
+def telegram_button_sender(client: httpx.Client, token: str) -> promo.ButtonSender:
+    """Текстовый пост с url-кнопками (по одной в ряд); возвращает message_id."""
+    def send(chat: str, text: str, buttons: list[tuple[str, str]]) -> int | None:
+        markup = {"inline_keyboard": [[{"text": t, "url": u}] for t, u in buttons]}
+        r = client.post(f"https://api.telegram.org/bot{token}/sendMessage",
+                        json={"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True,
+                              "reply_markup": markup})
+        _check(r)
+        return r.json().get("result", {}).get("message_id")
+    return send
+
+
 def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None, pin: Pinner | None = None,
-        live: dict[str, str] | None = None, send_text: TextSender | None = None) -> dict:
-    """live: работающие каналы, город → @username; по умолчанию из channels.json."""
+        live: dict[str, str] | None = None, send_text: TextSender | None = None,
+        send_promo: promo.ButtonSender | None = None) -> dict:
+    """live: работающие каналы, город → @username; по умолчанию из channels.json.
+    send_promo: пост о мини-приложении раз в день и закреп с ним (vacante.promo)."""
     now = now or datetime.now(timezone.utc)
     live = channels.live(data_dir) if live is None else live
     base_url = base_url.rstrip("/")
@@ -384,6 +398,10 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
                     stats["shifts"] = stats.get("shifts", 0) + 1
                 except (httpx.HTTPError, RuntimeError) as exc:
                     log.warning("смены в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        local_now = now.astimezone(LOCAL)
+        if send_promo and local_now.hour in POST_HOURS:
+            promo.run_channel(chat, city, state, now, local_now,
+                              promo.fresh_count(list(original.values()), city, now), send_promo, pin, stats)
         if not is_due(state["last_at"], now):
             continue
         v = pick(vacancies, city, state, now, known, keys_of, approved_at)

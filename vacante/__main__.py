@@ -107,7 +107,8 @@ def main() -> None:
             live = channels.refresh(args.data_dir, channels.telegram_checker(client, token), datetime.now(timezone.utc))
             stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token),
                                  pin=autopost.telegram_pinner(client, token), live=live,
-                                 send_text=autopost.telegram_text_sender(client, token))
+                                 send_text=autopost.telegram_text_sender(client, token),
+                                 send_promo=autopost.telegram_button_sender(client, token))
         logging.info("автопостинг: %s", stats)
     elif args.command == "crm":
         from vacante import crm_sync

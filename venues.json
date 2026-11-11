@@ -5959,6 +5959,20 @@
    "website"
   ]
  },
+ "almaty:bnc project": {
+  "name": "BNC Project",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "bnc_almaty",
+  "website": "https://www.bnc.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061830990",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:bns group": {
   "name": "BNS Group",
   "city": "almaty",
@@ -6259,6 +6273,20 @@
   "checked_at": "2026-11-07T11:45:05+00:00",
   "instagram": "caravan_beverage",
   "source": "https://2gis.kz/almaty/firm/9429940000842883"
+ },
+ "almaty:carlsberg kazakhstan": {
+  "name": "Carlsberg Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "carlsberg.kazakhstan",
+  "website": "http://carlsbergkazakhstan.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000786280",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:caspian beverage holding ао": {
   "name": "CASPIAN beverage holding, АО",
@@ -9155,6 +9183,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T14:44:20+00:00"
+ },
+ "almaty:holi food": {
+  "name": "HOLI Food",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "website": "https://holifood.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001072626609",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "328ba408b545db9d.jpg",
+  "avatar_source": "website"
  },
  "almaty:home credit bank дб ао fortebank": {
   "name": "Home Credit Bank (ДБ АО «ForteBank»)",
@@ -15944,6 +15987,13 @@
   "instagram": "homecarpet.kz",
   "source": "https://2gis.kz/almaty/firm/70000001047929288"
  },
+ "almaty:viar company": {
+  "name": "VIAR-company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
+ },
  "almaty:vici kazakhstan": {
   "name": "VICI-KAZAKHSTAN",
   "city": "almaty",
@@ -22640,6 +22690,13 @@
   "v": 3,
   "checked_at": "2026-11-08T17:43:21+00:00"
  },
+ "almaty:мунасыпов": {
+  "name": "МУНАСЫПОВ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
+ },
  "almaty:мурат": {
   "name": "Мурат",
   "city": "almaty",
@@ -24419,6 +24476,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "almaty:сеть магазинов gaissina": {
+  "name": "Сеть магазинов GAISSINA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "gaissina_com",
+  "website": "https://gaissina.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001045568694",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:сеть магазинов цифровой и бытовой техники днс казахстан": {
   "name": "Сеть магазинов цифровой и бытовой техники ДНС КАЗАХСТАН",
@@ -30377,6 +30448,19 @@
   "instagram": "instaxmini.qz",
   "source": "https://www.instagram.com/instaxmini.qz/"
  },
+ "astana:integra construction kz": {
+  "name": "Integra Construction KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "website": "https://inconkz.com/",
+  "source": "https://2gis.kz/astana/firm/70000001018100481",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:integra x": {
   "name": "Integra X",
   "city": "astana",
@@ -33600,6 +33684,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T12:43:42+00:00"
+ },
+ "astana:sk water solutions": {
+  "name": "SK Water Solutions",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
  },
  "astana:skill hub": {
   "name": "Skill Hub",
@@ -37156,6 +37247,13 @@
   "v": 3,
   "checked_at": "2026-11-07T09:44:22+00:00"
  },
+ "astana:жетысу": {
+  "name": "Жетысу",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
+ },
  "astana:жеті аспан": {
   "name": "Жеті Аспан",
   "city": "astana",
@@ -39821,6 +39919,20 @@
    "website"
   ]
  },
+ "astana:рудпроект": {
+  "name": "РУДПРОЕКТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "rudproekt",
+  "website": "https://rudproject.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001112619866",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:рэд тим дистрибьюшн": {
   "name": "Рэд Тим Дистрибьюшн",
   "city": "astana",
@@ -40132,6 +40244,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:сеть мини маркетов m mart": {
+  "name": "Сеть мини маркетов M MART",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "mymart_stores",
+  "source": "https://2gis.kz/astana/firm/70000001092008725"
  },
  "astana:сеть паназиатских суши баров sushifox": {
   "name": "Сеть паназиатских суши-баров SUSHIFOX",
@@ -42748,6 +42869,24 @@
   "instagram": "mango",
   "source": "https://2gis.kz/atyrau/firm/70000001034778630"
  },
+ "atyrau:kaspi kz": {
+  "name": "Kaspi.kz",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "kaspi.kz",
+  "telegram": "kaspikz",
+  "website": "https://kaspi.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034789178",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2687dcfe6816e5d7.jpg",
+  "avatar_source": "telegram"
+ },
  "atyrau:kazakhstan distributors centre": {
   "name": "Kazakhstan Distributors Centre",
   "city": "atyrau",
@@ -44899,6 +45038,13 @@
   "avatar": "3382d50bae331c58.jpg",
   "avatar_source": "website"
  },
+ "karaganda:resto bro": {
+  "name": "RESTO-BRO",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
+ },
  "karaganda:resto gamma": {
   "name": "Resto GAMMA",
   "city": "karaganda",
@@ -44984,6 +45130,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "karaganda:sportex ип савина": {
+  "name": "SportEX (ИП Савина)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
  },
  "karaganda:staff up consulting group": {
   "name": "Staff-UP Consulting Group",
@@ -46494,6 +46647,21 @@
   "checked_at": "2026-11-05T20:43:06+00:00",
   "instagram": "schaste_est_flowers",
   "source": "https://2gis.kz/karaganda/firm/70000001088097755"
+ },
+ "karaganda:тави павлодар": {
+  "name": "Тави Павлодар",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "website": "https://www.tavigroup.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001069140733",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2ca61a97b84cd56d.jpg",
+  "avatar_source": "website"
  },
  "karaganda:татлер": {
   "name": "Татлер",
@@ -51392,6 +51560,13 @@
   "avatar": "7465f71d353e87e1.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:филатов": {
+  "name": "Филатов",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
+ },
  "pavlodar:фирма дафа": {
   "name": "фирма ДАФА",
   "city": "pavlodar",
@@ -55582,6 +55757,13 @@
   "v": 3,
   "checked_at": "2026-11-06T04:43:35+00:00"
  },
+ "shymkent:алтын куз 2003": {
+  "name": "Алтын-Куз-2003",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
+ },
  "shymkent:амина трейд": {
   "name": "Амина Трейд",
   "city": "shymkent",
@@ -56930,6 +57112,13 @@
   ],
   "avatar": "6c3988993487cfd7.jpg",
   "avatar_source": "website"
+ },
+ "taldykorgan:частная компания central asia jintai mining ltd": {
+  "name": "ЧАСТНАЯ КОМПАНИЯ CENTRAL ASIA JINTAI MINING LTD.",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
  },
  "taldykorgan:эпирок центральная азия": {
   "name": "Эпирок Центральная Азия",
@@ -58781,6 +58970,22 @@
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
  },
+ "uralsk:международный аэропорт орал": {
+  "name": "Международный Аэропорт ОРАЛ",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00",
+  "instagram": "airport_oral",
+  "website": "http://ura.aero/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025329879",
+  "avatar_checked_at": "2026-11-11T06:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d6e1f5cbd1381fae.jpg",
+  "avatar_source": "website"
+ },
  "uralsk:мужской одежды": {
   "name": "МУЖСКОЙ ОДЕЖДЫ",
   "city": "uralsk",
@@ -60425,6 +60630,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
+ },
+ "ust-kamenogorsk:евсеева к в": {
+  "name": "ЕВСЕЕВА К.В.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T06:44:10+00:00"
  },
  "ust-kamenogorsk:заман": {
   "name": "Заман",

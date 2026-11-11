@@ -9416,6 +9416,13 @@
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
  },
+ "almaty:hime global": {
+  "name": "HIME GLOBAL",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
+ },
  "almaty:himzone": {
   "name": "HIMZONE",
   "city": "almaty",
@@ -10226,6 +10233,13 @@
   "checked_at": "2026-11-05T23:44:29+00:00",
   "instagram": "jumpingoat.coffee",
   "source": "https://2gis.kz/almaty/firm/70000001021307438"
+ },
+ "almaty:jinshi drilltech kazakhstan ltd цзиньши дриллтех казахстан": {
+  "name": "JINSHI DRILLTECH KAZAKHSTAN LTD (Цзиньши ДриллТех Казахстан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "almaty:joldostar": {
   "name": "JOLDOSTAR",
@@ -13853,6 +13867,15 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "almaty:realist": {
+  "name": "Realist",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "realist.megatau.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001034970030"
+ },
  "almaty:recruit expert": {
   "name": "Recruit expert",
   "city": "almaty",
@@ -15162,6 +15185,24 @@
   "instagram": "sp_service_",
   "source": "https://2gis.kz/almaty/firm/70000001076111918"
  },
+ "almaty:sta logistic": {
+  "name": "STA Logistic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "stalogistic.insta",
+  "telegram": "stalogistic",
+  "website": "https://stalogistic.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001079259252",
+  "avatar_checked_at": "2026-11-11T13:44:35+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "86b06eeda0ca6894.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:staff up consulting group": {
   "name": "Staff-UP Consulting Group",
   "city": "almaty",
@@ -16009,6 +16050,13 @@
   "avatar": "3924f6c764685c90.jpg",
   "avatar_source": "website"
  },
+ "almaty:tusin art space": {
+  "name": "Tusin Art Space",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
+ },
  "almaty:tvin kazakhstan твин казахстан": {
   "name": "TVIN KAZAKHSTAN (ТВИН КАЗАХСТАН)",
   "city": "almaty",
@@ -16193,6 +16241,13 @@
   ],
   "avatar": "159704cac2e363b4.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:uysot team": {
+  "name": "UYSOT TEAM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "almaty:valesco": {
   "name": "Valesco",
@@ -22782,6 +22837,22 @@
   "avatar": "51f8651468257c72.jpg",
   "avatar_source": "website"
  },
+ "almaty:металлинвест": {
+  "name": "МеталлИнвест",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "metalloinvest.kz",
+  "website": "https://metallinvest.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001068086800",
+  "avatar_checked_at": "2026-11-11T13:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "17f7185ea954f0ba.jpg",
+  "avatar_source": "website"
+ },
  "almaty:метешова ю в": {
   "name": "Метешова Ю.В.",
   "city": "almaty",
@@ -22939,6 +23010,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T07:43:16+00:00"
+ },
+ "almaty:мкхоум": {
+  "name": "МКХоум",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "almaty:мкцр persona": {
   "name": "МКЦР Persona",
@@ -25433,6 +25511,13 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "almaty:танатаров comfort": {
+  "name": "ТАНАТАРОВ “COMFORT”",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
+ },
  "almaty:танатов": {
   "name": "ТАНАТОВ",
   "city": "almaty",
@@ -25989,6 +26074,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T14:43:58+00:00"
+ },
+ "almaty:трудовый резервы": {
+  "name": "трудовый резервы",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "almaty:тссп казахстан": {
   "name": "ТССП Казахстан",
@@ -27013,6 +27105,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
+ },
+ "almaty:элиталық қазақ мектебі zaman": {
+  "name": "Элиталық қазақ мектебі ZAMAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "zaman_school.kz",
+  "website": "https://zaman-school.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001062984212",
+  "avatar_checked_at": "2026-11-11T13:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a48de79e7265e142.jpg",
+  "avatar_source": "website"
  },
  "almaty:эльвира": {
   "name": "Эльвира",
@@ -34565,6 +34673,20 @@
   "instagram": "sultani.astana",
   "source": "https://2gis.kz/astana/firm/70000001089434119"
  },
+ "astana:sun group": {
+  "name": "Sun Group",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "orlov_banya_astana",
+  "website": "https://orlovbani.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001060109638",
+  "avatar_checked_at": "2026-11-11T13:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:sushifox": {
   "name": "SUSHIFOX",
   "city": "astana",
@@ -35138,6 +35260,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
+ },
+ "astana:virere education": {
+  "name": "VIRERE EDUCATION",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "virere_school_astana",
+  "source": "https://2gis.kz/astana/firm/70000001100629786"
  },
  "astana:vita property": {
   "name": "Vita property",
@@ -36191,6 +36322,13 @@
   "v": 3,
   "checked_at": "2026-11-08T15:44:05+00:00"
  },
+ "astana:амантаева а е": {
+  "name": "Амантаева А.Е.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
+ },
  "astana:амир": {
   "name": "Амир",
   "city": "astana",
@@ -36326,6 +36464,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
+ },
+ "astana:аслан сто кузовной цех": {
+  "name": "Аслан (СТО КУЗОВНОЙ ЦЕХ)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "astana:астана": {
   "name": "Астана",
@@ -41260,6 +41405,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T01:42:32+00:00"
+ },
+ "astana:студия дизайна сид": {
+  "name": "студия дизайна сид",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "sidstudia.kz",
+  "source": "https://2gis.kz/astana/firm/70000001081589695"
  },
  "astana:студия наружной рекламы": {
   "name": "Студия наружной рекламы",
@@ -50086,6 +50240,13 @@
   "avatar": "a0c3dfbad39a62b0.jpg",
   "avatar_source": "website"
  },
+ "kostanay:мацкевич александр александрович": {
+  "name": "Мацкевич Александр Александрович",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
+ },
  "kostanay:машиностроительный завод мтз казахстан": {
   "name": "Машиностроительный завод МТЗ-Казахстан",
   "city": "kostanay",
@@ -50594,6 +50755,13 @@
   ],
   "avatar": "d1896a947e34597d.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:хабибуллина наталья васильевна": {
+  "name": "ХАБИБУЛЛИНА НАТАЛЬЯ ВАСИЛЬЕВНА",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "kostanay:хамидулин а р": {
   "name": "ХАМИДУЛИН А.Р",
@@ -52574,6 +52742,15 @@
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
  },
+ "petropavlovsk:apple city corps": {
+  "name": "Apple City Corps",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00",
+  "instagram": "apple_city_corps",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001099409362"
+ },
  "petropavlovsk:ar line service": {
   "name": "Ar line service",
   "city": "petropavlovsk",
@@ -54534,6 +54711,13 @@
   ],
   "avatar": "caea51af2dcd2bfc.jpg",
   "avatar_source": "telegram"
+ },
+ "semey:вася кошелев": {
+  "name": "Вася Кошелев",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T13:44:34+00:00"
  },
  "semey:ваши бани": {
   "name": "Ваши Бани",

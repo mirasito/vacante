@@ -2092,6 +2092,24 @@
   "instagram": "esetmontazh",
   "source": "https://2gis.kz/aktobe/firm/70000001066010857"
  },
+ "aktobe:fssa": {
+  "name": "FSSA",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "fssa_kz",
+  "telegram": "fssa_vacancies",
+  "website": "http://fssa.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001045244704",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "733f3e9bae1ccae3.jpg",
+  "avatar_source": "telegram"
+ },
  "aktobe:gayaz brand": {
   "name": "GAYAZ BRAND",
   "city": "aktobe",
@@ -2378,6 +2396,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T18:44:51+00:00"
+ },
+ "aktobe:papa johns": {
+  "name": "Papa John’s",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "papajohns.kz",
+  "source": "https://2gis.kz/aktobe/firm/70000001088726057"
  },
  "aktobe:parus mining": {
   "name": "PARUS MINING",
@@ -5285,6 +5312,13 @@
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
  },
+ "almaty:auto spa mbv": {
+  "name": "AUTO SPA MBV",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
+ },
  "almaty:auto trader": {
   "name": "Auto Trader",
   "city": "almaty",
@@ -5594,6 +5628,15 @@
   "checked_at": "2026-10-29T02:44:24+00:00",
   "instagram": "bakha.potolok",
   "source": "https://2gis.kz/almaty/firm/70000001098071424"
+ },
+ "almaty:bal": {
+  "name": "BAL",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "balbakery",
+  "source": "https://2gis.kz/almaty/firm/70000001116397066"
  },
  "almaty:baldáuren balabaqshasy": {
   "name": "Baldáuren balabaqshasy",
@@ -9148,6 +9191,15 @@
   "v": 3,
   "checked_at": "2026-11-09T05:44:45+00:00"
  },
+ "almaty:haragun": {
+  "name": "Haragun",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "haragun_country_club",
+  "source": "https://www.instagram.com/haragun_country_club/"
+ },
  "almaty:haridus харидус": {
   "name": "Haridus (Харидус)",
   "city": "almaty",
@@ -11524,7 +11576,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040103024",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12925,7 +12977,7 @@
   "instagram": "otrgroup_",
   "website": "http://otr-group.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001046877131",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22542,6 +22594,15 @@
    "website"
   ]
  },
+ "almaty:медлайф рц": {
+  "name": "Медлайф РЦ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "medlifealmaty",
+  "source": "https://2gis.kz/almaty/firm/70000001050843342"
+ },
  "almaty:медоптика": {
   "name": "МЕДОПТИКА",
   "city": "almaty",
@@ -23444,6 +23505,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:онгарбаева г а": {
+  "name": "Онгарбаева Г.А.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
+ },
  "almaty:онлайн школа mr josy english school": {
   "name": "Онлайн школа Mr Josy English school",
   "city": "almaty",
@@ -24336,7 +24404,7 @@
   "checked_at": "2026-11-04T11:44:39+00:00",
   "website": "https://rostadv.com/",
   "source": "https://2gis.kz/almaty/firm/70000001105345015",
-  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31202,6 +31270,13 @@
   "avatar": "b9fbabce7a9c6f29.jpg",
   "avatar_source": "website"
  },
+ "astana:kaztorque": {
+  "name": "KazTorque",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
+ },
  "astana:kc интернейшнл": {
   "name": "KC Интернейшнл",
   "city": "astana",
@@ -31392,6 +31467,13 @@
   "checked_at": "2026-11-02T22:43:44+00:00",
   "instagram": "koz_in_optica",
   "source": "https://2gis.kz/astana/firm/70000001053564239"
+ },
+ "astana:kremeroff": {
+  "name": "KREMEROFF",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "astana:kross street": {
   "name": "Kross street",
@@ -31797,7 +31879,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040103024",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31834,7 +31916,7 @@
   "instagram": "magnum.kz",
   "website": "https://magnum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040103024",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -35505,10 +35587,12 @@
   "checked_at": "2026-11-04T10:44:35+00:00",
   "website": "https://astanahub.com/",
   "source": "https://astanahub.com/en/article/astana-hub-kak-formiruetsia-budushchee-kazakhstana",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "ceca84cb5f4c1250.jpg",
+  "avatar_source": "website"
  },
  "astana:автосвет & аксессуары": {
   "name": "АВТОСВЕТ & Аксессуары",
@@ -36049,6 +36133,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T13:44:59+00:00"
+ },
+ "astana:анорова э м": {
+  "name": "АНОРОВА Э.М.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "astana:ансар фарм 6131": {
   "name": "Ансар- Фарм 6131",
@@ -41887,6 +41978,20 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "astana:филиал тоо торговый дом электрокомплект в г астана": {
+  "name": "Филиал ТОО «Торговый Дом «ЭЛЕКТРОКОМПЛЕКТ» в г. Астана",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "ekt_astana",
+  "website": "http://nursultan.ekt.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018128077",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:фирма бент": {
   "name": "Фирма БЕНТ",
   "city": "astana",
@@ -42159,6 +42264,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T09:44:27+00:00"
+ },
+ "astana:центртехформ": {
+  "name": "ЦентрТехФорм",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "astana:цех мясных полуфабрикатов": {
   "name": "Цех мясных полуфабрикатов",
@@ -42699,7 +42811,7 @@
   "instagram": "etagi__astana",
   "website": "https://astana.etagi.com/",
   "source": "https://2gis.kz/astana/firm/70000001054048241",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42888,6 +43000,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T13:44:59+00:00"
+ },
+ "atyrau:alatrade_2020": {
+  "name": "ALATRADE_2020",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "website": "https://alatrade.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001098048805",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "204db3f02ac145c2.jpg",
+  "avatar_source": "website"
  },
  "atyrau:alem crypto mining": {
   "name": "Alem Crypto Mining",
@@ -44584,7 +44711,7 @@
   "instagram": "aitaskz",
   "website": "https://aitas.kz/",
   "source": "https://2gis.kz/astana/firm/70000001082445383",
-  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48485,7 +48612,7 @@
   "instagram": "alemagro",
   "website": "https://alemagro.com/",
   "source": "https://2gis.kz/kostanaj/firm/70000001035747517",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -49533,6 +49660,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "kostanay:запорощенко а а": {
+  "name": "Запорощенко А.А",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "kostanay:игликов кайрат койшэевич": {
   "name": "Игликов Кайрат Койшэевич",
@@ -50858,7 +50992,7 @@
   "checked_at": "2026-10-28T10:43:31+00:00",
   "website": "https://erg.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001109725536",
-  "avatar_checked_at": "2026-11-04T10:44:36+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -54047,6 +54181,13 @@
    "website"
   ]
  },
+ "semey:toptrans kz": {
+  "name": "TopTrans-Kz",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
+ },
  "semey:torty mika": {
   "name": "TORTY MIKA",
   "city": "semey",
@@ -54345,6 +54486,13 @@
   "checked_at": "2026-10-30T22:43:08+00:00",
   "instagram": "qazynacinema",
   "source": "https://2gis.kz/semej/firm/70000001051336672"
+ },
+ "semey:каликанулы": {
+  "name": "Каликанулы",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "semey:калкан а в": {
   "name": "КАЛКАН А.В.",
@@ -55341,6 +55489,19 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "shymkent:erg kazakhstan": {
+  "name": "ERG Kazakhstan",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "website": "https://www.erg.kz/",
+  "source": "https://www.erg.kz/en/about",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:eurasia support services": {
   "name": "Eurasia Support Services",
   "city": "shymkent",
@@ -56062,6 +56223,15 @@
   "v": 3,
   "checked_at": "2026-11-11T04:44:03+00:00"
  },
+ "shymkent:sota kazakhstan": {
+  "name": "SOTA KAZAKHSTAN",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00",
+  "instagram": "sota.center",
+  "source": "https://2gis.kz/shymkent/firm/70000001077783099"
+ },
  "shymkent:staff up consulting group": {
   "name": "Staff-UP Consulting Group",
   "city": "shymkent",
@@ -56405,6 +56575,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T06:44:10+00:00"
+ },
+ "shymkent:альфа кт": {
+  "name": "Альфа-КТ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "shymkent:амина трейд": {
   "name": "Амина Трейд",
@@ -57428,6 +57605,13 @@
   ],
   "avatar": "a032c1560929d458.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:харитонов а а": {
+  "name": "Харитонов А.А.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T11:45:06+00:00"
  },
  "shymkent:центр детской неврологии и эпилепсии neurolife": {
   "name": "Центр детской неврологии и эпилепсии Neurolife",
@@ -62424,7 +62608,7 @@
   "instagram": "etagi.oskemen",
   "website": "https://ust-kamenogorsk.etagi.com/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001063160188",
-  "avatar_checked_at": "2026-11-04T11:44:40+00:00",
+  "avatar_checked_at": "2026-11-11T11:45:07+00:00",
   "avatar_tried": [
    "website"
   ]

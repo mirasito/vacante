@@ -2564,7 +2564,7 @@
   "instagram": "aktobe_kvartira_ansar",
   "website": "http://ansar.pro/",
   "source": "https://2gis.kz/aktobe/firm/70000001046171871",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2637,7 +2637,7 @@
   "instagram": "alidi.kazakhstan",
   "website": "http://alidi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001030531973",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2860,6 +2860,13 @@
   "v": 3,
   "checked_at": "2026-11-08T18:43:51+00:00"
  },
+ "aktobe:жасmoon": {
+  "name": "ЖАСmoon",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
+ },
  "aktobe:записочная ирина владимировна": {
   "name": "Записочная Ирина Владимировна",
   "city": "aktobe",
@@ -2908,6 +2915,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T00:44:08+00:00"
+ },
+ "aktobe:ищанов т н": {
+  "name": "Ищанов Т.Н.",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
  },
  "aktobe:казснаблогистиксервис": {
   "name": "КазСнабЛогистикСервис",
@@ -4442,6 +4456,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:anb group": {
+  "name": "ANB Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
+ },
  "almaty:anerss": {
   "name": "ANERSS",
   "city": "almaty",
@@ -4566,6 +4587,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
+ },
+ "almaty:aqua life": {
+  "name": "AQUA LIFE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "aqualife.kaz",
+  "website": "http://aqua-life.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103047776",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d144a458a720bb86.jpg",
+  "avatar_source": "website"
  },
  "almaty:aqua star group": {
   "name": "AQUA STAR GROUP",
@@ -9117,7 +9154,7 @@
   "instagram": "health_food.kz",
   "website": "http://healthfood.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037323186",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9197,6 +9234,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T04:43:00+00:00"
+ },
+ "almaty:himzone": {
+  "name": "HIMZONE",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "himzone_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001028045988"
  },
  "almaty:hj platform heros journey": {
   "name": "HJ Platform (Hero’s Journey)",
@@ -10780,7 +10826,7 @@
   "instagram": "kulikov_kz",
   "website": "https://kulikov.com/",
   "source": "https://2gis.kz/almaty/firm/70000001111152934",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18954,7 +19000,7 @@
   "instagram": "galereya.novostroek",
   "website": "https://galereya.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001094712170",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21879,7 +21925,7 @@
   "telegram": "elite_lombard_group",
   "website": "http://elitelombard.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001089022125",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -23322,7 +23368,7 @@
   "telegram": "ordoholding",
   "website": "http://ordo.education/l/popovicha45",
   "source": "https://2gis.kz/almaty/firm/70000001053871312",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -24615,6 +24661,13 @@
   ],
   "avatar": "57be832f5b4499d0.jpg",
   "avatar_source": "website"
+ },
+ "almaty:синтегра": {
+  "name": "Синтегра",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
  },
  "almaty:сихимбаева р к": {
   "name": "Сихимбаева Р.К.",
@@ -26977,10 +27030,12 @@
   "instagram": "12_mesyacev_kz",
   "website": "http://12.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018060889",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "2a6101898f6d2f33.jpg",
+  "avatar_source": "website"
  },
  "astana:2 зерделі мектебі": {
   "name": "№2 Зерделі мектебі",
@@ -29295,7 +29350,7 @@
   "instagram": "eat.and.fit",
   "website": "https://eatandfit.kz/",
   "source": "https://2gis.kz/astana/firm/70000001028666491",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30255,6 +30310,22 @@
   "instagram": "hotspotdonershop_",
   "source": "https://2gis.kz/astana/firm/70000001117475613"
  },
+ "astana:hotel aner": {
+  "name": "ТОО Hotel ANER",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "hotelaner",
+  "website": "http://www.hotelaner.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019779819",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7288929232a92351.jpg",
+  "avatar_source": "website"
+ },
  "astana:hr 2 viр": {
   "name": "HR 2 VIР",
   "city": "astana",
@@ -30811,6 +30882,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
+ },
+ "astana:k13": {
+  "name": "K13",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
  },
  "astana:kaber kids": {
   "name": "Kaber Kids",
@@ -32577,7 +32655,7 @@
   "checked_at": "2026-10-28T07:59:01+00:00",
   "website": "https://pako.kz/",
   "source": "https://2gis.kz/astana/firm/70000001042876961",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -36018,6 +36096,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "astana:байлық": {
+  "name": "Байлық",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
+ },
  "astana:байтлесов а с": {
   "name": "Байтлесов А.С.",
   "city": "astana",
@@ -39331,6 +39416,20 @@
   "v": 3,
   "checked_at": "2026-11-08T10:45:30+00:00"
  },
+ "astana:огонек": {
+  "name": "Огонек",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "ogonek_astana",
+  "website": "http://www.ogn.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001058733667",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:ода строй 1": {
   "name": "Ода Строй-1",
   "city": "astana",
@@ -39767,6 +39866,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
+ },
+ "astana:продюсерский центр kz film": {
+  "name": "ПРОДЮСЕРСКИЙ ЦЕНТР KZ FILM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "kzfilmproduction",
+  "website": "http://kzfilm.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001088830992",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:проект пинт": {
   "name": "ПРОЕКТ ПИНТ",
@@ -40533,6 +40646,15 @@
   "instagram": "solod.astana",
   "source": "https://2gis.kz/astana/firm/70000001039844078"
  },
+ "astana:соль": {
+  "name": "СОЛЬ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "solbar.astana",
+  "source": "https://2gis.kz/astana/firm/70000001118931149"
+ },
  "astana:сотовые аксессуары": {
   "name": "Сотовые аксессуары",
   "city": "astana",
@@ -41087,6 +41209,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
+ },
+ "astana:топмайнинг": {
+  "name": "ТопМайнинг",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "website": "http://topmining.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001029807305",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "83ab2dbaea57865b.jpg",
+  "avatar_source": "website"
  },
  "astana:торговая компания": {
   "name": "Торговая компания",
@@ -48446,6 +48583,19 @@
   "v": 3,
   "checked_at": "2026-11-06T20:45:35+00:00"
  },
+ "kostanay:orda trade astana": {
+  "name": "ORDA TRADE ASTANA",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "website": "http://ordatradeastana.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001110321478",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:osp agro": {
   "name": "OSP-AGRO",
   "city": "kostanay",
@@ -52906,7 +53056,7 @@
   "instagram": "chevrolet.petropavlovsk",
   "website": "https://top-motors-petropavl.chevrolet-auto.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001093683524",
-  "avatar_checked_at": "2026-11-04T08:45:40+00:00",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -53409,6 +53559,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T13:43:51+00:00"
+ },
+ "semey:mykhat": {
+  "name": "MYKHAT",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "mykhat.kz",
+  "website": "http://www.mykhat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029818433",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "semey:nango": {
   "name": "NANGO",
@@ -56620,6 +56784,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "shymkent:риа патрик": {
+  "name": "Риа Патрик",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
+ },
  "shymkent:ромашова": {
   "name": "Ромашова",
   "city": "shymkent",
@@ -56724,6 +56895,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
+ },
+ "shymkent:сп abn mb": {
+  "name": "СП ABN-MB",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "website": "https://www.abnmbgroup.com/",
+  "source": "https://2gis.kz/shymkent/firm/70000001105603210",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:таврида электрик астана": {
   "name": "Таврида Электрик Астана",
@@ -57556,6 +57740,13 @@
   ],
   "avatar": "a135ece1fa48d81b.jpg",
   "avatar_source": "website"
+ },
+ "taraz:la tomatina": {
+  "name": "La Tomatina",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
  },
  "taraz:lamoda kz мода с доставкой тоо": {
   "name": "Lamoda.kz (Мода с доставкой, ТОО)",
@@ -58700,6 +58891,13 @@
   "checked_at": "2026-11-06T00:44:08+00:00",
   "instagram": "unigroup.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001080246410"
+ },
+ "uralsk:vega": {
+  "name": "VEGA",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00"
  },
  "uralsk:wefind": {
   "name": "WeFind",
@@ -60150,6 +60348,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "ust-kamenogorsk:mykhat": {
+  "name": "MYKHAT",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T08:47:07+00:00",
+  "instagram": "mykhat.kz",
+  "website": "http://www.mykhat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001029818433",
+  "avatar_checked_at": "2026-11-11T08:47:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:nayman qurylys": {
   "name": "NAYMAN Qurylys",

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-11T05:58:00+00:00",
+ "updated_at": "2026-11-11T06:57:50+00:00",
  "reviews": {
   "zhumys_astana_kz-16844": {
    "verdict": "approve",
@@ -303,22 +303,6 @@
    "at": "2026-10-28T11:00:13+00:00",
    "fields": {
     "title": "Грузчик на склад Kaspi"
-   }
-  },
-  "hh-138592028": {
-   "verdict": "approve",
-   "at": "2026-10-28T11:00:13+00:00",
-   "fields": {
-    "title": "Продавец-кассир",
-    "employer": "ГК «Sabyrzhan Group»",
-    "salary_min": 220000,
-    "salary_max": null,
-    "salary_period": "month",
-    "address": "ул. Алишера Навои, 328",
-    "perks": [
-     "Обучение",
-     "Без опыта"
-    ]
    }
   },
   "astana_job_vakansii-129874": {
@@ -1559,15 +1543,6 @@
    "at": "2026-10-28T23:57:05+00:00",
    "fields": {}
   },
-  "rabota_astanakz-31002": {
-   "verdict": "approve",
-   "at": "2026-10-28T23:57:05+00:00",
-   "fields": {
-    "title": "Мастер по замене масла",
-    "employer": "LI-KON",
-    "schedule": "6/1, 09:00–20:00"
-   }
-  },
   "astana_job_vakansii-129836": {
    "verdict": "approve",
    "at": "2026-10-28T23:57:05+00:00",
@@ -1940,14 +1915,6 @@
    "verdict": "reject",
    "at": "2026-10-29T03:56:26+00:00",
    "reason": "Менеджер по продажам без понятных обязанностей, офисная должность"
-  },
-  "hh-138538754": {
-   "verdict": "approve",
-   "at": "2026-10-29T03:56:26+00:00",
-   "fields": {
-    "title": "Грузчик-комплектовщик на склад",
-    "perks": []
-   }
   },
   "hh-138946322": {
    "verdict": "approve",
@@ -52425,11 +52392,6 @@
     "employer": "Боулинг-центр «Актобе Молл»"
    }
   },
-  "aktobevakansii-44466": {
-   "verdict": "reject",
-   "at": "2026-11-11T05:58:00+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
   "rabota_v_aktobe-3018": {
    "verdict": "reject",
    "at": "2026-11-11T05:58:00+00:00",
@@ -52553,11 +52515,6 @@
    "at": "2026-11-11T05:58:00+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   },
-  "rabota_semey_official-6866": {
-   "verdict": "reject",
-   "at": "2026-11-11T05:58:00+00:00",
-   "reason": "Мало сведений: в тексте нет описания"
-  },
   "hh-139344497": {
    "verdict": "approve",
    "at": "2026-11-11T05:58:00+00:00",
@@ -52585,6 +52542,453 @@
    "at": "2026-11-11T05:58:00+00:00",
    "fields": {
     "schedule": "5/2"
+   }
+  },
+  "astana_job_vakansii-130474": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор, грузчик-отборщик",
+    "employer": "ТОО «Айгерим»",
+    "salary_min": 350000,
+    "salary_max": 900000,
+    "salary_period": "month",
+    "schedule": "6/1, 08:00–18:00",
+    "perks": [
+     "Официально",
+     "Без опыта"
+    ]
+   }
+  },
+  "rabotaaktau-142539": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Неясен город: объявление из канала Актау, а стоит Астана"
+  },
+  "rabota_astanakz-31440": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Кассир-продавец",
+    "employer": "Мини-маркеты «M Mart»",
+    "schedule": "2/2, 08:00–23:00"
+   }
+  },
+  "hh-139346645": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1"
+   }
+  },
+  "hh-139348276": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Офисная должность"
+  },
+  "hh-137433233": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор с личным автомобилем",
+    "schedule": "6/1"
+   }
+  },
+  "hh-139346642": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "SportEX",
+    "schedule": "5/2, 4/2 или 3/2, по 12 часов"
+   }
+  },
+  "hh-139346524": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "«Нұрмұхамед»",
+    "schedule": "6/1, по 10 часов"
+   }
+  },
+  "hh-139346096": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2, по 12 часов"
+   }
+  },
+  "hh-139346085": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Администратор-кассир в компьютерный клуб",
+    "employer": "ASF Partnership",
+    "schedule": "2/2, по 12 часов"
+   }
+  },
+  "hh-138500336": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "6/1 или 5/2"
+   }
+  },
+  "hh-138688820": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "hh-138500075": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "Swiss Energy",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139346135": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "Almawine",
+    "schedule": "2/2, по 11 часов"
+   }
+  },
+  "almaty_rabota_work-31904": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "2/2, сутки"
+   }
+  },
+  "hh-139345944": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Мастер по установке фильтров для воды, сантехник",
+    "employer": null,
+    "schedule": "6/1 или 5/2",
+    "perks": []
+   }
+  },
+  "hh-132972325": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "almaty_rabota01-26069": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "«Рядом»"
+   }
+  },
+  "hh-138499286": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов",
+    "perks": []
+   }
+  },
+  "hh-139348393": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "2/2"
+   }
+  },
+  "hh-139348344": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "Holi Food",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139347804": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Сантехник-электрик",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139347771": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Продавец-кассир в магазин Jack & Jones",
+    "employer": "Jack & Jones",
+    "address": "ТРЦ «Mega Alma-Ata», ул. Розыбакиева, 247А",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139347225": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Макетчик-монтажник",
+    "employer": "Reklamix",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-138863135": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "сутки через двое",
+    "address": "ул. Гагарина, 250"
+   }
+  },
+  "hh-139347820": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Домработница",
+    "employer": "«Алтын-Куз-2003»",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-138500720": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-138863640": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Family Store (IVI)",
+    "schedule": "6/1, по 9 часов",
+    "address": "мкр Нурсат, 121А"
+   }
+  },
+  "hh-138689287": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139346003": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Работа в Экибастузе, а не в Шымкенте"
+  },
+  "hh-138863125": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Nomad Exclusive Eyewear",
+    "address": "ТРЦ «Shymkent Plaza», пл. Аль-Фараби, 3/1",
+    "schedule": "2/1, по 12 часов"
+   }
+  },
+  "hh-138285127": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Электрогазосварщик",
+    "employer": "Eurasian Machinery",
+    "address": "Саранское шоссе, 8с2",
+    "schedule": "2/2, по 8 часов"
+   }
+  },
+  "hh-139348166": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Менеджер по продажам мебели",
+    "schedule": "6/1, по 8 часов"
+   }
+  },
+  "hh-139347850": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "hh-139347351": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин Columbia",
+    "employer": "SportEX",
+    "address": "ЦУМ, пр. Бухар Жырау, 53/8",
+    "schedule": "5/2, 4/2 или 3/2, по 11 часов"
+   }
+  },
+  "hh-139346359": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "4/2 или 2/2, по 11–12 часов"
+   }
+  },
+  "hh-139346174": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Менеджер по продажам и сервису",
+    "employer": "almaPLUS",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139346170": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "Arbuz Group",
+    "schedule": "2/2, по 11 часов"
+   }
+  },
+  "hh-138485294": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Пиццерист",
+    "employer": "Фастфуд «Palermo»",
+    "address": "ул. Карла Маркса, 9, Майкудук",
+    "schedule": "2/2"
+   }
+  },
+  "hh-139045072": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": "Arcada",
+    "schedule": "6/1 или 5/2"
+   }
+  },
+  "hh-138500457": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Продавец-консультант цифровой техники",
+    "employer": "Белый Ветер",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-138863684": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2, по 11 часов"
+   }
+  },
+  "hh-134774560": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Продавец",
+    "address": "ТЦ «Infinity», пр. Каныша Сатпаева, 43А",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "hh-139348014": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Кассир-пересчётчик",
+    "schedule": null
+   }
+  },
+  "hh-138862763": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Электрик",
+    "address": "ТРК «Актау», 16-й мкр, 4",
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "rabotaaktau-142537": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Руководящая должность (начальник участка)"
+  },
+  "rabotaaktau-142534": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Повар",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "6/1, 09:00–23:00",
+    "address": "Кафе в часе езды от города",
+    "perks": [
+     "Питание",
+     "Жильё"
+    ]
+   }
+  },
+  "rabotaaktau-142536": {
+   "verdict": "reject",
+   "at": "2026-11-11T06:57:50+00:00",
+   "reason": "Нет зарплаты и заведения, дискриминационные требования"
+  },
+  "hh-139347242": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1"
+   }
+  },
+  "hh-138862507": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139347666": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "6/1",
+    "address": "ул. Максима Горького, 82"
+   }
+  },
+  "hh-138638132": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов",
+    "address": "пр. Сатпаева, 72"
+   }
+  },
+  "rabota_semey_official-6880": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Кассир-продавец",
+    "salary_min": 6000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "08:30–19:30",
+    "address": "Павильон на остановке, район ЦУМа"
+   }
+  },
+  "rabota_semey_official-6879": {
+   "verdict": "approve",
+   "at": "2026-11-11T06:57:50+00:00",
+   "fields": {
+    "title": "Помощник продавца",
+    "schedule": "2/2, 09:00–18:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
    }
   }
  }

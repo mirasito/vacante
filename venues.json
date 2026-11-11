@@ -403,6 +403,13 @@
   "instagram": "jamesburger.kz",
   "source": "https://2gis.kz/aktau/firm/70000001028700502"
  },
+ "aktau:jq it group": {
+  "name": "JQ IT GROUP",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
+ },
  "aktau:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "aktau",
@@ -5531,6 +5538,13 @@
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
  },
+ "almaty:avantage one": {
+  "name": "Avantage One",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
+ },
  "almaty:aveco group almaty": {
   "name": "AVECO GROUP ALMATY",
   "city": "almaty",
@@ -6143,6 +6157,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:bian": {
+  "name": "BIAN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00",
+  "instagram": "bian_gelatesserie",
+  "source": "https://2gis.kz/almaty/firm/70000001116297615"
  },
  "almaty:biancos beauty": {
   "name": "Bianco's beauty",
@@ -17170,6 +17193,13 @@
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
  },
+ "almaty:ys global holding": {
+  "name": "YS GLOBAL HOLDING",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
+ },
  "almaty:ys kazakhstan": {
   "name": "YS-KAZAKHSTAN",
   "city": "almaty",
@@ -17458,6 +17488,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
+ },
+ "almaty:абсагатова р": {
+  "name": "Абсагатова Р",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "almaty:абуталип аружан": {
   "name": "Абуталип Аружан",
@@ -19023,6 +19060,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T23:44:03+00:00"
+ },
+ "almaty:байедилов а к": {
+  "name": "Байедилов А. К.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "almaty:баймаканова": {
   "name": "Баймаканова",
@@ -23445,6 +23489,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
+ },
+ "almaty:мир телевизоров": {
+  "name": "Мир телевизоров",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "almaty:мир чай": {
   "name": "МИР. ЧАЙ",
@@ -35005,6 +35056,13 @@
   "instagram": "simple_ashana",
   "source": "https://2gis.kz/astana/firm/70000001076582201"
  },
+ "astana:simple point симпл поинт": {
+  "name": "SIMPLE POINT (СИМПЛ ПОИНТ)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
+ },
  "astana:sinteks синтекс": {
   "name": "Sinteks (Синтекс)",
   "city": "astana",
@@ -36722,6 +36780,15 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "astana:аймурзаева а м niti storee": {
+  "name": "Аймурзаева А.М. (Niti.storee)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00",
+  "instagram": "niti.storee",
+  "source": "https://2gis.kz/astana/firm/70000001104397326"
+ },
  "astana:айса": {
   "name": "ТОО АЙСА",
   "city": "astana",
@@ -37658,6 +37725,20 @@
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
  },
+ "astana:бравый": {
+  "name": "Бравый",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00",
+  "instagram": "bravyi_astana",
+  "website": "http://bravyi-astana.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001039927942",
+  "avatar_checked_at": "2026-11-11T22:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:брювэн": {
   "name": "Брювэн",
   "city": "astana",
@@ -37807,6 +37888,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:ваш домофон": {
+  "name": "Ваш Домофон",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "astana:вечное небо": {
   "name": "Вечное Небо",
@@ -41245,6 +41333,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "astana:премиум ковры": {
+  "name": "Премиум ковры",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "astana:прессбук": {
   "name": "ПрессБук",
@@ -50382,6 +50477,13 @@
   "v": 3,
   "checked_at": "2026-11-06T11:44:26+00:00"
  },
+ "kostanay:rg brands kazakhstan": {
+  "name": "RG Brands Kazakhstan",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
+ },
  "kostanay:rzv trans": {
   "name": "RZV TRANS",
   "city": "kostanay",
@@ -51828,6 +51930,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T21:43:43+00:00"
+ },
+ "kostanay:хелперстафф": {
+  "name": "ХелперСтафф",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "kostanay:центр диагностики и ремонта техэнерго": {
   "name": "Центр диагностики и ремонта Техэнерго",
@@ -53734,6 +53843,13 @@
   ],
   "avatar": "7465f71d353e87e1.jpg",
   "avatar_source": "website"
+ },
+ "pavlodar:федорова е л": {
+  "name": "Федорова Е.Л.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "pavlodar:филатов": {
   "name": "Филатов",
@@ -56245,6 +56361,15 @@
   "instagram": "tagam_semey",
   "source": "https://2gis.kz/semej/firm/70000001116440545"
  },
+ "semey:техноавиа казахстан": {
+  "name": "Техноавиа-Казахстан",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00",
+  "instagram": "technoaviakz",
+  "source": "https://2gis.kz/semej/firm/70000001118330562"
+ },
  "semey:ткачева а с": {
   "name": "Ткачева А.С.",
   "city": "semey",
@@ -57066,6 +57191,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T23:44:29+00:00"
+ },
+ "shymkent:hyundai shymkent city": {
+  "name": "Hyundai Shymkent City",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "shymkent:imperial show": {
   "name": "Imperial Show",
@@ -57998,6 +58130,21 @@
    "website"
   ],
   "avatar": "bb836f628adc40bd.jpg",
+  "avatar_source": "website"
+ },
+ "shymkent:адамет групп": {
+  "name": "Адамет групп",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00",
+  "website": "https://adamet.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001105852737",
+  "avatar_checked_at": "2026-11-11T22:43:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "69c5217e1960f786.jpg",
   "avatar_source": "website"
  },
  "shymkent:айдарстройгрупп": {
@@ -58940,6 +59087,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:строй экспресс рк": {
+  "name": "Строй Экспресс РК",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "shymkent:таврида электрик астана": {
   "name": "Таврида Электрик Астана",
@@ -60354,6 +60508,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
+ },
+ "turkestan:sk transstroy": {
+  "name": "SK TRANSSTROY",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T22:43:45+00:00"
  },
  "turkestan:smlab": {
   "name": "SMLAB",

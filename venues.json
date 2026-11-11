@@ -570,6 +570,15 @@
   "instagram": "poplate_utepia",
   "source": "https://2gis.kz/aktau/firm/70000001094470066"
  },
+ "aktau:pr wellness club": {
+  "name": "PR Wellness club",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "instagram": "pr_wellness_club",
+  "source": "https://www.instagram.com/pr_wellness_club/"
+ },
  "aktau:qara bala": {
   "name": "Qara Bala",
   "city": "aktau",
@@ -5164,6 +5173,19 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:aspan asia": {
+  "name": "Aspan Asia",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "website": "http://aspan-asia.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001051413738",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:aspan production": {
   "name": "ASPAN PRODUCTION",
   "city": "almaty",
@@ -8030,6 +8052,13 @@
   "v": 3,
   "checked_at": "2026-11-07T17:43:35+00:00"
  },
+ "almaty:erudite worldwide kz": {
+  "name": "Erudite worldwide KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
+ },
  "almaty:esmar group": {
   "name": "ESMAR GROUP",
   "city": "almaty",
@@ -10183,6 +10212,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T18:44:51+00:00"
+ },
+ "almaty:ivy league education": {
+  "name": "Ivy League Education",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "instagram": "ivyleague_edu",
+  "telegram": "ivyleague_edu",
+  "website": "http://ivyleague.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001025238085",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "995a878c79afc2af.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:jambull": {
   "name": "JamBull",
@@ -12573,6 +12620,13 @@
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
  },
+ "almaty:neo style": {
+  "name": "Neo Style",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
+ },
  "almaty:neu ltd re max kazakhstan": {
   "name": "NEU LTD (RE/MAX Kazakhstan)",
   "city": "almaty",
@@ -13758,6 +13812,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:q17 construction group": {
+  "name": "Q17 Construction Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
  },
  "almaty:qadam corp": {
   "name": "Qadam corp.",
@@ -23096,6 +23157,20 @@
   "avatar": "17f7185ea954f0ba.jpg",
   "avatar_source": "website"
  },
+ "almaty:металлпро1": {
+  "name": "МеталлПро1",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "instagram": "metallpro1m",
+  "website": "https://metallpro1.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001088822718",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:метешова ю в": {
   "name": "Метешова Ю.В.",
   "city": "almaty",
@@ -23131,6 +23206,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
+ },
+ "almaty:микро логистика": {
+  "name": "Микро Логистика",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
  },
  "almaty:микрофинансовая организация business finance": {
   "name": "Микрофинансовая организация Business Finance",
@@ -24305,6 +24387,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
+ },
+ "almaty:полатжан": {
+  "name": "Полатжан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
  },
  "almaty:полати": {
   "name": "ПОЛАТИ",
@@ -25565,6 +25654,19 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:стоматологический центр имплант профи": {
+  "name": "СТОМАТОЛОГИЧЕСКИЙ ЦЕНТР ИМПЛАНТ ПРОФИ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "website": "https://implant-proffi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001084544037",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:стофарм": {
   "name": "Стофарм",
   "city": "almaty",
@@ -26283,6 +26385,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:торговый центр строй сити kz": {
+  "name": "Торговый центр Строй Сити KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
  },
  "almaty:торгстрой": {
   "name": "ТОРГСТРОЙ",
@@ -27188,6 +27297,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "almaty:шамсутдинов": {
+  "name": "Шамсутдинов",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "instagram": "tefani_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001090070293"
  },
  "almaty:шарыкта": {
   "name": "Шарыкта",
@@ -37115,6 +37233,22 @@
   "v": 3,
   "checked_at": "2026-11-10T15:43:43+00:00"
  },
+ "astana:бвб альянс": {
+  "name": "БВБ-Альянс",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "instagram": "bvbaliance_kz",
+  "website": "http://bvbalyans.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018084803",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5f56ed9d79801cd7.jpg",
+  "avatar_source": "website"
+ },
  "astana:беварт инжиниринг": {
   "name": "Беварт Инжиниринг",
   "city": "astana",
@@ -41909,6 +42043,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "astana:султанов е ю": {
+  "name": "СУЛТАНОВ Е.Ю",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
+ },
  "astana:сумарокова": {
   "name": "Сумарокова",
   "city": "astana",
@@ -42877,6 +43018,13 @@
   "checked_at": "2026-11-01T12:43:29+00:00",
   "instagram": "ozyurt.kz",
   "source": "https://2gis.kz/astana/firm/70000001110739984"
+ },
+ "astana:хамзина анеля": {
+  "name": "Хамзина Анеля",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
  },
  "astana:хасенов т с": {
   "name": "Хасенов Т.С.",
@@ -50994,6 +51142,13 @@
    "website"
   ]
  },
+ "kostanay:пашкевич р п": {
+  "name": "Пашкевич Р. П.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
+ },
  "kostanay:первый бит": {
   "name": "Первый БИТ",
   "city": "kostanay",
@@ -53081,6 +53236,13 @@
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
  },
+ "pavlodar:сарсембаева м в": {
+  "name": "Сарсембаева М.В.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
+ },
  "pavlodar:стеклоцентр": {
   "name": "Стеклоцентр",
   "city": "pavlodar",
@@ -53682,6 +53844,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T21:44:54+00:00"
+ },
+ "petropavlovsk:rw constructor": {
+  "name": "RW constructor",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00"
  },
  "petropavlovsk:sardana": {
   "name": "SARDANA",
@@ -55599,6 +55768,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
+ },
+ "semey:пивнофф": {
+  "name": "Пивнофф",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "instagram": "pivnoff_semey",
+  "website": "https://taplink.cc/pivnoff_semey",
+  "source": "https://2gis.kz/semej/firm/70000001051459639",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "semey:поликлиника андромеда": {
   "name": "Поликлиника АндроМеда",
@@ -57593,6 +57776,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
+ },
+ "shymkent:бал текстиль": {
+  "name": "Бал Текстиль",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T18:43:31+00:00",
+  "website": "https://baltekstil.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026009172",
+  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:бейсенбаева": {
   "name": "Бейсенбаева",

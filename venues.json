@@ -3222,6 +3222,13 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "aktobe:тк евромоторс": {
+  "name": "ТК ЕвроМоторс",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "aktobe:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
   "city": "aktobe",
@@ -3237,6 +3244,13 @@
   ],
   "avatar": "6eeab21583096967.jpg",
   "avatar_source": "website"
+ },
+ "aktobe:торговый дом rokos": {
+  "name": "ТОРГОВЫЙ ДОМ ROKOS",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "aktobe:умаг": {
   "name": "Умаг",
@@ -4258,6 +4272,19 @@
   "website": "https://cashmaster.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000801590",
   "avatar_checked_at": "2026-11-05T11:45:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:almaty insulation": {
+  "name": "Almaty Insulation",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00",
+  "website": "https://www.tn.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001079114853",
+  "avatar_checked_at": "2026-11-11T09:44:49+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -5589,6 +5616,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T16:44:42+00:00"
+ },
+ "almaty:barlau global distribution": {
+  "name": "«Barlau Global Distribution»",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "almaty:baspa service": {
   "name": "Baspa service",
@@ -6986,6 +7020,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T23:44:04+00:00"
+ },
+ "almaty:decor kz": {
+  "name": "DECOR KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00",
+  "instagram": "decor_kz_company",
+  "website": "http://decorkz.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001036425367",
+  "avatar_checked_at": "2026-11-11T09:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5addb9919fc58a50.jpg",
+  "avatar_source": "website"
  },
  "almaty:defacto retail store kz": {
   "name": "Defacto Retail Store Kz",
@@ -14486,6 +14536,13 @@
   "v": 3,
   "checked_at": "2026-11-04T06:44:59+00:00"
  },
+ "almaty:shintree": {
+  "name": "SHINTREE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "almaty:shoqan": {
   "name": "SHOQAN",
   "city": "almaty",
@@ -17919,6 +17976,13 @@
   "v": 3,
   "checked_at": "2026-11-05T14:43:38+00:00"
  },
+ "almaty:ануарбекова д": {
+  "name": "Ануарбекова Д.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "almaty:апекс авто": {
   "name": "Апекс Авто",
   "city": "almaty",
@@ -20859,6 +20923,13 @@
   "checked_at": "2026-11-06T16:45:18+00:00",
   "instagram": "kazmaktrade",
   "source": "https://2gis.kz/almaty/firm/70000001055893664"
+ },
+ "almaty:казмедгруп": {
+  "name": "КазМедГруп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "almaty:казмонтаж строй лтд": {
   "name": "КазМонтаж Строй ЛТД",
@@ -29437,6 +29508,13 @@
   "avatar": "8b2342393d98c5c6.jpg",
   "avatar_source": "website"
  },
+ "astana:emerald": {
+  "name": "Emerald",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "astana:emporio dent": {
   "name": "EMPORIO DENT",
   "city": "astana",
@@ -35068,6 +35146,13 @@
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
  },
+ "astana:yto express international kazakhstan": {
+  "name": "YTO EXPRESS INTERNATIONAL (KAZAKHSTAN)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "astana:za углом": {
   "name": "Za Углом",
   "city": "astana",
@@ -35154,6 +35239,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:а маркет": {
+  "name": "А Маркет",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "astana:абаева": {
   "name": "Абаева",
@@ -35844,6 +35936,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "astana:анвар": {
+  "name": "Анвар",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "astana:анкор центральная азия": {
   "name": "АНКОР Центральная Азия",
@@ -40588,6 +40687,13 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "astana:смагулова": {
+  "name": "СМАГУЛОВА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "astana:смартпикассо": {
   "name": "Смартпикассо",
   "city": "astana",
@@ -44695,6 +44801,15 @@
   "avatar": "e6665906346d6dec.jpg",
   "avatar_source": "telegram"
  },
+ "karaganda:flowers moose": {
+  "name": "Flowers Moose",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00",
+  "instagram": "mooseflowers.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001039743920"
+ },
  "karaganda:flsmidth флсмидс": {
   "name": "FLSmidth (ФЛСмидс)",
   "city": "karaganda",
@@ -45179,6 +45294,19 @@
   "v": 3,
   "checked_at": "2026-11-06T05:43:31+00:00"
  },
+ "karaganda:ome group": {
+  "name": "OME Group",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00",
+  "website": "https://omegroup.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032806478",
+  "avatar_checked_at": "2026-11-11T09:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:oxflo": {
   "name": "OXFLO",
   "city": "karaganda",
@@ -45489,6 +45617,20 @@
   "instagram": "svn_stroy",
   "source": "https://2gis.kz/karaganda/firm/70000001060703095"
  },
+ "karaganda:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00",
+  "instagram": "technodomkz",
+  "website": "https://www.technodom.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302863344",
+  "avatar_checked_at": "2026-11-11T09:44:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:the_limon": {
   "name": "The_Limon",
   "city": "karaganda",
@@ -45534,6 +45676,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
+ },
+ "karaganda:valtec asia": {
+  "name": "Valtec Asia",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "karaganda:vintar": {
   "name": "VINTAR",
@@ -55685,6 +55834,13 @@
   "instagram": "safia_kz",
   "source": "https://www.instagram.com/safia_kz/"
  },
+ "shymkent:samgau legal юридическая компания": {
+  "name": "SAMGAU LEGAL. Юридическая компания.",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "shymkent:sandyq world": {
   "name": "Sandyq World",
   "city": "shymkent",
@@ -57245,6 +57401,13 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "taldykorgan:green house limited": {
+  "name": "Green House Limited",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
+ },
  "taldykorgan:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "taldykorgan",
@@ -58208,6 +58371,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "turkestan:don": {
+  "name": "DON",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T09:44:47+00:00"
  },
  "turkestan:inclair": {
   "name": "Inclair",

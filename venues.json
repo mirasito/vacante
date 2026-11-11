@@ -1135,7 +1135,7 @@
   "instagram": "dinamarket_aktau",
   "website": "http://dinamarket.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001028893673",
-  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -1164,6 +1164,15 @@
   "checked_at": "2026-11-02T18:43:31+00:00",
   "instagram": "zhanaotel",
   "source": "https://2gis.kz/aktau/firm/70000001028544286"
+ },
+ "aktau:жансая": {
+  "name": "Жансая",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "zhansaya.shop",
+  "source": "https://2gis.kz/aktau/firm/70000001066647381"
  },
  "aktau:женской одежды": {
   "name": "ЖЕНСКОЙ ОДЕЖДЫ",
@@ -1376,6 +1385,13 @@
   ],
   "avatar": "658f32ff2826a982.jpg",
   "avatar_source": "website"
+ },
+ "aktau:максим": {
+  "name": "Максим",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "aktau:манали": {
   "name": "МАНАЛИ",
@@ -10549,6 +10565,13 @@
   "avatar": "42effbdb067e78d9.jpg",
   "avatar_source": "website"
  },
+ "almaty:kubayev capital": {
+  "name": "Kubayev Capital",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
+ },
  "almaty:kuchenland": {
   "name": "KuchenLand",
   "city": "almaty",
@@ -10714,7 +10737,7 @@
   "instagram": "lansauto.kz",
   "website": "https://lans-auto.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001109527920",
-  "avatar_checked_at": "2026-11-03T23:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12159,6 +12182,24 @@
   "instagram": "nomad_exclusive_eyewear",
   "source": "https://2gis.kz/almaty/firm/70000001116200414"
  },
+ "almaty:nomad insurance": {
+  "name": "NOMAD insurance",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "nomad.insurance",
+  "telegram": "nomadinsurancekz",
+  "website": "https://www.nomad.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000798628",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "ee92bd56dd792f2e.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:nomado partners": {
   "name": "Nomado Partners",
   "city": "almaty",
@@ -13426,6 +13467,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T23:43:38+00:00"
+ },
+ "almaty:renion hills hotel назаралиева д с": {
+  "name": "Renion Hills Hotel (Назаралиева Д.С.)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "renionhills_almaty",
+  "website": "https://renion.kz/renion-hills/",
+  "source": "https://2gis.kz/almaty/firm/9429940000790029",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:renkoplast": {
   "name": "RenkoPlast",
@@ -16255,6 +16310,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
+ },
+ "almaty:zilart": {
+  "name": "ZILART",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "almaty:zontex": {
   "name": "Zontex",
@@ -19792,6 +19854,13 @@
   "avatar": "918a50d0b2b391a9.jpg",
   "avatar_source": "website"
  },
+ "almaty:зелинский и розен парфюмерия": {
+  "name": "Зелинский и Розен парфюмерия",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
+ },
  "almaty:зенченко": {
   "name": "Зенченко",
   "city": "almaty",
@@ -21118,6 +21187,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T18:43:51+00:00"
+ },
+ "almaty:красное яблоко 1": {
+  "name": "Красное Яблоко 1",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "krasnoeyabloko.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001046608101"
  },
  "almaty:красоты": {
   "name": "Красоты",
@@ -24861,6 +24939,20 @@
   "instagram": "romeo.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001081063192"
  },
+ "almaty:тм меломан home video": {
+  "name": "ТМ Меломан Home Video",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "melomankaz",
+  "website": "https://meloman.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000819745",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:тмс": {
   "name": "ТМС",
   "city": "almaty",
@@ -25995,6 +26087,13 @@
   "avatar": "5dd0b7fbf72dbf69.jpg",
   "avatar_source": "website"
  },
+ "almaty:школа английского языка saya kidirali": {
+  "name": "Школа английского языка Saya Kidirali",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
+ },
  "almaty:шляппо": {
   "name": "Шляппо",
   "city": "almaty",
@@ -26290,6 +26389,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:юридическая контора de jure & агентство недвижимости avenue": {
+  "name": "Юридическая контора De jure & Агентство недвижимости Avenue",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "almaty:юрий": {
   "name": "Юрий",
@@ -27713,6 +27819,15 @@
    "website"
   ]
  },
+ "astana:botaqan": {
+  "name": "Botaqan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "botaqan.wear",
+  "source": "https://2gis.kz/astana/firm/70000001029410272"
+ },
  "astana:bounty shop глазкова м б": {
   "name": "BOUNTY SHOP (ГЛАЗКОВА М.Б)",
   "city": "astana",
@@ -28096,6 +28211,13 @@
   "checked_at": "2026-10-31T09:42:43+00:00",
   "instagram": "city_drive_ast",
   "source": "https://2gis.kz/astana/firm/70000001109568804"
+ },
+ "astana:city motors": {
+  "name": "CITY MOTORS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "astana:clv market": {
   "name": "Clv Market",
@@ -29775,6 +29897,13 @@
   "avatar": "3a0bcab910a96961.jpg",
   "avatar_source": "website"
  },
+ "astana:inditex kazakhstan": {
+  "name": "INDITEX Kazakhstan",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
+ },
  "astana:industriall recycling": {
   "name": "INDUSTRIALL RECYCLING",
   "city": "astana",
@@ -29937,7 +30066,7 @@
   "instagram": "da_istina_official",
   "website": "https://istina.kz/",
   "source": "https://2gis.kz/astana/firm/70000001083260205",
-  "avatar_checked_at": "2026-11-03T23:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31647,6 +31776,13 @@
   "instagram": "openhype_kaz",
   "source": "https://2gis.kz/astana/firm/70000001104513223"
  },
+ "astana:operation mastery": {
+  "name": "Operation Mastery",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
+ },
  "astana:opt building group": {
   "name": "Opt Building Group",
   "city": "astana",
@@ -32338,7 +32474,7 @@
   "instagram": "qazna.consulting_astana",
   "website": "https://qaznaconsulting.kz/",
   "source": "https://2gis.kz/astana/firm/70000001100654467",
-  "avatar_checked_at": "2026-11-03T23:44:10+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32485,6 +32621,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T13:43:36+00:00"
+ },
+ "astana:rest estate fullers pub & wine": {
+  "name": "Rest Estate (Fuller’s Pub & Wine)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00",
+  "instagram": "fullers.botanical",
+  "website": "http://fullersbg.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001100167188",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:resto invest group": {
   "name": "Resto Invest Group",
@@ -34996,6 +35146,13 @@
   "checked_at": "2026-11-05T21:44:29+00:00",
   "instagram": "market_arystan",
   "source": "https://2gis.kz/astana/firm/70000001055434902"
+ },
+ "astana:ас трейд": {
+  "name": "АС -Трейд",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "astana:аскарова": {
   "name": "Аскарова",
@@ -43189,7 +43346,7 @@
   "checked_at": "2026-11-04T00:43:58+00:00",
   "website": "https://arbuz.kz/",
   "source": "https://mergr.com/company/arbuz-group",
-  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -43901,7 +44058,7 @@
   "instagram": "newton.kazakhstan",
   "website": "https://newtonacademy.kz/",
   "source": "https://2gis.kz/astana/firm/70000001084302568",
-  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47600,6 +47757,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T05:43:28+00:00"
+ },
+ "kostanay:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "kostanay:бірлік ынтымақ 2008": {
   "name": "БІРЛІК - ЫНТЫМАҚ - 2008",
@@ -56556,6 +56720,13 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "turkestan:khanshaiym otel": {
+  "name": "Khanshaiym Otel",
+  "city": "turkestan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
+ },
  "turkestan:lider group 2005": {
   "name": "LIDER GROUP 2005",
   "city": "turkestan",
@@ -58312,7 +58483,7 @@
   "instagram": "ftelecomkz",
   "website": "https://business.ftel.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001054928316",
-  "avatar_checked_at": "2026-11-04T00:44:00+00:00",
+  "avatar_checked_at": "2026-11-11T00:45:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59885,6 +60056,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T01:44:11+00:00"
+ },
+ "ust-kamenogorsk:спец авто": {
+  "name": "Спец-Авто",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T00:45:29+00:00"
  },
  "ust-kamenogorsk:спортмастер казахстан": {
   "name": "Спортмастер Казахстан",

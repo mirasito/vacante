@@ -3805,7 +3805,7 @@
   "instagram": "aitaskz",
   "website": "http://aitas.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001084082556",
-  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4018,6 +4018,19 @@
    "website"
   ]
  },
+ "almaty:alcor": {
+  "name": "Alcor",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "website": "http://www.alcor.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001075190531",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:alem": {
   "name": "Alem",
   "city": "almaty",
@@ -4086,6 +4099,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:algoritm international logistics": {
+  "name": "ALGORITM INTERNATIONAL LOGISTICS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "instagram": "algorithm_logistics",
+  "website": "http://a-logistics.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110147452",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "180af660cfa65973.jpg",
+  "avatar_source": "website"
  },
  "almaty:ali bi": {
   "name": "Ali Bi",
@@ -10565,7 +10594,7 @@
   "instagram": "kcell.kz",
   "website": "https://www.kcell.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021329927",
-  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11887,6 +11916,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "almaty:metrix company": {
+  "name": "metriX company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "almaty:metrix pos": {
   "name": "METRIX POS",
@@ -13451,6 +13487,20 @@
   "v": 3,
   "checked_at": "2026-11-07T21:44:30+00:00"
  },
+ "almaty:pulsar systems": {
+  "name": "Pulsar Systems",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "instagram": "pulsar.kz",
+  "website": "http://pulsar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001036926809",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:q laboratory": {
   "name": "Q-Laboratory",
   "city": "almaty",
@@ -13732,7 +13782,7 @@
   "instagram": "reddragon.kz",
   "website": "https://reddragon.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001034593282",
-  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16381,6 +16431,13 @@
    "website"
   ]
  },
+ "almaty:west recycling company": {
+  "name": "West Recycling Company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
+ },
  "almaty:wheels world": {
   "name": "Wheels World",
   "city": "almaty",
@@ -16474,6 +16531,13 @@
   ],
   "avatar": "c7dc1207697187fa.jpg",
   "avatar_source": "website"
+ },
+ "almaty:yafitness": {
+  "name": "YAFITNESS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "almaty:yakuza sushi": {
   "name": "Yakuza Sushi",
@@ -16873,7 +16937,7 @@
   "instagram": "avatariya.almaty",
   "website": "https://avatariya.com/",
   "source": "https://2gis.kz/almaty/firm/70000001067380312",
-  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -23815,6 +23879,13 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "almaty:представительство ооо диарси глобал российская федерация в казахстане": {
+  "name": "Представительство ООО Диарси Глобал (Российская Федерация) в Казахстане.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
+ },
  "almaty:премиальный автосалон": {
   "name": "Премиальный автосалон",
   "city": "almaty",
@@ -24149,6 +24220,13 @@
   ],
   "avatar": "d8364f9715378789.jpg",
   "avatar_source": "website"
+ },
+ "almaty:республиканский центр подготовки и повышения квалификации": {
+  "name": "Республиканский центр подготовки и повышения квалификации",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "almaty:республиканское государственное предприятие на праве хозяйственного ведения казахский научный центр дерматологии и инфекционных заболеваний": {
   "name": "Республиканское государственное предприятие на праве хозяйственного ведения Казахский научный центр дерматологии и инфекционных заболеваний",
@@ -27362,6 +27440,13 @@
   "v": 3,
   "checked_at": "2026-11-09T07:44:13+00:00"
  },
+ "astana:aisara group банкетные залы астаны": {
+  "name": "ИП AISARA GROUP (банкетные залы Астаны)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
+ },
  "astana:ait shoes ип коробкин с т": {
   "name": "AIT Shoes (ИП Коробкин С.Т.)",
   "city": "astana",
@@ -29932,6 +30017,13 @@
   "checked_at": "2026-11-10T08:43:53+00:00",
   "instagram": "gayaz_brand",
   "source": "https://2gis.kz/astana/firm/70000001045454440"
+ },
+ "astana:gc education": {
+  "name": "GC Education",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "astana:get education": {
   "name": "GET Education",
@@ -33153,7 +33245,7 @@
   "instagram": "proreklama.kz",
   "website": "https://proreklama.kz/",
   "source": "https://2gis.kz/astana/firm/70000001038029504",
-  "avatar_checked_at": "2026-11-04T09:46:48+00:00",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34441,6 +34533,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
+ },
+ "astana:techoil astana": {
+  "name": "TECHOIL ASTANA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "astana:teg corporation": {
   "name": "TEG CORPORATION",
@@ -38724,6 +38823,15 @@
   "instagram": "viaggio__shop",
   "source": "https://2gis.kz/astana/firm/70000001105121072"
  },
+ "astana:магазин косметики и одежды freshion": {
+  "name": "Магазин косметики и одежды (FRESHION)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "instagram": "freshion_kz",
+  "source": "https://2gis.kz/astana/firm/70000001066373339"
+ },
  "astana:магазин мужской одежды shapan": {
   "name": "Магазин мужской одежды SHAPAN",
   "city": "astana",
@@ -39190,6 +39298,13 @@
   "checked_at": "2026-11-01T15:43:07+00:00",
   "instagram": "mona.restaurants",
   "source": "https://2gis.kz/astana/firm/70000001077238649"
+ },
+ "astana:монолог": {
+  "name": "Монолог",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "astana:москва": {
   "name": "Москва",
@@ -43502,6 +43617,13 @@
   "checked_at": "2026-11-08T16:46:43+00:00",
   "instagram": "tuysqan.atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001104180805"
+ },
+ "atyrau:umbrella systems company": {
+  "name": "Umbrella Systems Company",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "atyrau:union space tm тоо brand hub group": {
   "name": "Union Space`TM (ТОО Brand Hub Group)",
@@ -48545,6 +48667,19 @@
   "v": 3,
   "checked_at": "2026-11-06T20:45:35+00:00"
  },
+ "kostanay:erg kazakhstan": {
+  "name": "ERG Kazakhstan",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "website": "https://erg.kz/",
+  "source": "https://erg.kz/en/about",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:es group": {
   "name": "Es group",
   "city": "kostanay",
@@ -49982,6 +50117,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:сулейменова а ж": {
+  "name": "Сулейменова А.Ж.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
  },
  "kostanay:сынар групп": {
   "name": "Сынар Групп",
@@ -51897,6 +52039,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "pavlodar:тави павлодар": {
+  "name": "Тави Павлодар",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "website": "https://www.tavigroup.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001069140733",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a64d0b87b6c5ff21.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:ткачева екатерина юрьевна": {
   "name": "ТКАЧЁВА ЕКАТЕРИНА ЮРЬЕВНА",
@@ -59279,6 +59436,20 @@
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
  },
+ "uralsk:вираж": {
+  "name": "Вираж",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "instagram": "virazh_kz",
+  "website": "http://www.virazh.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025051700",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:глазцентр": {
   "name": "ГлазЦентр",
   "city": "uralsk",
@@ -60604,6 +60775,13 @@
   "v": 3,
   "checked_at": "2026-11-11T04:44:03+00:00"
  },
+ "ust-kamenogorsk:rg brands kazakhstan": {
+  "name": "RG Brands Kazakhstan",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00"
+ },
  "ust-kamenogorsk:sabotage": {
   "name": "Sabotage",
   "city": "ust-kamenogorsk",
@@ -61701,6 +61879,24 @@
    "website"
   ],
   "avatar": "6898d0b7258f0e78.jpg",
+  "avatar_source": "telegram"
+ },
+ "ust-kamenogorsk:пицца блюз у ка": {
+  "name": "Пицца Блюз У-Ка",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-11T10:44:24+00:00",
+  "instagram": "pizza_blues_ukg",
+  "telegram": "pizza_blues",
+  "website": "http://pizza-blues.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721317217",
+  "avatar_checked_at": "2026-11-11T10:44:25+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "36957fba847ab09b.jpg",
   "avatar_source": "telegram"
  },
  "ust-kamenogorsk:полежаев андрей валерьевич": {

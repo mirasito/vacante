@@ -1006,6 +1006,13 @@
   "v": 3,
   "checked_at": "2026-11-06T14:45:44+00:00"
  },
+ "aktau:астана": {
+  "name": "Астана",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
+ },
  "aktau:ақтау": {
   "name": "Ақтау",
   "city": "aktau",
@@ -1770,6 +1777,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T21:44:03+00:00"
+ },
+ "aktau:тд": {
+  "name": "ТД",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
  },
  "aktau:тойота": {
   "name": "Тойота",
@@ -4787,6 +4801,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T08:47:07+00:00"
+ },
+ "almaty:ancor": {
+  "name": "ANCOR",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "ancor_kazakhstan",
+  "telegram": "ancorholding",
+  "website": "https://ancor.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792690",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "311fce67fe12b6c3.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:anerss": {
   "name": "ANERSS",
@@ -8691,6 +8723,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T00:43:57+00:00"
+ },
+ "almaty:fastex": {
+  "name": "FastEx",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
  },
  "almaty:fbd logistics": {
   "name": "FBD Logistics",
@@ -13505,6 +13544,38 @@
   "instagram": "oiqaragai",
   "source": "https://www.instagram.com/oiqaragai/"
  },
+ "almaty:okadzaki": {
+  "name": "Okadzaki",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "okadzaki.almaty",
+  "website": "http://okadzaki.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001088050245",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "439c92cada594edd.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:okbolashak": {
+  "name": "OkBolashak",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "ok_bolashak",
+  "website": "http://ok-bolashak.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104185872",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "52cc2efb0abf8d11.jpg",
+  "avatar_source": "website"
+ },
  "almaty:olympia fitness": {
   "name": "Olympia Fitness",
   "city": "almaty",
@@ -13534,6 +13605,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
+ },
+ "almaty:onset company": {
+  "name": "ONSET COMPANY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "onset_company",
+  "website": "https://onset.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001105178420",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d4c6147bc43e6db7.jpg",
+  "avatar_source": "website"
  },
  "almaty:opatra london опатра лондон": {
   "name": "OPATRA LONDON (ОПАТРА ЛОНДОН)",
@@ -16627,6 +16714,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:tiho kz": {
+  "name": "Tiho.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "website": "https://tiho.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001066969004",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d9d7d46fefdedb08.jpg",
+  "avatar_source": "website"
  },
  "almaty:tirepro шинные центры": {
   "name": "TirePro, шинные центры",
@@ -22550,6 +22652,13 @@
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
  },
+ "almaty:ким с в": {
+  "name": "КИМ С В",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
+ },
  "almaty:кинопарк спутник": {
   "name": "Кинопарк Спутник",
   "city": "almaty",
@@ -22761,6 +22870,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:коллекторское агентство seven": {
+  "name": "Коллекторское агентство Seven",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
  },
  "almaty:коллекторское агентство кредит коллекшн груп": {
   "name": "Коллекторское агентство Кредит Коллекшн Груп",
@@ -27817,6 +27933,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "almaty:фирма мета": {
+  "name": "Фирма МЕТА",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
  },
  "almaty:фирма экомед тоо клиника репродукции человека экомед тм": {
   "name": "Фирма Экомед, ТОО (Клиника репродукции человека Экомед, ТМ)",
@@ -34240,6 +34363,13 @@
   "v": 3,
   "checked_at": "2026-11-10T20:46:07+00:00"
  },
+ "astana:my love": {
+  "name": "My love",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
+ },
  "astana:mycar astana": {
   "name": "Mycar Astana",
   "city": "astana",
@@ -35699,6 +35829,15 @@
   "avatar": "60e98ea0504f5725.jpg",
   "avatar_source": "website"
  },
+ "astana:rush inn": {
+  "name": "Rush Inn",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "rushinn.hotel",
+  "source": "https://2gis.kz/astana/firm/70000001021720619"
+ },
  "astana:rusoft company": {
   "name": "RuSoft company",
   "city": "astana",
@@ -37101,6 +37240,15 @@
   "checked_at": "2026-11-11T13:44:34+00:00",
   "instagram": "virere_school_astana",
   "source": "https://2gis.kz/astana/firm/70000001100629786"
+ },
+ "astana:visa tourism": {
+  "name": "VISA TOURISM",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "visa.tourism.kz",
+  "source": "https://2gis.kz/astana/firm/70000001116808084"
  },
  "astana:vita property": {
   "name": "Vita property",
@@ -47410,6 +47558,24 @@
   "instagram": "aleev_fasad",
   "source": "https://2gis.kz/karaganda/firm/70000001087663039"
  },
+ "karaganda:ancor": {
+  "name": "ANCOR",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "ancor_kazakhstan",
+  "telegram": "ancorholding",
+  "website": "https://ancor.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792690",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "97f92dbe059593b5.jpg",
+  "avatar_source": "telegram"
+ },
  "karaganda:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
   "city": "karaganda",
@@ -49959,6 +50125,21 @@
    "website"
   ],
   "avatar": "456c8b7a399586f1.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:публичная компания freedom finance global plc": {
+  "name": "Публичная Компания «Freedom Finance Global PLC»",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "website": "https://fbroker.kz/",
+  "source": "https://fbroker.kz/en/news/11746-freedom-finance-global-plc-pervye-rezultaty-deyatelnosti",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "da99d766948c9d8a.jpg",
   "avatar_source": "website"
  },
  "karaganda:развития предпринимательства даму": {
@@ -57480,6 +57661,13 @@
   "v": 3,
   "checked_at": "2026-10-29T10:46:00+00:00"
  },
+ "semey:битимиров": {
+  "name": "Битимиров",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
+ },
  "semey:блин & coffee": {
   "name": "БЛИН & COFFEE",
   "city": "semey",
@@ -61133,6 +61321,13 @@
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
  },
+ "taldykorgan:rossko": {
+  "name": "ROSSKO",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00"
+ },
  "taldykorgan:teplostandart": {
   "name": "TeploStandart",
   "city": "taldykorgan",
@@ -64503,6 +64698,22 @@
   "v": 3,
   "checked_at": "2026-11-11T04:44:03+00:00"
  },
+ "ust-kamenogorsk:reklamka": {
+  "name": "Reklamka",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "reklamka_uk",
+  "website": "https://reklamka.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721351479",
+  "avatar_checked_at": "2026-11-12T10:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7a210904759cf3b9.jpg",
+  "avatar_source": "website"
+ },
  "ust-kamenogorsk:rg brands kazakhstan": {
   "name": "RG Brands Kazakhstan",
   "city": "ust-kamenogorsk",
@@ -66123,6 +66334,15 @@
   "checked_at": "2026-11-02T04:43:55+00:00",
   "instagram": "zamena_masla_uka",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001105798500"
+ },
+ "ust-kamenogorsk:хлебозавод каравай": {
+  "name": "Хлебозавод Каравай",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T10:43:50+00:00",
+  "instagram": "karavay.uk",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721316231"
  },
  "ust-kamenogorsk:хуавей текнолоджиз казахстан": {
   "name": "Хуавей Текнолоджиз Казахстан",

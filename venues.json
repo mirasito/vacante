@@ -89,6 +89,22 @@
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
  },
+ "aktau:arabica": {
+  "name": "ARABICA",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "arabicacoffee.kz",
+  "telegram": "arabicacoffee",
+  "website": "https://www.arabicacoffee.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001062335875",
+  "avatar_checked_at": "2026-11-12T15:44:25+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "aktau:asau sarman": {
   "name": "Asau-Sarman",
   "city": "aktau",
@@ -720,6 +736,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T09:45:02+00:00"
+ },
+ "aktau:tamyr": {
+  "name": "TAMYR",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "tamyr_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001103465738"
  },
  "aktau:tanagascom": {
   "name": "TanaGasCom",
@@ -3890,6 +3915,13 @@
   "v": 3,
   "checked_at": "2026-11-06T13:44:26+00:00"
  },
+ "almaty:absolem servises лемур adv": {
+  "name": "ТОО Absolem Servises (Лемур Adv)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "almaty:abt & e trans forwarding company": {
   "name": "ABT & E-trans Forwarding company",
   "city": "almaty",
@@ -4932,6 +4964,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:anyvia cargo": {
+  "name": "AnyVia Cargo",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "anyvialogistics",
+  "telegram": "anyvialogistics",
+  "website": "https://anyvia.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001118766073",
+  "avatar_checked_at": "2026-11-12T15:44:25+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "35da1874c0968e79.jpg",
+  "avatar_source": "website"
  },
  "almaty:ap ltd": {
   "name": "AP LTD",
@@ -12664,6 +12714,13 @@
   ],
   "avatar": "7d40fa962023d725.jpg",
   "avatar_source": "website"
+ },
+ "almaty:meb_universal": {
+  "name": "Meb_Universal",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
  },
  "almaty:mebitex group": {
   "name": "Mebitex Group",
@@ -23215,6 +23272,13 @@
   "v": 3,
   "checked_at": "2026-11-05T00:43:57+00:00"
  },
+ "almaty:консультант бариста": {
+  "name": "консультант — бариста",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "almaty:концепт медикал": {
   "name": "КОНЦЕПТ МЕДИКАЛ",
   "city": "almaty",
@@ -23507,6 +23571,13 @@
   "checked_at": "2026-11-07T00:44:13+00:00",
   "instagram": "labsmile.kz",
   "source": "https://2gis.kz/almaty/firm/70000001043588387"
+ },
+ "almaty:лаванилла 5 сум": {
+  "name": "Лаванилла 5 Сум",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
  },
  "almaty:лад коммерц": {
   "name": "Лад Коммерц",
@@ -26322,6 +26393,13 @@
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
  },
+ "almaty:сабиров талгат абдумуханович": {
+  "name": "Сабиров Талгат Абдумуханович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "almaty:садыков": {
   "name": "Садыков",
   "city": "almaty",
@@ -26377,6 +26455,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:самарканд": {
+  "name": "Самарканд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "samarkand_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001093465854"
  },
  "almaty:самгау": {
   "name": "Самгау",
@@ -28085,6 +28172,13 @@
    "website"
   ]
  },
+ "almaty:федоров к ю": {
+  "name": "ФЕДОРОВ К Ю",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "almaty:ферронордик казахстан": {
   "name": "Ферронордик Казахстан",
   "city": "almaty",
@@ -28836,6 +28930,15 @@
   "v": 3,
   "checked_at": "2026-11-03T14:44:03+00:00"
  },
+ "almaty:шиликбаев а с dina rose": {
+  "name": "ШИЛИКБАЕВ А. С.(Dina Rose)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "dinarose.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001037031191"
+ },
  "almaty:шипудим": {
   "name": "Шипудим",
   "city": "almaty",
@@ -29503,6 +29606,13 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "astana:ag consulting": {
+  "name": "AG consulting",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "astana:ag property management": {
   "name": "AG Property Management",
   "city": "astana",
@@ -29562,6 +29672,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T23:44:03+00:00"
+ },
+ "astana:aipater": {
+  "name": "AIPATER",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "aipater.kz",
+  "website": "http://aipater.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001115254976",
+  "avatar_checked_at": "2026-11-12T15:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2c675ac48c1500ac.jpg",
+  "avatar_source": "website"
  },
  "astana:aiq inc": {
   "name": "AIQ Inc.",
@@ -38868,6 +38994,13 @@
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
  },
+ "astana:арман кала": {
+  "name": "Арман Кала",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "astana:арт студия": {
   "name": "Арт-студия",
   "city": "astana",
@@ -41667,6 +41800,13 @@
    "website"
   ]
  },
+ "astana:кәусар": {
+  "name": "Кәусар",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "astana:лаврут": {
   "name": "Лаврут",
   "city": "astana",
@@ -43326,6 +43466,13 @@
   "instagram": "puhovic_official",
   "source": "https://2gis.kz/astana/firm/70000001045497736"
  },
+ "astana:пятизвездочный отель": {
+  "name": "Пятизвёздочный отель",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "astana:работа вахтой в россии": {
   "name": "Работа Вахтой в России",
   "city": "astana",
@@ -44547,6 +44694,22 @@
    "website"
   ],
   "avatar": "24fd2d9268e3180c.jpg",
+  "avatar_source": "website"
+ },
+ "astana:техноgrad": {
+  "name": "ТехноGRAD",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "tgrad.kz",
+  "website": "https://www.tgrad.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001031309384",
+  "avatar_checked_at": "2026-11-12T15:44:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e2781a758f2feef6.jpg",
   "avatar_source": "website"
  },
  "astana:техноproff": {
@@ -48387,6 +48550,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
+ },
+ "karaganda:dorosh": {
+  "name": "Dorosh",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
  },
  "karaganda:ecolos engineering": {
   "name": "Ecolos Engineering",
@@ -55444,6 +55614,15 @@
   "avatar": "a83173fe0131ef9d.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:жаннур": {
+  "name": "ЖАННУР",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00",
+  "instagram": "ribeye.pavlodar",
+  "source": "https://2gis.kz/pavlodar/firm/70000001098460726"
+ },
  "pavlodar:инновационный евразийский университет инеу": {
   "name": "Инновационный Евразийский Университет (ИнЕУ)",
   "city": "pavlodar",
@@ -58762,6 +58941,13 @@
   "v": 3,
   "checked_at": "2026-11-12T13:43:44+00:00"
  },
+ "semey:ссп": {
+  "name": "ССП",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T15:44:25+00:00"
+ },
  "semey:стропальщик": {
   "name": "Стропальщик",
   "city": "semey",
@@ -58988,10 +59174,12 @@
   "instagram": "2gis.shymkentt",
   "telegram": "twogis",
   "source": "https://2gis.kz/shymkent/firm/70000001026543965",
-  "avatar_checked_at": "2026-11-05T14:44:46+00:00",
+  "avatar_checked_at": "2026-11-12T15:44:25+00:00",
   "avatar_tried": [
    "telegram"
-  ]
+  ],
+  "avatar": "c0dc4dd7ba6c6060.jpg",
+  "avatar_source": "telegram"
  },
  "shymkent:akmaral sayahat": {
   "name": "AKMARAL SAYAHAT",

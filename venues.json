@@ -680,6 +680,15 @@
   "instagram": "smak_time_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001117151349"
  },
+ "aktau:sultan mebel": {
+  "name": "Sultan Mebel",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "instagram": "sultanmebel.kz",
+  "source": "https://2gis.kz/aktau/firm/70000001063796490"
+ },
  "aktau:sw auto aktau": {
   "name": "Sw Auto Aktau",
   "city": "aktau",
@@ -4000,6 +4009,15 @@
   "v": 3,
   "checked_at": "2026-11-07T15:44:26+00:00"
  },
+ "almaty:aka snab group": {
+  "name": "AKA Snab Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "instagram": "aka_snab_group",
+  "source": "https://2gis.kz/almaty/firm/70000001059384679"
+ },
  "almaty:akdess": {
   "name": "AKDESS",
   "city": "almaty",
@@ -5187,6 +5205,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
+ },
+ "almaty:asker security": {
+  "name": "Asker Security",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "almaty:askona life kazakhstan аскона лайф казахстан": {
   "name": "Askona Life Kazakhstan (Аскона Лайф Казахстан)",
@@ -15063,6 +15088,20 @@
   "instagram": "shaidrinks",
   "source": "https://www.instagram.com/shaidrinks/"
  },
+ "almaty:shakespeare pub": {
+  "name": "Shakespeare pub",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "instagram": "shakespearepub.almaty",
+  "website": "http://theshakespearepub.taplink.ws/",
+  "source": "https://2gis.kz/almaty/firm/9429940000861345",
+  "avatar_checked_at": "2026-11-12T00:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:shanyraq study": {
   "name": "SHANYRAQ STUDY",
   "city": "almaty",
@@ -17840,6 +17879,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
+ },
+ "almaty:азимут трейд": {
+  "name": "Азимут- Трейд",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "almaty:азия газ ng": {
   "name": "Азия Газ NG",
@@ -21835,6 +21881,13 @@
    "website"
   ]
  },
+ "almaty:карстарглобал": {
+  "name": "КАРСТАРГЛОБАЛ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
+ },
  "almaty:карусевич": {
   "name": "Карусевич",
   "city": "almaty",
@@ -23605,6 +23658,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T18:44:20+00:00"
+ },
+ "almaty:многокартин": {
+  "name": "МногоКартин",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "instagram": "mnogokartinkz",
+  "website": "http://mnogokartin.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061698567",
+  "avatar_checked_at": "2026-11-12T00:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:мо фитнес more fitness": {
   "name": "Мо Фитнес (More Fitness)",
@@ -26691,6 +26758,19 @@
    "website"
   ]
  },
+ "almaty:транспортно экспедиционная компания караван": {
+  "name": "ТРАНСПОРТНО-ЭКСПЕДИЦИОННАЯ КОМПАНИЯ КАРАВАН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "website": "https://tekkaravan.tilda.ws/",
+  "source": "https://2gis.kz/almaty/firm/70000001076646447",
+  "avatar_checked_at": "2026-11-12T00:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:трасттраффик": {
   "name": "ТрастТраффик",
   "city": "almaty",
@@ -29162,6 +29242,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T04:43:55+00:00"
+ },
+ "astana:ba oilfield services": {
+  "name": "BA OILFIELD SERVICES",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "astana:bacademy": {
   "name": "BAcademy",
@@ -33657,6 +33744,13 @@
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
  },
+ "astana:oktrening": {
+  "name": "Oktrening",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
+ },
  "astana:omir collection": {
   "name": "OMIR COLLECTION",
   "city": "astana",
@@ -34724,6 +34818,13 @@
    "website"
   ]
  },
+ "astana:rrs promotion": {
+  "name": "RRS Promotion",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
+ },
  "astana:rs food": {
   "name": "RS FOOD",
   "city": "astana",
@@ -34986,6 +35087,13 @@
   ],
   "avatar": "4879293c6775deb2.jpg",
   "avatar_source": "website"
+ },
+ "astana:service solutions ltd": {
+  "name": "Service Solutions Ltd.",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "astana:servicekz 555": {
   "name": "ServiceKZ-555",
@@ -35346,6 +35454,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T19:44:34+00:00"
+ },
+ "astana:sportex ип савина": {
+  "name": "SportEX (ИП Савина)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "astana:sq": {
   "name": "SQ",
@@ -38087,6 +38202,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:гартекс а": {
+  "name": "Гартекс-А",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "astana:гастроном": {
   "name": "Гастроном",
@@ -41489,6 +41611,19 @@
   "v": 3,
   "checked_at": "2026-11-08T01:44:24+00:00"
  },
+ "astana:производственное объединение трубное решение казахстан": {
+  "name": "Производственное объединение Трубное решение Казахстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "website": "http://truboproduct.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001062020035",
+  "avatar_checked_at": "2026-11-12T00:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:производственный цех": {
   "name": "Производственный цех",
   "city": "astana",
@@ -41827,6 +41962,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:салтанат а": {
+  "name": "Салтанат А",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "astana:самал": {
   "name": "САМАЛ",
@@ -54449,6 +54591,13 @@
    "website"
   ]
  },
+ "petropavlovsk:simax trade": {
+  "name": "Simax Trade",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
+ },
  "petropavlovsk:sulpak": {
   "name": "Sulpak",
   "city": "petropavlovsk",
@@ -54724,6 +54873,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T00:44:13+00:00"
+ },
+ "petropavlovsk:зимыч": {
+  "name": "Зимыч",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "petropavlovsk:имплантстом": {
   "name": "ИмплантСтом",
@@ -58760,6 +58916,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T19:45:07+00:00"
+ },
+ "shymkent:казстрой consulting": {
+  "name": "КазСтрой consulting",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00"
  },
  "shymkent:калиев": {
   "name": "КАЛИЕВ",
@@ -62877,6 +63040,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T02:44:24+00:00"
+ },
+ "ust-kamenogorsk:ostara group": {
+  "name": "Ostara Group",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T00:43:53+00:00",
+  "website": "http://ostara-group.com/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721397107",
+  "avatar_checked_at": "2026-11-12T00:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c5359b080c7acd18.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:ote damdi": {
   "name": "OTE DAMDI",

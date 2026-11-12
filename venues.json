@@ -1619,6 +1619,21 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktau:международный аэропорт актау ао": {
+  "name": "Международный аэропорт Актау, АО",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "website": "https://www.aktau-airport.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001028874418",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "470e98330c07d45b.jpg",
+  "avatar_source": "website"
+ },
  "aktau:мир косметики": {
   "name": "Мир Косметики",
   "city": "aktau",
@@ -5167,6 +5182,19 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "almaty:aqua deluxe": {
+  "name": "Aqua Deluxe",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "website": "https://aquadeluxe.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098701876",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:aqua engineering": {
   "name": "Aqua Engineering",
   "city": "almaty",
@@ -6457,6 +6485,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "almaty:begemot almaty": {
+  "name": "Begemot Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "gippo.kz",
+  "website": "http://gippo.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001116550",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "15e646d7c36c446b.jpg",
+  "avatar_source": "website"
  },
  "almaty:beis spa hotel resort": {
   "name": "Beis Spa Hotel Resort",
@@ -9110,6 +9154,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T08:44:59+00:00"
+ },
+ "almaty:first motor group": {
+  "name": "First Motor Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "almaty:fit service": {
   "name": "FIT SERVICE",
@@ -14665,6 +14716,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
+ },
+ "almaty:pro triniti": {
+  "name": "Pro Triniti",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "website": "http://triniti.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001038525567",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:procoffee": {
   "name": "ProCoffee",
@@ -21184,6 +21248,20 @@
   "avatar": "8a6461a9d4d1e53a.jpg",
   "avatar_source": "website"
  },
+ "almaty:гномон": {
+  "name": "ГНОМОН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "briolettekz",
+  "website": "http://briolette.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001048096486",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:голд казына": {
   "name": "Голд Казына",
   "city": "almaty",
@@ -21411,6 +21489,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T20:44:15+00:00"
+ },
+ "almaty:дана balance": {
+  "name": "Дана «Balance»",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "almaty:данафлекс": {
   "name": "Данафлекс",
@@ -22121,6 +22206,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
+ },
+ "almaty:жумбак тас": {
+  "name": "Жумбак тас",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
@@ -26087,6 +26179,21 @@
   "v": 3,
   "checked_at": "2026-11-11T02:44:03+00:00"
  },
+ "almaty:пкф бс групп": {
+  "name": "ПКФ БС Групп",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "website": "https://bs5.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001036399571",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1882e6779af9d6ee.jpg",
+  "avatar_source": "website"
+ },
  "almaty:плавание pro": {
   "name": "Плавание PRO",
   "city": "almaty",
@@ -29074,6 +29181,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:центр фотолампы от желтухи алматы": {
+  "name": "Центр Фотолампы От Желтухи Алматы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "almaty:центр эндокринной гинекологии": {
   "name": "ЦЕНТР ЭНДОКРИННОЙ ГИНЕКОЛОГИИ",
@@ -34038,6 +34152,13 @@
   "checked_at": "2026-11-01T10:43:41+00:00",
   "instagram": "justsing.astana",
   "source": "https://2gis.kz/astana/firm/70000001098192277"
+ },
+ "astana:k line network": {
+  "name": "K-Line Network",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "astana:k&k gmbh": {
   "name": "K&K GmbH",
@@ -42104,6 +42225,20 @@
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
  },
+ "astana:кондитерская tika cake": {
+  "name": "Кондитерская Tika Cake",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "tika.cake",
+  "website": "http://tikacake.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001101332374",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:кондитерский цех": {
   "name": "Кондитерский цех",
   "city": "astana",
@@ -45908,6 +46043,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:филиал дышмал дишчи мальземелери ве тыбби джихазлары ималат тиджарет итхалат ихраджат лтд ширкеті в рк": {
+  "name": "ФИЛИАЛ ДЫШМАЛ ДИШЧИ МАЛЬЗЕМЕЛЕРИ ВЕ ТЫББИ ДЖИХАЗЛАРЫ ИМАЛАТ ТИДЖАРЕТ ИТХАЛАТ ИХРАДЖАТ ЛТД ШИРКЕТІ В РК",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "astana:филиал общества с ограниченной ответственностью лидер в городе астана": {
   "name": "Филиал общества с ограниченной ответственностью Лидер в городе Астана",
@@ -51363,6 +51505,15 @@
   "v": 3,
   "checked_at": "2026-11-05T00:43:57+00:00"
  },
+ "karaganda:молочный завод садовое": {
+  "name": "Молочный завод Садовое",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "molokosadovoe",
+  "source": "https://2gis.kz/karaganda/firm/70000001112344720"
+ },
  "karaganda:монтеко": {
   "name": "Монтеко",
   "city": "karaganda",
@@ -52070,6 +52221,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
+ },
+ "karaganda:эйкос": {
+  "name": "ЭЙКОС",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "aikos.kz",
+  "website": "http://aikos.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001038803067",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7e1dd29e3cee22c3.jpg",
+  "avatar_source": "website"
  },
  "karaganda:экспресс транспорт": {
   "name": "ЭКСПРЕСС ТРАНСПОРТ",
@@ -53507,6 +53674,15 @@
   ],
   "avatar": "40df94d33560dda3.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:nutrifit": {
+  "name": "NUTRIFIT",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "nutrifit_kst",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035734905"
  },
  "kostanay:oil центр": {
   "name": "Oil центр",
@@ -57272,6 +57448,13 @@
   "instagram": "coffee_people_petro",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001040237810"
  },
+ "petropavlovsk:company vip": {
+  "name": "Company Vip",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
+ },
  "petropavlovsk:continental петропавловск": {
   "name": "Continental Петропавловск",
   "city": "petropavlovsk",
@@ -57953,6 +58136,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:коллекторское агентство агентство судебного взыскания кз": {
+  "name": "Коллекторское Агентство Агентство Судебного Взыскания КЗ",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "petropavlovsk:кормилец": {
   "name": "Кормилец",
@@ -62403,6 +62593,20 @@
   "v": 3,
   "checked_at": "2026-11-09T12:45:04+00:00"
  },
+ "shymkent:мир паркета bau group тоо": {
+  "name": "Мир Паркета (BAU Group, ТОО)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00",
+  "instagram": "mirparketa_kz",
+  "website": "https://mirparketa.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001067952992",
+  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:мир реабилитации": {
   "name": "МИР РЕАБИЛИТАЦИИ",
   "city": "shymkent",
@@ -65553,6 +65757,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "uralsk:сотовых аксессуаров": {
+  "name": "СОТОВЫХ АКСЕССУАРОВ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T21:43:52+00:00"
  },
  "uralsk:спортивной одежды": {
   "name": "СПОРТИВНОЙ ОДЕЖДЫ",

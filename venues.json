@@ -531,6 +531,15 @@
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
  },
+ "aktau:msq man": {
+  "name": "MSQ Man",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00",
+  "instagram": "msq.aktau_",
+  "source": "https://2gis.kz/aktau/firm/70000001077247454"
+ },
  "aktau:nomad exclusive eyewear": {
   "name": "«Nomad Exclusive Eyewear»",
   "city": "aktau",
@@ -2034,7 +2043,7 @@
   "instagram": "aktobe_kvartira_ansar",
   "website": "https://ansar.pro/",
   "source": "https://2gis.kz/aktobe/firm/70000001056307449",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4022,6 +4031,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:admaker": {
+  "name": "ADMAKER",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
  },
  "almaty:admix sport адмикс спорт": {
   "name": "Admix Sport (Адмикс спорт)",
@@ -10533,6 +10549,13 @@
   "v": 3,
   "checked_at": "2026-11-08T05:44:03+00:00"
  },
+ "almaty:industry": {
+  "name": "INDUSTRY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "almaty:infoprof": {
   "name": "InfoProf",
   "city": "almaty",
@@ -12777,6 +12800,20 @@
    "website"
   ]
  },
+ "almaty:medical laser": {
+  "name": "Medical Laser",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00",
+  "instagram": "medicallaserkz",
+  "website": "https://medicallaser.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001063116335",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:medical store": {
   "name": "Medical Store",
   "city": "almaty",
@@ -13308,6 +13345,24 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:nag kazakhstan наг казахстан": {
+  "name": "NAG Kazakhstan (НАГ Казахстан)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00",
+  "instagram": "nagcompany.kz",
+  "telegram": "nag_kz_news",
+  "website": "https://shop.nag.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100554570",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "18a90006c957e54c.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:nakama group": {
   "name": "Nakama group",
@@ -15256,6 +15311,13 @@
   ],
   "avatar": "70f1f0b170cc8298.jpg",
   "avatar_source": "website"
+ },
+ "almaty:royal rose": {
+  "name": "Royal Rose",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
  },
  "almaty:royal tulip almaty ел таир": {
   "name": "Royal Tulip Almaty (ЕЛ-ТАИР)",
@@ -18790,6 +18852,13 @@
   "instagram": "akadembala",
   "source": "https://2gis.kz/almaty/firm/70000001116314241"
  },
+ "almaty:акваарт": {
+  "name": "Акваарт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "almaty:аквапарк гавайи aquapark hawaii": {
   "name": "Аквапарк Гавайи ( Aquapark Hawaii)",
   "city": "almaty",
@@ -19589,6 +19658,13 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "almaty:арсланалиев вюгар арсланалиевич": {
+  "name": "Арсланалиев Вюгар Арсланалиевич",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "almaty:арт инсайт": {
   "name": "АРТ Инсайт",
   "city": "almaty",
@@ -19598,7 +19674,7 @@
   "instagram": "artinsight.kz",
   "website": "https://artinsight.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001044727010",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21910,6 +21986,13 @@
   "v": 3,
   "checked_at": "2026-11-11T19:44:03+00:00"
  },
+ "almaty:зеленская": {
+  "name": "Зеленская",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "almaty:зеленый дом kz": {
   "name": "ЗЕЛЕНЫЙ ДОМ KZ",
   "city": "almaty",
@@ -22696,7 +22779,7 @@
   "instagram": "kps_snab",
   "website": "https://kps-snab.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001022720996",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24730,6 +24813,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "almaty:мсс кип автоматика": {
+  "name": "МСС-КИП Автоматика",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
  },
  "almaty:мт фарм": {
   "name": "МТ-Фарм",
@@ -33222,7 +33312,7 @@
   "checked_at": "2026-10-29T15:45:22+00:00",
   "website": "https://ingri.ru/",
   "source": "https://2gis.kz/astana/firm/70000001018120711",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34173,7 +34263,7 @@
   "instagram": "liftmaster.kz",
   "website": "https://www.lift-master.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018069625",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40895,6 +40985,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T11:44:54+00:00"
+ },
+ "astana:интер а 2020": {
+  "name": "ИНТЕР-А 2020",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
  },
  "astana:интер камень": {
   "name": "Интер Камень",
@@ -48326,6 +48423,13 @@
    "website"
   ]
  },
+ "karaganda:asiart": {
+  "name": "AsiArt",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "karaganda:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "karaganda",
@@ -51218,6 +51322,13 @@
   "v": 3,
   "checked_at": "2026-11-12T02:45:03+00:00"
  },
+ "karaganda:федоров к ю": {
+  "name": "ФЕДОРОВ К Ю",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "karaganda:феталиев ю а": {
   "name": "ФЕТАЛИЕВ Ю.А.",
   "city": "karaganda",
@@ -51350,6 +51461,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:черемискина о а": {
+  "name": "Черемискина О.А.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
  },
  "karaganda:шакабаев м р": {
   "name": "ШАКАБАЕВ М.Р.",
@@ -51719,6 +51837,13 @@
   "instagram": "life_food_kz",
   "source": "https://2gis.kz/kokshetau/firm/70000001097440674"
  },
+ "kokshetau:master coffee 03": {
+  "name": "MASTER COFFEE 03",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "kokshetau:matras kz": {
   "name": "MATRAS.KZ",
   "city": "kokshetau",
@@ -51847,6 +51972,13 @@
   ],
   "avatar": "1f8e800f9807f8b8.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:raithai kazakhstan": {
+  "name": "RaiThai Kazakhstan",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
  },
  "kokshetau:technodom operator технодом оператор": {
   "name": "TECHNODOM Operator (Технодом Оператор)",
@@ -55047,7 +55179,7 @@
   "checked_at": "2026-11-05T15:45:29+00:00",
   "website": "https://loftpark.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001100237946",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57275,7 +57407,7 @@
   "instagram": "milavitsaofficial.kz",
   "website": "https://milavitsa-shop.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001079231726",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58280,6 +58412,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T04:44:34+00:00"
+ },
+ "semey:star brands asia стар брэндс азия": {
+  "name": "Star Brands Asia (Стар Брэндс Азия)",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00",
+  "website": "https://starbrands-asia.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032821207",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "77f701ffaf3e2853.jpg",
+  "avatar_source": "website"
  },
  "semey:sultan rabat": {
   "name": "Sultan Rabat",
@@ -60435,6 +60582,13 @@
   "instagram": "royalrose_ballroom",
   "source": "https://2gis.kz/shymkent/firm/70000001030294452"
  },
+ "shymkent:rozza": {
+  "name": "Rozza",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00"
+ },
  "shymkent:rrofood": {
   "name": "RroFood",
   "city": "shymkent",
@@ -60653,7 +60807,7 @@
   "instagram": "trd_energy",
   "website": "https://www.trd-energy.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001102627787",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -61033,6 +61187,21 @@
   "v": 3,
   "checked_at": "2026-11-01T17:43:01+00:00"
  },
+ "shymkent:бьюти ретейлер золотое яблоко": {
+  "name": "Бьюти-ретейлер Золотое Яблоко",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00",
+  "website": "https://goldapple.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001063576313",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fd315b658604adf3.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "shymkent",
@@ -61380,7 +61549,7 @@
   "checked_at": "2026-10-29T15:45:22+00:00",
   "website": "https://idcollect.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055520546",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62703,7 +62872,7 @@
   "instagram": "lamoda_kz",
   "website": "https://lamoda.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001057589314",
-  "avatar_checked_at": "2026-11-05T15:45:29+00:00",
+  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63447,6 +63616,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "uralsk:323": {
+  "name": "323",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T16:43:11+00:00",
+  "instagram": "323cafe",
+  "source": "https://2gis.kz/uralsk/firm/70000001076466650"
  },
  "uralsk:5 realov": {
   "name": "5 REALOV",

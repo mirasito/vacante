@@ -7592,6 +7592,13 @@
    "website"
   ]
  },
+ "almaty:comfort plus": {
+  "name": "ИП COMFORT PLUS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "almaty:common market corporation": {
   "name": "Common Market Corporation",
   "city": "almaty",
@@ -8859,6 +8866,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "almaty:euroasia transit group": {
+  "name": "EUROASIA TRANSIT GROUP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "bytau.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001111206452"
  },
  "almaty:euroconnection": {
   "name": "EuroConnection",
@@ -12472,6 +12488,20 @@
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
  },
+ "almaty:local coffee company": {
+  "name": "LOCAL COFFEE COMPANY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "localcoffee.kz",
+  "website": "https://localcoffee.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098474542",
+  "avatar_checked_at": "2026-11-12T23:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:loft park": {
   "name": "LOFT Park",
   "city": "almaty",
@@ -12612,6 +12642,20 @@
   ],
   "avatar": "7a9a3e44ba875bb2.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:ls clinic": {
+  "name": "LS clinic",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "lsclinic.kz",
+  "website": "http://lsclinic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001024602400",
+  "avatar_checked_at": "2026-11-12T23:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:ls concept": {
   "name": "LS concept",
@@ -13222,6 +13266,13 @@
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
  },
+ "almaty:mia designer lighting": {
+  "name": "MIA Designer Lighting",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "almaty:mia kazakhstan": {
   "name": "MIA Kazakhstan",
   "city": "almaty",
@@ -13432,6 +13483,13 @@
   "checked_at": "2026-11-04T14:44:09+00:00",
   "instagram": "moteakz",
   "source": "https://2gis.kz/almaty/firm/70000001074196688"
+ },
+ "almaty:moto kz": {
+  "name": "MOTO KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
  },
  "almaty:motor land": {
   "name": "Motor Land",
@@ -16481,6 +16539,13 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "almaty:sortex techno": {
+  "name": "Sortex Techno",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "almaty:sovz kz совз кз": {
   "name": "Sovz kz (Совз кз)",
   "city": "almaty",
@@ -19091,6 +19156,13 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "almaty:айкен": {
+  "name": "Айкен",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "almaty:айленд к": {
   "name": "Айленд-К",
   "city": "almaty",
@@ -19786,6 +19858,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
+ },
+ "almaty:ан": {
+  "name": "Ан",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
  },
  "almaty:анар": {
   "name": "Анар",
@@ -20625,6 +20704,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
+ },
+ "almaty:биссбай": {
+  "name": "БИССБАЙ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
  },
  "almaty:блинова елена владимировна": {
   "name": "Блинова Елена Владимировна",
@@ -27463,6 +27549,13 @@
   "v": 3,
   "checked_at": "2026-11-12T06:44:11+00:00"
  },
+ "almaty:союз мастеров": {
+  "name": "ТОО Союз Мастеров",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "almaty:союз металл": {
   "name": "Союз Металл",
   "city": "almaty",
@@ -27886,6 +27979,20 @@
   ],
   "avatar": "938cde019632e18b.jpg",
   "avatar_source": "website"
+ },
+ "almaty:таксопарк 1": {
+  "name": "Таксопарк №1",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "arendataxi.kz",
+  "website": "http://arendataxi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001104536518",
+  "avatar_checked_at": "2026-11-12T23:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:тамаша": {
   "name": "ТАМАША",
@@ -41822,6 +41929,13 @@
    "website"
   ]
  },
+ "astana:казметкор": {
+  "name": "КазМетКор",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "astana:казметсервис групп": {
   "name": "КазМетСервис Групп",
   "city": "astana",
@@ -44784,6 +44898,15 @@
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
  },
+ "astana:сеть кофеен coffee hub": {
+  "name": "Сеть кофеен Coffee Hub",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "coffee.hub.kz",
+  "source": "https://2gis.kz/astana/firm/70000001110629027"
+ },
  "astana:сеть лаундж баров hookah place": {
   "name": "Сеть лаундж-баров Hookah Place",
   "city": "astana",
@@ -45346,6 +45469,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T19:44:10+00:00"
+ },
+ "astana:таксопарк 1": {
+  "name": "Таксопарк №1",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
  },
  "astana:таксопарк комфорт+": {
   "name": "Таксопарк (Комфорт+)",
@@ -46395,6 +46525,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
+ },
+ "astana:хоум концепт кз": {
+  "name": "ХОУМ КОНЦЕПТ КЗ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "home_concept_kz",
+  "telegram": "hc_kz",
+  "website": "http://home-concept.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001050733623",
+  "avatar_checked_at": "2026-11-12T23:43:43+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "astana:хочу на банкет": {
   "name": "ХОЧУ НА БАНКЕТ",
@@ -50096,6 +50242,13 @@
    "website"
   ]
  },
+ "karaganda:orda trade astana": {
+  "name": "ORDA TRADE ASTANA",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
+ },
  "karaganda:oxflo": {
   "name": "OXFLO",
   "city": "karaganda",
@@ -52706,6 +52859,22 @@
    "website"
   ]
  },
+ "kokshetau:metall stroy": {
+  "name": "Metall Stroy",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00",
+  "instagram": "metall.stroy.kz",
+  "website": "https://www.metall-stroy.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033810006",
+  "avatar_checked_at": "2026-11-12T23:43:43+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "95e1ccaa5dd0c058.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "kokshetau",
@@ -52774,6 +52943,13 @@
   "checked_at": "2026-11-10T12:44:06+00:00",
   "instagram": "oner_ortalygy_kokshetau",
   "source": "https://2gis.kz/kokshetau/firm/70000001046270950"
+ },
+ "kokshetau:orda machinery": {
+  "name": "ORDA MACHINERY",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
  },
  "kokshetau:pavlov barbershop": {
   "name": "Pavlov Barbershop",
@@ -53266,6 +53442,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T01:44:25+00:00"
+ },
+ "kokshetau:халиков а р": {
+  "name": "Халиков А.Р.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T23:43:42+00:00"
  },
  "kokshetau:химагро сункар": {
   "name": "ХИМАГРО-СУНКАР",

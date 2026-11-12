@@ -1546,6 +1546,19 @@
    "website"
   ]
  },
+ "aktau:лофт парк": {
+  "name": "Лофт Парк",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00",
+  "website": "https://www.loftpark.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001035872264",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:люкс уаш": {
   "name": "Люкс Уаш",
   "city": "aktau",
@@ -2175,6 +2188,13 @@
   "avatar": "240a676deb3749cb.jpg",
   "avatar_source": "website"
  },
+ "aktobe:birlik qurilis": {
+  "name": "BIRLIK QURILIS",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "aktobe:bus logistic group": {
   "name": "Bus Logistic Group",
   "city": "aktobe",
@@ -2451,6 +2471,22 @@
    "website"
   ],
   "avatar": "c8df2ef0fc0e35e1.jpg",
+  "avatar_source": "website"
+ },
+ "aktobe:kazfeltec": {
+  "name": "KazFeltec",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00",
+  "instagram": "kazfeltec",
+  "website": "http://kazfeltec.com/",
+  "source": "https://2gis.kz/aktobe/firm/70000001110355105",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5c42725c1f3fbef7.jpg",
   "avatar_source": "website"
  },
  "aktobe:kaznurstroygroup": {
@@ -9178,6 +9214,22 @@
   "instagram": "forcarskz",
   "source": "https://2gis.kz/almaty/firm/70000001088144491"
  },
+ "almaty:forone kz": {
+  "name": "ForOne.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00",
+  "instagram": "forone.kz",
+  "website": "http://forone.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098981704",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7e218acb34220328.jpg",
+  "avatar_source": "website"
+ },
  "almaty:fort vernyi family ип картанбаева э ш": {
   "name": "FORT VERNYI FAMILY (ИП КАРТАНБАЕВА Э.Ш.)",
   "city": "almaty",
@@ -10748,6 +10800,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T13:43:44+00:00"
+ },
+ "almaty:inteca": {
+  "name": "INTECA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "almaty:intellpack компания": {
   "name": "INTELLPACK, компания",
@@ -14020,6 +14079,13 @@
   "avatar": "d4c6147bc43e6db7.jpg",
   "avatar_source": "website"
  },
+ "almaty:ooo project of industry": {
+  "name": "OOO Project of Industry",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "almaty:opatra london опатра лондон": {
   "name": "OPATRA LONDON (ОПАТРА ЛОНДОН)",
   "city": "almaty",
@@ -16066,6 +16132,13 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "almaty:simka_kz": {
+  "name": "Simka_kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "almaty:simple inc": {
   "name": "Simple INC",
   "city": "almaty",
@@ -16509,6 +16582,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T05:44:45+00:00"
+ },
+ "almaty:stantranslogistics": {
+  "name": "StanTransLogistics",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "almaty:star brands asia стар брэндс азия": {
   "name": "Star Brands Asia (Стар Брэндс Азия)",
@@ -22193,6 +22273,15 @@
   "v": 3,
   "checked_at": "2026-11-08T19:44:34+00:00"
  },
+ "almaty:зерде": {
+  "name": "Зерде",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00",
+  "instagram": "zerdepharma",
+  "source": "https://2gis.kz/almaty/firm/70000001090674508"
+ },
  "almaty:зере сервис": {
   "name": "Зере-сервис",
   "city": "almaty",
@@ -26593,6 +26682,13 @@
   "v": 3,
   "checked_at": "2026-11-07T20:43:40+00:00"
  },
+ "almaty:российское автомобильное товарищество": {
+  "name": "Российское Автомобильное Товарищество",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "almaty:рост": {
   "name": "Рост",
   "city": "almaty",
@@ -29369,6 +29465,13 @@
   "avatar": "a81c7152264ebcc6.jpg",
   "avatar_source": "website"
  },
+ "almaty:эйчтиапп": {
+  "name": "ЭйчТиАпп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "almaty:эксперт ремонта": {
   "name": "Эксперт ремонта",
   "city": "almaty",
@@ -30790,7 +30893,7 @@
   "instagram": "avatariya.astana",
   "website": "http://avatariya.com/",
   "source": "https://2gis.kz/astana/firm/70000001066411803",
-  "avatar_checked_at": "2026-11-05T20:43:08+00:00",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32860,6 +32963,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:global export shipping глобал экспорт шипинг": {
+  "name": "GLOBAL EXPORT SHIPPING (ГЛОБАЛ ЭКСПОРТ ШИПИНГ)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "astana:global fruit": {
   "name": "Global Fruit",
@@ -38203,6 +38313,13 @@
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
  },
+ "astana:vion si": {
+  "name": "VION SI",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "astana:virere education": {
   "name": "VIRERE EDUCATION",
   "city": "astana",
@@ -39740,6 +39857,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T20:43:40+00:00"
+ },
+ "astana:белкин а с": {
+  "name": "БЕЛКИН А.С.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "astana:белый ветер kz": {
   "name": "Белый Ветер KZ",
@@ -42710,6 +42834,13 @@
   "v": 3,
   "checked_at": "2026-11-11T19:44:03+00:00"
  },
+ "astana:международная онлайн школа shkola": {
+  "name": "Международная онлайн школа Shkola",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "astana:мелешкин в а": {
   "name": "Мелешкин В.А.",
   "city": "astana",
@@ -43157,6 +43288,20 @@
   "checked_at": "2026-11-05T01:43:37+00:00",
   "instagram": "nasha_dacha_astana",
   "source": "https://2gis.kz/astana/firm/70000001036027241"
+ },
+ "astana:не школа барабанов": {
+  "name": "Не школа барабанов",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00",
+  "instagram": "neshkolabarabanov_astana",
+  "website": "http://astana.ne-shkola.com/barabany",
+  "source": "https://2gis.kz/astana/firm/70000001083294625",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:низкоцен павлодар": {
   "name": "НИЗКОЦЕН ПАВЛОДАР",
@@ -44028,6 +44173,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
+ },
+ "astana:ресторан": {
+  "name": "Ресторан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "astana:ресторан aralas": {
   "name": "Ресторан ARALAS",
@@ -54074,6 +54226,13 @@
   "v": 3,
   "checked_at": "2026-11-10T11:44:07+00:00"
  },
+ "kostanay:иман ltd": {
+  "name": "ИМАН LTD",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
+ },
  "kostanay:инструмент": {
   "name": "Инструмент",
   "city": "kostanay",
@@ -55278,7 +55437,7 @@
   "checked_at": "2026-11-05T20:43:06+00:00",
   "website": "https://kor.kz/",
   "source": "https://2gis.kz/kyzylorda/firm/70000001062818088",
-  "avatar_checked_at": "2026-11-05T20:43:08+00:00",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55583,6 +55742,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
+ },
+ "pavlodar:forever 19": {
+  "name": "Forever 19",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "pavlodar:format mach company": {
   "name": "Format Mach Company",
@@ -61538,7 +61704,7 @@
   "instagram": "profnastil_shymkent",
   "website": "https://www.ak-su.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001026068980",
-  "avatar_checked_at": "2026-11-05T20:43:08+00:00",
+  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63882,6 +64048,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T23:43:36+00:00"
+ },
+ "taraz:юнусов": {
+  "name": "Юнусов",
+  "city": "taraz",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T20:44:05+00:00"
  },
  "turkestan:aknazar holding": {
   "name": "AKNAZAR HOLDING",

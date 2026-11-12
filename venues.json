@@ -2825,6 +2825,13 @@
    "website"
   ]
  },
+ "aktobe:агран": {
+  "name": "Агран",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
+ },
  "aktobe:азимут трейд": {
   "name": "Азимут- Трейд",
   "city": "aktobe",
@@ -2962,6 +2969,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T10:43:41+00:00"
+ },
+ "aktobe:батыс мжбк": {
+  "name": "Батыс МЖБК",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "aktobe:белый ветер kz": {
   "name": "Белый Ветер KZ",
@@ -3943,7 +3957,7 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "website": "http://adal.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001202724",
-  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4417,7 +4431,7 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "website": "https://algroup.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001297074",
-  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6690,6 +6704,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
+ },
+ "almaty:boribay group": {
+  "name": "BORIBAY GROUP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "dr.edil.boribay",
+  "website": "http://www.boribay-stom.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028699803",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1c83ca2883b555ab.jpg",
+  "avatar_source": "website"
  },
  "almaty:bork": {
   "name": "BORK",
@@ -15529,6 +15559,13 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "almaty:sd solutions": {
+  "name": "SD Solutions",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
+ },
  "almaty:sd trade in": {
   "name": "SD Trade In",
   "city": "almaty",
@@ -23047,7 +23084,7 @@
   "checked_at": "2026-10-29T14:10:24+00:00",
   "website": "http://idcollect.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055520546",
-  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25332,6 +25369,13 @@
    "website"
   ]
  },
+ "almaty:оспанов марал куралович": {
+  "name": "Оспанов Марал Куралович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
+ },
  "almaty:останкинский мясоперерабатывающий холдинг": {
   "name": "Останкинский мясоперерабатывающий холдинг",
   "city": "almaty",
@@ -26478,6 +26522,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:севостьянова л в": {
+  "name": "Севостьянова Л.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "almaty:сеитов а к": {
   "name": "Сеитов А.К.",
@@ -28139,6 +28190,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T03:43:32+00:00"
+ },
+ "almaty:фиори": {
+  "name": "Фиори",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "almaty:фирма а профиль": {
   "name": "Фирма А-Профиль",
@@ -32809,6 +32867,20 @@
    "website"
   ]
  },
+ "astana:hyundai auto astana": {
+  "name": "Hyundai Auto Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "hyundai__astana",
+  "website": "http://astana.hyundai.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018067863",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:hyundai auto esil": {
   "name": "Hyundai Auto Esil",
   "city": "astana",
@@ -33095,6 +33167,22 @@
    "website"
   ],
   "avatar": "ab1ba4aec901c44a.jpg",
+  "avatar_source": "website"
+ },
+ "astana:invictus fitness green": {
+  "name": "Invictus Fitness Green",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "invictusastana",
+  "website": "http://invictus.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001036558298",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5080fb21defe7388.jpg",
   "avatar_source": "website"
  },
  "astana:invictus highvill": {
@@ -34816,6 +34904,13 @@
   "v": 3,
   "checked_at": "2026-11-05T08:45:21+00:00"
  },
+ "astana:nexpo market": {
+  "name": "Nexpo Market",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
+ },
  "astana:nkb group kazakhstan": {
   "name": "NKB Group Kazakhstan",
   "city": "astana",
@@ -36352,6 +36447,20 @@
   "instagram": "senimstaff",
   "source": "https://2gis.kz/astana/firm/70000001117886885"
  },
+ "astana:serebroff": {
+  "name": "SEREBROFF",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "serebroffjewelry",
+  "website": "https://serebroff.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001019173149",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:serpin qasiyet": {
   "name": "Serpin Qasiyet",
   "city": "astana",
@@ -37500,6 +37609,15 @@
   "v": 3,
   "checked_at": "2026-11-03T12:44:30+00:00"
  },
+ "astana:use time": {
+  "name": "USE TIME",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "usetime_astana",
+  "source": "https://2gis.kz/astana/firm/70000001078553726"
+ },
  "astana:v oil": {
   "name": "V-Oil",
   "city": "astana",
@@ -37751,7 +37869,7 @@
   "instagram": "wolt.kazakhstan",
   "website": "https://wolt.com/ru/kaz/nur-sultan",
   "source": "https://2gis.kz/astana/firm/70000001041019928",
-  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40631,6 +40749,13 @@
   "v": 3,
   "checked_at": "2026-11-03T10:44:18+00:00"
  },
+ "astana:инвестиционный центр недвижимости": {
+  "name": "Инвестиционный Центр Недвижимости",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
+ },
  "astana:инжвнешстрой": {
   "name": "Инжвнешстрой",
   "city": "astana",
@@ -41176,6 +41301,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T05:44:23+00:00"
+ },
+ "astana:комита цифровые технологии": {
+  "name": "Комита Цифровые Технологии",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "astana:компания cp retail компания си пи ритэил": {
   "name": "Компания CP Retail (Компания Си Пи Ритэил)",
@@ -42029,6 +42161,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T19:43:58+00:00"
+ },
+ "astana:мендимамбетова л м ресторан быстрого питания lavash food": {
+  "name": "МЕНДИМАМБЕТОВА Л.М (ресторан быстрого питания Lavash-Food)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "lavash_food_",
+  "website": "http://lf.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001100876741",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:мерси": {
   "name": "Мерси",
@@ -43007,6 +43153,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "astana:посохова с а": {
+  "name": "Посохова С.А",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "astana:премиум ковры": {
   "name": "Премиум ковры",
@@ -50183,7 +50336,7 @@
   "instagram": "stroydecor_karaganda",
   "website": "http://stroydecor.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302834900",
-  "avatar_checked_at": "2026-11-05T13:44:20+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -51984,6 +52137,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
+ },
+ "kokshetau:шумология кз": {
+  "name": "Шумология КЗ",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "kokshetau:эйкос": {
   "name": "ЭЙКОС",
@@ -54335,6 +54495,20 @@
    "website"
   ]
  },
+ "kyzylorda:квант": {
+  "name": "КВАНТ",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "tookvantkyzylorda",
+  "website": "https://tookvant.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001062653671",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kyzylorda:когай": {
   "name": "КОГАЙ",
   "city": "kyzylorda",
@@ -55550,6 +55724,13 @@
   ],
   "avatar": "acb366e15350a914.jpg",
   "avatar_source": "telegram"
+ },
+ "pavlodar:морозова а с": {
+  "name": "МОРОЗОВА А.С.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00"
  },
  "pavlodar:нагиев": {
   "name": "Нагиев",
@@ -57850,6 +58031,15 @@
   "instagram": "extreme_rabbit_semey",
   "source": "https://2gis.kz/semej/firm/70000001077121151"
  },
+ "semey:royal berry": {
+  "name": "ROYAL BERRY",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T14:43:56+00:00",
+  "instagram": "royal.berry.semey",
+  "source": "https://2gis.kz/semej/firm/70000001118717535"
+ },
  "semey:sakmed": {
   "name": "SAKMED",
   "city": "semey",
@@ -58006,7 +58196,7 @@
   "instagram": "wolt.kazakhstan",
   "website": "https://wolt.com/",
   "source": "https://2gis.kz/astana/firm/70000001041019928",
-  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65258,7 +65448,7 @@
   "checked_at": "2026-11-05T14:43:38+00:00",
   "website": "https://burgerking.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001105771876",
-  "avatar_checked_at": "2026-11-05T14:43:39+00:00",
+  "avatar_checked_at": "2026-11-12T14:43:57+00:00",
   "avatar_tried": [
    "website"
   ]

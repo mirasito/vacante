@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T12:57:59+00:00",
+ "updated_at": "2026-11-12T13:57:43+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -337,62 +337,6 @@
     "perks": []
    }
   },
-  "hh-138979912": {
-   "verdict": "approve",
-   "at": "2026-10-29T14:22:59+00:00",
-   "fields": {
-    "title": "Кондитер",
-    "employer": "Ресторан «Рыба Пила»",
-    "address": "пр. Достык, 280"
-   }
-  },
-  "hh-138775212": {
-   "verdict": "approve",
-   "at": "2026-10-29T14:22:59+00:00",
-   "fields": {
-    "title": "Администратор ресепшн лаунж-зоны",
-    "address": "ул. Керей-Жанибек Хандар, 640/1"
-   }
-  },
-  "hh-138011434": {
-   "verdict": "reject",
-   "at": "2026-10-29T14:22:59+00:00",
-   "reason": "Офисная должность: продажи финансовых услуг"
-  },
-  "hh-138978923": {
-   "verdict": "approve",
-   "at": "2026-10-29T14:22:59+00:00",
-   "fields": {}
-  },
-  "hh-138978207": {
-   "verdict": "approve",
-   "at": "2026-10-29T14:22:59+00:00",
-   "fields": {
-    "address": "ул. Желтоксан, 15"
-   }
-  },
-  "hh-138978170": {
-   "verdict": "reject",
-   "at": "2026-10-29T14:22:59+00:00",
-   "reason": "Офисная IT-должность"
-  },
-  "hh-138978026": {
-   "verdict": "approve",
-   "at": "2026-10-29T14:22:59+00:00",
-   "fields": {
-    "title": "Продавец",
-    "employer": "Спортмастер",
-    "address": "ТРЦ «Forum Almaty», пр. Сейфуллина, 617"
-   }
-  },
-  "hh-138977501": {
-   "verdict": "approve",
-   "at": "2026-10-29T14:22:59+00:00",
-   "fields": {
-    "schedule": "2/2",
-    "address": "пр. Аль-Фараби, 19к1Б"
-   }
-  },
   "hh-138977288": {
    "verdict": "approve",
    "at": "2026-10-29T14:22:59+00:00",
@@ -428,28 +372,6 @@
    "fields": {
     "title": "Администратор ресепшен",
     "schedule": "2/2, 12 часов"
-   }
-  },
-  "hh-138979799": {
-   "verdict": "approve",
-   "at": "2026-10-29T15:11:16+00:00",
-   "fields": {
-    "title": "Техник-монтажник слаботочных систем",
-    "employer": "J&J Limited",
-    "schedule": "6/1"
-   }
-  },
-  "hh-138978486": {
-   "verdict": "reject",
-   "at": "2026-10-29T15:11:16+00:00",
-   "reason": "Офисная должность, работа в CRM"
-  },
-  "hh-138977733": {
-   "verdict": "approve",
-   "at": "2026-10-29T15:11:16+00:00",
-   "fields": {
-    "employer": "Торговая компания «Дозор»",
-    "address": "пр. Бауыржана Момышулы, 4"
    }
   },
   "hh-138982077": {
@@ -1311,11 +1233,6 @@
    "at": "2026-10-30T06:59:47+00:00",
    "reason": "Офисная должность (бухгалтерия в 1С)"
   },
-  "hh-138977590": {
-   "verdict": "reject",
-   "at": "2026-10-30T06:59:47+00:00",
-   "reason": "Офисная должность"
-  },
   "hh-133722252": {
    "verdict": "approve",
    "at": "2026-10-30T06:59:47+00:00",
@@ -1362,15 +1279,6 @@
     "schedule": "6/1, дневные или ночные смены"
    }
   },
-  "rabotaaktau-141888": {
-   "verdict": "approve",
-   "at": "2026-10-30T06:59:47+00:00",
-   "fields": {
-    "perks": [
-     "Бонусы"
-    ]
-   }
-  },
   "rabotaaktau-141854": {
    "verdict": "approve",
    "at": "2026-10-30T06:59:47+00:00",
@@ -1379,24 +1287,12 @@
     "employer": "Кафе «Top Stop»"
    }
   },
-  "hh-137916466": {
-   "verdict": "approve",
-   "at": "2026-10-30T06:59:47+00:00",
-   "fields": {
-    "title": "Повар-кассир KFC (Akkala Mall)"
-   }
-  },
   "hh-138990078": {
    "verdict": "approve",
    "at": "2026-10-30T06:59:47+00:00",
    "fields": {
     "schedule": null
    }
-  },
-  "hh-138978320": {
-   "verdict": "approve",
-   "at": "2026-10-30T06:59:47+00:00",
-   "fields": {}
   },
   "hh-138994854": {
    "verdict": "approve",
@@ -2190,15 +2086,6 @@
     "schedule": "сутки через двое"
    }
   },
-  "vakansii_rabota_atyrau-49922": {
-   "verdict": "approve",
-   "at": "2026-10-30T10:00:11+00:00",
-   "fields": {
-    "title": "Уборщица в детский сад",
-    "schedule": "5/2",
-    "address": "мкр. Жумыскер"
-   }
-  },
   "hh-138874762": {
    "verdict": "reject",
    "at": "2026-10-30T10:00:11+00:00",
@@ -2237,21 +2124,6 @@
     "schedule": "09:00–01:00",
     "salary_min": null,
     "salary_max": null
-   }
-  },
-  "hh-138977791": {
-   "verdict": "approve",
-   "at": "2026-10-30T10:00:11+00:00",
-   "fields": {
-    "employer": "Monte Napoleone",
-    "schedule": "5/2"
-   }
-  },
-  "hh-138977789": {
-   "verdict": "approve",
-   "at": "2026-10-30T10:00:11+00:00",
-   "fields": {
-    "schedule": "6/1"
    }
   },
   "hh-138005131": {
@@ -2351,20 +2223,6 @@
     "schedule": "6/1"
    }
   },
-  "hh-138977589": {
-   "verdict": "approve",
-   "at": "2026-10-30T10:00:11+00:00",
-   "fields": {
-    "salary_min": 250000,
-    "salary_max": null,
-    "salary_period": "month",
-    "schedule": "5/2",
-    "perks": [
-     "Обучение",
-     "Без опыта"
-    ]
-   }
-  },
   "rabota_semey_official-6716": {
    "verdict": "approve",
    "at": "2026-10-30T10:00:11+00:00",
@@ -2431,13 +2289,6 @@
    "reason": "Офисная должность (B2B-продажи), Рудный"
   },
   "hh-138992169": {
-   "verdict": "approve",
-   "at": "2026-10-30T10:00:11+00:00",
-   "fields": {
-    "schedule": "6/1"
-   }
-  },
-  "hh-138977727": {
    "verdict": "approve",
    "at": "2026-10-30T10:00:11+00:00",
    "fields": {
@@ -2717,11 +2568,6 @@
    "verdict": "reject",
    "at": "2026-10-30T10:58:50+00:00",
    "reason": "Руководящая должность"
-  },
-  "hh-138978485": {
-   "verdict": "reject",
-   "at": "2026-10-30T10:58:50+00:00",
-   "reason": "Продажа финансовых продуктов, офис"
   },
   "hh-138969933": {
    "verdict": "reject",
@@ -3450,16 +3296,6 @@
    "verdict": "reject",
    "at": "2026-10-30T12:01:53+00:00",
    "reason": "Офисная должность в банке, нужно высшее образование"
-  },
-  "vakansii_oskemen-9182": {
-   "verdict": "approve",
-   "at": "2026-10-30T12:01:53+00:00",
-   "fields": {
-    "title": "Водитель-экспедитор",
-    "salary_min": 500000,
-    "salary_max": null,
-    "salary_period": "month"
-   }
   },
   "hh-139009199": {
    "verdict": "approve",
@@ -4450,14 +4286,6 @@
    "at": "2026-10-30T17:05:43+00:00",
    "fields": {}
   },
-  "rabotaaktau-141889": {
-   "verdict": "approve",
-   "at": "2026-10-30T17:05:43+00:00",
-   "fields": {
-    "title": "Водитель категории B",
-    "perks": []
-   }
-  },
   "rabotaaktau-141942": {
    "verdict": "approve",
    "at": "2026-10-30T17:05:43+00:00",
@@ -4970,15 +4798,6 @@
     "title": "Автоэлектрик, мастер по ходовой"
    }
   },
-  "rabotaaktau-141886": {
-   "verdict": "approve",
-   "at": "2026-10-31T04:57:08+00:00",
-   "fields": {
-    "title": "Воспитатель, няня",
-    "schedule": "09:00–18:00",
-    "address": "мкр Толқын-2"
-   }
-  },
   "vakansii_oskemen-9204": {
    "verdict": "approve",
    "at": "2026-10-31T04:57:08+00:00",
@@ -5482,14 +5301,6 @@
    "verdict": "reject",
    "at": "2026-10-31T07:56:55+00:00",
    "reason": "Промоутер с продажами по ЖК, похоже на агентские продажи"
-  },
-  "rabota4almaty-5860": {
-   "verdict": "approve",
-   "at": "2026-10-31T07:56:55+00:00",
-   "fields": {
-    "title": "Горничная-администратор",
-    "address": "ул. Ержанова, 109"
-   }
   },
   "hh-138689299": {
    "verdict": "approve",
@@ -53740,6 +53551,342 @@
    "fields": {
     "schedule": "5/2",
     "address": "ул. Алтынсарина, 229А"
+   }
+  },
+  "rabota_astanakz-31436": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Официант, бариста",
+    "employer": "Oneshott Coffee",
+    "schedule": "2/2, 5/3",
+    "address": null
+   }
+  },
+  "astana_job_vakansii-130566": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "4/3 или 5/2, 11:00–03:00"
+   }
+  },
+  "hh-139439001": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Продажи без понятного места работы, похоже на офисную должность"
+  },
+  "hh-139438331": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "schedule": "2/1"
+   }
+  },
+  "rabota_astanakz-31476": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Сотрудник ресторана"
+   }
+  },
+  "hh-139437282": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "hh-139435956": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Шеф-повар (грузинская кухня)",
+    "employer": null,
+    "address": null,
+    "schedule": "6/1"
+   }
+  },
+  "hh-139435689": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "schedule": "5/2"
+   }
+  },
+  "hh-138928830": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Магазин «All Stars»",
+    "schedule": "5/2",
+    "address": "пр. Кабанбай батыра, 62, ТРЦ «Mega Silk Way»",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-138928522": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: продажи медоборудования"
+  },
+  "hh-139430587": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "schedule": "6/1"
+   }
+  },
+  "hh-139432985": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Бариста",
+    "employer": "BB Coffee",
+    "schedule": "2/2 или 4/2"
+   }
+  },
+  "hh-139431573": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Aykun",
+    "schedule": "2/2, 3/2, 4/2 или 5/2",
+    "address": "ул. Сырмак, 10"
+   }
+  },
+  "hh-137988696": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Газоэлектросварщик-аргонщик",
+    "salary_min": 425000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "5/2",
+    "address": "пр. Суюнбая, 497В"
+   }
+  },
+  "hh-139438989": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "salary_min": 320000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2",
+    "address": "мкр Самал-3, 25"
+   }
+  },
+  "hh-139438688": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: онлайн-продажи"
+  },
+  "hh-139438390": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Банный клуб «Орловские бани»",
+    "schedule": "2/2 или 4/2",
+    "address": "ул. Каныша Сатпаева, 29/6"
+   }
+  },
+  "hh-138213366": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Пекарь в столовую",
+    "employer": null,
+    "schedule": "5/2",
+    "address": "пр. Аль-Фараби, 5к3А"
+   }
+  },
+  "hh-139437930": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Администратор спортзала единоборств",
+    "employer": "Институт Крав Мага Казахстан",
+    "schedule": "2/2",
+    "address": "ул. Навои, 62А/1"
+   }
+  },
+  "hh-139436086": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: активные продажи"
+  },
+  "hh-139434133": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: администратор клиники"
+  },
+  "hh-139431540": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Мастер-бровист, визажист",
+    "employer": "Haircorporation",
+    "schedule": "2/2",
+    "address": "ул. Кенесары хана, 54/29"
+   }
+  },
+  "hh-139431487": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "schedule": "2/2",
+    "address": "ул. Шаляпина"
+   }
+  },
+  "hh-138749085": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: продажи визовых услуг"
+  },
+  "hh-139438685": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Selena Insulations II",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139435578": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Шеф-повар ресторана восточной кухни",
+    "employer": null,
+    "schedule": "6/1 или 5/2",
+    "address": "мкр Восток-1, 2"
+   }
+  },
+  "hh-139438077": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "In Oil",
+    "schedule": "2/2"
+   }
+  },
+  "hh-139437993": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Lamoda",
+    "schedule": null,
+    "address": "пр. Санкибай батыра, 24Е"
+   }
+  },
+  "rabotaaktau-142635": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Офисная должность: консультант учебного центра"
+  },
+  "rabotaaktau-142632": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "schedule": "6/1, 09:00–19:00 или 14:00–00:00",
+    "address": "19 мкр, кулинарный цех"
+   }
+  },
+  "rabotaaktau-142630": {
+   "verdict": "reject",
+   "at": "2026-11-12T13:57:43+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142634": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Бариста-кассир",
+    "schedule": "11:00–23:00",
+    "address": "28 мкр, ТЦ «Метрополис»"
+   }
+  },
+  "rabotaaktau-142633": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Баня «Маңғышлақ»"
+   }
+  },
+  "hh-139436222": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Small",
+    "schedule": "2/2",
+    "address": "ул. Бауыржана Момышулы, 34А"
+   }
+  },
+  "rabota_semey_official-6906": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Магазин «Qazaq Shapany»",
+    "schedule": "5/2, 10:00–19:00"
+   }
+  },
+  "rabota_semey_official-6907": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Продавец сотовых аксессуаров",
+    "employer": null,
+    "schedule": "09:30–20:30"
+   }
+  },
+  "rabota_semey_official-6908": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Старший официант",
+    "address": "район Апрель, Мегастрой",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "rabota_semey_official-6905": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Повар-жарщик",
+    "address": "ул. Бозтаева, 5А"
+   }
+  },
+  "rabota_semey_official-6904": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "schedule": "2/2, 12:00–00:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota_semey_official-6903": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "title": "Повар, сушист, пиццерист",
+    "employer": "«312 Lounge Bar»",
+    "schedule": "11:30–00:00"
+   }
+  },
+  "hh-138105478": {
+   "verdict": "approve",
+   "at": "2026-11-12T13:57:43+00:00",
+   "fields": {
+    "employer": "Мибеко",
+    "schedule": "6/1",
+    "address": "ул. Узкоколейная, 9"
    }
   }
  }

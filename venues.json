@@ -1218,6 +1218,13 @@
   "instagram": "dildamarket",
   "source": "https://2gis.kz/aktau/firm/70000001063314916"
  },
+ "aktau:еден жуушы": {
+  "name": "ЕДЕН ЖУУШЫ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
+ },
  "aktau:ерекешов": {
   "name": "ЕРЕКЕШОВ",
   "city": "aktau",
@@ -3187,6 +3194,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "aktobe:мир телевизоров": {
+  "name": "Мир телевизоров",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "televizory_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001048864710"
  },
  "aktobe:монолог": {
   "name": "Монолог",
@@ -10318,6 +10334,22 @@
   "v": 3,
   "checked_at": "2026-11-06T20:45:35+00:00"
  },
+ "almaty:invictus go": {
+  "name": "Invictus go",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "invictusgo",
+  "website": "https://invictus.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001116500494",
+  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b777a6c0f9576c11.jpg",
+  "avatar_source": "website"
+ },
  "almaty:invitro тоо инвитро казахстан": {
   "name": "INVITRO (ТОО ИНВИТРО-Казахстан)",
   "city": "almaty",
@@ -12538,6 +12570,15 @@
   "instagram": "minisokz",
   "source": "https://2gis.kz/almaty/firm/70000001025693945"
  },
+ "almaty:mint production": {
+  "name": "Mint production",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "mint.print.pro",
+  "source": "https://2gis.kz/almaty/firm/70000001069401432"
+ },
  "almaty:mira kids": {
   "name": "Mira Kids",
   "city": "almaty",
@@ -12882,6 +12923,21 @@
   "v": 3,
   "checked_at": "2026-11-11T18:43:31+00:00"
  },
+ "almaty:neodrain kazakhstan неодрайн казахстан": {
+  "name": "NEODRAIN KAZAKHSTAN (НЕОДРАЙН КАЗАХСТАН)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "website": "https://neodrain.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043815114",
+  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e42d9361f6253b2a.jpg",
+  "avatar_source": "website"
+ },
  "almaty:neu ltd re max kazakhstan": {
   "name": "NEU LTD (RE/MAX Kazakhstan)",
   "city": "almaty",
@@ -12945,6 +13001,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T18:44:51+00:00"
+ },
+ "almaty:nexdom": {
+  "name": "NEXDOM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
  },
  "almaty:next": {
   "name": "Next",
@@ -15443,6 +15506,13 @@
   ],
   "avatar": "2947a66261b241f9.jpg",
   "avatar_source": "website"
+ },
+ "almaty:smart bridge": {
+  "name": "Smart Bridge",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
  },
  "almaty:smart english": {
   "name": "Smart English",
@@ -18749,6 +18819,15 @@
    "website"
   ]
  },
+ "almaty:андо": {
+  "name": "ИП андо",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "fruto.buket",
+  "source": "https://2gis.kz/almaty/firm/70000001048528482"
+ },
  "almaty:андреев вадим": {
   "name": "Андреев Вадим",
   "city": "almaty",
@@ -21402,6 +21481,22 @@
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
  },
+ "almaty:иналка фуд сервис каз": {
+  "name": "ИНАЛКА ФУД СЕРВИС КАЗ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "inalca_food_service",
+  "website": "https://inalcafood.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001035673801",
+  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "02dd7530641fb63e.jpg",
+  "avatar_source": "website"
+ },
  "almaty:инвестиционный дом ivm": {
   "name": "Инвестиционный дом IVM",
   "city": "almaty",
@@ -22124,6 +22219,13 @@
   "v": 3,
   "checked_at": "2026-10-30T16:42:48+00:00"
  },
+ "almaty:квартиры в алмате": {
+  "name": "Квартиры в Алмате",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
+ },
  "almaty:кгу кризисный центр жан сая управления занятости и социальных программ города алматы": {
   "name": "КГУ КРИЗИСНЫЙ ЦЕНТР ЖАН-САЯ УПРАВЛЕНИЯ ЗАНЯТОСТИ И СОЦИАЛЬНЫХ ПРОГРАММ ГОРОДА АЛМАТЫ",
   "city": "almaty",
@@ -22266,6 +22368,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
+ },
+ "almaty:клиника lucy": {
+  "name": "Клиника Lucy",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "lucyclinic.kz",
+  "website": "https://lucyclinic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001061096784",
+  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "db333c0494338b64.jpg",
+  "avatar_source": "website"
  },
  "almaty:клиника доктора кобландина": {
   "name": "Клиника доктора Кобландина",
@@ -24416,6 +24534,13 @@
   "checked_at": "2026-11-04T18:44:42+00:00",
   "instagram": "aikune.astana.kz",
   "source": "https://2gis.kz/almaty/firm/70000001118522270"
+ },
+ "almaty:оксана": {
+  "name": "оксана",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
  },
  "almaty:оленбергер": {
   "name": "ИП ОЛЕНБЕРГЕР",
@@ -30348,6 +30473,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T16:46:43+00:00"
+ },
+ "astana:cooperative resources international kazakhstan кооператив ресоусиз интернейшнл казахстан": {
+  "name": "COOPERATIVE RESOURCES INTERNATIONAL-KAZAKHSTAN /КООПЕРАТИВ РЕСОУСИЗ ИНТЕРНЕЙШНЛ-КАЗАХСТАН",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "cri_kz",
+  "website": "https://cri-kazakhstan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001097455568",
+  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:cosmetics star": {
   "name": "COSMETICS STAR",
@@ -37106,6 +37245,13 @@
   "instagram": "fortuna.group.ast",
   "source": "https://2gis.kz/astana/firm/70000001028660473"
  },
+ "astana:адал": {
+  "name": "АДАЛ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
+ },
  "astana:адили текстиль": {
   "name": "АДИЛИ ТЕКСТИЛЬ",
   "city": "astana",
@@ -38800,6 +38946,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "astana:даурен и": {
+  "name": "Даурен И",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
  },
  "astana:дентро": {
   "name": "Дентро",
@@ -40847,6 +41000,13 @@
   "v": 3,
   "checked_at": "2026-11-11T19:44:03+00:00"
  },
+ "astana:мелешкин в а": {
+  "name": "Мелешкин В.А.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
+ },
  "astana:мелочь": {
   "name": "Мелочь",
   "city": "astana",
@@ -42881,6 +43041,13 @@
   "checked_at": "2026-11-11T13:44:34+00:00",
   "instagram": "sidstudia.kz",
   "source": "https://2gis.kz/astana/firm/70000001081589695"
+ },
+ "astana:студия йоги фитнес центр": {
+  "name": "Студия йоги (фитнес-центр)",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
  },
  "astana:студия наружной рекламы": {
   "name": "Студия наружной рекламы",
@@ -53036,6 +53203,20 @@
    "website"
   ]
  },
+ "pavlodar:alias valve group": {
+  "name": "ALIAS VALVE GROUP",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "aliasvalvegroup",
+  "website": "https://alias.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018653931",
+  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "pavlodar:and asia": {
   "name": "AND Asia",
   "city": "pavlodar",
@@ -54264,6 +54445,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:ритам павлодар": {
+  "name": "РИТАМ-Павлодар",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00",
+  "instagram": "ritam_pavlodar",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018635307"
  },
  "pavlodar:рубиком": {
   "name": "Рубиком",
@@ -55965,6 +56155,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T10:45:30+00:00"
+ },
+ "semey:arnamultimedia": {
+  "name": "ArnaMultimedia",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-12T03:44:21+00:00"
  },
  "semey:asai clinic": {
   "name": "ASAI-CLINIC",

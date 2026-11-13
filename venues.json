@@ -1415,6 +1415,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "aktau:зелмар": {
+  "name": "Зелмар",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
+ },
  "aktau:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "aktau",
@@ -1665,6 +1672,13 @@
   "checked_at": "2026-11-01T22:42:38+00:00",
   "instagram": "mir_kosmetiki_aktau_",
   "source": "https://2gis.kz/aktau/firm/70000001039732611"
+ },
+ "aktau:мирас": {
+  "name": "Мирас",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
  },
  "aktau:мотерм": {
   "name": "МОТЕРМ",
@@ -4161,6 +4175,13 @@
   "checked_at": "2026-10-31T10:43:49+00:00",
   "instagram": "adallin_brand",
   "source": "https://2gis.kz/almaty/firm/70000001104382410"
+ },
+ "almaty:adelux": {
+  "name": "AdeLux",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
  },
  "almaty:adm capital": {
   "name": "ADM CAPITAL",
@@ -8323,6 +8344,20 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:doromarine": {
+  "name": "DoroMarine",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "doromarine_kz",
+  "website": "https://doromarine.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001057156600",
+  "avatar_checked_at": "2026-11-13T09:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:dos optics": {
   "name": "Dos Optics",
   "city": "almaty",
@@ -8892,6 +8927,13 @@
   ],
   "avatar": "de7cf24665c82266.jpg",
   "avatar_source": "website"
+ },
+ "almaty:estau company": {
+  "name": "Estau Company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
  },
  "almaty:estet": {
   "name": "Estet",
@@ -16110,6 +16152,19 @@
   "avatar": "b3b924b1027d6182.jpg",
   "avatar_source": "website"
  },
+ "almaty:santehtat": {
+  "name": "ИП SantehTAT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "website": "https://santehtat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001099064385",
+  "avatar_checked_at": "2026-11-13T09:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:santrade": {
   "name": "SANTRADE",
   "city": "almaty",
@@ -16578,6 +16633,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T15:44:26+00:00"
+ },
+ "almaty:ski park pioneer": {
+  "name": "Ski Park Pioneer",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "skiparkpioneer",
+  "source": "https://www.instagram.com/skiparkpioneer/"
  },
  "almaty:skill hub": {
   "name": "Skill Hub",
@@ -21199,6 +21263,13 @@
   "v": 3,
   "checked_at": "2026-11-07T09:44:22+00:00"
  },
+ "almaty:брииг": {
+  "name": "БрИиГ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
+ },
  "almaty:бродилина": {
   "name": "Бродилина",
   "city": "almaty",
@@ -22512,6 +22583,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T14:43:58+00:00"
+ },
+ "almaty:елакова": {
+  "name": "Елакова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
  },
  "almaty:елемесов": {
   "name": "Елемесов",
@@ -24186,6 +24264,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "almaty:компания алматыхолод": {
+  "name": "Компания АлматыХолод",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
  },
  "almaty:компания по страхованию жизни nomad life": {
   "name": "«Компания по страхованию жизни «Nomad Life»",
@@ -26989,6 +27074,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T12:43:29+00:00"
+ },
+ "almaty:продукты питания kz": {
+  "name": "ПРОДУКТЫ ПИТАНИЯ KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "produkty_pitaniya_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001091276939"
  },
  "almaty:проект pinta": {
   "name": "Проект PINTA",
@@ -40742,6 +40836,20 @@
   "v": 3,
   "checked_at": "2026-11-12T01:43:26+00:00"
  },
+ "astana:бактыгалиева г а": {
+  "name": "Бактыгалиева Г.А",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
+ },
+ "astana:балтабаев м к": {
+  "name": "Балтабаев М.К.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
+ },
  "astana:банный комплекс": {
   "name": "Банный комплекс",
   "city": "astana",
@@ -47767,6 +47875,22 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "astana:шин лайн": {
+  "name": "Шин-Лайн",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "shin_line_kz",
+  "website": "https://www.shinline.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001065562745",
+  "avatar_checked_at": "2026-11-13T09:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e653d46c5b7e99cd.jpg",
+  "avatar_source": "website"
+ },
  "astana:шинный магазин": {
   "name": "Шинный магазин",
   "city": "astana",
@@ -48075,6 +48199,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "astana:юнифарм казахстан": {
+  "name": "ЮНИФАРМ КАЗАХСТАН",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "website": "https://www.unipharm.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000802737",
+  "avatar_checked_at": "2026-11-13T09:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "cc104e74059c1fa5.jpg",
+  "avatar_source": "website"
  },
  "astana:юниэксперт": {
   "name": "ЮниЭксперт",
@@ -53390,6 +53529,13 @@
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
  },
+ "karaganda:шарапова в в": {
+  "name": "Шарапова В.В",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
+ },
  "karaganda:шахтсервис": {
   "name": "ШАХТСЕРВИС",
   "city": "karaganda",
@@ -54204,6 +54350,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
+ },
+ "kokshetau:завод абк бетон": {
+  "name": "Завод АБК-Бетон",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "zavodabkbeton",
+  "website": "https://abk-beton.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018454423",
+  "avatar_checked_at": "2026-11-13T09:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kokshetau:завод казагромаш": {
   "name": "ЗАВОД КАЗАГРОМАШ",
@@ -55716,6 +55876,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T06:44:20+00:00"
+ },
+ "kostanay:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "intertopkz",
+  "website": "https://intertop.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035235714",
+  "avatar_checked_at": "2026-11-13T09:43:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:ип эфес казахстан": {
   "name": "АО ИП Эфес Казахстан",
@@ -59478,6 +59652,15 @@
   "avatar": "ff01e8cf34c62f56.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:каз конд": {
+  "name": "Каз.Конд",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00",
+  "instagram": "kazkondfabrika",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001060943641"
+ },
  "petropavlovsk:казахмедимпорт": {
   "name": "КазахМедИмпорт",
   "city": "petropavlovsk",
@@ -62749,6 +62932,13 @@
   ],
   "avatar": "987d4183004a9027.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:oktrening": {
+  "name": "Oktrening",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T09:43:52+00:00"
  },
  "shymkent:omir shymkent 2025": {
   "name": "OMIR SHYMKENT 2025",

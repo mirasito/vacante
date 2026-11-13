@@ -10130,7 +10130,7 @@
   "instagram": "globus_machinery",
   "website": "https://globusmachinery.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001082986184",
-  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21312,7 +21312,7 @@
   "instagram": "centercreditkz",
   "website": "https://bcc.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000824139",
-  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -36710,7 +36710,7 @@
   "instagram": "metaltradekazakhstan",
   "website": "https://metaltrade.kz/",
   "source": "https://2gis.kz/astana/firm/70000001082576383",
-  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40413,7 +40413,7 @@
   "checked_at": "2026-11-06T19:43:58+00:00",
   "website": "https://zdflex.com/",
   "source": "https://2gis.kz/astana/firm/70000001029215513",
-  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -49308,6 +49308,22 @@
    "website"
   ]
  },
+ "atyrau:astau": {
+  "name": "ASTAU",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T20:42:10+00:00",
+  "instagram": "astau_shop",
+  "telegram": "astau_shop",
+  "website": "https://astau-shop.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001049799166",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "atyrau:astoria трц qiwi": {
   "name": "ASTORIA (ТРЦ QIWI)",
   "city": "atyrau",
@@ -57559,7 +57575,7 @@
   "instagram": "ffins.kz",
   "website": "https://ffins.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001089274087",
-  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63711,6 +63727,13 @@
   ],
   "avatar": "6c3508829cbcf7e6.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:gap": {
+  "name": "GAP",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T20:42:10+00:00"
  },
  "shymkent:gauf group": {
   "name": "Gauf Group",
@@ -70549,7 +70572,7 @@
   "instagram": "hotel_galirad",
   "website": "https://galirad.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721313225",
-  "avatar_checked_at": "2026-11-06T19:43:59+00:00",
+  "avatar_checked_at": "2026-11-13T20:42:10+00:00",
   "avatar_tried": [
    "website"
   ]

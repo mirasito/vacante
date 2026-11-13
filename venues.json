@@ -7764,6 +7764,13 @@
   "v": 3,
   "checked_at": "2026-11-12T12:44:11+00:00"
  },
+ "almaty:counting group": {
+  "name": "Counting Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
+ },
  "almaty:cramble": {
   "name": "Cramble",
   "city": "almaty",
@@ -9203,6 +9210,23 @@
   "v": 3,
   "checked_at": "2026-11-06T08:44:35+00:00"
  },
+ "almaty:fan азия": {
+  "name": "FAN АЗИЯ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "telegram": "azia_fan",
+  "website": "https://www.fan-asia.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001098985034",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "93b3370d78d865cc.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:farmreserv фармрезерв": {
   "name": "FarmReserv (ФармРезерв)",
   "city": "almaty",
@@ -10219,6 +10243,13 @@
   "checked_at": "2026-11-07T13:43:51+00:00",
   "instagram": "grunge.spc",
   "source": "https://2gis.kz/almaty/firm/70000001065282953"
+ },
+ "almaty:gscg": {
+  "name": "«GSCG»",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
  },
  "almaty:gt oil service": {
   "name": "GT oil service",
@@ -11267,6 +11298,13 @@
   "avatar": "995a878c79afc2af.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:jakon": {
+  "name": "Jakon",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
+ },
  "almaty:jambull": {
   "name": "JamBull",
   "city": "almaty",
@@ -11689,6 +11727,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:kazakhstan max cooper oiltech": {
+  "name": "Kazakhstan Max Cooper Oiltech",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
  },
  "almaty:kazakhstan tg tools co ltd": {
   "name": "Kazakhstan TG Tools Co., Ltd",
@@ -15825,6 +15870,13 @@
   "v": 3,
   "checked_at": "2026-10-28T22:44:50+00:00"
  },
+ "almaty:rl solutions": {
+  "name": "RL SOLUTIONS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
+ },
  "almaty:rm logistics": {
   "name": "RM Logistics",
   "city": "almaty",
@@ -17528,7 +17580,7 @@
   "instagram": "tehnoaltyn_",
   "website": "https://tehnoaltyn.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001097401134",
-  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18693,6 +18745,15 @@
   ],
   "avatar": "c7dc1207697187fa.jpg",
   "avatar_source": "website"
+ },
+ "almaty:y fit spa fitness юсупов ип": {
+  "name": "Y-Fit Spa Fitness (Юсупов ИП)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "yfitspa",
+  "source": "https://2gis.kz/almaty/firm/70000001033971827"
  },
  "almaty:yafitness": {
   "name": "YAFITNESS",
@@ -22393,7 +22454,7 @@
   "instagram": "domtablichek",
   "website": "https://domtablichek.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037458791",
-  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -23684,6 +23745,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:казсвет ast": {
+  "name": "КазСвет Ast",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "kazsvet_almaty",
+  "source": "https://2gis.kz/almaty/firm/9429940000847808"
  },
  "almaty:казхимсеть": {
   "name": "Казхимсеть",
@@ -26866,6 +26936,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T02:44:03+00:00"
+ },
+ "almaty:пкк арго": {
+  "name": "ПКК Арго",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "argo1kz_official",
+  "website": "https://argo.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792841",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "466f8a0d36901926.jpg",
+  "avatar_source": "website"
  },
  "almaty:пкф бс групп": {
   "name": "ПКФ БС Групп",
@@ -34844,6 +34930,13 @@
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
  },
+ "astana:izipro": {
+  "name": "iZiPRO",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
+ },
  "astana:izmir": {
   "name": "IZMIR",
   "city": "astana",
@@ -37127,7 +37220,7 @@
   "instagram": "pingwin_premium",
   "website": "http://pingwinbowling.kz/",
   "source": "https://2gis.kz/astana/firm/70000001100848208",
-  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39397,10 +39490,12 @@
   "checked_at": "2026-11-06T09:44:08+00:00",
   "website": "https://www.vivid.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001098645691",
-  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "7684ca63fc95d6f7.jpg",
+  "avatar_source": "website"
  },
  "astana:vizavi company": {
   "name": "Vizavi company",
@@ -40041,6 +40136,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "astana:азиябьютико": {
+  "name": "АзияБьютиКо",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
  },
  "astana:азиястрой": {
   "name": "АзияСтрой",
@@ -40937,6 +41039,13 @@
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
  },
+ "astana:бекзада куанышевна": {
+  "name": "Бекзада Куанышевна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
+ },
  "astana:бектемирова": {
   "name": "Бектемирова",
   "city": "astana",
@@ -41815,6 +41924,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T03:44:21+00:00"
+ },
+ "astana:дельта стом": {
+  "name": "Дельта Стом",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "deltastom.kz",
+  "website": "https://deltastom.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001052633959",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:дентро": {
   "name": "Дентро",
@@ -52772,6 +52895,22 @@
   "avatar_source": "website",
   "source": "https://2gis.kz/almaty/firm/9429940000797732"
  },
+ "karaganda:металл профиль казахстан": {
+  "name": "Металл Профиль - Казахстан",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "metallprofil.kz",
+  "website": "https://metallprofil.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302831092",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "99b01c269213ae32.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:металлофасад": {
   "name": "МЕТАЛЛОФАСАД",
   "city": "karaganda",
@@ -53281,6 +53420,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T11:44:07+00:00"
+ },
+ "karaganda:типография форма плюс": {
+  "name": "Типография Форма Плюс",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "formaplus",
+  "website": "https://forma.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001034424025",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:тм romeo flowers касымгалиев а а": {
   "name": "ТМ Romeo Flowers (Касымгалиев А.А.)",
@@ -61041,6 +61194,15 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "semey:аргымак": {
+  "name": "Аргымак",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "instagram": "argymaq.semey",
+  "source": "https://2gis.kz/semej/firm/70000001051694015"
+ },
  "semey:асоев к с": {
   "name": "АСОЕВ К. С",
   "city": "semey",
@@ -62730,6 +62892,19 @@
   "instagram": "main_energy_group_etl",
   "source": "https://2gis.kz/shymkent/firm/70000001103677001"
  },
+ "shymkent:marai e7 group марай е7 групп": {
+  "name": "MARAI E7 GROUP (МАРАЙ Е7 ГРУПП)",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00",
+  "website": "https://www.marai.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001032484947",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "shymkent:marvik partners": {
   "name": "MARVIK PARTNERS",
   "city": "shymkent",
@@ -63387,6 +63562,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:tsk trade": {
+  "name": "TSK Trade",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
  },
  "shymkent:umir kz": {
   "name": "UMIR KZ",
@@ -67337,6 +67519,13 @@
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
  },
+ "uralsk:курьер": {
+  "name": "КУРЬЕР",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
+ },
  "uralsk:күзетші": {
   "name": "КҮЗЕТШІ",
   "city": "uralsk",
@@ -67856,7 +68045,7 @@
   "checked_at": "2026-10-30T09:43:32+00:00",
   "website": "https://aitas.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721385082",
-  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67927,7 +68116,7 @@
   "instagram": "askona_official.kz",
   "website": "https://askona.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001093653740",
-  "avatar_checked_at": "2026-11-06T09:44:09+00:00",
+  "avatar_checked_at": "2026-11-13T10:43:50+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70127,6 +70316,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:успех лтд нс": {
+  "name": "Успех ЛТД НС",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T10:43:49+00:00"
  },
  "ust-kamenogorsk:усть каменогоркий конденсаторный завод": {
   "name": "Усть-Каменогоркий конденсаторный завод",

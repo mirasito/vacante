@@ -1146,6 +1146,15 @@
   "instagram": "bota_coffee_breakfast",
   "source": "https://2gis.kz/aktau/firm/70000001101215500"
  },
+ "aktau:бруклин": {
+  "name": "Бруклин",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "brooklynaktau",
+  "source": "https://2gis.kz/aktau/firm/70000001047458738"
+ },
  "aktau:в актау": {
   "name": "В АКТАУ",
   "city": "aktau",
@@ -6204,6 +6213,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T12:43:42+00:00"
+ },
+ "almaty:avto villa": {
+  "name": "AVTO VILLA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "autovilla.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001105380608"
  },
  "almaty:avtomarketkaraganda": {
   "name": "AvtoMarketKaraganda",
@@ -11339,6 +11357,15 @@
   "avatar": "995a878c79afc2af.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:izobilie": {
+  "name": "Izobilie",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "izobilie.studio",
+  "source": "https://2gis.kz/almaty/firm/70000001117285848"
+ },
  "almaty:jakon": {
   "name": "Jakon",
   "city": "almaty",
@@ -12277,7 +12304,7 @@
   "instagram": "krinxxi",
   "website": "https://krin.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000927202",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13303,7 +13330,7 @@
   "checked_at": "2026-11-06T12:45:11+00:00",
   "website": "https://maxwell-distribution.com/",
   "source": "https://2gis.kz/almaty/firm/70000001068820037",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13375,7 +13402,7 @@
   "instagram": "mechta.kz",
   "website": "http://mechta.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000836794",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13534,6 +13561,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
+ },
+ "almaty:mehanik": {
+  "name": "Mehanik",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "almaty:mehkaz": {
   "name": "MehKaz",
@@ -14707,6 +14741,15 @@
   "v": 3,
   "checked_at": "2026-10-31T22:43:53+00:00"
  },
+ "almaty:original market": {
+  "name": "Original market",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "original_market_official",
+  "source": "https://2gis.kz/almaty/firm/70000001069924593"
+ },
  "almaty:origo": {
   "name": "Origo",
   "city": "almaty",
@@ -14851,6 +14894,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
+ },
+ "almaty:parla banya": {
+  "name": "Parla banya",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "parla.banya",
+  "source": "https://2gis.kz/almaty/firm/70000001096956577"
  },
  "almaty:patentes talgo s l филиал в республике казахстан": {
   "name": "Patentes Talgo, S.L. Филиал в Республике Казахстан",
@@ -18205,6 +18257,13 @@
   "instagram": "uchina.kz",
   "source": "https://2gis.kz/almaty/firm/70000001097172803"
  },
+ "almaty:ultra alm": {
+  "name": "Ultra ALM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
+ },
  "almaty:ultra food": {
   "name": "Ultra Food",
   "city": "almaty",
@@ -18482,6 +18541,13 @@
   "checked_at": "2026-10-29T02:44:24+00:00",
   "instagram": "vici.kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001060647899"
+ },
+ "almaty:viled fashion вилед фешн": {
+  "name": "VILED FASHION (ВИЛЕД ФЕШН)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "almaty:vilka": {
   "name": "Vilka",
@@ -22669,6 +22735,13 @@
   "avatar": "e82f3c42f67ec213.jpg",
   "avatar_source": "website"
  },
+ "almaty:дыбова м м": {
+  "name": "Дыбова М.М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
+ },
  "almaty:дюсембинова онлайн учебный центр hopeland": {
   "name": "Дюсембинова (Онлайн учебный центр HOPELAND)",
   "city": "almaty",
@@ -24679,6 +24752,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
+ },
+ "almaty:кристалл": {
+  "name": "Кристалл",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "almaty:ксж freedom life": {
   "name": "КСЖ Freedom Life",
@@ -38194,7 +38274,7 @@
   "instagram": "s_parfum_astana",
   "website": "https://www.s-parfum.kz/",
   "source": "https://2gis.kz/astana/firm/70000001048402281",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42892,6 +42972,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:исайкин в в": {
+  "name": "Исайкин В.В.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "astana:исмурзина с у": {
   "name": "Исмурзина С У",
@@ -48958,7 +49045,7 @@
   "instagram": "cocrealty_hr",
   "website": "https://cocrealty.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001114811724",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -50467,6 +50554,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T16:44:09+00:00"
+ },
+ "atyrau:трц тамаша": {
+  "name": "ТРЦ Тамаша",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "tamasha_atyrau",
+  "website": "http://tamasha-center.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034846988",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:тссп казахстан": {
   "name": "ТССП Казахстан",
@@ -54195,7 +54296,7 @@
   "instagram": "etalon_avto_03",
   "website": "https://etalonauto.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033494932",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -54854,6 +54955,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "kokshetau:кокшетау": {
+  "name": "Кокшетау",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "kokshetau:кокшетауская железнодорожная больница": {
   "name": "Кокшетауская железнодорожная больница",
@@ -57359,6 +57467,20 @@
   "v": 3,
   "checked_at": "2026-11-06T08:44:35+00:00"
  },
+ "kyzylorda:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "technodomkz",
+  "website": "https://www.technodom.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001062653735",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kyzylorda:turan auto kz": {
   "name": "TURAN AUTO KZ",
   "city": "kyzylorda",
@@ -58321,6 +58443,13 @@
   "v": 3,
   "checked_at": "2026-11-13T05:44:11+00:00"
  },
+ "pavlodar:бакулин в с": {
+  "name": "Бакулин В.С.",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
+ },
  "pavlodar:батыр павлодар тоо": {
   "name": "БАТЫР-Павлодар, ТОО",
   "city": "pavlodar",
@@ -58677,6 +58806,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "pavlodar:кумисбекова": {
+  "name": "Кумисбекова",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "pavlodar:кх пахарь": {
   "name": "КХ Пахарь",
@@ -60806,6 +60942,15 @@
   "instagram": "2gissemey",
   "source": "https://2gis.kz/semej/firm/70000001051510593"
  },
+ "semey:5 звезд": {
+  "name": "5 звёзд",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00",
+  "instagram": "banya_5_zvezd",
+  "source": "https://2gis.kz/semej/firm/70000001077785118"
+ },
  "semey:adal supermarket": {
   "name": "ADAL SUPERMARKET",
   "city": "semey",
@@ -61778,6 +61923,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
+ },
+ "semey:корниенко е в": {
+  "name": "Корниенко Е. В",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "semey:корпорация gulfstream": {
   "name": "КОРПОРАЦИЯ GULFSTREAM",
@@ -64878,6 +65030,13 @@
   "v": 3,
   "checked_at": "2026-11-10T08:43:53+00:00"
  },
+ "shymkent:мхм групп": {
+  "name": "МХМ групп",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
+ },
  "shymkent:нур": {
   "name": "НУР",
   "city": "shymkent",
@@ -65005,7 +65164,7 @@
   "instagram": "euro.servis.shymkent",
   "website": "http://volvo-shymkent.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001030046708",
-  "avatar_checked_at": "2026-11-06T12:45:13+00:00",
+  "avatar_checked_at": "2026-11-13T13:43:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65038,6 +65197,13 @@
   ],
   "avatar": "55e1c15e5fcd9de6.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:сервис центр": {
+  "name": "Сервис Центр",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T13:43:08+00:00"
  },
  "shymkent:ситимед": {
   "name": "СитиМед",

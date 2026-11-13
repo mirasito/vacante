@@ -3,7 +3,7 @@
 Одно приложение на Expo (React Native) для трёх мест:
 
 - **Telegram Mini App** — веб-версия на https://vacante.kz/app/, открывается кнопкой «Вакансии» в @vacantekz_bot.
-- **Google Play** и **App Store** — нативные сборки из того же кода через EAS.
+- **Google Play** (и позже **App Store**) — нативные сборки из того же кода.
 
 Данные — статичные JSON, которые сайт пересобирает каждый час (`vacante/site/appfeed.py`):
 `/app/data/index.json` (города, сферы) и `/app/data/<город>.json` (до 400 свежих вакансий).
@@ -29,5 +29,9 @@ npx tsc --noEmit      # проверка типов
   Пакет `kz.vacante.app.test`, название «Vacante тест» (`app.config.js`), подпись общим тестовым
   ключом шаблона React Native: для Google Play такой APK не годится. Входа в нём пока нет,
   профиль, отклики и напоминания работают только в Telegram.
-- Сторы (нужны аккаунты владельца): Expo (бесплатно), Google Play Console ($25 один раз),
-  Apple Developer ($99 в год). Дальше `npx eas-cli build -p android` / `-p ios` и `eas submit`.
+- Google Play: workflow «Google Play» (`android.yml`, запуск вручную) собирает `.aab` на GitHub,
+  подписывает ключом загрузки с сервера Vacante (`/etc/vacante/android-upload.jks`, создаётся при
+  первой сборке) и кладёт в https://github.com/mirasito/vacante/releases/download/app-play/vacante-play.aab.
+  versionCode = номер прогона, название версии — `expo.version` в `app.json`. Файл загружают
+  в Play Console вручную. Аккаунт разработчика: корпоративный, ТОО «Vacante».
+- App Store: нужен Apple Developer ($99 в год), пока не оформлен.

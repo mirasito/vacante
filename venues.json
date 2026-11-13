@@ -8482,6 +8482,13 @@
   "v": 3,
   "checked_at": "2026-11-02T23:44:16+00:00"
  },
+ "almaty:ds property": {
+  "name": "DS PROPERTY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
+ },
  "almaty:dsb food": {
   "name": "DSB FOOD",
   "city": "almaty",
@@ -9567,6 +9574,20 @@
   "checked_at": "2026-11-08T01:44:24+00:00",
   "instagram": "g_project_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001099053798"
+ },
+ "almaty:gaissina": {
+  "name": "GAISSINA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "gaissina_com",
+  "website": "https://gaissina.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001045568694",
+  "avatar_checked_at": "2026-11-13T08:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:galafood": {
   "name": "GalaFood",
@@ -12309,6 +12330,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T12:44:06+00:00"
+ },
+ "almaty:lady collection леди коллекшн": {
+  "name": "Lady Collection (Леди Коллекшн)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "ladycollection_kazakhstan",
+  "source": "https://2gis.kz/almaty/firm/9429940000877585"
  },
  "almaty:lali": {
   "name": "LALI",
@@ -18762,6 +18792,15 @@
   "v": 3,
   "checked_at": "2026-10-28T15:44:53+00:00"
  },
+ "almaty:zero": {
+  "name": "ZERO",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "zero_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001093600730"
+ },
  "almaty:zet company": {
   "name": "ZET Company",
   "city": "almaty",
@@ -20131,6 +20170,22 @@
    "website"
   ]
  },
+ "almaty:аманат мед академи": {
+  "name": "АМАНАТ МЕД АКАДЕМИ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "amanat.academy.kz",
+  "website": "https://amanatmed.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001060674829",
+  "avatar_checked_at": "2026-11-13T08:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "48fe549173458a5c.jpg",
+  "avatar_source": "website"
+ },
  "almaty:амао": {
   "name": "Амао",
   "city": "almaty",
@@ -20592,6 +20647,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T08:43:15+00:00"
+ },
+ "almaty:асыл сауап": {
+  "name": "Асыл САУАП",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "almaty:ателье": {
   "name": "Ателье",
@@ -21276,6 +21338,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "almaty:васильевское": {
+  "name": "Васильевское",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "almaty:вассу": {
   "name": "ИП Вассу",
@@ -22274,7 +22343,7 @@
   "instagram": "domashka.prodlenka",
   "website": "https://domashkaalmaty.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001117789872",
-  "avatar_checked_at": "2026-11-06T08:44:36+00:00",
+  "avatar_checked_at": "2026-11-13T08:45:11+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22970,6 +23039,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T14:43:38+00:00"
+ },
+ "almaty:идоятова": {
+  "name": "Идоятова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "almaty:издательство jogary bilim": {
   "name": "Издательство JOGARY BILIM",
@@ -24965,6 +25041,13 @@
    "website"
   ]
  },
+ "almaty:макс дорстройсервис 21": {
+  "name": "МАКС ДОРСТРОЙСЕРВИС-21",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
+ },
  "almaty:максимальный размах corporation": {
   "name": "Максимальный размах corporation",
   "city": "almaty",
@@ -25755,6 +25838,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T23:44:10+00:00"
+ },
+ "almaty:мухаметкалиева": {
+  "name": "Мухаметкалиева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "almaty:мфа акцепт сеть ресторанов turandot": {
   "name": "МФА - акцепт (Сеть ресторанов Turandot)",
@@ -26790,6 +26880,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T00:44:13+00:00"
+ },
+ "almaty:полюс групп": {
+  "name": "Полюс Групп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "almaty:помыткин": {
   "name": "Помыткин",
@@ -28120,6 +28217,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T10:44:37+00:00"
+ },
+ "almaty:столичный": {
+  "name": "Столичный",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "stolichniy.almaty",
+  "source": "https://2gis.kz/almaty/firm/9429940000800716"
  },
  "almaty:столичный хлеб": {
   "name": "Столичный хлеб",
@@ -29704,6 +29810,21 @@
   "v": 3,
   "checked_at": "2026-11-09T11:44:31+00:00"
  },
+ "almaty:центр психического здоровья кгп на пхв": {
+  "name": "Центр психического здоровья, КГП на ПХВ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "website": "http://cpzalmaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000802071",
+  "avatar_checked_at": "2026-11-13T08:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "30fdceabc0498a22.jpg",
+  "avatar_source": "website"
+ },
  "almaty:центр рулевых реек": {
   "name": "Центр Рулевых Реек",
   "city": "almaty",
@@ -29890,6 +30011,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T03:43:44+00:00"
+ },
+ "almaty:чк otan limited": {
+  "name": "ЧК OTAN LIMITED",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "almaty:чк paidax limited": {
   "name": "ЧК PAIDAX LIMITED",
@@ -34076,6 +34204,20 @@
   "checked_at": "2026-11-05T00:43:57+00:00",
   "instagram": "hilondon_astana_",
   "source": "https://www.instagram.com/hilondon_astana_/"
+ },
+ "astana:hj europe city": {
+  "name": "TOO HJ europe city",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "herosjourneykz",
+  "website": "https://herosjourney.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001096917208",
+  "avatar_checked_at": "2026-11-13T08:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:holy melon": {
   "name": "Holy Melon",
@@ -39512,6 +39654,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T09:44:47+00:00"
+ },
+ "astana:а стом kz": {
+  "name": "А стом.KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "astana:абаева": {
   "name": "Абаева",
@@ -52616,6 +52765,22 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "karaganda:нпк алгеоритм": {
+  "name": "НПК АлГеоРитм",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "algeoritm",
+  "website": "https://algeoritm.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001025635615",
+  "avatar_checked_at": "2026-11-13T08:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7a8d8d0241721202.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:нпп интеррин": {
   "name": "НПП Интеррин",
   "city": "karaganda",
@@ -59700,6 +59865,13 @@
   "avatar": "c2c14445b47b3b77.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:рябкин а с": {
+  "name": "Рябкин А. С.",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
+ },
  "petropavlovsk:светофор": {
   "name": "Светофор",
   "city": "petropavlovsk",
@@ -59708,6 +59880,15 @@
   "checked_at": "2026-11-07T12:44:23+00:00",
   "instagram": "mag.svetofor.__petropavlovsk",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001038646315"
+ },
+ "petropavlovsk:светская львица": {
+  "name": "СВЕТСКАЯ ЛЬВИЦА",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00",
+  "instagram": "svetskaya_lvitsa_petro",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038565447"
  },
  "petropavlovsk:север": {
   "name": "Север",
@@ -68162,6 +68343,13 @@
   "checked_at": "2026-11-11T17:48:33+00:00",
   "instagram": "premier.clinic.uka",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001081124811"
+ },
+ "ust-kamenogorsk:prima distribution": {
+  "name": "Prima Distribution",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T08:45:10+00:00"
  },
  "ust-kamenogorsk:product mix": {
   "name": "Product-Mix",

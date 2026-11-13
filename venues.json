@@ -2445,6 +2445,13 @@
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
  },
+ "aktobe:gold интерьер": {
+  "name": "Gold интерьер",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
+ },
  "aktobe:gungir": {
   "name": "GUNGIR",
   "city": "aktobe",
@@ -4433,6 +4440,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:alageum logistics": {
+  "name": "ALAGEUM LOGISTICS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
  },
  "almaty:alaman ts": {
   "name": "Alaman TS",
@@ -12241,6 +12255,15 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "almaty:kzdent": {
+  "name": "KZDENT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00",
+  "instagram": "kz.dent",
+  "source": "https://2gis.kz/almaty/firm/70000001043841982"
+ },
  "almaty:kőkjal service": {
   "name": "Kőkjal service",
   "city": "almaty",
@@ -12706,6 +12729,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T07:46:02+00:00"
+ },
+ "almaty:lord": {
+  "name": "Lord",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00",
+  "instagram": "lord.barbershop.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001087677298"
  },
  "almaty:loveliness": {
   "name": "Loveliness",
@@ -18775,6 +18807,13 @@
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
  },
+ "almaty:zhuldyz melden": {
+  "name": "Zhuldyz Melden",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
+ },
  "almaty:zilart": {
   "name": "ZILART",
   "city": "almaty",
@@ -19982,6 +20021,13 @@
   "v": 3,
   "checked_at": "2026-11-06T03:43:44+00:00"
  },
+ "almaty:альгин аа": {
+  "name": "Альгин АА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
+ },
  "almaty:альдис": {
   "name": "АльДиС",
   "city": "almaty",
@@ -20771,6 +20817,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T17:48:14+00:00"
+ },
+ "almaty:бату travel компаниясы": {
+  "name": "Бату travel компаниясы",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
  },
  "almaty:батырханов адай ертисович": {
   "name": "БАТЫРХАНОВ АДАЙ ЕРТИСОВИЧ",
@@ -29860,6 +29913,13 @@
   "instagram": "shashlychnyi_dvor_almaty_2",
   "source": "https://2gis.kz/almaty/firm/70000001093106118"
  },
+ "almaty:шведский стол": {
+  "name": "Шведский стол",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
+ },
  "almaty:шевцов богдан васильевич": {
   "name": "Шевцов Богдан Васильевич",
   "city": "almaty",
@@ -35679,6 +35739,15 @@
   "checked_at": "2026-11-13T04:42:56+00:00",
   "instagram": "mellyskz",
   "source": "https://2gis.kz/astana/firm/70000001095607965"
+ },
+ "astana:mellys склад": {
+  "name": "MELLY'S  Склад",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00",
+  "instagram": "mellyskz",
+  "source": "https://2gis.kz/astana/firm/70000001114718628"
  },
  "astana:merci de france": {
   "name": "MERCI DE FRANCE",
@@ -42864,6 +42933,15 @@
   "instagram": "saniya.bakery",
   "source": "https://2gis.kz/astana/firm/70000001027000250"
  },
+ "astana:кондренко крендель": {
+  "name": "Кондренко (КРЕНДЕЛЬ)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00",
+  "instagram": "krendel.astanaa",
+  "source": "https://2gis.kz/astana/firm/70000001075246355"
+ },
  "astana:конкрит продактс астана": {
   "name": "Конкрит Продактс Астана",
   "city": "astana",
@@ -44647,6 +44725,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:покраска авто": {
+  "name": "Покраска авто",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
  },
  "astana:полезный продукт": {
   "name": "Полезный Продукт",
@@ -49880,6 +49965,22 @@
   "v": 3,
   "checked_at": "2026-11-12T16:43:11+00:00"
  },
+ "karaganda:ast kuzet": {
+  "name": "AST KUZET",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00",
+  "instagram": "ast.kuzet",
+  "website": "http://ast-kuzet.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001032407706",
+  "avatar_checked_at": "2026-11-13T06:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a2f678e532e7e5a6.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "karaganda",
@@ -51512,6 +51613,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
+ },
+ "karaganda:волкович и г": {
+  "name": "Волкович И.Г.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
  },
  "karaganda:гелиос": {
   "name": "Гелиос",
@@ -54044,6 +54152,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
+ },
+ "kokshetau:штейнбах а в": {
+  "name": "Штейнбах А.В",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00"
  },
  "kokshetau:шумология кз": {
   "name": "Шумология КЗ",
@@ -62016,6 +62131,15 @@
   ],
   "avatar": "cc0697ec4ec7da53.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:kulan oil": {
+  "name": "Kulan Oil",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T06:43:11+00:00",
+  "instagram": "kulanoil.kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001046241372"
  },
  "shymkent:kоллекторское агентство smart recovery": {
   "name": "Kоллекторское агентство «Smart Recovery",

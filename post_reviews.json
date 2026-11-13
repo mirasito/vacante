@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T16:57:06+00:00",
+ "updated_at": "2026-11-13T17:56:42+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1146,25 +1146,6 @@
    "verdict": "reject",
    "at": "2026-10-30T17:57:11+00:00",
    "reason": "Руководящая должность, нужен опыт в МВД и высшее образование"
-  },
-  "rabota_semey_official-6743": {
-   "verdict": "approve",
-   "at": "2026-10-30T17:57:11+00:00",
-   "fields": {
-    "employer": "ТД «Апрель»",
-    "schedule": "2/2, 10:00–21:00",
-    "perks": [
-     "Обучение",
-     "Ежедневная оплата"
-    ]
-   }
-  },
-  "rabota_semey_official-6742": {
-   "verdict": "approve",
-   "at": "2026-10-30T17:57:11+00:00",
-   "fields": {
-    "employer": "Банный комплекс «Арасан»"
-   }
   },
   "hh-139021809": {
    "verdict": "approve",
@@ -3605,23 +3586,6 @@
    "fields": {
     "title": "Администратор студии загара",
     "schedule": "Вт, Чт, Сб, Вс, 12:00–21:00"
-   }
-  },
-  "hh-139021601": {
-   "verdict": "approve",
-   "at": "2026-11-01T04:56:42+00:00",
-   "fields": {
-    "employer": "Алтрикс",
-    "schedule": "5/2, 8 или 10 часов"
-   }
-  },
-  "hh-139021238": {
-   "verdict": "approve",
-   "at": "2026-11-01T04:56:42+00:00",
-   "fields": {
-    "title": "Продавец женской одежды",
-    "employer": "Dominika",
-    "schedule": "2/2, по 12 часов"
    }
   },
   "hh-130146826": {
@@ -53993,6 +53957,170 @@
    "verdict": "reject",
    "at": "2026-11-13T16:57:06+00:00",
    "reason": "Офисная должность (менеджер по логистике с китайским)"
+  },
+  "astana_hh-1880": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Korean Shop",
+    "salary_min": 250000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": "2/2",
+    "perks": []
+   }
+  },
+  "hh-139488117": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "Рестобар «Proseccarna»",
+    "schedule": "4/2",
+    "address": "ул. Бухар Жырау, 28"
+   }
+  },
+  "hh-139487648": {
+   "verdict": "reject",
+   "at": "2026-11-13T17:56:42+00:00",
+   "reason": "Офисная должность: продажи в тендерах"
+  },
+  "zhumys_astana_kz-17466": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "employer": "«Мико»",
+    "schedule": "10:00–00:00",
+    "address": "ул. Айтматова, 36",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "astana_job_vakansii-130592": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "employer": "Гостиница «Топаз»",
+    "schedule": "сутки через двое"
+   }
+  },
+  "hh-139454308": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "ул. Табачнозаводская, 20"
+   }
+  },
+  "hh-138984210": {
+   "verdict": "reject",
+   "at": "2026-11-13T17:56:42+00:00",
+   "reason": "Офисная должность: B2B-продажи в финтехе"
+  },
+  "hh-139458242": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "employer": "Otan Limited",
+    "schedule": "6/1",
+    "address": "ул. Радостовца, 292"
+   }
+  },
+  "hh-138655098": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Оператор call-центра",
+    "employer": "ЗооТорг",
+    "schedule": "2/2",
+    "address": "пр. Жибек Жолы, 54"
+   }
+  },
+  "hh-138171255": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Грузчик в цех",
+    "employer": "Пласт продукт",
+    "schedule": "6/1",
+    "address": "ул. Ангарская, 115Б"
+   }
+  },
+  "hh-138957771": {
+   "verdict": "reject",
+   "at": "2026-11-13T17:56:42+00:00",
+   "reason": "Работа в Конаеве, не в Алматы, в игровой индустрии"
+  },
+  "hh-137621833": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": "ул. Казыбаева, 92"
+   }
+  },
+  "hh-138956581": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Разнорабочий на стройку",
+    "schedule": null,
+    "address": "ул. Льва Толстого, 15Б"
+   }
+  },
+  "rabota4almaty-6557": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Повар-донерщик",
+    "employer": "Shaurvill",
+    "salary_min": 18000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "4/2"
+   }
+  },
+  "hh-139455320": {
+   "verdict": "reject",
+   "at": "2026-11-13T17:56:42+00:00",
+   "reason": "Офисная должность: менеджер по продажам"
+  },
+  "hh-138984310": {
+   "verdict": "reject",
+   "at": "2026-11-13T17:56:42+00:00",
+   "reason": "Руководящая должность"
+  },
+  "rabota_semey_official-6925": {
+   "verdict": "reject",
+   "at": "2026-11-13T17:56:42+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_semey_official-6924": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Сушист",
+    "schedule": "10:00–23:00",
+    "address": "район Затона",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "rabota_semey_official-6927": {
+   "verdict": "approve",
+   "at": "2026-11-13T17:56:42+00:00",
+   "fields": {
+    "title": "Банщица",
+    "employer": "Баня «Алтын Тага»",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
   }
  }
 }

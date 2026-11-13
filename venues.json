@@ -11429,6 +11429,13 @@
   "avatar": "14698dc478d2b1ba.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:k towers realty": {
+  "name": "K Towers Realty",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T03:41:49+00:00"
+ },
  "almaty:k&k gmbh": {
   "name": "K&K GmbH",
   "city": "almaty",
@@ -14939,7 +14946,7 @@
   "instagram": "professional_service_almaty",
   "website": "https://ps-almaty.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032382249",
-  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24170,7 +24177,7 @@
   "checked_at": "2026-11-06T02:44:46+00:00",
   "website": "http://k24.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001047863826",
-  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31352,6 +31359,19 @@
   "website": "http://avrora.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018425100",
   "avatar_checked_at": "2026-11-11T14:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:avtoprompodshipnik автопромподшипник": {
+  "name": "Avtoprompodshipnik (Автопромподшипник)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T03:41:49+00:00",
+  "website": "https://www.avtoprom.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302890726",
+  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40219,7 +40239,7 @@
   "instagram": "ayan_supermarket",
   "website": "http://ayan.kz/",
   "source": "https://2gis.kz/astana/firm/70000001035282583",
-  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59986,7 +60006,7 @@
   "instagram": "technodomkz",
   "website": "https://technodom.kz/",
   "source": "https://2gis.kz/semej/firm/70000001051546946",
-  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63055,7 +63075,7 @@
   "instagram": "yvesrocherkz",
   "website": "https://www.yves-rocher.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001026613716",
-  "avatar_checked_at": "2026-11-06T02:44:48+00:00",
+  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
   "avatar_tried": [
    "website"
   ]

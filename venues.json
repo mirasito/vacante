@@ -719,6 +719,15 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "aktau:sak monshasy": {
+  "name": "Sak Monshasy",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "sak_monshasy_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001089559868"
+ },
  "aktau:sandavinci": {
   "name": "SanDaVinci",
   "city": "aktau",
@@ -2125,6 +2134,13 @@
   "checked_at": "2026-11-11T17:48:33+00:00",
   "instagram": "adalservice_cto",
   "source": "https://2gis.kz/aktobe/firm/70000001110931314"
+ },
+ "aktobe:adona ltd": {
+  "name": "Adona ltd",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
  },
  "aktobe:akmeshit hc": {
   "name": "Akmeshit HC",
@@ -4529,6 +4545,22 @@
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
  },
+ "almaty:alatau": {
+  "name": "Alatau",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "alatau_bc",
+  "website": "https://alatau.tsqr.me/",
+  "source": "https://2gis.kz/almaty/firm/70000001104873646",
+  "avatar_checked_at": "2026-11-13T14:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9651c7b55b2fafb8.jpg",
+  "avatar_source": "website"
+ },
  "almaty:alatau auto tech": {
   "name": "Alatau Auto Tech",
   "city": "almaty",
@@ -6667,6 +6699,13 @@
   "avatar": "15e646d7c36c446b.jpg",
   "avatar_source": "website"
  },
+ "almaty:beibars bottlers бейбарс ботлерс": {
+  "name": "Beibars Bottlers (Бейбарс Ботлерс)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
+ },
  "almaty:beis spa hotel resort": {
   "name": "Beis Spa Hotel Resort",
   "city": "almaty",
@@ -7839,6 +7878,13 @@
   "checked_at": "2026-11-09T20:44:15+00:00",
   "instagram": "autospacrystal",
   "source": "https://2gis.kz/almaty/firm/9429940001392498"
+ },
+ "almaty:crystal tech": {
+  "name": "Crystal Tech",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
  },
  "almaty:cs seven": {
   "name": "CS Seven",
@@ -11771,7 +11817,7 @@
   "checked_at": "2026-11-06T13:44:26+00:00",
   "telegram": "kayra_logistik_ve_dis_ticaret",
   "source": "https://2gis.kz/almaty/firm/70000001102918727",
-  "avatar_checked_at": "2026-11-06T13:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T14:45:30+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -11795,6 +11841,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:kazaisystems": {
+  "name": "KAZAISYSTEMS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
  },
  "almaty:kazakhstan max cooper oiltech": {
   "name": "Kazakhstan Max Cooper Oiltech",
@@ -15422,6 +15475,15 @@
    "website"
   ]
  },
+ "almaty:pyramid pride": {
+  "name": "Pyramid Pride",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "pyramid_pride",
+  "source": "https://2gis.kz/almaty/firm/70000001069475076"
+ },
  "almaty:q laboratory": {
   "name": "Q-Laboratory",
   "city": "almaty",
@@ -15643,6 +15705,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "almaty:radix solution радикс солюшн": {
+  "name": "Radix Solution (Радикс Солюшн)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
  },
  "almaty:rai company": {
   "name": "Rai-Company",
@@ -19862,6 +19931,13 @@
   "checked_at": "2026-10-29T17:43:26+00:00",
   "instagram": "akadembala",
   "source": "https://2gis.kz/almaty/firm/70000001116314241"
+ },
+ "almaty:акбулак": {
+  "name": "Акбулак",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
  },
  "almaty:акваарт": {
   "name": "Акваарт",
@@ -25010,6 +25086,15 @@
   "v": 3,
   "checked_at": "2026-11-11T15:45:20+00:00"
  },
+ "almaty:латифа": {
+  "name": "ЛАТИФА",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "babyshop_latifa_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001034056240"
+ },
  "almaty:лаффа": {
   "name": "Лаффа",
   "city": "almaty",
@@ -29946,6 +30031,20 @@
   "v": 3,
   "checked_at": "2026-11-09T04:44:32+00:00"
  },
+ "almaty:фридом банк казахстан": {
+  "name": "Фридом Банк Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "bankffin.kz",
+  "website": "https://bankffin.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001048737689",
+  "avatar_checked_at": "2026-11-13T14:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:фрост ко": {
   "name": "Фрост Ко",
   "city": "almaty",
@@ -31521,6 +31620,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:altyn badam алтын бадам": {
+  "name": "ALTYN BADAM (АЛТЫН БАДАМ)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
  },
  "astana:alver group": {
   "name": "Alver Group",
@@ -33508,6 +33614,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "astana:doslife group": {
+  "name": "DOSLIFE GROUP",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "doslifegroup",
+  "source": "https://2gis.kz/astana/firm/70000001066032300"
  },
  "astana:dosso dossi": {
   "name": "DOSSO DOSSI",
@@ -39205,6 +39320,13 @@
    "website"
   ]
  },
+ "astana:tengree": {
+  "name": "Tengree",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
+ },
  "astana:tengri innovations": {
   "name": "Tengri Innovations",
   "city": "astana",
@@ -39895,6 +40017,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:wonderbloom ast": {
+  "name": "Wonderbloom Ast",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "wonderbloom.kids",
+  "source": "https://2gis.kz/astana/firm/70000001098323238"
  },
  "astana:worldwide trade": {
   "name": "WorldWide Trade",
@@ -51780,6 +51911,19 @@
   "avatar": "9c00040f74310257.jpg",
   "avatar_source": "telegram"
  },
+ "karaganda:polymet solutions corporation полимет солюшинс корпорейшн": {
+  "name": "Polymet Solutions Corporation (Полимет Солюшинс Корпорейшн)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "website": "https://polymetsol.com/",
+  "source": "https://2gis.kz/karaganda/firm/70000001047398761",
+  "avatar_checked_at": "2026-11-13T14:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:prima distribution": {
   "name": "Prima Distribution",
   "city": "karaganda",
@@ -52001,6 +52145,22 @@
    "website"
   ],
   "avatar": "440401bb5b4c4439.jpg",
+  "avatar_source": "website"
+ },
+ "karaganda:star oil energy": {
+  "name": "STAR OIL Energy",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "staroil.kz",
+  "website": "https://staroil.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302894642",
+  "avatar_checked_at": "2026-11-13T14:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ceb38555a7806be1.jpg",
   "avatar_source": "website"
  },
  "karaganda:stratera": {
@@ -62806,6 +62966,15 @@
   "v": 3,
   "checked_at": "2026-11-05T13:44:20+00:00"
  },
+ "shymkent:block industry corp": {
+  "name": "Block Industry Corp",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "instagram": "block.industry",
+  "source": "https://2gis.kz/shymkent/firm/70000001052438796"
+ },
  "shymkent:bm group 2022": {
   "name": "BM Group-2022",
   "city": "shymkent",
@@ -68067,6 +68236,13 @@
   "v": 3,
   "checked_at": "2026-10-31T03:43:12+00:00"
  },
+ "uralsk:компания": {
+  "name": "Компания",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00"
+ },
  "uralsk:косметики": {
   "name": "КОСМЕТИКИ",
   "city": "uralsk",
@@ -69605,6 +69781,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T17:44:18+00:00"
+ },
+ "ust-kamenogorsk:абт консалтинг": {
+  "name": "АБТ-КОНСАЛТИНГ",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T14:45:29+00:00",
+  "website": "https://abtk.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721341461",
+  "avatar_checked_at": "2026-11-13T14:45:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:агротехменеджмент": {
   "name": "АгроТехМенеджмент",

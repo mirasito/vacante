@@ -1,64 +1,198 @@
-# Сборка Android-приложения (app/) для Google Play на серверах Expo (EAS Build, бесплатный план).
-# Запуск вручную: Actions → «Android» → Run workflow. Нужен секрет EXPO_TOKEN (expo.dev → Account settings →
-# Access tokens); пока его нет, сборка пропускается. Ключ подписи EAS создаёт и хранит сам при первой сборке.
-# Готовый .aab скачивается по ссылке из итога прогона; первую версию загружают в Play Console вручную.
-name: Android
+# Сборка Android-приложения (app/) для Google Play: файл .aab, подписанный ключом загрузки.
+# Запуск вручную: Actions → «Google Play» → Run workflow. Собирается здесь же, на GitHub,
+# без аккаунта Expo. Готовый файл лежит в пре-релизе app-play по постоянной ссылке:
+#   https://github.com/mirasito/vacante/releases/download/app-play/vacante-play.aab
+# Его загружают в Play Console (Тестирование → Внутреннее тестирование → Создать выпуск).
+#
+# Ключ загрузки (upload key) хранится на сервере Vacante: /etc/vacante/android-upload.jks, только
+# для root. При первой сборке workflow сам создаёт ключ и кладёт его туда, дальше берёт оттуда.
+# Пароль ключа не хранится: он выводится из того же секрета, что и ключи выкладки сервера
+# (SERVER_SECRET, а если его нет, SERVER_PASSWORD), поэтому новых секретов не нужно.
+# Ключ, которым приложение подписано для телефонов, хранит Google (Play App Signing). Если ключ
+# загрузки потеряется, его меняют через Play Console: Настройка → Целостность приложения.
+#
+# Номер версии для Google Play (versionCode) — номер прогона этого workflow: каждая сборка больше
+# прежней. Название версии берётся из app/app.json (expo.version).
+name: Google Play
 
 on:
   workflow_dispatch:
 
 concurrency:
-  group: android
+  group: android-play
   cancel-in-progress: false
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  aab:
+    name: Сборка .aab для Google Play
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     env:
-      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-      EAS: npx -y eas-cli@27.2.0  # версия закреплена: обновлять, только проверив сборку
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+      SERVER_SECRET: ${{ secrets.SERVER_SECRET }}
+      VACANTE_VERSION_CODE: ${{ github.run_number }}
+      KEYS: ${{ github.workspace }}/.keys
+      KEYSTORE: ${{ github.workspace }}/.keys/upload.jks
+      KEY_ALIAS: upload
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
     steps:
-      - name: Проверить секрет
-        id: secrets
+      - name: Проверить секреты
         run: |
-          if [ -z "$EXPO_TOKEN" ]; then
-            echo "::warning::Нет секрета EXPO_TOKEN: создайте токен на expo.dev и добавьте его в Settings → Secrets and variables → Actions"
-          else
-            echo "ready=1" >> "$GITHUB_OUTPUT"
+          if [ -z "$SERVER_HOST" ] || { [ -z "$SERVER_SECRET" ] && [ -z "$SERVER_PASSWORD" ]; }; then
+            echo "::error::Ключ загрузки хранится на сервере Vacante: нужны секреты SERVER_HOST и SERVER_SECRET (или SERVER_PASSWORD), как для workflow «Сервер»"
+            exit 1
           fi
 
       - uses: actions/checkout@v4
-        if: steps.secrets.outputs.ready
+
+      - name: Место на диске
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/share/boost "$AGENT_TOOLSDIRECTORY/CodeQL"
+          df -h / | tail -1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Ключ загрузки с сервера
+        run: |
+          pip install --quiet "cryptography>=42"
+          python server/deploy/keys.py "$KEYS" "$SERVER_HOST" > /dev/null
+          pass=$(python3 server/deploy/keys.py --label vacante-android-upload-v1)
+          echo "::add-mask::$pass"
+          echo "KEY_PASS=$pass" >> "$GITHUB_ENV"
+          ssh=(ssh -i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20
+            -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes "root@$SERVER_HOST")
+          if ! "${ssh[@]}" true; then
+            echo "::error::Не получилось войти на сервер по ключу выкладки. Workflow «Сервер» должен хотя бы раз пройти выкладку"
+            exit 1
+          fi
+          umask 077
+          if "${ssh[@]}" test -s /etc/vacante/android-upload.jks; then
+            "${ssh[@]}" cat /etc/vacante/android-upload.jks > "$KEYSTORE"
+            echo "Ключ загрузки взят с сервера"
+          else
+            echo "Ключа загрузки на сервере нет: создаю новый"
+            keytool -genkeypair -keystore "$KEYSTORE" -storetype PKCS12 -alias "$KEY_ALIAS" \
+              -keyalg RSA -keysize 4096 -validity 10000 -storepass "$pass" -keypass "$pass" \
+              -dname "CN=Vacante, O=TOO Vacante, L=Almaty, C=KZ" -noprompt
+            "${ssh[@]}" 'umask 077; install -d -m 700 /etc/vacante; cat > /etc/vacante/android-upload.jks.part && mv /etc/vacante/android-upload.jks.part /etc/vacante/android-upload.jks' < "$KEYSTORE"
+            "${ssh[@]}" cat /etc/vacante/android-upload.jks | cmp - "$KEYSTORE"
+            echo "Новый ключ загрузки сохранён на сервере: /etc/vacante/android-upload.jks"
+          fi
+          keytool -list -keystore "$KEYSTORE" -storepass "$pass" -alias "$KEY_ALIAS" > /dev/null
 
       - uses: actions/setup-node@v4
-        if: steps.secrets.outputs.ready
         with:
           node-version: "22"
           cache: npm
           cache-dependency-path: app/package-lock.json
 
+      - uses: gradle/actions/setup-gradle@v4
+
       - name: Зависимости
-        if: steps.secrets.outputs.ready
         working-directory: app
         run: npm ci
 
-      # Создаёт проект @<аккаунт>/vacante на expo.dev или привязывает уже созданный (пишет projectId в app.json)
-      - name: Проект на expo.dev
-        if: steps.secrets.outputs.ready
+      - name: Проект Android (expo prebuild)
         working-directory: app
-        run: $EAS init --non-interactive --force
+        run: npx expo prebuild -p android --no-install
 
+      # Свойства android.injected.signing.* задают подпись так же, как Android Studio:
+      # build.gradle из expo prebuild подписывает релиз тестовым ключом, а эти свойства его заменяют
       - name: Сборка .aab
-        if: steps.secrets.outputs.ready
-        working-directory: app
+        working-directory: app/android
+        run: >-
+          ./gradlew bundleRelease
+          -Pandroid.injected.signing.store.file="$KEYSTORE"
+          -Pandroid.injected.signing.store.password="$KEY_PASS"
+          -Pandroid.injected.signing.key.alias="$KEY_ALIAS"
+          -Pandroid.injected.signing.key.password="$KEY_PASS"
+          -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=1g"
+
+      - name: Проверка файла
         run: |
-          $EAS build -p android --profile production --non-interactive --no-wait --json > build.json
-          url=$(jq -r '.[0] | "https://expo.dev/accounts/\(.app.ownerAccount.name)/projects/\(.app.slug)/builds/\(.id)"' build.json)
-          echo "Сборка: $url"
+          aab=app/android/app/build/outputs/bundle/release/app-release.aab
+          cp "$aab" vacante-play.aab
+          # Подписан ключом загрузки, а не тестовым ключом
+          want=$(keytool -list -v -keystore "$KEYSTORE" -storepass "$KEY_PASS" -alias "$KEY_ALIAS" | awk '/SHA256:/ { print $2; exit }')
+          got=$(keytool -printcert -jarfile vacante-play.aab | awk '/SHA256:/ { print $2; exit }')
+          if [ -z "$want" ] || [ "$want" != "$got" ]; then
+            echo "::error::Файл подписан не ключом загрузки: $got вместо $want"
+            exit 1
+          fi
+          # Пакет и номер версии из манифеста внутри .aab
+          curl -sSfL -o bundletool.jar https://github.com/google/bundletool/releases/download/1.18.1/bundletool-all-1.18.1.jar
+          manifest=$(java -jar bundletool.jar dump manifest --bundle vacante-play.aab)
+          package=$(grep -o 'package="[^"]*"' <<< "$manifest" | head -1 | cut -d'"' -f2)
+          code=$(grep -o 'android:versionCode="[^"]*"' <<< "$manifest" | head -1 | cut -d'"' -f2)
+          name=$(grep -o 'android:versionName="[^"]*"' <<< "$manifest" | head -1 | cut -d'"' -f2)
+          target=$(grep -o 'android:targetSdkVersion="[^"]*"' <<< "$manifest" | head -1 | cut -d'"' -f2)
+          echo "Пакет $package, версия $name ($code), targetSdk $target, размер $(du -h vacante-play.aab | cut -f1)"
+          if [ "$package" != kz.vacante.app ] || [ "$code" != "$VACANTE_VERSION_CODE" ]; then
+            echo "::error::Ожидался пакет kz.vacante.app с versionCode $VACANTE_VERSION_CODE"
+            exit 1
+          fi
           {
-            echo "### Android-сборка запущена"
+            echo "VERSION_NAME=$name"
+            echo "TARGET_SDK=$target"
+            echo "UPLOAD_SHA256=$want"
+          } >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aab
+          path: vacante-play.aab
+          retention-days: 30
+          compression-level: 0
+
+      - name: Пре-релиз app-play
+        if: github.ref == 'refs/heads/main'
+        run: |
+          url="https://github.com/$GH_REPO/releases/download/app-play/vacante-play.aab"
+          title="Google Play: версия $VERSION_NAME ($VACANTE_VERSION_CODE)"
+          cat > notes.md <<EOF
+          Файл для загрузки в Google Play Console: версия $VERSION_NAME, versionCode $VACANTE_VERSION_CODE, коммит ${GITHUB_SHA::7}, targetSdk $TARGET_SDK.
+
+          **Как загрузить.** Скачайте $url и в Play Console откройте «Тестирование → Внутреннее тестирование → Создать выпуск», перетащите файл в «App bundles».
+
+          Отпечаток ключа загрузки (SHA-256): \`$UPLOAD_SHA256\`
+
+          Этот файл не ставится на телефон напрямую, для телефона есть тестовый APK: https://github.com/$GH_REPO/releases/download/app-test/vacante-test.apk
+          EOF
+          if gh release view app-play > /dev/null 2>&1; then
+            gh api -X PATCH "repos/$GH_REPO/git/refs/tags/app-play" -f sha="$GITHUB_SHA" -F force=true > /dev/null
+            gh release edit app-play --title "$title" --notes-file notes.md --prerelease
+            gh release upload app-play vacante-play.aab --clobber
+          else
+            gh release create app-play vacante-play.aab --prerelease --target "$GITHUB_SHA" \
+              --title "$title" --notes-file notes.md
+          fi
+
+      - name: Итог
+        run: |
+          {
+            echo "### Google Play: версия $VERSION_NAME ($VACANTE_VERSION_CODE)"
             echo
-            echo "Статус и файл .aab: $url"
+            if [ "$GITHUB_REF" = refs/heads/main ]; then
+              echo "Файл: https://github.com/$GH_REPO/releases/download/app-play/vacante-play.aab"
+            else
+              echo "Файл в артефакте aab этого прогона (с ветки $GITHUB_REF_NAME пре-релиз не обновляется)"
+            fi
             echo
-            echo "На бесплатном плане сборка ждёт в очереди, иногда больше часа."
+            echo "Ключ загрузки SHA-256: \`$UPLOAD_SHA256\`"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Убрать ключ
+        if: always()
+        run: rm -rf "$KEYS"

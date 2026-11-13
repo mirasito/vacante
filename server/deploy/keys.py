@@ -9,6 +9,8 @@ Workflow «Сервер» запускается на чистой машине 
 - ключ резервных копий: им шифруются ночные копии (печатается в stdout).
 
 Запуск: python keys.py <папка> <IP сервера>
+Пароль для другой задачи из того же секрета: python keys.py --label <метка> (печатает 40 hex-символов;
+так workflow «Google Play» получает пароль ключа загрузки).
 """
 
 from __future__ import annotations
@@ -38,7 +40,7 @@ def write_key(folder: Path, name: str, seed: bytes) -> str:
     return public
 
 
-def main(folder: str, host: str, port: int = 22) -> None:
+def server_secret() -> bytes:
     # SERVER_SECRET — для сервера, куда первый раз входят по ключу (SERVER_SSH_KEY): из такого ключа
     # выводить нельзя, workflow убирает его с сервера, а сам ключ мог где-то засветиться
     own = os.environ.get("SERVER_SECRET", "")
@@ -47,6 +49,11 @@ def main(folder: str, host: str, port: int = 22) -> None:
     secret = (own or os.environ.get("SERVER_PASSWORD", "")).encode()
     if len(secret) < 8:
         sys.exit("SERVER_PASSWORD пустой или короче 8 символов")
+    return secret
+
+
+def main(folder: str, host: str, port: int = 22) -> None:
+    secret = server_secret()
     out = Path(folder)
     out.mkdir(mode=0o700, parents=True, exist_ok=True)
     write_key(out, "deploy", derive(secret, "vacante-deploy-key-v1"))
@@ -57,4 +64,7 @@ def main(folder: str, host: str, port: int = 22) -> None:
 
 
 if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[1] == "--label":
+        print(derive(server_secret(), sys.argv[2]).hex()[:40])
+        sys.exit()
     main(sys.argv[1], sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 22)

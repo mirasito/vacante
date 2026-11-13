@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T20:56:12+00:00",
+ "updated_at": "2026-11-13T21:56:41+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -3941,14 +3941,6 @@
    "fields": {
     "employer": null,
     "schedule": "1/2, сутки через двое"
-   }
-  },
-  "hh-138085819": {
-   "verdict": "approve",
-   "at": "2026-11-01T07:57:05+00:00",
-   "fields": {
-    "schedule": "6/1",
-    "address": "ул. Жетиген, 9"
    }
   },
   "hh-137709904": {
@@ -54135,6 +54127,15 @@
     "employer": "Магазин «Астау»",
     "schedule": "2/2, по 9 часов",
     "address": "пр. Азаттык, 67"
+   }
+  },
+  "hh-139488952": {
+   "verdict": "approve",
+   "at": "2026-11-13T21:56:41+00:00",
+   "fields": {
+    "employer": "Perdehome.kz",
+    "schedule": "6/1",
+    "address": "ул. Ерназарова, 47"
    }
   }
  }

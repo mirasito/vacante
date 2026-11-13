@@ -1477,6 +1477,13 @@
   "avatar": "71eb8797c9e4d2b2.jpg",
   "avatar_source": "website"
  },
+ "aktau:капиталъ": {
+  "name": "Капиталъ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
+ },
  "aktau:кари кз": {
   "name": "КАРИ КЗ",
   "city": "aktau",
@@ -9223,6 +9230,13 @@
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
  },
+ "almaty:evrazex": {
+  "name": "EvrazEx",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
+ },
  "almaty:experience production": {
   "name": "Experience Production",
   "city": "almaty",
@@ -13345,6 +13359,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T03:44:45+00:00"
+ },
+ "almaty:match a": {
+  "name": "MATCH.A",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00",
+  "instagram": "match.a_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001118939590"
  },
  "almaty:materia": {
   "name": "Materia",
@@ -18149,6 +18172,21 @@
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
  },
+ "almaty:trading house b i profit": {
+  "name": "TRADING HOUSE B.I.PROFIT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00",
+  "website": "https://biprofit.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001236890",
+  "avatar_checked_at": "2026-11-13T16:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5b76824e63af6e25.jpg",
+  "avatar_source": "website"
+ },
  "almaty:tramax limited трамаkc лимитед": {
   "name": "TRAMAX Limited (ТРАМАKC Лимитед)",
   "city": "almaty",
@@ -22603,6 +22641,20 @@
   "avatar": "b4b7769464c2981a.jpg",
   "avatar_source": "website"
  },
+ "almaty:детский садик султанкурган имени кузиева пирмухамеда ажи": {
+  "name": "Детский Садик Султанкурган имени Кузиева Пирмухамеда ажи",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00",
+  "instagram": "sultankurgan",
+  "website": "https://sultankurgan.edu.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000800824",
+  "avatar_checked_at": "2026-11-13T16:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:джабарова г т": {
   "name": "Джабарова Г.Т.",
   "city": "almaty",
@@ -24071,6 +24123,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T08:43:39+00:00"
+ },
+ "almaty:казполимеринвест": {
+  "name": "“КазПолимерИнвест",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "almaty:казсвет ast": {
   "name": "КазСвет Ast",
@@ -28111,6 +28170,22 @@
    "website"
   ]
  },
+ "almaty:салон итальянской мебели акниет тоо art perfetto": {
+  "name": "Салон итальянской мебели Акниет (ТОО ART-PERFETTO)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00",
+  "instagram": "mebel.akniet",
+  "website": "http://www.akniet.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001039438535",
+  "avatar_checked_at": "2026-11-13T16:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0df055e41fae4065.jpg",
+  "avatar_source": "website"
+ },
  "almaty:салон штор маркиза": {
   "name": "Салон штор маркиза",
   "city": "almaty",
@@ -29319,6 +29394,13 @@
   "v": 3,
   "checked_at": "2026-11-08T17:43:21+00:00"
  },
+ "almaty:тимченко к в": {
+  "name": "ТИМЧЕНКО К.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
+ },
  "almaty:тк пищевик": {
   "name": "ТК Пищевик",
   "city": "almaty",
@@ -29767,6 +29849,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T05:43:22+00:00"
+ },
+ "almaty:урахунов н х": {
+  "name": "УРАХУНОВ Н.Х",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "almaty:урманов р а": {
   "name": "Урманов Р. А.",
@@ -31544,6 +31633,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T12:44:11+00:00"
+ },
+ "astana:ake plast аке пласт": {
+  "name": "AKE Plast (АКЕ Пласт)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "astana:akmaral academy": {
   "name": "Akmaral Academy",
@@ -37562,6 +37658,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
+ },
+ "astana:pasha distribution ltd": {
+  "name": "Pasha Distribution LTD",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "astana:passionm": {
   "name": "PassionM",
@@ -43976,6 +44079,15 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "astana:кофейня discovery coffee": {
+  "name": "Кофейня Discovery coffee",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00",
+  "instagram": "discovery_coffee_astana",
+  "source": "https://2gis.kz/astana/firm/70000001080351248"
+ },
  "astana:кофейня segafredo": {
   "name": "Кофейня Segafredo",
   "city": "astana",
@@ -48238,6 +48350,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-13T00:44:06+00:00"
+ },
+ "astana:цех по производству полуфабрикатов": {
+  "name": "Цех по производству полуфабрикатов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "astana:чарын": {
   "name": "Чарын",
@@ -52725,6 +52844,13 @@
   "avatar": "3dd43ff8d89130e7.jpg",
   "avatar_source": "telegram"
  },
+ "karaganda:бпи астана": {
+  "name": "БПИ-Астана",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
+ },
  "karaganda:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "karaganda",
@@ -53038,6 +53164,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
+ },
+ "karaganda:жамиева айнагуль": {
+  "name": "Жамиева Айнагуль",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "karaganda:жанар су": {
   "name": "Жанар-Су",
@@ -57195,6 +57328,13 @@
   "avatar": "17b034104a86ca4b.jpg",
   "avatar_source": "website"
  },
+ "kostanay:петченко в е": {
+  "name": "Петченко В.Е.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
+ },
  "kostanay:пк фарватер": {
   "name": "ПК ФАРВАТЕР",
   "city": "kostanay",
@@ -59295,6 +59435,22 @@
    "website"
   ]
  },
+ "pavlodar:охранное агентство сократ павлодар": {
+  "name": "Охранное агентство СОКРАТ-ПАВЛОДАР",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00",
+  "instagram": "sokrat.pavlodar",
+  "website": "http://sokrat.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001018634912",
+  "avatar_checked_at": "2026-11-13T16:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "15d889f91f26f3e8.jpg",
+  "avatar_source": "website"
+ },
  "pavlodar:павлодармолоко": {
   "name": "Павлодармолоко",
   "city": "pavlodar",
@@ -59861,6 +60017,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:carat": {
+  "name": "CARAT",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "petropavlovsk:caspian international restaurants company": {
   "name": "Caspian International Restaurants company",
@@ -70832,6 +70995,13 @@
   "instagram": "newyorkeronline",
   "source": "https://2gis.kz/pavlodar/firm/70000001059331894"
  },
+ "ust-kamenogorsk:объединенная энергосервисная компания": {
+  "name": "Объединённая ЭнергоСервисная Компания",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
+ },
  "ust-kamenogorsk:октеракт": {
   "name": "Октеракт",
   "city": "ust-kamenogorsk",
@@ -71229,6 +71399,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:тулебаев": {
+  "name": "Тулебаев",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T16:43:33+00:00"
  },
  "ust-kamenogorsk:ук трк": {
   "name": "УК ТРК",

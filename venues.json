@@ -984,6 +984,13 @@
    "website"
   ]
  },
+ "aktau:а стом kz": {
+  "name": "А стом.KZ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "aktau:августа": {
   "name": "Августа",
   "city": "aktau",
@@ -1828,6 +1835,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T05:44:45+00:00"
+ },
+ "aktau:сақ моншасы": {
+  "name": "Сақ моншасы",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "aktau:свежак": {
   "name": "СВЕЖАК",
@@ -3657,6 +3671,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "aktobe:спецстроймонтаж": {
+  "name": "Спецстроймонтаж",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "aktobe:стоматология зубок": {
   "name": "Стоматология ЗУБ'ОК",
@@ -5552,6 +5573,13 @@
   "v": 3,
   "checked_at": "2026-11-08T17:43:21+00:00"
  },
+ "almaty:arys research тм тоо arystown": {
+  "name": "ARYS Research, ТМ (ТОО ARYSTown)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "almaty:arystan it group": {
   "name": "ARYSTAN IT GROUP",
   "city": "almaty",
@@ -6593,7 +6621,7 @@
   "checked_at": "2026-10-30T11:43:44+00:00",
   "website": "https://beeline.kz/",
   "source": "https://beeline.kz/ru/about",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7099,7 +7127,7 @@
   "instagram": "breezy_kaz",
   "website": "https://breezy.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001086801365",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9263,6 +9291,19 @@
   "avatar": "a6a7ff73d83a9be6.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:fast logistic group": {
+  "name": "Fast Logistic Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00",
+  "website": "https://fast-logistic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001036702707",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:fast meals and goods": {
   "name": "Fast Meals and Goods",
   "city": "almaty",
@@ -10399,7 +10440,7 @@
   "instagram": "haval_alfarabi",
   "website": "https://haval-al-farabi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001090698915",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13247,6 +13288,13 @@
   "instagram": "mausym_couture",
   "source": "https://2gis.kz/almaty/firm/70000001046141071"
  },
+ "almaty:max v": {
+  "name": "Max V",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "almaty:maxwell distribution": {
   "name": "MAXWELL DISTRIBUTION",
   "city": "almaty",
@@ -13358,6 +13406,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:medical assistance group": {
+  "name": "Medical Assistance Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00",
+  "instagram": "medical_assistance_group",
+  "website": "http://assistance.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000920087",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a93c90ea17dd400f.jpg",
+  "avatar_source": "website"
  },
  "almaty:medical laser": {
   "name": "Medical Laser",
@@ -15829,6 +15893,13 @@
   "instagram": "rims.kz",
   "source": "https://2gis.kz/almaty/firm/70000001109498933"
  },
+ "almaty:rio churrasko рио чурраско": {
+  "name": "Rio Churrasko(Рио чурраско)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "almaty:rixmind тоо сквалио казахстан": {
   "name": "RixMind (ТОО Сквалио Казахстан)",
   "city": "almaty",
@@ -18185,6 +18256,22 @@
    "website"
   ]
  },
+ "almaty:unified technologies": {
+  "name": "Unified Technologies",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00",
+  "instagram": "unified.tech",
+  "website": "http://ut-it.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043547397",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d1d2c2cd481c8529.jpg",
+  "avatar_source": "website"
+ },
  "almaty:union space tm тоо brand hub group": {
   "name": "Union Space`TM (ТОО Brand Hub Group)",
   "city": "almaty",
@@ -20037,6 +20124,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:алмаз": {
+  "name": "ИП Алмаз",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "almaty:алмаз холдинг тоо аргента": {
   "name": "Алмаз-Холдинг (ТОО Аргента)",
@@ -28249,6 +28343,13 @@
   "v": 3,
   "checked_at": "2026-11-12T06:44:11+00:00"
  },
+ "almaty:софис": {
+  "name": "Софис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "almaty:союз мастеров": {
   "name": "ТОО Союз Мастеров",
   "city": "almaty",
@@ -31465,7 +31566,7 @@
   "instagram": "arbuz_kz",
   "website": "https://arbuz.kz/",
   "source": "https://2gis.kz/astana/firm/70000001114687647",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32327,7 +32428,7 @@
   "instagram": "boshanov_dent",
   "website": "http://boshanov-dental-clinic.kz/",
   "source": "https://2gis.kz/astana/firm/70000001112844670",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34334,6 +34435,13 @@
   ],
   "avatar": "873b7f0ff3d5ec77.jpg",
   "avatar_source": "website"
+ },
+ "astana:halyk stroy beton": {
+  "name": "HALYK STROY BETON",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "astana:hammer legend хамер лэджэнд": {
   "name": "Hammer Legend (Хамер Лэджэнд)",
@@ -37713,6 +37821,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:qgg service": {
+  "name": "QGG SERVICE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "astana:qilt kz": {
   "name": "Qilt.kz",
@@ -43820,7 +43935,7 @@
   "checked_at": "2026-10-30T11:43:44+00:00",
   "website": "https://lombard-b.kz/",
   "source": "https://2gis.kz/astana/firm/70000001046165610",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47261,6 +47376,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
+ },
+ "astana:уразбаева а н": {
+  "name": "УРАЗБАЕВА А.Н.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "astana:урумчи хого": {
   "name": "Урумчи Хого",
@@ -54108,6 +54230,13 @@
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
  },
+ "kokshetau:glasman trade": {
+  "name": "GLASMAN TRADE",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "kokshetau:green tech engineering": {
   "name": "Green tech engineering",
   "city": "kokshetau",
@@ -56016,6 +56145,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
+ },
+ "kostanay:демократ дентал ks": {
+  "name": "Демократ Дентал KS",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00",
+  "instagram": "demokrat_kostanay",
+  "website": "http://demokrat-kostanay.com/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001106038087",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d89ed0235a843bfa.jpg",
+  "avatar_source": "website"
  },
  "kostanay:деп": {
   "name": "ДЕП",
@@ -60504,7 +60649,7 @@
   "checked_at": "2026-11-06T11:44:26+00:00",
   "website": "http://saem.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001039333687",
-  "avatar_checked_at": "2026-11-06T11:44:27+00:00",
+  "avatar_checked_at": "2026-11-13T12:43:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67448,6 +67593,13 @@
   "v": 3,
   "checked_at": "2026-11-04T01:44:23+00:00"
  },
+ "uralsk:ауттранс": {
+  "name": "АутТранс",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
+ },
  "uralsk:батыс продукт": {
   "name": "Батыс-Продукт",
   "city": "uralsk",
@@ -67617,6 +67769,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
+ },
+ "uralsk:жареной рыбы": {
+  "name": "ЖАРЕНОЙ РЫБЫ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "uralsk:женской обуви": {
   "name": "ЖЕНСКОЙ ОБУВИ",
@@ -67870,6 +68029,15 @@
   "v": 3,
   "checked_at": "2026-11-02T19:45:07+00:00"
  },
+ "uralsk:оки": {
+  "name": "ОКИ",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00",
+  "instagram": "oqi_uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001062785788"
+ },
  "uralsk:орталықстройинвест": {
   "name": "ОрталықСтройИнвест",
   "city": "uralsk",
@@ -67967,6 +68135,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
+ },
+ "uralsk:сити центр": {
+  "name": "Сити Центр",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-13T12:43:31+00:00"
  },
  "uralsk:сотовых аксессуаров": {
   "name": "СОТОВЫХ АКСЕССУАРОВ",

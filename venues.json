@@ -5587,6 +5587,13 @@
   "avatar": "6b0ebf619a3523c1.jpg",
   "avatar_source": "website"
  },
+ "almaty:arizona": {
+  "name": "Arizona",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T17:41:47+00:00"
+ },
  "almaty:arlan logistics grop": {
   "name": "TOO Arlan logistics grop",
   "city": "almaty",
@@ -7864,7 +7871,7 @@
   "checked_at": "2026-11-07T16:43:36+00:00",
   "website": "https://colvir.com/",
   "source": "https://colvir.com/about_company",
-  "avatar_checked_at": "2026-11-07T16:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T17:41:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -52609,6 +52616,15 @@
    "website"
   ]
  },
+ "karaganda:mebeluxkrg": {
+  "name": "MebeluxKRG",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T17:41:47+00:00",
+  "instagram": "mebelux_krg",
+  "source": "https://2gis.kz/karaganda/firm/70000001117554516"
+ },
  "karaganda:megamix trade": {
   "name": "Megamix trade",
   "city": "karaganda",
@@ -56396,7 +56412,7 @@
   "instagram": "aura_su_kostanay",
   "website": "https://aurasu.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001054756774",
-  "avatar_checked_at": "2026-11-07T16:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T17:41:48+00:00",
   "avatar_tried": [
    "website"
   ]

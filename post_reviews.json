@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-14T13:57:18+00:00",
+ "updated_at": "2026-11-14T14:56:25+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1635,14 +1635,6 @@
     "address": "ул. Боралдай, 93Б"
    }
   },
-  "rabota4almaty-5960": {
-   "verdict": "approve",
-   "at": "2026-10-31T15:57:28+00:00",
-   "fields": {
-    "employer": "G and G Гламур",
-    "address": "пр. Достык, 34/1"
-   }
-  },
   "zhumys_astana_kz-17028": {
    "verdict": "reject",
    "at": "2026-10-31T15:57:28+00:00",
@@ -1652,18 +1644,6 @@
    "verdict": "reject",
    "at": "2026-10-31T15:57:28+00:00",
    "reason": "Удерживают депозит из зарплаты"
-  },
-  "agashka_job_almaty-1018": {
-   "verdict": "approve",
-   "at": "2026-10-31T15:57:28+00:00",
-   "fields": {
-    "title": "Слесарь на производство",
-    "schedule": "6/1, сокращённая суббота",
-    "address": "Ауэзовский район",
-    "perks": [
-     "Ежедневная оплата"
-    ]
-   }
   },
   "hh-138905455": {
    "verdict": "approve",
@@ -1677,13 +1657,6 @@
    "at": "2026-10-31T15:57:28+00:00",
    "fields": {}
   },
-  "rabota_v_aktobe-3009": {
-   "verdict": "approve",
-   "at": "2026-10-31T15:57:28+00:00",
-   "fields": {
-    "address": "ул. Нокина, 42, АЗС «Синойл»"
-   }
-  },
   "rabota_v_pavlodare-7293": {
    "verdict": "approve",
    "at": "2026-10-31T15:57:28+00:00",
@@ -1696,13 +1669,6 @@
    "at": "2026-10-31T15:57:28+00:00",
    "fields": {
     "title": "Водитель-экспедитор"
-   }
-  },
-  "vakansii_oskemen-9212": {
-   "verdict": "approve",
-   "at": "2026-10-31T15:57:28+00:00",
-   "fields": {
-    "title": "Машинист буровой установки"
    }
   },
   "rabota_v_semee-7922": {
@@ -3787,14 +3753,6 @@
     "title": "Официант, пекарь",
     "employer": "Кафе «Құлжа»",
     "address": "Рынок «Алтын Орда»"
-   }
-  },
-  "almatyvacancies-11090": {
-   "verdict": "approve",
-   "at": "2026-11-01T14:56:49+00:00",
-   "fields": {
-    "title": "Сборщик корпусной мебели",
-    "schedule": "Пн–Сб"
    }
   },
   "almatyvacancies-11093": {
@@ -54506,6 +54464,182 @@
      "Питание"
     ]
    }
+  },
+  "hh-139494614": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Менеджер по продажам в фитнес-клуб",
+    "schedule": "6/1, по 6 часов",
+    "address": "ул. Шолпан Иманбаевой, 8к2"
+   }
+  },
+  "hh-139470525": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "employer": "Opatra London",
+    "schedule": "6/1, по 8 часов",
+    "address": "пр. Кабанбай Батыра, 28"
+   }
+  },
+  "astana_job_vakansii-130647": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "employer": "Level Sky",
+    "schedule": "2/1, 15:00–02:00 и 20:00–04:00",
+    "address": "Левый берег",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "astana_job_vakansii-130644": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Администратор магазина подарков",
+    "employer": "Martebe"
+   }
+  },
+  "zhumys_astana_kz-17464": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "schedule": "6/1, 08:00–20:00",
+    "address": "Район Коктал"
+   }
+  },
+  "zhumys_astana_kz-17455": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "schedule": "6/1, 06:00–15:00",
+    "address": "Республика, Богенбай батыра, Сарыарка"
+   }
+  },
+  "zhumys_astana_kz-17397": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Администратор, кассир, продавец",
+    "employer": "Магазин «А Маркет»",
+    "schedule": "2/2 и 5/2, 08:00–20:00 или 20:00–08:00"
+   }
+  },
+  "hh-139494859": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Администратор ресторана",
+    "employer": "Ресторан «Сарай-Бар»",
+    "schedule": "2/2"
+   }
+  },
+  "hh-139016369": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "schedule": "5/2, по 8 часов"
+   }
+  },
+  "hh-139457792": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Автослесарь",
+    "schedule": null,
+    "address": "Илийский район, Первомайская промзона, 278/2"
+   }
+  },
+  "rabota4almaty-6559": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Gaissina",
+    "address": "ул. Койгелды батыра, 4"
+   }
+  },
+  "hh-138360484": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Менеджер по продажам",
+    "address": "ул. Журавлёва, 28к1"
+   }
+  },
+  "almaty_rabota_work-31927": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "employer": "Оптика «Рядом»",
+    "schedule": "2/2, 09:00–20:00",
+    "address": "ул. Желтоксан, 111",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "rabota4almaty-6551": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор с личной газелью",
+    "employer": null,
+    "address": "пр. Райымбека, 496А"
+   }
+  },
+  "rabota4almaty-6550": {
+   "verdict": "reject",
+   "at": "2026-11-14T14:56:25+00:00",
+   "reason": "Требование по гражданству, частное лицо"
+  },
+  "rabota4almaty-6547": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Электромонтажник"
+   }
+  },
+  "rabota4almaty-6543": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Монтажник-высотник"
+   }
+  },
+  "rabota4almaty-6541": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Электромонтажник 4-го разряда",
+    "employer": "МСС-КИП Автоматика"
+   }
+  },
+  "rabota4almaty-6540": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор на газель",
+    "employer": "Алматынан",
+    "address": "пр. Райымбека, 486Б"
+   }
+  },
+  "hh-138825665": {
+   "verdict": "approve",
+   "at": "2026-11-14T14:56:25+00:00",
+   "fields": {
+    "schedule": "2/2",
+    "perks": []
+   }
+  },
+  "vakansii_oskemen-9344": {
+   "verdict": "reject",
+   "at": "2026-11-14T14:56:25+00:00",
+   "reason": "Набор в таксопарк, а не вакансия; зарплаты нет"
   }
  }
 }

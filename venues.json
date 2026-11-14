@@ -4657,6 +4657,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "almaty:alatau plus": {
+  "name": "Alatau Plus",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T07:42:15+00:00"
+ },
  "almaty:alatrade_2020": {
   "name": "ALATRADE_2020",
   "city": "almaty",
@@ -19087,7 +19094,7 @@
   "checked_at": "2026-10-31T05:43:11+00:00",
   "website": "https://wildberries.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001033122288",
-  "avatar_checked_at": "2026-11-07T06:43:51+00:00",
+  "avatar_checked_at": "2026-11-14T07:42:16+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20344,6 +20351,13 @@
   ],
   "avatar": "e12a044e3f0265ba.jpg",
   "avatar_source": "website"
+ },
+ "almaty:али": {
+  "name": "ИП Али",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T07:42:15+00:00"
  },
  "almaty:али бизнес холдинг": {
   "name": "Али Бизнес Холдинг",
@@ -29893,6 +29907,13 @@
   "v": 3,
   "checked_at": "2026-11-11T13:44:34+00:00"
  },
+ "almaty:трц байсат": {
+  "name": "Трц Байсат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T07:42:15+00:00"
+ },
  "almaty:тссп казахстан": {
   "name": "ТССП Казахстан",
   "city": "almaty",
@@ -30893,6 +30914,15 @@
   ],
   "avatar": "2145275038975a5a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:шафран": {
+  "name": "Шафран",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T07:42:15+00:00",
+  "instagram": "shafran.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001053380071"
  },
  "almaty:шахман": {
   "name": "ШАХМАН",
@@ -40992,6 +41022,20 @@
   "instagram": "aurum_astana",
   "source": "https://2gis.kz/astana/firm/70000001117640041"
  },
+ "astana:академия танца и спорта": {
+  "name": "Академия танца и спорта",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T07:42:15+00:00",
+  "instagram": "da_istina_official",
+  "website": "https://istina.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001083260205",
+  "avatar_checked_at": "2026-11-14T07:42:16+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:акваарт": {
   "name": "Акваарт",
   "city": "astana",
@@ -50936,6 +50980,13 @@
   "v": 3,
   "checked_at": "2026-11-12T04:44:19+00:00"
  },
+ "atyrau:продавец консультант": {
+  "name": "ПРОДАВЕЦ-консультант",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T07:42:15+00:00"
+ },
  "atyrau:продавец консультант с": {
   "name": "ПРОДАВЕЦ-консультант. С",
   "city": "atyrau",
@@ -55453,7 +55504,7 @@
   "telegram": "astralombard_kz",
   "website": "https://astra-lombard.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033357709",
-  "avatar_checked_at": "2026-11-07T06:43:51+00:00",
+  "avatar_checked_at": "2026-11-14T07:42:16+00:00",
   "avatar_tried": [
    "telegram",
    "website"

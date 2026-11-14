@@ -2367,7 +2367,7 @@
   "checked_at": "2026-10-31T16:43:38+00:00",
   "website": "https://www.common.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001024663799",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9992,7 +9992,7 @@
   "instagram": "tuttobene.kz",
   "website": "http://tuttobene.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001061125185",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12442,7 +12442,7 @@
   "instagram": "konsel_kz",
   "website": "https://konselgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000934233",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16543,7 +16543,7 @@
   "instagram": "soventus_kz",
   "website": "https://soventus.org/ru",
   "source": "https://2gis.kz/almaty/firm/70000001111563955",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28785,7 +28785,7 @@
   "instagram": "7morey.kz",
   "website": "https://7morey.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001046859422",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42874,7 +42874,7 @@
   "instagram": "grandbp.kz",
   "website": "http://gbp.kz/",
   "source": "https://2gis.kz/astana/firm/70000001103310652",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -43744,7 +43744,7 @@
   "instagram": "zuzu_astana",
   "website": "https://zuzuplay.kz/",
   "source": "https://2gis.kz/astana/firm/70000001097168390",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46465,6 +46465,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T01:43:26+00:00"
+ },
+ "astana:производственная компания": {
+  "name": "Производственная компания",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T18:42:32+00:00"
  },
  "astana:производственная фирма лик": {
   "name": "Производственная фирма ЛиК",
@@ -51319,6 +51326,13 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "atyrau:нурсултанова": {
+  "name": "НУРСУЛТАНОВА",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T18:42:32+00:00"
+ },
  "atyrau:остин казахстан ostin тм": {
   "name": "Остин Казахстан (O'stin ТМ)",
   "city": "atyrau",
@@ -51515,7 +51529,7 @@
   "checked_at": "2026-10-31T17:43:24+00:00",
   "website": "https://ffins.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001094997040",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60184,6 +60198,13 @@
   "avatar": "15d889f91f26f3e8.jpg",
   "avatar_source": "website"
  },
+ "pavlodar:павловский": {
+  "name": "Павловский",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T18:42:32+00:00"
+ },
  "pavlodar:павлодармолоко": {
   "name": "Павлодармолоко",
   "city": "pavlodar",
@@ -61951,6 +61972,13 @@
    "website"
   ]
  },
+ "petropavlovsk:скородумов ю ю": {
+  "name": "Скородумов Ю.Ю",
+  "city": "petropavlovsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T18:42:32+00:00"
+ },
  "petropavlovsk:стар карго казахстан": {
   "name": "Стар-Карго Казахстан",
   "city": "petropavlovsk",
@@ -63063,6 +63091,13 @@
   "v": 3,
   "checked_at": "2026-11-08T18:43:51+00:00"
  },
+ "semey:глория джинс": {
+  "name": "Глория Джинс",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T18:42:32+00:00"
+ },
  "semey:глория джинс каспиан": {
   "name": "Глория Джинс Каспиан",
   "city": "semey",
@@ -63350,6 +63385,13 @@
   ],
   "avatar": "29ada0b77188187a.jpg",
   "avatar_source": "website"
+ },
+ "semey:приданое": {
+  "name": "Приданое",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T18:42:32+00:00"
  },
  "semey:промстрой": {
   "name": "Промстрой",
@@ -67847,7 +67889,7 @@
   "checked_at": "2026-10-31T17:43:24+00:00",
   "website": "https://www.kdr.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001111570615",
-  "avatar_checked_at": "2026-11-07T17:43:37+00:00",
+  "avatar_checked_at": "2026-11-14T18:42:33+00:00",
   "avatar_tried": [
    "website"
   ]

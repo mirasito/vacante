@@ -10710,7 +10710,7 @@
   "instagram": "hellagood_taxi",
   "website": "https://hellagood.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001043707108",
-  "avatar_checked_at": "2026-11-07T12:44:24+00:00",
+  "avatar_checked_at": "2026-11-14T13:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17790,6 +17790,15 @@
   ],
   "avatar": "39c314e379664a36.jpg",
   "avatar_source": "website"
+ },
+ "almaty:sultan khan kazakhstan": {
+  "name": "Sultan Khan Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T13:42:30+00:00",
+  "instagram": "sultankho_kazakhstan",
+  "source": "https://2gis.kz/almaty/firm/70000001118969789"
  },
  "almaty:sulu med": {
   "name": "Sulu Med",
@@ -41611,6 +41620,13 @@
   "v": 3,
   "checked_at": "2026-11-11T09:44:47+00:00"
  },
+ "astana:ангел": {
+  "name": "Ангел",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T13:42:30+00:00"
+ },
  "astana:анкил ас": {
   "name": "Анкил-АС",
   "city": "astana",
@@ -42541,6 +42557,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "astana:все ключи и чехлы": {
+  "name": "Все Ключи и Чехлы",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T13:42:30+00:00",
+  "instagram": "vsekluchi.kz",
+  "source": "https://2gis.kz/astana/firm/70000001066998043"
  },
  "astana:высочайший": {
   "name": "Высочайший",
@@ -47459,6 +47484,13 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "astana:стоматологическая клиника adodent": {
+  "name": "Стоматологическая клиника «ADOdent»",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T13:42:30+00:00"
+ },
  "astana:стоматология neo dent": {
   "name": "Стоматология Neo Dent",
   "city": "astana",
@@ -48334,6 +48366,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-13T12:43:31+00:00"
+ },
+ "astana:уразгулов": {
+  "name": "Уразгулов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T13:42:30+00:00"
  },
  "astana:урумчи хого": {
   "name": "Урумчи Хого",
@@ -68042,6 +68081,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T04:43:59+00:00"
+ },
+ "turkestan:интеллектуальная школа nur": {
+  "name": "Интеллектуальная школа Nur",
+  "city": "turkestan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T13:42:30+00:00",
+  "instagram": "nurmektebi.kz",
+  "source": "https://2gis.kz/turkestan/firm/70000001059863103"
  },
  "turkestan:казахстанская сталепромышленная компания": {
   "name": "Казахстанская сталепромышленная компания",

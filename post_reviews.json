@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T21:56:41+00:00",
+ "updated_at": "2026-11-14T03:56:15+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1151,11 +1151,6 @@
    "verdict": "reject",
    "at": "2026-10-31T03:56:12+00:00",
    "reason": "Офисная должность: Enterprise-продажи в ИТ"
-  },
-  "hh-138540078": {
-   "verdict": "approve",
-   "at": "2026-10-31T03:56:12+00:00",
-   "fields": {}
   },
   "hh-137932332": {
    "verdict": "reject",
@@ -54136,6 +54131,48 @@
     "employer": "Perdehome.kz",
     "schedule": "6/1",
     "address": "ул. Ерназарова, 47"
+   }
+  },
+  "hh-138986442": {
+   "verdict": "approve",
+   "at": "2026-11-14T03:56:15+00:00",
+   "fields": {}
+  },
+  "hh-139488572": {
+   "verdict": "approve",
+   "at": "2026-11-14T03:56:15+00:00",
+   "fields": {
+    "employer": "Аубакирова Ж. Е."
+   }
+  },
+  "hh-138985161": {
+   "verdict": "approve",
+   "at": "2026-11-14T03:56:15+00:00",
+   "fields": {
+    "employer": "Амангалиева"
+   }
+  },
+  "hh-138497062": {
+   "verdict": "approve",
+   "at": "2026-11-14T03:56:15+00:00",
+   "fields": {
+    "title": "Уборщик, уборщица"
+   }
+  },
+  "hh-139454529": {
+   "verdict": "approve",
+   "at": "2026-11-14T03:56:15+00:00",
+   "fields": {
+    "employer": "Тимченко К. В.",
+    "schedule": "2/2, 12 часов"
+   }
+  },
+  "hh-139454396": {
+   "verdict": "approve",
+   "at": "2026-11-14T03:56:15+00:00",
+   "fields": {
+    "title": "Кассир",
+    "employer": "Mon Amie"
    }
   }
  }

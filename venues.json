@@ -13490,6 +13490,22 @@
   "instagram": "maryamfood_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001109917807"
  },
+ "almaty:master teeht": {
+  "name": "Master teeht",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T14:41:55+00:00",
+  "instagram": "masterteeth.kz",
+  "website": "https://mtdent.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001068830328",
+  "avatar_checked_at": "2026-11-14T14:41:56+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2aa8c2d9f36f3d13.jpg",
+  "avatar_source": "website"
+ },
  "almaty:mat group": {
   "name": "MAT Group",
   "city": "almaty",
@@ -16342,7 +16358,7 @@
   "checked_at": "2026-11-07T13:43:51+00:00",
   "website": "https://alm.rossko.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001069584939",
-  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_checked_at": "2026-11-14T14:41:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29576,6 +29592,13 @@
   "v": 3,
   "checked_at": "2026-10-30T20:45:03+00:00"
  },
+ "almaty:тау жол медеу": {
+  "name": "Тау Жол Медеу",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T14:41:55+00:00"
+ },
  "almaty:тау спа": {
   "name": "Тау-Спа",
   "city": "almaty",
@@ -31907,6 +31930,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T15:44:25+00:00"
+ },
+ "astana:ag development": {
+  "name": "AG Development",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T14:41:55+00:00"
  },
  "astana:ag property management": {
   "name": "AG Property Management",
@@ -51584,7 +51614,7 @@
   "checked_at": "2026-10-31T12:44:38+00:00",
   "website": "http://en.sepco1.com/",
   "source": "https://2gis.kz/almaty/firm/70000001089659724",
-  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_checked_at": "2026-11-14T14:41:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59992,7 +60022,7 @@
   "instagram": "maxrazmah_official",
   "website": "https://maxrazmah.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001089189059",
-  "avatar_checked_at": "2026-11-07T13:43:51+00:00",
+  "avatar_checked_at": "2026-11-14T14:41:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -68342,6 +68372,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
+ },
+ "uralsk:babi": {
+  "name": "BABI",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T14:41:55+00:00",
+  "instagram": "sadik_babi_uralsk",
+  "website": "https://babi.sad.tilda.ws/",
+  "source": "https://2gis.kz/uralsk/firm/70000001043815793",
+  "avatar_checked_at": "2026-11-14T14:41:56+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:barmarket": {
   "name": "BarMarket",

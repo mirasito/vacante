@@ -19604,7 +19604,7 @@
   "instagram": "zoomlion_kazakhstan",
   "website": "https://zoomlion.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001061693221",
-  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25428,7 +25428,7 @@
   "checked_at": "2026-10-31T15:43:32+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27960,7 +27960,7 @@
   "instagram": "trubnoereshenie_almaty",
   "website": "https://almaty.truboproduct.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001095376731",
-  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29525,7 +29525,7 @@
   "checked_at": "2026-11-07T15:44:26+00:00",
   "website": "https://tangens.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001069923435",
-  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46010,7 +46010,7 @@
   "instagram": "onegeli.kz",
   "website": "http://onegeli.kz/",
   "source": "https://2gis.kz/astana/firm/70000001094707651",
-  "avatar_checked_at": "2026-11-07T15:44:28+00:00",
+  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59681,6 +59681,13 @@
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
  },
+ "pavlodar:даутов": {
+  "name": "Даутов",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T16:40:50+00:00"
+ },
  "pavlodar:деп": {
   "name": "ДЕП",
   "city": "pavlodar",
@@ -71634,6 +71641,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:листопад н в": {
+  "name": "Листопад Н.В",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T16:40:50+00:00"
  },
  "ust-kamenogorsk:лпгруп lpgroup": {
   "name": "ЛПГруп (LPGroup)",

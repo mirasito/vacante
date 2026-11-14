@@ -4840,6 +4840,20 @@
   "instagram": "alidentkz",
   "source": "https://2gis.kz/almaty/firm/70000001070549541"
  },
+ "almaty:alidar service": {
+  "name": "Alidar Service",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T12:41:54+00:00",
+  "instagram": "alidarservice",
+  "telegram": "alidarservice",
+  "source": "https://2gis.kz/almaty/firm/70000001118459437",
+  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
+ },
  "almaty:alil group": {
   "name": "Alil Group",
   "city": "almaty",
@@ -8590,6 +8604,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:dostyk optics": {
+  "name": "DOSTYK OPTICS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T12:41:54+00:00",
+  "instagram": "dostykoptics.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001097473972"
  },
  "almaty:dostyk plaza": {
   "name": "Dostyk Plaza",
@@ -15925,7 +15948,7 @@
   "instagram": "rai_company",
   "website": "http://rai-company.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001035551354",
-  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18291,7 +18314,7 @@
   "instagram": "top.kz",
   "website": "https://top.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021055352",
-  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26598,7 +26621,7 @@
   "checked_at": "2026-11-07T11:45:05+00:00",
   "website": "http://www.montazhproekt.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000798229",
-  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28585,6 +28608,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:сара": {
+  "name": "Сара",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T12:41:54+00:00"
  },
  "almaty:сарисунова м б": {
   "name": "Сарисунова М.Б.",
@@ -60084,7 +60114,7 @@
   "checked_at": "2026-10-31T11:43:29+00:00",
   "website": "https://pavlodarenergo.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018658154",
-  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70350,7 +70380,7 @@
   "instagram": "mechta.kz",
   "website": "https://www.mechta.kz/",
   "source": "https://www.instagram.com/mechta.kz/",
-  "avatar_checked_at": "2026-11-07T11:45:06+00:00",
+  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
   "avatar_tried": [
    "website"
   ]

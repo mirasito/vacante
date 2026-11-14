@@ -2378,7 +2378,7 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "website": "https://contineo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001042206719",
-  "avatar_checked_at": "2026-11-07T04:44:00+00:00",
+  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -2590,6 +2590,19 @@
   "checked_at": "2026-11-06T02:44:46+00:00",
   "instagram": "jadyra.s",
   "source": "https://2gis.kz/aktobe/firm/70000001098553626"
+ },
+ "aktobe:jti kazakhstan": {
+  "name": "JTI Kazakhstan",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00",
+  "website": "https://www.jti.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001029199117",
+  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktobe:karavan караван": {
   "name": "KARAVAN (КАРАВАН)",
@@ -10250,6 +10263,15 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "almaty:gotourist": {
+  "name": "GOTOURIST",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00",
+  "instagram": "gotourist.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001094257627"
+ },
  "almaty:gourmand group": {
   "name": "Gourmand group",
   "city": "almaty",
@@ -13942,6 +13964,13 @@
   "instagram": "monteva_boutiquehotel",
   "source": "https://2gis.kz/almaty/firm/70000001114966538"
  },
+ "almaty:moonlight": {
+  "name": "moonlight",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
+ },
  "almaty:moonline": {
   "name": "MOONLINE",
   "city": "almaty",
@@ -14774,7 +14803,7 @@
   "instagram": "opatra_almaty",
   "website": "http://opatra.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001077199790",
-  "avatar_checked_at": "2026-11-07T04:44:00+00:00",
+  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17101,6 +17130,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
+ },
+ "almaty:smartpack": {
+  "name": "ТОО SmartPack",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00",
+  "instagram": "smart_pack.kz",
+  "website": "https://smartpack.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043807074",
+  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e9db6fc4dae66643.jpg",
+  "avatar_source": "website"
  },
  "almaty:snow king kazakhstan new silk road": {
   "name": "SNOW KING (KAZAKHSTAN) NEW SILK ROAD",
@@ -21199,6 +21244,13 @@
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
  },
+ "almaty:афандиев": {
+  "name": "Афандиев",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
+ },
  "almaty:ахметова а м": {
   "name": "АХМЕТОВА А.М.",
   "city": "almaty",
@@ -21912,6 +21964,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T06:44:48+00:00"
+ },
+ "almaty:витражи kz": {
+  "name": "ТОО Витражи KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
  },
  "almaty:вкайф": {
   "name": "ВКАЙФ",
@@ -23651,6 +23710,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T22:43:40+00:00"
+ },
+ "almaty:империя худи": {
+  "name": "Империя Худи",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
  },
  "almaty:имя пользователя": {
   "name": "Имя пользователя",
@@ -27353,6 +27419,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T03:44:14+00:00"
+ },
+ "almaty:перетяжка": {
+  "name": "Перетяжка",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
  },
  "almaty:персона дент": {
   "name": "Персона Дент",
@@ -45044,6 +45117,13 @@
   "instagram": "mona.restaurants",
   "source": "https://2gis.kz/astana/firm/70000001077238649"
  },
+ "astana:моно": {
+  "name": "МОНО",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
+ },
  "astana:монолог": {
   "name": "Монолог",
   "city": "astana",
@@ -45080,6 +45160,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
+ },
+ "astana:мунайтпасова": {
+  "name": "Мунайтпасова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
  },
  "astana:муратова": {
   "name": "Муратова",
@@ -48435,6 +48522,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "astana:цех наружной рекламы": {
+  "name": "Цех наружной рекламы",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
  },
  "astana:цех по производству мягкой мебели": {
   "name": "Цех по производству мягкой мебели",
@@ -57969,7 +58063,7 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "website": "https://contineo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001042206719",
-  "avatar_checked_at": "2026-11-07T04:44:00+00:00",
+  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59552,6 +59646,13 @@
   "v": 3,
   "checked_at": "2026-11-08T19:44:34+00:00"
  },
+ "pavlodar:национальная общепромышленная компания": {
+  "name": "Национальная Общепромышленная Компания",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T05:42:43+00:00"
+ },
  "pavlodar:омурзаков": {
   "name": "Омурзаков",
   "city": "pavlodar",
@@ -60217,7 +60318,7 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "website": "https://contineo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001042206719",
-  "avatar_checked_at": "2026-11-07T04:44:00+00:00",
+  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
   "avatar_tried": [
    "website"
   ]

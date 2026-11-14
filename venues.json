@@ -5158,10 +5158,12 @@
   "instagram": "pfchangskz",
   "website": "https://pfchangs-kazakhstan.com/",
   "source": "https://2gis.kz/almaty/firm/70000001063292141",
-  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "c47dc773f754210d.jpg",
+  "avatar_source": "website"
  },
  "almaty:alucon sw": {
   "name": "ALUCON SW",
@@ -15269,7 +15271,7 @@
   "checked_at": "2026-11-07T14:44:39+00:00",
   "website": "https://shop.phaeton.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001094364353",
-  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -23246,7 +23248,7 @@
   "instagram": "eurasianbank",
   "website": "http://eubank.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000884856",
-  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30486,7 +30488,7 @@
   "instagram": "aprofile_kz",
   "website": "https://a-profile.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792740",
-  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31040,6 +31042,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "almaty:черненкова": {
+  "name": "ЧЕРНЕНКОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T15:41:27+00:00"
  },
  "almaty:чимиров м": {
   "name": "Чимиров М",
@@ -44631,6 +44640,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
+ },
+ "astana:кравченко ю а": {
+  "name": "Кравченко Ю.А.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T15:41:27+00:00"
  },
  "astana:крендель": {
   "name": "КРЕНДЕЛЬ",
@@ -61549,7 +61565,7 @@
   "checked_at": "2026-10-31T14:43:47+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-11-07T14:44:41+00:00",
+  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
   "avatar_tried": [
    "website"
   ]

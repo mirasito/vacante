@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-14T16:57:10+00:00",
+ "updated_at": "2026-11-14T17:56:47+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1665,15 +1665,6 @@
     "schedule": "2/2, 09:00–21:00"
    }
   },
-  "hh-139029234": {
-   "verdict": "approve",
-   "at": "2026-10-31T17:57:15+00:00",
-   "fields": {
-    "title": "Продавец-консультант в магазин игрушек",
-    "employer": null,
-    "schedule": "5/2"
-   }
-  },
   "zhumys_astana_kz-16891": {
    "verdict": "approve",
    "at": "2026-10-31T17:57:15+00:00",
@@ -1702,15 +1693,6 @@
    "verdict": "approve",
    "at": "2026-10-31T17:57:15+00:00",
    "fields": {}
-  },
-  "hh-139029258": {
-   "verdict": "approve",
-   "at": "2026-10-31T17:57:15+00:00",
-   "fields": {
-    "employer": "Ресторан «Мой Тбилиси»",
-    "schedule": "сменный, 12 часов",
-    "address": "пр. Абдирова, 32/3"
-   }
   },
   "hh-139029439": {
    "verdict": "approve",
@@ -54848,6 +54830,113 @@
    "at": "2026-11-14T16:57:10+00:00",
    "fields": {
     "employer": null
+   }
+  },
+  "astana_job_vakansii-130639": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "schedule": "сменный",
+    "perks": [
+     "Питание"
+    ]
+   }
+  },
+  "astana_job_vakansii-130648": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "employer": "Smart School",
+    "schedule": "Пн–Пт, 08:00–18:00"
+   }
+  },
+  "hh-139495215": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "5/2, 10:00–21:00"
+   }
+  },
+  "hh-139018562": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {}
+  },
+  "hh-139495600": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {}
+  },
+  "hh-139020794": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "title": "Повар на гриль (хоспер)",
+    "employer": "Ресторан «Plateau 1966»",
+    "address": "ул. Керей-Жанибек Хандар, 582"
+   }
+  },
+  "agashka_job_almaty-1147": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "title": "Курьер",
+    "address": "Турксибский район"
+   }
+  },
+  "agashka_job_almaty-1145": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "schedule": "09:00–21:00 или 09:00–19:00"
+   }
+  },
+  "hh-139453074": {
+   "verdict": "reject",
+   "at": "2026-11-14T17:56:47+00:00",
+   "reason": "Банковская должность, офисная работа"
+  },
+  "rabota4almaty-6553": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "title": "Кладовщик, сборщик на склад",
+    "employer": "Oneki",
+    "schedule": "6/1, 08:00–18:00",
+    "address": "ул. Бокейханова, 508"
+   }
+  },
+  "rabotaalmatyyyy-15336": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "title": "Водитель категории B, C",
+    "schedule": "5/2, 8 часов"
+   }
+  },
+  "jumystap1-1555": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "perks": [
+     "Бонусы",
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139495605": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {}
+  },
+  "hh-139477790": {
+   "verdict": "approve",
+   "at": "2026-11-14T17:56:47+00:00",
+   "fields": {
+    "address": null
    }
   }
  }

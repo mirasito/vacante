@@ -1461,6 +1461,15 @@
    "website"
   ]
  },
+ "aktau:ифтар": {
+  "name": "ИФТАР",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T10:42:27+00:00",
+  "instagram": "iftar_chaihana_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001111673253"
+ },
  "aktau:каймак": {
   "name": "Каймак",
   "city": "aktau",
@@ -14938,6 +14947,13 @@
   "instagram": "lemont.shymbulak",
   "source": "https://2gis.kz/almaty/firm/70000001095648280"
  },
+ "almaty:orbis leasing": {
+  "name": "Orbis Leasing",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T10:42:27+00:00"
+ },
  "almaty:orbis machinery": {
   "name": "ORBIS MACHINERY",
   "city": "almaty",
@@ -17935,7 +17951,7 @@
   "instagram": "technosector_kz",
   "website": "https://www.technosector.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001019577023",
-  "avatar_checked_at": "2026-11-07T09:44:22+00:00",
+  "avatar_checked_at": "2026-11-14T10:42:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30222,6 +30238,13 @@
   "v": 3,
   "checked_at": "2026-11-12T15:44:25+00:00"
  },
+ "almaty:федосова": {
+  "name": "Федосова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T10:42:27+00:00"
+ },
  "almaty:ферронордик казахстан": {
   "name": "Ферронордик Казахстан",
   "city": "almaty",
@@ -36456,7 +36479,7 @@
   "instagram": "lanzhou_astana",
   "website": "https://lanzhou.kz/",
   "source": "https://2gis.kz/astana/firm/70000001104987225",
-  "avatar_checked_at": "2026-11-07T09:44:22+00:00",
+  "avatar_checked_at": "2026-11-14T10:42:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37830,6 +37853,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:oz company": {
+  "name": "OZ-COMPANY",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T10:42:27+00:00"
  },
  "astana:ozon": {
   "name": "Ozon",
@@ -42769,6 +42799,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "astana:дана маркет": {
+  "name": "Дана Маркет",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T10:42:27+00:00"
  },
  "astana:даниял": {
   "name": "Даниял",
@@ -49519,6 +49556,15 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "atyrau:adal clinic": {
+  "name": "ADAL CLINIC",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T10:42:27+00:00",
+  "instagram": "adal.clinic_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001088990472"
+ },
  "atyrau:adidas kazakhstan": {
   "name": "adidas Kazakhstan",
   "city": "atyrau",
@@ -55253,7 +55299,7 @@
   "instagram": "kcell.kz",
   "website": "https://www.kcell.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033792530",
-  "avatar_checked_at": "2026-11-07T09:44:22+00:00",
+  "avatar_checked_at": "2026-11-14T10:42:28+00:00",
   "avatar_tried": [
    "website"
   ]

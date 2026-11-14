@@ -41723,7 +41723,7 @@
   "checked_at": "2026-10-31T18:42:42+00:00",
   "website": "http://f-okna.kz/",
   "source": "https://2gis.kz/astana/firm/70000001066155259",
-  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_checked_at": "2026-11-14T19:41:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56119,6 +56119,15 @@
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
  },
+ "kokshetau:оптика стиль": {
+  "name": "Оптика стиль",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T19:41:36+00:00",
+  "instagram": "optica.style",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033331200"
+ },
  "kokshetau:промбезтехнологии": {
   "name": "Промбезтехнологии",
   "city": "kokshetau",
@@ -58033,7 +58042,7 @@
   "instagram": "ostin.kz",
   "website": "https://ostin.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001035192741",
-  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_checked_at": "2026-11-14T19:41:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -61085,7 +61094,7 @@
   "instagram": "railways_systems_kz",
   "website": "https://railsystems.kz/",
   "source": "https://2gis.kz/ekibastuz/firm/70000001089339959",
-  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_checked_at": "2026-11-14T19:41:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -61819,7 +61828,7 @@
   "checked_at": "2026-11-07T18:44:51+00:00",
   "website": "http://ptcom.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001039127460",
-  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_checked_at": "2026-11-14T19:41:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63330,7 +63339,7 @@
   "checked_at": "2026-10-31T18:42:42+00:00",
   "website": "http://besk.kz/ru/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721358523",
-  "avatar_checked_at": "2026-11-07T18:44:52+00:00",
+  "avatar_checked_at": "2026-11-14T19:41:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -71520,6 +71529,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
+ },
+ "ust-kamenogorsk:казахстанский монетный двор": {
+  "name": "Казахстанский Монетный двор",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T19:41:36+00:00"
  },
  "ust-kamenogorsk:казахстанское промышленное предприятие": {
   "name": "КАЗАХСТАНСКОЕ ПРОМЫШЛЕННОЕ ПРЕДПРИЯТИЕ",

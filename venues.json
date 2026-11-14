@@ -3328,6 +3328,13 @@
   "v": 3,
   "checked_at": "2026-11-10T14:44:20+00:00"
  },
+ "aktobe:далида центр": {
+  "name": "Далида центр",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
+ },
  "aktobe:демиденко к а": {
   "name": "Демиденко К.А",
   "city": "aktobe",
@@ -8116,6 +8123,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T10:45:30+00:00"
+ },
+ "almaty:darident": {
+  "name": "Darident",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00",
+  "instagram": "darident_stom",
+  "source": "https://2gis.kz/almaty/firm/70000001069004823"
  },
  "almaty:darina": {
   "name": "Darina",
@@ -18793,6 +18809,13 @@
   "instagram": "vici.kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001060647899"
  },
+ "almaty:vie de famille": {
+  "name": "Vie de famille",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
+ },
  "almaty:viled fashion вилед фешн": {
   "name": "VILED FASHION (ВИЛЕД ФЕШН)",
   "city": "almaty",
@@ -22615,6 +22638,13 @@
   "v": 3,
   "checked_at": "2026-11-09T20:44:15+00:00"
  },
+ "almaty:дакенов": {
+  "name": "Дакенов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
+ },
  "almaty:дана balance": {
   "name": "Дана «Balance»",
   "city": "almaty",
@@ -25591,6 +25621,19 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "almaty:лофт парк антикафе": {
+  "name": "ЛОФТ ПАРК АНТИКАФЕ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00",
+  "website": "https://loftpark.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001119072622",
+  "avatar_checked_at": "2026-11-14T09:42:48+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:лпгруп lpgroup": {
   "name": "ЛПГруп (LPGroup)",
   "city": "almaty",
@@ -25700,6 +25743,13 @@
   ],
   "avatar": "e726e1f9ca9a26b5.jpg",
   "avatar_source": "website"
+ },
+ "almaty:магзумова ш к": {
+  "name": "МАГЗУМОВА Ш. К",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
  },
  "almaty:магия чистоты": {
   "name": "Магия Чистоты",
@@ -30849,6 +30899,13 @@
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
  },
+ "almaty:чимиров м": {
+  "name": "Чимиров М",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
+ },
  "almaty:чк alkor kazakhstan ltd": {
   "name": "ЧК ALKOR KAZAKHSTAN LTD.",
   "city": "almaty",
@@ -32310,6 +32367,13 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "astana:astana plast": {
+  "name": "Astana Plast",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
+ },
  "astana:astana soap factory ип asf": {
   "name": "Astana Soap Factory (ИП ASF)",
   "city": "astana",
@@ -33331,6 +33395,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:chaikhana navat чайхана нават": {
+  "name": "Chaikhana NAVAT ( Чайхана НАВАТ)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00",
+  "instagram": "navat_astana",
+  "website": "http://navat.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040709213",
+  "avatar_checked_at": "2026-11-14T09:42:48+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "a97e71b070871695.jpg",
+  "avatar_source": "website"
  },
  "astana:champion fitness": {
   "name": "Champion fitness",
@@ -50410,6 +50490,15 @@
    "website"
   ]
  },
+ "atyrau:white studio dental clinic": {
+  "name": "WHITE STUDIO DENTAL CLINIC",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00",
+  "instagram": "white_studio_dental_clinic",
+  "source": "https://2gis.kz/atyrau/firm/70000001060039151"
+ },
  "atyrau:ya fit atyrau": {
   "name": "YA. FIT ATYRAU",
   "city": "atyrau",
@@ -51352,6 +51441,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T15:43:43+00:00"
+ },
+ "atyrau:шайхы": {
+  "name": "Шайхы",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T09:42:46+00:00"
  },
  "atyrau:шалкыма": {
   "name": "Шалкыма",

@@ -11227,6 +11227,13 @@
   "avatar": "aa202d8a3a7bda0d.jpg",
   "avatar_source": "website"
  },
+ "almaty:innotrack": {
+  "name": "InnoTrack",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00"
+ },
  "almaty:innovo dental clinic": {
   "name": "Innovo Dental Clinic",
   "city": "almaty",
@@ -14677,6 +14684,21 @@
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
  },
+ "almaty:nursadi": {
+  "name": "NURSADI",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00",
+  "website": "https://sadi.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001031786425",
+  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1973d841916d1eeb.jpg",
+  "avatar_source": "website"
+ },
  "almaty:nurtau": {
   "name": "NURTAU",
   "city": "almaty",
@@ -15293,6 +15315,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
+ },
+ "almaty:platinum": {
+  "name": "Platinum",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00",
+  "instagram": "spaplatinum_corona",
+  "website": "http://new.platinum-corona.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110581207",
+  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:platinum 2 0": {
   "name": "PLATINUM 2.0",
@@ -19800,6 +19836,13 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:автосалон afd plaza": {
+  "name": "Автосалон AFD Plaza",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00"
+ },
  "almaty:автосервис": {
   "name": "Автосервис",
   "city": "almaty",
@@ -21898,6 +21941,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
+ },
+ "almaty:быстрокадр": {
+  "name": "БыстроКадр",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00"
  },
  "almaty:бьюти ретейлер золотое яблоко": {
   "name": "Бьюти-ретейлер Золотое Яблоко",
@@ -28877,6 +28927,13 @@
    "website"
   ]
  },
+ "almaty:смирнова зоя александровна": {
+  "name": "Смирнова Зоя Александровна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00"
+ },
  "almaty:снабженец": {
   "name": "СНАБЖЕНЕЦ",
   "city": "almaty",
@@ -31174,6 +31231,15 @@
    "website"
   ]
  },
+ "almaty:эга": {
+  "name": "ЭГА",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00",
+  "instagram": "ega_village",
+  "source": "https://2gis.kz/almaty/firm/9429940001195176"
+ },
  "almaty:эгида group": {
   "name": "Эгида Group",
   "city": "almaty",
@@ -33372,7 +33438,7 @@
   "instagram": "caviarhouse.kz",
   "website": "http://caviarhouse.kz/",
   "source": "https://2gis.kz/astana/firm/70000001025428203",
-  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34697,6 +34763,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:frnds": {
+  "name": "Frnds",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T11:43:05+00:00",
+  "instagram": "frnds.kz",
+  "source": "https://2gis.kz/astana/firm/70000001113515854"
  },
  "astana:fruit republic alа": {
   "name": "Fruit Republic ALА",
@@ -55363,7 +55438,7 @@
   "instagram": "mechta.kz",
   "website": "https://mechta.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001034028148",
-  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62749,7 +62824,7 @@
   "telegram": "blin_coffee",
   "website": "https://blin-coffee.kz/",
   "source": "https://2gis.kz/semej/firm/70000001054630421",
-  "avatar_checked_at": "2026-11-07T10:45:08+00:00",
+  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
   "avatar_tried": [
    "telegram",
    "website"

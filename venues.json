@@ -6767,6 +6767,13 @@
   "instagram": "almaty_prokat_service",
   "source": "https://2gis.kz/almaty/firm/70000001086838075"
  },
+ "almaty:bekzatr": {
+  "name": "BekzatR",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T08:41:33+00:00"
+ },
  "almaty:belbixlab": {
   "name": "BelbixLab",
   "city": "almaty",
@@ -13894,6 +13901,13 @@
   "checked_at": "2026-11-04T21:44:03+00:00",
   "instagram": "mirakids_kz",
   "source": "https://2gis.kz/almaty/firm/70000001116431517"
+ },
+ "almaty:miras": {
+  "name": "Miras",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T08:41:33+00:00"
  },
  "almaty:miraskids_optom": {
   "name": "miraskids_optom",
@@ -24583,7 +24597,7 @@
   "instagram": "kelet.kz",
   "website": "https://kelet.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796758",
-  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27177,6 +27191,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ораз": {
+  "name": "Ораз",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T08:41:33+00:00"
  },
  "almaty:орбита дэнт": {
   "name": "Орбита-Дэнт",
@@ -32462,7 +32483,7 @@
   "checked_at": "2026-11-07T07:43:53+00:00",
   "website": "https://astana.atkglobal.kz/",
   "source": "https://2gis.kz/astana/firm/70000001093323985",
-  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38583,7 +38604,7 @@
   "instagram": "negroni_astana",
   "website": "https://negroni.taptable.kz/",
   "source": "https://2gis.kz/astana/firm/70000001088744333",
-  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48298,6 +48319,13 @@
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
  },
+ "astana:фирма торговая палата": {
+  "name": "ФИРМА ТОРГОВАЯ ПАЛАТА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T08:41:33+00:00"
+ },
  "astana:фирма траяна": {
   "name": "Фирма Траяна",
   "city": "astana",
@@ -49341,6 +49369,13 @@
   "instagram": "gazhaiyp_restoran",
   "source": "https://2gis.kz/astana/firm/70000001032132659"
  },
+ "astana:қазына": {
+  "name": "Қазына",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T08:41:33+00:00"
+ },
  "astana:қосым": {
   "name": "Қосым",
   "city": "astana",
@@ -50054,7 +50089,7 @@
   "instagram": "lift_capital",
   "website": "https://liftcapital.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001095550821",
-  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55950,7 +55985,7 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "website": "https://agro-s.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001042928156",
-  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -61968,6 +62003,13 @@
    "website"
   ]
  },
+ "semey:flexway cargo kz": {
+  "name": "Flexway Cargo KZ",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T08:41:33+00:00"
+ },
  "semey:galanz bottlers ао": {
   "name": "Galanz Bottlers, АО",
   "city": "semey",
@@ -66583,7 +66625,7 @@
   "checked_at": "2026-10-31T06:44:38+00:00",
   "website": "https://www.bcc.kz/",
   "source": "https://www.bcc.kz/llms.txt",
-  "avatar_checked_at": "2026-11-07T07:43:55+00:00",
+  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
   "avatar_tried": [
    "website"
   ]

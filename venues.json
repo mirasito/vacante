@@ -15976,6 +15976,15 @@
   "v": 3,
   "checked_at": "2026-10-31T23:43:38+00:00"
  },
+ "almaty:renaissance": {
+  "name": "Renaissance",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00",
+  "instagram": "renaissance_shtory",
+  "source": "https://2gis.kz/almaty/firm/9429940000789684"
+ },
  "almaty:renion hills hotel назаралиева д с": {
   "name": "Renion Hills Hotel (Назаралиева Д.С.)",
   "city": "almaty",
@@ -16303,6 +16312,13 @@
   "avatar": "25caa09904960c06.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/almaty/firm/9429940000799900"
+ },
+ "almaty:rr": {
+  "name": "RR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00"
  },
  "almaty:rr interiors": {
   "name": "RR INTERIORS",
@@ -20363,6 +20379,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T17:44:18+00:00"
+ },
+ "almaty:алия": {
+  "name": "Алия",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00"
  },
  "almaty:алма": {
   "name": "Алма",
@@ -28440,6 +28463,13 @@
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
  },
+ "almaty:саша": {
+  "name": "Саша",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00"
+ },
  "almaty:саяхат": {
   "name": "Саяхат",
   "city": "almaty",
@@ -31295,6 +31325,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T17:43:50+00:00"
+ },
+ "almaty:юлия": {
+  "name": "Юлия",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00"
  },
  "almaty:юнитайр": {
   "name": "ЮНИТАЙР",
@@ -45746,6 +45783,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
  },
+ "astana:охранное агентство ans": {
+  "name": "ТОО Охранное агентство ANS",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00"
+ },
  "astana:охранное агентство ran security": {
   "name": "Охранное агентство RAN SECURITY",
   "city": "astana",
@@ -57151,6 +57195,15 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "kostanay:кдм": {
+  "name": "КДМ",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00",
+  "instagram": "kdm.kustanay",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035690702"
+ },
  "kostanay:кенжетаев ж ж": {
   "name": "Кенжетаев Ж Ж",
   "city": "kostanay",
@@ -67955,6 +68008,15 @@
    "website"
   ]
  },
+ "uralsk:cookareky": {
+  "name": "Cookareky",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00",
+  "instagram": "cookareku_uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001109885436"
+ },
  "uralsk:cosmoshop": {
   "name": "COSMOSHOP",
   "city": "uralsk",
@@ -68027,6 +68089,13 @@
   ],
   "avatar": "a127124be756fdbb.jpg",
   "avatar_source": "telegram"
+ },
+ "uralsk:id project": {
+  "name": "ID PROJECT",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-14T06:43:07+00:00"
  },
  "uralsk:inkor uralsk": {
   "name": "INKOR-URALSK",

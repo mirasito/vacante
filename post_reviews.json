@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-14T12:56:44+00:00",
+ "updated_at": "2026-11-14T13:57:18+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -662,14 +662,6 @@
     "employer": "LICHI",
     "address": "ТРЦ «Maxi Mall», пр. Каныша Сатпаева, 51",
     "schedule": "2/2"
-   }
-  },
-  "rabota_semey_official-6716": {
-   "verdict": "approve",
-   "at": "2026-10-30T10:00:11+00:00",
-   "fields": {
-    "title": "Продавец-консультант, кассир",
-    "employer": null
    }
   },
   "hh-138924927": {
@@ -1553,124 +1545,10 @@
    "at": "2026-10-31T12:57:27+00:00",
    "reason": "Офисная должность (продажа недвижимости)"
   },
-  "rabota_astanakz-31134": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Донерщик, помощник повара",
-    "employer": "Дөнерхана",
-    "salary_min": 10000,
-    "salary_max": 14000,
-    "salary_period": "day",
-    "schedule": "2/2, 10:00–01:00",
-    "perks": [
-     "Питание",
-     "Бонусы"
-    ]
-   }
-  },
-  "hh-121870475": {
-   "verdict": "reject",
-   "at": "2026-10-31T14:57:51+00:00",
-   "reason": "Офисная работа агентом недвижимости"
-  },
-  "rabota_astanakz-31135": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "employer": "Titan Security",
-    "schedule": "сутки через двое",
-    "address": null,
-    "perks": [
-     "Официально"
-    ]
-   }
-  },
-  "hh-139027621": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "address": null
-   }
-  },
-  "hh-139027410": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Продавец-кассир в строительный магазин",
-    "address": "ул. Е-36, 4"
-   }
-  },
-  "hh-139027359": {
-   "verdict": "reject",
-   "at": "2026-10-31T14:57:51+00:00",
-   "reason": "Адрес не в Астане (с. Туймебаева), услуги не указаны"
-  },
-  "astana_job_vakansii-129996": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Горничная в хостел"
-   }
-  },
-  "rabota_astanakz-31132": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "employer": "Магазин мужской одежды «Shapan»",
-    "schedule": "5/2, 6/1 или 2/2",
-    "perks": [
-     "Обучение",
-     "Бонусы",
-     "Ежедневная оплата",
-     "Без опыта"
-    ]
-   }
-  },
-  "hh-139027654": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "employer": "Мукажан",
-    "address": "пр. Жибек Жолы, 85"
-   }
-  },
-  "hh-139027496": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "employer": "Салон «Розовое»",
-    "schedule": "6/1, 5/2, 3/3 или 2/2, по 12 часов",
-    "address": "ул. Курмангазы, 20"
-   }
-  },
   "hh-138619900": {
    "verdict": "reject",
    "at": "2026-10-31T14:57:51+00:00",
    "reason": "Сомнительное объявление частного лица с hh.ru, работодатель не указан"
-  },
-  "rabota4almaty-5956": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Слесарь механосборочных работ",
-    "address": "ул. Гоголя, 86"
-   }
-  },
-  "rabota4almaty-5957": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "address": "ул. Ескендирова, 1"
-   }
-  },
-  "rabota4almaty-5955": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "employer": "Фирма «А-Профиль»",
-    "address": "пр. Суюнбая, 481В"
-   }
   },
   "almaty_rabota05-11649": {
    "verdict": "reject",
@@ -1700,20 +1578,6 @@
     "title": "Продавец-консультант в магазин косметики"
    }
   },
-  "aktobevakansii-44322": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Повар, помощник повара, уборщица, посудомойщица"
-   }
-  },
-  "vakansii_rabota_atyrau-49946": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Кассир, официант"
-   }
-  },
   "rabotaaktau-141982": {
    "verdict": "approve",
    "at": "2026-10-31T14:57:51+00:00",
@@ -1725,33 +1589,6 @@
      "Можно студентам"
     ]
    }
-  },
-  "rabotaaktau-141980": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Помощник кондитера",
-    "schedule": "6/1, 07:00–16:00"
-   }
-  },
-  "rabotaaktau-141979": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "employer": "Торговая фирма «Doss Group»"
-   }
-  },
-  "vakansii_oskemen-9211": {
-   "verdict": "approve",
-   "at": "2026-10-31T14:57:51+00:00",
-   "fields": {
-    "title": "Менеджер по продажам лакокрасочных материалов"
-   }
-  },
-  "hh-120745319": {
-   "verdict": "reject",
-   "at": "2026-10-31T15:57:28+00:00",
-   "reason": "Агент по недвижимости, офисная работа на проценте"
   },
   "zhumys_astana_kz-16948": {
    "verdict": "approve",
@@ -3401,14 +3238,6 @@
    "fields": {
     "title": "Водитель такси",
     "schedule": "дневные и ночные смены"
-   }
-  },
-  "rabota_astanakz-31133": {
-   "verdict": "approve",
-   "at": "2026-11-01T11:57:30+00:00",
-   "fields": {
-    "title": "Охранник строительного объекта",
-    "employer": null
    }
   },
   "hh-137094278": {
@@ -6379,15 +6208,6 @@
     "perks": [
      "Без опыта"
     ]
-   }
-  },
-  "hh-138686131": {
-   "verdict": "approve",
-   "at": "2026-11-02T09:57:58+00:00",
-   "fields": {
-    "employer": "Magnum E-commerce",
-    "title": "Сотрудник службы безопасности склада",
-    "schedule": "2/2, по 12 часов"
    }
   },
   "hh-130275112": {
@@ -54453,6 +54273,238 @@
    "at": "2026-11-14T12:56:44+00:00",
    "fields": {
     "schedule": "5/2"
+   }
+  },
+  "zhumys_astana_kz-17511": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Донерщик",
+    "employer": "Кафе «Измир»",
+    "schedule": "5/2, 12:00–00:00",
+    "address": "ул. Алихана Бокейхана, 25А"
+   }
+  },
+  "astana_job_vakansii-130642": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Мастер-продавец по автоключам и аксессуарам",
+    "employer": "Все ключи и чехлы",
+    "schedule": "5/2 или 6/1, 10:00–22:00",
+    "address": "ТРЦ «Жибек Жолы», ул. Байтурсынова, 34",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139494545": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Оператор компьютерного клуба SimRacing",
+    "employer": null,
+    "schedule": "1/2, сутки",
+    "address": "ул. Ахмета Байтурсынова, 43/3"
+   }
+  },
+  "hh-139494337": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Оператор колл-центра",
+    "schedule": "5/2, по 9 часов",
+    "address": "пр. Мангилик Ел, 36"
+   }
+  },
+  "hh-139494303": {
+   "verdict": "reject",
+   "at": "2026-11-14T13:57:18+00:00",
+   "reason": "Мало сведений, похоже на офисные продажи"
+  },
+  "astana_job_vakansii-130643": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Бариста, помощник баристы, раннер",
+    "employer": "Coffee Boom",
+    "schedule": "2/2, 10:00–00:00",
+    "address": "ТРЦ «Керуен», ул. Достык, 9"
+   }
+  },
+  "astana_hh-1884": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Оператор компьютерного клуба",
+    "employer": "Компьютерный клуб «BRO»",
+    "schedule": "смены по 12 часов, 08:00–20:00 или 20:00–08:00",
+    "address": "ул. Туран, 53в; ул. Кунаева, 14; ул. Байтурсынова, 29а и др."
+   }
+  },
+  "hh-139461725": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Кладовщик",
+    "employer": "New Yorker",
+    "address": "ТРЦ «Хан Шатыр», пр. Туран, 37"
+   }
+  },
+  "hh-138957596": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "employer": "Mycar Astana"
+   }
+  },
+  "zhumys_astana_kz-17465": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Посудомойщица-уборщица",
+    "schedule": "6/1, 12:00–22:00"
+   }
+  },
+  "hh-139011360": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Уборщица",
+    "employer": "Damdala",
+    "schedule": "2/2, по 12 часов",
+    "address": "пр. Турара Рыскулова, 57В",
+    "salary_min": 264000,
+    "salary_max": null,
+    "salary_period": "month"
+   }
+  },
+  "hh-139494522": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "schedule": "2/2, по 9–10 часов",
+    "address": "пр. Абылай хана, 62"
+   }
+  },
+  "hh-139012890": {
+   "verdict": "reject",
+   "at": "2026-11-14T13:57:18+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "hh-139012629": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "employer": "Spaceprachka",
+    "schedule": "2/2, по 12 часов",
+    "address": "ул. Каныша Сатпаева, 82/2"
+   }
+  },
+  "rabota4almaty-6578": {
+   "verdict": "reject",
+   "at": "2026-11-14T13:57:18+00:00",
+   "reason": "Сомнительно: стажёр с зарплатой 600–800 тыс., репост агрегатора"
+  },
+  "almaty_rabota05-11751": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "employer": "Минимаркет",
+    "salary_min": 230000,
+    "salary_max": 270000,
+    "salary_period": "month",
+    "schedule": "2/2, 10:00–23:00",
+    "address": "ул. Розыбакиева, 181А, ЖК «Атамекен»"
+   }
+  },
+  "rabota4almaty-6572": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "employer": null,
+    "salary_min": 500000,
+    "salary_max": null,
+    "salary_period": "month"
+   }
+  },
+  "hh-139463311": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Промоутер-расклейщик",
+    "employer": "Союз Мастеров",
+    "schedule": "свободный график, подработка",
+    "address": "ул. Коммунальная, 4"
+   }
+  },
+  "rabota4almaty-6566": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "employer": "SantehTAT",
+    "address": "пр. Гагарина, 66Б"
+   }
+  },
+  "rabota4almaty-6564": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "employer": "Lady Collection",
+    "address": "пр. Райымбека, 348/4"
+   }
+  },
+  "rabota4almaty-6563": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Слесарь-сантехник",
+    "employer": "ГМК «Васильевское»",
+    "address": "пр. аль-Фараби, 75/7"
+   }
+  },
+  "rabota4almaty-6560": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "employer": "Alatrade",
+    "address": "пр. Суюнбая, 2"
+   }
+  },
+  "hh-132273680": {
+   "verdict": "reject",
+   "at": "2026-11-14T13:57:18+00:00",
+   "reason": "Инженерная должность технолога, без зарплаты"
+  },
+  "hh-139012793": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "schedule": "3/3"
+   }
+  },
+  "vakansii_oskemen-9343": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Водитель грузового автомобиля",
+    "salary_min": 85000,
+    "salary_max": null,
+    "salary_period": "month"
+   }
+  },
+  "rabota_semey_official-6915": {
+   "verdict": "approve",
+   "at": "2026-11-14T13:57:18+00:00",
+   "fields": {
+    "title": "Продавец овощей и фруктов",
+    "address": "Цемпосёлок",
+    "perks": [
+     "Питание"
+    ]
    }
   }
  }

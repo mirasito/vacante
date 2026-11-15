@@ -13,7 +13,9 @@ Telegram передаёт приложению одно значение до 64
 
 from __future__ import annotations
 
+import os
 import re
+from urllib.parse import urlencode
 
 from vacante import direct
 from vacante.models import Vacancy
@@ -42,26 +44,29 @@ def app_link(param: str) -> str:
     return f"https://t.me/{direct.BOT_USERNAME}?startapp={param}"
 
 
-# Способ связи из исходного поста → окончание метки источника: по метке воронка видит, какую кнопку нажали
-REPLY_TAGS = {"whatsapp": "wa", "phone": "call", "telegram": "tg"}
+# Сервер в Казахстане: там контакты работодателей из постов и переход /go/<вакансия>/<вид> (server/src/go.ts)
+GO_URL = (os.environ.get("SERVER_URL") or "https://api.vacante.kz").rstrip("/")
+# id вакансии из канала: <канал>-<номер поста>. Только для них сервер умеет найти исходный пост
+CHANNEL_ID = re.compile(r"[A-Za-z]\w{3,31}-\d{1,10}", re.ASCII)
+# Вид контакта в исходном посте → вид перехода на сервере
+GO_KINDS = {"whatsapp": "wa", "phone": "call", "telegram": "tg"}
 
 
 def reply_buttons(v: Vacancy, source: str) -> list[tuple[str, str]]:
-    """Кнопки отклика на вакансию из чужого источника: [(вид, ссылка в мини-приложение)].
+    """Кнопки отклика на вакансию из чужого источника: [(вид, ссылка)].
 
-    Вид — «whatsapp», «phone», «telegram» по контактам исходного поста или «apply», если контактов нет.
-    Все ссылки открывают эту вакансию в приложении: номер работодателя нигде не хранится, приложение
-    берёт его из исходного поста в момент отклика (server/src/contacts.ts). source — откуда кнопка:
-    «web» — сайт, «tg» — свои каналы, «bot» — подборки бота. Пусто, если отклик идёт иначе (вакансия
-    от работодателя, смена на день) или ссылка не помещается в 64 знака Telegram.
+    У вакансии из канала с контактами в посте — прямые кнопки «whatsapp», «phone», «telegram»: ссылка ведёт
+    на сервер, а он сразу отправляет человека в чат WhatsApp с готовым текстом, на звонок или в Telegram.
+    Сами номера хранятся только на сервере, в открытые данные сайта они не попадают. У остальных
+    (hh.kz, OLX, пост без контактов) одна кнопка «apply»: вакансия в мини-приложении.
+    source — откуда кнопка, для счётчика нажатий: «web» — сайт, «tg» — свои каналы, «bot» — подборки бота.
+    Пусто, если отклик идёт иначе: вакансия от работодателя или смена на день.
     """
     if v.source == direct.SOURCE or v.shift_date or not v.city:
         return []
-    kinds = [k for k in REPLY_TAGS if k in v.contact]
-    out = []
-    for kind in kinds or ["apply"]:
-        param = start_param(source=source + REPLY_TAGS.get(kind, ""), city=v.city, vacancy_id=v.id)
-        if param is None:
-            return []
-        out.append((kind, app_link(param)))
-    return out
+    kinds = [k for k in GO_KINDS if k in v.contact]
+    if kinds and v.source == "telegram" and CHANNEL_ID.fullmatch(v.id) and SOURCE.fullmatch(source):
+        query = urlencode({"s": source, "t": (v.title or "")[:80]})
+        return [(kind, f"{GO_URL}/go/{v.id}/{GO_KINDS[kind]}?{query}") for kind in kinds]
+    param = start_param(source=source, city=v.city, vacancy_id=v.id)
+    return [("apply", app_link(param))] if param else []

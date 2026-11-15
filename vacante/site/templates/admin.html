@@ -251,6 +251,12 @@ td.nowrap { white-space: nowrap; }
     <thead><tr><th>День</th><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отклик без профиля</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
     <tbody></tbody>
   </table></div>
+  <h2>Прямые кнопки связи</h2>
+  <p class="quiet">Нажатия на «WhatsApp», «Позвонить» и «Telegram» на сайте (web), под постами в каналах (tg) и в подборках бота (bot). «Не нашли контакт» — человек ушёл на исходный пост: номера в посте не оказалось или пост удалён. Считаются нажатия, а не люди.</p>
+  <div class="scroll"><table id="funnel-clicks">
+    <thead><tr><th>День</th><th>Откуда</th><th class="num">WhatsApp</th><th class="num">Позвонить</th><th class="num">Telegram</th><th class="num">Не нашли контакт</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
   </div>
 
   <div id="tab-emp" hidden>
@@ -585,6 +591,16 @@ td.nowrap { white-space: nowrap; }
       $("#funnel-daily tbody").innerHTML = data.rows.length
         ? data.rows.map((r) => `<tr><td>${esc(r.day)}</td><td>${esc(r.source)}</td>${funnelCells(r, false)}</tr>`).join("")
         : empty(10);
+      // Нажатия на прямые кнопки связи: строки сервера (день, источник, вид) сводим в строку на день и источник
+      const clicks = new Map();
+      for (const c of data.clicks || []) {
+        const key = c.day + "|" + c.source;
+        if (!clicks.has(key)) clicks.set(key, { day: c.day, source: c.source, wa: 0, call: 0, tg: 0, miss: 0 });
+        clicks.get(key)[c.kind] = c.n;
+      }
+      $("#funnel-clicks tbody").innerHTML = clicks.size
+        ? [...clicks.values()].map((r) => `<tr><td>${esc(r.day)}</td><td>${esc(r.source)}</td>${["wa", "call", "tg", "miss"].map((k) => `<td class="num">${num(r[k])}</td>`).join("")}</tr>`).join("")
+        : empty(6);
     };
     $("#funnel-days").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
       $("#funnel-days").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));

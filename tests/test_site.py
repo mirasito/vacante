@@ -218,12 +218,15 @@ def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
     assert "«Показывать фото и кружок в превью ссылки»" in ru and "Имени и других данных анкеты в превью нет" in ru
     assert "Telegram скачивает картинку и кружок на свои серверы" in ru
     assert "«Сілтеме превьюінде фото мен бейнехабарды көрсету»" in kk and "Telegram-да қалады" in kk
-    # Отклики: номер работодателя берётся из поста в момент отклика и не хранится
-    assert "<h2>Отклики</h2>" in ru and "Мы его не сохраняем" in ru and "работает 60 дней" in ru
-    assert "<h2>Өтінімдер</h2>" in kk and "Біз оны сақтамаймыз" in kk and "60 күн жұмыс істейді" in kk
-    # Напоминания: не больше двух в день с 9 до 21, номер для кнопок тоже не хранится
-    assert "<h2>Напоминания</h2>" in ru and "не больше двух напоминаний в день" in ru and "и не сохраняет" in ru
-    assert "<h2>Еске салғыштар</h2>" in kk and "күніне екіден көп емес" in kk and "сақтамайды" in kk
+    # Отклики: номер работодателя берётся из открытого поста и хранится на сервере в Казахстане,
+    # на страницах сайта и в открытых данных его нет; нажатия на кнопки связи считаются без имён
+    assert "<h2>Отклики</h2>" in ru and "храним на сервере в Казахстане" in ru and "работает 60 дней" in ru
+    assert "На страницах сайта и в открытых данных номеров нет" in ru and "не записываем, кто нажал" in ru
+    assert "Мы его не сохраняем" not in ru and "Біз оны сақтамаймыз" not in kk
+    assert "<h2>Өтінімдер</h2>" in kk and "Қазақстандағы серверде сақтаймыз" in kk and "60 күн жұмыс істейді" in kk
+    # Напоминания: не больше двух в день с 9 до 21
+    assert "<h2>Напоминания</h2>" in ru and "не больше двух напоминаний в день" in ru
+    assert "<h2>Еске салғыштар</h2>" in kk and "күніне екіден көп емес" in kk
     # Цель недели и достижения: видит только сам человек, рейтинга нет
     assert "<h2>Цель недели и достижения</h2>" in ru and "Рейтингов и сравнения с другими людьми нет" in ru
     assert "<h2>Апта мақсаты және жетістіктер</h2>" in kk and "Рейтинг және басқа адамдармен салыстыру жоқ" in kk
@@ -239,9 +242,10 @@ def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_p
     save_vacancies(tmp_path / "data", [replace(parse_post(raw), contact=["whatsapp", "phone"])])
     build(tmp_path / "data", tmp_path / "public", "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
     page = (tmp_path / "public" / "v" / "chan-31" / "index.html").read_text("utf-8")
-    assert '<a class="apply" href="https://t.me/vacantekz_bot?startapp=swebwa_v_almaty_chan-31" rel="nofollow">💬 Написать в WhatsApp</a>' in page
-    assert '<a class="apply" href="https://t.me/vacantekz_bot?startapp=swebcall_v_almaty_chan-31" rel="nofollow">📞 Позвонить</a>' in page
+    # Кнопки сразу ведут к работодателю через сервер, где хранится номер; на самой странице номера нет
+    assert '<a class="apply" href="https://api.vacante.kz/go/chan-31/wa?s=web&amp;t=%D0%9F%D0%BE%D0%B2%D0%B0%D1%80" rel="nofollow">💬 Написать в WhatsApp</a>' in page
+    assert '<a class="apply" href="https://api.vacante.kz/go/chan-31/call?s=web&amp;t=%D0%9F%D0%BE%D0%B2%D0%B0%D1%80" rel="nofollow">📞 Позвонить</a>' in page
     assert "Откликнуться в приложении" not in page  # есть способы связи: общая кнопка не нужна
-    assert "Номера работодателя на сайте нет" in page
+    assert "wa.me" not in page and "tel:" not in page
     kk = (tmp_path / "public" / "kk" / "v" / "chan-31" / "index.html").read_text("utf-8")
     assert "WhatsApp-қа жазу" in kk and "Қоңырау шалу" in kk

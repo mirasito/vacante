@@ -21,7 +21,6 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from vacante import channels, launch, shifts
 from vacante import venues as venue_store
 from vacante.direct import BOT_USERNAME, POST_URL
-from vacante.direct import SOURCE as SOURCE_BOT
 from vacante.geo import MAP_WORTHY
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
@@ -136,12 +135,15 @@ def bot_item(v: Vacancy, base_url: str) -> str:
     if facts:
         lines.append(" · ".join(facts))
     lines.append(f"📍 {e(city_name(v.city))}" + (f", {e(v.address)}" if v.address else ""))
-    # Отклик в приложении: готовый текст со ссылкой на профиль и номер работодателя из исходного поста.
-    # У вакансий от работодателей и смен свой отклик через бота, им ссылка не нужна
-    if v.source != SOURCE_BOT and not v.shift_date and (param := launch.start_param(source="bot", city=v.city, vacancy_id=v.id)):
-        lines.append(f'✉️ <a href="{launch.app_link(param)}">Откликнуться в приложении</a>')
+    # Связаться сразу: WhatsApp, звонок или Telegram работодателя; если контактов в посте нет — отклик
+    # в приложении. У вакансий от работодателей и смен свой отклик через бота, им ссылки не нужны
+    if replies := launch.reply_buttons(v, "bot"):
+        lines.append(" · ".join(f'<a href="{e(url)}">{BOT_REPLY_LABELS[kind]}</a>' for kind, url in replies))
     return "\n".join(lines)
 
+
+BOT_REPLY_LABELS = {"whatsapp": "💬 WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Telegram",
+                    "apply": "✉️ Откликнуться в приложении"}
 
 # Подписи кнопок отклика на карточке сайта (переводятся в шаблоне)
 REPLY_LABELS = {"whatsapp": "💬 Написать в WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Написать в Telegram",

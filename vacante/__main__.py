@@ -67,6 +67,11 @@ def main() -> None:
     p_ig.add_argument("--plan", type=Path, help="publish: файл плана (по умолчанию <out>/ig/plan.json)")
     p_ig.add_argument("--base-url", default="https://vacante.kz")
 
+    p_video = sub.add_parser("video", help="короткие видео из данных для Reels, TikTok и Shorts")
+    p_video.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_video.add_argument("--out", type=Path, default=Path("videos"), help="куда положить mp4 и подписи")
+    p_video.add_argument("--send", action="store_true", help="отправить ролики модераторам в Telegram")
+
     p_crm = sub.add_parser("crm", help="отправить работодателей, заведения и вакансии в CRM на сервере api.vacante.kz")
     p_crm.add_argument("--data-dir", type=Path, default=Path("data"))
 
@@ -102,6 +107,8 @@ def main() -> None:
         run_review(args)
     elif args.command == "instagram":
         run_instagram(args)
+    elif args.command == "video":
+        run_video(args)
     elif args.command == "post":
         token = os.environ.get("TELEGRAM_BOT_TOKEN")
         if not token:
@@ -179,6 +186,32 @@ def annotate(report: list[tuple[str, str]], title: str) -> None:
         if lines:
             text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
             print(f"::{level} title={title}::{text}")
+
+
+def run_video(args: argparse.Namespace) -> None:
+    from vacante import video
+
+    vacancies = load_vacancies(args.data_dir)
+    clips = video.plan(autopost.checked_by_agent(vacancies, review.load(args.data_dir)), vacancies, datetime.now(timezone.utc))
+    if not clips:
+        print("::notice title=Видео::сегодня не из чего собрать ролик: мало свежих вакансий с зарплатой")
+        return
+    video.render(clips, args.out)
+    names = ", ".join(clip.name for clip in clips)
+    if not args.send:
+        print(f"::notice title=Видео::собрано: {names}")
+        return
+    env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
+    if not all(env.values()):
+        print(f"::warning title=Видео::собрано: {names}; нет секретов бота или Cloudflare, не отправлено")
+        return
+    with httpx.Client(timeout=120) as client:
+        d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+        chats = [int(row["chat_id"]) for row in d1.query("SELECT chat_id FROM admins")] if d1.database_id() else []
+        stats = video.send(client, env["TELEGRAM_BOT_TOKEN"], chats, clips, args.out)
+    level = "warning" if stats["failed"] or not chats else "notice"
+    print(f"::{level} title=Видео::собрано: {names}; модераторов {len(chats)}, отправлено роликов {stats['sent']}, "
+          f"не дошло чатов {stats['failed']}")
 
 
 def run_instagram(args: argparse.Namespace) -> None:

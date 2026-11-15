@@ -26,7 +26,28 @@ export type Employment = 'full' | 'shifts' | 'night' | 'flexible' | 'part' | 'we
 export type Start = 'today' | 'week' | '2weeks' | 'later';
 export type PayPeriod = 'month' | 'shift';
 export type Language = 'kk' | 'ru' | 'en';
-export type Tip = 'details' | 'video' | 'photo' | 'phone' | 'about' | 'docs';
+export type Tip = 'work' | 'details' | 'video' | 'photo' | 'docs' | 'phone' | 'about';
+/** Санкнижка: есть действующая, оформлю, нет. */
+export type Med = 'yes' | 'soon' | 'no';
+export type JobTerm = 'lt6m' | '6to12' | '1to3' | 'gt3';
+// Тот же список, что на сервере (server/src/profile.ts SKILLS)
+export const SKILLS = [
+  'hot', 'cold', 'prep', 'sushi', 'pizza', 'grill', 'bakery', 'kitchen_banquet',
+  'espresso', 'alt_brew', 'latte_art',
+  'classic_cocktails', 'signature_cocktails', 'hookah',
+  'banquets', 'big_hall', 'wine', 'english_menu',
+  'cash', 'iiko', 'rkeeper', 'poster',
+  'display', 'onec', 'receiving',
+  'own_car', 'own_bike', 'knows_city',
+  'picking', 'tsd', 'forklift',
+] as const;
+export type Skill = (typeof SKILLS)[number];
+/** Прошлое место работы: заведение, кем и сколько. */
+export interface Job {
+  place: string;
+  role: string;
+  term: JobTerm;
+}
 
 /** Где живёт человек: точка, округлённая сервером до 300–500 метров. Работодатель её не видит. */
 export interface Home {
@@ -53,6 +74,15 @@ export interface Profile {
   about: string | null;
   med_book: boolean;
   driver: boolean;
+  /** Поля 2026-11-16; сервер до этой даты их не присылает. */
+  jobs?: Job[];
+  skills?: Skill[];
+  med?: Med | null;
+  trial?: boolean;
+  /** Когда отмечено «ищу работу сейчас»; горит 30 дней (profile/skills.ts isLooking). */
+  looking_at?: string | null;
+  /** Только при сохранении: включить или выключить «ищу работу сейчас». Дату ставит сервер. */
+  looking?: boolean;
 }
 
 export interface ProfileView {
@@ -63,6 +93,8 @@ export interface ProfileView {
   video: { duration: number; recorded_at: string; ready: boolean; poster: boolean } | null;
   photo: { width: number; height: number; uploaded_at: string } | null;
   strength: { percent: number; next: Tip | null } | null;
+  /** Что сказать в кружке: готовые фразы из анкеты, на языке приложения. */
+  script?: string[] | null;
   link: { code: string; url: string } | null;
 }
 
@@ -137,7 +169,7 @@ export async function getProfile(): Promise<ProfileView | null> {
   }
 }
 
-export const CONSENT_VERSION = '2026-11-04.2';
+export const CONSENT_VERSION = '2026-11-16.1';
 
 /** source — метка источника из ссылки запуска: сервер запоминает её вместе с первой анкетой. */
 export const saveProfile = (

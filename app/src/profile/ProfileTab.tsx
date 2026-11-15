@@ -40,11 +40,13 @@ import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, Loading, Retry, styles as ui } from '../ui';
 import { HomeStep, type HomeDraft } from './Home';
 import { Avatar, PhotoSection, usePhotoUpload, usePhotoUrl } from './Photo';
+import { isLooking, JOB_TERMS, skillLabel } from './skills';
 import { EMPLOYMENT, EXPERIENCE, label, LANGUAGES, money, P, phoneLabel, START, when } from './texts';
 import { useVideoRecording, VideoSection } from './Video';
 import { Wizard } from './Wizard';
+import { Work } from './Work';
 
-type Mode = 'card' | 'wizard' | 'extras' | 'home';
+type Mode = 'card' | 'wizard' | 'extras' | 'home' | 'work';
 type RemindersProps = { data: Reminders | null; onChange(next: Reminders): void; onOpenAll(): void };
 
 export function ProfileTab(props: {
@@ -122,7 +124,7 @@ export function ProfileTab(props: {
     [],
   );
 
-  if (mode !== 'wizard') backRef.current = mode === 'extras' || mode === 'home' ? () => (setMode('card'), true) : null;
+  if (mode !== 'wizard') backRef.current = mode !== 'card' ? () => (setMode('card'), true) : null;
 
   if (failed) return <Retry c={c} lang={lang} text={t.notAvailable} onRetry={() => setAttempt((n) => n + 1)} />;
   if (view === undefined) return <Loading c={c} text="" />;
@@ -155,6 +157,9 @@ export function ProfileTab(props: {
   if (mode === 'home') {
     return <HomeEdit c={c} lang={lang} view={view} onSaved={(v) => (setView(v), setMode('card'))} />;
   }
+  if (mode === 'work') {
+    return <Work c={c} lang={lang} index={index} view={view} onSaved={(v) => (setView(v), setMode('card'))} />;
+  }
   return (
     <Card
       c={c}
@@ -164,6 +169,7 @@ export function ProfileTab(props: {
       onChange={setView}
       onEdit={() => setMode('wizard')}
       onExtras={() => setMode('extras')}
+      onWork={() => setMode('work')}
       onHome={() => setMode('home')}
       onDeleted={() => {
         setView(null);
@@ -259,8 +265,6 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
   const [waiting, setWaiting] = useState(false);
   const [languages, setLanguages] = useState<Language[]>(profile.languages);
   const [about, setAbout] = useState(profile.about ?? '');
-  const [medBook, setMedBook] = useState(profile.med_book);
-  const [driver, setDriver] = useState(profile.driver);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const rec = useVideoRecording(view, onChange);
@@ -283,8 +287,6 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
         phone: phone.trim() || profile.phone,
         languages,
         about: about.trim() || null,
-        med_book: medBook,
-        driver,
       };
       onSaved(await saveProfile(next, lang));
     } catch (err) {
@@ -351,9 +353,6 @@ function Extras(props: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: Pr
           style={s.area}
         />
 
-        <Text style={[s.section, { color: c.ink }]}>{t.documents}</Text>
-        <Check c={c} checked={medBook} label={t.medBook} onPress={() => setMedBook(!medBook)} />
-        <Check c={c} checked={driver} label={t.driver} onPress={() => setDriver(!driver)} />
         {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
       </ScrollView>
       <View style={s.foot}>
@@ -391,12 +390,13 @@ function Card(props: {
   onChange(v: ProfileView): void;
   onEdit(): void;
   onExtras(): void;
+  onWork(): void;
   onHome(): void;
   onDeleted(): void;
   reminders?: RemindersProps;
   extra?: ReactNode;
 }) {
-  const { c, lang, index, view, onChange, onEdit, onExtras, onHome, onDeleted, reminders } = props;
+  const { c, lang, index, view, onChange, onEdit, onExtras, onWork, onHome, onDeleted, reminders } = props;
   const t = P[lang];
   const p = view.profile!;
   const [views, setViews] = useState<ProfileViewEvent[] | null>(null);
@@ -415,7 +415,16 @@ function Card(props: {
   const city = index?.cities.find((ct) => ct.slug === p.city);
   const place = [city ? i18n.cityName(city, lang) : p.city, p.district].filter(Boolean).join(', ');
   const pay = p.pay_from ? t.payFrom(money(p.pay_from), p.pay_period === 'shift' ? t.perShift : t.perMonth) : null;
-  const docs = [p.med_book ? t.medBook : null, p.driver ? t.driver : null].filter(Boolean).join(', ');
+  const docs = p.driver ? t.driver : '';
+  // Отметки под именем, как на странице для работодателя
+  const med = p.med ?? (p.med_book ? 'yes' : null);
+  const tags = [
+    isLooking(p.looking_at) ? { text: t.looking, live: true } : null,
+    p.trial ? { text: t.trial, live: false } : null,
+    med === 'yes' ? { text: t.medYes, live: false } : med === 'soon' ? { text: t.medSoon, live: false } : null,
+  ].filter((x): x is { text: string; live: boolean } => !!x);
+  const jobs = p.jobs ?? [];
+  const skills = p.skills ?? [];
 
   const share = async (via: 'telegram' | 'whatsapp' | 'copy') => {
     haptic();
@@ -467,6 +476,8 @@ function Card(props: {
   const onTip = async (tip: Tip) => {
     // Короткая анкета: дополнить опыт, график и выход в полной анкете
     if (tip === 'details') return onEdit();
+    // Опыт, навыки и санкнижка заполняются на одном экране
+    if (tip === 'work' || tip === 'docs') return onWork();
     if (tip === 'video') return rec.start();
     // Окно выбора фото открывается только прямо из нажатия, поэтому до любых await
     if (tip === 'photo') return photo.upload();
@@ -489,6 +500,19 @@ function Card(props: {
             <Text style={{ color: c.quiet }}>{place}</Text>
           </View>
         </View>
+        {tags.length ? (
+          <View style={ui.row}>
+            {tags.map((tag) => (
+              <Text
+                key={tag.text}
+                style={[s.tag, tag.live ? { backgroundColor: c.like, color: c.card, borderColor: c.like } : { color: c.ink, borderColor: c.line }]}
+              >
+                {tag.live ? '● ' : ''}
+                {tag.text}
+              </Text>
+            ))}
+          </View>
+        ) : null}
         <View style={ui.row}>
           {p.roles.map((r) => (
             <Text key={r} style={[s.pill, { backgroundColor: c.pill, color: c.ink }]}>
@@ -496,6 +520,31 @@ function Card(props: {
             </Text>
           ))}
         </View>
+        {jobs.length ? (
+          <View>
+            <Text style={[s.factKey, { color: c.quiet }]}>{t.jobsFact}</Text>
+            {jobs.map((j, i) => (
+              <View key={i} style={[s.job, { borderColor: c.accent }]}>
+                <Text style={[s.factValue, { color: c.ink }]}>{roleName(j.role)}</Text>
+                <Text style={{ color: c.quiet }}>
+                  {j.place} · {label(JOB_TERMS, j.term, lang).toLowerCase()}
+                </Text>
+              </View>
+            ))}
+          </View>
+        ) : null}
+        {skills.length ? (
+          <View style={s.skills}>
+            <Text style={[s.factKey, { color: c.quiet }]}>{t.skillsFact}</Text>
+            <View style={ui.row}>
+              {skills.map((id) => (
+                <Text key={id} style={[s.pill, { backgroundColor: c.pill, color: c.ink }]}>
+                  {skillLabel(id, lang)}
+                </Text>
+              ))}
+            </View>
+          </View>
+        ) : null}
         {p.experience ? <Fact c={c} k={t.experience} v={label(EXPERIENCE, p.experience, lang)} /> : null}
         {p.employment.length ? (
           <Fact c={c} k={t.employment} v={p.employment.map((e) => label(EMPLOYMENT, e, lang)).join(', ')} />
@@ -518,6 +567,7 @@ function Card(props: {
         <Text style={[s.small, { color: c.accent, fontWeight: '600' }]}>{t.homeChange}</Text>
       </Pressable>
 
+      <Button c={c} label={t.workButton} onPress={onWork} />
       <Button c={c} ghost label={t.edit} onPress={onEdit} />
       <Button c={c} ghost label={t.more} onPress={onExtras} />
 
@@ -608,6 +658,9 @@ const s = StyleSheet.create({
   homeRow: { flexDirection: 'row', gap: 8, alignItems: 'center' },
   name: { fontSize: 22, fontWeight: '800' },
   pill: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 12, overflow: 'hidden', fontWeight: '600' },
+  tag: { paddingHorizontal: 12, paddingVertical: 5, borderRadius: 999, borderWidth: 1, overflow: 'hidden', fontWeight: '600', fontSize: 14 },
+  job: { borderLeftWidth: 3, paddingLeft: 10, marginTop: 6 },
+  skills: { gap: 6 },
   factKey: { fontSize: 12 },
   factValue: { fontSize: 15, fontWeight: '600' },
   linkRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, alignItems: 'center' },

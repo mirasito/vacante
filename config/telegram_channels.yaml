@@ -24,6 +24,12 @@ channels:
   - {username: almatyrabota360, city: almaty}
   - {username: alaportjobs, city: almaty}
   - {username: almaty_rabota_vacancy, city: almaty, enabled: false}
+  # Добавлены 16.11.2026 под общепит Алматы, проверены по открытому превью t.me/s.
+  # almatyfoodwork — только общепит, 18 постов в неделю, почти в каждом телефон работодателя.
+  # almaty_rabota — общий канал, 70 постов в неделю, общепита около шестой части, в постах телефон.
+  # Его зеркало almaty_rabotao с теми же постами не добавляем.
+  - {username: almatyfoodwork, city: almaty}
+  - {username: almaty_rabota, city: almaty}
 
   # Астана
   - {username: astana_job_vakansii, city: astana}

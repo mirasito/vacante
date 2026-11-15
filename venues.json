@@ -3224,6 +3224,13 @@
   "v": 3,
   "checked_at": "2026-11-07T23:44:10+00:00"
  },
+ "aktobe:байтанаев е б": {
+  "name": "Байтанаев Е.Б",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T16:41:37+00:00"
+ },
  "aktobe:байтурин а ж": {
   "name": "Байтурин А.Ж.",
   "city": "aktobe",
@@ -15285,6 +15292,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:paimon": {
+  "name": "PAIMON",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T16:41:37+00:00",
+  "instagram": "paimon.kz",
+  "telegram": "paimon_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001060239853",
+  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
  },
  "almaty:panda media": {
   "name": "PANDA MEDIA",
@@ -41673,7 +41694,7 @@
   "instagram": "akcentmicrosystems",
   "website": "https://www.ak-cent.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000791812",
-  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -50989,7 +51010,7 @@
   "checked_at": "2026-11-08T15:44:05+00:00",
   "website": "https://wildberries.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001038152697",
-  "avatar_checked_at": "2026-11-08T15:44:06+00:00",
+  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65027,6 +65048,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-13T01:44:50+00:00"
+ },
+ "shymkent:kazeliteservice": {
+  "name": "KazEliteService",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T16:41:37+00:00",
+  "instagram": "too_kes",
+  "website": "https://www.kamazeuro.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001027706144",
+  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:kazmebeltrade": {
   "name": "Kazmebeltrade",

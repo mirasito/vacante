@@ -247,5 +247,8 @@ def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_p
     assert '<a class="apply" href="https://api.vacante.kz/go/chan-31/call?s=web&amp;t=%D0%9F%D0%BE%D0%B2%D0%B0%D1%80" rel="nofollow">📞 Позвонить</a>' in page
     assert "Откликнуться в приложении" not in page  # есть способы связи: общая кнопка не нужна
     assert "wa.me" not in page and "tel:" not in page
+    # Профиль можно сделать и придя с сайта: кнопка ведёт в приложение на эту вакансию
+    assert '<a class="apply second" href="https://t.me/vacantekz_bot?startapp=swebpf_v_almaty_chan-31" rel="nofollow">👤 Откликнуться с профилем</a>' in page
+    assert "С профилем отвечают охотнее" in page
     kk = (tmp_path / "public" / "kk" / "v" / "chan-31" / "index.html").read_text("utf-8")
     assert "WhatsApp-қа жазу" in kk and "Қоңырау шалу" in kk

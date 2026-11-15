@@ -1,7 +1,7 @@
 from dataclasses import replace
 from datetime import datetime, timezone
 
-from vacante.launch import app_link, reply_buttons, start_param
+from vacante.launch import app_link, profile_link, reply_buttons, start_param
 from vacante.models import RawPost
 from vacante.parse import parse_post
 
@@ -73,3 +73,14 @@ def test_no_reply_buttons_for_employer_vacancies_shifts_and_long_links():
     assert reply_buttons(vacancy(shift_date="2026-10-28"), "web") == []  # «Беру смену» в боте
     assert reply_buttons(vacancy(id="a" * 60, contact=[]), "web") == []  # ссылка в приложение не помещается
     assert reply_buttons(vacancy(city=None), "web") == []
+
+
+def test_profile_link_goes_with_direct_buttons_only():
+    # Рядом с прямыми кнопками — путь в приложение, где отклик уходит со ссылкой на профиль
+    v = vacancy(contact=["whatsapp"])
+    assert profile_link(v, "web") == "https://t.me/vacantekz_bot?startapp=swebpf_v_almaty_chan-5"
+    assert profile_link(v, "tg") == "https://t.me/vacantekz_bot?startapp=stgpf_v_almaty_chan-5"
+    # Кнопка отклика и так ведёт в приложение: вторая такая же не нужна
+    assert profile_link(vacancy(contact=[]), "web") is None
+    assert profile_link(vacancy(source="bot"), "web") is None
+    assert profile_link(vacancy(id="a" * 60, source="telegram", contact=["whatsapp"]), "web") is None

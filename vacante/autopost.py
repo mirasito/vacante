@@ -209,6 +209,8 @@ def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: byte
         # текстом, на звонок или в Telegram (через сервер, где хранятся номера). Если контактов в посте
         # нет, кнопка «Откликнуться» открывает вакансию в мини-приложении
         replies = [(REPLY_LABELS[kind], url) for kind, url in launch.reply_buttons(v, launch.OWN_CHANNELS)]
+        if url := launch.profile_link(v, launch.OWN_CHANNELS):
+            replies.append(("👤 С профилем", url))
         buttons = replies + buttons
     if url := twogis_url(v):
         buttons.append(("📍 Открыть в 2ГИС", url))

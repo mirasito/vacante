@@ -16,6 +16,7 @@ from __future__ import annotations
 import re
 
 from vacante import direct
+from vacante.models import Vacancy
 
 MAX = 64  # предел Telegram для startapp
 OWN_CHANNELS = "tg"  # метка источника для постов в своих каналах
@@ -39,3 +40,28 @@ def start_param(*, source: str | None = None, city: str | None = None, vacancy_i
 
 def app_link(param: str) -> str:
     return f"https://t.me/{direct.BOT_USERNAME}?startapp={param}"
+
+
+# Способ связи из исходного поста → окончание метки источника: по метке воронка видит, какую кнопку нажали
+REPLY_TAGS = {"whatsapp": "wa", "phone": "call", "telegram": "tg"}
+
+
+def reply_buttons(v: Vacancy, source: str) -> list[tuple[str, str]]:
+    """Кнопки отклика на вакансию из чужого источника: [(вид, ссылка в мини-приложение)].
+
+    Вид — «whatsapp», «phone», «telegram» по контактам исходного поста или «apply», если контактов нет.
+    Все ссылки открывают эту вакансию в приложении: номер работодателя нигде не хранится, приложение
+    берёт его из исходного поста в момент отклика (server/src/contacts.ts). source — откуда кнопка:
+    «web» — сайт, «tg» — свои каналы, «bot» — подборки бота. Пусто, если отклик идёт иначе (вакансия
+    от работодателя, смена на день) или ссылка не помещается в 64 знака Telegram.
+    """
+    if v.source == direct.SOURCE or v.shift_date or not v.city:
+        return []
+    kinds = [k for k in REPLY_TAGS if k in v.contact]
+    out = []
+    for kind in kinds or ["apply"]:
+        param = start_param(source=source + REPLY_TAGS.get(kind, ""), city=v.city, vacancy_id=v.id)
+        if param is None:
+            return []
+        out.append((kind, app_link(param)))
+    return out

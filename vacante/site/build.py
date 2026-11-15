@@ -18,9 +18,10 @@ from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from vacante import channels, shifts
+from vacante import channels, launch, shifts
 from vacante import venues as venue_store
 from vacante.direct import BOT_USERNAME, POST_URL
+from vacante.direct import SOURCE as SOURCE_BOT
 from vacante.geo import MAP_WORTHY
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
@@ -135,7 +136,21 @@ def bot_item(v: Vacancy, base_url: str) -> str:
     if facts:
         lines.append(" · ".join(facts))
     lines.append(f"📍 {e(city_name(v.city))}" + (f", {e(v.address)}" if v.address else ""))
+    # Отклик в приложении: готовый текст со ссылкой на профиль и номер работодателя из исходного поста.
+    # У вакансий от работодателей и смен свой отклик через бота, им ссылка не нужна
+    if v.source != SOURCE_BOT and not v.shift_date and (param := launch.start_param(source="bot", city=v.city, vacancy_id=v.id)):
+        lines.append(f'✉️ <a href="{launch.app_link(param)}">Откликнуться в приложении</a>')
     return "\n".join(lines)
+
+
+# Подписи кнопок отклика на карточке сайта (переводятся в шаблоне)
+REPLY_LABELS = {"whatsapp": "💬 Написать в WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Написать в Telegram",
+                "apply": "Откликнуться в приложении"}
+
+
+def app_replies(v: Vacancy) -> list[tuple[str, str]]:
+    """Кнопки отклика через приложение для карточки сайта: [(подпись, ссылка)]."""
+    return [(REPLY_LABELS[kind], url) for kind, url in launch.reply_buttons(v, "web")]
 
 
 def age_label(posted_at: str, now: datetime, lang: str = "ru") -> str:
@@ -176,6 +191,7 @@ def _env(lang: str = "ru") -> Environment:
     )
     env.globals.update(city_name=lambda slug: city_name(slug, lang), cat_name=lambda c: category_name(c, lang),
                        salary_label=lambda v: salary_label(v, lang), twogis_url=twogis_url,
+                       app_replies=app_replies,
                        monthly_pay=monthly_pay, monthly_label=lambda v: monthly_label(v, lang),
                        search_text=lambda v: search_text(v, lang), money=money, perks_of=shifts.perks,
                        shift_day=lambda v: shifts.day_label(v.shift_date, lang),

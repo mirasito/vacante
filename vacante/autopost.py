@@ -196,15 +196,20 @@ def format_caption(v: Vacancy, urgent: bool = False) -> str:
     return "\n".join(lines)
 
 
+REPLY_LABELS = {"whatsapp": "💬 WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Telegram", "apply": "✉️ Откликнуться"}
+
+
 def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: bytes | None = None,
               urgent: bool = False) -> Post:
     buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
-    elif param := launch.start_param(source=launch.OWN_CHANNELS, city=v.city, vacancy_id=v.id):
-        # Вакансия из чужого источника: кнопка открывает её в мини-приложении, где отклик уходит
-        # со ссылкой на профиль. Ссылка не поместилась в 64 знака Telegram — остаётся карточка сайта
-        buttons.insert(0, ("✉️ Откликнуться", launch.app_link(param)))
+    else:
+        # Вакансия из чужого источника: первые кнопки называют способ связи из исходного поста и открывают
+        # вакансию в мини-приложении, где отклик уходит со ссылкой на профиль. Ссылка не поместилась
+        # в 64 знака Telegram — остаётся карточка сайта
+        replies = [(REPLY_LABELS[kind], url) for kind, url in launch.reply_buttons(v, launch.OWN_CHANNELS)]
+        buttons = replies + buttons
     if url := twogis_url(v):
         buttons.append(("📍 Открыть в 2ГИС", url))
     if url := instagram_url(venue):

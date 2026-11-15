@@ -1,4 +1,9 @@
-from vacante.launch import app_link, start_param
+from dataclasses import replace
+from datetime import datetime, timezone
+
+from vacante.launch import app_link, reply_buttons, start_param
+from vacante.models import RawPost
+from vacante.parse import parse_post
 
 
 def test_vacancy_link():
@@ -34,3 +39,29 @@ def test_bad_city_or_id_gives_none():
 
 def test_app_link():
     assert app_link("stg_c_almaty") == "https://t.me/vacantekz_bot?startapp=stg_c_almaty"
+
+
+def vacancy(**changes):
+    raw = RawPost("telegram", "chan", 5, "https://t.me/chan/5", "Кафе «Зерно» ищет бариста, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "almaty")
+    return replace(parse_post(raw), **changes)
+
+
+def test_reply_buttons_follow_contacts_of_the_post():
+    link = "https://t.me/vacantekz_bot?startapp=s{}_v_almaty_chan-5"
+    v = vacancy(contact=["whatsapp", "phone", "telegram"])
+    assert reply_buttons(v, "web") == [("whatsapp", link.format("webwa")), ("phone", link.format("webcall")),
+                                       ("telegram", link.format("webtg"))]
+    assert reply_buttons(vacancy(contact=["phone"]), "tg") == [("phone", link.format("tgcall"))]
+
+
+def test_reply_button_without_contacts_is_plain_apply():
+    assert reply_buttons(vacancy(contact=[]), "web") == [
+        ("apply", "https://t.me/vacantekz_bot?startapp=sweb_v_almaty_chan-5")]
+
+
+def test_no_reply_buttons_for_employer_vacancies_shifts_and_long_links():
+    assert reply_buttons(vacancy(source="bot"), "web") == []  # отклик идёт работодателю через бота
+    assert reply_buttons(vacancy(shift_date="2026-10-28"), "web") == []  # «Беру смену» в боте
+    assert reply_buttons(vacancy(id="a" * 60, contact=["whatsapp"]), "web") == []
+    assert reply_buttons(vacancy(city=None), "web") == []

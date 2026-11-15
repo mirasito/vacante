@@ -20,6 +20,10 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     page = (out / "v" / "chan-5" / "index.html").read_text("utf-8")
     assert "Официант" in page and "14 000 – 18 000 ₸/день" in page
     assert 'href="https://t.me/chan/5"' in page
+    # Главная кнопка ведёт в приложение на эту вакансию; оригинал объявления остаётся второй ссылкой
+    assert 'class="apply" href="https://t.me/vacantekz_bot?startapp=sweb_v_almaty_chan-5"' in page
+    assert 'class="apply second" href="https://t.me/chan/5"' in page
+    assert page.index('startapp=sweb_v_almaty_chan-5') < page.index('class="apply second"')
     assert '"@type": "JobPosting"' in page
     assert (out / "almaty" / "horeca" / "index.html").exists()
     assert "https://vacante.kz/almaty/" in (out / "sitemap.xml").read_text("utf-8")
@@ -226,3 +230,18 @@ def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
     home = (out / "index.html").read_text("utf-8")
     assert 'href="/privacy/"' in home and 'href="/app/"' in home
     assert 'href="/kk/privacy/"' in (out / "kk" / "index.html").read_text("utf-8")
+
+
+def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_path):
+    raw = RawPost("telegram", "chan", 31, "https://t.me/chan/31", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "almaty")
+    from dataclasses import replace
+    save_vacancies(tmp_path / "data", [replace(parse_post(raw), contact=["whatsapp", "phone"])])
+    build(tmp_path / "data", tmp_path / "public", "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    page = (tmp_path / "public" / "v" / "chan-31" / "index.html").read_text("utf-8")
+    assert '<a class="apply" href="https://t.me/vacantekz_bot?startapp=swebwa_v_almaty_chan-31" rel="nofollow">💬 Написать в WhatsApp</a>' in page
+    assert '<a class="apply" href="https://t.me/vacantekz_bot?startapp=swebcall_v_almaty_chan-31" rel="nofollow">📞 Позвонить</a>' in page
+    assert "Откликнуться в приложении" not in page  # есть способы связи: общая кнопка не нужна
+    assert "Номера работодателя на сайте нет" in page
+    kk = (tmp_path / "public" / "kk" / "v" / "chan-31" / "index.html").read_text("utf-8")
+    assert "WhatsApp-қа жазу" in kk and "Қоңырау шалу" in kk

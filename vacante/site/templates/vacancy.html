@@ -30,12 +30,17 @@
   {% elif v.source == "bot" %}
   <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в Telegram") }}</a>
   <p class="direct">{{ t("Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.") }}</p>
-  {% elif v.source == "olx" %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться на OLX") }}</a>
-  {% elif v.source == "hh" %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться на hh.kz") }}</a>
   {% else %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в оригинальном объявлении") }}</a>
+  {# Главные кнопки открывают эту вакансию в приложении vacante: там номер работодателя из исходного поста,
+     готовый текст отклика и ссылка на профиль. Оригинал объявления остаётся второй ссылкой #}
+  {% set replies = app_replies(v) %}
+  {% for label, url in replies %}
+  <a class="apply" href="{{ url }}" rel="nofollow">{{ t(label) }}</a>
+  {% endfor %}
+  {% if replies %}
+  <p class="direct">{{ t("Номера работодателя на сайте нет: кнопка откроет приложение vacante в Telegram, там номер, готовый текст отклика и ссылка на ваш профиль.") }}</p>
+  {% endif %}
+  <a class="apply{% if replies %} second{% endif %}" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{% if v.source == "olx" %}{{ t("Откликнуться на OLX") }}{% elif v.source == "hh" %}{{ t("Откликнуться на hh.kz") }}{% else %}{{ t("Откликнуться в оригинальном объявлении") }}{% endif %}</a>
   {% endif %}
   <h2>{{ t("Описание") }}</h2>
   {% if lang != "ru" %}<p class="note">{{ t("Текст объявления на языке оригинала.") }}</p>{% endif %}

@@ -64,6 +64,9 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .facts dt { color: var(--quiet); }
 .facts dd { margin: 0; font-weight: 600; }
 .apply { display: block; text-align: center; background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 700; padding: 16px; border-radius: 999px; margin: 20px 0; }
+/* Вторая кнопка отклика: оригинал объявления под кнопками приложения */
+.apply + .apply { margin-top: -8px; }
+.apply.second { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); padding: 12px; font-weight: 600; margin-top: 12px; }
 .text { white-space: pre-line; }
 .also, .source, .direct { color: var(--quiet); font-size: 14px; word-break: break-all; }
 .direct { word-break: normal; margin-top: -8px; }

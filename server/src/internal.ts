@@ -9,10 +9,12 @@ import { join } from "node:path";
 
 import type { Ctx } from "./app.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
+import { videoScript } from "./labels.ts";
 import { normalizePhone } from "./profile.ts";
 import { applicationsMessage, pressReminder, remindersMessage } from "./reminder-bot.ts";
 import {
   dropVideo,
+  getProfile,
   getSeeker,
   getVideo,
   iso,
@@ -67,10 +69,13 @@ const TEXT = {
     foreign: "Отправьте свой номер: чужие контакты в профиль не добавляю.",
     notKz: "Пока принимаю только номера Казахстана, +7 7…",
     videoPrompt:
-      "🎥 Запишите кружок для профиля, до минуты.\n\n" +
-      "Нажмите на значок микрофона внизу справа, он сменится камерой, и удерживайте его, пока говорите.\n\n" +
-      "О чём рассказать:\n1. Как вас зовут и кем хотите работать\n2. Где уже работали или чему готовы научиться\n" +
-      "3. Когда можете выйти и какой график удобен\n\n" +
+      "🎥 Запишите кружок для профиля: хватит 20–40 секунд, не дольше минуты.\n\n" +
+      "Как записать: нажмите на значок микрофона внизу справа, он сменится камерой, и удерживайте его, пока говорите.\n\n" +
+      "Что сказать, по порядку:\n1. Имя и кем работаете\n2. Где работали и сколько\n3. Что умеете лучше всего\n" +
+      "4. Когда можете выйти и какой график удобен",
+    videoExample: "Можно своими словами. Например, так:",
+    videoAdvice:
+      "Встаньте лицом к окну, держите телефон на уровне глаз и улыбнитесь в начале.\n\n" +
       "Кружок увидит только работодатель, которому вы отправите ссылку на профиль.",
     videoNoProfile: "Кружок добавляется в профиль. Сначала создайте профиль в приложении, это 2 минуты.",
     videoNeedNote:
@@ -89,11 +94,13 @@ const TEXT = {
     foreign: "Өз нөміріңізді жіберіңіз: басқа адамның контактісін профильге қоспаймын.",
     notKz: "Әзірге тек Қазақстан нөмірлерін қабылдаймын, +7 7…",
     videoPrompt:
-      "🎥 Профильге бейнехабар жазыңыз, бір минутқа дейін.\n\n" +
-      "Төменгі оң жақтағы микрофон белгісін басыңыз, ол камераға ауысады, сөйлеп тұрғанда оны басып тұрыңыз.\n\n" +
-      "Не туралы айту керек:\n1. Атыңыз кім және кім болып жұмыс істегіңіз келеді\n" +
-      "2. Бұрын қайда жұмыс істедіңіз немесе неге үйренуге дайынсыз\n" +
-      "3. Жұмысқа қашан шыға аласыз және қандай кесте ыңғайлы\n\n" +
+      "🎥 Профильге бейнехабар жазыңыз: 20–40 секунд жеткілікті, бір минуттан аспасын.\n\n" +
+      "Қалай жазу керек: төменгі оң жақтағы микрофон белгісін басыңыз, ол камераға ауысады, сөйлеп тұрғанда оны басып тұрыңыз.\n\n" +
+      "Не айту керек, ретімен:\n1. Атыңыз және кім болып жұмыс істейсіз\n2. Қайда және қанша уақыт жұмыс істедіңіз\n" +
+      "3. Ең жақсы не істей аласыз\n4. Жұмысқа қашан шыға аласыз және қандай кесте ыңғайлы",
+    videoExample: "Өз сөзіңізбен айтуға болады. Мысалы, былай:",
+    videoAdvice:
+      "Терезеге қарап тұрыңыз, телефонды көз деңгейінде ұстаңыз және басында жымиыңыз.\n\n" +
       "Бейнехабарды тек сіз профиль сілтемесін жіберген жұмыс беруші көреді.",
     videoNoProfile: "Бейнехабар профильге қосылады. Алдымен қосымшада профиль жасаңыз, бұл 2 минут.",
     videoNeedNote:
@@ -122,8 +129,9 @@ export function internalRoutes(ctx: Ctx): Route[] {
     if (given.length !== key.length || !timingSafeEqual(given, key)) throw new HttpError(403, "Нет доступа");
   };
 
-  const textsFor = (from: { id: number; language_code?: string }): Texts =>
-    TEXT[getSeeker(ctx.db, from.id)?.lang ?? (from.language_code === "kk" ? "kk" : "ru")];
+  const langFor = (from: { id: number; language_code?: string }): "ru" | "kk" =>
+    getSeeker(ctx.db, from.id)?.lang ?? (from.language_code === "kk" ? "kk" : "ru");
+  const textsFor = (from: { id: number; language_code?: string }): Texts => TEXT[langFor(from)];
 
   // Ответ не дошёл до Telegram: данные всё равно сохранены, а бот не должен разбирать сообщение заново
   const call = async (method: string, body: Record<string, unknown>) => {
@@ -215,12 +223,20 @@ export function internalRoutes(ctx: Ctx): Route[] {
     }
   }
 
+  /** Подсказка перед записью кружка: порядок рассказа и готовый пример из анкеты этого человека. */
+  function videoPrompt(seekerId: number, lang: "ru" | "kk"): string {
+    const t = TEXT[lang];
+    const profile = getProfile(ctx.db, seekerId);
+    const example = profile ? `${t.videoExample}\n«${videoScript(profile, lang).join(" ")}»\n\n` : "";
+    return `${t.videoPrompt}\n\n${example}${t.videoAdvice}`;
+  }
+
   async function onCallback(q: TgCallback) {
     const data = q.data ?? "";
     if (data.startsWith("r:")) {
       // Кнопка под напоминанием. «Опаздываю» ищет номер в посте, а бот ждёт ответа сервера
       // всего 4 секунды, поэтому отвечаем сразу, а нажатие разбираем после ответа
-      ctx.background(pressReminder(ctx, q, { videoPrompt: (chatId, lang) => reply(chatId, TEXT[lang].videoPrompt) }));
+      ctx.background(pressReminder(ctx, q, { videoPrompt: (chatId, lang) => reply(chatId, videoPrompt(chatId, lang)) }));
       return true;
     }
     if (!data.startsWith("v:")) return false;
@@ -260,7 +276,7 @@ export function internalRoutes(ctx: Ctx): Route[] {
         } else if (VIDEO_START.test(m.text?.trim() ?? "")) {
           const t = textsFor(m.from);
           if (!hasProfile(m.from.id)) await reply(m.chat.id, t.videoNoProfile, [[appButton(t)]]);
-          else await reply(m.chat.id, t.videoPrompt);
+          else await reply(m.chat.id, videoPrompt(m.from.id, langFor(m.from)));
           handled = true;
         } else if (APPLICATIONS.test(m.text?.trim() ?? "") || REMINDERS.test(m.text?.trim() ?? "")) {
           const lang = m.from.language_code === "kk" ? "kk" : "ru";

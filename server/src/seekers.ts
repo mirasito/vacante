@@ -4,6 +4,7 @@ import { rmSync } from "node:fs";
 import { join } from "node:path";
 
 import { tx, type Db } from "./db.ts";
+import { videoScript } from "./labels.ts";
 import { fromRow, strength, type Profile } from "./profile.ts";
 
 // Без похожих друг на друга знаков (0/o, 1/l/i), чтобы код можно было продиктовать
@@ -86,18 +87,20 @@ export function createSeeker(
 export function saveProfile(db: Db, id: number, p: Profile, now: number) {
   db.prepare(
     `INSERT INTO profiles (seeker_id, name, city, district, home_lat, home_lon, home_source, roles, experience, employment,
-       pay_from, pay_period, start, phone, languages, about, med_book, driver, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       pay_from, pay_period, start, phone, languages, about, med_book, driver, jobs, skills, med, trial, looking_at, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT (seeker_id) DO UPDATE SET name = excluded.name, city = excluded.city, district = excluded.district,
        home_lat = excluded.home_lat, home_lon = excluded.home_lon, home_source = excluded.home_source,
        roles = excluded.roles, experience = excluded.experience, employment = excluded.employment,
        pay_from = excluded.pay_from, pay_period = excluded.pay_period, start = excluded.start, phone = excluded.phone,
        languages = excluded.languages, about = excluded.about, med_book = excluded.med_book, driver = excluded.driver,
-       updated_at = excluded.updated_at`,
+       jobs = excluded.jobs, skills = excluded.skills, med = excluded.med, trial = excluded.trial,
+       looking_at = excluded.looking_at, updated_at = excluded.updated_at`,
   ).run(
     id, p.name, p.city, p.district, p.home?.lat ?? null, p.home?.lon ?? null, p.home?.source ?? null,
     JSON.stringify(p.roles), p.experience ?? "", JSON.stringify(p.employment), p.pay_from, p.pay_period, p.start ?? "", p.phone,
-    JSON.stringify(p.languages), p.about, p.med_book ? 1 : 0, p.driver ? 1 : 0, iso(now),
+    JSON.stringify(p.languages), p.about, p.med === "yes" ? 1 : 0, p.driver ? 1 : 0,
+    JSON.stringify(p.jobs), JSON.stringify(p.skills), p.med, p.trial ? 1 : 0, p.looking_at, iso(now),
   );
 }
 
@@ -340,6 +343,8 @@ export function profileView(db: Db, id: number, profileOrigin: string) {
     video: video ? { duration: video.duration, recorded_at: video.recorded_at, ready: !!video.file, poster: !!video.poster } : null,
     photo: photo ? { width: photo.width, height: photo.height, uploaded_at: photo.uploaded_at } : null,
     strength: profile ? strength(profile, { video: !!video?.file, photo: !!photo }) : null,
+    // Что сказать в кружке: фразы из этой же анкеты, на языке приложения
+    script: profile ? videoScript(profile, seeker.lang) : null,
     link: link ? { code: link.code, url: `${profileOrigin}/${link.code}` } : null,
   };
 }

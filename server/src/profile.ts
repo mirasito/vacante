@@ -3,7 +3,9 @@ import { HOME_SOURCES, inKazakhstan, roundHome, type HomeSource } from "./geo.ts
 import { HttpError } from "./http.ts";
 
 /** Версия текста согласия. Меняется вместе с текстом в приложении (app/src/profile/texts.ts, CONSENT). */
-export const CONSENT_VERSION = "2026-11-04.2";
+export const CONSENT_VERSION = "2026-11-16.1";
+/** С какими версиями текста можно создать профиль: нынешняя и прежняя, пока у людей открыто старое приложение. */
+export const CONSENT_VERSIONS: readonly string[] = [CONSENT_VERSION, "2026-11-04.2"];
 
 // Те же города, что у сбора вакансий (vacante/parse.py, CITIES); совпадение проверяет tests/test_server_lists.py
 export const CITIES = [
@@ -16,6 +18,33 @@ export const START = ["today", "week", "2weeks", "later"] as const;
 export const PAY_PERIOD = ["month", "shift"] as const;
 export const LANGUAGES = ["kk", "ru", "en"] as const;
 export const MAX_ROLES = 3;
+/** Санкнижка: есть действующая, оформлю, нет. */
+export const MED = ["yes", "soon", "no"] as const;
+/** Сколько человек проработал на прошлом месте. */
+export const JOB_TERM = ["lt6m", "6to12", "1to3", "gt3"] as const;
+export const MAX_JOBS = 3;
+export const MAX_SKILLS = 12;
+/** Сколько дней горит «Ищу работу сейчас» после последнего подтверждения. */
+export const LOOKING_DAYS = 30;
+// Навыки кнопками. Какие из них показать, приложение решает по профессиям человека
+// (app/src/profile/skills.ts); подписи для страницы профиля — в labels.ts. Списки сверяет tests/test_server_lists.py
+export const SKILLS = [
+  "hot", "cold", "prep", "sushi", "pizza", "grill", "bakery", "kitchen_banquet",
+  "espresso", "alt_brew", "latte_art",
+  "classic_cocktails", "signature_cocktails", "hookah",
+  "banquets", "big_hall", "wine", "english_menu",
+  "cash", "iiko", "rkeeper", "poster",
+  "display", "onec", "receiving",
+  "own_car", "own_bike", "knows_city",
+  "picking", "tsd", "forklift",
+] as const;
+
+/** Прошлое место работы: заведение, кем и сколько. */
+export interface Job {
+  place: string;
+  role: string;
+  term: (typeof JOB_TERM)[number];
+}
 
 /** Дом: точка, округлённая до 300–500 метров. Видит только сам соискатель. */
 export interface Home {
@@ -40,9 +69,21 @@ export interface Profile {
   phone: string | null;
   languages: (typeof LANGUAGES)[number][];
   about: string | null;
+  /** То же, что med === "yes": для приложения до 2026-11-16, которое знает только галочку. */
   med_book: boolean;
   driver: boolean;
+  jobs: Job[];
+  skills: (typeof SKILLS)[number][];
+  /** null — человек не отвечал про санкнижку. */
+  med: (typeof MED)[number] | null;
+  trial: boolean;
+  /** Когда человек последний раз отметил «ищу работу сейчас»; см. isLooking. */
+  looking_at: string | null;
 }
+
+/** Горит ли отметка «ищу работу сейчас»: она гаснет сама, чтобы в профиле не висела устаревшая. */
+export const isLooking = (p: Pick<Profile, "looking_at">, now: number) =>
+  !!p.looking_at && now - Date.parse(p.looking_at) < LOOKING_DAYS * 86_400_000;
 
 const bad = (message: string) => new HttpError(400, message);
 
@@ -101,6 +142,21 @@ export function normalizePhone(raw: string): string | null {
   return /^77\d{9}$/.test(digits) ? `+${digits}` : null;
 }
 
+function parseJobs(value: unknown): Job[] {
+  if (value === undefined || value === null) return [];
+  if (!Array.isArray(value)) throw bad("Поле jobs должно быть списком");
+  if (value.length > MAX_JOBS) throw bad(`Не больше ${MAX_JOBS} мест работы`);
+  return value.map((item, i) => {
+    if (!item || typeof item !== "object" || Array.isArray(item)) throw bad(`jobs[${i}]: нужны место, должность и срок`);
+    const j = item as Record<string, unknown>;
+    return {
+      place: text(j.place, `jobs[${i}].place`, 60, true) as string,
+      role: text(j.role, `jobs[${i}].role`, 60, true) as string,
+      term: oneOf(j.term, JOB_TERM, `jobs[${i}].term`),
+    };
+  });
+}
+
 /** Проверяет анкету из приложения. Возвращает чистые значения или бросает 400 с понятной причиной. */
 export function parseProfile(body: unknown): Profile {
   if (!body || typeof body !== "object" || Array.isArray(body)) throw bad("Нужна анкета");
@@ -124,6 +180,11 @@ export function parseProfile(body: unknown): Profile {
     if (!phone) throw bad("Телефон: номер Казахстана, например +7 701 234 56 78");
   }
 
+  const skills = b.skills === undefined || b.skills === null ? [] : someOf(b.skills, SKILLS, "skills", 0);
+  if (skills.length > MAX_SKILLS) throw bad(`Не больше ${MAX_SKILLS} навыков`);
+  // Старое приложение присылает только галочку med_book
+  const med = maybeOneOf(b.med, MED, "med") ?? (b.med_book === true ? "yes" : null);
+
   return {
     name: text(b.name, "name", 40, true) as string,
     city: oneOf(b.city, CITIES, "city"),
@@ -139,12 +200,18 @@ export function parseProfile(body: unknown): Profile {
     phone,
     languages: b.languages === undefined ? [] : someOf(b.languages, LANGUAGES, "languages", 0),
     about: text(b.about, "about", 300, false),
-    med_book: b.med_book === true,
+    med_book: med === "yes",
     driver: b.driver === true,
+    jobs: parseJobs(b.jobs),
+    skills,
+    med,
+    trial: b.trial === true,
+    // «Ищу сейчас» приложение присылает полем looking: дату ставит сервер (me.ts)
+    looking_at: null,
   };
 }
 
-export type Tip = "details" | "video" | "photo" | "phone" | "about" | "docs";
+export type Tip = "work" | "details" | "video" | "photo" | "docs" | "phone" | "about";
 
 /**
  * Сила профиля: анкета 45%, кружок 25%, фото 10%, телефон 10%, «о себе» 5%, документы 5%.
@@ -152,13 +219,15 @@ export type Tip = "details" | "video" | "photo" | "phone" | "about" | "docs";
  */
 export function strength(p: Profile, has: { video: boolean; photo: boolean }): { percent: number; next: Tip | null } {
   const parts: [Tip, number, boolean][] = [
-    // Опыт, график и выход: короткая анкета их не спрашивает, первая подсказка — дополнить
-    ["details", 20, !!p.experience && p.employment.length > 0 && !!p.start],
-    ["video", 25, has.video],
+    // Где работал и что умеет: это работодатель общепита смотрит первым, и отвечается оно кнопками
+    ["work", 20, p.jobs.length > 0 || p.skills.length > 0],
+    // Опыт, график и выход: короткая анкета их не спрашивает
+    ["details", 15, !!p.experience && p.employment.length > 0 && !!p.start],
+    ["video", 15, has.video],
     ["photo", 10, has.photo],
-    ["phone", 10, !!p.phone],
+    ["docs", 5, p.med !== null || p.driver],
+    ["phone", 5, !!p.phone],
     ["about", 5, !!p.about],
-    ["docs", 5, p.med_book || p.driver],
   ];
   const percent = 25 + parts.reduce((sum, [, weight, done]) => sum + (done ? weight : 0), 0);
   return { percent, next: parts.find(([, , done]) => !done)?.[0] ?? null };
@@ -183,7 +252,12 @@ export function fromRow(row: Record<string, unknown>): Profile {
     phone: (row.phone as string | null) ?? null,
     languages: JSON.parse(String(row.languages ?? "[]")) as Profile["languages"],
     about: (row.about as string | null) ?? null,
-    med_book: row.med_book === 1,
+    med_book: row.med === "yes",
     driver: row.driver === 1,
+    jobs: JSON.parse(String(row.jobs ?? "[]")) as Job[],
+    skills: JSON.parse(String(row.skills ?? "[]")) as Profile["skills"],
+    med: (row.med as Profile["med"]) ?? null,
+    trial: row.trial === 1,
+    looking_at: (row.looking_at as string | null) ?? null,
   };
 }

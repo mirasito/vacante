@@ -62,13 +62,39 @@ test("анкета проверяется и чистится", () => {
   assert.throws(() => parseProfile({ ...ANKETA, pay_from: -5 }), /Зарплата/);
 });
 
-test("сила профиля: анкета 45, кружок 25, фото и телефон по 10, о себе и документы по 5", () => {
+test("сила профиля: анкета 40, опыт и навыки 20, кружок 15, фото 10, документы, телефон и о себе по 5", () => {
   const p = parseProfile(ANKETA) as Profile;
-  assert.deepEqual(strength(p, { video: false, photo: false }), { percent: 45, next: "video" });
-  assert.deepEqual(strength({ ...p, phone: "+77012345678" }, { video: true, photo: false }), { percent: 80, next: "photo" });
-  assert.deepEqual(strength({ ...p, phone: "+77012345678" }, { video: true, photo: true }), { percent: 90, next: "about" });
-  const full = { ...p, phone: "+77012345678", about: "Люблю кофе", driver: true };
+  // Первым просим то, что работодатель общепита смотрит первым и что отвечается кнопками
+  assert.deepEqual(strength(p, { video: false, photo: false }), { percent: 40, next: "work" });
+  const worked = { ...p, skills: ["espresso"] } as Profile;
+  assert.deepEqual(strength(worked, { video: false, photo: false }), { percent: 60, next: "video" });
+  assert.deepEqual(strength({ ...worked, phone: "+77012345678" }, { video: true, photo: false }), { percent: 80, next: "photo" });
+  assert.deepEqual(strength({ ...worked, phone: "+77012345678" }, { video: true, photo: true }), { percent: 90, next: "docs" });
+  // Любой ответ про санкнижку засчитывается: «оформлю» тоже ответ
+  const full = { ...worked, phone: "+77012345678", about: "Люблю кофе", med: "soon" } as Profile;
   assert.deepEqual(strength(full, { video: true, photo: true }), { percent: 100, next: null });
+});
+
+test("опыт, навыки, санкнижка и пробная смена: проверяются и чистятся", () => {
+  const p = parseProfile({
+    ...ANKETA,
+    jobs: [{ place: "  Coffee   Boom ", role: "Бариста", term: "1to3" }],
+    skills: ["latte_art", "espresso", "latte_art"].slice(0, 2),
+    med: "soon",
+    trial: true,
+  });
+  assert.deepEqual(p.jobs, [{ place: "Coffee Boom", role: "Бариста", term: "1to3" }]);
+  assert.deepEqual(p.skills, ["espresso", "latte_art"]); // в порядке списка сервера
+  assert.deepEqual([p.med, p.med_book, p.trial, p.looking_at], ["soon", false, true, null]);
+  // Старое приложение знает только галочку: она становится ответом «есть»
+  assert.deepEqual([parseProfile({ ...ANKETA, med_book: true }).med, parseProfile(ANKETA).med], ["yes", null]);
+  const bad = (extra: Record<string, unknown>, message: RegExp) =>
+    assert.throws(() => parseProfile({ ...ANKETA, ...extra }), (e: Error) => message.test(e.message));
+  bad({ skills: ["hacking"] }, /skills/);
+  bad({ med: "maybe" }, /med/);
+  bad({ jobs: [{ place: "Зерно", role: "Бариста", term: "вечность" }] }, /term/);
+  bad({ jobs: [{ place: "", role: "Бариста", term: "1to3" }] }, /place/);
+  bad({ jobs: Array.from({ length: 4 }, () => ({ place: "Зерно", role: "Бариста", term: "1to3" })) }, /Не больше 3/);
 });
 
 test("профиль без согласия, без 18 лет или до открытия профилей не создаётся", async () => {
@@ -94,7 +120,7 @@ test("профиль без согласия, без 18 лет или до от�
 test("тестировщик создаёт профиль, потом правит его", async () => {
   const created = await createProfile();
   assert.equal(created.profile.name, "Айгерим");
-  assert.deepEqual(created.strength, { percent: 45, next: "video" });
+  assert.deepEqual(created.strength, { percent: 40, next: "work" });
   assert.equal(created.seeker.base, false);
   assert.equal(created.link, null);
   const consent = s.db.prepare("SELECT consent_version, consent_at FROM seekers WHERE id = ?").get(AIGERIM.id) as Record<string, string>;
@@ -108,7 +134,9 @@ test("тестировщик создаёт профиль, потом прав�
   });
   assert.equal(edited.status, 200);
   assert.equal(edited.json.profile.phone, "+77012345678");
-  assert.equal(edited.json.strength.percent, 65);
+  // Старое приложение прислало галочку: в профиле это ответ «есть»
+  assert.deepEqual([edited.json.profile.med, edited.json.profile.med_book], ["yes", true]);
+  assert.equal(edited.json.strength.percent, 55);
 
   const me = await s.call("GET", "/me", { headers: auth() });
   assert.equal(me.json.profile, true);

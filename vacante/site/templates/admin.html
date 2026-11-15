@@ -150,6 +150,7 @@ td.nowrap { white-space: nowrap; }
 <div id="app" hidden>
   <nav class="tabs" role="tablist">
     <button type="button" role="tab" data-tab="stats" aria-selected="true">Сбор и посты</button>
+    <button type="button" role="tab" data-tab="funnel" aria-selected="false">Воронка</button>
     <button type="button" role="tab" data-tab="emp" aria-selected="false">Работодатели</button>
     <button type="button" role="tab" data-tab="crm" aria-selected="false">CRM заведений</button>
     <button type="button" role="tab" data-tab="jobs" aria-selected="false">Работодатели в боте</button>
@@ -230,6 +231,26 @@ td.nowrap { white-space: nowrap; }
     <tbody></tbody>
   </table></div>
   <button type="button" class="more" id="crm-more" hidden>Показать ещё</button>
+  </div>
+
+  <div id="tab-funnel" hidden>
+  <p class="quiet">Путь соискателя по источникам: открыл приложение → начал анкету → создал профиль → отправил отклик → отправил со ссылкой на профиль → работодатель открыл ссылку («дошёл») → работодатель ответил. Источник — метка из ссылки запуска: <b>tg</b> — свои каналы, остальные — метки рекламы и видео, «—» — без метки. Открытия и начатые анкеты считаются обезличенно, по одному на человека в день. Под числом — доля от предыдущего шага.</p>
+  <p class="err" id="funnel-error" hidden></p>
+  <div class="filters">
+    <div class="seg" id="funnel-days">
+      <button type="button" data-v="7" aria-pressed="true">7 дней</button>
+      <button type="button" data-v="30" aria-pressed="false">30 дней</button>
+    </div>
+  </div>
+  <div class="scroll"><table id="funnel">
+    <thead><tr><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <h2>По дням</h2>
+  <div class="scroll"><table id="funnel-daily">
+    <thead><tr><th>День</th><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
   </div>
 
   <div id="tab-emp" hidden>
@@ -524,16 +545,52 @@ td.nowrap { white-space: nowrap; }
     }
 
     renderCrm(data.crm || [], now, data.crm_api);
-    let jobsLoaded = false, empLoaded = false;
+    let jobsLoaded = false, empLoaded = false, funnelLoaded = false;
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
-      for (const tab of ["stats", "emp", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
+      for (const tab of ["stats", "funnel", "emp", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
+      if (b.dataset.tab === "funnel" && !funnelLoaded && data.funnel_api) { funnelLoaded = true; renderFunnel(data.funnel_api); }
       if (b.dataset.tab === "jobs" && !jobsLoaded && data.jobs_api) { jobsLoaded = true; renderJobs(data.jobs_api, data.cities || {}); }
       if (b.dataset.tab === "emp" && !empLoaded && data.employers_api) { empLoaded = true; renderEmployers(data.employers_api, data.cities || {}, data.crm_api); }
     }));
 
     $("#loading").hidden = true;
     $("#app").hidden = false;
+  }
+
+  // Воронка соискателей: числа считает сервер в Казахстане (server/src/funnel.ts), вход тем же ключом, что у CRM
+  const FUNNEL_STEPS = ["opened", "profile_started", "profile_done", "sent", "sent_with_link", "reached", "answered"];
+  // От какого шага считать долю: «со ссылкой» и «дошёл» — от отправленных и от отправленных со ссылкой
+  const FUNNEL_BASE = { profile_started: "opened", profile_done: "profile_started", sent: "profile_done", sent_with_link: "sent", reached: "sent_with_link", answered: "reached" };
+  function funnelCells(r, share) {
+    return FUNNEL_STEPS.map((f) => {
+      const base = FUNNEL_BASE[f] ? r[FUNNEL_BASE[f]] : 0;
+      const part = share && base > 0 ? `<br><span class="quiet">${Math.round((r[f] / base) * 100)}%</span>` : "";
+      return `<td class="num">${num(r[f])}${part}</td>`;
+    }).join("");
+  }
+  async function renderFunnel(api) {
+    const load = async (days) => {
+      $("#funnel-error").hidden = true;
+      let data;
+      try { data = await crmFetch(`${api}?days=${days}`); } catch (e) {
+        $("#funnel-error").hidden = false;
+        $("#funnel-error").textContent = `Сервер не ответил (${e.message}). Попробуйте позже.`;
+        return;
+      }
+      const empty = (cols) => `<tr><td colspan="${cols}" class="quiet">За этот период данных пока нет</td></tr>`;
+      $("#funnel tbody").innerHTML = data.sources.length
+        ? [...data.sources, data.total].map((r) => `<tr><td>${r === data.total ? "<b>Всего</b>" : esc(r.source)}</td>${funnelCells(r, true)}</tr>`).join("")
+        : empty(8);
+      $("#funnel-daily tbody").innerHTML = data.rows.length
+        ? data.rows.map((r) => `<tr><td>${esc(r.day)}</td><td>${esc(r.source)}</td>${funnelCells(r, false)}</tr>`).join("")
+        : empty(9);
+    };
+    $("#funnel-days").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+      $("#funnel-days").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      load(b.dataset.v);
+    }));
+    await load(7);
   }
 
   // CRM: статусы и заметки на сервере (воркер бота, bot/src/crm.js), ключ доступа из пароля админки.

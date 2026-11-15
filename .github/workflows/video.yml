@@ -1,0 +1,58 @@
+# Короткие видео из собственных данных (vacante/video.py): каждое утро собирает ролики по общепиту Алматы
+# («5 вакансий повара», «сколько платят официанту») и отправляет их с готовыми подписями модераторам
+# в Telegram. В Reels, TikTok и Shorts их выкладывает человек. Ролики также лежат в артефактах запуска.
+name: Видео
+
+on:
+  schedule:
+    - cron: "30 2 * * *"  # 7:30 по Казахстану
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "Отправить ролики модераторам в Telegram"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: video
+  cancel-in-progress: true
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install .
+
+      - name: Вакансии из ветки data
+        run: |
+          git fetch --depth 1 origin data:refs/remotes/origin/data
+          git worktree add data origin/data
+
+      - name: Собрать и отправить
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SEND: ${{ github.event_name == 'schedule' || inputs.send }}
+        run: |
+          ffmpeg -version | head -1
+          if [ "$SEND" = "true" ]; then flag="--send"; else flag=""; fi
+          python -m vacante video --data-dir data --out videos $flag
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: videos
+          path: videos/
+          if-no-files-found: ignore
+          retention-days: 14

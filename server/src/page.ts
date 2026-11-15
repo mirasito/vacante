@@ -4,6 +4,7 @@
 // может проиграть сам кружок прямо в превью.
 // Поисковики страницу не индексируют, сторонних скриптов и Метрики на ней нет.
 import type { Ctx } from "./app.ts";
+import type { Db } from "./db.ts";
 import {
   answerable,
   employerAnswer,
@@ -42,7 +43,7 @@ import {
   type Link,
   type Video,
 } from "./seekers.ts";
-import { dateTimeLabel, DAY_MS, fromLocal, toLocalInput } from "./time.ts";
+import { dateTimeLabel, DAY_MS, fromLocal, localDay, toLocalInput } from "./time.ts";
 import { duration, fileReply } from "./video.ts";
 import {
   addMessage,
@@ -99,7 +100,11 @@ const T = {
     hello: (name: string) => `Здравствуйте, ${name}! Увидели ваш профиль в Vacante.`,
     gone: "Ссылка больше не работает",
     goneText: "Кандидат выключил эту ссылку или удалил профиль.",
-    post: "Ищете сотрудников? Разместите вакансию в боте Vacante",
+    aboutTitle: "Что такое Vacante",
+    aboutText:
+      "Vacante — бесплатный сервис поиска работы в Казахстане. Кандидаты откликаются на вакансии со своим профилем: опыт, график, зарплата и короткое видео. Вам не нужно ничего устанавливать: профиль открывается по ссылке.",
+    post: "Получать таких кандидатов — разместить вакансию бесплатно",
+    postNote: "Вакансию заполняете в Telegram-боте за пару минут. Отклики приходят вам в Telegram.",
     updated: "Профиль обновлён",
     other: "Қазақша",
     watch: "▶ Смотреть кружок",
@@ -152,7 +157,11 @@ const T = {
     hello: (name: string) => `Сәлеметсіз бе, ${name}! Vacante-де профиліңізді көрдік.`,
     gone: "Сілтеме енді жұмыс істемейді",
     goneText: "Үміткер бұл сілтемені өшірді немесе профилін жойды.",
-    post: "Қызметкер іздейсіз бе? Vacante ботында бос орын орналастырыңыз",
+    aboutTitle: "Vacante деген не",
+    aboutText:
+      "Vacante — Қазақстандағы тегін жұмыс іздеу сервисі. Үміткерлер бос орындарға өз профилімен өтінім береді: тәжірибе, кесте, жалақы және қысқа бейне. Ештеңе орнатудың қажеті жоқ: профиль сілтеме арқылы ашылады.",
+    post: "Осындай үміткерлерді алу — бос орынды тегін орналастыру",
+    postNote: "Бос орынды Telegram-ботта бірнеше минутта толтырасыз. Өтінімдер сізге Telegram-ға келеді.",
     updated: "Профиль жаңартылды",
     other: "Русский",
     watch: "▶ Бейнехабарды көру",
@@ -213,7 +222,7 @@ dl{margin:0}dt{color:var(--quiet);font-size:13px;margin-top:10px}dd{margin:0;fon
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .phone{font-size:22px;font-weight:800;width:100%;margin:4px 0}
 .note{color:var(--quiet);font-size:14px}
-footer{margin:20px 4px;color:var(--quiet);font-size:14px}footer a{color:var(--brand)}
+.us{margin-top:12px}.us h2{font-size:18px;margin:0 0 6px}.us p{margin:0 0 12px}.us .note{margin:10px 0 0}
 .answer{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
 .field{display:block;margin:0 0 4px}.field span{display:block;color:var(--quiet);font-size:13px;margin-bottom:6px}
 .field input{width:100%;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
@@ -358,7 +367,12 @@ ${p.about ? html`<dt>${t.about}</dt><dd class="about">${p.about}</dd>` : ""}
 ${application?.answer ?? ""}
 <p class="note">${t.updated}: ${updatedAt.slice(0, 10).split("-").reverse().join(".")}</p>
 </section>
-<footer><a href="https://t.me/${ctx.config.botUsername}?start=post">${t.post}</a></footer>`;
+<section class="card us">
+<h2>${t.aboutTitle}</h2>
+<p>${t.aboutText}</p>
+<a class="btn" href="/${link.code}/post" rel="nofollow">${t.post}</a>
+<p class="note">${t.postNote}</p>
+</section>`;
 }
 
 /**
@@ -459,6 +473,15 @@ function gone(lang: Lang): Reply {
   };
 }
 
+/** Нажатия «разместить вакансию» на страницах профилей за дни from…to: в том же виде, что нажатия кнопок связи. */
+export function postClicks(db: Db, from: string, to: string): { day: string; source: string; kind: string; n: number }[] {
+  const rows = db.prepare("SELECT day, n FROM post_clicks WHERE day BETWEEN ? AND ? ORDER BY day DESC").all(from, to) as {
+    day: string;
+    n: number;
+  }[];
+  return rows.map((r) => ({ day: r.day, source: "page", kind: "post", n: Number(r.n) }));
+}
+
 export function pageRoutes(ctx: Ctx): Route[] {
   const limit = new RateLimit();
   const clientOf = (req: Request) => (req.header("x-forwarded-for") ?? "").split(",")[0]?.trim() || "local";
@@ -493,6 +516,22 @@ export function pageRoutes(ctx: Ctx): Route[] {
     route("GET", "profile", "/:code/video.mp4", (req) => media(req, "file", "video/mp4")),
     route("GET", "profile", "/:code/poster.jpg", (req) => media(req, "poster", "image/jpeg")),
     route("GET", "profile", "/:code/photo.jpg", (req) => media(req, "photo", "image/jpeg")),
+
+    // «Разместить вакансию бесплатно» на странице профиля: считаем нажатие числом, без имён, и ведём
+    // в бота. Метка post_pf говорит боту, что работодатель пришёл со страницы профиля кандидата:
+    // тёплым контактом в CRM становится только тот, кто дошёл до бота
+    route("GET", "profile", "/:code/post", (req) => {
+      const now = ctx.now();
+      if (!limit.take(clientOf(req), now)) throw new HttpError(429, "Слишком много запросов, попробуйте через минуту");
+      const code = req.params.code ?? "";
+      if (!CODE_RE.test(code)) throw new HttpError(404, "Не найдено");
+      if (req.method !== "HEAD" && !isPreviewBot(req.header("user-agent"))) {
+        ctx.db
+          .prepare("INSERT INTO post_clicks (day, n) VALUES (?, 1) ON CONFLICT (day) DO UPDATE SET n = n + 1")
+          .run(localDay(now));
+      }
+      return { status: 302, headers: { Location: `https://t.me/${ctx.config.botUsername}?start=post_pf` } };
+    }),
 
     // Ответ работодателя кнопкой: кандидат сразу получает сообщение, стадия отклика меняется сама
     route("POST", "profile", "/:code/answer", async (req) => {

@@ -196,6 +196,17 @@ test("работодатель размещает вакансию, модера
   assert.match(sentTo(calls, 301).at(-1).body.text, /уже закрыта/);
 });
 
+test("работодатель со страницы профиля кандидата: та же анкета, в вакансии отметка, откуда пришёл", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  await say(env, user(100, "Дана", "dana_cafe"), "/start post_pf");
+  assert.match(sentTo(calls, 100).at(-1).body.text, /В каком городе работа/);
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 100").came_from, "profile");
+  await say(env, user(101, "Ерлан"), "/start post");
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 101").came_from, null);
+});
+
 test("вакансии до /admin ждут модератора, лимит на проверке, отмена анкеты", async () => {
   const env = fakeEnv();
   const calls = [];

@@ -39,6 +39,15 @@ def test_snapshot_groups_venues_of_one_employer_across_cities(tmp_path):
     assert by_city["astana"]["instagram"] is None
 
 
+def test_snapshot_sends_olx_ad_link_but_not_post_links(tmp_path):
+    """Ссылка на объявление OLX — способ связаться с работодателем, когда номер скрыт за кнопкой OLX."""
+    olx = make(5, "Повар", "Cafe Nova", "Алматы", "almaty")
+    olx.id, olx.source, olx.source_url = "olx-501", "olx", "https://www.olx.kz/d/obyavlenie/rabota/povar-ID501.html"
+    tg = make(6, "Бариста", "Cafe Nova", "Алматы", "almaty", hours_ago=2)
+    venue = crm_sync.snapshot(tmp_path, [olx, tg])[0]["venues"][0]
+    assert [(v["id"], v.get("url")) for v in venue["vacancies"]] == [("olx-501", olx.source_url), (tg.id, None)]
+
+
 def test_send_archives_only_after_whole_snapshot(monkeypatch):
     calls = []
 
@@ -72,8 +81,12 @@ class FakeD1:
 
     def query(self, sql, params=None):
         if "FROM jobs" in sql:
-            return [{"id": 7, "employer_chat": 555, "employer_name": "Айгуль @aigul", "company": "ТОО «Greenwich»", "city": "almaty"},
-                    {"id": 8, "employer_chat": 556, "employer_name": None, "company": "", "city": "astana"}]
+            # Как D1: в ответе только те столбцы, что названы в запросе
+            rows = [{"id": 7, "employer_chat": 555, "employer_name": "Айгуль @aigul", "company": "ТОО «Greenwich»",
+                     "city": "almaty", "came_from": "profile"},
+                    {"id": 8, "employer_chat": 556, "employer_name": None, "company": "", "city": "astana", "came_from": None}]
+            asked = sql.split("FROM")[0]
+            return [{k: v for k, v in r.items() if k in asked} for r in rows]
         if "FROM payments" in sql:
             return [{"id": 1, "job_id": 7, "kind": "post", "amount": 900, "status": "paid",
                      "created_at": "2026-11-06 10:00:00", "decided_at": "2026-11-06 10:05:00",
@@ -91,6 +104,8 @@ def test_from_bot_keys_jobs_and_payments_like_snapshot():
     assert job["job_id"] == 7 and job["chat"] == 555
     assert job["venue_key"] == "almaty:greenwich" and job["employer_key"] == "greenwich"
     assert data["jobs"][1]["employer_key"] is None
+    # Отметка «пришёл со страницы профиля кандидата» едет на сервер вместе с вакансией из бота
+    assert job["came_from"] == "profile" and data["jobs"][1]["came_from"] is None
     pay = data["payments"][0]
     assert pay["kind"] == "post" and pay["amount"] == 900 and pay["at"] == "2026-11-06T10:05:00+00:00"
     assert data["marks"]["almaty:greenwich"]["contacted_at"] == "2026-11-01T13:27:32+00:00"

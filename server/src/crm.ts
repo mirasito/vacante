@@ -13,7 +13,12 @@
 // Ручные правки лежат в edits отдельно от того, что приносит сбор, поэтому импорт их не перезаписывает.
 // Контакты работодателя из его вакансий (номер для звонка и WhatsApp, имя в Telegram) лежат в vacancy_contacts
 // как есть, самими номерами: их собирает go.ts из открытых постов. Карточка заведения показывает их списком.
+// У вакансий OLX номер есть, только если автор сам написал его в тексте объявления (olx-import.ts хранит такой
+// номер 30 дней): для вакансий, которые попали на сайт, он копируется в vacancy_contacts при каждом снимке.
+// Номер за кнопкой OLX мы не открываем; способом связи остаётся ссылка на само объявление.
 // Других контактов людей здесь нет, кроме тех, кто сам пишет в бот как работодатель (members).
+// У вакансии из бота bot_jobs.came_from = 'profile' значит, что работодатель пришёл со страницы профиля
+// кандидата p.vacante.kz: карточка отмечает такое заведение, список — такого работодателя.
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { timingSafeEqual } from "node:crypto";
@@ -21,6 +26,7 @@ import { timingSafeEqual } from "node:crypto";
 import type { Ctx } from "./app.ts";
 import { tx, type Db } from "./db.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
+import { OLX_JOB_URL } from "./olx-import.ts";
 import { cleanJpeg, MAX_PHOTO_BYTES } from "./photo.ts";
 import { randomCode, removeFiles } from "./seekers.ts";
 import { internalKey } from "./telegram.ts";
@@ -46,6 +52,8 @@ interface VacancyIn {
   source: string;
   posted_at: string;
   top_until?: string | null;
+  /** Ссылка на объявление OLX; у вакансий из других источников её нет. */
+  url?: string | null;
 }
 
 interface VenueIn {
@@ -109,9 +117,11 @@ function cleanVacancy(v: unknown): VacancyIn | null {
   const posted = str(o.posted_at, 40);
   if (!id || !title || !source || !SOURCES.has(source) || !posted || !ISO.test(posted)) return null;
   const top = str(o.top_until, 40);
+  const url = source === "olx" ? str(o.url, 300) : null;
   return {
     id, title, source, posted_at: posted,
     category: str(o.category, 40), salary: str(o.salary, 80), top_until: top && ISO.test(top) ? top : null,
+    url: url && OLX_JOB_URL.test(url) ? url : null,
   };
 }
 
@@ -175,16 +185,36 @@ export function venueView(row: Record<string, unknown>) {
 }
 
 export interface VenueContact {
-  kind: "whatsapp" | "phone" | "telegram";
-  /** Сам контакт, как он сохранён: +77011234567 или имя в Telegram без @. */
+  kind: "whatsapp" | "phone" | "telegram" | "olx";
+  /** Сам контакт, как он сохранён: +77011234567, имя в Telegram без @ или адрес объявления на OLX. */
   value: string;
-  /** Из какой вакансии взят и когда его видели в последний раз. */
+  /** Из какой вакансии взят и когда его видели в последний раз (у ссылки OLX — когда вышло объявление). */
   vacancy_id: string;
   title: string;
   seen_at: string;
 }
 
-/** Контакты заведения из всех его вакансий, нынешних и снятых: каждый номер и имя один раз, свежие первыми. */
+/**
+ * Номера из текста объявлений OLX — в общую базу контактов вакансий, с теми же правилами, что у номеров из
+ * постов: только на сервере и без срока. Берём лишь объявления, которые стали вакансиями на сайте; текст
+ * объявления с номером olx-import.ts хранит 30 дней, поэтому копируем при каждом снимке, пока он есть.
+ */
+export function saveOlxPhones(db: Db): number {
+  const res = db.prepare(
+    `INSERT INTO vacancy_contacts (vacancy_id, whatsapp, phone, telegram, found, checked_at)
+     SELECT v.id, NULL, o.phone, NULL, 1, o.imported_at
+     FROM employer_vacancies v JOIN olx_ads o ON o.id = CAST(substr(v.id, 5) AS INTEGER)
+     WHERE v.source = 'olx' AND v.id GLOB 'olx-[0-9]*' AND o.phone IS NOT NULL
+     ON CONFLICT (vacancy_id) DO UPDATE SET phone = excluded.phone, found = 1, checked_at = excluded.checked_at
+       WHERE vacancy_contacts.phone IS NOT excluded.phone OR vacancy_contacts.checked_at < excluded.checked_at`,
+  ).run();
+  return Number(res.changes);
+}
+
+/**
+ * Контакты заведения из всех его вакансий, нынешних и снятых: каждый номер и имя один раз, свежие первыми.
+ * После них — ссылки на объявления OLX, которые сейчас на сайте: у снятого объявления ссылка уже не работает.
+ */
 export function venueContacts(db: Db, venueId: number): VenueContact[] {
   const rows = db
     .prepare(
@@ -205,6 +235,13 @@ export function venueContacts(db: Db, venueId: number): VenueContact[] {
       out.push({ kind, value, vacancy_id: r.id, title: r.title, seen_at: r.checked_at });
     }
   }
+  const ads = db
+    .prepare(
+      `SELECT id, title, url, posted_at FROM employer_vacancies
+       WHERE venue_id = ? AND source = 'olx' AND active = 1 AND url IS NOT NULL ORDER BY posted_at DESC, id`,
+    )
+    .all(venueId) as { id: string; title: string; url: string; posted_at: string }[];
+  for (const a of ads) out.push({ kind: "olx", value: a.url, vacancy_id: a.id, title: a.title, seen_at: a.posted_at });
   return out;
 }
 
@@ -340,11 +377,12 @@ export function crmRoutes(ctx: Ctx): Route[] {
   );
   const upsertVacancy = db.prepare(
     `INSERT INTO employer_vacancies (id, venue_id, title, category, salary, source, posted_at, top_until, first_seen,
-       last_seen, active)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+       last_seen, active, url)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
      ON CONFLICT (id) DO UPDATE SET venue_id = excluded.venue_id, title = excluded.title, category = excluded.category,
        salary = excluded.salary, source = excluded.source, posted_at = excluded.posted_at,
-       top_until = excluded.top_until, last_seen = excluded.last_seen, active = 1`,
+       top_until = excluded.top_until, last_seen = excluded.last_seen, active = 1,
+       url = coalesce(excluded.url, employer_vacancies.url)`,
   );
   // Вакансия из бота, для которой работодатель выбрал заведение, живёт в нём, а не в заведении по названию
   const chosenVenue = db.prepare(
@@ -370,6 +408,7 @@ export function crmRoutes(ctx: Ctx): Route[] {
          WHERE y.employer_id = e.id) AS categories,
        (SELECT count(*) FROM vacancy_contacts c JOIN employer_vacancies x ON x.id = c.vacancy_id
          JOIN venues y ON y.id = x.venue_id WHERE y.employer_id = e.id AND y.removed = 0 AND c.found = 1) AS contacts,
+       (SELECT count(*) FROM bot_jobs b WHERE b.employer_id = e.id AND b.came_from = 'profile') AS from_profile,
        (SELECT count(*) FROM members m WHERE m.employer_id = e.id AND m.confirmed_at IS NOT NULL) AS members,
        (SELECT count(*) FROM members m WHERE m.employer_id = e.id AND m.confirmed_at IS NULL AND m.rejected_at IS NULL) AS claims,
        (SELECT coalesce(sum(p.amount), 0) FROM payments p WHERE p.employer_id = e.id AND p.status = 'confirmed') AS paid
@@ -382,21 +421,31 @@ export function crmRoutes(ctx: Ctx): Route[] {
     if (!row) throw new HttpError(404, "Работодатель не найден");
     const venues = db.prepare("SELECT * FROM venues WHERE employer_id = ? AND removed = 0 ORDER BY review = 'pending' DESC, last_seen DESC, name")
       .all(id) as Record<string, unknown>[];
+    // came_from: 'profile' у вакансии из бота, которую разместил работодатель со страницы профиля кандидата
+    const cameFrom = "(SELECT b.came_from FROM bot_jobs b WHERE x.source = 'bot' AND x.id = 'bot-' || b.job_id) AS came_from";
     const active = db.prepare(
-      `SELECT id, title, category, salary, source, posted_at, top_until, first_seen, last_seen, active
-       FROM employer_vacancies WHERE venue_id = ? AND active = 1 ORDER BY posted_at DESC`,
+      `SELECT id, title, category, salary, source, posted_at, top_until, first_seen, last_seen, active, ${cameFrom}
+       FROM employer_vacancies x WHERE venue_id = ? AND active = 1 ORDER BY posted_at DESC`,
     );
     const archive = db.prepare(
-      `SELECT id, title, category, salary, source, posted_at, top_until, first_seen, last_seen, active
-       FROM employer_vacancies WHERE venue_id = ? AND active = 0 ORDER BY last_seen DESC LIMIT ${ARCHIVE}`,
+      `SELECT id, title, category, salary, source, posted_at, top_until, first_seen, last_seen, active, ${cameFrom}
+       FROM employer_vacancies x WHERE venue_id = ? AND active = 0 ORDER BY last_seen DESC LIMIT ${ARCHIVE}`,
     );
+    // Заведение отмечено, если хоть одна его вакансия, нынешняя или снятая, размещена со страницы профиля
+    const fromProfile = db.prepare(
+      `SELECT count(*) AS n FROM employer_vacancies x JOIN bot_jobs b ON x.id = 'bot-' || b.job_id
+       WHERE x.venue_id = ? AND x.source = 'bot' AND b.came_from = 'profile'`,
+    );
+    const employerFromProfile = db.prepare("SELECT count(*) AS n FROM bot_jobs WHERE employer_id = ? AND came_from = 'profile'");
     const archived = db.prepare("SELECT count(*) AS n FROM employer_vacancies WHERE venue_id = ? AND active = 0");
     const photos = db.prepare("SELECT id, file, width, height FROM media WHERE venue_id = ? ORDER BY id");
     const media = (file: string) => `${ctx.config.apiOrigin}/crm/media/${file}`;
     return {
-      employer: employerView(row),
+      // from_profile: сколько вакансий работодатель разместил, придя со страницы профиля кандидата
+      employer: { ...employerView(row), from_profile: (employerFromProfile.get(id) as { n: number }).n },
       venues: venues.map((v) => ({
         ...venueView(v),
+        from_profile: (fromProfile.get(v.id as number) as { n: number }).n > 0,
         contacts: venueContacts(db, v.id as number),
         vacancies: active.all(v.id as number),
         archive: archive.all(v.id as number),
@@ -444,7 +493,7 @@ export function crmRoutes(ctx: Ctx): Route[] {
               const job = /^bot-(\d+)$/.exec(x.id);
               const chosen = job ? (chosenVenue.get(Number(job[1])) as { venue_id: number } | undefined) : undefined;
               upsertVacancy.run(x.id, chosen?.venue_id ?? venueId, x.title, x.category ?? null, x.salary ?? null, x.source,
-                x.posted_at, x.top_until ?? null, at, at);
+                x.posted_at, x.top_until ?? null, at, at, x.url ?? null);
               vacancies++;
             }
           }
@@ -459,6 +508,7 @@ export function crmRoutes(ctx: Ctx): Route[] {
       const data = await body(req);
       const at = runAt(data.run_at);
       const archived = db.prepare("UPDATE employer_vacancies SET active = 0 WHERE active = 1 AND last_seen < ?").run(at);
+      saveOlxPhones(db);
       const jobs = Array.isArray(data.jobs) ? data.jobs : [];
       const payments = Array.isArray(data.payments) ? data.payments : [];
       const marks = data.marks && typeof data.marks === "object" ? (data.marks as Record<string, unknown>) : {};
@@ -470,10 +520,14 @@ export function crmRoutes(ctx: Ctx): Route[] {
           const jobId = int(j.job_id), chat = int(j.chat);
           if (!jobId || !chat) continue;
           const employerId = resolveEmployer(db, str(j.venue_key, 200), str(j.employer_key, 200));
+          // Отметка «пришёл со страницы профиля кандидата» ставится и вакансиям, которые сервер уже знал без неё,
+          // и не снимается, если в следующем снимке её нет
+          const cameFrom = j.came_from === "profile" ? "profile" : null;
           db.prepare(
-            `INSERT INTO bot_jobs (job_id, tg_chat, employer_id) VALUES (?, ?, ?)
-             ON CONFLICT (job_id) DO UPDATE SET employer_id = coalesce(bot_jobs.employer_id, excluded.employer_id)`,
-          ).run(jobId, chat, employerId);
+            `INSERT INTO bot_jobs (job_id, tg_chat, employer_id, came_from) VALUES (?, ?, ?, ?)
+             ON CONFLICT (job_id) DO UPDATE SET employer_id = coalesce(bot_jobs.employer_id, excluded.employer_id),
+               came_from = coalesce(excluded.came_from, bot_jobs.came_from)`,
+          ).run(jobId, chat, employerId, cameFrom);
           if (employerId === null) continue;
           const name = str(j.name, 120);
           const existing = db.prepare("SELECT confirmed_at FROM members WHERE employer_id = ? AND tg_chat = ?").get(employerId, chat);
@@ -578,7 +632,8 @@ export function crmRoutes(ctx: Ctx): Route[] {
           website: e.website ?? r.v_website ?? e.hh?.site ?? null,
           avatar: r.avatar ?? null, logo: e.hh?.logo ?? null,
           active: r.active, total: r.total, last_posted: r.last_posted,
-          contacts: r.contacts, // у скольких вакансий работодателя сохранён контакт из поста
+          contacts: r.contacts, // у скольких вакансий работодателя сохранён контакт из поста или объявления OLX
+          from_profile: r.from_profile, // сколько вакансий он разместил, придя со страницы профиля кандидата
           members: r.members, claims: r.claims, pending_venues: r.pending_venues ?? 0, paid: r.paid,
         };
       });

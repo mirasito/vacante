@@ -813,7 +813,7 @@
   "checked_at": "2026-11-01T10:43:41+00:00",
   "website": "https://www.technodom.kz/",
   "source": "https://www.technodom.kz",
-  "avatar_checked_at": "2026-11-08T10:45:31+00:00",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -4112,6 +4112,13 @@
   "checked_at": "2026-10-29T00:43:40+00:00",
   "instagram": "aa.express_",
   "source": "https://2gis.kz/almaty/firm/70000001059445078"
+ },
+ "almaty:ab clean": {
+  "name": "AB Clean",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T11:42:44+00:00"
  },
  "almaty:ab exim management": {
   "name": "AB exim Management",
@@ -11094,6 +11101,19 @@
   "instagram": "ice_konditer",
   "source": "https://2gis.kz/almaty/firm/70000001044838640"
  },
+ "almaty:iceberg almaty": {
+  "name": "ICEBERG Almaty",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T11:42:44+00:00",
+  "website": "https://iceberg-almaty.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001025923822",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:icecore": {
   "name": "IceCore",
   "city": "almaty",
@@ -12544,6 +12564,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:kross street": {
+  "name": "Kross street",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T11:42:44+00:00",
+  "instagram": "kross_street_almaty_",
+  "website": "http://krossstreet.taplink.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001063183491",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "418ff6c42dd92c9e.jpg",
+  "avatar_source": "website"
  },
  "almaty:ksb group": {
   "name": "KSB Group",
@@ -19797,7 +19833,7 @@
   "instagram": "abdicompanykz",
   "website": "http://abdi.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000820284",
-  "avatar_checked_at": "2026-11-08T10:45:31+00:00",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20342,6 +20378,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:ак цент микросистемс норд": {
+  "name": "АК ЦЕНТ Микросистемс Норд",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T11:42:44+00:00"
  },
  "almaty:академбала": {
   "name": "Академбала",
@@ -25504,6 +25547,15 @@
   "checked_at": "2026-11-10T21:43:51+00:00",
   "instagram": "kumar_alga",
   "source": "https://2gis.kz/almaty/firm/70000001102013222"
+ },
+ "almaty:кунжут": {
+  "name": "Кунжут",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T11:42:44+00:00",
+  "instagram": "kunjut_cafe",
+  "source": "https://2gis.kz/almaty/firm/70000001040637576"
  },
  "almaty:кураметова айнур": {
   "name": "Кураметова Айнур",
@@ -34911,7 +34963,7 @@
   "checked_at": "2026-11-08T10:45:30+00:00",
   "website": "https://ferrovolt.kz/",
   "source": "https://2gis.kz/astana/firm/70000001117152954",
-  "avatar_checked_at": "2026-11-08T10:45:31+00:00",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38809,6 +38861,13 @@
   "checked_at": "2026-11-04T21:44:03+00:00",
   "instagram": "minihotelpulsar",
   "source": "https://2gis.kz/astana/firm/70000001022018125"
+ },
+ "astana:puresupp": {
+  "name": "PureSupp",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T11:42:44+00:00"
  },
  "astana:qadam visa group": {
   "name": "QADAM VISA GROUP",
@@ -55080,7 +55139,7 @@
   "instagram": "dns_qazaqstan",
   "website": "https://dns-shop.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001099070185",
-  "avatar_checked_at": "2026-11-08T10:45:31+00:00",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60714,7 +60773,7 @@
   "checked_at": "2026-11-08T10:45:30+00:00",
   "website": "https://kdr.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018661796",
-  "avatar_checked_at": "2026-11-08T10:45:31+00:00",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -64562,7 +64621,7 @@
   "instagram": "daryn.online.ubt",
   "website": "http://daryn.online/",
   "source": "https://2gis.kz/shymkent/firm/70000001048360681",
-  "avatar_checked_at": "2026-11-08T10:45:31+00:00",
+  "avatar_checked_at": "2026-11-15T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]

@@ -1493,7 +1493,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "almaty": {
   "ids": [
@@ -3046,7 +3049,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "shymkent": {
   "ids": [
@@ -3709,7 +3715,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "karaganda": {
   "ids": [
@@ -4472,7 +4481,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "aktobe": {
   "ids": [
@@ -4974,7 +4986,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "atyrau": {
   "ids": [
@@ -5724,7 +5739,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "aktau": {
   "ids": [
@@ -6820,7 +6838,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "pavlodar": {
   "ids": [
@@ -7266,7 +7287,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "ust-kamenogorsk": {
   "ids": [
@@ -7940,7 +7964,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "semey": {
   "ids": [
@@ -8597,7 +8624,10 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  },
  "kostanay": {
   "ids": [
@@ -9095,6 +9125,9 @@
    "pinned": true,
    "tried_at": "2026-11-12T03:00:49+00:00"
   },
-  "app_on": "2026-11-15"
+  "app_on": "2026-11-15",
+  "announced": [
+   "apply-button"
+  ]
  }
 }

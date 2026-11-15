@@ -32,7 +32,8 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - run: pip install .
+      # ffmpeg в образе сборщика нет: берём готовую сборку из пакета imageio-ffmpeg (vacante.video.ffmpeg_path)
+      - run: pip install . imageio-ffmpeg
 
       - name: Вакансии из ветки data
         run: |
@@ -46,7 +47,6 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           SEND: ${{ github.event_name == 'schedule' || inputs.send }}
         run: |
-          ffmpeg -version | head -1
           if [ "$SEND" = "true" ]; then flag="--send"; else flag=""; fi
           python -m vacante video --data-dir data --out videos $flag
 

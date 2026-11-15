@@ -9,6 +9,7 @@ import type { Ctx } from "./app.ts";
 import type { Db } from "./db.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import { contactClicks } from "./go.ts";
+import { postClicks } from "./page.ts";
 import { getSeeker, iso } from "./seekers.ts";
 import { DAY_MS, localDay } from "./time.ts";
 
@@ -174,10 +175,11 @@ export function funnelRoutes(ctx: Ctx): Route[] {
       const now = ctx.now();
       const from = localDay(now - (days - 1) * DAY_MS);
       const rows = funnel(ctx.db, from, localDay(now));
-      // clicks — нажатия на прямые кнопки связи «WhatsApp», «Позвонить», «Telegram» (go.ts)
+      // clicks — нажатия на прямые кнопки связи «WhatsApp», «Позвонить», «Telegram» (go.ts) и на кнопку
+      // «разместить вакансию» на странице профиля (page.ts, источник page, вид post)
       return {
         headers: { "Cache-Control": "no-store" },
-        json: { days, rows, ...totals(rows), clicks: contactClicks(ctx.db, from, localDay(now)) },
+        json: { days, rows, ...totals(rows), clicks: [...contactClicks(ctx.db, from, localDay(now)), ...postClicks(ctx.db, from, localDay(now))] },
       };
     }),
   ];

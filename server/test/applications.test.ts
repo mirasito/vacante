@@ -323,6 +323,24 @@ test("работодатель открыл ссылку отклика: «Пр�
   assert.equal(s.sent.length, 0);
 });
 
+test("страница профиля объясняет работодателю, что такое Vacante, и ведёт размещать вакансию", async () => {
+  const page = await s.call("GET", `/${code}`, { ...profileHost, headers: { "user-agent": BROWSER, cookie: `v_${code}=1` } });
+  assert.match(page.text, /Что такое Vacante/);
+  assert.match(page.text, /разместить вакансию бесплатно/);
+  assert.match(page.text, new RegExp(`href="/${code}/post"`));
+  const clicks = () =>
+    (s.db.prepare("SELECT COALESCE(SUM(n), 0) AS n FROM post_clicks").get() as { n: number }).n;
+  // Превью ссылки нажатием не считается
+  await s.call("GET", `/${code}/post`, { ...profileHost, headers: { "user-agent": "WhatsApp/2.24.1 A" } });
+  assert.equal(clicks(), 0);
+  // Нажатие считаем числом и ведём в бота с меткой «пришёл с профиля кандидата»
+  const go = await s.call("GET", `/${code}/post`, { ...profileHost, headers: { "user-agent": BROWSER } });
+  assert.equal(go.status, 302);
+  assert.match(String(go.headers.location), /^https:\/\/t\.me\/\w+\?start=post_pf$/);
+  assert.equal(clicks(), 1);
+  assert.equal((await s.call("GET", "/no.code/post", { ...profileHost, headers: { "user-agent": BROWSER } })).status, 404);
+});
+
 test("работодатель отвечает на странице: приглашение со временем, отказ", async () => {
   const answer = (form: string) =>
     s.call("POST", `/${code}/answer`, {

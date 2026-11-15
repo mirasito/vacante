@@ -79,7 +79,7 @@ export async function jobsApi(request, env) {
   if (request.method !== "GET") return new Response("method not allowed", { status: 405, headers });
   const { results } = await env.DB.prepare(
     "SELECT j.id, j.employer_chat, j.employer_name, j.status, j.step, j.city, j.title, j.company, j.salary, " +
-      "j.created_at, j.approved_at, j.decided_by, j.boost_until, " +
+      "j.created_at, j.approved_at, j.decided_by, j.boost_until, j.came_from, " +
       "(SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id) AS applications, " +
       "(SELECT COALESCE(SUM(p.amount), 0) FROM payments p WHERE p.job_id = j.id AND p.status = 'confirmed') AS paid " +
       "FROM jobs j ORDER BY j.id DESC LIMIT 1000",

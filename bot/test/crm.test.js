@@ -69,4 +69,5 @@ test("вкладка «Работодатели»: кто разместил, с
   assert.equal(jobs[1].applications, 2);
   assert.equal(jobs[1].paid, 3000);
   assert.equal(jobs[1].employer_chat, 42);
+  assert.equal(jobs[1].came_from, null);  // 'profile' — пришёл со страницы профиля кандидата
 });

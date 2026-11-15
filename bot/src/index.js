@@ -125,6 +125,8 @@ async function onMessage(m, env) {
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
   if (name === "/start" && arg.startsWith("take_")) return startTake(env, m, Number(arg.slice(5)));
   if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
+  // Кнопка на странице профиля кандидата (server/src/page.ts): работодатель увидел отклик и пришёл размещать
+  if (name === "/start" && arg === "post_pf") return startPost(env, m, "vacancy", "profile");
   if ((name === "/start" && arg === "smena") || name === "/smena") return startPost(env, m, "shift");
   if ((name === "/start" && arg === "smeny") || name === "/smeny") return subscribeShifts(env, chatId);
   if (name === "/start" && bot.fromLink(arg)) {
@@ -181,7 +183,7 @@ async function subscriptionButton(env, q) {
 
 // Работодатель: анкета вакансии
 
-async function startPost(env, m, kind = "vacancy") {
+async function startPost(env, m, kind = "vacancy", cameFrom = null) {
   const chatId = m.chat.id;
   const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status IN ('pending', 'payment')")
     .bind(chatId)
@@ -190,8 +192,10 @@ async function startPost(env, m, kind = "vacancy") {
     return send(env, chatId, `У вас уже ${pending} вакансии ждут оплаты или проверки. Оплатите или закройте их: /myjobs`);
   }
   await env.DB.prepare("DELETE FROM jobs WHERE employer_chat = ? AND status = 'draft'").bind(chatId).run();
-  const { meta } = await env.DB.prepare("INSERT INTO jobs (employer_chat, employer_name, step, kind) VALUES (?, ?, 'city', ?)")
-    .bind(chatId, job.employerName(m.from), kind)
+  const { meta } = await env.DB.prepare(
+    "INSERT INTO jobs (employer_chat, employer_name, step, kind, came_from) VALUES (?, ?, 'city', ?, ?)",
+  )
+    .bind(chatId, job.employerName(m.from), kind, cameFrom)
     .run();
   await setDialog(env, chatId, "post", meta.last_row_id);
   const { text, keyboard } = job.askScreen(job.stepsFor({ kind })[0]);

@@ -6,6 +6,7 @@ import { join } from "node:path";
 import { createApp } from "./app.ts";
 import { loadConfig } from "./config.ts";
 import { openDb } from "./db.ts";
+import { startContactsBackfill } from "./go.ts";
 import { startScheduler } from "./reminder-bot.ts";
 import { Bot } from "./telegram.ts";
 
@@ -24,9 +25,12 @@ server.listen(config.port, config.host, () => {
 });
 // Напоминания в бот: раз в 5 минут, с 9:00 до 21:00 по Казахстану и не больше двух в день
 const stopReminders = startScheduler({ config, db, bot, now: Date.now, fetch });
+// Контакты работодателей из постов в каналах: чтобы кнопки «WhatsApp» и «Позвонить» открывались сразу
+const stopContacts = startContactsBackfill({ db, now: Date.now, fetch });
 
 function stop() {
   stopReminders();
+  stopContacts();
   server.close(() => {
     db.close();
     process.exit(0);

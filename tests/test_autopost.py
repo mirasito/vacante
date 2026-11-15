@@ -66,11 +66,11 @@ def test_post_is_picture_with_map_button():
 
 
 def test_post_buttons_name_the_contacts_of_the_original_post():
-    # В посте есть WhatsApp и телефон: кнопки называют способ, а ведут в приложение на эту вакансию
+    # В посте есть WhatsApp и телефон: кнопки сразу ведут к работодателю
     v = replace(make(14, "Кафе «Зерно» ищет бариста"), contact=["whatsapp", "phone"])
     assert autopost.make_post(v, "https://vacante.kz").buttons == [
-        ("💬 WhatsApp", "https://t.me/vacantekz_bot?startapp=stgwa_v_almaty_chan-14"),
-        ("📞 Позвонить", "https://t.me/vacantekz_bot?startapp=stgcall_v_almaty_chan-14"),
+        ("💬 WhatsApp", "https://api.vacante.kz/go/chan-14/wa?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
+        ("📞 Позвонить", "https://api.vacante.kz/go/chan-14/call?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
         ("👆 Подробнее", "https://vacante.kz/v/chan-14/")]
 
 

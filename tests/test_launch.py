@@ -48,11 +48,19 @@ def vacancy(**changes):
 
 
 def test_reply_buttons_follow_contacts_of_the_post():
-    link = "https://t.me/vacantekz_bot?startapp=s{}_v_almaty_chan-5"
+    # Прямые кнопки: сервер сразу отправляет к работодателю и знает, откуда нажали и по какой вакансии
+    link = "https://api.vacante.kz/go/chan-5/{}?s={}&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"
     v = vacancy(contact=["whatsapp", "phone", "telegram"])
-    assert reply_buttons(v, "web") == [("whatsapp", link.format("webwa")), ("phone", link.format("webcall")),
-                                       ("telegram", link.format("webtg"))]
-    assert reply_buttons(vacancy(contact=["phone"]), "tg") == [("phone", link.format("tgcall"))]
+    assert reply_buttons(v, "web") == [("whatsapp", link.format("wa", "web")), ("phone", link.format("call", "web")),
+                                       ("telegram", link.format("tg", "web"))]
+    assert reply_buttons(vacancy(contact=["phone"]), "tg") == [("phone", link.format("call", "tg"))]
+
+
+def test_reply_button_is_app_link_when_server_cannot_find_the_post():
+    app = [("apply", "https://t.me/vacantekz_bot?startapp=sweb_v_almaty_hh-7")]
+    # hh.kz и OLX: исходного поста в канале нет, отклик идёт через приложение
+    assert reply_buttons(vacancy(id="hh-7", source="hh", contact=[]), "web") == app
+    assert reply_buttons(vacancy(id="hh-7", source="olx", contact=["phone"]), "web") == app
 
 
 def test_reply_button_without_contacts_is_plain_apply():
@@ -63,5 +71,5 @@ def test_reply_button_without_contacts_is_plain_apply():
 def test_no_reply_buttons_for_employer_vacancies_shifts_and_long_links():
     assert reply_buttons(vacancy(source="bot"), "web") == []  # отклик идёт работодателю через бота
     assert reply_buttons(vacancy(shift_date="2026-10-28"), "web") == []  # «Беру смену» в боте
-    assert reply_buttons(vacancy(id="a" * 60, contact=["whatsapp"]), "web") == []
+    assert reply_buttons(vacancy(id="a" * 60, contact=[]), "web") == []  # ссылка в приложение не помещается
     assert reply_buttons(vacancy(city=None), "web") == []

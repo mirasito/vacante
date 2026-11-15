@@ -8,6 +8,7 @@ import { timingSafeEqual } from "node:crypto";
 import type { Ctx } from "./app.ts";
 import type { Db } from "./db.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
+import { contactClicks } from "./go.ts";
 import { getSeeker, iso } from "./seekers.ts";
 import { DAY_MS, localDay } from "./time.ts";
 
@@ -171,8 +172,13 @@ export function funnelRoutes(ctx: Ctx): Route[] {
       const asked = Number(req.query.get("days") ?? 30);
       const days = Number.isSafeInteger(asked) && asked >= 1 && asked <= 90 ? asked : 30;
       const now = ctx.now();
-      const rows = funnel(ctx.db, localDay(now - (days - 1) * DAY_MS), localDay(now));
-      return { headers: { "Cache-Control": "no-store" }, json: { days, rows, ...totals(rows) } };
+      const from = localDay(now - (days - 1) * DAY_MS);
+      const rows = funnel(ctx.db, from, localDay(now));
+      // clicks — нажатия на прямые кнопки связи «WhatsApp», «Позвонить», «Telegram» (go.ts)
+      return {
+        headers: { "Cache-Control": "no-store" },
+        json: { days, rows, ...totals(rows), clicks: contactClicks(ctx.db, from, localDay(now)) },
+      };
     }),
   ];
 }

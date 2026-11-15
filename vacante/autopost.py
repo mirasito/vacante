@@ -205,9 +205,9 @@ def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: byte
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
     else:
-        # Вакансия из чужого источника: первые кнопки называют способ связи из исходного поста и открывают
-        # вакансию в мини-приложении, где отклик уходит со ссылкой на профиль. Ссылка не поместилась
-        # в 64 знака Telegram — остаётся карточка сайта
+        # Вакансия из чужого источника: первые кнопки сразу ведут к работодателю — в WhatsApp с готовым
+        # текстом, на звонок или в Telegram (через сервер, где хранятся номера). Если контактов в посте
+        # нет, кнопка «Откликнуться» открывает вакансию в мини-приложении
         replies = [(REPLY_LABELS[kind], url) for kind, url in launch.reply_buttons(v, launch.OWN_CHANNELS)]
         buttons = replies + buttons
     if url := twogis_url(v):

@@ -15862,7 +15862,7 @@
   "instagram": "prosnab_service",
   "website": "https://prosnabservice.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001034446055",
-  "avatar_checked_at": "2026-11-08T19:44:35+00:00",
+  "avatar_checked_at": "2026-11-15T20:41:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17260,7 +17260,7 @@
   "instagram": "sigmacenter.kz",
   "website": "https://sigmacenter.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001067321620",
-  "avatar_checked_at": "2026-11-08T19:44:35+00:00",
+  "avatar_checked_at": "2026-11-15T20:41:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21036,7 +21036,7 @@
   "checked_at": "2026-11-08T19:44:34+00:00",
   "website": "https://almatynan.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792381",
-  "avatar_checked_at": "2026-11-08T19:44:35+00:00",
+  "avatar_checked_at": "2026-11-15T20:41:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32154,6 +32154,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
+ },
+ "almaty:қызыметова": {
+  "name": "ҚЫЗЫМЕТОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T20:41:19+00:00"
  },
  "astana:026 промышленное решение": {
   "name": "026 Промышленное решение",
@@ -50259,6 +50266,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T02:43:14+00:00"
+ },
+ "astana:қызыметова": {
+  "name": "ҚЫЗЫМЕТОВА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T20:41:19+00:00"
  },
  "astana:құрылысшы ltd": {
   "name": "Құрылысшы LTD",

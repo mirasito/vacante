@@ -1,11 +1,12 @@
 // Анкета соискателя: что можно заполнить, проверка того, что прислало приложение, и сила профиля.
+import { districtOf } from "./districts.ts";
 import { HOME_SOURCES, inKazakhstan, roundHome, type HomeSource } from "./geo.ts";
 import { HttpError } from "./http.ts";
 
 /** Версия текста согласия. Меняется вместе с текстом в приложении (app/src/profile/texts.ts, CONSENT). */
-export const CONSENT_VERSION = "2026-11-16.1";
-/** С какими версиями текста можно создать профиль: нынешняя и прежняя, пока у людей открыто старое приложение. */
-export const CONSENT_VERSIONS: readonly string[] = [CONSENT_VERSION, "2026-11-04.2"];
+export const CONSENT_VERSION = "2026-11-16.2";
+/** С какими версиями текста можно создать профиль: нынешняя и прежние, пока у людей открыто старое приложение. */
+export const CONSENT_VERSIONS: readonly string[] = [CONSENT_VERSION, "2026-11-16.1", "2026-11-04.2"];
 
 // Те же города, что у сбора вакансий (vacante/parse.py, CITIES); совпадение проверяет tests/test_server_lists.py
 export const CITIES = [
@@ -56,9 +57,14 @@ export interface Home {
 export interface Profile {
   name: string;
   city: string;
-  /** Район из прежней анкеты (до 2026-11-04.2): новое приложение вместо него спрашивает, где дом. */
+  /**
+   * Район, который видит работодатель. Считается по точке дома (districts.ts), если человек указал дом после
+   * предупреждения, что район будет виден (home_district). Иначе — район из прежней анкеты, если он был.
+   */
   district: string | null;
   home: Home | null;
+  /** Дом указан в приложении, которое предупредило: работодатель увидит район. */
+  home_district: boolean;
   roles: string[];
   /** null — ещё не указан: короткая анкета спрашивает только имя и профессии. */
   experience: (typeof EXPERIENCE)[number] | null;
@@ -191,6 +197,7 @@ export function parseProfile(body: unknown): Profile {
     district: text(b.district, "district", 60, false),
     // Старое приложение дом не присылает: тогда сервер оставляет прежний (me.ts)
     home: b.home === undefined ? null : parseHome(b.home),
+    home_district: b.home_district === true,
     roles,
     experience: maybeOneOf(b.experience, EXPERIENCE, "experience"),
     employment: b.employment === undefined || b.employment === null ? [] : someOf(b.employment, EMPLOYMENT, "employment", 0),
@@ -238,7 +245,11 @@ export function fromRow(row: Record<string, unknown>): Profile {
   return {
     name: String(row.name),
     city: String(row.city),
-    district: (row.district as string | null) ?? null,
+    district:
+      row.home_district === 1 && typeof row.home_lat === "number" && typeof row.home_lon === "number"
+        ? districtOf(String(row.city), { lat: row.home_lat, lon: row.home_lon })
+        : (row.district as string | null) ?? null,
+    home_district: row.home_district === 1,
     home:
       typeof row.home_lat === "number" && typeof row.home_lon === "number"
         ? { lat: row.home_lat, lon: row.home_lon, source: (row.home_source as HomeSource | null) ?? "phone" }

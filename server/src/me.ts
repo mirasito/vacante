@@ -133,7 +133,10 @@ export function meRoutes(ctx: Ctx): Route[] {
       const raw = body.profile as Record<string, unknown>;
       const prev = getProfile(ctx.db, user.id);
       // Приложение до 2026-11-04.2 про дом не знает: правка анкеты из него не стирает точку
-      if (raw.home === undefined) profile.home = prev?.home ?? null;
+      if (raw.home === undefined) {
+        profile.home = prev?.home ?? null;
+        profile.home_district = prev?.home_district ?? false;
+      }
       // Так же с полями 2026-11-16: старое приложение их не присылает и не должно стирать
       if (prev) {
         if (raw.jobs === undefined) profile.jobs = prev.jobs;

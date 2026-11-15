@@ -1,6 +1,6 @@
 // «Опыт и навыки»: то, что работодатель общепита смотрит первым. Ищу ли работу сейчас, выйду ли на пробную
 // смену, где работал, что умею, санкнижка и район. Почти всё кнопками; какие навыки показать, решают
-// профессии человека (skills.ts).
+// профессии человека (skills.ts). Район руками не выбирают: сервер называет его по адресу дома.
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -9,7 +9,7 @@ import { ApiError, saveProfile, type Job, type JobTerm, type Med, type Profile, 
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Button, Check, Chip, Field, styles as ui } from '../ui';
-import { asksDriver, DISTRICTS, groupsFor, isLooking, JOB_TERMS, MED_OPTIONS, needsMed, skillLabel } from './skills';
+import { asksDriver, groupsFor, isLooking, JOB_TERMS, MED_OPTIONS, needsMed, skillLabel } from './skills';
 import { P } from './texts';
 
 const MAX_JOBS = 3;
@@ -28,7 +28,15 @@ const draftOf = (j: Job, roles: string[]): JobDraft => ({ ...j, other: !roles.in
 const empty = (j: JobDraft) => !j.place.trim() && !j.role.trim() && !j.term;
 const complete = (j: JobDraft): j is JobDraft & { term: JobTerm } => !!j.place.trim() && !!j.role.trim() && !!j.term;
 
-export function Work(props: { c: Colors; lang: Lang; index: Index | null; view: ProfileView; onSaved(v: ProfileView): void }) {
+export function Work(props: {
+  c: Colors;
+  lang: Lang;
+  index: Index | null;
+  view: ProfileView;
+  onSaved(v: ProfileView): void;
+  /** Открыть «Где вы живёте?»: район берётся из адреса дома. */
+  onHome(): void;
+}) {
   const { c, lang, index, view, onSaved } = props;
   const t = P[lang];
   const profile = view.profile!;
@@ -38,13 +46,11 @@ export function Work(props: { c: Colors; lang: Lang; index: Index | null; view: 
   const [skills, setSkills] = useState<Skill[]>(profile.skills ?? []);
   const [med, setMed] = useState<Med | null>(profile.med ?? (profile.med_book ? 'yes' : null));
   const [driver, setDriver] = useState(profile.driver);
-  const [district, setDistrict] = useState(profile.district);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
 
   const roleName = (title: string) => (lang === 'kk' ? index?.roles?.find((r) => r.title === title)?.title_kk ?? title : title);
   const groups = groupsFor(profile.roles, skills);
-  const districts = DISTRICTS[profile.city] ?? [];
 
   const setJob = (i: number, patch: Partial<JobDraft>) => setJobs((list) => list.map((j, k) => (k === i ? { ...j, ...patch } : j)));
   const toggleSkill = (id: Skill) => {
@@ -70,7 +76,6 @@ export function Work(props: { c: Colors; lang: Lang; index: Index | null; view: 
         driver,
         trial,
         looking,
-        district: district || null,
       };
       onSaved(await saveProfile(next, lang));
     } catch (err) {
@@ -158,18 +163,14 @@ export function Work(props: { c: Colors; lang: Lang; index: Index | null; view: 
 
         {asksDriver(profile.roles) || driver ? <Check c={c} checked={driver} label={t.driver} onPress={() => setDriver(!driver)} /> : null}
 
-        {districts.length ? (
-          <>
-            <Text style={[s.section, { color: c.ink }]}>{t.districtTitle}</Text>
-            <Text style={[s.text, { color: c.quiet }]}>{t.districtHint}</Text>
-            <View style={ui.row}>
-              {districts.map((d) => (
-                <Chip key={d} c={c} active={district === d} label={d} onPress={() => setDistrict(d)} />
-              ))}
-              <Chip c={c} active={!district} label={t.districtNone} onPress={() => setDistrict(null)} />
-            </View>
-          </>
+        <Text style={[s.section, { color: c.ink }]}>{t.districtTitle}</Text>
+        {profile.home ? (
+          <Text style={[s.text, { color: c.ink }]}>{profile.district ? t.districtIs(profile.district) : t.districtUnknown}</Text>
         ) : null}
+        <Text style={[s.text, { color: c.quiet }]}>{t.districtHint}</Text>
+        <View style={ui.row}>
+          <Button c={c} small ghost label={profile.home ? t.districtChange : t.districtSet} onPress={props.onHome} />
+        </View>
         {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
       </ScrollView>
       <View style={s.foot}>

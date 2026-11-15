@@ -59,9 +59,11 @@ export interface Home {
 export interface Profile {
   name: string;
   city: string;
-  /** Район из прежней анкеты: новое приложение вместо него спрашивает, где дом. */
+  /** Район, который видит работодатель: сервер называет его по точке дома. Приложение его только показывает. */
   district: string | null;
   home: Home | null;
+  /** Дом указан после предупреждения, что работодатель увидит район. Новое приложение всегда шлёт true. */
+  home_district?: boolean;
   roles: string[];
   /** null — ещё не указан: короткая анкета спрашивает только имя и профессии. */
   experience: Experience | null;
@@ -169,7 +171,7 @@ export async function getProfile(): Promise<ProfileView | null> {
   }
 }
 
-export const CONSENT_VERSION = '2026-11-16.1';
+export const CONSENT_VERSION = '2026-11-16.2';
 
 /** source — метка источника из ссылки запуска: сервер запоминает её вместе с первой анкетой. */
 export const saveProfile = (

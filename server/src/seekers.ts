@@ -87,20 +87,22 @@ export function createSeeker(
 export function saveProfile(db: Db, id: number, p: Profile, now: number) {
   db.prepare(
     `INSERT INTO profiles (seeker_id, name, city, district, home_lat, home_lon, home_source, roles, experience, employment,
-       pay_from, pay_period, start, phone, languages, about, med_book, driver, jobs, skills, med, trial, looking_at, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       pay_from, pay_period, start, phone, languages, about, med_book, driver, jobs, skills, med, trial, looking_at,
+       home_district, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT (seeker_id) DO UPDATE SET name = excluded.name, city = excluded.city, district = excluded.district,
        home_lat = excluded.home_lat, home_lon = excluded.home_lon, home_source = excluded.home_source,
        roles = excluded.roles, experience = excluded.experience, employment = excluded.employment,
        pay_from = excluded.pay_from, pay_period = excluded.pay_period, start = excluded.start, phone = excluded.phone,
        languages = excluded.languages, about = excluded.about, med_book = excluded.med_book, driver = excluded.driver,
        jobs = excluded.jobs, skills = excluded.skills, med = excluded.med, trial = excluded.trial,
-       looking_at = excluded.looking_at, updated_at = excluded.updated_at`,
+       looking_at = excluded.looking_at, home_district = excluded.home_district, updated_at = excluded.updated_at`,
   ).run(
-    id, p.name, p.city, p.district, p.home?.lat ?? null, p.home?.lon ?? null, p.home?.source ?? null,
+    id, p.name, p.city, p.home ? null : p.district, p.home?.lat ?? null, p.home?.lon ?? null, p.home?.source ?? null,
     JSON.stringify(p.roles), p.experience ?? "", JSON.stringify(p.employment), p.pay_from, p.pay_period, p.start ?? "", p.phone,
     JSON.stringify(p.languages), p.about, p.med === "yes" ? 1 : 0, p.driver ? 1 : 0,
-    JSON.stringify(p.jobs), JSON.stringify(p.skills), p.med, p.trial ? 1 : 0, p.looking_at, iso(now),
+    JSON.stringify(p.jobs), JSON.stringify(p.skills), p.med, p.trial ? 1 : 0, p.looking_at,
+    p.home && p.home_district ? 1 : 0, iso(now),
   );
 }
 

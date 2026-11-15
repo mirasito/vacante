@@ -129,6 +129,8 @@ export function Wizard(props: {
       // Район человек выбирает сам на экране «Опыт и навыки»: анкета его не трогает
       district: existing?.district ?? null,
       home: final.place.home,
+      // Шаг «Где вы живёте» предупреждает, что работодатель увидит район
+      home_district: !!final.place.home,
       roles: final.roles,
       experience: final.experience,
       employment: final.employment,
@@ -265,9 +267,7 @@ export function Wizard(props: {
                 ? t.create
                 : step === 'pay' && !draft.pay
                   ? t.payAny
-                  : step === 'home' && !draft.place.home
-                    ? t.skip
-                    : t.next
+                  : t.next
             }
             disabled={!ready(step, draft, adult && agree)}
             onPress={next}
@@ -288,6 +288,9 @@ function ready(step: Step, d: Draft, consented: boolean): boolean {
       return d.roles.length > 0;
     case 'employment':
       return d.employment.length > 0;
+    // Дом обязателен: по нему считается район для работодателя и расстояние до работы
+    case 'home':
+      return !!d.place.home;
     default:
       return true;
   }

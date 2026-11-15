@@ -3,9 +3,13 @@ import { createHash } from "node:crypto";
 import { test } from "node:test";
 
 import { internalKey } from "../src/telegram.ts";
-import { readFileSync } from "node:fs";
+import { copyFileSync, mkdtempSync, readdirSync, readFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { DatabaseSync } from "node:sqlite";
 
-import { startServer, TOKEN } from "./helpers.ts";
+import { migrate, MIGRATIONS } from "../src/db.ts";
+import { NOW, startServer, TOKEN } from "./helpers.ts";
 
 const PASSWORD = "секрет-админки";
 // Так же ключ считают админка в браузере, воркер бота и выкладка (server.yml)
@@ -337,5 +341,141 @@ test("Бот /company: новой компании нет в базе — соз
     assert.deepEqual((await tg(update(555, "привет"))).json, { ok: true, handled: false });
   } finally {
     await s.close();
+  }
+});
+
+test("CRM: работодатель, пришедший со страницы профиля кандидата, отмечен в карточке заведения и в списке", async () => {
+  const s = await startServer({}, { CRM_KEY: KEY });
+  try {
+    // Бот пишет came_from = 'profile' в вакансию, сбор передаёт отметку вместе с тем, кто разместил
+    await seed(s, 10, {
+      jobs: [
+        { job_id: 7, chat: 111, name: "Айгерим @hr", venue_key: "astana:greenwich", employer_key: "greenwich" },
+        { job_id: 8, chat: 222, name: "Ерлан", venue_key: "almaty:cafe nova", employer_key: "cafe nova", came_from: "profile" },
+      ],
+    });
+    await s.idle();
+    const g = idOf(s, "greenwich"), n = idOf(s, "cafe nova");
+    type Venue = Record<string, unknown> & { vacancies: Record<string, unknown>[]; archive: Record<string, unknown>[] };
+    type Card = { employer: Record<string, unknown>; venues: Venue[] };
+    const cardOf = async (id: number) => (await s.call("GET", `/admin/crm/${id}`, { headers: admin })).json as Card;
+    const listOf = async () => ((await s.call("GET", "/admin/crm", { headers: admin })).json as { employers: Record<string, unknown>[] }).employers;
+
+    let list = await listOf();
+    assert.equal(list.find((e) => e.id === n)!.from_profile, 1);
+    assert.equal(list.find((e) => e.id === g)!.from_profile, 0);
+    let nova = await cardOf(n);
+    assert.equal(nova.employer.from_profile, 1);
+    assert.equal(nova.venues[0]!.from_profile, true);
+    assert.equal(nova.venues[0]!.vacancies[0]!.came_from, "profile");
+    let green = await cardOf(g);
+    assert.equal(green.employer.from_profile, 0);
+    assert.ok(green.venues.every((v) => v.from_profile === false));
+    assert.equal(green.venues.find((v) => v.city === "astana")!.vacancies[0]!.came_from, null);
+
+    // Следующий снимок: у вакансии №7, которую сервер уже знал без отметки, отметка появилась (так дойдут
+    // вакансии, размещённые до этой правки); отметка №8 не пропадает, если её не прислали; чужое значение не пишем
+    await seed(s, 11, {
+      jobs: [
+        { job_id: 7, chat: 111, venue_key: "astana:greenwich", employer_key: "greenwich", came_from: "profile" },
+        { job_id: 8, chat: 222, venue_key: "almaty:cafe nova", employer_key: "cafe nova", came_from: "<b>site</b>" },
+      ],
+    });
+    await s.idle();
+    list = await listOf();
+    assert.equal(list.find((e) => e.id === n)!.from_profile, 1);
+    assert.equal(list.find((e) => e.id === g)!.from_profile, 1);
+    green = await cardOf(g);
+    assert.equal(green.venues.find((v) => v.city === "astana")!.from_profile, true);
+    assert.equal(green.venues.find((v) => v.city === "almaty")!.from_profile, false);
+    assert.deepEqual(s.db.prepare("SELECT job_id, came_from FROM bot_jobs ORDER BY job_id").all().map((r) => ({ ...r })),
+      [{ job_id: 7, came_from: "profile" }, { job_id: 8, came_from: "profile" }]);
+    // Вакансию сняли с сайта: отметка у заведения остаётся, работодатель по-прежнему тёплый
+    await s.call("POST", "/internal/crm/import", { headers: internal, body: { run_at: RUN(12), employers: [] } });
+    await s.call("POST", "/internal/crm/finish", { headers: internal, body: { run_at: RUN(12) } });
+    nova = await cardOf(n);
+    assert.equal(nova.venues[0]!.from_profile, true);
+    assert.equal(nova.venues[0]!.archive[0]!.came_from, "profile");
+  } finally {
+    await s.close();
+  }
+});
+
+test("CRM: у вакансий OLX в карточке заведения — номер из текста объявления и ссылка на объявление", async () => {
+  const s = await startServer({}, { CRM_KEY: KEY });
+  try {
+    const url = (id: number) => `https://www.olx.kz/d/obyavlenie/rabota/povar-ID${id}.html`;
+    const ad = (id: number, description: string) => ({
+      id, url: url(id), title: "Повар", description, created_time: "2026-11-04T10:00:00+05:00", offer_type: "offer", city: "Алматы",
+    });
+    // Объявления забраны с открытой страницы OLX: в первом автор сам написал номер в тексте, во втором номера нет
+    // (он за кнопкой OLX, и мы её не нажимаем)
+    const stored = await s.call("POST", "/internal/olx/batch", {
+      headers: internal,
+      body: { items: [ad(501, "Кафе в центре. Звоните 8 701 000 00 01"), ad(502, "Отклик на OLX"), ad(503, "Пишите 8 701 000 00 03")] },
+    });
+    assert.equal(stored.status, 200);
+    const olx = (id: number, extra: Record<string, unknown> = {}) =>
+      vacancy(`olx-${id}`, { title: "Повар", source: "olx", url: url(id), ...extra });
+    const snapshot = (hour: number, vacancies: unknown[]) => s.call("POST", "/internal/crm/import", {
+      headers: internal,
+      body: { run_at: RUN(hour), employers: [{ key: "cafe nova", name: "Cafe Nova", venues: [{ key: "almaty:cafe nova", name: "Cafe Nova", city: "almaty", vacancies }] }] },
+    });
+    const finish = (hour: number) => s.call("POST", "/internal/crm/finish", { headers: internal, body: { run_at: RUN(hour) } });
+    // Ссылку берём только на объявление OLX: чужой адрес в карточку не попадает. olx-503 на сайт не прошло
+    const later = olx(502, { posted_at: "2026-11-05T09:00:00+00:00" });
+    await snapshot(10, [olx(501), later, vacancy("hh-1", { url: "https://example.com/x.html" }), olx(504, { url: "https://example.com/olx.html" })]);
+    await finish(10);
+    const n = idOf(s, "cafe nova");
+    const contactsOf = async () =>
+      ((await s.call("GET", `/admin/crm/${n}`, { headers: admin })).json as { venues: { contacts: Record<string, unknown>[] }[] }).venues[0]!.contacts;
+    const at = new Date(NOW).toISOString();
+    assert.deepEqual(await contactsOf(), [
+      { kind: "phone", value: "+77010000001", vacancy_id: "olx-501", title: "Повар", seen_at: at },
+      { kind: "olx", value: url(501), vacancy_id: "olx-501", title: "Повар", seen_at: "2026-11-05T10:00:00+00:00" },
+      { kind: "olx", value: url(502), vacancy_id: "olx-502", title: "Повар", seen_at: "2026-11-05T09:00:00+00:00" },
+    ]);
+    const row = ((await s.call("GET", "/admin/crm", { headers: admin })).json as { employers: Record<string, unknown>[] }).employers[0]!;
+    assert.equal(row.contacts, 1); // фильтр «Есть телефон или Telegram» считает номера, а не ссылки
+    // Номер объявления, которого нет среди вакансий сайта, в базу контактов не копируется
+    assert.deepEqual(s.db.prepare("SELECT vacancy_id FROM vacancy_contacts").all().map((r) => ({ ...r })), [{ vacancy_id: "olx-501" }]);
+
+    // Объявление сняли, а сервер через 30 дней забыл его текст: номер в карточке остаётся, как у постов из каналов;
+    // ссылка на снятое объявление уже никуда не ведёт, её не показываем
+    s.db.prepare("DELETE FROM olx_ads").run();
+    await snapshot(11, [later]);
+    await finish(11);
+    assert.deepEqual(await contactsOf(), [
+      { kind: "phone", value: "+77010000001", vacancy_id: "olx-501", title: "Повар", seen_at: at },
+      { kind: "olx", value: url(502), vacancy_id: "olx-502", title: "Повар", seen_at: "2026-11-05T09:00:00+00:00" },
+    ]);
+  } finally {
+    await s.close();
+  }
+});
+
+test("миграция 0019 добавляет отметку и ссылку, не трогая строки живой базы", () => {
+  const dir = mkdtempSync(join(tmpdir(), "vacante-mig-"));
+  try {
+    const all = readdirSync(MIGRATIONS).filter((f) => f.endsWith(".sql")).sort();
+    for (const name of all.filter((f) => f < "0019")) copyFileSync(join(MIGRATIONS, name), join(dir, name));
+    const db = new DatabaseSync(":memory:");
+    migrate(db, dir);
+    db.exec(`
+      INSERT INTO employers (id, key, name, first_seen, last_seen) VALUES (1, 'cafe nova', 'Cafe Nova', '2026-11-01T00:00:00Z', '2026-11-01T00:00:00Z');
+      INSERT INTO venues (id, key, employer_id, name, first_seen, last_seen) VALUES (1, 'almaty:cafe nova', 1, 'Cafe Nova', '2026-11-01T00:00:00Z', '2026-11-01T00:00:00Z');
+      INSERT INTO employer_vacancies (id, venue_id, title, source, posted_at, first_seen, last_seen, active)
+        VALUES ('bot-8', 1, 'Повар', 'bot', '2026-11-01T00:00:00Z', '2026-11-01T00:00:00Z', '2026-11-01T00:00:00Z', 1);
+      INSERT INTO bot_jobs (job_id, tg_chat, employer_id, venue_id, asked_at) VALUES (8, 222, 1, 1, '2026-11-01T00:00:00Z');
+    `);
+    copyFileSync(join(MIGRATIONS, "0019_crm_came_from.sql"), join(dir, "0019_crm_came_from.sql"));
+    assert.deepEqual(migrate(db, dir), ["0019_crm_came_from.sql"]);
+    assert.deepEqual({ ...db.prepare("SELECT * FROM bot_jobs").get() },
+      { job_id: 8, tg_chat: 222, employer_id: 1, venue_id: 1, asked_at: "2026-11-01T00:00:00Z", came_from: null });
+    assert.deepEqual({ ...db.prepare("SELECT id, venue_id, title, active, url FROM employer_vacancies").get() },
+      { id: "bot-8", venue_id: 1, title: "Повар", active: 1, url: null });
+    db.close();
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
   }
 });

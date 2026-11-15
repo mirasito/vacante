@@ -2,11 +2,13 @@
 
 Работодатель — название из вакансий без города, регистра и формы собственности («ТОО Greenwich» и «Greenwich»
 в Алматы и Астане — один работодатель). Внутри него заведения: тот же ключ «город:название», что в venues.json,
-с адресом из вакансий и ссылками, которые нашёл агент «Заведения». У заведения его вакансии с сайта.
+с адресом из вакансий и ссылками, которые нашёл агент «Заведения». У заведения его вакансии с сайта;
+у вакансий OLX — ссылка на объявление: номер OLX прячет за кнопкой, и ссылка остаётся способом связи.
 Сервер сам отправляет в архив вакансии, которых нет в новом снимке.
 
 Из базы бота (Cloudflare D1), если есть ключ Cloudflare: кто разместил вакансии в боте (сервер делает ему
-профиль работодателя и спрашивает, для какого заведения вакансия), оплаты размещения и «Срочно» для выручки
+профиль работодателя и спрашивает, для какого заведения вакансия) и пришёл ли он со страницы профиля
+кандидата (jobs.came_from), оплаты размещения и «Срочно» для выручки
 по работодателям и статусы старой «CRM заведений». Это уходит только на сервер в Казахстане, не в ветку data.
 С открытого API hh: логотип, сайт и описание компании для работодателей с вакансиями на hh.
 
@@ -72,6 +74,7 @@ def snapshot(data_dir: Path, vacancies: list[Vacancy]) -> list[dict]:
             "vacancies": [{
                 "id": v.id, "title": v.title, "category": v.category, "salary": salary_label(v),
                 "source": v.source, "posted_at": v.posted_at, "top_until": v.top_until,
+                "url": v.source_url if v.source == "olx" else None,
             } for v in items],
         }
         ek = employer_key(k)
@@ -93,9 +96,11 @@ def _keys(company: str | None, city: str | None) -> dict:
 
 def from_bot(d1) -> dict:
     """Из базы бота: кто разместил одобренные вакансии, оплаты и статусы «CRM заведений»."""
+    # came_from = 'profile': работодатель нажал «разместить вакансию» на странице профиля кандидата (bot/src/index.js)
     jobs = [{"job_id": r["id"], "chat": r["employer_chat"], "name": r.get("employer_name"),
-             **_keys(r.get("company"), r.get("city"))}
-            for r in d1.query("SELECT id, employer_chat, employer_name, company, city FROM jobs WHERE status = 'approved'")]
+             "came_from": r.get("came_from"), **_keys(r.get("company"), r.get("city"))}
+            for r in d1.query("SELECT id, employer_chat, employer_name, company, city, came_from FROM jobs "
+                              "WHERE status = 'approved'")]
     payments = [{"id": r["id"], "job_id": r["job_id"], "kind": r.get("kind") or "boost", "amount": r["amount"],
                  "status": r["status"], "at": _utc(r.get("decided_at") or r.get("created_at")),
                  **_keys(r.get("company"), r.get("city"))}

@@ -260,7 +260,7 @@ td.nowrap { white-space: nowrap; }
   </div>
 
   <div id="tab-emp" hidden>
-  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками, телефонами и Telegram из постов его вакансий, фото и вакансиями, которые сейчас на сайте, и архивом снятых. Сбор обновляет данные каждый час, ручные правки он не трогает. В карточке: статус и следующий шаг, история, профили работодателя в боте (/company), оплаты, склейка дублей. Хранится только на сервере api.vacante.kz.</p>
+  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками, телефонами и Telegram из постов его вакансий и ссылками на его объявления OLX, фото и вакансиями, которые сейчас на сайте, и архивом снятых. Сбор обновляет данные каждый час, ручные правки он не трогает. В карточке: статус и следующий шаг, история, профили работодателя в боте (/company), оплаты, склейка дублей. Отметка «с профиля кандидата»: работодатель нажал «разместить вакансию» на странице профиля соискателя и разместил вакансию в боте. Хранится только на сервере api.vacante.kz.</p>
   <p class="err" id="emp-error" hidden></p>
   <div class="filters">
     <div class="seg" id="emp-has">
@@ -269,6 +269,7 @@ td.nowrap { white-space: nowrap; }
       <button type="button" data-v="many" aria-pressed="false">Несколько заведений</button>
       <button type="button" data-v="links" aria-pressed="false">Есть сайт или соцсети</button>
       <button type="button" data-v="contacts" aria-pressed="false">Есть телефон или Telegram</button>
+      <button type="button" data-v="profile" aria-pressed="false">Пришли с профиля кандидата</button>
       <button type="button" data-v="todo" aria-pressed="false">Заявки и проверки<span id="emp-todo-n"></span></button>
       <button type="button" data-v="next" aria-pressed="false">Шаг на сегодня</button>
       <button type="button" data-v="paid" aria-pressed="false">В боте и платили</button>
@@ -742,10 +743,17 @@ td.nowrap { white-space: nowrap; }
       r.twogis && `<a href="${esc(r.twogis)}" target="_blank" rel="noopener">2ГИС</a>`,
     ].filter(Boolean).join("");
     // Контакты заведения из постов его вакансий: сами номера и имена текстом, чтобы их можно было скопировать
-    const CONTACT_KIND = { whatsapp: "WhatsApp", phone: "Телефон", telegram: "Telegram" };
+    // У вакансий OLX номер есть, только если автор написал его в тексте объявления; номер за кнопкой OLX мы
+    // не открываем, поэтому способ связи — само объявление (kind = olx, ссылка на него)
+    const CONTACT_KIND = { whatsapp: "WhatsApp", phone: "Телефон", telegram: "Telegram", olx: "OLX" };
     const phoneText = (p) => p.replace(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7 $1 $2 $3 $4");
+    const contactValue = (c) => c.kind === "olx"
+      ? `<a href="${esc(c.value)}" target="_blank" rel="noopener">написать или позвонить через объявление</a>`
+      : `<b style="user-select:all">${esc(c.kind === "telegram" ? "@" + c.value : phoneText(c.value))}</b>`;
     const contacts = (list) => (list || []).map((c) =>
-      `<div class="snippet">${CONTACT_KIND[c.kind]}: <b style="user-select:all">${esc(c.kind === "telegram" ? "@" + c.value : phoneText(c.value))}</b> <span class="quiet">· ${esc(c.title)}, ${day(c.seen_at)}</span></div>`).join("");
+      `<div class="snippet">${CONTACT_KIND[c.kind] || esc(c.kind)}: ${contactValue(c)} <span class="quiet">· ${esc(c.title)}, ${day(c.seen_at)}</span></div>`).join("");
+    // Работодатель пришёл со страницы профиля кандидата (кнопка «разместить вакансию» на p.vacante.kz): тёплый контакт
+    const FROM_PROFILE = `<span class="badge accepted" title="Нажал «разместить вакансию» на странице профиля соискателя и разместил вакансию в боте">с профиля кандидата</span>`;
     const plural = (n, one, few, many) => { const a = n % 10, b = n % 100; return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many; };
     const day = (iso) => (iso ? new Date(iso).toLocaleDateString("ru-RU", { day: "numeric", month: "short", timeZone: "Asia/Almaty" }) : "");
 
@@ -756,6 +764,7 @@ td.nowrap { white-space: nowrap; }
         (has !== "active" || r.active > 0) && (has !== "many" || r.venues > 1) &&
         (has !== "links" || r.website || r.instagram || r.telegram) &&
         (has !== "contacts" || r.contacts > 0) &&
+        (has !== "profile" || r.from_profile > 0) &&
         (has !== "todo" || r.claims > 0 || r.pending_venues > 0) &&
         (has !== "next" || (r.next_at && r.next_at <= today)) &&
         (has !== "paid" || r.paid > 0 || r.members > 0) &&
@@ -772,6 +781,7 @@ td.nowrap { white-space: nowrap; }
           r.claims ? `<span class="badge duplicate">заявка</span>` : "",
           r.pending_venues ? `<span class="badge duplicate">заведение на проверке</span>` : "",
           r.members ? `<span class="badge accepted" title="Есть профиль в боте">в боте</span>` : "",
+          r.from_profile ? FROM_PROFILE : "",
         ].join(" ");
         const next = r.next_at ? `<div class="snippet${r.next_at <= today ? " err" : ""}">шаг ${esc(day(r.next_at + "T12:00:00Z"))}</div>` : "";
         return `<tr class="emp-row" tabindex="0" data-id="${r.id}">
@@ -800,13 +810,15 @@ td.nowrap { white-space: nowrap; }
         members: card.members.filter((m) => m.confirmed_at).length,
         pending_venues: card.venues.filter((v) => v.review === "pending").length,
         paid: card.payments.filter((p) => p.status === "confirmed").reduce((a, p) => a + p.amount, 0),
+        from_profile: e.from_profile || 0,
         logo: e.hh && e.hh.logo, website: e.website || r.website, instagram: e.instagram || r.instagram, telegram: e.telegram || r.telegram,
       });
       draw(false);
     }
 
-    const vacancy = (v) => `<li><span><a href="${ROOT}/v/${esc(v.id)}/" target="_blank">${esc(v.title)}</a>${v.salary ? ` · ${esc(v.salary)}` : ""}</span><span>${esc(SOURCE[v.source] || v.source)} · ${when(v.posted_at)}</span></li>`;
-    const archived = (v) => `<li><span>${esc(v.title)}${v.salary ? ` · ${esc(v.salary)}` : ""}</span><span>${esc(SOURCE[v.source] || v.source)} · снята ${when(v.last_seen)}</span></li>`;
+    const viaProfile = (v) => (v.came_from === "profile" ? ` <span class="quiet">· с профиля кандидата</span>` : "");
+    const vacancy = (v) => `<li><span><a href="${ROOT}/v/${esc(v.id)}/" target="_blank">${esc(v.title)}</a>${v.salary ? ` · ${esc(v.salary)}` : ""}${viaProfile(v)}</span><span>${esc(SOURCE[v.source] || v.source)} · ${when(v.posted_at)}</span></li>`;
+    const archived = (v) => `<li><span>${esc(v.title)}${v.salary ? ` · ${esc(v.salary)}` : ""}${viaProfile(v)}</span><span>${esc(SOURCE[v.source] || v.source)} · снята ${when(v.last_seen)}</span></li>`;
     const field = (name, label, value, attrs = "") => `<label class="fld"><span>${esc(label)}</span><input name="${name}" value="${esc(value || "")}" ${attrs}></label>`;
     const cityOptions = (sel) => `<option value="">Весь Казахстан</option>` + Object.entries(cities)
       .sort((a, b) => a[1].localeCompare(b[1])).map(([k, n]) => `<option value="${esc(k)}"${k === sel ? " selected" : ""}>${esc(n)}</option>`).join("");
@@ -821,7 +833,7 @@ td.nowrap { white-space: nowrap; }
         : v.review === "rejected" ? `<div class="snippet err">Отклонено</div>` : "";
       const who = v.added_by === "employer" ? "добавил работодатель" : v.added_by === "admin" ? "добавили вручную" : "";
       return `<article class="venue${v.review === "pending" ? " pending" : ""}" data-vid="${v.id}">
-        <div class="emp-name">${ava(venueAva(v), v.name)}<div><h4>${esc(v.name)}</h4><div class="snippet">${esc(city(v.city))}${v.address ? ", " + esc(v.address) : ""}${who ? ` · ${who}` : ""}</div></div></div>
+        <div class="emp-name">${ava(venueAva(v), v.name)}<div><h4>${esc(v.name)}${v.from_profile ? " " + FROM_PROFILE : ""}</h4><div class="snippet">${esc(city(v.city))}${v.address ? ", " + esc(v.address) : ""}${who ? ` · ${who}` : ""}</div></div></div>
         ${review}
         <div class="links" style="margin-top:6px">${links(v) || `<span class="quiet">ссылок пока нет</span>`}</div>
         ${contacts(v.contacts) || `<div class="snippet quiet">Телефона и Telegram из вакансий пока нет</div>`}
@@ -869,7 +881,7 @@ td.nowrap { white-space: nowrap; }
         const no = !m.rejected_at ? `<button type="button" class="act" data-do="deny" data-mid="${m.id}">${m.confirmed_at ? "Отвязать" : "Отклонить"}</button>` : "";
         return `<li><span>${who} ${state}</span><span>${btn} ${no}</span></li>`;
       };
-      box.innerHTML = `<div class="head">${ava(cover, e.name, true)}<div><h3>${esc(e.name)}</h3>
+      box.innerHTML = `<div class="head">${ava(cover, e.name, true)}<div><h3>${esc(e.name)}${e.from_profile ? " " + FROM_PROFILE : ""}</h3>
           <div class="snippet">${num(live.length)} ${plural(live.length, "заведение", "заведения", "заведений")} · вакансий сейчас: ${num(active)} · в базе с ${when(e.first_seen)}${e.legal_name ? ` · ${esc(e.legal_name)}` : ""}${e.bin ? ` · БИН ${esc(e.bin)}` : ""}</div>
           <div class="links">${links(e)}${e.hh ? `<a href="https://hh.kz/employer/${esc(e.hh.id)}" target="_blank" rel="noopener">hh.kz</a>` : ""}${e.hh && e.hh.site && e.hh.site !== e.website ? `<a href="${esc(e.hh.site)}" target="_blank" rel="noopener">сайт по hh</a>` : ""}</div></div>
           <button type="button" class="more close" id="emp-close">Закрыть</button></div>

@@ -184,7 +184,8 @@ test("отзывы: после собеседования, наружу толь
 test("приглашения: код, ссылка и счётчик", async () => {
   const me = (await s.call("GET", "/me/referral", { headers: auth() })).json;
   assert.match(me.code, /^[a-z0-9]{6}$/);
-  assert.equal(me.url, `https://t.me/vacantekz_bot?startapp=ref_${me.code}`);
+  // «sfr» — метка источника «друг» для воронки (app/src/launch.ts)
+  assert.equal(me.url, `https://t.me/vacantekz_bot?startapp=sfr_ref_${me.code}`);
   assert.equal(me.invited, 0);
   const self = await s.call("POST", "/me/referral", { headers: auth(), body: { code: me.code } });
   assert.equal(self.json.ok, false);

@@ -96,7 +96,7 @@ export function saveProfile(db: Db, id: number, p: Profile, now: number) {
        updated_at = excluded.updated_at`,
   ).run(
     id, p.name, p.city, p.district, p.home?.lat ?? null, p.home?.lon ?? null, p.home?.source ?? null,
-    JSON.stringify(p.roles), p.experience, JSON.stringify(p.employment), p.pay_from, p.pay_period, p.start, p.phone,
+    JSON.stringify(p.roles), p.experience ?? "", JSON.stringify(p.employment), p.pay_from, p.pay_period, p.start ?? "", p.phone,
     JSON.stringify(p.languages), p.about, p.med_book ? 1 : 0, p.driver ? 1 : 0, iso(now),
   );
 }

@@ -18,7 +18,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, channels, direct, promo, review, shifts, venues
+from vacante import card, channels, direct, launch, promo, review, shifts, venues
 from vacante.models import Vacancy
 from vacante.site.build import city_heading, instagram_url, salary_label, twogis_url
 from vacante.store import load_vacancies
@@ -201,6 +201,10 @@ def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: byte
     buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
+    elif param := launch.start_param(source=launch.OWN_CHANNELS, city=v.city, vacancy_id=v.id):
+        # Вакансия из чужого источника: кнопка открывает её в мини-приложении, где отклик уходит
+        # со ссылкой на профиль. Ссылка не поместилась в 64 знака Telegram — остаётся карточка сайта
+        buttons.insert(0, ("✉️ Откликнуться", launch.app_link(param)))
     if url := twogis_url(v):
         buttons.append(("📍 Открыть в 2ГИС", url))
     if url := instagram_url(venue):

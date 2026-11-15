@@ -25,7 +25,7 @@ const CITY: Record<string, [string, string]> = {
   taldykorgan: ["Талдыкорган", "Талдықорған"],
 };
 
-const EXPERIENCE: Record<Profile["experience"], [string, string]> = {
+const EXPERIENCE: Record<NonNullable<Profile["experience"]>, [string, string]> = {
   none: ["без опыта", "тәжірибесіз"],
   lt1: ["до года", "бір жылға дейін"],
   "1to3": ["1–3 года", "1–3 жыл"],
@@ -42,7 +42,7 @@ const EMPLOYMENT: Record<Profile["employment"][number], [string, string]> = {
   rotation: ["вахта", "вахта"],
 };
 
-const START: Record<Profile["start"], [string, string]> = {
+const START: Record<NonNullable<Profile["start"]>, [string, string]> = {
   today: ["сегодня", "бүгін"],
   week: ["на этой неделе", "осы аптада"],
   "2weeks": ["через 2 недели", "2 аптадан кейін"],
@@ -61,9 +61,11 @@ const pick = (pair: [string, string] | undefined, lang: Lang, fallback = "") => 
 export const CITY_SLUGS = Object.keys(CITY);
 
 export const cityName = (slug: string, lang: Lang) => pick(CITY[slug], lang, slug);
-export const experienceLabel = (p: Profile, lang: Lang) => pick(EXPERIENCE[p.experience], lang);
-export const employmentLabel = (p: Profile, lang: Lang) => p.employment.map((e) => pick(EMPLOYMENT[e], lang)).join(", ");
-export const startLabel = (p: Profile, lang: Lang) => pick(START[p.start], lang);
+// Короткая анкета опыт, график и выход не спрашивает: тогда подписи нет, и страница строку не показывает
+export const experienceLabel = (p: Profile, lang: Lang) => (p.experience ? pick(EXPERIENCE[p.experience], lang) : null);
+export const employmentLabel = (p: Profile, lang: Lang) =>
+  p.employment.length ? p.employment.map((e) => pick(EMPLOYMENT[e], lang)).join(", ") : null;
+export const startLabel = (p: Profile, lang: Lang) => (p.start ? pick(START[p.start], lang) : null);
 export const languagesLabel = (p: Profile, lang: Lang) => p.languages.map((l) => pick(LANGUAGE[l], lang)).join(", ");
 
 /** 250000 → «250 000» (неразрывные пробелы, как на сайте). */

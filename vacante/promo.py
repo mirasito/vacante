@@ -19,7 +19,7 @@ from datetime import date, datetime, timedelta
 
 import httpx
 
-from vacante import direct
+from vacante import direct, launch
 from vacante.models import Vacancy
 from vacante.site import i18n
 from vacante.site.build import city_heading, city_name
@@ -37,7 +37,7 @@ Pinner = Callable[[str, int, bool], None]  # (канал, message_id, закре
 
 
 def app_url(city: str) -> str:
-    return f"https://t.me/{direct.BOT_USERNAME}?startapp={city}"
+    return launch.app_link(launch.start_param(source=launch.OWN_CHANNELS, city=city) or city)
 
 
 def buttons(city: str) -> list[tuple[str, str]]:

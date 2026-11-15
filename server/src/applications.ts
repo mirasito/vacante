@@ -121,6 +121,8 @@ export interface Patch {
   interview_at?: string | null;
   start_at?: string | null;
   note?: string | null;
+  /** Отклик ушёл со ссылкой на профиль (галочка в окне отклика). */
+  link?: boolean;
 }
 
 const isoOrNull = (value: unknown, field: string, now: number): string | null => {
@@ -156,6 +158,10 @@ export function parsePatch(body: unknown, now: number): Patch {
     patch.start_at = b.start_at as string | null;
   }
   if (b.note !== undefined) patch.note = clean(b.note, "note", 500);
+  if (b.with_link !== undefined) {
+    if (typeof b.with_link !== "boolean") throw bad("Поле with_link: да или нет");
+    patch.link = b.with_link;
+  }
   return patch;
 }
 
@@ -327,6 +333,8 @@ export function patchApplication(
       next.stage, next.method, next.interview_at, next.start_at, next.note, next.sent_at, next.updated_at,
       next.cancelled_at, next.attended, next.attended_by, id,
     );
+    // Только вверх: «Написать ещё раз» без галочки не отменяет того, что ссылка уже ушла
+    if (patch.link) db.prepare("UPDATE applications SET with_link = 1 WHERE id = ?").run(id);
     if (next.stage !== row.stage) addEvent(db, id, next.stage, by, at);
     return next;
   });
@@ -592,7 +600,7 @@ export function summary(db: Db, seekerId: number, now: number): Summary {
   };
 }
 
-const EXPERIENCE_TEXT: Record<Lang, Record<Profile["experience"], string>> = {
+const EXPERIENCE_TEXT: Record<Lang, Record<NonNullable<Profile["experience"]>, string>> = {
   ru: {
     none: "Опыта пока нет, но быстро учусь.",
     lt1: "Опыт до года.",
@@ -607,7 +615,7 @@ const EXPERIENCE_TEXT: Record<Lang, Record<Profile["experience"], string>> = {
   },
 };
 
-const START_TEXT: Record<Lang, Record<Profile["start"], string>> = {
+const START_TEXT: Record<Lang, Record<NonNullable<Profile["start"]>, string>> = {
   ru: {
     today: "Могу выйти сегодня.",
     week: "Могу выйти на этой неделе.",
@@ -637,7 +645,10 @@ export function applicationText(
     lang === "kk"
       ? `Сәлеметсіз бе! «${title}» бос орны бойынша жазып отырмын. Менің атым ${p.name}.`
       : `Здравствуйте! Пишу по вакансии «${title}». Меня зовут ${p.name}.`;
-  const text = [greeting, EXPERIENCE_TEXT[lang][p.experience], START_TEXT[lang][p.start]].join(" ");
+  // Короткая анкета: про опыт и выход человек ещё не сказал, значит и в тексте их нет
+  const text = [greeting, p.experience && EXPERIENCE_TEXT[lang][p.experience], p.start && START_TEXT[lang][p.start]]
+    .filter(Boolean)
+    .join(" ");
   const label =
     lang === "kk" ? (hasVideo ? "Бейнесі бар профилім" : "Профилім") : hasVideo ? "Мой профиль с видео" : "Мой профиль";
   return { text, link_text: `${label}: ${linkUrl}` };

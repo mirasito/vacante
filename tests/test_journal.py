@@ -160,3 +160,14 @@ def test_parser_change_rereads_channels(tmp_path, monkeypatch):
     calls.clear()
     run_collect(tmp_path, channels, calls)
     assert calls == [("chan_a", 0)]
+
+
+def test_admin_has_funnel_tab(tmp_path):
+    run_collect(tmp_path, {"chan_a": [raw("chan_a", 1, BARISTA)]})
+    build(tmp_path / "data", tmp_path / "out", now=NOW, admin_password="ключ от админки")
+    page = (tmp_path / "out" / "admin" / "index.html").read_text("utf-8")
+    assert 'data-tab="funnel"' in page and 'id="tab-funnel"' in page and "Воронка" in page
+    admin = unseal(json.loads((tmp_path / "out" / "admin" / "sealed.json").read_text("utf-8")), "ключ от админки")
+    # Числа воронки лежат только на сервере в Казахстане: страница получает адрес, а не данные
+    assert admin["funnel_api"] == "https://api.vacante.kz/admin/funnel"
+    assert "funnel" not in {k for k in admin if k != "funnel_api"}

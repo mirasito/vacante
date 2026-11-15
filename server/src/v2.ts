@@ -402,7 +402,7 @@ export function v2Routes(ctx: Ctx): Route[] {
       const seeker = seekerOf(req);
       const code = refCode(ctx.db, seeker.id);
       return {
-        json: { code, url: `https://t.me/${ctx.config.botUsername}?startapp=ref_${code}`, invited: invitedCount(ctx.db, seeker.id) },
+        json: { code, url: `https://t.me/${ctx.config.botUsername}?startapp=sfr_ref_${code}`, invited: invitedCount(ctx.db, seeker.id) },
       };
     }),
 

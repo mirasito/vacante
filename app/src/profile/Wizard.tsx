@@ -1,6 +1,6 @@
 // Создание и правка профиля: согласие и семь экранов с кнопками.
 // Экраны с одним ответом переходят дальше сами, чтобы анкета занимала пару минут.
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import * as i18n from '../i18n';
@@ -9,6 +9,7 @@ import {
   ApiError,
   patchMe,
   saveProfile,
+  sendEvent,
   type Employment,
   type Experience,
   type PayPeriod,
@@ -25,6 +26,8 @@ import { CONSENT, EMPLOYMENT, EXPERIENCE, money, P, PAY_PERIOD, PAY_PRESETS, STA
 
 type Step = 'consent' | 'place' | 'home' | 'roles' | 'experience' | 'employment' | 'pay' | 'start';
 const STEPS: Step[] = ['place', 'home', 'roles', 'experience', 'employment', 'pay', 'start'];
+// Короткая анкета перед первым откликом: имя и профессии, остальное человек дополнит потом
+const QUICK_STEPS: Step[] = ['place', 'roles'];
 const MAX_ROLES = 3;
 
 interface Draft {
@@ -64,6 +67,10 @@ export function Wizard(props: {
   existing: Profile | null;
   /** Ответы стартовых экранов: подсказка для новой анкеты. */
   seed?: Want;
+  /** Короткая анкета перед откликом: согласие, имя и профессии. Только для нового профиля. */
+  quick?: boolean;
+  /** Метка источника из ссылки запуска: уходит на сервер с первой анкетой. */
+  source?: string;
   onDone(view: ProfileView, created: boolean): void;
   onCancel(): void;
   /** Кнопка «Назад» Telegram и Android: шаг назад; false, если шагать некуда. */
@@ -80,7 +87,13 @@ export function Wizard(props: {
   const [error, setError] = useState('');
 
   const set = (patch: Partial<Draft>) => setDraft((d) => ({ ...d, ...patch }));
-  const order: Step[] = existing ? STEPS : ['consent', ...STEPS];
+  const quick = !!props.quick && !existing;
+  const steps = quick ? QUICK_STEPS : STEPS;
+  const order: Step[] = existing ? steps : ['consent', ...steps];
+  // Воронка: человек без профиля увидел первый экран анкеты
+  useEffect(() => {
+    if (!existing) void sendEvent('profile_start', props.source);
+  }, []);
   const at = order.indexOf(step);
 
   const back = () => {
@@ -114,11 +127,11 @@ export function Wizard(props: {
       district: null,
       home: final.place.home,
       roles: final.roles,
-      experience: final.experience!,
+      experience: final.experience,
       employment: final.employment,
       pay_from: pay > 0 ? pay : null,
       pay_period: pay > 0 ? final.pay_period : null,
-      start: final.start!,
+      start: final.start,
       phone: existing?.phone ?? null,
       languages: existing?.languages ?? [],
       about: existing?.about ?? null,
@@ -126,7 +139,7 @@ export function Wizard(props: {
       driver: existing?.driver ?? false,
     };
     try {
-      let view = await saveProfile(profile, lang, existing ? undefined : { adult, base });
+      let view = await saveProfile(profile, lang, existing ? undefined : { adult, base }, existing ? undefined : props.source);
       if (!existing) {
         // Без разрешения бот не сможет присылать напоминания: окно Telegram, нажать один раз
         const allowed = await requestWriteAccess();
@@ -141,18 +154,19 @@ export function Wizard(props: {
     }
   }
 
-  const stepNumber = STEPS.indexOf(step) + 1;
+  const stepNumber = steps.indexOf(step) + 1;
+  const last = quick && step === 'roles';
   return (
     <View style={ui.flex}>
       <View style={s.head}>
         <Pressable onPress={back} hitSlop={12} accessibilityLabel={t.back}>
           <Text style={[s.backText, { color: c.accent }]}>← {t.back}</Text>
         </Pressable>
-        {stepNumber > 0 ? <Text style={{ color: c.quiet }}>{t.step(stepNumber, STEPS.length)}</Text> : null}
+        {stepNumber > 0 ? <Text style={{ color: c.quiet }}>{t.step(stepNumber, steps.length)}</Text> : null}
       </View>
       {stepNumber > 0 ? (
         <View style={s.progress}>
-          <Bar c={c} value={(stepNumber / STEPS.length) * 100} />
+          <Bar c={c} value={(stepNumber / steps.length) * 100} />
         </View>
       ) : null}
       <ScrollView contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">
@@ -215,7 +229,7 @@ export function Wizard(props: {
             }}
           />
         )}
-        {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
+        {error && !last ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
       </ScrollView>
       {step === 'experience' || step === 'start' ? (
         busy ? (
@@ -227,6 +241,12 @@ export function Wizard(props: {
             <Button c={c} label={t.save} onPress={() => submit(draft)} />
           </View>
         ) : null
+      ) : last ? (
+        <View style={s.foot}>
+          {/* Список профессий длинный: ошибку сохранения показываем у кнопки, а не под списком */}
+          {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
+          <Button c={c} label={t.quickDone} busy={busy} disabled={!ready(step, draft, adult && agree)} onPress={() => submit(draft)} />
+        </View>
       ) : (
         <View style={s.foot}>
           <Button

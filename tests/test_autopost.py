@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
 from vacante import autopost
@@ -55,18 +56,26 @@ def test_post_is_picture_with_map_button():
     v = make(10, "Кафе «Зерно» ищет бариста, 12 000 тг за смену\n📍 Адрес: г. Алматы, ул. Жибек Жолы, 65А (Арбат)")
     post = autopost.make_post(v, "https://vacante.kz")
     assert post.photo.startswith(b"\x89PNG")
-    assert post.buttons == [("👆 Подробнее", "https://vacante.kz/v/chan-10/"),
+    # Первая кнопка открывает эту вакансию в мини-приложении, с меткой «свои каналы» для воронки
+    assert post.buttons == [("✉️ Откликнуться", "https://t.me/vacantekz_bot?startapp=stg_v_almaty_chan-10"),
+                            ("👆 Подробнее", "https://vacante.kz/v/chan-10/"),
                             ("📍 Открыть в 2ГИС", "https://2gis.kz/almaty/search/"
                              "%D1%83%D0%BB.%20%D0%96%D0%B8%D0%B1%D0%B5%D0%BA%20%D0%96%D0%BE%D0%BB%D1%8B%2C%2065%D0%90")]
     no_address = autopost.make_post(make(11, "Кафе «Зерно» ищет бариста"), "https://vacante.kz")
-    assert [text for text, _ in no_address.buttons] == ["👆 Подробнее"]
+    assert [text for text, _ in no_address.buttons] == ["✉️ Откликнуться", "👆 Подробнее"]
+
+
+def test_post_without_apply_button_when_link_is_too_long():
+    # Telegram принимает в ссылке запуска до 64 знаков: с длинным id вакансии остаётся карточка сайта
+    v = replace(make(13, "Кафе «Зерно» ищет бариста"), id="a" * 60)
+    assert [text for text, _ in autopost.make_post(v, "https://vacante.kz").buttons] == ["👆 Подробнее"]
 
 
 def test_run_posts_once_per_channel_and_remembers(tmp_path):
     save_vacancies(tmp_path, [make(6, "Кафе «Зерно» ищет бариста, 12 000 тг за смену"),
                               make(7, "Ресторан «Луна» ищет повара, 400 000 тг", city="astana")])
     sent = []
-    stats = autopost.run(tmp_path, "https://vacante.kz/", lambda chat, post: sent.append((chat, post.buttons[0][1])), now=NOON)
+    stats = autopost.run(tmp_path, "https://vacante.kz/", lambda chat, post: sent.append((chat, dict(post.buttons)["👆 Подробнее"])), now=NOON)
     assert stats == {"posted": 2, "failed": 0}
     assert sorted(sent) == [("@vacantealmaty", "https://vacante.kz/v/chan-6/"),
                             ("@vacanteastana", "https://vacante.kz/v/chan-7/")]
@@ -94,7 +103,7 @@ def test_same_employer_is_not_posted_again_for_three_days(tmp_path):
     save_vacancies(tmp_path, [first, repost, other])
     sent = []
     for minutes in (0, 15, 30):
-        autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(post.buttons[0][1]),
+        autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(dict(post.buttons)["👆 Подробнее"]),
                      now=NOON + timedelta(minutes=minutes))
     assert sent == ["https://vacante.kz/v/chan-21/", "https://vacante.kz/v/chan-22/"]
     state = autopost.load_posted(tmp_path)["almaty"]

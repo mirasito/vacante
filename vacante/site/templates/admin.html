@@ -260,7 +260,7 @@ td.nowrap { white-space: nowrap; }
   </div>
 
   <div id="tab-emp" hidden>
-  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками, фото и вакансиями, которые сейчас на сайте, и архивом снятых. Сбор обновляет данные каждый час, ручные правки он не трогает. В карточке: статус и следующий шаг, история, профили работодателя в боте (/company), оплаты, склейка дублей. Хранится только на сервере api.vacante.kz.</p>
+  <p class="quiet">Карточки работодателей: внутри каждой его заведения по городам с адресом, ссылками, телефонами и Telegram из постов его вакансий, фото и вакансиями, которые сейчас на сайте, и архивом снятых. Сбор обновляет данные каждый час, ручные правки он не трогает. В карточке: статус и следующий шаг, история, профили работодателя в боте (/company), оплаты, склейка дублей. Хранится только на сервере api.vacante.kz.</p>
   <p class="err" id="emp-error" hidden></p>
   <div class="filters">
     <div class="seg" id="emp-has">
@@ -268,6 +268,7 @@ td.nowrap { white-space: nowrap; }
       <button type="button" data-v="active" aria-pressed="false">С вакансиями сейчас</button>
       <button type="button" data-v="many" aria-pressed="false">Несколько заведений</button>
       <button type="button" data-v="links" aria-pressed="false">Есть сайт или соцсети</button>
+      <button type="button" data-v="contacts" aria-pressed="false">Есть телефон или Telegram</button>
       <button type="button" data-v="todo" aria-pressed="false">Заявки и проверки<span id="emp-todo-n"></span></button>
       <button type="button" data-v="next" aria-pressed="false">Шаг на сегодня</button>
       <button type="button" data-v="paid" aria-pressed="false">В боте и платили</button>
@@ -740,6 +741,11 @@ td.nowrap { white-space: nowrap; }
       r.telegram && `<a href="${esc(href("telegram", r.telegram))}" target="_blank" rel="noopener">Telegram</a>`,
       r.twogis && `<a href="${esc(r.twogis)}" target="_blank" rel="noopener">2ГИС</a>`,
     ].filter(Boolean).join("");
+    // Контакты заведения из постов его вакансий: сами номера и имена текстом, чтобы их можно было скопировать
+    const CONTACT_KIND = { whatsapp: "WhatsApp", phone: "Телефон", telegram: "Telegram" };
+    const phoneText = (p) => p.replace(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7 $1 $2 $3 $4");
+    const contacts = (list) => (list || []).map((c) =>
+      `<div class="snippet">${CONTACT_KIND[c.kind]}: <b style="user-select:all">${esc(c.kind === "telegram" ? "@" + c.value : phoneText(c.value))}</b> <span class="quiet">· ${esc(c.title)}, ${day(c.seen_at)}</span></div>`).join("");
     const plural = (n, one, few, many) => { const a = n % 10, b = n % 100; return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many; };
     const day = (iso) => (iso ? new Date(iso).toLocaleDateString("ru-RU", { day: "numeric", month: "short", timeZone: "Asia/Almaty" }) : "");
 
@@ -749,6 +755,7 @@ td.nowrap { white-space: nowrap; }
         (!s || (s === "none" ? !r.status : r.status === s)) &&
         (has !== "active" || r.active > 0) && (has !== "many" || r.venues > 1) &&
         (has !== "links" || r.website || r.instagram || r.telegram) &&
+        (has !== "contacts" || r.contacts > 0) &&
         (has !== "todo" || r.claims > 0 || r.pending_venues > 0) &&
         (has !== "next" || (r.next_at && r.next_at <= today)) &&
         (has !== "paid" || r.paid > 0 || r.members > 0) &&
@@ -817,6 +824,7 @@ td.nowrap { white-space: nowrap; }
         <div class="emp-name">${ava(venueAva(v), v.name)}<div><h4>${esc(v.name)}</h4><div class="snippet">${esc(city(v.city))}${v.address ? ", " + esc(v.address) : ""}${who ? ` · ${who}` : ""}</div></div></div>
         ${review}
         <div class="links" style="margin-top:6px">${links(v) || `<span class="quiet">ссылок пока нет</span>`}</div>
+        ${contacts(v.contacts) || `<div class="snippet quiet">Телефона и Telegram из вакансий пока нет</div>`}
         ${m.status ? `<div class="snippet">Старая CRM: ${esc(CRM_STATUS[m.status] || m.status)}${m.note ? " · " + esc(m.note) : ""}</div>` : ""}
         ${v.photos.length ? `<div class="photos">${v.photos.map((p) => `<figure><a href="${esc(p.url)}" target="_blank"><img src="${esc(p.url)}" alt="" loading="lazy"></a><button type="button" class="x" data-do="unphoto" data-mid="${p.id}" aria-label="Удалить фото">×</button></figure>`).join("")}</div>` : ""}
         <ul>${v.vacancies.map(vacancy).join("") || `<li><span class="quiet">Сейчас вакансий нет</span><span></span></li>`}</ul>

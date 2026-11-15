@@ -121,6 +121,8 @@ export interface Patch {
   interview_at?: string | null;
   start_at?: string | null;
   note?: string | null;
+  /** Отклик ушёл со ссылкой на профиль (галочка в окне отклика). */
+  link?: boolean;
 }
 
 const isoOrNull = (value: unknown, field: string, now: number): string | null => {
@@ -156,6 +158,10 @@ export function parsePatch(body: unknown, now: number): Patch {
     patch.start_at = b.start_at as string | null;
   }
   if (b.note !== undefined) patch.note = clean(b.note, "note", 500);
+  if (b.link !== undefined) {
+    if (typeof b.link !== "boolean") throw bad("Поле link: да или нет");
+    patch.link = b.link;
+  }
   return patch;
 }
 
@@ -327,6 +333,7 @@ export function patchApplication(
       next.stage, next.method, next.interview_at, next.start_at, next.note, next.sent_at, next.updated_at,
       next.cancelled_at, next.attended, next.attended_by, id,
     );
+    if (patch.link !== undefined) db.prepare("UPDATE applications SET with_link = ? WHERE id = ?").run(patch.link ? 1 : 0, id);
     if (next.stage !== row.stage) addEvent(db, id, next.stage, by, at);
     return next;
   });

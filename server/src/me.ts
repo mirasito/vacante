@@ -60,6 +60,7 @@ import {
   PHONE_ASK_MINUTES,
 } from "./seekers.ts";
 import { tx } from "./db.ts";
+import { attachSource, sourceOf } from "./funnel.ts";
 import { fileReply, writeAtomic } from "./video.ts";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -151,6 +152,8 @@ export function meRoutes(ctx: Ctx): Route[] {
           touchSeeker(ctx.db, user.id, { lang: body.lang === undefined ? undefined : langOf(body.lang) }, now);
         }
         saveProfile(ctx.db, user.id, profile, now);
+        // Откуда человек пришёл: метка из ссылки запуска, пишется один раз
+        attachSource(ctx.db, user.id, sourceOf(body.source), now);
       });
       return { status: existing ? 200 : 201, json: profileView(ctx.db, user.id, ctx.config.profileOrigin) };
     }),

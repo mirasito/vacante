@@ -9,6 +9,7 @@ import { internalRoutes } from "./internal.ts";
 import { meRoutes } from "./me.ts";
 import { olxImportRoutes } from "./olx-import.ts";
 import { crmRoutes } from "./crm.ts";
+import { funnelRoutes } from "./funnel.ts";
 import { createCrmBot, type CrmBot } from "./crm-bot.ts";
 import { olxRoutes } from "./olx.ts";
 import { pageRoutes } from "./page.ts";
@@ -129,6 +130,7 @@ function buildRoutes(ctx: Ctx): Route[] {
     ...olxRoutes(ctx),
     ...olxImportRoutes(ctx),
     ...crmRoutes(ctx),
+    ...funnelRoutes(ctx),
     ...pageRoutes(ctx),
   ];
 }

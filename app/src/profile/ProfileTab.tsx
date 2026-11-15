@@ -158,7 +158,7 @@ export function ProfileTab(props: {
     return <HomeEdit c={c} lang={lang} view={view} onSaved={(v) => (setView(v), setMode('card'))} />;
   }
   if (mode === 'work') {
-    return <Work c={c} lang={lang} index={index} view={view} onSaved={(v) => (setView(v), setMode('card'))} />;
+    return <Work c={c} lang={lang} index={index} view={view} onSaved={(v) => (setView(v), setMode('card'))} onHome={() => setMode('home')} />;
   }
   return (
     <Card
@@ -237,7 +237,8 @@ function HomeEdit({ c, lang, view, onSaved }: { c: Colors; lang: Lang; view: Pro
     setBusy(true);
     setError('');
     try {
-      onSaved(await saveProfile({ ...profile, home: place.home }, lang));
+      // Экран предупреждает, что работодатель увидит район: сохраняем дом вместе с этим согласием
+      onSaved(await saveProfile({ ...profile, home: place.home, home_district: !!place.home }, lang));
     } catch {
       setError(t.saveError);
     } finally {
@@ -563,7 +564,9 @@ function Card(props: {
         <Text style={[s.small, { color: photo.error ? c.skip : c.quiet }]}>{photo.error || t.photoUploading}</Text>
       ) : null}
       <Pressable onPress={onHome} hitSlop={8} style={s.homeRow}>
-        <Text style={[s.small, ui.flex, { color: p.home ? c.quiet : c.ink }]}>{p.home ? t.homeCard : t.homeAsk}</Text>
+        <Text style={[s.small, ui.flex, { color: p.home ? c.quiet : c.ink }]}>
+          {p.home ? (p.district ? t.homeCardDistrict(p.district) : t.homeCard) : t.homeAsk}
+        </Text>
         <Text style={[s.small, { color: c.accent, fontWeight: '600' }]}>{t.homeChange}</Text>
       </Pressable>
 

@@ -159,3 +159,30 @@ test("что сказать в кружке: фразы из анкеты сам
   ]);
   assert.equal(videoScript(parseProfile({ ...QUICK, experience: "none" }), "kk")[2], "Тәжірибем әзірге жоқ, бірақ тез үйренемін.");
 });
+
+test("район по адресу дома: работодатель видит район, только если человек указал дом после предупреждения", async () => {
+  const s = await server();
+  const home = { lat: 43.233, lon: 76.957, source: "2gis" }; // пр. Достык, Медеуский район
+  const consent = { version: CONSENT_VERSION, adult: true, base: false };
+  // Старое приложение: дом указан, но о районе человека не предупреждали — район не показываем
+  const old = await s.call("PUT", "/me/profile", { headers: auth, body: { profile: { ...FULL, home }, consent } });
+  assert.equal(old.status, 201, old.text);
+  assert.deepEqual([old.json.profile.district, old.json.profile.home_district], [null, false]);
+  const link = await s.call("POST", "/me/link", { headers: auth });
+  const page = async () => (await s.call("GET", `/${link.json.code}`, { ...profileHost, headers: { "user-agent": BROWSER } })).text;
+  assert.ok(!(await page()).includes("Медеуский"));
+
+  // Новое приложение: человек подтвердил дом, зная, что работодатель увидит район
+  const now = await s.call("PUT", "/me/profile", { headers: auth, body: { profile: { ...FULL, home, home_district: true } } });
+  assert.deepEqual([now.json.profile.district, now.json.profile.home_district], ["Медеуский район", true]);
+  const text = await page();
+  assert.ok(text.includes("Алматы, Медеуский район"));
+  assert.ok(!text.includes("43.2") && !text.includes("76.9")); // точки на странице нет
+
+  // Правка без поля home (экран «Опыт и навыки») район не сбрасывает; район, присланный приложением, ничего не значит
+  const edit = await s.call("PUT", "/me/profile", { headers: auth, body: { profile: { ...FULL, district: "Выдуманный район", trial: true } } });
+  assert.equal(edit.json.profile.district, "Медеуский район");
+  // Убрал дом — района нет
+  const none = await s.call("PUT", "/me/profile", { headers: auth, body: { profile: { ...FULL, home: null } } });
+  assert.deepEqual([none.json.profile.district, none.json.profile.home], [null, null]);
+});

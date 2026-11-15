@@ -746,6 +746,15 @@
   "instagram": "silk_way.aktau",
   "source": "https://2gis.kz/aktau/firm/70000001096268282"
  },
+ "aktau:sipss": {
+  "name": "Sipss",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00",
+  "instagram": "sipss.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001104620471"
+ },
  "aktau:smak time": {
   "name": "Smak Time",
   "city": "aktau",
@@ -2078,6 +2087,20 @@
   "instagram": "shashlyk.house.akshukur",
   "source": "https://2gis.kz/aktau/firm/70000001101557759"
  },
+ "aktau:шашлыки от дяди гадима": {
+  "name": "Шашлыки от дяди Гадима",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00",
+  "instagram": "shashliki_ot_dyadi_gadima__",
+  "website": "https://gadimaktau.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001028576480",
+  "avatar_checked_at": "2026-11-15T17:42:56+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:шаңырақ": {
   "name": "Шаңырақ",
   "city": "aktau",
@@ -2100,6 +2123,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T22:44:17+00:00"
+ },
+ "aktau:әсем": {
+  "name": "Әсем",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00"
  },
  "aktau:әсем берекет": {
   "name": "Әсем Берекет",
@@ -6665,6 +6695,15 @@
    "website"
   ]
  },
+ "almaty:barbershop mvp": {
+  "name": "Barbershop MVP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00",
+  "instagram": "m.v.p.barbershop",
+  "source": "https://2gis.kz/almaty/firm/70000001086860470"
+ },
  "almaty:barista": {
   "name": "Barista",
   "city": "almaty",
@@ -8264,6 +8303,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T14:43:38+00:00"
+ },
+ "almaty:datarocks": {
+  "name": "DataRocks",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00"
  },
  "almaty:dau fish": {
   "name": "Dau Fish",
@@ -11346,7 +11392,7 @@
   "instagram": "innovodent.kz",
   "website": "https://innovodent.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001057240980",
-  "avatar_checked_at": "2026-11-08T16:46:44+00:00",
+  "avatar_checked_at": "2026-11-15T17:42:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14023,6 +14069,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T03:43:33+00:00"
+ },
+ "almaty:mia nails cafe": {
+  "name": "MIA Nails Cafe",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00",
+  "instagram": "mia_nails_cafe",
+  "source": "https://2gis.kz/almaty/firm/70000001075295940"
  },
  "almaty:micropigmentation studio of zhanar taizhanova": {
   "name": "Micropigmentation studio of Zhanar Taizhanova",
@@ -20079,6 +20134,13 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:авторобот": {
+  "name": "Авторобот",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00"
+ },
  "almaty:автосалон afd plaza": {
   "name": "Автосалон AFD Plaza",
   "city": "almaty",
@@ -24016,7 +24078,7 @@
   "checked_at": "2026-11-01T16:42:40+00:00",
   "website": "https://zinagroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001074358688",
-  "avatar_checked_at": "2026-11-08T16:46:44+00:00",
+  "avatar_checked_at": "2026-11-15T17:42:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25935,6 +25997,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:логистсервис": {
+  "name": "ИП ЛогистСервис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00"
  },
  "almaty:лозовой в а": {
   "name": "Лозовой В.А.",
@@ -40346,7 +40415,7 @@
   "instagram": "tazazher_capital001",
   "website": "https://tazazher.kz/",
   "source": "https://2gis.kz/astana/firm/70000001090248194",
-  "avatar_checked_at": "2026-11-08T16:46:44+00:00",
+  "avatar_checked_at": "2026-11-15T17:42:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59992,6 +60061,13 @@
   "checked_at": "2026-11-05T13:44:20+00:00",
   "instagram": "velvet_rest_pvl",
   "source": "https://2gis.kz/pavlodar/firm/70000001117225303"
+ },
+ "pavlodar:revenue": {
+  "name": "REVENUE",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T17:42:55+00:00"
  },
  "pavlodar:rpv trade company": {
   "name": "RPV-TRADE Company",

@@ -2078,6 +2078,13 @@
   "instagram": "shashlyk.house.akshukur",
   "source": "https://2gis.kz/aktau/firm/70000001101557759"
  },
+ "aktau:шаңырақ": {
+  "name": "Шаңырақ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00"
+ },
  "aktau:широяма": {
   "name": "Широяма",
   "city": "aktau",
@@ -2093,6 +2100,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T22:44:17+00:00"
+ },
+ "aktau:әсем берекет": {
+  "name": "Әсем Берекет",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00"
  },
  "aktau:өркен": {
   "name": "Өркен",
@@ -13704,7 +13718,7 @@
   "checked_at": "2026-11-08T05:44:03+00:00",
   "website": "https://medhouse.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018070263",
-  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16338,7 +16352,7 @@
   "instagram": "rixosalmaty",
   "website": "https://all.accor.com/hotel/B1N9/index.ru.shtml",
   "source": "https://2gis.kz/almaty/firm/9429940000789746",
-  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19168,7 +19182,7 @@
   "instagram": "waw.mebel",
   "website": "http://wawmebel.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001101446891",
-  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22113,6 +22127,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:василий": {
+  "name": "Василий",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00"
  },
  "almaty:васильева ангелина игоревна": {
   "name": "Васильева Ангелина Игоревна",
@@ -28729,6 +28750,22 @@
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
  },
+ "almaty:сауна цезарь": {
+  "name": "Сауна цезарь",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00",
+  "instagram": "saunacaesar",
+  "website": "https://sauna-555.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000786234",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c73ff011a6477fe6.jpg",
+  "avatar_source": "website"
+ },
  "almaty:саша": {
   "name": "Саша",
   "city": "almaty",
@@ -30304,7 +30341,7 @@
   "instagram": "mardenproperty",
   "website": "https://marden.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001039176770",
-  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37424,6 +37461,13 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "astana:monaco": {
+  "name": "Monaco",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00"
+ },
  "astana:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
   "city": "astana",
@@ -41850,6 +41894,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T13:43:27+00:00"
+ },
+ "astana:аружан молл": {
+  "name": "Аружан Молл",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00"
  },
  "astana:арыстан": {
   "name": "Арыстан",
@@ -57513,7 +57564,7 @@
   "instagram": "dep_company",
   "website": "https://dep.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001104159266",
-  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65754,6 +65805,13 @@
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
  },
+ "shymkent:бакеев": {
+  "name": "БАКЕЕВ",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T06:42:12+00:00"
+ },
  "shymkent:бал текстиль": {
   "name": "Бал Текстиль",
   "city": "shymkent",
@@ -69094,7 +69152,7 @@
   "checked_at": "2026-11-01T05:43:29+00:00",
   "website": "https://www.zkmk.kz/",
   "source": "https://www.zkmk.kz/en/about-company/",
-  "avatar_checked_at": "2026-11-08T05:44:04+00:00",
+  "avatar_checked_at": "2026-11-15T06:42:13+00:00",
   "avatar_tried": [
    "website"
   ]

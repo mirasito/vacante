@@ -137,3 +137,127 @@ def test_text_stays_inside_the_safe_zone_of_reels():
     for box in [(0, 0, video.W, video.SAFE_TOP), (0, video.SAFE_BOTTOM, video.W, video.H),
                 (video.SAFE_RIGHT, 0, video.W, video.H)]:
         assert frame.crop(box).getcolors() == [(((box[2] - box[0]) * (box[3] - box[1])), background)]
+
+
+# Третья тема: признаки, по которым объявление стоит перепроверить, с долей таких вакансий за неделю
+
+def distinct(items):
+    """Отпечаток текста не видит цифр, и одинаковые по словам объявления считались бы одним: разводим их."""
+    return [replace(v, fingerprint=f"{v.fingerprint}-{i}") for i, v in enumerate(items)]
+
+
+def week(no_pay: int = 10, wide: int = 5, ceiling: int = 1):
+    """Неделя общепита Алматы: 40 вакансий с суммой (из них с вилкой вдвое и с одним «до») и вакансии без суммы."""
+    paid = cooks(40)
+    paid[:wide] = [replace(v, salary_min=200_000, salary_max=500_000) for v in paid[:wide]]
+    paid[wide:wide + ceiling] = [replace(v, salary_min=None, salary_max=400_000) for v in paid[wide:wide + ceiling]]
+    return paid + distinct(make(700 + i, f"Кафе «Сад {i}» ищет бармена, 2/2, питание") for i in range(no_pay))
+
+
+def texts(clip):
+    return [text for s in clip.slides for text in [s.kicker, s.title, s.big, *s.lines]] + [clip.caption]
+
+
+def test_signs_clip_gives_the_share_of_vacancies_with_each_sign():
+    clip = video.signs_clip(week(), NOW)
+    assert clip.name == "2026-11-16-almaty-priznaki-summa"
+    intro = clip.slides[0]
+    # Первая строка — суть с цифрой, под ней — сколько вакансий посчитано
+    assert (intro.title, intro.big, intro.lines[0]) == ("Вакансии общепита в Алматы", "20% — без суммы", "10 из 50 за неделю")
+    assert [(s.title, s.big, s.lines) for s in clip.slides[1:3]] == [
+        ("Нет суммы", "20% вакансий", ["10 из 50 за неделю", "Спросите сумму до собеседования"]),
+        ("Только «до» или вилка вдвое", "12% вакансий", ["6 из 50 за неделю", "Спросите, сколько выходит обычно"])]
+    assert len(clip.slides) == 1 + 2 + 1 + 1  # обложка, два признака, что спросить, концовка
+    first = clip.caption.split("\n")[0]
+    assert first == "20% вакансий общепита в Алматы за неделю — без суммы: 10 из 50."
+    assert len(first) <= 125
+    assert "— Только «до» или вилка вдвое: 12% (6 из 50 за неделю)." in clip.caption
+    assert "https://t.me/vacantekz_bot?startapp=svid_c_almaty" in clip.caption
+    assert clip.caption.endswith("#работаалматы #вакансииалматы #общепит #поискработы")
+    assert 12 <= sum(s.seconds for s in clip.slides) <= 25
+    # Главный признак меняется по дням, он же в имени файла: просмотры можно записывать по признакам
+    other = video.signs_clip(week(), NOW + timedelta(days=1))
+    assert other.name == "2026-11-17-almaty-priznaki-vilka" and other.slides[0].big == "12% — «до» или вилка вдвое"
+    assert other.caption.startswith("12% вакансий общепита в Алматы за неделю — с суммой только «до» или вилкой вдвое: 6 из 50.")
+    assert [s.title for s in other.slides[1:3]] == ["Только «до» или вилка вдвое", "Нет суммы"]
+
+
+def test_signs_clip_names_no_venue_and_quotes_no_advert():
+    # Ролик про признаки, а не про работодателя: ни названий, ни телефонов, ни текста объявлений
+    items = week() + distinct(make(900 + i, f"Кафе «Мята {i}» ищет официанта. Стажировка 3 дня не оплачивается. "
+                                             f"Тел. +7 701 555 00 0{i}") for i in range(5))
+    clip = video.signs_clip(items, NOW)
+    said = " ".join(texts(clip))
+    assert not any(word in said for word in ("Зерно", "Сад", "Мята", "701", "Кафе", "3 дня"))
+    assert "Стажировка без оплаты" in said
+
+
+def test_signs_clip_needs_enough_vacancies_under_every_number():
+    assert video.signs_clip(week()[:39], NOW) is None  # меньше 40 вакансий за неделю: долей не называем
+    assert video.signs_clip(cooks(45), NOW) is None  # признаков нет: ролика нет
+    # Признак меньше чем у пяти вакансий в ролик не попадает, остальные остаются
+    few = video.signs_clip(week(no_pay=4), NOW)
+    assert few.name.endswith("-priznaki-vilka") and not any("Нет суммы" in text for text in texts(few))
+    assert [s.big for s in few.slides[:2]] == ["14% — «до» или вилка вдвое", "14% вакансий"] and few.slides[1].lines[0] == "6 из 44 за неделю"
+    # Старше недели не считаем
+    old = [replace(v, posted_at=(NOW - timedelta(days=8)).isoformat()) for v in week()]
+    assert video.signs_clip(old, NOW) is None
+
+
+def test_signs_clip_counts_a_repeated_advert_once_and_trusts_only_clear_cases():
+    base = week()
+    silent = base[-1]
+    # То же объявление в другом канале и повтор того же заведения с той же должностью: считаем один раз
+    again = [replace(silent, id="chan2-1"), replace(silent, id="chan-9001", fingerprint="другой текст")]
+    # Разбор не нашёл сумму, но она в тексте есть: «без суммы» не считаем
+    missed = replace(make(950, "Кафе «Лес» ищет повара, 300 000 тг"), salary_min=None, salary_max=None)
+    # Вилка у объявления с несколькими должностями — это разные должности, а не разброс
+    several = replace(make(951, "Кафе «Луг» ищет повара, 300 000 тг"), title="Повар, Мойщик", salary_min=150_000,
+                      salary_max=400_000)
+    # Опечатка в сумме не считается вилкой
+    typo = replace(make(952, "Кафе «Бор» ищет повара, 300 000 тг"), salary_min=30_000, salary_max=3_000_000)
+    clip = video.signs_clip(base + again + [missed, several, typo], NOW)
+    assert [s.lines[0] for s in clip.slides[1:3]] == ["10 из 53 за неделю", "6 из 53 за неделю"]
+
+
+def test_signs_from_the_text_are_counted_only_where_the_full_text_is_known():
+    # У вакансий с hh.kz в базе только отрывок текста: про стажировку и залог по нему судить нельзя
+    hh = [replace(v, source="hh") for v in cooks(30, start=100)]
+    unpaid = distinct(make(900 + i, f"Кафе «Мята {i}» ищет официанта, 300 000 тг. Стажировка 3 дня не оплачивается") for i in range(5))
+    paid = distinct(make(920 + i, f"Кафе «Роза {i}» ищет официанта, 300 000 тг. Оплачиваемая стажировка") for i in range(3))
+    deposit = distinct(make(940 + i, f"Кафе «Ива {i}» ищет официанта, 300 000 тг. Залог за форму 10 000 тг") for i in range(5))
+    clip = video.signs_clip(cooks(40) + hh + unpaid + paid + deposit, NOW)
+    got = {s.title: (s.big, s.lines[0]) for s in clip.slides[1:-2]}
+    assert got == {"Стажировка без оплаты": ("9% объявлений", "5 из 53 с полным текстом"),
+                   "Залог или удержание": ("9% объявлений", "5 из 53 с полным текстом")}
+    # Полных текстов меньше 40: по тексту не судим совсем
+    assert video.signs_clip(cooks(30) + hh + unpaid, NOW) is None
+
+
+def test_third_clip_goes_with_the_first_two_and_only_when_there_is_data():
+    waiters = [make(500 + i, f"Кафе «Луна {i}» ищет официанта, {250 + 10 * i} 000 тг") for i in range(9)]
+    items = week() + waiters
+    clips = video.plan(items, items, NOW)
+    assert [c.name.split("-")[4] for c in clips] == ["vakansii", "zarplata", "priznaki"]
+    assert all(len(c.caption.split("\n")[0]) <= 125 for c in clips)
+    # Вакансии другого города в долю не идут: данных на третий ролик нет, первые два выходят как раньше
+    astana = [replace(v, city="astana") for v in week()]
+    assert [c.name.split("-")[4] for c in video.plan(cooks(9) + waiters, cooks(9) + waiters + astana, NOW)] == [
+        "vakansii", "zarplata"]
+
+
+def test_signs_clip_stays_inside_the_safe_zone_and_is_not_cut():
+    unpaid = distinct(make(900 + i, f"Кафе «Мята {i}» ищет официанта, 300 000 тг. Стажировка без оплаты") for i in range(5))
+    deposit = distinct(make(940 + i, f"Кафе «Ива {i}» ищет официанта, 300 000 тг. Залог за форму 10 000 тг") for i in range(5))
+    for day in range(4):  # каждый из четырёх признаков по очереди главный
+        clip = video.signs_clip(week() + unpaid + deposit, NOW + timedelta(days=day))
+        assert len(clip.slides) == 1 + 4 + 1 + 1 and sum(s.seconds for s in clip.slides) <= 25
+        for slide in clip.slides:
+            # Ничего не обрезано многоточием и не выброшено: на кадре весь текст слайда
+            wanted = " ".join([slide.kicker, slide.title, slide.big, *slide.lines]).split()
+            assert " ".join(video.fitted(slide)).split() == wanted
+            frame = video.draw(slide)
+            background = frame.getpixel((5, 5))
+            for box in [(0, 0, video.W, video.SAFE_TOP), (0, video.SAFE_BOTTOM, video.W, video.H),
+                        (video.SAFE_RIGHT, 0, video.W, video.H)]:
+                assert frame.crop(box).getcolors() == [(((box[2] - box[0]) * (box[3] - box[1])), background)]

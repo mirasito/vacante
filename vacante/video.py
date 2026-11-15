@@ -1,8 +1,10 @@
 """Короткие вертикальные видео из собственных данных: для Reels, TikTok и Shorts.
 
-Два вида роликов по общепиту Алматы, каждый день по одному:
+Три вида роликов по общепиту Алматы, каждый день по одному:
 - «5 вакансий повара в Алматы»: свежие вакансии одной должности, по слайду на вакансию;
-- «Сколько платят официанту в Алматы»: зарплаты по своей базе за две недели.
+- «Сколько платят официанту в Алматы»: зарплаты по своей базе за две недели;
+- «17% вакансий — без суммы»: признаки, по которым объявление стоит перепроверить, и доля таких вакансий
+  за неделю. Про признаки, а не про работодателей: ни заведений, ни текста объявлений в ролике нет.
 
 Ролик — слайды 1080×1920 без звука, 15–20 секунд: кадры рисует Pillow, в mp4 их собирает ffmpeg.
 Публикацию в соцсети код не делает: готовые ролики с подписями приходят модераторам в Telegram
@@ -13,9 +15,10 @@
 from __future__ import annotations
 
 import logging
+import re
 import shutil
 import subprocess
-from collections.abc import Iterator
+from collections.abc import Callable, Iterable, Iterator
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -27,6 +30,7 @@ from PIL import Image, ImageDraw
 from vacante import autopost, launch
 from vacante.card import BRAND, BRAND_SOFT, _font, _wrap
 from vacante.models import Vacancy
+from vacante.quality import _has_money
 from vacante.site.build import PER_MONTH, _locative, money, salary_label
 
 log = logging.getLogger(__name__)
@@ -41,7 +45,14 @@ FRESH = timedelta(hours=72)  # вакансии для ролика-списка
 LIST_MAX, LIST_MIN = 5, 3
 STATS_MIN = 8  # меньше восьми вакансий с зарплатой: про зарплаты не говорим
 PAY_RANGE = (80_000, 1_500_000)  # в месяц; вне этого — опечатка или не зарплата
-SECONDS = {"intro": 2.6, "item": 2.8, "outro": 3.2}
+WEEK = timedelta(days=7)  # вакансии для ролика о признаках
+# Доля в целых процентах от меньшего числа вакансий скачет на 3 пункта и больше от одного объявления.
+# Общепита Алматы в базе за неделю обычно в разы больше, так что порог срабатывает только в провальную неделю
+SIGNS_BASE_MIN = 40
+# Признак меньше чем у пяти вакансий — случай, а не доля; и ролик не должен оказаться рассказом об одном объявлении
+SIGN_MIN = 5
+SNIPPET_SOURCES = ("hh",)  # в базе только отрывок текста: о том, чего в отрывке нет, по нему не судим
+SECONDS = {"intro": 2.6, "item": 2.8, "outro": 3.2, "sign": 3.0, "ask": 3.4}
 FADE = 0.35  # секунды перехода между слайдами
 INK, SOFT, ACCENT = "white", BRAND_SOFT, "#ffd43b"
 
@@ -195,9 +206,119 @@ def pay_clip(role: str, items: list[Vacancy], now: datetime) -> Clip | None:
     return Clip(f"{local.date().isoformat()}-{CITY}-zarplata-{ROLES[role][3]}-{variant}", slides, caption)
 
 
+# Ролик о признаках: на что смотреть в объявлении
+
+@dataclass(frozen=True)
+class Sign:
+    """Признак, по которому объявление стоит перепроверить до собеседования."""
+    slug: str  # в имени файла
+    title: str  # на слайде и в подписи
+    short: str  # на обложке после процента
+    tail: str  # в первой строке подписи после «N% вакансий … —»
+    ask: str  # что сделать соискателю
+    test: Callable[[Vacancy], bool]
+    full_text: bool = False  # признак ищем в тексте: считаем только там, где текст в базе целиком
+
+
+def _no_sum(v: Vacancy) -> bool:
+    # Сумма в тексте есть, а разбор её не взял — это наш недочёт, а не признак объявления
+    return not (v.salary_min or v.salary_max) and not _has_money(v.text)
+
+
+def _ceiling(v: Vacancy) -> bool:
+    """Названа только верхняя граница, или верх вилки вдвое выше низа. Границы одной вакансии — в одних
+    единицах, так что час, смена и месяц здесь не смешиваются; опечатки отсекает _monthly."""
+    pay = _monthly(v)
+    if not pay:
+        return False
+    # Вилка в объявлении с несколькими должностями — разные должности, а не разброс у одной
+    return not v.salary_min or (pay[1] >= 2 * pay[0] and ", " not in v.title)
+
+
+_UNPAID = re.compile(r"стажиров[^.,;\n]{0,40}(?:не\s?оплачива|без оплаты)|(?:неоплачиваем|бесплатн)\w*\s+стажиров")
+# «Залог успеха» и «без залога» сюда не попадают: только залог за что-то и удержание
+_DEPOSIT = re.compile(r"залог\w*\s+(?:за|в размере)|(?:внос|внес|удерж|оставл)\w*\s+(?:залог|депозит)|депозит\s+ретінде")
+
+SIGNS = [
+    Sign("summa", "Нет суммы", "без суммы", "без суммы", "Спросите сумму до собеседования", _no_sum),
+    Sign("vilka", "Только «до» или вилка вдвое", "«до» или вилка вдвое", "с суммой только «до» или вилкой вдвое",
+         "Спросите, сколько выходит обычно", _ceiling),
+    Sign("stazhirovka", "Стажировка без оплаты", "стажировка без оплаты", "со стажировкой без оплаты",
+         "Спросите, сколько дней она длится", lambda v: bool(_UNPAID.search(v.text.lower())), full_text=True),
+    Sign("zalog", "Залог или удержание", "с залогом", "с залогом или удержанием из оплаты",
+         "Спросите, за что и когда его вернут", lambda v: bool(_DEPOSIT.search(v.text.lower())), full_text=True),
+]
+
+
+def _unique(items: Iterable[Vacancy]) -> list[Vacancy]:
+    """Без повторов: одно объявление из разных каналов (тот же отпечаток) и одна должность одного заведения,
+    выложенная несколько раз, считаются один раз."""
+    seen: set[tuple] = set()
+    out = []
+    for v in items:
+        keys = {("text", v.fingerprint)}
+        if v.employer:
+            keys.add(("venue", v.employer.lower(), v.title.lower()))
+        if not keys & seen:
+            out.append(v)
+        seen |= keys
+    return out
+
+
+def signs_clip(items: list[Vacancy], now: datetime) -> Clip | None:
+    """«17% вакансий общепита — без суммы»: признаки, по которым объявление стоит перепроверить, и доля
+    вакансий недели с каждым из них.
+
+    Заведений не называем и объявлений не цитируем: разбор автоматический, и обвинять по нему конкретного
+    работодателя нельзя. В ролик идут только готовые формулировки из SIGNS и числа. Главный признак (обложка,
+    первая строка подписи, имя файла) меняется по дням."""
+    cutoff = (now - WEEK).isoformat()
+    week = _unique(v for v in sorted(items, key=lambda v: v.posted_at, reverse=True) if v.posted_at >= cutoff)
+    full = [v for v in week if v.source not in SNIPPET_SOURCES]
+    found: list[tuple[Sign, int, int]] = []  # признак, у скольких вакансий, из скольких
+    for sign in SIGNS:
+        base = full if sign.full_text else week
+        hits = sum(1 for v in base if sign.test(v))
+        if len(base) >= SIGNS_BASE_MIN and hits >= SIGN_MIN:
+            found.append((sign, hits, len(base)))
+    if not found:
+        return None
+    local = now.astimezone(autopost.LOCAL)
+    where = _locative(CITY)
+    turn = local.date().toordinal() % len(found)
+    found = found[turn:] + found[:turn]
+    pct = lambda hits, n: f"{max(1, round(100 * hits / n))}%"  # noqa: E731
+    counted = lambda sign, hits, n: f"{hits} из {n} " + ("с полным текстом" if sign.full_text else "за неделю")  # noqa: E731
+    lead, hits, n = found[0]
+    slides = [Slide(kicker="vacante.kz · объявления", title=f"Вакансии общепита в {where}",
+                    big=f"{pct(hits, n)} — {lead.short}", lines=[counted(lead, hits, n), "На что смотреть в объявлении"],
+                    seconds=SECONDS["intro"])]
+    rows = []
+    for i, (sign, k, of) in enumerate(found, 1):
+        what = "объявлений" if sign.full_text else "вакансий"
+        slides.append(Slide(kicker=f"Признак {i} из {len(found)}", title=sign.title, big=f"{pct(k, of)} {what}",
+                            lines=[counted(sign, k, of), sign.ask], seconds=SECONDS["sign"]))
+        rows.append(f"— {sign.title}: {pct(k, of)} ({counted(sign, k, of)}). {sign.ask}.")
+    slides.append(Slide(kicker="До первой смены", title="Спросите заранее",
+                        lines=["Сколько платят: за смену или в месяц", "Платят ли за стажировку",
+                               "Адрес и название заведения"], seconds=SECONDS["ask"]))
+    slides.append(_outro())
+    # Первая строка подписи — то, что лента показывает до «ещё» (около 125 знаков): доля и признак
+    first = f"{pct(hits, n)} вакансий общепита в {where} за неделю — {lead.tail}: {hits} из {n}."
+    caption = "\n".join([
+        first, "", "На что смотреть в объявлении:", *rows, "",
+        "До первой смены спросите, сколько платят и за что (смену или месяц), платят ли за стажировку, "
+        "адрес и название заведения. Просят залог за форму или обучение — повод насторожиться.", "",
+        "Посчитали по вакансиям общепита на vacante.kz за неделю, повтор объявления считали один раз. "
+        "Это повод задать вопрос до собеседования, а не обвинение: заведений не называем.", "",
+        f"Все вакансии и отклик в одно нажатие: {_link()}", "",
+        "#работаалматы #вакансииалматы #общепит #поискработы"])
+    return Clip(f"{local.date().isoformat()}-{CITY}-priznaki-{lead.slug}", slides, caption)
+
+
 def plan(reviewed: list[Vacancy], everything: list[Vacancy], now: datetime) -> list[Clip]:
     """Ролики на сегодня. reviewed — что можно показывать поимённо (проверено агентом или от работодателей),
-    everything — вся база для подсчёта зарплат. Должность меняется по дням, у двух роликов она разная."""
+    everything — вся база для подсчёта зарплат и долей. Должность меняется по дням, у двух роликов она разная."""
     day = now.astimezone(autopost.LOCAL).date().toordinal()
     cutoff = (now - FRESH).isoformat()
     ours = lambda v: v.city == CITY and v.category == SPHERE and not v.shift_date  # noqa: E731
@@ -220,19 +341,26 @@ def plan(reviewed: list[Vacancy], everything: list[Vacancy], now: datetime) -> l
     others = [r for r in payable if r != list_role] or payable
     if others and (clip := pay_clip(others[day % len(others)], stats[others[day % len(others)]], now)):
         clips.append(clip)
+    # Третий ролик — о признаках в объявлениях недели; мало данных — его нет, первые два выходят как раньше
+    if clip := signs_clip([v for v in everything if ours(v)], now):
+        clips.append(clip)
     return clips
 
 
 # Отрисовка
 
-def draw(slide: Slide) -> Image.Image:
-    img = Image.new("RGB", (W, H), BRAND)
-    d = ImageDraw.Draw(img)
+TOP = SAFE_TOP + 140  # верх текста: под строкой сверху
+GAP = 44  # между блоками текста
+
+
+def _kicker(d: ImageDraw.ImageDraw, slide: Slide) -> str:
+    return _wrap(d, slide.kicker, _font("SemiBold", 48), SAFE_RIGHT - PAD, 1)[0] if slide.kicker else ""
+
+
+def _blocks(d: ImageDraw.ImageDraw, slide: Slide) -> list[tuple[list[str], object, str, int]]:
+    """Текст слайда по блокам, как он встанет в кадр: строки, шрифт, цвет, высота строки."""
     width = SAFE_RIGHT - PAD
-    if slide.kicker:
-        d.text((PAD, SAFE_TOP + 40), _wrap(d, slide.kicker, _font("SemiBold", 48), width, 1)[0],
-               font=_font("SemiBold", 48), fill=SOFT)
-    blocks: list[tuple[list[str], object, str, int]] = []  # строки, шрифт, цвет, высота строки
+    blocks: list[tuple[list[str], object, str, int]] = []
     if slide.title:
         size = 112 if len(slide.title) <= 28 else 92
         blocks.append((_wrap(d, slide.title, _font("Bold", size), width, 4), _font("Bold", size), INK, int(size * 1.16)))
@@ -241,17 +369,33 @@ def draw(slide: Slide) -> Image.Image:
         blocks.append((_wrap(d, slide.big, _font("Bold", size), width, 2), _font("Bold", size), ACCENT, int(size * 1.2)))
     for line in slide.lines:
         blocks.append((_wrap(d, line, _font("SemiBold", 58), width, 2), _font("SemiBold", 58), SOFT, 76))
-    gap = 44
-    top = SAFE_TOP + 140  # под строкой сверху
-    height = lambda: sum(len(lines) * h for lines, _, _, h in blocks) + gap * (len(blocks) - 1)  # noqa: E731
-    while height() > SAFE_BOTTOM - top and len(blocks) > 1:
+    while _height(blocks) > SAFE_BOTTOM - TOP and len(blocks) > 1:
         blocks.pop()  # не помещается: нижние подписи не показываем
-    y = top + (SAFE_BOTTOM - top - height()) // 2
+    return blocks
+
+
+def _height(blocks: list[tuple[list[str], object, str, int]]) -> int:
+    return sum(len(lines) * h for lines, _, _, h in blocks) + GAP * (len(blocks) - 1)
+
+
+def fitted(slide: Slide) -> list[str]:
+    """Строки, которые попадут в кадр: по ним видно, что текст слайда не обрезан и не выброшен."""
+    d = ImageDraw.Draw(Image.new("RGB", (W, H)))
+    return [line for line in [_kicker(d, slide)] if line] + [line for lines, *_ in _blocks(d, slide) for line in lines]
+
+
+def draw(slide: Slide) -> Image.Image:
+    img = Image.new("RGB", (W, H), BRAND)
+    d = ImageDraw.Draw(img)
+    if slide.kicker:
+        d.text((PAD, SAFE_TOP + 40), _kicker(d, slide), font=_font("SemiBold", 48), fill=SOFT)
+    blocks = _blocks(d, slide)
+    y = TOP + (SAFE_BOTTOM - TOP - _height(blocks)) // 2
     for lines, font, color, h in blocks:
         for line in lines:
             d.text((PAD, y), line, font=font, fill=color)
             y += h
-        y += gap
+        y += GAP
     return img
 
 

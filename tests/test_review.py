@@ -17,13 +17,14 @@ def make(post_id: int, text: str, city: str = "almaty", hour: int = 5):
 
 def test_queue_takes_best_unreviewed_unposted_per_city():
     full = make(1, "Кафе «Зерно» ищет бариста, 2/2, 12 000 тг за смену, питание")
-    bare = make(2, "Требуется грузчик на склад")
+    bare = make(2, "Требуется грузчик на склад", city="astana")
+    loader = make(14, "Требуется грузчик на склад, 300 000 тг")  # канал Алматы — только общепит
     done = make(3, "Ресторан «Сад» ищет повара, 400 000 тг")
     posted = make(4, "Кафе «Луна» ищет официанта, 300 000 тг")
     astana = make(5, "Кафе «Луна» ищет официанта, 300 000 тг", city="astana")
-    queue = autopost.review_queue([full, bare, done, posted, astana], {"almaty": {"ids": [posted.id]}},
+    queue = autopost.review_queue([full, bare, loader, done, posted, astana], {"almaty": {"ids": [posted.id]}},
                                   {done.id: {"verdict": "approve"}}, NOON)
-    assert [v.id for v in queue] == [astana.id, full.id, bare.id]
+    assert [v.id for v in queue] == [astana.id, bare.id, full.id]
 
 
 def test_without_reviews_file_everything_goes_as_before(tmp_path):

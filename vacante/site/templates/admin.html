@@ -530,11 +530,21 @@ td.nowrap { white-space: nowrap; }
     $("#more").addEventListener("click", () => { shown += PAGE; drawPosts(false); });
     drawPosts(true);
 
-    // Автопостинг
+    // Автопостинг. Охват: сколько подписчиков и сколько просмотров набирает пост за сутки, по дням
+    const reach = (rows) => {
+      const last = rows[rows.length - 1];
+      if (!last) return "";
+      const seen = (r) => r.views == null ? "—" : `${num(r.views)}${r.share == null ? "" : ` (${String(r.share).replace(".", ",")}%)`}`;
+      const days = rows.slice(-14).reverse().map((r) =>
+        `<tr><td>${esc(r.on.slice(8))}.${esc(r.on.slice(5, 7))}</td><td class="n">${r.subscribers == null ? "—" : num(r.subscribers)}</td><td class="n">${seen(r)}</td><td class="n">${num(r.posts)}</td></tr>`).join("");
+      return `<p>Подписчиков: <b>${last.subscribers == null ? "—" : num(last.subscribers)}</b>, пост за сутки видят: <b>${seen(last)}</b></p>
+        <details><summary class="quiet">По дням</summary><table><thead><tr><th>День</th><th class="n">Подписчиков</th><th class="n">Видят пост</th><th class="n">Постов в замере</th></tr></thead><tbody>${days}</tbody></table></details>`;
+    };
     $("#autopost").innerHTML = data.autopost.map((a) => `
       <div class="card">
         <h3><a href="${esc(a.channel)}" target="_blank" rel="noopener">${esc(a.city)}</a></h3>
         <p class="quiet">Опубликовано: ${num(a.count)}${a.last_at ? `, последний пост ${when(a.last_at)}` : ""}</p>
+        ${reach(a.reach)}
         <ul class="list">${a.recent.map((r) => `<li><span>${r.live ? `<a href="${ROOT}/v/${esc(r.id)}/" target="_blank">${esc(r.title)}</a>` : esc(r.title)}</span></li>`).join("") || `<li class="quiet">Пока ничего</li>`}</ul>
       </div>`).join("");
 

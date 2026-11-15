@@ -4,9 +4,11 @@
 # на сайте появляется кнопка подписки, а агент-модератор начинает проверять вакансии города.
 # Если имя занято и канал создан под другим, поменяйте username здесь.
 # always: true — канал точно работает, без проверки.
+# only: horeca — канал одной сферы (vacante.parse.CATEGORIES): из очереди в него идут только её вакансии.
+# Вакансии от работодателей и оплаченные «Срочно» выходят в канал города в любой сфере.
 channels:
   astana: {username: vacanteastana, always: true}
-  almaty: {username: vacantealmaty, always: true}
+  almaty: {username: vacantealmaty, always: true, only: horeca}
   shymkent: {username: vacanteshymkent}
   karaganda: {username: vacantekaraganda}
   aktobe: {username: vacanteaktobe}

@@ -13,8 +13,11 @@ CONF = {"astana": {"chat": "@vacanteastana", "always": True},
 
 
 def test_config_lists_all_main_cities():
-    assert channels.ALL["astana"] == {"chat": "@vacanteastana", "always": True}
-    assert channels.ALL["shymkent"] == {"chat": "@vacanteshymkent", "always": False}
+    assert channels.ALL["astana"] == {"chat": "@vacanteastana", "always": True, "only": None}
+    # Канал Алматы — про работу в общепите, остальные обо всех вакансиях города
+    assert channels.sphere("almaty") == "horeca" and channels.sphere("astana") is None
+    assert [city for city, c in channels.ALL.items() if c["only"]] == ["almaty"]
+    assert channels.ALL["shymkent"] == {"chat": "@vacanteshymkent", "always": False, "only": None}
     assert len(channels.ALL) == 18
     assert set(channels.ALL) == set(CITIES)
 

@@ -1,9 +1,10 @@
 """Автопостинг свежих вакансий в свои Telegram-каналы vacante.
 
-Каждый час после сбора: если для канала подошло время, выбираем лучшую свежую вакансию
-его города и публикуем картинку-карточку (аватар заведения, должность, заведение, адрес, зарплата)
-с подписью и кнопками «Подробнее», «2ГИС» и Instagram заведения. Что уже опубликовано, хранится в posted.json рядом с вакансиями.
-Вакансии из чужих каналов перед постом проверяет и оформляет агент-модератор (vacante.review).
+В каждый канал в день выходит утренняя подборка и до семи лучших вакансий, по одной в слот (SLOTS):
+картинка-карточка (аватар заведения, должность, заведение, адрес, зарплата) с подписью и кнопками отклика,
+«Подробнее», «2ГИС» и Instagram заведения. Канал может быть посвящён одной сфере (config/own_channels.yaml,
+only): тогда из очереди в него идут только её вакансии. Что уже опубликовано, хранится в posted.json рядом
+с вакансиями. Вакансии из чужих каналов перед постом проверяет и оформляет агент-модератор (vacante.review).
 """
 
 from __future__ import annotations
@@ -11,6 +12,7 @@ from __future__ import annotations
 import html
 import json
 import logging
+from collections import Counter
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -18,9 +20,9 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, channels, direct, launch, promo, review, shifts, venues
+from vacante import card, channels, direct, launch, promo, reach, review, shifts, venues
 from vacante.models import Vacancy
-from vacante.site.build import city_heading, instagram_url, salary_label, twogis_url
+from vacante.site.build import city_heading, city_name, instagram_url, salary_label, twogis_url
 from vacante.store import load_vacancies
 
 log = logging.getLogger(__name__)
@@ -33,17 +35,25 @@ POST_HOURS = range(8, 22)  # публикуем с 8:00 до 21:59 по мест
 # но не ночью: с 22:00 до 8:00 ждут утра
 DIRECT_HOURS = range(8, 22)
 MAX_DIRECT = 3  # за один запуск в канал, остальные следующим часом
-# post.yml после каждого часового обновления публикует серию из 10 постов раз в 5,5 минуты, около 140 в день
-# на канал. Интервал меньше 5,5 минуты, чтобы серия не теряла пост из-за сдвига, и защищает от двойного
-# поста, если два запуска совпали.
-MIN_GAP = timedelta(minutes=4)
+# Часы по местному времени, с которых начинается слот поста из очереди: в слот выходит одна лучшая вакансия,
+# до семи в день. Слот длится до начала следующего; пропущенный (нечего публиковать, не было запуска) не
+# навёрстывается. post.yml запускает автопостинг каждые пять минут, поэтому пост выходит в начале слота.
+# Раньше пост выходил раз в 5,5 минуты, около 140 в день: такой канал не читают.
+SLOTS = (9, 10, 12, 14, 16, 18, 20)
+# Утренняя подборка: один пост со списком лучших вакансий дня. Если в 8 утра вакансий мало, ждём до 11
+DIGEST_HOURS = range(8, 11)
+DIGEST_MAX = 8
+DIGEST_MIN = 4  # меньше четырёх вакансий: подборку в этот день не публикуем
+DIGEST_SOURCE = "tgdg"  # метка источника в ссылках подборки: воронка отличает её от постов-карточек («tg»)
+SPHERE_WORK = {"horeca": "Работа в общепите"}  # заголовок подборки в канале одной сферы
+MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября",
+          "ноября", "декабря")
 FRESH = timedelta(hours=48)
 KEEP = 500  # сколько опубликованных id помнить на канал
-# Сколько ближайших кандидатов на пост в каждом городе агент проверяет за раз: каждый час с запасом
-# на серию из 10 постов и на отклонённые
+# Сколько ближайших кандидатов на пост в каждом городе агент проверяет за раз, с запасом на отклонённые
 REVIEW_PER_CITY = 16
-# Агенту даём новых кандидатов, только пока одобренных и ещё не вышедших меньше этого числа: иначе очередь
-# растёт быстрее, чем выходят посты, и раньше одобренные вакансии вытесняются свежими и не выходят никогда
+# Агенту даём новых кандидатов, только пока одобренных и ещё не вышедших меньше этого числа: в день выходит
+# до 15 вакансий (подборка и слоты), и из запаса в 20 одобренных есть из чего выбрать лучшие
 BACKLOG = 20
 # Одно заведение выходит в канал не чаще раза в трое суток: работодатели размещают одну и ту же вакансию
 # в нескольких каналах и с разными словами, а у WeFind на hh.kz десятки почти одинаковых вакансий грузчиков
@@ -78,15 +88,28 @@ def save_posted(data_dir: Path, posted: dict) -> None:
     (data_dir / "posted.json").write_text(json.dumps(posted, ensure_ascii=False, indent=1) + "\n", "utf-8")
 
 
-def is_due(last_at: str | None, now: datetime) -> bool:
-    if now.astimezone(LOCAL).hour not in POST_HOURS:
-        return False
-    return last_at is None or now - datetime.fromisoformat(last_at) >= MIN_GAP
+def slot(now: datetime) -> str | None:
+    """Слот поста из очереди, который идёт сейчас: «2026-11-16T09». None ночью и до первого слота дня."""
+    local = now.astimezone(LOCAL)
+    started = [h for h in SLOTS if h <= local.hour]
+    if local.hour not in POST_HOURS or not started:
+        return None
+    return f"{local.date().isoformat()}T{started[-1]:02d}"
+
+
+def fits(v: Vacancy, city: str) -> bool:
+    """Вакансия для канала этого города. В канал одной сферы из очереди идут только её вакансии;
+    вакансии от работодателей (и оплаченные «Срочно») выходят в канал своего города в любой сфере."""
+    only = channels.sphere(city)
+    return v.city == city and (only is None or v.category == only or v.source == direct.SOURCE)
 
 
 def _score(v: Vacancy, known: set[str]) -> float:
-    # Вакансии, размещённые работодателем через бота, идут в канал первыми; с аватаром заведения чуть выше
-    return (10 * (v.source == direct.SOURCE) + 3 * (v.salary_min is not None or v.salary_max is not None)
+    # Вакансии, размещённые работодателем через бота, идут в канал первыми. Дальше — с контактом WhatsApp или
+    # Telegram: только там отклик из приложения несёт ссылку на профиль (звонок её не передаёт, на hh.kz она
+    # лишь копируется); внутри каждой группы выше более полные. С аватаром заведения чуть выше
+    return (100 * (v.source == direct.SOURCE) + 10 * bool({"whatsapp", "telegram"} & set(v.contact))
+            + 3 * (v.salary_min is not None or v.salary_max is not None)
             + 2 * bool(v.employer) + (v.id in known) + bool(v.schedule) + 0.5 * min(len(v.perks), 2)
             + (v.category != "other"))
 
@@ -131,10 +154,10 @@ def _backfill(state: dict, vacancies: list[Vacancy], keys_of: dict[str, set[str]
     _remember(state, keys, at)
 
 
-def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
-         known: set[str] = frozenset(), keys_of: dict[str, set[str]] | None = None,
-         approved_at: dict[str, str] | None = None) -> Vacancy | None:
-    """Лучшая свежая неопубликованная вакансия города.
+def ranked(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
+           known: set[str] = frozenset(), keys_of: dict[str, set[str]] | None = None,
+           approved_at: dict[str, str] | None = None) -> list[Vacancy]:
+    """Свежие неопубликованные вакансии для канала города, лучшие первыми.
 
     Должности последних постов и заведения, вышедшие за последние трое суток, не повторяем. Из равных
     по полноте первой идёт та, что агент одобрил раньше, без проверки агента — самая свежая."""
@@ -146,7 +169,7 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
     cutoff = (now - FRESH).isoformat()
     candidates = [
         v for v in vacancies
-        if v.city == city and v.id not in seen and v.posted_at >= cutoff and v.title not in recent_titles
+        if fits(v, city) and v.id not in seen and v.posted_at >= cutoff and v.title not in recent_titles
         and filled(v)
         and not (keys_of.get(v.id) or dup_keys(v)) & recent
     ]
@@ -156,7 +179,55 @@ def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
         # Одобренные раньше выше; без одобрения (вакансии из бота, или агент ещё не включён) — свежие выше
         return (_score(v, known), at is None, -datetime.fromisoformat(at).timestamp() if at else v.posted_at)
 
-    return max(candidates, key=order, default=None)
+    return sorted(candidates, key=order, reverse=True)
+
+
+def pick(vacancies: list[Vacancy], city: str, state: dict, now: datetime,
+         known: set[str] = frozenset(), keys_of: dict[str, set[str]] | None = None,
+         approved_at: dict[str, str] | None = None) -> Vacancy | None:
+    """Лучшая свежая неопубликованная вакансия для канала города (см. ranked)."""
+    return next(iter(ranked(vacancies, city, state, now, known, keys_of, approved_at)), None)
+
+
+def digest_items(best: list[Vacancy], keys_of: dict[str, set[str]] | None = None) -> list[Vacancy]:
+    """Вакансии утренней подборки из списка ranked: разные заведения, одна должность не больше двух раз.
+    Вакансии от работодателей в подборку не берём: им обещан отдельный пост."""
+    keys_of = keys_of or {}
+    out, taken, titles = [], set(), Counter()
+    for v in best:
+        keys = keys_of.get(v.id) or dup_keys(v)
+        if v.source == direct.SOURCE or keys & taken or titles[v.title] >= 2:
+            continue
+        out.append(v)
+        taken |= keys
+        titles[v.title] += 1
+        if len(out) == DIGEST_MAX:
+            break
+    return out
+
+
+def digest_text(items: list[Vacancy], city: str, base_url: str, now: datetime) -> str:
+    """Утренняя подборка: должность ссылкой на эту вакансию в мини-приложении, заведение и зарплата."""
+    e = html.escape
+    local = now.astimezone(LOCAL)
+    only = channels.sphere(city)
+    where = city_heading(city, "ru").removeprefix("Работа ")  # «в Алматы»
+    lines = [f"☀️ <b>{SPHERE_WORK.get(only, 'Работа')} {e(where)}: {local.day} {MONTHS[local.month - 1]}</b>", ""]
+    for v in items:
+        param = launch.start_param(source=DIGEST_SOURCE, city=city, vacancy_id=v.id)
+        url = launch.app_link(param) if param else f"{base_url}/v/{v.id}/"
+        facts = [e(v.employer)] if v.employer else []
+        if pay := salary_label(v):
+            facts.append(e(pay))
+        lines.append(f'• <a href="{url}">{e(v.title)}</a>' + (f" · {' · '.join(facts)}" if facts else ""))
+    lines += ["", "Нажмите на должность: вакансия откроется в приложении, откликнуться можно сразу.",
+              "Перешлите другу, который ищет работу 🙌", "", f"#вакансии {HASHTAGS.get(only, '')}".strip()]
+    return "\n".join(lines)
+
+
+def digest_buttons(city: str) -> list[tuple[str, str]]:
+    param = launch.start_param(source=DIGEST_SOURCE, city=city)
+    return [(f"📱 Все вакансии · {city_name(city, 'ru')}", launch.app_link(param or city))]
 
 
 def top_key(v: Vacancy) -> str:
@@ -277,15 +348,15 @@ def review_queue(vacancies: list[Vacancy], posted: dict, reviews: dict, now: dat
                  known: set[str] = frozenset(), cities: Iterable[str] | None = None) -> list[Vacancy]:
     """Ближайшие кандидаты на пост в каждом городе, которые агент ещё не проверял, в порядке очереди.
 
-    Повторы уже вышедших или уже одобренных заведений агенту не показываем, и новых кандидатов не даём,
-    пока одобренных и ещё не вышедших хватает на пару часов постов."""
+    В канал одной сферы — только её вакансии. Повторы уже вышедших или уже одобренных заведений агенту
+    не показываем, и новых кандидатов не даём, пока одобренных и ещё не вышедших хватает на день постов."""
     cutoff = (now - FRESH).isoformat()
     out = []
     # По умолчанию — каналы, которые работают всегда (Астана и Алматы)
     for city in ([c for c, ch in channels.ALL.items() if ch["always"]] if cities is None else cities):
         state = posted.get(city, {})
         seen = set(state.get("ids", []))
-        fresh = [v for v in vacancies if v.city == city and v.source != direct.SOURCE and v.id not in seen
+        fresh = [v for v in vacancies if fits(v, city) and v.source != direct.SOURCE and v.id not in seen
                  and v.posted_at >= cutoff]
         taken = _recent(state, now)
         waiting = 0
@@ -363,9 +434,10 @@ def telegram_button_sender(client: httpx.Client, token: str) -> promo.ButtonSend
 
 def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None, pin: Pinner | None = None,
         live: dict[str, str] | None = None, send_text: TextSender | None = None,
-        send_promo: promo.ButtonSender | None = None) -> dict:
+        send_promo: promo.ButtonSender | None = None, meter: reach.Meter | None = None) -> dict:
     """live: работающие каналы, город → @username; по умолчанию из channels.json.
-    send_promo: пост о мини-приложении раз в день и закреп с ним (vacante.promo)."""
+    send_promo: утренняя подборка, пост о мини-приложении раз в день и закреп с ним (vacante.promo).
+    meter: раз в день записывает, сколько у канала подписчиков и сколько просмотров у поста (vacante.reach)."""
     now = now or datetime.now(timezone.utc)
     live = channels.live(data_dir) if live is None else live
     base_url = base_url.rstrip("/")
@@ -413,10 +485,28 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
         if send_promo and local_now.hour in POST_HOURS:
             promo.run_channel(chat, city, state, now, local_now,
                               promo.fresh_count(list(original.values()), city, now), send_promo, pin, stats)
-        if not is_due(state["last_at"], now):
+        if meter:
+            reach.record(state, chat, now, meter)
+        if send_promo and local_now.hour in DIGEST_HOURS and state.get("digest_on") != today:
+            items = digest_items(ranked(vacancies, city, state, now, known, keys_of, approved_at), keys_of)
+            if len(items) >= DIGEST_MIN:
+                state["digest_on"] = today  # и при ошибке: второй раз за утро не пробуем
+                try:
+                    send_promo(chat, digest_text(items, city, base_url, now), digest_buttons(city))
+                except (httpx.HTTPError, RuntimeError) as exc:
+                    log.warning("подборка в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+                else:
+                    stats["digest"] = stats.get("digest", 0) + 1
+                    # Вакансии подборки вышли в канал: отдельным постом их не повторяем
+                    state["ids"] = (state["ids"] + [v.id for v in items])[-KEEP:]
+                    state["titles"] = (state["titles"] + [v.title for v in items])[-KEEP:]
+                    _remember(state, set().union(*(keys_of[v.id] for v in items)), now)
+        current = slot(now)
+        if current is None or state.get("slot") == current:
             continue
         v = pick(vacancies, city, state, now, known, keys_of, approved_at)
         if v is not None and _publish(chat, v, base_url, send, state, stats, data_dir, venue_of.get(v.id))[0]:
+            state["slot"] = current
             state["last_at"] = now.isoformat()
             _remember(state, keys_of[v.id], now)
     save_posted(data_dir, posted)

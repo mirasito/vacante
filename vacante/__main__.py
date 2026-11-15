@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, channels, collect, digest, direct, geocode, instagram, quality, review, venues
+from vacante import autopost, channels, collect, digest, direct, geocode, instagram, quality, reach, review, venues
 from vacante.site import build
 from vacante.store import load_vacancies
 
@@ -112,7 +112,8 @@ def main() -> None:
             stats = autopost.run(args.data_dir, args.base_url, autopost.telegram_sender(client, token),
                                  pin=autopost.telegram_pinner(client, token), live=live,
                                  send_text=autopost.telegram_text_sender(client, token),
-                                 send_promo=autopost.telegram_button_sender(client, token))
+                                 send_promo=autopost.telegram_button_sender(client, token),
+                                 meter=reach.telegram_meter(client, token))
         logging.info("автопостинг: %s", stats)
     elif args.command == "announce":
         from vacante import announce

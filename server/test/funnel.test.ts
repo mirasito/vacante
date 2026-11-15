@@ -116,11 +116,11 @@ test("отклик запоминает, ушёл ли он со ссылкой 
   const withLink = (id: number) => (t.s.db.prepare("SELECT with_link FROM applications WHERE id = ?").get(id) as { with_link: number }).with_link;
   const a = (await t.s.call("POST", "/me/applications", { headers: t.auth(), body: { vacancy: vacancy("a-1") } })).json.application.id;
   const b = (await t.s.call("POST", "/me/applications", { headers: t.auth(), body: { vacancy: vacancy("a-2") } })).json.application.id;
-  assert.equal((await t.s.call("PATCH", `/me/applications/${a}`, { headers: t.auth(), body: { stage: "sent", link: true } })).status, 200);
+  assert.equal((await t.s.call("PATCH", `/me/applications/${a}`, { headers: t.auth(), body: { stage: "sent", with_link: true } })).status, 200);
   assert.equal((await t.s.call("PATCH", `/me/applications/${b}`, { headers: t.auth(), body: { stage: "sent" } })).status, 200);
   assert.equal(withLink(a), 1);
   assert.equal(withLink(b), 0);
-  assert.equal((await t.s.call("PATCH", `/me/applications/${b}`, { headers: t.auth(), body: { link: "yes" } })).status, 400);
+  assert.equal((await t.s.call("PATCH", `/me/applications/${b}`, { headers: t.auth(), body: { with_link: "yes" } })).status, 400);
   await t.s.close();
 });
 
@@ -142,7 +142,7 @@ test("воронка: шаги по источникам, «дошёл» оди�
   await t.profile({ source: "tg" });
   const apply = async (id: string, link: boolean) => {
     const app = (await t.s.call("POST", "/me/applications", { headers: t.auth(), body: { vacancy: vacancy(id) } })).json.application;
-    await t.s.call("PATCH", `/me/applications/${app.id}`, { headers: t.auth(), body: { stage: "sent", method: "whatsapp", link } });
+    await t.s.call("PATCH", `/me/applications/${app.id}`, { headers: t.auth(), body: { stage: "sent", method: "whatsapp", with_link: link } });
     return app.link.code as string;
   };
   const code = await apply("a-1", true);

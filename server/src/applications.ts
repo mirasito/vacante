@@ -158,9 +158,9 @@ export function parsePatch(body: unknown, now: number): Patch {
     patch.start_at = b.start_at as string | null;
   }
   if (b.note !== undefined) patch.note = clean(b.note, "note", 500);
-  if (b.link !== undefined) {
-    if (typeof b.link !== "boolean") throw bad("Поле link: да или нет");
-    patch.link = b.link;
+  if (b.with_link !== undefined) {
+    if (typeof b.with_link !== "boolean") throw bad("Поле with_link: да или нет");
+    patch.link = b.with_link;
   }
   return patch;
 }

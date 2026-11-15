@@ -462,6 +462,8 @@ function Card(props: {
   };
 
   const onTip = async (tip: Tip) => {
+    // Короткая анкета: дополнить опыт, график и выход в полной анкете
+    if (tip === 'details') return onEdit();
     if (tip === 'video') return rec.start();
     // Окно выбора фото открывается только прямо из нажатия, поэтому до любых await
     if (tip === 'photo') return photo.upload();
@@ -491,10 +493,12 @@ function Card(props: {
             </Text>
           ))}
         </View>
-        <Fact c={c} k={t.experience} v={label(EXPERIENCE, p.experience, lang)} />
-        <Fact c={c} k={t.employment} v={p.employment.map((e) => label(EMPLOYMENT, e, lang)).join(', ')} />
+        {p.experience ? <Fact c={c} k={t.experience} v={label(EXPERIENCE, p.experience, lang)} /> : null}
+        {p.employment.length ? (
+          <Fact c={c} k={t.employment} v={p.employment.map((e) => label(EMPLOYMENT, e, lang)).join(', ')} />
+        ) : null}
         {pay ? <Fact c={c} k={t.pay} v={pay} /> : null}
-        <Fact c={c} k={t.start} v={label(START, p.start, lang)} />
+        {p.start ? <Fact c={c} k={t.start} v={label(START, p.start, lang)} /> : null}
         {p.languages.length ? (
           <Fact c={c} k={t.languages} v={p.languages.map((l) => LANGUAGES.find((x) => x.value === l)?.label).join(', ')} />
         ) : null}

@@ -26,7 +26,7 @@ export type Employment = 'full' | 'shifts' | 'night' | 'flexible' | 'part' | 'we
 export type Start = 'today' | 'week' | '2weeks' | 'later';
 export type PayPeriod = 'month' | 'shift';
 export type Language = 'kk' | 'ru' | 'en';
-export type Tip = 'video' | 'photo' | 'phone' | 'about' | 'docs';
+export type Tip = 'details' | 'video' | 'photo' | 'phone' | 'about' | 'docs';
 
 /** Где живёт человек: точка, округлённая сервером до 300–500 метров. Работодатель её не видит. */
 export interface Home {
@@ -42,11 +42,12 @@ export interface Profile {
   district: string | null;
   home: Home | null;
   roles: string[];
-  experience: Experience;
+  /** null — ещё не указан: короткая анкета спрашивает только имя и профессии. */
+  experience: Experience | null;
   employment: Employment[];
   pay_from: number | null;
   pay_period: PayPeriod | null;
-  start: Start;
+  start: Start | null;
   phone: string | null;
   languages: Language[];
   about: string | null;
@@ -138,11 +139,32 @@ export async function getProfile(): Promise<ProfileView | null> {
 
 export const CONSENT_VERSION = '2026-11-04.2';
 
-export const saveProfile = (profile: Profile, lang: 'ru' | 'kk', consent?: { adult: boolean; base: boolean }) =>
+/** source — метка источника из ссылки запуска: сервер запоминает её вместе с первой анкетой. */
+export const saveProfile = (
+  profile: Profile,
+  lang: 'ru' | 'kk',
+  consent?: { adult: boolean; base: boolean },
+  source?: string,
+) =>
   api<ProfileView>('/me/profile', {
     method: 'PUT',
-    body: { profile, lang, ...(consent ? { consent: { version: CONSENT_VERSION, ...consent } } : {}) },
+    body: {
+      profile,
+      lang,
+      ...(consent ? { consent: { version: CONSENT_VERSION, ...consent } } : {}),
+      ...(source ? { source } : {}),
+    },
   });
+
+/**
+ * Шаг воронки: открыл приложение или начал анкету, с меткой источника из ссылки запуска.
+ * Сервер считает шаги обезличенно. Ошибки не важны: приложение работает и без этого.
+ */
+export const sendEvent = (step: 'open' | 'profile_start', source?: string): Promise<void> =>
+  api<unknown>('/me/events', { method: 'POST', body: { step, ...(source ? { source } : {}) } }).then(
+    () => undefined,
+    () => undefined,
+  );
 
 export const patchMe = (patch: { lang?: 'ru' | 'kk'; base?: boolean; write_access?: boolean; preview?: boolean }) =>
   api<ProfileView>('/me', { method: 'PATCH', body: patch });
@@ -299,7 +321,10 @@ export interface Message {
   link_text: string;
 }
 
-export type ApplicationPatch = Partial<Pick<Application, 'stage' | 'method' | 'interview_at' | 'start_at' | 'note'>>;
+export type ApplicationPatch = Partial<Pick<Application, 'stage' | 'method' | 'interview_at' | 'start_at' | 'note'>> & {
+  /** Отклик ушёл со ссылкой на профиль: галочка в окне отклика. */
+  with_link?: boolean;
+};
 
 /** Лайк или отклик, сделанный на телефоне до профиля. */
 export interface ImportItem extends ApplicationPatch {

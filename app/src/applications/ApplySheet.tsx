@@ -47,7 +47,8 @@ export function ApplySheet(props: {
   name: string;
   onStarted(app: Application): void;
   /** «Да, отправлено». app — отклик на сервере, null — отклик только на телефоне. */
-  onSent(method: Method, app: Application | null): Promise<void>;
+  /** link — текст ушёл со ссылкой на профиль. */
+  onSent(method: Method, app: Application | null, link: boolean): Promise<void>;
   onClose(): void;
   onMakeProfile(): void;
   onOpenTracker(): void;
@@ -167,7 +168,7 @@ export function ApplySheet(props: {
     setSaving(true);
     setNotice('');
     try {
-      await props.onSent(method, app);
+      await props.onSent(method, app, withLink && !!message);
       setStep('done');
     } catch {
       setNotice(t.saveError);

@@ -29,8 +29,11 @@ import {
   launchChat,
   launchCity,
   launchRef,
+  launchSource,
   launchTab,
+  launchVacancy,
   loadWebFont,
+  notify,
   onAppVisible,
   phoneLocation,
   openUrl,
@@ -41,7 +44,9 @@ import {
   type HomeScreen,
 } from './src/platform';
 import { Onboarding } from './src/Onboarding';
+import { findLaunched } from './src/openFromLink';
 import { ProfileTab } from './src/profile/ProfileTab';
+import { Wizard } from './src/profile/Wizard';
 import { almaty, P } from './src/profile/texts';
 import { RemindersTab, type Write } from './src/reminders/RemindersTab';
 import { R } from './src/reminders/texts';
@@ -59,6 +64,7 @@ import {
   seenAchievements,
   setBeta,
   useReferral,
+  sendEvent,
   whoAmI,
   type Account,
   type Application,
@@ -99,6 +105,8 @@ type Prefs = {
   filter?: Filter;
   /** Код друга из ссылки ?startapp=ref_…: уходит на сервер, когда появится профиль. */
   ref?: string;
+  /** Откуда человек пришёл в первый раз: метка источника из ссылки запуска (канал, реклама, видео). */
+  source?: string;
 };
 type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'chats' | 'profile';
 type Seen = Record<string, 'l' | 'r'>;
@@ -177,8 +185,16 @@ function Main() {
   const seenCity = useRef<string | null>(null);
   // Шаг назад внутри вкладки «Профиль» (анкета); null — назад некуда, уходим в ленту
   const profileBack = useRef<(() => boolean) | null>(null);
+  // Вакансия из ссылки запуска: открываем один раз, когда загрузится лента города
+  const launchedVacancy = useRef(launchVacancy());
+  const langRef = useRef<Lang>('ru');
+  // Короткая анкета перед первым откликом: кому откликаемся после неё. quickSkipped — человек отказался
+  const [quickFor, setQuickFor] = useState<{ copy: VacancyCopy; full?: Vacancy } | null>(null);
+  const quickSkipped = useRef(false);
+  const quickBack = useRef<(() => boolean) | null>(null);
 
   const lang: Lang = prefs.lang ?? 'ru';
+  langRef.current = lang;
   const city = prefs.city;
   const t = (key: i18n.Key) => i18n.t(lang, key);
 
@@ -197,6 +213,8 @@ function Main() {
       const linkCity = launchTab() === 'profile' && stored.city ? undefined : launchCity();
       const beta = stored.beta || launchBeta();
       const ref = launchRef();
+      // Первая метка источника остаётся: по ней воронка в админке видит, откуда пришёл человек
+      const source = stored.source ?? launchSource();
       setBeta(beta);
       setPrefs({
         ...stored,
@@ -204,6 +222,9 @@ function Main() {
         ...(linkCity ? { city: linkCity } : {}),
         ...(beta ? { beta: true } : {}),
         ...(ref && !stored.ref ? { ref } : {}),
+        ...(source ? { source } : {}),
+        // Пришёл по кнопке «Откликнуться» под постом: сразу к вакансии, без стартовых вопросов
+        ...(launchVacancy() ? { onboarded: true } : {}),
       });
       setLiked(storedLiked);
       setGoalHistory(storedGoal);
@@ -211,7 +232,10 @@ function Main() {
       if (app) {
         homeScreenStatus().then(setHome);
         // Вход на сервер Vacante: пока сервера нет, просто ничего не показываем
-        whoAmI().then(setAccount);
+        whoAmI().then((who) => {
+          setAccount(who);
+          if (who) void sendEvent('open', source);
+        });
       }
     })();
   }, []);
@@ -254,6 +278,11 @@ function Main() {
         setSeen(kept);
         setHistory([]);
         setFeed(items);
+        // Ссылка под постом в канале: открываем эту вакансию; если её уже сняли, остаётся лента города
+        const launched = findLaunched(items, launchedVacancy.current);
+        launchedVacancy.current = undefined;
+        if (launched.vacancy) setOpen(launched.vacancy);
+        else if (launched.closed) notify(i18n.t(langRef.current, 'vacancyClosed'));
       },
       (err) => {
         console.warn(`Вакансии города ${city} не загрузились`, err);
@@ -307,7 +336,7 @@ function Main() {
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
   useBackButton(
-    !!applying || !!open || filtersOpen || settingsOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
+    !!quickFor || !!applying || !!open || filtersOpen || settingsOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
     () => {
     if (reportFor) setReportFor(null);
     else if (inviteOpen) setInviteOpen(false);
@@ -316,6 +345,7 @@ function Main() {
     else if (tab === 'chats' && chat) setChat(null);
     else if (filtersOpen) setFiltersOpen(false);
     else if (settingsOpen) setSettingsOpen(false);
+    else if (quickFor) quickBack.current?.();
     else if (applying) setApplying(null);
     else if (open) setOpen(null);
     else if (picking && city) setPicking(false);
@@ -517,11 +547,11 @@ function Main() {
     });
   };
 
-  const onSent = async (method: Method, app: Application | null) => {
+  const onSent = async (method: Method, app: Application | null, link: boolean) => {
     if (!applying) return;
     if (tracker === 'server' && app) {
       // «Написать ещё раз» не отматывает стадию назад
-      const patch: ApplicationPatch = app.stage === 'liked' ? { stage: 'sent', method } : { method };
+      const patch: ApplicationPatch = app.stage === 'liked' ? { stage: 'sent', method, with_link: link } : { method, with_link: link };
       const r = await patchApplication(app.id, patch);
       putApp(r.application, r.summary);
       return;
@@ -556,8 +586,16 @@ function Main() {
   };
 
   // Смена на день: «Беру смену» сразу в боте, там номер, подтверждение работодателя и напоминание
+  /**
+   * Отклик на вакансию. У кого профиля ещё нет, сначала короткая анкета (согласие, имя, профессии),
+   * и сразу после неё — окно отклика на эту же вакансию. Отказался от анкеты — отклик коротким текстом.
+   */
+  const beginApply = (target: { copy: VacancyCopy; full?: Vacancy }) => {
+    if (showProfile && !account?.profile && !quickSkipped.current) setQuickFor(target);
+    else setApplying(target);
+  };
   const startApply = (v: Vacancy) =>
-    v.shift === 'slot' && v.source_url ? openUrl(v.source_url) : city && setApplying({ copy: copyOf(v, city), full: v });
+    v.shift === 'slot' && v.source_url ? openUrl(v.source_url) : city && beginApply({ copy: copyOf(v, city), full: v });
 
   /** Готовый текст работодателю из напоминания или «Написать ещё раз» в отклике. */
   const presetFor = (kind: Write, title: string, interviewAt?: string | null): Preset => {
@@ -722,10 +760,10 @@ function Main() {
             ),
           );
         }
-        setApplying({ copy: copyOf(v, city), full: v });
+        beginApply({ copy: copyOf(v, city), full: v });
       }
     },
-    [city, tracker],
+    [city, tracker, showProfile, account?.profile],
   );
 
   const undo = () => {
@@ -1139,6 +1177,36 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
+      <Modal visible={!!quickFor} animationType="slide" onRequestClose={() => void quickBack.current?.()}>
+        <ModalArea>
+          {quickFor && account ? (
+            <Wizard
+              c={c}
+              lang={lang}
+              index={index}
+              name={account.first_name}
+              city={city}
+              existing={null}
+              seed={prefs.want}
+              quick
+              source={prefs.source}
+              backRef={quickBack}
+              onCancel={() => {
+                // Без анкеты отклик тоже возможен: коротким текстом без ссылки, как раньше
+                quickSkipped.current = true;
+                setApplying(quickFor);
+                setQuickFor(null);
+              }}
+              onDone={() => {
+                setAccount((a) => (a ? { ...a, profile: true } : a));
+                setApplying(quickFor);
+                setQuickFor(null);
+              }}
+            />
+          ) : null}
+        </ModalArea>
+      </Modal>
+
       <Modal visible={!!applying} animationType="slide" onRequestClose={() => setApplying(null)} transparent>
         <ModalArea>
           {applying ? (

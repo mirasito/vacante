@@ -370,6 +370,14 @@ export function requestWriteAccess(): Promise<boolean> {
   return new Promise((resolve) => app.requestWriteAccess!((allowed) => resolve(!!allowed)));
 }
 
+/** Короткое сообщение окном Telegram, браузера или телефона. */
+export function notify(message: string) {
+  const app = telegram() as (WebApp & { showAlert?(message: string): void }) | undefined;
+  if (app?.showAlert && supports(app, '6.2')) app.showAlert(message);
+  else if (isWeb) window.alert(message);
+  else Alert.alert('', message);
+}
+
 /** Вопрос «Да / Нет» окном Telegram, браузера или телефона. */
 export function confirm(message: string, yes: string, no: string): Promise<boolean> {
   const app = telegram();

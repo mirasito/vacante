@@ -197,7 +197,8 @@ export function localSummary(items: Application[], history: GoalHistory = [], no
 /** Как отклик меняется от правки, так же как на сервере: дата собеседования ставит «Собеседование». */
 export function applyPatch<T extends { stage?: Stage; sent_at?: string | null; interview_at?: string | null }>(
   item: T,
-  patch: Partial<Application>,
+  // with_link — «ушёл со ссылкой на профиль»: нужен серверу для воронки
+  patch: Partial<Application> & { with_link?: boolean },
   now = new Date().toISOString(),
 ): T {
   const stageNow = item.stage ?? 'liked';

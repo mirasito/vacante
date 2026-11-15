@@ -11,7 +11,9 @@
 // - сами работодатели в боте: /company (server/src/crm-bot.ts).
 //
 // Ручные правки лежат в edits отдельно от того, что приносит сбор, поэтому импорт их не перезаписывает.
-// Контактов людей здесь нет, кроме тех, кто сам пишет в бот как работодатель (members).
+// Контакты работодателя из его вакансий (номер для звонка и WhatsApp, имя в Telegram) лежат в vacancy_contacts
+// как есть, самими номерами: их собирает go.ts из открытых постов. Карточка заведения показывает их списком.
+// Других контактов людей здесь нет, кроме тех, кто сам пишет в бот как работодатель (members).
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { timingSafeEqual } from "node:crypto";
@@ -170,6 +172,40 @@ export function venueView(row: Record<string, unknown>) {
     added_by: row.added_by as string, review: (row.review as string) ?? "", edited: Object.keys(e),
     first_seen: row.first_seen, last_seen: row.last_seen,
   };
+}
+
+export interface VenueContact {
+  kind: "whatsapp" | "phone" | "telegram";
+  /** Сам контакт, как он сохранён: +77011234567 или имя в Telegram без @. */
+  value: string;
+  /** Из какой вакансии взят и когда его видели в последний раз. */
+  vacancy_id: string;
+  title: string;
+  seen_at: string;
+}
+
+/** Контакты заведения из всех его вакансий, нынешних и снятых: каждый номер и имя один раз, свежие первыми. */
+export function venueContacts(db: Db, venueId: number): VenueContact[] {
+  const rows = db
+    .prepare(
+      `SELECT c.whatsapp, c.phone, c.telegram, c.checked_at, v.id, v.title
+       FROM vacancy_contacts c JOIN employer_vacancies v ON v.id = c.vacancy_id
+       WHERE v.venue_id = ? AND c.found = 1 ORDER BY c.checked_at DESC, v.id`,
+    )
+    .all(venueId) as { whatsapp: string | null; phone: string | null; telegram: string | null; checked_at: string; id: string; title: string }[];
+  const out: VenueContact[] = [];
+  const seen = new Set<string>();
+  for (const r of rows) {
+    for (const kind of ["whatsapp", "phone", "telegram"] as const) {
+      const value = r[kind];
+      // Один номер часто и для WhatsApp, и для звонка: показываем его один раз, как WhatsApp
+      const key = kind === "telegram" ? `tg:${value?.toLowerCase()}` : `n:${value}`;
+      if (!value || seen.has(key)) continue;
+      seen.add(key);
+      out.push({ kind, value, vacancy_id: r.id, title: r.title, seen_at: r.checked_at });
+    }
+  }
+  return out;
 }
 
 export const getEmployer = (db: Db, id: number) =>
@@ -332,6 +368,8 @@ export function crmRoutes(ctx: Ctx): Route[] {
          WHERE y.employer_id = e.id AND x.active = 1) AS sources,
        (SELECT group_concat(DISTINCT x.category) FROM employer_vacancies x JOIN venues y ON y.id = x.venue_id
          WHERE y.employer_id = e.id) AS categories,
+       (SELECT count(*) FROM vacancy_contacts c JOIN employer_vacancies x ON x.id = c.vacancy_id
+         JOIN venues y ON y.id = x.venue_id WHERE y.employer_id = e.id AND y.removed = 0 AND c.found = 1) AS contacts,
        (SELECT count(*) FROM members m WHERE m.employer_id = e.id AND m.confirmed_at IS NOT NULL) AS members,
        (SELECT count(*) FROM members m WHERE m.employer_id = e.id AND m.confirmed_at IS NULL AND m.rejected_at IS NULL) AS claims,
        (SELECT coalesce(sum(p.amount), 0) FROM payments p WHERE p.employer_id = e.id AND p.status = 'confirmed') AS paid
@@ -359,6 +397,7 @@ export function crmRoutes(ctx: Ctx): Route[] {
       employer: employerView(row),
       venues: venues.map((v) => ({
         ...venueView(v),
+        contacts: venueContacts(db, v.id as number),
         vacancies: active.all(v.id as number),
         archive: archive.all(v.id as number),
         archived: (archived.get(v.id as number) as { n: number }).n,
@@ -539,6 +578,7 @@ export function crmRoutes(ctx: Ctx): Route[] {
           website: e.website ?? r.v_website ?? e.hh?.site ?? null,
           avatar: r.avatar ?? null, logo: e.hh?.logo ?? null,
           active: r.active, total: r.total, last_posted: r.last_posted,
+          contacts: r.contacts, // у скольких вакансий работодателя сохранён контакт из поста
           members: r.members, claims: r.claims, pending_venues: r.pending_venues ?? 0, paid: r.paid,
         };
       });

@@ -69,6 +69,26 @@ test("CRM: снимок с GitHub раскладывается по работо
     assert.deepEqual((almaty.vacancies as { id: string }[]).map((v) => v.id), ["hh-1"]);
     assert.deepEqual((almaty.archive as { id: string }[]).map((v) => v.id), ["tg-2"]);
     assert.equal(almaty.archived, 1);
+    assert.deepEqual(almaty.contacts, []);
+    assert.equal(row.contacts, 0);
+
+    // Контакты из постов вакансий (их сохраняет go.ts) видны в карточке заведения самими номерами,
+    // и от снятой вакансии тоже. Один номер для WhatsApp и звонка показан один раз
+    const save = s.db.prepare(
+      "INSERT INTO vacancy_contacts (vacancy_id, whatsapp, phone, telegram, found, checked_at) VALUES (?, ?, ?, ?, ?, ?)",
+    );
+    save.run("tg-2", "+77011234567", "+77011234567", "zerno_hr", 1, "2026-11-06T10:30:00Z");
+    save.run("hh-1", null, "+77272500000", "Zerno_HR", 1, "2026-11-06T11:30:00Z");
+    save.run("bot-3", null, null, null, 0, "2026-11-06T11:30:00Z");
+    const again = await s.call("GET", `/admin/crm/${row.id}`, { headers: admin });
+    const venue = (again.json as { venues: Record<string, unknown>[] }).venues.find((v) => v.city === "almaty")!;
+    assert.deepEqual(venue.contacts, [
+      { kind: "phone", value: "+77272500000", vacancy_id: "hh-1", title: "Бариста", seen_at: "2026-11-06T11:30:00Z" },
+      { kind: "telegram", value: "Zerno_HR", vacancy_id: "hh-1", title: "Бариста", seen_at: "2026-11-06T11:30:00Z" },
+      { kind: "whatsapp", value: "+77011234567", vacancy_id: "tg-2", title: "Бариста", seen_at: "2026-11-06T10:30:00Z" },
+    ]);
+    const listed = await s.call("GET", "/admin/crm", { headers: admin });
+    assert.equal((listed.json as { employers: Record<string, unknown>[] }).employers[0]!.contacts, 2);
   } finally {
     await s.close();
   }

@@ -30,16 +30,21 @@ Checker = Callable[[str], "bool | None"]
 
 
 def load(config: Path = CONFIG) -> dict[str, dict]:
-    """Город → {"chat": "@username", "always": bool}."""
+    """Город → {"chat": "@username", "always": bool, "only": сфера канала или None}."""
     if not config.exists():  # запуск не из корня репозитория
-        return {"astana": {"chat": "@vacanteastana", "always": True},
-                "almaty": {"chat": "@vacantealmaty", "always": True}}
+        return {"astana": {"chat": "@vacanteastana", "always": True, "only": None},
+                "almaty": {"chat": "@vacantealmaty", "always": True, "only": "horeca"}}
     raw = yaml.safe_load(config.read_text("utf-8"))["channels"]
-    return {city: {"chat": "@" + c["username"].lstrip("@"), "always": bool(c.get("always"))}
+    return {city: {"chat": "@" + c["username"].lstrip("@"), "always": bool(c.get("always")), "only": c.get("only")}
             for city, c in raw.items()}
 
 
 ALL = load()
+
+
+def sphere(city: str, channels: dict[str, dict] | None = None) -> str | None:
+    """Сфера, которой посвящён канал города («horeca» у Алматы), или None, если канал обо всех вакансиях."""
+    return ((ALL if channels is None else channels).get(city) or {}).get("only")
 
 
 def _read(data_dir: Path) -> dict:

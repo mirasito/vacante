@@ -32,6 +32,7 @@ BOT_URL = os.environ.get("BOT_URL") or "https://vacante-bot.vacante-kz.workers.d
 SERVER_URL = os.environ.get("SERVER_URL") or "https://api.vacante.kz"
 SILENT_DAYS = 3  # канал без новых постов дольше этого считаем замолчавшим
 RECENT_POSTED = 15
+REACH_DAYS = 30  # сколько дней замеров охвата канала показывать
 
 
 def _read(path: Path) -> dict | None:
@@ -122,7 +123,9 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
     for city, url in channels.items():
         state = posted.get(city, {"ids": [], "titles": [], "last_at": None})
         recent = list(zip(state["ids"], state["titles"]))[-RECENT_POSTED:][::-1]
+        # reach: замеры охвата по дням — подписчики и просмотры поста за сутки (vacante.reach)
         autopost.append({"city": _city(city), "channel": url, "count": len(state["ids"]), "last_at": state["last_at"],
+                         "reach": state.get("reach", [])[-REACH_DAYS:],
                          "recent": [{"id": i, "title": t, "live": i in live} for i, t in recent]})
 
     bot = _read(data_dir / "bot.json")

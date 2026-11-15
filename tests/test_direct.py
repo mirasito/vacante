@@ -107,7 +107,7 @@ def test_bot_job_goes_to_channel_at_once_but_not_at_night(tmp_path):
     send = lambda chat, post: sent.append((chat, [b[0] for b in post.buttons]))  # noqa: E731
     night = datetime(2026, 10, 27, 2, 30, tzinfo=timezone.utc)  # 7:30 по Казахстану
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=night) == {"posted": 0, "failed": 0}
-    # В 12:00 общий слот ещё не подошёл (последний пост в 11:55), а вакансия работодателя выходит сразу
+    # Вакансия работодателя выходит сразу и слот общей очереди не занимает
     stats = autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 10, 27, 7, tzinfo=timezone.utc))
     assert stats == {"posted": 1, "failed": 0, "direct": 1}
     assert sent == [("@vacantealmaty", ["👆 Подробнее", "✉️ Откликнуться", "📍 Открыть в 2ГИС"])]

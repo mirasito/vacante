@@ -118,13 +118,23 @@ def _tags(role: str) -> str:
 
 
 def list_clip(role: str, items: list[Vacancy], now: datetime) -> Clip:
-    """«5 вакансий повара в Алматы»: обложка, по слайду на вакансию, концовка."""
+    """«Пекарь в Алматы: 240 000 – 400 000 ₸»: обложка, по слайду на вакансию, концовка.
+
+    Первая строка — должность и сумма, а не «N вакансий»: в разборе чужих роликов (16.11.2026, YouTube Shorts)
+    «профессия + точная сумма» набирала просмотры, а ролики-объявления о вакансиях общепита — нет."""
     local = now.astimezone(autopost.LOCAL)
     where = _locative(CITY)
     n = len(items)
-    head = f"{n} {_plural(n, 'вакансия', 'вакансии', 'вакансий')} {ROLES[role][1]} в {where}"
+    count = f"{n} {_plural(n, 'свежая вакансия', 'свежие вакансии', 'свежих вакансий')}"
+    pays = [p for v in items if (p := _monthly(v))]
+    # От самой низкой до самой высокой нижней границы: верх вилки («до 1 000 000 с чаевыми») в заголовок не берём
+    lows = sorted(_round(lo) for lo, _ in pays)
+    span = "" if not lows else f"{money(lows[0])} ₸" if lows[0] == lows[-1] else f"{money(lows[0])} – {money(lows[-1])} ₸"
+    head = f"{role} в {where}: {span}" if span else f"{role} в {where}: {count}"
     date = f"{local.day} {MONTHS[local.month - 1]}"
-    slides = [Slide(kicker=f"vacante.kz · {date}", title=head, lines=["Свежие, с зарплатой"], seconds=SECONDS["intro"])]
+    slides = [Slide(kicker=f"vacante.kz · {date}", title=f"{role} в {where}", big=span,
+                    lines=["в месяц" if span else "", count], seconds=SECONDS["intro"])]
+    slides[0].lines = [line for line in slides[0].lines if line]
     rows = []
     for i, v in enumerate(items, 1):
         facts = [f"График: {v.schedule}"] if v.schedule else []
@@ -136,14 +146,19 @@ def list_clip(role: str, items: list[Vacancy], now: datetime) -> Clip:
                             lines=facts))
         rows.append(f"{i}. {v.title}" + (f" — {v.employer}" if v.employer else "") + f", {salary_label(v)}")
     slides.append(_outro())
-    caption = "\n".join([f"{head} на {date} 👇", "", *rows, "",
-                         f"Откликнуться в одно нажатие: {_link()}", "", _tags(role)])
+    # Первая строка подписи — то, что лента показывает до «ещё» (около 125 знаков): должность, сумма, сколько
+    first = f"{head} в месяц, {count} на {date}." if span else f"{head} на {date}."
+    caption = "\n".join([first, "", *rows, "", f"Откликнуться в одно нажатие: {_link()}", "", _tags(role)])
     return Clip(f"{local.date().isoformat()}-{CITY}-vakansii-{ROLES[role][3]}", slides, caption)
 
 
 def pay_clip(role: str, items: list[Vacancy], now: datetime) -> Clip | None:
-    """«Сколько платят официанту в Алматы»: середина рынка по своей базе и верхняя четверть.
-    Заведений не называем: в базе есть ИП с фамилией вместо названия."""
+    """«Сколько получает официант в Алматы?»: середина рынка по своей базе и верхняя четверть.
+    Заведений не называем: в базе есть ИП с фамилией вместо названия.
+
+    Первая строка в двух вариантах, они чередуются по дням (буква в имени файла): вопрос «Сколько получает…»
+    и утверждение «Должность: сумма». Оба вида набирали просмотры в чужих роликах; какой лучше у нас, покажут
+    просмотры своих."""
     pays = [(p, v) for v in items if (p := _monthly(v))]
     if len(pays) < STATS_MIN:
         return None
@@ -154,21 +169,30 @@ def pay_clip(role: str, items: list[Vacancy], now: datetime) -> Clip | None:
     low, high = _round(q1), _round(q3)
     n = len(pays)
     counted = f"Посчитали по {n} {_plural(n, 'вакансии', 'вакансиям', 'вакансиям')} за две недели"
-    question = f"Сколько платят {ROLES[role][2]} в {where}?"
+    span = f"{money(low)} – {money(high)} ₸"
+    question = f"Сколько получает {role.lower()} в {where}?"
+    variant = "ab"[local.date().toordinal() % 2]
+    if variant == "a":
+        intro = Slide(kicker="vacante.kz · зарплаты", title=question, lines=[counted], seconds=SECONDS["intro"])
+    else:
+        intro = Slide(kicker="vacante.kz · зарплаты", title=f"{role} в {where}", big=span, lines=["в месяц", counted],
+                      seconds=SECONDS["intro"])
     slides = [
-        Slide(kicker="vacante.kz · зарплаты", title=question, lines=[counted], seconds=SECONDS["intro"]),
-        Slide(kicker="Половина вакансий — в этих пределах", title="Обычно", big=f"{money(low)} – {money(high)} ₸",
+        intro,
+        Slide(kicker="Половина вакансий — в этих пределах", title="Обычно", big=span,
               lines=["в месяц", "Оплату за смену пересчитали на 22 смены"], seconds=3.4),
     ]
     slides.append(Slide(kicker="А больше?", title="Каждая четвёртая вакансия", big=f"от {money(high)} ₸",
                         lines=["в месяц"], seconds=3.0))
     slides.append(_outro())
-    caption = "\n".join([f"{question}", "",
-                         f"Обычно {money(low)} – {money(high)} ₸ в месяц: в этих пределах половина вакансий. "
-                         f"Каждая четвёртая — от {money(high)} ₸.",
+    # Первая строка подписи — то, что лента показывает до «ещё» (около 125 знаков): должность и сумма
+    first = (f"{question} Обычно {span} в месяц." if variant == "a"
+             else f"{role} в {where}: {span} в месяц по {n} {_plural(n, 'вакансии', 'вакансиям', 'вакансиям')}.")
+    caption = "\n".join([first, "",
+                         f"В этих пределах половина вакансий. Каждая четвёртая — от {money(high)} ₸.",
                          f"{counted} на vacante.kz. Оплату за смену пересчитали на месяц (22 смены).", "",
                          f"Все вакансии и отклик в одно нажатие: {_link()}", "", _tags(role)])
-    return Clip(f"{local.date().isoformat()}-{CITY}-zarplata-{ROLES[role][3]}", slides, caption)
+    return Clip(f"{local.date().isoformat()}-{CITY}-zarplata-{ROLES[role][3]}-{variant}", slides, caption)
 
 
 def plan(reviewed: list[Vacancy], everything: list[Vacancy], now: datetime) -> list[Clip]:

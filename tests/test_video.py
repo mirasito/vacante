@@ -33,11 +33,15 @@ def test_list_clip_has_a_slide_per_vacancy_and_a_caption_with_tracked_link():
     clips = video.plan(items, items, NOW)
     clip = clips[0]
     assert clip.name == "2026-11-16-almaty-vakansii-povar"
-    assert [s.title for s in clip.slides][0] == "5 вакансий повара в Алматы"
+    # Первая строка — должность и сумма: от самой низкой до самой высокой зарплаты в ролике
+    assert (clip.slides[0].title, clip.slides[0].big) == ("Повар в Алматы", "250\xa0000 – 290\xa0000 ₸")
+    assert clip.slides[0].lines == ["в месяц", "5 свежих вакансий"]
     assert len(clip.slides) == 1 + 5 + 1  # обложка, пять вакансий, концовка
     assert clip.slides[1].kicker.startswith("1 из 5 · ") and "₸" in clip.slides[1].big
     assert clip.slides[1].lines[0] == "График: 2/2"
-    assert "5 вакансий повара в Алматы на 16 ноября" in clip.caption
+    first = clip.caption.split("\n")[0]
+    assert first == "Повар в Алматы: 250\xa0000 – 290\xa0000 ₸ в месяц, 5 свежих вакансий на 16 ноября."
+    assert len(first) <= 125  # столько лента показывает до «ещё»
     assert "https://t.me/vacantekz_bot?startapp=svid_c_almaty" in clip.caption
     assert clip.caption.endswith("#работаалматы #вакансииалматы #общепит #повар")
     assert 12 <= sum(s.seconds for s in clip.slides) <= 25
@@ -57,13 +61,20 @@ def test_pay_clip_gives_the_middle_half_of_the_market():
     waiters = [make(400 + i, f"Кафе «Луна {i}» ищет официанта, {pay} 000 тг")
                for i, pay in enumerate([200, 220, 250, 260, 280, 300, 320, 350, 400, 600])]
     clip = video.pay_clip("Официант", waiters, NOW)
-    assert clip.slides[0].title == "Сколько платят официанту в Алматы?"
+    assert clip.name == "2026-11-16-almaty-zarplata-oficiant-a"
+    assert clip.slides[0].title == "Сколько получает официант в Алматы?"
     assert clip.slides[0].lines == ["Посчитали по 10 вакансиям за две недели"]
+    assert clip.caption.split("\n")[0] == "Сколько получает официант в Алматы? Обычно 240\xa0000 – 360\xa0000 ₸ в месяц."
+    # На другой день первая строка — утверждение «должность: сумма»: сравниваем, что смотрят лучше
+    other = video.pay_clip("Официант", waiters, NOW + timedelta(days=1))
+    assert other.name.endswith("-b") and (other.slides[0].title, other.slides[0].big) == (
+        "Официант в Алматы", "240\xa0000 – 360\xa0000 ₸")
+    assert other.caption.startswith("Официант в Алматы: 240\xa0000 – 360\xa0000 ₸ в месяц по 10 вакансиям.")
     assert clip.slides[1].big == "240 000 – 360 000 ₸"  # между четвертями, округлено до 10 000
     assert (clip.slides[2].title, clip.slides[2].big) == ("Каждая четвёртая вакансия", "от 360 000 ₸")
     # Заведений в ролике о зарплатах не называем
     assert not any("Луна" in text for s in clip.slides for text in [s.title, s.big, *s.lines])
-    assert "Обычно 240 000 – 360 000 ₸ в месяц" in clip.caption
+    assert "Каждая четвёртая — от 360\xa0000 ₸" in clip.caption
     # Оплата за смену пересчитана на месяц; опечатки в зарплате не считаются
     shift = make(420, "Кафе «Сад» ищет официанта, 15 000 тг за смену")
     assert video._monthly(shift) == (330_000, 330_000)
@@ -78,6 +89,7 @@ def test_two_clips_a_day_are_about_different_roles():
     assert len(clips) == 2
     kinds = [c.name.split("-")[4] for c in clips]
     roles = [c.name.split("-")[5] for c in clips]
+    assert all(len(c.caption.split("\n")[0]) <= 125 for c in clips)
     assert kinds == ["vakansii", "zarplata"] and roles[0] != roles[1]
 
 

@@ -35,6 +35,8 @@ jobs:
       - run: npm ci
       - name: Проверка типов
         run: npx tsc --noEmit
+      - name: Тесты
+        run: node --test "test/*.test.mjs"
       - name: Сборка веб-версии
         run: npx expo export -p web --output-dir dist
 

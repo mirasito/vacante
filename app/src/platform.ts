@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Alert, Linking, Platform, Share } from 'react-native';
 
+import { parseLaunch } from './launch';
+
 // Внутри Telegram приложение открывается как Mini App: окно Telegram.WebApp даёт тему,
 // вибрацию и ссылки, которые открываются, не закрывая приложение.
 export type HomeScreen = 'unsupported' | 'unknown' | 'added' | 'missed';
@@ -259,24 +261,29 @@ function startParam(): string | undefined {
   return telegram()?.initDataUnsafe?.start_param ?? query.get('tgWebAppStartParam') ?? hash.get('tgWebAppStartParam') ?? undefined;
 }
 
+const launch = () => parseLaunch(startParam());
+
 /** Тестовая ссылка t.me/vacantekz_bot?startapp=beta: профиль до общего запуска. */
-export const launchBeta = () => startParam() === 'beta';
+export const launchBeta = () => launch().beta === true;
 
 /**
  * Город из ссылки, по которой открыли приложение: кнопка бота добавляет ?city=almaty,
- * а ссылка t.me/vacantekz_bot?startapp=almaty передаёт его в start_param.
+ * а ссылки t.me/vacantekz_bot?startapp=almaty, …=stg_c_almaty и …=stg_v_almaty_<вакансия> несут его в start_param.
  */
 export function launchCity(): string | undefined {
   if (!isWeb) return undefined;
-  const value = new URLSearchParams(window.location.search).get('city') ?? startParam();
-  return value && value !== 'beta' && /^[a-z][a-z-]{1,30}$/.test(value) ? value : undefined;
+  const query = new URLSearchParams(window.location.search).get('city');
+  return query && /^[a-z][a-z-]{1,30}$/.test(query) ? query : launch().city;
 }
 
 /** Код приглашения из ссылки друга t.me/vacantekz_bot?startapp=ref_abc123. */
-export function launchRef(): string | undefined {
-  const m = /^ref_([a-z0-9]{6})$/.exec(startParam() ?? '');
-  return m?.[1];
-}
+export const launchRef = () => launch().ref;
+
+/** Вакансия из ссылки под постом в канале: приложение открывает её сразу. */
+export const launchVacancy = () => launch().vacancyId;
+
+/** Откуда пришёл человек: метка источника из ссылки («tg» — свои каналы, метка рекламы и так далее). */
+export const launchSource = () => launch().source;
 
 /** Переписка из сообщения бота «Ответ по отклику»: ?tab=chats&chat=12. */
 export function launchChat(): number | undefined {

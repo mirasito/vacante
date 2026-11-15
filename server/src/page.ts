@@ -18,16 +18,18 @@ import { html, raw, type Html } from "./html.ts";
 import { HttpError, route, type Reply, type Request, type Route } from "./http.ts";
 import {
   cityName,
-  documentsLabel,
   employmentLabel,
   experienceLabel,
+  jobTermLabel,
   languagesLabel,
+  medLabel,
   payLabel,
   phoneLabel,
+  skillLabel,
   startLabel,
   type Lang,
 } from "./labels.ts";
-import type { Profile } from "./profile.ts";
+import { isLooking, type Profile } from "./profile.ts";
 import { RateLimit } from "./limits.ts";
 import { sendNews } from "./notify.ts";
 import {
@@ -93,6 +95,10 @@ const T = {
     languages: "Языки",
     documents: "Документы",
     about: "О себе",
+    looking: "Ищет работу сейчас",
+    trial: "Выйдет на пробную смену",
+    jobs: "Опыт работы",
+    skills: "Умеет",
     contact: "Связаться",
     showPhone: "Показать телефон",
     call: "Позвонить",
@@ -150,6 +156,10 @@ const T = {
     languages: "Тілдер",
     documents: "Құжаттар",
     about: "Өзі туралы",
+    looking: "Қазір жұмыс іздеп жүр",
+    trial: "Сынақ ауысымына шығады",
+    jobs: "Жұмыс тәжірибесі",
+    skills: "Қолынан келеді",
     contact: "Байланысу",
     showPhone: "Телефонды көрсету",
     call: "Қоңырау шалу",
@@ -213,16 +223,24 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
 .circle{display:block;position:relative;width:220px;height:220px;margin:0 auto 18px;border-radius:50%;overflow:hidden;background:#101012;text-decoration:none}
 .circle img{width:100%;height:100%;object-fit:cover;display:block}
 .play{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.62);color:#fff;font-weight:700;font-size:15px;border-radius:999px;padding:6px 14px;white-space:nowrap}
-h1{font-size:26px;margin:0}.place{color:var(--quiet);margin:2px 0 0}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}.chip{background:var(--pill);border-radius:12px;padding:4px 10px;font-weight:600}
+h1{font-size:26px;line-height:1.15;margin:0}.lead{font-weight:700;font-size:17px;margin:4px 0 0}.place{color:var(--quiet);margin:2px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0}.chip{background:var(--pill);border-radius:12px;padding:4px 10px;font-weight:600}
 dl{margin:0}dt{color:var(--quiet);font-size:13px;margin-top:10px}dd{margin:0;font-weight:600}
-.about{white-space:pre-line;font-weight:400}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-top:18px}.facts dt{margin-top:0}
+.about{white-space:pre-line;font-weight:400;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 4px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-weight:600;font-size:14px;line-height:1.3}
+.tag.live{border-color:transparent;background:#e6f6ec;color:#12683a}.tag.live::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#1f9d57;margin-right:7px;vertical-align:1px}
+@media (prefers-color-scheme:dark){.tag.live{background:#173a27;color:#8fe3b0}.tag.live::before{background:#4fd18a}}
+h2{font-size:13px;font-weight:400;color:var(--quiet);margin:16px 0 6px}
+.jobs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.jobs li{border-left:3px solid var(--brand);padding-left:12px}.jobs b{display:block;font-size:17px}.jobs span{color:var(--quiet);font-size:15px}
 .contact{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
 .btn{flex:1 1 auto;display:block;text-align:center;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;padding:14px 16px;border-radius:14px;border:0;font-size:16px}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .phone{font-size:22px;font-weight:800;width:100%;margin:4px 0}
 .note{color:var(--quiet);font-size:14px}
-.us{margin-top:12px}.us h2{font-size:18px;margin:0 0 6px}.us p{margin:0 0 12px}.us .note{margin:10px 0 0}
+.us{margin-top:12px}.us h2{font-size:18px;font-weight:700;color:var(--ink);margin:0 0 6px}.us p{margin:0 0 12px}.us .note{margin:10px 0 0}
 .answer{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
 .field{display:block;margin:0 0 4px}.field span{display:block;color:var(--quiet);font-size:13px;margin-bottom:6px}
 .field input{width:100%;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
@@ -329,16 +347,27 @@ function profileBody(
   updatedAt: string,
   application?: { title: string; answer: Html },
   badge?: string,
+  now = Date.now(),
 ): Html {
   const t = T[lang];
+  // Значки под именем: то, по чему управляющий решает за секунду, звать ли на пробную смену
+  const med = medLabel(p, lang);
+  const tags = [
+    isLooking(p, now) ? html`<span class="tag live">${t.looking}</span>` : "",
+    p.trial ? html`<span class="tag">${t.trial}</span>` : "",
+    med ? html`<span class="tag">${med}</span>` : "",
+    badge ? html`<span class="tag">${badge}</span>` : "",
+  ];
+  const driver = p.driver ? (lang === "kk" ? "жүргізуші куәлігі" : "водительские права") : null;
   const place = [cityName(p.city, lang), p.district].filter(Boolean).join(", ");
   const facts: [string, string | null][] = [
-    [t.experience, experienceLabel(p, lang)],
+    // Общий опыт одной строкой нужен, только пока человек не назвал, где работал
+    [t.experience, p.jobs.length ? null : experienceLabel(p, lang)],
     [t.employment, employmentLabel(p, lang)],
     [t.pay, payLabel(p, lang)],
     [t.start, startLabel(p, lang)],
     [t.languages, p.languages.length ? languagesLabel(p, lang) : null],
-    [t.documents, documentsLabel(p, lang)],
+    [t.documents, driver],
   ];
   const phoneUrl = `/${link.code}?phone=1${lang === "kk" ? "&lang=kk" : ""}#contact`;
   const wa = p.phone ? `https://wa.me/${p.phone.slice(1)}?text=${encodeURIComponent(t.hello(p.name))}` : "";
@@ -356,13 +385,16 @@ ${video?.file ? circle(link.code, video, t.watch) : ""}
       ? html`<a class="avatar" href="/${link.code}/photo.jpg"><img src="/${link.code}/photo.jpg" alt="${p.name}"></a>`
       : html`<div class="avatar" aria-hidden="true">${initials(p.name)}</div>`
   }
-<div><h1>${p.name}</h1><p class="place">${place}</p></div></div>
-${badge ? html`<p class="badge">${badge}</p>` : ""}
-<dl>
-<dt>${t.wants}</dt><dd><div class="chips">${p.roles.map((r) => html`<span class="chip">${r}</span>`)}</div></dd>
-${facts.map(([label, value]) => (value ? html`<dt>${label}</dt><dd>${value}</dd>` : ""))}
-${p.about ? html`<dt>${t.about}</dt><dd class="about">${p.about}</dd>` : ""}
-</dl>
+<div><h1>${p.name}</h1><p class="lead">${p.roles.join(" · ")}</p><p class="place">${place}</p></div></div>
+${tags.some(Boolean) ? html`<div class="tags">${tags}</div>` : ""}
+${p.jobs.length ? html`<h2>${t.jobs}</h2>
+<ul class="jobs">${p.jobs.map((j) => html`<li><b>${j.role}</b><span>${j.place} · ${jobTermLabel(j.term, lang)}</span></li>`)}</ul>` : ""}
+${p.skills.length ? html`<h2>${t.skills}</h2>
+<div class="chips">${p.skills.map((id) => html`<span class="chip">${skillLabel(id, lang)}</span>`)}</div>` : ""}
+${facts.some(([, value]) => value) ? html`<dl class="facts">
+${facts.map(([label, value]) => (value ? html`<div><dt>${label}</dt><dd>${value}</dd></div>` : ""))}
+</dl>` : ""}
+${p.about ? html`<h2>${t.about}</h2><p class="about">${p.about}</p>` : ""}
 <div class="contact" id="contact">${contact}</div>
 ${application?.answer ?? ""}
 <p class="note">${t.updated}: ${updatedAt.slice(0, 10).split("-").reverse().join(".")}</p>
@@ -676,7 +708,7 @@ export function pageRoutes(ctx: Ctx): Route[] {
       const badge = rel.level ? t.reliable(t.level[rel.level]!, rel.attended) : undefined;
       const photo = !!getPhoto(ctx.db, link.seeker_id);
       return {
-        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application, badge), other, preview),
+        html: page(lang, profileBody(ctx, link, profile, video, photo, lang, showPhone, updatedAt, application, badge, now), other, preview),
         headers: {
           "Content-Security-Policy":
             "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",

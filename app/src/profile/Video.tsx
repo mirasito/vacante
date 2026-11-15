@@ -80,6 +80,9 @@ export function VideoSection(props: { c: Colors; lang: Lang; view: ProfileView; 
   const t = P[lang];
   const video = view.video?.ready ? view.video : null;
   const [busy, setBusy] = useState(false);
+  // Подсказка «что сказать»: открыта, пока кружка нет; с готовым кружком — по нажатию, перед пересъёмкой
+  const [help, setHelp] = useState(false);
+  const script = view.script ?? [];
 
   const remove = async () => {
     if (!(await confirm(t.videoRemoveAsk, t.yes, t.no))) return;
@@ -106,6 +109,28 @@ export function VideoSection(props: { c: Colors; lang: Lang; view: ProfileView; 
       ) : (
         <Text style={[s.text, { color: c.quiet }]}>{t.videoHint}</Text>
       )}
+      {!video || help ? (
+        <View style={[s.script, { backgroundColor: c.soft }]}>
+          <Text style={[s.scriptTitle, { color: c.ink }]}>{t.scriptTitle}</Text>
+          {t.scriptSteps.map((step, i) => (
+            <Text key={step} style={[s.text, { color: c.ink }]}>
+              {i + 1}. {step}
+            </Text>
+          ))}
+          {script.length ? (
+            <>
+              <Text style={[s.text, { color: c.quiet }]}>{t.scriptExample}</Text>
+              <Text style={[s.quote, { color: c.ink, borderColor: c.accent }]}>«{script.join(' ')}»</Text>
+            </>
+          ) : null}
+          <Text style={[s.text, { color: c.quiet }]}>{t.scriptAdvice}</Text>
+        </View>
+      ) : null}
+      {video ? (
+        <Pressable onPress={() => setHelp(!help)} hitSlop={8}>
+          <Text style={[s.note, { color: c.accent, fontWeight: '600' }]}>{help ? t.scriptHide : t.scriptShow}</Text>
+        </Pressable>
+      ) : null}
       {rec.waiting ? <Text style={[s.text, { color: c.accent }]}>⏳ {t.videoWaiting}</Text> : null}
       <View style={ui.row}>
         <Button c={c} ghost={!!video} label={video ? t.videoRetake : t.videoRecord} onPress={rec.start} />
@@ -221,6 +246,9 @@ const s = StyleSheet.create({
   title: { fontSize: 17, fontWeight: '700' },
   text: { fontSize: 15, lineHeight: 21 },
   note: { fontSize: 14, textAlign: 'center' },
+  script: { borderRadius: 14, padding: 12, gap: 6 },
+  scriptTitle: { fontSize: 15, fontWeight: '700' },
+  quote: { fontSize: 15, lineHeight: 22, borderLeftWidth: 3, paddingLeft: 10 },
   circle: {
     width: SIZE,
     height: SIZE,

@@ -3,8 +3,9 @@ import assert from "node:assert/strict";
 import { after, test } from "node:test";
 
 import { applicationText } from "../src/applications.ts";
-import { parseProfile, strength } from "../src/profile.ts";
-import { AIGERIM, BROWSER, initDataFor, startServer, type TestServer } from "./helpers.ts";
+import { videoScript } from "../src/labels.ts";
+import { CONSENT_VERSION, parseProfile, strength } from "../src/profile.ts";
+import { AIGERIM, BROWSER, initDataFor, NOW, startServer, type TestServer } from "./helpers.ts";
 
 const CONSENT = { version: "2026-11-04.2", adult: true, base: false };
 const QUICK = { name: "Айдана", city: "almaty", roles: ["Бариста"] };
@@ -49,9 +50,11 @@ test("текст отклика из короткой анкеты: без пу�
   assert.equal(full, "Здравствуйте! Пишу по вакансии «Бариста». Меня зовут Айдана. Опыт 1–3 года. Могу выйти на этой неделе.");
 });
 
-test("сила профиля: короткая анкета первым делом просит опыт и график, полная — как раньше", () => {
-  assert.deepEqual(strength(parseProfile(QUICK), { video: false, photo: false }), { percent: 25, next: "details" });
-  assert.deepEqual(strength(parseProfile(FULL), { video: false, photo: false }), { percent: 45, next: "video" });
+test("сила профиля: и короткая, и полная анкета первым делом просят опыт работы и навыки", () => {
+  assert.deepEqual(strength(parseProfile(QUICK), { video: false, photo: false }), { percent: 25, next: "work" });
+  assert.deepEqual(strength(parseProfile(FULL), { video: false, photo: false }), { percent: 40, next: "work" });
+  const skilled = { ...parseProfile(QUICK), skills: ["espresso" as const] };
+  assert.deepEqual(strength(skilled, { video: false, photo: false }), { percent: 45, next: "details" });
 });
 
 test("короткая анкета сохраняется, читается обратно и дополняется до полной", async () => {
@@ -62,13 +65,13 @@ test("короткая анкета сохраняется, читается о�
     [created.json.profile.experience, created.json.profile.employment, created.json.profile.start],
     [null, [], null],
   );
-  assert.equal(created.json.strength.next, "details");
+  assert.equal(created.json.strength.next, "work");
   const read = await s.call("GET", "/me/profile", { headers: auth });
   assert.equal(read.json.profile.experience, null);
   const filled = await s.call("PUT", "/me/profile", { headers: auth, body: { profile: FULL } });
   assert.equal(filled.status, 200);
   assert.equal(filled.json.profile.experience, "1to3");
-  assert.equal(filled.json.strength.next, "video");
+  assert.equal(filled.json.strength.next, "work");
 });
 
 test("страница короткого профиля для работодателя: без пустых строк и слов undefined, null", async () => {
@@ -81,4 +84,78 @@ test("страница короткого профиля для работода
   assert.match(page.text, /Бариста/);
   assert.doesNotMatch(page.text, /undefined|>null<|<dd><\/dd>/);
   for (const label of ["Опыт", "График", "Может выйти"]) assert.doesNotMatch(page.text, new RegExp(`<dt>${label}</dt>`));
+});
+
+test("опыт, навыки и отметки: видны работодателю, не стираются старым приложением, «ищу сейчас» гаснет через 30 дней", async () => {
+  let clock = NOW;
+  const s = await startServer({ now: () => clock }, { PROFILES_OPEN: "1" });
+  started.push(s);
+  const worked = {
+    ...FULL,
+    jobs: [{ place: "Coffee Boom", role: "Бариста", term: "1to3" }],
+    skills: ["espresso", "latte_art", "cash"],
+    med: "soon",
+    trial: true,
+    looking: true,
+  };
+  // Профиль создаётся и с новым текстом согласия
+  const created = await s.call("PUT", "/me/profile", {
+    headers: auth,
+    body: { profile: worked, consent: { version: CONSENT_VERSION, adult: true, base: false } },
+  });
+  assert.equal(created.status, 201, created.text);
+  assert.equal(created.json.profile.looking_at, "2026-11-04T06:00:00.000Z");
+  assert.deepEqual(created.json.profile.skills, ["espresso", "latte_art", "cash"]);
+
+  const link = await s.call("POST", "/me/link", { headers: auth });
+  const open = () => s.call("GET", `/${link.json.code}`, { ...profileHost, headers: { "user-agent": BROWSER } });
+  let page = (await open()).text;
+  for (const text of ["Ищет работу сейчас", "Выйдет на пробную смену", "Санкнижку оформит", "Опыт работы",
+    "<b>Бариста</b><span>Coffee Boom · 1–3 года</span>", "Умеет", "Эспрессо-машина", "Латте-арт", "Касса"]) {
+    assert.ok(page.includes(text), text);
+  }
+
+  // Старое приложение о новых полях не знает: правка из него их не стирает
+  const old = await s.call("PUT", "/me/profile", { headers: auth, body: { profile: { ...FULL, about: "Люблю кофе" } } });
+  assert.deepEqual(old.json.profile.jobs, worked.jobs);
+  assert.deepEqual([old.json.profile.skills.length, old.json.profile.med, old.json.profile.trial], [3, "soon", true]);
+  assert.equal(old.json.profile.looking_at, "2026-11-04T06:00:00.000Z");
+
+  // Через 31 день отметка «ищу сейчас» гаснет сама; остальное на месте
+  clock = NOW + 31 * 86_400_000;
+  page = (await open()).text;
+  assert.ok(!page.includes("Ищет работу сейчас"));
+  assert.ok(page.includes("Выйдет на пробную смену"));
+
+  // Человек снимает отметки сам
+  const later = { authorization: `tma ${initDataFor(AIGERIM, clock / 1000 - 60)}` };
+  const off = await s.call("PUT", "/me/profile", { headers: later, body: { profile: { ...worked, looking: false, trial: false, med: "no", skills: [] } } });
+  assert.deepEqual([off.json.profile.looking_at, off.json.profile.trial, off.json.profile.med], [null, false, "no"]);
+  page = (await open()).text;
+  // Ответ «нет санкнижки» работодателю не показываем
+  assert.ok(!page.includes("анкнижк") && !page.includes("Умеет"));
+});
+
+test("что сказать в кружке: фразы из анкеты самого человека, по порядку и на его языке", () => {
+  const p = parseProfile({
+    ...FULL,
+    jobs: [{ place: "Coffee Boom", role: "Бариста", term: "1to3" }],
+    skills: ["espresso", "latte_art", "cash", "iiko", "knows_city"],
+    trial: true,
+  });
+  assert.deepEqual(videoScript(p, "ru"), [
+    "Здравствуйте! Меня зовут Айдана.",
+    "Ищу работу: бариста.",
+    "Мой опыт: бариста в Coffee Boom, 1–3 года.",
+    "Умею: эспрессо-машина, латте-арт, касса.",
+    "Могу выйти на этой неделе.",
+    "Удобный график: смены.",
+    "Могу выйти на пробную смену.",
+    "Спасибо, буду ждать ответа!",
+  ]);
+  // Короткая анкета: только то, что человек уже указал
+  assert.deepEqual(videoScript(parseProfile(QUICK), "ru"), [
+    "Здравствуйте! Меня зовут Айдана.", "Ищу работу: бариста.", "Спасибо, буду ждать ответа!",
+  ]);
+  assert.equal(videoScript(parseProfile({ ...QUICK, experience: "none" }), "kk")[2], "Тәжірибем әзірге жоқ, бірақ тез үйренемін.");
 });

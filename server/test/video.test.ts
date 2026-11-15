@@ -84,10 +84,10 @@ test("кружок из бота: скачивается в профиль, ра
   // Город из профиля: на новом устройстве приложение не спросит его заново
   assert.equal(saved.reply_markup.inline_keyboard[1][0].web_app.url, "https://vacante.kz/app/?tab=profile&city=astana");
 
-  // Сила профиля: анкета 45 + кружок 25
+  // Сила профиля: анкета 40 + кружок 15
   const view = (await s.call("GET", "/me/profile", { headers: auth(user) })).json;
   assert.deepEqual(view.video, { duration: 42, recorded_at: "2026-11-04T06:00:00Z", ready: true, poster: true });
-  assert.equal(view.strength.percent, 70);
+  assert.equal(view.strength.percent, 55);
 
   // Своё видео в приложении
   const mine = await s.call("GET", "/me/video", { headers: auth(user) });
@@ -180,6 +180,8 @@ test("кружок без профиля, слишком длинный, обы�
   const start = await relay({ message: { message_id: 31, from: user, chat: { id: user.id, type: "private" }, text: "/start video" } });
   assert.equal(start.json.handled, true);
   assert.match(lastSent().text, /Запишите кружок для профиля/);
+  // В подсказке готовый пример из анкеты этого человека
+  assert.match(lastSent().text, /Например, так:\n«Здравствуйте! Меня зовут /);
   // Остальные команды бот ведёт сам
   assert.equal((await relay({ message: { message_id: 32, from: user, chat: { id: user.id, type: "private" }, text: "/start" } })).json.handled, false);
 

@@ -22,10 +22,13 @@ import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, styles as ui } from '../ui';
 import { HomeStep, type HomeDraft } from './Home';
+import { isHoreca } from './skills';
 import { CONSENT, EMPLOYMENT, EXPERIENCE, money, P, PAY_PERIOD, PAY_PRESETS, START } from './texts';
 
 type Step = 'consent' | 'place' | 'home' | 'roles' | 'experience' | 'employment' | 'pay' | 'start';
-const STEPS: Step[] = ['place', 'home', 'roles', 'experience', 'employment', 'pay', 'start'];
+// «Где вы живёте» — самый трудный шаг (геопозиция или ссылка из 2ГИС), поэтому он последний из вопросов:
+// бросить анкету на нём уже жалко, а пропустить можно одной кнопкой
+const STEPS: Step[] = ['place', 'roles', 'experience', 'employment', 'pay', 'home', 'start'];
 // Короткая анкета перед первым откликом: имя и профессии, остальное человек дополнит потом
 const QUICK_STEPS: Step[] = ['place', 'roles'];
 const MAX_ROLES = 3;
@@ -123,8 +126,8 @@ export function Wizard(props: {
     const profile: Profile = {
       name: final.name.trim(),
       city: final.city,
-      // Вместо района теперь дом: прежний район уходит из анкеты при первой правке
-      district: null,
+      // Район человек выбирает сам на экране «Опыт и навыки»: анкета его не трогает
+      district: existing?.district ?? null,
       home: final.place.home,
       roles: final.roles,
       experience: final.experience,
@@ -137,6 +140,11 @@ export function Wizard(props: {
       about: existing?.about ?? null,
       med_book: existing?.med_book ?? false,
       driver: existing?.driver ?? false,
+      // Опыт, навыки и отметки заполняются на своём экране: правка анкеты их сохраняет
+      jobs: existing?.jobs,
+      skills: existing?.skills,
+      med: existing?.med,
+      trial: existing?.trial,
     };
     try {
       let view = await saveProfile(profile, lang, existing ? undefined : { adult, base }, existing ? undefined : props.source);
@@ -195,7 +203,8 @@ export function Wizard(props: {
             <Text style={[s.title, { color: c.ink }]}>{t.employmentTitle}</Text>
             <Text style={[s.hint, { color: c.quiet }]}>{t.employmentHint}</Text>
             <View style={s.options}>
-              {EMPLOYMENT.map((e) => (
+              {/* Вахта в общепите ни к чему: показываем её только тем, у кого есть другая профессия */}
+              {EMPLOYMENT.filter((e) => e.value !== 'rotation' || !isHoreca(draft.roles) || draft.employment.includes('rotation')).map((e) => (
                 <Chip
                   key={e.value}
                   c={c}

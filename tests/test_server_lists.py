@@ -42,3 +42,27 @@ def test_server_contact_rules_match_parser():
 
     for name in ("PHONE", "WHATSAPP", "USERNAME", "PROMO"):
         assert pattern(name) == getattr(contacts, name).pattern, name
+
+
+def test_skill_lists_match_between_server_and_app():
+    """Навыки профиля — один список в трёх местах: проверка на сервере, подписи для страницы работодателя
+    и кнопки в приложении. Разойдутся — человек отметит навык, а сервер его не примет или страница не подпишет."""
+    def ids(path: str, pattern: str) -> list[str]:
+        source = (ROOT / path).read_text("utf-8")
+        block = re.search(pattern, source, re.S)
+        assert block, f"в {path} нет списка навыков"
+        return re.findall(r"""^\s*["']?([a-z_]+)["']?\s*[:,]|["']([a-z_]+)["']""", block.group(1), re.M)
+
+    def flat(found: list[tuple[str, str]]) -> list[str]:
+        return [a or b for a, b in found]
+
+    server = flat(ids("server/src/profile.ts", r"export const SKILLS = \[(.*?)\] as const;"))
+    app = flat(ids("app/src/server.ts", r"export const SKILLS = \[(.*?)\] as const;"))
+    assert server == app and len(server) > 20
+    labels = re.search(r"const SKILL: Record<[^>]+> = \{(.*?)\n\};", (ROOT / "server/src/labels.ts").read_text("utf-8"), re.S)
+    assert re.findall(r"^\s*([a-z_]+): \[", labels.group(1), re.M) == server
+    buttons = re.search(r"export const SKILL_LABEL: Record<[^>]+> = \{(.*?)\n\};", (ROOT / "app/src/profile/skills.ts").read_text("utf-8"), re.S)
+    assert re.findall(r"^\s*([a-z_]+): \{", buttons.group(1), re.M) == server
+    # Каждый навык стоит хотя бы в одной группе кнопок
+    groups = (ROOT / "app/src/profile/skills.ts").read_text("utf-8").split("export const SKILL_GROUPS", 1)[1].split("];", 1)[0]
+    assert set(re.findall(r"'([a-z_]+)'", groups)) >= set(server)

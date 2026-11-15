@@ -21,7 +21,7 @@ import { find2gisLink, resolve2gis, roundHome } from "./geo.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import { RateLimit } from "./limits.ts";
 import { cleanJpeg, MAX_PHOTO_BYTES } from "./photo.ts";
-import { CONSENT_VERSION, parseProfile } from "./profile.ts";
+import { CONSENT_VERSIONS, isLooking, parseProfile } from "./profile.ts";
 import { achievementsSeen, importGoal, parseGoal, setGoal } from "./progress.ts";
 import {
   actOn,
@@ -130,22 +130,39 @@ export function meRoutes(ctx: Ctx): Route[] {
       const profile = parseProfile(body.profile);
       const now = ctx.now();
       const existing = getSeeker(ctx.db, user.id);
+      const raw = body.profile as Record<string, unknown>;
+      const prev = getProfile(ctx.db, user.id);
       // Приложение до 2026-11-04.2 про дом не знает: правка анкеты из него не стирает точку
-      if ((body.profile as Record<string, unknown>).home === undefined) profile.home = getProfile(ctx.db, user.id)?.home ?? null;
+      if (raw.home === undefined) profile.home = prev?.home ?? null;
+      // Так же с полями 2026-11-16: старое приложение их не присылает и не должно стирать
+      if (prev) {
+        if (raw.jobs === undefined) profile.jobs = prev.jobs;
+        if (raw.skills === undefined) profile.skills = prev.skills;
+        if (raw.trial === undefined) profile.trial = prev.trial;
+        if (raw.med === undefined && !profile.med && prev.med !== "yes") profile.med = prev.med;
+      }
+      // «Ищу работу сейчас»: каждое сохранение с включённой отметкой продлевает её на 30 дней
+      profile.looking_at =
+        raw.looking === undefined
+          ? prev && isLooking(prev, now) ? prev.looking_at : null
+          : raw.looking === true ? new Date(now).toISOString() : null;
       tx(ctx.db, () => {
         if (!existing) {
           if (!ctx.config.profilesOpen && req.header("x-vacante-beta") !== "1") {
             throw new HttpError(403, "Профили пока открыты только для тестирования");
           }
           const consent = body.consent as { version?: unknown; adult?: unknown; base?: unknown } | undefined;
-          if (consent?.version !== CONSENT_VERSION) throw new HttpError(400, "Нужно согласие с текущим текстом");
-          if (consent.adult !== true) throw new HttpError(400, "Профиль можно создать с 18 лет");
+          const version = consent?.version;
+          if (typeof version !== "string" || !CONSENT_VERSIONS.includes(version)) {
+            throw new HttpError(400, "Нужно согласие с текущим текстом");
+          }
+          if (consent?.adult !== true) throw new HttpError(400, "Профиль можно создать с 18 лет");
           createSeeker(ctx.db, {
             id: user.id,
             first_name: user.first_name,
             lang: langOf(body.lang, user.language_code),
-            consent_version: CONSENT_VERSION,
-            base: consent.base === true,
+            consent_version: version,
+            base: consent?.base === true,
             now,
           });
         } else {

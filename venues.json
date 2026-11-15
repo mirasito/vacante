@@ -6052,6 +6052,15 @@
   "instagram": "asyq_et",
   "source": "https://2gis.kz/almaty/firm/70000001052096219"
  },
+ "almaty:ata_mura": {
+  "name": "Ata_mura",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T15:41:30+00:00",
+  "instagram": "ata_mura",
+  "source": "https://2gis.kz/almaty/firm/70000001103553173"
+ },
  "almaty:ataauto": {
   "name": "AtaAuto",
   "city": "almaty",
@@ -8984,6 +8993,13 @@
   "avatar": "a56986c0b8afbf4a.jpg",
   "avatar_source": "website"
  },
+ "almaty:elitewall": {
+  "name": "EliteWall",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T15:41:30+00:00"
+ },
  "almaty:elk и эл кей": {
   "name": "ELK (И Эл Кей)",
   "city": "almaty",
@@ -11844,7 +11860,7 @@
   "telegram": "jsiclub",
   "website": "https://jsi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001068041909",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -18560,6 +18576,13 @@
   "v": 3,
   "checked_at": "2026-11-04T14:44:09+00:00"
  },
+ "almaty:trade corp kz трэйд корп кз": {
+  "name": "TRADE CORP KZ (ТРЭЙД КОРП КЗ)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T15:41:30+00:00"
+ },
  "almaty:trading house b i profit": {
   "name": "TRADING HOUSE B.I.PROFIT",
   "city": "almaty",
@@ -23321,6 +23344,21 @@
    "website"
   ]
  },
+ "almaty:домино бутик": {
+  "name": "Домино Бутик",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T15:41:30+00:00",
+  "website": "https://domino.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001080557961",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "24f66257dba63fa1.jpg",
+  "avatar_source": "website"
+ },
  "almaty:дон плюс": {
   "name": "Дон Плюс",
   "city": "almaty",
@@ -24596,7 +24634,7 @@
   "instagram": "kazznt",
   "website": "https://kazznt.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001080994531",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25011,7 +25049,7 @@
   "instagram": "kinopark_kz",
   "website": "https://kinopark.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037363298",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26183,7 +26221,7 @@
   "instagram": "malenkaya_italiya",
   "website": "http://littleitaly.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001029247120",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29094,7 +29132,7 @@
   "instagram": "dns_qazaqstan",
   "website": "http://dns-shop.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001064968167",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44913,7 +44951,7 @@
   "instagram": "concreteastana",
   "website": "https://concrete-astana.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018134318",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -72611,7 +72649,7 @@
   "instagram": "siluminvostok",
   "website": "https://silumin.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721317694",
-  "avatar_checked_at": "2026-11-08T14:43:59+00:00",
+  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
   "avatar_tried": [
    "website"
   ]

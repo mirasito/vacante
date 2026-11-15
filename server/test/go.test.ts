@@ -152,3 +152,9 @@ test("фоновый сбор сохраняет номера всех вака�
   assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_contacts WHERE found = 1"), 5);
   assert.equal(fetched.length, 5);
 });
+
+test("вилка зарплаты «237000 - 237000 ₸» — не номер работодателя", async () => {
+  const { contactsOf } = await import("../src/contacts.ts");
+  assert.equal(contactsOf("Повар в кафе\nЗарплата: 237000 - 237000 ₸", [], "almaty_jobs").phone, null);
+  assert.equal(contactsOf("Зарплата: 700000 - 700000 ₸\nТел: 87011234567", [], "almaty_jobs").phone, "+77011234567");
+});

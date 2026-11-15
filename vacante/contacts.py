@@ -10,7 +10,8 @@ from __future__ import annotations
 import re
 
 # Те же номера, что вырезает разбор: +7 701 123 45 67, 8(701)1234567, 701-123-45-67
-PHONE = re.compile(r"(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}")
+# Цифра вплотную до или после — это не номер, а сумма: «237000 - 237000 ₸»
+PHONE = re.compile(r"(?<!\d)(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}(?!\d)")
 WHATSAPP = re.compile(r"whats\s?app|watsap|ватс?ап|вацап|уатсап|вотсап|wa\.me/|api\.whatsapp\.com/send", re.I)
 # @hr_almaty или t.me/hr_almaty: человек или бот, которому можно написать
 USERNAME = re.compile(r"(?:(?<![\w.@/])@|(?:https?://)?t\.me/)([A-Za-z]\w{3,31})(?![\w/])")

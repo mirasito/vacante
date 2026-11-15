@@ -9,7 +9,8 @@ import { localDay } from "./time.ts";
 export const POST_URL = /^https:\/\/t\.me\/([A-Za-z]\w{3,31})\/(\d{1,10})$/;
 
 // Те же выражения, что в vacante/contacts.py. В Python \w понимает и кириллицу, здесь это [\p{L}\p{N}_]
-const PHONE = /(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}/g;
+// Цифра вплотную до или после — это не номер, а сумма: «237000 - 237000 ₸»
+const PHONE = /(?<!\d)(?:\+?[78][\s(-]*)?\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}(?!\d)/g;
 const WHATSAPP = /whats\s?app|watsap|ватс?ап|вацап|уатсап|вотсап|wa\.me\/|api\.whatsapp\.com\/send/iu;
 const USERNAME = /(?:(?<![\p{L}\p{N}_.@/])@|(?:https?:\/\/)?t\.me\/)([A-Za-z]\w{3,31})(?![\p{L}\p{N}_/])/gu;
 const PROMO = /подпис|разместить ваканси|размещени[\p{L}\p{N}_]* ваканси|реклам|наш канал|поделись|жазыл/iu;

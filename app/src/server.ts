@@ -157,10 +157,11 @@ export const saveProfile = (
   });
 
 /**
- * Шаг воронки: открыл приложение или начал анкету, с меткой источника из ссылки запуска.
+ * Шаг воронки: открыл приложение, начал анкету или откликнулся без профиля (sent_plain),
+ * с меткой источника из ссылки запуска.
  * Сервер считает шаги обезличенно. Ошибки не важны: приложение работает и без этого.
  */
-export const sendEvent = (step: 'open' | 'profile_start', source?: string): Promise<void> =>
+export const sendEvent = (step: 'open' | 'profile_start' | 'sent_plain', source?: string): Promise<void> =>
   api<unknown>('/me/events', { method: 'POST', body: { step, ...(source ? { source } : {}) } }).then(
     () => undefined,
     () => undefined,

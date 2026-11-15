@@ -62,6 +62,8 @@ export function ProfileTab(props: {
   start?: 'home';
   /** Ответы стартовых экранов: подсказка для новой анкеты. */
   want?: Want;
+  /** Метка источника из ссылки запуска: уходит на сервер с первой анкетой. */
+  source?: string;
   /** Ближайшие напоминания и их настройки (есть, когда профиль на сервере). */
   reminders?: RemindersProps;
   /** Блоки vacante 2.0 над напоминаниями: «Надёжность» и «Пригласить друга». */
@@ -135,6 +137,7 @@ export function ProfileTab(props: {
         city={props.city}
         existing={view?.profile ?? null}
         seed={props.want}
+        source={props.source}
         backRef={backRef}
         onCancel={() => setMode('card')}
         onDone={(v, created) => {

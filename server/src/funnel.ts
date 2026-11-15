@@ -11,7 +11,7 @@ import { HttpError, route, type Request, type Route } from "./http.ts";
 import { getSeeker, iso } from "./seekers.ts";
 import { DAY_MS, localDay } from "./time.ts";
 
-export const STEPS = ["open", "profile_start"] as const;
+export const STEPS = ["open", "profile_start", "sent_plain"] as const;
 export type Step = (typeof STEPS)[number];
 
 const SOURCE_RE = /^[a-z0-9]{1,8}$/;
@@ -37,20 +37,22 @@ export interface FunnelRow {
   opened: number;
   profile_started: number;
   profile_done: number;
+  /** Отклики без профиля: человек отказался от анкеты и отправил короткий текст без ссылки. */
+  sent_plain: number;
   sent: number;
   sent_with_link: number;
   reached: number;
   answered: number;
 }
 
-const NUMBERS = ["opened", "profile_started", "profile_done", "sent", "sent_with_link", "reached", "answered"] as const;
+const NUMBERS = ["opened", "profile_started", "profile_done", "sent_plain", "sent", "sent_with_link", "reached", "answered"] as const;
 type Field = (typeof NUMBERS)[number];
 const NO_SOURCE = "—";
 // День по времени Казахстана (UTC+5) из времени в базе
 const DAY = (column: string) => `date(${column}, '+5 hours')`;
 
 const blank = (day: string, source: string): FunnelRow => ({
-  day, source, opened: 0, profile_started: 0, profile_done: 0, sent: 0, sent_with_link: 0, reached: 0, answered: 0,
+  day, source, opened: 0, profile_started: 0, profile_done: 0, sent_plain: 0, sent: 0, sent_with_link: 0, reached: 0, answered: 0,
 });
 
 /** Воронка за дни from…to включительно (ГГГГ-ММ-ДД по времени Казахстана), строка на день и источник. */
@@ -70,6 +72,7 @@ export function funnel(db: Db, from: string, to: string): FunnelRow[] {
 
   each("SELECT day, source, n FROM funnel_counts WHERE step = 'open' AND day BETWEEN ? AND ?", "opened");
   each("SELECT day, source, n FROM funnel_counts WHERE step = 'profile_start' AND day BETWEEN ? AND ?", "profile_started");
+  each("SELECT day, source, n FROM funnel_counts WHERE step = 'sent_plain' AND day BETWEEN ? AND ?", "sent_plain");
   // Соискатель появляется в базе вместе с первой сохранённой анкетой
   each(
     `SELECT ${DAY("s.created_at")} AS day, s.source, COUNT(*) AS n FROM seekers s
@@ -153,7 +156,7 @@ export function funnelRoutes(ctx: Ctx): Route[] {
       const body = (await req.json<Record<string, unknown>>()) ?? {};
       const step = body.step;
       if (step !== undefined && !(STEPS as readonly unknown[]).includes(step)) {
-        throw new HttpError(400, "Поле step: open или profile_start");
+        throw new HttpError(400, "Поле step: open, profile_start или sent_plain");
       }
       const source = sourceOf(body.source);
       const now = ctx.now();

@@ -234,7 +234,7 @@ td.nowrap { white-space: nowrap; }
   </div>
 
   <div id="tab-funnel" hidden>
-  <p class="quiet">Путь соискателя по источникам: открыл приложение → начал анкету → создал профиль → отправил отклик → отправил со ссылкой на профиль → работодатель открыл ссылку («дошёл») → работодатель ответил. Источник — метка из ссылки запуска: <b>tg</b> — свои каналы, остальные — метки рекламы и видео, «—» — без метки. Открытия и начатые анкеты считаются обезличенно, по одному на человека в день. Под числом — доля от предыдущего шага.</p>
+  <p class="quiet">Путь соискателя по источникам: открыл приложение → начал анкету → создал профиль (или отказался от анкеты и откликнулся без профиля, коротким текстом без ссылки) → отправил отклик → отправил со ссылкой на профиль → работодатель открыл ссылку («дошёл») → работодатель ответил. Источник — метка из ссылки запуска: <b>tg</b> — свои каналы, остальные — метки рекламы и видео, «—» — без метки. Открытия, начатые анкеты и отклики без профиля считаются обезличенно, по одному на человека в день, поэтому за период один человек может попасть в них несколько раз. Под числом — доля от предыдущего шага.</p>
   <p class="err" id="funnel-error" hidden></p>
   <div class="filters">
     <div class="seg" id="funnel-days">
@@ -243,12 +243,12 @@ td.nowrap { white-space: nowrap; }
     </div>
   </div>
   <div class="scroll"><table id="funnel">
-    <thead><tr><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
+    <thead><tr><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отклик без профиля</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
     <tbody></tbody>
   </table></div>
   <h2>По дням</h2>
   <div class="scroll"><table id="funnel-daily">
-    <thead><tr><th>День</th><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
+    <thead><tr><th>День</th><th>Источник</th><th class="num">Открыли</th><th class="num">Начали анкету</th><th class="num">Создали профиль</th><th class="num">Отклик без профиля</th><th class="num">Отправили отклик</th><th class="num">Со ссылкой</th><th class="num">Дошёл</th><th class="num">Ответили</th></tr></thead>
     <tbody></tbody>
   </table></div>
   </div>
@@ -559,9 +559,9 @@ td.nowrap { white-space: nowrap; }
   }
 
   // Воронка соискателей: числа считает сервер в Казахстане (server/src/funnel.ts), вход тем же ключом, что у CRM
-  const FUNNEL_STEPS = ["opened", "profile_started", "profile_done", "sent", "sent_with_link", "reached", "answered"];
+  const FUNNEL_STEPS = ["opened", "profile_started", "profile_done", "sent_plain", "sent", "sent_with_link", "reached", "answered"];
   // От какого шага считать долю: «со ссылкой» и «дошёл» — от отправленных и от отправленных со ссылкой
-  const FUNNEL_BASE = { profile_started: "opened", profile_done: "profile_started", sent: "profile_done", sent_with_link: "sent", reached: "sent_with_link", answered: "reached" };
+  const FUNNEL_BASE = { profile_started: "opened", profile_done: "profile_started", sent_plain: "profile_started", sent: "profile_done", sent_with_link: "sent", reached: "sent_with_link", answered: "reached" };
   function funnelCells(r, share) {
     return FUNNEL_STEPS.map((f) => {
       const base = FUNNEL_BASE[f] ? r[FUNNEL_BASE[f]] : 0;
@@ -581,10 +581,10 @@ td.nowrap { white-space: nowrap; }
       const empty = (cols) => `<tr><td colspan="${cols}" class="quiet">За этот период данных пока нет</td></tr>`;
       $("#funnel tbody").innerHTML = data.sources.length
         ? [...data.sources, data.total].map((r) => `<tr><td>${r === data.total ? "<b>Всего</b>" : esc(r.source)}</td>${funnelCells(r, true)}</tr>`).join("")
-        : empty(8);
+        : empty(9);
       $("#funnel-daily tbody").innerHTML = data.rows.length
         ? data.rows.map((r) => `<tr><td>${esc(r.day)}</td><td>${esc(r.source)}</td>${funnelCells(r, false)}</tr>`).join("")
-        : empty(9);
+        : empty(10);
     };
     $("#funnel-days").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
       $("#funnel-days").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));

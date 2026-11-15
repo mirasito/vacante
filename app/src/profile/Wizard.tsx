@@ -229,7 +229,7 @@ export function Wizard(props: {
             }}
           />
         )}
-        {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
+        {error && !last ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
       </ScrollView>
       {step === 'experience' || step === 'start' ? (
         busy ? (
@@ -243,6 +243,8 @@ export function Wizard(props: {
         ) : null
       ) : last ? (
         <View style={s.foot}>
+          {/* Список профессий длинный: ошибку сохранения показываем у кнопки, а не под списком */}
+          {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
           <Button c={c} label={t.quickDone} busy={busy} disabled={!ready(step, draft, adult && agree)} onPress={() => submit(draft)} />
         </View>
       ) : (

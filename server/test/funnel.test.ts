@@ -164,10 +164,10 @@ test("воронка: шаги по источникам, «дошёл» оди�
   assert.equal(r.status, 200);
   const row = (source: string) => r.json.rows.find((x: { source: string }) => x.source === source);
   assert.deepEqual(row("tg"), {
-    day: "2026-11-04", source: "tg", opened: 1, profile_started: 1, profile_done: 1, sent: 2, sent_with_link: 1, reached: 1, answered: 1,
+    day: "2026-11-04", source: "tg", opened: 1, profile_started: 1, profile_done: 1, sent_plain: 0, sent: 2, sent_with_link: 1, reached: 1, answered: 1,
   });
   assert.deepEqual(row("ad12"), {
-    day: "2026-11-04", source: "ad12", opened: 1, profile_started: 0, profile_done: 0, sent: 0, sent_with_link: 0, reached: 0, answered: 0,
+    day: "2026-11-04", source: "ad12", opened: 1, profile_started: 0, profile_done: 0, sent_plain: 0, sent: 0, sent_with_link: 0, reached: 0, answered: 0,
   });
   assert.equal(r.json.total.opened, 2);
   assert.equal(r.json.total.sent, 2);
@@ -196,4 +196,18 @@ test("воронка только для админки: без пароля 403
   const bare = await startServer();
   assert.equal((await bare.call("GET", "/admin/funnel", { headers: admin })).status, 503);
   await bare.close();
+});
+
+test("отклик без профиля (отказ от анкеты) виден в воронке обезличенным числом", async () => {
+  const t = await server();
+  await t.event({ step: "open", source: "tg" });
+  await t.event({ step: "profile_start", source: "tg" });
+  assert.equal((await t.event({ step: "sent_plain", source: "tg" })).status, 204);
+  await t.event({ step: "sent_plain", source: "tg" }); // второй отклик за день того же человека не считается
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM seekers").get()!.n, 0);
+  const r = await t.s.call("GET", "/admin/funnel?days=7", { headers: admin });
+  assert.deepEqual(r.json.rows, [{
+    day: "2026-11-04", source: "tg", opened: 1, profile_started: 1, profile_done: 0, sent_plain: 1, sent: 0, sent_with_link: 0, reached: 0, answered: 0,
+  }]);
+  await t.s.close();
 });

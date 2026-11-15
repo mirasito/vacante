@@ -44,7 +44,7 @@ import {
   type HomeScreen,
 } from './src/platform';
 import { Onboarding } from './src/Onboarding';
-import { findLaunched } from './src/openFromLink';
+import { findLaunched, findOnPages } from './src/openFromLink';
 import { ProfileTab } from './src/profile/ProfileTab';
 import { Wizard } from './src/profile/Wizard';
 import { almaty, P } from './src/profile/texts';
@@ -279,10 +279,18 @@ function Main() {
         setHistory([]);
         setFeed(items);
         // Ссылка под постом в канале: открываем эту вакансию; если её уже сняли, остаётся лента города
-        const launched = findLaunched(items, launchedVacancy.current);
+        const wanted = launchedVacancy.current;
+        const launched = findLaunched(items, wanted);
         launchedVacancy.current = undefined;
         if (launched.vacancy) setOpen(launched.vacancy);
-        else if (launched.closed) notify(i18n.t(langRef.current, 'vacancyClosed'));
+        else if (launched.closed && wanted) {
+          // В большом городе пост двухдневной давности уже не в первых 400: смотрим следующие страницы
+          void findOnPages(wanted, last, (n) => loadPage(city, n)).then((found) => {
+            if (!alive) return;
+            if (found) setOpen(found);
+            else notify(i18n.t(langRef.current, 'vacancyClosed'));
+          });
+        }
       },
       (err) => {
         console.warn(`Вакансии города ${city} не загрузились`, err);
@@ -556,6 +564,8 @@ function Main() {
       putApp(r.application, r.summary);
       return;
     }
+    // Отклик без профиля: человек отказался от анкеты. В воронке это обезличенное число, иначе его не отличить от ушедшего
+    void sendEvent('sent_plain', prefs.source);
     const known = liked.find((x) => x.id === applying.copy.id);
     saveLocal(applying.copy, applying.full, !known?.stage || known.stage === 'liked' ? { stage: 'sent', method } : { method });
   };
@@ -1041,6 +1051,7 @@ function Main() {
           backRef={profileBack}
           start={profileStart ?? undefined}
           want={prefs.want}
+          source={prefs.source}
           onHome={(point) => {
             setAccount((a) => (a && !samePoint(a.home, point) ? { ...a, home: point } : a));
             // Дом сохранили после кнопки «Рядом с домом»: назад в ленту, фильтр уже включён

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T07:56:32+00:00",
+ "updated_at": "2026-11-15T08:56:36+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -431,11 +431,6 @@
    "fields": {
     "schedule": "Сменный график"
    }
-  },
-  "hh-138309897": {
-   "verdict": "reject",
-   "at": "2026-10-30T06:59:47+00:00",
-   "reason": "Офисные продажи, не рабочая специальность"
   },
   "astana_job_vakansii-129948": {
    "verdict": "approve",
@@ -1595,14 +1590,6 @@
     "employer": "Ресторан «Proseccarna»"
    }
   },
-  "almaty_rabota01-26007": {
-   "verdict": "approve",
-   "at": "2026-10-31T16:57:12+00:00",
-   "fields": {
-    "schedule": "5/2, 07:00–18:00",
-    "address": "район Абая — Алтынсарина"
-   }
-  },
   "almatyrabota1-21214": {
    "verdict": "approve",
    "at": "2026-10-31T16:57:12+00:00",
@@ -1801,154 +1788,10 @@
     "employer": "Сеть «5 баллов»"
    }
   },
-  "hh-133853971": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "schedule": "1/2"
-   }
-  },
-  "rabota_astanakz-31147": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "employer": null,
-    "schedule": "Суточный график"
-   }
-  },
-  "astana_job_vakansii-130006": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "employer": "Rumble Boxing & Fitness",
-    "schedule": "6/1, с 22:30"
-   }
-  },
-  "astana_job_vakansii-130005": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Технический персонал (посуда, уборка)",
-    "employer": "Караоке-клуб «Bariton»",
-    "salary_min": 10000,
-    "salary_max": 16000,
-    "salary_period": "day",
-    "schedule": "ночные смены, 17:00–06:30"
-   }
-  },
-  "hh-139032542": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "employer": "PRO-LINE",
-    "schedule": "5/2"
-   }
-  },
-  "hh-139032560": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Продавец-кассир",
-    "employer": "O'stin",
-    "schedule": null
-   }
-  },
-  "hh-139032307": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "schedule": "6/1"
-   }
-  },
-  "hh-139032300": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Машинист автокрана",
-    "employer": "Кадышев Ерлан",
-    "schedule": "6/1"
-   }
-  },
-  "hh-139032134": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "schedule": "5/2"
-   }
-  },
-  "rabota4almaty-5987": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Администратор-горничная",
-    "employer": null,
-    "schedule": "2/2, сутки",
-    "perks": [
-     "Ежедневная оплата"
-    ]
-   }
-  },
-  "rabota4almaty-5986": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Автослесарь (ходовик, моторист)"
-   }
-  },
   "hh-138959438": {
    "verdict": "reject",
    "at": "2026-11-01T08:56:30+00:00",
    "reason": "Работа в России (Мытищи)"
-  },
-  "rabota4almaty-5988": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Сварщик 4-го разряда",
-    "employer": "ИП «Техно Logic»"
-   }
-  },
-  "hh-139032306": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "employer": "Бастық",
-    "schedule": "2/2 или 3/2"
-   }
-  },
-  "rabota4almaty-5985": {
-   "verdict": "reject",
-   "at": "2026-11-01T08:56:30+00:00",
-   "reason": "Офисная должность, кредитный брокер"
-  },
-  "hh-139032556": {
-   "verdict": "reject",
-   "at": "2026-11-01T08:56:30+00:00",
-   "reason": "Похоже на продажи с доходом «без потолка», не рабочая специальность"
-  },
-  "rabotaaktau-141987": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Официант, кассир",
-    "employer": "Кафетерий «Le Brunch»",
-    "address": "18а-3"
-   }
-  },
-  "hh-139032505": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "schedule": "5/2"
-   }
-  },
-  "hh-139032599": {
-   "verdict": "approve",
-   "at": "2026-11-01T08:56:30+00:00",
-   "fields": {
-    "title": "Старший продавец овощного отдела",
-    "schedule": "5/2 или 2/2"
-   }
   },
   "astana_job_vakansii-130007": {
    "verdict": "approve",
@@ -55155,6 +54998,208 @@
    "verdict": "reject",
    "at": "2026-11-15T07:56:32+00:00",
    "reason": "Реклама таксопарка без зарплаты"
+  },
+  "astana_job_vakansii-130657": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Су-шеф, повар, сушист",
+    "employer": "Ресторан «TAIYO»",
+    "salary_min": 20000,
+    "salary_max": 25000,
+    "salary_period": "day",
+    "schedule": "6/1 или 2/2, смены по 12 часов",
+    "address": "ул. Достык, 4",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "hh-139498589": {
+   "verdict": "reject",
+   "at": "2026-11-15T08:56:36+00:00",
+   "reason": "Работа с криптовалютой"
+  },
+  "hh-139498250": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "employer": "Лайк Сервис",
+    "address": "ул. Жакыпа Омарова, 166"
+   }
+  },
+  "astana_job_vakansii-130659": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Повар-жарщик, кухонный работник, кассир",
+    "salary_min": 10000,
+    "salary_max": 15000,
+    "salary_period": "day",
+    "schedule": "5/2, 11:00–23:00",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "astana_job_vakansii-130660": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Официант, хостес",
+    "employer": null,
+    "schedule": "2/2 или 5/2, смены по 9 и 13 часов"
+   }
+  },
+  "astana_rabota-90218": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Повар-универсал",
+    "schedule": "ночные смены, 21:00–09:00",
+    "address": "ул. Кабанбай батыра, 56"
+   }
+  },
+  "zhumys_astana_kz-17402": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Официант, раннер",
+    "employer": "Кафе «Chinar»",
+    "schedule": "дневная смена, полный график"
+   }
+  },
+  "zhumys_astana_kz-17347": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Продавец",
+    "employer": "ТД «Евразия-1»",
+    "salary_min": 13000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "08:00–20:00",
+    "address": "ТД «Евразия-1», отдел фруктов и овощей",
+    "perks": [
+     "Питание",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139498351": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "1/3, сутки",
+    "address": "Алатауский район, ул. Казтуган Жырау, 18"
+   }
+  },
+  "hh-138199545": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "employer": "Сумо-Сан",
+    "schedule": "2/2",
+    "address": "ул. Байтурсынова, 159"
+   }
+  },
+  "hh-138284339": {
+   "verdict": "reject",
+   "at": "2026-11-15T08:56:36+00:00",
+   "reason": "Руководящая должность, адрес в Астане"
+  },
+  "hh-138252098": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Менеджер по продажам красок",
+    "employer": "Samruk Trade",
+    "address": "ул. Кабдолова, 1/8"
+   }
+  },
+  "hh-137919193": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Администратор стоматологии",
+    "employer": "Benefakta",
+    "address": "ул. Сатпаева, 11"
+   }
+  },
+  "hh-138301168": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "employer": null,
+    "address": "пр. Абая, 170"
+   }
+  },
+  "hh-138436402": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "employer": "Белый Ветер"
+   }
+  },
+  "hh-139493400": {
+   "verdict": "reject",
+   "at": "2026-11-15T08:56:36+00:00",
+   "reason": "Руководящая должность: нужен опыт супервайзера от 5 лет"
+  },
+  "hh-139493560": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "employer": "БыстроКадр",
+    "schedule": "свободный график",
+    "address": "ул. Лебедева, 62"
+   }
+  },
+  "hh-139493146": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Администратор падел-клуба",
+    "employer": "Padel Hills Club",
+    "address": "мкр Кок-Тобе, ул. Сагадата Нурмагамбетова, 232"
+   }
+  },
+  "rabota4almaty-6616": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "title": "Газосварщик, газоэлектросварщик",
+    "employer": "КазНИТУ им. К. И. Сатпаева",
+    "address": "ул. Сатпаева, 22"
+   }
+  },
+  "hh-131600913": {
+   "verdict": "reject",
+   "at": "2026-11-15T08:56:36+00:00",
+   "reason": "Работа в Темиртау, а не в Караганде"
+  },
+  "hh-139498392": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "schedule": "2/2",
+    "address": "ул. Торайгырова, 105"
+   }
+  },
+  "vakansii_oskemen-9349": {
+   "verdict": "reject",
+   "at": "2026-11-15T08:56:36+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139498257": {
+   "verdict": "approve",
+   "at": "2026-11-15T08:56:36+00:00",
+   "fields": {
+    "schedule": "2/2, 12 часов",
+    "address": "пр. Аль-Фараби, 48"
+   }
   }
  }
 }

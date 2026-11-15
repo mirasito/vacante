@@ -18878,7 +18878,7 @@
   "instagram": "valesco_kz",
   "website": "http://www.valesco.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790908",
-  "avatar_checked_at": "2026-11-08T07:43:17+00:00",
+  "avatar_checked_at": "2026-11-15T08:42:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21280,6 +21280,13 @@
   ],
   "avatar": "6debd153bc4cd66a.jpg",
   "avatar_source": "website"
+ },
+ "almaty:арю р т": {
+  "name": "Арю Р.Т.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00"
  },
  "almaty:ас трейд": {
   "name": "АС -Трейд",
@@ -32949,6 +32956,13 @@
   "instagram": "aura_optics",
   "source": "https://2gis.kz/astana/firm/70000001063404709"
  },
+ "astana:ausu": {
+  "name": "AUSU",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00"
+ },
  "astana:auto bus service": {
   "name": "Auto Bus Service",
   "city": "astana",
@@ -36891,7 +36905,7 @@
   "checked_at": "2026-11-01T07:43:00+00:00",
   "website": "http://likedecor.kz/",
   "source": "https://2gis.kz/astana/firm/70000001044766457",
-  "avatar_checked_at": "2026-11-08T07:43:17+00:00",
+  "avatar_checked_at": "2026-11-15T08:42:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40056,6 +40070,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T18:44:06+00:00"
+ },
+ "astana:taiyo": {
+  "name": "TAIYO",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00",
+  "instagram": "taiyo.bar",
+  "source": "https://2gis.kz/astana/firm/70000001090104472"
  },
  "astana:talan service astana": {
   "name": "TALAN Service Astana",
@@ -45012,6 +45035,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "astana:лайк сервис": {
+  "name": "ЛАЙК СЕРВИС",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00",
+  "website": "https://like.service.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001111842779",
+  "avatar_checked_at": "2026-11-15T08:42:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:лаунж бар totem": {
   "name": "Лаунж бар TOTEM",
@@ -53577,6 +53613,13 @@
   "instagram": "aquamaster.krg",
   "source": "https://2gis.kz/karaganda/firm/70000001104938338"
  },
+ "karaganda:алатау премиум мунай": {
+  "name": "Алатау Премиум Мунай",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00"
+ },
  "karaganda:алиди казахстан": {
   "name": "АЛИДИ Казахстан",
   "city": "karaganda",
@@ -57077,6 +57120,13 @@
    "website"
   ]
  },
+ "kostanay:silk way": {
+  "name": "Silk Way",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00"
+ },
  "kostanay:skill hub": {
   "name": "Skill Hub",
   "city": "kostanay",
@@ -59525,6 +59575,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:lmarko": {
+  "name": "L'MARKO",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T08:42:08+00:00"
  },
  "pavlodar:log4": {
   "name": "LOG4",

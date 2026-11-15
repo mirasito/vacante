@@ -167,6 +167,9 @@ def test_admin_has_funnel_tab(tmp_path):
     build(tmp_path / "data", tmp_path / "out", now=NOW, admin_password="ключ от админки")
     page = (tmp_path / "out" / "admin" / "index.html").read_text("utf-8")
     assert 'data-tab="funnel"' in page and 'id="tab-funnel"' in page and "Воронка" in page
+    # Шаги полной анкеты и честный итог за период: таблица и подпись про людей, а не сумму дней
+    assert 'id="funnel-form"' in page and "Где вы живёте (дом)" in page
+    assert 'id="funnel-returns"' in page and "opened_daily" in page
     admin = unseal(json.loads((tmp_path / "out" / "admin" / "sealed.json").read_text("utf-8")), "ключ от админки")
     # Числа воронки лежат только на сервере в Казахстане: страница получает адрес, а не данные
     assert admin["funnel_api"] == "https://api.vacante.kz/admin/funnel"

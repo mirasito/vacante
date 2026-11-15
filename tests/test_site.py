@@ -21,9 +21,9 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     assert "Официант" in page and "14 000 – 18 000 ₸/день" in page
     assert 'href="https://t.me/chan/5"' in page
     # Главная кнопка ведёт в приложение на эту вакансию; оригинал объявления остаётся второй ссылкой
-    assert 'class="apply" href="https://t.me/vacantekz_bot?startapp=sweb_v_almaty_chan-5"' in page
+    assert 'class="apply" href="https://t.me/vacantekz_bot?startapp=sweb_a_almaty_chan-5"' in page
     assert 'class="apply second" href="https://t.me/chan/5"' in page
-    assert page.index('startapp=sweb_v_almaty_chan-5') < page.index('class="apply second"')
+    assert page.index('startapp=sweb_a_almaty_chan-5') < page.index('class="apply second"')
     assert '"@type": "JobPosting"' in page
     assert (out / "almaty" / "horeca" / "index.html").exists()
     assert "https://vacante.kz/almaty/" in (out / "sitemap.xml").read_text("utf-8")
@@ -248,7 +248,7 @@ def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_p
     assert "Откликнуться в приложении" not in page  # есть способы связи: общая кнопка не нужна
     assert "wa.me" not in page and "tel:" not in page
     # Профиль можно сделать и придя с сайта: кнопка ведёт в приложение на эту вакансию
-    assert '<a class="apply second" href="https://t.me/vacantekz_bot?startapp=swebpf_v_almaty_chan-31" rel="nofollow">👤 Откликнуться с профилем</a>' in page
+    assert '<a class="apply second" href="https://t.me/vacantekz_bot?startapp=swebpf_a_almaty_chan-31" rel="nofollow">👤 Откликнуться с профилем</a>' in page
     assert "С профилем отвечают охотнее" in page
     kk = (tmp_path / "public" / "kk" / "v" / "chan-31" / "index.html").read_text("utf-8")
     assert "WhatsApp-қа жазу" in kk and "Қоңырау шалу" in kk

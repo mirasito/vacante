@@ -282,6 +282,9 @@ export const launchRef = () => launch().ref;
 /** Вакансия из ссылки под постом в канале: приложение открывает её сразу. */
 export const launchVacancy = () => launch().vacancyId;
 
+/** Ссылка ведёт на отклик (кнопки «Откликнуться» и «С профилем»): вместо карточки сразу окно отклика. */
+export const launchApply = () => launch().apply === true;
+
 /** Откуда пришёл человек: метка источника из ссылки («tg» — свои каналы, метка рекламы и так далее). */
 export const launchSource = () => launch().source;
 

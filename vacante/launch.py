@@ -4,7 +4,8 @@ Telegram передаёт приложению одно значение до 64
 источник перехода, город и вакансия собраны в одну строку. Разбирает её приложение (app/src/launch.ts),
 и обе стороны должны понимать один формат:
 
-    [s<метка>_] v_<город>_<id вакансии>   вакансия открыта сразу
+    [s<метка>_] v_<город>_<id вакансии>   карточка вакансии (заголовки в подборке, старые ссылки)
+    [s<метка>_] a_<город>_<id вакансии>   сразу окно отклика на вакансию (кнопки «Откликнуться», «С профилем»)
     [s<метка>_] c_<город>                 лента города
 
 Метка источника — до 8 строчных букв и цифр («tg» — свои каналы). В городе нет «_», поэтому «_» после
@@ -27,15 +28,19 @@ CITY = re.compile(r"[a-z-]{2,30}")
 VACANCY = re.compile(r"[A-Za-z0-9_-]+")
 
 
-def start_param(*, source: str | None = None, city: str | None = None, vacancy_id: str | None = None) -> str | None:
-    """Параметр для ссылки или None, если он не поместится в ссылку или в нём недопустимый символ."""
+def start_param(*, source: str | None = None, city: str | None = None, vacancy_id: str | None = None,
+                apply: bool = False) -> str | None:
+    """Параметр для ссылки или None, если он не поместится в ссылку или в нём недопустимый символ.
+
+    apply — ссылка стоит под словом «Откликнуться»: приложение открывает сразу окно отклика, а не карточку.
+    """
     if not city or not CITY.fullmatch(city):
         return None
     if source is not None and not SOURCE.fullmatch(source):
         return None
     if vacancy_id is not None and not VACANCY.fullmatch(vacancy_id):
         return None
-    body = f"v_{city}_{vacancy_id}" if vacancy_id is not None else f"c_{city}"
+    body = f"{'a' if apply else 'v'}_{city}_{vacancy_id}" if vacancy_id is not None else f"c_{city}"
     param = f"s{source}_{body}" if source else body
     return param if len(param) <= MAX else None
 
@@ -58,7 +63,7 @@ def reply_buttons(v: Vacancy, source: str) -> list[tuple[str, str]]:
     У вакансии из канала с контактами в посте — прямые кнопки «whatsapp», «phone», «telegram»: ссылка ведёт
     на сервер, а он сразу отправляет человека в чат WhatsApp с готовым текстом, на звонок или в Telegram.
     Сами номера хранятся только на сервере, в открытые данные сайта они не попадают. У остальных
-    (hh.kz, OLX, пост без контактов) одна кнопка «apply»: вакансия в мини-приложении.
+    (hh.kz, OLX, пост без контактов) одна кнопка «apply»: окно отклика на вакансию в мини-приложении.
     source — откуда кнопка, для счётчика нажатий: «web» — сайт, «tg» — свои каналы, «bot» — подборки бота.
     Пусто, если отклик идёт иначе: вакансия от работодателя или смена на день.
     """
@@ -68,12 +73,12 @@ def reply_buttons(v: Vacancy, source: str) -> list[tuple[str, str]]:
     if kinds and v.source == "telegram" and CHANNEL_ID.fullmatch(v.id) and SOURCE.fullmatch(source):
         query = urlencode({"s": source, "t": (v.title or "")[:80]})
         return [(kind, f"{GO_URL}/go/{v.id}/{GO_KINDS[kind]}?{query}") for kind in kinds]
-    param = start_param(source=source, city=v.city, vacancy_id=v.id)
+    param = start_param(source=source, city=v.city, vacancy_id=v.id, apply=True)
     return [("apply", app_link(param))] if param else []
 
 
 def profile_link(v: Vacancy, source: str) -> str | None:
-    """Ссылка «откликнуться с профилем» рядом с прямыми кнопками связи: эта вакансия в мини-приложении.
+    """Ссылка «откликнуться с профилем» рядом с прямыми кнопками связи: отклик на эту вакансию в мини-приложении.
 
     Прямые кнопки ведут к работодателю мимо приложения, поэтому рядом с ними всегда есть путь, где человек
     за минуту делает профиль и отклик уходит со ссылкой на него. None, если прямых кнопок нет (тогда кнопка
@@ -82,5 +87,5 @@ def profile_link(v: Vacancy, source: str) -> str | None:
     """
     if not any(kind != "apply" for kind, _ in reply_buttons(v, source)):
         return None
-    param = start_param(source=source + "pf", city=v.city, vacancy_id=v.id)
+    param = start_param(source=source + "pf", city=v.city, vacancy_id=v.id, apply=True)
     return app_link(param) if param else None

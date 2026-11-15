@@ -192,11 +192,26 @@ export const saveProfile = (
 
 /**
  * Шаг воронки: открыл приложение, начал анкету или откликнулся без профиля (sent_plain),
- * с меткой источника из ссылки запуска.
+ * с меткой источника из ссылки запуска. gap — только у открытия: сколько дней назад приложение
+ * открывали на этом устройстве в прошлый раз (opens.ts), чтобы итог за период считал людей, а не дни.
  * Сервер считает шаги обезличенно. Ошибки не важны: приложение работает и без этого.
+ * Возвращает, принял ли сервер событие.
  */
-export const sendEvent = (step: 'open' | 'profile_start' | 'sent_plain', source?: string): Promise<void> =>
-  api<unknown>('/me/events', { method: 'POST', body: { step, ...(source ? { source } : {}) } }).then(
+export const sendEvent = (step: 'open' | 'profile_start' | 'sent_plain', source?: string, gap?: number): Promise<boolean> =>
+  api<unknown>('/me/events', { method: 'POST', body: { step, ...(source ? { source } : {}), ...(gap ? { gap } : {}) } }).then(
+    () => true,
+    () => false,
+  );
+
+/** Экраны полной анкеты по порядку; сервер знает тот же список (FORM_SCREENS в server/src/funnel.ts). */
+export type FormScreen = 'consent' | 'place' | 'roles' | 'experience' | 'employment' | 'pay' | 'home' | 'start';
+
+/**
+ * Шаг полной анкеты для воронки: человек дошёл до экрана (form_reach) или прошёл его (form_pass).
+ * Тоже обезличенное число за день: по нему видно, на каком экране анкету бросают.
+ */
+export const sendFormStep = (step: 'form_reach' | 'form_pass', screen: FormScreen, source?: string): Promise<void> =>
+  api<unknown>('/me/events', { method: 'POST', body: { step, screen, ...(source ? { source } : {}) } }).then(
     () => undefined,
     () => undefined,
   );

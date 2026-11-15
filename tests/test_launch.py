@@ -37,6 +37,18 @@ def test_bad_city_or_id_gives_none():
     assert start_param() is None
 
 
+def test_apply_link_opens_the_apply_window_and_view_link_stays_as_it_was():
+    # «a_» — сразу окно отклика, «v_» — карточка вакансии (заголовки в утренней подборке и старые ссылки)
+    assert start_param(source="tg", city="almaty", vacancy_id="hh-1", apply=True) == "stg_a_almaty_hh-1"
+    assert start_param(source="tg", city="almaty", vacancy_id="hh-1") == "stg_v_almaty_hh-1"
+    # Без вакансии откликаться не на что: лента города
+    assert start_param(source="tg", city="almaty", apply=True) == "stg_c_almaty"
+    # Ссылка на отклик не длиннее ссылки на карточку: предел Telegram тот же
+    longest = "x" * (64 - len("stgpf_a_almaty_"))
+    assert len(start_param(source="tgpf", city="almaty", vacancy_id=longest, apply=True)) == 64
+    assert start_param(source="tgpf", city="almaty", vacancy_id=longest + "x", apply=True) is None
+
+
 def test_app_link():
     assert app_link("stg_c_almaty") == "https://t.me/vacantekz_bot?startapp=stg_c_almaty"
 
@@ -57,7 +69,7 @@ def test_reply_buttons_follow_contacts_of_the_post():
 
 
 def test_reply_button_is_app_link_when_server_cannot_find_the_post():
-    app = [("apply", "https://t.me/vacantekz_bot?startapp=sweb_v_almaty_hh-7")]
+    app = [("apply", "https://t.me/vacantekz_bot?startapp=sweb_a_almaty_hh-7")]
     # hh.kz и OLX: исходного поста в канале нет, отклик идёт через приложение
     assert reply_buttons(vacancy(id="hh-7", source="hh", contact=[]), "web") == app
     assert reply_buttons(vacancy(id="hh-7", source="olx", contact=["phone"]), "web") == app
@@ -65,7 +77,7 @@ def test_reply_button_is_app_link_when_server_cannot_find_the_post():
 
 def test_reply_button_without_contacts_is_plain_apply():
     assert reply_buttons(vacancy(contact=[]), "web") == [
-        ("apply", "https://t.me/vacantekz_bot?startapp=sweb_v_almaty_chan-5")]
+        ("apply", "https://t.me/vacantekz_bot?startapp=sweb_a_almaty_chan-5")]
 
 
 def test_no_reply_buttons_for_employer_vacancies_shifts_and_long_links():
@@ -78,8 +90,8 @@ def test_no_reply_buttons_for_employer_vacancies_shifts_and_long_links():
 def test_profile_link_goes_with_direct_buttons_only():
     # Рядом с прямыми кнопками — путь в приложение, где отклик уходит со ссылкой на профиль
     v = vacancy(contact=["whatsapp"])
-    assert profile_link(v, "web") == "https://t.me/vacantekz_bot?startapp=swebpf_v_almaty_chan-5"
-    assert profile_link(v, "tg") == "https://t.me/vacantekz_bot?startapp=stgpf_v_almaty_chan-5"
+    assert profile_link(v, "web") == "https://t.me/vacantekz_bot?startapp=swebpf_a_almaty_chan-5"
+    assert profile_link(v, "tg") == "https://t.me/vacantekz_bot?startapp=stgpf_a_almaty_chan-5"
     # Кнопка отклика и так ведёт в приложение: вторая такая же не нужна
     assert profile_link(vacancy(contact=[]), "web") is None
     assert profile_link(vacancy(source="bot"), "web") is None

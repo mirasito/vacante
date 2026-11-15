@@ -63,3 +63,34 @@ test("галочку превью, включённую до кружка в п�
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test("миграция 0019 проходит на базе с данными: счётчики воронки и соискатели на месте", () => {
+  const dir = mkdtempSync(join(tmpdir(), "vacante-mig-"));
+  try {
+    const all = readdirSync(MIGRATIONS).filter((f) => f.endsWith(".sql")).sort();
+    for (const name of all.filter((f) => f < "0019")) copyFileSync(join(MIGRATIONS, name), join(dir, name));
+    const db = new DatabaseSync(":memory:");
+    migrate(db, dir);
+    db.prepare(
+      "INSERT INTO funnel_counts (day, source, step, n) VALUES ('2026-11-15', 'tg', 'open', 7), ('2026-11-15', 'tg', 'profile_start', 3), ('2026-11-16', '', 'sent_plain', 1)",
+    ).run();
+    db.prepare(
+      "INSERT INTO seekers (id, first_name, consent_version, consent_at, source) VALUES (1, 'Дана', 'v', '2026-11-15T10:00:00Z', 'tg')",
+    ).run();
+    const before = {
+      counts: db.prepare("SELECT * FROM funnel_counts ORDER BY day, step").all().map((r) => ({ ...r })),
+      seekers: db.prepare("SELECT * FROM seekers").all().map((r) => ({ ...r })),
+      tables: tables(db),
+    };
+    assert.equal(before.counts.length, 3);
+    copyFileSync(join(MIGRATIONS, "0019_funnel_period.sql"), join(dir, "0019_funnel_period.sql"));
+    assert.deepEqual(migrate(db, dir), ["0019_funnel_period.sql"]);
+    assert.deepEqual(db.prepare("SELECT * FROM funnel_counts ORDER BY day, step").all().map((r) => ({ ...r })), before.counts);
+    assert.deepEqual(db.prepare("SELECT * FROM seekers").all().map((r) => ({ ...r })), before.seekers);
+    // Только новые таблицы: существующие не перестраиваются
+    assert.deepEqual(tables(db), [...before.tables, "funnel_form", "funnel_returns"].sort());
+    db.close();
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});

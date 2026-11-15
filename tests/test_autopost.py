@@ -85,7 +85,7 @@ def test_post_is_picture_with_map_button():
     post = autopost.make_post(v, "https://vacante.kz")
     assert post.photo.startswith(b"\x89PNG")
     # Первая кнопка открывает эту вакансию в мини-приложении, с меткой «свои каналы» для воронки
-    assert post.buttons == [("✉️ Откликнуться", "https://t.me/vacantekz_bot?startapp=stg_v_almaty_chan-10"),
+    assert post.buttons == [("✉️ Откликнуться", "https://t.me/vacantekz_bot?startapp=stg_a_almaty_chan-10"),
                             ("👆 Подробнее", "https://vacante.kz/v/chan-10/"),
                             ("📍 Открыть в 2ГИС", "https://2gis.kz/almaty/search/"
                              "%D1%83%D0%BB.%20%D0%96%D0%B8%D0%B1%D0%B5%D0%BA%20%D0%96%D0%BE%D0%BB%D1%8B%2C%2065%D0%90")]
@@ -99,7 +99,7 @@ def test_post_buttons_name_the_contacts_of_the_original_post():
     assert autopost.make_post(v, "https://vacante.kz").buttons == [
         ("💬 WhatsApp", "https://api.vacante.kz/go/chan-14/wa?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
         ("📞 Позвонить", "https://api.vacante.kz/go/chan-14/call?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
-        ("👤 С профилем", "https://t.me/vacantekz_bot?startapp=stgpf_v_almaty_chan-14"),
+        ("👤 С профилем", "https://t.me/vacantekz_bot?startapp=stgpf_a_almaty_chan-14"),
         ("👆 Подробнее", "https://vacante.kz/v/chan-14/")]
 
 

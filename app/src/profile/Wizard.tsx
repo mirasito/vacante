@@ -1,6 +1,6 @@
 // Создание и правка профиля: согласие и семь экранов с кнопками.
 // Экраны с одним ответом переходят дальше сами, чтобы анкета занимала пару минут.
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import * as i18n from '../i18n';
@@ -10,8 +10,10 @@ import {
   patchMe,
   saveProfile,
   sendEvent,
+  sendFormStep,
   type Employment,
   type Experience,
+  type FormScreen,
   type PayPeriod,
   type Profile,
   type ProfileView,
@@ -25,7 +27,8 @@ import { HomeStep, type HomeDraft } from './Home';
 import { isHoreca } from './skills';
 import { CONSENT, EMPLOYMENT, EXPERIENCE, money, P, PAY_PERIOD, PAY_PRESETS, START } from './texts';
 
-type Step = 'consent' | 'place' | 'home' | 'roles' | 'experience' | 'employment' | 'pay' | 'start';
+// Имена экранов уходят в воронку (sendFormStep): новый экран добавляй и в FORM_SCREENS на сервере
+type Step = FormScreen;
 // «Где вы живёте» — самый трудный шаг (геопозиция или ссылка из 2ГИС), поэтому он последний из вопросов:
 // бросить анкету на нём уже жалко, а пропустить можно одной кнопкой
 const STEPS: Step[] = ['place', 'roles', 'experience', 'employment', 'pay', 'home', 'start'];
@@ -99,6 +102,20 @@ export function Wizard(props: {
   }, []);
   const at = order.indexOf(step);
 
+  // Воронка: до какого экрана полной анкеты человек дошёл и какой прошёл. По этим числам в админке видно,
+  // где анкету бросают (шаг с домом обязательный). Короткая анкета перед откликом сюда не входит.
+  // Каждый экран сообщаем один раз за анкету: «Назад» и снова «Дальше» ничего не добавляют
+  const reported = useRef(new Set<string>());
+  const report = (kind: 'form_reach' | 'form_pass', screen: Step) => {
+    const key = `${kind}:${screen}`;
+    if (quick || reported.current.has(key)) return;
+    reported.current.add(key);
+    void sendFormStep(kind, screen, props.source);
+  };
+  useEffect(() => {
+    report('form_reach', step);
+  }, [step]);
+
   const back = () => {
     setError('');
     if (at <= 0) {
@@ -115,6 +132,7 @@ export function Wizard(props: {
   const next = () => {
     haptic();
     setError('');
+    report('form_pass', step);
     setStep(order[at + 1]!);
   };
 
@@ -156,6 +174,8 @@ export function Wizard(props: {
         if (allowed) view = await patchMe({ write_access: true }).catch(() => view);
       }
       haptic('medium');
+      // Последний экран пройден, когда анкета сохранилась
+      report('form_pass', step);
       onDone(view, !existing);
     } catch (err) {
       setError(err instanceof ApiError && err.status >= 400 && err.status < 500 ? err.message : t.saveError);

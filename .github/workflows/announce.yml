@@ -1,0 +1,52 @@
+# Разовое объявление во все свои каналы (vacante/announce.py). Запускается только вручную:
+# Actions → «Объявление в каналы» → Run workflow, имя объявления из ANNOUNCEMENTS.
+# В каждом канале объявление выходит один раз: повторный запуск дошлёт только туда, куда не дошло.
+name: Объявление в каналы
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Имя объявления из vacante/announce.py"
+        required: true
+        default: "apply-button"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: announce
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install .
+      - name: Подготовить ветку data
+        run: |
+          git config user.name "vacante-bot"
+          git config user.email "vacante-bot@users.noreply.github.com"
+          git fetch --depth 1 origin data:refs/remotes/origin/data
+          git worktree add data origin/data
+          git -C data switch -C data
+      - name: Опубликовать
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ANNOUNCE_NAME: ${{ inputs.name }}
+        run: |
+          python -m vacante announce --name "$ANNOUNCE_NAME" --data-dir data
+          git -C data add posted.json
+          git -C data diff --cached --quiet && exit 0
+          git -C data commit -q -m "Объявление в каналы: $ANNOUNCE_NAME"
+          for attempt in 1 2 3; do
+            git -C data push -q origin data && exit 0
+            git -C data pull -q --rebase origin data || true
+          done
+          echo "::warning::не удалось сохранить posted.json: повторный запуск может продублировать объявление"

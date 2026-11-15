@@ -25,6 +25,10 @@ def main() -> None:
     p_post.add_argument("--data-dir", type=Path, default=Path("data"))
     p_post.add_argument("--base-url", default="https://vacante.kz")
 
+    p_announce = sub.add_parser("announce", help="разовое объявление во все свои Telegram-каналы")
+    p_announce.add_argument("--name", required=True, help="имя объявления из vacante/announce.py")
+    p_announce.add_argument("--data-dir", type=Path, default=Path("data"))
+
     p_digest = sub.add_parser("digest", help="разослать подписчикам бота подборки новых вакансий")
     p_digest.add_argument("--data-dir", type=Path, default=Path("data"))
     p_digest.add_argument("--base-url", default="https://vacante.kz")
@@ -110,6 +114,19 @@ def main() -> None:
                                  send_text=autopost.telegram_text_sender(client, token),
                                  send_promo=autopost.telegram_button_sender(client, token))
         logging.info("автопостинг: %s", stats)
+    elif args.command == "announce":
+        from vacante import announce
+
+        token = os.environ.get("TELEGRAM_BOT_TOKEN")
+        if not token:
+            raise SystemExit("объявление: нет TELEGRAM_BOT_TOKEN")
+        posted = autopost.load_posted(args.data_dir)
+        with httpx.Client(timeout=30) as client:
+            stats = announce.run(args.name, posted, channels.live(args.data_dir), autopost.telegram_button_sender(client, token))
+        autopost.save_posted(args.data_dir, posted)
+        logging.info("объявление «%s»: %s", args.name, stats)
+        if stats["failed"]:
+            raise SystemExit(f"объявление не дошло в {stats['failed']} каналов: запустите ещё раз")
     elif args.command == "crm":
         from vacante import crm_sync
         # Итог видно в аннотации «CRM работодателей» запуска, без чтения логов

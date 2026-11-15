@@ -1138,6 +1138,7 @@ function Main() {
           show={showApp}
           onShown={clearShowApp}
           onBooking={tracker === 'server' ? setBooking : undefined}
+          onInvite={tracker === 'server' ? () => setInviteOpen(true) : undefined}
         />
       ) : (
         <LikedList
@@ -1358,7 +1359,18 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
-      {fresh.length && !applying && !open ? <Celebrate c={c} lang={lang} list={fresh} onClose={closeCelebrate} /> : null}
+      {fresh.length && !applying && !open ? (
+        <Celebrate
+          c={c}
+          lang={lang}
+          list={fresh}
+          onClose={closeCelebrate}
+          onInvite={() => {
+            closeCelebrate();
+            setInviteOpen(true);
+          }}
+        />
+      ) : null}
       <StatusBar style="auto" />
     </Screen>
   );

@@ -17,9 +17,11 @@ export const ICONS: Record<AchievementKind, string> = {
   hired: '💼',
 };
 
-export function Celebrate(props: { c: Colors; lang: Lang; list: Achievement[]; onClose(): void }) {
+/** onInvite: после первого отклика рядом с «Отлично» стоит «Позвать друга» (ссылка-приглашение). */
+export function Celebrate(props: { c: Colors; lang: Lang; list: Achievement[]; onClose(): void; onInvite?(): void }) {
   const { c, lang, list } = props;
   const t = A[lang].achievements;
+  const invite = props.onInvite && list.some((a) => a.kind === 'first_sent') ? props.onInvite : null;
   useEffect(() => haptic('medium'), []);
   return (
     <Modal visible transparent animationType="fade" onRequestClose={props.onClose}>
@@ -35,8 +37,14 @@ export function Celebrate(props: { c: Colors; lang: Lang; list: Achievement[]; o
               <Text style={[s.why, { color: c.quiet }]}>{t.why[a.kind]}</Text>
             </View>
           ))}
+          {invite ? <Text style={[s.why, { color: c.ink }]}>{t.inviteText}</Text> : null}
+          {invite ? (
+            <View style={s.button}>
+              <Button c={c} icon="user" label={t.invite} onPress={invite} />
+            </View>
+          ) : null}
           <View style={s.button}>
-            <Button c={c} label={t.ok} onPress={props.onClose} />
+            <Button c={c} ghost={!!invite} label={t.ok} onPress={props.onClose} />
           </View>
         </View>
       </View>

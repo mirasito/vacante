@@ -599,7 +599,7 @@ export function summary(db: Db, seekerId: number, now: number): Summary {
   };
 }
 
-const EXPERIENCE_TEXT: Record<Lang, Record<Profile["experience"], string>> = {
+const EXPERIENCE_TEXT: Record<Lang, Record<NonNullable<Profile["experience"]>, string>> = {
   ru: {
     none: "Опыта пока нет, но быстро учусь.",
     lt1: "Опыт до года.",
@@ -614,7 +614,7 @@ const EXPERIENCE_TEXT: Record<Lang, Record<Profile["experience"], string>> = {
   },
 };
 
-const START_TEXT: Record<Lang, Record<Profile["start"], string>> = {
+const START_TEXT: Record<Lang, Record<NonNullable<Profile["start"]>, string>> = {
   ru: {
     today: "Могу выйти сегодня.",
     week: "Могу выйти на этой неделе.",
@@ -644,7 +644,10 @@ export function applicationText(
     lang === "kk"
       ? `Сәлеметсіз бе! «${title}» бос орны бойынша жазып отырмын. Менің атым ${p.name}.`
       : `Здравствуйте! Пишу по вакансии «${title}». Меня зовут ${p.name}.`;
-  const text = [greeting, EXPERIENCE_TEXT[lang][p.experience], START_TEXT[lang][p.start]].join(" ");
+  // Короткая анкета: про опыт и выход человек ещё не сказал, значит и в тексте их нет
+  const text = [greeting, p.experience && EXPERIENCE_TEXT[lang][p.experience], p.start && START_TEXT[lang][p.start]]
+    .filter(Boolean)
+    .join(" ");
   const label =
     lang === "kk" ? (hasVideo ? "Бейнесі бар профилім" : "Профилім") : hasVideo ? "Мой профиль с видео" : "Мой профиль";
   return { text, link_text: `${label}: ${linkUrl}` };

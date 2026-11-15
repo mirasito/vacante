@@ -31,11 +31,12 @@ export interface Profile {
   district: string | null;
   home: Home | null;
   roles: string[];
-  experience: (typeof EXPERIENCE)[number];
+  /** null — ещё не указан: короткая анкета спрашивает только имя и профессии. */
+  experience: (typeof EXPERIENCE)[number] | null;
   employment: (typeof EMPLOYMENT)[number][];
   pay_from: number | null;
   pay_period: (typeof PAY_PERIOD)[number] | null;
-  start: (typeof START)[number];
+  start: (typeof START)[number] | null;
   phone: string | null;
   languages: (typeof LANGUAGES)[number][];
   about: string | null;
@@ -67,6 +68,10 @@ function oneOf<T extends string>(value: unknown, allowed: readonly T[], field: s
   }
   return value as T;
 }
+
+/** Поле по желанию: нет значения — null, есть — одно из разрешённых. */
+const maybeOneOf = <T extends string>(value: unknown, allowed: readonly T[], field: string): T | null =>
+  value === undefined || value === null || value === "" ? null : oneOf(value, allowed, field);
 
 function someOf<T extends string>(value: unknown, allowed: readonly T[], field: string, min: number): T[] {
   if (!Array.isArray(value)) throw bad(`Поле ${field} должно быть списком`);
@@ -126,11 +131,11 @@ export function parseProfile(body: unknown): Profile {
     // Старое приложение дом не присылает: тогда сервер оставляет прежний (me.ts)
     home: b.home === undefined ? null : parseHome(b.home),
     roles,
-    experience: oneOf(b.experience, EXPERIENCE, "experience"),
-    employment: someOf(b.employment, EMPLOYMENT, "employment", 1),
+    experience: maybeOneOf(b.experience, EXPERIENCE, "experience"),
+    employment: b.employment === undefined || b.employment === null ? [] : someOf(b.employment, EMPLOYMENT, "employment", 0),
     pay_from: payFrom,
     pay_period: payPeriod,
-    start: oneOf(b.start, START, "start"),
+    start: maybeOneOf(b.start, START, "start"),
     phone,
     languages: b.languages === undefined ? [] : someOf(b.languages, LANGUAGES, "languages", 0),
     about: text(b.about, "about", 300, false),
@@ -139,7 +144,7 @@ export function parseProfile(body: unknown): Profile {
   };
 }
 
-export type Tip = "video" | "photo" | "phone" | "about" | "docs";
+export type Tip = "details" | "video" | "photo" | "phone" | "about" | "docs";
 
 /**
  * Сила профиля: анкета 45%, кружок 25%, фото 10%, телефон 10%, «о себе» 5%, документы 5%.
@@ -147,13 +152,15 @@ export type Tip = "video" | "photo" | "phone" | "about" | "docs";
  */
 export function strength(p: Profile, has: { video: boolean; photo: boolean }): { percent: number; next: Tip | null } {
   const parts: [Tip, number, boolean][] = [
+    // Опыт, график и выход: короткая анкета их не спрашивает, первая подсказка — дополнить
+    ["details", 20, !!p.experience && p.employment.length > 0 && !!p.start],
     ["video", 25, has.video],
     ["photo", 10, has.photo],
     ["phone", 10, !!p.phone],
     ["about", 5, !!p.about],
     ["docs", 5, p.med_book || p.driver],
   ];
-  const percent = 45 + parts.reduce((sum, [, weight, done]) => sum + (done ? weight : 0), 0);
+  const percent = 25 + parts.reduce((sum, [, weight, done]) => sum + (done ? weight : 0), 0);
   return { percent, next: parts.find(([, , done]) => !done)?.[0] ?? null };
 }
 
@@ -168,11 +175,11 @@ export function fromRow(row: Record<string, unknown>): Profile {
         ? { lat: row.home_lat, lon: row.home_lon, source: (row.home_source as HomeSource | null) ?? "phone" }
         : null,
     roles: JSON.parse(String(row.roles)) as string[],
-    experience: row.experience as Profile["experience"],
+    experience: (row.experience as Profile["experience"]) || null,
     employment: JSON.parse(String(row.employment)) as Profile["employment"],
     pay_from: (row.pay_from as number | null) ?? null,
     pay_period: (row.pay_period as Profile["pay_period"]) ?? null,
-    start: row.start as Profile["start"],
+    start: (row.start as Profile["start"]) || null,
     phone: (row.phone as string | null) ?? null,
     languages: JSON.parse(String(row.languages ?? "[]")) as Profile["languages"],
     about: (row.about as string | null) ?? null,

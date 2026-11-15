@@ -28,7 +28,7 @@ class Bot:
 
 
 def test_texts_are_bilingual_with_city_link():
-    assert promo.app_url("almaty") == "https://t.me/vacantekz_bot?startapp=almaty"
+    assert promo.app_url("almaty") == "https://t.me/vacantekz_bot?startapp=stg_c_almaty"
     for i in range(len(promo.DAILY)):
         text = promo.daily_text("almaty", date(2026, 11, 1) + timedelta(days=i), 120)
         assert "🇰🇿" in text and "{" not in text
@@ -45,7 +45,7 @@ def test_daily_post_once_a_day_after_hour_and_pinned_post_kept():
                                         bot.send, bot.pin, stats)
     run(at(9))  # утром: только закреп
     assert len(bot.sent) == 1 and "📌" in bot.sent[0][1]
-    assert bot.sent[0][2] == [("📱 Открыть приложение · Қосымшаны ашу", "https://t.me/vacantekz_bot?startapp=almaty")]
+    assert bot.sent[0][2] == [("📱 Открыть приложение · Қосымшаны ашу", "https://t.me/vacantekz_bot?startapp=stg_c_almaty")]
     assert bot.pins == [("@vacantealmaty", 101, True)]
     run(at(10))
     assert len(bot.sent) == 1

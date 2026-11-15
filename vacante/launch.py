@@ -18,6 +18,7 @@ import re
 from vacante import direct
 
 MAX = 64  # предел Telegram для startapp
+OWN_CHANNELS = "tg"  # метка источника для постов в своих каналах
 SOURCE = re.compile(r"[a-z0-9]{1,8}")
 CITY = re.compile(r"[a-z-]{2,30}")
 VACANCY = re.compile(r"[A-Za-z0-9_-]+")

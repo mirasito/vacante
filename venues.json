@@ -6619,7 +6619,7 @@
   "checked_at": "2026-11-08T20:44:20+00:00",
   "website": "https://bakertilly-ca.com/",
   "source": "https://2gis.kz/almaty/firm/70000001067985765",
-  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8340,6 +8340,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T19:43:27+00:00"
+ },
+ "almaty:de zhuang": {
+  "name": "DE ZHUANG",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "dezhuang_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001117578500"
  },
  "almaty:debocar": {
   "name": "Debocar",
@@ -11948,6 +11957,15 @@
    "website"
   ]
  },
+ "almaty:julius": {
+  "name": "JULIUS",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "julius.cafe",
+  "source": "https://2gis.kz/almaty/firm/70000001104792100"
+ },
  "almaty:just retail": {
   "name": "JUST RETAIL",
   "city": "almaty",
@@ -12442,6 +12460,15 @@
    "website"
   ]
  },
+ "almaty:kiehls": {
+  "name": "Kiehl's",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "kiehls_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001043986973"
+ },
  "almaty:kill house": {
   "name": "Kill House",
   "city": "almaty",
@@ -12755,7 +12782,7 @@
   "instagram": "kulikov_kz",
   "website": "https://kulikov.com/",
   "source": "https://2gis.kz/almaty/firm/9429940001671404",
-  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -14406,6 +14433,15 @@
   "instagram": "myherb.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001047641250"
  },
+ "almaty:myata city": {
+  "name": "Myata City",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "myata_city",
+  "source": "https://2gis.kz/almaty/firm/70000001084014253"
+ },
  "almaty:mycar almaty": {
   "name": "MyCar Almaty",
   "city": "almaty",
@@ -16037,6 +16073,13 @@
   "checked_at": "2026-10-30T07:43:20+00:00",
   "instagram": "qazjihaz_group",
   "source": "https://2gis.kz/almaty/firm/70000001103487134"
+ },
+ "almaty:qazline distribution": {
+  "name": "QazLine Distribution",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00"
  },
  "almaty:qazyna beauty": {
   "name": "Qazyna Beauty",
@@ -18097,6 +18140,13 @@
   "instagram": "swissotelalatau",
   "source": "https://2gis.kz/almaty/firm/70000001055199555"
  },
+ "almaty:tafam": {
+  "name": "TAFAM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00"
+ },
  "almaty:talent craft": {
   "name": "Talent Craft",
   "city": "almaty",
@@ -18189,6 +18239,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
+ },
+ "almaty:tau uzbechka": {
+  "name": "TAU UZBECHKA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "tauuzbechka.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001095720040"
  },
  "almaty:tau_barys": {
   "name": "Tau_barys",
@@ -19115,6 +19174,13 @@
   "instagram": "gradient_2167",
   "source": "https://2gis.kz/almaty/firm/70000001102339828"
  },
+ "almaty:velour": {
+  "name": "VELOUR",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00"
+ },
  "almaty:vender": {
   "name": "VENDER",
   "city": "almaty",
@@ -19608,10 +19674,12 @@
   "instagram": "yellowclinic.kz",
   "website": "https://taplink.cc/yellowcosmetology",
   "source": "https://2gis.kz/almaty/firm/70000001040000842",
-  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "dc38268d6361da67.jpg",
+  "avatar_source": "website"
  },
  "almaty:yes exchange": {
   "name": "YES EXCHANGE",
@@ -21450,6 +21518,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:арт ланч": {
+  "name": "Арт Ланч",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00"
  },
  "almaty:арука групп": {
   "name": "Арука Групп",
@@ -28233,6 +28308,13 @@
   "v": 3,
   "checked_at": "2026-11-10T07:44:34+00:00"
  },
+ "almaty:премиум": {
+  "name": "Премиум",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00"
+ },
  "almaty:премьера мини маркет": {
   "name": "Премьера мини маркет",
   "city": "almaty",
@@ -28278,6 +28360,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:принцесса": {
+  "name": "Принцесса",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "restaurant_princessa",
+  "source": "https://2gis.kz/almaty/firm/9429940000799425"
  },
  "almaty:прогресс": {
   "name": "ПРОГРЕСС",
@@ -28472,6 +28563,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
+ },
+ "almaty:райымбек батыра": {
+  "name": "Райымбек батыра",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00"
  },
  "almaty:рауза аде": {
   "name": "Рауза АДЕ",
@@ -31107,6 +31205,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T05:43:31+00:00"
+ },
+ "almaty:хан": {
+  "name": "Хан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T22:43:10+00:00",
+  "instagram": "xan_lounge_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001104373952"
  },
  "almaty:хан в ю": {
   "name": "Хан В.Ю.",
@@ -43753,7 +43860,7 @@
   "instagram": "eurasia_cinema7",
   "website": "http://eurasia-cinema.kz/",
   "source": "https://2gis.kz/astana/firm/70000001028256423",
-  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -54869,7 +54976,7 @@
   "checked_at": "2026-11-01T20:43:30+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67145,7 +67252,7 @@
   "instagram": "sequoiaservice_kz",
   "website": "https://sequoia-service.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110980544",
-  "avatar_checked_at": "2026-11-08T20:44:20+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -68287,7 +68394,7 @@
   "instagram": "tezber_resmi",
   "website": "https://tezber.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001093104134",
-  "avatar_checked_at": "2026-11-08T21:43:44+00:00",
+  "avatar_checked_at": "2026-11-15T22:43:12+00:00",
   "avatar_tried": [
    "website"
   ]

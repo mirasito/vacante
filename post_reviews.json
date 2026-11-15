@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T13:57:09+00:00",
+ "updated_at": "2026-11-15T14:56:51+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1302,11 +1302,6 @@
     "salary_period": "month"
    }
   },
-  "rabotaalmatyyyy-15253": {
-   "verdict": "reject",
-   "at": "2026-10-31T09:57:28+00:00",
-   "reason": "Реклама набора курьеров-партнёров, не вакансия работодателя"
-  },
   "hh-138708627": {
    "verdict": "approve",
    "at": "2026-10-31T09:57:28+00:00",
@@ -1983,14 +1978,6 @@
    "at": "2026-11-01T14:56:49+00:00",
    "reason": "Офисная должность (активные продажи B2B)"
   },
-  "agashka_job_almaty-1029": {
-   "verdict": "approve",
-   "at": "2026-11-01T14:56:49+00:00",
-   "fields": {
-    "title": "Кухонный работник в школьную столовую",
-    "address": "Жетысуский район"
-   }
-  },
   "rabotaalmatyyyy-15194": {
    "verdict": "approve",
    "at": "2026-11-01T14:56:49+00:00",
@@ -2018,14 +2005,6 @@
     "address": "Турксибский район"
    }
   },
-  "astana_job_vakansii-130031": {
-   "verdict": "approve",
-   "at": "2026-11-01T14:56:49+00:00",
-   "fields": {
-    "title": "Сотрудник ресторана, дворник",
-    "employer": "KFC"
-   }
-  },
   "zhumys_astana_kz-17013": {
    "verdict": "approve",
    "at": "2026-11-01T14:56:49+00:00",
@@ -2046,16 +2025,6 @@
     "perks": []
    }
   },
-  "rabota4almaty-6010": {
-   "verdict": "approve",
-   "at": "2026-11-01T14:56:49+00:00",
-   "fields": {
-    "title": "Охранник объекта",
-    "employer": "ТОО «Кинопарк Студент»",
-    "address": "ул. Тимирязева, 42",
-    "perks": []
-   }
-  },
   "rabotaalmatyyyy-15221": {
    "verdict": "approve",
    "at": "2026-11-01T14:56:49+00:00",
@@ -2063,14 +2032,6 @@
     "employer": "USTAZ EDUCATION",
     "schedule": "5/2, 10:00–19:00",
     "address": "ул. Райымбека, 432А (Сайран)"
-   }
-  },
-  "hh-139034524": {
-   "verdict": "approve",
-   "at": "2026-11-01T14:56:49+00:00",
-   "fields": {
-    "schedule": "5/2",
-    "address": "пр. Кенеса Нокина, 34Е"
    }
   },
   "hh-139035029": {
@@ -2086,21 +2047,6 @@
    "verdict": "reject",
    "at": "2026-11-01T15:57:23+00:00",
    "reason": "Неясные обязанности, похоже на онлайн-продажи"
-  },
-  "hh-139034697": {
-   "verdict": "approve",
-   "at": "2026-11-01T15:57:23+00:00",
-   "fields": {
-    "title": "Бариста-кассир",
-    "employer": "Global Coffee",
-    "schedule": null,
-    "address": "пр. Бауыржана Момышулы, 2Б"
-   }
-  },
-  "hh-139034614": {
-   "verdict": "reject",
-   "at": "2026-11-01T15:57:23+00:00",
-   "reason": "Офисная должность: продажи и CRM"
   },
   "hh-139035025": {
    "verdict": "approve",
@@ -2128,15 +2074,6 @@
     "address": "ул. Казакова, 4"
    }
   },
-  "hh-139034700": {
-   "verdict": "approve",
-   "at": "2026-11-01T15:57:23+00:00",
-   "fields": {
-    "employer": "Студия «Gradient»",
-    "schedule": "5/2 или 2/2",
-    "address": "ул. Асанбая Аскарова, 21/67"
-   }
-  },
   "rabota4almaty-6012": {
    "verdict": "approve",
    "at": "2026-11-01T15:57:23+00:00",
@@ -2145,25 +2082,10 @@
     "address": "пр. Райымбека, 239Г"
    }
   },
-  "almaty_rabota05-11711": {
-   "verdict": "approve",
-   "at": "2026-11-01T15:57:23+00:00",
-   "fields": {
-    "schedule": "2/2, сутки"
-   }
-  },
   "agashka_job_almaty-1030": {
    "verdict": "approve",
    "at": "2026-11-01T15:57:23+00:00",
    "fields": {}
-  },
-  "aktobevakansii-44343": {
-   "verdict": "approve",
-   "at": "2026-11-01T15:57:23+00:00",
-   "fields": {
-    "employer": "Ресторан «UYA»",
-    "schedule": "2/2, 09:00–22:00"
-   }
   },
   "aktobevakansii-44344": {
    "verdict": "approve",
@@ -2191,18 +2113,6 @@
    "verdict": "reject",
    "at": "2026-11-01T15:57:23+00:00",
    "reason": "Руководящая должность"
-  },
-  "rabota_semey_official-6759": {
-   "verdict": "approve",
-   "at": "2026-11-01T15:57:23+00:00",
-   "fields": {
-    "title": "Посудомойщица в столовую"
-   }
-  },
-  "rabota_semey_official-6758": {
-   "verdict": "reject",
-   "at": "2026-11-01T15:57:23+00:00",
-   "reason": "Почти нет сведений, руководящая должность"
   },
   "hh-139034810": {
    "verdict": "approve",
@@ -55014,6 +54924,220 @@
    "verdict": "reject",
    "at": "2026-11-15T13:57:09+00:00",
    "reason": "Зарплата в долларах и переезд с билетами: похоже на работу за границей"
+  },
+  "astana_job_vakansii-130680": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Официант, кассир",
+    "employer": "«SQ»",
+    "schedule": "6/1, 11:00–23:00"
+   }
+  },
+  "hh-139500829": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "employer": "Focus-life",
+    "schedule": "5/2"
+   }
+  },
+  "hh-139500787": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "schedule": "6/1",
+    "address": "пер. Рауан"
+   }
+  },
+  "astana_job_vakansii-130677": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "employer": "Ресторан «Yummy Maki»",
+    "schedule": "2/2 или 1/1, 09:45–01:00"
+   }
+  },
+  "hh-139027621": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "schedule": "5/2",
+    "address": null
+   }
+  },
+  "zhumys_astana_kz-17542": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Менеджер по продажам диванов",
+    "schedule": "10:00–20:00",
+    "perks": [
+     "Обучение",
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_job_vakansii-130678": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Продавец сотовых аксессуаров",
+    "schedule": "09:30–22:00"
+   }
+  },
+  "zhumys_astana_kz-17541": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-138874803": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "employer": "Recruit Expert",
+    "schedule": "5/2",
+    "address": "мкр. Ожет, ул. Бекболата, 2/91"
+   }
+  },
+  "almatyrabota1-21376": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Помощник мастера, мастер маникюра",
+    "employer": "Салон красоты «ЭГА»",
+    "schedule": "сменный, 09:00–22:00",
+    "address": "ТРЦ «Март» и «Март Village»"
+   }
+  },
+  "rabota4almaty-6612": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "employer": "Антикафе «Лофт Парк»",
+    "schedule": "09:00–18:00",
+    "address": "ул. Сейфуллина, 402",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "rabota4almaty-6595": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "address": "ул. Кирпичная, 1"
+   }
+  },
+  "hh-138825018": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Офисная должность: продажи услуг клиники через CRM"
+  },
+  "hh-138171171": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Офисная должность: работа с блогерами и проектами"
+  },
+  "hh-138103056": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Сборщик заказов",
+    "employer": "Choco"
+   }
+  },
+  "rabota4almaty-6610": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Реклама услуг сварщика, не вакансия"
+  },
+  "almaty_rabota_work-31931": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Оператор VR-студии"
+   }
+  },
+  "almatyvacancies-11173": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "almatyvacancies-11171": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "almaty_rabota05-11754": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Помощник-консультант",
+    "employer": "Медицинский центр «Тибет»",
+    "schedule": "5/2 или 2/2, 8 часов",
+    "perks": [
+     "Официально"
+    ]
+   }
+  },
+  "almaty_rabota01-26090": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "employer": "«Balausa Jewelry»",
+    "schedule": "10:00–21:00",
+    "address": "ТЦ «Пассаж»"
+   }
+  },
+  "hh-139500762": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "schedule": "5/2 или 2/2",
+    "address": "пр. Санкибай батыра, 261"
+   }
+  },
+  "aktobevakansii-44556": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Официант, повар, технический персонал",
+    "schedule": "2/2, 13:30–04:00"
+   }
+  },
+  "hh-139500943": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Работа в Хромтау, не в Актобе"
+  },
+  "aktobevakansii-44551": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "aktobevakansii-44554": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "aktobevakansii-44555": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabotaaktau-142739": {
+   "verdict": "approve",
+   "at": "2026-11-15T14:56:51+00:00",
+   "fields": {
+    "title": "Воспитатель, помощник воспитателя",
+    "address": "мкр. Толқын-1, 86"
+   }
+  },
+  "hh-139501020": {
+   "verdict": "reject",
+   "at": "2026-11-15T14:56:51+00:00",
+   "reason": "Офисная должность: продажи маркетинговых услуг"
   }
  }
 }

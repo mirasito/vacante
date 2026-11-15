@@ -112,3 +112,16 @@ def test_clips_go_to_moderators_with_caption(tmp_path):
         assert video.send(client, "1:t", [900, 901], [clip], tmp_path) == {"sent": 2, "failed": 0}
     assert [name for name, _ in calls] == ["sendMessage", "sendVideo"] * 2
     assert "Подпись".encode() in calls[1][1] and b'filename="demo.mp4"' in calls[1][1]
+
+
+def test_text_stays_inside_the_safe_zone_of_reels():
+    # Сверху, снизу и справа ролик закрыт интерфейсом соцсети: там должен быть только фон
+    slide = video.Slide(kicker="5 из 5 · Очень длинное название заведения на всю строку", title="Повар горячего цеха, "
+                        "помощник повара, заготовщик и ещё должность", big="от 1 200 000 – 1 500 000 ₸/мес",
+                        lines=["График: 2/2, с 08:00 до 23:00, ночные смены по желанию", "Питание · Развозка · Обучение",
+                               "микрорайон Самал-2, улица очень длинная, дом 111"])
+    frame = list(video.frames([slide, slide], fps=2))[-1]
+    background = frame.getpixel((5, 5))
+    for box in [(0, 0, video.W, video.SAFE_TOP), (0, video.SAFE_BOTTOM, video.W, video.H),
+                (video.SAFE_RIGHT, 0, video.W, video.H)]:
+        assert frame.crop(box).getcolors() == [(((box[2] - box[0]) * (box[3] - box[1])), background)]

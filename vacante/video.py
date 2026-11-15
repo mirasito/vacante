@@ -32,6 +32,9 @@ from vacante.site.build import PER_MONTH, _locative, money, salary_label
 log = logging.getLogger(__name__)
 
 W, H, FPS, PAD = 1080, 1920, 30, 90
+# Поверх ролика в Reels, TikTok и Shorts лежит интерфейс: шапка сверху, подпись и звук снизу, кнопки справа.
+# Текст держим внутри этой рамки, иначе его закрывает
+SAFE_TOP, SAFE_BOTTOM, SAFE_RIGHT = 230, 1440, W - 230
 CITY, SPHERE = "almaty", "horeca"
 SOURCE = "vid"  # метка источника в ссылке из подписи
 FRESH = timedelta(hours=72)  # вакансии для ролика-списка
@@ -201,8 +204,10 @@ def plan(reviewed: list[Vacancy], everything: list[Vacancy], now: datetime) -> l
 def draw(slide: Slide) -> Image.Image:
     img = Image.new("RGB", (W, H), BRAND)
     d = ImageDraw.Draw(img)
-    width = W - 2 * PAD
-    d.text((PAD, 150), slide.kicker, font=_font("SemiBold", 48), fill=SOFT)
+    width = SAFE_RIGHT - PAD
+    if slide.kicker:
+        d.text((PAD, SAFE_TOP + 40), _wrap(d, slide.kicker, _font("SemiBold", 48), width, 1)[0],
+               font=_font("SemiBold", 48), fill=SOFT)
     blocks: list[tuple[list[str], object, str, int]] = []  # строки, шрифт, цвет, высота строки
     if slide.title:
         size = 112 if len(slide.title) <= 28 else 92
@@ -213,8 +218,11 @@ def draw(slide: Slide) -> Image.Image:
     for line in slide.lines:
         blocks.append((_wrap(d, line, _font("SemiBold", 58), width, 2), _font("SemiBold", 58), SOFT, 76))
     gap = 44
-    total = sum(len(lines) * h for lines, _, _, h in blocks) + gap * (len(blocks) - 1)
-    y = max(300, (H - total) // 2)
+    top = SAFE_TOP + 140  # под строкой сверху
+    height = lambda: sum(len(lines) * h for lines, _, _, h in blocks) + gap * (len(blocks) - 1)  # noqa: E731
+    while height() > SAFE_BOTTOM - top and len(blocks) > 1:
+        blocks.pop()  # не помещается: нижние подписи не показываем
+    y = top + (SAFE_BOTTOM - top - height()) // 2
     for lines, font, color, h in blocks:
         for line in lines:
             d.text((PAD, y), line, font=font, fill=color)
@@ -229,7 +237,7 @@ def frames(slides: list[Slide], fps: int = FPS) -> Iterator[Image.Image]:
     total = sum(s.seconds for s in slides)
     elapsed = 0.0
     seg_gap = 12
-    seg_w = (W - 2 * PAD - seg_gap * (len(slides) - 1)) / len(slides)
+    seg_w = (SAFE_RIGHT - 2 - PAD - seg_gap * (len(slides) - 1)) / len(slides)
     for i, (slide, picture) in enumerate(zip(slides, pictures)):
         count = round(slide.seconds * fps)
         for f in range(count):
@@ -239,10 +247,10 @@ def frames(slides: list[Slide], fps: int = FPS) -> Iterator[Image.Image]:
             d = ImageDraw.Draw(frame)
             for k in range(len(slides)):
                 x = PAD + k * (seg_w + seg_gap)
-                d.rounded_rectangle((x, 84, x + seg_w, 94), radius=5, fill="#3d79ad")
+                d.rounded_rectangle((x, SAFE_TOP, x + seg_w, SAFE_TOP + 10), radius=5, fill="#3d79ad")
                 done = 1.0 if k < i else (t / slide.seconds if k == i else 0.0)
                 if done:
-                    d.rounded_rectangle((x, 84, x + max(10, seg_w * done), 94), radius=5, fill=INK)
+                    d.rounded_rectangle((x, SAFE_TOP, x + max(10, seg_w * done), SAFE_TOP + 10), radius=5, fill=INK)
             yield frame
         elapsed += slide.seconds
     assert abs(elapsed - total) < 1e-6

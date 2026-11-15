@@ -106,6 +106,8 @@ export function ApplicationsTab(props: {
   onShown?(): void;
   /** Экран «Запись» vacante 2.0 (только с профилем на сервере). */
   onBooking?(a: Application): void;
+  /** Ссылка-приглашение для друга: показываем, когда человек уже отправил хотя бы один отклик. */
+  onInvite?(): void;
 }) {
   const { c, lang, items, summary, local, show, onShown } = props;
   const t = A[lang];
@@ -201,6 +203,14 @@ export function ApplicationsTab(props: {
 
         {summary ? <GoalCard c={c} lang={lang} goal={summary.goal} onGoal={props.onGoal} /> : null}
         {summary && !local ? <Achievements c={c} lang={lang} list={summary.achievements} /> : null}
+        {props.onInvite && !local && items?.some((a) => a.stage !== 'liked') ? (
+          <View style={[s.top, { backgroundColor: c.card, borderColor: c.line }]}>
+            <Text style={[s.week, { color: c.ink }]}>{t.achievements.inviteText}</Text>
+            <View style={ui.row}>
+              <Button c={c} small ghost icon="user" label={t.achievements.invite} onPress={props.onInvite} />
+            </View>
+          </View>
+        ) : null}
 
         {local ? (
           <View style={[s.local, { backgroundColor: c.pill }]}>

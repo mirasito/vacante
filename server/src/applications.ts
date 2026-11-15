@@ -333,7 +333,8 @@ export function patchApplication(
       next.stage, next.method, next.interview_at, next.start_at, next.note, next.sent_at, next.updated_at,
       next.cancelled_at, next.attended, next.attended_by, id,
     );
-    if (patch.link !== undefined) db.prepare("UPDATE applications SET with_link = ? WHERE id = ?").run(patch.link ? 1 : 0, id);
+    // Только вверх: «Написать ещё раз» без галочки не отменяет того, что ссылка уже ушла
+    if (patch.link) db.prepare("UPDATE applications SET with_link = 1 WHERE id = ?").run(id);
     if (next.stage !== row.stage) addEvent(db, id, next.stage, by, at);
     return next;
   });

@@ -90,11 +90,12 @@ export function funnel(db: Db, from: string, to: string): FunnelRow[] {
      WHERE a.sent_at IS NOT NULL AND a.with_link = 1 AND ${DAY("a.sent_at")} BETWEEN ? AND ? GROUP BY 1, 2`,
     "sent_with_link",
   );
-  // «Дошёл»: ссылку отклика открыли. Один раз на отклик, в день первого открытия; превью мессенджеров
-  // в views не попадают (page.ts)
+  // «Дошёл»: ссылку отклика, ушедшего со ссылкой на профиль, открыли. Один раз на отклик, в день первого
+  // открытия; превью мессенджеров в views не попадают (page.ts), удалённые отклики не считаются
   each(
     `SELECT ${DAY("v.at")} AS day, s.source, COUNT(*) AS n
      FROM (SELECT application_id, seeker_id, MIN(at) AS at FROM views WHERE application_id IS NOT NULL GROUP BY application_id) v
+     JOIN applications a ON a.id = v.application_id AND a.seeker_id = v.seeker_id AND a.with_link = 1
      JOIN seekers s ON s.id = v.seeker_id
      WHERE ${DAY("v.at")} BETWEEN ? AND ? GROUP BY 1, 2`,
     "reached",

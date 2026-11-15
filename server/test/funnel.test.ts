@@ -211,3 +211,32 @@ test("отклик без профиля (отказ от анкеты) виде
   }]);
   await t.s.close();
 });
+
+test("отметка «со ссылкой» не снимается повторной отправкой без галочки", async () => {
+  const t = await server();
+  await t.profile();
+  const id = (await t.s.call("POST", "/me/applications", { headers: t.auth(), body: { vacancy: vacancy("a-1") } })).json.application.id;
+  await t.s.call("PATCH", `/me/applications/${id}`, { headers: t.auth(), body: { stage: "sent", with_link: true } });
+  await t.s.call("PATCH", `/me/applications/${id}`, { headers: t.auth(), body: { method: "call", with_link: false } });
+  assert.equal((t.s.db.prepare("SELECT with_link FROM applications WHERE id = ?").get(id) as { with_link: number }).with_link, 1);
+  await t.s.close();
+});
+
+test("«дошёл» считает только отклики, ушедшие со ссылкой, и не считает удалённые", async () => {
+  const t = await server();
+  await t.profile({ source: "tg" });
+  const apply = async (id: string, link: boolean) => {
+    const app = (await t.s.call("POST", "/me/applications", { headers: t.auth(), body: { vacancy: vacancy(id) } })).json.application;
+    await t.s.call("PATCH", `/me/applications/${app.id}`, { headers: t.auth(), body: { stage: "sent", with_link: link } });
+    return app as { id: number; link: { code: string } };
+  };
+  const open = (code: string) => t.s.call("GET", `/${code}`, { ...profileHost, headers: { "user-agent": BROWSER } });
+  const sent = await apply("a-1", true);
+  const plain = await apply("a-2", false);
+  const gone = await apply("a-3", true);
+  for (const a of [sent, plain, gone]) await open(a.link.code);
+  await t.s.call("DELETE", `/me/applications/${gone.id}`, { headers: t.auth() });
+  const row = funnel(t.s.db, "2026-11-04", "2026-11-04")[0]!;
+  assert.deepEqual([row.sent, row.sent_with_link, row.reached], [2, 1, 1]);
+  await t.s.close();
+});

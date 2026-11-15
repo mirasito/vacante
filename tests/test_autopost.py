@@ -65,6 +65,15 @@ def test_post_is_picture_with_map_button():
     assert [text for text, _ in no_address.buttons] == ["✉️ Откликнуться", "👆 Подробнее"]
 
 
+def test_post_buttons_name_the_contacts_of_the_original_post():
+    # В посте есть WhatsApp и телефон: кнопки называют способ, а ведут в приложение на эту вакансию
+    v = replace(make(14, "Кафе «Зерно» ищет бариста"), contact=["whatsapp", "phone"])
+    assert autopost.make_post(v, "https://vacante.kz").buttons == [
+        ("💬 WhatsApp", "https://t.me/vacantekz_bot?startapp=stgwa_v_almaty_chan-14"),
+        ("📞 Позвонить", "https://t.me/vacantekz_bot?startapp=stgcall_v_almaty_chan-14"),
+        ("👆 Подробнее", "https://vacante.kz/v/chan-14/")]
+
+
 def test_post_without_apply_button_when_link_is_too_long():
     # Telegram принимает в ссылке запуска до 64 знаков: с длинным id вакансии остаётся карточка сайта
     v = replace(make(13, "Кафе «Зерно» ищет бариста"), id="a" * 60)

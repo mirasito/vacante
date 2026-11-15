@@ -111,4 +111,4 @@ def test_digest_item_links_straight_to_employer_when_post_has_contacts():
     text = digest.format_digest([v], "https://vacante.kz")
     assert ('<a href="https://api.vacante.kz/go/chan-3/wa?s=bot&amp;t=%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BD%D1%82">💬 WhatsApp</a>'
             ' · <a href="https://api.vacante.kz/go/chan-3/call?s=bot&amp;t=%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BD%D1%82">📞 Позвонить</a>') in text
-    assert "startapp=" not in text
+    assert ' · <a href="https://t.me/vacantekz_bot?startapp=sbotpf_v_almaty_chan-3">👤 С профилем</a>' in text

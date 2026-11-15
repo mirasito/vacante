@@ -138,7 +138,10 @@ def bot_item(v: Vacancy, base_url: str) -> str:
     # Связаться сразу: WhatsApp, звонок или Telegram работодателя; если контактов в посте нет — отклик
     # в приложении. У вакансий от работодателей и смен свой отклик через бота, им ссылки не нужны
     if replies := launch.reply_buttons(v, "bot"):
-        lines.append(" · ".join(f'<a href="{e(url)}">{BOT_REPLY_LABELS[kind]}</a>' for kind, url in replies))
+        links = [f'<a href="{e(url)}">{BOT_REPLY_LABELS[kind]}</a>' for kind, url in replies]
+        if url := launch.profile_link(v, "bot"):
+            links.append(f'<a href="{e(url)}">👤 С профилем</a>')
+        lines.append(" · ".join(links))
     return "\n".join(lines)
 
 
@@ -193,7 +196,7 @@ def _env(lang: str = "ru") -> Environment:
     )
     env.globals.update(city_name=lambda slug: city_name(slug, lang), cat_name=lambda c: category_name(c, lang),
                        salary_label=lambda v: salary_label(v, lang), twogis_url=twogis_url,
-                       app_replies=app_replies,
+                       app_replies=app_replies, profile_link=lambda v: launch.profile_link(v, "web"),
                        monthly_pay=monthly_pay, monthly_label=lambda v: monthly_label(v, lang),
                        search_text=lambda v: search_text(v, lang), money=money, perks_of=shifts.perks,
                        shift_day=lambda v: shifts.day_label(v.shift_date, lang),

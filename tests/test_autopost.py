@@ -71,6 +71,7 @@ def test_post_buttons_name_the_contacts_of_the_original_post():
     assert autopost.make_post(v, "https://vacante.kz").buttons == [
         ("💬 WhatsApp", "https://api.vacante.kz/go/chan-14/wa?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
         ("📞 Позвонить", "https://api.vacante.kz/go/chan-14/call?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
+        ("👤 С профилем", "https://t.me/vacantekz_bot?startapp=stgpf_v_almaty_chan-14"),
         ("👆 Подробнее", "https://vacante.kz/v/chan-14/")]
 
 

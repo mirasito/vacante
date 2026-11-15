@@ -37,6 +37,12 @@
   {% for label, url in replies %}
   <a class="apply" href="{{ url }}" rel="nofollow">{{ t(label) }}</a>
   {% endfor %}
+  {# Прямые кнопки идут мимо приложения: рядом путь, где за минуту делается профиль и отклик уходит со ссылкой на него #}
+  {% set with_profile = profile_link(v) %}
+  {% if with_profile %}
+  <a class="apply second" href="{{ with_profile }}" rel="nofollow">{{ t("👤 Откликнуться с профилем") }}</a>
+  <p class="direct">{{ t("С профилем отвечают охотнее: имя и профессия за минуту в Telegram, а работодатель получит ссылку на вас.") }}</p>
+  {% endif %}
   <a class="apply{% if replies %} second{% endif %}" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{% if v.source == "olx" %}{{ t("Откликнуться на OLX") }}{% elif v.source == "hh" %}{{ t("Откликнуться на hh.kz") }}{% else %}{{ t("Откликнуться в оригинальном объявлении") }}{% endif %}</a>
   {% endif %}
   <h2>{{ t("Описание") }}</h2>

@@ -70,3 +70,17 @@ def reply_buttons(v: Vacancy, source: str) -> list[tuple[str, str]]:
         return [(kind, f"{GO_URL}/go/{v.id}/{GO_KINDS[kind]}?{query}") for kind in kinds]
     param = start_param(source=source, city=v.city, vacancy_id=v.id)
     return [("apply", app_link(param))] if param else []
+
+
+def profile_link(v: Vacancy, source: str) -> str | None:
+    """Ссылка «откликнуться с профилем» рядом с прямыми кнопками связи: эта вакансия в мини-приложении.
+
+    Прямые кнопки ведут к работодателю мимо приложения, поэтому рядом с ними всегда есть путь, где человек
+    за минуту делает профиль и отклик уходит со ссылкой на него. None, если прямых кнопок нет (тогда кнопка
+    отклика и так ведёт в приложение) или ссылка не помещается в 64 знака Telegram. Метка источника —
+    source + «pf»: воронка видит, откуда пришли за профилем.
+    """
+    if not any(kind != "apply" for kind, _ in reply_buttons(v, source)):
+        return None
+    param = start_param(source=source + "pf", city=v.city, vacancy_id=v.id)
+    return app_link(param) if param else None

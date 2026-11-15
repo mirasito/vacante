@@ -75,6 +75,10 @@ def main() -> None:
     p_crm = sub.add_parser("crm", help="отправить работодателей, заведения и вакансии в CRM на сервере api.vacante.kz")
     p_crm.add_argument("--data-dir", type=Path, default=Path("data"))
 
+    p_draft = sub.add_parser("draft", help="черновик поста «не вакансия» для канала Алматы: модераторам в Telegram")
+    p_draft.add_argument("--data-dir", type=Path, default=Path("data"))
+    p_draft.add_argument("--send", action="store_true", help="отправить черновик модераторам и запомнить тему")
+
     p_build = sub.add_parser("build", help="собрать статический сайт")
     p_build.add_argument("--data-dir", type=Path, default=Path("data"))
     p_build.add_argument("--out", type=Path, default=Path("public"))
@@ -149,6 +153,8 @@ def main() -> None:
             print(f"::notice title=CRM работодателей::работодателей {stats['employers']}, заведений {stats['venues']}, "
                   f"вакансий сейчас {stats['active']}, в архив {stats['archived']}, из бота {stats.get('bot_jobs', 0)}, "
                   f"оплат {stats.get('payments', 0)}, карточек hh {stats.get('hh', 0)} из {stats.get('hh_missing', 0)}")
+    elif args.command == "draft":
+        run_draft(args)
     elif args.command == "digest":
         env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
         if not all(env.values()):
@@ -271,6 +277,33 @@ def run_venues(args: argparse.Namespace) -> None:
             sources["telegram"] = venues.TelegramAvatars(client, token).avatar
         sources["website"] = venues.WebsiteLogo(client).avatar
         annotate(venues.fetch_avatars(args.data_dir, sources), "Аватары")
+
+
+def run_draft(args: argparse.Namespace) -> None:
+    from vacante import draft
+
+    now = datetime.now(timezone.utc)
+    found = draft.plan(load_vacancies(args.data_dir), review.load(args.data_dir), venues.load(args.data_dir),
+                       draft.load_history(args.data_dir), now)
+    title = f"{draft.THEME_NAMES[found.theme]}, {found.key}" if found else "данных не хватило ни на одну тему"
+    if found:
+        print(f"{found.text}\n\n{draft.note(found)}")
+    if not args.send:
+        print(f"::notice title=Черновик поста::{title}; не отправлено")
+        return
+    env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
+    if not all(env.values()):
+        print(f"::warning title=Черновик поста::{title}; нет секретов бота или Cloudflare, не отправлено")
+        return
+    with httpx.Client(timeout=30) as client:
+        d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+        chats = [int(row["chat_id"]) for row in d1.query("SELECT chat_id FROM admins")] if d1.database_id() else []
+        stats = draft.send(client, env["TELEGRAM_BOT_TOKEN"], chats, found)
+    if found and stats["sent"]:
+        draft.remember(args.data_dir, found, now)  # тему, которую никто не получил, завтра можно взять снова
+    level = "warning" if stats["failed"] or not chats else "notice"
+    print(f"::{level} title=Черновик поста::{title}; модераторов {len(chats)}, дошло {stats['sent']}, "
+          f"не дошло {stats['failed']}")
 
 
 def direct_vacancies(data_dir: Path) -> list | None:

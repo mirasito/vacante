@@ -1,0 +1,66 @@
+# Черновик поста «не вакансия» для канала Алматы (vacante/draft.py): каждое утро собирает из своей базы один пост
+# (зарплаты по должности, заведение, которое нанимает, или совет по отклику) и отправляет его со справкой
+# «на чём посчитано» модераторам в Telegram, вслед за роликами. В канал код ничего не публикует: это делает человек.
+# Что уже отправляли, хранится в drafts.json в ветке data: тема и должность два дня подряд не повторяются.
+name: Черновик поста
+
+on:
+  schedule:
+    - cron: "40 2 * * *"  # 7:40 по Казахстану, через десять минут после роликов
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "Отправить черновик модераторам в Telegram и запомнить тему"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install .
+
+      - name: Вакансии из ветки data
+        run: |
+          git config user.name "vacante-bot"
+          git config user.email "vacante-bot@users.noreply.github.com"
+          git fetch --depth 1 origin data:refs/remotes/origin/data
+          git worktree add data origin/data
+          git -C data switch -C data
+
+      - name: Собрать и отправить
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SEND: ${{ github.event_name == 'schedule' || inputs.send }}
+        run: |
+          if [ "$SEND" = "true" ]; then flag="--send"; else flag=""; fi
+          python -m vacante draft --data-dir data $flag
+
+      - name: Запомнить отправленное
+        run: |
+          [ -f data/drafts.json ] || exit 0
+          git -C data add drafts.json
+          git -C data diff --cached --quiet && exit 0
+          git -C data commit -q -m "Черновик поста $(date -u +'%Y-%m-%d') UTC"
+          for attempt in 1 2 3; do
+            git -C data push -q origin data && exit 0
+            git -C data pull -q --rebase origin data || true
+          done
+          echo "::warning title=Черновик поста::не удалось сохранить drafts.json: завтра тема может повториться"

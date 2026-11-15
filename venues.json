@@ -1456,7 +1456,7 @@
   "instagram": "intertopkz",
   "website": "https://intertop.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001102012452",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17523,7 +17523,7 @@
   "instagram": "spdex.kz",
   "website": "http://www.spdex.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001694535",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18135,7 +18135,7 @@
   "checked_at": "2026-11-01T09:43:31+00:00",
   "website": "https://technodom.kz/",
   "source": "https://technodom.kz",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21084,7 +21084,7 @@
   "instagram": "ankernye_bolty_fundamentnye",
   "website": "http://ankerstal.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032291297",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22322,6 +22322,13 @@
   ],
   "avatar": "db8a3cbce91e50b2.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:вольт спб": {
+  "name": "ВОЛЬТ-СПБ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
  },
  "almaty:восток oil kz": {
   "name": "Восток OIL KZ",
@@ -25778,7 +25785,7 @@
   "instagram": "liniya.kz",
   "website": "http://www.devline.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001103090761",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30877,6 +30884,13 @@
   "v": 3,
   "checked_at": "2026-11-09T07:44:13+00:00"
  },
+ "almaty:хасенова": {
+  "name": "ХАСЕНОВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
+ },
  "almaty:хата хостел": {
   "name": "Хата, хостел",
   "city": "almaty",
@@ -31557,6 +31571,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T21:44:27+00:00"
+ },
+ "almaty:экстремал": {
+  "name": "Экстремал",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00",
+  "instagram": "extremal.kz",
+  "website": "https://extremal.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000946607",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:элигита азия": {
   "name": "Элигита - Азия",
@@ -34801,7 +34829,7 @@
   "instagram": "fabricfactory.kz",
   "website": "http://fabricfactory.kz/",
   "source": "https://2gis.kz/astana/firm/70000001091839641",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46656,6 +46684,13 @@
   "v": 3,
   "checked_at": "2026-11-10T12:44:06+00:00"
  },
+ "astana:приведи друга": {
+  "name": "Приведи друга",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
+ },
  "astana:примавера каз": {
   "name": "Примавера КАЗ",
   "city": "astana",
@@ -53296,6 +53331,13 @@
   "v": 3,
   "checked_at": "2026-11-11T07:44:35+00:00"
  },
+ "karaganda:silk way stroi": {
+  "name": "Silk Way Stroi",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
+ },
  "karaganda:silumin of qazaqstan силумин оф казахстан": {
   "name": "Silumin of Qazaqstan (Силумин оф Казахстан)",
   "city": "karaganda",
@@ -59514,7 +59556,7 @@
   "instagram": "joseph.company.kz",
   "website": "https://joseph-company.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001105157575",
-  "avatar_checked_at": "2026-11-08T09:44:28+00:00",
+  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -69909,6 +69951,13 @@
    "website"
   ]
  },
+ "uralsk:полежаев андрей валерьевич": {
+  "name": "Полежаев Андрей Валерьевич",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
+ },
  "uralsk:полиграфсервис": {
   "name": "Полиграфсервис",
   "city": "uralsk",
@@ -70076,6 +70125,13 @@
   ],
   "avatar": "f4876f6f039b6b16.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:триумф": {
+  "name": "ТРИУМФ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
  },
  "uralsk:ультроника": {
   "name": "Ультроника",
@@ -72296,6 +72352,13 @@
   "avatar": "8775aad43bcd0401.jpg",
   "avatar_source": "website",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001030069704"
+ },
+ "ust-kamenogorsk:приведи друга": {
+  "name": "Приведи друга",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-15T10:42:38+00:00"
  },
  "ust-kamenogorsk:продбаза иртыш": {
   "name": "Продбаза Иртыш",

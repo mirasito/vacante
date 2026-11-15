@@ -40,6 +40,21 @@ test('приглашение друга с источником', () => {
   assert.deepEqual(parseLaunch('sfr_ref_abc123'), { source: 'fr', ref: 'abc123' });
 });
 
+test('ссылка на отклик: a_ вместо v_, окно отклика открывается сразу', () => {
+  assert.deepEqual(parseLaunch('stg_a_almaty_hh-139501020'), { source: 'tg', city: 'almaty', vacancyId: 'hh-139501020', apply: true });
+  assert.deepEqual(parseLaunch('a_ust-kamenogorsk_astana_job_vakansii-130653'), {
+    city: 'ust-kamenogorsk',
+    vacancyId: 'astana_job_vakansii-130653',
+    apply: true,
+  });
+});
+
+test('старая ссылка v_ по-прежнему открывает карточку, а не отклик', () => {
+  assert.equal(parseLaunch('stg_v_almaty_hh-1').apply, undefined);
+  assert.equal(parseLaunch('stgdg_v_almaty_chan-205').apply, undefined);
+  assert.deepEqual(parseLaunch('a_almaty_'), {});
+});
+
 test('мусор и пустое значение ничего не дают', () => {
   assert.deepEqual(parseLaunch('что-то<script>'), {});
   assert.deepEqual(parseLaunch('v_almaty_'), {});

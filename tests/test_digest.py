@@ -47,7 +47,7 @@ def test_digest_lists_ten_and_points_to_site():
     assert text.startswith("🆕 Новые вакансии для вас: 12")
     # У каждой вакансии ссылка на карточку сайта и ссылка «Откликнуться» в приложение
     assert text.count("<a href=") == 20 and "Остальные 2 на сайте" in text
-    assert '<a href="https://t.me/vacantekz_bot?startapp=sbot_v_almaty_chan-3">✉️ Откликнуться в приложении</a>' in text
+    assert '<a href="https://t.me/vacantekz_bot?startapp=sbot_a_almaty_chan-3">✉️ Откликнуться в приложении</a>' in text
     assert '<b><a href="https://vacante.kz/v/chan-3/">Официант</a></b> · Луна' in text
     assert "📍 Алматы, ул. Абая, 3" in text
 
@@ -111,4 +111,4 @@ def test_digest_item_links_straight_to_employer_when_post_has_contacts():
     text = digest.format_digest([v], "https://vacante.kz")
     assert ('<a href="https://api.vacante.kz/go/chan-3/wa?s=bot&amp;t=%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BD%D1%82">💬 WhatsApp</a>'
             ' · <a href="https://api.vacante.kz/go/chan-3/call?s=bot&amp;t=%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BD%D1%82">📞 Позвонить</a>') in text
-    assert ' · <a href="https://t.me/vacantekz_bot?startapp=sbotpf_v_almaty_chan-3">👤 С профилем</a>' in text
+    assert ' · <a href="https://t.me/vacantekz_bot?startapp=sbotpf_a_almaty_chan-3">👤 С профилем</a>' in text

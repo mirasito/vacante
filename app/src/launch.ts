@@ -3,7 +3,8 @@
  * поэтому источник перехода, город и вакансия собраны в одну строку. Собирает её сбор
  * (vacante/launch.py), формат общий:
  *
- *   [s<метка>_] v_<город>_<id вакансии>   вакансия открыта сразу
+ *   [s<метка>_] v_<город>_<id вакансии>   открыта карточка вакансии
+ *   [s<метка>_] a_<город>_<id вакансии>   сразу окно отклика на вакансию (кнопки «Откликнуться» и «С профилем»)
  *   [s<метка>_] c_<город>                 лента города
  *   [s<метка>_] ref_<код>                 приглашение друга
  *   [s<метка>_] beta                      тестовая ссылка
@@ -15,12 +16,14 @@ export type Launch = {
   source?: string;
   city?: string;
   vacancyId?: string;
+  /** Ссылка ведёт на отклик: вместо карточки вакансии сразу окно отклика. */
+  apply?: boolean;
   ref?: string;
   beta?: boolean;
 };
 
 const SOURCE = /^s([a-z0-9]{1,8})_(.+)$/;
-const VACANCY = /^v_([a-z-]{2,30})_([A-Za-z0-9_-]+)$/;
+const VACANCY = /^([va])_([a-z-]{2,30})_([A-Za-z0-9_-]+)$/;
 const CITY = /^c_([a-z-]{2,30})$/;
 const REF = /^ref_([a-z0-9]{6})$/;
 const OLD_CITY = /^[a-z][a-z-]{1,30}$/;
@@ -28,7 +31,7 @@ const OLD_CITY = /^[a-z][a-z-]{1,30}$/;
 function body(value: string): Launch | undefined {
   if (value === 'beta') return { beta: true };
   const vacancy = VACANCY.exec(value);
-  if (vacancy) return { city: vacancy[1], vacancyId: vacancy[2] };
+  if (vacancy) return { city: vacancy[2], vacancyId: vacancy[3], ...(vacancy[1] === 'a' ? { apply: true } : {}) };
   const city = CITY.exec(value);
   if (city) return { city: city[1] };
   const ref = REF.exec(value);

@@ -240,3 +240,101 @@ test("«дошёл» считает только отклики, ушедшие 
   assert.deepEqual([row.sent, row.sent_with_link, row.reached], [2, 1, 1]);
   await t.s.close();
 });
+
+test("итог за период считает человека один раз, сколько бы дней он ни открывал приложение", async () => {
+  const t = await server();
+  // День 1: Айгерим и Ерлан открывают впервые. Дни 2 и 3: Айгерим возвращается, приложение сообщает,
+  // что прошлое открытие было день назад. Кто она, сервер по-прежнему не записывает
+  await t.event({ step: "open", source: "tg" });
+  await t.event({ step: "open", source: "tg" }, OTHER);
+  await t.event({ step: "profile_start", source: "tg" });
+  t.tick(24 * HOUR);
+  await t.event({ step: "open", source: "tg", gap: 1 });
+  t.tick(24 * HOUR);
+  await t.event({ step: "open", source: "tg", gap: 1 });
+  await t.event({ step: "open", source: "tg", gap: 1 }); // второй раз за день не считается ни открытием, ни возвратом
+
+  const week = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
+  // По дням всё как было: 2, 1 и 1 открытие
+  assert.deepEqual(week.rows.map((r: { day: string; opened: number }) => [r.day, r.opened]), [["2026-11-06", 1], ["2026-11-05", 1], ["2026-11-04", 2]]);
+  // За период — два человека, а не четыре: первая конверсия считается от людей
+  assert.equal(week.total.opened, 2);
+  assert.equal(week.total.opened_daily, 4);
+  assert.equal(week.total.profile_started, 1);
+  assert.deepEqual(week.sources.map((r: { source: string; opened: number; opened_daily: number }) => [r.source, r.opened, r.opened_daily]), [["tg", 2, 4]]);
+  assert.equal(week.returns_since, "2026-11-05");
+
+  // Период из двух последних дней: Айгерим в нём одна. Её открытие дня 2 — первое в периоде (прошлое было до него)
+  const two = (await t.s.call("GET", "/admin/funnel?days=2", { headers: admin })).json;
+  assert.equal(two.total.opened, 1);
+  assert.equal(two.total.opened_daily, 2);
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM seekers").get()!.n, 0);
+  await t.s.close();
+});
+
+test("давность не по формату не учитывается: открытие считается новым, как раньше", async () => {
+  const t = await server();
+  for (const [i, gap] of [0, 91, -1, 1.5, "1", null].entries()) {
+    assert.equal((await t.event({ step: "open", source: "tg", gap }, { ...OTHER, id: 8000 + i })).status, 204);
+  }
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM funnel_returns").get()!.n, 0);
+  const r = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
+  assert.equal(r.total.opened, 6);
+  assert.equal(r.returns_since, null);
+  await t.s.close();
+});
+
+test("вернувшийся с другой меткой не уводит итог источника в минус", async () => {
+  const t = await server();
+  await t.event({ step: "open" });
+  t.tick(24 * HOUR);
+  await t.event({ step: "open", source: "tg", gap: 1 });
+  const r = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
+  assert.deepEqual(r.sources.map((x: { source: string; opened: number }) => [x.source, x.opened]).sort(), [["tg", 0], ["—", 1]]);
+  assert.equal(r.total.opened, 1);
+  await t.s.close();
+});
+
+test("шаги полной анкеты: дошёл и прошёл по каждому экрану, обезличенно и раз в день на человека", async () => {
+  const t = await server();
+  const step = (kind: "form_reach" | "form_pass", screen: string, user?: Record<string, unknown>) => t.event({ step: kind, screen, source: "tg" }, user);
+  // Айгерим проходит анкету целиком, Ерлан бросает её на шаге с домом
+  for (const screen of ["consent", "place", "roles", "experience", "employment", "pay", "home", "start"]) {
+    assert.equal((await step("form_reach", screen)).status, 204);
+    assert.equal((await step("form_pass", screen)).status, 204);
+  }
+  for (const screen of ["consent", "place", "roles", "experience", "employment", "pay"]) {
+    await step("form_reach", screen, OTHER);
+    await step("form_pass", screen, OTHER);
+  }
+  await step("form_reach", "home", OTHER);
+  await step("form_reach", "home", OTHER); // вернулся назад и снова пришёл: тот же человек, тот же день
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM seekers").get()!.n, 0);
+
+  const r = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
+  assert.deepEqual(r.form, [
+    { screen: "consent", reached: 2, passed: 2 },
+    { screen: "place", reached: 2, passed: 2 },
+    { screen: "roles", reached: 2, passed: 2 },
+    { screen: "experience", reached: 2, passed: 2 },
+    { screen: "employment", reached: 2, passed: 2 },
+    { screen: "pay", reached: 2, passed: 2 },
+    { screen: "home", reached: 2, passed: 1 },
+    { screen: "start", reached: 1, passed: 1 },
+  ]);
+  // В основную воронку шаги анкеты не попадают
+  assert.deepEqual(r.rows, []);
+  await t.s.close();
+});
+
+test("шаг анкеты без экрана или с неизвестным экраном — ошибка, в базу ничего не попадает", async () => {
+  const t = await server();
+  assert.equal((await t.event({ step: "form_reach" })).status, 400);
+  assert.equal((await t.event({ step: "form_pass", screen: "hack" })).status, 400);
+  assert.equal((await t.event({ step: "form_reach", screen: "home'; DROP TABLE funnel_form; --" })).status, 400);
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM funnel_form").get()!.n, 0);
+  const r = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
+  assert.equal(r.form.length, 8);
+  assert.ok(r.form.every((x: { reached: number; passed: number }) => x.reached === 0 && x.passed === 0));
+  await t.s.close();
+});

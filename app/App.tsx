@@ -6,6 +6,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { loadCity, loadIndex, loadPage, loadRole } from './src/api';
 import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
 import { ApplySheet, type Preset } from './src/applications/ApplySheet';
+import { applyGate } from './src/applications/gate';
 import { Celebrate } from './src/applications/Celebrate';
 import { Booking } from './src/Booking';
 import { ChatsTab } from './src/Chats';
@@ -25,6 +26,7 @@ import {
   homeScreenStatus,
   initTelegram,
   launchApp,
+  launchApply,
   launchBeta,
   launchChat,
   launchCity,
@@ -45,6 +47,7 @@ import {
 } from './src/platform';
 import { Onboarding } from './src/Onboarding';
 import { findLaunched, findOnPages } from './src/openFromLink';
+import { dayOf, nextOpen, type Opens } from './src/opens';
 import { ProfileTab } from './src/profile/ProfileTab';
 import { Wizard } from './src/profile/Wizard';
 import { almaty, P } from './src/profile/texts';
@@ -109,11 +112,26 @@ type Prefs = {
   source?: string;
 };
 type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'chats' | 'profile';
+/** На что откликаемся. fromLink — пришли по ссылке на отклик из канала, с сайта или из подборки бота. */
+type ApplyTarget = { copy: VacancyCopy; full?: Vacancy; fromLink?: boolean };
 type Seen = Record<string, 'l' | 'r'>;
 
 const samePoint = (a: Point | null, b: Point | null) => a?.lat === b?.lat && a?.lon === b?.lon;
 
 const MAX_LIKED = 300;
+// Сколько «Откликнуться» ждёт ответа сервера о профиле. Дольше — сервера считай нет: отклик идёт
+// коротким текстом без профиля, как и раньше, когда сервер недоступен
+const ACCOUNT_WAIT_MS = 10_000;
+
+/**
+ * Открытие приложения для воронки. Сколько дней назад его открывали в прошлый раз, помнит только
+ * телефон (opens.ts); серверу уходит одно это число. День запоминаем, когда сервер событие принял:
+ * иначе следующее открытие назвалось бы повторным, хотя первое не посчитано.
+ */
+async function reportOpen(source: string | undefined) {
+  const { opens, gap } = nextOpen(await read<Opens | undefined>('opens', undefined), dayOf(Date.now()));
+  if (await sendEvent('open', source, gap)) await write('opens', opens);
+}
 // Значок на экран телефона предлагаем один раз, когда человек уже полистал ленту
 const HOME_AFTER = 5;
 
@@ -155,6 +173,9 @@ function Main() {
   const [attempt, setAttempt] = useState(0);
   const [home, setHome] = useState<HomeScreen>('unsupported');
   const [account, setAccount] = useState<Account | null>(null);
+  // Сервер ответил, кто вошёл и есть ли профиль (или ясно, что ответа не будет). Пока нет, «профиля нет»
+  // и «ещё не знаем» выглядят одинаково, поэтому отклик ждёт (applications/gate.ts)
+  const [accountKnown, setAccountKnown] = useState(false);
   // Отклики на сервере (когда есть профиль) и сводка недели
   const [apps, setApps] = useState<Application[] | null>(null);
   const [summary, setSummary] = useState<Summary | null>(null);
@@ -172,9 +193,14 @@ function Main() {
   const [showApp, setShowApp] = useState<{ id: number; focus: Focus } | null>(null);
   // Окно «Как откликнуться?»: копия вакансии и, если есть, вакансия из ленты целиком.
   // preset — готовый текст из напоминания («Написать ещё раз», «Опаздываю»)
-  const [applying, setApplying] = useState<{ copy: VacancyCopy; full?: Vacancy; preset?: Preset; onDone?(): void } | null>(
-    null,
-  );
+  // fromLink — окно открыто ссылкой на отклик: закрыл, не отправив, — остаётся карточка этой вакансии
+  const [applying, setApplying] = useState<{
+    copy: VacancyCopy;
+    full?: Vacancy;
+    preset?: Preset;
+    onDone?(): void;
+    fromLink?: boolean;
+  } | null>(null);
   // vacante 2.0: открытая переписка, экран «Запись», надёжность, «Пригласить друга», жалоба
   const [chat, setChat] = useState<number | null>(null);
   const [booking, setBooking] = useState<Application | null>(null);
@@ -187,9 +213,13 @@ function Main() {
   const profileBack = useRef<(() => boolean) | null>(null);
   // Вакансия из ссылки запуска: открываем один раз, когда загрузится лента города
   const launchedVacancy = useRef(launchVacancy());
+  // Ссылка вела на отклик (кнопка «Откликнуться» или «С профилем»): вместо карточки сразу окно отклика
+  const launchedApply = useRef(launchApply());
   const langRef = useRef<Lang>('ru');
   // Короткая анкета перед первым откликом: кому откликаемся после неё. quickSkipped — человек отказался
-  const [quickFor, setQuickFor] = useState<{ copy: VacancyCopy; full?: Vacancy } | null>(null);
+  const [quickFor, setQuickFor] = useState<ApplyTarget | null>(null);
+  // Нажали «Откликнуться»: ждём, пока станет известно, есть ли профиль, и только потом решаем, что открыть
+  const [pendingApply, setPendingApply] = useState<ApplyTarget | null>(null);
   const quickSkipped = useRef(false);
   const quickBack = useRef<(() => boolean) | null>(null);
 
@@ -232,11 +262,14 @@ function Main() {
       if (app) {
         homeScreenStatus().then(setHome);
         // Вход на сервер Vacante: пока сервера нет, просто ничего не показываем
+        const giveUp = setTimeout(() => setAccountKnown(true), ACCOUNT_WAIT_MS);
         whoAmI().then((who) => {
+          clearTimeout(giveUp);
           setAccount(who);
-          if (who) void sendEvent('open', source);
+          setAccountKnown(true);
+          if (who) void reportOpen(source);
         });
-      }
+      } else setAccountKnown(true);
     })();
   }, []);
 
@@ -282,12 +315,16 @@ function Main() {
         const wanted = launchedVacancy.current;
         const launched = findLaunched(items, wanted);
         launchedVacancy.current = undefined;
-        if (launched.vacancy) setOpen(launched.vacancy);
+        // Ссылка на отклик открывает сразу окно отклика (перед ним короткая анкета, если профиля нет),
+        // остальные ссылки на вакансию — её карточку. Смену на день берут в боте, а не в окне отклика
+        const show = (v: Vacancy) =>
+          launchedApply.current && v.shift !== 'slot' ? setPendingApply({ copy: copyOf(v, city), full: v, fromLink: true }) : setOpen(v);
+        if (launched.vacancy) show(launched.vacancy);
         else if (launched.closed && wanted) {
           // В большом городе пост двухдневной давности уже не в первых 400: смотрим следующие страницы
           void findOnPages(wanted, last, (n) => loadPage(city, n)).then((found) => {
             if (!alive) return;
-            if (found) setOpen(found);
+            if (found) show(found);
             else notify(i18n.t(langRef.current, 'vacancyClosed'));
           });
         }
@@ -344,7 +381,7 @@ function Main() {
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
   useBackButton(
-    !!quickFor || !!applying || !!open || filtersOpen || settingsOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
+    !!pendingApply || !!quickFor || !!applying || !!open || filtersOpen || settingsOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
     () => {
     if (reportFor) setReportFor(null);
     else if (inviteOpen) setInviteOpen(false);
@@ -353,8 +390,9 @@ function Main() {
     else if (tab === 'chats' && chat) setChat(null);
     else if (filtersOpen) setFiltersOpen(false);
     else if (settingsOpen) setSettingsOpen(false);
+    else if (pendingApply) setPendingApply(null);
     else if (quickFor) quickBack.current?.();
-    else if (applying) setApplying(null);
+    else if (applying) closeApplying();
     else if (open) setOpen(null);
     else if (picking && city) setPicking(false);
     else if (tab === 'profile' && profileBack.current?.()) return;
@@ -367,6 +405,17 @@ function Main() {
   // Отклики: на сервере, когда есть профиль; без профиля — на телефоне; без сервера — просто «Избранное»
   // «Мои» есть у всех: без профиля отклики и стадии хранятся на телефоне
   const tracker: 'off' | 'local' | 'server' = account?.profile ? 'server' : 'local';
+
+  // «Откликнуться»: у кого профиля нет, сначала короткая анкета. Решаем здесь, а не в момент нажатия:
+  // нажатие в первую секунду после запуска приходит раньше ответа сервера о профиле и раньше шло мимо анкеты
+  useEffect(() => {
+    if (!pendingApply) return;
+    const gate = applyGate({ known: accountKnown, canProfile: showProfile, hasProfile: !!account?.profile, skipped: quickSkipped.current });
+    if (gate === 'wait') return;
+    setPendingApply(null);
+    if (gate === 'quick') setQuickFor(pendingApply);
+    else setApplying(pendingApply);
+  }, [pendingApply, accountKnown, showProfile, account]);
 
   // Открыли кнопкой бота «Открыть профиль» (?tab=profile), из сообщения об отклике (?tab=applications)
   // или из напоминания (?tab=reminders; «Перенести» добавляет &app=<id>: сразу дата собеседования)
@@ -555,8 +604,17 @@ function Main() {
     });
   };
 
+  /** Закрыть окно отклика. Пришли по ссылке на отклик и не отправили — остаётся карточка вакансии, а не лента. */
+  const closeApplying = () => {
+    const card = applying?.fromLink ? applying.full : undefined;
+    setApplying(null);
+    if (card) setOpen(card);
+  };
+
   const onSent = async (method: Method, app: Application | null, link: boolean) => {
     if (!applying) return;
+    // Отклик отправлен: карточку этой вакансии после окна уже не показываем
+    setApplying((a) => (a ? { ...a, fromLink: false } : a));
     if (tracker === 'server' && app) {
       // «Написать ещё раз» не отматывает стадию назад
       const patch: ApplicationPatch = app.stage === 'liked' ? { stage: 'sent', method, with_link: link } : { method, with_link: link };
@@ -600,10 +658,7 @@ function Main() {
    * Отклик на вакансию. У кого профиля ещё нет, сначала короткая анкета (согласие, имя, профессии),
    * и сразу после неё — окно отклика на эту же вакансию. Отказался от анкеты — отклик коротким текстом.
    */
-  const beginApply = (target: { copy: VacancyCopy; full?: Vacancy }) => {
-    if (showProfile && !account?.profile && !quickSkipped.current) setQuickFor(target);
-    else setApplying(target);
-  };
+  const beginApply = (target: ApplyTarget) => setPendingApply(target);
   const startApply = (v: Vacancy) =>
     v.shift === 'slot' && v.source_url ? openUrl(v.source_url) : city && beginApply({ copy: copyOf(v, city), full: v });
 
@@ -1189,6 +1244,12 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
+      {/* Нажали «Откликнуться» раньше, чем сервер ответил о профиле: ждём ответа, анкету не пропускаем */}
+      <Modal visible={!!pendingApply && !accountKnown} animationType="fade" onRequestClose={() => setPendingApply(null)}>
+        <ModalArea>
+          <Loading c={c} text="" />
+        </ModalArea>
+      </Modal>
       <Modal visible={!!quickFor} animationType="slide" onRequestClose={() => void quickBack.current?.()}>
         <ModalArea>
           {quickFor && account ? (
@@ -1219,7 +1280,7 @@ function Main() {
         </ModalArea>
       </Modal>
 
-      <Modal visible={!!applying} animationType="slide" onRequestClose={() => setApplying(null)} transparent>
+      <Modal visible={!!applying} animationType="slide" onRequestClose={closeApplying} transparent>
         <ModalArea>
           {applying ? (
             <ApplySheet
@@ -1233,7 +1294,7 @@ function Main() {
               name={account?.first_name ?? ''}
               onStarted={(a) => putApp(a)}
               onSent={onSent}
-              onClose={() => setApplying(null)}
+              onClose={closeApplying}
               onMakeProfile={() => {
                 setApplying(null);
                 setTab('profile');

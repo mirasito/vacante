@@ -67,3 +67,13 @@ def test_rescan_fills_contacts_of_cards_saved_before():
     fresh = with_contact(parse_post(raw), raw)
     [result] = merge([saved], [fresh])
     assert result is saved and result.contact == ["whatsapp", "phone"]
+
+
+def test_salary_range_is_not_a_phone():
+    """«237000 - 237000 ₸» — вилка зарплаты, а не номер: сумма остаётся в карточке, контакта из неё нет."""
+    text = "Требуется повар в кафе, 5/2\nЗарплата: 237000 - 237000 ₸"
+    assert contacts.kinds(text) == []
+    assert not contacts.PHONE.search(text)
+    card = parse_post(post(text + "\nТел: 87011234567"))
+    assert card.salary_min == 237000
+    assert contacts.kinds(text + "\nТел: 87011234567") == ["phone"]

@@ -64,11 +64,11 @@ test("галочку превью, включённую до кружка в п�
   }
 });
 
-test("миграция 0019 проходит на базе с данными: счётчики воронки и соискатели на месте", () => {
+test("миграция 0020 проходит на базе с данными: счётчики воронки и соискатели на месте", () => {
   const dir = mkdtempSync(join(tmpdir(), "vacante-mig-"));
   try {
     const all = readdirSync(MIGRATIONS).filter((f) => f.endsWith(".sql")).sort();
-    for (const name of all.filter((f) => f < "0019")) copyFileSync(join(MIGRATIONS, name), join(dir, name));
+    for (const name of all.filter((f) => f < "0020")) copyFileSync(join(MIGRATIONS, name), join(dir, name));
     const db = new DatabaseSync(":memory:");
     migrate(db, dir);
     db.prepare(
@@ -83,8 +83,8 @@ test("миграция 0019 проходит на базе с данными: с
       tables: tables(db),
     };
     assert.equal(before.counts.length, 3);
-    copyFileSync(join(MIGRATIONS, "0019_funnel_period.sql"), join(dir, "0019_funnel_period.sql"));
-    assert.deepEqual(migrate(db, dir), ["0019_funnel_period.sql"]);
+    copyFileSync(join(MIGRATIONS, "0020_funnel_period.sql"), join(dir, "0020_funnel_period.sql"));
+    assert.deepEqual(migrate(db, dir), ["0020_funnel_period.sql"]);
     assert.deepEqual(db.prepare("SELECT * FROM funnel_counts ORDER BY day, step").all().map((r) => ({ ...r })), before.counts);
     assert.deepEqual(db.prepare("SELECT * FROM seekers").all().map((r) => ({ ...r })), before.seekers);
     // Только новые таблицы: существующие не перестраиваются

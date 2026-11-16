@@ -7,6 +7,7 @@ import { createApp } from "./app.ts";
 import { loadConfig } from "./config.ts";
 import { openDb } from "./db.ts";
 import { startContactsBackfill } from "./go.ts";
+import { startOlxHourly } from "./olx-hourly.ts";
 import { startScheduler } from "./reminder-bot.ts";
 import { Bot } from "./telegram.ts";
 
@@ -27,10 +28,13 @@ server.listen(config.port, config.host, () => {
 const stopReminders = startScheduler({ config, db, bot, now: Date.now, fetch });
 // Контакты работодателей из постов в каналах: чтобы кнопки «WhatsApp» и «Позвонить» открывались сразу
 const stopContacts = startContactsBackfill({ db, now: Date.now, fetch });
+// Вакансии OLX.kz: раз в час до пяти страниц рубрики «Работа», первый проход через полторы минуты после запуска
+const stopOlx = startOlxHourly({ config, db, now: Date.now, fetch });
 
 function stop() {
   stopReminders();
   stopContacts();
+  stopOlx();
   server.close(() => {
     db.close();
     process.exit(0);

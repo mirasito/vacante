@@ -174,3 +174,17 @@ def test_admin_has_funnel_tab(tmp_path):
     # Числа воронки лежат только на сервере в Казахстане: страница получает адрес, а не данные
     assert admin["funnel_api"] == "https://api.vacante.kz/admin/funnel"
     assert "funnel" not in {k for k in admin if k != "funnel_api"}
+
+
+def test_disabled_channel_cards_leave_the_site(tmp_path):
+    """Канал отключили (enabled: false) — его уже собранные карточки уходят с сайта, а не висят ещё две недели."""
+    cook = "Требуется повар в столовую, 5/2, 300 000 тг, питание. Звоните 8 701 123 45 67"
+    channels = {"chan_a": [raw("chan_a", 1, BARISTA, 8)], "chan_b": [raw("chan_b", 5, cook, 6)]}
+    run_collect(tmp_path, channels)
+    saved = lambda: {v["id"] for v in json.loads((tmp_path / "data" / "vacancies.json").read_text("utf-8"))}  # noqa: E731
+    assert saved() == {"chan_a-1", "chan_b-5"}
+    config = tmp_path / "channels.yaml"
+    config.write_text("channels:\n  - username: chan_a\n    city: almaty\n"
+                      "  - {username: chan_b, city: almaty, enabled: false}\n", "utf-8")
+    collect.run(config, tmp_path / "data", fetch=lambda client, name, city, since_id=0, max_age_days=14: [], now=NOW)
+    assert saved() == {"chan_a-1"}

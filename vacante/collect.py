@@ -38,6 +38,12 @@ def load_channels(config_path: Path) -> list[dict]:
     return [c for c in config["channels"] if c.get("enabled", True)]
 
 
+def disabled_channels(config_path: Path) -> set[str]:
+    """Каналы с enabled: false: их уже собранные карточки с сайта уходят сразу, а не через две недели."""
+    config = yaml.safe_load(config_path.read_text("utf-8"))
+    return {c["username"].lower() for c in config["channels"] if not c.get("enabled", True)}
+
+
 def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
             dropped: dict[str, str] | None = None) -> list[Vacancy]:
     """Заново разбирает сохранённые карточки, чтобы улучшения разбора доходили и до уже собранных вакансий.
@@ -133,7 +139,9 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
         from_bot = direct
         stats["direct"] = len(direct)
     # Правилами заново разбираем только посты из каналов: у вакансий hh поля уже разложены по полочкам
-    existing = reparse([v for v in saved if v.source == "telegram"], cities, dropped)
+    off = disabled_channels(config_path)
+    existing = reparse([v for v in saved if v.source == "telegram" and v.id.rpartition("-")[0].lower() not in off],
+                       cities, dropped)
     from_hh_saved = [v for v in saved if v.source == hh.SOURCE]
     from_olx_saved = [v for v in saved if v.source == olx.SOURCE]
     for v in from_hh_saved:

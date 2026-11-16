@@ -3266,6 +3266,13 @@
   "v": 3,
   "checked_at": "2026-11-10T21:43:51+00:00"
  },
+ "aktobe:академия здоровья тоо беркут 2016": {
+  "name": "Академия здоровья (ТОО БЕРКУТ-2016)",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
+ },
  "aktobe:актобе климат комфорт": {
   "name": "Актобе Климат Комфорт",
   "city": "aktobe",
@@ -3750,6 +3757,22 @@
   "checked_at": "2026-11-07T12:44:23+00:00",
   "instagram": "dr.ym_aktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001032124981"
+ },
+ "aktobe:компания эврика": {
+  "name": "Компания ЭВРИКА",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "evrika.kazakhstan",
+  "website": "https://evrika.com/",
+  "source": "https://2gis.kz/aktobe/firm/70000001101019934",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bae2fc00a0844752.jpg",
+  "avatar_source": "website"
  },
  "aktobe:лентелефонстрой ум": {
   "name": "Лентелефонстрой-УМ",
@@ -7494,6 +7517,13 @@
   "v": 3,
   "checked_at": "2026-11-04T11:44:39+00:00"
  },
+ "almaty:brand hub group бренд хаб груп": {
+  "name": "Brand Hub Group (Бренд Хаб Груп)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
+ },
  "almaty:brave talents брэйв тэлэнтс": {
   "name": "Brave Talents (Брэйв Тэлэнтс)",
   "city": "almaty",
@@ -8044,6 +8074,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:cleantown group": {
+  "name": "Cleantown Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
  },
  "almaty:climcom": {
   "name": "ClimCom",
@@ -13887,6 +13924,13 @@
   "instagram": "marrone_rosso",
   "source": "https://2gis.kz/almaty/firm/9429940000788591"
  },
+ "almaty:marseco group": {
+  "name": "Marseco Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
+ },
  "almaty:marsianka": {
   "name": "Marsianka",
   "city": "almaty",
@@ -19145,6 +19189,22 @@
   "v": 3,
   "checked_at": "2026-11-10T17:48:14+00:00"
  },
+ "almaty:tumodo travel technologies": {
+  "name": "TUMODO TRAVEL TECHNOLOGIES",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "tumodo.kz",
+  "website": "https://tumodo.io/kz",
+  "source": "https://2gis.kz/almaty/firm/70000001116215992",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0cce59303e33b067.jpg",
+  "avatar_source": "website"
+ },
  "almaty:turk dunyasi": {
   "name": "Turk Dunyasi",
   "city": "almaty",
@@ -19403,6 +19463,21 @@
   ],
   "avatar": "159704cac2e363b4.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:uts iic": {
+  "name": "UTS IIc",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "website": "http://assc.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001071529310",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8997017cd8f179e2.jpg",
+  "avatar_source": "website"
  },
  "almaty:uysot team": {
   "name": "UYSOT TEAM",
@@ -20974,6 +21049,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
+ },
+ "almaty:аквастрим": {
+  "name": "АкваСтрим",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
  },
  "almaty:акерке": {
   "name": "Акерке",
@@ -26918,7 +27000,7 @@
   "checked_at": "2026-11-09T12:45:04+00:00",
   "website": "https://maxrazmah.kz/",
   "source": "https://2gis.kz/astana/firm/70000001089187430",
-  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28651,6 +28733,22 @@
   "v": 3,
   "checked_at": "2026-11-14T05:42:43+00:00"
  },
+ "almaty:пернебеков е ш 4monkeys": {
+  "name": "ПЕРНЕБЕКОВ Е.Ш (4MONKEYS)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "4monkeys.kz",
+  "website": "https://4monkeys.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001051318521",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7f6a5d7022de2231.jpg",
+  "avatar_source": "website"
+ },
  "almaty:персона дент": {
   "name": "Персона Дент",
   "city": "almaty",
@@ -30270,6 +30368,20 @@
   "website": "https://poehalisnami.kz/office/almaty/2213",
   "source": "https://2gis.kz/almaty/firm/70000001082031162",
   "avatar_checked_at": "2026-11-15T04:41:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:стади ферст": {
+  "name": "Стади Ферст",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "studyfirst.kz",
+  "website": "https://studyfirst.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001105811970",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32611,6 +32723,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
+ },
+ "almaty:элита трейд": {
+  "name": "Элита Трейд",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "website": "https://new.elitetrade.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001020902544",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:элиталық қазақ мектебі zaman": {
   "name": "Элиталық қазақ мектебі ZAMAN",
@@ -35828,10 +35953,17 @@
   "checked_at": "2026-11-09T12:45:04+00:00",
   "website": "https://site.euroelectric.kz/ru",
   "source": "https://2gis.kz/astana/firm/70000001018066283",
-  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:everest accessory corporation": {
+  "name": "EVEREST ACCESSORY CORPORATION",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
  },
  "astana:evs construction": {
   "name": "EVS Construction",
@@ -36201,7 +36333,7 @@
   "instagram": "get.education",
   "website": "https://get-edu.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040421836",
-  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42280,6 +42412,15 @@
   "v": 3,
   "checked_at": "2026-11-13T08:45:10+00:00"
  },
+ "astana:а8": {
+  "name": "А8",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "restaurant_a8",
+  "source": "https://2gis.kz/astana/firm/70000001069502569"
+ },
  "astana:абаева": {
   "name": "Абаева",
   "city": "astana",
@@ -43254,7 +43395,7 @@
   "instagram": "aetz.kz",
   "website": "https://www.aetz.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018083583",
-  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46569,7 +46710,7 @@
   "checked_at": "2026-11-09T12:45:04+00:00",
   "website": "https://maxrazmah.kz/",
   "source": "https://2gis.kz/astana/firm/70000001089187430",
-  "avatar_checked_at": "2026-11-09T12:45:06+00:00",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48177,6 +48318,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T23:43:36+00:00"
+ },
+ "astana:радуга тоо компания raduga kdr": {
+  "name": "Радуга, ТОО (Компания Raduga KDR)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "radugakdr.kz",
+  "website": "https://kdr.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018111545",
+  "avatar_checked_at": "2026-11-16T13:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:разливной": {
   "name": "РАЗЛИВНОЙ",
@@ -62743,6 +62898,15 @@
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
  },
+ "pavlodar:экспресс транспорт": {
+  "name": "ЭКСПРЕСС ТРАНСПОРТ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "partsfortrucks.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001022309113"
+ },
  "pavlodar:элпроммаш": {
   "name": "ЭЛПРОММАШ",
   "city": "pavlodar",
@@ -65543,6 +65707,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "semey:силикат": {
+  "name": "СИЛИКАТ",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
  },
  "semey:сладкая жизнь": {
   "name": "СЛАДКАЯ ЖИЗНЬ",
@@ -69002,6 +69173,15 @@
    "website"
   ]
  },
+ "shymkent:экспресс транспорт": {
+  "name": "ЭКСПРЕСС ТРАНСПОРТ",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "partsfortrucks.kz",
+  "source": "https://2gis.kz/karaganda/firm/70000001022309113"
+ },
  "shymkent:эрсиджи": {
   "name": "ЭРСИДЖИ",
   "city": "shymkent",
@@ -69158,6 +69338,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T10:43:50+00:00"
+ },
+ "taldykorgan:senim 01": {
+  "name": "SENIM-01",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00"
  },
  "taldykorgan:teplostandart": {
   "name": "TeploStandart",
@@ -71815,6 +72002,15 @@
    "website"
   ]
  },
+ "uralsk:нұр ай": {
+  "name": "НҰР-АЙ",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "tkani_nurai",
+  "source": "https://2gis.kz/uralsk/firm/70000001031963369"
+ },
  "uralsk:оками": {
   "name": "Оками",
   "city": "uralsk",
@@ -72675,6 +72871,15 @@
   ],
   "avatar": "4462b986fe2212fe.jpg",
   "avatar_source": "telegram"
+ },
+ "ust-kamenogorsk:ideas for retail": {
+  "name": "Ideas for Retail",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T13:44:52+00:00",
+  "instagram": "podium.yk",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001043823888"
  },
  "ust-kamenogorsk:indigo solutions": {
   "name": "Indigo Solutions",

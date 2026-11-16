@@ -5530,6 +5530,13 @@
   "instagram": "angel_wear_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001111021382"
  },
+ "almaty:ant inc": {
+  "name": "ANT INC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:ant security": {
   "name": "ANT SECURITY",
   "city": "almaty",
@@ -14513,6 +14520,13 @@
   "instagram": "mint.print.pro",
   "source": "https://2gis.kz/almaty/firm/70000001069401432"
  },
+ "almaty:mir a construction": {
+  "name": "MIR-A Construction",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:mira kids": {
   "name": "Mira Kids",
   "city": "almaty",
@@ -14782,6 +14796,13 @@
   "checked_at": "2026-11-03T04:43:49+00:00",
   "instagram": "myherb.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001047641250"
+ },
+ "almaty:my startups": {
+  "name": "My Startups",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
  },
  "almaty:myata city": {
   "name": "Myata City",
@@ -19028,6 +19049,13 @@
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
  },
+ "almaty:tobiko": {
+  "name": "TOBIKO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:tole bi co": {
   "name": "TOLE BI CO",
   "city": "almaty",
@@ -19901,6 +19929,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-10T02:45:03+00:00"
+ },
+ "almaty:watt prokat": {
+  "name": "WATT PROKAT",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
  },
  "almaty:wave": {
   "name": "Wave",
@@ -24568,6 +24603,13 @@
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
  },
+ "almaty:жасыл үміт": {
+  "name": "Жасыл Үміт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:жибек жолы": {
   "name": "Жибек жолы",
   "city": "almaty",
@@ -26572,6 +26614,19 @@
   "instagram": "labsmile.kz",
   "source": "https://2gis.kz/almaty/firm/70000001043588387"
  },
+ "almaty:лаборатория цифрового маркетинга": {
+  "name": "Лаборатория цифрового маркетинга",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00",
+  "website": "https://mslab.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089697585",
+  "avatar_checked_at": "2026-11-16T15:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:лаванилла 5 сум": {
   "name": "Лаванилла 5 Сум",
   "city": "almaty",
@@ -27246,6 +27301,13 @@
   "v": 3,
   "checked_at": "2026-11-13T01:44:50+00:00"
  },
+ "almaty:махмутов": {
+  "name": "Махмутов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:махнина н в": {
   "name": "Махнина Н.В.",
   "city": "almaty",
@@ -27290,12 +27352,32 @@
   "instagram": "megatau.td",
   "source": "https://2gis.kz/almaty/firm/9429940000797834"
  },
+ "almaty:медарткз": {
+  "name": "Медарткз",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:медикал груп": {
   "name": "Медикал груп",
   "city": "almaty",
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T02:43:54+00:00"
+ },
+ "almaty:медикер": {
+  "name": "Медикер",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00",
+  "website": "https://mediker.kz/",
+  "source": "https://mediker.kz/en/public-private-partnership",
+  "avatar_checked_at": "2026-11-16T15:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:медилэнд": {
   "name": "МЕДИЛЭНД",
@@ -28477,6 +28559,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:омарова н қ": {
+  "name": "ОМАРОВА Н Қ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
  },
  "almaty:омега строй базис": {
   "name": "ТОО Омега Строй Базис",
@@ -31353,6 +31442,13 @@
    "website"
   ]
  },
+ "almaty:торговый дом лд": {
+  "name": "ТОРГОВЫЙ ДОМ ЛД",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "almaty:торговый дом ордабасы кус алматы": {
   "name": "Торговый дом Ордабасы - кус Алматы",
   "city": "almaty",
@@ -31648,6 +31744,23 @@
   ],
   "avatar": "2dfdf697627b0a02.jpg",
   "avatar_source": "website"
+ },
+ "almaty:учебный центр косметологии аравия": {
+  "name": "Учебный центр косметологии «Аравия»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00",
+  "telegram": "aravia_almaty",
+  "website": "https://aravia-academy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001079214713",
+  "avatar_checked_at": "2026-11-16T15:43:45+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "0aea8d5a40f962f4.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:учреждение sdu university": {
   "name": "Учреждение SDU University",
@@ -35984,6 +36097,22 @@
    "website"
   ],
   "avatar": "8b2342393d98c5c6.jpg",
+  "avatar_source": "website"
+ },
+ "astana:elpa kz": {
+  "name": "ELPA.kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00",
+  "instagram": "tooelpa.kz",
+  "website": "https://elpa.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001023131300",
+  "avatar_checked_at": "2026-11-16T15:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8de14b3c37d8571d.jpg",
   "avatar_source": "website"
  },
  "astana:emerald": {
@@ -42544,6 +42673,13 @@
    "website"
   ]
  },
+ "astana:zumdex": {
+  "name": "Zumdex",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "astana:а маркет": {
   "name": "А Маркет",
   "city": "astana",
@@ -45922,6 +46058,13 @@
   "checked_at": "2026-11-01T12:43:29+00:00",
   "instagram": "baritonkaraoke",
   "source": "https://2gis.kz/astana/firm/70000001032443131"
+ },
+ "astana:карлов": {
+  "name": "Карлов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
  },
  "astana:каспарова а в дилижанс шоу": {
   "name": "Каспарова А.В. Дилижанс-шоу",
@@ -51583,6 +51726,13 @@
   "v": 3,
   "checked_at": "2026-11-06T19:43:58+00:00"
  },
+ "astana:юлкон": {
+  "name": "ЮЛКОН",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
+ },
  "astana:юникен": {
   "name": "Юникен",
   "city": "astana",
@@ -53124,6 +53274,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T19:44:42+00:00"
+ },
+ "atyrau:интертек интернэшинал казахстан": {
+  "name": "Интертек Интернэшинал Казахстан",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00",
+  "website": "https://www.intertek.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001037612741",
+  "avatar_checked_at": "2026-11-16T15:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:инфинити орда": {
   "name": "Инфинити Орда",
@@ -56708,6 +56871,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:прессбук": {
+  "name": "ПрессБук",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
  },
  "karaganda:производственная компания карпромснаб": {
   "name": "Производственная компания КарПромСнаб.",
@@ -72506,6 +72676,13 @@
   ],
   "avatar": "66c515510c8f40a4.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:хаиров даурен": {
+  "name": "Хаиров Даурен",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T15:43:44+00:00"
  },
  "uralsk:хачапури": {
   "name": "ХАЧАПУРИ",

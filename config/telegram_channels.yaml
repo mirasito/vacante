@@ -20,7 +20,10 @@ channels:
   - {username: almatyvacancies, city: almaty}
   - {username: rabotaaty, city: almaty}
   - {username: rabota4almaty, city: almaty}
-  - {username: agashka_job_almaty, city: almaty}
+  # 16.11.2026 отключён: это канал другого агрегатора («Агашка Бот»). Он пересказывает чужие вакансии
+  # (в том числе с hh.kz) без контактов работодателя, а отклик ведёт в его приложение: 97 из 102 карточек
+  # были без контакта, и наш «Откликнуться» приводил человека в чужой канал.
+  - {username: agashka_job_almaty, city: almaty, enabled: false}
   - {username: almatyrabota360, city: almaty}
   - {username: alaportjobs, city: almaty}
   - {username: almaty_rabota_vacancy, city: almaty, enabled: false}

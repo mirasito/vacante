@@ -6,7 +6,7 @@
 // а подборки каждый час рассылает `python -m vacante digest` из GitHub Actions.
 // Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
 // Профили соискателей хранит сервер в Казахстане: что касается профиля, бот передаёт ему (server.js).
-import { dispatchUpdate, wakeUpdate } from "./cron.js";
+import { dispatchUpdate, wakeDaily, wakeUpdate } from "./cron.js";
 import { crmApi, jobsApi } from "./crm.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
@@ -62,6 +62,8 @@ export default {
   // Раз в час (crons в wrangler.toml): подстраховка расписания GitHub, см. cron.js
   async scheduled(event, env, ctx) {
     ctx.waitUntil(wakeUpdate(env).then((result) => console.log(`update.yml: ${result}`)));
+    // Утренние ролики и черновик поста: расписания GitHub у них нет, запускает только этот будильник
+    ctx.waitUntil(wakeDaily(env).then((result) => console.log(`утро: ${JSON.stringify(result)}`)));
     // Смены: напоминания, вопрос «кто пришёл» и закрытие прошедших
     ctx.waitUntil(shiftCron(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },

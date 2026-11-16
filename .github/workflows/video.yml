@@ -3,9 +3,9 @@
 # в Telegram. В Reels, TikTok и Shorts их выкладывает человек. Ролики также лежат в артефактах запуска.
 name: Видео
 
+# Расписания здесь нет: GitHub пропускал утренние запуски целиком. В 7:25 по Казахстану workflow запускает
+# будильник в воркере бота (bot/src/cron.js, wakeDaily), один раз в день.
 on:
-  schedule:
-    - cron: "30 2 * * *"  # 7:30 по Казахстану
   workflow_dispatch:
     inputs:
       send:

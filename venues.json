@@ -6107,6 +6107,13 @@
   "instagram": "ataautoservice",
   "source": "https://2gis.kz/almaty/firm/70000001115458713"
  },
+ "almaty:atakent nomad": {
+  "name": "Atakent Nomad",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00"
+ },
  "almaty:atamiras s": {
   "name": "ATAMIRAS.S",
   "city": "almaty",
@@ -10157,7 +10164,7 @@
   "instagram": "gesso.kz",
   "website": "http://gesso.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001035673091",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16240,6 +16247,20 @@
   "v": 3,
   "checked_at": "2026-11-13T00:44:06+00:00"
  },
+ "almaty:rayan park": {
+  "name": "RAYAN PARK",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00",
+  "instagram": "rayanpark_",
+  "website": "https://rayanpark.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001102863450",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:rb brands": {
   "name": "RB Brands",
   "city": "almaty",
@@ -19335,7 +19356,7 @@
   "instagram": "changan_vmpremium_almaty",
   "website": "http://changan-vmpremiumalmaty.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001111386609",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19657,6 +19678,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "almaty:yans янс": {
+  "name": "YANS (ЯНС)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00",
+  "instagram": "yans.kz",
+  "website": "https://www.yans.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032769999",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d639aee6ce5c7980.jpg",
+  "avatar_source": "website"
  },
  "almaty:yarko events": {
   "name": "Yarko events",
@@ -23499,6 +23536,20 @@
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
  },
+ "almaty:додо пицца": {
+  "name": "Додо Пицца",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00",
+  "instagram": "dodopizza.almaty",
+  "website": "https://dodopizza.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032793835",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:доктор слух": {
   "name": "Доктор Слух",
   "city": "almaty",
@@ -27035,7 +27086,7 @@
   "instagram": "persona_clinic",
   "website": "http://persona-clinic.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001022987069",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31520,6 +31571,15 @@
   ],
   "avatar": "1c4be1745c5b78d2.jpg",
   "avatar_source": "website"
+ },
+ "almaty:чайla premium": {
+  "name": "ЧайLa Premium",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00",
+  "instagram": "chayla_premium",
+  "source": "https://2gis.kz/almaty/firm/70000001105648632"
  },
  "almaty:чайная": {
   "name": "Чайная",
@@ -36650,6 +36710,20 @@
   "website": "https://landrover-astana.kz/",
   "source": "https://2gis.kz/astana/firm/70000001020455749",
   "avatar_checked_at": "2026-11-12T09:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:joyu": {
+  "name": "JOYU",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00",
+  "instagram": "joyu.kz",
+  "website": "https://joyu.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001043414447",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60741,7 +60815,7 @@
   "instagram": "neftekhim_ltd",
   "website": "http://nephtechim.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018662574",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63372,6 +63446,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "semey:oina": {
+  "name": "OiNA",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00",
+  "instagram": "oina_semey",
+  "source": "https://2gis.kz/semej/firm/70000001111168045"
  },
  "semey:orhun medical": {
   "name": "Orhun Medical",
@@ -68010,7 +68093,7 @@
   "instagram": "alemagro",
   "website": "http://alemagro.com/",
   "source": "https://2gis.kz/almaty/firm/70000001035777558",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -69254,6 +69337,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
+ },
+ "uralsk:ba group services": {
+  "name": "BA Group Services",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T04:43:18+00:00"
  },
  "uralsk:babi": {
   "name": "BABI",
@@ -70613,7 +70703,7 @@
   "checked_at": "2026-11-09T03:44:14+00:00",
   "website": "http://oralrem.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001024982527",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70977,7 +71067,7 @@
   "instagram": "borusan_kazakhstan",
   "telegram": "borusancatkazakhtsan",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721372273",
-  "avatar_checked_at": "2026-11-09T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-16T04:43:19+00:00",
   "avatar_tried": [
    "telegram"
   ]

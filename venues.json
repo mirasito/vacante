@@ -801,6 +801,20 @@
   "instagram": "sandavinci_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001044841365"
  },
+ "aktau:seyco group": {
+  "name": "SEYCO GROUP",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "deniz.pipes",
+  "website": "https://denizplast.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001080030336",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktau:silk way": {
   "name": "Silk Way",
   "city": "aktau",
@@ -919,6 +933,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T22:43:40+00:00"
+ },
+ "aktau:tisou": {
+  "name": "TISOU",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "tisou.official",
+  "source": "https://2gis.kz/aktau/firm/70000001118551049"
  },
  "aktau:tokyo roll": {
   "name": "Tokyo Roll",
@@ -6104,7 +6127,7 @@
   "instagram": "asstra.kz",
   "website": "https://asstra.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001060889618",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7619,7 +7642,7 @@
   "instagram": "arenasunsetkz",
   "website": "http://arenasunset.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001068807042",
-  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11616,7 +11639,7 @@
   "instagram": "intellpack_family",
   "website": "https://www.intellpack.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001374212",
-  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22625,6 +22648,13 @@
   "v": 3,
   "checked_at": "2026-11-14T11:43:05+00:00"
  },
+ "almaty:бытсервис ақбол": {
+  "name": "Бытсервис Ақбол",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00"
+ },
  "almaty:бьюти ретейлер золотое яблоко": {
   "name": "Бьюти-ретейлер Золотое Яблоко",
   "city": "almaty",
@@ -22739,6 +22769,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T06:43:49+00:00"
+ },
+ "almaty:ветзащитаазия": {
+  "name": "ВетЗащитаАзия",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "website": "https://www.vetazia.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001208693",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:ветпром": {
   "name": "Ветпром",
@@ -27050,6 +27093,13 @@
   "v": 3,
   "checked_at": "2026-10-31T05:43:11+00:00"
  },
+ "almaty:международная беттинг компания parimatch тоо бк pm бет": {
+  "name": "Международная беттинг компания Parimatch (ТОО БК PM Бет)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00"
+ },
  "almaty:международная логистика crct казахстан": {
   "name": "“Международная логистика (CRCT) Казахстан",
   "city": "almaty",
@@ -30785,6 +30835,13 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "almaty:торг автодеталь": {
+  "name": "Торг - Автодеталь",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00"
+ },
  "almaty:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
   "city": "almaty",
@@ -31619,10 +31676,10 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-16T09:43:19+00:00",
+  "checked_at": "2026-11-16T11:05:53+00:00",
   "website": "https://www.aksaynan.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000791941",
-  "avatar_checked_at": "2026-11-16T09:43:19+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31877,6 +31934,15 @@
   ],
   "avatar": "1c4be1745c5b78d2.jpg",
   "avatar_source": "website"
+ },
+ "almaty:чайla": {
+  "name": "ЧайLa",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "chayla_ala_park",
+  "source": "https://2gis.kz/almaty/firm/70000001093317446"
  },
  "almaty:чайla premium": {
   "name": "ЧайLa Premium",
@@ -33127,7 +33193,7 @@
   "instagram": "almagest_astana",
   "website": "http://www.almagest1.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018062106",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33164,7 +33230,7 @@
   "instagram": "alpha.group.machinery",
   "website": "https://alpha-group.kz/",
   "source": "https://2gis.kz/astana/firm/70000001115683435",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44004,7 +44070,7 @@
   "telegram": "vdrova_astana",
   "website": "http://vdrova.taptable.kz/",
   "source": "https://2gis.kz/astana/firm/70000001022749691",
-  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -44918,6 +44984,29 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T14:43:56+00:00"
+ },
+ "astana:инвиво лаборатория": {
+  "name": "Инвиво, Лаборатория",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "invivokz",
+  "telegram": "invivokz",
+  "website": "https://www.invivo.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001038809860",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
+ "astana:индустрия производства": {
+  "name": "Индустрия Производства",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00"
  },
  "astana:инжвнешстрой": {
   "name": "Инжвнешстрой",
@@ -48366,7 +48455,7 @@
   "instagram": "dns_qazaqstan",
   "website": "https://dns-shop.kz/",
   "source": "https://2gis.kz/astana/firm/70000001070513794",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48940,6 +49029,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
+ },
+ "astana:талисман": {
+  "name": "Талисман",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "talisman_kazakhstan_",
+  "source": "https://2gis.kz/astana/firm/70000001021471793"
  },
  "astana:тамсан": {
   "name": "ТАМСАН",
@@ -50062,16 +50160,9 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-16T09:43:19+00:00",
+  "checked_at": "2026-11-16T11:05:53+00:00",
   "instagram": "huaweimobilekz",
-  "website": "https://www.huawei.com/",
-  "source": "https://2gis.kz/astana/firm/70000001020394812",
-  "avatar_checked_at": "2026-11-16T09:43:19+00:00",
-  "avatar_tried": [
-   "website"
-  ],
-  "avatar": "c55f336ad48e1210.jpg",
-  "avatar_source": "website"
+  "source": "https://www.instagram.com/huaweimobilekz/"
  },
  "astana:цан": {
   "name": "ЦАН",
@@ -50145,6 +50236,20 @@
   "website": "http://centerplast.kz/",
   "source": "https://2gis.kz/astana/firm/70000001069156815",
   "avatar_checked_at": "2026-11-12T09:45:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:центр реабилитации и спортивной кинезиологии кинетик": {
+  "name": "Центр реабилитации и спортивной кинезиологии Кинетик",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "kinetikastana",
+  "website": "https://www.kinetik.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001023229773",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -50753,6 +50858,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-16T06:44:08+00:00"
+ },
+ "astana:элпроммаш": {
+  "name": "ЭЛПРОММАШ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "elprommash",
+  "website": "https://elprommash.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001110344334",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "11b9cc7af3f9ee6e.jpg",
+  "avatar_source": "website"
  },
  "astana:элснаб кз": {
   "name": "ЭлСнаб-КЗ",
@@ -55468,6 +55589,24 @@
   "avatar": "08276ba36baf2b78.jpg",
   "avatar_source": "website"
  },
+ "karaganda:карагандинский филиал республиканского государственного предприятия на праве хозяйственного ведения казахстанский институт стандартизации и метрологи": {
+  "name": "Карагандинский филиал Республиканского государственного предприятия на праве хозяйственного ведения Казахстанский институт стандартизации и метрологи",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "kazstandard",
+  "telegram": "kazstandard",
+  "website": "https://ksm.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018097308",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "4740e0ea628b01c5.jpg",
+  "avatar_source": "telegram"
+ },
  "karaganda:карагандинское горно строительное предприятие": {
   "name": "Карагандинское горно-строительное предприятие",
   "city": "karaganda",
@@ -58887,6 +59026,19 @@
    "website"
   ]
  },
+ "kostanay:дочерний банк казахстан зираат интернешнл банк": {
+  "name": "Дочерний Банк Казахстан-Зираат Интернешнл Банк",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "website": "https://www.kzibank.kz/",
+  "source": "https://kzibank.kz/",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:дычко в ю": {
   "name": "Дычко В.Ю",
   "city": "kostanay",
@@ -61127,7 +61279,7 @@
   "checked_at": "2026-11-09T09:44:49+00:00",
   "website": "https://alidi.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001066614787",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62260,6 +62412,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T12:45:11+00:00"
+ },
+ "pavlodar:элпроммаш": {
+  "name": "ЭЛПРОММАШ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "elprommash",
+  "website": "https://elprommash.kz/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001023506457",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d4821046ed1238e9.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:alcomag": {
   "name": "AlcoMag",
@@ -66774,6 +66942,22 @@
   "v": 3,
   "checked_at": "2026-11-02T11:44:06+00:00"
  },
+ "shymkent:sdn construction": {
+  "name": "SDN Construction",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00",
+  "instagram": "sdn_kz",
+  "website": "https://sdn.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001098579013",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ca9421f02430ffe0.jpg",
+  "avatar_source": "website"
+ },
  "shymkent:senim guard": {
   "name": "Senim Guard",
   "city": "shymkent",
@@ -69271,6 +69455,13 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "taraz:skill hub": {
+  "name": "Skill Hub",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00"
+ },
  "taraz:tezber company": {
   "name": "TEZBER Company",
   "city": "taraz",
@@ -69324,10 +69515,12 @@
   "instagram": "vitallylife.taraz",
   "website": "https://vitallylife.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001117524039",
-  "avatar_checked_at": "2026-11-09T10:43:44+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "ab8932baf12779dd.jpg",
+  "avatar_source": "website"
  },
  "taraz:woowpack": {
   "name": "WOOWPACK",
@@ -70335,7 +70528,7 @@
   "instagram": "koton.uralsk",
   "website": "https://koton.com/",
   "source": "https://2gis.kz/uralsk/firm/70000001024970901",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -72786,6 +72979,13 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "ust-kamenogorsk:алтынстом": {
+  "name": "АЛТЫНСТОМ",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T11:05:53+00:00"
+ },
  "ust-kamenogorsk:аманат": {
   "name": "Аманат",
   "city": "ust-kamenogorsk",
@@ -73029,7 +73229,7 @@
   "instagram": "helios_oskemen",
   "website": "https://helios.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721335888",
-  "avatar_checked_at": "2026-11-09T09:44:50+00:00",
+  "avatar_checked_at": "2026-11-16T11:05:54+00:00",
   "avatar_tried": [
    "website"
   ]

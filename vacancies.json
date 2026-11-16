@@ -1,5 +1,38 @@
 [
  {
+  "id": "hh-139550960",
+  "title": "Продавец-консультант",
+  "category": "retail",
+  "city": "astana",
+  "salary_min": 200000,
+  "salary_max": 350000,
+  "salary_period": "month",
+  "schedule": "5/2, 8 часов",
+  "perks": [
+   "Обучение",
+   "Без опыта"
+  ],
+  "employer": "Сеть магазинов GAISSINA",
+  "text": "Обязанности: Работа с клиентами и активные продажи. — Подбор образов. — Выполнение личного и общего плана. — Увеличение среднего чека и допродажи. —\nТребования: Можно без опыта — всему обучим. — Активного, быстрого и коммуникабельного. — Ответственного и дисциплинированного. — С желанием продавать и зарабатывать.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/139550960?tech_source=api",
+  "posted_at": "2026-11-16T22:56:55+00:00",
+  "fingerprint": "51f233994b29c8c4",
+  "also_seen_in": [],
+  "address": "улица Илияса Жансугурова, 8к1",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": 51.1602,
+  "lon": 71.483,
+  "geo": "hh",
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "2508382"
+ },
+ {
   "id": "hh-138802278",
   "title": "Упаковщик",
   "category": "warehouse",

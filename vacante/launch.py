@@ -77,6 +77,19 @@ def reply_buttons(v: Vacancy, source: str) -> list[tuple[str, str]]:
     return [("apply", app_link(param))] if param else []
 
 
+def apply_link(v: Vacancy, source: str) -> str | None:
+    """Единственная кнопка «Откликнуться» под вакансией в Telegram (свои каналы, подборки бота): окно отклика
+    в мини-приложении. Решение Мираса от 16.11.2026: прямых кнопок WhatsApp, звонка и Telegram под постом нет,
+    человек пишет работодателю из приложения, с профилем и ссылкой на него. На сайте прямые кнопки остаются
+    (reply_buttons): там человек может быть без Telegram. None — отклик идёт иначе (вакансия от работодателя,
+    смена на день) или ссылка не помещается в 64 знака Telegram.
+    """
+    if v.source == direct.SOURCE or v.shift_date or not v.city:
+        return None
+    param = start_param(source=source, city=v.city, vacancy_id=v.id, apply=True)
+    return app_link(param) if param else None
+
+
 def profile_link(v: Vacancy, source: str) -> str | None:
     """Ссылка «откликнуться с профилем» рядом с прямыми кнопками связи: отклик на эту вакансию в мини-приложении.
 

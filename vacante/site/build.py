@@ -135,18 +135,12 @@ def bot_item(v: Vacancy, base_url: str) -> str:
     if facts:
         lines.append(" · ".join(facts))
     lines.append(f"📍 {e(city_name(v.city))}" + (f", {e(v.address)}" if v.address else ""))
-    # Связаться сразу: WhatsApp, звонок или Telegram работодателя; если контактов в посте нет — отклик
-    # в приложении. У вакансий от работодателей и смен свой отклик через бота, им ссылки не нужны
-    if replies := launch.reply_buttons(v, "bot"):
-        links = [f'<a href="{e(url)}">{BOT_REPLY_LABELS[kind]}</a>' for kind, url in replies]
-        if url := launch.profile_link(v, "bot"):
-            links.append(f'<a href="{e(url)}">👤 С профилем</a>')
-        lines.append(" · ".join(links))
+    # Одна ссылка отклика: окно отклика в приложении, откуда человек пишет работодателю с профилем.
+    # У вакансий от работодателей и смен свой отклик через бота, им ссылка не нужна
+    if url := launch.apply_link(v, "bot"):
+        lines.append(f'<a href="{e(url)}">✉️ Откликнуться</a>')
     return "\n".join(lines)
 
-
-BOT_REPLY_LABELS = {"whatsapp": "💬 WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Telegram",
-                    "apply": "✉️ Откликнуться в приложении"}
 
 # Подписи кнопок отклика на карточке сайта (переводятся в шаблоне)
 REPLY_LABELS = {"whatsapp": "💬 Написать в WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Написать в Telegram",

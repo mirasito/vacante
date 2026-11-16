@@ -93,13 +93,12 @@ def test_post_is_picture_with_map_button():
     assert [text for text, _ in no_address.buttons] == ["✉️ Откликнуться", "👆 Подробнее"]
 
 
-def test_post_buttons_name_the_contacts_of_the_original_post():
-    # В посте есть WhatsApp и телефон: кнопки сразу ведут к работодателю
+def test_post_has_one_apply_button_even_when_original_post_has_contacts():
+    # В посте есть WhatsApp и телефон, но под вакансией одна кнопка отклика: она ведёт в приложение, где человек
+    # делает профиль и пишет работодателю в WhatsApp со ссылкой на него. Прямых кнопок мимо приложения нет
     v = replace(make(14, "Кафе «Зерно» ищет бариста"), contact=["whatsapp", "phone"])
     assert autopost.make_post(v, "https://vacante.kz").buttons == [
-        ("💬 WhatsApp", "https://api.vacante.kz/go/chan-14/wa?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
-        ("📞 Позвонить", "https://api.vacante.kz/go/chan-14/call?s=tg&t=%D0%91%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B0"),
-        ("👤 С профилем", "https://t.me/vacantekz_bot?startapp=stgpf_a_almaty_chan-14"),
+        ("✉️ Откликнуться", "https://t.me/vacantekz_bot?startapp=stg_a_almaty_chan-14"),
         ("👆 Подробнее", "https://vacante.kz/v/chan-14/")]
 
 

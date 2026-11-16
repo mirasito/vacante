@@ -8037,6 +8037,13 @@
   "v": 3,
   "checked_at": "2026-11-13T01:44:50+00:00"
  },
+ "almaty:cosmic coffee космик кофе": {
+  "name": "COSMIC COFFEE (КОСМИК КОФЕ)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "almaty:cosmos": {
   "name": "Cosmos",
   "city": "almaty",
@@ -9140,6 +9147,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:enjoyit": {
+  "name": "EnjoyIT",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "instagram": "enjoyit.kz",
+  "website": "https://enjoyit.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001090424075",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d85b54b8bfbf7c9f.jpg",
+  "avatar_source": "website"
  },
  "almaty:entrecote": {
   "name": "Entrecote",
@@ -12171,6 +12194,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:kazbiotech llp": {
+  "name": "KAZBIOTECH LLP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "website": "https://kazbiotech.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001027841674",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e08311c73d1dafa9.jpg",
+  "avatar_source": "website"
  },
  "almaty:kazdeal t": {
   "name": "KAZDEAL T",
@@ -21175,7 +21213,7 @@
   "instagram": "alprof_kz",
   "website": "http://www.alprof.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001036267503",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22410,6 +22448,13 @@
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
  },
+ "almaty:бц на татарке": {
+  "name": "БЦ на Татарке",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "almaty:быстрокадр": {
   "name": "БыстроКадр",
   "city": "almaty",
@@ -22850,6 +22895,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
+ },
+ "almaty:гк настилекс": {
+  "name": "ГК НАСТИЛЕКС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "website": "https://nastilex.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001116895994",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4fef6f44227d8c8d.jpg",
+  "avatar_source": "website"
  },
  "almaty:гк скиф": {
   "name": "ГК СКИФ",
@@ -36816,6 +36876,13 @@
   "v": 3,
   "checked_at": "2026-11-12T04:44:19+00:00"
  },
+ "astana:karavan караван": {
+  "name": "KARAVAN (КАРАВАН)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "astana:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "astana",
@@ -41628,6 +41695,13 @@
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
  },
+ "astana:абди компани": {
+  "name": "АБДИ Компани",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "astana:абдиров а с": {
   "name": "АБДИРОВ А.С.",
   "city": "astana",
@@ -42448,6 +42522,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T17:43:35+00:00"
+ },
+ "astana:арзанмикс": {
+  "name": "АРЗАНМИКС",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
  },
  "astana:арман": {
   "name": "Арман",
@@ -52732,7 +52813,7 @@
   "checked_at": "2026-11-09T04:44:32+00:00",
   "website": "https://avrora.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302828690",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -52833,7 +52914,7 @@
   "instagram": "broglasses.karaganda",
   "website": "https://eyecheck.broglasses.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001066923733",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -53187,6 +53268,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T13:43:44+00:00"
+ },
+ "karaganda:ined kz": {
+  "name": "ined.kz",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "instagram": "ined.astana",
+  "telegram": "inedkz",
+  "website": "https://ined.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001037936351",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "karaganda:izi": {
   "name": "IZI",
@@ -54727,7 +54824,7 @@
   "instagram": "igraika_kz_",
   "website": "https://www.igraika.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302936144",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57354,6 +57451,13 @@
   "v": 3,
   "checked_at": "2026-11-10T17:48:14+00:00"
  },
+ "kostanay:dizzy": {
+  "name": "Dizzy",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "kostanay:dpd kazakhstan": {
   "name": "DPD Kazakhstan",
   "city": "kostanay",
@@ -57425,6 +57529,13 @@
   "checked_at": "2026-11-05T09:44:32+00:00",
   "instagram": "glasman.kz",
   "source": "https://2gis.kz/kostanaj/firm/70000001035190134"
+ },
+ "kostanay:global gloves": {
+  "name": "Global Gloves",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
  },
  "kostanay:globus": {
   "name": "GloBus",
@@ -57502,7 +57613,7 @@
   "instagram": "kiaqazaqstan.plant",
   "website": "https://kiawork.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001105211864",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58994,6 +59105,20 @@
   "avatar": "dd41bdc87c15d255.jpg",
   "avatar_source": "website"
  },
+ "kostanay:секвойя сервис": {
+  "name": "СЕКВОЙЯ СЕРВИС",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "instagram": "sequoiaservice_kz",
+  "website": "https://sequoia-service.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110980544",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:сервисный центр ростсельмаш": {
   "name": "Сервисный центр Ростсельмаш",
   "city": "kostanay",
@@ -59009,6 +59134,13 @@
   ],
   "avatar": "20ea0b412ff4855e.jpg",
   "avatar_source": "telegram"
+ },
+ "kostanay:сму 1 аств спецстрой": {
+  "name": "СМУ-1 АСТВ Спецстрой",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
  },
  "kostanay:спк вершина": {
   "name": "СПК Вершина",
@@ -59438,6 +59570,20 @@
    "website"
   ]
  },
+ "kyzylorda:monamie сеть парфюмерно косметических магазинов": {
+  "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "instagram": "monamie.kz",
+  "website": "https://monamie.kz/",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001066009550",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kyzylorda:orda cola": {
   "name": "ORDA-COLA",
   "city": "kyzylorda",
@@ -59656,6 +59802,13 @@
    "website"
   ]
  },
+ "kyzylorda:ориент терра": {
+  "name": "Ориент-Терра",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "kyzylorda:полат": {
   "name": "Полат",
   "city": "kyzylorda",
@@ -59835,10 +59988,12 @@
   "instagram": "12mvpvl",
   "website": "https://12.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018644410",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "4b3d6ab907f545cf.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:ar line service": {
   "name": "Ar line service",
@@ -59869,6 +60024,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T20:43:40+00:00"
+ },
+ "pavlodar:bhk agro ag": {
+  "name": "BHK Agro AG",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "instagram": "bhkagro",
+  "website": "https://bhkagro.com/",
+  "source": "https://2gis.kz/pavlodar/firm/70000001045719373",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "pavlodar:bn house group": {
   "name": "BN House Group",
@@ -61180,6 +61349,13 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "pavlodar:премьерстройдизайн": {
+  "name": "ПремьерСтройДизайн",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
+ },
  "pavlodar:производственное объединение ascor": {
   "name": "Производственное объединение ASCOR",
   "city": "pavlodar",
@@ -61266,6 +61442,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-11T18:43:31+00:00"
+ },
+ "pavlodar:секвойя сервис": {
+  "name": "СЕКВОЙЯ СЕРВИС",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00",
+  "instagram": "sequoiaservice_kz",
+  "website": "https://sequoia-service.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110980544",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "pavlodar:стекломир": {
   "name": "СтеклоМир",
@@ -64771,7 +64961,7 @@
   "instagram": "askona_official.kz",
   "website": "https://askona.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001083450345",
-  "avatar_checked_at": "2026-11-09T04:44:34+00:00",
+  "avatar_checked_at": "2026-11-16T05:44:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65371,6 +65561,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T14:44:20+00:00"
+ },
+ "shymkent:k&k gmbh": {
+  "name": "K&K GmbH",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
  },
  "shymkent:kaspi kz": {
   "name": "Kaspi.kz",
@@ -66650,6 +66847,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:ваш домофон": {
+  "name": "Ваш Домофон",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T05:44:34+00:00"
  },
  "shymkent:витрина плюс": {
   "name": "Витрина плюс",

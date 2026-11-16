@@ -1701,6 +1701,13 @@
   "v": 3,
   "checked_at": "2026-11-10T02:45:03+00:00"
  },
+ "aktau:күн": {
+  "name": "КҮН",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "aktau:лакокрасочная торговая сеть 5 баллов": {
   "name": "Лакокрасочная Торговая Сеть 5-БАЛЛОВ",
   "city": "aktau",
@@ -3374,6 +3381,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
+ },
+ "aktobe:анвар": {
+  "name": "Анвар",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00",
+  "instagram": "anvar_retail",
+  "website": "http://anvar.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001031943194",
+  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "48d5a9dcdece71b8.jpg",
+  "avatar_source": "website"
  },
  "aktobe:аслан": {
   "name": "АСЛАН",
@@ -8166,6 +8189,13 @@
   "instagram": "coffeevarka.kz",
   "source": "https://2gis.kz/almaty/firm/70000001058954587"
  },
+ "almaty:college hub": {
+  "name": "College hub",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "almaty:colore home": {
   "name": "COLORE HOME",
   "city": "almaty",
@@ -9580,6 +9610,13 @@
   ],
   "avatar": "8e044ddc18469726.jpg",
   "avatar_source": "website"
+ },
+ "almaty:euro ceramics евро керамикс": {
+  "name": "Euro Ceramics (Евро Керамикс)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "almaty:euro truck": {
   "name": "Euro Truck",
@@ -14141,6 +14178,13 @@
   "v": 3,
   "checked_at": "2026-11-10T11:44:07+00:00"
  },
+ "almaty:mccloud": {
+  "name": "McCloud",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "almaty:mdg group kz": {
   "name": "MDG Group.kz",
   "city": "almaty",
@@ -16964,7 +17008,7 @@
   "instagram": "rixosalmaty",
   "website": "https://all.accor.com/hotel/B1N9/index.ru.shtml",
   "source": "https://2gis.kz/almaty/firm/9429940000789746",
-  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
+  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18785,6 +18829,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:teez": {
+  "name": "Teez",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "almaty:tehno altyn": {
   "name": "TEHNO ALTYN",
@@ -22951,6 +23002,19 @@
   "v": 3,
   "checked_at": "2026-11-07T20:43:40+00:00"
  },
+ "almaty:бухта": {
+  "name": "Бухта",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00",
+  "website": "https://buhta.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001096791916",
+  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:буцик": {
   "name": "БУЦИК",
   "city": "almaty",
@@ -25859,6 +25923,13 @@
    "website"
   ]
  },
+ "almaty:кен": {
+  "name": "КЕН",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "almaty:кенжехан": {
   "name": "Кенжехан",
   "city": "almaty",
@@ -25910,7 +25981,7 @@
   "instagram": "kinopark_kz",
   "website": "http://kinopark.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000788177",
-  "avatar_checked_at": "2026-11-09T15:44:25+00:00",
+  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27263,6 +27334,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T21:44:54+00:00"
+ },
+ "almaty:мастерская вкуса": {
+  "name": "Мастерская Вкуса",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "almaty:матпро": {
   "name": "МатПро",
@@ -28700,6 +28778,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T20:44:15+00:00"
+ },
+ "almaty:осоо бпк азия": {
+  "name": "ОсОО БПК Азия",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "almaty:осоо дерма лазер": {
   "name": "ОсОО Дерма Лазер",
@@ -34615,6 +34700,13 @@
   "v": 3,
   "checked_at": "2026-11-08T13:43:36+00:00"
  },
+ "astana:batyr": {
+  "name": "BATYR",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "astana:bauyrdaq": {
   "name": "Bauyrdaq",
   "city": "astana",
@@ -37001,6 +37093,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:happy dream": {
+  "name": "Happy Dream",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "astana:haridus харидус": {
   "name": "Haridus (Харидус)",
@@ -43527,6 +43626,13 @@
   "v": 3,
   "checked_at": "2026-11-01T20:43:30+00:00"
  },
+ "astana:ап юниверсити казахстан": {
+  "name": "АП ЮНИВЕРСИТИ КАЗАХСТАН",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "astana:апорт": {
   "name": "АПОРТ",
   "city": "astana",
@@ -44256,6 +44362,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
+ },
+ "astana:в2в сервис": {
+  "name": "В2В Сервис",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "astana:вайпоинг": {
   "name": "Вайпоинг",
@@ -46081,6 +46194,13 @@
   ],
   "avatar": "54cafbfa738d5abb.jpg",
   "avatar_source": "website"
+ },
+ "astana:каспимунайкапитал": {
+  "name": "КаспиМунайКапитал",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "astana:касымова": {
   "name": "Касымова",
@@ -51223,6 +51343,13 @@
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
  },
+ "astana:чк mcd holding ltd": {
+  "name": "ЧК MCD Holding Ltd.",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
+ },
  "astana:чк pingwin friends ltd": {
   "name": "ЧК PINGWIN FRIENDS LTD.",
   "city": "astana",
@@ -53961,6 +54088,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T14:44:20+00:00"
+ },
+ "atyrau:энджин мастер": {
+  "name": "Энджин Мастер",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "atyrau:этажи ип привальцев а а": {
   "name": "ЭТАЖИ (ИП Привальцев А.А.)",
@@ -63444,6 +63578,20 @@
    "website"
   ]
  },
+ "petropavlovsk:karpov accounting": {
+  "name": "KARPOV ACCOUNTING",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00",
+  "instagram": "karpov.accounting",
+  "website": "https://karpovaccounting.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001054732993",
+  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:kaspi kz": {
   "name": "Kaspi.kz",
   "city": "petropavlovsk",
@@ -65709,6 +65857,13 @@
   "checked_at": "2026-11-09T04:44:32+00:00",
   "instagram": "zaya_na_biss_karaokebar",
   "source": "https://2gis.kz/semej/firm/70000001118100081"
+ },
+ "semey:ибрагимов к д": {
+  "name": "Ибрагимов К.Д",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00"
  },
  "semey:иртыш моторс": {
   "name": "Иртыш Моторс",
@@ -71357,6 +71512,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T02:44:46+00:00"
+ },
+ "uralsk:fortebank": {
+  "name": "ForteBank",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T16:44:05+00:00",
+  "instagram": "fortebankkz",
+  "telegram": "forte",
+  "website": "https://forte.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001024812751",
+  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "b210aa60adc43b38.jpg",
+  "avatar_source": "telegram"
  },
  "uralsk:gayaz brand": {
   "name": "GAYAZ BRAND",

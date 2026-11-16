@@ -2648,6 +2648,19 @@
   "v": 3,
   "checked_at": "2026-11-09T05:44:45+00:00"
  },
+ "aktobe:erg kazakhstan": {
+  "name": "ERG Kazakhstan",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "website": "https://www.erg.kz/",
+  "source": "https://ergservice.erg.kz/en",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:esetmontazh": {
   "name": "Esetmontazh",
   "city": "aktobe",
@@ -3034,6 +3047,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
+ },
+ "aktobe:olymp medical group": {
+  "name": "Olymp Medical Group",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "aktobe:outfit": {
   "name": "Outfit",
@@ -4268,6 +4288,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:1000 мелочей": {
+  "name": "1000 мелочей",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "almaty:12 месяцев": {
   "name": "12 месяцев",
@@ -9127,6 +9154,15 @@
   "v": 3,
   "checked_at": "2026-11-05T17:43:42+00:00"
  },
+ "almaty:dr ayaulym": {
+  "name": "Dr. Ayaulym",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "instagram": "dr.ayaulym_",
+  "source": "https://2gis.kz/almaty/firm/70000001117195431"
+ },
  "almaty:dr gulzhainar clinic": {
   "name": "Dr Gulzhainar Clinic",
   "city": "almaty",
@@ -9324,6 +9360,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
+ },
+ "almaty:ed optic technology": {
+  "name": "ED OPTIC TECHNOLOGY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "almaty:ekonika": {
   "name": "EKONIKA",
@@ -19284,6 +19327,13 @@
   "v": 3,
   "checked_at": "2026-10-29T01:44:16+00:00"
  },
+ "almaty:tommy hilfiger": {
+  "name": "Tommy Hilfiger",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
+ },
  "almaty:tool master": {
   "name": "Tool Master",
   "city": "almaty",
@@ -21080,6 +21130,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:автоцентр abs cars тоо abs invest": {
+  "name": "Автоцентр ABS-Cars ( ТОО ABS Invest)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "instagram": "changan.almaty_abs",
+  "source": "https://2gis.kz/almaty/firm/70000001067906829"
  },
  "almaty:агентство гепард": {
   "name": "Агентство ГЕПАРД",
@@ -27917,6 +27976,13 @@
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
  },
+ "almaty:мешелова": {
+  "name": "Мешелова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
+ },
  "almaty:микро логистика": {
   "name": "Микро Логистика",
   "city": "almaty",
@@ -28131,6 +28197,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T22:43:40+00:00"
+ },
+ "almaty:молдашева д г": {
+  "name": "Молдашева Д.Г",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "instagram": "luxusplasma_clinic",
+  "website": "https://www.luxusplasma.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037571202",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:монолит вк": {
   "name": "Монолит ВК",
@@ -31124,7 +31204,7 @@
   "instagram": "sattyzhuldyz",
   "website": "https://sz.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001082977708",
-  "avatar_checked_at": "2026-11-09T21:43:38+00:00",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31845,6 +31925,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T11:44:49+00:00"
+ },
+ "almaty:требован": {
+  "name": "Требован",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "almaty:трегубенко": {
   "name": "Трегубенко",
@@ -40987,7 +41074,7 @@
   "instagram": "redpandakz",
   "website": "https://www.redpanda.kz/",
   "source": "https://2gis.kz/astana/firm/70000001067520759",
-  "avatar_checked_at": "2026-11-09T21:43:38+00:00",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42153,6 +42240,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:tb corp": {
+  "name": "TB corp",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "instagram": "lammi.me.astana",
+  "source": "https://2gis.kz/astana/firm/70000001080663230"
  },
  "astana:technodom operator технодом оператор": {
   "name": "TECHNODOM Operator (Технодом Оператор)",
@@ -44057,6 +44153,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T15:44:25+00:00"
+ },
+ "astana:арсенал": {
+  "name": "Арсенал",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "astana:арт студия": {
   "name": "Арт-студия",
@@ -55723,6 +55826,13 @@
    "website"
   ]
  },
+ "karaganda:power blast": {
+  "name": "Power Blast",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
+ },
  "karaganda:prima distribution": {
   "name": "Prima Distribution",
   "city": "karaganda",
@@ -57189,6 +57299,22 @@
    "website"
   ]
  },
+ "karaganda:ломбард goldencapital kz": {
+  "name": "ЛОМБАРД GOLDENCAPITAL.KZ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "instagram": "goldencapital.kz",
+  "website": "https://goldencapital.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302864227",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6f13961e7f8572cb.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:ломбард караганда кредит": {
   "name": "ЛОМБАРД КАРАГАНДА-КРЕДИТ",
   "city": "karaganda",
@@ -58342,6 +58468,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T05:43:22+00:00"
+ },
+ "kokshetau:elai dental clinic": {
+  "name": "ELAI DENTAL CLINIC",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "instagram": "elai_dental_clinic",
+  "source": "https://2gis.kz/kokshetau/firm/70000001059488996"
  },
  "kokshetau:etalon auto": {
   "name": "Etalon Auto",
@@ -62247,6 +62382,13 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "pavlodar:capital stroy v": {
+  "name": "Capital Stroy V",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
+ },
  "pavlodar:delivery fast": {
   "name": "Delivery Fast",
   "city": "pavlodar",
@@ -64883,6 +65025,19 @@
   "v": 3,
   "checked_at": "2026-11-13T01:44:50+00:00"
  },
+ "petropavlovsk:компания по страхованию жизни nomad life": {
+  "name": "«Компания по страхованию жизни «Nomad Life»",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "website": "https://nomadlife.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001110737724",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:компания шин line": {
   "name": "Компания Шин Line",
   "city": "petropavlovsk",
@@ -66141,6 +66296,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "semey:temirlan kalikov": {
+  "name": "Temirlan Kalikov",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "semey:toptrans kz": {
   "name": "TopTrans-Kz",
@@ -70454,6 +70616,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T04:43:35+00:00"
+ },
+ "taldykorgan:aster автомобили": {
+  "name": "ASTER Автомобили",
+  "city": "taldykorgan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00",
+  "website": "https://aster.kz/",
+  "source": "https://apps.apple.com/kz/app/aster-kz-%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D1%82%D1%8C-%D0%B0%D0%B2%D1%82%D0%BE/id1546075383",
+  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "164020b4bc79deb8.jpg",
+  "avatar_source": "website"
  },
  "taldykorgan:caspian international restaurants company": {
   "name": "Caspian International Restaurants company",
@@ -75239,6 +75416,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "ust-kamenogorsk:дегавцов о н": {
+  "name": "Дегавцов О.Н.",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T21:44:14+00:00"
  },
  "ust-kamenogorsk:докка": {
   "name": "ДОККА",

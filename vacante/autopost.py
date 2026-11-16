@@ -267,22 +267,16 @@ def format_caption(v: Vacancy, urgent: bool = False) -> str:
     return "\n".join(lines)
 
 
-REPLY_LABELS = {"whatsapp": "💬 WhatsApp", "phone": "📞 Позвонить", "telegram": "✈️ Telegram", "apply": "✉️ Откликнуться"}
-
-
 def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: bytes | None = None,
               urgent: bool = False) -> Post:
     buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
     else:
-        # Вакансия из чужого источника: первые кнопки сразу ведут к работодателю — в WhatsApp с готовым
-        # текстом, на звонок или в Telegram (через сервер, где хранятся номера). Если контактов в посте
-        # нет, кнопка «Откликнуться» открывает вакансию в мини-приложении
-        replies = [(REPLY_LABELS[kind], url) for kind, url in launch.reply_buttons(v, launch.OWN_CHANNELS)]
-        if url := launch.profile_link(v, launch.OWN_CHANNELS):
-            replies.append(("👤 С профилем", url))
-        buttons = replies + buttons
+        # Вакансия из чужого источника: одна кнопка отклика, она открывает окно отклика в мини-приложении.
+        # Там человек делает профиль и пишет работодателю в WhatsApp или Telegram со ссылкой на него
+        if url := launch.apply_link(v, launch.OWN_CHANNELS):
+            buttons.insert(0, ("✉️ Откликнуться", url))
     if url := twogis_url(v):
         buttons.append(("📍 Открыть в 2ГИС", url))
     if url := instagram_url(venue):

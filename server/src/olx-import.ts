@@ -151,6 +151,40 @@ export function importedPhone(db: Db, vacancyId: string, url: string, now: numbe
   return row?.phone ?? null;
 }
 
+/**
+ * Запись объявлений в olx_ads: одна дорога для закладки, облачного сборщика и часового сбора самого сервера
+ * (server/src/olx-hourly.ts). Каждое объявление чистит cleanAd, записи старше KEEP_DAYS удаляются.
+ */
+export function storeItems(db: Db, items: readonly unknown[], now: number, automatic: boolean) {
+  const at = new Date(now).toISOString();
+  const upsert = db.prepare(
+    `INSERT INTO olx_ads (id, url, title, description, salary, city, lat, lon, detailed, created_time, refreshed_time, imported_at, phone)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT (id) DO UPDATE SET url = excluded.url, title = excluded.title, description = excluded.description,
+       salary = excluded.salary, city = excluded.city, lat = excluded.lat, lon = excluded.lon, detailed = excluded.detailed,
+       created_time = COALESCE(olx_ads.created_time, excluded.created_time), refreshed_time = excluded.refreshed_time,
+       imported_at = excluded.imported_at, phone = excluded.phone`,
+  );
+  let stored = 0;
+  let inserted = 0;
+  const existing = db.prepare("SELECT 1 FROM olx_ads WHERE id = ?");
+  const phoneIds: number[] = [];
+  const seen = new Set<number>();
+  for (const item of items) {
+    const ad = cleanAd(item, now);
+    if (!ad || seen.has(ad.id)) continue;
+    seen.add(ad.id);
+    if (automatic && !existing.get(ad.id)) inserted++;
+    upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at, ad.phone);
+    if (ad.phone) phoneIds.push(ad.id);
+    stored++;
+  }
+  const old = new Date(now - KEEP_DAYS * 86_400_000).toISOString();
+  db.prepare("DELETE FROM olx_ads WHERE imported_at < ?").run(old);
+  const total = (db.prepare("SELECT count(*) AS n FROM olx_ads").get() as { n: number }).n;
+  return { received: items.length, stored, skipped: items.length - stored, total, ...(automatic ? { phone_ids: phoneIds, inserted } : {}) };
+}
+
 export function olxImportRoutes(ctx: Ctx): Route[] {
   const internal = Buffer.from(internalKey(ctx.config.botToken));
   const same = (given: string, key: Buffer) => {
@@ -193,34 +227,7 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
     const items = Array.isArray(body?.items) ? body.items : null;
     if (!items) throw new HttpError(400, "Нет списка объявлений");
     if (items.length > MAX_ITEMS) throw new HttpError(400, `Не больше ${MAX_ITEMS} объявлений за раз`);
-    const now = ctx.now();
-    const at = new Date(now).toISOString();
-    const upsert = ctx.db.prepare(
-      `INSERT INTO olx_ads (id, url, title, description, salary, city, lat, lon, detailed, created_time, refreshed_time, imported_at, phone)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT (id) DO UPDATE SET url = excluded.url, title = excluded.title, description = excluded.description,
-         salary = excluded.salary, city = excluded.city, lat = excluded.lat, lon = excluded.lon, detailed = excluded.detailed,
-         created_time = COALESCE(olx_ads.created_time, excluded.created_time), refreshed_time = excluded.refreshed_time,
-         imported_at = excluded.imported_at, phone = excluded.phone`,
-    );
-    let stored = 0;
-    let inserted = 0;
-    const existing = ctx.db.prepare("SELECT 1 FROM olx_ads WHERE id = ?");
-    const phoneIds: number[] = [];
-    const seen = new Set<number>();
-    for (const item of items) {
-      const ad = cleanAd(item, now);
-      if (!ad || seen.has(ad.id)) continue;
-      seen.add(ad.id);
-      if (automatic && !existing.get(ad.id)) inserted++;
-      upsert.run(ad.id, ad.url, ad.title, ad.description, ad.salary, ad.city, ad.lat, ad.lon, ad.detailed, ad.created_time, ad.refreshed_time, at, ad.phone);
-      if (ad.phone) phoneIds.push(ad.id);
-      stored++;
-    }
-    const old = new Date(now - KEEP_DAYS * 86_400_000).toISOString();
-    ctx.db.prepare("DELETE FROM olx_ads WHERE imported_at < ?").run(old);
-    const total = (ctx.db.prepare("SELECT count(*) AS n FROM olx_ads").get() as { n: number }).n;
-    return { json: { received: items.length, stored, skipped: items.length - stored, total, ...(automatic ? { phone_ids: phoneIds, inserted } : {}) } };
+    return { json: storeItems(ctx.db, items, ctx.now(), automatic) };
   }
 
   return [

@@ -37,6 +37,11 @@ export interface Config {
    * в воркере бота. Его считает выкладка из секрета ADMIN_PASSWORD. Пусто — CRM в админке не открывается.
    */
   crmKey: string;
+  /**
+   * Часовой сбор OLX.kz самим сервером (server/src/olx-hourly.ts). Включён, пока в окружении нет
+   * OLX_HOURLY=0 (или false).
+   */
+  olxHourly: boolean;
 }
 
 type Env = Record<string, string | undefined>;
@@ -66,6 +71,7 @@ export function loadConfig(env: Env = process.env): Config {
     profilesOpen: env.PROFILES_OPEN === "1",
     olxImportKey: /^[0-9a-f]{64}$/i.test(env.OLX_IMPORT_KEY ?? "") ? (env.OLX_IMPORT_KEY as string).toLowerCase() : "",
     crmKey: /^[0-9a-f]{64}$/i.test(env.CRM_KEY ?? "") ? (env.CRM_KEY as string).toLowerCase() : "",
+    olxHourly: !/^(?:0|false)$/i.test((env.OLX_HOURLY ?? "").trim()),
   };
 }
 

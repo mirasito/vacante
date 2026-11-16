@@ -7,6 +7,7 @@ import type { Db } from "./db.ts";
 import { HttpError, makeRequest, route, send, type Reply, type Request, type Route, type Site } from "./http.ts";
 import { internalRoutes } from "./internal.ts";
 import { meRoutes } from "./me.ts";
+import { olxHourlyRoutes } from "./olx-hourly.ts";
 import { olxImportRoutes } from "./olx-import.ts";
 import { crmRoutes } from "./crm.ts";
 import { funnelRoutes } from "./funnel.ts";
@@ -130,6 +131,7 @@ function buildRoutes(ctx: Ctx): Route[] {
     ...internalRoutes(ctx),
     ...olxRoutes(ctx),
     ...olxImportRoutes(ctx),
+    ...olxHourlyRoutes(ctx),
     ...crmRoutes(ctx),
     ...funnelRoutes(ctx),
     ...goRoutes(ctx),

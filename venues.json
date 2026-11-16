@@ -510,6 +510,24 @@
   "instagram": "manali_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001103371939"
  },
+ "aktau:mdv beton": {
+  "name": "MDV BETON",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "mdvbeton",
+  "telegram": "mdvbeton",
+  "website": "http://mdvbeton.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001035256071",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "91de7b0824da636e.jpg",
+  "avatar_source": "website"
+ },
  "aktau:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "aktau",
@@ -532,6 +550,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
+ },
+ "aktau:monamie сеть парфюмерно косметических магазинов": {
+  "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "monamie.kz",
+  "website": "https://monamie.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001028575091",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "aktau:monte napoleone": {
   "name": "MONTE NAPOLEONE",
@@ -4926,6 +4958,15 @@
   "v": 3,
   "checked_at": "2026-11-09T09:44:49+00:00"
  },
+ "almaty:alim academy": {
+  "name": "ALIM ACADEMY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "alim_academy_kids",
+  "source": "https://2gis.kz/almaty/firm/70000001118051648"
+ },
  "almaty:alina group": {
   "name": "Alina Group",
   "city": "almaty",
@@ -5330,6 +5371,13 @@
   ],
   "avatar": "311fce67fe12b6c3.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:and asia": {
+  "name": "AND Asia",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
  },
  "almaty:anerss": {
   "name": "ANERSS",
@@ -8018,7 +8066,7 @@
   "checked_at": "2026-11-09T05:44:45+00:00",
   "website": "https://cordis.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001093571816",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8338,6 +8386,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T05:44:59+00:00"
+ },
+ "almaty:daulet": {
+  "name": "Daulet",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
  },
  "almaty:dayin food": {
   "name": "Dayin Food",
@@ -19988,6 +20043,13 @@
   "v": 3,
   "checked_at": "2026-11-11T00:45:29+00:00"
  },
+ "almaty:zm health": {
+  "name": "ZM HEALTH",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
+ },
  "almaty:zontex": {
   "name": "Zontex",
   "city": "almaty",
@@ -23222,6 +23284,13 @@
    "telegram"
   ]
  },
+ "almaty:группа компаний монолит": {
+  "name": "Группа Компаний Монолит",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
+ },
  "almaty:гулжайнар": {
   "name": "Гулжайнар",
   "city": "almaty",
@@ -23503,7 +23572,7 @@
   "checked_at": "2026-11-09T05:44:45+00:00",
   "website": "https://kikocosmetics.com.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001101994706",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33194,7 +33263,7 @@
   "instagram": "askona_official.kz",
   "website": "https://askona.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001100758564",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33212,6 +33281,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:46:23+00:00"
+ },
+ "astana:assyl media info kz": {
+  "name": "ASSYL MEDIA INFO KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
  },
  "astana:astana motor astana тойота центр астана моторс": {
   "name": "ASTANA MOTOR ASTANA (Тойота Центр Астана Моторс)",
@@ -38684,10 +38760,12 @@
   "checked_at": "2026-11-09T05:44:45+00:00",
   "website": "https://obf.kz/",
   "source": "https://2gis.kz/astana/firm/70000001113679534",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "56eb559ffbce4e02.jpg",
+  "avatar_source": "website"
  },
  "astana:orta development group": {
   "name": "ORTA DEVELOPMENT GROUP",
@@ -41363,6 +41441,20 @@
   "checked_at": "2026-11-10T13:45:32+00:00",
   "instagram": "vostokstory",
   "source": "https://2gis.kz/astana/firm/70000001117363217"
+ },
+ "astana:vr retail group": {
+  "name": "VR RETAIL GROUP",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "damdym.kz",
+  "website": "http://damdym.com/",
+  "source": "https://2gis.kz/astana/firm/70000001069426446",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:vs invest паприка": {
   "name": "VS Invest (Паприка)",
@@ -46262,6 +46354,20 @@
   "avatar": "a8d68df813992eec.jpg",
   "avatar_source": "telegram"
  },
+ "astana:мир паркета bau group тоо": {
+  "name": "Мир Паркета (BAU Group, ТОО)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "mirparketa_kz",
+  "website": "http://mirparketa.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001026141008",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:мир подиум статус": {
   "name": "МИР ПОДИУМ Статус",
   "city": "astana",
@@ -46626,7 +46732,7 @@
   "instagram": "inmart.kz",
   "website": "https://inmartshops.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001080889526",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48489,6 +48595,13 @@
   "v": 3,
   "checked_at": "2026-11-13T07:43:56+00:00"
  },
+ "astana:сыздыкова": {
+  "name": "Сыздыкова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
+ },
  "astana:сырные традиции": {
   "name": "Сырные традиции",
   "city": "astana",
@@ -50342,6 +50455,13 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "astana:элиттехсервис 2010": {
+  "name": "ЭлитТехСервис 2010",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
+ },
  "astana:элснаб кз": {
   "name": "ЭлСнаб-КЗ",
   "city": "astana",
@@ -51282,6 +51402,20 @@
   "checked_at": "2026-11-07T12:44:23+00:00",
   "instagram": "manufacturers_group",
   "source": "https://2gis.kz/atyrau/firm/70000001100825229"
+ },
+ "atyrau:monamie сеть парфюмерно косметических магазинов": {
+  "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "monamie.kz",
+  "website": "https://monamie.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034797637",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:mr alliance": {
   "name": "MR ALLIANCE",
@@ -53082,7 +53216,7 @@
   "checked_at": "2026-11-02T05:43:53+00:00",
   "website": "https://frgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001103021603",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -53475,6 +53609,15 @@
   "checked_at": "2026-11-07T16:43:36+00:00",
   "instagram": "log_krg",
   "source": "https://2gis.kz/karaganda/firm/70000001032750163"
+ },
+ "karaganda:lpp kazakhstan лпп казахстан": {
+  "name": "LPP Kazakhstan (ЛПП Казахстан)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "sinsaykz",
+  "source": "https://2gis.kz/karaganda/firm/70000001110417161"
  },
  "karaganda:magnum": {
   "name": "MAGNUM",
@@ -56118,7 +56261,7 @@
   "instagram": "korgau_kyzmeti",
   "website": "https://korgaukrg.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302832232",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56269,7 +56412,7 @@
   "instagram": "canagro_official",
   "website": "https://can-agro.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033559329",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56773,7 +56916,7 @@
   "instagram": "akm_komatsu",
   "website": "http://ak-machinery.kz/",
   "source": "https://2gis.kz/astana/firm/70000001110480094",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58298,7 +58441,7 @@
   "checked_at": "2026-11-02T05:43:53+00:00",
   "website": "https://allur.kz/",
   "source": "https://allur.kz/en/about",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60309,7 +60452,7 @@
   "checked_at": "2026-11-02T05:43:53+00:00",
   "website": "https://www.kspsteel.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018648330",
-  "avatar_checked_at": "2026-11-09T05:44:47+00:00",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -64749,6 +64892,15 @@
   "v": 3,
   "checked_at": "2026-11-08T07:43:16+00:00"
  },
+ "semey:этнохаус": {
+  "name": "Этнохаус",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "ethnohouse.kz",
+  "source": "https://2gis.kz/semej/firm/70000001103309899"
+ },
  "semey:қымызхана 1": {
   "name": "ҚЫМЫЗХАНА #1",
   "city": "semey",
@@ -68030,6 +68182,13 @@
   "v": 3,
   "checked_at": "2026-11-06T06:44:52+00:00"
  },
+ "taldykorgan:flexway kazakhstan": {
+  "name": "Flexway Kazakhstan",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
+ },
  "taldykorgan:green house limited": {
   "name": "Green House Limited",
   "city": "taldykorgan",
@@ -68336,6 +68495,13 @@
   "avatar": "b455d1cfdd0084b8.jpg",
   "avatar_source": "telegram"
  },
+ "taraz:and asia": {
+  "name": "AND Asia",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
+ },
  "taraz:art soffio": {
   "name": "ART SOFFIO",
   "city": "taraz",
@@ -68378,6 +68544,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
+ },
+ "taraz:chaikhana navat чайхана нават": {
+  "name": "Chaikhana NAVAT ( Чайхана НАВАТ)",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "instagram": "navat.taraz",
+  "source": "https://2gis.kz/taraz/firm/70000001111116566"
  },
  "taraz:chemical engineering": {
   "name": "Chemical Engineering",
@@ -69450,6 +69625,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T21:44:29+00:00"
+ },
+ "uralsk:2 я дачная": {
+  "name": "2-я дачная",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00"
  },
  "uralsk:2gis запад": {
   "name": "2GIS Запад",
@@ -70737,6 +70919,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
+ },
+ "uralsk:правительство для граждан": {
+  "name": "Правительство для граждан",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T06:44:08+00:00",
+  "website": "https://gov4c.kz/",
+  "source": "https://gov4c.kz",
+  "avatar_checked_at": "2026-11-16T06:44:08+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "61e4ab4ee4e68bbd.jpg",
+  "avatar_source": "website"
  },
  "uralsk:руслан": {
   "name": "РУСЛАН",

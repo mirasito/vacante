@@ -24795,7 +24795,7 @@
   "instagram": "qaganat_kz",
   "website": "http://qaganat24.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000824185",
-  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26151,6 +26151,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T15:45:20+00:00"
+ },
+ "almaty:латипов": {
+  "name": "Латипов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00"
  },
  "almaty:латифа": {
   "name": "ЛАТИФА",
@@ -27697,6 +27704,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T17:43:21+00:00"
+ },
+ "almaty:нефтетехника": {
+  "name": "НефтеТехника",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00",
+  "instagram": "neftetekhnika",
+  "website": "https://neftetehnika.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001041804753",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:нобел алматинская фармацевтическая фабрика": {
   "name": "Нобел Алматинская Фармацевтическая Фабрика",
@@ -38799,7 +38820,7 @@
   "instagram": "osmar.group",
   "website": "https://osmar.kz/",
   "source": "https://2gis.kz/astana/firm/70000001080571240",
-  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39581,7 +39602,7 @@
   "instagram": "rami__market",
   "telegram": "rami_market",
   "source": "https://2gis.kz/astana/firm/70000001101124890",
-  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -47043,7 +47064,7 @@
   "instagram": "tengri_hotel",
   "website": "http://www.tengrihotel.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018080224",
-  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -49382,6 +49403,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-14T13:42:30+00:00"
+ },
+ "astana:урбанов": {
+  "name": "ИП Урбанов",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00"
  },
  "astana:урумчи хого": {
   "name": "Урумчи Хого",
@@ -56110,7 +56138,7 @@
   "instagram": "tsan_karaganda",
   "website": "http://tsan.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302836101",
-  "avatar_checked_at": "2026-11-09T06:44:49+00:00",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57388,6 +57416,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T09:46:47+00:00"
+ },
+ "kostanay:admix sport адмикс спорт": {
+  "name": "Admix Sport (Адмикс спорт)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00",
+  "instagram": "lining.admix.kz",
+  "source": "https://2gis.kz/kostanaj/firm/70000001117155121"
  },
  "kostanay:agroservice kz": {
   "name": "AGROSERVICE KZ",
@@ -65535,6 +65572,13 @@
   "v": 3,
   "checked_at": "2026-10-29T22:43:35+00:00"
  },
+ "shymkent:energy logistics": {
+  "name": "ENERGY LOGISTICS",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00"
+ },
  "shymkent:erg kazakhstan": {
   "name": "ERG Kazakhstan",
   "city": "shymkent",
@@ -68389,6 +68433,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T12:44:38+00:00"
+ },
+ "taldykorgan:серікбек": {
+  "name": "Серікбек",
+  "city": "taldykorgan",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00"
  },
  "taldykorgan:темір сауда": {
   "name": "Темір сауда",
@@ -71566,6 +71617,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T14:44:03+00:00"
+ },
+ "ust-kamenogorsk:fortebank": {
+  "name": "ForteBank",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T07:44:05+00:00",
+  "instagram": "fortebankkz",
+  "telegram": "forte",
+  "website": "https://forte.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001035353048",
+  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "502856ad3bb1e312.jpg",
+  "avatar_source": "telegram"
  },
  "ust-kamenogorsk:forward school ukg": {
   "name": "Forward School UKG",

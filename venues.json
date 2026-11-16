@@ -403,6 +403,15 @@
   "v": 3,
   "checked_at": "2026-11-07T06:43:49+00:00"
  },
+ "aktau:hide apart hotel": {
+  "name": "Hide Apart Hotel",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "hide.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001082760504"
+ },
  "aktau:hyla": {
   "name": "Hyla",
   "city": "aktau",
@@ -2238,6 +2247,13 @@
   "checked_at": "2026-11-13T01:44:50+00:00",
   "instagram": "shiroyama_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001082010472"
+ },
+ "aktau:ынтымақ": {
+  "name": "Ынтымақ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
  },
  "aktau:я&б лифтовая компания": {
   "name": "Я&Б лифтовая компания",
@@ -5671,6 +5687,22 @@
    "website"
   ]
  },
+ "almaty:apathai": {
+  "name": "Apathai",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "apathai_almaty",
+  "website": "https://apathai.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001100851814",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "c3f10c706cde7ac2.jpg",
+  "avatar_source": "website"
+ },
  "almaty:apex co": {
   "name": "Apex Co",
   "city": "almaty",
@@ -6629,6 +6661,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
+ },
+ "almaty:avis logistics": {
+  "name": "Avis Logistics",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "website": "http://avislogistics.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000785849",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ebaf614b91b067ad.jpg",
+  "avatar_source": "website"
  },
  "almaty:avital kz": {
   "name": "Avital.kz",
@@ -10998,6 +11045,13 @@
    "website"
   ]
  },
+ "almaty:h&b technology эйч энд би технолоджи": {
+  "name": "H&B Technology (Эйч энд Би Технолоджи)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
+ },
  "almaty:haim global": {
   "name": "Haim Global",
   "city": "almaty",
@@ -15310,6 +15364,13 @@
   ],
   "avatar": "ee92bd56dd792f2e.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:nomadcar": {
+  "name": "Nomadcar",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
  },
  "almaty:nomado partners": {
   "name": "Nomado Partners",
@@ -33716,6 +33777,13 @@
   "v": 3,
   "checked_at": "2026-11-03T08:44:40+00:00"
  },
+ "astana:adal qyzmet co": {
+  "name": "ADAL QYZMET CO",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
+ },
  "astana:adal qyzmet company": {
   "name": "ADAL QYZMET COMPANY",
   "city": "astana",
@@ -34077,6 +34145,20 @@
   "v": 3,
   "checked_at": "2026-11-03T13:44:33+00:00"
  },
+ "astana:ana bolu": {
+  "name": "Ana bolu",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "anabolu_astanaa",
+  "website": "http://anabolu.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001088133304",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:anchor inference": {
   "name": "Anchor Inference",
   "city": "astana",
@@ -34230,6 +34312,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T11:44:18+00:00"
+ },
+ "astana:arslan": {
+  "name": "ARSLAN",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "sport_club_arslan",
+  "website": "https://sportclubarslan.taplink.ws/",
+  "source": "https://2gis.kz/astana/firm/70000001045377340",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ea4057ddaf5b55ec.jpg",
+  "avatar_source": "website"
  },
  "astana:art vision": {
   "name": "ART VISION",
@@ -39795,6 +39893,20 @@
   "avatar": "206cc0da16c372ef.jpg",
   "avatar_source": "website"
  },
+ "astana:on clinic international center": {
+  "name": "ON CLINIC INTERNATIONAL CENTER",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "onclinicastana",
+  "website": "https://astana.onclinic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018071365",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:one filter": {
   "name": "One Filter",
   "city": "astana",
@@ -42247,6 +42359,20 @@
   ],
   "avatar": "aef0f8cad7edc525.jpg",
   "avatar_source": "website"
+ },
+ "astana:trade nails": {
+  "name": "Trade Nails",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "tradenails.astana",
+  "website": "http://tradenails.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001065637398",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:transport logistics service center транспорт логитикс сервис центр": {
   "name": "TRANSPORT LOGISTICS SERVICE CENTER (ТРАНСПОРТ ЛОГИТИКС СЕРВИС ЦЕНТР)",
@@ -50792,6 +50918,13 @@
   "v": 3,
   "checked_at": "2026-11-01T16:42:40+00:00"
  },
+ "astana:управляющая компания луч": {
+  "name": "Управляющая Компания Луч",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
+ },
  "astana:уразбаева а н": {
   "name": "УРАЗБАЕВА А.Н.",
   "city": "astana",
@@ -51249,6 +51382,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:цветландия": {
+  "name": "Цветландия",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
  },
  "astana:цдо открытая аудитория": {
   "name": "ЦДО Открытая аудитория",
@@ -55539,6 +55679,21 @@
   "v": 3,
   "checked_at": "2026-11-07T05:43:00+00:00"
  },
+ "karaganda:qaragandy metallurgia zauyty": {
+  "name": "Qaragandy metallurgia zauyty",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "website": "https://qmz.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001036630897",
+  "avatar_checked_at": "2026-11-16T19:44:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4968937a0ca43bc2.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
   "city": "karaganda",
@@ -59265,6 +59420,13 @@
   "v": 3,
   "checked_at": "2026-11-11T14:44:52+00:00"
  },
+ "kostanay:d a t trade": {
+  "name": "D.A.T.trade",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
+ },
  "kostanay:dabs group": {
   "name": "DABS Group",
   "city": "kostanay",
@@ -59677,6 +59839,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T14:10:24+00:00"
+ },
+ "kostanay:stratera": {
+  "name": "STRATERA",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
  },
  "kostanay:stroy индустрия company": {
   "name": "Stroy Индустрия Company",
@@ -62507,6 +62676,15 @@
   ],
   "avatar": "5c67d834e0b0199b.jpg",
   "avatar_source": "website"
+ },
+ "pavlodar:zmk trade": {
+  "name": "ZMK Trade",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "zmk_trade.pvl",
+  "source": "https://2gis.kz/pavlodar/firm/70000001044403245"
  },
  "pavlodar:агрохимпрогресс": {
   "name": "АгроХимПрогресс",
@@ -70013,6 +70191,13 @@
   "v": 3,
   "checked_at": "2026-11-07T00:44:13+00:00"
  },
+ "shymkent:шик строй": {
+  "name": "ШИК-Строй",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
+ },
  "shymkent:шымкентский пивоваренный завод": {
   "name": "Шымкентский пивоваренный завод",
   "city": "shymkent",
@@ -70032,6 +70217,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:эврика сервис": {
+  "name": "Эврика Сервис",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00",
+  "instagram": "evrika_service",
+  "source": "https://2gis.kz/shymkent/firm/70000001032780211"
  },
  "shymkent:экспресс транспорт": {
   "name": "ЭКСПРЕСС ТРАНСПОРТ",
@@ -74766,6 +74960,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T11:44:06+00:00"
+ },
+ "ust-kamenogorsk:вп восток": {
+  "name": "ВП Восток",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T19:44:25+00:00"
  },
  "ust-kamenogorsk:высочайший": {
   "name": "Высочайший",

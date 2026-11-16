@@ -259,6 +259,13 @@ def collect(state: dict, now: datetime) -> list[Vacancy] | None:
                 state["olx_status"] = f"import error: {type(exc).__name__}"
                 return None
             vacancies = [v for item in items if (v := to_vacancy(item)) is not None]
+            # Как прошла последняя попытка сервера прочитать OLX (server/src/olx-hourly.ts): видно в state.json
+            try:
+                last = get(server, "/hourly").get("last") or {}
+                state.update(olx_hourly_status=last.get("status"), olx_hourly_at=last.get("at"),
+                             olx_hourly_pages=last.get("pages"), olx_hourly_stored=last.get("stored"))
+            except (Blocked, httpx.HTTPError, ValueError, AttributeError):
+                pass
             state["olx_imports_at"] = now.isoformat()
             state.update(olx_status="inbox", olx_candidates=len(vacancies), olx_checked_at=now.isoformat())
             return vacancies

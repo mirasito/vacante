@@ -13750,6 +13750,13 @@
   "avatar": "aba86a32f84a43bb.jpg",
   "avatar_source": "website"
  },
+ "almaty:live advertising": {
+  "name": "Live advertising",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T22:42:03+00:00"
+ },
  "almaty:livisa art": {
   "name": "ТОО LiVisa art",
   "city": "almaty",
@@ -74426,6 +74433,13 @@
   ],
   "avatar": "44d30644eb156cbc.jpg",
   "avatar_source": "telegram"
+ },
+ "ust-kamenogorsk:kaz ceramics": {
+  "name": "«KAZ CERAMICS»",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-16T22:42:03+00:00"
  },
  "ust-kamenogorsk:kaz minerals management": {
   "name": "KAZ Minerals Management",

@@ -19,10 +19,12 @@ import {
   getVideo,
   iso,
   phoneAsked,
+  phoneAskedNew,
   putVideo,
   randomCode,
   removeFiles,
   setPhone,
+  setPhoneNew,
 } from "./seekers.ts";
 import { internalKey } from "./telegram.ts";
 import { MAX_DURATION, MAX_POSTER_BYTES, MAX_VIDEO_BYTES, writeAtomic } from "./video.ts";
@@ -65,6 +67,7 @@ export interface TgUpdate {
 const TEXT = {
   ru: {
     phoneSaved: "✅ Номер добавлен в профиль. Работодатель увидит его, когда откроет ваш профиль.",
+    phoneForForm: "✅ Номер получен. Вернитесь в приложение и закончите анкету.",
     noProfile: "Сначала создайте профиль в приложении, это 2 минуты.",
     foreign: "Отправьте свой номер: чужие контакты в профиль не добавляю.",
     notKz: "Пока принимаю только номера Казахстана, +7 7…",
@@ -90,6 +93,7 @@ const TEXT = {
   },
   kk: {
     phoneSaved: "✅ Нөмір профильге қосылды. Жұмыс беруші оны профиліңізді ашқанда көреді.",
+    phoneForForm: "✅ Нөмір алынды. Қосымшаға оралып, сауалнаманы аяқтаңыз.",
     noProfile: "Алдымен қосымшада профиль жасаңыз, бұл 2 минут.",
     foreign: "Өз нөміріңізді жіберіңіз: басқа адамның контактісін профильге қоспаймын.",
     notKz: "Әзірге тек Қазақстан нөмірлерін қабылдаймын, +7 7…",
@@ -158,7 +162,8 @@ export function internalRoutes(ctx: Ctx): Route[] {
     if (!from || !m.contact) return false;
     // Номер идёт в профиль, только если приложение только что попросило его кнопкой Telegram.
     // Иначе контакт отвечает на вопрос бота (отклик на вакансию), и его обрабатывает сам бот.
-    if (!phoneAsked(ctx.db, from.id, ctx.now())) return false;
+    const forNew = !phoneAsked(ctx.db, from.id, ctx.now()) && phoneAskedNew(from.id, ctx.now());
+    if (!forNew && !phoneAsked(ctx.db, from.id, ctx.now())) return false;
     const t = textsFor(from);
     // Telegram подтверждает, что номер свой, только когда user_id контакта совпадает с отправителем
     if (m.contact.user_id !== from.id) {
@@ -168,6 +173,12 @@ export function internalRoutes(ctx: Ctx): Route[] {
     const phone = normalizePhone(m.contact.phone_number);
     if (!phone) {
       await reply(m.chat.id, t.notKz);
+      return true;
+    }
+    if (forNew) {
+      // Анкеты ещё нет: номер ждёт в памяти, приложение подставит его на шаге «Телефон»
+      setPhoneNew(from.id, phone);
+      await reply(m.chat.id, t.phoneForForm);
       return true;
     }
     await reply(m.chat.id, setPhone(ctx.db, from.id, phone, ctx.now()) ? t.phoneSaved : t.noProfile);

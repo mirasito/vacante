@@ -24,7 +24,7 @@ export const STEPS = ["open", "profile_start", "sent_plain"] as const;
 export type Step = (typeof STEPS)[number];
 
 /** Экраны полной анкеты по порядку, как в приложении (app/src/profile/Wizard.tsx). */
-export const FORM_SCREENS = ["consent", "place", "roles", "experience", "employment", "pay", "home", "start"] as const;
+export const FORM_SCREENS = ["consent", "place", "phone", "roles", "experience", "employment", "pay", "home", "start"] as const;
 export type FormScreen = (typeof FORM_SCREENS)[number];
 export const FORM_STEPS = ["form_reach", "form_pass"] as const;
 export type FormStep = (typeof FORM_STEPS)[number];

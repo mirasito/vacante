@@ -24,6 +24,7 @@ import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, styles as ui } from '../ui';
 import { HomeStep, type HomeDraft } from './Home';
+import { kzPhone, PhoneStep } from './Phone';
 import { isHoreca } from './skills';
 import { CONSENT, EMPLOYMENT, EXPERIENCE, money, P, PAY_PERIOD, PAY_PRESETS, START } from './texts';
 
@@ -31,14 +32,16 @@ import { CONSENT, EMPLOYMENT, EXPERIENCE, money, P, PAY_PERIOD, PAY_PRESETS, STA
 type Step = FormScreen;
 // «Где вы живёте» — самый трудный шаг (геопозиция или ссылка из 2ГИС), поэтому он последний из вопросов:
 // бросить анкету на нём уже жалко, а пропустить можно одной кнопкой
-const STEPS: Step[] = ['place', 'roles', 'experience', 'employment', 'pay', 'home', 'start'];
-// Короткая анкета перед первым откликом: имя и профессии, остальное человек дополнит потом
-const QUICK_STEPS: Step[] = ['place', 'roles'];
+// Телефон сразу после имени и города: с 2026-11-17 он обязателен, без него работодатель не позвонит
+const STEPS: Step[] = ['place', 'phone', 'roles', 'experience', 'employment', 'pay', 'home', 'start'];
+// Короткая анкета перед первым откликом: имя, телефон и профессии, остальное человек дополнит потом
+const QUICK_STEPS: Step[] = ['place', 'phone', 'roles'];
 const MAX_ROLES = 3;
 
 interface Draft {
   name: string;
   city: string;
+  phone: string;
   place: HomeDraft;
   roles: string[];
   experience: Experience | null;
@@ -52,6 +55,7 @@ function draftOf(existing: Profile | null, name: string, city: string | undefine
   return {
     name: existing?.name ?? name,
     city: existing?.city ?? city ?? '',
+    phone: existing?.phone ?? '',
     place: { home: existing?.home ?? null, label: '' },
     // Без профиля подставляем ответы со старта («Кем работаешь», «Где и когда»)
     roles: existing?.roles ?? seed?.roles ?? [],
@@ -155,7 +159,7 @@ export function Wizard(props: {
       pay_from: pay > 0 ? pay : null,
       pay_period: pay > 0 ? final.pay_period : null,
       start: final.start,
-      phone: existing?.phone ?? null,
+      phone: kzPhone(final.phone) ?? existing?.phone ?? null,
       languages: existing?.languages ?? [],
       about: existing?.about ?? null,
       med_book: existing?.med_book ?? false,
@@ -204,6 +208,17 @@ export function Wizard(props: {
           <Consent c={c} lang={lang} adult={adult} agree={agree} base={base} onAdult={setAdult} onAgree={setAgree} onBase={setBase} />
         ) : step === 'place' ? (
           <Place c={c} lang={lang} index={index} draft={draft} set={set} />
+        ) : step === 'phone' ? (
+          <PhoneStep
+            c={c}
+            lang={lang}
+            value={draft.phone}
+            onChange={(phone) => set({ phone })}
+            onShared={(phone) => {
+              set({ phone });
+              next();
+            }}
+          />
         ) : step === 'home' ? (
           <HomeStep c={c} lang={lang} value={draft.place} onChange={(place) => set({ place })} />
         ) : step === 'roles' ? (
@@ -304,6 +319,8 @@ function ready(step: Step, d: Draft, consented: boolean): boolean {
       return consented;
     case 'place':
       return !!d.name.trim() && !!d.city;
+    case 'phone':
+      return !!kzPhone(d.phone);
     case 'roles':
       return d.roles.length > 0;
     case 'employment':

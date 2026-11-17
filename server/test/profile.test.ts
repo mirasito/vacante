@@ -9,6 +9,7 @@ const ANKETA = {
   city: "almaty",
   district: "Бостандыкский",
   roles: ["Бариста", "Официант"],
+  phone: "+77012345678",
   experience: "1to3",
   employment: ["full", "shifts"],
   pay_from: 200000,
@@ -63,7 +64,7 @@ test("анкета проверяется и чистится", () => {
 });
 
 test("сила профиля: анкета 40, опыт и навыки 20, кружок 15, фото 10, документы, телефон и о себе по 5", () => {
-  const p = parseProfile(ANKETA) as Profile;
+  const p = parseProfile({ ...ANKETA, phone: null }) as Profile;
   // Первым просим то, что работодатель общепита смотрит первым и что отвечается кнопками
   assert.deepEqual(strength(p, { video: false, photo: false }), { percent: 40, next: "work" });
   const worked = { ...p, skills: ["espresso"] } as Profile;
@@ -120,7 +121,7 @@ test("профиль без согласия, без 18 лет или до от�
 test("тестировщик создаёт профиль, потом правит его", async () => {
   const created = await createProfile();
   assert.equal(created.profile.name, "Айгерим");
-  assert.deepEqual(created.strength, { percent: 40, next: "work" });
+  assert.deepEqual(created.strength, { percent: 45, next: "work" });
   assert.equal(created.seeker.base, false);
   assert.equal(created.link, null);
   const consent = s.db.prepare("SELECT consent_version, consent_at FROM seekers WHERE id = ?").get(AIGERIM.id) as Record<string, string>;
@@ -286,10 +287,22 @@ test("номер из чата бота: только после просьбы 
   assert.equal(await relay(contact(AIGERIM.id, AIGERIM.id, "+77019998877")), false);
   assert.equal(phoneOf(), "+77015556677");
 
-  // Без профиля просить нечего, и в базе никто не появляется
-  assert.equal((await s.call("POST", "/me/phone/ask", { headers: auth({ id: 4242, first_name: "Б" }) })).status, 404);
+  // Без профиля: шаг «Телефон» новой анкеты. Не просили — контакт для бота
+  const newbie = auth({ id: 4242, first_name: "Б" });
   assert.equal(await relay(contact(4242, 4242)), false);
+  const asked = await s.call("POST", "/me/phone/ask", { headers: newbie });
+  assert.equal(asked.status, 200);
+  assert.equal(asked.json.pending, true);
+  assert.deepEqual((await s.call("GET", "/me/phone/ask", { headers: newbie })).json, { phone: null });
+  // Номер ждёт в памяти, приложение забирает его; в базе никто не появляется
+  assert.equal(await relay(contact(4242, 4242, "8 701 444 55 66")), true);
+  assert.match(String(s.sent.at(-1)?.body.text), /Вернитесь в приложение/);
+  assert.deepEqual((await s.call("GET", "/me/phone/ask", { headers: newbie })).json, { phone: "+77014445566" });
   assert.equal(count(s, "SELECT COUNT(*) AS n FROM seekers WHERE id = 4242"), 0);
+  // Отказался от окна — номера больше нет
+  assert.equal((await s.call("DELETE", "/me/phone/ask", { headers: newbie })).status, 200);
+  assert.deepEqual((await s.call("GET", "/me/phone/ask", { headers: newbie })).json, { phone: null });
+  assert.equal(await relay(contact(4242, 4242)), false);
 });
 
 test("номер сохранён, даже если Telegram не принял ответ бота", async () => {
@@ -339,4 +352,15 @@ test("когда профили открыты для всех, пометка �
   } finally {
     await open.close();
   }
+});
+
+test("новый профиль без телефона не создаётся: номер обязателен с 2026-11-17", async () => {
+  const user = { id: 9911, first_name: "Без номера" };
+  const r = await s.call("PUT", "/me/profile", {
+    headers: { authorization: `tma ${initDataFor(user)}`, "x-vacante-beta": "1" },
+    body: { consent: CONSENT, profile: { ...ANKETA, phone: null }, lang: "ru" },
+  });
+  assert.equal(r.status, 400);
+  assert.match(r.json.error, /Телефон/);
+  assert.equal(s.db.prepare("SELECT COUNT(*) AS n FROM seekers WHERE id = ?").get(user.id)!.n, 0);
 });

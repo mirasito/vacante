@@ -204,7 +204,7 @@ export const sendEvent = (step: 'open' | 'profile_start' | 'sent_plain', source?
   );
 
 /** Экраны полной анкеты по порядку; сервер знает тот же список (FORM_SCREENS в server/src/funnel.ts). */
-export type FormScreen = 'consent' | 'place' | 'roles' | 'experience' | 'employment' | 'pay' | 'home' | 'start';
+export type FormScreen = 'consent' | 'place' | 'phone' | 'roles' | 'experience' | 'employment' | 'pay' | 'home' | 'start';
 
 /**
  * Шаг полной анкеты для воронки: человек дошёл до экрана (form_reach) или прошёл его (form_pass).
@@ -222,6 +222,8 @@ export const patchMe = (patch: { lang?: 'ru' | 'kk'; base?: boolean; write_acces
 /** Сейчас откроется окно Telegram «Поделиться номером»: контакт, пришедший боту, относится к профилю. */
 export const askPhone = () => api<{ ok: boolean; minutes: number }>('/me/phone/ask', { method: 'POST' });
 export const cancelPhone = () => api<{ ok: boolean }>('/me/phone/ask', { method: 'DELETE' });
+/** Номер, который бот получил для анкеты, которой ещё нет (запасной путь шага «Телефон»). */
+export const pendingPhone = () => api<{ phone: string | null }>('/me/phone/ask');
 
 export const deleteMe = () => api<{ deleted: boolean }>('/me', { method: 'DELETE' });
 export const newLink = () => api<{ code: string; url: string }>('/me/link', { method: 'POST' });

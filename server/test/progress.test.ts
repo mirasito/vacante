@@ -16,6 +16,7 @@ const ANKETA = {
   city: "almaty",
   district: null,
   roles: ["Бариста"],
+  phone: "+77011112233",
   experience: "1to3",
   employment: ["shifts"],
   pay_from: null,

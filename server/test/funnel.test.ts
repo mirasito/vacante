@@ -13,6 +13,7 @@ const ANKETA = {
   city: "almaty",
   district: null,
   roles: ["Бариста"],
+  phone: "+77011112233",
   experience: "1to3",
   employment: ["shifts"],
   pay_from: null,
@@ -299,11 +300,11 @@ test("шаги полной анкеты: дошёл и прошёл по каж
   const t = await server();
   const step = (kind: "form_reach" | "form_pass", screen: string, user?: Record<string, unknown>) => t.event({ step: kind, screen, source: "tg" }, user);
   // Айгерим проходит анкету целиком, Ерлан бросает её на шаге с домом
-  for (const screen of ["consent", "place", "roles", "experience", "employment", "pay", "home", "start"]) {
+  for (const screen of ["consent", "place", "phone", "roles", "experience", "employment", "pay", "home", "start"]) {
     assert.equal((await step("form_reach", screen)).status, 204);
     assert.equal((await step("form_pass", screen)).status, 204);
   }
-  for (const screen of ["consent", "place", "roles", "experience", "employment", "pay"]) {
+  for (const screen of ["consent", "place", "phone", "roles", "experience", "employment", "pay"]) {
     await step("form_reach", screen, OTHER);
     await step("form_pass", screen, OTHER);
   }
@@ -315,6 +316,7 @@ test("шаги полной анкеты: дошёл и прошёл по каж
   assert.deepEqual(r.form, [
     { screen: "consent", reached: 2, passed: 2 },
     { screen: "place", reached: 2, passed: 2 },
+    { screen: "phone", reached: 2, passed: 2 },
     { screen: "roles", reached: 2, passed: 2 },
     { screen: "experience", reached: 2, passed: 2 },
     { screen: "employment", reached: 2, passed: 2 },
@@ -334,7 +336,7 @@ test("шаг анкеты без экрана или с неизвестным �
   assert.equal((await t.event({ step: "form_reach", screen: "home'; DROP TABLE funnel_form; --" })).status, 400);
   assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM funnel_form").get()!.n, 0);
   const r = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
-  assert.equal(r.form.length, 8);
+  assert.equal(r.form.length, 9);
   assert.ok(r.form.every((x: { reached: number; passed: number }) => x.reached === 0 && x.passed === 0));
   await t.s.close();
 });

@@ -1561,6 +1561,15 @@
   "v": 3,
   "checked_at": "2026-11-09T06:44:48+00:00"
  },
+ "aktau:жана орпак": {
+  "name": "Жана Орпак",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T19:42:20+00:00",
+  "instagram": "zhanaurpaq.kz",
+  "source": "https://2gis.kz/aktau/firm/70000001112818622"
+ },
  "aktau:жана отель": {
   "name": "Жана Отель",
   "city": "aktau",
@@ -12998,7 +13007,7 @@
   "checked_at": "2026-11-10T18:43:51+00:00",
   "website": "https://kazintake.info/",
   "source": "https://2gis.kz/almaty/firm/70000001098518628",
-  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
+  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21503,6 +21512,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-28T18:44:37+00:00"
+ },
+ "almaty:авк+": {
+  "name": "ТОО АВК+",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T19:42:20+00:00"
  },
  "almaty:аврора холдинг": {
   "name": "Аврора Холдинг",
@@ -46465,7 +46481,7 @@
   "instagram": "vodometr_kz",
   "website": "https://www.vodometr.kz/",
   "source": "https://2gis.kz/astana/firm/70000001032506791",
-  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
+  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48016,7 +48032,7 @@
   "checked_at": "2026-11-10T18:43:51+00:00",
   "website": "https://petrolcompany.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018076542",
-  "avatar_checked_at": "2026-11-10T18:43:51+00:00",
+  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62060,6 +62076,22 @@
   "instagram": "proff_kst",
   "source": "https://2gis.kz/kostanaj/firm/70000001111810449"
  },
+ "kostanay:qazaqoil petroretail": {
+  "name": "QazaqOil (PetroRetail)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T19:42:20+00:00",
+  "instagram": "azs_qazaq_oil",
+  "website": "https://qazaqoil.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001037558900",
+  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3f4e8fe7ec29f682.jpg",
+  "avatar_source": "website"
+ },
  "kostanay:qqq qazaqstan qamqor qyzmet": {
   "name": "QQQ - Qazaqstan Qamqor Qyzmet",
   "city": "kostanay",
@@ -71940,6 +71972,13 @@
   ],
   "avatar": "18af8f1d19974b66.jpg",
   "avatar_source": "website"
+ },
+ "shymkent:дирик б б": {
+  "name": "Дирик Б Б",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T19:42:20+00:00"
  },
  "shymkent:дск 17": {
   "name": "ДСК 17",

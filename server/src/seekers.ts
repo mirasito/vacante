@@ -117,6 +117,37 @@ export function askPhone(db: Db, id: number, now: number): boolean {
   return Number(changes) > 0;
 }
 
+/**
+ * Номер для анкеты, которой ещё нет: человек на шаге «Телефон» нажал «Поделиться номером из Telegram».
+ * До согласия о человеке на диск ничего не пишем, поэтому отметка и номер живут только в памяти процесса
+ * 10 минут. Приложение обычно берёт номер прямо из ответа Telegram, а это запасной путь для клиентов,
+ * которые номер в ответе не присылают: бот получает контакт и кладёт номер сюда, приложение его забирает.
+ */
+const pending = new Map<number, { at: number; phone: string | null }>();
+
+export function askPhoneNew(id: number, now: number) {
+  for (const [key, v] of pending) if (now - v.at > PHONE_ASK_MINUTES * 60_000) pending.delete(key);
+  pending.set(id, { at: now, phone: null });
+}
+
+export function phoneAskedNew(id: number, now: number): boolean {
+  const v = pending.get(id);
+  return !!v && now - v.at >= 0 && now - v.at <= PHONE_ASK_MINUTES * 60_000;
+}
+
+export function setPhoneNew(id: number, phone: string) {
+  const v = pending.get(id);
+  if (v) v.phone = phone;
+}
+
+export function pendingPhone(id: number, now: number): string | null {
+  return phoneAskedNew(id, now) ? pending.get(id)!.phone : null;
+}
+
+export function dropPendingPhone(id: number) {
+  pending.delete(id);
+}
+
 /** Человек закрыл окно Telegram, не поделившись: контакты снова относятся к откликам в боте. */
 export function cancelPhoneAsk(db: Db, id: number) {
   db.prepare("UPDATE seekers SET phone_asked_at = NULL WHERE id = ?").run(id);

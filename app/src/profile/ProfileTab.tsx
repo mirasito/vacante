@@ -39,6 +39,7 @@ import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, Loading, Retry, styles as ui } from '../ui';
 import { HomeStep, type HomeDraft } from './Home';
+import { kzPhone, PhoneStep } from './Phone';
 import { Avatar, PhotoSection, usePhotoUpload, usePhotoUrl } from './Photo';
 import { isLooking, JOB_TERMS, skillLabel } from './skills';
 import { EMPLOYMENT, EXPERIENCE, label, LANGUAGES, money, P, phoneLabel, START, when } from './texts';
@@ -151,6 +152,8 @@ export function ProfileTab(props: {
     );
   }
   if (!view?.profile) return <Intro c={c} lang={lang} onStart={() => setMode('wizard')} />;
+  // Профиль, созданный до 2026-11-17, мог остаться без номера: теперь номер обязателен, просим его первым
+  if (!view.profile.phone) return <PhoneGate c={c} lang={lang} view={view} onSaved={setView} />;
   if (mode === 'extras') {
     return <Extras c={c} lang={lang} view={view} onSaved={(v) => (setView(v), setMode('card'))} onChange={setView} />;
   }
@@ -224,6 +227,50 @@ async function phoneFromTelegram(): Promise<ProfileView | null> {
     return null;
   }
   return waitForPhone();
+}
+
+/** Обязательный номер для профиля без него: тот же шаг, что в анкете, и «Сохранить». */
+function PhoneGate({ c, lang, view, onSaved }: { c: Colors; lang: Lang; view: ProfileView; onSaved(v: ProfileView): void }) {
+  const t = P[lang];
+  const profile = view.profile!;
+  const [phone, setPhone] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const save = async (value = phone) => {
+    const valid = kzPhone(value);
+    if (!valid || busy) return;
+    setBusy(true);
+    setError('');
+    try {
+      onSaved(await saveProfile({ ...profile, phone: valid }, lang));
+    } catch (err) {
+      setError(err instanceof Error && err.message.startsWith('Телефон') ? err.message : t.saveError);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <View style={ui.flex}>
+      <ScrollView contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">
+        <PhoneStep
+          c={c}
+          lang={lang}
+          value={phone}
+          onChange={setPhone}
+          onShared={(p) => {
+            setPhone(p);
+            void save(p);
+          }}
+          title={t.phoneGateTitle}
+          hint={t.phoneGateText}
+        />
+        {error ? <Text style={[s.error, { color: c.skip }]}>{error}</Text> : null}
+      </ScrollView>
+      <View style={s.foot}>
+        <Button c={c} label={t.save} busy={busy} disabled={!kzPhone(phone)} onPress={() => save()} />
+      </View>
+    </View>
+  );
 }
 
 /** «Где вы живёте?» из профиля: тот же экран, что в анкете, и «Сохранить». */

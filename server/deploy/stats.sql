@@ -46,3 +46,40 @@ SELECT n AS applications_per_person, COUNT(*) AS people FROM (SELECT seeker_id, 
 
 SELECT '--- способ отклика ---' AS '';
 SELECT coalesce(method, '—') AS method, COUNT(*) AS n FROM sent GROUP BY 1 ORDER BY 2 DESC;
+
+SELECT '--- профили: что заполнено (без тестовых, все) ---' AS '';
+SELECT 'всего' AS what, COUNT(*) AS n FROM prof
+UNION ALL SELECT 'короткая анкета (опыт не указан)', (SELECT COUNT(*) FROM profiles p WHERE p.seeker_id IN (SELECT id FROM prof) AND p.experience IS NULL)
+UNION ALL SELECT 'с телефоном', (SELECT COUNT(*) FROM profiles p WHERE p.seeker_id IN (SELECT id FROM prof) AND p.phone IS NOT NULL)
+UNION ALL SELECT 'с фото', (SELECT COUNT(*) FROM photos f WHERE f.seeker_id IN (SELECT id FROM prof))
+UNION ALL SELECT 'с кружком', (SELECT COUNT(*) FROM videos v WHERE v.seeker_id IN (SELECT id FROM prof))
+UNION ALL SELECT 'с домом', (SELECT COUNT(*) FROM profiles p WHERE p.seeker_id IN (SELECT id FROM prof) AND p.home_lat IS NOT NULL)
+UNION ALL SELECT 'с «о себе»', (SELECT COUNT(*) FROM profiles p WHERE p.seeker_id IN (SELECT id FROM prof) AND p.about IS NOT NULL)
+UNION ALL SELECT 'в базе для работодателей', (SELECT COUNT(*) FROM seekers s WHERE s.id IN (SELECT id FROM prof) AND s.base_consent_at IS NOT NULL)
+UNION ALL SELECT 'разрешили боту писать', (SELECT COUNT(*) FROM seekers s WHERE s.id IN (SELECT id FROM prof) AND s.write_access = 1)
+UNION ALL SELECT 'язык kk', (SELECT COUNT(*) FROM seekers s WHERE s.id IN (SELECT id FROM prof) AND s.lang = 'kk')
+UNION ALL SELECT 'заходили после дня создания', (SELECT COUNT(*) FROM seekers s WHERE s.id IN (SELECT id FROM prof) AND date(s.seen_at, '+5 hours') > date(s.created_at, '+5 hours'))
+UNION ALL SELECT 'делились общей ссылкой на профиль', (SELECT COUNT(DISTINCT seeker_id) FROM links WHERE application_id IS NULL AND seeker_id IN (SELECT id FROM prof));
+
+SELECT '--- источник профилей ---' AS '';
+SELECT coalesce(source, '—') AS source, COUNT(*) AS n FROM seekers WHERE id IN (SELECT id FROM prof) GROUP BY 1 ORDER BY 2 DESC;
+
+SELECT '--- работодатели и профили ---' AS '';
+SELECT 'просмотров профилей всего' AS what, (SELECT COUNT(*) FROM views WHERE seeker_id IN (SELECT id FROM prof)) AS n
+UNION ALL SELECT 'из них по ссылке отклика', (SELECT COUNT(*) FROM views WHERE application_id IS NOT NULL AND seeker_id IN (SELECT id FROM prof))
+UNION ALL SELECT 'из них по общей ссылке', (SELECT COUNT(*) FROM views WHERE application_id IS NULL AND seeker_id IN (SELECT id FROM prof))
+UNION ALL SELECT 'чьи профили открывали (людей)', (SELECT COUNT(DISTINCT seeker_id) FROM views WHERE seeker_id IN (SELECT id FROM prof))
+UNION ALL SELECT 'откликов, чью ссылку открыли', (SELECT COUNT(DISTINCT application_id) FROM views WHERE application_id IS NOT NULL)
+UNION ALL SELECT 'нажали «Показать телефон»', (SELECT COUNT(*) FROM views WHERE phone_shown = 1)
+UNION ALL SELECT 'ответов работодателя (приглашение/отказ)', (SELECT COUNT(*) FROM application_events WHERE by = 'employer' AND stage != 'seen')
+UNION ALL SELECT 'нажатий «разместить вакансию» со страницы профиля', (SELECT coalesce(SUM(n), 0) FROM post_clicks);
+
+SELECT '--- отклики по этапам и со ссылкой (все, без тестовых) ---' AS '';
+SELECT a.stage, a.with_link, coalesce(a.method, '—') AS method, COUNT(*) AS n FROM applications a
+WHERE a.sent_at IS NOT NULL AND a.seeker_id NOT IN (SELECT id FROM testers) GROUP BY 1, 2, 3 ORDER BY 4 DESC;
+
+SELECT '--- шаги полной анкеты с периода ---' AS '';
+SELECT screen, SUM(reached) AS reached, SUM(passed) AS passed FROM funnel_form WHERE day >= :since GROUP BY screen;
+
+SELECT '--- прямые кнопки связи с периода ---' AS '';
+SELECT source, kind, SUM(n) AS n FROM contact_clicks WHERE day >= :since GROUP BY 1, 2 ORDER BY 3 DESC;

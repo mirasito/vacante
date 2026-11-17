@@ -100,6 +100,7 @@ const ANKETA = {
   name: "Асель",
   city: "almaty",
   roles: ["Повар"],
+  phone: "+77011112233",
   experience: "gt3",
   employment: ["shifts"],
   start: "week",

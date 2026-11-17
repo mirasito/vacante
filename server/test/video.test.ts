@@ -11,6 +11,7 @@ const ANKETA = {
   city: "astana",
   district: null,
   roles: ["Повар"],
+  phone: "+77011112233",
   experience: "lt1",
   employment: ["shifts"],
   pay_from: null,
@@ -84,10 +85,10 @@ test("кружок из бота: скачивается в профиль, ра
   // Город из профиля: на новом устройстве приложение не спросит его заново
   assert.equal(saved.reply_markup.inline_keyboard[1][0].web_app.url, "https://vacante.kz/app/?tab=profile&city=astana");
 
-  // Сила профиля: анкета 40 + кружок 15
+  // Сила профиля: анкета 40 + телефон 5 + кружок 15
   const view = (await s.call("GET", "/me/profile", { headers: auth(user) })).json;
   assert.deepEqual(view.video, { duration: 42, recorded_at: "2026-11-04T06:00:00Z", ready: true, poster: true });
-  assert.equal(view.strength.percent, 55);
+  assert.equal(view.strength.percent, 60);
 
   // Своё видео в приложении
   const mine = await s.call("GET", "/me/video", { headers: auth(user) });

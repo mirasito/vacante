@@ -630,7 +630,7 @@ td.nowrap { white-space: nowrap; }
     }).join("");
   }
   // Экраны полной анкеты (app/src/profile/Wizard.tsx), порядок задаёт сервер
-  const FORM_SCREENS = { consent: "Согласие", place: "Имя и город", roles: "Профессии", experience: "Опыт", employment: "График", pay: "Зарплата", home: "Где вы живёте (дом)", start: "Когда выйдете" };
+  const FORM_SCREENS = { consent: "Согласие", place: "Имя и город", phone: "Телефон", roles: "Профессии", experience: "Опыт", employment: "График", pay: "Зарплата", home: "Где вы живёте (дом)", start: "Когда выйдете" };
   function formRows(form) {
     const share = (n, of) => (of > 0 ? `<br><span class="quiet">${Math.round((n / of) * 100)}%</span>` : "");
     return form.map((r, i) => {

@@ -33,7 +33,9 @@ type WebApp = {
   };
   addToHomeScreen?(): void;
   /** Окно Telegram «Поделиться номером»: номер приходит боту сообщением-контактом (Bot API 6.9). */
-  requestContact?(callback: (shared: boolean) => void): void;
+  requestContact?(
+    callback: (shared: boolean, result?: { responseUnsafe?: { contact?: { phone_number?: string; user_id?: number } } }) => void,
+  ): void;
   /** Окно Telegram «Разрешить боту писать вам» (Bot API 6.9). */
   requestWriteAccess?(callback: (allowed: boolean) => void): void;
   showConfirm?(message: string, callback: (ok: boolean) => void): void;
@@ -362,6 +364,24 @@ export function requestContact(): Promise<boolean> {
       app.requestContact!((shared) => resolve(!!shared));
     } catch {
       resolve(false); // окно уже открыто
+    }
+  });
+}
+
+/**
+ * Номер из Telegram одной кнопкой для шага «Телефон»: новые клиенты Telegram отдают номер прямо в ответе.
+ * phone — номер, если он пришёл; shared без phone — человек поделился, но номер пришёл только боту.
+ */
+export function requestContactPhone(): Promise<{ shared: boolean; phone: string | null }> {
+  const app = telegram();
+  if (!canRequestContact() || !app?.requestContact) return Promise.resolve({ shared: false, phone: null });
+  return new Promise((resolve) => {
+    try {
+      app.requestContact!((shared, result) =>
+        resolve({ shared: !!shared, phone: (shared && result?.responseUnsafe?.contact?.phone_number) || null }),
+      );
+    } catch {
+      resolve({ shared: false, phone: null }); // окно уже открыто
     }
   });
 }

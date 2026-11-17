@@ -36,7 +36,10 @@ import {
 } from "./reminders.ts";
 import {
   askPhone,
+  askPhoneNew,
   cancelPhoneAsk,
+  dropPendingPhone,
+  pendingPhone,
   createSeeker,
   deleteSeeker,
   dropPhoto,
@@ -160,6 +163,10 @@ export function meRoutes(ctx: Ctx): Route[] {
             throw new HttpError(400, "Нужно согласие с текущим текстом");
           }
           if (consent?.adult !== true) throw new HttpError(400, "Профиль можно создать с 18 лет");
+          // С 2026-11-17 номер обязателен: без него работодатель не может позвонить. Старые профили
+          // без номера остаются, приложение просит номер при входе
+          if (!profile.phone) throw new HttpError(400, "Телефон: укажите номер, по нему вам позвонит работодатель");
+          dropPendingPhone(user.id);
           createSeeker(ctx.db, {
             id: user.id,
             first_name: user.first_name,
@@ -270,14 +277,27 @@ export function meRoutes(ctx: Ctx): Route[] {
 
     // Приложение сейчас откроет окно Telegram «Поделиться номером»: номер придёт боту сообщением,
     // и бот передаст его сюда (internal.ts). Отметка нужна, чтобы этот контакт не ушёл в отклик
+    // Без профиля (шаг «Телефон» в новой анкете) отметка только в памяти, а номер приложение забирает
+    // через GET /me/phone/ask
     route("POST", "api", "/me/phone/ask", (req) => {
-      const seeker = seekerOf(req);
-      if (!askPhone(ctx.db, seeker.id, ctx.now())) throw new HttpError(409, "Сначала заполните анкету");
-      return { json: { ok: true, minutes: PHONE_ASK_MINUTES } };
+      const { user } = ctx.auth(req);
+      if (getProfile(ctx.db, user.id)) {
+        askPhone(ctx.db, user.id, ctx.now());
+        return { json: { ok: true, minutes: PHONE_ASK_MINUTES } };
+      }
+      askPhoneNew(user.id, ctx.now());
+      return { json: { ok: true, minutes: PHONE_ASK_MINUTES, pending: true } };
+    }),
+
+    route("GET", "api", "/me/phone/ask", (req) => {
+      const { user } = ctx.auth(req);
+      return { headers: { "Cache-Control": "no-store" }, json: { phone: pendingPhone(user.id, ctx.now()) } };
     }),
 
     route("DELETE", "api", "/me/phone/ask", (req) => {
-      cancelPhoneAsk(ctx.db, seekerOf(req).id);
+      const { user } = ctx.auth(req);
+      dropPendingPhone(user.id);
+      if (getSeeker(ctx.db, user.id)) cancelPhoneAsk(ctx.db, user.id);
       return { json: { ok: true } };
     }),
 

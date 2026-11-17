@@ -14,6 +14,7 @@ const ANKETA = {
   name: "Дана",
   city: "almaty",
   roles: ["Кассир"],
+  phone: "+77011112233",
   experience: "lt1",
   employment: ["full"],
   start: "today",
@@ -93,12 +94,12 @@ test("фото в профиле: загрузить, показать рабо�
   });
   assert.equal(created.status, 201, created.text);
   assert.equal(created.json.photo, null);
-  assert.deepEqual(created.json.strength, { percent: 40, next: "work" });
+  assert.deepEqual(created.json.strength, { percent: 45, next: "work" });
 
   const up = await s.call("PUT", "/me/photo", { headers: jpeg(), body: PHOTO });
   assert.equal(up.status, 200, up.text);
   assert.deepEqual(up.json.photo, { width: 240, height: 320, uploaded_at: "2026-11-04T06:00:00Z" });
-  assert.equal(up.json.strength.percent, 50);
+  assert.equal(up.json.strength.percent, 55);
   const [first] = files();
   assert.match(first!, /^7301-[a-z2-9]{8}-photo\.jpg$/);
   assert.ok(!readFileSync(`${s.config.videosDir}/${first}`).includes("Exif"));

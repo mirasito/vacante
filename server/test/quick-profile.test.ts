@@ -8,7 +8,7 @@ import { CONSENT_VERSION, parseProfile, strength } from "../src/profile.ts";
 import { AIGERIM, BROWSER, initDataFor, NOW, startServer, type TestServer } from "./helpers.ts";
 
 const CONSENT = { version: "2026-11-04.2", adult: true, base: false };
-const QUICK = { name: "Айдана", city: "almaty", roles: ["Бариста"] };
+const QUICK = { name: "Айдана", city: "almaty", roles: ["Бариста"], phone: "+77011112233" };
 const FULL = { ...QUICK, experience: "1to3", employment: ["shifts"], start: "week" };
 const auth = { authorization: `tma ${initDataFor(AIGERIM)}` };
 const profileHost = { host: "p.vacante.kz" };
@@ -51,9 +51,9 @@ test("текст отклика из короткой анкеты: без пу�
 });
 
 test("сила профиля: и короткая, и полная анкета первым делом просят опыт работы и навыки", () => {
-  assert.deepEqual(strength(parseProfile(QUICK), { video: false, photo: false }), { percent: 25, next: "work" });
-  assert.deepEqual(strength(parseProfile(FULL), { video: false, photo: false }), { percent: 40, next: "work" });
-  const skilled = { ...parseProfile(QUICK), skills: ["espresso" as const] };
+  assert.deepEqual(strength(parseProfile({ ...QUICK, phone: null }), { video: false, photo: false }), { percent: 25, next: "work" });
+  assert.deepEqual(strength(parseProfile({ ...FULL, phone: null }), { video: false, photo: false }), { percent: 40, next: "work" });
+  const skilled = { ...parseProfile({ ...QUICK, phone: null }), skills: ["espresso" as const] };
   assert.deepEqual(strength(skilled, { video: false, photo: false }), { percent: 45, next: "details" });
 });
 

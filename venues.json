@@ -26628,6 +26628,20 @@
   "v": 3,
   "checked_at": "2026-11-07T12:44:23+00:00"
  },
+ "almaty:королевские окна": {
+  "name": "Королевские окна",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T04:41:58+00:00",
+  "instagram": "korolevskie_okna",
+  "website": "https://k-o.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001089776483",
+  "avatar_checked_at": "2026-11-17T04:41:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:корона казбел логистик": {
   "name": "Корона Казбел Логистик",
   "city": "almaty",
@@ -28805,7 +28819,7 @@
   "instagram": "serebryanaya_voda_kz",
   "website": "http://www.obis.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000798739",
-  "avatar_checked_at": "2026-11-10T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-17T04:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55049,10 +55063,12 @@
   "checked_at": "2026-11-10T03:44:14+00:00",
   "website": "https://complex-bar.kz/",
   "source": "https://2gis.kz/karaganda/firm/70000001069599630",
-  "avatar_checked_at": "2026-11-10T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-17T04:41:59+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "751fcd21f0198e68.jpg",
+  "avatar_source": "website"
  },
  "karaganda:consumer trade company": {
   "name": "Consumer Trade Company",
@@ -67022,7 +67038,7 @@
   "instagram": "hyundai_semey",
   "website": "https://semey-hyundai.kz/",
   "source": "https://2gis.kz/semej/firm/70000001067833944",
-  "avatar_checked_at": "2026-11-10T03:44:15+00:00",
+  "avatar_checked_at": "2026-11-17T04:41:59+00:00",
   "avatar_tried": [
    "website"
   ]

@@ -1119,6 +1119,15 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktau:айтан": {
+  "name": "Айтан",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00",
+  "instagram": "aitan_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001112595919"
+ },
  "aktau:ак кала молл": {
   "name": "Ак Кала Молл",
   "city": "aktau",
@@ -17159,6 +17168,13 @@
   "v": 3,
   "checked_at": "2026-11-10T17:48:14+00:00"
  },
+ "almaty:rich service": {
+  "name": "RICH SERVICE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "almaty:rider": {
   "name": "Rider”",
   "city": "almaty",
@@ -23522,6 +23538,13 @@
   "avatar": "99dfbf042cb24d1c.jpg",
   "avatar_source": "website"
  },
+ "almaty:вкус к жизни": {
+  "name": "Вкус к жизни",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "almaty:владимир": {
   "name": "Владимир",
   "city": "almaty",
@@ -25751,6 +25774,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:казахстанская пивная компания": {
+  "name": "Казахстанская пивная компания",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
  },
  "almaty:казахстанские трубопроводные системы": {
   "name": "Казахстанские Трубопроводные системы",
@@ -29983,6 +30013,13 @@
   "status": "skip",
   "checked_at": "2026-10-28T06:51:26+00:00"
  },
+ "almaty:рент групп": {
+  "name": "Рент Групп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "almaty:республиканская школа лидерства жаңа ұрпақ": {
   "name": "Республиканская школа лидерства Жаңа Ұрпақ",
   "city": "almaty",
@@ -30977,6 +31014,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T16:44:53+00:00"
+ },
+ "almaty:ста логистик казахстан": {
+  "name": "СТА ЛОГИСТИК КАЗАХСТАН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00",
+  "instagram": "stalogistic.insta",
+  "telegram": "stalogistic",
+  "website": "https://stalogistic.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001079259252",
+  "avatar_checked_at": "2026-11-17T06:44:56+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "162e3fde6b2e16c2.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:ста поехали с нами": {
   "name": "СТА Поехали с нами",
@@ -35200,6 +35255,13 @@
   ],
   "avatar": "bf7c7298db50bbb5.jpg",
   "avatar_source": "website"
+ },
+ "astana:belesai": {
+  "name": "BELESAI",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
  },
  "astana:belostan kz": {
   "name": "BELOSTAN.KZ",
@@ -39693,6 +39755,13 @@
   "instagram": "monke__barbershop",
   "source": "https://2gis.kz/astana/firm/70000001093526525"
  },
+ "astana:moscow garage": {
+  "name": "MOSCOW GARAGE",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "astana:mpies": {
   "name": "Mpies",
   "city": "astana",
@@ -43891,6 +43960,24 @@
   "checked_at": "2026-10-28T09:43:33+00:00",
   "instagram": "astana_activ_zoloto",
   "source": "https://www.instagram.com/astana_activ_zoloto/"
+ },
+ "astana:актуаль клуб оптика лтд": {
+  "name": "Актуаль Клуб Оптика ЛТД",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00",
+  "instagram": "actualoptic_kz",
+  "telegram": "actualopticsale",
+  "website": "https://actualoptic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018130542",
+  "avatar_checked_at": "2026-11-17T06:44:56+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "82c3eadf1c468d03.jpg",
+  "avatar_source": "telegram"
  },
  "astana:акылханова а б": {
   "name": "АКЫЛХАНОВА А.Б.",
@@ -49450,6 +49537,20 @@
   "v": 3,
   "checked_at": "2026-11-06T00:44:08+00:00"
  },
+ "astana:ргп госградкадастр": {
+  "name": "РГП ГОСГРАДКАДАСТР",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00",
+  "instagram": "gosgradkadastr.kz",
+  "website": "https://gov.ggk.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018084040",
+  "avatar_checked_at": "2026-11-17T06:44:56+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:рейка": {
   "name": "Рейка",
   "city": "astana",
@@ -50032,6 +50133,13 @@
   "v": 3,
   "checked_at": "2026-11-13T18:41:42+00:00"
  },
+ "astana:систерс маркет": {
+  "name": "Систерс маркет",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "astana:сит фирма строительных материалов": {
   "name": "Сит (фирма строительных материалов)",
   "city": "astana",
@@ -50443,6 +50551,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T13:43:44+00:00"
+ },
+ "astana:сулу ет": {
+  "name": "Сулу Ет",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
  },
  "astana:сумарокова": {
   "name": "Сумарокова",
@@ -55019,6 +55134,13 @@
   "avatar": "ed1fd9ac949bb7ba.jpg",
   "avatar_source": "website"
  },
+ "karaganda:autocity karaganda": {
+  "name": "AutoCity Karaganda",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "karaganda:autotools": {
   "name": "Autotools",
   "city": "karaganda",
@@ -56467,6 +56589,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T18:42:42+00:00"
+ },
+ "karaganda:абсолют": {
+  "name": "Абсолют",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
  },
  "karaganda:августа": {
   "name": "Августа",
@@ -59924,6 +60053,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:eurasian machinery евразиан машинери": {
+  "name": "Eurasian Machinery (Евразиан Машинери)",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00",
+  "website": "https://eurasianmachinery.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001045612701",
+  "avatar_checked_at": "2026-11-17T06:44:56+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e575f255aa419609.jpg",
+  "avatar_source": "website"
  },
  "kostanay:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -68250,6 +68394,15 @@
   "v": 3,
   "checked_at": "2026-11-12T01:43:26+00:00"
  },
+ "shymkent:global coffee management": {
+  "name": "GLOBAL COFFEE MANAGEMENT",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00",
+  "instagram": "global_coffee_kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001105118851"
+ },
  "shymkent:global mnf": {
   "name": "GLOBAL MNF",
   "city": "shymkent",
@@ -73295,6 +73448,13 @@
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
  },
+ "uralsk:береке магазинге": {
+  "name": "Береке. Магазинге",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "uralsk:бэст прайс казахстан": {
   "name": "Бэст Прайс Казахстан",
   "city": "uralsk",
@@ -73730,6 +73890,13 @@
   "instagram": "oqi_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001062785788"
  },
+ "uralsk:организация": {
+  "name": "Организация",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
+ },
  "uralsk:орталықстройинвест": {
   "name": "ОрталықСтройИнвест",
   "city": "uralsk",
@@ -73996,6 +74163,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T01:44:24+00:00"
+ },
+ "uralsk:универмаг": {
+  "name": "Универмаг",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
  },
  "uralsk:уралметаллинвест": {
   "name": "УралМеталлинвест",
@@ -75044,6 +75218,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T10:44:24+00:00"
+ },
+ "ust-kamenogorsk:rossko": {
+  "name": "ROSSKO",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T06:44:55+00:00"
  },
  "ust-kamenogorsk:sabotage": {
   "name": "Sabotage",

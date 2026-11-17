@@ -150,6 +150,8 @@ def admin_data(data_dir: Path, vacancies: list[Vacancy], channels: dict[str, str
         "employers_api": f"{SERVER_URL}/admin/crm",
         # Воронка соискателей: числа считает сервер в Казахстане (server/src/funnel.ts), сюда идёт только адрес
         "funnel_api": f"{SERVER_URL}/admin/funnel",
+        # Соискатели с профилем: грузятся с сервера в Казахстане при открытии вкладки (server/src/admin-seekers.ts)
+        "seekers_api": f"{SERVER_URL}/admin/seekers",
         "jobs_api": f"{BOT_URL}/api/jobs",  # кто размещал вакансии в боте: грузится из воркера, на GitHub не хранится
         "cities": {slug: names[0] for slug, names in CITIES.items()},
     }

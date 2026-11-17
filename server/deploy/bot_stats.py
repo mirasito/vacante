@@ -20,6 +20,9 @@ QUERIES = [
      "SELECT COUNT(*) AS admins, SUM(s.chat_id IS NOT NULL) AS subscribed, SUM(coalesce(s.active, 0)) AS active, "
      "group_concat(coalesce(s.city, 'весь КЗ') || ' / сферы: ' || coalesce(nullif(s.categories, ''), 'любые') || ' / от ' || coalesce(s.min_pay, 0), '; ') AS filters "
      "FROM admins a LEFT JOIN subscribers s ON s.chat_id = a.chat_id"),
+    ("фильтры активных подписок (без chat_id; первая строка, если есть — модератор)",
+     "SELECT (s.chat_id IN (SELECT chat_id FROM admins)) AS admin, coalesce(s.city, 'весь КЗ') AS city, s.categories, s.perks, s.min_pay "
+     "FROM subscribers s WHERE s.active = 1 ORDER BY admin DESC"),
     ("начатые диалоги сейчас", "SELECT mode, COUNT(*) AS n FROM dialogs GROUP BY mode"),
 ]
 

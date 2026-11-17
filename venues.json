@@ -938,7 +938,7 @@
   "checked_at": "2026-11-10T21:43:51+00:00",
   "website": "https://tenizcap.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001105387386",
-  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -7030,7 +7030,7 @@
   "instagram": "ayvaz_kazakhstan",
   "website": "https://ayvaz.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001043463657",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9492,7 +9492,7 @@
   "instagram": "dromos_group",
   "website": "http://dromosgroup.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001102882439",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10482,10 +10482,12 @@
   "instagram": "flask_almt",
   "website": "http://taplink.cc/flask_almt",
   "source": "https://2gis.kz/almaty/firm/70000001036440155",
-  "avatar_checked_at": "2026-11-10T21:43:52+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "f4f9d2d2bff53e79.jpg",
+  "avatar_source": "website"
  },
  "almaty:fleet pay": {
   "name": "FLEET PAY",
@@ -28880,7 +28882,7 @@
   "instagram": "mirparketa_kz",
   "website": "http://mirparketa.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001086706638",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34443,7 +34445,7 @@
   "checked_at": "2026-11-10T20:46:07+00:00",
   "website": "https://eridon.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001098493593",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56352,6 +56354,20 @@
   "v": 3,
   "checked_at": "2026-11-04T16:44:09+00:00"
  },
+ "atyrau:транстелеком": {
+  "name": "Транстелеком",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T22:41:58+00:00",
+  "instagram": "ttc_kz",
+  "website": "https://ttc.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035371855",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:трц тамаша": {
   "name": "ТРЦ Тамаша",
   "city": "atyrau",
@@ -64326,7 +64342,7 @@
   "instagram": "sportmaster_kz",
   "website": "https://sportmaster.kz/",
   "source": "https://2gis.kz/kyzylorda/firm/70000001062409004",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -77558,7 +77574,7 @@
   "checked_at": "2026-11-10T20:46:07+00:00",
   "website": "https://smartinnovations.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001032503880",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -77882,7 +77898,7 @@
   "instagram": "akm_komatsu",
   "website": "http://ak-machinery.kz/",
   "source": "https://2gis.kz/astana/firm/70000001110480094",
-  "avatar_checked_at": "2026-11-10T20:46:08+00:00",
+  "avatar_checked_at": "2026-11-17T22:41:59+00:00",
   "avatar_tried": [
    "website"
   ]

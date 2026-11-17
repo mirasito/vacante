@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-17T14:57:13+00:00",
+ "updated_at": "2026-11-17T15:56:20+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2413,51 +2413,12 @@
     ]
    }
   },
-  "vakansii_rabota_atyrau-49865": {
-   "verdict": "approve",
-   "at": "2026-11-03T15:57:35+00:00",
-   "fields": {
-    "employer": "Кофейня «Nan cakes&bakes»",
-    "address": "ул. Кулманова, 117а"
-   }
-  },
-  "vakansii_oskemen-9243": {
-   "verdict": "approve",
-   "at": "2026-11-03T15:57:35+00:00",
-   "fields": {
-    "perks": [
-     "Без опыта"
-    ]
-   }
-  },
-  "vakansiya_ukg-21727": {
-   "verdict": "reject",
-   "at": "2026-11-03T15:57:35+00:00",
-   "reason": "Это резюме соискателя, а не вакансия"
-  },
   "hh-139123251": {
    "verdict": "approve",
    "at": "2026-11-03T16:56:42+00:00",
    "fields": {
     "employer": "Open Hype",
     "schedule": "5/2 или 2/2, по 9 часов"
-   }
-  },
-  "hh-138449525": {
-   "verdict": "approve",
-   "at": "2026-11-03T16:56:42+00:00",
-   "fields": {
-    "employer": "Omir Collection",
-    "schedule": "5/2, по 11 часов"
-   }
-  },
-  "hh-139122074": {
-   "verdict": "approve",
-   "at": "2026-11-03T16:56:42+00:00",
-   "fields": {
-    "title": "Сервис-консультант, администратор",
-    "employer": "Glass Go",
-    "schedule": "2/2, по 12 часов"
    }
   },
   "rabota4almaty-6113": {
@@ -50193,6 +50154,41 @@
    "at": "2026-11-17T14:57:13+00:00",
    "fields": {
     "schedule": "6/1 или 5/2, 8 часов"
+   }
+  },
+  "hh-139530787": {
+   "verdict": "approve",
+   "at": "2026-11-17T15:56:20+00:00",
+   "fields": {}
+  },
+  "hh-139587790": {
+   "verdict": "approve",
+   "at": "2026-11-17T15:56:20+00:00",
+   "fields": {}
+  },
+  "hh-139587438": {
+   "verdict": "reject",
+   "at": "2026-11-17T15:56:20+00:00",
+   "reason": "Описание не совпадает с должностью (похоже на съёмку контента)"
+  },
+  "rabotaaktau-142900": {
+   "verdict": "approve",
+   "at": "2026-11-17T15:56:20+00:00",
+   "fields": {
+    "title": "Пекарь, тестомес, кухонный работник, посудомойщица",
+    "employer": null,
+    "salary_min": 147000,
+    "salary_max": 237000,
+    "salary_period": "month",
+    "schedule": "2/2"
+   }
+  },
+  "hh-139587617": {
+   "verdict": "approve",
+   "at": "2026-11-17T15:56:20+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин косметики",
+    "employer": "Hit.cosmetics.kz"
    }
   }
  }

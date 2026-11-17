@@ -1,0 +1,56 @@
+# Статистика соискателей: сколько людей заполнили профиль и отправили отклики с выбранного дня.
+# Только чтение: заходит на сервер ключом выкладки и открывает базу sqlite3 -readonly,
+# в лог пишет только числа (server/deploy/stats.sql), без имён, телефонов и id.
+# Запуск: Actions → «Статистика» → Run workflow, в поле «С какого дня» дата ГГГГ-ММ-ДД.
+name: Статистика
+
+on:
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "С какого дня (ГГГГ-ММ-ДД, время Казахстана)"
+        default: "2026-11-01"
+  push:
+    branches: ["claude/**"]
+    paths: ["server/deploy/stats.sql", ".github/workflows/stats.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    env:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+      SERVER_SECRET: ${{ secrets.SERVER_SECRET }}
+      SINCE: ${{ inputs.since || '2026-11-01' }}
+      KEYS: ${{ github.workspace }}/.keys
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ключ сервера
+        run: |
+          if [[ ! $SINCE =~ ^20[0-9]{2}-[01][0-9]-[0-3][0-9]$ ]]; then
+            echo "::error::Дата должна быть в виде ГГГГ-ММ-ДД, например 2026-11-01"
+            exit 1
+          fi
+          if [[ ! $SERVER_HOST =~ ^[A-Za-z0-9.:-]+$ ]]; then
+            echo "::error::Нет секрета SERVER_HOST"
+            exit 1
+          fi
+          pip install --quiet "cryptography>=42"
+          backup_key=$(python server/deploy/keys.py "$KEYS" "$SERVER_HOST")
+          echo "::add-mask::$backup_key"
+      - name: Цифры
+        run: |
+          ssh -i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20 \
+            -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes "root@$SERVER_HOST" \
+            "sqlite3 -readonly -cmd \".parameter set :since '$SINCE'\" /var/lib/vacante/vacante.db" \
+            < server/deploy/stats.sql | tee stats.txt
+          { echo '```'; cat stats.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Убрать ключи
+        if: always()
+        run: rm -rf "$KEYS"

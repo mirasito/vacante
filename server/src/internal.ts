@@ -3,12 +3,12 @@
 // с общим ключом (internalKey: считается из токена бота, отдельный секрет не нужен).
 // Сейчас это номер из окна «Поделиться номером», кружок для профиля, /start video, кнопки «v:…»
 // под кружком, кнопки «r:…» под напоминаниями и команды /otkliki и /napominaniya (reminder-bot.ts).
-import { timingSafeEqual } from "node:crypto";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 import type { Ctx } from "./app.ts";
-import { HttpError, route, type Request, type Route } from "./http.ts";
+import { internalGuard } from "./auth.ts";
+import { route, type Route } from "./http.ts";
 import { videoScript } from "./labels.ts";
 import { normalizePhone } from "./profile.ts";
 import { applicationsMessage, pressReminder, remindersMessage } from "./reminder-bot.ts";
@@ -26,7 +26,6 @@ import {
   setPhone,
   setPhoneNew,
 } from "./seekers.ts";
-import { internalKey } from "./telegram.ts";
 import { MAX_DURATION, MAX_POSTER_BYTES, MAX_VIDEO_BYTES, writeAtomic } from "./video.ts";
 
 export interface TgMessage {
@@ -127,11 +126,7 @@ const APPLICATIONS = /^\/otkliki(@\w+)?$/;
 const REMINDERS = /^\/napominaniya(@\w+)?$/;
 
 export function internalRoutes(ctx: Ctx): Route[] {
-  const key = Buffer.from(internalKey(ctx.config.botToken));
-  const check = (req: Request) => {
-    const given = Buffer.from((req.header("authorization") ?? "").replace(/^Bearer /, ""));
-    if (given.length !== key.length || !timingSafeEqual(given, key)) throw new HttpError(403, "Нет доступа");
-  };
+  const check = internalGuard(ctx);
 
   const langFor = (from: { id: number; language_code?: string }): "ru" | "kk" =>
     getSeeker(ctx.db, from.id)?.lang ?? (from.language_code === "kk" ? "kk" : "ru");

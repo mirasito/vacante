@@ -10,11 +10,11 @@
 // Открытие, чьё прошлое открытие попало в тот же период, в итог не идёт; остаются люди.
 //
 // Шаги полной анкеты (funnel_form): дошёл до экрана и прошёл его, теми же обезличенными числами за день.
-import { timingSafeEqual } from "node:crypto";
 
 import type { Ctx } from "./app.ts";
+import { adminGuard } from "./auth.ts";
 import type { Db } from "./db.ts";
-import { HttpError, route, type Request, type Route } from "./http.ts";
+import { HttpError, route, type Route } from "./http.ts";
 import { contactClicks } from "./go.ts";
 import { postClicks } from "./page.ts";
 import { getSeeker, iso } from "./seekers.ts";
@@ -231,13 +231,7 @@ export function funnelRoutes(ctx: Ctx): Route[] {
     seen.add(key);
     return true;
   };
-  const admin = (req: Request) => {
-    const key = ctx.config.crmKey;
-    if (!key) throw new HttpError(503, "Админка не настроена: нет секрета ADMIN_PASSWORD");
-    const given = Buffer.from((req.header("authorization") ?? "").replace(/^Bearer /, ""));
-    const want = Buffer.from(key);
-    if (given.length !== want.length || !timingSafeEqual(given, want)) throw new HttpError(403, "Неверный пароль админки");
-  };
+  const admin = adminGuard(ctx);
 
   return [
     // Приложение сообщает шаг и метку источника. Шаг считается обезличенно; метка привязывается

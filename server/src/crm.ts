@@ -21,15 +21,14 @@
 // кандидата p.vacante.kz: карточка отмечает такое заведение, список — такого работодателя.
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { timingSafeEqual } from "node:crypto";
 
 import type { Ctx } from "./app.ts";
+import { adminGuard, internalGuard } from "./auth.ts";
 import { tx, type Db } from "./db.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import { OLX_JOB_URL } from "./olx-import.ts";
 import { cleanJpeg, MAX_PHOTO_BYTES } from "./photo.ts";
 import { randomCode, removeFiles } from "./seekers.ts";
-import { internalKey } from "./telegram.ts";
 import { fileReply, writeAtomic } from "./video.ts";
 
 const BODY_LIMIT = 8 * 1024 * 1024;
@@ -319,19 +318,8 @@ export function addVenue(db: Db, employerId: number, input: Record<string, unkno
 // ---------- Маршруты ----------
 
 export function crmRoutes(ctx: Ctx): Route[] {
-  const internal = Buffer.from(internalKey(ctx.config.botToken));
-  const same = (given: string, key: Buffer) => {
-    const g = Buffer.from(given);
-    return g.length === key.length && timingSafeEqual(g, key);
-  };
-  const bearer = (req: Request) => (req.header("authorization") ?? "").replace(/^Bearer /, "");
-  const admin = (req: Request) => {
-    if (!ctx.config.crmKey) throw new HttpError(503, "CRM не настроена: нет секрета ADMIN_PASSWORD");
-    if (!same(bearer(req), Buffer.from(ctx.config.crmKey))) throw new HttpError(403, "Неверный пароль админки");
-  };
-  const inner = (req: Request) => {
-    if (!same(bearer(req), internal)) throw new HttpError(403, "Нет доступа");
-  };
+  const admin = adminGuard(ctx, "CRM");
+  const inner = internalGuard(ctx);
   const db = ctx.db;
   const nowIso = () => new Date(ctx.now()).toISOString();
 

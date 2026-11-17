@@ -4,10 +4,10 @@
 // Профиль открывается в самой админке, а не по ссылке p.vacante.kz: просмотр ссылки записывается
 // и приходит человеку в бот («ваш профиль посмотрели»), а владелец сайта работодателем не является.
 // Фото и кружок отдаются отдельными запросами с тем же ключом. Точка дома в админку не идёт.
-import { timingSafeEqual } from "node:crypto";
 import { join } from "node:path";
 
 import type { Ctx } from "./app.ts";
+import { adminGuard } from "./auth.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
 import {
   cityName, documentsLabel, employmentLabel, experienceLabel, jobTermLabel, languagesLabel, payLabel,
@@ -23,13 +23,7 @@ const STAGE: Record<string, string> = {
 };
 
 export function adminSeekerRoutes(ctx: Ctx): Route[] {
-  const admin = (req: Request) => {
-    const key = ctx.config.crmKey;
-    if (!key) throw new HttpError(503, "Админка не настроена: нет секрета ADMIN_PASSWORD");
-    const given = Buffer.from((req.header("authorization") ?? "").replace(/^Bearer /, ""));
-    const want = Buffer.from(key);
-    if (given.length !== want.length || !timingSafeEqual(given, want)) throw new HttpError(403, "Неверный пароль админки");
-  };
+  const admin = adminGuard(ctx);
   const idOf = (req: Request) => {
     const id = Number(req.params.id);
     if (!Number.isSafeInteger(id) || id <= 0) throw new HttpError(404, "Нет такого соискателя");

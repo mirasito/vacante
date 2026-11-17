@@ -40,6 +40,7 @@ import type { Index, Lang } from '../types';
 import { Bar, Button, Check, Chip, Field, Loading, Retry, styles as ui } from '../ui';
 import { HomeStep, type HomeDraft } from './Home';
 import { kzPhone, PhoneStep } from './Phone';
+import { canPickPhoto } from './photo';
 import { Avatar, PhotoSection, usePhotoUpload, usePhotoUrl } from './Photo';
 import { isLooking, JOB_TERMS, skillLabel } from './skills';
 import { EMPLOYMENT, EXPERIENCE, label, LANGUAGES, money, P, phoneLabel, START, when } from './texts';
@@ -154,6 +155,8 @@ export function ProfileTab(props: {
   if (!view?.profile) return <Intro c={c} lang={lang} onStart={() => setMode('wizard')} />;
   // Профиль, созданный до 2026-11-17, мог остаться без номера: теперь номер обязателен, просим его первым
   if (!view.profile.phone) return <PhoneGate c={c} lang={lang} view={view} onSaved={setView} />;
+  // С 2026-11-17 фото тоже обязательно: без него работодатели профиль не открывают
+  if (!view.photo && canPickPhoto()) return <PhotoGate c={c} lang={lang} view={view} onChange={setView} />;
   if (mode === 'extras') {
     return <Extras c={c} lang={lang} view={view} onSaved={(v) => (setView(v), setMode('card'))} onChange={setView} />;
   }
@@ -268,6 +271,27 @@ function PhoneGate({ c, lang, view, onSaved }: { c: Colors; lang: Lang; view: Pr
       </ScrollView>
       <View style={s.foot}>
         <Button c={c} label={t.save} busy={busy} disabled={!kzPhone(phone)} onPress={() => save()} />
+      </View>
+    </View>
+  );
+}
+
+/** Фото обязательно: без него дальше профиля не пускаем. Пропустить нельзя. */
+function PhotoGate({ c, lang, view, onChange }: { c: Colors; lang: Lang; view: ProfileView; onChange(v: ProfileView): void }) {
+  const t = P[lang];
+  const photo = usePhotoUpload(lang, onChange);
+  return (
+    <View style={ui.flex}>
+      <ScrollView contentContainerStyle={s.body}>
+        <Text style={[s.title, { color: c.ink }]}>{t.photoGateTitle}</Text>
+        <Text style={[s.text, { color: c.quiet }]}>{t.photoGateText}</Text>
+        <View style={{ alignItems: 'center', paddingVertical: 12 }}>
+          <Avatar c={c} name={view.profile?.name ?? ''} url={null} size={140} />
+        </View>
+        {photo.error ? <Text style={[s.error, { color: c.skip }]}>{photo.error}</Text> : null}
+      </ScrollView>
+      <View style={s.foot}>
+        <Button c={c} label={t.photoGateButton} busy={photo.busy} onPress={photo.upload} />
       </View>
     </View>
   );

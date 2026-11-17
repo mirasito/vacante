@@ -85,7 +85,7 @@ export function screen(name, sub) {
     });
     const pay = sub.min_pay ? `от ${money(sub.min_pay)} ₸` : "любая";
     return {
-      text: "Что для вас важно? Это можно пропустить.\nЗарплату за смену и за час считаю как полный месяц.",
+      text: "Что для вас важно? Пришлю вакансии, где есть хотя бы одно из отмеченного. Это можно пропустить.\nЗарплату за смену и за час считаю как полный месяц.",
       keyboard: [
         ...rows(perks, 2),
         [{ text: `💰 Зарплата: ${pay} · сменить`, callback_data: "pay" }],
@@ -147,7 +147,9 @@ export function matches(sub, v) {
     (!sub.city || v.city === sub.city) &&
     (!sub.categories.length || sub.categories.includes(v.category)) &&
     v.pay >= sub.min_pay &&
-    sub.perks.every((p) => (p === SALARY ? v.pay > 0 : v.perks.includes(p)))
+    (!sub.perks.includes(SALARY) || v.pay > 0) &&
+    // Остальные условия — любое из отмеченных (как в vacante/digest.py), а не все сразу
+    (sub.perks.every((p) => p === SALARY) || sub.perks.some((p) => p !== SALARY && v.perks.includes(p)))
   );
 }
 

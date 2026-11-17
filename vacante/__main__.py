@@ -12,6 +12,13 @@ from vacante.site import build
 from vacante.store import load_vacancies
 
 
+def _read_json(path: Path) -> dict | None:
+    try:
+        return json.loads(path.read_text("utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="vacante")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -172,8 +179,14 @@ def main() -> None:
                 jobs = d1.job_counts()
             except (httpx.HTTPError, RuntimeError):
                 jobs = None  # таблиц вакансий ещё нет: бот не перевыложен
+            # last_digest: что ушло в этот час (new — новых вакансий, sent — сообщений, failed — ошибок Telegram,
+            # blocked — сколько отписались блокировкой бота), чтобы в админке было видно, работает ли рассылка
+            last = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "new": stats["new"],
+                    "sent": stats["sent"], "failed": stats["failed"], "blocked": len(stats["blocked"])}
+            old = _read_json(args.data_dir / "bot.json") or {}
+            history = [h for h in old.get("digest_runs", []) if isinstance(h, dict)][-47:] + [last]
             bot = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                   "subscribers": d1.subscriber_counts(), "jobs": jobs}
+                   "subscribers": d1.subscriber_counts(), "jobs": jobs, "digest_runs": history}
             (args.data_dir / "bot.json").write_text(json.dumps(bot, ensure_ascii=False) + "\n", "utf-8")
         logging.info("подборки: %s", stats)
     else:

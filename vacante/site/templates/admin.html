@@ -433,6 +433,14 @@ td.nowrap { white-space: nowrap; }
   });
 
   // Вакансии, которые работодатели разместили через бота: по статусам и отклики
+  // Рассылка подборок за последние сутки: часовые запуски из update.yml (vacante/__main__.py, digest_runs)
+  function digestLine(runs) {
+    if (!runs || !runs.length) return `<p class="quiet">О рассылке подборок данных пока нет: они появятся после следующего часового обновления.</p>`;
+    const day = runs.filter((r) => Date.now() - new Date(r.at) < 86400000);
+    const sum = (k) => day.reduce((a, r) => a + (r[k] || 0), 0);
+    const last = runs[runs.length - 1];
+    return `<p class="quiet">Подборки за сутки: отправлено сообщений ${num(sum("sent"))}, ошибок ${num(sum("failed"))}, заблокировали бота ${num(sum("blocked"))}. Последний запуск ${when(last.at)}: новых вакансий ${num(last.new)}, сообщений ${num(last.sent)}.</p>`;
+  }
   function jobsLine(jobs) {
     if (!jobs) return "";
     const n = (k) => num(jobs[k] || 0);
@@ -595,6 +603,7 @@ td.nowrap { white-space: nowrap; }
       const total = rows.reduce((a, r) => a + r.total, 0);
       $("#bot").innerHTML = `
         <p class="quiet">Активных подписчиков: ${num(subs)} из ${num(total)} начавших. Обновлено ${when(data.bot.updated_at)}.</p>
+        ${digestLine(data.bot.digest_runs)}
         ${jobsLine(data.bot.jobs)}
         <ul class="list">${rows.map((r) => `<li><span>${esc(r.city)}</span><span class="num">активных: ${num(r.active)} из ${num(r.total)}</span></li>`).join("") || `<li class="quiet">Пока никого</li>`}</ul>`;
     } else {

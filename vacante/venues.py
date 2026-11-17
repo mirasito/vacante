@@ -28,6 +28,7 @@ import httpx
 from bs4 import BeautifulSoup
 from PIL import Image, ImageOps, UnidentifiedImageError
 
+from vacante import tg
 from vacante.models import Vacancy
 from vacante.parse import CITIES
 
@@ -288,7 +289,7 @@ def fetch_avatars(data_dir: Path, sources: dict[str, AvatarSource], now: datetim
                 broken[field] = str(exc)
                 tried.append(f"{field}: токен не подошёл")
             except (httpx.HTTPError, RuntimeError, UnidentifiedImageError, OSError, ValueError) as exc:
-                tried.append(f"{field}: {exc if isinstance(exc, RuntimeError) else type(exc).__name__}")
+                tried.append(f"{field}: {tg.error_text(exc)}")
         if venue.get("avatar"):
             report.append((k, f"аватар скачан ({venue['avatar_source']})"))
         else:
@@ -442,7 +443,7 @@ class TelegramAvatars:
         self.client, self.token = client, token
 
     def _call(self, method: str, **params) -> dict | None:
-        r = self.client.get(f"https://api.telegram.org/bot{self.token}/{method}", params=params)
+        r = self.client.get(tg.url(self.token, method), params=params)
         body = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
         if r.status_code in (401, 404) and body.get("error_code") in (401, 404):
             raise TokenError(f"Telegram {r.status_code}: {body.get('description')}")  # в тексте нет токена
@@ -456,7 +457,7 @@ class TelegramAvatars:
         file = self._call("getFile", file_id=photo["big_file_id"])
         if not file or not file.get("file_path"):
             return None
-        r = self.client.get(f"https://api.telegram.org/file/bot{self.token}/{file['file_path']}")
+        r = self.client.get(tg.file_url(self.token, file["file_path"]))
         r.raise_for_status()
         return r.content
 

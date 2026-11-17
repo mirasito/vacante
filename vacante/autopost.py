@@ -20,7 +20,8 @@ from pathlib import Path
 
 import httpx
 
-from vacante import card, channels, direct, launch, promo, reach, review, shifts, venues
+from vacante import card, channels, direct, launch, promo, reach, review, shifts, tg, venues
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.site.build import city_heading, city_name, instagram_url, salary_label, twogis_url
 from vacante.store import load_vacancies
@@ -29,7 +30,6 @@ log = logging.getLogger(__name__)
 
 # Свои каналы по городам (config/own_channels.yaml); постим только в уже работающие, см. vacante.channels
 CHANNELS = {city: c["chat"] for city, c in channels.ALL.items()}
-LOCAL = timezone(timedelta(hours=5))  # весь Казахстан живёт по UTC+5
 POST_HOURS = range(8, 22)  # публикуем с 8:00 до 21:59 по местному времени
 # Вакансии от работодателей (через бота) публикуем сразу после одобрения, вне общей очереди,
 # но не ночью: с 22:00 до 8:00 ждут утра
@@ -289,12 +289,12 @@ def telegram_sender(client: httpx.Client, token: str) -> Sender:
         keys = [{"text": text, "url": url} for text, url in post.buttons]
         markup = {"inline_keyboard": [keys[i:i + 2] for i in range(0, len(keys), 2)]}  # по две кнопки в ряд
         r = client.post(
-            f"https://api.telegram.org/bot{token}/sendPhoto",
+            tg.url(token, "sendPhoto"),
             data={"chat_id": chat, "caption": post.caption, "parse_mode": "HTML",
                   "reply_markup": json.dumps(markup, ensure_ascii=False)},
             files={"photo": ("vacancy.png", post.photo, "image/png")},
         )
-        _check(r)
+        tg.check(r)
         return r.json().get("result", {}).get("message_id")
     return send
 
@@ -304,16 +304,9 @@ def telegram_pinner(client: httpx.Client, token: str) -> Pinner:
     Боту нужно право администратора канала «Редактирование сообщений»."""
     def pin(chat: str, message_id: int, on: bool) -> None:
         method, body = ("pinChatMessage", {"disable_notification": True}) if on else ("unpinChatMessage", {})
-        _check(client.post(f"https://api.telegram.org/bot{token}/{method}",
+        tg.check(client.post(tg.url(token, method),
                            json={"chat_id": chat, "message_id": message_id, **body}))
     return pin
-
-
-def _check(r: httpx.Response) -> None:
-    if r.status_code != 200:
-        # В логах только ответ Telegram: адрес запроса содержит токен
-        json_body = r.headers.get("content-type", "").startswith("application/json")
-        raise RuntimeError(f"Telegram {r.status_code}: {r.json().get('description') if json_body else r.reason_phrase}")
 
 
 def awaiting_review(data_dir: Path) -> set[str]:
@@ -409,7 +402,7 @@ def shifts_digest(vacancies: list[Vacancy], city: str, base_url: str, now: datet
 
 def telegram_text_sender(client: httpx.Client, token: str) -> TextSender:
     def send(chat: str, text: str) -> None:
-        _check(client.post(f"https://api.telegram.org/bot{token}/sendMessage",
+        tg.check(client.post(tg.url(token, "sendMessage"),
                            json={"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True}))
     return send
 
@@ -418,10 +411,10 @@ def telegram_button_sender(client: httpx.Client, token: str) -> promo.ButtonSend
     """Текстовый пост с url-кнопками (по одной в ряд); возвращает message_id."""
     def send(chat: str, text: str, buttons: list[tuple[str, str]]) -> int | None:
         markup = {"inline_keyboard": [[{"text": t, "url": u}] for t, u in buttons]}
-        r = client.post(f"https://api.telegram.org/bot{token}/sendMessage",
+        r = client.post(tg.url(token, "sendMessage"),
                         json={"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True,
                               "reply_markup": markup})
-        _check(r)
+        tg.check(r)
         return r.json().get("result", {}).get("message_id")
     return send
 
@@ -474,7 +467,7 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
                     send_text(chat, text)
                     stats["shifts"] = stats.get("shifts", 0) + 1
                 except (httpx.HTTPError, RuntimeError) as exc:
-                    log.warning("смены в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+                    log.warning("смены в %s: %s", chat, tg.error_text(exc))
         local_now = now.astimezone(LOCAL)
         if send_promo and local_now.hour in POST_HOURS:
             promo.run_channel(chat, city, state, now, local_now,
@@ -488,7 +481,7 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
                 try:
                     send_promo(chat, digest_text(items, city, base_url, now), digest_buttons(city))
                 except (httpx.HTTPError, RuntimeError) as exc:
-                    log.warning("подборка в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+                    log.warning("подборка в %s: %s", chat, tg.error_text(exc))
                 else:
                     stats["digest"] = stats.get("digest", 0) + 1
                     # Вакансии подборки вышли в канал: отдельным постом их не повторяем
@@ -512,7 +505,7 @@ def _publish(chat: str, v: Vacancy, base_url: str, send: Sender, state: dict, st
     try:
         message_id = send(chat, make_post(v, base_url, venue, venues.avatar_bytes(data_dir, venue), urgent))
     except (httpx.HTTPError, RuntimeError) as exc:
-        log.warning("канал %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        log.warning("канал %s: %s", chat, tg.error_text(exc))
         stats["failed"] += 1
         return False, None
     state["ids"] = (state["ids"] + [v.id])[-KEEP:]
@@ -527,7 +520,7 @@ def _pin(chat: str, v: Vacancy, message_id: int, state: dict, pin: Pinner, stats
     try:
         pin(chat, message_id, True)
     except (httpx.HTTPError, RuntimeError) as exc:
-        log.warning("закреп в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        log.warning("закреп в %s: %s", chat, tg.error_text(exc))
         return
     state.setdefault("pins", []).append({"message_id": message_id, "vacancy": v.id, "until": v.top_until})
     stats["pinned"] = stats.get("pinned", 0) + 1

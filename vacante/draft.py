@@ -27,7 +27,8 @@ from statistics import median, quantiles
 
 import httpx
 
-from vacante import autopost, contacts, launch, review, venues
+from vacante import autopost, contacts, launch, review, tg, venues
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.site.build import _locative, money, salary_label
 from vacante.video import CITY, PAY_RANGE, ROLES, SPHERE, _plural, _round, role_of
@@ -81,7 +82,7 @@ def _link(vacancy_id: str | None = None) -> str:
 
 def _days(now: datetime) -> str:
     """«9–16 ноября»: за какие дни посчитано."""
-    end = now.astimezone(autopost.LOCAL)
+    end = now.astimezone(LOCAL)
     start = end - WINDOW
     if start.month == end.month:
         return f"{start.day}–{end.day} {autopost.MONTHS[end.month - 1]}"
@@ -243,7 +244,7 @@ def _tip_whatsapp(items: list[Vacancy], now: datetime) -> Draft | None:
 
 def _tip_hours(items: list[Vacancy], now: datetime) -> Draft | None:
     n = len(items)
-    hours = [datetime.fromisoformat(v.posted_at).astimezone(autopost.LOCAL).hour for v in items]
+    hours = [datetime.fromisoformat(v.posted_at).astimezone(LOCAL).hour for v in items]
     morning, evening = sum(1 for h in hours if h < 12), sum(1 for h in hours if h >= 18)
     day = n - morning - evening
     if n < SHARE_MIN or morning + day < 0.7 * n:
@@ -295,7 +296,7 @@ def plan(vacancies: list[Vacancy], reviews: dict | None, known: dict[str, dict],
     history — что уже отправляли: [{date, theme, key}]. Тема идёт следующей по кругу за прошлой и с ней не
     совпадает; не хватает данных — берём следующую. Внутри темы — должность (заведение, совет), о которой
     не писали дольше всего."""
-    today = now.astimezone(autopost.LOCAL).date()
+    today = now.astimezone(LOCAL).date()
     past = sorted((h for h in history if h["date"] < today.isoformat()), key=lambda h: h["date"])
     last = past[-1] if past else None
     items = week(vacancies, now)
@@ -324,7 +325,7 @@ def load_history(data_dir: Path) -> list[dict]:
 
 
 def remember(data_dir: Path, draft: Draft, now: datetime) -> None:
-    today = now.astimezone(autopost.LOCAL).date().isoformat()
+    today = now.astimezone(LOCAL).date().isoformat()
     sent = [h for h in load_history(data_dir) if h["date"] != today]  # повторный запуск за день заменяет запись
     sent.append({"date": today, "theme": draft.theme, "key": draft.key})
     (data_dir / STATE).write_text(json.dumps({"sent": sent[-KEEP:]}, ensure_ascii=False, indent=1) + "\n", "utf-8")
@@ -347,15 +348,15 @@ def note(draft: Draft) -> str:
 def send(client: httpx.Client, token: str, chats: list[int], draft: Draft | None) -> dict:
     """Отправляет черновик модераторам: пост отдельным сообщением без разметки (его можно скопировать как есть),
     следом справка. Нет черновика — одно сообщение о том, что данных сегодня нет."""
-    api = f"https://api.telegram.org/bot{token}/sendMessage"
+    api = tg.url(token, "sendMessage")
     stats = {"sent": 0, "failed": 0}
     for chat in chats:
         try:
             for text in [draft.text, note(draft)] if draft else [EMPTY]:
-                autopost._check(client.post(api, json={"chat_id": chat, "text": text, "disable_web_page_preview": True}))
+                tg.check(client.post(api, json={"chat_id": chat, "text": text, "disable_web_page_preview": True}))
             stats["sent"] += 1
         except (httpx.HTTPError, RuntimeError) as exc:
             # В тексте сетевой ошибки адрес запроса с токеном: в лог только её вид
-            log.warning("черновик в чат модератора: %s", exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+            log.warning("черновик в чат модератора: %s", tg.error_text(exc))
             stats["failed"] += 1
     return stats

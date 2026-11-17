@@ -13,19 +13,19 @@ import logging
 import time
 from collections.abc import Callable
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 import httpx
 
-from vacante import shifts
+from vacante import shifts, tg
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.site.build import bot_item, monthly_pay
 from vacante.store import load_vacancies
 
 log = logging.getLogger(__name__)
 
-LOCAL = timezone(timedelta(hours=5))
 SEND_HOURS = range(8, 22)  # с 8:00 до 21:59 по времени Казахстана
 MAX_ITEMS = 10  # вакансий в одном сообщении, остальные на сайте
 SALARY = "salary"  # условие «С зарплатой» в подписке
@@ -128,7 +128,7 @@ def run(data_dir: Path, base_url: str, subscriptions: Callable[[], list[Subscrip
             except Blocked:
                 stats["blocked"].append(sub.chat_id)
             except (httpx.HTTPError, RuntimeError) as exc:
-                log.warning("подборка %s: %s", sub.chat_id, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+                log.warning("подборка %s: %s", sub.chat_id, tg.error_text(exc))
                 stats["failed"] += 1
             else:
                 stats["sent"] += 1
@@ -149,7 +149,7 @@ def _morning(vacancies: list[Vacancy], subs: list[Subscription], base_url: str, 
         except Blocked:
             stats["blocked"].append(sub.chat_id)
         except (httpx.HTTPError, RuntimeError) as exc:
-            log.warning("утренние смены %s: %s", sub.chat_id, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+            log.warning("утренние смены %s: %s", sub.chat_id, tg.error_text(exc))
             stats["failed"] += 1
         else:
             stats["morning"] = stats.get("morning", 0) + 1
@@ -247,15 +247,12 @@ class D1:
 
 def telegram_sender(client: httpx.Client, token: str) -> Sender:
     def send(chat_id: int, text: str, keyboard: list) -> None:
-        r = client.post(f"https://api.telegram.org/bot{token}/sendMessage", json={
+        r = client.post(tg.url(token, "sendMessage"), json={
             "chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True,
             "reply_markup": {"inline_keyboard": keyboard},
         })
         time.sleep(0.05)  # лимит Telegram: не больше 30 сообщений в секунду
         if r.status_code == 403:
             raise Blocked(chat_id)
-        if r.status_code != 200:
-            # В логах только ответ Telegram: адрес запроса содержит токен
-            json_body = r.headers.get("content-type", "").startswith("application/json")
-            raise RuntimeError(f"Telegram {r.status_code}: {r.json().get('description') if json_body else r.reason_phrase}")
+        tg.check(r)
     return send

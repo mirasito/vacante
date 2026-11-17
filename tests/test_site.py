@@ -173,7 +173,6 @@ def test_build_writes_app_feed_by_city(tmp_path):
 def test_app_feed_writes_role_files_beyond_city_feed(tmp_path, monkeypatch):
     import json
     from vacante.site import appfeed
-    from vacante.models import Vacancy
     monkeypatch.setattr(appfeed, "PER_CITY", 2)
     now = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
     texts = ["Требуется повар, 300 000 тг", "Требуется кассир", "Требуется официант", "Требуется официант, 200 000 тг",

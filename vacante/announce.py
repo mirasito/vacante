@@ -13,7 +13,7 @@ import logging
 
 import httpx
 
-from vacante import launch
+from vacante import launch, tg
 from vacante.promo import ButtonSender, _ru_in, _where
 
 log = logging.getLogger(__name__)
@@ -63,7 +63,7 @@ def run(name: str, posted: dict, live: dict[str, str], send: ButtonSender) -> di
             send(chat, text_for(name, city), buttons_for(name, city))
         except (httpx.HTTPError, RuntimeError) as exc:
             stats["failed"] += 1
-            log.warning("объявление «%s» в %s: %s", name, chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+            log.warning("объявление «%s» в %s: %s", name, chat, tg.error_text(exc))
             continue
         done.append(name)
         stats["sent"] += 1

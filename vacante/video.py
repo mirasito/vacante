@@ -27,7 +27,8 @@ from statistics import quantiles
 import httpx
 from PIL import Image, ImageDraw
 
-from vacante import autopost, launch
+from vacante import autopost, launch, tg
+from vacante.localtime import LOCAL
 from vacante.card import BRAND, BRAND_SOFT, _font, _wrap
 from vacante.models import Vacancy
 from vacante.quality import _has_money
@@ -133,7 +134,7 @@ def list_clip(role: str, items: list[Vacancy], now: datetime) -> Clip:
 
     Первая строка — должность и сумма, а не «N вакансий»: в разборе чужих роликов (16.11.2026, YouTube Shorts)
     «профессия + точная сумма» набирала просмотры, а ролики-объявления о вакансиях общепита — нет."""
-    local = now.astimezone(autopost.LOCAL)
+    local = now.astimezone(LOCAL)
     where = _locative(CITY)
     n = len(items)
     count = f"{n} {_plural(n, 'свежая вакансия', 'свежие вакансии', 'свежих вакансий')}"
@@ -173,7 +174,7 @@ def pay_clip(role: str, items: list[Vacancy], now: datetime) -> Clip | None:
     pays = [(p, v) for v in items if (p := _monthly(v))]
     if len(pays) < STATS_MIN:
         return None
-    local = now.astimezone(autopost.LOCAL)
+    local = now.astimezone(LOCAL)
     where = _locative(CITY)
     mids = sorted((lo + hi) / 2 for (lo, hi), _ in pays)
     q1, _, q3 = quantiles(mids, n=4)
@@ -283,7 +284,7 @@ def signs_clip(items: list[Vacancy], now: datetime) -> Clip | None:
             found.append((sign, hits, len(base)))
     if not found:
         return None
-    local = now.astimezone(autopost.LOCAL)
+    local = now.astimezone(LOCAL)
     where = _locative(CITY)
     turn = local.date().toordinal() % len(found)
     found = found[turn:] + found[:turn]
@@ -319,7 +320,7 @@ def signs_clip(items: list[Vacancy], now: datetime) -> Clip | None:
 def plan(reviewed: list[Vacancy], everything: list[Vacancy], now: datetime) -> list[Clip]:
     """Ролики на сегодня. reviewed — что можно показывать поимённо (проверено агентом или от работодателей),
     everything — вся база для подсчёта зарплат и долей. Должность меняется по дням, у двух роликов она разная."""
-    day = now.astimezone(autopost.LOCAL).date().toordinal()
+    day = now.astimezone(LOCAL).date().toordinal()
     cutoff = (now - FRESH).isoformat()
     ours = lambda v: v.city == CITY and v.category == SPHERE and not v.shift_date  # noqa: E731
     by_role: dict[str, list[Vacancy]] = {}
@@ -475,24 +476,23 @@ NOTE = ("🎬 <b>Ролики на сегодня</b> для Reels, TikTok и Sh
 
 def send(client: httpx.Client, token: str, chats: list[int], clips: list[Clip], out: Path) -> dict:
     """Отправляет готовые ролики с подписями в Telegram (модераторам): выкладывает их в соцсети человек."""
-    api = f"https://api.telegram.org/bot{token}"
     stats = {"sent": 0, "failed": 0}
     for chat in chats:
         try:
-            autopost._check(client.post(f"{api}/sendMessage", json={"chat_id": chat, "text": NOTE, "parse_mode": "HTML"}))
+            tg.check(client.post(tg.url(token, "sendMessage"), json={"chat_id": chat, "text": NOTE, "parse_mode": "HTML"}))
             for clip in clips:
                 short = len(clip.caption) <= CAPTION_LIMIT
-                autopost._check(client.post(
-                    f"{api}/sendVideo",
+                tg.check(client.post(
+                    tg.url(token, "sendVideo"),
                     data={"chat_id": chat, "supports_streaming": "true", "width": W, "height": H,
                           **({"caption": clip.caption} if short else {})},
                     files={"video": (f"{clip.name}.mp4", (out / f"{clip.name}.mp4").read_bytes(), "video/mp4")}))
                 if not short:
-                    autopost._check(client.post(f"{api}/sendMessage", json={"chat_id": chat, "text": clip.caption,
+                    tg.check(client.post(tg.url(token, "sendMessage"), json={"chat_id": chat, "text": clip.caption,
                                                                              "disable_web_page_preview": True}))
                 stats["sent"] += 1
         except (httpx.HTTPError, RuntimeError) as exc:
             # В тексте сетевой ошибки адрес запроса с токеном: в лог только её вид
-            log.warning("видео в чат модератора: %s", exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+            log.warning("видео в чат модератора: %s", tg.error_text(exc))
             stats["failed"] += 1
     return stats

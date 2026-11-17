@@ -7,9 +7,15 @@ from pathlib import Path
 
 import httpx
 
-from vacante import autopost, channels, collect, digest, direct, geocode, instagram, quality, reach, review, venues
+from vacante import autopost, channels, collect, digest, direct, geocode, instagram, quality, reach, review, tg, venues
+from vacante.localtime import LOCAL
 from vacante.site import build
 from vacante.store import load_vacancies
+
+
+# Секреты бота: токен Telegram и доступ к его базе D1 в Cloudflare
+BOT_SECRETS = ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")
+D1_SECRETS = ("CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")
 
 
 def _read_json(path: Path) -> dict | None:
@@ -17,6 +23,27 @@ def _read_json(path: Path) -> dict | None:
         return json.loads(path.read_text("utf-8"))
     except (OSError, ValueError):
         return None
+
+
+def _secrets(names: tuple[str, ...]) -> dict[str, str] | None:
+    """Значения переменных окружения, или None, если хоть одной нет."""
+    env = {k: os.environ.get(k) for k in names}
+    return env if all(env.values()) else None
+
+
+def _d1(client: httpx.Client, env: dict[str, str]) -> digest.D1:
+    return digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+
+
+def _moderator_chats(d1: digest.D1) -> list[int]:
+    """Чаты модераторов (админов каналов, /admin в боте); пусто, пока бот не выложен."""
+    return [int(row["chat_id"]) for row in d1.query("SELECT chat_id FROM admins")] if d1.database_id() else []
+
+
+def _annotation(level: str, title: str, text: str) -> None:
+    """Аннотация GitHub Actions: её видно в сводке запуска и через REST API, без скачивания логов."""
+    text = text.replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+    print(f"::{level} title={title}::{text}")
 
 
 def main() -> None:
@@ -102,12 +129,10 @@ def main() -> None:
         logging.info("сбор: %s", stats)
         if geo := stats.get("geocode"):
             # Итог поиска адресов виден в сводке прогона и через REST API, без скачивания логов
-            level = "warning" if geo.get("stopped") else "notice"
-            print(f"::{level} title=Поиск адресов::{geocode.summary(geo).replace('%', '%25')}")
+            _annotation("warning" if geo.get("stopped") else "notice", "Поиск адресов", geocode.summary(geo))
     elif args.command == "geocheck":
         lines = geocode.check_report(geocode.check(load_vacancies(args.data_dir), args.sample))
-        text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
-        print(f"::notice title=Проверка поиска адресов::{text}")
+        _annotation("notice", "Проверка поиска адресов", "\n".join(lines))
     elif args.command == "quality":
         print(quality.report(args.data_dir, days=args.days))
     elif args.command == "replay":
@@ -163,12 +188,12 @@ def main() -> None:
     elif args.command == "draft":
         run_draft(args)
     elif args.command == "digest":
-        env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
-        if not all(env.values()):
+        env = _secrets(BOT_SECRETS)
+        if not env:
             logging.info("подборки: нет секретов бота или Cloudflare, пропускаю")
             return
         with httpx.Client(timeout=30) as client:
-            d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+            d1 = _d1(client, env)
             if d1.database_id() is None:
                 logging.info("подборки: базы бота ещё нет (бот не выложен), пропускаю")
                 return
@@ -203,8 +228,7 @@ def annotate(report: list[tuple[str, str]], title: str) -> None:
     for level in ("notice", "error"):
         lines = [f"{key}: {outcome}" for key, outcome in report if outcome.startswith("error") == (level == "error")]
         if lines:
-            text = "\n".join(lines).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
-            print(f"::{level} title={title}::{text}")
+            _annotation(level, title, "\n".join(lines))
 
 
 def run_video(args: argparse.Namespace) -> None:
@@ -220,13 +244,12 @@ def run_video(args: argparse.Namespace) -> None:
     if not args.send:
         print(f"::notice title=Видео::собрано: {names}")
         return
-    env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
-    if not all(env.values()):
+    env = _secrets(BOT_SECRETS)
+    if not env:
         print(f"::warning title=Видео::собрано: {names}; нет секретов бота или Cloudflare, не отправлено")
         return
     with httpx.Client(timeout=120) as client:
-        d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
-        chats = [int(row["chat_id"]) for row in d1.query("SELECT chat_id FROM admins")] if d1.database_id() else []
+        chats = _moderator_chats(_d1(client, env))
         stats = video.send(client, env["TELEGRAM_BOT_TOKEN"], chats, clips, args.out)
     level = "warning" if stats["failed"] or not chats else "notice"
     print(f"::{level} title=Видео::собрано: {names}; модераторов {len(chats)}, отправлено роликов {stats['sent']}, "
@@ -304,13 +327,12 @@ def run_draft(args: argparse.Namespace) -> None:
     if not args.send:
         print(f"::notice title=Черновик поста::{title}; не отправлено")
         return
-    env = {k: os.environ.get(k) for k in ("TELEGRAM_BOT_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
-    if not all(env.values()):
+    env = _secrets(BOT_SECRETS)
+    if not env:
         print(f"::warning title=Черновик поста::{title}; нет секретов бота или Cloudflare, не отправлено")
         return
     with httpx.Client(timeout=30) as client:
-        d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
-        chats = [int(row["chat_id"]) for row in d1.query("SELECT chat_id FROM admins")] if d1.database_id() else []
+        chats = _moderator_chats(_d1(client, env))
         stats = draft.send(client, env["TELEGRAM_BOT_TOKEN"], chats, found)
     if found and stats["sent"]:
         draft.remember(args.data_dir, found, now)  # тему, которую никто не получил, завтра можно взять снова
@@ -323,24 +345,24 @@ def direct_vacancies(data_dir: Path) -> list | None:
     """Одобренные вакансии от работодателей из базы бота, или None, если её не прочитать.
 
     Заодно выкладывает в data/moderation.json очередь на проверку для агента-модератора."""
-    env = {k: os.environ.get(k) for k in ("CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN")}
-    if not all(env.values()):
+    env = _secrets(D1_SECRETS)
+    if not env:
         return None
     try:
         with httpx.Client(timeout=30) as client:
-            d1 = digest.D1(client, env["CLOUDFLARE_ACCOUNT_ID"], env["CLOUDFLARE_API_TOKEN"])
+            d1 = _d1(client, env)
             if d1.database_id() is None:
                 return None
             queue = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                      "jobs": [direct.queue_item(job) for job in d1.review_queue()]}
             data_dir.mkdir(parents=True, exist_ok=True)
             (data_dir / "moderation.json").write_text(json.dumps(queue, ensure_ascii=False, indent=1) + "\n", "utf-8")
-            today = datetime.now(direct.LOCAL).date().isoformat()
+            today = datetime.now(LOCAL).date().isoformat()
             # Прошедшие смены бот закрывает сам, но до его будильника они не должны висеть на сайте
             return [direct.to_vacancy(job) for job in d1.approved_jobs()
                     if not (direct.is_shift(job) and job["shift_date"] < today)]
     except (httpx.HTTPError, RuntimeError) as exc:
-        logging.warning("вакансии от работодателей: %s", exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        logging.warning("вакансии от работодателей: %s", tg.error_text(exc))
         return None
 
 

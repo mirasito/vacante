@@ -19,7 +19,7 @@ from datetime import date, datetime, timedelta
 
 import httpx
 
-from vacante import direct, launch
+from vacante import launch, tg
 from vacante.models import Vacancy
 from vacante.site import i18n
 from vacante.site.build import city_heading, city_name
@@ -119,7 +119,7 @@ def run_channel(chat: str, city: str, state: dict, now: datetime, local_now: dat
             send(chat, daily_text(city, local_now.date(), count), buttons(city))
             stats["app"] = stats.get("app", 0) + 1
         except (httpx.HTTPError, RuntimeError) as exc:
-            log.warning("пост о приложении в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+            log.warning("пост о приложении в %s: %s", chat, tg.error_text(exc))
     if pin is not None:
         _keep_pinned(chat, city, state, now, send, pin, stats)
 
@@ -142,7 +142,7 @@ def _keep_pinned(chat: str, city: str, state: dict, now: datetime, send: ButtonS
     try:
         message_id = send(chat, pinned_text(city), buttons(city))
     except (httpx.HTTPError, RuntimeError) as exc:
-        log.warning("закреп о приложении в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        log.warning("закреп о приложении в %s: %s", chat, tg.error_text(exc))
         return
     if not message_id:
         return
@@ -156,7 +156,7 @@ def _keep_pinned(chat: str, city: str, state: dict, now: datetime, send: ButtonS
             pin(chat, cur["message_id"], False)
         except (httpx.HTTPError, RuntimeError) as exc:
             log.info("открепить старый пост о приложении в %s: %s", chat,
-                     exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+                     tg.error_text(exc))
 
 
 def _try_pin(chat: str, message_id: int, pin: Pinner) -> bool:
@@ -164,5 +164,5 @@ def _try_pin(chat: str, message_id: int, pin: Pinner) -> bool:
         pin(chat, message_id, True)
         return True
     except (httpx.HTTPError, RuntimeError) as exc:
-        log.warning("закрепить пост о приложении в %s: %s", chat, exc if isinstance(exc, RuntimeError) else type(exc).__name__)
+        log.warning("закрепить пост о приложении в %s: %s", chat, tg.error_text(exc))
         return False

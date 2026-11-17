@@ -17,12 +17,13 @@ from statistics import median
 import httpx
 from bs4 import BeautifulSoup
 
+from vacante import tg
+from vacante.localtime import LOCAL
 from vacante.sources.telegram import BASE_URL, USER_AGENT
 
 log = logging.getLogger(__name__)
 
 HOUR = 9  # замер раз в день после этого часа по Казахстану
-LOCAL = timezone(timedelta(hours=5))
 KEEP = 120  # сколько дней замеров помнить
 PAGES = 3  # сколько страниц превью листать назад, по ~20 постов
 AGE = (timedelta(hours=24), timedelta(hours=48))  # посты какого возраста считаем
@@ -74,7 +75,7 @@ def telegram_meter(client: httpx.Client, token: str) -> Meter:
     def meter(chat: str) -> dict | None:
         name = chat.lstrip("@")
         try:
-            r = client.post(f"https://api.telegram.org/bot{token}/getChatMemberCount", data={"chat_id": chat})
+            r = client.post(tg.url(token, "getChatMemberCount"), data={"chat_id": chat})
             subscribers = r.json().get("result") if r.status_code == 200 else None
             views: dict[int, tuple[datetime, int]] = {}
             before = None

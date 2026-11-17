@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { BackHandler, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { BackHandler, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { loadCity, loadIndex, loadPage, loadRole } from './src/api';
 import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
 import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { applyGate } from './src/applications/gate';
 import { Celebrate } from './src/applications/Celebrate';
+import { Details } from './src/Details';
 import { Booking } from './src/Booking';
 import { ChatsTab } from './src/Chats';
+import { Empty } from './src/Empty';
 import { InviteSheet, Locked, ReliabilityCard, ReliabilityPage, ReportSheet } from './src/Extras';
 import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
@@ -18,7 +20,7 @@ import { FeedList, type Dir } from './src/FeedList';
 import { Filters } from './src/Filters';
 import { DEFAULT_NEAR, kmFromHome, type NearKm, type Point } from './src/geo';
 import * as i18n from './src/i18n';
-import { Icon, type IconName } from './src/icons';
+import { Icon } from './src/icons';
 import {
   addToHomeScreen,
   downloadFile,
@@ -39,10 +41,8 @@ import {
   onAppVisible,
   phoneLocation,
   openUrl,
-  shareLink,
   telegram,
   useBackButton,
-  whatsapp,
   type HomeScreen,
 } from './src/platform';
 import { Onboarding } from './src/Onboarding';
@@ -82,12 +82,10 @@ import {
 } from './src/server';
 import { read, write } from './src/storage';
 import { Settings } from './src/Settings';
-import { useColors, type Colors } from './src/theme';
+import { useColors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
-import { Button, Chip, IconCircle, LangSwitch, Loading, Logo, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
-import { Avatar, VacancyFull } from './src/VacancyCard';
+import { Button, Chip, LangSwitch, Loading, Logo, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
 import { V } from './src/v2texts';
-import { sameEmployer, VenueView } from './src/Venue';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
 // beta: открыли по тестовой ссылке ?startapp=beta, профиль можно создать до общего запуска;
@@ -111,7 +109,7 @@ type Prefs = {
   /** Откуда человек пришёл в первый раз: метка источника из ссылки запуска (канал, реклама, видео). */
   source?: string;
 };
-type TabName = 'feed' | 'liked' | 'applications' | 'reminders' | 'chats' | 'profile';
+type TabName = 'feed' | 'applications' | 'reminders' | 'chats' | 'profile';
 /** На что откликаемся. fromLink — пришли по ссылке на отклик из канала, с сайта или из подборки бота. */
 type ApplyTarget = { copy: VacancyCopy; full?: Vacancy; fromLink?: boolean };
 type Seen = Record<string, 'l' | 'r'>;
@@ -1171,7 +1169,7 @@ function Main() {
           onRecord={() => setTab('profile')}
           onTab={setTab}
         />
-      ) : tab !== 'liked' ? (
+      ) : (
         <ApplicationsTab
           c={c}
           lang={lang}
@@ -1195,21 +1193,13 @@ function Main() {
           onBooking={tracker === 'server' ? setBooking : undefined}
           onInvite={tracker === 'server' ? () => setInviteOpen(true) : undefined}
         />
-      ) : (
-        <LikedList
-          items={liked}
-          lang={lang}
-          c={c}
-          onOpen={setOpen}
-          onRemove={(id) => setLiked((list) => list.filter((x) => x.id !== id))}
-        />
       )}
 
       <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]}>
         <Tab c={c} active={tab === 'feed'} icon="pin" label={t('feed')} onPress={() => setTab('feed')} />
         <Tab
           c={c}
-          active={tab === 'applications' || tab === 'liked'}
+          active={tab === 'applications'}
           icon="calendar"
           label={A[lang].tab}
           badge={trackerItems?.length}
@@ -1437,157 +1427,7 @@ function Main() {
   );
 }
 
-function shareVacancy(v: Vacancy, lang: Lang, via: 'any' | 'whatsapp') {
-  const pay = i18n.pay(v, lang);
-  const text = `${i18n.t(lang, 'shareText')} ${i18n.title(v, lang)}${pay ? ` — ${pay}` : ''}`;
-  haptic();
-  return via === 'whatsapp' ? whatsapp(text, v.url) : shareLink(text, v.url);
-}
-
-/** Страница вакансии из макета: назад, «Поделиться» и «Сохранить» сверху, отклик снизу. */
-function Details(props: {
-  v: Vacancy;
-  lang: Lang;
-  c: Colors;
-  home: Point | null;
-  /** Вакансии города: для страницы заведения. */
-  all: Vacancy[];
-  onOther(v: Vacancy): void;
-  onClose(): void;
-  onSave(): void;
-  onApply?(): void;
-  /** «Пожаловаться»: только когда вошли через Telegram (жалоба уходит модератору с аккаунтом). */
-  onReport?(): void;
-}) {
-  const { v, lang, c, onClose } = props;
-  const t = (key: i18n.Key) => i18n.t(lang, key);
-  const [venue, setVenue] = useState(false);
-  const others = v.employer ? props.all.filter((x) => sameEmployer(x, v)).length : 0;
-  const iconButton = (icon: IconName, label: string, onPress: () => void) => (
-    <Pressable onPress={onPress} hitSlop={10} accessibilityRole="button" accessibilityLabel={label} style={styles.iconButton}>
-      <Icon name={icon} color={c.ink} />
-    </Pressable>
-  );
-  return (
-    <SafeAreaView style={[styles.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
-      <View style={ui.column}>
-        <View style={styles.pageTop}>
-          {iconButton('back', t('back'), venue ? () => setVenue(false) : onClose)}
-          {venue ? null : (
-            <View style={styles.pageTopRight}>
-              {iconButton('share', t('share'), () => shareVacancy(v, lang, 'any'))}
-              {iconButton('heart', t('like'), props.onSave)}
-            </View>
-          )}
-        </View>
-        {venue ? (
-          <VenueView
-            v={v}
-            all={props.all}
-            lang={lang}
-            c={c}
-            onOpen={(x) => {
-              setVenue(false);
-              props.onOther(x);
-            }}
-          />
-        ) : (
-          <>
-            <ScrollView style={ui.flex}>
-              <VacancyFull v={v} lang={lang} c={c} home={props.home} />
-              {v.employer ? (
-                <Pressable
-                  onPress={() => setVenue(true)}
-                  accessibilityRole="button"
-                  style={[styles.venueCard, { borderColor: c.line, backgroundColor: c.card }]}
-                >
-                  <View style={ui.flex}>
-                    <Text style={[styles.venueTitle, { color: c.ink }]}>{t('aboutVenue')}</Text>
-                    <Text style={[styles.venueSub, { color: c.quiet }]} numberOfLines={1}>
-                      {v.employer}
-                      {others > 1 ? ` · ${i18n.count(others, lang)}` : ''}
-                    </Text>
-                  </View>
-                  <Icon name="next" color={c.faint} size={20} />
-                </Pressable>
-              ) : null}
-            </ScrollView>
-            <View style={[styles.pageActions, { borderColor: c.line }]}>
-              <Button c={c} label={t('apply')} onPress={props.onApply ?? (() => openUrl(v.source_url ?? v.url))} />
-              <View style={styles.pageLinks}>
-                <Button c={c} small ghost icon="chat" label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
-                {v.map ? <Button c={c} small ghost icon="map" label={t('onMap')} onPress={() => openUrl(v.map!)} /> : null}
-                <Button c={c} small ghost icon="link" label={t('onSite')} onPress={() => openUrl(v.url)} />
-                {props.onReport ? <Button c={c} small ghost icon="shield" label={V[lang].report} onPress={props.onReport} /> : null}
-              </View>
-            </View>
-          </>
-        )}
-      </View>
-    </SafeAreaView>
-  );
-}
-
-/** Пустая лента: значок в сером круге, заголовок, пояснение и кнопки. */
-function Empty(props: { c: Colors; icon: IconName; title: string; text: string; children?: ReactNode }) {
-  const { c } = props;
-  return (
-    <View style={ui.center}>
-      <IconCircle c={c} icon={props.icon} />
-      <Text style={[ui.h2, { color: c.ink }]}>{props.title}</Text>
-      <Text style={[ui.note, { color: c.quiet }]}>{props.text}</Text>
-      {/* Кнопки растягиваются по ширине в ряду: здесь обёртка, чтобы не растянулись по высоте */}
-      <View style={styles.endActions}>{props.children}</View>
-    </View>
-  );
-}
-
-function LikedList(props: {
-  items: Liked[];
-  lang: Lang;
-  c: Colors;
-  onOpen(v: Vacancy): void;
-  onRemove(id: string): void;
-}) {
-  const { items, lang, c, onOpen, onRemove } = props;
-  const t = (key: i18n.Key) => i18n.t(lang, key);
-  if (!items.length) return <Empty c={c} icon="heart" title={t('liked')} text={t('emptyLiked')} />;
-  return (
-    <FlatList
-      data={items}
-      keyExtractor={(v) => v.id}
-      ListHeaderComponent={<Text style={[ui.h1, styles.listTitle, { color: c.ink }]}>{t('liked')}</Text>}
-      contentContainerStyle={styles.likedList}
-      renderItem={({ item: v }) => (
-        <Pressable
-          onPress={() => onOpen(v)}
-          style={[styles.likedRow, { backgroundColor: c.card, borderColor: c.line }]}
-        >
-          <View style={styles.likedHead}>
-            <Avatar v={v} c={c} size={40} />
-            <View style={ui.flex}>
-              <Text style={[styles.likedTitle, { color: c.ink }]} numberOfLines={2}>
-                {i18n.title(v, lang)}
-              </Text>
-              <Text style={[styles.likedSub, { color: c.quiet }]} numberOfLines={1}>
-                {[v.employer, i18n.age(v.posted_at, lang)].filter(Boolean).join(' · ')}
-              </Text>
-            </View>
-          </View>
-          {i18n.pay(v, lang) ? <Text style={[styles.likedPay, { color: c.ink }]}>{i18n.pay(v, lang)}</Text> : null}
-          <View style={ui.row}>
-            <Button c={c} small label={t('apply')} onPress={() => openUrl(v.source_url ?? v.url)} />
-            <Button c={c} small ghost label={t('share')} onPress={() => shareVacancy(v, lang, 'any')} />
-            <Button c={c} small ghost label={t('remove')} onPress={() => onRemove(v.id)} />
-          </View>
-        </Pressable>
-      )}
-    />
-  );
-}
-
 const styles = StyleSheet.create({
-  logo: { fontSize: 22, fontWeight: '800', letterSpacing: -0.5 },
   pickerHead: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -1626,7 +1466,6 @@ const styles = StyleSheet.create({
   deckArea: { flex: 1 },
   countRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 36 },
   count: { fontSize: 13, fontWeight: '600' },
-  endActions: { alignSelf: 'stretch', gap: 10 },
   hint: {
     position: 'absolute',
     left: 16,
@@ -1641,17 +1480,6 @@ const styles = StyleSheet.create({
   hintText: { flex: 1, fontSize: 14, lineHeight: 19 },
   hintOk: { fontSize: 15, fontWeight: '800', textDecorationLine: 'underline' },
   tabs: { flexDirection: 'row', borderTopWidth: 1, paddingHorizontal: 8 },
-  listTitle: { paddingHorizontal: 0, marginTop: 4 },
-  likedList: { paddingHorizontal: 20, paddingBottom: 24, gap: 12 },
-  likedRow: { padding: 16, borderRadius: 16, borderWidth: 1, gap: 10 },
-  likedHead: { flexDirection: 'row', gap: 12, alignItems: 'flex-start' },
-  likedTitle: { fontSize: 18, fontWeight: '700', lineHeight: 23 },
-  likedSub: { fontSize: 13, marginTop: 2 },
-  likedPay: { fontSize: 20, fontWeight: '800', letterSpacing: -0.3 },
-  page: { flex: 1 },
-  pageTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 8 },
-  pageTopRight: { flexDirection: 'row', gap: 4 },
-  iconButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   headerRight: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   gear: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   dot: {
@@ -1669,18 +1497,4 @@ const styles = StyleSheet.create({
   dotText: { color: '#fff', fontSize: 10, fontWeight: '800', lineHeight: 12 },
   extra: { gap: 10 },
   locError: { fontSize: 13, paddingHorizontal: 20, paddingBottom: 6 },
-  venueCard: {
-    marginHorizontal: 20,
-    marginBottom: 20,
-    borderWidth: 1,
-    borderRadius: 16,
-    padding: 14,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-  },
-  venueTitle: { fontSize: 15, fontWeight: '700' },
-  venueSub: { fontSize: 13, marginTop: 2 },
-  pageActions: { paddingHorizontal: 20, paddingTop: 12, paddingBottom: 16, gap: 10, borderTopWidth: 1 },
-  pageLinks: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
 });

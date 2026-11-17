@@ -48,8 +48,8 @@ jobs:
         run: |
           ssh -i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20 \
             -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes "root@$SERVER_HOST" \
-            "sqlite3 -readonly -cmd \".parameter set :since '$SINCE'\" /var/lib/vacante/vacante.db" \
-            < server/deploy/stats.sql | tee stats.txt
+            "sqlite3 -readonly /var/lib/vacante/vacante.db" \
+            < <(sed "s/:since/'$SINCE'/g" server/deploy/stats.sql) | head -c 200000 | tee stats.txt
           { echo '```'; cat stats.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - name: Убрать ключи
         if: always()

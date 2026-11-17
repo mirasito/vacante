@@ -1,6 +1,6 @@
 -- Сводка по соискателям для workflow «Статистика»: только числа, без имён, телефонов и id.
 -- База открывается только на чтение (sqlite3 -readonly). Дни — по времени Казахстана (UTC+5).
--- Начало периода — параметр :since (ГГГГ-ММ-ДД), его подставляет workflow.
+-- Начало периода — :since (ГГГГ-ММ-ДД): workflow заменяет его на дату в кавычках.
 .headers on
 .mode column
 CREATE TEMP TABLE t AS SELECT strftime('%Y-%m-%dT%H:%M:%SZ', :since || 'T00:00:00', '-5 hours') AS cut;
@@ -32,7 +32,7 @@ UNION ALL SELECT 'открытий приложения (сумма по дня�
 UNION ALL SELECT 'начали анкету (сумма по дням)', (SELECT coalesce(SUM(n), 0) FROM funnel_counts WHERE step = 'profile_start' AND day >= :since);
 
 SELECT '--- по дням ---' AS '';
-WITH days(day) AS (SELECT :since UNION ALL SELECT date(day, '+1 day') FROM days WHERE day < date('now', '+5 hours'))
+WITH days(day) AS (SELECT :since UNION ALL SELECT date(day, '+1 day') FROM days WHERE day < date('now', '+5 hours') AND day < date(:since, '+400 days'))
 SELECT d.day,
   (SELECT COUNT(*) FROM prof WHERE prof.day = d.day) AS profiles,
   (SELECT COUNT(*) FROM sent WHERE sent.day = d.day) AS applications,

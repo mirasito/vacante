@@ -55,11 +55,16 @@ class Subscription:
 
 
 def matches(sub: Subscription, v: Vacancy) -> bool:
+    """«С зарплатой» — обязательное условие, остальные отмеченные условия — любое из них.
+    До 2026-11-17 требовались все сразу: подписчик, отметивший 8 условий, не получал ничего."""
     pay = monthly_pay(v) or 0
+    wanted = [p for p in sub.perks if p != SALARY]
+    perks = shifts.perks(v) if wanted else []
     return ((not sub.city or v.city == sub.city)
             and (not sub.categories or v.category in sub.categories)
             and pay >= sub.min_pay
-            and all(pay > 0 if p == SALARY else p in shifts.perks(v) for p in sub.perks))
+            and (SALARY not in sub.perks or pay > 0)
+            and (not wanted or any(p in perks for p in wanted)))
 
 
 def format_digest(hits: list[Vacancy], base_url: str) -> str:

@@ -36,6 +36,9 @@ def test_matches_city_category_perks_and_pay():
     assert not digest.matches(sub(categories=["retail"]), barista)
     assert digest.matches(sub(perks=["Без опыта", "salary"]), barista)
     assert not digest.matches(sub(perks=["Жильё"]), barista)
+    # Условия — любое из отмеченных, «С зарплатой» обязательна
+    assert digest.matches(sub(perks=["Жильё", "Без опыта", "Питание"]), barista)
+    assert not digest.matches(sub(perks=["Жильё", "Питание"]), barista)
     assert digest.matches(sub(min_pay=200000), barista)
     assert not digest.matches(sub(min_pay=300000), barista)
     assert not digest.matches(sub(perks=["salary"]), make(2, "Требуется грузчик на склад"))

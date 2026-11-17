@@ -57,6 +57,10 @@ test("подбор вакансий из feed.json", () => {
   assert.deepEqual(feed.filter((v) => bot.matches(press(sub, "pay", "pay"), v)).map((v) => v.id), []);
   assert.equal(bot.examples(press(sub, "cat:horeca"), feed), "Вот последние подходящие:\n\n<b>Бариста</b>");
   assert.match(bot.examples(press(sub, "perk:3"), feed), /подходящих вакансий нет/);
+  // Несколько условий — любое из них: «Без опыта» или «Жильё» находит бариста без опыта
+  const both = { ...sub, perks: ["Без опыта", "Жильё"] };
+  assert.deepEqual(feed.filter((v) => bot.matches(both, v)).map((v) => v.id), ["a"]);
+  assert.deepEqual(feed.filter((v) => bot.matches({ ...both, perks: ["Жильё", "Питание"] }, v)).map((v) => v.id), []);
 });
 
 test("секрет вебхука совпадает с тем, что ставит workflow", async () => {

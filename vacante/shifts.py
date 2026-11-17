@@ -7,8 +7,9 @@
 
 from __future__ import annotations
 
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta
 
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 
 # Условие фильтра на сайте и в подписке бота (options.json): то же слово, что и у остальных условий
@@ -61,9 +62,6 @@ def ordered(items: list[Vacancy]) -> list[Vacancy]:
 def perks(v: Vacancy) -> list[str]:
     """Условия вакансии вместе с «Смены и подработка»: по ним фильтр сайта и подписки бота."""
     return [*v.perks, SHIFT] if is_shift(v) else v.perks
-
-
-LOCAL = timezone(timedelta(hours=5))  # время Казахстана
 
 
 def upcoming(vacancies: list[Vacancy], now: datetime, hours: int = 36, days: int = 1) -> list[Vacancy]:

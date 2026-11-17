@@ -7,13 +7,12 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 from vacante.models import Vacancy
 from vacante.parse import CITIES, clean_text, detect_titles, fingerprint, parse_perks, parse_salary
 
 BOT_USERNAME = "vacantekz_bot"
-LOCAL = timezone(timedelta(hours=5))  # время Казахстана: день смены считаем по нему
 SOURCE = "bot"
 POST_URL = f"https://t.me/{BOT_USERNAME}?start=post"
 

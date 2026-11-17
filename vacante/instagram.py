@@ -30,6 +30,7 @@ from pathlib import Path
 import yaml
 
 from vacante import autopost, card, channels, review, venues
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.site.build import _locative, city_name, salary_label
 from vacante.store import load_vacancies
@@ -39,7 +40,6 @@ log = logging.getLogger(__name__)
 CONFIG = Path("config/instagram.yaml")
 STATE = "instagram.json"
 PLAN = "ig/plan.json"
-LOCAL = autopost.LOCAL
 MAX_ITEMS = 9  # и обложка: в карусели не больше 10 карточек
 MIN_ITEMS = 2  # меньше двух вакансий — подборку не делаем, ждём следующего раза
 FRESH = timedelta(days=3)  # старше трёх суток в подборку не берём

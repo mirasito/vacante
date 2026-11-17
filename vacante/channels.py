@@ -17,6 +17,8 @@ from pathlib import Path
 import httpx
 import yaml
 
+from vacante import tg
+
 log = logging.getLogger(__name__)
 
 CONFIG = Path("config/own_channels.yaml")
@@ -92,7 +94,7 @@ def telegram_checker(client: httpx.Client, token: str) -> Checker:
 
     def check(chat: str) -> bool | None:
         try:
-            r = client.post(f"https://api.telegram.org/bot{token}/getChatMember",
+            r = client.post(tg.url(token, "getChatMember"),
                             data={"chat_id": chat, "user_id": bot_id})
         except httpx.HTTPError:
             return None

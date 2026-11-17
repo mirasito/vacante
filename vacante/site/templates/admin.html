@@ -84,7 +84,15 @@ td.nowrap { white-space: nowrap; }
 .emp-row:hover td, .emp-row:focus td { background: var(--line); }
 .emp-ava { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; background: var(--line); display: inline-grid; place-items: center; font-weight: 700; color: var(--quiet); vertical-align: middle; margin-right: 8px; flex: none; }
 .emp-name { display: flex; align-items: center; }
-#emp-card[hidden] { display: none; }
+#emp-card[hidden], #sk-card[hidden] { display: none; }
+#sk-card { border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 12px 0 20px; }
+#sk-card .head { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+#sk-card .media img, #sk-card .media video { width: 140px; height: 140px; object-fit: cover; border-radius: 12px; display: block; }
+#sk-card .media video { border-radius: 50%; }
+#sk-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 12px 0; }
+#sk-card dt { color: var(--quiet); }
+#sk-card dd { margin: 0; }
+#sk tbody tr { cursor: pointer; }
 #emp-card { border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 12px 0 20px; }
 #emp-card .head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 #emp-card .head h3 { margin: 0; font-size: 20px; }
@@ -151,6 +159,7 @@ td.nowrap { white-space: nowrap; }
   <nav class="tabs" role="tablist">
     <button type="button" role="tab" data-tab="stats" aria-selected="true">Сбор и посты</button>
     <button type="button" role="tab" data-tab="funnel" aria-selected="false">Воронка</button>
+    <button type="button" role="tab" data-tab="sk" aria-selected="false">Соискатели</button>
     <button type="button" role="tab" data-tab="emp" aria-selected="false">Работодатели</button>
     <button type="button" role="tab" data-tab="crm" aria-selected="false">CRM заведений</button>
     <button type="button" role="tab" data-tab="jobs" aria-selected="false">Работодатели в боте</button>
@@ -262,6 +271,29 @@ td.nowrap { white-space: nowrap; }
   <p class="quiet">Нажатия на «WhatsApp», «Позвонить» и «Telegram» на сайте (web), под постами в каналах (tg) и в подборках бота (bot). «Не нашли контакт» — человек ушёл на исходный пост: номера в посте не оказалось или пост удалён. «Разместить вакансию» — работодатель на странице профиля кандидата (page) нажал кнопку размещения. Считаются нажатия, а не люди.</p>
   <div class="scroll"><table id="funnel-clicks">
     <thead><tr><th>День</th><th>Откуда</th><th class="num">WhatsApp</th><th class="num">Позвонить</th><th class="num">Telegram</th><th class="num">Не нашли контакт</th><th class="num">Разместить вакансию</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  </div>
+
+  <div id="tab-sk" hidden>
+  <p class="quiet">Все, кто заполнил профиль в приложении: анкета, телефон, фото, кружок и отклики. Данные берутся прямо с сервера api.vacante.kz в Казахстане при открытии вкладки и на GitHub не хранятся; точка дома сюда не попадает. Нажмите на строку, чтобы открыть профиль. Открытие здесь человеку не приходит, в отличие от ссылки p.vacante.kz. «В базе» — человек разрешил показывать профиль работодателям базы.</p>
+  <p class="err" id="sk-error" hidden></p>
+  <div class="filters">
+    <div class="seg" id="sk-has">
+      <button type="button" data-v="" aria-pressed="true">Все</button>
+      <button type="button" data-v="sent" aria-pressed="false">С откликами</button>
+      <button type="button" data-v="phone" aria-pressed="false">Есть телефон</button>
+      <button type="button" data-v="video" aria-pressed="false">Есть кружок</button>
+      <button type="button" data-v="looking" aria-pressed="false">Ищут сейчас</button>
+      <button type="button" data-v="base" aria-pressed="false">В базе</button>
+    </div>
+    <select id="sk-city" aria-label="Город"><option value="">Все города</option></select>
+    <input id="sk-q" type="search" placeholder="Имя, профессия или телефон" aria-label="Поиск соискателя">
+  </div>
+  <p class="quiet" id="sk-count">Загружаю…</p>
+  <section id="sk-card" hidden aria-live="polite"></section>
+  <div class="scroll"><table id="sk">
+    <thead><tr><th>Профиль создан</th><th>Имя</th><th>Город</th><th>Профессии</th><th>Телефон</th><th>Опыт, график</th><th class="n">Откликов</th><th>Кружок, фото</th><th>Заходил</th></tr></thead>
     <tbody></tbody>
   </table></div>
   </div>
@@ -570,11 +602,12 @@ td.nowrap { white-space: nowrap; }
     }
 
     renderCrm(data.crm || [], now, data.crm_api);
-    let jobsLoaded = false, empLoaded = false, funnelLoaded = false;
+    let jobsLoaded = false, empLoaded = false, funnelLoaded = false, skLoaded = false;
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
-      for (const tab of ["stats", "funnel", "emp", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
+      for (const tab of ["stats", "funnel", "sk", "emp", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
       if (b.dataset.tab === "funnel" && !funnelLoaded && data.funnel_api) { funnelLoaded = true; renderFunnel(data.funnel_api); }
+      if (b.dataset.tab === "sk" && !skLoaded && data.seekers_api) { skLoaded = true; renderSeekers(data.seekers_api); }
       if (b.dataset.tab === "jobs" && !jobsLoaded && data.jobs_api) { jobsLoaded = true; renderJobs(data.jobs_api, data.cities || {}); }
       if (b.dataset.tab === "emp" && !empLoaded && data.employers_api) { empLoaded = true; renderEmployers(data.employers_api, data.cities || {}, data.crm_api); }
     }));
@@ -674,6 +707,133 @@ td.nowrap { white-space: nowrap; }
       throw new Error(r.status === 403 ? "сервер не принял пароль" : r.status === 503 ? "на сервере не задан пароль админки" : text || "ошибка " + r.status);
     }
     return r.json();
+  }
+
+  // Соискатели с профилем (server/src/admin-seekers.ts): список, карточка, фото и кружок тем же ключом, что у CRM
+  async function crmBlob(url) {
+    const r = await fetch(url, { headers: { Authorization: await crmAuth() } });
+    if (!r.ok) throw new Error("ошибка " + r.status);
+    return URL.createObjectURL(await r.blob());
+  }
+  const waLink = (raw) => (raw ? `https://wa.me/${raw.replace(/\D/g, "")}` : "");
+  async function renderSeekers(api) {
+    let rows;
+    try {
+      rows = (await crmFetch(api)).seekers;
+    } catch (e) {
+      $("#sk-error").hidden = false;
+      $("#sk-error").textContent = `Сервер не ответил (${e.message}). Если вкладка новая, сервер ещё выкладывается: попробуйте через 10 минут.`;
+      $("#sk-count").textContent = "";
+      return;
+    }
+    const now = Date.now();
+    let has = "", open = null, urls = [];
+    const cities = [...new Set(rows.map((r) => r.city))].sort();
+    $("#sk-city").innerHTML += cities.map((c) => `<option>${esc(c)}</option>`).join("");
+    const day = (iso) => (iso ? new Date(iso).toLocaleDateString("ru-RU", { day: "numeric", month: "short", timeZone: "Asia/Almaty" }) : "—");
+    const draw = () => {
+      const q = $("#sk-q").value.trim().toLowerCase();
+      const qd = q.replace(/\D/g, "");
+      const city = $("#sk-city").value;
+      const list = rows.filter((r) => {
+        if (city && r.city !== city) return false;
+        if (has === "sent" && !r.sent) return false;
+        if (has === "phone" && !r.phone) return false;
+        if (has === "video" && r.video === null) return false;
+        if (has === "looking" && !r.looking) return false;
+        if (has === "base" && !r.base) return false;
+        if (!q) return true;
+        const text = [r.name, ...r.roles, ...(r.jobs || []).map((j) => j.place + " " + j.role)].join(" ").toLowerCase();
+        return text.includes(q) || (qd.length >= 3 && (r.phone_raw || "").includes(qd));
+      });
+      $("#sk-count").textContent = `Профилей: ${num(list.length)} из ${num(rows.length)}, с откликами: ${num(list.filter((r) => r.sent).length)}, с телефоном: ${num(list.filter((r) => r.phone).length)}`;
+      $("#sk tbody").innerHTML = list.length ? list.map((r) => `<tr data-id="${r.id}">
+        <td>${esc(day(r.created_at))}</td>
+        <td><b>${esc(r.name)}</b>${r.looking ? ` <span class="quiet">· ищет сейчас</span>` : ""}</td>
+        <td>${esc(r.city)}${r.district ? `<br><span class="quiet">${esc(r.district)}</span>` : ""}</td>
+        <td>${esc(r.roles.join(", "))}</td>
+        <td>${r.phone ? `<a href="tel:${esc(r.phone_raw)}">${esc(r.phone)}</a> · <a href="${esc(waLink(r.phone_raw))}" target="_blank" rel="noopener">WA</a>` : `<span class="quiet">нет</span>`}</td>
+        <td>${esc([r.experience, r.employment].filter(Boolean).join("; ") || "—")}</td>
+        <td class="n">${num(r.sent)}${r.invited ? `<br><span class="quiet">приглашений: ${num(r.invited)}</span>` : ""}</td>
+        <td>${[r.video !== null ? `🎥 ${r.video} с` : "", r.photo ? "📷" : ""].filter(Boolean).join(" ") || `<span class="quiet">—</span>`}</td>
+        <td>${esc(ago(r.seen_at, now))}</td>
+      </tr>`).join("") : `<tr><td colspan="9" class="quiet">Никого не нашлось</td></tr>`;
+    };
+    const close = () => {
+      for (const u of urls) URL.revokeObjectURL(u);
+      urls = [];
+      open = null;
+      $("#sk-card").hidden = true;
+    };
+    const card = async (r) => {
+      close();
+      open = r.id;
+      const line = (label, value) => (value ? `<dt>${esc(label)}</dt><dd>${value}</dd>` : "");
+      const jobs = (r.jobs || []).map((j) => `${esc(j.role)} — ${esc(j.place)}${j.term ? ` <span class="quiet">(${esc(j.term)})</span>` : ""}`).join("<br>");
+      $("#sk-card").hidden = false;
+      $("#sk-card").innerHTML = `
+        <div class="head">
+          <div class="media" id="sk-media"></div>
+          <div style="flex:1;min-width:220px">
+            <h2 style="margin:0">${esc(r.name)}</h2>
+            <p class="quiet" style="margin:4px 0">${esc(r.city)}${r.district ? ", " + esc(r.district) : ""} · ${esc(r.roles.join(", "))}</p>
+            <p style="margin:4px 0">${r.phone ? `<a href="tel:${esc(r.phone_raw)}">${esc(r.phone)}</a> · <a href="${esc(waLink(r.phone_raw))}" target="_blank" rel="noopener">WhatsApp</a>` : `<span class="quiet">Телефона нет</span>`}</p>
+          </div>
+          <button type="button" class="more" id="sk-close" style="margin:0">Закрыть</button>
+        </div>
+        <dl>
+          ${line("Опыт", esc(r.experience))}
+          ${line("График", esc(r.employment))}
+          ${line("Зарплата", esc(r.pay))}
+          ${line("Выйдет", esc(r.start))}
+          ${line("Где работал", jobs)}
+          ${line("Навыки", esc((r.skills || []).join(", ")))}
+          ${line("Языки", esc(r.languages))}
+          ${line("Документы", esc(r.documents))}
+          ${line("Пробная смена", r.trial ? "готов" : "")}
+          ${line("О себе", esc(r.about))}
+          ${line("Ищет сейчас", r.looking ? "да" : "")}
+          ${line("Дом указан", r.home ? "да (точку видит только сам человек)" : "")}
+          ${line("В базе для работодателей", r.base ? "да" : "нет")}
+          ${line("Язык приложения", r.lang === "kk" ? "казахский" : "русский")}
+          ${line("Откуда пришёл", esc(r.source))}
+          ${line("Профиль создан", esc(when(r.created_at)))}
+          ${line("Анкета изменена", esc(when(r.updated_at)))}
+          ${line("Последний вход", esc(when(r.seen_at)))}
+        </dl>
+        <h3>Отклики</h3>
+        <div id="sk-apps" class="quiet">${r.sent || r.invited ? "Загружаю…" : "Откликов пока нет"}</div>`;
+      $("#sk-close").addEventListener("click", close);
+      $("#sk-card").scrollIntoView({ behavior: "smooth", block: "start" });
+      const base = api + "/" + r.id;
+      if (r.photo) crmBlob(base + "/photo.jpg").then((u) => { if (open !== r.id) return URL.revokeObjectURL(u); urls.push(u); $("#sk-media").insertAdjacentHTML("beforeend", `<img src="${u}" alt="Фото">`); }).catch(() => {});
+      if (r.video !== null) crmBlob(base + "/video.mp4").then((u) => { if (open !== r.id) return URL.revokeObjectURL(u); urls.push(u); $("#sk-media").insertAdjacentHTML("beforeend", `<video src="${u}" controls playsinline preload="metadata" style="margin-top:8px"></video>`); }).catch(() => {});
+      try {
+        const apps = (await crmFetch(base + "/applications")).applications;
+        if (open !== r.id) return;
+        $("#sk-apps").classList.remove("quiet");
+        $("#sk-apps").innerHTML = apps.length ? `<div class="scroll"><table><thead><tr><th>Когда</th><th>Вакансия</th><th>Работодатель</th><th>Как</th><th>Этап</th></tr></thead><tbody>${apps.map((a) => `<tr>
+          <td>${esc(day(a.sent_at || a.created_at))}</td>
+          <td>${a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a>` : esc(a.title)}</td>
+          <td>${esc(a.employer || "—")}</td><td>${esc(a.method || "—")}</td><td>${esc(a.stage)}</td></tr>`).join("")}</tbody></table></div>` : `<span class="quiet">Откликов пока нет</span>`;
+      } catch (e) {
+        if (open === r.id) $("#sk-apps").textContent = `Не удалось загрузить отклики (${e.message})`;
+      }
+    };
+    $("#sk-has").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+      $("#sk-has").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      has = b.dataset.v;
+      draw();
+    }));
+    $("#sk-city").addEventListener("change", draw);
+    $("#sk-q").addEventListener("input", draw);
+    $("#sk tbody").addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      const tr = e.target.closest("tr[data-id]");
+      const r = tr && rows.find((x) => String(x.id) === tr.dataset.id);
+      if (r) card(r);
+    });
+    draw();
   }
 
   // Работодатели из бота (bot/src/crm.js, /api/jobs): время в D1 в UTC вида «2026-11-01 13:27:32»

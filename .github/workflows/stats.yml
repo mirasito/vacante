@@ -12,7 +12,7 @@ on:
         default: "2026-11-01"
   push:
     branches: ["claude/**"]
-    paths: ["server/deploy/stats.sql", ".github/workflows/stats.yml"]
+    paths: ["server/deploy/stats.sql", "server/deploy/bot_stats.py", ".github/workflows/stats.yml"]
 
 permissions:
   contents: read
@@ -51,6 +51,13 @@ jobs:
             "sqlite3 -readonly /var/lib/vacante/vacante.db" \
             < <(sed "s/:since/'$SINCE'/g" server/deploy/stats.sql) | head -c 200000 | tee stats.txt
           { echo '```'; cat stats.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Бот
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          pip install --quiet -e .
+          python server/deploy/bot_stats.py
       - name: Убрать ключи
         if: always()
         run: rm -rf "$KEYS"

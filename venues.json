@@ -3988,6 +3988,13 @@
   "avatar": "bae2fc00a0844752.jpg",
   "avatar_source": "website"
  },
+ "aktobe:кускулаков м н": {
+  "name": "КУСКУЛАКОВ М.Н.",
+  "city": "aktobe",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "aktobe:лентелефонстрой ум": {
   "name": "Лентелефонстрой-УМ",
   "city": "aktobe",
@@ -10120,6 +10127,19 @@
   "instagram": "fabe_fb",
   "source": "https://2gis.kz/almaty/firm/9429940001484873"
  },
+ "almaty:fabis chemical group фабис кемикал групп": {
+  "name": "FABIS CHEMICAL GROUP (ФАБИС КЕМИКАЛ ГРУПП)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00",
+  "website": "https://www.fabis.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001090108490",
+  "avatar_checked_at": "2026-11-17T13:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:falcon logistic": {
   "name": "FALCON LOGISTIC",
   "city": "almaty",
@@ -14928,6 +14948,20 @@
   "v": 3,
   "checked_at": "2026-11-10T20:46:07+00:00"
  },
+ "almaty:migron": {
+  "name": "Migron",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00",
+  "instagram": "migron_kz",
+  "telegram": "migronkz",
+  "source": "https://2gis.kz/almaty/firm/70000001067241721",
+  "avatar_checked_at": "2026-11-17T13:45:07+00:00",
+  "avatar_tried": [
+   "telegram"
+  ]
+ },
  "almaty:milash": {
   "name": "Milash",
   "city": "almaty",
@@ -15224,6 +15258,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T22:42:38+00:00"
+ },
+ "almaty:multistrada": {
+  "name": "Multistrada",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "almaty:muscat almaty": {
   "name": "Muscat Almaty",
@@ -34831,6 +34872,13 @@
   "v": 3,
   "checked_at": "2026-11-05T01:43:37+00:00"
  },
+ "astana:antara global": {
+  "name": "ANTARA GLOBAL",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "astana:antonovych design": {
   "name": "ANTONOVYCH DESIGN",
   "city": "astana",
@@ -35824,6 +35872,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T12:44:06+00:00"
+ },
+ "astana:boden group": {
+  "name": "BODEN Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "astana:bodrum coffee": {
   "name": "Bodrum Coffee",
@@ -40244,6 +40299,13 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "astana:modno lux": {
+  "name": "Modno Lux",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "astana:monaco": {
   "name": "Monaco",
   "city": "astana",
@@ -43137,6 +43199,13 @@
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
  },
+ "astana:the future company": {
+  "name": "The Future Company",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "astana:the kitchen group": {
   "name": "THE KITCHEN GROUP",
   "city": "astana",
@@ -43164,6 +43233,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:tinak": {
+  "name": "TINAK",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "astana:tion kz": {
   "name": "TION.KZ",
@@ -43444,6 +43520,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T07:44:35+00:00"
+ },
+ "astana:united dance space": {
+  "name": "United Dance Space",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00",
+  "instagram": "united_dance_space",
+  "website": "http://united-dance-space.com/",
+  "source": "https://2gis.kz/astana/firm/70000001038891024",
+  "avatar_checked_at": "2026-11-17T13:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:united expo юнайтед експо": {
   "name": "United Expo (Юнайтед Експо)",
@@ -44981,6 +45071,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-15T06:42:12+00:00"
+ },
+ "astana:аружана": {
+  "name": "Аружана",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "astana:арыстан": {
   "name": "Арыстан",
@@ -49916,6 +50013,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "astana:посольство хашимитского королевства иордания в республике казахстан": {
+  "name": "Посольство Хашимитского Королевства Иордания в Республике Казахстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00",
+  "website": "https://www.mfa.gov.jo/ru/embassy/Nur-Sultan-Russian",
+  "source": "https://2gis.kz/astana/firm/70000001074794197",
+  "avatar_checked_at": "2026-11-17T13:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:посохова с а": {
   "name": "Посохова С.А",
@@ -55032,6 +55142,21 @@
    "website"
   ]
  },
+ "atyrau:каспгео": {
+  "name": "КаспГео",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00",
+  "website": "https://www.caspgeo.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001035632529",
+  "avatar_checked_at": "2026-11-17T13:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "6457b7127fa6c2f7.jpg",
+  "avatar_source": "website"
+ },
  "atyrau:кафе marimo ип рысмендиева озкурт": {
   "name": "кафе Marimo (ИП Рысмендиева-Озкурт)",
   "city": "atyrau",
@@ -55789,6 +55914,13 @@
    "website"
   ]
  },
+ "karaganda:aksenger ltd": {
+  "name": "Aksenger LTD",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "karaganda:aleev": {
   "name": "Aleev",
   "city": "karaganda",
@@ -56282,6 +56414,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T17:43:26+00:00"
+ },
+ "karaganda:get target agency": {
+  "name": "Get Target Agency",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "karaganda:global drinks distribution": {
   "name": "GLOBAL DRINKS DISTRIBUTION",
@@ -58911,6 +59050,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:серикова к т": {
+  "name": "Серикова К.Т.",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "karaganda:сеть магазинов цифровой и бытовой техники днс казахстан": {
   "name": "Сеть магазинов цифровой и бытовой техники ДНС КАЗАХСТАН",
@@ -64145,6 +64291,13 @@
   "v": 3,
   "checked_at": "2026-11-13T05:44:11+00:00"
  },
+ "pavlodar:арман": {
+  "name": "Арман",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "pavlodar:бакулин в с": {
   "name": "Бакулин В.С.",
   "city": "pavlodar",
@@ -65723,6 +65876,13 @@
   "avatar": "e2850ad6049549da.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:qsr тм burger king": {
+  "name": "“QSR” ,ТМ BURGER KING",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
+ },
  "petropavlovsk:railways systems kz": {
   "name": "Railways Systems KZ",
   "city": "petropavlovsk",
@@ -66199,6 +66359,19 @@
   ],
   "avatar": "8d956ea37dd8cb32.jpg",
   "avatar_source": "telegram"
+ },
+ "petropavlovsk:кгу петропавловский центр социального обслуживания управления координации занятости и социальных программ ско": {
+  "name": "КГУ «Петропавловский центр социального обслуживания» управления координации занятости и социальных программ СКО.",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00",
+  "website": "https://pcso.sko.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038563091",
+  "avatar_checked_at": "2026-11-17T13:45:07+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "petropavlovsk:кодерлайн": {
   "name": "Кодерлайн",
@@ -78267,6 +78440,13 @@
   ],
   "avatar": "f7165706bd938f56.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:электроснабжение": {
+  "name": "Электроснабжение",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T13:45:06+00:00"
  },
  "ust-kamenogorsk:эмиль": {
   "name": "Эмиль",

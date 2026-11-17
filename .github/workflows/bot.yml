@@ -101,17 +101,19 @@ jobs:
           # описание (профиль и пересылка ссылки) и меню команд, по умолчанию на русском и отдельно
           # для казахского интерфейса Telegram. Аватар и картинка к описанию только через @BotFather.
           # Русский ставится без language_code и виден всем, у кого интерфейс не на казахском.
-          for lang in $(jq -r '.languages | keys[]' ../profile.json); do
+          # Отдельной строкой, чтобы ошибка чтения файла остановила шаг (внутри for она теряется)
+          langs=$(jq -r '.languages | keys[]' profile.json)
+          for lang in $langs; do
             code=$lang; [ "$lang" = ru ] && code=
-            jq --arg l "$lang" --arg c "$code" '{description: .languages[$l].description, language_code: $c}' ../profile.json \
+            jq --arg l "$lang" --arg c "$code" '{description: .languages[$l].description, language_code: $c}' profile.json \
               | curl -fsS "$tg/setMyDescription" -H "Content-Type: application/json" -d @- | jq -c --arg l "$lang" '{lang: $l, description: .ok}'
-            jq --arg l "$lang" --arg c "$code" '{short_description: .languages[$l].short_description, language_code: $c}' ../profile.json \
+            jq --arg l "$lang" --arg c "$code" '{short_description: .languages[$l].short_description, language_code: $c}' profile.json \
               | curl -fsS "$tg/setMyShortDescription" -H "Content-Type: application/json" -d @- | jq -c --arg l "$lang" '{lang: $l, short_description: .ok}'
-            jq --arg l "$lang" --arg c "$code" '{commands: .languages[$l].commands, language_code: $c}' ../profile.json \
+            jq --arg l "$lang" --arg c "$code" '{commands: .languages[$l].commands, language_code: $c}' profile.json \
               | curl -fsS "$tg/setMyCommands" -H "Content-Type: application/json" -d @- | jq -c --arg l "$lang" '{lang: $l, commands: .ok}'
           done
           # Кнопка слева от поля ввода открывает приложение со свайпами (app/, выложено на сайте в /app/)
-          jq '{menu_button}' ../profile.json \
+          jq '{menu_button}' profile.json \
             | curl -fsS "$tg/setChatMenuButton" -H "Content-Type: application/json" -d @- | jq -c '{ok}'
           # Главное приложение бота (Main Mini App) включают только в @BotFather: с ним у бота появляется
           # кнопка «Открыть» в профиле и работают ссылки t.me/<бот>?startapp=<город>

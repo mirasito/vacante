@@ -1741,7 +1741,7 @@
   "checked_at": "2026-11-03T07:45:16+00:00",
   "website": "https://5-ballov.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001080072487",
-  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6899,6 +6899,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T10:44:23+00:00"
+ },
+ "almaty:azimut tehnika": {
+  "name": "Azimut Tehnika",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "almaty:aлматы энерго kz": {
   "name": "Aлматы Энерго KZ",
@@ -15130,7 +15137,7 @@
   "instagram": "mykhat.kz",
   "website": "https://www.mykhat.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001029818433",
-  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20000,6 +20007,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:vego motors": {
+  "name": "VeGo Motors",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
+ },
  "almaty:velaris marketing services via social media l l c": {
   "name": "VELARIS MARKETING SERVICES VIA SOCIAL MEDIA L.L.C",
   "city": "almaty",
@@ -20721,7 +20735,7 @@
   "instagram": "zhanartravel.almaty",
   "website": "http://zhanar.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001080778747",
-  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21227,6 +21241,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T14:44:20+00:00"
+ },
+ "almaty:агентство недвижимости legenda": {
+  "name": "АГЕНТСТВО НЕДВИЖИМОСТИ LEGENDA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "legendarealestate",
+  "source": "https://2gis.kz/almaty/firm/70000001109809639"
  },
  "almaty:агентство недвижимости мечта": {
   "name": "АГЕНТСТВО НЕДВИЖИМОСТИ МЕЧТА",
@@ -24197,6 +24220,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T20:44:15+00:00"
+ },
+ "almaty:даежъ": {
+  "name": "Даёжъ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "almaty:дакенов": {
   "name": "Дакенов",
@@ -29635,6 +29665,13 @@
   "v": 3,
   "checked_at": "2026-11-15T22:43:10+00:00"
  },
+ "almaty:премиум кеа груп": {
+  "name": "Премиум Кеа Груп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
+ },
  "almaty:премьера мини маркет": {
   "name": "Премьера мини маркет",
   "city": "almaty",
@@ -31514,6 +31551,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:тасқын": {
+  "name": "Тасқын",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "almaty:тау жетысу": {
   "name": "ТАУ ЖЕТЫСУ",
@@ -37653,6 +37697,20 @@
   "v": 3,
   "checked_at": "2026-11-16T16:44:05+00:00"
  },
+ "astana:happy travel астана 2": {
+  "name": "Happy Travel Астана 2",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "happytravelastana",
+  "website": "https://astana.happy-travel.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001060009743",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:haridus харидус": {
   "name": "Haridus (Харидус)",
   "city": "astana",
@@ -37723,6 +37781,20 @@
   "website": "https://herosjourney.kz/",
   "source": "https://2gis.kz/astana/firm/70000001096917208",
   "avatar_checked_at": "2026-11-13T08:45:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:holodok": {
+  "name": "HOLODOK",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "holodok.astana",
+  "website": "http://holodoks.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001101886746",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38928,7 +39000,7 @@
   "instagram": "kultura_diktuet",
   "website": "https://www.kulturadiktuet.com/",
   "source": "https://2gis.kz/astana/firm/70000001063901576",
-  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40645,6 +40717,13 @@
   "avatar": "ec63500866ae0737.jpg",
   "avatar_source": "website"
  },
+ "astana:peoples lounge bar": {
+  "name": "PEOPLE’S LOUNGE BAR",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
+ },
  "astana:perfect e&a": {
   "name": "Perfect E&A",
   "city": "astana",
@@ -40704,6 +40783,13 @@
   "checked_at": "2026-11-03T04:43:49+00:00",
   "instagram": "poolandbeer.kz",
   "source": "https://2gis.kz/astana/firm/70000001095607265"
+ },
+ "astana:portofino lt": {
+  "name": "PORTOFINO LT",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "astana:poseydon": {
   "name": "POSEYDON",
@@ -43583,6 +43669,13 @@
   "avatar": "149409433660aebb.jpg",
   "avatar_source": "telegram"
  },
+ "astana:абылайхан": {
+  "name": "Абылайхан",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
+ },
  "astana:авангард сауда": {
   "name": "АВАНГАРД САУДА",
   "city": "astana",
@@ -44222,6 +44315,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "astana:амангелды": {
+  "name": "Амангелды",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "astana:амангелді": {
   "name": "АМАНГЕЛДІ",
@@ -54742,6 +54842,15 @@
    "website"
   ]
  },
+ "atyrau:спортландия": {
+  "name": "СПОРТЛАНДИЯ",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "sportlandia.kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001034969225"
+ },
  "atyrau:спортмастер казахстан": {
   "name": "Спортмастер Казахстан",
   "city": "atyrau",
@@ -57002,7 +57111,7 @@
   "checked_at": "2026-11-03T07:45:16+00:00",
   "website": "https://www.gsdm.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302830373",
-  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60140,6 +60249,20 @@
   ],
   "avatar": "e575f255aa419609.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:fessla": {
+  "name": "Fessla",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "fessla_kostanay",
+  "website": "https://fessla.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001035181829",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -64993,6 +65116,20 @@
   "instagram": "sardana.remont15",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001099157220"
  },
+ "petropavlovsk:sens fashion": {
+  "name": "SENS FASHION",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "sens.school.kz",
+  "website": "http://sensfashion.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038244502",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:servernet": {
   "name": "ServerNet",
   "city": "petropavlovsk",
@@ -66524,6 +66661,13 @@
   "checked_at": "2026-11-16T04:43:18+00:00",
   "instagram": "oina_semey",
   "source": "https://2gis.kz/semej/firm/70000001111168045"
+ },
+ "semey:optimus kz": {
+  "name": "Optimus kz",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "semey:orhun medical": {
   "name": "Orhun Medical",
@@ -69520,6 +69664,13 @@
   "v": 3,
   "checked_at": "2026-11-13T10:43:49+00:00"
  },
+ "shymkent:uidegroup": {
+  "name": "Uidegroup",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
+ },
  "shymkent:umir kz": {
   "name": "UMIR KZ",
   "city": "shymkent",
@@ -69671,7 +69822,7 @@
   "checked_at": "2026-11-03T07:45:16+00:00",
   "website": "https://autopiter.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001093712167",
-  "avatar_checked_at": "2026-11-10T08:43:54+00:00",
+  "avatar_checked_at": "2026-11-17T08:44:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70116,6 +70267,13 @@
   "avatar": "4b773eab5249020c.jpg",
   "avatar_source": "website"
  },
+ "shymkent:жунусова а ж": {
+  "name": "ЖУНУСОВА А.Ж.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
+ },
  "shymkent:жұманова ақерке": {
   "name": "Жұманова Ақерке",
   "city": "shymkent",
@@ -70389,6 +70547,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "shymkent:кофемолка": {
+  "name": "Кофемолка",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00",
+  "instagram": "coffeemolka_shymkent",
+  "source": "https://2gis.kz/shymkent/firm/70000001026040680"
  },
  "shymkent:кристалл авто": {
   "name": "Кристалл Авто",
@@ -73790,6 +73957,13 @@
   ],
   "avatar": "12bd89cb1e848fa1.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:желаевский комбинат хлебопродуктов": {
+  "name": "Желаевский комбинат хлебопродуктов",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-17T08:44:12+00:00"
  },
  "uralsk:женской обуви": {
   "name": "ЖЕНСКОЙ ОБУВИ",

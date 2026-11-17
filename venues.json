@@ -15058,7 +15058,7 @@
   "instagram": "metrolux.kz",
   "website": "https://www.metrolux.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001089598102",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18746,7 +18746,7 @@
   "instagram": "snt_kz",
   "website": "https://snt1.satu.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001031757869",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30683,6 +30683,13 @@
   "v": 3,
   "checked_at": "2026-11-10T09:46:44+00:00"
  },
+ "almaty:рахимбаева": {
+  "name": "РАХИМБАЕВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-17T20:42:36+00:00"
+ },
  "almaty:рахимова": {
   "name": "Рахимова",
   "city": "almaty",
@@ -34565,7 +34572,7 @@
   "instagram": "unityre_company",
   "website": "http://unityre.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790979",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47934,7 +47941,7 @@
   "instagram": "svarka_astana_its",
   "website": "https://its-astana.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018518570",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -48092,7 +48099,7 @@
   "instagram": "mnu.kz",
   "website": "https://mnu.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018081024",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -50599,6 +50606,15 @@
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
  },
+ "astana:планета речи": {
+  "name": "ПЛАНЕТА РЕЧИ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-17T20:42:36+00:00",
+  "instagram": "planeta.rechi",
+  "source": "https://2gis.kz/astana/firm/70000001077382012"
+ },
  "astana:пожкабель": {
   "name": "Пожкабель",
   "city": "astana",
@@ -52225,7 +52241,7 @@
   "instagram": "santal.kst",
   "website": "http://santal-restaurant.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001079755854",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -76200,7 +76216,7 @@
   "instagram": "bosch_service_uralsk",
   "website": "https://bosch-service.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001025319525",
-  "avatar_checked_at": "2026-11-10T19:44:29+00:00",
+  "avatar_checked_at": "2026-11-17T20:42:37+00:00",
   "avatar_tried": [
    "website"
   ]

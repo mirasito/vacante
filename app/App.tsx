@@ -13,7 +13,7 @@ import { Booking } from './src/Booking';
 import { ChatsTab } from './src/Chats';
 import { Empty } from './src/Empty';
 import { InviteSheet, Locked, ReliabilityCard, ReliabilityPage, ReportSheet } from './src/Extras';
-import { applyPatch, copyOf, fromLiked, localGoal, localSummary, toImport, withGoal, type GoalHistory } from './src/applications/model';
+import { applyPatch, copyOf, fromLiked, localSummary, withGoal, type GoalHistory } from './src/applications/model';
 import { A } from './src/applications/texts';
 import { filterCount, matches, subscribeLink, why, type Filter, type Want } from './src/feed';
 import { FeedList, type Dir } from './src/FeedList';
@@ -58,10 +58,6 @@ import {
   deleteApplication,
   exportData,
   getReliability,
-  importApplications,
-  importGoal,
-  listApplications,
-  listReminders,
   patchApplication,
   putGoal,
   seenAchievements,
@@ -76,12 +72,11 @@ import {
   type Method,
   type Reliability,
   type Reminder,
-  type Reminders,
-  type Summary,
   type VacancyCopy,
 } from './src/server';
 import { read, write } from './src/storage';
 import { Settings } from './src/Settings';
+import { useServerTracker } from './src/useServerTracker';
 import { useColors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
 import { Button, Chip, LangSwitch, Loading, Logo, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
@@ -174,19 +169,10 @@ function Main() {
   // Сервер ответил, кто вошёл и есть ли профиль (или ясно, что ответа не будет). Пока нет, «профиля нет»
   // и «ещё не знаем» выглядят одинаково, поэтому отклик ждёт (applications/gate.ts)
   const [accountKnown, setAccountKnown] = useState(false);
-  // Отклики на сервере (когда есть профиль) и сводка недели
-  const [apps, setApps] = useState<Application[] | null>(null);
-  const [summary, setSummary] = useState<Summary | null>(null);
-  const [appsFailed, setAppsFailed] = useState(false);
-  const [appsAttempt, setAppsAttempt] = useState(0);
   // Цель недели без профиля: с какой недели какая цель, на телефоне
   const [goalHistory, setGoalHistory] = useState<GoalHistory>([]);
   // С какими достижениями уже поздравили в этом запуске: сервер узнает об этом чуть позже
   const celebrated = useRef(new Set<string>());
-  // Напоминания (только с профилем на сервере): что ждёт, история, счётчик и настройки
-  const [reminders, setReminders] = useState<Reminders | null>(null);
-  const [remindersFailed, setRemindersFailed] = useState(false);
-  const [remindersAttempt, setRemindersAttempt] = useState(0);
   // Какую карточку отклика открыть: из ссылки бота или кнопкой «Перенести» в напоминании
   const [showApp, setShowApp] = useState<{ id: number; focus: Focus } | null>(null);
   // Окно «Как откликнуться?»: копия вакансии и, если есть, вакансия из ленты целиком.
@@ -429,82 +415,20 @@ function Main() {
     if (want === 'applications' && app) setShowApp({ id: app, focus: 'interview' });
   }, [showProfile, account]);
 
-  // Отклики с сервера; заодно переносим туда то, что накопилось на телефоне до профиля
-  useEffect(() => {
-    if (tracker !== 'server') return;
-    let alive = true;
-    setAppsFailed(false);
-    listApplications().then(
-      (r) => {
-        if (!alive) return;
-        setApps(r.applications);
-        setSummary(r.summary);
-      },
-      () => alive && setAppsFailed(true),
-    );
-    return () => {
-      alive = false;
-    };
-  }, [tracker, appsAttempt]);
-
-  const moving = useRef(false);
-  useEffect(() => {
-    if (tracker !== 'server' || !liked.length || moving.current) return;
-    moving.current = true;
-    const batch = liked.slice(0, 300);
-    importApplications(batch.map(toImport)).then(
-      (r) => {
-        moving.current = false;
-        setApps(r.applications);
-        setSummary(r.summary);
-        const done = new Set(batch.map((l) => l.id));
-        setLiked((list) => list.filter((l) => !done.has(l.id)));
-      },
-      () => {
-        moving.current = false;
-      },
-    );
-  }, [tracker, liked]);
-
-  // Цель с телефона переносим, когда отклики уже на сервере: по ним он считает прошлые недели серии
-  const movingGoal = useRef(false);
-  useEffect(() => {
-    if (tracker !== 'server' || !summary || liked.length || !goalHistory.length || movingGoal.current) return;
-    const goal = localGoal([], goalHistory).goal;
-    if (!goal) {
-      setGoalHistory([]);
-      return;
-    }
-    movingGoal.current = true;
-    importGoal(goal, goalHistory).then(
-      (r) => {
-        movingGoal.current = false;
-        setSummary(r.summary);
-        setGoalHistory([]);
-      },
-      () => {
-        movingGoal.current = false;
-      },
-    );
-  }, [tracker, summary, liked.length, goalHistory]);
-
-  // Напоминания с сервера: при запуске, после изменений в откликах и при переходе на вкладку
-  useEffect(() => {
-    if (tracker !== 'server') {
-      setReminders(null);
-      return;
-    }
-    let alive = true;
-    setRemindersFailed(false);
-    listReminders().then(
-      (r) => alive && setReminders(r),
-      () => alive && setRemindersFailed(true),
-    );
-    return () => {
-      alive = false;
-    };
-  }, [tracker, remindersAttempt]);
-  const refreshReminders = useCallback(() => setRemindersAttempt((n) => n + 1), []);
+  // Отклики и напоминания с сервера, перенос накопленного на телефоне (src/useServerTracker.ts)
+  const {
+    apps,
+    setApps,
+    summary,
+    setSummary,
+    appsFailed,
+    reloadApps,
+    reminders,
+    setReminders,
+    remindersFailed,
+    refreshReminders,
+    putApp,
+  } = useServerTracker(tracker, liked, setLiked, goalHistory, setGoalHistory);
 
   // Друг пригласил по ссылке: сервер запишет это один раз, когда появится профиль
   useEffect(() => {
@@ -526,33 +450,23 @@ function Main() {
   unreadRef.current = unread;
   // Чаты прочитали или пришёл ответ: обновим отклики, чтобы значок на вкладке был верным
   const onUnread = useCallback((n: number) => {
-    if (n !== unreadRef.current) setAppsAttempt((x) => x + 1);
-  }, []);
+    if (n !== unreadRef.current) reloadApps();
+  }, [reloadApps]);
   // На вкладке свежее: кнопки в боте меняют и напоминания, и стадии откликов
   useEffect(() => {
     if (tab === 'reminders' || tab === 'profile') refreshReminders();
-    if (tab === 'applications') setAppsAttempt((n) => n + 1);
+    if (tab === 'applications') reloadApps();
     if (tab !== 'chats') setChat(null);
-  }, [tab, refreshReminders]);
+  }, [tab, refreshReminders, reloadApps]);
 
   // Вернулись в приложение: работодатель мог открыть профиль или ответить, а в боте могли нажать кнопку
   useEffect(() => {
     if (tracker !== 'server') return;
     return onAppVisible(() => {
-      setAppsAttempt((n) => n + 1);
+      reloadApps();
       refreshReminders();
     });
-  }, [tracker, refreshReminders]);
-
-  // Стадия или дата собеседования поменялись: у отклика другие напоминания
-  const putApp = useCallback(
-    (a: Application, next?: Summary) => {
-      setApps((list) => [a, ...(list ?? []).filter((x) => x.id !== a.id)]);
-      if (next) setSummary(next);
-      refreshReminders();
-    },
-    [refreshReminders],
-  );
+  }, [tracker, refreshReminders, reloadApps]);
 
   const clearShowApp = useCallback(() => setShowApp(null), []);
   const localItems = useMemo(() => liked.map(fromLiked), [liked]);
@@ -1177,7 +1091,7 @@ function Main() {
           summary={trackerSummary}
           local={tracker === 'local'}
           failed={appsFailed}
-          onRetry={() => setAppsAttempt((n) => n + 1)}
+          onRetry={() => reloadApps()}
           onApply={(a, again) =>
             setApplying({
               copy: a.vacancy,

@@ -46,7 +46,11 @@ test("мои вакансии: закрыть можно только откры
 
 test("«Срочно»: условия из настроек, дата по Казахстану, пост в канале города, если он есть", () => {
   assert.equal(job.boostOffer({}), null);
-  assert.deepEqual(job.boostOffer({ KASPI_DETAILS: " +7 700 ", BOOST_PRICE: "5000", BOOST_DAYS: "3" }), { price: 5000, days: 3, kaspi: "+7 700", shiftPrice: 1390, postPrice: 990, packs: [] });
+  assert.deepEqual(job.boostOffer({ KASPI_DETAILS: " +7 700 ", BOOST_PRICE: "5000", BOOST_DAYS: "3" }), { price: 5000, days: 3, kaspi: "+7 700", shiftPrice: 1390, postPrice: 990, packs: [], instagram: "" });
+  // Instagram в описании Про — только когда он задан в настройках
+  const pro = job.boostOffer({ KASPI_DETAILS: "x" });
+  assert.doesNotMatch(job.tariffText("pro", { kind: "job" }, pro), /Instagram/);
+  assert.match(job.tariffText("pro", { kind: "job" }, { ...pro, instagram: "@vacante.kz" }), /пост и сторис в нашем Instagram @vacante\.kz/);
   assert.equal(job.postPrice(job.boostOffer({ KASPI_DETAILS: "x", POST_PRICE: "0" })), 0);
   assert.equal(job.postPrice(null), 0);
   assert.equal(job.localDate("2026-11-05 20:00:00"), "06.11");

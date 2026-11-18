@@ -1,90 +1,106 @@
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import httpx
 from PIL import Image
 
-from vacante import autopost, instagram, venues
+from vacante import instagram, venues
 from vacante.models import RawPost
 from vacante.parse import parse_post
 from vacante.store import save_vacancies
 
-NOON = datetime(2026, 11, 2, 7, 30, tzinfo=timezone.utc)  # 12:30 в Казахстане
-CONFIG = {"daily_limit": 3, "hours": {"astana": [12], "almaty": [12, 13], "shymkent": [12]},
-          "priority": ["astana", "almaty", "shymkent"]}
-LIVE = {"astana": "@vacanteastana", "almaty": "@vacantealmaty", "shymkent": "@vacanteshymkent"}
+NOON = datetime(2026, 11, 18, 5, 30, tzinfo=timezone.utc)  # среда, 10:30 в Казахстане
+CONFIG = instagram.load_config()
+CONFIG["daily_limit"] = 3
 
 
-def make(post_id: int, text: str, city: str = "almaty"):
+def make(post_id: int, text: str, city: str = "almaty", hours_ago: float = 2, top: bool = False):
     raw = RawPost("telegram", "chan", post_id, f"https://t.me/chan/{post_id}", text,
-                  datetime(2026, 11, 2, 5, tzinfo=timezone.utc), city)
-    return parse_post(raw)
-
-
-def test_due_cities_follow_schedule_live_channels_slot_and_daily_limit():
-    assert instagram.due_cities(CONFIG, {}, NOON, LIVE) == ["astana", "almaty", "shymkent"]
-    assert instagram.due_cities(CONFIG, {}, NOON, {"almaty": "@vacantealmaty"}) == ["almaty"]
-    done = {"astana": {"slot": instagram.slot(NOON)}}
-    assert instagram.due_cities(CONFIG, done, NOON, LIVE) == ["almaty", "shymkent"]
-    full = {"log": [{"at": NOON.isoformat()}] * 2}
-    assert instagram.due_cities(CONFIG, full, NOON, LIVE) == ["astana"]
-    later = NOON.replace(hour=8)  # 13:30
-    assert instagram.due_cities(CONFIG, {}, later, LIVE) == ["almaty"]
+                  NOON - timedelta(hours=hours_ago), city)
+    v = parse_post(raw)
+    if top:
+        v.top_until = (NOON + timedelta(days=10)).isoformat()
+    return v
 
 
 def test_load_config_from_repo():
     config = instagram.load_config()
-    assert config["hours"]["astana"][0] == 9 and config["priority"][:2] == ["astana", "almaty"]
+    assert config["review"]["hour"] == 10 and config["tips"]["weekdays"] == [1, 3, 5]
+    assert 9 in config["pro"]["hours"] and config["pro"]["repost_days"] == 7
     assert 0 < config["daily_limit"] <= 50
-    # Сутки при всех городах укладываются в лимит
-    assert sum(len(h) for h in config["hours"].values()) <= config["daily_limit"]
 
 
-def test_pick_takes_posted_to_telegram_newest_first_one_per_employer():
-    a = make(1, "Кафе «Зерно» ищет бариста, 12 000 тг за смену")
-    b = make(2, "Кафе «Зерно» ищет официанта, 10 000 тг за смену")
-    c = make(3, "Ресторан «Сад» ищет повара, 400 000 тг")
-    d = make(4, "Требуется грузчик на склад, 300 000 тг")
-    old = make(5, "Магазин «Ромашка» ищет продавца, 250 000 тг")
-    old.posted_at = "2026-10-20T05:00:00+00:00"
-    vacancies = {v.id: v for v in (a, b, c, d, old)}
-    posted = {"almaty": {"ids": [old.id, a.id, c.id, b.id, d.id]}}
-    picked = instagram.pick("almaty", vacancies, posted, {}, NOON)
-    assert [v.id for v in picked] == [d.id, b.id, c.id]
-    assert [v.id for v in instagram.pick("almaty", vacancies, posted, {"almaty": {"ids": [d.id, b.id]}}, NOON)] \
-        == [c.id, a.id]
+def test_daily_due_once_a_day_from_its_hour_until_21(tmp_path):
+    assert instagram.daily_due("review", CONFIG, {}, NOON)
+    assert not instagram.daily_due("review", CONFIG, {"done": {"review": "2026-11-18"}}, NOON)
+    assert not instagram.daily_due("review", CONFIG, {}, NOON - timedelta(hours=1))  # 9:30
+    assert instagram.daily_due("review", CONFIG, {}, NOON + timedelta(hours=5))  # 15:30: догоняем
+    assert not instagram.daily_due("employers", CONFIG, {}, NOON + timedelta(hours=3))  # среда — не его день
+    assert instagram.daily_due("tips", CONFIG, {}, NOON + timedelta(days=1, hours=5))  # четверг
 
 
-def test_caption_lists_vacancies_with_channel_and_hashtags():
-    v = make(1, "Кафе «Зерно» ищет бариста, 12 000 тг за смену")
-    text = instagram.caption("astana", [v], NOON, "@vacanteastana")
-    assert text.startswith("Работа в Астане — свежие вакансии на 2 ноября")
-    assert "1. Бариста — " in text and "12\xa0000 ₸/день" in text
-    assert "@vacanteastana" in text and "#вакансииастана" in text and "#общепит" in text
-    long = [make(i, f"Кафе «{'Очень длинное название ' * 8}{i}» ищет бариста, 12 000 тг") for i in range(9)]
-    assert len(instagram.caption("almaty", long, NOON, None)) <= instagram.CAPTION_LIMIT
+def test_only_pro_vacancies_new_first_and_again_after_a_week():
+    plain = make(1, "Кафе «Зерно» ищет бариста, 12 000 тг за смену")
+    pro = make(2, "Ресторан «Сад» ищет повара, 400 000 тг", top=True)
+    old = make(3, "Склад ищет грузчика, 300 000 тг", top=True, hours_ago=200)
+    expired = make(4, "Магазин ищет продавца, 250 000 тг")
+    expired.top_until = (NOON - timedelta(days=1)).isoformat()
+    items, fresh = instagram.pro_due([plain, pro, old, expired], {}, NOON)
+    assert [v.id for v in items] == [pro.id, old.id] and fresh == {pro.id, old.id}
+    week_ago = (NOON - timedelta(days=8)).isoformat()
+    state = {"pro": {pro.id: [NOON.isoformat()], old.id: [week_ago]}}
+    items, fresh = instagram.pro_due([plain, pro, old], state, NOON)
+    assert [v.id for v in items] == [old.id] and fresh == set()
+    state["pro"][old.id].append(NOON.isoformat())  # дважды уже было
+    assert instagram.pro_due([plain, pro, old], state, NOON) == ([], set())
 
 
-def write_data(tmp_path, vacancies, posted):
-    save_vacancies(tmp_path, vacancies)
-    autopost.save_posted(tmp_path, posted)
+def test_market_counts_last_day_and_pay_by_profession():
+    items = [make(i, f"Кафе «Место {i}» ищет официанта, {200 + i * 10} 000 тг") for i in range(12)]
+    items += [make(50, "Склад ищет грузчика, 300 000 тг", city="astana"),
+              make(51, "Склад ищет грузчика", city="astana", hours_ago=30)]
+    m = instagram.market(items, NOON)
+    assert m["new"] == 13 and m["total"] == 14
+    assert m["cities"] == [("almaty", 12), ("astana", 1)]
+    assert m["pays"][0][0] == "Официант" and 250_000 <= m["pays"][0][1] <= 270_000
+    assert instagram._change(13, {"date": "2026-11-17", "new": 10}, NOON) == ("+30% к вчера", "кешемен салыстырғанда +30%")
+    assert instagram._change(13, {"date": "2026-11-10", "new": 10}, NOON) is None
 
 
-def test_plan_renders_carousel_and_plan_json(tmp_path, monkeypatch):
+def check_images(out, urls, size=(1080, 1350)):
+    for url in urls:
+        with Image.open(out / url.removeprefix("https://vacante.kz/")) as img:
+            assert img.format == "JPEG" and img.size == size
+
+
+def test_plan_review_pro_and_stories(tmp_path):
     data, out = tmp_path / "data", tmp_path / "public"
     data.mkdir()
-    items = [make(i, f"Кафе «Место {i}» ищет бариста, 2/2, 12 000 тг за смену, питание", city="astana")
-             for i in range(3)]
-    write_data(data, items, {"astana": {"ids": [v.id for v in items]}})
-    monkeypatch.setattr(instagram.channels, "live", lambda d: LIVE)
-    posts = instagram.plan(data, out, "https://vacante.kz/", NOON, CONFIG)
-    assert [p["city"] for p in posts] == ["astana"]  # в Алматы и Шымкенте нет вакансий
-    p = posts[0]
-    assert len(p["images"]) == 4 and p["images"][0].startswith("https://vacante.kz/ig/astana-2026110212-")
-    for url in p["images"]:
-        with Image.open(out / url.removeprefix("https://vacante.kz/")) as img:
-            assert img.format == "JPEG" and img.size == (1080, 1350)
+    items = [make(i, f"Кафе «Место {i}» ищет бариста, 2/2, 12 000 тг за смену, питание") for i in range(3)]
+    items += [make(10, "Ресторан «Сад» ищет повара, 400 000 тг", top=True, city="astana"),
+              make(11, "Пекарня «Хлеб» ищет пекаря, 350 000 тг", top=True)]
+    save_vacancies(data, items)
+    config = {**CONFIG, "daily_limit": 10}
+    posts = instagram.plan(data, out, "https://vacante.kz/", NOON, config, reel=lambda *a: None)
+    assert [p["kind"] for p in posts] == ["review", "pro", "story", "story"]
+    review, pro = posts[0], posts[1]
+    assert review["type"] == "carousel" and review["new"] == 5 and review["caption"].startswith("Рынок работы на 18 ноября")
+    assert pro["type"] == "carousel" and len(pro["images"]) == 3 and set(pro["ids"]) == {items[3].id, items[4].id}
+    assert "Бариста" not in pro["caption"]  # вакансии без «Про» в Instagram не идут
+    check_images(out, review["images"] + pro["images"])
+    check_images(out, posts[2]["images"], (1080, 1920))
     assert json.loads((out / instagram.PLAN).read_text("utf-8"))["posts"] == posts
+    # Одна Про-вакансия — одна картинка, без обложки; лимит в сутки соблюдаем
+    save_vacancies(data, items[:4])
+    posts = instagram.plan(data, out, "https://vacante.kz", NOON, {**CONFIG, "daily_limit": 2}, reel=lambda *a: None)
+    assert [(p["kind"], p["type"]) for p in posts] == [("review", "carousel"), ("pro", "image")]
+
+
+def test_tips_and_employers_cards():
+    image, text = instagram.tip_card(len(instagram.TIPS) + 1)
+    assert text.startswith(instagram.TIPS[1][0]) and image[:2] == b"\xff\xd8"
+    image, text = instagram.employers_card()
+    assert "990 ₸" in text and "Instagram" in text
 
 
 def graph(scopes=("instagram_basic", "instagram_content_publish"), fail_city_image=None, quota=0):
@@ -113,40 +129,78 @@ def graph(scopes=("instagram_basic", "instagram_content_publish"), fail_city_ima
     return instagram.Publisher(venues.InstagramAPI(client, "token"), sleep=lambda s: None), calls
 
 
-POSTS = [{"city": "astana", "slot": "2026-11-02T12", "ids": ["a", "b"], "caption": "Работа в Астане",
-          "images": ["https://vacante.kz/ig/astana/1.jpg", "https://vacante.kz/ig/astana/2.jpg"]},
-         {"city": "almaty", "slot": "2026-11-02T12", "ids": ["c", "d"], "caption": "Работа в Алматы",
-          "images": ["https://vacante.kz/ig/almaty/1.jpg", "https://vacante.kz/ig/almaty/2.jpg"]}]
+POSTS = [{"kind": "review", "type": "carousel", "slot": "2026-11-18T10", "new": 120, "caption": "Рынок работы",
+          "images": ["https://vacante.kz/ig/1/review-1.jpg", "https://vacante.kz/ig/1/review-2.jpg"]},
+         {"kind": "pro", "type": "image", "slot": "2026-11-18T10", "ids": ["a"], "caption": "Про",
+          "images": ["https://vacante.kz/ig/1/pro-1.jpg"]},
+         {"kind": "story", "type": "story", "slot": "2026-11-18T10", "ids": ["a"],
+          "images": ["https://vacante.kz/ig/1/story-1.jpg"]}]
 
 
-def test_publish_carousel_and_remember(tmp_path):
+def test_publish_each_kind_and_remember(tmp_path):
     publisher, calls = graph()
-    report = instagram.publish(tmp_path, POSTS, publisher, NOON, CONFIG)
-    assert report == [("astana", "опубликовано, 2 вакансий (пост post-c3)"),
-                      ("almaty", "опубликовано, 2 вакансий (пост post-c6)")]
+    report = instagram.publish(tmp_path, POSTS, publisher, NOON, {**CONFIG, "daily_limit": 10})
+    assert [r[1].split(" (")[0] for r in report] == ["опубликовано"] * 3
     carousel = [b for m, name, b in calls if name == "media" and b.get("media_type") == "CAROUSEL"][0]
-    assert carousel["children"] == "c1,c2" and carousel["caption"] == "Работа в Астане"
-    children = [b for m, name, b in calls if name == "media" and "image_url" in b]
-    assert all(b["is_carousel_item"] == "true" for b in children)
+    assert carousel["children"] == "c1,c2" and carousel["caption"] == "Рынок работы"
+    story = [b for m, name, b in calls if name == "media" and b.get("media_type") == "STORIES"][0]
+    assert story["image_url"].endswith("story-1.jpg") and "caption" not in story
+    single = [b for m, name, b in calls if name == "media" and b.get("image_url", "").endswith("pro-1.jpg")][0]
+    assert single["caption"] == "Про" and "is_carousel_item" not in single
     state = instagram.load_state(tmp_path)
-    assert state["astana"]["ids"] == ["a", "b"] and state["astana"]["slot"] == "2026-11-02T12"
-    assert len(state["log"]) == 2
+    assert state["done"]["review"] == "2026-11-18" and state["review"] == {"date": "2026-11-18", "new": 120}
+    assert state["pro"]["a"] == [NOON.isoformat()] and state["pro_slot"] == "2026-11-18T10" and len(state["log"]) == 3
     # Повторный запуск того же плана ничего не публикует
-    assert instagram.publish(tmp_path, POSTS, graph()[0], NOON, CONFIG)[0] == ("astana", "уже опубликовано в этот час")
+    again = instagram.publish(tmp_path, POSTS[:2], graph()[0], NOON, CONFIG)
+    assert again == [("review", "уже опубликовано"), ("pro", "уже опубликовано")]
+
+
+def test_publish_reel_waits_for_video(tmp_path):
+    publisher, calls = graph()
+    post = {"kind": "reel", "type": "reel", "slot": "x", "video": "https://vacante.kz/ig/1/reel.mp4", "caption": "Ролик"}
+    assert instagram.publish(tmp_path, [post], publisher, NOON, CONFIG)[0][1].startswith("опубликовано")
+    reel = [b for m, name, b in calls if name == "media"][0]
+    assert reel["media_type"] == "REELS" and reel["video_url"].endswith("reel.mp4") and reel["share_to_feed"] == "true"
 
 
 def test_publish_skips_without_permission_quota_or_on_error(tmp_path):
     report = instagram.publish(tmp_path, POSTS, graph(scopes=("instagram_basic",))[0], NOON, CONFIG)
-    assert report[0][1].startswith("пропущено: у токена нет права instagram_content_publish")
+    assert report[0][1].startswith("error: у токена нет права instagram_content_publish")
     assert not (tmp_path / instagram.STATE).exists()
 
     report = instagram.publish(tmp_path, POSTS, graph(quota=49)[0], NOON, CONFIG)
-    assert report[1] == ("almaty", "пропущено: дневной лимит публикаций")
+    assert report[1] == ("pro", "пропущено: дневной лимит публикаций")
 
-    report = instagram.publish(tmp_path / "x", POSTS, graph(fail_city_image="https://vacante.kz/ig/astana")[0],
-                               NOON, CONFIG) if (tmp_path / "x").mkdir() is None else None
-    assert report[0] == ("astana", "error: Instagram API 400: Only photo or video (code 9004, subcode None)")
+    (tmp_path / "x").mkdir()
+    report = instagram.publish(tmp_path / "x", POSTS, graph(fail_city_image="https://vacante.kz/ig/1/review")[0],
+                               NOON, CONFIG)
+    assert report[0] == ("review", "error: Instagram API 400: Only photo or video (code 9004, subcode None)")
     assert report[1][1].startswith("опубликовано")
+
+
+class FakeD1:
+    def __init__(self):
+        self.row = None
+
+    def query(self, sql, params=None):
+        if sql.startswith("SELECT"):
+            return [self.row] if self.row else []
+        if sql.startswith("INSERT"):
+            self.row = dict(zip(("token", "seed", "refreshed_at"), params))
+        return []
+
+
+def test_token_store_refreshes_weekly_and_takes_new_secret():
+    d1, store = FakeD1(), None
+    store = instagram.TokenStore(d1)
+    refreshed = []
+    refresh = lambda t: refreshed.append(t) or f"{t}+"  # noqa: E731
+    assert store.token("IGA1", refresh, NOON) == "IGA1+"
+    assert store.token("IGA1", refresh, NOON + timedelta(days=3)) == "IGA1+" and refreshed == ["IGA1"]
+    assert store.token("IGA1", refresh, NOON + timedelta(days=8)) == "IGA1++"
+    assert store.token("IGB2", refresh, NOON + timedelta(days=9)) == "IGB2+"  # новый секрет
+    assert store.token("IGB2", lambda t: None, NOON + timedelta(days=30)) == "IGB2+"  # не продлился — старый
+    assert store.token("EAAfb", refresh, NOON) == "EAAfb"
 
 
 def test_publish_without_linked_instagram(tmp_path):
@@ -159,9 +213,9 @@ def test_publish_without_linked_instagram(tmp_path):
 
     api = venues.InstagramAPI(httpx.Client(transport=httpx.MockTransport(handler)), "token")
     report = instagram.publish(tmp_path, POSTS, instagram.Publisher(api), NOON, CONFIG)
-    assert report == [("instagram", "пропущено: Instagram API: у токена нет страницы с привязанным "
+    assert report == [("instagram", "error: Instagram API: у токена нет страницы с привязанным "
                                     "бизнес-аккаунтом Instagram")]
-    assert instagram.publish(tmp_path, [], instagram.Publisher(api), NOON, CONFIG) == [("подборки", "на этот час нет")]
+    assert instagram.publish(tmp_path, [], instagram.Publisher(api), NOON, CONFIG) == [("instagram", "на этот час ничего нет")]
 
 
 def test_publish_with_instagram_login_token_needs_no_facebook_page(tmp_path):
@@ -185,5 +239,5 @@ def test_publish_with_instagram_login_token_needs_no_facebook_page(tmp_path):
     assert api.check() == [("токен", "вход через Instagram, @vacante.kz, id 1784: подборки в ленту работают, "
                                      "аватары заведений через такой токен недоступны")]
     report = instagram.publish(tmp_path, POSTS[:1], instagram.Publisher(api, sleep=lambda s: None), NOON, CONFIG)
-    assert report == [("astana", "опубликовано, 2 вакансий (пост post)")]
+    assert report == [("review", "опубликовано (пост post)")]
     assert hosts == {"graph.instagram.com"} and "debug_token" not in calls

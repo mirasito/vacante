@@ -1,7 +1,7 @@
 # Каждый час: собрать новые вакансии (из каналов и от работодателей через бота), разослать
 # подборки подписчикам бота, сохранить данные в ветку data и опубликовать сайт на GitHub Pages.
-# После него post.yml публикует серию постов в свои каналы, а job instagram — подборки в Instagram
-# (график в config/instagram.yaml; карточки выкладываются на сайт, Instagram забирает их по ссылке).
+# После него post.yml публикует серию постов в свои каналы, а job instagram — посты в Instagram
+# (график в config/instagram.yaml; картинки выкладываются на сайт, Instagram забирает их по ссылке).
 name: Обновление вакансий
 
 on:
@@ -170,13 +170,15 @@ jobs:
             echo "::notice::Ветки app-web ещё нет, приложение не выкладываю"
           fi
 
-      # Только когда есть секрет INSTAGRAM_TOKEN: карточки подборок городов, которым по графику пора
-      - name: Карточки подборок в Instagram
+      # Только когда есть секрет INSTAGRAM_TOKEN: картинки и ролик того, чему по графику пора (config/instagram.yaml)
+      - name: Карточки для Instagram
         id: instagram
         env:
           HAS_INSTAGRAM: ${{ secrets.INSTAGRAM_TOKEN != '' }}
         run: |
           if [ "$HAS_INSTAGRAM" != "true" ]; then echo "posts=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          # ffmpeg для ролика дня: в образе сборщика его нет (vacante.video.ffmpeg_path)
+          pip install -q imageio-ffmpeg || echo "::warning::imageio-ffmpeg не поставился, ролик пропускаю"
           python -m vacante instagram plan --data-dir data --out public --base-url "$SITE_URL"
           echo "posts=$(python -c 'import json; print(len(json.load(open("public/ig/plan.json"))["posts"]))')" >> "$GITHUB_OUTPUT"
 
@@ -227,7 +229,7 @@ jobs:
           [ -s ping/urls.txt ] || { echo "новых адресов нет"; exit 0; }
           python -m vacante.searchping send ping/urls.txt | tee -a "$GITHUB_STEP_SUMMARY"
 
-  # Подборки в Instagram: после выкладки сайта, когда карточки уже доступны по ссылкам
+  # Instagram: после выкладки сайта, когда картинки и ролик уже доступны по ссылкам
   instagram:
     needs: [collect, deploy]
     if: needs.collect.outputs.instagram != '0' && needs.collect.outputs.instagram != ''
@@ -259,9 +261,13 @@ jobs:
           name: instagram-plan
           path: plan
 
-      - name: Опубликовать подборки
+      # Секреты бота и Cloudflare: продлённый токен Instagram хранится в базе бота, туда же предупреждение модераторам
+      - name: Опубликовать
         env:
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: python -m vacante instagram publish --data-dir data --plan plan/plan.json
 
       # instagram.json пишет только этот job, поэтому rebase на свежие вакансии проходит без конфликтов

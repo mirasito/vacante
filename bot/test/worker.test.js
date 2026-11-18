@@ -951,8 +951,8 @@ test("вход на сайт через бота: код, подтвержден
   const dana = user(100, "Дана");
   await say(env, dana, `/start login_${start.code}`);
   const ask = sentTo(calls, 100).at(-1).body;
-  assert.match(ask.text, /Войти в кабинет работодателя/);
-  assert.deepEqual(ask.reply_markup.inline_keyboard[0][0], { text: "✅ Да, войти", callback_data: `login:${start.code}` });
+  assert.match(ask.text, /Войти на сайт vacante.kz/);
+  assert.deepEqual(ask.reply_markup.inline_keyboard[0][0], { text: "✅ Да, войти · Иә, кіру", callback_data: `login:${start.code}` });
   await press(env, dana, `login:${start.code}`, 9);
   assert.match(calls.at(-1).body.text, /Вход подтверждён/);
   // Второй раз тот же код не подтвердить, в том числе другому человеку

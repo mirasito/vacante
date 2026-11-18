@@ -1,22 +1,21 @@
 // Кабинет работодателя: его вакансии и смены из бота, отклики, оплата размещения, тариф Про и пакеты.
 // Данные живут в базе бота (bot/src/cabinet.js), вход — подписанные данные Telegram (initData), как у профиля.
-// На сайте вне Telegram вход через бота (bot/src/login.js): «Войти через Telegram» → подтверждение кнопкой в боте,
-// ключ входа хранится в браузере 30 дней.
+// На сайте вне Telegram вход через бота (src/Login.tsx, bot/src/login.js): тот же ключ, что у профиля соискателя.
 // Анкету новой вакансии ведёт бот: кнопки «Разместить» открывают чат с ним.
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon } from '../icons';
-import { BOT, confirm, copyText, onAppVisible, openUrl, telegram } from '../platform';
+import { Login } from '../Login';
+import { BOT, confirm, copyText, openUrl } from '../platform';
+import { authHeader, initData, setSession } from '../session';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
 import { Badge, Button, Loading, styles as ui } from '../ui';
 
 const WORKER = 'https://vacante-bot.vacante-kz.workers.dev';
 export const CABINET_URL = `${WORKER}/api/cabinet`;
-const LOGIN_URL = `${WORKER}/api/login`;
-const SESSION_KEY = 'vacante.employer.session';
 
 export type CabinetJob = {
   id: number;
@@ -57,11 +56,7 @@ const T = {
     post: 'Разместить вакансию',
     shift: 'Смена на день',
     empty: 'Вакансий пока нет. Разместите первую: это пара минут в боте, отклики придут туда же.',
-    noTelegram: 'Войдите через Telegram: без логина и пароля. Бот спросит «Войти?», нажмите «Да», и кабинет откроется здесь.',
-    login: 'Войти через Telegram',
-    loginWait: 'Ждём подтверждения в Telegram. Нажмите в боте «✅ Да, войти» и вернитесь на эту страницу.',
-    loginAgain: 'Открыть Telegram ещё раз',
-    loginExpired: 'Ссылка для входа устарела. Нажмите «Войти через Telegram» ещё раз.',
+    noTelegram: 'Войдите, чтобы видеть свои вакансии, отклики и оплату.',
     logout: 'Выйти',
     openBot: 'Открыть бота',
     error: 'Не получилось загрузить кабинет. Проверьте интернет и попробуйте ещё раз.',
@@ -110,11 +105,7 @@ const T = {
     post: 'Вакансия орналастыру',
     shift: 'Бір күнге ауысым',
     empty: 'Әзірге вакансия жоқ. Біріншісін орналастырыңыз: ботта бірнеше минут, жауаптар сонда келеді.',
-    noTelegram: 'Telegram арқылы кіріңіз: логин мен құпиясөзсіз. Бот «Кіру?» деп сұрайды, «Иә» басыңыз, кабинет осында ашылады.',
-    login: 'Telegram арқылы кіру',
-    loginWait: 'Telegram-дағы растауды күтіп тұрмыз. Ботта «✅ Да, войти» басып, осы бетке оралыңыз.',
-    loginAgain: 'Telegram-ды қайта ашу',
-    loginExpired: 'Кіру сілтемесінің мерзімі өтті. «Telegram арқылы кіру» батырмасын қайта басыңыз.',
+    noTelegram: 'Вакансияларыңызды, жауаптар мен төлемді көру үшін кіріңіз.',
     logout: 'Шығу',
     openBot: 'Ботты ашу',
     error: 'Кабинетті жүктеу мүмкін болмады. Интернетті тексеріп, қайталап көріңіз.',
@@ -158,29 +149,6 @@ const T = {
 };
 
 const money = (n: number) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₸`;
-const initData = () => telegram()?.initData || '';
-
-// Ключ входа с сайта: в браузере, где хранилище может быть недоступно (приватный режим)
-const store = {
-  get: (): string => {
-    try {
-      return (typeof localStorage !== 'undefined' && localStorage.getItem(SESSION_KEY)) || '';
-    } catch {
-      return '';
-    }
-  },
-  set: (value: string) => {
-    try {
-      if (value) localStorage.setItem(SESSION_KEY, value);
-      else localStorage.removeItem(SESSION_KEY);
-    } catch {
-      // ничего: войдут ещё раз
-    }
-  },
-};
-
-/** Заголовок входа: initData в Telegram, иначе ключ с сайта; пусто — нужно войти. */
-const authHeader = () => (initData() ? `tma ${initData()}` : store.get() ? `session ${store.get()}` : '');
 
 class AuthError extends Error {}
 
@@ -192,7 +160,7 @@ async function call(init?: { action: string; id?: number; count?: number }): Pro
   });
   const data = await res.json().catch(() => ({}));
   if (res.status === 401 && !initData()) {
-    store.set('');  // ключ устарел: войти ещё раз
+    setSession('');  // ключ устарел: войти ещё раз
     throw new AuthError(data.error || 'auth');
   }
   if (init) {
@@ -231,70 +199,6 @@ function PayBox(props: { c: Colors; t: (typeof T)['ru']; kaspi: string; comment:
   );
 }
 
-/** Вход с сайта через бота: код берём заранее, чтобы ссылка открылась прямо по нажатию (иначе браузер её заблокирует). */
-function Login(props: { c: Colors; t: (typeof T)['ru']; onDone(): void }) {
-  const { c, t } = props;
-  const [link, setLink] = useState<{ code: string; link: string } | null>(null);
-  const [waiting, setWaiting] = useState(false);
-  const [note, setNote] = useState('');
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const fresh = useCallback(async () => {
-    setLink(null);
-    try {
-      const res = await fetch(LOGIN_URL, { method: 'POST' });
-      setLink(await res.json());
-    } catch {
-      setNote(t.error);
-    }
-  }, [t]);
-  useEffect(() => {
-    fresh();
-  }, [fresh]);
-
-  const check = useCallback(async () => {
-    if (!link) return;
-    try {
-      const res = await fetch(`${LOGIN_URL}?code=${link.code}`);
-      const data = await res.json().catch(() => ({}));
-      if (data.session) {
-        store.set(data.session);
-        props.onDone();
-      } else if (res.status === 410) {
-        setWaiting(false);
-        setNote(t.loginExpired);
-        fresh();
-      }
-    } catch {
-      // сеть моргнула: проверим ещё раз
-    }
-  }, [link, props, t, fresh]);
-
-  useEffect(() => {
-    if (!waiting) return;
-    timer.current = setInterval(check, 2000);
-    const off = onAppVisible(check);  // вернулись из Telegram: проверяем сразу
-    return () => {
-      if (timer.current) clearInterval(timer.current);
-      off();
-    };
-  }, [waiting, check]);
-
-  const go = () => {
-    if (!link) return;
-    setNote('');
-    setWaiting(true);
-    openUrl(link.link);
-  };
-  return (
-    <View style={styles.gap}>
-      <Text style={[styles.text, { color: c.ink }]}>{waiting ? t.loginWait : t.noTelegram}</Text>
-      {note ? <Text style={[styles.small, { color: c.quiet }]}>{note}</Text> : null}
-      <Button c={c} label={waiting ? t.loginAgain : t.login} busy={!link} ghost={waiting} onPress={go} />
-    </View>
-  );
-}
-
 export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
   const { c, lang } = props;
   const t = T[lang];
@@ -318,7 +222,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
     if (authed) load();
   }, [authed, load]);
   const logout = () => {
-    store.set('');
+    setSession('');
     setState(null);
     setAuthed(false);
   };
@@ -351,7 +255,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
 
   let body;
   if (!authed) {
-    body = <Login c={c} t={t} onDone={() => setAuthed(true)} />;
+    body = <Login c={c} lang={lang} intro={t.noTelegram} onDone={() => setAuthed(true)} />;
   } else if (failed) {
     body = (
       <View style={styles.gap}>

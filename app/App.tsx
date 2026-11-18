@@ -74,6 +74,7 @@ import {
   type Reminder,
   type VacancyCopy,
 } from './src/server';
+import { getSession, loadSession, onSessionChange, setSession } from './src/session';
 import { read, write } from './src/storage';
 import { Cabinet } from './src/employer/Cabinet';
 import { Settings } from './src/Settings';
@@ -220,6 +221,7 @@ function Main() {
         read<Liked[]>('liked', []),
         read<GoalHistory>('goal', []),
         initTelegram(),
+        loadSession(),
       ]);
       const tgLang = app?.initDataUnsafe?.user?.language_code === 'kk' ? 'kk' : undefined;
       // Открыли по кнопке из подборки бота: сразу город этой подборки. Кнопка «Открыть профиль»
@@ -243,9 +245,10 @@ function Main() {
       setLiked(storedLiked);
       setGoalHistory(storedGoal);
       setBooted(true);
-      if (app) {
-        homeScreenStatus().then(setHome);
-        // Вход на сервер Vacante: пока сервера нет, просто ничего не показываем
+      if (app) homeScreenStatus().then(setHome);
+      // Вход на сервер Vacante: в Telegram сам, на сайте — если раньше вошли через бота (src/session.ts).
+      // Пока сервер не ответил, просто ничего не показываем
+      if (app || getSession()) {
         const giveUp = setTimeout(() => setAccountKnown(true), ACCOUNT_WAIT_MS);
         whoAmI().then((who) => {
           clearTimeout(giveUp);
@@ -256,6 +259,21 @@ function Main() {
       } else setAccountKnown(true);
     })();
   }, []);
+
+  // Вход и выход на сайте вне Telegram: заново узнаём, кто это. Отклики с устройства переносятся
+  // в аккаунт сами, когда у него есть профиль (src/useServerTracker.ts)
+  useEffect(
+    () =>
+      onSessionChange(() => {
+        if (telegram()) return;
+        if (!getSession()) {
+          setAccount(null);
+          return;
+        }
+        whoAmI().then(setAccount);
+      }),
+    [],
+  );
 
   useEffect(() => {
     setError(false);
@@ -1001,7 +1019,7 @@ function Main() {
           c={c}
           lang={lang}
           what={tab === 'chats' ? 'chats' : 'profile'}
-          where={!telegram() ? 'browser' : showProfile ? 'ready' : account ? 'closed' : 'offline'}
+          where={!telegram() && !getSession() ? 'browser' : showProfile ? 'ready' : account ? 'closed' : 'offline'}
           onProfile={() => setTab('profile')}
           openUrl={openUrl}
           city={city}
@@ -1046,6 +1064,7 @@ function Main() {
           onDelete={removeItem}
           onGoal={onGoal}
           onMakeProfile={() => setTab('profile')}
+          signIn={!telegram() && !account}
           show={showApp}
           onShown={clearShowApp}
           onBooking={tracker === 'server' ? setBooking : undefined}
@@ -1212,6 +1231,22 @@ function Main() {
                 setSettingsOpen(false);
                 setCabinetOpen(true);
               }}
+              site={
+                telegram()
+                  ? undefined
+                  : {
+                      signedIn: account ? account.first_name : getSession() ? '' : null,
+                      onSignIn: () => {
+                        setSettingsOpen(false);
+                        setTab('profile');
+                      },
+                      onSignOut: () => {
+                        setSettingsOpen(false);
+                        setSession('');
+                        setTab('feed');
+                      },
+                    }
+              }
               onInvite={() => setInviteOpen(true)}
               onExport={async () => {
                 const { url } = await exportData();

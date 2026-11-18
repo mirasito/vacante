@@ -67,8 +67,9 @@ export async function startLogin(env, m, code) {
     (await env.DB.prepare(`SELECT chat_id FROM logins WHERE code = ? AND created_at >= ${fresh}`).bind(code).first());
   if (!row || row.chat_id) return send(env, m.chat.id, "Ссылка для входа устарела. Нажмите «Войти через Telegram» на сайте ещё раз.");
   return send(env, m.chat.id,
-    "Войти в кабинет работодателя на сайте vacante.kz?\n\nПодтверждайте, только если вы сами сейчас нажали «Войти» на сайте.",
-    [[{ text: "✅ Да, войти", callback_data: `login:${code}` }]]);
+    "Войти на сайт vacante.kz под этим Telegram?\nОсы Telegram арқылы vacante.kz сайтына кіру керек пе?\n\n" +
+      "Подтверждайте, только если вы сами сейчас нажали «Войти» на сайте.\nСайтта «Кіру» батырмасын өзіңіз басқан болсаңыз ғана растаңыз.",
+    [[{ text: "✅ Да, войти · Иә, кіру", callback_data: `login:${code}` }]]);
 }
 
 /** Кнопка «Да, войти». */
@@ -82,7 +83,7 @@ export async function confirmLogin(env, q) {
   return tg(env, "editMessageText", {
     chat_id: q.message.chat.id,
     message_id: q.message.message_id,
-    text: done ? "✅ Вход подтверждён. Вернитесь на вкладку vacante.kz, кабинет откроется сам."
+    text: done ? "✅ Вход подтверждён. Вернитесь на вкладку vacante.kz, всё откроется само.\n✅ Кіру расталды. vacante.kz бетіне оралыңыз."
       : "Ссылка для входа устарела. Нажмите «Войти через Telegram» на сайте ещё раз.",
   });
 }

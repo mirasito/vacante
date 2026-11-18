@@ -59,6 +59,28 @@ export function verifyInitData(raw: string, botToken: string, nowMs = Date.now()
 }
 
 /**
+ * Ключ входа с сайта (вне Telegram): его выдаёт бот после подтверждения кнопкой (bot/src/login.js).
+ * Формат «<base64url JSON {id, first_name, exp}>.<hex HMAC-SHA-256>», ключ подписи — из токена бота,
+ * поэтому сервер проверяет его сам, без запроса к боту. Возвращает пользователя или null.
+ */
+export function verifySession(raw: string, botToken: string, nowMs = Date.now()): TgUser | null {
+  const parts = String(raw || "").split(".");
+  if (parts.length !== 2) return null;
+  const [body, mac] = parts as [string, string];
+  if (!body || !/^[0-9a-f]{64}$/.test(mac)) return null;
+  const expected = createHmac("sha256", `vacante-site-session:${botToken}`).update(body).digest();
+  if (!timingSafeEqual(expected, Buffer.from(mac, "hex"))) return null;
+  try {
+    const user = JSON.parse(Buffer.from(body, "base64url").toString("utf8")) as { id?: unknown; first_name?: unknown; exp?: unknown };
+    if (!Number.isSafeInteger(user.id) || (user.id as number) <= 0) return null;
+    if (!(typeof user.exp === "number" && user.exp > nowMs / 1000)) return null;
+    return { id: user.id as number, first_name: typeof user.first_name === "string" ? user.first_name : "" };
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Общий ключ сервера и бота на Cloudflare для внутренних адресов /internal/…
  * Считается из токена бота, поэтому отдельный секрет не нужен (так же бот считает свой).
  */

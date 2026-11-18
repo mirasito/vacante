@@ -4352,6 +4352,22 @@
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
  },
+ "aktobe:техавтокар": {
+  "name": "ТехАвтоКар",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00",
+  "instagram": "tak.kz",
+  "website": "http://tak.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032754074",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "7c0dc5a6f175dad8.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:тк евромоторс": {
   "name": "ТК ЕвроМоторс",
   "city": "aktobe",
@@ -5318,7 +5334,7 @@
   "instagram": "papajohns.kz",
   "website": "http://www.papajohns.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001080437181",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17829,7 +17845,7 @@
   "instagram": "royaltulipalmaty",
   "website": "https://royaltulipalmaty.com/",
   "source": "https://2gis.kz/almaty/firm/9429940000789806",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22518,7 +22534,7 @@
   "checked_at": "2026-11-04T03:44:25+00:00",
   "website": "http://www.aztm.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792220",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -23518,6 +23534,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T23:44:04+00:00"
+ },
+ "almaty:барбершоп": {
+  "name": "Барбершоп",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00"
  },
  "almaty:бариста": {
   "name": "Бариста",
@@ -28156,7 +28179,7 @@
   "instagram": "mlombard.kz",
   "website": "http://m-lombard.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000828821",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28193,7 +28216,7 @@
   "instagram": "salomon.kz",
   "website": "http://salomon.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000819061",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29153,6 +29176,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-16T08:44:36+00:00"
+ },
+ "almaty:мужской бутик": {
+  "name": "Мужской бутик",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00"
  },
  "almaty:мукажан": {
   "name": "МУКАЖАН",
@@ -30887,7 +30917,7 @@
   "checked_at": "2026-11-11T03:49:35+00:00",
   "website": "https://kaznai.kz/",
   "source": "https://kaznai.kz/en/category/janalyqtar/page/2",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31360,6 +31390,19 @@
   "website": "http://modul-sw.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000798193",
   "avatar_checked_at": "2026-11-11T14:44:53+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:сдэк сервис доставки экспресс курьер": {
+  "name": "СДЭК- Сервис Доставки Экспресс Курьер",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00",
+  "website": "https://cdek.kz/",
+  "source": "https://ahrefs.com/websites/cdek.kz",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32022,7 +32065,7 @@
   "instagram": "amanat_official",
   "website": "http://www.amanat24.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001044959253",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34345,7 +34388,7 @@
   "checked_at": "2026-11-04T02:44:14+00:00",
   "website": "http://www.eligita.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001438004",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40106,7 +40149,7 @@
   "checked_at": "2026-11-04T02:44:14+00:00",
   "website": "https://laps.kz/",
   "source": "https://2gis.kz/astana/firm/70000001118953394",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46476,7 +46519,7 @@
   "instagram": "jumbaktas",
   "website": "http://www.jumbaktas.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018088367",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56188,7 +56231,7 @@
   "instagram": "rika.express",
   "website": "http://rika.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001039864284",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -61184,6 +61227,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kokshetau:далаков м р": {
+  "name": "Далаков М.Р.",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00"
  },
  "kokshetau:деко": {
   "name": "Деко",
@@ -69848,7 +69898,7 @@
   "instagram": "annckz",
   "website": "http://annc.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001098539846",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70195,7 +70245,7 @@
   "checked_at": "2026-11-04T02:44:14+00:00",
   "website": "http://celviano.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001105816419",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -73104,7 +73154,7 @@
   "instagram": "aiplus.kz",
   "website": "http://aiplus.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001051514062",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -73444,6 +73494,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
+ },
+ "taldykorgan:евразиан фудс корпорэйшн ао": {
+  "name": "Евразиан Фудс Корпорэйшн, АО",
+  "city": "taldykorgan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00",
+  "website": "https://efc.kz/",
+  "source": "https://www.efc.kz/en/factories/eurasian-foods-corporation",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "82750bc59cce7879.jpg",
+  "avatar_source": "website"
  },
  "taldykorgan:жасар сауда": {
   "name": "Жасар-Сауда",
@@ -74026,6 +74091,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T21:43:43+00:00"
+ },
+ "taraz:qqq qazaqstan qamqor qyzmet": {
+  "name": "QQQ - Qazaqstan Qamqor Qyzmet",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00"
  },
  "taraz:renessans taraz дистрибьюторская компания": {
   "name": "Renessans Taraz (дистрибьюторская компания)",
@@ -76628,7 +76700,7 @@
   "instagram": "elsibo_07",
   "website": "http://elsibo.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001117823005",
-  "avatar_checked_at": "2026-11-11T03:49:36+00:00",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -78522,6 +78594,19 @@
   "checked_at": "2026-11-04T03:44:25+00:00",
   "instagram": "konditer.plus",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721361080"
+ },
+ "ust-kamenogorsk:корпорация востокпромгео": {
+  "name": "Корпорация Востокпромгео",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T04:42:45+00:00",
+  "website": "https://www.kvp-geo.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721332977",
+  "avatar_checked_at": "2026-11-18T04:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:крепеж опк": {
   "name": "Крепеж-ОПК",

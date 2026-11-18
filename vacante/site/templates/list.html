@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block title %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }} | vacante.kz{% endblock %}
 {% block description %}{{ t("{heading}: свежие вакансии с зарплатой, графиком и условиями, сейчас {total}. Обновляется каждый час.", heading=heading, total=total) }}{% endblock %}
+{% block head %}{% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}{% endblock %}
 {% block content %}
 <section class="hero">
   <h1>{{ heading }}</h1>
+  {% if stats %}<p class="pay-stats">{{ t("Зарплата по {n} вакансиям с месячной оплатой: в среднем {median} ₸, обычно от {low} до {high} ₸ в месяц.", n=stats[0], median=money(stats[1]), low=money(stats[2]), high=money(stats[3])) }}</p>{% endif %}
   <div class="search">
     <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" autocomplete="off">
   </div>
@@ -65,14 +67,15 @@
 </div>
 <p id="pay-note" class="note" hidden>{{ t("Зарплату сравниваем в тенге в месяц: смену считаем как 22 смены в месяц, час как 176 часов.") }}</p>
 {% endif %}
-<p class="count">{{ t("Результаты:") }} <span id="count">{{ vacancies | length }}</span></p>
-<div id="list" class="list">
-{% for v in vacancies %}
+<p class="count">{{ t("Результаты:") }} <span id="count">{{ total }}</span></p>
+<div id="list" class="list"{% if cards %} data-src="{{ cards }}" data-total="{{ total }}"{% if ids %} data-ids="{{ ids }}"{% endif %}{% endif %}>
+{% for v in vacancies[:PAGE_SIZE] %}
 {% include "_card.html" %}
 {% else %}
 <p class="empty">{{ t("Пока нет вакансий. Загляните через час: сборщик обновляет список каждый час.") }}</p>
 {% endfor %}
 </div>
+{% if total > PAGE_SIZE %}<button type="button" id="more" class="show-more">{{ t("Показать ещё") }}</button>{% endif %}
 <p id="none" class="empty" hidden>{{ t("Ничего не нашлось. Попробуйте убрать часть фильтров.") }}</p>
 <p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ city_name(city) }}{% endif %}:
   {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
@@ -89,16 +92,45 @@
   {% endfor %}
 </nav>
 {% endif %}
+{% if professions %}
+<nav class="by-category">
+  <h2>{{ t("Вакансии по профессиям") }}</h2>
+  {% for prof, n in professions %}
+  <a href="{{ home }}/{{ city }}/{{ prof }}/"{% if prof == profession %} aria-current="page"{% endif %}>{{ prof_name(prof) }} <small>{{ n }}</small></a>
+  {% endfor %}
+</nav>
+{% endif %}
 <script>
 (function () {
   const $ = (id) => document.getElementById(id);
   const q = $('q'), pay = $('pay'), fresh = $('fresh'), cat = $('cat'), sort = $('sort'), list = $('list');
-  const cards = [...list.querySelectorAll('.card')], toggles = [...document.querySelectorAll('.toggle')];
-  if (!cards.length) return;
-  const info = new Map(cards.map((c, i) => [c, {
-    i, posted: Date.parse(c.dataset.posted), pay: +c.dataset.pay, cat: c.dataset.category,
+  const more = $('more'), toggles = [...document.querySelectorAll('.toggle')];
+  const STEP = {{ PAGE_SIZE }};
+  // Карточки: в странице первые STEP, весь список в cards.json (data-src). Его грузим, только когда нужен:
+  // поиск, фильтр, сортировка или «Показать ещё»
+  let items = [...list.querySelectorAll('.card')].map((c, i) => ({
+    i, html: c.outerHTML, posted: Date.parse(c.dataset.posted), pay: +c.dataset.pay, cat: c.dataset.category,
     perks: c.dataset.perks.split('|'), search: c.dataset.search,
-  }]));
+  }));
+  if (!items.length) return;
+  let full = !list.dataset.src, loading = null, shown = STEP;
+  function load() {
+    if (full) return Promise.resolve();
+    if (!loading) {
+      list.setAttribute('aria-busy', 'true');
+      loading = fetch(list.dataset.src).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((rows) => {
+        // Страница сферы или профессии берёт из файла города только свои вакансии, в своём порядке
+        const ids = list.dataset.ids ? list.dataset.ids.split(' ') : null;
+        const byId = new Map(rows.map((r) => [r[0], r]));
+        const mine = ids ? ids.map((id) => byId.get(id)).filter(Boolean) : rows;
+        items = mine.map(([, html, posted, pay, cat, perks, search], i) => ({
+          i, html, posted: Date.parse(posted), pay, cat, perks: perks.split('|'), search,
+        }));
+        full = true;
+      }).catch(() => { loading = null; }).finally(() => list.removeAttribute('aria-busy'));
+    }
+    return loading;
+  }
   // Начало дня по времени Казахстана (UTC+5) days дней назад: «за сегодня» значит с полуночи
   const DAY = 864e5, KZ = 5 * 3600e3;
   const since = (days) => { const local = Date.now() + KZ; return local - (local % DAY) - KZ - days * DAY; };
@@ -110,8 +142,10 @@
       fresh: fresh ? fresh.value : '',
       cat: cat ? cat.value : '',
       need: toggles.filter((t) => t.getAttribute('aria-pressed') === 'true').map((t) => t.dataset.perk),
+      byPay: !!sort && sort.value === 'pay',
     };
   }
+  const blank = (s) => !s.words.length && !s.min && !s.fresh && !s.cat && !s.need.length && !s.byPay;
   function fits(d, s) {
     return s.words.every((w) => d.search.includes(w)) && d.pay >= s.min
       && (s.fresh === '' || d.posted >= since(+s.fresh))
@@ -124,18 +158,10 @@
     for (const o of select.options) {
       const alt = { ...s, [key]: o.value };
       let n = 0;
-      for (const d of info.values()) if (fits(d, alt)) n++;
+      for (const d of items) if (fits(d, alt)) n++;
       o.textContent = `${o.dataset.label} · ${n}`;
       o.disabled = n === 0 && o.value !== select.value;
     }
-  }
-  function order() {
-    const byPay = sort && sort.value === 'pay';
-    const sorted = [...cards].sort((a, b) => {
-      const x = info.get(a), y = info.get(b);
-      return byPay ? (y.pay - x.pay) || (x.i - y.i) : x.i - y.i;  // без зарплаты в конце, внутри по новизне
-    });
-    list.append(...sorted);
   }
   function save() {
     const p = new URLSearchParams();
@@ -149,21 +175,27 @@
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
   }
-  function apply(reorder) {
+  function render() {
     const s = state();
-    let n = 0;
-    for (const [c, d] of info) {
-      const hit = fits(d, s);
-      c.hidden = !hit;
-      if (hit) n++;
+    const hits = items.filter((d) => fits(d, s));
+    if (s.byPay) hits.sort((x, y) => (y.pay - x.pay) || (x.i - y.i));  // без зарплаты в конце, внутри по новизне
+    // Пока весь список не загружен, на странице только первые карточки, а всего их data-total
+    const n = full ? hits.length : +list.dataset.total;
+    list.innerHTML = hits.slice(0, shown).map((d) => d.html).join('');
+    if (full) {
+      counts(fresh, 'fresh', s);
+      counts(cat, 'cat', s);
     }
-    if (reorder) order();
-    counts(fresh, 'fresh', s);
-    counts(cat, 'cat', s);
     $('count').textContent = n;
     $('none').hidden = n > 0;
-    if (pay) $('pay-note').hidden = !(+pay.value || (sort && sort.value === 'pay'));
+    if (more) more.hidden = n <= shown;
+    if (pay) $('pay-note').hidden = !(+pay.value || s.byPay);
     save();
+  }
+  async function apply() {
+    shown = STEP;
+    if (!blank(state())) await load();
+    render();
   }
   // Фильтры из адреса страницы: ссылкой с ними можно поделиться
   const saved = new URLSearchParams(location.search);
@@ -178,14 +210,18 @@
   const perks = (saved.get('perks') || '').split(',');
   for (const t of toggles) t.setAttribute('aria-pressed', perks.includes(t.dataset.perk));
 
-  q.addEventListener('input', () => apply(false));
-  for (const el of [pay, fresh, cat]) if (el) el.addEventListener('change', () => apply(false));
-  if (sort) sort.addEventListener('change', () => apply(true));
+  q.addEventListener('input', apply);
+  for (const el of [pay, fresh, cat, sort]) if (el) el.addEventListener('change', apply);
   for (const t of toggles) t.addEventListener('click', () => {
     t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true');
-    apply(false);
+    apply();
   });
-  apply(true);
+  if (more) more.addEventListener('click', async () => {
+    shown += STEP;
+    await load();
+    render();
+  });
+  if (full || !blank(state())) apply();
 })();
 </script>
 {% endblock %}

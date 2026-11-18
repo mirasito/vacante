@@ -251,3 +251,48 @@ def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_p
     assert "С профилем отвечают охотнее" in page
     kk = (tmp_path / "public" / "kk" / "v" / "chan-31" / "index.html").read_text("utf-8")
     assert "WhatsApp-қа жазу" in kk and "Қоңырау шалу" in kk
+
+
+def test_long_lists_load_rest_from_city_cards_and_profession_pages(tmp_path, monkeypatch):
+    import json
+    monkeypatch.setattr(site, "PAGE_SIZE", 2)
+    posts = [RawPost("telegram", "chan", i, f"https://t.me/chan/{i}", f"Требуется официант в кафе Ромашка, 250 000 тг, №{i}",
+                     datetime(2026, 10, 27, i, tzinfo=timezone.utc), "almaty") for i in range(1, 5)]
+    save_vacancies(tmp_path / "data", [parse_post(p) for p in posts])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    city = (out / "almaty" / "index.html").read_text("utf-8")
+    assert city.count('<a class="card') == 2 and 'data-src="/almaty/cards.json"' in city and 'id="more"' in city
+    rows = json.loads((out / "almaty" / "cards.json").read_text("utf-8"))
+    assert len(rows) == 4 and "data-search" not in rows[0][1]
+    # Профессия берёт карточки из файла города по своим id
+    prof = (out / "almaty" / "oficiant" / "index.html").read_text("utf-8")
+    assert "Официант: вакансии в Алматы" in prof and 'data-src="/almaty/cards.json"' in prof and "data-ids=" in prof
+    assert not (out / "almaty" / "oficiant" / "cards.json").exists()
+    assert "Даяшы: Алматыдағы жұмыс" in (out / "kk" / "almaty" / "oficiant" / "index.html").read_text("utf-8")
+    assert "<loc>https://vacante.kz/almaty/oficiant/</loc>" in (out / "sitemap.xml").read_text("utf-8")
+    page = (out / "v" / "chan-1" / "index.html").read_text("utf-8")
+    assert '"BreadcrumbList"' in page and 'href="/almaty/oficiant/"' in page and 'class="similar"' in page
+    assert '<meta property="og:title"' in page
+    assert (out / f"{site.INDEXNOW_KEY}.txt").read_text() == site.INDEXNOW_KEY
+
+
+def test_job_posting_escapes_text_and_adds_address():
+    from vacante.models import Vacancy
+    v = Vacancy(id="c-1", title="Повар", category="horeca", city="astana", salary_min=None, salary_max=None,
+                salary_period=None, schedule="5/2", perks=[], employer="Кафе", text="Повар <нужен>\nсрочно",
+                source="telegram", source_url="https://t.me/c/1", posted_at="2026-11-01T10:00:00+00:00",
+                fingerprint="x", address="ул. Сыганак, 2")
+    import json
+    data = json.loads(site.job_posting_ld(v, "https://vacante.kz"))
+    assert data["description"] == "Повар &lt;нужен&gt;<br>срочно"
+    assert data["jobLocation"]["address"]["streetAddress"] == "ул. Сыганак, 2" and data["workHours"] == "5/2"
+
+
+def test_search_ping_sends_only_new_urls_and_own_vacancies_to_google():
+    from vacante import searchping
+    old = "<url><loc>https://vacante.kz/</loc></url><url><loc>https://vacante.kz/v/a-1/</loc></url>"
+    new = old + "".join(f"<url><loc>https://vacante.kz/{p}/</loc></url>" for p in ["v/a-2", "kk/v/a-2", "v/hh-5"])
+    urls = searchping.new_urls(old, new)
+    assert urls == ["https://vacante.kz/v/a-2/", "https://vacante.kz/kk/v/a-2/", "https://vacante.kz/v/hh-5/"]
+    assert searchping.google_order(urls) == ["https://vacante.kz/v/a-2/"]

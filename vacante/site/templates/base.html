@@ -5,7 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{{ t("vacante.kz — работа рядом с домом") }}{% endblock %}</title>
 <meta name="description" content="{% block description %}{{ t("Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.") }}{% endblock %}">
-<link rel="canonical" href="{{ base_url }}/{{ path ~ '/' if path else '' }}">
+{% set canonical = base_url ~ "/" ~ (path ~ "/" if path else "") %}
+<link rel="canonical" href="{{ canonical }}">
+{% if page != "404" and page != "admin" %}
+<meta property="og:site_name" content="vacante.kz">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:image" content="{% block og_image %}{{ base_url }}/static/icon-512.png{% endblock %}">
+<meta property="og:locale" content="{{ 'kk_KZ' if lang == 'kk' else 'ru_RU' }}">
+<meta name="twitter:card" content="summary">
+{% endif %}
 {% if page != "404" and page != "admin" %}
 {% for l in LANGS %}
 {% set p = (("kk/" if l == "kk" else "") ~ page) | trim("/") %}
@@ -43,6 +54,11 @@
   <p><b>{{ t("Работодателям:") }}</b> {{ t("разместите вакансию через") }} <a href="{{ employer_url }}" rel="nofollow">{{ t("бота @vacantekz_bot") }}</a>. {{ t("Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.") }}</p>
   <p>{{ t("vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.") }}</p>
   <p>{{ t("Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.") }}</p>
+  {% if all_cities %}
+  <nav class="cities"><b>{{ t("Работа по городам:") }}</b>
+    {% for slug, n in all_cities %}<a href="{{ home }}/{{ slug }}/">{{ city_name(slug) }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
+  </nav>
+  {% endif %}
   <p><a href="{{ root }}/app/">{{ t("Приложение: вакансии свайпами") }}</a> · <a href="{{ home }}/privacy/">{{ t("Политика конфиденциальности") }}</a></p>
 </footer>
 {% if metrika_id %}

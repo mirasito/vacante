@@ -1,3 +1,4 @@
+import json
 from datetime import datetime, timezone
 
 from vacante.models import RawPost
@@ -14,9 +15,9 @@ def test_build_writes_city_category_and_vacancy_pages(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     out = tmp_path / "public"
     count = build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
-    # главная, город, город+сфера, вакансия, конфиденциальность и две страницы «Подработка и смены» (оплата за смену):
+    # главная, город, город+сфера, вакансия, конфиденциальность, «Работодателям» и две страницы «Подработка и смены» (оплата за смену):
     # по-русски и по-казахски
-    assert count == 14
+    assert count == 16
     page = (out / "v" / "chan-5" / "index.html").read_text("utf-8")
     assert "Официант" in page and "14 000 – 18 000 ₸/день" in page
     assert 'href="https://t.me/chan/5"' in page
@@ -232,6 +233,24 @@ def test_privacy_page_in_both_languages_and_linked_from_footer(tmp_path):
     home = (out / "index.html").read_text("utf-8")
     assert 'href="/privacy/"' in home and 'href="/app/"' in home
     assert 'href="/kk/privacy/"' in (out / "kk" / "index.html").read_text("utf-8")
+
+
+def test_employers_page_linked_from_header_and_feed_has_channels(tmp_path):
+    raw = RawPost("telegram", "chan", 11, "https://t.me/chan/11", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    ru = (out / "rabotodatelyam" / "index.html").read_text("utf-8")
+    kk = (out / "kk" / "rabotodatelyam" / "index.html").read_text("utf-8")
+    assert "<h1>Найдите сотрудников через vacante.kz</h1>" in ru and "https://t.me/vacantekz_bot?start=post" in ru
+    assert 'href="https://t.me/vacanteastana">Астана</a>' in ru
+    assert "<h1>Қызметкерлерді vacante.kz арқылы табыңыз</h1>" in kk
+    assert 'class="post-job" href="/rabotodatelyam/"' in (out / "index.html").read_text("utf-8")
+    assert 'class="post-job" href="/kk/rabotodatelyam/"' in (out / "kk" / "index.html").read_text("utf-8")
+    # Бот по feed.json пишет работодателю, в каком канале выйдет вакансия
+    feed = json.loads((out / "feed.json").read_text("utf-8"))
+    assert feed["channels"]["astana"] == "@vacanteastana" and feed["channels"]["almaty"] == "@vacantealmaty"
 
 
 def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_path):

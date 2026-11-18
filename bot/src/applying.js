@@ -24,8 +24,11 @@ export async function applyAnswer(env, m, d) {
   await endDialog(env, chatId);
   const found = await getJob(env, d.job_id);
   if (!found || found.status !== "approved") return send(env, chatId, JOB_CLOSED, NO_KEYBOARD);
-  await env.DB.prepare("INSERT INTO applications (job_id, chat_id) VALUES (?, ?)").bind(found.id, chatId).run();
-  await send(env, found.employer_chat, job.applicationText(found, m.from, m.text, phone));
+  // Номер сообщения с откликом у работодателя: по кнопке «📩 Отклики» бот покажет его ещё раз (copyMessage).
+  // Сам текст отклика и номер кандидата бот не хранит.
+  const sent = await send(env, found.employer_chat, job.applicationText(found, m.from, m.text, phone));
+  await env.DB.prepare("INSERT INTO applications (job_id, chat_id, notice_id) VALUES (?, ?, ?)")
+    .bind(found.id, chatId, sent?.result?.message_id ?? null).run();
   return send(
     env,
     chatId,

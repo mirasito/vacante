@@ -40,11 +40,11 @@ test("мои вакансии: закрыть можно только откры
   ]);
   assert.match(screen.text, /№5 <b>Повар &lt;горячий цех&gt;<\/b>, Астана: опубликована, откликов: 2/);
   assert.match(screen.text, /№4 .*: отклонена$/m);
-  assert.deepEqual(screen.keyboard.map((row) => row[0].callback_data), ["close:5"]);
+  assert.deepEqual(screen.keyboard.map((row) => row[0].callback_data), ["apps:5", "close:5"]);
   assert.match(job.myJobsScreen([]).text, /пока нет вакансий/);
 });
 
-test("«Срочно»: условия из настроек, дата по Казахстану, пост в канале только для Астаны и Алматы", () => {
+test("«Срочно»: условия из настроек, дата по Казахстану, пост в канале города, если он есть", () => {
   assert.equal(job.boostOffer({}), null);
   assert.deepEqual(job.boostOffer({ KASPI_DETAILS: " +7 700 ", BOOST_PRICE: "5000", BOOST_DAYS: "3" }), { price: 5000, days: 3, kaspi: "+7 700", shiftPrice: 2500, postPrice: 900 });
   assert.equal(job.postPrice(job.boostOffer({ KASPI_DETAILS: "x", POST_PRICE: "0" })), 0);
@@ -55,9 +55,15 @@ test("«Срочно»: условия из настроек, дата по Ка
   assert.ok(!job.isBoosted({ boost_until: "2026-10-31 23:59:59" }, now));
   assert.ok(!job.isBoosted({ boost_until: null }, now));
   const boost = { price: 3000, days: 7, kaspi: "+7 700 <Мирас>" };
-  assert.match(job.boostScreen(filled, boost).text, /в нашем канале Астана/);
+  assert.match(job.boostScreen(filled, boost).text, /в нашем канале @vacanteastana \(Астана\)/);
   assert.match(job.boostScreen(filled, boost).text, /\+7 700 &lt;Мирас&gt;/);
   assert.doesNotMatch(job.boostScreen({ ...filled, city: "shymkent" }, boost).text, /канале/);
+  const live = { ...job.DEFAULT_CHANNELS, shymkent: "@vacanteshymkent" };
+  assert.match(job.boostScreen({ ...filled, city: "shymkent" }, boost, new Date(), live).text, /@vacanteshymkent/);
+  const approved = job.approvedScreen({ ...filled, city: "shymkent" }, null, new Date(), live).text;
+  assert.match(approved, /нашем Telegram-канале @vacanteshymkent/);
+  assert.match(approved, /https:\/\/vacante\.kz\/v\/bot-5\//);
+  assert.doesNotMatch(job.approvedText({ ...filled, city: "taraz" }), /канале/);
 });
 
 test("«Срочно» для смены: до дня смены", () => {
@@ -69,4 +75,16 @@ test("«Срочно» для смены: до дня смены", () => {
   assert.match(job.boostScreen(s, boost, now).text, /до начала смены за 2 500 ₸/);
   assert.match(job.approvedScreen(s, boost, now).text, /Смена прошла проверку/);
   assert.match(job.myJobsScreen([{ ...s, applications: 3, confirmed: 1 }], boost, now).text, /⚡ <b>Повар &lt;горячий цех&gt;<\/b>, Астана 08\.11: опубликована, взяли 1 из 2, просились: 3/);
+});
+
+test("меню работодателя, вопрос N из M и повторный показ откликов", () => {
+  const menu = job.employerMenu(0, { price: 2500 });
+  assert.match(menu.text, /Размещение бесплатное\. Нужно быстрее: «🔥 Срочно» за 2 500 ₸/);
+  assert.deepEqual(menu.keyboard.flat().map((b) => b.callback_data), ["emp:vacancy", "emp:shift", "emp:jobs", "emp:company"]);
+  assert.match(job.employerMenu(900).text, /Размещение стоит 900 ₸\./);
+  assert.match(job.askScreen(job.STEPS[1]).text, /^<i>Вопрос 2 из 7<\/i>\nКого ищете/);
+  assert.match(job.applicationsIntro(filled, 0, 0), /пока нет откликов/);
+  assert.match(job.applicationsIntro(filled, 2, 2), /: 2\. Ниже они ещё раз/);
+  assert.match(job.applicationsIntro(filled, 1, 3), /последние 1, остальные выше/);
+  assert.match(job.applicationsIntro(filled, 0, 3), /Они выше в этом чате/);
 });

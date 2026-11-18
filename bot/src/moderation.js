@@ -3,6 +3,7 @@ import { getJob } from "./db.js";
 import * as job from "./employer.js";
 import { refreshNotices, sendNotice, wakeSite } from "./notices.js";
 import { serverKey } from "./server.js";
+import { siteChannels } from "./site.js";
 import { answerCallback, edit, screen, send, tg } from "./telegram.js";
 import { HELP } from "./texts.js";
 
@@ -44,7 +45,7 @@ export async function moderate(env, q, ctx) {
   await edit(env, q.message.chat.id, q.message.message_id, ...screen(job.moderationScreen(now)));
   if (!meta.changes) return;
   await refreshNotices(env, now);
-  await send(env, now.employer_chat, ...(approve ? screen(job.approvedScreen(now, job.boostOffer(env))) : [job.rejectedText(now)]));
+  await send(env, now.employer_chat, ...(approve ? screen(job.approvedScreen(now, job.boostOffer(env), new Date(), await siteChannels(env), env.SITE_URL)) : [job.rejectedText(now)]));
   // Не ждём часового обновления: сразу запускаем сборку, чтобы вакансия появилась на сайте и в канале за несколько минут
   if (approve) wakeSite(env, ctx);
 }
@@ -95,7 +96,7 @@ async function review(env, d) {
   await refreshNotices(env, saved);
   if (!decided) return "edited";
   await send(env, saved.employer_chat,
-    ...(status === "approved" ? screen(job.approvedScreen(saved, job.boostOffer(env))) : [job.rejectedText(saved, d.reason)]));
+    ...(status === "approved" ? screen(job.approvedScreen(saved, job.boostOffer(env), new Date(), await siteChannels(env), env.SITE_URL)) : [job.rejectedText(saved, d.reason)]));
   return status;
 }
 

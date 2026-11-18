@@ -45,13 +45,13 @@
     {% endfor %}
   </nav>
   {% endif %}
-  <a class="post-job" href="{{ employer_url }}" rel="nofollow">{{ t("Разместить вакансию") }}</a>
+  <a class="post-job" href="{{ home }}/rabotodatelyam/">{{ t("Работодателям") }}</a>
 </header>
 <main class="wrap">
 {% block content %}{% endblock %}
 </main>
 <footer class="footer wrap">
-  <p><b>{{ t("Работодателям:") }}</b> {{ t("разместите вакансию через") }} <a href="{{ employer_url }}" rel="nofollow">{{ t("бота @vacantekz_bot") }}</a>. {{ t("Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.") }}</p>
+  <p><b>{{ t("Работодателям:") }}</b> {{ t("разместите вакансию через") }} <a href="{{ employer_url }}" rel="nofollow">{{ t("бота @vacantekz_bot") }}</a>. {{ t("Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.") }} <a href="{{ home }}/rabotodatelyam/">{{ t("Как это работает") }}</a></p>
   <p>{{ t("vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.") }}</p>
   <p>{{ t("Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.") }}</p>
   {% if all_cities %}

@@ -5799,6 +5799,22 @@
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
  },
+ "almaty:alt университет имени мухамеджана тынышпаева": {
+  "name": "ALT Университет имени Мухамеджана Тынышпаева",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T17:41:57+00:00",
+  "instagram": "altedukz",
+  "telegram": "altedukz",
+  "website": "https://alt.edu.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000796111",
+  "avatar_checked_at": "2026-11-18T17:41:59+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "almaty:altai business hotel": {
   "name": "Altai Business Hotel",
   "city": "almaty",
@@ -26879,6 +26895,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "almaty:ирина": {
+  "name": "Ирина",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T17:41:57+00:00"
+ },
  "almaty:исаева хэда": {
   "name": "Исаева Хэда",
   "city": "almaty",
@@ -35693,6 +35716,13 @@
   "instagram": "kinesis_a_gym",
   "source": "https://2gis.kz/astana/firm/70000001046465109"
  },
+ "astana:ab group": {
+  "name": "AB-group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T17:41:57+00:00"
+ },
  "astana:ab restaurants": {
   "name": "AB Restaurants",
   "city": "astana",
@@ -36396,6 +36426,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T16:46:43+00:00"
+ },
+ "astana:aset pix": {
+  "name": "Aset Pix",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T17:41:57+00:00"
  },
  "astana:asf partnership": {
   "name": "ASF PARTNERSHIP",
@@ -49233,6 +49270,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T21:43:37+00:00"
+ },
+ "astana:кабылдинов": {
+  "name": "КАБЫЛДИНОВ",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T17:41:57+00:00"
  },
  "astana:кавказская пленница": {
   "name": "Кавказская пленница",
@@ -72843,6 +72887,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T02:45:04+00:00"
+ },
+ "shymkent:mo create": {
+  "name": "MO-CREATE",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T17:41:57+00:00"
  },
  "shymkent:mobil o k security company": {
   "name": "Mobil O.K. Security Company",

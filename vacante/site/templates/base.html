@@ -54,6 +54,9 @@
   <p><b>{{ t("Работодателям:") }}</b> {{ t("разместите вакансию через") }} <a href="{{ employer_url }}" rel="nofollow">{{ t("бота @vacantekz_bot") }}</a>. {{ t("Она появится на сайте и в подборках соискателям, а отклики придут вам в Telegram.") }} <a href="{{ home }}/rabotodatelyam/">{{ t("Как это работает") }}</a></p>
   <p>{{ t("vacante.kz собирает вакансии из открытых источников: Telegram-каналов и сайтов работодателей. Контакты работодателя смотрите в оригинальном объявлении.") }}</p>
   <p>{{ t("Владелец канала и хотите, чтобы его не было в сборе? Напишите нам, уберём сразу.") }}</p>
+  {# Кнопка Google «Предпочтительные источники»: человек отмечает vacante.kz, и Google чаще показывает нас
+     ему в «Главных новостях», Discover и ответах ИИ (developers.google.com/search/docs/appearance/preferred-sources) #}
+  <p><a class="preferred" href="https://www.google.com/preferences/source?q=vacante.kz" rel="noopener" target="_blank">★ {{ t("Добавить vacante.kz в предпочитаемые источники Google") }}</a></p>
   {% if all_cities %}
   <nav class="cities"><b>{{ t("Работа по городам:") }}</b>
     {% for slug, n in all_cities %}<a href="{{ home }}/{{ slug }}/">{{ city_name(slug) }}</a>{% if not loop.last %} · {% endif %}{% endfor %}

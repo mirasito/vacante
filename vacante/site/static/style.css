@@ -114,3 +114,4 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .employers .tariff .price { font-size: 24px; font-weight: 700; margin: 4px 0 8px; }
 .employers .tariff .price small { font-size: 14px; font-weight: 400; color: var(--quiet); }
 .employers .tariff p { margin: 0; }
+.footer .preferred{display:inline-block;padding:10px 14px;border:1px solid rgba(127,127,127,.4);border-radius:12px;text-decoration:none;color:inherit;font-weight:600}

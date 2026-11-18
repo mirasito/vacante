@@ -319,3 +319,13 @@ def test_search_ping_sends_only_new_urls_and_own_vacancies_to_google():
     urls = searchping.new_urls(old, new)
     assert urls == ["https://vacante.kz/v/a-2/", "https://vacante.kz/kk/v/a-2/", "https://vacante.kz/v/hh-5/"]
     assert searchping.google_order(urls) == ["https://vacante.kz/v/a-2/"]
+
+
+def test_footer_has_google_preferred_source_button(tmp_path):
+    raw = RawPost("telegram", "chan", 11, "https://t.me/chan/11", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    link = 'href="https://www.google.com/preferences/source?q=vacante.kz"'
+    assert link in (tmp_path / "public" / "index.html").read_text("utf-8")
+    assert "таңдаулы дереккөздерге" in (tmp_path / "public" / "kk" / "v" / "chan-11" / "index.html").read_text("utf-8")

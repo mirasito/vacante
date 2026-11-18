@@ -1,5 +1,6 @@
 // Кабинет работодателя в приложении (Mini App vacante.kz/app/?tab=employer). Приложение входит данными
 // Telegram (initData), бот проверяет их подписью своего токена, как сервер профилей (server/src/telegram.ts).
+// На сайте вне Telegram вход через бота (login.js): заголовок Authorization: session <ключ>.
 // Вакансии работодателя живут здесь, в D1 бота, поэтому кабинет ходит прямо в воркер:
 //   GET  /api/cabinet   — вакансии, отклики, тарифы, остаток пакетов, реквизиты Kaspi
 //   POST /api/cabinet   — { action, id?, count? }: close, apps, credit, paid_boost, paid_post, paid_pack
@@ -7,6 +8,7 @@
 import options from "./options.json" with { type: "json" };
 import { creditsLeft, myJobs } from "./db.js";
 import * as job from "./employer.js";
+import { verifySession } from "./login.js";
 import { boostWithCredit, requestBoost, requestPack, requestPost } from "./payments.js";
 import { closeOwnJob, resendApplications } from "./posting.js";
 import { send } from "./telegram.js";
@@ -47,7 +49,7 @@ export async function verifyInitData(raw, token, nowMs = Date.now()) {
   }
 }
 
-function cors(request, env) {
+export function cors(request, env) {
   const origin = request.headers.get("Origin") || "";
   const allowed = [...ORIGINS, ...String(env.APP_ORIGINS || "").split(",").map((s) => s.trim()).filter(Boolean)];
   return allowed.includes(origin)
@@ -147,8 +149,9 @@ async function act(env, user, body, ctx) {
 export async function cabinetApi(request, env, ctx) {
   const headers = cors(request, env);
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
-  const auth = (request.headers.get("Authorization") || "").replace(/^tma\s+/, "");
-  const user = await verifyInitData(auth, env.TELEGRAM_BOT_TOKEN);
+  const auth = request.headers.get("Authorization") || "";
+  const user = /^session\s+/.test(auth) ? await verifySession(auth.replace(/^session\s+/, ""), env.TELEGRAM_BOT_TOKEN)
+    : await verifyInitData(auth.replace(/^tma\s+/, ""), env.TELEGRAM_BOT_TOKEN);
   if (!user) return Response.json({ error: "Откройте кабинет из Telegram" }, { status: 401, headers });
   if (request.method === "GET") return Response.json(await cabinetState(env, user), { headers });
   if (request.method !== "POST") return Response.json({ error: "method" }, { status: 405, headers });

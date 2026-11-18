@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-18T15:56:56+00:00",
+ "updated_at": "2026-11-18T16:56:33+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2564,15 +2564,6 @@
     "schedule": null
    }
   },
-  "hh-139138678": {
-   "verdict": "approve",
-   "at": "2026-11-04T16:58:05+00:00",
-   "fields": {
-    "employer": "Свой проект",
-    "schedule": "5/2",
-    "address": "пр. Тауелсиздик, 22"
-   }
-  },
   "zhumys_astana_kz-17143": {
    "verdict": "approve",
    "at": "2026-11-04T16:58:05+00:00",
@@ -2604,47 +2595,6 @@
    "verdict": "reject",
    "at": "2026-11-04T16:58:05+00:00",
    "reason": "Повтор вакансии кассира и сборщика бургеров из этой же очереди"
-  },
-  "hh-139138824": {
-   "verdict": "approve",
-   "at": "2026-11-04T16:58:05+00:00",
-   "fields": {
-    "employer": "Караоке-бар «Dauys»",
-    "schedule": "6/1, смены по 12 часов",
-    "address": "мкр Авангард-2, 22А",
-    "perks": []
-   }
-  },
-  "hh-139138761": {
-   "verdict": "approve",
-   "at": "2026-11-04T16:58:05+00:00",
-   "fields": {
-    "title": "Водитель категорий C, D, E (ДОПОГ)",
-    "employer": "Транспортная компания «Бизнес Альянс»",
-    "schedule": null
-   }
-  },
-  "rabota_semey_official-6811": {
-   "verdict": "approve",
-   "at": "2026-11-04T16:58:05+00:00",
-   "fields": {
-    "title": "Посудомойщица-уборщица",
-    "employer": "Қымызхана №1",
-    "schedule": "18:00–03:00",
-    "perks": [
-     "Развозка",
-     "Ежедневная оплата"
-    ]
-   }
-  },
-  "rabota_semey_official-6809": {
-   "verdict": "approve",
-   "at": "2026-11-04T16:58:05+00:00",
-   "fields": {
-    "title": "Продавец-консультант",
-    "employer": "Autosvet-Autolight",
-    "address": "авторынок «Восточный»"
-   }
   },
   "rabota_astanakz-31273": {
    "verdict": "approve",
@@ -5154,15 +5104,6 @@
     "employer": "МЖЭК «Prestige»",
     "schedule": "5/2",
     "address": "ул. Г. Каирбекова, 358/2"
-   }
-  },
-  "hh-139138724": {
-   "verdict": "approve",
-   "at": "2026-11-05T12:57:57+00:00",
-   "fields": {
-    "title": "Промоутер в автосалон",
-    "schedule": "2/2, смены по 12 часов",
-    "address": "пр. Нурсултана Назарбаева, 193"
    }
   },
   "hh-139174956": {
@@ -47791,6 +47732,39 @@
      "Бонусы"
     ]
    }
+  },
+  "rabota4almaty-6739": {
+   "verdict": "approve",
+   "at": "2026-11-18T16:56:33+00:00",
+   "fields": {
+    "employer": "Супермаркет «City Market»",
+    "schedule": "2/2, 08:00–20:00"
+   }
+  },
+  "aktobevakansii-44608": {
+   "verdict": "approve",
+   "at": "2026-11-18T16:56:33+00:00",
+   "fields": {
+    "schedule": "2/2, 11:00–01:00",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "vakansii_rabota_atyrau-50274": {
+   "verdict": "approve",
+   "at": "2026-11-18T16:56:33+00:00",
+   "fields": {
+    "title": "Официант, технический персонал",
+    "employer": "Караоке «Voice»"
+   }
+  },
+  "rabotaaktau-142947": {
+   "verdict": "reject",
+   "at": "2026-11-18T16:56:33+00:00",
+   "reason": "Офисная должность: менеджер-администратор медцентра, мало сведений"
   }
  }
 }

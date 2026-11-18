@@ -15,9 +15,6 @@ on:
       days:
         description: "За сколько последних дней"
         default: "14"
-  push:
-    branches: ["claude/**"]
-    paths: ["vacante/metrika.py", ".github/workflows/metrika.yml"]
 
 permissions:
   contents: read
@@ -35,6 +32,7 @@ jobs:
           METRIKA_TOKEN: ${{ secrets.METRIKA_TOKEN }}
           DAYS: ${{ inputs.days || '14' }}
         run: |
+          set -o pipefail
           pip install --quiet httpx
           python vacante/metrika.py | tee metrika.txt
           { echo '```'; cat metrika.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

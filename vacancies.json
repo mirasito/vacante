@@ -1,5 +1,39 @@
 [
  {
+  "id": "hh-137961400",
+  "title": "Кладовщик-комплектовщик (сборщик заказов)",
+  "category": "warehouse",
+  "city": "kostanay",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_period": null,
+  "schedule": "6/1, 11 часов, 12 часов",
+  "perks": [
+   "Без опыта"
+  ],
+  "employer": "ХАБИБУЛЛИНА НАТАЛЬЯ ВАСИЛЬЕВНА",
+  "text": "Обязанности: Прием учет и выдача товара. -Комплектовать товар.\nТребования: Рассматриваем без опыта работы. -Внимательность. -Ответственность. -Аккуратность.",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/137961400?tech_source=api",
+  "posted_at": "2026-11-18T21:23:03+00:00",
+  "fingerprint": "ffe0354b70376214",
+  "also_seen_in": [
+   "https://hh.kz/vacancy/139504417?tech_source=api"
+  ],
+  "address": "Москва, Красная площадь",
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "12728847"
+ },
+ {
   "id": "hh-139635448",
   "title": "Администратор в детский центр",
   "category": "service",
@@ -97014,40 +97048,6 @@
   "shift_time": null,
   "need": null,
   "employer_hh": "10872997"
- },
- {
-  "id": "hh-137961400",
-  "title": "Кладовщик-комплектовщик (сборщик заказов)",
-  "category": "warehouse",
-  "city": "kostanay",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_period": null,
-  "schedule": "6/1, 11 часов, 12 часов",
-  "perks": [
-   "Без опыта"
-  ],
-  "employer": "ХАБИБУЛЛИНА НАТАЛЬЯ ВАСИЛЬЕВНА",
-  "text": "Обязанности: Прием учет и выдача товара. -Комплектовать товар.\nТребования: Рассматриваем без опыта работы. -Внимательность. -Ответственность. -Аккуратность.",
-  "source": "hh",
-  "source_url": "https://hh.kz/vacancy/137961400?tech_source=api",
-  "posted_at": "2026-11-15T21:23:03+00:00",
-  "fingerprint": "ffe0354b70376214",
-  "also_seen_in": [
-   "https://hh.kz/vacancy/139504417?tech_source=api"
-  ],
-  "address": "Москва, Красная площадь",
-  "top_until": null,
-  "title_kk": null,
-  "contact": [],
-  "lat": null,
-  "lon": null,
-  "geo": null,
-  "approx": false,
-  "shift_date": null,
-  "shift_time": null,
-  "need": null,
-  "employer_hh": "12728847"
  },
  {
   "id": "hh-139503205",

@@ -7734,6 +7734,13 @@
    "website"
   ]
  },
+ "almaty:biodom": {
+  "name": "Biodom",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
+ },
  "almaty:biohayat kids": {
   "name": "BioHayat Kids",
   "city": "almaty",
@@ -7891,6 +7898,20 @@
   ],
   "avatar": "f114fc58412c1e78.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:bocharoff": {
+  "name": "Bocharoff",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00",
+  "instagram": "bocharoff.kz",
+  "website": "https://bocharoff.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001065990414",
+  "avatar_checked_at": "2026-11-18T08:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:bol1patsha group": {
   "name": "BOL1PATSHA GROUP",
@@ -9028,6 +9049,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-15T17:42:55+00:00"
+ },
+ "almaty:datasec": {
+  "name": "DataSec",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "almaty:dau fish": {
   "name": "Dau Fish",
@@ -26319,6 +26347,22 @@
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
  },
+ "almaty:институт гастроэнтерологии гепатологии и метаболизма": {
+  "name": "Институт гастроэнтерологии,гепатологии и метаболизма",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00",
+  "instagram": "interna.clinic",
+  "website": "http://internaclinic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001065536807",
+  "avatar_checked_at": "2026-11-18T08:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fb3992bd18254d37.jpg",
+  "avatar_source": "website"
+ },
  "almaty:институт ядерной физики": {
   "name": "Институт ядерной физики",
   "city": "almaty",
@@ -27541,6 +27585,13 @@
   ],
   "avatar": "619f0b355ba3ad80.jpg",
   "avatar_source": "website"
+ },
+ "almaty:комплаинс контрол": {
+  "name": "Комплаинс Контрол",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "almaty:комплект строй сервис": {
   "name": "Комплект Строй Сервис",
@@ -30433,6 +30484,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-17T14:43:54+00:00"
+ },
+ "almaty:пк компания такт": {
+  "name": "ПК Компания Такт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "almaty:пкк арго": {
   "name": "ПКК Арго",
@@ -33524,6 +33582,13 @@
   ],
   "avatar": "19e405b78d420e43.jpg",
   "avatar_source": "website"
+ },
+ "almaty:финансовый компасс": {
+  "name": "Финансовый Компасс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "almaty:финансовый холдинг республика": {
   "name": "«ФИНАНСОВЫЙ ХОЛДИНГ «РЕСПУБЛИКА»",
@@ -46486,6 +46551,13 @@
   "v": 3,
   "checked_at": "2026-11-10T23:44:04+00:00"
  },
+ "astana:бином": {
+  "name": "Бином",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
+ },
  "astana:бисенов": {
   "name": "Бисенов",
   "city": "astana",
@@ -47532,6 +47604,13 @@
   "checked_at": "2026-10-30T00:43:00+00:00",
   "instagram": "doner_na_abaya_astanaa",
   "source": "https://2gis.kz/astana/firm/70000001094949378"
+ },
+ "astana:дорфман олег валерьевич": {
+  "name": "Дорфман Олег Валерьевич",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "astana:досметов": {
   "name": "ДОСМЕТОВ",
@@ -48828,6 +48907,13 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "astana:компания акко": {
+  "name": "Компания АККО",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
+ },
  "astana:компания владира": {
   "name": "Компания ВладИра",
   "city": "astana",
@@ -49906,6 +49992,13 @@
   "checked_at": "2026-11-11T14:44:52+00:00",
   "instagram": "miko_beshbarmaq",
   "source": "https://2gis.kz/astana/firm/70000001068825291"
+ },
+ "astana:микрокредитная организация мегакредит": {
+  "name": "Микрокредитная организация Мегакредит",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "astana:миллениум парк": {
   "name": "Миллениум Парк",
@@ -51102,6 +51195,21 @@
   "v": 3,
   "checked_at": "2026-11-14T18:42:32+00:00"
  },
+ "astana:производственная компания целинмаш": {
+  "name": "Производственная Компания ЦелинМаш",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00",
+  "website": "https://pkcm.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001116746966",
+  "avatar_checked_at": "2026-11-18T08:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2305b2025e404077.jpg",
+  "avatar_source": "website"
+ },
  "astana:производственная фирма лик": {
   "name": "Производственная фирма ЛиК",
   "city": "astana",
@@ -52133,6 +52241,13 @@
   "v": 3,
   "checked_at": "2026-10-30T21:43:07+00:00"
  },
+ "astana:союз14": {
+  "name": "СОЮЗ14",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
+ },
  "astana:спа комплекс": {
   "name": "Спа-комплекс",
   "city": "astana",
@@ -53035,6 +53150,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T19:44:10+00:00"
+ },
+ "astana:трц jibek joly": {
+  "name": "ТРЦ Jibek Joly",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "astana:трц керуен build system": {
   "name": "ТРЦ Керуен (Build SYSTEM)",
@@ -63559,6 +63681,13 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "kostanay:компания акко": {
+  "name": "Компания АККО",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
+ },
  "kostanay:компания саламат": {
   "name": "Компания САЛАМАТ",
   "city": "kostanay",
@@ -64101,6 +64230,20 @@
   ],
   "avatar": "20ea0b412ff4855e.jpg",
   "avatar_source": "telegram"
+ },
+ "kostanay:сеть магазинов цифровой и бытовой техники днс казахстан": {
+  "name": "Сеть магазинов цифровой и бытовой техники ДНС КАЗАХСТАН",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00",
+  "instagram": "dns_qazaqstan",
+  "website": "https://dns-shop.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001081060764",
+  "avatar_checked_at": "2026-11-18T08:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kostanay:сму 1 аств спецстрой": {
   "name": "СМУ-1 АСТВ Спецстрой",
@@ -69255,6 +69398,15 @@
   "instagram": "supermarket_adal_semey",
   "source": "https://2gis.kz/semej/firm/70000001053104249"
  },
+ "semey:адмирал": {
+  "name": "АДМИРАЛ",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00",
+  "instagram": "admiral_semey",
+  "source": "https://2gis.kz/semej/firm/70000001066020265"
+ },
  "semey:азия декор": {
   "name": "Азия Декор",
   "city": "semey",
@@ -69598,6 +69750,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-29T00:43:40+00:00"
+ },
+ "semey:канцеров": {
+  "name": "Канцеров",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
  },
  "semey:кари кз": {
   "name": "КАРИ КЗ",
@@ -74867,6 +75026,13 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "taraz:компания акко": {
+  "name": "Компания АККО",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00"
+ },
  "taraz:компания эврика": {
   "name": "Компания ЭВРИКА",
   "city": "taraz",
@@ -76061,6 +76227,20 @@
   ],
   "avatar": "c32e276b9ffd6d68.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:technodom operator технодом оператор": {
+  "name": "TECHNODOM Operator (Технодом Оператор)",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T08:44:10+00:00",
+  "instagram": "technodomkz",
+  "website": "https://www.technodom.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025450282",
+  "avatar_checked_at": "2026-11-18T08:44:11+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:teniz capital investment banking": {
   "name": "TENIZ CAPITAL INVESTMENT BANKING",

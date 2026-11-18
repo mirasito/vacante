@@ -107,3 +107,10 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .employers .btn { display: inline-block; padding: 12px 20px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
 .employers .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
 .employers .steps { padding-left: 1.3em; display: grid; gap: 8px; }
+.employers .tariffs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.employers .tariff { border: 1.5px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.employers .tariff.pro { border-color: #E5560B; }
+.employers .tariff h3 { margin: 0; }
+.employers .tariff .price { font-size: 24px; font-weight: 700; margin: 4px 0 8px; }
+.employers .tariff .price small { font-size: 14px; font-weight: 400; color: var(--quiet); }
+.employers .tariff p { margin: 0; }

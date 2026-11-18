@@ -174,6 +174,13 @@ def test_paid_top_is_posted_again_once_per_payment(tmp_path):
     assert pins[-1] == ("@vacantealmaty", 502, True)
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(8, 29), pin=pin)["unpinned"] == 1
     assert pins[-1] == ("@vacantealmaty", 501, False)
+    # Тариф Про: через неделю после первого поста ещё один пост без нового закрепа, один раз
+    count = len(sent)
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(9, 30), pin=pin)["posted"] == 0
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 11, 3, 10, tzinfo=timezone.utc), pin=pin)["direct"] == 1
+    assert len(sent) == count + 1 and sent[-1].startswith("🔥 <b>Срочно!</b>")
+    assert autopost.run(tmp_path, "https://vacante.kz", send, now=datetime(2026, 11, 3, 11, tzinfo=timezone.utc), pin=pin)["posted"] == 0
+    assert pins[-1] == ("@vacantealmaty", 501, False)
     # Работодатель закрыл вакансию раньше: открепляем сразу
     save_vacancies(tmp_path, [])
     assert autopost.run(tmp_path, "https://vacante.kz", send, now=at(9, 29), pin=pin)["unpinned"] == 1

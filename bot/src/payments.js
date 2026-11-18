@@ -1,5 +1,5 @@
 // Оплаты на Kaspi: «🔥 Срочно» и платное размещение, подтверждение модератором.
-import { getJob, getPayment } from "./db.js";
+import { creditsLeft, getJob, getPayment, useCredit } from "./db.js";
 import * as job from "./employer.js";
 import { sendNotice, wakeSite } from "./notices.js";
 import { siteChannels } from "./site.js";
@@ -15,7 +15,60 @@ export async function boostJob(env, q) {
   const found = boost && (await ownApproved(env, q));
   if (!found) return answerCallback(env, q, boost ? "Поднять можно только опубликованную вакансию" : "Услуга пока недоступна");
   await answerCallback(env, q);
-  return send(env, q.message.chat.id, ...screen(job.boostScreen(found, boost, new Date(), await siteChannels(env))));
+  const credits = await creditsLeft(env, q.message.chat.id);
+  return send(env, q.message.chat.id, ...screen(job.boostScreen(found, boost, new Date(), await siteChannels(env), credits)));
+}
+
+// «🔥 Списать из пакета»: Про для опубликованной вакансии без оплаты, срок продлевается от текущего конца
+export async function boostFromCredit(env, q, ctx) {
+  const boost = job.boostOffer(env);
+  const found = boost && (await ownApproved(env, q));
+  if (!found || found.kind === "shift") return answerCallback(env, q, "Поднять из пакета можно только опубликованную вакансию");
+  if (!(await useCredit(env, found.employer_chat))) return answerCallback(env, q, "В пакетах не осталось Про: /employer");
+  await answerCallback(env, q);
+  await env.DB.prepare(
+    `UPDATE jobs SET boost_until = datetime(MAX(COALESCE(boost_until, datetime('now')), datetime('now')), '+' || ? || ' days'),
+       updated_at = datetime('now') WHERE id = ?`,
+  ).bind(boost.days, found.id).run();
+  const now = await getJob(env, found.id);
+  await edit(env, q.message.chat.id, q.message.message_id,
+    `${job.boostedText(now, await siteChannels(env))}\n\nОсталось Про в пакетах: ${await creditsLeft(env, found.employer_chat)}.`);
+  wakeSite(env, ctx);
+}
+
+// Пакеты Про: экран с пакетами, оплата на Kaspi, «Я оплатил», модератор подтверждает
+export async function showPacks(env, q) {
+  const boost = job.boostOffer(env);
+  await answerCallback(env, q, boost?.packs?.length ? undefined : "Пакеты пока недоступны");
+  if (!boost?.packs?.length) return;
+  return send(env, q.message.chat.id, ...screen(job.packsScreen(boost, await creditsLeft(env, q.message.chat.id))));
+}
+
+const packOf = (boost, data) => boost?.packs?.find((p) => p.count === Number(data.split(":")[1]));
+
+export async function packPay(env, q) {
+  const boost = job.boostOffer(env);
+  const pack = packOf(boost, q.data);
+  if (!pack) return answerCallback(env, q, "Такого пакета уже нет: /employer");
+  await answerCallback(env, q);
+  return edit(env, q.message.chat.id, q.message.message_id, ...screen(job.packPayScreen(pack, boost)));
+}
+
+export async function packPaid(env, q) {
+  const boost = job.boostOffer(env);
+  const pack = packOf(boost, q.data);
+  if (!pack) return answerCallback(env, q, "Такого пакета уже нет: /employer");
+  const chatId = q.message.chat.id;
+  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE employer_chat = ? AND kind = 'pack' AND status = 'pending'")
+    .bind(chatId).first();
+  if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод за пакет, напишу, как только включим");
+  await answerCallback(env, q);
+  const name = job.employerName(q.from);
+  const { meta } = await env.DB.prepare(
+    "INSERT INTO payments (job_id, employer_chat, amount, days, kind, pack, employer_name) VALUES (0, ?, ?, ?, 'pack', ?, ?)",
+  ).bind(chatId, pack.price, pack.days, pack.count, name).run();
+  await edit(env, chatId, q.message.message_id, job.packWaitText(pack));
+  await notifyPayment(env, await getPayment(env, meta.last_row_id), { employer_name: name });
 }
 
 export async function paid(env, q) {
@@ -58,13 +111,16 @@ export async function confirmPayment(env, q, ctx) {
     .bind(ok ? "confirmed" : "rejected", job.employerName(q.from), payment.id)
     .run();
   if (meta.changes && ok && payment.kind === "post") {
-    // Размещение оплачено: вакансия уходит на проверку (даже если её успели закрыть, за неё заплатили)
+    // Размещение оплачено: вакансия уходит на проверку (даже если её успели закрыть, за неё заплатили).
+    // Тариф Про (payment.days > 0): срок Про считаем с этой минуты, проверка обычно до часа.
     await env.DB.prepare(
-      `UPDATE jobs SET status = 'pending', post_paid = ?, updated_at = datetime('now') WHERE id = ? AND status IN ('payment', 'closed')`,
+      `UPDATE jobs SET status = 'pending', post_paid = ?, updated_at = datetime('now'),
+         boost_until = CASE WHEN ? > 0 THEN datetime('now', '+' || ? || ' days') ELSE boost_until END
+       WHERE id = ? AND status IN ('payment', 'closed')`,
     )
-      .bind(payment.amount, payment.job_id)
+      .bind(payment.amount, payment.days, payment.days, payment.job_id)
       .run();
-  } else if (meta.changes && ok) {
+  } else if (meta.changes && ok && payment.kind !== "pack") {
     // Продление считаем от конца текущего «Срочно», если оно ещё идёт
     await env.DB.prepare(
       `UPDATE jobs SET boost_until = datetime(MAX(COALESCE(boost_until, datetime('now')), datetime('now')), '+' || ? || ' days'),
@@ -74,6 +130,7 @@ export async function confirmPayment(env, q, ctx) {
       .run();
   }
   const now = await getPayment(env, payment.id);
+  if (payment.kind === "pack") return packDecided(env, now, meta.changes > 0, ok);
   const found = await getJob(env, payment.job_id);
   const { results } = await env.DB.prepare("SELECT chat_id, message_id FROM payment_notices WHERE payment_id = ?").bind(now.id).all();
   const card = job.paymentScreen(now, found);
@@ -113,8 +170,9 @@ export async function postPaid(env, q) {
     .bind(found.id).first();
   if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод, напишу, как только придёт");
   await answerCallback(env, q);
-  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days, kind) VALUES (?, ?, ?, 0, 'post')")
-    .bind(found.id, found.employer_chat, job.postPrice(boost))
+  const days = found.pro ? job.offerFor(boost, found).days : 0;
+  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days, kind) VALUES (?, ?, ?, ?, 'post')")
+    .bind(found.id, found.employer_chat, job.postPriceFor(found, boost), days)
     .run();
   await edit(env, q.message.chat.id, q.message.message_id, job.postWaitText(found));
   await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
@@ -124,4 +182,38 @@ export async function postLater(env, q) {
   const found = await ownUnpaid(env, q);
   await answerCallback(env, q);
   if (found) return edit(env, q.message.chat.id, q.message.message_id, job.postLaterText(found));
+}
+
+// Решение по оплате пакета: обновляем карточки модераторов, включаем пакет и пишем работодателю
+async function packDecided(env, payment, changed, ok) {
+  const { results } = await env.DB.prepare("SELECT chat_id, message_id FROM payment_notices WHERE payment_id = ?").bind(payment.id).all();
+  const card = job.paymentScreen(payment, { employer_name: payment.employer_name });
+  for (const n of results) await edit(env, n.chat_id, n.message_id, card.text, card.keyboard);
+  if (!changed) return;
+  if (!ok) {
+    return send(env, payment.employer_chat,
+      `Мы не нашли перевод за пакет «${payment.pack} Про». Если вы уже переводили, проверьте сумму и комментарий «Пакет ${payment.pack}» ` +
+      "и нажмите «Я оплатил» ещё раз: /employer");
+  }
+  await env.DB.prepare(
+    "INSERT INTO credits (employer_chat, total, left, expires_at, payment_id) VALUES (?, ?, ?, datetime('now', '+' || ? || ' days'), ?)",
+  ).bind(payment.employer_chat, payment.pack, payment.pack, payment.days, payment.id).run();
+  const credit = await env.DB.prepare("SELECT expires_at FROM credits WHERE payment_id = ?").bind(payment.id).first();
+  return send(env, payment.employer_chat, job.packReadyText(payment.pack, credit.expires_at));
+}
+
+// Итог Про: когда срок кончился, работодатель получает число откликов и кнопку продлить.
+// Раз в час из scheduled (index.js); по каждому сроку (boost_until) один раз, старше двух суток не шлём.
+export async function proReports(env) {
+  const { results } = await env.DB.prepare(
+    `SELECT j.*, (SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id) AS applications FROM jobs j
+     WHERE j.boost_until IS NOT NULL AND j.boost_until <= datetime('now') AND j.boost_until > datetime('now', '-2 days')
+       AND (j.pro_reported IS NULL OR j.pro_reported != j.boost_until) AND j.status IN ('approved', 'closed')`,
+  ).all();
+  const boost = job.boostOffer(env);
+  for (const j of results) {
+    await env.DB.prepare("UPDATE jobs SET pro_reported = boost_until WHERE id = ?").bind(j.id).run();
+    await send(env, j.employer_chat, ...screen(job.proReportScreen(j, j.applications, boost)));
+  }
+  return results.length;
 }

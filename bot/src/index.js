@@ -13,7 +13,7 @@ import { endDialog, load, myJobs, save } from "./db.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
 import { becomeAdmin, moderate, moderationApi, reportApi } from "./moderation.js";
-import { boostJob, confirmPayment, paid, postLater, postPaid, postPay } from "./payments.js";
+import { boostFromCredit, boostJob, confirmPayment, packPaid, packPay, paid, postLater, postPaid, postPay, proReports, showPacks } from "./payments.js";
 import { closeJob, employerButton, employerMenu, postAnswer, postButton, showApplications, startPost } from "./posting.js";
 import { relayToServer } from "./server.js";
 import { attendance, shiftCron, shiftDecision, startTake, subscribeShifts, takeAnswer } from "./taking.js";
@@ -21,7 +21,7 @@ import { answerCallback, screen, send, tg } from "./telegram.js";
 import { HELP } from "./texts.js";
 
 // Будильник смен вызывают тесты и scheduled ниже
-export { shiftCron };
+export { proReports, shiftCron };
 
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
@@ -72,6 +72,8 @@ export default {
     ctx.waitUntil(wakeDaily(env).then((result) => console.log(`утро: ${JSON.stringify(result)}`)));
     // Смены: напоминания, вопрос «кто пришёл» и закрытие прошедших
     ctx.waitUntil(shiftCron(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
+    // Итог тарифа Про тем, у кого срок закончился
+    ctx.waitUntil(proReports(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },
 };
 
@@ -115,6 +117,10 @@ async function handle(update, env, ctx) {
   if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q, ctx);
   if (data === "emp" || data.startsWith("emp:")) return employerButton(env, q, (u) => relayToServer(env, u));
   if (data.startsWith("apps:")) return showApplications(env, q);
+  if (data === "packs") return showPacks(env, q);
+  if (data.startsWith("pack:")) return packPay(env, q);
+  if (data.startsWith("packpaid:")) return packPaid(env, q);
+  if (data.startsWith("usecredit:")) return boostFromCredit(env, q, ctx);
   return subscriptionButton(env, q);
 }
 

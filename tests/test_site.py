@@ -246,6 +246,10 @@ def test_employers_page_linked_from_header_and_feed_has_channels(tmp_path):
     assert "<h1>Найдите сотрудников через vacante.kz</h1>" in ru and "https://t.me/vacantekz_bot?start=post" in ru
     assert 'href="https://t.me/vacanteastana">Астана</a>' in ru
     assert "<h1>Қызметкерлерді vacante.kz арқылы табыңыз</h1>" in kk
+    # Цены тарифов берутся из bot/wrangler.toml
+    prices = site.employer_prices()
+    assert prices and f"{site.money(prices['pro'])} ₸" in ru and f"{site.money(prices['post'])} ₸" in ru
+    assert "Пакеты Про:" in ru and "Про пакеттері:" in kk
     assert 'class="post-job" href="/rabotodatelyam/"' in (out / "index.html").read_text("utf-8")
     assert 'class="post-job" href="/kk/rabotodatelyam/"' in (out / "kk" / "index.html").read_text("utf-8")
     # Бот по feed.json пишет работодателю, в каком канале выйдет вакансия

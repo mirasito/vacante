@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-18T19:56:36+00:00",
+ "updated_at": "2026-11-18T20:56:38+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2605,14 +2605,6 @@
    "verdict": "approve",
    "at": "2026-11-04T20:56:31+00:00",
    "fields": {}
-  },
-  "hh-139140050": {
-   "verdict": "approve",
-   "at": "2026-11-05T03:56:22+00:00",
-   "fields": {
-    "employer": "Hammer Legend",
-    "schedule": "2/2"
-   }
   },
   "hh-137275080": {
    "verdict": "approve",
@@ -47752,6 +47744,18 @@
     "employer": "«Хамдан»",
     "schedule": "4/3, смены по 12 часов",
     "address": "пр. Сакена Сейфуллина, 617"
+   }
+  },
+  "hh-139631963": {
+   "verdict": "approve",
+   "at": "2026-11-18T20:56:38+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "salary_min": 300000,
+    "salary_max": null,
+    "salary_period": "month",
+    "schedule": null,
+    "perks": []
    }
   }
  }

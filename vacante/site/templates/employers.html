@@ -32,7 +32,7 @@
   <div class="tariff"><h3>Базалық</h3><p class="price">{{ prices.post | tenge }}</p>
     <p>Сайт пен қосымшада 30 күн, бот жазылушыларына іріктемелер, қала арнасында пост, жауаптар Telegram-ға.</p></div>
   <div class="tariff pro"><h3>Про</h3><p class="price">{{ prices.pro | tenge }} <small>/ {{ prices.days }} күн</small></p>
-    <p>Базалықтағының бәрі, қала тізімінде «🔥 Шұғыл» белгісімен бірінші, арнада бекітілген пост пен бір аптадан кейін қайта пост, соңында жауаптар қорытындысы. Бір күндік ауысым үшін Про: {{ prices.shift_pro | tenge }}.</p></div>
+    <p>Базалықтағының бәрі, қала тізімінде «🔥 Шұғыл» белгісімен бірінші, арнада бекітілген пост пен бір аптадан кейін қайта пост, соңында жауаптар қорытындысы.{% if prices.instagram %} Instagram {{ prices.instagram }} парақшамызда пост пен сторис.{% endif %} Бір күндік ауысым үшін Про: {{ prices.shift_pro | tenge }}.</p></div>
 </div>
 {% if prices.packs %}<p><b>Про пакеттері:</b> {% for p in prices.packs %}{{ p.count }} вакансия {{ p.price | tenge }} ({{ p.days }} күн ішінде){% if not loop.last %}, {% endif %}{% endfor %}. Желілер мен жиі жалдайтындарға.</p>{% endif %}
 <p>Төлем Kaspi арқылы, тарифті бот сауалнамадан кейін ұсынады.</p>
@@ -68,7 +68,7 @@
   <div class="tariff"><h3>Базовый</h3><p class="price">{{ prices.post | tenge }}</p>
     <p>Сайт и приложение на 30 дней, подборки подписчикам бота, пост в канале города, отклики в Telegram.</p></div>
   <div class="tariff pro"><h3>Про</h3><p class="price">{{ prices.pro | tenge }} <small>/ {{ prices.days }} дней</small></p>
-    <p>Всё из Базового, первой в списке города с пометкой «🔥 Срочно», закреплённый пост в канале и повтор через неделю, в конце итог по откликам. Смена на день по Про: {{ prices.shift_pro | tenge }}.</p></div>
+    <p>Всё из Базового, первой в списке города с пометкой «🔥 Срочно», закреплённый пост в канале и повтор через неделю, в конце итог по откликам.{% if prices.instagram %} Пост и сторис в нашем Instagram {{ prices.instagram }}.{% endif %} Смена на день по Про: {{ prices.shift_pro | tenge }}.</p></div>
 </div>
 {% if prices.packs %}<p><b>Пакеты Про:</b> {% for p in prices.packs %}{{ p.count }} вакансий за {{ p.price | tenge }} (на {{ p.days }} дней){% if not loop.last %}, {% endif %}{% endfor %}. Для сетей и тех, кто нанимает часто.</p>{% endif %}
 <p>Оплата через Kaspi, тариф бот предложит после анкеты.</p>

@@ -144,9 +144,11 @@ export function tariffText(kind, job, pro = null) {
       ? "раздел «Подработка и смены» на сайте и в приложении, подборки тем, кто ищет подработку, канал города."
       : "сайт и приложение на 30 дней, подборки подписчикам бота, пост в канале города, отклики сюда в чат.";
   }
-  if (job.kind === "shift") return "всё из Базового, смена первой в разделе города до её начала с пометкой «🔥 Срочно» и закреп в канале.";
+  // INSTAGRAM в wrangler.toml: Про-вакансии выходят в Instagram vacante (vacante/instagram.py)
+  const ig = pro && pro.instagram ? `, пост и сторис в нашем Instagram ${pro.instagram}` : "";
+  if (job.kind === "shift") return `всё из Базового, смена первой в разделе города до её начала с пометкой «🔥 Срочно», закреп в канале${ig}.`;
   return `всё из Базового, ${pro.days} дней первой в списке города с пометкой «🔥 Срочно», закреп в канале города ` +
-    "и повторный пост через неделю, в конце итог по откликам.";
+    `и повторный пост через неделю${ig}, в конце итог по откликам.`;
 }
 
 // Свои Telegram-каналы vacante по городам (город → @канал). Точный список работающих каналов бот берёт
@@ -363,7 +365,7 @@ export function boostOffer(env) {
   if (!kaspi) return null;
   return { price: Number(env.BOOST_PRICE) || 3990, days: Number(env.BOOST_DAYS) || 14, kaspi,
     shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 1390, postPrice: env.POST_PRICE === undefined ? 990 : Number(env.POST_PRICE) || 0,
-    packs: parsePacks(env.PACKS) };
+    packs: parsePacks(env.PACKS), instagram: String(env.INSTAGRAM || "").trim() };
 }
 
 // Пакеты «Про»: PACKS = "3:9990:60,10:29990:90" — сколько вакансий, цена в тенге, сколько дней действует пакет

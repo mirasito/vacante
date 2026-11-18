@@ -43,7 +43,8 @@ def employer_prices(wrangler: Path = HERE.parents[1] / "bot" / "wrangler.toml") 
         packs = [dict(zip(("count", "price", "days"), map(int, p.strip().split(":"))))
                  for p in str(env.get("PACKS", "")).split(",") if p.strip()]
         return {"post": int(env["POST_PRICE"]), "pro": int(env["BOOST_PRICE"]), "days": int(env["BOOST_DAYS"]),
-                "shift_pro": int(env["SHIFT_BOOST_PRICE"]), "packs": packs}
+                "shift_pro": int(env["SHIFT_BOOST_PRICE"]), "packs": packs,
+                "instagram": str(env.get("INSTAGRAM", "")).strip()}
     except (OSError, KeyError, ValueError, tomllib.TOMLDecodeError):
         return None
 

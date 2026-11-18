@@ -93,9 +93,9 @@ def main() -> None:
     p_replay.add_argument("--base-ref", default="origin/main", help="с какой версией parse.py сравнивать")
     p_replay.add_argument("--examples", type=int, default=8)
 
-    p_ig = sub.add_parser("instagram", help="подборки вакансий в Instagram по городам")
+    p_ig = sub.add_parser("instagram", help="Instagram vacante: обзор рынка, Про-вакансии, ролики, советы")
     p_ig.add_argument("action", choices=["plan", "publish"],
-                      help="plan: карточки и план на этот час в <out>/ig/; publish: опубликовать план (INSTAGRAM_TOKEN)")
+                      help="plan: картинки, ролик и план на этот час в <out>/ig/; publish: опубликовать план (INSTAGRAM_TOKEN)")
     p_ig.add_argument("--data-dir", type=Path, default=Path("data"))
     p_ig.add_argument("--out", type=Path, default=Path("public"), help="plan: куда положить карточки (сайт)")
     p_ig.add_argument("--plan", type=Path, help="publish: файл плана (по умолчанию <out>/ig/plan.json)")
@@ -258,18 +258,49 @@ def run_video(args: argparse.Namespace) -> None:
 
 def run_instagram(args: argparse.Namespace) -> None:
     if args.action == "plan":
-        posts = instagram.plan(args.data_dir, args.out, args.base_url)
-        logging.info("instagram: подборки на этот час: %s", ", ".join(p["city"] for p in posts) or "нет")
+        posts = instagram.plan(args.data_dir, args.out, args.base_url, reel=instagram.make_reel)
+        logging.info("instagram: на этот час: %s", ", ".join(p["kind"] for p in posts) or "ничего")
         return
-    token = os.environ.get("INSTAGRAM_TOKEN")
-    if not token:
-        print("::notice title=Instagram в ленту::нет секрета INSTAGRAM_TOKEN, пропускаю")
+    secret = os.environ.get("INSTAGRAM_TOKEN")
+    if not secret:
+        print("::notice title=Instagram::нет секрета INSTAGRAM_TOKEN, пропускаю")
         return
     path = args.plan or args.out / instagram.PLAN
     posts = json.loads(path.read_text("utf-8"))["posts"] if path.exists() else []
+    bot = _secrets(BOT_SECRETS)
     with httpx.Client(timeout=60) as client:
+        d1 = _d1(client, bot) if bot else None
+        token = secret
+        if d1 and d1.database_id():  # продлённый токен из базы бота, см. instagram.TokenStore
+            try:
+                token = instagram.TokenStore(d1).token(secret, lambda t: instagram.refresh_token(client, t))
+            except (httpx.HTTPError, RuntimeError) as exc:
+                logging.warning("instagram: токен из базы бота не взять: %s", exc)
         publisher = instagram.Publisher(venues.InstagramAPI(client, token))
-        annotate(instagram.publish(args.data_dir, posts, publisher), "Instagram в ленту")
+        try:
+            report = instagram.publish(args.data_dir, posts, publisher)
+        except venues.TokenError as exc:
+            report = [("instagram", f"error: токен не работает: {exc}")]
+            _instagram_alert(client, bot, d1, args.data_dir)
+        annotate(report, "Instagram")
+
+
+def _instagram_alert(client: httpx.Client, bot: dict | None, d1, data_dir: Path) -> None:
+    """Токен Instagram перестал работать: раз в сутки пишем модераторам в бот, что нужен новый."""
+    state = instagram.load_state(data_dir)
+    now = datetime.now(timezone.utc)
+    if not bot or not d1 or state.get("alert_at", "") >= (now - instagram.DAY).isoformat():
+        return
+    text = ("⚠️ Instagram vacante не публикуется: токен не работает (истёк или доступ отозван).\n"
+            "Сгенерируйте новый на developers.facebook.com (README, пункт 8а) и сохраните как секрет INSTAGRAM_TOKEN "
+            "в GitHub. Дальше он продлевается сам.")
+    for chat in _moderator_chats(d1):
+        try:
+            client.post(tg.url(bot["TELEGRAM_BOT_TOKEN"], "sendMessage"), json={"chat_id": chat, "text": text})
+        except httpx.HTTPError:
+            pass
+    state["alert_at"] = now.isoformat(timespec="seconds")
+    instagram.save_state(data_dir, state)
 
 
 def run_review(args: argparse.Namespace) -> None:

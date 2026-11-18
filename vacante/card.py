@@ -136,43 +136,6 @@ def _logo(img: Image.Image, v: Vacancy, avatar: bytes | None, box: tuple[int, in
     _letter_logo(img, v, box, size)
 
 
-def cover(where: str, items: list[Vacancy], date_label: str, channel: str | None = None) -> bytes:
-    """Обложка подборки «Работа в Алматы» (where — город в предложном падеже): сколько вакансий и первые должности с зарплатой."""
-    img = Image.new("RGB", (SLIDE_W, SLIDE_H), BRAND)
-    draw = ImageDraw.Draw(img)
-    x, width = SLIDE_PAD, SLIDE_W - 2 * SLIDE_PAD
-    draw.text((x, SLIDE_PAD), "vacante.kz", font=_font("Bold", 44), fill="white")
-    draw.text((SLIDE_W - SLIDE_PAD, SLIDE_PAD + 4), date_label, font=_font("SemiBold", 36), fill=BRAND_SOFT,
-              anchor="ra")
-    y = 250
-    draw.text((x, y), "Работа", font=_font("Bold", 120), fill="white")
-    y += 140
-    for line in _wrap(draw, f"в {where}", _font("Bold", 120), width, 2):
-        draw.text((x, y), line, font=_font("Bold", 120), fill="white")
-        y += 140
-    count = len(items)
-    y += 20
-    draw.text((x, y), f"Свежих вакансий: {count}", font=_font("SemiBold", 46), fill=BRAND_SOFT)
-    y += 110
-    row_font, pay_font = _font("SemiBold", 42), _font("Regular", 36)
-    for v in items[:5]:
-        draw.ellipse((x, y + 16, x + 16, y + 32), fill=BRAND_SOFT)
-        draw.text((x + 40, y), _wrap(draw, v.title, row_font, width - 40, 1)[0], font=row_font, fill="white")
-        y += 54
-        if pay := salary_label(v):
-            draw.text((x + 40, y), pay, font=pay_font, fill=BRAND_SOFT)
-            y += 48
-        y += 22
-        if y > SLIDE_H - 300:
-            break
-    footer = "Листайте »"
-    draw.text((x, SLIDE_H - SLIDE_PAD), footer, font=_font("Bold", 48), fill="white", anchor="ls")
-    if channel:
-        draw.text((SLIDE_W - SLIDE_PAD, SLIDE_H - SLIDE_PAD), f"Telegram {channel}", font=_font("SemiBold", 36),
-                  fill=BRAND_SOFT, anchor="rs")
-    return _jpeg(img)
-
-
 def slide(v: Vacancy, avatar: bytes | None = None, page: str = "", channel: str | None = None) -> bytes:
     """Карточка вакансии в карусели: значок, должность, заведение, адрес, зарплата, график и условия."""
     # Содержимое рисуем отдельно и ставим по центру между верхом и подвалом карточки

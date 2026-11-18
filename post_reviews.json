@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-18T20:56:38+00:00",
+ "updated_at": "2026-11-18T23:56:24+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1234,15 +1234,6 @@
     "employer": "ИП Трубачёва Н. Ю.",
     "schedule": "посменно, 15 дней в месяц",
     "address": "ул. Антона Чехова, 55"
-   }
-  },
-  "rabota_astanakz-31131": {
-   "verdict": "approve",
-   "at": "2026-11-01T05:56:56+00:00",
-   "fields": {
-    "title": "Оператор приёма заказов",
-    "employer": null,
-    "schedule": "11:00–00:00"
    }
   },
   "hh-138092544": {
@@ -2753,15 +2744,6 @@
    "verdict": "reject",
    "at": "2026-11-05T04:57:01+00:00",
    "reason": "Руководящая должность"
-  },
-  "hh-139140332": {
-   "verdict": "approve",
-   "at": "2026-11-05T04:57:01+00:00",
-   "fields": {
-    "employer": "Qadam Corp.",
-    "schedule": "5/2, 8–9 часов",
-    "address": "ул. Трудовая, 3"
-   }
   },
   "hh-139143839": {
    "verdict": "approve",
@@ -47756,6 +47738,14 @@
     "salary_period": "month",
     "schedule": null,
     "perks": []
+   }
+  },
+  "hh-139635638": {
+   "verdict": "approve",
+   "at": "2026-11-18T23:56:24+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор на личном автомобиле",
+    "schedule": "6/1"
    }
   }
  }

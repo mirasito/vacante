@@ -19,6 +19,7 @@ import {
   type ProfileView,
   type Start,
 } from '../server';
+import { siteSignedIn } from '../session';
 import type { Want } from '../feed';
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
@@ -174,7 +175,8 @@ export function Wizard(props: {
       let view = await saveProfile(profile, lang, existing ? undefined : { adult, base }, existing ? undefined : props.source);
       if (!existing) {
         // Без разрешения бот не сможет присылать напоминания: окно Telegram, нажать один раз
-        const allowed = await requestWriteAccess();
+        // Вошёл на сайте через бота: он уже нажимал «Старт» в чате, бот может ему писать
+        const allowed = siteSignedIn() || (await requestWriteAccess());
         if (allowed) view = await patchMe({ write_access: true }).catch(() => view);
       }
       haptic('medium');

@@ -99,6 +99,8 @@ export function ApplicationsTab(props: {
   onPatch(a: Application, patch: ApplicationPatch): Promise<Application>;
   onDelete(a: Application): Promise<void>;
   onMakeProfile(): void;
+  /** Сайт вне Telegram и человек не вошёл: вместо «Создать профиль» — «Войти через Telegram». */
+  signIn?: boolean;
   /** Цель недели: 3, 5 или 10 откликов, null — без цели. */
   onGoal(goal: GoalValue | null): Promise<void>;
   /** Открыть карточку отклика: из ссылки бота или кнопкой «Перенести» в напоминании. */
@@ -215,9 +217,9 @@ export function ApplicationsTab(props: {
         {local ? (
           <View style={[s.local, { backgroundColor: c.pill }]}>
             <Text style={[s.localTitle, { color: c.ink }]}>📱 {t.localTitle}</Text>
-            <Text style={[s.small, { color: c.ink }]}>{t.localText}</Text>
+            <Text style={[s.small, { color: c.ink }]}>{props.signIn ? t.localWebText : t.localText}</Text>
             <View style={ui.row}>
-              <Button c={c} small label={A[lang].makeProfile} onPress={props.onMakeProfile} />
+              <Button c={c} small label={props.signIn ? t.signIn : A[lang].makeProfile} onPress={props.onMakeProfile} />
             </View>
           </View>
         ) : null}

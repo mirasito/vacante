@@ -34,6 +34,7 @@ import {
   type Reminders,
   type Tip,
 } from '../server';
+import { siteSignedIn } from '../session';
 import type { Want } from '../feed';
 import type { Colors } from '../theme';
 import type { Index, Lang } from '../types';
@@ -677,7 +678,7 @@ function Card(props: {
           onChange={reminders.onChange}
           onOpenAll={reminders.onOpenAll}
           onAllowBot={async () => {
-            if (await requestWriteAccess()) onChange(await patchMe({ write_access: true }).catch(() => view));
+            if (siteSignedIn() || (await requestWriteAccess())) onChange(await patchMe({ write_access: true }).catch(() => view));
           }}
         />
       ) : null}

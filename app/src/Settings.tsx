@@ -38,6 +38,13 @@ const T = {
     employer: 'Кабинет работодателя',
     employerHint: 'Ваши вакансии, отклики, тарифы Про и пакеты',
     footer: 'Профили хранятся на сервере в Казахстане · vacante 2.0',
+    account: 'Аккаунт',
+    signIn: 'Войти через Telegram',
+    signInHint: 'Профиль, отклики и напоминания будут здесь и в Telegram, на любом устройстве',
+    signedIn: (name: string) => `Вы вошли${name ? `: ${name}` : ''}`,
+    signOut: 'Выйти на этом устройстве',
+    signOutAsk: 'Выйти из аккаунта на этом устройстве? Профиль и отклики останутся, войти можно снова через Telegram.',
+    signOutYes: 'Выйти',
   },
   kk: {
     title: 'Баптаулар және деректер',
@@ -66,6 +73,13 @@ const T = {
     employer: 'Жұмыс беруші кабинеті',
     employerHint: 'Вакансияларыңыз, жауаптар, Про тарифтері мен пакеттер',
     footer: 'Профильдер Қазақстандағы серверде сақталады · vacante 2.0',
+    account: 'Аккаунт',
+    signIn: 'Telegram арқылы кіру',
+    signInHint: 'Профиль, өтінімдер мен еске салулар осында да, Telegram-да да, кез келген құрылғыда болады',
+    signedIn: (name: string) => `Сіз кірдіңіз${name ? `: ${name}` : ''}`,
+    signOut: 'Осы құрылғыдан шығу',
+    signOutAsk: 'Осы құрылғыда аккаунттан шығасыз ба? Профиль мен өтінімдер сақталады, Telegram арқылы қайта кіруге болады.',
+    signOutYes: 'Шығу',
   },
 };
 
@@ -83,6 +97,8 @@ export function Settings(props: {
   onClose(): void;
   /** Кабинет работодателя (src/employer/Cabinet.tsx). */
   onEmployer(): void;
+  /** Вне Telegram: вход на сайте через бота (src/session.ts). signedIn — имя, если вошли; null — не вошли. */
+  site?: { signedIn: string | null; onSignIn(): void; onSignOut(): void };
   /** vacante 2.0, только с профилем: «Скачать мои данные» и «Пригласить друга». */
   onExport?(): Promise<void>;
   onInvite?(): void;
@@ -114,6 +130,18 @@ export function Settings(props: {
           <Text style={[styles.h1, { color: c.ink }]}>{t.title}</Text>
         </View>
         <ScrollView contentContainerStyle={styles.body}>
+          {props.site ? (
+            <>
+              <Text style={[styles.sec, { color: c.quiet }]}>{t.account}</Text>
+              <View>
+                {props.site.signedIn !== null
+                  ? row(t.signedIn(props.site.signedIn), t.signOut, async () => {
+                      if (await confirm(t.signOutAsk, t.signOutYes, t.clearNo)) props.site!.onSignOut();
+                    }, { last: true })
+                  : row(t.signIn, t.signInHint, props.site.onSignIn, { last: true })}
+              </View>
+            </>
+          ) : null}
           <Text style={[styles.sec, { color: c.quiet }]}>{t.notify}</Text>
           <View>
             {props.subscribeUrl ? row(t.subscribe, t.subscribeHint, () => openUrl(props.subscribeUrl!), { last: !props.server }) : null}

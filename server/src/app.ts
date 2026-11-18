@@ -19,7 +19,7 @@ import { createCrmBot, type CrmBot } from "./crm-bot.ts";
 import { olxRoutes } from "./olx.ts";
 import { pageRoutes } from "./page.ts";
 import { v2Routes } from "./v2.ts";
-import { verifyInitData, type Bot, type InitData } from "./telegram.ts";
+import { verifyInitData, verifySession, type Bot, type InitData } from "./telegram.ts";
 
 export interface Deps {
   config: Config;
@@ -36,7 +36,7 @@ export interface Ctx extends Deps {
   now: () => number;
   background: (task: Promise<unknown>) => void;
   fetch: typeof fetch;
-  /** Кто открыл Mini App: проверяет подпись Telegram в заголовке Authorization: tma <initData>. */
+  /** Кто открыл Mini App: подпись Telegram в заголовке Authorization: tma <initData> или ключ входа с сайта: session <ключ>. */
   auth(req: Request): InitData;
   /** Профиль работодателя в боте (/company), CRM работодателей. */
   crmBot?: CrmBot;
@@ -50,6 +50,12 @@ export function createApp(deps: Deps) {
     fetch: deps.fetch ?? fetch,
     auth(req) {
       const header = req.header("authorization") ?? "";
+      if (header.startsWith("session ")) {
+        // Сайт вне Telegram: ключ входа, который выдал бот (bot/src/login.js), живёт 30 дней
+        const user = verifySession(header.slice(8), deps.config.botToken, ctx.now());
+        if (!user) throw new HttpError(401, "Нужен вход через Telegram");
+        return { user, authDate: Math.floor(ctx.now() / 1000) };
+      }
       const raw = header.startsWith("tma ") ? header.slice(4) : "";
       const data = raw ? verifyInitData(raw, deps.config.botToken, ctx.now()) : null;
       if (!data) throw new HttpError(401, "Нужен вход через Telegram");

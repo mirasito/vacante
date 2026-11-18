@@ -1,8 +1,9 @@
 import type { Point } from './geo';
-import { telegram } from './platform';
+import { authHeader, initData, setSession } from './session';
 
 // Сервер Vacante в Казахстане (server/ в репозитории): профили, отклики, напоминания.
-// Приложение входит на него подписанными данными Telegram, без паролей.
+// Приложение входит на него подписанными данными Telegram, без паролей; на сайте вне Telegram —
+// ключом входа от бота (src/session.ts).
 export const API_URL = 'https://api.vacante.kz';
 
 export interface Account {
@@ -115,8 +116,6 @@ export class ApiError extends Error {
   }
 }
 
-/** Данные входа из Telegram, их сервер проверяет подписью бота. Вне Telegram их нет. */
-const initData = () => telegram()?.initData || '';
 
 let beta = false;
 /** Тестировщик открыл приложение по ссылке ?startapp=beta: ему можно создать профиль до общего запуска. */
@@ -125,12 +124,12 @@ export const setBeta = (on: boolean) => {
 };
 
 const authHeaders = (auth: string): Record<string, string> => ({
-  Authorization: `tma ${auth}`,
+  Authorization: auth,
   ...(beta ? { 'X-Vacante-Beta': '1' } : {}),
 });
 
 export async function api<T>(path: string, init: { method?: string; body?: unknown } = {}): Promise<T> {
-  const auth = initData();
+  const auth = authHeader();
   if (!auth) throw new ApiError(0, 'not in Telegram');
   const res = await fetch(`${API_URL}${path}`, {
     method: init.method ?? 'GET',
@@ -141,13 +140,15 @@ export async function api<T>(path: string, init: { method?: string; body?: unkno
     body: init.body === undefined ? undefined : JSON.stringify(init.body),
   });
   const data = (await res.json().catch(() => ({}))) as T & { error?: string };
+  // Ключ входа с сайта устарел или отозван: выходим, приложение снова покажет «Войти через Telegram»
+  if (res.status === 401 && !initData()) setSession('');
   if (!res.ok) throw new ApiError(res.status, data.error ?? `HTTP ${res.status}`);
   return data;
 }
 
-/** Кто вошёл. null, если открыто не в Telegram или сервер пока недоступен. */
+/** Кто вошёл. null, если не вошли (ни Telegram, ни ключа с сайта) или сервер пока недоступен. */
 export async function whoAmI(): Promise<Account | null> {
-  if (!initData()) return null;
+  if (!authHeader()) return null;
   try {
     const { user, open, profile, home } = await api<{
       user: { id: number; first_name: string };
@@ -235,7 +236,7 @@ export const deleteVideo = () => api<ProfileView>('/me/video', { method: 'DELETE
 
 /** Фото в профиль: JPEG, уже уменьшенный на телефоне (profile/photo.ts). */
 export async function putPhoto(photo: Blob): Promise<ProfileView> {
-  const auth = initData();
+  const auth = authHeader();
   if (!auth) throw new ApiError(0, 'not in Telegram');
   const res = await fetch(`${API_URL}/me/photo`, {
     method: 'PUT',
@@ -259,7 +260,7 @@ export const homeFromLink = (link: string) =>
  * null, если файла нет, сервер недоступен или это не браузер.
  */
 export async function mediaUrl(path: '/me/video' | '/me/video/poster' | '/me/photo'): Promise<string | null> {
-  const auth = initData();
+  const auth = authHeader();
   if (!auth || typeof URL === 'undefined' || typeof URL.createObjectURL !== 'function') return null;
   try {
     const res = await fetch(`${API_URL}${path}`, { headers: authHeaders(auth) });

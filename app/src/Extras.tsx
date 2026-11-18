@@ -5,6 +5,7 @@ import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon } from './icons';
+import { Login } from './Login';
 import { haptic, shareLink, whatsapp } from './platform';
 import { getReferral, getReliability, REPORT_REASONS, reportVacancy, type Reliability, type ReportReason } from './server';
 import type { Colors } from './theme';
@@ -13,8 +14,8 @@ import { Button, IconCircle, Loading, styles as ui } from './ui';
 import { V } from './v2texts';
 
 /**
- * «Чаты» и «Профиль» без профиля на сервере: что это и как туда попасть. Вне Telegram — открыть
- * в Telegram (вход без пароля), профили закрыты — объяснить и предложить подписку, профиль можно
+ * «Чаты» и «Профиль» без профиля на сервере: что это и как туда попасть. Вне Telegram — войти
+ * через Telegram прямо здесь (src/Login.tsx) или открыть Mini App, профили закрыты — объяснить и предложить подписку, профиль можно
  * создать — кнопка «Создать профиль».
  */
 export function Locked(props: {
@@ -48,12 +49,16 @@ export function Locked(props: {
         <Text style={[s.small, { color: c.ink }]}>{t[where]}</Text>
       </View>
       {where === 'browser' ? (
-        <Button
-          c={c}
-          icon="link"
-          label={t.openTelegram}
-          onPress={() => props.openUrl(`https://t.me/vacantekz_bot?startapp=${props.city ?? 'app'}`)}
-        />
+        <>
+          <Login c={c} lang={lang} />
+          <Button
+            c={c}
+            ghost
+            small
+            label={t.openTelegram}
+            onPress={() => props.openUrl(`https://t.me/vacantekz_bot?startapp=${props.city ?? 'app'}`)}
+          />
+        </>
       ) : where === 'ready' ? (
         <Button c={c} icon="user" label={t.create} onPress={props.onProfile} />
       ) : props.subscribeUrl ? (

@@ -75,6 +75,7 @@ import {
   type VacancyCopy,
 } from './src/server';
 import { read, write } from './src/storage';
+import { Cabinet } from './src/employer/Cabinet';
 import { Settings } from './src/Settings';
 import { useCityFeed } from './src/useCityFeed';
 import { useServerTracker } from './src/useServerTracker';
@@ -157,6 +158,8 @@ function Main() {
   const [open, setOpen] = useState<Vacancy | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  // Кабинет работодателя: из настроек или по ссылке бота /app/?tab=employer
+  const [cabinetOpen, setCabinetOpen] = useState(() => launchTab() === 'employer');
   const [locError, setLocError] = useState('');
   // Профиль открыли кнопкой «Рядом с домом», а дома ещё нет: сразу шаг «Где вы живёте?»
   const [profileStart, setProfileStart] = useState<'home' | null>(null);
@@ -362,9 +365,10 @@ function Main() {
 
   // В Telegram то же самое делает кнопка «Назад» в шапке, а ещё она закрывает карточку вакансии
   useBackButton(
-    !!pendingApply || !!quickFor || !!applying || !!open || filtersOpen || settingsOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
+    !!pendingApply || !!quickFor || !!applying || !!open || filtersOpen || settingsOpen || cabinetOpen || !!booking || reliabilityOpen || inviteOpen || !!reportFor || (picking && !!city) || tab !== 'feed',
     () => {
-    if (reportFor) setReportFor(null);
+    if (cabinetOpen) setCabinetOpen(false);
+    else if (reportFor) setReportFor(null);
     else if (inviteOpen) setInviteOpen(false);
     else if (reliabilityOpen) setReliabilityOpen(false);
     else if (booking) setBooking(null);
@@ -405,6 +409,7 @@ function Main() {
     if (!showProfile || launched.current) return;
     launched.current = true;
     const want = launchTab();
+    if (want === 'employer') return;  // кабинет открыт сразу (cabinetOpen)
     if ((want === 'reminders' || want === 'chats') && !account.profile) return;
     if (want) setTab(want);
     if (want === 'chats') setChat(launchChat() ?? null);
@@ -708,6 +713,9 @@ function Main() {
   const setPref = (patch: Prefs) => setPrefs((p) => ({ ...p, ...patch }));
 
   if (!booted) return <Loading c={c} text="" />;
+
+  // Кабинет работодателя поверх всего: работодателю не нужны выбор города и стартовые вопросы соискателя
+  if (cabinetOpen) return <Cabinet c={c} lang={lang} onClose={() => setCabinetOpen(false)} />;
 
   // Первый запуск: язык и город
   if (!city || picking) {
@@ -1200,6 +1208,10 @@ function Main() {
                 setPrefs((p) => ({ lang: p.lang, city: p.city, beta: p.beta }));
               }}
               onClose={() => setSettingsOpen(false)}
+              onEmployer={() => {
+                setSettingsOpen(false);
+                setCabinetOpen(true);
+              }}
               onInvite={() => setInviteOpen(true)}
               onExport={async () => {
                 const { url } = await exportData();

@@ -19,23 +19,6 @@ export async function boostJob(env, q) {
   return send(env, q.message.chat.id, ...screen(job.boostScreen(found, boost, new Date(), await siteChannels(env), credits)));
 }
 
-// «🔥 Списать из пакета»: Про для опубликованной вакансии без оплаты, срок продлевается от текущего конца
-export async function boostFromCredit(env, q, ctx) {
-  const boost = job.boostOffer(env);
-  const found = boost && (await ownApproved(env, q));
-  if (!found || found.kind === "shift") return answerCallback(env, q, "Поднять из пакета можно только опубликованную вакансию");
-  if (!(await useCredit(env, found.employer_chat))) return answerCallback(env, q, "В пакетах не осталось Про: /employer");
-  await answerCallback(env, q);
-  await env.DB.prepare(
-    `UPDATE jobs SET boost_until = datetime(MAX(COALESCE(boost_until, datetime('now')), datetime('now')), '+' || ? || ' days'),
-       updated_at = datetime('now') WHERE id = ?`,
-  ).bind(boost.days, found.id).run();
-  const now = await getJob(env, found.id);
-  await edit(env, q.message.chat.id, q.message.message_id,
-    `${job.boostedText(now, await siteChannels(env))}\n\nОсталось Про в пакетах: ${await creditsLeft(env, found.employer_chat)}.`);
-  wakeSite(env, ctx);
-}
-
 // Пакеты Про: экран с пакетами, оплата на Kaspi, «Я оплатил», модератор подтверждает
 export async function showPacks(env, q) {
   const boost = job.boostOffer(env);
@@ -54,35 +37,103 @@ export async function packPay(env, q) {
   return edit(env, q.message.chat.id, q.message.message_id, ...screen(job.packPayScreen(pack, boost)));
 }
 
-export async function packPaid(env, q) {
+// Действия с оплатой без кнопок Telegram: их вызывают и кнопки бота, и кабинет работодателя в приложении
+// (cabinet.js). Каждое возвращает { error } с текстом для человека или результат.
+
+/** «Я оплатил» за Про опубликованной вакансии. */
+export async function requestBoost(env, chatId, jobId) {
   const boost = job.boostOffer(env);
-  const pack = packOf(boost, q.data);
-  if (!pack) return answerCallback(env, q, "Такого пакета уже нет: /employer");
-  const chatId = q.message.chat.id;
+  const found = boost && (await getJob(env, jobId));
+  if (!boost) return { error: "Услуга пока недоступна" };
+  if (!found || found.employer_chat !== chatId || found.status !== "approved") return { error: "Вакансия уже закрыта" };
+  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE job_id = ? AND status = 'pending'").bind(found.id).first();
+  if (waiting) return { error: "Уже сверяем ваш перевод, напишу, как только поднимем" };
+  const offer = job.offerFor(boost, found);
+  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days) VALUES (?, ?, ?, ?)")
+    .bind(found.id, found.employer_chat, offer.price, offer.days)
+    .run();
+  await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
+  return { job: found };
+}
+
+/** «Я оплатил» за размещение (Базовый или Про) вакансии, которая ждёт оплаты. */
+export async function requestPost(env, chatId, jobId) {
+  const boost = job.boostOffer(env);
+  const found = job.postPrice(boost) && (await getJob(env, jobId));
+  if (!found || found.employer_chat !== chatId || found.status !== "payment") return { error: "Эта вакансия уже не ждёт оплаты: /myjobs" };
+  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE job_id = ? AND kind = 'post' AND status = 'pending'")
+    .bind(found.id).first();
+  if (waiting) return { error: "Уже сверяем ваш перевод, напишу, как только придёт" };
+  const days = found.pro ? job.offerFor(boost, found).days : 0;
+  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days, kind) VALUES (?, ?, ?, ?, 'post')")
+    .bind(found.id, found.employer_chat, job.postPriceFor(found, boost), days)
+    .run();
+  await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
+  return { job: found };
+}
+
+/** «Я оплатил» за пакет Про. */
+export async function requestPack(env, chatId, count, from) {
+  const boost = job.boostOffer(env);
+  const pack = boost?.packs?.find((p) => p.count === Number(count));
+  if (!pack) return { error: "Такого пакета уже нет: /employer" };
   const waiting = await env.DB.prepare("SELECT id FROM payments WHERE employer_chat = ? AND kind = 'pack' AND status = 'pending'")
     .bind(chatId).first();
-  if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод за пакет, напишу, как только включим");
-  await answerCallback(env, q);
-  const name = job.employerName(q.from);
+  if (waiting) return { error: "Уже сверяем ваш перевод за пакет, напишу, как только включим" };
+  const name = job.employerName(from);
   const { meta } = await env.DB.prepare(
     "INSERT INTO payments (job_id, employer_chat, amount, days, kind, pack, employer_name) VALUES (0, ?, ?, ?, 'pack', ?, ?)",
   ).bind(chatId, pack.price, pack.days, pack.count, name).run();
-  await edit(env, chatId, q.message.message_id, job.packWaitText(pack));
   await notifyPayment(env, await getPayment(env, meta.last_row_id), { employer_name: name });
+  return { pack };
 }
 
-export async function paid(env, q) {
+/** Про из пакета для опубликованной вакансии: без оплаты, срок продлевается от текущего конца. */
+export async function boostWithCredit(env, chatId, jobId, ctx) {
   const boost = job.boostOffer(env);
-  const found = boost && (await ownApproved(env, q));
-  if (!found) return answerCallback(env, q, boost ? "Вакансия уже закрыта" : "Услуга пока недоступна");
-  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE job_id = ? AND status = 'pending'").bind(found.id).first();
-  if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод, напишу, как только поднимем");
+  const found = boost && (await getJob(env, jobId));
+  if (!found || found.employer_chat !== chatId || found.status !== "approved" || found.kind === "shift") {
+    return { error: "Поднять из пакета можно только опубликованную вакансию" };
+  }
+  if (!(await useCredit(env, chatId))) return { error: "В пакетах не осталось Про: /employer" };
+  await env.DB.prepare(
+    `UPDATE jobs SET boost_until = datetime(MAX(COALESCE(boost_until, datetime('now')), datetime('now')), '+' || ? || ' days'),
+       updated_at = datetime('now') WHERE id = ?`,
+  ).bind(boost.days, found.id).run();
+  wakeSite(env, ctx);
+  return { job: await getJob(env, found.id), left: await creditsLeft(env, chatId) };
+}
+
+// Кнопки бота поверх этих действий
+const idOf = (q) => Number(q.data.split(":")[1]);
+
+export async function paid(env, q) {
+  const r = await requestBoost(env, q.message.chat.id, idOf(q));
+  if (r.error) return answerCallback(env, q, r.error);
   await answerCallback(env, q);
-  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days) VALUES (?, ?, ?, ?)")
-    .bind(found.id, found.employer_chat, job.offerFor(boost, found).price, job.offerFor(boost, found).days)
-    .run();
-  await edit(env, q.message.chat.id, q.message.message_id, job.paymentWaitText(found));
-  await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
+  return edit(env, q.message.chat.id, q.message.message_id, job.paymentWaitText(r.job));
+}
+
+export async function postPaid(env, q) {
+  const r = await requestPost(env, q.message.chat.id, idOf(q));
+  if (r.error) return answerCallback(env, q, r.error);
+  await answerCallback(env, q);
+  return edit(env, q.message.chat.id, q.message.message_id, job.postWaitText(r.job));
+}
+
+export async function packPaid(env, q) {
+  const r = await requestPack(env, q.message.chat.id, idOf(q), q.from);
+  if (r.error) return answerCallback(env, q, r.error);
+  await answerCallback(env, q);
+  return edit(env, q.message.chat.id, q.message.message_id, job.packWaitText(r.pack));
+}
+
+export async function boostFromCredit(env, q, ctx) {
+  const r = await boostWithCredit(env, q.message.chat.id, idOf(q), ctx);
+  if (r.error) return answerCallback(env, q, r.error);
+  await answerCallback(env, q);
+  return edit(env, q.message.chat.id, q.message.message_id,
+    `${job.boostedText(r.job, await siteChannels(env))}\n\nОсталось Про в пакетах: ${r.left}.`);
 }
 
 // Карточка оплаты всем модераторам; запоминаем сообщения, чтобы обновить их после решения
@@ -160,22 +211,6 @@ export async function postPay(env, q) {
   if (!found) return answerCallback(env, q, "Эта вакансия уже не ждёт оплаты: /myjobs");
   await answerCallback(env, q);
   return send(env, q.message.chat.id, ...screen(job.postPayScreen(found, boost)));
-}
-
-export async function postPaid(env, q) {
-  const boost = job.boostOffer(env);
-  const found = job.postPrice(boost) && (await ownUnpaid(env, q));
-  if (!found) return answerCallback(env, q, "Эта вакансия уже не ждёт оплаты: /myjobs");
-  const waiting = await env.DB.prepare("SELECT id FROM payments WHERE job_id = ? AND kind = 'post' AND status = 'pending'")
-    .bind(found.id).first();
-  if (waiting) return answerCallback(env, q, "Уже сверяем ваш перевод, напишу, как только придёт");
-  await answerCallback(env, q);
-  const days = found.pro ? job.offerFor(boost, found).days : 0;
-  const { meta } = await env.DB.prepare("INSERT INTO payments (job_id, employer_chat, amount, days, kind) VALUES (?, ?, ?, ?, 'post')")
-    .bind(found.id, found.employer_chat, job.postPriceFor(found, boost), days)
-    .run();
-  await edit(env, q.message.chat.id, q.message.message_id, job.postWaitText(found));
-  await notifyPayment(env, await getPayment(env, meta.last_row_id), found);
 }
 
 export async function postLater(env, q) {

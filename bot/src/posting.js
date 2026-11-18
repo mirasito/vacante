@@ -41,7 +41,7 @@ async function postPriceFor(env, chatId) {
 
 // Меню работодателя: /employer, ?start=employer и кнопка «🏢 Ищу сотрудников» на /start
 export async function employerMenu(env, chatId, messageId) {
-  const { text, keyboard } = job.employerMenu(await postPriceFor(env, chatId), job.boostOffer(env));
+  const { text, keyboard } = job.employerMenu(await postPriceFor(env, chatId), job.boostOffer(env), env.SITE_URL);
   return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
 }
 
@@ -66,16 +66,23 @@ export async function employerButton(env, q, relay) {
 const SHOW_APPLICATIONS = 20;
 
 export async function showApplications(env, q) {
-  const chatId = q.message.chat.id;
   const found = await getJob(env, Number(q.data.split(":")[1]));
-  if (!found || found.employer_chat !== chatId) return answerCallback(env, q, "Вакансия не найдена: /myjobs");
+  if (!found || found.employer_chat !== q.message.chat.id) return answerCallback(env, q, "Вакансия не найдена: /myjobs");
   await answerCallback(env, q);
+  return resendApplications(env, q.message.chat.id, found.id);
+}
+
+/** Присылает в чат работодателя отклики на его вакансию ещё раз. Для кнопки в /myjobs и кабинета в приложении. */
+export async function resendApplications(env, chatId, jobId) {
+  const found = await getJob(env, jobId);
+  if (!found || found.employer_chat !== chatId) return { error: "Вакансия не найдена: /myjobs" };
   const { results } = await env.DB.prepare(
     "SELECT notice_id FROM applications WHERE job_id = ? ORDER BY id DESC",
   ).bind(found.id).all();
   const ids = results.map((r) => r.notice_id).filter(Boolean).slice(0, SHOW_APPLICATIONS).reverse();
   await send(env, chatId, job.applicationsIntro(found, ids.length, results.length));
   for (const id of ids) await tg(env, "copyMessage", { chat_id: chatId, from_chat_id: chatId, message_id: id });
+  return { shown: ids.length, total: results.length };
 }
 
 // Предпросмотр с выбором тарифа: Базовый, Про и Про из пакета
@@ -172,16 +179,21 @@ async function notifyModerators(env, found, ctx) {
 
 export async function closeJob(env, q) {
   const chatId = q.message.chat.id;
-  const id = Number(q.data.split(":")[1]);
+  const closed = await closeOwnJob(env, chatId, Number(q.data.split(":")[1]));
+  await answerCallback(env, q, closed ? "Вакансия закрыта, с сайта она уйдёт в течение часа" : undefined);
+  const { text, keyboard } = job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env));
+  return edit(env, chatId, q.message.message_id, text, keyboard);
+}
+
+/** Закрывает свою вакансию: true, если закрыли. */
+export async function closeOwnJob(env, chatId, id) {
   const { meta } = await env.DB.prepare(
     `UPDATE jobs SET status = 'closed', updated_at = datetime('now')
      WHERE id = ? AND employer_chat = ? AND status IN ('payment', 'pending', 'approved')`,
   )
     .bind(id, chatId)
     .run();
-  await answerCallback(env, q, meta.changes ? "Вакансия закрыта, с сайта она уйдёт в течение часа" : undefined);
-  const { text, keyboard } = job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env));
-  return edit(env, chatId, q.message.message_id, text, keyboard);
+  return meta.changes > 0;
 }
 
 // Платная услуга «🔥 Срочно»: работодатель переводит деньги на Kaspi и жмёт «Я оплатил»,

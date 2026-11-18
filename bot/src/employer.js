@@ -163,7 +163,7 @@ function inChannel(city, channels) {
 // price: цена размещения (0, если бесплатно), boost: условия «Срочно» или null.
 export const EMPLOYER_BUTTON = { text: "🏢 Ищу сотрудников", callback_data: "emp" };
 
-export function employerMenu(price = 0, boost = null) {
+export function employerMenu(price = 0, boost = null, siteUrl = SITE) {
   const cost = price ? `Тариф Базовый: ${money(price)}.` : "Размещение бесплатное.";
   const faster = boost ? ` Нужно быстрее: тариф Про за ${money(boost.price)}, ${boost.days} дней первой в городе и закреп в канале.` +
     (boost.packs?.length ? ` Пакеты Про дешевле: ${boost.packs.map((p) => `${p.count} за ${money(p.price)}`).join(", ")}.` : "") : "";
@@ -176,6 +176,7 @@ export function employerMenu(price = 0, boost = null) {
       `${cost}${faster}\n\n` +
       "📝 <b>Вакансия</b>: постоянная работа.\n⚡ <b>Смена на день</b>: люди на конкретный день, с оплатой за смену.",
     keyboard: [
+      [{ text: "📱 Кабинет работодателя", web_app: { url: `${siteUrl}/app/?tab=employer` } }],
       [{ text: "📝 Вакансия", callback_data: "emp:vacancy" }, { text: "⚡ Смена на день", callback_data: "emp:shift" }],
       [{ text: "📋 Мои вакансии и отклики", callback_data: "emp:jobs" }],
       ...(boost?.packs?.length ? [[{ text: "📦 Пакеты Про со скидкой", callback_data: "packs" }]] : []),

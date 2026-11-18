@@ -315,10 +315,10 @@ export function downloadFile(url: string, name: string) {
  * Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile,
  * сообщения об откликах — с ?tab=applications, напоминания — с ?tab=reminders.
  */
-export function launchTab(): 'profile' | 'applications' | 'reminders' | 'chats' | undefined {
+export function launchTab(): 'profile' | 'applications' | 'reminders' | 'chats' | 'employer' | undefined {
   if (!isWeb) return undefined;
   const tab = new URLSearchParams(window.location.search).get('tab');
-  return tab === 'profile' || tab === 'applications' || tab === 'reminders' || tab === 'chats' ? tab : undefined;
+  return tab === 'profile' || tab === 'applications' || tab === 'reminders' || tab === 'chats' || tab === 'employer' ? tab : undefined;
 }
 
 /** Отклик из ссылки: кнопка «Перенести» под напоминанием о собеседовании открывает ?tab=applications&app=12. */

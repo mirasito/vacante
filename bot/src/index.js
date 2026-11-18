@@ -7,6 +7,7 @@
 // Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
 // Профили соискателей хранит сервер в Казахстане: что касается профиля, бот передаёт ему (server.js).
 import { applyAnswer, startApply } from "./applying.js";
+import { cabinetApi } from "./cabinet.js";
 import { crmApi, jobsApi } from "./crm.js";
 import { wakeDaily, wakeUpdate } from "./cron.js";
 import { endDialog, load, myJobs, save } from "./db.js";
@@ -49,6 +50,7 @@ export default {
     if (request.method === "POST" && url.pathname === "/api/moderate") return moderationApi(request, env, ctx);
     if (url.pathname === "/api/crm") return crmApi(request, env);  // CRM заведений в админке сайта
     if (url.pathname === "/api/jobs") return jobsApi(request, env);  // кто размещал вакансии, там же
+    if (url.pathname === "/api/cabinet") return cabinetApi(request, env, ctx);  // кабинет работодателя в приложении
     if (request.method === "POST" && url.pathname === "/internal/report") return reportApi(request, env);  // жалобы из приложения
     if (request.method !== "POST" || url.pathname !== "/telegram") {
       return new Response("vacante.kz bot", { status: 200 });

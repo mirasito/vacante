@@ -1,17 +1,22 @@
 // Кабинет работодателя: его вакансии и смены из бота, отклики, оплата размещения, тариф Про и пакеты.
 // Данные живут в базе бота (bot/src/cabinet.js), вход — подписанные данные Telegram (initData), как у профиля.
+// На сайте вне Telegram вход через бота (bot/src/login.js): «Войти через Telegram» → подтверждение кнопкой в боте,
+// ключ входа хранится в браузере 30 дней.
 // Анкету новой вакансии ведёт бот: кнопки «Разместить» открывают чат с ним.
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon } from '../icons';
-import { BOT, confirm, copyText, openUrl, telegram } from '../platform';
+import { BOT, confirm, copyText, onAppVisible, openUrl, telegram } from '../platform';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
 import { Badge, Button, Loading, styles as ui } from '../ui';
 
-export const CABINET_URL = 'https://vacante-bot.vacante-kz.workers.dev/api/cabinet';
+const WORKER = 'https://vacante-bot.vacante-kz.workers.dev';
+export const CABINET_URL = `${WORKER}/api/cabinet`;
+const LOGIN_URL = `${WORKER}/api/login`;
+const SESSION_KEY = 'vacante.employer.session';
 
 export type CabinetJob = {
   id: number;
@@ -52,7 +57,12 @@ const T = {
     post: 'Разместить вакансию',
     shift: 'Смена на день',
     empty: 'Вакансий пока нет. Разместите первую: это пара минут в боте, отклики придут туда же.',
-    noTelegram: 'Кабинет открывается в Telegram: там мы знаем, кто вы, без логина и пароля.',
+    noTelegram: 'Войдите через Telegram: без логина и пароля. Бот спросит «Войти?», нажмите «Да», и кабинет откроется здесь.',
+    login: 'Войти через Telegram',
+    loginWait: 'Ждём подтверждения в Telegram. Нажмите в боте «✅ Да, войти» и вернитесь на эту страницу.',
+    loginAgain: 'Открыть Telegram ещё раз',
+    loginExpired: 'Ссылка для входа устарела. Нажмите «Войти через Telegram» ещё раз.',
+    logout: 'Выйти',
     openBot: 'Открыть бота',
     error: 'Не получилось загрузить кабинет. Проверьте интернет и попробуйте ещё раз.',
     retry: 'Попробовать снова',
@@ -100,7 +110,12 @@ const T = {
     post: 'Вакансия орналастыру',
     shift: 'Бір күнге ауысым',
     empty: 'Әзірге вакансия жоқ. Біріншісін орналастырыңыз: ботта бірнеше минут, жауаптар сонда келеді.',
-    noTelegram: 'Кабинет Telegram ішінде ашылады: онда біз сізді логин мен құпиясөзсіз танимыз.',
+    noTelegram: 'Telegram арқылы кіріңіз: логин мен құпиясөзсіз. Бот «Кіру?» деп сұрайды, «Иә» басыңыз, кабинет осында ашылады.',
+    login: 'Telegram арқылы кіру',
+    loginWait: 'Telegram-дағы растауды күтіп тұрмыз. Ботта «✅ Да, войти» басып, осы бетке оралыңыз.',
+    loginAgain: 'Telegram-ды қайта ашу',
+    loginExpired: 'Кіру сілтемесінің мерзімі өтті. «Telegram арқылы кіру» батырмасын қайта басыңыз.',
+    logout: 'Шығу',
     openBot: 'Ботты ашу',
     error: 'Кабинетті жүктеу мүмкін болмады. Интернетті тексеріп, қайталап көріңіз.',
     retry: 'Қайталау',
@@ -145,13 +160,41 @@ const T = {
 const money = (n: number) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₸`;
 const initData = () => telegram()?.initData || '';
 
+// Ключ входа с сайта: в браузере, где хранилище может быть недоступно (приватный режим)
+const store = {
+  get: (): string => {
+    try {
+      return (typeof localStorage !== 'undefined' && localStorage.getItem(SESSION_KEY)) || '';
+    } catch {
+      return '';
+    }
+  },
+  set: (value: string) => {
+    try {
+      if (value) localStorage.setItem(SESSION_KEY, value);
+      else localStorage.removeItem(SESSION_KEY);
+    } catch {
+      // ничего: войдут ещё раз
+    }
+  },
+};
+
+/** Заголовок входа: initData в Telegram, иначе ключ с сайта; пусто — нужно войти. */
+const authHeader = () => (initData() ? `tma ${initData()}` : store.get() ? `session ${store.get()}` : '');
+
+class AuthError extends Error {}
+
 async function call(init?: { action: string; id?: number; count?: number }): Promise<CabinetState & { message?: string; error?: string }> {
   const res = await fetch(CABINET_URL, {
     method: init ? 'POST' : 'GET',
-    headers: { Authorization: `tma ${initData()}`, ...(init ? { 'Content-Type': 'application/json' } : {}) },
+    headers: { Authorization: authHeader(), ...(init ? { 'Content-Type': 'application/json' } : {}) },
     body: init ? JSON.stringify(init) : undefined,
   });
   const data = await res.json().catch(() => ({}));
+  if (res.status === 401 && !initData()) {
+    store.set('');  // ключ устарел: войти ещё раз
+    throw new AuthError(data.error || 'auth');
+  }
   if (init) {
     if (!data.state) throw new Error(data.error || `HTTP ${res.status}`);
     return { ...data.state, message: data.message, error: data.error };
@@ -188,6 +231,70 @@ function PayBox(props: { c: Colors; t: (typeof T)['ru']; kaspi: string; comment:
   );
 }
 
+/** Вход с сайта через бота: код берём заранее, чтобы ссылка открылась прямо по нажатию (иначе браузер её заблокирует). */
+function Login(props: { c: Colors; t: (typeof T)['ru']; onDone(): void }) {
+  const { c, t } = props;
+  const [link, setLink] = useState<{ code: string; link: string } | null>(null);
+  const [waiting, setWaiting] = useState(false);
+  const [note, setNote] = useState('');
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const fresh = useCallback(async () => {
+    setLink(null);
+    try {
+      const res = await fetch(LOGIN_URL, { method: 'POST' });
+      setLink(await res.json());
+    } catch {
+      setNote(t.error);
+    }
+  }, [t]);
+  useEffect(() => {
+    fresh();
+  }, [fresh]);
+
+  const check = useCallback(async () => {
+    if (!link) return;
+    try {
+      const res = await fetch(`${LOGIN_URL}?code=${link.code}`);
+      const data = await res.json().catch(() => ({}));
+      if (data.session) {
+        store.set(data.session);
+        props.onDone();
+      } else if (res.status === 410) {
+        setWaiting(false);
+        setNote(t.loginExpired);
+        fresh();
+      }
+    } catch {
+      // сеть моргнула: проверим ещё раз
+    }
+  }, [link, props, t, fresh]);
+
+  useEffect(() => {
+    if (!waiting) return;
+    timer.current = setInterval(check, 2000);
+    const off = onAppVisible(check);  // вернулись из Telegram: проверяем сразу
+    return () => {
+      if (timer.current) clearInterval(timer.current);
+      off();
+    };
+  }, [waiting, check]);
+
+  const go = () => {
+    if (!link) return;
+    setNote('');
+    setWaiting(true);
+    openUrl(link.link);
+  };
+  return (
+    <View style={styles.gap}>
+      <Text style={[styles.text, { color: c.ink }]}>{waiting ? t.loginWait : t.noTelegram}</Text>
+      {note ? <Text style={[styles.small, { color: c.quiet }]}>{note}</Text> : null}
+      <Button c={c} label={waiting ? t.loginAgain : t.login} busy={!link} ghost={waiting} onPress={go} />
+    </View>
+  );
+}
+
 export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
   const { c, lang } = props;
   const t = T[lang];
@@ -196,18 +303,25 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
   const [busy, setBusy] = useState('');
   const [note, setNote] = useState<{ text: string; error?: boolean } | null>(null);
   const [open, setOpen] = useState('');  // какая панель оплаты раскрыта: boost:12, post:12, pack:3
+  const [authed, setAuthed] = useState(() => !!authHeader());
 
   const load = useCallback(async () => {
     setFailed(false);
     try {
       setState(await call());
-    } catch {
-      setFailed(true);
+    } catch (e) {
+      if (e instanceof AuthError) setAuthed(false);
+      else setFailed(true);
     }
   }, []);
   useEffect(() => {
-    if (initData()) load();
-  }, [load]);
+    if (authed) load();
+  }, [authed, load]);
+  const logout = () => {
+    store.set('');
+    setState(null);
+    setAuthed(false);
+  };
 
   const act = async (key: string, body: { action: string; id?: number; count?: number }) => {
     setBusy(key);
@@ -218,6 +332,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
       setNote(next.error ? { text: next.error, error: true } : next.message ? { text: next.message } : null);
       if (!next.error) setOpen('');
     } catch (e) {
+      if (e instanceof AuthError) return setAuthed(false);
       setNote({ text: e instanceof Error ? e.message : t.error, error: true });
     } finally {
       setBusy('');
@@ -235,13 +350,8 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
   );
 
   let body;
-  if (!initData()) {
-    body = (
-      <View style={styles.gap}>
-        <Text style={[styles.text, { color: c.ink }]}>{t.noTelegram}</Text>
-        <Button c={c} label={t.openBot} onPress={() => bot('employer')} />
-      </View>
-    );
+  if (!authed) {
+    body = <Login c={c} t={t} onDone={() => setAuthed(true)} />;
   } else if (failed) {
     body = (
       <View style={styles.gap}>
@@ -404,6 +514,11 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
             ))}
           </View>
         ) : null}
+        {!initData() ? (
+          <Pressable onPress={logout} accessibilityRole="button" style={styles.logout}>
+            <Text style={[styles.link, { color: c.quiet }]}>{t.logout}</Text>
+          </Pressable>
+        ) : null}
       </View>
     );
   }
@@ -436,5 +551,6 @@ const styles = StyleSheet.create({
   card: { borderWidth: 1, borderRadius: 16, padding: 14, gap: 10 },
   cardHead: { flexDirection: 'row', alignItems: 'flex-start', gap: 10 },
   pay: { borderWidth: 1, borderRadius: 12, padding: 12, gap: 6 },
+  logout: { alignSelf: 'center', padding: 12, marginTop: 8 },
   copyRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
 });

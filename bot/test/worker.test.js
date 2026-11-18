@@ -931,3 +931,48 @@ test("кабинет работодателя: вход по initData, вака�
   assert.match(r.message, /закрыта/);
   assert.equal(env.DB.get("SELECT status FROM jobs WHERE id = 1").status, "closed");
 });
+
+test("вход на сайт через бота: код, подтверждение кнопкой, ключ для кабинета", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const api = (method, query = "") => worker.fetch(new Request(`https://bot.example/api/login${query}`,
+    { method, headers: { Origin: "https://vacante.kz" } }), env, ctx);
+  const cabinet = (auth) => worker.fetch(new Request("https://bot.example/api/cabinet",
+    { headers: { Authorization: auth, Origin: "https://vacante.kz" } }), env, ctx);
+
+  const start = await (await api("POST")).json();
+  assert.match(start.code, /^[0-9a-f]{24}$/);
+  assert.equal(start.link, `https://t.me/vacantekz_bot?start=login_${start.code}`);
+  assert.deepEqual(await (await api("GET", `?code=${start.code}`)).json(), { pending: true });
+  assert.equal((await api("GET", "?code=nope")).status, 410);
+
+  // Бот спрашивает, человек подтверждает кнопкой
+  const dana = user(100, "Дана");
+  await say(env, dana, `/start login_${start.code}`);
+  const ask = sentTo(calls, 100).at(-1).body;
+  assert.match(ask.text, /Войти в кабинет работодателя/);
+  assert.deepEqual(ask.reply_markup.inline_keyboard[0][0], { text: "✅ Да, войти", callback_data: `login:${start.code}` });
+  await press(env, dana, `login:${start.code}`, 9);
+  assert.match(calls.at(-1).body.text, /Вход подтверждён/);
+  // Второй раз тот же код не подтвердить, в том числе другому человеку
+  await press(env, user(200, "Чужой"), `login:${start.code}`, 10);
+  assert.match(calls.at(-1).body.text, /устарела/);
+
+  const done = await (await api("GET", `?code=${start.code}`)).json();
+  assert.deepEqual(done.user, { id: 100, first_name: "Дана" });
+  assert.equal((await api("GET", `?code=${start.code}`)).status, 410);  // ключ выдаём один раз
+
+  const ok = await cabinet(`session ${done.session}`);
+  assert.equal(ok.status, 200);
+  assert.equal((await ok.json()).user.id, 100);
+  const [body, mac] = done.session.split(".");
+  assert.equal((await cabinet(`session ${body}.${"0".repeat(64)}`)).status, 401);
+  assert.equal((await cabinet(`session ${mac}`)).status, 401);
+
+  // Старый код не подтверждается
+  const old = await (await api("POST")).json();
+  await env.DB.prepare("UPDATE logins SET created_at = datetime('now', '-11 minutes') WHERE code = ?").bind(old.code).run();
+  await say(env, dana, `/start login_${old.code}`);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /устарела/);
+});

@@ -7,12 +7,13 @@
 // Ещё воркер раз в час будит это обновление, если расписание GitHub его пропустило (cron.js).
 // Профили соискателей хранит сервер в Казахстане: что касается профиля, бот передаёт ему (server.js).
 import { applyAnswer, startApply } from "./applying.js";
-import { cabinetApi } from "./cabinet.js";
+import { cabinetApi, cors } from "./cabinet.js";
 import { crmApi, jobsApi } from "./crm.js";
 import { wakeDaily, wakeUpdate } from "./cron.js";
 import { endDialog, load, myJobs, save } from "./db.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
+import { confirmLogin, loginApi, startLogin } from "./login.js";
 import { becomeAdmin, moderate, moderationApi, reportApi } from "./moderation.js";
 import { boostFromCredit, boostJob, confirmPayment, packPaid, packPay, paid, postLater, postPaid, postPay, proReports, showPacks } from "./payments.js";
 import { closeJob, employerButton, employerMenu, postAnswer, postButton, showApplications, startPost } from "./posting.js";
@@ -51,6 +52,10 @@ export default {
     if (url.pathname === "/api/crm") return crmApi(request, env);  // CRM заведений в админке сайта
     if (url.pathname === "/api/jobs") return jobsApi(request, env);  // кто размещал вакансии, там же
     if (url.pathname === "/api/cabinet") return cabinetApi(request, env, ctx);  // кабинет работодателя в приложении
+    if (url.pathname === "/api/login") {  // вход на сайт через бота, см. login.js
+      const headers = cors(request, env);
+      return request.method === "OPTIONS" ? new Response(null, { status: 204, headers }) : loginApi(request, env, headers);
+    }
     if (request.method === "POST" && url.pathname === "/internal/report") return reportApi(request, env);  // жалобы из приложения
     if (request.method !== "POST" || url.pathname !== "/telegram") {
       return new Response("vacante.kz bot", { status: 200 });
@@ -106,6 +111,7 @@ async function handle(update, env, ctx) {
     if (await relayToServer(env, update)) return;
     return answerCallback(env, q, PROFILE_DOWN);
   }
+  if (data.startsWith("login:")) return confirmLogin(env, q);
   if (data.startsWith("mod:")) return moderate(env, q, ctx);
   if (data.startsWith("sh:")) return shiftDecision(env, q, ctx);
   if (data.startsWith("att:")) return attendance(env, q);
@@ -141,6 +147,7 @@ async function onMessage(m, env) {
   await endDialog(env, chatId); // любая команда прерывает анкету или отклик
   const name = command.split("@")[0];
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
+  if (name === "/start" && arg.startsWith("login_")) return startLogin(env, m, arg.slice(6));
   if (name === "/start" && arg.startsWith("take_")) return startTake(env, m, Number(arg.slice(5)));
   if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
   if ((name === "/start" && arg === "employer") || name === "/employer") return employerMenu(env, chatId);

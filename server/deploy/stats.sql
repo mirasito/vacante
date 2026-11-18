@@ -83,3 +83,31 @@ SELECT screen, SUM(reached) AS reached, SUM(passed) AS passed FROM funnel_form W
 
 SELECT '--- прямые кнопки связи с периода ---' AS '';
 SELECT source, kind, SUM(n) AS n FROM contact_clicks WHERE day >= :since GROUP BY 1, 2 ORDER BY 3 DESC;
+
+SELECT '--- воронка по источникам с периода (метка из ссылки запуска; пусто — без метки) ---' AS '';
+SELECT coalesce(nullif(source, ''), '—') AS source,
+  SUM(CASE WHEN step = 'open' THEN n ELSE 0 END) AS opened,
+  SUM(CASE WHEN step = 'profile_start' THEN n ELSE 0 END) AS profile_start,
+  SUM(CASE WHEN step = 'sent_plain' THEN n ELSE 0 END) AS sent_plain
+FROM funnel_counts WHERE day >= :since GROUP BY 1 ORDER BY 2 DESC;
+
+SELECT '--- открытия по дням и источникам ---' AS '';
+SELECT day, coalesce(nullif(source, ''), '—') AS source, n FROM funnel_counts
+WHERE step = 'open' AND day >= :since ORDER BY day, n DESC;
+
+SELECT '--- повторные открытия по источникам (сколько открытий от уже открывавших) ---' AS '';
+SELECT coalesce(nullif(source, ''), '—') AS source, SUM(n) AS returns FROM funnel_returns WHERE day >= :since GROUP BY 1 ORDER BY 2 DESC;
+
+SELECT '--- профили и отклики за период по источнику человека ---' AS '';
+SELECT coalesce(s.source, '—') AS source,
+  (SELECT COUNT(*) FROM prof p JOIN seekers x ON x.id = p.id WHERE coalesce(x.source, '—') = coalesce(s.source, '—') AND p.created_at >= (SELECT cut FROM t)) AS profiles,
+  COUNT(a.seeker_id) AS applications, COUNT(DISTINCT a.seeker_id) AS people
+FROM seekers s LEFT JOIN sent a ON a.seeker_id = s.id
+WHERE s.id IN (SELECT id FROM prof) GROUP BY 1 ORDER BY 3 DESC, 2 DESC;
+
+SELECT '--- прямые кнопки связи по дням ---' AS '';
+SELECT day, SUM(n) AS n FROM contact_clicks WHERE day >= :since GROUP BY 1 ORDER BY 1;
+
+SELECT '--- входы в админку по дням (без адресов) ---' AS '';
+SELECT date(at, '+5 hours') AS day, result, COUNT(*) AS n, COUNT(DISTINCT ip) AS addresses FROM admin_logins
+WHERE at >= (SELECT cut FROM t) GROUP BY 1, 2 ORDER BY 1, 2;

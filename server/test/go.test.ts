@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { after, test } from "node:test";
 
 import { backfillContacts } from "../src/go.ts";
-import { count, startServer, type TestServer } from "./helpers.ts";
+import { BROWSER, count, startServer, type TestServer } from "./helpers.ts";
 
 const KEY = "ab".repeat(32);
 const admin = { authorization: `Bearer ${KEY}` };
@@ -45,6 +45,9 @@ async function server(pages: Record<string, string> = { "almatyrabota1/21258": P
   }) as typeof fetch;
   const s = await startServer({ fetch: fetchImpl, now: () => clock }, { CRM_KEY: KEY });
   started.push(s);
+  // Кнопки нажимает человек из браузера; роботов проверяет отдельный тест
+  const call = s.call.bind(s);
+  s.call = (method, path, opts = {}) => call(method, path, { ...opts, headers: { "user-agent": BROWSER, ...opts.headers } });
   return { s, fetched, fetchImpl, tick: (ms: number) => void (clock += ms) };
 }
 
@@ -157,4 +160,17 @@ test("вилка зарплаты «237000 - 237000 ₸» — не номер р
   const { contactsOf } = await import("../src/contacts.ts");
   assert.equal(contactsOf("Повар в кафе\nЗарплата: 237000 - 237000 ₸", [], "almaty_jobs").phone, null);
   assert.equal(contactsOf("Зарплата: 700000 - 700000 ₸\nТел: 87011234567", [], "almaty_jobs").phone, "+77011234567");
+});
+
+test("роботы: нажатие не считается, номер не отдаётся, robots.txt закрывает API", async () => {
+  const { s, fetched } = await server();
+  for (const ua of ["Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)", ""]) {
+    const r = await s.call("GET", "/go/almatyrabota1-21258/call?s=web", { headers: { "user-agent": ua } });
+    assert.equal(r.status, 302);
+    assert.equal(r.headers.location, "https://t.me/almatyrabota1/21258");
+  }
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM contact_clicks"), 0);
+  assert.deepEqual(fetched, []);
+  const robots = await s.call("GET", "/robots.txt");
+  assert.equal(robots.text, "User-agent: *\nDisallow: /\n");
 });

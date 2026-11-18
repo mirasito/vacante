@@ -9,6 +9,7 @@ import { fetchPostContacts, type PostContacts } from "./contacts.ts";
 import { escapeHtml as esc } from "./html.ts";
 import { HttpError, route, type Route } from "./http.ts";
 import { RateLimit } from "./limits.ts";
+import { isPreviewBot } from "./page.ts";
 import { iso } from "./seekers.ts";
 import { DAY_MS, localDay } from "./time.ts";
 
@@ -187,6 +188,8 @@ export function goRoutes(ctx: Deps): Route[] {
       const now = ctx.now();
       const tag = req.query.get("s") ?? "";
       const source = SOURCE_RE.test(tag) ? tag : "";
+      // Поисковые и другие роботы: не считаем нажатие и не отдаём номер, ведём к объявлению
+      if (isPreviewBot(req.header("user-agent"))) return { status: 302, headers: { ...noindex, Location: url } };
 
       let contacts = stored(ctx.db, id, now);
       if (contacts === undefined && fetches.take("t.me", now)) contacts = (await lookup(ctx, id, url)) ?? "miss";

@@ -4,6 +4,7 @@
 // - пароль админки (секрет ADMIN_PASSWORD, в конфиге crmKey) — vacante.kz/admin/.
 import { timingSafeEqual } from "node:crypto";
 
+import { isBlocked, recordLogin, clientIp } from "./admin-logins.ts";
 import type { Ctx } from "./app.ts";
 import { HttpError, type Request } from "./http.ts";
 import { internalKey } from "./telegram.ts";
@@ -24,11 +25,23 @@ export function internalGuard(ctx: Ctx): (req: Request) => void {
   };
 }
 
-/** Проверка пароля админки: 503, пока секрета нет (what — что не настроено), и 403 при неверном пароле. */
+/**
+ * Проверка пароля админки: 503, пока секрета нет (what — что не настроено), 403 при неверном пароле
+ * и 429, если с адреса подбирают пароль. Попытки пишутся в журнал (server/src/admin-logins.ts).
+ */
 export function adminGuard(ctx: Ctx, what = "Админка"): (req: Request) => void {
   return (req) => {
     const key = ctx.config.crmKey;
     if (!key) throw new HttpError(503, `${what} не настроена: нет секрета ADMIN_PASSWORD`);
-    if (!sameKey(bearer(req), key)) throw new HttpError(403, "Неверный пароль админки");
+    const now = ctx.now ? ctx.now() : Date.now();
+    if (isBlocked(ctx.db, clientIp(req), now)) {
+      recordLogin(ctx.db, req, "blocked", now);
+      throw new HttpError(429, "Слишком много неверных попыток, попробуйте через 15 минут");
+    }
+    if (!sameKey(bearer(req), key)) {
+      recordLogin(ctx.db, req, "wrong", now);
+      throw new HttpError(403, "Неверный пароль админки");
+    }
+    recordLogin(ctx.db, req, "ok", now);
   };
 }

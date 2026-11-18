@@ -55,13 +55,21 @@ const CANCEL = { text: "Отменить", callback_data: "jobcancel" };
 
 // Экран вопроса анкеты
 export function askScreen(step, now = new Date()) {
-  if (step.field === "shift_date" || step.field === "need") return { text: step.ask, keyboard: [...shiftButtons(step.field, now), [CANCEL]] };
+  const text = `${progress(step)}${step.ask}`;
+  if (step.field === "shift_date" || step.field === "need") return { text, keyboard: [...shiftButtons(step.field, now), [CANCEL]] };
   if (step.field === "city") {
     const cities = options.cities.map(([slug, title]) => ({ text: title, callback_data: `jobcity:${slug}` }));
-    return { text: step.ask, keyboard: [...rows(cities, 3), [CANCEL]] };
+    return { text, keyboard: [...rows(cities, 3), [CANCEL]] };
   }
   const keyboard = step.optional ? [[{ text: "Пропустить", callback_data: `skip:${step.field}` }, CANCEL]] : [[CANCEL]];
-  return { text: step.ask, keyboard };
+  return { text, keyboard };
+}
+
+// «Вопрос 2 из 7»: работодатель видит, сколько осталось до конца анкеты
+function progress(step) {
+  const steps = SHIFT_STEPS.includes(step) ? SHIFT_STEPS : STEPS;
+  const i = steps.indexOf(step);
+  return i < 0 ? "" : `<i>Вопрос ${i + 1} из ${steps.length}</i>\n`;
 }
 
 // Ответ текстом на текущий вопрос → обновлённая вакансия или ошибка
@@ -118,6 +126,39 @@ export function previewScreen(job, price = 0) {
   };
 }
 
+// Свои Telegram-каналы vacante по городам (город → @канал). Точный список работающих каналов бот берёт
+// из feed.json сайта (site.js), это запасной вариант, если сайт не ответил.
+export const DEFAULT_CHANNELS = { astana: "@vacanteastana", almaty: "@vacantealmaty" };
+
+// Где выйдет вакансия этого города: «и в канале @vacantealmaty» или пусто, если своего канала там нет
+function inChannel(city, channels) {
+  const channel = (channels || DEFAULT_CHANNELS)[city];
+  return channel ? ` и в нашем Telegram-канале ${channel}` : "";
+}
+
+// Меню работодателя: кнопка «🏢 Ищу сотрудников» на /start, команда /employer и ссылка ?start=employer.
+// price: цена размещения (0, если бесплатно), boost: условия «Срочно» или null.
+export const EMPLOYER_BUTTON = { text: "🏢 Ищу сотрудников", callback_data: "emp" };
+
+export function employerMenu(price = 0, boost = null) {
+  const cost = price ? `Размещение стоит ${money(price)}.` : "Размещение бесплатное.";
+  const faster = boost ? ` Нужно быстрее: «🔥 Срочно» за ${money(boost.price)}, вакансия первой в городе и закреп в канале.` : "";
+  return {
+    text:
+      "🏢 <b>Найдём сотрудников</b>\n\n" +
+      "Ответьте на несколько вопросов, это пара минут. Мы проверим вакансию (обычно до часа) и выпустим её " +
+      "на vacante.kz, в приложении Vacante, в подборках тем, кто ищет работу, и в Telegram-канале вашего города. " +
+      "Отклики кандидатов придут сюда, в этот чат.\n\n" +
+      `${cost}${faster}\n\n` +
+      "📝 <b>Вакансия</b>: постоянная работа.\n⚡ <b>Смена на день</b>: люди на конкретный день, с оплатой за смену.",
+    keyboard: [
+      [{ text: "📝 Вакансия", callback_data: "emp:vacancy" }, { text: "⚡ Смена на день", callback_data: "emp:shift" }],
+      [{ text: "📋 Мои вакансии и отклики", callback_data: "emp:jobs" }],
+      [{ text: "🏢 Профиль компании и заведения", callback_data: "emp:company" }],
+    ],
+  };
+}
+
 export function employerName(from) {
   const name = [from.first_name, from.last_name].filter(Boolean).join(" ");
   return from.username ? `${name} (@${from.username})` : name;
@@ -140,32 +181,41 @@ export function moderationScreen(job) {
 }
 
 // boost: если включена услуга «Срочно», под сообщением кнопка поднять вакансию
-export function approvedScreen(job, boost = null, now = new Date()) {
+// channels: свои каналы по городам (DEFAULT_CHANNELS или из feed.json), siteUrl: адрес сайта для ссылки на вакансию
+export function approvedScreen(job, boost = null, now = new Date(), channels = DEFAULT_CHANNELS, siteUrl = SITE) {
   boost = offerFor(boost, job, now);
-  if (!boost) return { text: approvedText(job), keyboard: [] };
+  const text = approvedText(job, channels, siteUrl);
+  if (!boost) return { text, keyboard: [] };
+  const pin = (channels || DEFAULT_CHANNELS)[job.city] ? " и закреплённый пост в канале" : "";
   if (boost.shift) {
-    const more = `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: смена первой в разделе «Подработка и смены» города до её начала и закреплённый пост в канале.`;
-    return { text: approvedText(job) + more, keyboard: [[boostButton(job, boost)]] };
+    const more = `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: смена первой в разделе «Подработка и смены» города до её начала${pin}.`;
+    return { text: text + more, keyboard: [[boostButton(job, boost)]] };
   }
   const more =
     `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: ${boost.days} дней первой в списке города на сайте ` +
-    "с яркой пометкой и закреплённый пост в канале.";
-  return { text: approvedText(job) + more, keyboard: [[boostButton(job, boost)]] };
+    `с яркой пометкой${pin}.`;
+  return { text: text + more, keyboard: [[boostButton(job, boost)]] };
 }
 
-export function approvedText(job) {
+const SITE = "https://vacante.kz";
+
+// Ссылка на страницу вакансии на сайте: её сборка сайта делает из id вакансии бота (vacante/direct.py)
+export const jobUrl = (job, siteUrl = SITE) => `${siteUrl}/v/bot-${job.id}/`;
+
+export function approvedText(job, channels = DEFAULT_CHANNELS, siteUrl = SITE) {
+  const link = `\n\n🌐 Страница на сайте (появится через несколько минут): ${jobUrl(job, siteUrl)}`;
   if (job.kind === "shift") {
     return (
       `✅ Смена прошла проверку и публикуется:\n\n${card(job)}\n\n` +
-      "Через несколько минут она будет на vacante.kz в разделе «Подработка и смены», в приложении и в подборках тем, " +
-      "кто ищет подработку. Кто захочет выйти, нажмёт «Беру смену»: просьба придёт сюда, вы подтвердите одной кнопкой. " +
-      "Когда наберёте всех, смена сама уйдёт с сайта.\n\nВаши смены: /myjobs"
+      `Через несколько минут она будет на vacante.kz в разделе «Подработка и смены», в приложении, в подборках тем, ` +
+      `кто ищет подработку${inChannel(job.city, channels)}. Кто захочет выйти, нажмёт «Беру смену»: просьба придёт сюда, вы подтвердите одной кнопкой. ` +
+      `Когда наберёте всех, смена сама уйдёт с сайта.${link}\n\nВаши смены: /myjobs`
     );
   }
   return (
     `✅ Вакансия прошла проверку и публикуется:\n\n${card(job)}\n\n` +
-    "Через несколько минут она будет на vacante.kz и в подборках подписчикам бота, а вакансии Астаны и Алматы " +
-    "ещё и в наших Telegram-каналах. Отклики кандидатов придут сюда.\n\nНашли сотрудника? Закройте вакансию: /myjobs"
+    `Через несколько минут она будет на vacante.kz, в приложении, в подборках подписчикам бота${inChannel(job.city, channels)}. ` +
+    `Отклики кандидатов придут сюда, в этот чат.${link}\n\nВсе отклики и закрыть вакансию: /myjobs`
   );
 }
 
@@ -247,11 +297,20 @@ export function applicationText(job, from, text, phone) {
   return `📩 Отклик на «${esc(job.title)}»\n\n${about}👤 ${esc(who)}${link}`;
 }
 
+// «📩 Отклики №12»: бот заново присылает сообщения с откликами (хранит только их номера в чате)
+export function applicationsIntro(j, shown, total) {
+  if (!total) return `На «${esc(j.title)}» пока нет откликов. Как только кто-то откликнется, сообщение придёт сюда.`;
+  const lines = [`📩 Отклики на «${esc(j.title)}»: ${total}.`];
+  if (shown) lines.push(shown < total ? `Ниже ещё раз последние ${shown}, остальные выше в этом чате.` : "Ниже они ещё раз.");
+  else lines.push("Они выше в этом чате.");
+  return lines.join(" ");
+}
+
 // Список вакансий работодателя: jobs с полем applications (число откликов).
 // boost: условия «🔥 Срочно» (boostOffer) или null, если платная услуга выключена.
 export function myJobsScreen(jobs, boost = null, now = new Date()) {
   if (!jobs.length) {
-    return { text: "У вас пока нет вакансий. Разместить: /vacancy", keyboard: [] };
+    return { text: "У вас пока нет вакансий. Разместить: /vacancy", keyboard: [[{ text: "📝 Разместить вакансию", callback_data: "emp:vacancy" }]] };
   }
   const lines = jobs.map((j) => `№${j.id} ${j.kind === "shift" ? "⚡ " : ""}<b>${esc(j.title)}</b>, ${esc(CITY[j.city] || "")}` +
     (j.kind === "shift" && j.shift_date ? ` ${j.shift_date.slice(8, 10)}.${j.shift_date.slice(5, 7)}` : "") + `: ${STATUS[j.status]}` +
@@ -260,11 +319,14 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
     (j.status === "approved" && isBoosted(j, now) ? `, 🔥 срочно до ${localDate(j.boost_until)}` : ""));
   const keyboard = [];
   for (const j of jobs.filter((j) => ["approved", "pending", "payment"].includes(j.status))) {
+    if (j.kind !== "shift" && j.applications > 0) {
+      keyboard.push([{ text: `📩 Отклики №${j.id}: ${j.applications}`, callback_data: `apps:${j.id}` }]);
+    }
     if (boost && j.status === "approved") keyboard.push([boostButton(j, offerFor(boost, j, now), now)]);
     if (j.status === "payment") keyboard.push([{ text: `💳 Оплатить №${j.id}: ${money(postPrice(boost))}`, callback_data: `postpay:${j.id}` }]);
     keyboard.push([{ text: `Закрыть №${j.id} ${j.title}`.slice(0, 60), callback_data: `close:${j.id}` }]);
   }
-  return { text: `Ваши вакансии:\n\n${lines.join("\n")}\n\nНовая вакансия: /vacancy`, keyboard };
+  return { text: `Ваши вакансии:\n\n${lines.join("\n")}\n\nОтклики приходят сюда в чат, кнопка «📩 Отклики» покажет их ещё раз. Новая вакансия: /vacancy`, keyboard };
 }
 
 // Платная услуга «🔥 Срочно»: вакансия первой в списке своего города на сайте с пометкой и повторный пост
@@ -337,9 +399,10 @@ export function boostButton(j, boost, now = new Date()) {
   return { text: `${what} №${j.id}: ${money(boost.price)}`, callback_data: `boost:${j.id}` };
 }
 
-export function boostScreen(j, boost, now = new Date()) {
+export function boostScreen(j, boost, now = new Date(), channels = DEFAULT_CHANNELS) {
   boost = offerFor(boost, j, now);
-  const channel = ["astana", "almaty"].includes(j.city) ? `\n2. Пост в нашем канале ${CITY[j.city]} с той же пометкой, закреплённый наверху канала на все ${boost.days} дней.` : "";
+  const chat = (channels || DEFAULT_CHANNELS)[j.city];
+  const channel = chat ? `\n2. Пост в нашем канале ${chat} (${CITY[j.city]}) с той же пометкой, закреплённый наверху канала на все ${boost.days} дней.` : "";
   return {
     text:
       (boost.shift ? `🔥 <b>«Срочно» до начала смены за ${money(boost.price)}</b>\n\n${card(j)}\n\n`
@@ -376,11 +439,12 @@ export function paymentWaitText(j) {
   return `⏳ Сверяем перевод за вакансию №${j.id} «${esc(j.title)}». Обычно это до пары часов днём. Напишу, как только поднимем.`;
 }
 
-export function boostedText(j) {
+export function boostedText(j, channels = DEFAULT_CHANNELS) {
+  const chat = (channels || DEFAULT_CHANNELS)[j.city];
   return (
     `🔥 Оплата получена, спасибо! Вакансия «${esc(j.title)}» отмечена «Срочно» до ${localDate(j.boost_until)}: ` +
     "через несколько минут она будет первой в списке своего города на vacante.kz." +
-    (["astana", "almaty"].includes(j.city) ? ` А в нашем канале ${CITY[j.city]} выйдет пост, закреплённый до конца срока.` : "") +
+    (chat ? ` А в нашем канале ${chat} выйдет пост, закреплённый до конца срока.` : "") +
     "\n\nВаши вакансии: /myjobs"
   );
 }

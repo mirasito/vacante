@@ -3,11 +3,12 @@ import { endDialog, getJob, myJobs, setDialog } from "./db.js";
 import * as job from "./employer.js";
 import { sendNotice, wakeSite } from "./notices.js";
 import * as shift from "./shift.js";
-import { answerCallback, edit, screen, send } from "./telegram.js";
+import { answerCallback, edit, screen, send, tg } from "./telegram.js";
 import { HELP } from "./texts.js";
 
 const postIntro = (price) =>
-  `Разместим вакансию${price ? ` за ${job.money(price)}` : ""}: на vacante.kz, в приложении и в подборках подписчикам бота. ` +
+  `Разместим вакансию${price ? ` за ${job.money(price)}` : ""}: на vacante.kz, в приложении, в подборках подписчикам бота ` +
+  "и в Telegram-канале вашего города. " +
   "Отклики кандидатов придут вам сюда. Ответьте на несколько вопросов, это пара минут.";
 
 export async function startPost(env, m, kind = "vacancy", cameFrom = null) {
@@ -36,6 +37,45 @@ async function postPriceFor(env, chatId) {
   if (!price) return 0;
   const admin = await env.DB.prepare("SELECT chat_id FROM admins WHERE chat_id = ?").bind(chatId).first();
   return admin ? 0 : price;
+}
+
+// Меню работодателя: /employer, ?start=employer и кнопка «🏢 Ищу сотрудников» на /start
+export async function employerMenu(env, chatId, messageId) {
+  const { text, keyboard } = job.employerMenu(await postPriceFor(env, chatId), job.boostOffer(env));
+  return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
+}
+
+// Кнопки меню работодателя. Профиль компании ведёт сервер: передаём ему команду /company от имени работодателя.
+export async function employerButton(env, q, relay) {
+  const chatId = q.message.chat.id;
+  const m = { message_id: q.message.message_id, chat: q.message.chat, from: q.from, date: Math.floor(Date.now() / 1000) };
+  const action = q.data.split(":")[1];
+  await answerCallback(env, q);
+  if (!action) return employerMenu(env, chatId);
+  if (action === "vacancy") return startPost(env, m);
+  if (action === "shift") return startPost(env, m, "shift");
+  if (action === "jobs") return send(env, chatId, ...screen(job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env))));
+  if (action === "company") {
+    await endDialog(env, chatId);
+    if (await relay({ message: { ...m, text: "/company" } })) return;
+    return send(env, chatId, "Профиль компании сейчас недоступен, попробуйте через несколько минут: /company");
+  }
+}
+
+// «📩 Отклики №12» в /myjobs: бот заново присылает сообщения с откликами этой вакансии, последние 20
+const SHOW_APPLICATIONS = 20;
+
+export async function showApplications(env, q) {
+  const chatId = q.message.chat.id;
+  const found = await getJob(env, Number(q.data.split(":")[1]));
+  if (!found || found.employer_chat !== chatId) return answerCallback(env, q, "Вакансия не найдена: /myjobs");
+  await answerCallback(env, q);
+  const { results } = await env.DB.prepare(
+    "SELECT notice_id FROM applications WHERE job_id = ? ORDER BY id DESC",
+  ).bind(found.id).all();
+  const ids = results.map((r) => r.notice_id).filter(Boolean).slice(0, SHOW_APPLICATIONS).reverse();
+  await send(env, chatId, job.applicationsIntro(found, ids.length, results.length));
+  for (const id of ids) await tg(env, "copyMessage", { chat_id: chatId, from_chat_id: chatId, message_id: id });
 }
 
 export async function postAnswer(env, m, d) {

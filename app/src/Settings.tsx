@@ -35,6 +35,8 @@ const T = {
     clearAsk: 'Стереть избранное, просмотренные вакансии и настройки на этом телефоне?',
     clearYes: 'Стереть',
     clearNo: 'Отмена',
+    employer: 'Ищете сотрудников?',
+    employerHint: 'Разместите вакансию в нашем Telegram-боте, отклики придут туда же',
     footer: 'Профили хранятся на сервере в Казахстане · vacante 2.0',
   },
   kk: {
@@ -61,6 +63,8 @@ const T = {
     clearAsk: 'Осы телефондағы таңдаулыларды, қаралған бос орындарды және баптауларды өшіру керек пе?',
     clearYes: 'Өшіру',
     clearNo: 'Болдырмау',
+    employer: 'Қызметкер іздеп жүрсіз бе?',
+    employerHint: 'Вакансияны Telegram-ботымызда орналастырыңыз, жауаптар сонда келеді',
     footer: 'Профильдер Қазақстандағы серверде сақталады · vacante 2.0',
   },
 };
@@ -129,6 +133,7 @@ export function Settings(props: {
           </View>
           <Text style={[styles.sec, { color: c.quiet }]}>{t.data}</Text>
           <View>
+            {row(t.employer, t.employerHint, () => openUrl('https://t.me/vacantekz_bot?start=employer'))}
             {row(t.privacy, t.privacyHint, () => openUrl(lang === 'kk' ? 'https://vacante.kz/kk/privacy/' : 'https://vacante.kz/privacy/'))}
             {row(t.why, t.whyHint, null)}
             {row(t.restart, null, props.onRestart)}

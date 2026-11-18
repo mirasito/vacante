@@ -2,6 +2,7 @@
 import { getJob, getPayment } from "./db.js";
 import * as job from "./employer.js";
 import { sendNotice, wakeSite } from "./notices.js";
+import { siteChannels } from "./site.js";
 import { answerCallback, edit, screen, send } from "./telegram.js";
 
 async function ownApproved(env, q) {
@@ -14,7 +15,7 @@ export async function boostJob(env, q) {
   const found = boost && (await ownApproved(env, q));
   if (!found) return answerCallback(env, q, boost ? "Поднять можно только опубликованную вакансию" : "Услуга пока недоступна");
   await answerCallback(env, q);
-  return send(env, q.message.chat.id, ...screen(job.boostScreen(found, boost)));
+  return send(env, q.message.chat.id, ...screen(job.boostScreen(found, boost, new Date(), await siteChannels(env))));
 }
 
 export async function paid(env, q) {
@@ -85,7 +86,7 @@ export async function confirmPayment(env, q, ctx) {
     for (const a of admins) await sendNotice(env, a.chat_id, found);
     return wakeSite(env, ctx);  // очередь на проверку (moderation.json) для агента
   }
-  await send(env, found.employer_chat, ok ? job.boostedText(found) : job.paymentRejectedText(found));
+  await send(env, found.employer_chat, ok ? job.boostedText(found, await siteChannels(env)) : job.paymentRejectedText(found));
   if (ok) wakeSite(env, ctx);
 }
 

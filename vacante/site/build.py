@@ -489,6 +489,8 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
 
     # Политика конфиденциальности: на неё ссылаются подвал сайта и страница приложения в Google Play
     write("privacy", "privacy.html")
+    # Страница для работодателей: где выйдет вакансия, как придут отклики, сколько стоит. На неё ведёт кнопка в шапке
+    write("rabotodatelyam", "employers.html", channels=tg_channels)
 
     by_city_cat: dict[tuple[str | None, str], list[Vacancy]] = defaultdict(list)
     for v in vacancies:
@@ -505,7 +507,9 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": shifts.perks(v), "pay": monthly_pay(v) or 0,
              "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
-    (out / "feed.json").write_text(json.dumps({"vacancies": feed}, ensure_ascii=False), "utf-8")
+    # channels: свои каналы по городам (город → @канал), бот пишет работодателю, в каком канале выйдет вакансия
+    (out / "feed.json").write_text(json.dumps({"vacancies": feed, "channels": channels.live(data_dir)},
+                                              ensure_ascii=False), "utf-8")
     # Лента приложения со свайпами (app/ в репозитории): вакансии по городам
     appfeed.write(out, vacancies, base_url, now, venues)
     # Админка: не в sitemap и закрыта от индексации. Данные только зашифрованные паролем владельца,

@@ -14,7 +14,7 @@ import * as job from "./employer.js";
 import * as bot from "./logic.js";
 import { becomeAdmin, moderate, moderationApi, reportApi } from "./moderation.js";
 import { boostJob, confirmPayment, paid, postLater, postPaid, postPay } from "./payments.js";
-import { closeJob, postAnswer, postButton, startPost } from "./posting.js";
+import { closeJob, employerButton, employerMenu, postAnswer, postButton, showApplications, startPost } from "./posting.js";
 import { relayToServer } from "./server.js";
 import { attendance, shiftCron, shiftDecision, startTake, subscribeShifts, takeAnswer } from "./taking.js";
 import { answerCallback, screen, send, tg } from "./telegram.js";
@@ -26,7 +26,8 @@ export { shiftCron };
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
   "🃏 Их можно листать свайпами в приложении: вправо сохранить, влево пропустить.\n" +
-  "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.";
+  "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.\n\n" +
+  "Ищете сотрудников? Нажмите «🏢 Ищу сотрудников».";
 
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
 
@@ -112,6 +113,8 @@ async function handle(update, env, ctx) {
   if (data.startsWith("postpaid:")) return postPaid(env, q);
   if (data.startsWith("postlater:")) return postLater(env, q);
   if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q, ctx);
+  if (data === "emp" || data.startsWith("emp:")) return employerButton(env, q, (u) => relayToServer(env, u));
+  if (data.startsWith("apps:")) return showApplications(env, q);
   return subscriptionButton(env, q);
 }
 
@@ -132,6 +135,7 @@ async function onMessage(m, env) {
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
   if (name === "/start" && arg.startsWith("take_")) return startTake(env, m, Number(arg.slice(5)));
   if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
+  if ((name === "/start" && arg === "employer") || name === "/employer") return employerMenu(env, chatId);
   // Кнопка на странице профиля кандидата (server/src/page.ts): работодатель увидел отклик и пришёл размещать
   if (name === "/start" && arg === "post_pf") return startPost(env, m, "vacancy", "profile");
   if ((name === "/start" && arg === "smena") || name === "/smena") return startPost(env, m, "shift");
@@ -147,7 +151,7 @@ async function onMessage(m, env) {
   if (name === "/start" || name === "/settings") {
     const sub = await load(env, chatId);
     await save(env, chatId, sub);
-    if (name === "/start") await send(env, chatId, GREETING, [[bot.appButton(env.SITE_URL, sub.city)]]);
+    if (name === "/start") await send(env, chatId, GREETING, [[bot.appButton(env.SITE_URL, sub.city)], [job.EMPLOYER_BUTTON]]);
     const { text: question, keyboard } = bot.screen("city", sub);
     return send(env, chatId, question, keyboard);
   }

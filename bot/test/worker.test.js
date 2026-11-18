@@ -110,6 +110,28 @@ test("от /start до «Готово» и первых примеров", async
   assert.equal(env.DB.get("SELECT active FROM subscribers WHERE chat_id = 7").active, 0);
 });
 
+test("работодатель с /start: кнопка «Ищу сотрудников», меню и анкета из меню", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(110, "Айжан");
+  await say(env, boss, "/start");
+  assert.deepEqual(calls[0].body.reply_markup.inline_keyboard[1][0], { text: "🏢 Ищу сотрудников", callback_data: "emp" });
+  await press(env, boss, "emp");
+  assert.match(sentTo(calls, 110).at(-1).body.text, /Найдём сотрудников/);
+  await say(env, boss, "/employer");
+  const menu = sentTo(calls, 110).at(-1).body;
+  assert.match(menu.text, /Размещение бесплатное/);
+  await press(env, boss, "emp:vacancy");
+  assert.match(sentTo(calls, 110).at(-1).body.text, /Вопрос 1 из 7<\/i>\nВ каком городе работа/);
+  await press(env, boss, "emp:jobs");
+  assert.match(sentTo(calls, 110).at(-1).body.text, /пока нет вакансий/);
+  await press(env, boss, "emp:company");
+  const relayed = calls.findLast((c) => c.method === "server");
+  assert.equal(relayed.body.message.text, "/company");
+  assert.match(sentTo(calls, 110).at(-1).body.text, /Профиль компании сейчас недоступен/);
+});
+
 test("чужие запросы без секрета отклоняются", async () => {
   const res = await post(fakeEnv(), { message: { chat: { id: 1, type: "private" }, text: "/start" } }, "wrong");
   assert.equal(res.status, 403);
@@ -189,7 +211,17 @@ test("работодатель размещает вакансию, модера
 
   // Работодатель видит отклики и закрывает вакансию; после этого откликнуться нельзя
   await say(env, boss, "/myjobs");
-  assert.match(sentTo(calls, 100).at(-1).body.text, /опубликована, откликов: 1/);
+  const jobs = sentTo(calls, 100).at(-1).body;
+  assert.match(jobs.text, /опубликована, откликов: 1/);
+  assert.equal(jobs.reply_markup.inline_keyboard[0][0].callback_data, `apps:${job.id}`);
+  // «📩 Отклики»: бот присылает то же сообщение с откликом ещё раз, сам текст отклика не хранит
+  const noticeId = env.DB.get("SELECT notice_id FROM applications").notice_id;
+  assert.ok(noticeId);
+  await press(env, stranger, `apps:${job.id}`);
+  assert.equal(calls.filter((c) => c.method === "copyMessage").length, 0);
+  await press(env, boss, `apps:${job.id}`);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Отклики на «Официант»: 1\. Ниже они ещё раз/);
+  assert.deepEqual(calls.at(-1), { method: "copyMessage", body: { chat_id: 100, from_chat_id: 100, message_id: noticeId } });
   await press(env, boss, `close:${job.id}`, 31);
   assert.equal(env.DB.get("SELECT status FROM jobs").status, "closed");
   await say(env, user(301, "Асель"), `/start apply_${job.id}`);
@@ -236,7 +268,7 @@ test("вакансии до /admin ждут модератора, лимит н�
   await press(env, boss, "jobcancel");
   assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE status = 'draft'").n, 0);
   await say(env, boss, "Повар");
-  assert.match(sentTo(calls, 100).at(-1).body.text, /\/vacancy: разместить вакансию/);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Работодателям: \/employer/);
   assert.ok(sentTo(calls, 100).some((c) => /не опубликовали/.test(c.body.text)));
 });
 

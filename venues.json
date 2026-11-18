@@ -6685,7 +6685,7 @@
   "checked_at": "2026-11-11T18:43:31+00:00",
   "website": "http://aspan-asia.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001051413738",
-  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16786,6 +16786,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:otter hvac": {
+  "name": "OTTER HVAC",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T19:42:04+00:00"
  },
  "almaty:otvet kz": {
   "name": "OTVET.KZ",
@@ -29435,7 +29442,7 @@
   "instagram": "metallpro1m",
   "website": "https://metallpro1.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001088822718",
-  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32755,7 +32762,7 @@
   "checked_at": "2026-11-11T18:43:31+00:00",
   "website": "https://implant-proffi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001084544037",
-  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44018,6 +44025,13 @@
   "v": 3,
   "checked_at": "2026-11-12T00:43:53+00:00"
  },
+ "astana:service08": {
+  "name": "Service08",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T19:42:04+00:00"
+ },
  "astana:servicekz 555": {
   "name": "ServiceKZ-555",
   "city": "astana",
@@ -44981,6 +44995,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:the wall street investments": {
+  "name": "The Wall Street Investments",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T19:42:04+00:00"
  },
  "astana:tinak": {
   "name": "TINAK",
@@ -71201,10 +71222,12 @@
   "instagram": "pivnoff_semey",
   "website": "https://taplink.cc/pivnoff_semey",
   "source": "https://2gis.kz/semej/firm/70000001051459639",
-  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "83e88f30a69ab525.jpg",
+  "avatar_source": "website"
  },
  "semey:поликлиника андромеда": {
   "name": "Поликлиника АндроМеда",
@@ -73893,10 +73916,12 @@
   "checked_at": "2026-11-11T18:43:31+00:00",
   "website": "https://baltekstil.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001026009172",
-  "avatar_checked_at": "2026-11-11T18:43:33+00:00",
+  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "61b5a76c4074e6a2.jpg",
+  "avatar_source": "website"
  },
  "shymkent:бейсенбаева": {
   "name": "Бейсенбаева",

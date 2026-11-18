@@ -1728,6 +1728,13 @@
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
  },
+ "aktau:компания акко": {
+  "name": "Компания АККО",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
+ },
  "aktau:корзинка": {
   "name": "Корзинка",
   "city": "aktau",
@@ -6940,6 +6947,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T22:43:45+00:00"
+ },
+ "almaty:avantgarde": {
+  "name": "Avantgarde",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "avantgarde_gym_navoi",
+  "website": "http://avantfit.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001080965388",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:aveco group almaty": {
   "name": "AVECO GROUP ALMATY",
@@ -12902,6 +12923,22 @@
   "instagram": "julius.cafe",
   "source": "https://2gis.kz/almaty/firm/70000001104792100"
  },
+ "almaty:just": {
+  "name": "JUST",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "just2010.kz",
+  "telegram": "just2010_kz",
+  "source": "https://2gis.kz/almaty/firm/70000001061943158",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "37143c9cc24e14af.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:just retail": {
   "name": "JUST RETAIL",
   "city": "almaty",
@@ -14965,7 +15002,7 @@
   "instagram": "medstore.kz",
   "website": "https://www.medstore.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110620530",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16294,7 +16331,7 @@
   "instagram": "ohkz_almaty",
   "website": "http://www.ohc.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001101364328",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17670,6 +17707,20 @@
   ],
   "avatar": "400b33cbfdc81544.jpg",
   "avatar_source": "website"
+ },
+ "almaty:retail space global": {
+  "name": "Retail Space Global",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "retailspace_global",
+  "website": "https://retailspaceglobal.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001081316348",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:rg brands kazakhstan": {
   "name": "RG Brands Kazakhstan",
@@ -23820,6 +23871,13 @@
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
  },
+ "almaty:бисенева лх": {
+  "name": "БИСЕНЕВА ЛХ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
+ },
  "almaty:биссбай": {
   "name": "БИССБАЙ",
   "city": "almaty",
@@ -23937,6 +23995,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T16:45:18+00:00"
+ },
+ "almaty:брашгрупп": {
+  "name": "Брашгрупп",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "almaty:бриз": {
   "name": "Бриз",
@@ -28479,7 +28544,7 @@
   "checked_at": "2026-11-04T07:44:30+00:00",
   "website": "https://markformelle.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032408149",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38219,6 +38284,20 @@
    "website"
   ]
  },
+ "astana:freedom mobile": {
+  "name": "FREEDOM MOBILE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "fmobile.kz",
+  "website": "https://fmobile.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001067106311",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:freedom telecom operations": {
   "name": "Freedom Telecom Operations",
   "city": "astana",
@@ -46470,6 +46549,13 @@
    "website"
   ]
  },
+ "astana:брашгрупп": {
+  "name": "Брашгрупп",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
+ },
  "astana:брювэн": {
   "name": "Брювэн",
   "city": "astana",
@@ -47584,7 +47670,7 @@
   "instagram": "trc_eurasia",
   "website": "https://trc-eurasia.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018091635",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47950,7 +48036,7 @@
   "instagram": "zavodabkbeton",
   "website": "http://abk-beton.kz/",
   "source": "https://2gis.kz/kosshy/firm/70000001075885262",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -51391,7 +51477,7 @@
   "instagram": "rostmetall.kz",
   "website": "https://rostmetall.kz/astana/",
   "source": "https://2gis.kz/astana/firm/70000001062845462",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56678,6 +56764,22 @@
   "instagram": "nazy_flowers_atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001102715199"
  },
+ "atyrau:феникс клиник": {
+  "name": "Феникс клиник",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "phoenix.clinic.kz",
+  "website": "http://phoenixclinic.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001055831178",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "18432bef313ef51d.jpg",
+  "avatar_source": "website"
+ },
  "atyrau:филиал компании powerchina sepco1 electric power construction co ltd в республике казахстан": {
   "name": "Филиал компании POWERCHINA SEPCO1 Electric Power Construction Co.Ltd в Республике Казахстан",
   "city": "atyrau",
@@ -56789,7 +56891,7 @@
   "instagram": "shashlikoff_atyrau",
   "website": "https://atyrau.shashlikoff.com/",
   "source": "https://2gis.kz/atyrau/firm/70000001041137385",
-  "avatar_checked_at": "2026-11-11T07:44:35+00:00",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58518,6 +58620,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-13T00:44:06+00:00"
+ },
+ "karaganda:umit 2017": {
+  "name": "UMIT 2017",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "karaganda:valtec asia": {
   "name": "Valtec Asia",
@@ -60507,6 +60616,13 @@
   ],
   "avatar": "05e3af54aff93042.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:хорека фуд": {
+  "name": "Хорека Фуд",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "karaganda:хуавей текнолоджиз казахстан": {
   "name": "Хуавей Текнолоджиз Казахстан",
@@ -64650,6 +64766,13 @@
    "website"
   ]
  },
+ "kyzylorda:кб мунайгаз инжиниринг": {
+  "name": "КБ МунайГаз Инжиниринг",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
+ },
  "kyzylorda:квант": {
   "name": "КВАНТ",
   "city": "kyzylorda",
@@ -64663,6 +64786,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kyzylorda:ким татьяна": {
+  "name": "КИМ ТАТЬЯНА",
+  "city": "kyzylorda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "kyzylorda:когай": {
   "name": "КОГАЙ",
@@ -70108,6 +70238,13 @@
   "avatar": "a3c25c3ca6041f8e.jpg",
   "avatar_source": "website"
  },
+ "shymkent:adm auto": {
+  "name": "ADM auto",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
+ },
  "shymkent:akmaral sayahat": {
   "name": "AKMARAL SAYAHAT",
   "city": "shymkent",
@@ -73633,6 +73770,13 @@
   "v": 3,
   "checked_at": "2026-11-06T18:44:15+00:00"
  },
+ "taldykorgan:125 high school": {
+  "name": "125 HIGH SCHOOL",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
+ },
  "taldykorgan:2гис справочник двух столиц": {
   "name": "2ГИС-Справочник Двух Столиц",
   "city": "taldykorgan",
@@ -74766,6 +74910,29 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T10:45:06+00:00"
+ },
+ "taraz:первый пивзавод": {
+  "name": "ПЕРВЫЙ ПИВЗАВОД",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "pivzavod1.kz",
+  "website": "http://pivzavod1.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001024922",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1596b51604e9c6fd.jpg",
+  "avatar_source": "website"
+ },
+ "taraz:пк билал": {
+  "name": "ПК Билал",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "taraz:прессбук": {
   "name": "ПрессБук",
@@ -76612,6 +76779,22 @@
   "avatar": "d6e1f5cbd1381fae.jpg",
   "avatar_source": "website"
  },
+ "uralsk:микрофинансовая организация r finance": {
+  "name": "Микрофинансовая организация «R-Finance»",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00",
+  "instagram": "rfinance_mfo",
+  "website": "http://r-finance.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001057823709",
+  "avatar_checked_at": "2026-11-18T07:45:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ad2054c78d4882a5.jpg",
+  "avatar_source": "website"
+ },
  "uralsk:мужской одежды": {
   "name": "МУЖСКОЙ ОДЕЖДЫ",
   "city": "uralsk",
@@ -76808,6 +76991,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T04:42:23+00:00"
+ },
+ "uralsk:сатушы кеңесшілер": {
+  "name": "САТУШЫ-КЕҢЕСШІЛЕР",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "uralsk:саяхат": {
   "name": "Саяхат",
@@ -77891,6 +78081,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T00:44:13+00:00"
+ },
+ "ust-kamenogorsk:optimus kz": {
+  "name": "Optimus kz",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-18T07:45:53+00:00"
  },
  "ust-kamenogorsk:oskemenagroprodukt": {
   "name": "OskemenAgroProdukt",

@@ -1,0 +1,44 @@
+# Google Search Console: клики и показы в поиске Google по дням, запросы, страницы, устройства,
+# и отправка карты сайта (vacante/searchping.py report). Запуск: Actions → «Поиск Google» → Run workflow.
+#
+# Нужен секрет GSC_SERVICE_ACCOUNT (один раз, ~10 минут). Он же включает мгновенную отправку
+# новых вакансий в Google (Indexing API) в каждом часовом обновлении.
+# 1. https://console.cloud.google.com/projectcreate — создать проект «vacante».
+# 2. Включить в нём два API:
+#    https://console.cloud.google.com/apis/library/searchconsole.googleapis.com
+#    https://console.cloud.google.com/apis/library/indexing.googleapis.com
+# 3. https://console.cloud.google.com/iam-admin/serviceaccounts — «Создать сервисный аккаунт», имя vacante-seo,
+#    роли не нужны. Открыть его → «Ключи» → «Добавить ключ» → JSON. Скачается файл.
+# 4. https://search.google.com/search-console/users — «Добавить пользователя»: почта аккаунта
+#    (vacante-seo@….iam.gserviceaccount.com), разрешение «Владелец» (без него Indexing API отвечает 403).
+# 5. GitHub → Settings → Secrets and variables → Actions → New repository secret: GSC_SERVICE_ACCOUNT,
+#    значение — всё содержимое скачанного JSON-файла.
+name: Поиск Google
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "За сколько последних дней"
+        default: "28"
+
+permissions:
+  contents: read
+
+jobs:
+  gsc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install .
+      - name: Цифры
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+        run: |
+          set -o pipefail
+          python -m vacante.searchping report "${{ inputs.days || '28' }}" | tee gsc.txt
+          { echo '```'; cat gsc.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

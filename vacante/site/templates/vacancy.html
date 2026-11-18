@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block title %}{{ title(v) }}{% if v.employer %}, {{ v.employer }}{% endif %} — {{ city_name(v.city) }} | vacante.kz{% endblock %}
 {% block description %}{{ t("{title} в {city}", title=title(v), city=city_name(v.city)) }}{% set s = salary_label(v) %}{% if s %}, {{ s }}{% endif %}{% if v.schedule %}, {{ t("график {schedule}", schedule=v.schedule) }}{% endif %}. {{ v.text[:120] }}{% endblock %}
-{% block head %}{% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}{% endblock %}
+{% block og_image %}{% set place = venue(v) %}{% if place and place.avatar %}{{ base_url }}/venues/{{ place.avatar }}{% else %}{{ base_url }}/static/icon-512.png{% endif %}{% endblock %}
+{% block head %}{% if job %}<script type="application/ld+json">{{ job | safe }}</script>
+{% endif %}<script type="application/ld+json">{{ crumbs | safe }}</script>{% endblock %}
 {% block content %}
-<p class="crumbs"><a href="{{ home }}/">{{ t("Вакансии") }}</a>{% if v.city %} / <a href="{{ home }}/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="{{ home }}/{{ v.city }}/{{ v.category }}/">{{ cat_name(v.category) }}</a>{% endif %}</p>
+<p class="crumbs"><a href="{{ home }}/">{{ t("Вакансии") }}</a>{% if v.city %} / <a href="{{ home }}/{{ v.city }}/">{{ city_name(v.city) }}</a> / <a href="{{ home }}/{{ v.city }}/{{ v.category }}/">{{ cat_name(v.category) }}</a>{% set prof = prof_of(v) %}{% if prof %} / <a href="{{ home }}/{{ v.city }}/{{ prof }}/">{{ prof_name(prof) }}</a>{% endif %}{% endif %}</p>
 <article class="vacancy">
   <h1>{{ title(v) }}</h1>
   {% set place = venue(v) %}
@@ -57,4 +59,15 @@
   <p class="source">{{ t("Источник:") }} <a href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ v.source_url }}</a></p>
   {% endif %}
 </article>
+{% if similar %}
+<section class="similar">
+  <h2>{{ t("Похожие вакансии") }}{% if v.city %} {{ t("в городе {city}", city=city_name(v.city)) }}{% endif %}</h2>
+  <ul class="similar-list">
+  {% for o in similar %}
+  <li><a href="{{ home }}/v/{{ o.id }}/">{{ title(o) }}</a>{% if o.employer %} · {{ o.employer }}{% endif %}{% set s = salary_label(o) %}{% if s %} · <b>{{ s }}</b>{% endif %}</li>
+  {% endfor %}
+  </ul>
+  {% if v.city %}<p class="more"><a href="{{ home }}/{{ v.city }}/{{ v.category }}/">{{ t("Все вакансии: {name}", name=cat_name(v.category)) }} →</a></p>{% endif %}
+</section>
+{% endif %}
 {% endblock %}

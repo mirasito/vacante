@@ -143,6 +143,22 @@ jobs:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}  # данные админки шифруются этим паролем
         run: python -m vacante build --data-dir data --out public --base-url "$SITE_URL"
 
+      # Новые страницы по сравнению с картой сайта, которая сейчас на vacante.kz: их после выкладки
+      # отправим поисковикам (job search). Карта прошлого прогона не скачалась — ничего не отправляем
+      - name: Новые адреса для поисковиков
+        run: |
+          mkdir -p ping
+          curl -sf --max-time 60 "$SITE_URL/sitemap.xml" -o ping/old.xml || rm -f ping/old.xml
+          python -m vacante.searchping diff ping/old.xml public/sitemap.xml ping/urls.txt
+          rm -f ping/old.xml
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: search-ping
+          path: ping/urls.txt
+          retention-days: 1
+          if-no-files-found: ignore
+
       # Веб-версия приложения со свайпами (её собирает app.yml в ветку app-web) ложится рядом
       # с данными ленты в public/app/
       - name: Приложение в /app/
@@ -184,6 +200,32 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Сообщить поисковикам о новых страницах, когда они уже доступны: IndexNow (Bing и поиск ChatGPT) всегда,
+  # Google Indexing API — если есть секрет GSC_SERVICE_ACCOUNT (шаги в .github/workflows/seo.yml)
+  search:
+    needs: [collect, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install .
+      - uses: actions/download-artifact@v4
+        with:
+          name: search-ping
+          path: ping
+      - name: Отправить
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://vacante.kz' }}
+        run: |
+          [ -s ping/urls.txt ] || { echo "новых адресов нет"; exit 0; }
+          python -m vacante.searchping send ping/urls.txt | tee -a "$GITHUB_STEP_SUMMARY"
 
   # Подборки в Instagram: после выкладки сайта, когда карточки уже доступны по ссылкам
   instagram:

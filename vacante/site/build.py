@@ -53,6 +53,18 @@ HH_QUERIES = {"horeca": "официант OR повар OR бармен OR ба�
               "service": "уборщица OR горничная OR мойщик", "construction": "разнорабочий OR строитель",
               "callcenter": "оператор колл-центра"}
 FEED_SIZE = 300
+# Сколько карточек в самой странице списка. Остальные лежат рядом в cards.json и подгружаются,
+# когда человек ищет, фильтрует или жмёт «Показать ещё»: страница города с тысячами карточек
+# весила мегабайты, телефон её долго открывал, а Google не дочитывал.
+PAGE_SIZE = 50
+# Страница профессии в городе («Официант: вакансии в Алматы») появляется от стольких вакансий
+PROFESSION_MIN = 3
+# Слишком общие названия, по ним страницу не делаем
+PROFESSION_SKIP = {"Сотрудник", "Рабочий", "Оператор"}
+# Похожих вакансий внизу страницы вакансии
+SIMILAR = 6
+# Ключ IndexNow: публичный, лежит файлом в корне сайта (vacante/indexnow.py)
+INDEXNOW_KEY = "5f0c2a7e9b3d4c18a6e1f7d2b9c4a3e8"
 # Сколько первых символов текста объявления попадает в поиск на странице списка: страница
 # содержит все вакансии города, и полный текст каждой сделал бы её слишком тяжёлой для телефона.
 SEARCH_TEXT = 300
@@ -195,7 +207,7 @@ def _env(lang: str = "ru") -> Environment:
                        search_text=lambda v: search_text(v, lang), money=money, perks_of=shifts.perks,
                        shift_day=lambda v: shifts.day_label(v.shift_date, lang),
                        SHIFTS=shifts.SLUG, shift_post_url=f"https://t.me/{BOT_USERNAME}?start=smena",
-                       FILTER_PERKS=FILTER_PERKS, employer_url=POST_URL, instagram_url=instagram_url,
+                       FILTER_PERKS=FILTER_PERKS, PAGE_SIZE=PAGE_SIZE, employer_url=POST_URL, instagram_url=instagram_url,
                        site_name=site_name, more_links=more_links, initial=initial, lang=lang, LANGS=i18n.LANGS,
                        LANG_NAME=i18n.LANG_NAME, t=lambda text, **kw: i18n.t(lang, text, **kw),
                        title=lambda v: i18n.title(v, lang), perk=lambda p: i18n.perk(p, lang))
@@ -229,25 +241,69 @@ def site_name(url: str) -> str:
     return (parts.netloc.removeprefix("www.") + parts.path).rstrip("/")
 
 
+_TRANSLIT = dict(zip("абвгдеёжзийклмнопрстуфхцчшщъыьэюяәғқңөұүһі",
+                     ["a", "b", "v", "g", "d", "e", "e", "zh", "z", "i", "y", "k", "l", "m", "n", "o", "p", "r", "s",
+                      "t", "u", "f", "h", "c", "ch", "sh", "sch", "", "y", "", "e", "yu", "ya", "a", "g", "k", "n",
+                      "o", "u", "u", "h", "i"]))
+
+
+def slugify(text: str) -> str:
+    """«Оператор колл-центра» → «operator-koll-centra»: адрес страницы профессии латиницей."""
+    out = "".join(_TRANSLIT.get(c, c) for c in text.lower())
+    return re.sub(r"[^a-z0-9]+", "-", out).strip("-")
+
+
+# Профессии для страниц «Официант: вакансии в Алматы»: должности, которые знает разбор (у них есть казахский перевод)
+PROFESSIONS = {slugify(name): name for name in i18n.TITLES_KK if name not in PROFESSION_SKIP}
+
+
+def professions_of(v: Vacancy) -> list[str]:
+    """Слаги профессий вакансии: «Повар холодного цеха» попадает и к поварам, «Продавец-кассир» и к продавцам."""
+    parts = [p.strip().lower() for p in v.title.split(",")]
+    found = []
+    for slug, name in PROFESSIONS.items():
+        low = name.lower()
+        if any(p == low or p.startswith(low + " ") or p.startswith(low + "-") for p in parts):
+            found.append(slug)
+    return found
+
+
+def profession_heading(slug: str, city: str, lang: str) -> str:
+    """«Официант: вакансии в Алматы» / «Даяшы: Алматыдағы жұмыс»."""
+    name = PROFESSIONS[slug]
+    if lang == "kk":
+        return f"{i18n.TITLES_KK[name]}: {city_heading(city, lang)}"
+    return f"{name}: вакансии в {_locative(city)}"
+
+
 def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str | None:
     """Разметка JobPosting для Google Jobs. Google требует работодателя, без него не выводим."""
     if not v.employer:
         return None
     posted = datetime.fromisoformat(v.posted_at)
+    address = {"@type": "PostalAddress", "addressLocality": city_name(v.city), "addressCountry": "KZ"}
+    if v.address:
+        address["streetAddress"] = v.address
+    place: dict = {"@type": "Place", "address": address}
+    if v.lat is not None and v.lon is not None and not v.approx:
+        place["geo"] = {"@type": "GeoCoordinates", "latitude": v.lat, "longitude": v.lon}
     data = {
         "@context": "https://schema.org/",
         "@type": "JobPosting",
         "title": v.title,
-        "description": v.text.replace("\n", "<br>"),
+        # Описание в HTML: текст экранируем, переносы строк — <br>
+        "description": html.escape(v.text).replace("\n", "<br>"),
+        "identifier": {"@type": "PropertyValue", "name": "vacante.kz", "value": v.id},
         "datePosted": posted.date().isoformat(),
         "validThrough": (posted + timedelta(days=30)).isoformat(),
         "hiringOrganization": {"@type": "Organization", "name": v.employer},
-        "jobLocation": {
-            "@type": "Place",
-            "address": {"@type": "PostalAddress", "addressLocality": city_name(v.city), "addressCountry": "KZ"},
-        },
+        "jobLocation": place,
         "url": f"{base_url}/v/{v.id}/",
     }
+    if v.schedule:
+        data["workHours"] = v.schedule
+    if shifts.is_shift(v):
+        data["employmentType"] = ["PART_TIME", "TEMPORARY"]
     if venue and venue.get("avatar"):
         data["hiringOrganization"]["logo"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"
     if same := [u for u in (instagram_url(venue), venue and venue.get("website")) if u]:
@@ -260,7 +316,45 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
         if v.salary_max:
             value["maxValue"] = v.salary_max
         data["baseSalary"] = {"@type": "MonetaryAmount", "currency": "KZT", "value": value}
+    return ld_json(data)
+
+
+# data-поля карточки нужны странице, только когда карточки лежат в самом HTML; в cards.json они в отдельных полях
+_DATA_ATTRS = re.compile(r' data-[a-z]+="[^"]*"')
+
+
+def pay_stats(items: list[Vacancy]) -> tuple[int, int, int, int] | None:
+    """Свои данные о зарплатах для страницы списка: (сколько вакансий, медиана, нижняя и верхняя четверть)
+    в тенге в месяц. Только вакансии с месячной оплатой: смены и часы в пересчёте исказили бы картину."""
+    pays = sorted(((v.salary_min or v.salary_max) + (v.salary_max or v.salary_min)) // 2 for v in items
+                  if v.salary_period == "month" and (v.salary_min or v.salary_max))
+    if len(pays) < 5:
+        return None
+    pick = lambda share: round(pays[min(len(pays) - 1, int(len(pays) * share))], -3)  # noqa: E731
+    return len(pays), pick(0.5), pick(0.25), pick(0.75)
+
+
+def ld_json(data: dict | list) -> str:
+    """JSON-LD для <script>: «</» внутри текста не закроет тег."""
     return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+
+
+def breadcrumbs_ld(items: list[tuple[str, str]]) -> str:
+    """Хлебные крошки для Google: [(название, полный адрес)]."""
+    return ld_json({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i, "name": name, "item": url} for i, (name, url) in enumerate(items, 1)]})
+
+
+def site_ld(base_url: str, lang: str) -> str:
+    """Сайт и организация на главной: название в выдаче и логотип."""
+    home = base_url + ("/kk/" if lang == "kk" else "/")
+    return ld_json([
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "vacante.kz", "url": home,
+         "inLanguage": lang},
+        {"@context": "https://schema.org", "@type": "Organization", "name": "vacante.kz", "url": base_url + "/",
+         "logo": f"{base_url}/static/icon-512.png",
+         "sameAs": ["https://t.me/vacantealmaty", "https://t.me/vacanteastana", f"https://t.me/{BOT_USERNAME}"]},
+    ])
 
 
 def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: datetime | None = None,
@@ -289,9 +383,11 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     shutil.copytree(HERE / "static", out / "static")
     if (data_dir / venue_store.AVATARS).is_dir():
         shutil.copytree(data_dir / venue_store.AVATARS, out / venue_store.AVATARS)
-    pages: list[str] = []  # пути страниц без языка: в sitemap каждая идёт русской и казахской
+    # Пути страниц без языка и дата их изменения для sitemap: каждая идёт русской и казахской
+    pages: list[tuple[str, str]] = []
+    today = now.date().isoformat()
 
-    def write(path: str, template: str, **ctx) -> None:
+    def write(path: str, template: str, lastmod: str = today, **ctx) -> None:
         """Страница на всех языках: русская по path, казахская по kk/path. В ctx значения или функции от языка."""
         for lang, lang_env in envs.items():
             full = lang_path(lang, path)
@@ -299,7 +395,38 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
             target.parent.mkdir(parents=True, exist_ok=True)
             values = {k: v(lang) if callable(v) else v for k, v in ctx.items()}
             target.write_text(lang_env.get_template(template).render(path=full, page=path, **values), "utf-8")
-        pages.append(path)
+        pages.append((path, lastmod))
+
+    card_cache: dict[tuple[str, str], list] = {}
+
+    def card_row(v: Vacancy, lang: str) -> list:
+        """Карточка для cards.json: id, готовый HTML без data-полей и поля, по которым фильтрует страница."""
+        key = (lang, v.id)
+        if key not in card_cache:
+            card = _DATA_ATTRS.sub("", envs[lang].get_template("_card.html").render(v=v))
+            card_cache[key] = [v.id, card, v.posted_at, monthly_pay(v) or 0, v.category, "|".join(shifts.perks(v)),
+                               search_text(v, lang)]
+        return card_cache[key]
+
+    def write_list(path: str, items: list[Vacancy], shared: str | None = None, **ctx) -> None:
+        """Страница списка: первые PAGE_SIZE карточек в HTML, весь список в cards.json.
+        Страницы внутри города (сфера, профессия, смены) берут карточки из cards.json города (shared)
+        и показывают из него только свои id: так одна карточка не лежит на сайте пять раз."""
+        if len(items) <= PAGE_SIZE:
+            src, ids = "", ""
+        elif shared is not None:
+            src = lambda lang: f"{root}/{lang_path(lang, shared)}/cards.json"  # noqa: E731
+            ids = " ".join(v.id for v in items)
+        else:
+            src = lambda lang: f"{root}/{lang_path(lang, path)}/".replace("//", "/") + "cards.json"  # noqa: E731
+            ids = ""
+            for lang in envs:
+                full = lang_path(lang, path)
+                (out / full if full else out).mkdir(parents=True, exist_ok=True)
+                ((out / full if full else out) / "cards.json").write_text(
+                    json.dumps([card_row(v, lang) for v in items], ensure_ascii=False, separators=(",", ":")), "utf-8")
+        write(path, "list.html", vacancies=items, total=len(items), cards=src, ids=ids, stats=pay_stats(items),
+              **ctx)
 
     by_city: dict[str, list[Vacancy]] = defaultdict(list)
     for v in vacancies:
@@ -307,45 +434,72 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
             by_city[v.city].append(v)
     city_counts = sorted(((slug, len(items)) for slug, items in by_city.items()), key=lambda x: -x[1])
     shift_cities = {slug for slug, items in by_city.items() if any(shifts.is_shift(v) for v in items)}
-    for lang_env in envs.values():
-        lang_env.globals["shift_cities"] = shift_cities
+    # Профессии по городам: {город: {слаг: [вакансии]}}, только где вакансий хватает на страницу
+    by_prof: dict[str, dict[str, list[Vacancy]]] = {}
+    for slug, items in by_city.items():
+        found: dict[str, list[Vacancy]] = defaultdict(list)
+        for v in items:
+            for prof in professions_of(v):
+                found[prof].append(v)
+        by_prof[slug] = dict(sorted(((k, vs) for k, vs in found.items() if len(vs) >= PROFESSION_MIN),
+                                    key=lambda kv: -len(kv[1])))
 
-    # На страницах списка все вакансии: фильтры и сортировка работают в браузере и должны видеть каждую
-    write("", "list.html", heading=lambda lang: i18n.t(lang, "Вакансии"), vacancies=vacancies, total=len(vacancies),
-          city=None, category=None, city_counts=city_counts, category_counts=_category_counts(vacancies),
-          channels=tg_channels)
+    def prof_of(v: Vacancy) -> str | None:
+        """Страница профессии этой вакансии, если она есть: для крошек и ссылок."""
+        return next((p for p in professions_of(v) if p in by_prof.get(v.city or "", {})), None)
+
+    for lang, lang_env in envs.items():
+        lang_env.globals.update(shift_cities=shift_cities, all_cities=city_counts, prof_of=prof_of,
+                                prof_name=lambda slug, lang=lang: (i18n.TITLES_KK[PROFESSIONS[slug]] if lang == "kk"
+                                                                    else PROFESSIONS[slug]))
+
+    # Фильтры и сортировка работают в браузере по всему списку (cards.json), в HTML только первые карточки
+    write_list("", vacancies, heading=lambda lang: i18n.t(lang, "Вакансии"),
+               city=None, category=None, city_counts=city_counts, category_counts=_category_counts(vacancies),
+               channels=tg_channels, ld=lambda lang: site_ld(base_url, lang))
 
     for slug, items in by_city.items():
-        write(slug, "list.html", heading=lambda lang: city_heading(slug, lang), vacancies=items, total=len(items),
-              city=slug, category=None, city_counts=city_counts, category_counts=_category_counts(items),
-              channels=tg_channels)
+        professions = [(p, len(vs)) for p, vs in by_prof[slug].items()]
+        write_list(slug, items, heading=lambda lang: city_heading(slug, lang),
+                   city=slug, category=None, city_counts=city_counts, category_counts=_category_counts(items),
+                   channels=tg_channels, professions=professions)
         by_cat: dict[str, list[Vacancy]] = defaultdict(list)
         for v in items:
             by_cat[v.category].append(v)
         for cat, cat_items in by_cat.items():
-            write(f"{slug}/{cat}", "list.html",
-                  heading=lambda lang: category_heading(cat, slug, lang),
-                  vacancies=cat_items, total=len(cat_items), city=slug, category=cat, city_counts=city_counts,
-                  category_counts=_category_counts(items), channels=tg_channels)
+            write_list(f"{slug}/{cat}", cat_items, slug,
+                       heading=lambda lang: category_heading(cat, slug, lang),
+                       city=slug, category=cat, city_counts=city_counts,
+                       category_counts=_category_counts(items), channels=tg_channels)
+        for prof, prof_items in by_prof[slug].items():
+            write_list(f"{slug}/{prof}", prof_items, slug, heading=lambda lang: profession_heading(prof, slug, lang),
+                       city=slug, category=None, profession=prof, city_counts=city_counts,
+                       category_counts=_category_counts(prof_items), channels=tg_channels, professions=professions)
         # «Подработка и смены в Алматы»: оплата за смену или час, ежедневная оплата, подработка (vacante.shifts)
         shift_items = shifts.ordered([v for v in items if shifts.is_shift(v)])
         if shift_items:
-            write(f"{slug}/{shifts.SLUG}", "list.html", heading=lambda lang: shifts_heading(slug, lang),
-                  vacancies=shift_items, total=len(shift_items), city=slug, category=None, shifts_page=True,
-                  city_counts=city_counts, category_counts=_category_counts(shift_items), channels=tg_channels)
+            write_list(f"{slug}/{shifts.SLUG}", shift_items, slug, heading=lambda lang: shifts_heading(slug, lang),
+                       city=slug, category=None, shifts_page=True,
+                       city_counts=city_counts, category_counts=_category_counts(shift_items), channels=tg_channels)
 
     all_shifts = shifts.ordered([v for v in vacancies if shifts.is_shift(v)])
-    write(shifts.SLUG, "list.html", heading=lambda lang: shifts_heading(None, lang), vacancies=all_shifts,
-          total=len(all_shifts), city=None, category=None, shifts_page=True, city_counts=city_counts,
-          category_counts=_category_counts(all_shifts), channels=tg_channels)
+    write_list(shifts.SLUG, all_shifts, heading=lambda lang: shifts_heading(None, lang),
+               city=None, category=None, shifts_page=True, city_counts=city_counts,
+               category_counts=_category_counts(all_shifts), channels=tg_channels)
 
     # Политика конфиденциальности: на неё ссылаются подвал сайта и страница приложения в Google Play
     write("privacy", "privacy.html")
 
+    by_city_cat: dict[tuple[str | None, str], list[Vacancy]] = defaultdict(list)
+    for v in vacancies:
+        by_city_cat[(v.city, v.category)].append(v)
     for v in vacancies:
         # Разметка для Google Jobs только на русской странице: одна вакансия — одно объявление
-        ld = job_posting_ld(v, base_url, venue_store.lookup(venues, v))
-        write(f"v/{v.id}", "vacancy.html", v=v, ld=lambda lang: ld if lang == "ru" else None, channels=tg_channels)
+        job = job_posting_ld(v, base_url, venue_store.lookup(venues, v))
+        similar = [o for o in by_city_cat[(v.city, v.category)][:SIMILAR + 1] if o.id != v.id][:SIMILAR]
+        write(f"v/{v.id}", "vacancy.html", lastmod=v.posted_at[:10], v=v, similar=similar, channels=tg_channels,
+              job=lambda lang: job if lang == "ru" else None,
+              crumbs=lambda lang, v=v: vacancy_crumbs(v, base_url, lang, prof_of(v)))
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404"), "utf-8")
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки
@@ -365,9 +519,26 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n", "utf-8")
     (out / "sitemap.xml").write_text(env.get_template("sitemap.xml").render(pages=pages, lang_path=lang_path),
                                      "utf-8")
+    # IndexNow (Bing, Yandex и др.): файл с ключом в корне подтверждает, что адреса присылаем мы (vacante/indexnow.py)
+    (out / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, "utf-8")
     if base_url.startswith("https://") and "github.io" not in base_url:
         (out / "CNAME").write_text(base_url.removeprefix("https://") + "\n", "utf-8")
     return len(pages) * len(i18n.LANGS)
+
+
+def vacancy_crumbs(v: Vacancy, base_url: str, lang: str, prof: str | None) -> str:
+    """Крошки вакансии для Google: Вакансии › Город › Профессия или сфера › Вакансия."""
+    home = base_url + ("/kk" if lang == "kk" else "")
+    items = [(i18n.t(lang, "Вакансии"), home + "/")]
+    if v.city:
+        items.append((city_name(v.city, lang), f"{home}/{v.city}/"))
+        if prof:
+            name = PROFESSIONS[prof]
+            items.append((i18n.TITLES_KK[name] if lang == "kk" else name, f"{home}/{v.city}/{prof}/"))
+        else:
+            items.append((category_name(v.category, lang), f"{home}/{v.city}/{v.category}/"))
+    items.append((i18n.title(v, lang), f"{home}/v/{v.id}/"))
+    return breadcrumbs_ld(items)
 
 
 def _category_counts(items: list[Vacancy]) -> list[tuple[str, int]]:

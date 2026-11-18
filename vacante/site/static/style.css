@@ -89,3 +89,14 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
   .filters.perks::-webkit-scrollbar { display: none; }
   .filters.perks .toggle { flex: none; white-space: nowrap; }
 }
+
+/* SEO-проход: «Показать ещё», профессии, зарплаты, похожие вакансии, города в подвале */
+.show-more{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:12px;background:none;color:inherit;font:inherit;cursor:pointer;opacity:.85}
+.show-more[hidden]{display:none}
+.list[aria-busy="true"]{opacity:.6}
+.pay-stats{margin:4px 0 10px;opacity:.8;font-size:.95em}
+.similar{margin-top:28px}
+.footer .cities{margin:8px 0;line-height:1.8}
+.by-category a[aria-current="page"]{font-weight:600}
+.similar-list{list-style:none;padding:0;margin:8px 0}
+.similar-list li{padding:10px 0;border-bottom:1px solid rgba(127,127,127,.2);line-height:1.4}

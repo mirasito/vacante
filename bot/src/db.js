@@ -53,3 +53,19 @@ export async function save(env, chatId, sub) {
     .bind(chatId, ...bot.toRow(sub))
     .run();
 }
+
+// Пакеты Про: сколько осталось у работодателя (только непросроченные)
+export async function creditsLeft(env, chatId) {
+  return (await env.DB.prepare(
+    "SELECT COALESCE(SUM(left), 0) AS n FROM credits WHERE employer_chat = ? AND left > 0 AND expires_at > datetime('now')",
+  ).bind(chatId).first("n")) || 0;
+}
+
+// Списать одну вакансию Про из пакета, который кончается раньше всех. true, если списали.
+export async function useCredit(env, chatId) {
+  const { meta } = await env.DB.prepare(
+    `UPDATE credits SET left = left - 1 WHERE id = (SELECT id FROM credits WHERE employer_chat = ? AND left > 0
+       AND expires_at > datetime('now') ORDER BY expires_at LIMIT 1)`,
+  ).bind(chatId).run();
+  return meta.changes > 0;
+}

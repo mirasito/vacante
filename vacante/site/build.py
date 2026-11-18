@@ -10,6 +10,7 @@ import html
 import json
 import re
 import shutil
+import tomllib
 import zlib
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
@@ -33,6 +34,18 @@ HERE = Path(__file__).parent
 PER_MONTH = {"month": 1, "day": 22, "hour": 176}
 # Условия, по которым можно отфильтровать список; «С зарплатой» проверяется отдельно.
 FILTER_PERKS = ["Без опыта", "Питание", "Развозка", "Жильё", "Ежедневная оплата", "Можно студентам", "Официально", shifts.SHIFT]
+
+
+def employer_prices(wrangler: Path = HERE.parents[1] / "bot" / "wrangler.toml") -> dict | None:
+    """Тарифы для страницы «Работодателям» из настроек бота (bot/wrangler.toml), чтобы цены были в одном месте."""
+    try:
+        env = tomllib.loads(wrangler.read_text("utf-8")).get("vars", {})
+        packs = [dict(zip(("count", "price", "days"), map(int, p.strip().split(":"))))
+                 for p in str(env.get("PACKS", "")).split(",") if p.strip()]
+        return {"post": int(env["POST_PRICE"]), "pro": int(env["BOOST_PRICE"]), "days": int(env["BOOST_DAYS"]),
+                "shift_pro": int(env["SHIFT_BOOST_PRICE"]), "packs": packs}
+    except (OSError, KeyError, ValueError, tomllib.TOMLDecodeError):
+        return None
 
 
 def telegram_channels(data_dir: Path) -> dict[str, str]:
@@ -212,6 +225,7 @@ def _env(lang: str = "ru") -> Environment:
                        LANG_NAME=i18n.LANG_NAME, t=lambda text, **kw: i18n.t(lang, text, **kw),
                        title=lambda v: i18n.title(v, lang), perk=lambda p: i18n.perk(p, lang))
     env.filters["plural"] = lambda n, *forms: plural(n, *forms, lang=lang)
+    env.filters["tenge"] = lambda n: f"{money(n)} ₸"
     return env
 
 
@@ -490,7 +504,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     # Политика конфиденциальности: на неё ссылаются подвал сайта и страница приложения в Google Play
     write("privacy", "privacy.html")
     # Страница для работодателей: где выйдет вакансия, как придут отклики, сколько стоит. На неё ведёт кнопка в шапке
-    write("rabotodatelyam", "employers.html", channels=tg_channels)
+    write("rabotodatelyam", "employers.html", channels=tg_channels, prices=employer_prices())
 
     by_city_cat: dict[tuple[str | None, str], list[Vacancy]] = defaultdict(list)
     for v in vacancies:

@@ -49,6 +49,8 @@ SPHERE_WORK = {"horeca": "Работа в общепите"}  # заголово
 MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября",
           "ноября", "декабря")
 FRESH = timedelta(hours=48)
+# Тариф Про (бывшее «Срочно»): через неделю после первого поста вакансия выходит в канал ещё раз
+REPOST_AFTER = timedelta(days=7)
 KEEP = 500  # сколько опубликованных id помнить на канал
 # Сколько ближайших кандидатов на пост в каждом городе агент проверяет за раз, с запасом на отклонённые
 REVIEW_PER_CITY = 16
@@ -243,8 +245,17 @@ def direct_due(vacancies: list[Vacancy], city: str, state: dict, now: datetime) 
     seen, tops = set(state.get("ids", [])), set(state.get("tops", []))
     cutoff = (now - FRESH).isoformat()
     due = [v for v in vacancies if v.source == direct.SOURCE and v.city == city
-           and ((v.id not in seen and v.posted_at >= cutoff) or (v.is_top(now) and top_key(v) not in tops))]
+           and ((v.id not in seen and v.posted_at >= cutoff) or (v.is_top(now) and top_key(v) not in tops)
+                or repost_due(v, state, now))]
     return sorted(due, key=lambda v: (not v.is_top(now), v.posted_at))[:MAX_DIRECT]
+
+
+def repost_due(v: Vacancy, state: dict, now: datetime) -> bool:
+    """Про ещё идёт, первый пост с пометкой вышел неделю назад, повтора ещё не было. Смены не повторяем."""
+    key = top_key(v)
+    first = state.get("tops_at", {}).get(key)
+    return (v.is_top(now) and v.shift_date is None and first is not None and f"{key}#2" not in state.get("tops", [])
+            and datetime.fromisoformat(first) <= now - REPOST_AFTER)
 
 
 def _lower_first(title: str) -> str:
@@ -453,8 +464,15 @@ def run(data_dir: Path, base_url: str, send: Sender, now: datetime | None = None
             if ok:
                 stats["direct"] = stats.get("direct", 0) + 1
                 _remember(state, keys_of[v.id], now)
-                if urgent:
+                if urgent and repost_due(v, state, now):
+                    # Повтор через неделю: закреп остаётся на первом посте
+                    state["tops"] = (state.get("tops", []) + [f"{top_key(v)}#2"])[-KEEP:]
+                elif urgent:
                     state["tops"] = (state.get("tops", []) + [top_key(v)])[-KEEP:]
+                    tops_at = state.setdefault("tops_at", {})
+                    tops_at[top_key(v)] = now.isoformat()
+                    for old in [k for k in tops_at if k not in state["tops"]]:
+                        del tops_at[old]
                     if pin and message_id:
                         _pin(chat, v, message_id, state, pin, stats)
         today = now.astimezone(LOCAL).date().isoformat()

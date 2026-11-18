@@ -355,7 +355,7 @@ test("«Срочно»: работодатель платит на Kaspi, мод
   ).run();
   await press(env, admin, "mod:ok:1", 21);
   const approved = sentTo(calls, 100).at(-1).body;
-  assert.match(approved.text, /«🔥 Срочно» за 3 000 ₸/);
+  assert.match(approved.text, /Тариф Про за 3 000 ₸/);
   assert.equal(approved.reply_markup.inline_keyboard[0][0].callback_data, "boost:1");
 
   // Чужую вакансию поднять нельзя
@@ -371,7 +371,7 @@ test("«Срочно»: работодатель платит на Kaspi, мод
   await press(env, boss, "paid:1", 31); // второй раз: уже сверяем
   assert.deepEqual(env.DB.get("SELECT job_id, amount, days, status FROM payments"), { job_id: 1, amount: 3000, days: 7, status: "pending" });
   const card = sentTo(calls, 900).at(-1).body;
-  assert.match(card.text, /Оплата «Срочно» №1: <b>3 000 ₸<\/b>/);
+  assert.match(card.text, /Оплата Про №1: <b>3 000 ₸<\/b>/);
   assert.deepEqual(card.reply_markup.inline_keyboard[0].map((b) => b.callback_data), ["pay:ok:1", "pay:no:1"]);
 
   await press(env, stranger, "pay:ok:1");
@@ -379,7 +379,7 @@ test("«Срочно»: работодатель платит на Kaspi, мод
   await press(env, admin, "pay:ok:1", 41);
   const boosted = env.DB.get("SELECT boost_until, julianday(boost_until) - julianday('now') AS left FROM jobs");
   assert.ok(boosted.left > 6.99 && boosted.left < 7.01);
-  assert.match(sentTo(calls, 100).at(-1).body.text, /Оплата получена/);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Тариф Про включён/);
   assert.equal(env.DB.get("SELECT status, decided_by FROM payments").decided_by, "Мирас");
   assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /✅ Деньги пришли: Мирас/);
 
@@ -396,7 +396,7 @@ test("«Срочно»: работодатель платит на Kaspi, мод
   await say(env, boss, "/myjobs");
   const mine = sentTo(calls, 100).at(-1).body;
   assert.match(mine.text, /🔥 срочно до \d\d\.\d\d/);
-  assert.match(mine.reply_markup.inline_keyboard[0][0].text, /Продлить «Срочно» №1: 3 000 ₸/);
+  assert.match(mine.reply_markup.inline_keyboard[0][0].text, /Продлить Про №1: 3 000 ₸/);
 });
 
 test("платное размещение: оплата на Kaspi, потом проверка; модератор размещает бесплатно; при отказе вернуть деньги", async () => {
@@ -417,8 +417,8 @@ test("платное размещение: оплата на Kaspi, потом �
   await press(env, boss, "skip:address", 12);
   await press(env, boss, "skip:details", 12);
   const preview = calls.at(-1).body;
-  assert.match(preview.text, /Размещение стоит <b>900 ₸<\/b>/);
-  assert.match(preview.reply_markup.inline_keyboard[0][0].text, /к оплате: 900 ₸/);
+  assert.match(preview.text, /Выберите тариф[\s\S]*Базовый, 900 ₸[\s\S]*Про, 3 990 ₸/);
+  assert.deepEqual(preview.reply_markup.inline_keyboard.slice(0, 2).map((r) => r[0].text), ["✅ Базовый: 900 ₸", "🔥 Про: 3 990 ₸"]);
 
   // «К оплате»: вакансия ждёт оплаты, модераторам пока ничего
   const before = sentTo(calls, 900).length;
@@ -459,6 +459,89 @@ test("платное размещение: оплата на Kaspi, потом �
   // Модератор размещает сам без оплаты
   await say(env, admin, "/vacancy");
   assert.doesNotMatch(sentTo(calls, 900).at(-1).body.text, /900 ₸/);
+});
+
+test("тарифы: Про сразу при размещении, пакет Про, Про из пакета и итог по откликам", async () => {
+  const env = { ...fakeEnv(), KASPI_DETAILS: "+7 700 000 00 00, Мирас Б.", POST_PRICE: "990", BOOST_PRICE: "3990", BOOST_DAYS: "14",
+    PACKS: "3:9990:60,10:29990:90" };
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(100, "Дана", "dana_cafe");
+  const admin = user(900, "Мирас");
+  await say(env, admin, "/admin");
+  const fill = async () => {
+    await say(env, boss, "/vacancy");
+    await press(env, boss, "jobcity:astana", 11);
+    for (const text of ["Повар", "Кафе", "300 000 ₸"]) await say(env, boss, text);
+    for (const f of ["schedule", "address", "details"]) await press(env, boss, `skip:${f}`, 12);
+    return calls.at(-1).body;
+  };
+
+  // Про сразу: одна оплата 3 990 ₸, после подтверждения на проверке уже со сроком Про
+  const preview = await fill();
+  assert.deepEqual(preview.reply_markup.inline_keyboard.slice(0, 3).map((r) => r[0].callback_data), ["jobsend", "jobpro", "packs"]);
+  await press(env, boss, "jobpro", 12);
+  assert.deepEqual(env.DB.get("SELECT status, pro FROM jobs WHERE id = 1"), { status: "payment", pro: 1 });
+  assert.match(calls.at(-1).body.text, /тарифу Про за 3 990 ₸[\s\S]*переведите <b>3 990 ₸<\/b>/);
+  await press(env, boss, "postpaid:1", 13);
+  assert.deepEqual(env.DB.get("SELECT kind, amount, days FROM payments"), { kind: "post", amount: 3990, days: 14 });
+  assert.match(sentTo(calls, 900).at(-1).body.text, /Оплата размещения Про №1: <b>3 990 ₸<\/b> на 14 дней/);
+  await press(env, admin, "pay:ok:1", 41);
+  const pro = env.DB.get("SELECT status, post_paid, julianday(boost_until) - julianday('now') AS left FROM jobs WHERE id = 1");
+  assert.equal(pro.status, "pending");
+  assert.equal(pro.post_paid, 3990);
+  assert.ok(pro.left > 13.99 && pro.left < 14.01);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Тариф Про оплачен/);
+  await press(env, admin, "mod:ok:1", 51);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /🔥 Тариф Про до \d\d\.\d\d\./);
+
+  // Пакет: экран, оплата, модератор подтверждает, у работодателя 3 Про на 60 дней
+  await press(env, boss, "packs");
+  const packs = sentTo(calls, 100).at(-1).body;
+  assert.match(packs.text, /3 вакансий Про за 9 990 ₸<\/b>: 3 330 ₸ за одну вместо 3 990 ₸/);
+  assert.deepEqual(packs.reply_markup.inline_keyboard.map((r) => r[0].callback_data), ["pack:3", "pack:10"]);
+  await press(env, boss, "pack:7", 61);  // такого пакета нет
+  await press(env, boss, "pack:3", 61);
+  assert.match(calls.at(-1).body.text, /«Пакет 3»/);
+  await press(env, boss, "packpaid:3", 61);
+  await press(env, boss, "packpaid:3", 61);  // второй раз: уже сверяем
+  assert.deepEqual(env.DB.get("SELECT job_id, kind, amount, days, pack FROM payments WHERE id = 2"),
+    { job_id: 0, kind: "pack", amount: 9990, days: 60, pack: 3 });
+  assert.match(sentTo(calls, 900).at(-1).body.text, /Оплата пакета «3 Про» №2: <b>9 990 ₸<\/b> на 60 дней\nОт: Дана \(@dana_cafe\)[\s\S]*«Пакет 3»/);
+  await press(env, admin, "pay:ok:2", 62);
+  assert.equal(env.DB.get("SELECT left FROM credits").left, 3);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Пакет включён: 3 вакансий Про/);
+  assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /✅ Деньги пришли: Мирас/);
+
+  // Новая вакансия: «Про из пакета» без оплаты, сразу на проверку со сроком Про
+  const second = await fill();
+  assert.equal(second.reply_markup.inline_keyboard[2][0].text, "🔥 Про из пакета, осталось 3");
+  await press(env, boss, "jobcredit", 12);
+  assert.deepEqual(env.DB.get("SELECT status, pro FROM jobs WHERE id = 2"), { status: "pending", pro: 1 });
+  assert.ok(env.DB.get("SELECT boost_until FROM jobs WHERE id = 2").boost_until);
+  assert.equal(env.DB.get("SELECT left FROM credits").left, 2);
+  assert.match(sentTo(calls, 900).at(-1).body.reply_markup.inline_keyboard[0][0].callback_data, /^mod:ok:2$/);
+
+  // Опубликованную поднять из пакета: кнопка в окне Про
+  env.DB.prepare(`INSERT INTO jobs (employer_chat, employer_name, status, city, title, company, salary, approved_at)
+     VALUES (100, 'Дана', 'approved', 'astana', 'Бариста', 'Кафе', '250 000 ₸', datetime('now'))`).run();
+  await press(env, boss, "boost:3");
+  assert.equal(sentTo(calls, 100).at(-1).body.reply_markup.inline_keyboard[1][0].callback_data, "usecredit:3");
+  await press(env, user(555, "Хитрец"), "usecredit:3");
+  assert.equal(env.DB.get("SELECT left FROM credits").left, 2);
+  await press(env, boss, "usecredit:3", 71);
+  assert.equal(env.DB.get("SELECT left FROM credits").left, 1);
+  assert.match(calls.at(-1).body.text, /Тариф Про включён[\s\S]*Осталось Про в пакетах: 1/);
+
+  // Срок кончился: итог по откликам один раз
+  env.DB.prepare("UPDATE jobs SET boost_until = datetime('now', '-1 hour') WHERE id = 3").run();
+  env.DB.prepare("INSERT INTO applications (job_id, chat_id) VALUES (3, 300), (3, 301)").run();
+  const { proReports } = await import("../src/index.js");
+  assert.equal(await proReports(env), 1);
+  const report = sentTo(calls, 100).at(-1).body;
+  assert.match(report.text, /Итог тарифа Про по «Бариста»: откликов 2/);
+  assert.equal(report.reply_markup.inline_keyboard[0][0].callback_data, "boost:3");
+  assert.equal(await proReports(env), 0);
 });
 
 test("без реквизитов Kaspi кнопок «Поднять» нет", async () => {

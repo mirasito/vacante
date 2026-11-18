@@ -108,22 +108,45 @@ export function card(job) {
   return lines.join("\n");
 }
 
-// price: цена размещения (postPrice) или 0, если размещение бесплатное (модератору или без реквизитов)
-export function previewScreen(job, price = 0) {
+// Предпросмотр анкеты и выбор тарифа. price: цена «Базового» (postPrice) или 0, если размещение бесплатное
+// (модератору или без реквизитов). boost: условия «Про» (boostOffer) или null. credits: сколько «Про» осталось в пакетах.
+export function previewScreen(job, price = 0, boost = null, credits = 0, now = new Date()) {
+  const what = job.kind === "shift" ? "смену" : "вакансию";
   const where = job.kind === "shift"
     ? "смена появится на vacante.kz в разделе «Подработка и смены» и в подборках"
     : "вакансия появится на vacante.kz и в подборках подписчикам бота";
-  const text = price
-    ? `Проверьте ${job.kind === "shift" ? "смену" : "вакансию"}:\n\n${card(job)}\n\nРазмещение стоит <b>${money(price)}</b>. ` +
-      `Если всё верно, переходите к оплате. После оплаты и проверки (обычно до часа) ${where}.`
-    : `Проверьте ${job.kind === "shift" ? "смену" : "вакансию"}:\n\n${card(job)}\n\nЕсли всё верно, отправьте на проверку, это до часа. Потом ${where}.`;
-  return {
-    text,
-    keyboard: [
-      [{ text: price ? `💳 Всё верно, к оплате: ${money(price)}` : "✅ Отправить на проверку", callback_data: "jobsend" }],
-      [{ text: "Заполнить заново", callback_data: "jobredo" }, CANCEL],
-    ],
-  };
+  const head = `Проверьте ${what}:\n\n${card(job)}\n\n`;
+  const redo = [{ text: "Заполнить заново", callback_data: "jobredo" }, CANCEL];
+  if (!price) {
+    return {
+      text: `${head}Если всё верно, отправьте на проверку, это до часа. Потом ${where}.`,
+      keyboard: [[{ text: "✅ Отправить на проверку", callback_data: "jobsend" }], redo],
+    };
+  }
+  const pro = boost && offerFor(boost, job, now);
+  const lines = [`Выберите тариф. После оплаты и проверки (обычно до часа) ${where}.`, "", `✅ <b>Базовый, ${money(price)}</b>: ${tariffText("basic", job)}`];
+  if (pro) lines.push(`🔥 <b>Про, ${money(pro.price)}</b>: ${tariffText("pro", job, pro)}`);
+  const keyboard = [[{ text: `✅ Базовый: ${money(price)}`, callback_data: "jobsend" }]];
+  if (pro) keyboard.push([{ text: `🔥 Про: ${money(pro.price)}`, callback_data: "jobpro" }]);
+  if (pro && job.kind !== "shift" && credits > 0) {
+    keyboard.push([{ text: `🔥 Про из пакета, осталось ${credits}`, callback_data: "jobcredit" }]);
+  } else if (pro && job.kind !== "shift" && boost.packs?.length) {
+    keyboard.push([{ text: "📦 Пакеты Про со скидкой", callback_data: "packs" }]);
+  }
+  keyboard.push(redo);
+  return { text: head + lines.join("\n"), keyboard };
+}
+
+// Что даёт тариф, одной строкой
+export function tariffText(kind, job, pro = null) {
+  if (kind === "basic") {
+    return job.kind === "shift"
+      ? "раздел «Подработка и смены» на сайте и в приложении, подборки тем, кто ищет подработку, канал города."
+      : "сайт и приложение на 30 дней, подборки подписчикам бота, пост в канале города, отклики сюда в чат.";
+  }
+  if (job.kind === "shift") return "всё из Базового, смена первой в разделе города до её начала с пометкой «🔥 Срочно» и закреп в канале.";
+  return `всё из Базового, ${pro.days} дней первой в списке города с пометкой «🔥 Срочно», закреп в канале города ` +
+    "и повторный пост через неделю, в конце итог по откликам.";
 }
 
 // Свои Telegram-каналы vacante по городам (город → @канал). Точный список работающих каналов бот берёт
@@ -141,8 +164,9 @@ function inChannel(city, channels) {
 export const EMPLOYER_BUTTON = { text: "🏢 Ищу сотрудников", callback_data: "emp" };
 
 export function employerMenu(price = 0, boost = null) {
-  const cost = price ? `Размещение стоит ${money(price)}.` : "Размещение бесплатное.";
-  const faster = boost ? ` Нужно быстрее: «🔥 Срочно» за ${money(boost.price)}, вакансия первой в городе и закреп в канале.` : "";
+  const cost = price ? `Тариф Базовый: ${money(price)}.` : "Размещение бесплатное.";
+  const faster = boost ? ` Нужно быстрее: тариф Про за ${money(boost.price)}, ${boost.days} дней первой в городе и закреп в канале.` +
+    (boost.packs?.length ? ` Пакеты Про дешевле: ${boost.packs.map((p) => `${p.count} за ${money(p.price)}`).join(", ")}.` : "") : "";
   return {
     text:
       "🏢 <b>Найдём сотрудников</b>\n\n" +
@@ -154,6 +178,7 @@ export function employerMenu(price = 0, boost = null) {
     keyboard: [
       [{ text: "📝 Вакансия", callback_data: "emp:vacancy" }, { text: "⚡ Смена на день", callback_data: "emp:shift" }],
       [{ text: "📋 Мои вакансии и отклики", callback_data: "emp:jobs" }],
+      ...(boost?.packs?.length ? [[{ text: "📦 Пакеты Про со скидкой", callback_data: "packs" }]] : []),
       [{ text: "🏢 Профиль компании и заведения", callback_data: "emp:company" }],
     ],
   };
@@ -185,15 +210,15 @@ export function moderationScreen(job) {
 export function approvedScreen(job, boost = null, now = new Date(), channels = DEFAULT_CHANNELS, siteUrl = SITE) {
   boost = offerFor(boost, job, now);
   const text = approvedText(job, channels, siteUrl);
-  if (!boost) return { text, keyboard: [] };
+  if (!boost || isBoosted(job, now)) return { text: text + (isBoosted(job, now) ? `\n\n🔥 Тариф Про до ${localDate(job.boost_until)}.` : ""), keyboard: [] };
   const pin = (channels || DEFAULT_CHANNELS)[job.city] ? " и закреплённый пост в канале" : "";
   if (boost.shift) {
-    const more = `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: смена первой в разделе «Подработка и смены» города до её начала${pin}.`;
+    const more = `\n\nНужно быстрее? Тариф Про за ${money(boost.price)}: смена первой в разделе «Подработка и смены» города до её начала${pin}.`;
     return { text: text + more, keyboard: [[boostButton(job, boost)]] };
   }
   const more =
-    `\n\nНужно быстрее? «🔥 Срочно» за ${money(boost.price)}: ${boost.days} дней первой в списке города на сайте ` +
-    `с яркой пометкой${pin}.`;
+    `\n\nНужно быстрее? Тариф Про за ${money(boost.price)}: ${boost.days} дней первой в списке города на сайте ` +
+    `с пометкой «🔥 Срочно»${pin}.`;
   return { text: text + more, keyboard: [[boostButton(job, boost)]] };
 }
 
@@ -323,7 +348,7 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
       keyboard.push([{ text: `📩 Отклики №${j.id}: ${j.applications}`, callback_data: `apps:${j.id}` }]);
     }
     if (boost && j.status === "approved") keyboard.push([boostButton(j, offerFor(boost, j, now), now)]);
-    if (j.status === "payment") keyboard.push([{ text: `💳 Оплатить №${j.id}: ${money(postPrice(boost))}`, callback_data: `postpay:${j.id}` }]);
+    if (j.status === "payment") keyboard.push([{ text: `💳 Оплатить №${j.id}: ${money(postPriceFor(j, boost, now))}`, callback_data: `postpay:${j.id}` }]);
     keyboard.push([{ text: `Закрыть №${j.id} ${j.title}`.slice(0, 60), callback_data: `close:${j.id}` }]);
   }
   return { text: `Ваши вакансии:\n\n${lines.join("\n")}\n\nОтклики приходят сюда в чат, кнопка «📩 Отклики» покажет их ещё раз. Новая вакансия: /vacancy`, keyboard };
@@ -335,20 +360,74 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
 export function boostOffer(env) {
   const kaspi = String(env.KASPI_DETAILS || "").trim();
   if (!kaspi) return null;
-  return { price: Number(env.BOOST_PRICE) || 2500, days: Number(env.BOOST_DAYS) || 7, kaspi,
-    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 2500, postPrice: env.POST_PRICE === undefined ? 900 : Number(env.POST_PRICE) || 0 };
+  return { price: Number(env.BOOST_PRICE) || 3990, days: Number(env.BOOST_DAYS) || 14, kaspi,
+    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 1390, postPrice: env.POST_PRICE === undefined ? 990 : Number(env.POST_PRICE) || 0,
+    packs: parsePacks(env.PACKS) };
+}
+
+// Пакеты «Про»: PACKS = "3:9990:60,10:29990:90" — сколько вакансий, цена в тенге, сколько дней действует пакет
+export function parsePacks(value) {
+  return String(value || "").split(",").map((part) => part.trim().split(":").map(Number))
+    .filter(([count, price, days]) => count > 0 && price > 0 && days > 0)
+    .map(([count, price, days]) => ({ count, price, days }));
+}
+
+export function packsScreen(boost, credits = 0) {
+  const lines = boost.packs.map((p) =>
+    `📦 <b>${p.count} вакансий Про за ${money(p.price)}</b>: ${money(Math.round(p.price / p.count))} за одну вместо ${money(boost.price)}, ` +
+    `использовать в течение ${p.days} дней.`);
+  return {
+    text:
+      "<b>Пакеты Про</b>\n\nДля сетей и тех, кто нанимает часто. Каждая вакансия из пакета получает тариф Про: " +
+      `${boost.days} дней первой в городе, закреп в канале, повторный пост и итог по откликам.\n\n${lines.join("\n")}` +
+      (credits ? `\n\nСейчас у вас осталось Про: ${credits}.` : ""),
+    keyboard: boost.packs.map((p) => [{ text: `📦 ${p.count} Про: ${money(p.price)}`, callback_data: `pack:${p.count}` }]),
+  };
+}
+
+export function packPayScreen(pack, boost) {
+  return {
+    text:
+      `📦 <b>Пакет: ${pack.count} вакансий Про за ${money(pack.price)}</b>\n\n` +
+      `Как оплатить: переведите <b>${money(pack.price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
+      `В комментарии к переводу напишите «Пакет ${pack.count}». Потом нажмите кнопку ниже: мы сверим перевод и включим пакет.`,
+    keyboard: [[{ text: "✅ Я оплатил", callback_data: `packpaid:${pack.count}` }]],
+  };
+}
+
+export function packWaitText(pack) {
+  return `⏳ Сверяем перевод за пакет «${pack.count} Про». Обычно это до пары часов днём. Напишу, как только включим.`;
+}
+
+export function packReadyText(count, until) {
+  return (
+    `📦 Пакет включён: ${count} вакансий Про до ${localDate(until)}.\n\n` +
+    "При новой вакансии выберите «🔥 Про из пакета», а уже опубликованную поднимите в /myjobs кнопкой «🔥 Про». /vacancy"
+  );
+}
+
+// Итог «Про», когда срок закончился: сколько откликов, и предложение продлить
+export function proReportScreen(j, applications, boost) {
+  const text =
+    `📊 Итог тарифа Про по «${esc(j.title)}»: откликов ${applications}.\n\n` +
+    (j.status === "approved" ? "Вакансия остаётся на сайте по тарифу Базовый. Нужно ещё людей? Продлите Про." : "Вакансия уже закрыта.");
+  const keyboard = boost && j.status === "approved" ? [[boostButton(j, offerFor(boost, j))]] : [];
+  return { text, keyboard };
 }
 
 // Платное размещение (POST_PRICE, по умолчанию 900 ₸): вакансия или смена уходит на проверку только после
 // оплаты. Без реквизитов Kaspi или с POST_PRICE = "0" размещение бесплатное, как раньше.
 export const postPrice = (boost) => (boost && boost.postPrice > 0 ? boost.postPrice : 0);
 
-export function postPayScreen(j, boost) {
-  const price = postPrice(boost);
+// Цена размещения этой вакансии: «Про» (j.pro = 1) или «Базовый»
+export const postPriceFor = (j, boost, now = new Date()) => (j.pro ? offerFor(boost, j, now).price : postPrice(boost));
+
+export function postPayScreen(j, boost, now = new Date()) {
+  const price = postPriceFor(j, boost, now);
   const what = j.kind === "shift" ? "смены" : "вакансии";
   return {
     text:
-      `💳 <b>Размещение ${what} за ${money(price)}</b>\n\n${card(j)}\n\n` +
+      `💳 <b>Размещение ${what} по тарифу ${j.pro ? "Про" : "Базовый"} за ${money(price)}</b>\n\n${card(j)}\n\n` +
       `Как оплатить: переведите <b>${money(price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
       `В комментарии к переводу напишите «№${j.id}». Потом нажмите кнопку ниже: мы сверим перевод и отправим ` +
       `${j.kind === "shift" ? "смену" : "вакансию"} на проверку. Если не пропустим, деньги вернём.`,
@@ -369,7 +448,7 @@ export function postLaterText(j) {
 
 export function postPaidText(j) {
   return (
-    `💳 Оплата получена, спасибо! «${esc(j.title)}» на проверке, обычно это до часа. ` +
+    `💳 ${j.pro ? "Тариф Про оплачен" : "Оплата получена"}, спасибо! «${esc(j.title)}» на проверке, обычно это до часа. ` +
     "Напишу, когда опубликуем. Ваши вакансии: /myjobs"
   );
 }
@@ -395,22 +474,26 @@ export function localDate(s) {
 }
 
 export function boostButton(j, boost, now = new Date()) {
-  const what = isBoosted(j, now) ? "Продлить «Срочно»" : "🔥 Поднять";
+  const what = isBoosted(j, now) ? "Продлить Про" : "🔥 Про";
   return { text: `${what} №${j.id}: ${money(boost.price)}`, callback_data: `boost:${j.id}` };
 }
 
-export function boostScreen(j, boost, now = new Date(), channels = DEFAULT_CHANNELS) {
+export function boostScreen(j, boost, now = new Date(), channels = DEFAULT_CHANNELS, credits = 0) {
   boost = offerFor(boost, j, now);
   const chat = (channels || DEFAULT_CHANNELS)[j.city];
   const channel = chat ? `\n2. Пост в нашем канале ${chat} (${CITY[j.city]}) с той же пометкой, закреплённый наверху канала на все ${boost.days} дней.` : "";
   return {
     text:
-      (boost.shift ? `🔥 <b>«Срочно» до начала смены за ${money(boost.price)}</b>\n\n${card(j)}\n\n`
-        : `🔥 <b>«Срочно» на ${boost.days} дней за ${money(boost.price)}</b>\n\n${card(j)}\n\n`) +
-      `1. Вакансия первой в списке города на vacante.kz с пометкой «🔥 Срочно».${channel}\n\n` +
+      (boost.shift ? `🔥 <b>Тариф Про до начала смены за ${money(boost.price)}</b>\n\n${card(j)}\n\n`
+        : `🔥 <b>Тариф Про на ${boost.days} дней за ${money(boost.price)}</b>\n\n${card(j)}\n\n`) +
+      `1. Вакансия первой в списке города на vacante.kz с пометкой «🔥 Срочно».${channel}` +
+      (boost.shift || !chat ? "" : "\n3. Повторный пост в канале через неделю, в конце итог по откликам.") + "\n\n" +
       `Как оплатить: переведите <b>${money(boost.price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
       `В комментарии к переводу напишите «№${j.id}». Потом нажмите кнопку ниже: мы сверим перевод и поднимем вакансию.`,
-    keyboard: [[{ text: "✅ Я оплатил", callback_data: `paid:${j.id}` }]],
+    keyboard: [
+      [{ text: "✅ Я оплатил", callback_data: `paid:${j.id}` }],
+      ...(credits > 0 && !boost.shift ? [[{ text: `🔥 Списать из пакета, осталось ${credits}`, callback_data: `usecredit:${j.id}` }]] : []),
+    ],
   };
 }
 
@@ -418,16 +501,17 @@ export const PAYMENT_STATUS = { pending: "ждёт проверки", confirmed:
 
 // Карточка оплаты у модераторов: пока ждёт, с кнопками, потом с решением
 export function paymentScreen(p, j) {
-  const what = p.kind === "post" ? "Оплата размещения" : "Оплата «Срочно»";
+  const pack = p.kind === "pack";
+  const what = pack ? `Оплата пакета «${p.pack} Про»` : p.kind === "post" ? (j.pro ? "Оплата размещения Про" : "Оплата размещения") : "Оплата Про";
   const head =
-    `💳 ${what} №${p.id}: <b>${money(p.amount)}</b>${p.kind === "post" ? "" : ` на ${p.days} дней`}\n` +
-    `Вакансия №${j.id} «${esc(j.title)}», ${esc(j.company)}\nОт: ${esc(j.employer_name)}\n\n`;
+    `💳 ${what} №${p.id}: <b>${money(p.amount)}</b>${p.kind === "post" && !j.pro ? "" : ` на ${p.days} дней`}\n` +
+    (pack ? `От: ${esc(j.employer_name)}\n\n` : `Вакансия №${j.id} «${esc(j.title)}», ${esc(j.company)}\nОт: ${esc(j.employer_name)}\n\n`);
   if (p.status !== "pending") {
     const by = p.decided_by ? `: ${esc(p.decided_by)}` : "";
     return { text: head + (p.status === "confirmed" ? `✅ Деньги пришли${by}` : `❌ Перевод не найден${by}`), keyboard: [] };
   }
   return {
-    text: head + `Проверьте в Kaspi перевод на ${money(p.amount)} с комментарием «№${j.id}».`,
+    text: head + `Проверьте в Kaspi перевод на ${money(p.amount)} с комментарием «${pack ? `Пакет ${p.pack}` : `№${j.id}`}».`,
     keyboard: [[
       { text: "✅ Деньги пришли", callback_data: `pay:ok:${p.id}` },
       { text: "❌ Не пришли", callback_data: `pay:no:${p.id}` },
@@ -442,7 +526,7 @@ export function paymentWaitText(j) {
 export function boostedText(j, channels = DEFAULT_CHANNELS) {
   const chat = (channels || DEFAULT_CHANNELS)[j.city];
   return (
-    `🔥 Оплата получена, спасибо! Вакансия «${esc(j.title)}» отмечена «Срочно» до ${localDate(j.boost_until)}: ` +
+    `🔥 Тариф Про включён! Вакансия «${esc(j.title)}» отмечена «🔥 Срочно» до ${localDate(j.boost_until)}: ` +
     "через несколько минут она будет первой в списке своего города на vacante.kz." +
     (chat ? ` А в нашем канале ${chat} выйдет пост, закреплённый до конца срока.` : "") +
     "\n\nВаши вакансии: /myjobs"

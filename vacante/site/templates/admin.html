@@ -163,6 +163,7 @@ td.nowrap { white-space: nowrap; }
     <button type="button" role="tab" data-tab="emp" aria-selected="false">Работодатели</button>
     <button type="button" role="tab" data-tab="crm" aria-selected="false">CRM заведений</button>
     <button type="button" role="tab" data-tab="jobs" aria-selected="false">Работодатели в боте</button>
+    <button type="button" role="tab" data-tab="logins" aria-selected="false">Входы</button>
   </nav>
   <div id="tab-stats">
   <div class="tiles" id="tiles"></div>
@@ -324,6 +325,13 @@ td.nowrap { white-space: nowrap; }
     <tbody></tbody>
   </table></div>
   <button type="button" class="more" id="emp-more" hidden>Показать ещё</button>
+  </div>
+
+  <div id="tab-logins" hidden>
+  <p class="quiet">Попытки войти в админку на сервере api.vacante.kz за 30 дней: каждый неверный пароль и первый верный вход с адреса за шесть часов. После 10 неверных попыток за 15 минут адрес блокируется до конца этих 15 минут. Время — по Казахстану.</p>
+  <p class="err" id="logins-error" hidden></p>
+  <p id="logins-summary"></p>
+  <div class="scroll"><table id="logins-table"><thead><tr><th>Когда</th><th>Итог</th><th>Адрес</th><th>Браузер</th><th>Что открывали</th></tr></thead><tbody></tbody></table></div>
   </div>
 
   <div id="tab-jobs" hidden>
@@ -611,12 +619,13 @@ td.nowrap { white-space: nowrap; }
     }
 
     renderCrm(data.crm || [], now, data.crm_api);
-    let jobsLoaded = false, empLoaded = false, funnelLoaded = false, skLoaded = false;
+    let jobsLoaded = false, empLoaded = false, funnelLoaded = false, skLoaded = false, loginsLoaded = false;
     document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
-      for (const tab of ["stats", "funnel", "sk", "emp", "crm", "jobs"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
+      for (const tab of ["stats", "funnel", "sk", "emp", "crm", "jobs", "logins"]) $("#tab-" + tab).hidden = b.dataset.tab !== tab;
       if (b.dataset.tab === "funnel" && !funnelLoaded && data.funnel_api) { funnelLoaded = true; renderFunnel(data.funnel_api); }
       if (b.dataset.tab === "sk" && !skLoaded && data.seekers_api) { skLoaded = true; renderSeekers(data.seekers_api); }
+      if (b.dataset.tab === "logins" && !loginsLoaded && data.logins_api) { loginsLoaded = true; renderLogins(data.logins_api); }
       if (b.dataset.tab === "jobs" && !jobsLoaded && data.jobs_api) { jobsLoaded = true; renderJobs(data.jobs_api, data.cities || {}); }
       if (b.dataset.tab === "emp" && !empLoaded && data.employers_api) { empLoaded = true; renderEmployers(data.employers_api, data.cities || {}, data.crm_api); }
     }));
@@ -723,6 +732,27 @@ td.nowrap { white-space: nowrap; }
     const r = await fetch(url, { headers: { Authorization: await crmAuth() } });
     if (!r.ok) throw new Error("ошибка " + r.status);
     return URL.createObjectURL(await r.blob());
+  }
+  // Журнал входов в админку (server/src/admin-logins.ts)
+  async function renderLogins(api) {
+    let rows;
+    try {
+      rows = (await crmFetch(api)).logins;
+    } catch (e) {
+      $("#logins-error").hidden = false;
+      $("#logins-error").textContent = `Сервер не ответил (${e.message}). Если вкладка новая, сервер ещё выкладывается: попробуйте через 10 минут.`;
+      return;
+    }
+    const label = { ok: "✅ вошёл", wrong: "❌ неверный пароль", blocked: "⛔ заблокирован" };
+    const wrong = rows.filter((r) => r.result !== "ok");
+    const ips = new Set(wrong.map((r) => r.ip));
+    $("#logins-summary").textContent = wrong.length
+      ? `Неудачных попыток: ${num(wrong.length)} с ${num(ips.size)} адресов.`
+      : "Неудачных попыток не было.";
+    const when = (iso) => new Date(iso).toLocaleString("ru-RU", { timeZone: "Asia/Almaty", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+    $("#logins-table tbody").innerHTML = rows.map((r) =>
+      `<tr><td>${esc(when(r.at))}</td><td>${label[r.result] || esc(r.result)}</td><td>${esc(r.ip)}</td><td>${esc(r.ua)}</td><td>${esc(r.path)}</td></tr>`).join("")
+      || `<tr><td colspan="5" class="quiet">Записей пока нет</td></tr>`;
   }
   const waLink = (raw) => (raw ? `https://wa.me/${raw.replace(/\D/g, "")}` : "");
   async function renderSeekers(api) {

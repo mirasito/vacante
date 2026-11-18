@@ -1,0 +1,40 @@
+# Яндекс Метрика сайта: визиты по дням, доля роботов, источники трафика, города, страницы.
+# Только чтение и только числа (vacante/metrika.py). Запуск: Actions → «Метрика» → Run workflow.
+#
+# Нужен секрет METRIKA_TOKEN (один раз):
+# 1. https://oauth.yandex.ru/client/new — создать приложение «vacante метрика», платформа «Веб-сервисы»,
+#    Redirect URI: https://oauth.yandex.ru/verification_code, доступ «Яндекс.Метрика → Получение статистики».
+# 2. Открыть https://oauth.yandex.ru/authorize?response_type=token&client_id=<ClientID приложения>
+#    тем аккаунтом Яндекса, у которого есть счётчик, и скопировать токен со страницы.
+# 3. GitHub → Settings → Secrets and variables → Actions → New repository secret: METRIKA_TOKEN.
+name: Метрика
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "За сколько последних дней"
+        default: "14"
+  push:
+    branches: ["claude/**"]
+    paths: ["vacante/metrika.py", ".github/workflows/metrika.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  metrika:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Цифры
+        env:
+          METRIKA_TOKEN: ${{ secrets.METRIKA_TOKEN }}
+          DAYS: ${{ inputs.days || '14' }}
+        run: |
+          pip install --quiet httpx
+          python vacante/metrika.py | tee metrika.txt
+          { echo '```'; cat metrika.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

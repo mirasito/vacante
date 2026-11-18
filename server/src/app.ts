@@ -1,5 +1,7 @@
 // Обработчик всех запросов сервера. Caddy принимает HTTPS для api.vacante.kz и p.vacante.kz
 // и передаёт запросы сюда, а здесь по имени хоста решаем, какой это сайт.
+import { recentLogins } from "./admin-logins.ts";
+import { adminGuard } from "./auth.ts";
 import type { IncomingMessage, ServerResponse } from "node:http";
 
 import { hostOf, type Config } from "./config.ts";
@@ -126,6 +128,16 @@ function buildRoutes(ctx: Ctx): Route[] {
     route("GET", "any", "/health", () => {
       ctx.db.prepare("SELECT 1").get();
       return { json: { ok: true, version: ctx.config.version } };
+    }),
+    // API не для поисковиков: роботы ходили по кнопкам «Позвонить» и «WhatsApp» (/go/…) и накручивали счётчик
+    route("GET", "api", "/robots.txt", () => ({
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
+      body: Buffer.from("User-agent: *\nDisallow: /\n"),
+    })),
+    // Журнал попыток входа в админку (server/src/admin-logins.ts)
+    route("GET", "api", "/admin/logins", (req) => {
+      adminGuard(ctx)(req);
+      return { json: { logins: recentLogins(ctx.db) } };
     }),
     ...meRoutes(ctx),
     ...v2Routes(ctx),

@@ -107,3 +107,7 @@ WHERE s.id IN (SELECT id FROM prof) GROUP BY 1 ORDER BY 3 DESC, 2 DESC;
 
 SELECT '--- прямые кнопки связи по дням ---' AS '';
 SELECT day, SUM(n) AS n FROM contact_clicks WHERE day >= :since GROUP BY 1 ORDER BY 1;
+
+SELECT '--- входы в админку по дням (без адресов) ---' AS '';
+SELECT date(at, '+5 hours') AS day, result, COUNT(*) AS n, COUNT(DISTINCT ip) AS addresses FROM admin_logins
+WHERE at >= (SELECT cut FROM t) GROUP BY 1, 2 ORDER BY 1, 2;

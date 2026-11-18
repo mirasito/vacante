@@ -80,7 +80,8 @@ test("«Срочно» для смены: до дня смены", () => {
 test("меню работодателя, вопрос N из M и повторный показ откликов", () => {
   const menu = job.employerMenu(0, { price: 2500, days: 14 });
   assert.match(menu.text, /Размещение бесплатное\. Нужно быстрее: тариф Про за 2 500 ₸, 14 дней/);
-  assert.deepEqual(menu.keyboard.flat().map((b) => b.callback_data), ["emp:vacancy", "emp:shift", "emp:jobs", "emp:company"]);
+  assert.deepEqual(menu.keyboard[0][0].web_app, { url: "https://vacante.kz/app/?tab=employer" });
+  assert.deepEqual(menu.keyboard.slice(1).flat().map((b) => b.callback_data), ["emp:vacancy", "emp:shift", "emp:jobs", "emp:company"]);
   assert.match(job.employerMenu(900).text, /Тариф Базовый: 900 ₸\./);
   assert.deepEqual(job.parsePacks("3:9990:60, 10:29990:90,x,0:1:1"), [{ count: 3, price: 9990, days: 60 }, { count: 10, price: 29990, days: 90 }]);
   assert.match(job.askScreen(job.STEPS[1]).text, /^<i>Вопрос 2 из 7<\/i>\nКого ищете/);

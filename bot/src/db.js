@@ -1,13 +1,13 @@
 // Запросы к базе бота D1: подписки, анкеты (dialogs), вакансии, оплаты и отклики.
 import * as bot from "./logic.js";
 
-export async function myJobs(env, chatId) {
+export async function myJobs(env, chatId, limit = 10) {
   const { results } = await env.DB.prepare(
     `SELECT j.*, (SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id) AS applications,
        (SELECT COUNT(*) FROM applications a WHERE a.job_id = j.id AND a.status = 'confirmed') AS confirmed
-     FROM jobs j WHERE employer_chat = ? AND status != 'draft' ORDER BY id DESC LIMIT 10`,
+     FROM jobs j WHERE employer_chat = ? AND status != 'draft' ORDER BY id DESC LIMIT ?`,
   )
-    .bind(chatId)
+    .bind(chatId, limit)
     .all();
   return results;
 }

@@ -852,3 +852,82 @@ test("профиль компании /company, ответы на вопросы
   await post(env, { message: { chat, from: boss, text: "привет", reply_to_message: { text: "Как вас зовут?" } } });
   assert.equal(relayed().length, 3);
 });
+
+// initData, подписанные токеном бота, как их присылает Telegram в Mini App
+function initData(token, user, authDate = Math.floor(Date.now() / 1000)) {
+  const fields = { auth_date: String(authDate), query_id: "AAE", user: JSON.stringify(user) };
+  const check = Object.keys(fields).sort().map((k) => `${k}=${fields[k]}`).join("\n");
+  const secret = createHmac("sha256", "WebAppData").update(token).digest();
+  const hash = createHmac("sha256", secret).update(check).digest("hex");
+  return new URLSearchParams({ ...fields, hash }).toString();
+}
+
+test("кабинет работодателя: вход по initData, вакансии, отклики, оплата и пакеты", async () => {
+  const env = { ...fakeEnv(), KASPI_DETAILS: "+7 700 000 00 00, Мирас Б.", POST_PRICE: "990", BOOST_PRICE: "3990", BOOST_DAYS: "14",
+    PACKS: "3:9990:60" };
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  await say(env, user(900, "Мирас"), "/admin");
+  const call = (auth, method = "GET", body) => worker.fetch(new Request("https://bot.example/api/cabinet", {
+    method, headers: { Authorization: `tma ${auth}`, Origin: "https://vacante.kz", ...(body ? { "Content-Type": "application/json" } : {}) },
+    body: body ? JSON.stringify(body) : undefined }), env, ctx);
+  const dana = initData(env.TELEGRAM_BOT_TOKEN, { id: 100, first_name: "Дана", username: "dana_cafe" });
+
+  // Без подписи, с чужой подписью или старые данные: не пускаем
+  assert.equal((await call("hash=0")).status, 401);
+  assert.equal((await call(initData("2:other", { id: 100, first_name: "Дана" }))).status, 401);
+  assert.equal((await call(initData(env.TELEGRAM_BOT_TOKEN, { id: 100, first_name: "Дана" }, 1000))).status, 401);
+  const preflight = await worker.fetch(new Request("https://bot.example/api/cabinet", { method: "OPTIONS", headers: { Origin: "https://vacante.kz" } }), env, ctx);
+  assert.equal(preflight.headers.get("Access-Control-Allow-Origin"), "https://vacante.kz");
+
+  env.DB.prepare(`INSERT INTO jobs (employer_chat, employer_name, status, city, title, company, salary, approved_at)
+     VALUES (100, 'Дана', 'approved', 'almaty', 'Повар', 'Кафе', '300 000 ₸', datetime('now')),
+            (100, 'Дана', 'payment', 'almaty', 'Бариста', 'Кафе', '250 000 ₸', NULL),
+            (555, 'Чужой', 'approved', 'almaty', 'Курьер', 'Склад', '200 000 ₸', datetime('now'))`).run();
+  env.DB.prepare("INSERT INTO applications (job_id, chat_id, notice_id) VALUES (1, 300, 77)").run();
+
+  const res = await call(dana);
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get("Access-Control-Allow-Origin"), "https://vacante.kz");
+  const state = await res.json();
+  assert.deepEqual(state.jobs.map((j) => [j.id, j.status, j.applications]), [[2, "payment", 0], [1, "approved", 1]]);
+  assert.deepEqual(state.jobs[0].pay, { amount: 990, tariff: "basic", waiting: false });
+  assert.equal(state.jobs[1].url, "https://vacante.kz/v/bot-1/");
+  assert.deepEqual(state.jobs[1].boost, { price: 3990, days: 14, shift: false, waiting: false });
+  assert.deepEqual(state.tariffs, { post: 990, pro: 3990, days: 14, shift_pro: 1390, packs: [{ count: 3, price: 9990, days: 60 }] });
+  assert.equal(state.kaspi, "+7 700 000 00 00, Мирас Б.");
+
+  // Отклики приходят в чат ещё раз
+  let r = await (await call(dana, "POST", { action: "apps", id: 1 })).json();
+  assert.equal(r.message, "Отклики отправили вам в чат с ботом");
+  assert.deepEqual(calls.at(-1), { method: "copyMessage", body: { chat_id: 100, from_chat_id: 100, message_id: 77 } });
+  // Чужую вакансию не трогаем
+  r = await call(dana, "POST", { action: "close", id: 3 });
+  assert.equal(r.status, 400);
+  assert.equal(env.DB.get("SELECT status FROM jobs WHERE id = 3").status, "approved");
+
+  // «Я оплатил» за размещение и за Про: карточки модератору, сообщение в чат
+  r = await (await call(dana, "POST", { action: "paid_post", id: 2 })).json();
+  assert.match(r.message, /Сверяем перевод/);
+  assert.equal(r.state.jobs[0].pay.waiting, true);
+  assert.match(sentTo(calls, 900).at(-1).body.text, /Оплата размещения №1: <b>990 ₸<\/b>/);
+  r = await (await call(dana, "POST", { action: "paid_boost", id: 1 })).json();
+  assert.equal(r.state.jobs[1].boost.waiting, true);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Сверяем перевод за вакансию №1/);
+  assert.equal((await call(dana, "POST", { action: "paid_boost", id: 1 })).status, 400);  // второй раз: уже сверяем
+
+  // Пакет: оплата, модератор подтверждает, Про из пакета
+  r = await (await call(dana, "POST", { action: "paid_pack", count: 3 })).json();
+  assert.equal(r.state.pack_waiting, true);
+  const pack = env.DB.get("SELECT id FROM payments WHERE kind = 'pack'").id;
+  await press(env, user(900, "Мирас"), `pay:ok:${pack}`, 5);
+  env.DB.prepare("UPDATE payments SET status = 'rejected' WHERE job_id = 1").run();
+  r = await (await call(dana, "POST", { action: "credit", id: 1 })).json();
+  assert.match(r.message, /Тариф Про включён до \d\d\.\d\d/);
+  assert.equal(r.state.credits, 2);
+  assert.ok(r.state.jobs[1].pro_until);
+
+  r = await (await call(dana, "POST", { action: "close", id: 1 })).json();
+  assert.match(r.message, /закрыта/);
+  assert.equal(env.DB.get("SELECT status FROM jobs WHERE id = 1").status, "closed");
+});

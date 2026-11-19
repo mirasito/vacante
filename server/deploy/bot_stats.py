@@ -23,6 +23,29 @@ QUERIES = [
     ("фильтры активных подписок (без chat_id; первая строка, если есть — модератор)",
      "SELECT (s.chat_id IN (SELECT chat_id FROM admins)) AS admin, coalesce(s.city, 'весь КЗ') AS city, s.categories, s.perks, s.min_pay "
      "FROM subscribers s WHERE s.active = 1 ORDER BY admin DESC"),
+    ("работодатели: вакансии и смены по дням создания с периода (UTC+5, статус)",
+     "SELECT date(created_at, '+5 hours') AS day, kind, status, COUNT(*) AS n, SUM(pro) AS pro, "
+     "COUNT(DISTINCT employer_chat) AS employers FROM jobs WHERE created_at >= ? GROUP BY 1, 2, 3 ORDER BY 1, 2, 3"),
+    ("работодатели: откуда пришли (came_from) с периода",
+     "SELECT coalesce(nullif(came_from, ''), '—') AS came_from, COUNT(*) AS jobs, COUNT(DISTINCT employer_chat) AS employers "
+     "FROM jobs WHERE created_at >= ? GROUP BY 1 ORDER BY 2 DESC"),
+    ("работодатели: одобренные по дням одобрения с периода (UTC+5)",
+     "SELECT date(approved_at, '+5 hours') AS day, kind, COUNT(*) AS n, SUM(pro) AS pro FROM jobs "
+     "WHERE approved_at >= ? GROUP BY 1, 2 ORDER BY 1, 2"),
+    ("отклики в боте по дням с периода (UTC+5, вид вакансии)",
+     "SELECT date(a.created_at, '+5 hours') AS day, coalesce(j.kind, '?') AS kind, COUNT(*) AS n, "
+     "COUNT(DISTINCT a.chat_id) AS people, SUM(a.attended = 1) AS attended, SUM(a.attended = 0) AS no_show "
+     "FROM applications a LEFT JOIN jobs j ON j.id = a.job_id WHERE a.created_at >= ? GROUP BY 1, 2 ORDER BY 1, 2"),
+    ("оплаты по дням с периода (UTC+5)",
+     "SELECT date(created_at, '+5 hours') AS day, kind, status, amount, COUNT(*) AS n FROM payments "
+     "WHERE created_at >= ? GROUP BY 1, 2, 3, 4 ORDER BY 1"),
+    ("оплаты за всё время по статусу",
+     "SELECT status, COUNT(*) AS n, SUM(amount) AS tenge FROM payments GROUP BY 1"),
+    ("пакеты Про: куплено / осталось",
+     "SELECT COUNT(*) AS packs, SUM(total) AS total, SUM(left) AS left FROM credits"),
+    ("входы на сайт через бота с периода (UTC+5): кодов / подтверждено",
+     "SELECT date(created_at, '+5 hours') AS day, COUNT(*) AS codes, SUM(chat_id IS NOT NULL) AS confirmed "
+     "FROM logins WHERE created_at >= ? GROUP BY 1 ORDER BY 1"),
     ("начатые диалоги сейчас", "SELECT mode, COUNT(*) AS n FROM dialogs GROUP BY mode"),
 ]
 

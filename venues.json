@@ -2072,6 +2072,15 @@
   "v": 3,
   "checked_at": "2026-11-07T04:43:59+00:00"
  },
+ "aktau:пельмешка": {
+  "name": "Пельмешка",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "pelmeshka.cafe.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001043755663"
+ },
  "aktau:пинта": {
   "name": "Пинта",
   "city": "aktau",
@@ -5813,6 +5822,22 @@
   "v": 3,
   "checked_at": "2026-11-02T09:43:43+00:00"
  },
+ "almaty:alseco ао": {
+  "name": "ALSECO, АО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "alseco.kz",
+  "website": "https://www.alseco.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000792426",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1691b195b6c361bd.jpg",
+  "avatar_source": "website"
+ },
  "almaty:alt университет имени мухамеджана тынышпаева": {
   "name": "ALT Университет имени Мухамеджана Тынышпаева",
   "city": "almaty",
@@ -7456,6 +7481,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
+ },
+ "almaty:balltech": {
+  "name": "BALLTECH",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
  },
  "almaty:balym group": {
   "name": "BALYM GROUP",
@@ -9549,6 +9581,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T08:43:53+00:00"
+ },
+ "almaty:dm market": {
+  "name": "DM Market",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "dm_market_kz",
+  "website": "https://www.dental-market.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000956718",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3d8b922b397097e1.jpg",
+  "avatar_source": "website"
  },
  "almaty:dmc": {
   "name": "DMC",
@@ -13736,6 +13784,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T16:43:36+00:00"
+ },
+ "almaty:kfc": {
+  "name": "KFC",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001059471296",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9c1b34d7cc6dddd3.jpg",
+  "avatar_source": "website"
  },
  "almaty:kfc кафе быстрого питания": {
   "name": "KFC, кафе быстрого питания",
@@ -21832,7 +21896,7 @@
   "instagram": "too_zharyq_logistics",
   "website": "http://zh-logistics.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001089557065",
-  "avatar_checked_at": "2026-11-12T06:44:12+00:00",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -23579,6 +23643,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
+ },
+ "almaty:армада": {
+  "name": "Армада",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
  },
  "almaty:арман": {
   "name": "АРМАН",
@@ -28665,7 +28736,7 @@
   "instagram": "lemanapro_kz",
   "website": "https://lemanapro.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001030764296",
-  "avatar_checked_at": "2026-11-12T06:44:12+00:00",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33451,6 +33522,13 @@
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
  },
+ "almaty:тигай": {
+  "name": "Тигай",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
+ },
  "almaty:тимлид": {
   "name": "ТимЛид",
   "city": "almaty",
@@ -35867,6 +35945,13 @@
   "instagram": "5th.ugol",
   "source": "https://2gis.kz/astana/firm/70000001110382750"
  },
+ "astana:999": {
+  "name": "999",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
+ },
  "astana:a_gym astana": {
   "name": "A_GYM ASTANA",
   "city": "astana",
@@ -37723,6 +37808,13 @@
   "v": 3,
   "checked_at": "2026-11-07T19:44:04+00:00"
  },
+ "astana:business pro": {
+  "name": "BUSINESS PRO",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
+ },
  "astana:bw&grafen": {
   "name": "BW&Grafen",
   "city": "astana",
@@ -39336,7 +39428,7 @@
   "instagram": "gameovershop.ast",
   "website": "http://gameovershop.kz/",
   "source": "https://2gis.kz/astana/firm/70000001078933999",
-  "avatar_checked_at": "2026-11-12T06:44:12+00:00",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39850,6 +39942,20 @@
   "website": "https://handoors.kz/",
   "source": "https://2gis.kz/astana/firm/70000001056422463",
   "avatar_checked_at": "2026-11-13T18:41:44+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:hannah inn": {
+  "name": "HANNAH INN",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "hannahinnastana",
+  "website": "https://hannahinn.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001023746515",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -54939,6 +55045,15 @@
   "instagram": "ozyurt.kz",
   "source": "https://2gis.kz/astana/firm/70000001110739984"
  },
+ "astana:халал ресторан турецкой кухни озюрт": {
+  "name": "Халал ресторан турецкой кухни Озюрт",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "ozyurt.kz",
+  "source": "https://2gis.kz/astana/firm/70000001019237907"
+ },
  "astana:хамзина анеля": {
   "name": "Хамзина Анеля",
   "city": "astana",
@@ -58418,6 +58533,20 @@
   "website": "http://atyrau.etagi.com/",
   "source": "https://2gis.kz/atyrau/firm/70000001059435377",
   "avatar_checked_at": "2026-11-17T03:42:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "atyrau:ярмарка": {
+  "name": "Ярмарка",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "yarmarka_retail",
+  "website": "https://yarmarkaretail.tilda.ws/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034926337",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -69315,6 +69444,22 @@
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
  },
+ "petropavlovsk:глоббинг": {
+  "name": "Глоббинг",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "globbingkazakhstan",
+  "website": "https://globbing.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001066007286",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "df910ada3cef63af.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:гоголь моголь": {
   "name": "Гоголь-Моголь",
   "city": "petropavlovsk",
@@ -71929,6 +72074,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T10:45:06+00:00"
+ },
+ "semey:чайковка": {
+  "name": "ЧАЙКОВКА",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
  },
  "semey:частная компания aquasphere mining kazakhstan limited": {
   "name": "ЧАСТНАЯ КОМПАНИЯ AQUASPHERE MINING KAZAKHSTAN LIMITED",
@@ -77703,6 +77855,20 @@
   "instagram": "destination_kz",
   "source": "https://2gis.kz/uralsk/firm/70000001067612200"
  },
+ "uralsk:dina market": {
+  "name": "Dina Market",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "instagram": "dinamarket_uralsk",
+  "website": "https://dinamarket.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025373991",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:easyspeak": {
   "name": "EasySpeak",
   "city": "uralsk",
@@ -81931,6 +82097,13 @@
    "website"
   ]
  },
+ "ust-kamenogorsk:системы оконных конструкций": {
+  "name": "Системы Оконных Конструкций",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00"
+ },
  "ust-kamenogorsk:согринская тэц": {
   "name": "Согринская ТЭЦ",
   "city": "ust-kamenogorsk",
@@ -82191,6 +82364,19 @@
   ],
   "avatar": "2678815ffff51a52.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:усть каменогорский арматурный завод": {
+  "name": "Усть-Каменогорский арматурный завод",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T07:44:19+00:00",
+  "website": "https://ukaz.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721318144",
+  "avatar_checked_at": "2026-11-19T07:44:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:усть каменогорский масло экстракционный комплекс": {
   "name": "Усть-Каменогорский Масло-Экстракционный Комплекс",

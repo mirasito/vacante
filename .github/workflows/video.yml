@@ -11,7 +11,9 @@ on:
       send:
         description: "Отправить ролики модераторам в Telegram"
         type: boolean
-        default: true
+        # 19.11.2026 Мирас попросил больше не присылать ролики в нынешнем виде: утренний запуск только собирает
+        # их в артефакты. Отправить вручную: Run workflow с галочкой.
+        default: false
 
 permissions:
   contents: read

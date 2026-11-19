@@ -27,6 +27,7 @@ def test_load_config_from_repo():
     config = instagram.load_config()
     assert config["review"]["hour"] == 10 and config["tips"]["weekdays"] == [1, 3, 5]
     assert 9 in config["pro"]["hours"] and config["pro"]["repost_days"] == 7
+    assert config["reel"]["hour"] is None  # ролики выключены до нового оформления
     assert 0 < config["daily_limit"] <= 50
 
 

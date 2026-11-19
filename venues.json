@@ -5283,7 +5283,7 @@
   "instagram": "__ajour__",
   "website": "http://www.ajourhotel.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000785200",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -9823,7 +9823,7 @@
   "instagram": "doner_na_satpayeva",
   "website": "https://order.site/donernasatpayeva/ru/kaz",
   "source": "https://2gis.kz/almaty/firm/70000001112763581",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10456,7 +10456,7 @@
   "checked_at": "2026-10-29T17:43:26+00:00",
   "website": "http://eqvi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001117168405",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29116,6 +29116,20 @@
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
  },
+ "almaty:ларс": {
+  "name": "Ларс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T18:42:11+00:00",
+  "instagram": "pansionatlars1",
+  "website": "http://lars.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001044766408",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ласка": {
   "name": "Ласка",
   "city": "almaty",
@@ -30707,6 +30721,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T18:43:14+00:00"
+ },
+ "almaty:народные бани": {
+  "name": "Народные Бани",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T18:42:11+00:00"
  },
  "almaty:народный банк казахстана": {
   "name": "Народный банк Казахстана",
@@ -35226,7 +35247,7 @@
   "instagram": "hafele_kazakhstan",
   "website": "https://www.hafele.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001019074429",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41436,7 +41457,7 @@
   "instagram": "janymsoul.ns",
   "website": "https://janymsoul.kz/astana",
   "source": "https://2gis.kz/astana/firm/70000001043815193",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44405,6 +44426,13 @@
    "website"
   ]
  },
+ "astana:qazaq shaurma": {
+  "name": "Qazaq Shaurma",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T18:42:11+00:00"
+ },
  "astana:qazaqoil petroretail": {
   "name": "QazaqOil (PetroRetail)",
   "city": "astana",
@@ -45464,7 +45492,7 @@
   "checked_at": "2026-11-05T17:43:42+00:00",
   "website": "https://www.soudal.kz/",
   "source": "https://2gis.kz/astana/firm/70000001043917330",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47109,7 +47137,7 @@
   "instagram": "da.clinic",
   "website": "https://daclinic.kz/",
   "source": "https://2gis.kz/astana/firm/70000001044689112",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -56528,7 +56556,7 @@
   "instagram": "shashlikoff_kz",
   "website": "https://www.shashlikoff.com/",
   "source": "https://2gis.kz/astana/firm/70000001046104600",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57164,7 +57192,7 @@
   "checked_at": "2026-11-05T17:43:42+00:00",
   "website": "https://adidas.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001086795821",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57758,7 +57786,7 @@
   "checked_at": "2026-11-05T17:43:42+00:00",
   "website": "https://inconkz.com/",
   "source": "https://2gis.kz/astana/firm/70000001018100481",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62093,7 +62121,7 @@
   "instagram": "kazahmedimport.kz",
   "website": "https://kazahmedimport.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001038555096",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67459,7 +67487,7 @@
   "checked_at": "2026-10-29T16:44:32+00:00",
   "website": "https://kref.kz/",
   "source": "https://2gis.kz/kyzylorda/firm/70000001080244738",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -73527,7 +73555,7 @@
   "telegram": "alstarkz",
   "website": "https://www.alstar.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001110743337",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -74930,7 +74958,7 @@
   "checked_at": "2026-11-05T17:43:42+00:00",
   "website": "https://www.phyto-apipharm.com/",
   "source": "https://2gis.kz/shymkent/firm/70000001032285898",
-  "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_checked_at": "2026-11-19T18:42:12+00:00",
   "avatar_tried": [
    "website"
   ]

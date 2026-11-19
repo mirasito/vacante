@@ -26,6 +26,8 @@ QUERIES = [
     ("работодатели: вакансии и смены по дням создания с периода (UTC+5, статус)",
      "SELECT date(created_at, '+5 hours') AS day, kind, status, COUNT(*) AS n, SUM(pro) AS pro, "
      "COUNT(DISTINCT employer_chat) AS employers FROM jobs WHERE created_at >= ? GROUP BY 1, 2, 3 ORDER BY 1, 2, 3"),
+    ("работодатели: на каком вопросе бросили черновик (kind, step)",
+     "SELECT kind, coalesce(step, '—') AS step, COUNT(*) AS n FROM jobs WHERE status = 'draft' AND created_at >= ? GROUP BY 1, 2 ORDER BY 3 DESC"),
     ("работодатели: откуда пришли (came_from) с периода",
      "SELECT coalesce(nullif(came_from, ''), '—') AS came_from, COUNT(*) AS jobs, COUNT(DISTINCT employer_chat) AS employers "
      "FROM jobs WHERE created_at >= ? GROUP BY 1 ORDER BY 2 DESC"),

@@ -2577,6 +2577,15 @@
   "v": 3,
   "checked_at": "2026-11-06T17:45:34+00:00"
  },
+ "aktobe:a rai": {
+  "name": "A-rai",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T17:42:12+00:00",
+  "instagram": "a_raibalabakshasy",
+  "source": "https://2gis.kz/aktobe/firm/70000001075780219"
+ },
  "aktobe:adalservice": {
   "name": "ADALSERVICE",
   "city": "aktobe",
@@ -2639,7 +2648,7 @@
   "instagram": "aktobe_kvartira_ansar",
   "website": "https://ansar.pro/",
   "source": "https://2gis.kz/aktobe/firm/70000001056307449",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -3828,6 +3837,21 @@
    "website"
   ],
   "avatar": "48d5a9dcdece71b8.jpg",
+  "avatar_source": "website"
+ },
+ "aktobe:арт вижен": {
+  "name": "АРТ ВИЖЕН",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T17:42:12+00:00",
+  "website": "http://artvi.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001032399491",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "721c3af7790cf4d3.jpg",
   "avatar_source": "website"
  },
  "aktobe:аслан": {
@@ -15557,7 +15581,7 @@
   "instagram": "medicallaserkz",
   "website": "https://medicallaser.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001063116335",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19706,6 +19730,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T15:43:43+00:00"
+ },
+ "almaty:space in art": {
+  "name": "SPACE IN ART",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T17:42:12+00:00"
  },
  "almaty:space line": {
   "name": "SPACE LINE",
@@ -23986,7 +24017,7 @@
   "instagram": "artinsight.kz",
   "website": "https://artinsight.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001044727010",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27889,10 +27920,12 @@
   "instagram": "kps_snab",
   "website": "https://kps-snab.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001022720996",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "1758e769f1877ae9.jpg",
+  "avatar_source": "website"
  },
  "almaty:карада про": {
   "name": "КАРАДА ПРО",
@@ -30188,6 +30221,13 @@
   "avatar": "31f3522f6f42f7b0.jpg",
   "avatar_source": "website"
  },
+ "almaty:мир кексов": {
+  "name": "Мир Кексов",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T17:42:12+00:00"
+ },
  "almaty:мир паркета bau group тоо": {
   "name": "Мир Паркета (BAU Group, ТОО)",
   "city": "almaty",
@@ -30833,6 +30873,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:новиков": {
+  "name": "ИП Новиков",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T17:42:12+00:00"
  },
  "almaty:новикова н в": {
   "name": "НОВИКОВА Н.В.",
@@ -41104,7 +41151,7 @@
   "checked_at": "2026-10-29T15:45:22+00:00",
   "website": "https://ingri.ru/",
   "source": "https://2gis.kz/astana/firm/70000001018120711",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42205,7 +42252,7 @@
   "instagram": "liftmaster.kz",
   "website": "https://www.lift-master.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018069625",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55750,6 +55797,13 @@
    "website"
   ]
  },
+ "astana:филиал тоо ұлы дала емі": {
+  "name": "Филиал ТОО Ұлы Дала емі",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T17:42:12+00:00"
+ },
  "astana:фирма бент": {
   "name": "Фирма БЕНТ",
   "city": "astana",
@@ -68123,7 +68177,7 @@
   "checked_at": "2026-11-05T15:45:29+00:00",
   "website": "https://loftpark.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001100237946",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70953,7 +71007,7 @@
   "instagram": "milavitsaofficial.kz",
   "website": "https://milavitsa-shop.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001079231726",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -75320,7 +75374,7 @@
   "instagram": "trd_energy",
   "website": "https://www.trd-energy.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001102627787",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -76159,7 +76213,7 @@
   "checked_at": "2026-10-29T15:45:22+00:00",
   "website": "https://idcollect.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001055520546",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -77894,7 +77948,7 @@
   "instagram": "lamoda_kz",
   "website": "https://lamoda.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001057589314",
-  "avatar_checked_at": "2026-11-12T16:43:12+00:00",
+  "avatar_checked_at": "2026-11-19T17:42:13+00:00",
   "avatar_tried": [
    "website"
   ]

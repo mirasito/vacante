@@ -13911,6 +13911,15 @@
   "v": 3,
   "checked_at": "2026-11-02T10:44:42+00:00"
  },
+ "almaty:kitchen chefs китчен шефс": {
+  "name": "KITCHEN CHEFS (КИТЧЕН ШЕФС)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00",
+  "instagram": "bestia.kz",
+  "source": "https://en.line-group.kz/bestia"
+ },
  "almaty:kl&k trans": {
   "name": "KL&K Trans",
   "city": "almaty",
@@ -26369,6 +26378,13 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "almaty:жаксылыкова а м": {
+  "name": "Жаксылыкова А.М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
+ },
  "almaty:жан массажный салон": {
   "name": "Жан массажный салон",
   "city": "almaty",
@@ -33139,6 +33155,13 @@
   "checked_at": "2026-11-03T15:44:31+00:00",
   "instagram": "suncar.kz",
   "source": "https://2gis.kz/almaty/firm/70000001045594307"
+ },
+ "almaty:сутки плюс": {
+  "name": "Сутки Плюс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
  },
  "almaty:суық қоңырау": {
   "name": "Суық қоңырау",
@@ -41901,6 +41924,13 @@
   "instagram": "m_mart_astana",
   "source": "https://2gis.kz/astana/firm/70000001046539668"
  },
+ "astana:m studio м студио": {
+  "name": "M-Studio (М-Студио)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
+ },
  "astana:m3 studio ип мирсагатов": {
   "name": "M3 Studio (ИП Мирсагатов)",
   "city": "astana",
@@ -47147,6 +47177,13 @@
   "checked_at": "2026-11-02T22:43:44+00:00",
   "instagram": "altyn_adamdetsad",
   "source": "https://2gis.kz/astana/firm/70000001060483672"
+ },
+ "astana:алтын алма": {
+  "name": "Алтын Алма",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
  },
  "astana:алтын сара": {
   "name": "Алтын Сара",
@@ -52944,6 +52981,20 @@
    "website"
   ]
  },
+ "astana:реабилитационный центр neoclinic": {
+  "name": "Реабилитационный центр NeoClinic",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00",
+  "instagram": "neoclinic2011",
+  "website": "https://neoclinic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001057241452",
+  "avatar_checked_at": "2026-11-19T09:42:47+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:рейка": {
   "name": "Рейка",
   "city": "astana",
@@ -54126,6 +54177,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-10T23:44:04+00:00"
+ },
+ "astana:таза су": {
+  "name": "Таза Су",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
  },
  "astana:тайбасаров": {
   "name": "ИП Тайбасаров",
@@ -61458,6 +61516,19 @@
   "v": 3,
   "checked_at": "2026-10-30T19:43:59+00:00"
  },
+ "karaganda:кен груп": {
+  "name": "КЕН ГРУП",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00",
+  "website": "https://www.kengroup.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302907708",
+  "avatar_checked_at": "2026-11-19T09:42:47+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:керн в а": {
   "name": "КЕРН В.А.",
   "city": "karaganda",
@@ -61868,6 +61939,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:нуриев": {
+  "name": "НУРИЕВ",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
  },
  "karaganda:окс": {
   "name": "ОКС",
@@ -75580,6 +75658,15 @@
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
  },
+ "shymkent:слп инвестмент": {
+  "name": "СЛП Инвестмент",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00",
+  "instagram": "calzedonia",
+  "source": "https://2gis.kz/shymkent/firm/70000001069166987"
+ },
  "shymkent:смартер казахстан": {
   "name": "Смартер Казахстан",
   "city": "shymkent",
@@ -79716,6 +79803,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
+ },
+ "uralsk:хозяйственных товаров": {
+  "name": "ХОЗЯЙСТВЕННЫХ ТОВАРОВ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T09:42:46+00:00"
  },
  "uralsk:хорошилов": {
   "name": "Хорошилов",

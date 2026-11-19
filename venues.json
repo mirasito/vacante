@@ -16854,6 +16854,13 @@
   "avatar": "52cc2efb0abf8d11.jpg",
   "avatar_source": "website"
  },
+ "almaty:oktrening": {
+  "name": "Oktrening",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00"
+ },
  "almaty:olympia fitness": {
   "name": "Olympia Fitness",
   "city": "almaty",
@@ -50751,6 +50758,13 @@
   "v": 3,
   "checked_at": "2026-11-08T21:43:43+00:00"
  },
+ "astana:кварта лтд": {
+  "name": "Кварта ЛТД",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00"
+ },
  "astana:кгу центр социального обслуживания жәрдем акимата города астаны": {
   "name": "КГУ Центр социального обслуживания Жәрдем акимата города Астаны",
   "city": "astana",
@@ -53854,6 +53868,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-11T01:44:58+00:00"
+ },
+ "astana:сарисунова м б": {
+  "name": "Сарисунова М.Б.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00"
  },
  "astana:сарыарка": {
   "name": "Сарыарка",
@@ -58013,6 +58034,19 @@
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
  },
+ "atyrau:sweet city": {
+  "name": "Sweet City",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00",
+  "website": "https://bayansulu.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033678476",
+  "avatar_checked_at": "2026-11-19T15:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:technodom operator технодом оператор": {
   "name": "TECHNODOM Operator (Технодом Оператор)",
   "city": "atyrau",
@@ -61298,6 +61332,13 @@
   "checked_at": "2026-11-01T05:43:29+00:00",
   "instagram": "aquamaster.krg",
   "source": "https://2gis.kz/karaganda/firm/70000001104938338"
+ },
+ "karaganda:акслайн": {
+  "name": "Акслайн",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00"
  },
  "karaganda:алатау премиум мунай": {
   "name": "Алатау Премиум Мунай",
@@ -65408,6 +65449,19 @@
   "v": 3,
   "checked_at": "2026-11-13T15:43:30+00:00"
  },
+ "kostanay:sweet city": {
+  "name": "Sweet City",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00",
+  "website": "https://bayansulu.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033678476",
+  "avatar_checked_at": "2026-11-19T15:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:taudi": {
   "name": "TAUDI",
   "city": "kostanay",
@@ -68454,6 +68508,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T14:44:22+00:00"
+ },
+ "pavlodar:yulilogistic": {
+  "name": "YuliLogistic",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T15:42:44+00:00"
  },
  "pavlodar:zmk trade": {
   "name": "ZMK Trade",

@@ -311,6 +311,15 @@
    "website"
   ]
  },
+ "aktau:denta pro": {
+  "name": "DENTA PRO",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "instagram": "dentapro.aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001069033167"
+ },
  "aktau:dostyk business hotel": {
   "name": "Dostyk Business Hotel",
   "city": "aktau",
@@ -6110,6 +6119,13 @@
    "website"
   ]
  },
+ "almaty:antara global": {
+  "name": "ANTARA GLOBAL",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "almaty:antario food & beverage group": {
   "name": "ANTARIO FOOD & BEVERAGE GROUP",
   "city": "almaty",
@@ -9043,6 +9059,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T11:45:55+00:00"
+ },
+ "almaty:crn group": {
+  "name": "CRN GROUP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "instagram": "crinzo.official",
+  "website": "https://linkscrinzo.tilda.ws/",
+  "source": "https://2gis.kz/almaty/firm/70000001112068407",
+  "avatar_checked_at": "2026-11-19T11:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:crown star": {
   "name": "Crown Star",
@@ -19349,6 +19379,13 @@
   "v": 3,
   "checked_at": "2026-10-30T01:43:30+00:00"
  },
+ "almaty:smart venue": {
+  "name": "Smart Venue",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "almaty:smart ломбард": {
   "name": "Smart Ломбард",
   "city": "almaty",
@@ -22201,6 +22238,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T21:45:41+00:00"
+ },
+ "almaty:абишева гаухар": {
+  "name": "Абишева Гаухар",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
  },
  "almaty:абсагатова р": {
   "name": "Абсагатова Р",
@@ -28218,6 +28262,13 @@
   "v": 3,
   "checked_at": "2026-11-04T23:43:42+00:00"
  },
+ "almaty:комильфо": {
+  "name": "Комильфо",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "almaty:компания santex компания сантекс": {
   "name": "Компания Santex (Компания Сантекс)",
   "city": "almaty",
@@ -28838,6 +28889,13 @@
   "checked_at": "2026-11-13T14:45:29+00:00",
   "instagram": "babyshop_latifa_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001034056240"
+ },
+ "almaty:лаура": {
+  "name": "Лаура",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
  },
  "almaty:лаффа": {
   "name": "Лаффа",
@@ -36905,6 +36963,20 @@
   "v": 3,
   "checked_at": "2026-11-13T17:42:38+00:00"
  },
+ "astana:asia park": {
+  "name": "ASIA PARK",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "instagram": "asia.park",
+  "website": "https://astana.asiapark.kz/ru/",
+  "source": "https://2gis.kz/astana/firm/70000001018123410",
+  "avatar_checked_at": "2026-11-19T11:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:asiansertgroup азиансертгрупп": {
   "name": "AsianSertGroup(АзианСертГрупп)",
   "city": "astana",
@@ -40500,6 +40572,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T10:44:10+00:00"
+ },
+ "astana:i con": {
+  "name": "I-Con",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
  },
  "astana:i like": {
   "name": "I like",
@@ -46343,6 +46422,13 @@
   "instagram": "wonderbloom.kids",
   "source": "https://2gis.kz/astana/firm/70000001098323238"
  },
+ "astana:world english": {
+  "name": "WORLD ENGLISH",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "astana:worldwide trade": {
   "name": "WorldWide Trade",
   "city": "astana",
@@ -48996,6 +49082,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:детский коррекционный центр neuron": {
+  "name": "Детский коррекционный центр Neuron",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "instagram": "neuron_astana",
+  "source": "https://2gis.kz/astana/firm/70000001093747365"
  },
  "astana:детский магазин uti": {
   "name": "Детский магазин Uti",
@@ -54343,6 +54438,13 @@
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
  },
+ "astana:талдықорған архитектура": {
+  "name": "Талдықорған Архитектура",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "astana:талисман": {
   "name": "Талисман",
   "city": "astana",
@@ -55192,6 +55294,13 @@
    "website"
   ]
  },
+ "astana:филиал бизнес петролеум": {
+  "name": "Филиал Бизнес Петролеум",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "astana:филиал дышмал дишчи мальземелери ве тыбби джихазлары ималат тиджарет итхалат ихраджат лтд ширкеті в рк": {
   "name": "ФИЛИАЛ ДЫШМАЛ ДИШЧИ МАЛЬЗЕМЕЛЕРИ ВЕ ТЫББИ ДЖИХАЗЛАРЫ ИМАЛАТ ТИДЖАРЕТ ИТХАЛАТ ИХРАДЖАТ ЛТД ШИРКЕТІ В РК",
   "city": "astana",
@@ -55982,6 +56091,20 @@
   "website": "https://www.shashlikoff.com/",
   "source": "https://2gis.kz/astana/firm/70000001046104600",
   "avatar_checked_at": "2026-11-12T17:43:51+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:шая казахстан": {
+  "name": "Шая Казахстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "instagram": "starbuckskz",
+  "website": "https://starbucks.com.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001024722232",
+  "avatar_checked_at": "2026-11-19T11:44:03+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62044,6 +62167,13 @@
   "avatar": "7e7aec08a0894782.jpg",
   "avatar_source": "website"
  },
+ "karaganda:мясная продукция": {
+  "name": "Мясная продукция",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "karaganda:народный банк казахстана": {
   "name": "Народный банк Казахстана",
   "city": "karaganda",
@@ -62372,6 +62502,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:серикбай": {
+  "name": "Серикбай",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
  },
  "karaganda:серикова к т": {
   "name": "Серикова К.Т.",
@@ -72121,6 +72258,13 @@
   "avatar": "39dd811d4ab1efe9.jpg",
   "avatar_source": "telegram"
  },
+ "semey:научно технический центр востоктехносервис": {
+  "name": "Научно-Технический Центр Востоктехносервис",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "semey:небо": {
   "name": "Небо",
   "city": "semey",
@@ -76199,6 +76343,13 @@
   "v": 3,
   "checked_at": "2026-11-07T00:44:13+00:00"
  },
+ "shymkent:швейная фабрика global textile": {
+  "name": "Швейная фабрика Global Textile",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00"
+ },
  "shymkent:шебер юг": {
   "name": "Шебер Юг",
   "city": "shymkent",
@@ -78828,6 +78979,19 @@
   "checked_at": "2026-11-06T00:44:08+00:00",
   "instagram": "unigroup.kz",
   "source": "https://2gis.kz/karaganda/firm/70000001080246410"
+ },
+ "uralsk:uniserv": {
+  "name": "UNISERV",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "website": "https://uniserv.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025147656",
+  "avatar_checked_at": "2026-11-19T11:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:vega": {
   "name": "VEGA",
@@ -81932,6 +82096,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "ust-kamenogorsk:казахтелеком": {
+  "name": "Казахтелеком",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T11:44:02+00:00",
+  "instagram": "telecomkz",
+  "website": "https://telecom.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721316135",
+  "avatar_checked_at": "2026-11-19T11:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:казпромэлектрогрупп": {
   "name": "КАЗПРОМЭЛЕКТРОГРУПП",

@@ -8853,6 +8853,20 @@
   "v": 3,
   "checked_at": "2026-11-04T07:44:30+00:00"
  },
+ "almaty:coffeelogia": {
+  "name": "Coffeelogia",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "coffeelogia.kz",
+  "website": "http://coffeelogia.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001024009865",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:coffeevarka kz": {
   "name": "Coffeevarka kz",
   "city": "almaty",
@@ -15214,6 +15228,13 @@
   "v": 3,
   "checked_at": "2026-11-13T12:43:31+00:00"
  },
+ "almaty:maxjoy": {
+  "name": "MAXJOY",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
+ },
  "almaty:maxwell distribution": {
   "name": "MAXWELL DISTRIBUTION",
   "city": "almaty",
@@ -17002,6 +17023,13 @@
   "avatar_tried": [
    "telegram"
   ]
+ },
+ "almaty:palme school inc": {
+  "name": "Palme School inc",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
  },
  "almaty:panda media": {
   "name": "PANDA MEDIA",
@@ -27438,6 +27466,21 @@
   "avatar": "d41ad190fbfa24ce.jpg",
   "avatar_source": "website"
  },
+ "almaty:кайрат футзал футзальный клуб": {
+  "name": "Кайрат Футзал, Футзальный клуб",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "website": "http://afckairat.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000796536",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2c0f17801c18553d.jpg",
+  "avatar_source": "website"
+ },
  "almaty:кайсар есимов": {
   "name": "Кайсар Есимов",
   "city": "almaty",
@@ -27609,6 +27652,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "almaty:кас озен": {
+  "name": "Кас Озен",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "website": "http://qasozen.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001109532365",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:каспарова а в дилижанс шоу": {
   "name": "Каспарова А.В. Дилижанс-шоу",
@@ -31820,6 +31876,13 @@
   "v": 3,
   "checked_at": "2026-10-28T11:44:45+00:00"
  },
+ "almaty:реформа": {
+  "name": "РЕФОРМА",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
+ },
  "almaty:риза кочиев": {
   "name": "Риза Кочиев",
   "city": "almaty",
@@ -33454,6 +33517,13 @@
    "website"
   ]
  },
+ "almaty:техакс": {
+  "name": "Техакс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
+ },
  "almaty:техно logic": {
   "name": "ИП Техно Logic",
   "city": "almaty",
@@ -33630,6 +33700,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T22:43:57+00:00"
+ },
+ "almaty:тойбосс kz": {
+  "name": "Тойбосс-KZ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "toyboss.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001031961988"
  },
  "almaty:тойо транс центральная азия": {
   "name": "Тойо Транс Центральная Азия",
@@ -36257,6 +36336,22 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "astana:alatau city bank": {
+  "name": "Alatau City Bank",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "alatau_city_bank",
+  "website": "http://alataucitybank.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018126563",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "be99ebd66accf97a.jpg",
+  "avatar_source": "website"
+ },
  "astana:alco&beerpoint": {
   "name": "Alco&BeerPoint",
   "city": "astana",
@@ -38861,6 +38956,20 @@
   "instagram": "astana.ebm",
   "source": "https://2gis.kz/astana/firm/70000001082009257"
  },
+ "astana:ecomaf": {
+  "name": "ECOMAF",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "ecomaf.kz",
+  "website": "http://ecomaf.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040776702",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:ecotara": {
   "name": "EcoTara",
   "city": "astana",
@@ -39634,6 +39743,13 @@
   "v": 3,
   "checked_at": "2026-11-08T01:44:24+00:00"
  },
+ "astana:go abroad": {
+  "name": "Go abroad",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
+ },
  "astana:goals lab": {
   "name": "Goals lab",
   "city": "astana",
@@ -39959,6 +40075,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:happy cake": {
+  "name": "Happy Cake",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "happycake.kz",
+  "website": "http://happycake.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001061109436",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1441e1b212ed61ff.jpg",
+  "avatar_source": "website"
  },
  "astana:happy dream": {
   "name": "Happy Dream",
@@ -42936,6 +43068,20 @@
   ],
   "avatar": "ed56cdece0801722.jpg",
   "avatar_source": "website"
+ },
+ "astana:orient solutions": {
+  "name": "Orient Solutions",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "orient_1c",
+  "website": "http://ors.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018342899",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:orken business finance": {
   "name": "Orken Business Finance",
@@ -53787,6 +53933,19 @@
   "instagram": "neodentastana",
   "source": "https://2gis.kz/astana/firm/70000001018071209"
  },
+ "astana:стофарм": {
+  "name": "Стофарм",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "website": "http://stopharm.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001031371623",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:стоять рядом": {
   "name": "стоять рядом",
   "city": "astana",
@@ -59826,6 +59985,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T12:44:26+00:00"
+ },
+ "karaganda:profi kz": {
+  "name": "PROFI KZ",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "profikz.kz",
+  "source": "https://2gis.kz/karaganda/firm/11822477302864427"
  },
  "karaganda:profland rt": {
   "name": "Profland-RT",
@@ -69296,6 +69464,24 @@
   "v": 3,
   "checked_at": "2026-11-01T19:44:04+00:00"
  },
+ "petropavlovsk:vita industrial apart hotel": {
+  "name": "VITA INDUSTRIAL APART HOTEL",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "instagram": "vitahotel.kz",
+  "telegram": "vitahotel_kz",
+  "website": "http://vitahotel.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001113485698",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "47cef0b6de6c826b.jpg",
+  "avatar_source": "website"
+ },
  "petropavlovsk:vizavi company": {
   "name": "Vizavi company",
   "city": "petropavlovsk",
@@ -72551,6 +72737,13 @@
   "instagram": "bali.spa.shymkent",
   "source": "https://2gis.kz/shymkent/firm/70000001101564250"
  },
+ "shymkent:baq nur": {
+  "name": "BAQ-NUR",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
+ },
  "shymkent:bbs trade": {
   "name": "BBS TRADE",
   "city": "shymkent",
@@ -75170,6 +75363,13 @@
   "v": 3,
   "checked_at": "2026-10-31T06:44:38+00:00"
  },
+ "shymkent:мк корпорация": {
+  "name": "«МК «Корпорация»",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
+ },
  "shymkent:мониторинг технологий": {
   "name": "Мониторинг Технологий",
   "city": "shymkent",
@@ -76878,6 +77078,23 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "taraz:доброцен": {
+  "name": "ДОБРОЦЕН",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00",
+  "telegram": "dobrotsenru",
+  "website": "http://dobrotsen.ru/",
+  "source": "https://2gis.kz/taraz/firm/70000001061125210",
+  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "f99c2fb67f18cfd3.jpg",
+  "avatar_source": "telegram"
  },
  "taraz:дудар": {
   "name": "Дудар",
@@ -80647,6 +80864,13 @@
   "checked_at": "2026-11-10T18:43:51+00:00",
   "instagram": "studylink.oskemen",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001117744902"
+ },
+ "ust-kamenogorsk:syngenta": {
+  "name": "Syngenta",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T08:44:53+00:00"
  },
  "ust-kamenogorsk:teamo": {
   "name": "TEAMO",

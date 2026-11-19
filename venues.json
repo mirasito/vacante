@@ -108,7 +108,7 @@
   "telegram": "arabicacoffee",
   "website": "https://www.arabicacoffee.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001062335875",
-  "avatar_checked_at": "2026-11-12T15:44:25+00:00",
+  "avatar_checked_at": "2026-11-19T16:42:13+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -19131,6 +19131,13 @@
   "v": 3,
   "checked_at": "2026-11-06T14:45:44+00:00"
  },
+ "almaty:shah sultan": {
+  "name": "Shah sultan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T16:42:12+00:00"
+ },
  "almaty:shai drinks": {
   "name": "Shai Drinks",
   "city": "almaty",
@@ -32099,6 +32106,13 @@
   "v": 3,
   "checked_at": "2026-11-02T00:42:59+00:00"
  },
+ "almaty:рачковская": {
+  "name": "РАЧКОВСКАЯ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T16:42:12+00:00"
+ },
  "almaty:регион а": {
   "name": "Регион А",
   "city": "almaty",
@@ -34479,6 +34493,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T13:44:20+00:00"
+ },
+ "almaty:тілашар": {
+  "name": "«Тілашар»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T16:42:12+00:00",
+  "instagram": "tilashar_ortalygy",
+  "source": "https://2gis.kz/almaty/firm/70000001068847182"
  },
  "almaty:у дома": {
   "name": "у дома",
@@ -52582,6 +52605,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T19:43:58+00:00"
+ },
+ "astana:нуртаева": {
+  "name": "Нуртаева",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T16:42:12+00:00"
  },
  "astana:нуртазина": {
   "name": "Нуртазина",
@@ -71823,6 +71853,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "semey:ismed": {
+  "name": "ISMED",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T16:42:12+00:00"
  },
  "semey:istanbul picnic": {
   "name": "ISTANBUL PICNIC",

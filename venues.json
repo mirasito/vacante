@@ -15469,6 +15469,13 @@
   "v": 3,
   "checked_at": "2026-11-03T15:44:31+00:00"
  },
+ "almaty:mg company": {
+  "name": "MG company",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00"
+ },
  "almaty:mia designer lighting": {
   "name": "MIA Designer Lighting",
   "city": "almaty",
@@ -17311,6 +17318,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T19:44:04+00:00"
+ },
+ "almaty:prof solutions": {
+  "name": "Prof Solutions",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00"
  },
  "almaty:professional education company": {
   "name": "Professional Education Company",
@@ -32557,6 +32571,13 @@
   "v": 3,
   "checked_at": "2026-11-07T07:43:53+00:00"
  },
+ "almaty:специализированное коллекторское агентство": {
+  "name": "Специализированное коллекторское агентство",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00"
+ },
  "almaty:специалист": {
   "name": "Специалист",
   "city": "almaty",
@@ -38068,7 +38089,7 @@
   "instagram": "cri_kz",
   "website": "https://cri-kazakhstan.kz/",
   "source": "https://2gis.kz/astana/firm/70000001097455568",
-  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_checked_at": "2026-11-19T04:42:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39054,6 +39075,13 @@
   "v": 3,
   "checked_at": "2026-11-09T21:43:37+00:00"
  },
+ "astana:food express air": {
+  "name": "Food express air",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00"
+ },
  "astana:food retail pro": {
   "name": "Food Retail PRO",
   "city": "astana",
@@ -39776,6 +39804,15 @@
   "checked_at": "2026-11-05T00:43:57+00:00",
   "instagram": "hilondon_astana_",
   "source": "https://www.instagram.com/hilondon_astana_/"
+ },
+ "astana:himbyt astana": {
+  "name": "Himbyt Astana",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00",
+  "instagram": "himbyt_optom_kazakhstan",
+  "source": "https://2gis.kz/astana/firm/70000001096255689"
  },
  "astana:hj europe city": {
   "name": "TOO HJ europe city",
@@ -42888,6 +42925,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
+ },
+ "astana:patentes talgo s l филиал в республике казахстан": {
+  "name": "Patentes Talgo, S.L. Филиал в Республике Казахстан",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00"
  },
  "astana:peak ast": {
   "name": "PEAK AST",
@@ -65476,6 +65520,13 @@
   "v": 3,
   "checked_at": "2026-11-16T05:44:34+00:00"
  },
+ "kostanay:смыщук с в": {
+  "name": "Смыщук С.В.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-19T04:42:45+00:00"
+ },
  "kostanay:спк вершина": {
   "name": "СПК Вершина",
   "city": "kostanay",
@@ -66377,7 +66428,7 @@
   "instagram": "aliasvalvegroup",
   "website": "https://alias.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018653931",
-  "avatar_checked_at": "2026-11-12T03:44:22+00:00",
+  "avatar_checked_at": "2026-11-19T04:42:45+00:00",
   "avatar_tried": [
    "website"
   ]

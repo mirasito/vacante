@@ -1024,9 +1024,10 @@ test("брошенная анкета: одно напоминание днём 
   await say(env, boss, "/start post");
   await press(env, boss, "jobcity:almaty", 7);
   await say(env, user(131, "Тимур"), "/start post"); // ничего не выбрал: возможно, нажал случайно, не пишем
-  env.DB.prepare("UPDATE jobs SET updated_at = datetime('now', '-2 hours'), created_at = datetime('now', '-2 hours')").run();
-  const day = new Date(); day.setUTCHours(7);   // 12:00 в Казахстане
-  const night = new Date(); night.setUTCHours(20); // 01:00
+  // Одни и те же часы для базы и будильника: анкета брошена в 10:00, будильник в 12:00 и в 01:00 по Казахстану
+  env.DB.prepare("UPDATE jobs SET updated_at = '2026-11-20 05:00:00', created_at = '2026-11-20 05:00:00'").run();
+  const day = new Date("2026-11-20T07:00:00Z");
+  const night = new Date("2026-11-20T20:00:00Z");
   assert.equal(await nudgeDrafts(env, night), 0);
   assert.equal(await nudgeDrafts(env, day), 1);
   assert.equal(await nudgeDrafts(env, day), 0); // только один раз

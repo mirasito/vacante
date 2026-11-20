@@ -2523,7 +2523,7 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "website": "https://ttc.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001028924180",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -12259,7 +12259,7 @@
   "checked_at": "2026-10-30T16:42:48+00:00",
   "website": "https://grandlinelogistics.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110238116",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26769,7 +26769,7 @@
   "instagram": "dep_company",
   "website": "https://dep.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001115178504",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26851,7 +26851,7 @@
   "instagram": "sultankurgan",
   "website": "https://sultankurgan.edu.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000800824",
-  "avatar_checked_at": "2026-11-13T16:43:33+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33339,6 +33339,13 @@
   "v": 3,
   "checked_at": "2026-11-04T00:43:58+00:00"
  },
+ "almaty:сайрам рент": {
+  "name": "Сайрам Рент",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T17:42:52+00:00"
+ },
  "almaty:сайфуллин р м": {
   "name": "САЙФУЛЛИН Р. М",
   "city": "almaty",
@@ -38079,7 +38086,7 @@
   "checked_at": "2026-11-06T16:45:18+00:00",
   "website": "https://voltrix.kz/",
   "source": "https://2gis.kz/astana/firm/70000001109834367",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40988,7 +40995,7 @@
   "instagram": "bankffin.kz",
   "website": "http://freedombank.kz/",
   "source": "https://2gis.kz/astana/firm/70000001059385165",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42363,7 +42370,7 @@
   "instagram": "iswimastana",
   "website": "http://iswim.kz/",
   "source": "https://2gis.kz/astana/firm/70000001118349809",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -52144,7 +52151,7 @@
   "instagram": "kelet.kz",
   "website": "https://www.kelet.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018099257",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55409,7 +55416,7 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "website": "https://dodopizza.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001025209348",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57782,7 +57789,7 @@
   "instagram": "bga.asia",
   "website": "https://www.bga.asia/",
   "source": "https://2gis.kz/astana/firm/70000001104833378",
-  "avatar_checked_at": "2026-11-13T17:42:39+00:00",
+  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70988,6 +70995,13 @@
    "website"
   ]
  },
+ "pavlodar:отдел": {
+  "name": "Отдел",
+  "city": "pavlodar",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T17:42:52+00:00"
+ },
  "pavlodar:охранное агентство сократ павлодар": {
   "name": "Охранное агентство СОКРАТ-ПАВЛОДАР",
   "city": "pavlodar",
@@ -80285,6 +80299,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "taraz:корпоративные перевозки и решения": {
+  "name": "Корпоративные перевозки и решения",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T17:42:52+00:00"
  },
  "taraz:масло дел": {
   "name": "Масло-Дел",

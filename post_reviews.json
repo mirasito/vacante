@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T16:56:54+00:00",
+ "updated_at": "2026-11-20T17:56:33+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1383,15 +1383,6 @@
    "at": "2026-11-01T14:56:49+00:00",
    "fields": {
     "address": "Турксибский район"
-   }
-  },
-  "rabotaalmatyyyy-15221": {
-   "verdict": "approve",
-   "at": "2026-11-01T14:56:49+00:00",
-   "fields": {
-    "employer": "USTAZ EDUCATION",
-    "schedule": "5/2, 10:00–19:00",
-    "address": "ул. Райымбека, 432А (Сайран)"
    }
   },
   "hh-138400158": {
@@ -2961,13 +2952,6 @@
     "address": "Кульджинский тракт, 106, ТРЦ «Aport Mall East»"
    }
   },
-  "hh-139219816": {
-   "verdict": "approve",
-   "at": "2026-11-06T17:57:03+00:00",
-   "fields": {
-    "schedule": "Подработка, свободный график"
-   }
-  },
   "hh-139220329": {
    "verdict": "approve",
    "at": "2026-11-06T18:56:40+00:00",
@@ -2992,25 +2976,6 @@
     "schedule": "5/2",
     "address": "ул. Момынова, 5В"
    }
-  },
-  "olx-402700765": {
-   "verdict": "approve",
-   "at": "2026-11-06T18:56:40+00:00",
-   "fields": {
-    "title": "Водитель грузовика Shacman"
-   }
-  },
-  "olx-402702259": {
-   "verdict": "approve",
-   "at": "2026-11-06T19:56:50+00:00",
-   "fields": {
-    "title": "Повар восточной кухни"
-   }
-  },
-  "olx-402701097": {
-   "verdict": "reject",
-   "at": "2026-11-07T03:56:36+00:00",
-   "reason": "Доход только с процентов, обещания завышены, должность не ясна"
   },
   "hh-139222431": {
    "verdict": "approve",
@@ -3134,11 +3099,6 @@
     "address": null,
     "schedule": "5/2"
    }
-  },
-  "hh-139220131": {
-   "verdict": "reject",
-   "at": "2026-11-07T04:56:47+00:00",
-   "reason": "Работа в интернете, онлайн-продажи"
   },
   "rabota4almaty-6262": {
    "verdict": "approve",
@@ -4797,17 +4757,6 @@
     "schedule": "2/2, 08:00–20:00 или 20:00–08:00"
    }
   },
-  "olx-402700979": {
-   "verdict": "approve",
-   "at": "2026-11-07T16:57:12+00:00",
-   "fields": {
-    "title": "Няня-помощница",
-    "salary_min": 180000,
-    "salary_max": null,
-    "salary_period": "month",
-    "schedule": "6/1, 13:00–23:00"
-   }
-  },
   "vakansii_rabota_atyrau-50060": {
    "verdict": "approve",
    "at": "2026-11-07T16:57:12+00:00",
@@ -5918,11 +5867,6 @@
    "verdict": "approve",
    "at": "2026-11-08T09:57:05+00:00",
    "fields": {}
-  },
-  "hh-139219712": {
-   "verdict": "reject",
-   "at": "2026-11-08T09:57:05+00:00",
-   "reason": "Офисная руководящая должность"
   },
   "aktobevakansii-44431": {
    "verdict": "reject",
@@ -42646,6 +42590,76 @@
     "salary_max": null,
     "salary_period": "month"
    }
+  },
+  "hh-139180786": {
+   "verdict": "reject",
+   "at": "2026-11-20T17:56:33+00:00",
+   "reason": "Руководящая должность (управляющий магазином)"
+  },
+  "rabota_v_shymkente-1466": {
+   "verdict": "approve",
+   "at": "2026-11-20T17:56:33+00:00",
+   "fields": {
+    "title": "Уборщица",
+    "address": "ТРЦ «Аль-Фараби»",
+    "schedule": "2/2, 09:00–18:00",
+    "salary_min": 85000,
+    "salary_max": null,
+    "salary_period": "month"
+   }
+  },
+  "rabota_v_pavlodare-7368": {
+   "verdict": "approve",
+   "at": "2026-11-20T17:56:33+00:00",
+   "fields": {
+    "title": "Продавец в продуктовый магазин",
+    "employer": null,
+    "address": "Второй Павлодар",
+    "schedule": "14/14",
+    "perks": [
+     "Развозка"
+    ]
+   }
+  },
+  "rabota_v_pavlodare-7367": {
+   "verdict": "approve",
+   "at": "2026-11-20T17:56:33+00:00",
+   "fields": {
+    "title": "Кочегар",
+    "schedule": "сутки через двое"
+   }
+  },
+  "rabota_v_pavlodare-7369": {
+   "verdict": "reject",
+   "at": "2026-11-20T17:56:33+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_v_semee-7984": {
+   "verdict": "approve",
+   "at": "2026-11-20T17:56:33+00:00",
+   "fields": {
+    "title": "Водитель-экспедитор",
+    "address": "ул. Гагарина, 335",
+    "schedule": "Пн–Пт 09:00–18:00, Сб 09:00–14:00"
+   }
+  },
+  "rabota_v_semee-7986": {
+   "verdict": "approve",
+   "at": "2026-11-20T17:56:33+00:00",
+   "fields": {
+    "title": "Кочегар-дворник в сауну",
+    "address": "Цемпосёлок",
+    "schedule": "сутки через двое",
+    "perks": [
+     "Ежедневная оплата",
+     "Бонусы"
+    ]
+   }
+  },
+  "rabota_v_semee-7985": {
+   "verdict": "reject",
+   "at": "2026-11-20T17:56:33+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   }
  }
 }

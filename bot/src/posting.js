@@ -67,15 +67,12 @@ const PASTED = "✍️ Заполнил анкету из вашего текс�
 /** Кабинет в приложении: вакансия из вставленного текста, дальше анкета в чате с ботом. */
 export async function pasteFromApp(env, user, text) {
   const chatId = user.id;
+  // Сначала разбираем: если не вышло, начатая в боте анкета остаётся как была
+  const r = await pasteInto(env, { ...job.newJob("vacancy"), kind: "vacancy" }, text);
+  if (!r.draft) return { error: r.error || "Не нашёл в тексте вакансии. Вставьте объявление целиком или разместите через бота" };
   const created = await newDraft(env, chatId, user, "vacancy", "app");
   if (created.error) return created;
-  const r = await pasteInto(env, await getJob(env, created.id), text);
-  if (!r.draft) {
-    await env.DB.prepare("DELETE FROM jobs WHERE id = ?").bind(created.id).run();
-    await endDialog(env, chatId);
-    return { error: r.error || "Не нашёл в тексте вакансии. Вставьте объявление целиком или разместите через бота" };
-  }
-  const sent = await advance(env, chatId, r.draft, undefined, PASTED);
+  const sent = await advance(env, chatId, { ...r.draft, id: created.id }, undefined, PASTED);
   if (sent && sent.ok === false) return { error: "Не получилось написать вам в Telegram. Откройте бота @vacantekz_bot и нажмите «Старт»" };
   return { message: "Готово! Анкета заполнена, проверьте её в чате с ботом", draft: created.id };
 }
@@ -152,7 +149,8 @@ export async function postAnswer(env, m, d) {
   // В начале анкеты можно вставить объявление целиком или ссылку на него
   if ((draft.step === "city" || draft.step === "title") && looksPasted(text)) {
     const r = await pasteInto(env, draft, text);
-    if (r.draft) return advance(env, chatId, r.draft, undefined, PASTED);
+    // На вопросе «Кого ищете?» длинная должность — обычный ответ, если разбор её не нашёл
+    if (r.draft && (draft.step !== "title" || r.draft.title)) return advance(env, chatId, r.draft, undefined, PASTED);
     if (r.error) return send(env, chatId, r.error, job.askScreen(job.stepsFor(draft).find((s) => s.field === draft.step)).keyboard);
   }
   // Город словами вместо кнопки: «Алматы», «в Астане»

@@ -1085,6 +1085,10 @@ test("быстрое размещение: текст в чат, ссылка н
   assert.match(sentTo(calls, 141).at(-1).body.text, /Эту ссылку открыть не могу/);
   await say(env, hr, "в Астане");
   assert.match(sentTo(calls, 141).at(-1).body.text, /Кого ищете/);
+  // Длинная должность на вопросе «Кого ищете?» — обычный ответ
+  await say(env, hr, "Продавец-консультант в магазин строительных материалов и инструментов");
+  assert.deepEqual(env.DB.get("SELECT title, step FROM jobs WHERE employer_chat = 141"),
+    { title: "Продавец-консультант в магазин строительных материалов и инструментов", step: "company" });
 
   // Кабинет в приложении: вставка уходит в бот, недостающее спросит чат
   const call = (body) => worker.fetch(new Request("https://bot.example/api/cabinet", {
@@ -1092,6 +1096,13 @@ test("быстрое размещение: текст в чат, ссылка н
       Origin: "https://vacante.kz", "Content-Type": "application/json" }, body: JSON.stringify(body) }), env, ctx);
   const short = await (await call({ action: "paste", text: "повар" })).json();
   assert.match(short.error, /Вставьте текст вакансии/);
+  // Неудачная вставка не трогает начатую в боте анкету
+  await say(env, user(142, "Алия"), "/vacancy");
+  await press(env, user(142, "Алия"), "jobcity:astana", 9);
+  const bad = await (await call({ action: "paste", text: "https://www.olx.kz/d/obyavlenie/vakansiya" })).json();
+  assert.match(bad.error, /Эту ссылку открыть не могу/);
+  assert.deepEqual(env.DB.get("SELECT city, step FROM jobs WHERE employer_chat = 142"), { city: "astana", step: "title" });
+  assert.equal(env.DB.get("SELECT mode FROM dialogs WHERE chat_id = 142").mode, "post");
   const ok = await (await call({ action: "paste", text: "Нужен грузчик на склад\nОплата 10 000 тг в день\nг. Караганда" })).json();
   assert.match(ok.message, /проверьте её в чате с ботом/);
   assert.deepEqual(env.DB.get("SELECT city, title, salary, came_from, step FROM jobs WHERE employer_chat = 142"),

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T15:57:09+00:00",
+ "updated_at": "2026-11-20T16:56:54+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2919,39 +2919,6 @@
     ]
    }
   },
-  "hh-139219611": {
-   "verdict": "approve",
-   "at": "2026-11-06T16:56:33+00:00",
-   "fields": {
-    "title": "Кладовщик-водитель",
-    "employer": "Arlan Voltrix Group",
-    "schedule": "5/2, 8 часов",
-    "address": "мкр Юго-Восток (правая сторона), ул. Аршын, 13"
-   }
-  },
-  "rabota_astanakz-31332": {
-   "verdict": "approve",
-   "at": "2026-11-06T16:56:33+00:00",
-   "fields": {
-    "title": "Водитель погрузчика, водитель, чабан",
-    "employer": null,
-    "schedule": null,
-    "address": "Откормочная база, 100 км от Астаны",
-    "perks": [
-     "Питание",
-     "Жильё"
-    ]
-   }
-  },
-  "astana_hh-1849": {
-   "verdict": "approve",
-   "at": "2026-11-06T16:56:33+00:00",
-   "fields": {
-    "title": "Пекарь",
-    "schedule": "6/1, 08:00–19:00",
-    "perks": []
-   }
-  },
   "rabota_astana-15659": {
    "verdict": "approve",
    "at": "2026-11-06T16:56:33+00:00",
@@ -2974,14 +2941,6 @@
    "fields": {
     "employer": "Doner на Абая",
     "address": "ТРЦ «Мега», Аль-Фараби, Акмешит, Ильяс Омарова, ТРЦ «Аружан»"
-   }
-  },
-  "hh-139219266": {
-   "verdict": "approve",
-   "at": "2026-11-06T16:56:33+00:00",
-   "fields": {
-    "employer": "Сәрсенбаев",
-    "address": "ул. Керима Мынбаева, 47В"
    }
   },
   "zhumys_astana_kz-17240": {
@@ -3420,15 +3379,6 @@
    "fields": {
     "employer": "АО «Алматинский завод тяжёлого машиностроения»",
     "address": "ул. Толе би, 189"
-   }
-  },
-  "rabota4almaty-6260": {
-   "verdict": "approve",
-   "at": "2026-11-07T06:56:39+00:00",
-   "fields": {
-    "title": "Сторож",
-    "employer": "ТОО «КазМакТрейд»",
-    "address": "мкр. Самгау, ул. Ырысты, 15А"
    }
   },
   "hh-139223418": {
@@ -4537,16 +4487,6 @@
    "at": "2026-11-07T13:57:00+00:00",
    "fields": {
     "schedule": "07:00–17:00, суббота короткий день"
-   }
-  },
-  "astana_rabota-90164": {
-   "verdict": "approve",
-   "at": "2026-11-07T13:57:00+00:00",
-   "fields": {
-    "title": "Подсобный рабочий на монтаж бамбуковых панелей",
-    "perks": [
-     "Обучение"
-    ]
    }
   },
   "almaty_rabota_work-31850": {
@@ -42680,6 +42620,31 @@
    "fields": {
     "title": "Кассир-продавец на АЗС",
     "schedule": null
+   }
+  },
+  "rabota_v_aktobe-3026": {
+   "verdict": "reject",
+   "at": "2026-11-20T16:56:54+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139707451": {
+   "verdict": "approve",
+   "at": "2026-11-20T16:56:54+00:00",
+   "fields": {
+    "title": "Мастер по ремонту электро- и бензоинструмента",
+    "employer": "LIDER PVL",
+    "address": "ул. Циолковского, 28",
+    "schedule": null
+   }
+  },
+  "vakansii_oskemen-9404": {
+   "verdict": "approve",
+   "at": "2026-11-20T16:56:54+00:00",
+   "fields": {
+    "title": "Электрогазосварщик",
+    "salary_min": 413000,
+    "salary_max": null,
+    "salary_period": "month"
    }
   }
  }

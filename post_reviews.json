@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T13:57:16+00:00",
+ "updated_at": "2026-11-20T14:56:32+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2894,48 +2894,10 @@
     "address": "ул. Терешковой, Казкрай"
    }
   },
-  "hh-139215950": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "schedule": "5/2"
-   }
-  },
-  "hh-138563796": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "title": "Ночной охранник",
-    "employer": "Sana Holding",
-    "schedule": "5/2, ночные смены",
-    "address": "пр. Мангилик Ел, 41/1"
-   }
-  },
   "hh-138889280": {
    "verdict": "reject",
    "at": "2026-11-06T14:57:42+00:00",
    "reason": "Офисная должность"
-  },
-  "almaty_rabota_work-31844": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "employer": "Ресторан «Лен»",
-    "schedule": "2/2, 09:00–01:00",
-    "perks": [
-     "Питание",
-     "Развозка"
-    ]
-   }
-  },
-  "rabotaalmatyyyy-15309": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "employer": "Супермаркет «Холидей»",
-    "schedule": "2/2, ночные смены, 20:00–08:00",
-    "address": "ул. Толе би, 124"
-   }
   },
   "hh-139216961": {
    "verdict": "approve",
@@ -2944,75 +2906,6 @@
     "employer": "Orkin",
     "schedule": "6/1 или 2/2"
    }
-  },
-  "hh-139216757": {
-   "verdict": "reject",
-   "at": "2026-11-06T14:57:42+00:00",
-   "reason": "Офисная должность: продажи IT-услуг"
-  },
-  "hh-139216569": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "title": "Хостес-кассир",
-    "employer": "Ресторан «Nuala»",
-    "salary_min": 270000,
-    "salary_max": null,
-    "salary_period": "month",
-    "schedule": "2/2",
-    "address": "ул. Богенбай батыра, 134"
-   }
-  },
-  "hh-139216466": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "employer": "Lumen Decor",
-    "schedule": "3/2",
-    "address": "ул. Кабанбай батыра, 140"
-   }
-  },
-  "hh-139215230": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "title": "Бариста",
-    "schedule": "5/2",
-    "address": "пр. аль-Фараби, 5/2"
-   }
-  },
-  "hh-139215007": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "title": "Водитель полевой группы (внедорожник, механика)",
-    "employer": "РНПИЦ «Казэкология»",
-    "schedule": "5/2",
-    "address": "ул. Махамбета Утемисова, 100"
-   }
-  },
-  "hh-139217716": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {
-    "employer": null,
-    "schedule": null
-   }
-  },
-  "rabotaaktau-142319": {
-   "verdict": "reject",
-   "at": "2026-11-06T14:57:42+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
-  "hh-139216432": {
-   "verdict": "reject",
-   "at": "2026-11-06T14:57:42+00:00",
-   "reason": "Офисная должность"
-  },
-  "vakansii_oskemen-9264": {
-   "verdict": "approve",
-   "at": "2026-11-06T14:57:42+00:00",
-   "fields": {}
   },
   "hh-139218068": {
    "verdict": "approve",
@@ -3754,23 +3647,6 @@
    "fields": {
     "title": "Дежурный зала аттракционов",
     "address": "мкр. Самгау, ул. Ырысты, 46/4"
-   }
-  },
-  "rabota4almaty-6253": {
-   "verdict": "approve",
-   "at": "2026-11-07T07:57:07+00:00",
-   "fields": {
-    "title": "Администратор кофейни",
-    "employer": "Urbo Coffee",
-    "address": "пр. Сейфуллина, 574/1"
-   }
-  },
-  "rabota4almaty-6255": {
-   "verdict": "approve",
-   "at": "2026-11-07T07:57:07+00:00",
-   "fields": {
-    "title": "Машинист-крановщик",
-    "address": "пр. Рыскулова, 92А"
    }
   },
   "hh-138247173": {
@@ -5039,11 +4915,6 @@
     "address": "пр. Туран, 39а, ЖК «Four Seasons»"
    }
   },
-  "astana_hh-1848": {
-   "verdict": "reject",
-   "at": "2026-11-07T16:57:12+00:00",
-   "reason": "Повтор вакансии кафе «Каусар» из этой же очереди"
-  },
   "hh-135192275": {
    "verdict": "approve",
    "at": "2026-11-07T16:57:12+00:00",
@@ -5095,15 +4966,6 @@
     "salary_max": null,
     "salary_period": "month",
     "schedule": "6/1, 13:00–23:00"
-   }
-  },
-  "almaty_rabota_work-31845": {
-   "verdict": "approve",
-   "at": "2026-11-07T16:57:12+00:00",
-   "fields": {
-    "employer": "Truezard",
-    "schedule": "2/2, 10:00–22:00",
-    "address": "ул. Сейфуллина, 617, ТРЦ «Forum», 2 этаж"
    }
   },
   "vakansii_rabota_atyrau-50060": {
@@ -5614,13 +5476,6 @@
    "fields": {
     "title": "Официант, раздатчица",
     "schedule": "сменный график, дневные и ночные смены"
-   }
-  },
-  "almatyrabota1-21330": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "schedule": "5/2, 08:00–16:00"
    }
   },
   "hh-139229635": {
@@ -42806,6 +42661,89 @@
    "fields": {
     "schedule": "Полный рабочий день"
    }
+  },
+  "hh-139704394": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "schedule": null
+   }
+  },
+  "hh-139705574": {
+   "verdict": "reject",
+   "at": "2026-11-20T14:56:32+00:00",
+   "reason": "Руководящая должность (управление магазином и командой)"
+  },
+  "rabotaaktau-143057": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "title": "Администратор-кассир",
+    "employer": "Баня «Маңғышлақ»",
+    "schedule": "2/2, 11:00–00:00"
+   }
+  },
+  "hh-139705141": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "employer": "QazaqOil",
+    "schedule": "смены по 12 часов"
+   }
+  },
+  "hh-139705481": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "employer": "Galanz Bottlers",
+    "schedule": "6/1"
+   }
+  },
+  "vakansiya_ukg-21899": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "title": "Пекарь-кассир",
+    "employer": "Магазин «Продуктофф»",
+    "salary_min": 280000,
+    "salary_max": null,
+    "salary_period": "month",
+    "address": "ул. Крылова, 106"
+   }
+  },
+  "hh-139704330": {
+   "verdict": "reject",
+   "at": "2026-11-20T14:56:32+00:00",
+   "reason": "Работа в Семее, а не в Усть-Каменогорске; зарплата не указана"
+  },
+  "rabota_semey_official-7006": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "employer": "Бильярдный клуб",
+    "schedule": "2/2, 14:00–02:00"
+   }
+  },
+  "rabota_semey_official-7008": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин женской одежды",
+    "schedule": "2/2, 10:00–19:00"
+   }
+  },
+  "rabota_semey_official-7007": {
+   "verdict": "approve",
+   "at": "2026-11-20T14:56:32+00:00",
+   "fields": {
+    "title": "Сушист, пиццамейкер",
+    "employer": "Akira Sushi"
+   }
+  },
+  "rabota_semey_official-7005": {
+   "verdict": "reject",
+   "at": "2026-11-20T14:56:32+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   }
  }
 }

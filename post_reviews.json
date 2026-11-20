@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19T20:56:56+00:00",
+ "updated_at": "2026-11-20T03:56:42+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2759,11 +2759,6 @@
    "at": "2026-11-05T17:57:05+00:00",
    "reason": "Офисная должность (B2B-продажи недвижимости, высшее образование)"
   },
-  "hh-139184247": {
-   "verdict": "reject",
-   "at": "2026-11-06T02:56:35+00:00",
-   "reason": "Ограничение по полу (берут только девушек)"
-  },
   "hh-138179153": {
    "verdict": "approve",
    "at": "2026-11-06T03:56:55+00:00",
@@ -2793,16 +2788,6 @@
    "fields": {
     "employer": "Охранное агентство «Stels»",
     "address": "ул. Касыма Аманжолова, 34"
-   }
-  },
-  "hh-139185958": {
-   "verdict": "approve",
-   "at": "2026-11-06T03:56:55+00:00",
-   "fields": {
-    "title": "Администратор ресторана",
-    "employer": null,
-    "schedule": "5/2, 12 часов",
-    "address": "ул. Брусиловского, 164"
    }
   },
   "hh-139186123": {
@@ -45560,6 +45545,284 @@
    "fields": {
     "title": "Повар, помощник повара, салатница",
     "employer": "Ресторан «Mussali»"
+   }
+  },
+  "rabota_astanakz-31592": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Водитель",
+    "schedule": "5/2, 10:00–21:00",
+    "perks": []
+   }
+  },
+  "rabota_astanakz-31605": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Aisara Group",
+    "schedule": "2/2, 11:00–02:00",
+    "salary_min": 18000,
+    "salary_max": null,
+    "salary_period": "day"
+   }
+  },
+  "rabota_astanakz-31589": {
+   "verdict": "reject",
+   "at": "2026-11-20T03:56:42+00:00",
+   "reason": "Работодатель не назван, нужен свой автомобиль"
+  },
+  "rabota_astanakz-31546": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "1/2, 1/1 или 2/2",
+    "address": "ул. Улы Дала, 10"
+   }
+  },
+  "rabota_astanakz-31544": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Охранное агентство «Баходур-А»",
+    "salary_min": 9000,
+    "salary_max": 12000,
+    "salary_period": "day",
+    "schedule": "1/2, 2/2, 2/1"
+   }
+  },
+  "rabota_astanakz-31600": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Повар, пекарь",
+    "employer": "Столовая ТЭЦ-2",
+    "schedule": "Гибкий график"
+   }
+  },
+  "rabota_astanakz-31584": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Администратор мини-отеля",
+    "employer": "Hannah Inn",
+    "schedule": "сутки через двое, 08:00–08:00",
+    "address": "напротив СК «Алатау»"
+   }
+  },
+  "rabota4almaty-6727": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Бильярдный клуб «Москва»",
+    "address": "мкр Мамыр-4, 100б",
+    "schedule": "2/2",
+    "perks": []
+   }
+  },
+  "rabota4almaty-6743": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Пекарня «Geo Nan»"
+   }
+  },
+  "hh-139641209": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Basilic",
+    "schedule": "5/2",
+    "address": "ул. Желтоксан, 115"
+   }
+  },
+  "hh-139479069": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Повар",
+    "employer": "Банно-ресторанный комплекс «Орловские бани»",
+    "schedule": "4/3 или 2/2, 12 часов",
+    "address": "ул. Каныша Сатпаева, 29/6"
+   }
+  },
+  "hh-139662633": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Rixos Almaty",
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Сейфуллина, 506"
+   }
+  },
+  "hh-139652186": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Kitchen Chefs",
+    "schedule": "2/2",
+    "address": "мкр Самал-2, 111"
+   }
+  },
+  "hh-139649816": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Достык, 104А"
+   }
+  },
+  "rabota4almaty-6745": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Кофейня «Coffee Original»",
+    "schedule": "08:00–20:00",
+    "address": "ул. Байтурсынова, 67"
+   }
+  },
+  "hh-139677187": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "schedule": "6/1, 10 часов",
+    "address": "ул. Туркестанская, 6"
+   }
+  },
+  "hh-139097017": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Тауке хана, 330/1"
+   }
+  },
+  "hh-138929443": {
+   "verdict": "reject",
+   "at": "2026-11-20T03:56:42+00:00",
+   "reason": "Продажа услуг связи, доход от плана; есть вакансия торгового представителя получше"
+  },
+  "hh-139609586": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "НПЦ «UniVet»",
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Байдибек би, 37"
+   }
+  },
+  "hh-139677041": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Водитель такси",
+    "schedule": null,
+    "address": "ул. Алимхана Ермекова, 106А"
+   }
+  },
+  "hh-139645879": {
+   "verdict": "reject",
+   "at": "2026-11-20T03:56:42+00:00",
+   "reason": "Руководящая должность: закупки, поставщики, 1С"
+  },
+  "hh-139673821": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Водитель КамАЗа с ДОПОГ",
+    "schedule": "6/1, 8 часов"
+   }
+  },
+  "hh-139671620": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "schedule": "5/2, 8 часов",
+    "address": "пр. Строителей, 37/2"
+   }
+  },
+  "hh-139596659": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов"
+   }
+  },
+  "rabotaaktau-143007": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Администратор супермаркета",
+    "employer": "Супермаркет «Дана»",
+    "address": "3А мкр",
+    "schedule": "6/1, 11:00–21:00"
+   }
+  },
+  "rabotaaktau-142983": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "Семейное кафе «Пельмешка»",
+    "address": "7а мкр, 9 здание",
+    "schedule": "2/2, 10:00–23:00"
+   }
+  },
+  "hh-139668873": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Продавец-консультант посуды",
+    "employer": "Astau",
+    "schedule": "2/2, 9 часов",
+    "address": "19-й мкр, 20"
+   }
+  },
+  "hh-139660432": {
+   "verdict": "reject",
+   "at": "2026-11-20T03:56:42+00:00",
+   "reason": "Офисная должность: продажи недвижимости"
+  },
+  "hh-139657988": {
+   "verdict": "reject",
+   "at": "2026-11-20T03:56:42+00:00",
+   "reason": "Офисная должность: администратор клиники"
+  },
+  "rabotaaktau-143010": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "MSQ",
+    "schedule": "5/2, 09:30–19:00 или 13:00–22:00",
+    "address": "16-й мкр, 94, ЖК «Tomiris Towers»"
+   }
+  },
+  "rabotaaktau-142985": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "title": "Уборщица",
+    "schedule": "5/2, 14:00–17:00",
+    "address": "район Адайского светофора"
+   }
+  },
+  "rabotaaktau-143009": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "employer": "НЕО",
+    "schedule": "6/1, 12:00–22:00"
+   }
+  },
+  "hh-138791342": {
+   "verdict": "approve",
+   "at": "2026-11-20T03:56:42+00:00",
+   "fields": {
+    "schedule": "5/2, 8 часов",
+    "address": "ул. Космонавтов, 1/2"
    }
   }
  }

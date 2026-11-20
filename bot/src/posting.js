@@ -1,5 +1,6 @@
 // Работодатель размещает вакансию или смену: анкета, предпросмотр, отправка на проверку, закрытие.
 import { creditsLeft, endDialog, getJob, myJobs, setDialog, useCredit } from "./db.js";
+import { fetchPasted, findCity, looksPasted, parseVacancy, pasteUrl } from "./paste.js";
 import * as job from "./employer.js";
 import { sendNotice, wakeSite } from "./notices.js";
 import * as shift from "./shift.js";
@@ -11,24 +12,72 @@ const postIntro = (price) =>
   "и в Telegram-канале вашего города. " +
   "Отклики кандидатов придут вам сюда. Ответьте на несколько вопросов, это пара минут.";
 
-export async function startPost(env, m, kind = "vacancy", cameFrom = null) {
-  const chatId = m.chat.id;
+const PASTE_HINT = "⚡ Быстрее: вставьте сюда текст вакансии или ссылку на неё (hh.kz, пост в Telegram-канале), я сам заполню анкету.";
+
+// Новый черновик вместо старого. Возвращает id черновика или текст ошибки.
+async function newDraft(env, chatId, from, kind, cameFrom) {
   const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status IN ('pending', 'payment')")
     .bind(chatId)
     .first("n");
   if (pending >= job.MAX_PENDING) {
-    return send(env, chatId, `У вас уже ${pending} вакансии ждут оплаты или проверки. Оплатите или закройте их: /myjobs`);
+    return { error: `У вас уже ${pending} вакансии ждут оплаты или проверки. Оплатите или закройте их: /myjobs` };
   }
   await env.DB.prepare("DELETE FROM jobs WHERE employer_chat = ? AND status = 'draft'").bind(chatId).run();
   const { meta } = await env.DB.prepare(
     "INSERT INTO jobs (employer_chat, employer_name, step, kind, came_from) VALUES (?, ?, 'city', ?, ?)",
   )
-    .bind(chatId, job.employerName(m.from), kind, cameFrom)
+    .bind(chatId, job.employerName(from), kind, cameFrom)
     .run();
   await setDialog(env, chatId, "post", meta.last_row_id);
+  return { id: meta.last_row_id };
+}
+
+export async function startPost(env, m, kind = "vacancy", cameFrom = null) {
+  const chatId = m.chat.id;
+  const created = await newDraft(env, chatId, m.from, kind, cameFrom);
+  if (created.error) return send(env, chatId, created.error);
   const { text, keyboard } = job.askScreen(job.stepsFor({ kind })[0]);
   const price = await postPriceFor(env, chatId);
-  return send(env, chatId, `${kind === "shift" ? shift.shiftIntro(price) : postIntro(price)}\n\n${text}`, keyboard);
+  return send(env, chatId, `${kind === "shift" ? shift.shiftIntro(price) : postIntro(price)}\n\n${PASTE_HINT}\n\n${text}`, keyboard);
+}
+
+// Поля из вставленного текста, которые можно взять в анкету этого вида
+const PASTE_FIELDS = { vacancy: ["city", "title", "company", "salary", "schedule", "address", "details"],
+  shift: ["city", "title", "company", "salary", "address", "details"] };
+
+/** Разбирает вставленный текст или ссылку в черновик. → { draft } или { error } */
+export async function pasteInto(env, draft, text) {
+  const url = pasteUrl(text);
+  if (url?.kind === "other") return { error: "Эту ссылку открыть не могу. Вставьте текст вакансии сообщением или ответьте на вопрос." };
+  const found = url ? await fetchPasted(url) : parseVacancy(text);
+  if (!found || !Object.keys(found).length) {
+    return { error: url ? "Не получилось открыть ссылку. Вставьте текст вакансии сообщением или ответьте на вопрос." : null };
+  }
+  const next = { ...draft };
+  for (const field of PASTE_FIELDS[draft.kind === "shift" ? "shift" : "vacancy"]) {
+    if (next[field] == null && found[field]) next[field] = found[field];
+  }
+  // Необязательное, чего в тексте не нашлось, не спрашиваем: всё видно в предпросмотре
+  for (const step of job.stepsFor(draft)) if (step.optional && next[step.field] == null) next[step.field] = "";
+  return { draft: next, found: Object.keys(found).length };
+}
+
+const PASTED = "✍️ Заполнил анкету из вашего текста. Осталось ответить на пару вопросов, а в конце проверить карточку.";
+
+/** Кабинет в приложении: вакансия из вставленного текста, дальше анкета в чате с ботом. */
+export async function pasteFromApp(env, user, text) {
+  const chatId = user.id;
+  const created = await newDraft(env, chatId, user, "vacancy", "app");
+  if (created.error) return created;
+  const r = await pasteInto(env, await getJob(env, created.id), text);
+  if (!r.draft) {
+    await env.DB.prepare("DELETE FROM jobs WHERE id = ?").bind(created.id).run();
+    await endDialog(env, chatId);
+    return { error: r.error || "Не нашёл в тексте вакансии. Вставьте объявление целиком или разместите через бота" };
+  }
+  const sent = await advance(env, chatId, r.draft, undefined, PASTED);
+  if (sent && sent.ok === false) return { error: "Не получилось написать вам в Telegram. Откройте бота @vacantekz_bot и нажмите «Старт»" };
+  return { message: "Готово! Анкета заполнена, проверьте её в чате с ботом", draft: created.id };
 }
 
 // Цена размещения для этого работодателя: модераторы (админы каналов) размещают бесплатно
@@ -99,7 +148,16 @@ export async function postAnswer(env, m, d) {
     return send(env, chatId, HELP);
   }
   if (!draft.step) return send(env, chatId, ...screen(await preview(env, chatId, draft))); // анкета заполнена, ждём кнопку
-  const { job: next, error } = job.answer(draft, draft.step, m.text);
+  const text = m.text || m.caption || "";
+  // В начале анкеты можно вставить объявление целиком или ссылку на него
+  if ((draft.step === "city" || draft.step === "title") && looksPasted(text)) {
+    const r = await pasteInto(env, draft, text);
+    if (r.draft) return advance(env, chatId, r.draft, undefined, PASTED);
+    if (r.error) return send(env, chatId, r.error, job.askScreen(job.stepsFor(draft).find((s) => s.field === draft.step)).keyboard);
+  }
+  // Город словами вместо кнопки: «Алматы», «в Астане»
+  if (draft.step === "city" && findCity(text)) return advance(env, chatId, { ...draft, city: findCity(text) });
+  const { job: next, error } = job.answer(draft, draft.step, text);
   if (error) return send(env, chatId, error, job.askScreen(job.stepsFor(draft).find((s) => s.field === draft.step)).keyboard);
   return advance(env, chatId, next);
 }
@@ -134,7 +192,7 @@ export async function postButton(env, q, ctx) {
 }
 
 // Следующий вопрос анкеты или, когда всё заполнено, предпросмотр. По кнопке правим то же сообщение.
-async function advance(env, chatId, draft, messageId) {
+async function advance(env, chatId, draft, messageId, note) {
   const step = job.nextStep(draft);
   draft = { ...draft, step: step ? step.field : null };
   // У смены график — это её день и время: «Смена 07.11, 10:00–22:00»
@@ -146,7 +204,8 @@ async function advance(env, chatId, draft, messageId) {
     .bind(draft.step, draft.city, draft.title, draft.company, draft.salary, draft.schedule, draft.address, draft.details,
       draft.shift_date ?? null, draft.shift_start ?? null, draft.shift_end ?? null, draft.need ?? null, draft.id)
     .run();
-  const { text, keyboard } = step ? job.askScreen(step) : await preview(env, chatId, draft);
+  const { text: body, keyboard } = step ? job.askScreen(step) : await preview(env, chatId, draft);
+  const text = note ? `${note}\n\n${body}` : body;
   return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
 }
 

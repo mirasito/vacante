@@ -10,7 +10,7 @@ import { creditsLeft, myJobs } from "./db.js";
 import * as job from "./employer.js";
 import { verifySession } from "./login.js";
 import { boostWithCredit, requestBoost, requestPack, requestPost } from "./payments.js";
-import { closeOwnJob, resendApplications } from "./posting.js";
+import { closeOwnJob, pasteFromApp, resendApplications } from "./posting.js";
 import { send } from "./telegram.js";
 
 const CITY = Object.fromEntries(options.cities);
@@ -140,6 +140,12 @@ async function act(env, user, body, ctx) {
       if (r.error) return r;
       await send(env, chatId, job.packWaitText(r.pack));
       return { message: "Сверяем перевод за пакет. Напишем в чат с ботом, как только включим" };
+    }
+    case "paste": {
+      // Быстрое размещение: текст или ссылка из кабинета, анкета продолжается в чате с ботом
+      const text = String(body.text ?? "").trim().slice(0, 4000);
+      if (text.length < 20) return { error: "Вставьте текст вакансии целиком или ссылку на неё" };
+      return pasteFromApp(env, user, text);
     }
     default:
       return { error: "Неизвестное действие" };

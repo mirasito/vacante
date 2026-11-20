@@ -1047,3 +1047,56 @@ test("брошенная анкета: одно напоминание днём 
   await press(env, boss, `jobdrop:${id}`, 8);
   assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE id = ?", id).n, 0);
 });
+
+test("быстрое размещение: текст в чат, ссылка на hh, город словами и вставка из кабинета", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  const tgFetch = fakeFetch(calls);
+  globalThis.fetch = async (url, init) => {
+    if (String(url) === "https://api.hh.ru/vacancies/777") {
+      calls.push({ method: "hh", headers: init.headers });
+      return Response.json({ name: "Кассир", employer: { name: "Магнум" }, area: { name: "Шымкент" },
+        salary: { from: 230000, currency: "KZT" }, description: "<p>Работа на кассе</p>" });
+    }
+    if (String(url).startsWith("https://api.hh.ru/")) return new Response("nope", { status: 404 });
+    return tgFetch(url, init);
+  };
+  const boss = user(140, "Самал");
+  await say(env, boss, "/start post_site");
+  assert.match(sentTo(calls, 140).at(-1).body.text, /вставьте сюда текст вакансии или ссылку/);
+  await say(env, boss, "Требуется повар в кафе «Арман»\nЗарплата: 15 000 тг за смену\nАлматы, мкр Самал-2\nПитание");
+  const after = sentTo(calls, 140).at(-1).body.text;
+  assert.match(after, /Заполнил анкету из вашего текста/);
+  assert.match(after, /Проверьте вакансию/); // всё нашлось: сразу предпросмотр
+  assert.deepEqual(env.DB.get("SELECT city, title, company, salary, schedule, step FROM jobs WHERE employer_chat = 140"),
+    { city: "almaty", title: "Повар", company: "кафе «Арман»", salary: "15 000 тг за смену", schedule: "", step: null });
+
+  // Ссылка на hh: берём из официального API, спрашиваем только недостающее
+  const hr = user(141, "Ерке");
+  await say(env, hr, "/vacancy");
+  await say(env, hr, "https://shymkent.hh.kz/vacancy/777");
+  assert.equal(calls.find((c) => c.method === "hh").headers["HH-User-Agent"], "vacante.kz/1.0 (bot)");
+  assert.deepEqual(env.DB.get("SELECT city, title, company, salary, details, step FROM jobs WHERE employer_chat = 141"),
+    { city: "shymkent", title: "Кассир", company: "Магнум", salary: "от 230 000 ₸ в месяц", details: "Работа на кассе", step: null });
+  await say(env, hr, "/vacancy");
+  await say(env, hr, "https://hh.kz/vacancy/404");
+  assert.match(sentTo(calls, 141).at(-1).body.text, /Не получилось открыть ссылку/);
+  await say(env, hr, "https://www.olx.kz/d/obyavlenie/x");
+  assert.match(sentTo(calls, 141).at(-1).body.text, /Эту ссылку открыть не могу/);
+  await say(env, hr, "в Астане");
+  assert.match(sentTo(calls, 141).at(-1).body.text, /Кого ищете/);
+
+  // Кабинет в приложении: вставка уходит в бот, недостающее спросит чат
+  const call = (body) => worker.fetch(new Request("https://bot.example/api/cabinet", {
+    method: "POST", headers: { Authorization: `tma ${initData(env.TELEGRAM_BOT_TOKEN, { id: 142, first_name: "Алия" })}`,
+      Origin: "https://vacante.kz", "Content-Type": "application/json" }, body: JSON.stringify(body) }), env, ctx);
+  const short = await (await call({ action: "paste", text: "повар" })).json();
+  assert.match(short.error, /Вставьте текст вакансии/);
+  const ok = await (await call({ action: "paste", text: "Нужен грузчик на склад\nОплата 10 000 тг в день\nг. Караганда" })).json();
+  assert.match(ok.message, /проверьте её в чате с ботом/);
+  assert.deepEqual(env.DB.get("SELECT city, title, salary, came_from, step FROM jobs WHERE employer_chat = 142"),
+    { city: "karaganda", title: "Грузчик на склад", salary: "10 000 тг в день", came_from: "app", step: "company" });
+  assert.match(sentTo(calls, 142).at(-1).body.text, /Заполнил анкету[\s\S]*Как называется заведение/);
+  await say(env, user(142, "Алия"), "Склад «Восток»");
+  assert.match(sentTo(calls, 142).at(-1).body.text, /Проверьте вакансию/);
+});

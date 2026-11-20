@@ -1285,7 +1285,7 @@
   "city": "aktau",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "aktau:анвар": {
   "name": "Анвар",
@@ -2877,6 +2877,22 @@
    "website"
   ],
   "avatar": "17d039d28bc846d7.jpg",
+  "avatar_source": "website"
+ },
+ "aktobe:coffee boom": {
+  "name": "COFFEE BOOM",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00",
+  "instagram": "coffeeboom.aqtobe.keruen",
+  "website": "https://coffeeboom.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001069284786",
+  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e8644095553aa547.jpg",
   "avatar_source": "website"
  },
  "aktobe:common market corporation": {
@@ -5671,7 +5687,7 @@
   "city": "almaty",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00",
+  "checked_at": "2026-11-20T08:43:21+00:00",
   "instagram": "alem_hotel_hostel",
   "source": "https://2gis.kz/almaty/firm/70000001088973670"
  },
@@ -9205,6 +9221,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:complex bar kz комплекс бар кей зет": {
+  "name": "Complex-Bar KZ (Комплекс-Бар Кей Зет)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00",
+  "instagram": "complexbar_almaty",
+  "website": "https://complex-bar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032121529",
+  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d8c12fb24ffc89ba.jpg",
+  "avatar_source": "website"
  },
  "almaty:consys": {
   "name": "CONSYS",
@@ -17799,7 +17831,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "almaty:print house gerona": {
   "name": "Print House Gerona",
@@ -21782,7 +21814,7 @@
   "city": "almaty",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "almaty:vito": {
   "name": "VITO",
@@ -32442,6 +32474,13 @@
   "v": 3,
   "checked_at": "2026-11-17T20:42:36+00:00"
  },
+ "almaty:рахимжан trade": {
+  "name": "Рахимжан Trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00"
+ },
  "almaty:рахимова": {
   "name": "Рахимова",
   "city": "almaty",
@@ -38802,6 +38841,20 @@
   "instagram": "cafestar",
   "source": "https://2gis.kz/astana/firm/70000001018064604"
  },
+ "astana:capital cinema тм cinema hotel corporation": {
+  "name": "«Capital Cinema» ТМ Cinema Hotel Corporation",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00",
+  "instagram": "chaplincinemas",
+  "website": "https://chaplin.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001027048493",
+  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:capital education services": {
   "name": "Capital Education Services",
   "city": "astana",
@@ -41053,7 +41106,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "astana:hhf": {
   "name": "HHF",
@@ -43453,7 +43506,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "astana:mutayev & co": {
   "name": "Mutayev & CO",
@@ -43511,7 +43564,7 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00",
+  "checked_at": "2026-11-20T08:43:21+00:00",
   "instagram": "na_chile_food_astana01",
   "source": "https://2gis.kz/astana/firm/70000001101202169"
  },
@@ -54440,6 +54493,13 @@
   "v": 3,
   "checked_at": "2026-11-19T15:42:44+00:00"
  },
+ "astana:сарсембаева д о": {
+  "name": "Сарсембаева Д.О.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00"
+ },
  "astana:сарыарка": {
   "name": "Сарыарка",
   "city": "astana",
@@ -55560,7 +55620,7 @@
   "city": "astana",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "astana:технопарк биоген": {
   "name": "Технопарк Биоген",
@@ -56339,11 +56399,11 @@
   "city": "astana",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00",
+  "checked_at": "2026-11-20T08:43:21+00:00",
   "instagram": "stalnoy_soyuz",
-  "website": "http://stalsoyuz.kz/",
+  "website": "https://stalsoyuz.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018124894",
-  "avatar_checked_at": "2026-11-20T07:44:27+00:00",
+  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58922,7 +58982,7 @@
   "city": "atyrau",
   "status": "none",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00"
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "atyrau:алмаз холдинг тоо аргента": {
   "name": "Алмаз-Холдинг (ТОО Аргента)",
@@ -60169,6 +60229,13 @@
   "avatar": "97f92dbe059593b5.jpg",
   "avatar_source": "telegram"
  },
+ "karaganda:apn profit limited апнпрофит лимитед": {
+  "name": "APN-Profit Limited (АПНПрофит Лимитед)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00"
+ },
  "karaganda:arbuz group арбуз груп": {
   "name": "Arbuz Group (Арбуз Груп)",
   "city": "karaganda",
@@ -60658,6 +60725,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T07:44:35+00:00"
+ },
+ "karaganda:galaклиника": {
+  "name": "GalaКлиника",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00",
+  "instagram": "galaklinika",
+  "website": "https://galaklinika.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302934620",
+  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "73446bf2957422f6.jpg",
+  "avatar_source": "website"
  },
  "karaganda:germes": {
   "name": "GERMES",
@@ -67154,16 +67237,12 @@
   "city": "kostanay",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00",
+  "checked_at": "2026-11-20T08:43:21+00:00",
   "instagram": "mebelvdom.qostanay",
   "website": "https://taplink.cc/mebel_v_dom",
-  "source": "https://2gis.kz/kostanaj/firm/70000001061893541",
-  "avatar_checked_at": "2026-11-20T07:44:27+00:00",
-  "avatar_tried": [
-   "website"
-  ],
   "avatar": "13383a2e5faa1a9f.jpg",
-  "avatar_source": "website"
+  "avatar_source": "website",
+  "source": "https://2gis.kz/kostanaj/firm/70000001061893541"
  },
  "kostanay:мебель в дом бочкарева е м": {
   "name": "Мебель в Дом (Бочкарева Е.М.)",
@@ -68595,11 +68674,11 @@
   "city": "pavlodar",
   "status": "found",
   "v": 3,
-  "checked_at": "2026-11-20T07:44:26+00:00",
+  "checked_at": "2026-11-20T08:43:21+00:00",
   "instagram": "asianpaints.pvl",
-  "website": "http://asianpaints.kz/",
+  "website": "https://asianpaints.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018633180",
-  "avatar_checked_at": "2026-11-20T07:44:27+00:00",
+  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
   "avatar_tried": [
    "website"
   ],
@@ -69957,6 +70036,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:павлодарэнерго тд": {
+  "name": "Павлодарэнерго ТД",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T08:43:21+00:00"
  },
  "pavlodar:паноян": {
   "name": "Паноян",

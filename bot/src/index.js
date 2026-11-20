@@ -31,9 +31,10 @@ const GREETING =
   "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.\n\n" +
   "Ищете сотрудников? Нажмите «🏢 Ищу сотрудников».";
 
-// Метки в ссылках на анкету работодателя → jobs.came_from. pf: кнопка на странице профиля кандидата (server/src/page.ts)
+// Метки в ссылках на анкету работодателя → jobs.came_from. pf: кнопка на странице профиля кандидата (server/src/page.ts),
+// ch: разовый пост для работодателей в наших каналах (vacante/announce.py)
 const ENTRY = /^(post|smena)(?:_([a-z]+))?$/;
-const ENTRY_FROM = { pf: "profile", site: "site", land: "land", tg: "tg", app: "app" };
+const ENTRY_FROM = { pf: "profile", site: "site", land: "land", tg: "tg", app: "app", ch: "channel" };
 
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
 

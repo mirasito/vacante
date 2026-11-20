@@ -51,3 +51,25 @@ def test_text_fits_telegram_limit_for_every_city():
 
     for city in channels.ALL:
         assert len(announce.text_for("apply-button", city)) < 4096
+
+
+def test_employer_post_leads_to_bot_questionnaire_and_tagged_landing():
+    bot = Bot()
+    assert announce.run("employers-paste", {}, LIVE, bot.send)["sent"] == 2
+    _, text, buttons = bot.sent[0]
+    assert "вставьте в бот" in text and "hh.kz" in text and "990 ₸" in text and "3 990 ₸" in text
+    assert "в Алматы" in text and "Алматыдағы" in text
+    assert buttons[0] == ("⚡ Разместить вакансию · Орналастыру", "https://t.me/vacantekz_bot?start=post_ch")
+    assert buttons[1][1] == ("https://vacante.kz/rabotodatelyam/?utm_source=telegram&utm_medium=channel"
+                             "&utm_campaign=employers_paste&utm_content=almaty")
+    assert bot.sent[1][2][1][1].endswith("utm_content=astana")
+
+
+def test_every_announcement_fits_telegram_limit_for_every_city():
+    from vacante import channels
+
+    for name in announce.ANNOUNCEMENTS:
+        for city in channels.ALL:
+            assert "{" not in announce.text_for(name, city)
+            assert len(announce.text_for(name, city)) < 4096
+            assert all(url.startswith("https://") for _, url in announce.buttons_for(name, city))

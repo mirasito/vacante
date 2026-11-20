@@ -9,7 +9,7 @@ on:
       name:
         description: "Имя объявления из vacante/announce.py"
         required: true
-        default: "apply-button"
+        default: "employers-paste"
 
 permissions:
   contents: write

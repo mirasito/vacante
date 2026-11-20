@@ -986,6 +986,8 @@ test("анкета работодателя: метка ссылки, должн
   const first = sentTo(calls, 120).at(-1).body;
   assert.ok(first.reply_markup.inline_keyboard.some((row) => row[0].callback_data === "jobseeker"));
   assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 120").came_from, "site");
+  await say(env, user(122, "Ерлан"), "/start post_ch"); // пост для работодателей в канале
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 122").came_from, "channel");
   await press(env, boss, "jobcity:astana", 5);
   const ask = calls.at(-1).body;
   assert.match(ask.text, /Нажмите кнопку или напишите свою должность/);

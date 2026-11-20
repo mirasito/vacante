@@ -8936,6 +8936,13 @@
    "website"
   ]
  },
+ "almaty:cassackia": {
+  "name": "CASSACKIA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T18:42:47+00:00"
+ },
  "almaty:cbc group группа компаний свс": {
   "name": "CBC-GROUP (Группа компаний СВС)",
   "city": "almaty",
@@ -41611,7 +41618,7 @@
   "checked_at": "2026-10-30T17:43:02+00:00",
   "website": "https://handoors.kz/",
   "source": "https://2gis.kz/astana/firm/70000001056422463",
-  "avatar_checked_at": "2026-11-13T18:41:44+00:00",
+  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46078,6 +46085,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T12:44:58+00:00"
+ },
+ "astana:saya lux sp": {
+  "name": "Saya lux sp",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T18:42:47+00:00",
+  "instagram": "saya_lux_spa",
+  "source": "https://2gis.kz/astana/firm/70000001035923945"
  },
  "astana:sbc group": {
   "name": "SBC Group",
@@ -55499,7 +55515,7 @@
   "instagram": "gaissina_com",
   "website": "https://gaissina.com/",
   "source": "https://2gis.kz/astana/firm/70000001115504137",
-  "avatar_checked_at": "2026-11-13T18:41:44+00:00",
+  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57076,7 +57092,7 @@
   "checked_at": "2026-11-06T17:44:18+00:00",
   "website": "https://ffins.kz/",
   "source": "https://2gis.kz/astana/firm/70000001116773966",
-  "avatar_checked_at": "2026-11-13T18:41:44+00:00",
+  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -68161,7 +68177,7 @@
   "instagram": "lux_voda_lux_kostanay",
   "website": "http://lsu.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001035753410",
-  "avatar_checked_at": "2026-11-13T18:41:44+00:00",
+  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
   "avatar_tried": [
    "website"
   ]

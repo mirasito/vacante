@@ -1214,6 +1214,13 @@
   "v": 3,
   "checked_at": "2026-11-10T07:44:34+00:00"
  },
+ "aktau:yomy mart": {
+  "name": "YOMY Mart",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
+ },
  "aktau:zephyr": {
   "name": "Zephyr",
   "city": "aktau",
@@ -2522,6 +2529,13 @@
   "checked_at": "2026-11-18T13:44:46+00:00",
   "instagram": "cafe.turan_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001089632079"
+ },
+ "aktau:тәукебай": {
+  "name": "ТӘУКЕБАЙ",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "aktau:филиал частной компании aktau tоurism city ltd в городе актау": {
   "name": "Филиал частной компании Aktau Tоurism City Ltd. в городе Актау",
@@ -7613,6 +7627,20 @@
   ],
   "avatar": "a0e1feffd97231a2.jpg",
   "avatar_source": "website"
+ },
+ "almaty:axios logistic company": {
+  "name": "«Axios Logistic Company».",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "avtovozy_axios",
+  "website": "http://axioslogistic.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001080550080",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:aykss": {
   "name": "AYKSS",
@@ -16395,6 +16423,13 @@
   "v": 3,
   "checked_at": "2026-11-10T07:44:34+00:00"
  },
+ "almaty:molly shine": {
+  "name": "Molly Shine",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
+ },
  "almaty:monamie сеть парфюмерно косметических магазинов": {
   "name": "MonAmie, Сеть парфюмерно-косметических магазинов",
   "city": "almaty",
@@ -23721,6 +23756,15 @@
   "v": 3,
   "checked_at": "2026-11-01T05:43:29+00:00"
  },
+ "almaty:алатау құс": {
+  "name": "Алатау-Құс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "alataukus.official",
+  "source": "https://2gis.kz/almaty/firm/70000001030529463"
+ },
  "almaty:албаев": {
   "name": "Албаев",
   "city": "almaty",
@@ -25528,6 +25572,24 @@
   "avatar": "30cd2d0a5f61024d.jpg",
   "avatar_source": "website"
  },
+ "almaty:бэст прайс казахстан": {
+  "name": "Бэст Прайс Казахстан",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "fixprice.kazakhstan",
+  "telegram": "fixprice_kazakhstan",
+  "website": "http://fix-price.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001045299451",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "ed4d91df91c47028.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:бәкімжанов": {
   "name": "Бәкімжанов",
   "city": "almaty",
@@ -25592,6 +25654,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-15T06:42:12+00:00"
+ },
+ "almaty:васильев кирилл романович": {
+  "name": "Васильев Кирилл Романович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "almaty:васильева ангелина игоревна": {
   "name": "Васильева Ангелина Игоревна",
@@ -28736,6 +28805,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
+ },
+ "almaty:ким а в": {
+  "name": "Ким А.В.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "almaty:ким в р": {
   "name": "Ким В.Р",
@@ -40022,6 +40098,20 @@
   "v": 3,
   "checked_at": "2026-11-10T21:43:51+00:00"
  },
+ "astana:diaverum kazakhstan distribution диаверум казахстан дистрибьюшн": {
+  "name": "DIAVERUM KAZAKHSTAN DISTRIBUTION (ДИАВЕРУМ КАЗАХСТАН ДИСТРИБЬЮШН)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "diaverum.kz",
+  "website": "https://www.diaverum.com/",
+  "source": "https://2gis.kz/astana/firm/70000001091213892",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:dincom": {
   "name": "Dincom",
   "city": "astana",
@@ -45455,6 +45545,15 @@
   "instagram": "reklama.01kz",
   "source": "https://2gis.kz/astana/firm/70000001066154712"
  },
+ "astana:rentauto": {
+  "name": "RentAuto",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "rent.auto_astana",
+  "source": "https://2gis.kz/astana/firm/70000001066099719"
+ },
  "astana:reset finance": {
   "name": "Reset Finance",
   "city": "astana",
@@ -48067,6 +48166,20 @@
   "v": 3,
   "checked_at": "2026-11-17T08:44:12+00:00"
  },
+ "astana:авангард": {
+  "name": "АВАНГАРД",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "avangardstone",
+  "website": "http://avangardstone.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001069618266",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:авангард сауда": {
   "name": "АВАНГАРД САУДА",
   "city": "astana",
@@ -49320,6 +49433,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T08:43:53+00:00"
+ },
+ "astana:бақ бастау": {
+  "name": "Бақ-Бастау",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "astana:бақытжан": {
   "name": "Бақытжан",
@@ -50777,6 +50897,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
+ },
+ "astana:ебидоеби": {
+  "name": "ЁбиДоёби",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "yobidoyobi.astana",
+  "website": "http://yobidoyobi.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001099027942",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4ecb979f5e14126f.jpg",
+  "avatar_source": "website"
  },
  "astana:евразиан фудс корпорэйшн ао": {
   "name": "Евразиан Фудс Корпорэйшн, АО",
@@ -52467,6 +52603,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "astana:кусаинова": {
+  "name": "КУСАИНОВА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
+ },
  "astana:куттибаев а а": {
   "name": "Куттибаев А.А",
   "city": "astana",
@@ -52724,6 +52867,13 @@
   "checked_at": "2026-11-03T22:43:58+00:00",
   "instagram": "bauma_store_astana",
   "source": "https://2gis.kz/astana/firm/70000001069505394"
+ },
+ "astana:магазин пивной": {
+  "name": "Магазин пивной",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "astana:маденов": {
   "name": "Маденов",
@@ -57046,6 +57196,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-11T18:43:31+00:00"
+ },
+ "astana:хан шатыр": {
+  "name": "Хан Шатыр",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "astana:хасенов т с": {
   "name": "Хасенов Т.С.",
@@ -65747,6 +65904,13 @@
   "v": 3,
   "checked_at": "2026-10-30T17:43:02+00:00"
  },
+ "kokshetau:кадровое агентство prohr ип байбалин": {
+  "name": "Кадровое агентство ProHR (ИП БАЙБАЛИН)",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
+ },
  "kokshetau:казагроэксперт": {
   "name": "КазАгроЭксперт",
   "city": "kokshetau",
@@ -69511,6 +69675,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:galanz bottlers ао": {
+  "name": "Galanz Bottlers, АО",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00"
  },
  "pavlodar:glasman trade": {
   "name": "GLASMAN TRADE",
@@ -76142,6 +76313,20 @@
   "website": "https://mds-doors.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001067620951",
   "avatar_checked_at": "2026-11-15T04:41:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "shymkent:medcomfort": {
+  "name": "Medcomfort",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "medcomfort.kz",
+  "website": "http://www.medcomfort.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001056584033",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -85016,6 +85201,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T09:44:22+00:00"
+ },
+ "ust-kamenogorsk:продуктофф": {
+  "name": "Продуктофф",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T14:43:24+00:00",
+  "instagram": "produktoff.kz",
+  "website": "http://produktoff.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721392351",
+  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:продуктофф тм маркет сбыт": {
   "name": "Продуктофф, ТМ (Маркет Сбыт )",

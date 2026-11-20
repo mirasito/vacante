@@ -1,9 +1,10 @@
 // Кабинет работодателя: его вакансии и смены из бота, отклики, оплата размещения, тариф Про и пакеты.
 // Данные живут в базе бота (bot/src/cabinet.js), вход — подписанные данные Telegram (initData), как у профиля.
 // На сайте вне Telegram вход через бота (src/Login.tsx, bot/src/login.js): тот же ключ, что у профиля соискателя.
-// Анкету новой вакансии ведёт бот: кнопки «Разместить» открывают чат с ним.
+// Анкету новой вакансии ведёт бот: кнопки «Разместить» открывают чат с ним. «Быстрое размещение»: текст или ссылку
+// разбирает бот (bot/src/paste.js) и спрашивает в чате только то, чего не нашёл.
 import { useCallback, useEffect, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon } from '../icons';
@@ -55,6 +56,11 @@ const T = {
     lead: 'Здесь ваши вакансии и смены из бота @vacantekz_bot, отклики и оплата. Отклики приходят в чат с ботом.',
     post: 'Разместить вакансию',
     shift: 'Смена на день',
+    quick: '⚡ Быстрое размещение',
+    quickLead: 'Вставьте текст вакансии или ссылку на неё (hh.kz, пост в Telegram-канале). Заполним анкету сами, в чате с ботом останется проверить.',
+    quickHint: 'Например: Требуется повар в кафе «Арман», 15 000 ₸ за смену, Алматы…',
+    quickGo: 'Заполнить анкету',
+    quickChat: 'Открыть чат с ботом',
     empty: 'Вакансий пока нет. Разместите первую: это пара минут в боте, отклики придут туда же.',
     noTelegram: 'Войдите, чтобы видеть свои вакансии, отклики и оплату.',
     logout: 'Выйти',
@@ -104,6 +110,11 @@ const T = {
     lead: 'Мұнда @vacantekz_bot ботындағы вакансиялар мен ауысымдарыңыз, жауаптар және төлем. Жауаптар бот чатына келеді.',
     post: 'Вакансия орналастыру',
     shift: 'Бір күнге ауысым',
+    quick: '⚡ Жылдам орналастыру',
+    quickLead: 'Вакансия мәтінін немесе сілтемесін қойыңыз (hh.kz, Telegram-арнадағы пост). Сауалнаманы өзіміз толтырамыз, бот чатында тек тексересіз.',
+    quickHint: 'Мысалы: «Арман» кафесіне аспаз керек, ауысымына 15 000 ₸, Алматы…',
+    quickGo: 'Сауалнаманы толтыру',
+    quickChat: 'Бот чатын ашу',
     empty: 'Әзірге вакансия жоқ. Біріншісін орналастырыңыз: ботта бірнеше минут, жауаптар сонда келеді.',
     noTelegram: 'Вакансияларыңызды, жауаптар мен төлемді көру үшін кіріңіз.',
     logout: 'Шығу',
@@ -152,7 +163,7 @@ const money = (n: number) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
 
 class AuthError extends Error {}
 
-async function call(init?: { action: string; id?: number; count?: number }): Promise<CabinetState & { message?: string; error?: string }> {
+async function call(init?: { action: string; id?: number; count?: number; text?: string }): Promise<CabinetState & { message?: string; error?: string }> {
   const res = await fetch(CABINET_URL, {
     method: init ? 'POST' : 'GET',
     headers: { Authorization: authHeader(), ...(init ? { 'Content-Type': 'application/json' } : {}) },
@@ -208,6 +219,8 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
   const [note, setNote] = useState<{ text: string; error?: boolean } | null>(null);
   const [open, setOpen] = useState('');  // какая панель оплаты раскрыта: boost:12, post:12, pack:3
   const [authed, setAuthed] = useState(() => !!authHeader());
+  const [paste, setPaste] = useState('');
+  const [pasted, setPasted] = useState(false);
 
   const load = useCallback(async () => {
     setFailed(false);
@@ -227,7 +240,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
     setAuthed(false);
   };
 
-  const act = async (key: string, body: { action: string; id?: number; count?: number }) => {
+  const act = async (key: string, body: { action: string; id?: number; count?: number; text?: string }) => {
     setBusy(key);
     setNote(null);
     try {
@@ -235,9 +248,11 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
       setState(next);
       setNote(next.error ? { text: next.error, error: true } : next.message ? { text: next.message } : null);
       if (!next.error) setOpen('');
+      return !next.error;
     } catch (e) {
-      if (e instanceof AuthError) return setAuthed(false);
-      setNote({ text: e instanceof Error ? e.message : t.error, error: true });
+      if (e instanceof AuthError) setAuthed(false);
+      else setNote({ text: e instanceof Error ? e.message : t.error, error: true });
+      return false;
     } finally {
       setBusy('');
     }
@@ -280,6 +295,33 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
           <View style={ui.flex}>
             <Button c={c} ghost label={t.shift} onPress={() => bot('smena_app')} />
           </View>
+        </View>
+        <View style={[styles.card, { borderColor: c.line, backgroundColor: c.card }]}>
+          <Text style={[styles.h3, { color: c.ink }]}>{t.quick}</Text>
+          <Text style={[styles.small, { color: c.quiet }]}>{t.quickLead}</Text>
+          <TextInput
+            value={paste}
+            onChangeText={(v) => { setPaste(v); setPasted(false); }}
+            placeholder={t.quickHint}
+            placeholderTextColor={c.quiet}
+            multiline
+            maxLength={4000}
+            style={[styles.input, { color: c.ink, borderColor: c.line }]}
+          />
+          {pasted ? (
+            <Button c={c} label={t.quickChat} onPress={() => openUrl(`https://t.me/${BOT}`)} />
+          ) : (
+            <Button
+              c={c}
+              ghost
+              label={t.quickGo}
+              disabled={busy !== '' || paste.trim().length < 20}
+              onPress={async () => {
+                const ok = await act('paste', { action: 'paste', text: paste });
+                if (ok) { setPasted(true); setPaste(''); }
+              }}
+            />
+          )}
         </View>
         {note ? (
           <View style={[styles.note, { backgroundColor: note.error ? c.warnBg : c.okBg }]}>
@@ -457,4 +499,5 @@ const styles = StyleSheet.create({
   pay: { borderWidth: 1, borderRadius: 12, padding: 12, gap: 6 },
   logout: { alignSelf: 'center', padding: 12, marginTop: 8 },
   copyRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
+  input: { borderWidth: 1, borderRadius: 12, padding: 12, minHeight: 96, fontSize: 15, lineHeight: 21, textAlignVertical: 'top' },
 });

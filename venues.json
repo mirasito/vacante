@@ -1256,6 +1256,13 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "aktau:аккала молл": {
+  "name": "Аккала Молл",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
+ },
  "aktau:актау": {
   "name": "Актау",
   "city": "aktau",
@@ -10356,6 +10363,22 @@
   "v": 3,
   "checked_at": "2026-11-05T08:45:21+00:00"
  },
+ "almaty:echo group kazakhstan": {
+  "name": "Echo Group Kazakhstan",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "instagram": "echogroup.kz",
+  "website": "http://echogroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001114874960",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "697d236c90657f92.jpg",
+  "avatar_source": "website"
+ },
  "almaty:eco climate almaty": {
   "name": "ECO Climate Almaty",
   "city": "almaty",
@@ -10994,6 +11017,13 @@
   "checked_at": "2026-11-02T23:44:16+00:00",
   "instagram": "eywa_terrace",
   "source": "https://2gis.kz/almaty/firm/70000001104940651"
+ },
+ "almaty:f service ltd": {
+  "name": "F-Service LTD",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
  },
  "almaty:f1 cyber club": {
   "name": "F1 cyber club",
@@ -19103,6 +19133,13 @@
    "website"
   ]
  },
+ "almaty:rya": {
+  "name": "RYA",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
+ },
  "almaty:s group business service center": {
   "name": "S Group Business Service Center",
   "city": "almaty",
@@ -22806,6 +22843,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-11T22:43:45+00:00"
+ },
+ "almaty:абсолют": {
+  "name": "Абсолют",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
  },
  "almaty:абуталип аружан": {
   "name": "Абуталип Аружан",
@@ -36460,6 +36504,15 @@
    "website"
   ]
  },
+ "almaty:эгида алматы": {
+  "name": "ЭГИДА АЛМАТЫ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "instagram": "egida_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001081857401"
+ },
  "almaty:эйкос": {
   "name": "ЭЙКОС",
   "city": "almaty",
@@ -37535,6 +37588,13 @@
   ],
   "avatar": "01b3905e0ce29f97.jpg",
   "avatar_source": "website"
+ },
+ "astana:amanat engineering astana": {
+  "name": "AMANAT ENGINEERING ASTANA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
  },
  "astana:amanat estate": {
   "name": "Amanat Estate",
@@ -39406,6 +39466,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:comfort trans": {
+  "name": "Comfort Trans",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
  },
  "astana:commercium": {
   "name": "Commercium",
@@ -47138,6 +47205,13 @@
   "v": 3,
   "checked_at": "2026-11-03T12:44:30+00:00"
  },
+ "astana:ursa cyber arena": {
+  "name": "Ursa cyber arena",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
+ },
  "astana:usc company": {
   "name": "USC Company",
   "city": "astana",
@@ -47922,6 +47996,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
+ },
+ "astana:автомол": {
+  "name": "Автомол",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "instagram": "avtomol.astana",
+  "website": "https://taplink.cc/avtomol.astana",
+  "source": "https://2gis.kz/astana/firm/70000001030591911",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "40bb880cd027c3f0.jpg",
+  "avatar_source": "website"
  },
  "astana:автономный кластерный фонд астана хаб": {
   "name": "автономный кластерный фонд Астана Хаб",
@@ -55793,6 +55883,13 @@
   "v": 3,
   "checked_at": "2026-11-11T16:44:32+00:00"
  },
+ "astana:теміржол жөндеу": {
+  "name": "ТЕМІРЖОЛ ЖӨНДЕУ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
+ },
  "astana:тепло": {
   "name": "ТЕПЛО",
   "city": "astana",
@@ -57230,6 +57327,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T16:44:34+00:00"
+ },
+ "astana:чк iscar kazakhstan ltd": {
+  "name": "ЧК ISCAR KAZAKHSTAN LTD.",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "website": "https://www.iscar.com/",
+  "source": "https://2gis.kz/astana/firm/70000001093398306",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:чк mcd holding ltd": {
   "name": "ЧК MCD Holding Ltd.",
@@ -59515,6 +59625,20 @@
   "website": "https://www.intertek.com/",
   "source": "https://2gis.kz/atyrau/firm/70000001037612741",
   "avatar_checked_at": "2026-11-16T15:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "atyrau:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "instagram": "intertopkz",
+  "website": "http://www.intertop.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001034666418",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62574,6 +62698,13 @@
   "v": 3,
   "checked_at": "2026-11-13T06:43:11+00:00"
  },
+ "karaganda:галымжан": {
+  "name": "Галымжан",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
+ },
  "karaganda:гелиос": {
   "name": "Гелиос",
   "city": "karaganda",
@@ -62926,6 +63057,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T07:43:20+00:00"
+ },
+ "karaganda:интертоп центральная азия тм intertop": {
+  "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "instagram": "intertopkz",
+  "website": "http://www.intertop.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302831372",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "karaganda:ип": {
   "name": "ИП",
@@ -67423,6 +67568,13 @@
   "v": 3,
   "checked_at": "2026-11-09T10:43:43+00:00"
  },
+ "kostanay:лежанин а в": {
+  "name": "Лежанин А.В.",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
+ },
  "kostanay:лидер 2010": {
   "name": "Лидер-2010",
   "city": "kostanay",
@@ -70994,6 +71146,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:capital plast kz": {
+  "name": "CAPITAL PLAST KZ",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "website": "http://capitalplast.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001113757615",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0383f347242a96ed.jpg",
+  "avatar_source": "website"
  },
  "petropavlovsk:carat": {
   "name": "CARAT",
@@ -75054,6 +75221,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
+ },
+ "shymkent:city": {
+  "name": "City",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00"
  },
  "shymkent:clinic": {
   "name": "Clinic",
@@ -81332,6 +81506,19 @@
   "v": 3,
   "checked_at": "2026-11-06T01:44:25+00:00"
  },
+ "uralsk:западно казахстанский филиал ргп на пхвказводхоз комитета по водным ресурсам министерства водных ресурсов и ирригации республики казахстан": {
+  "name": "Западно–Казахстанский филиал РГП на ПХВ«Казводхоз» Комитета по водным ресурсам Министерства водных ресурсов и ирригации Республики Казахстан",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "website": "http://qazsu.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001025525394",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:западный транзит": {
   "name": "Западный Транзит",
   "city": "uralsk",
@@ -84096,6 +84283,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:котофей казахстан": {
+  "name": "Котофей Казахстан",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T11:43:55+00:00",
+  "telegram": "kotofey_kaz",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001104889240",
+  "avatar_checked_at": "2026-11-20T11:43:56+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "dd85efc0d4e453f7.jpg",
+  "avatar_source": "telegram"
  },
  "ust-kamenogorsk:крепеж опк": {
   "name": "Крепеж-ОПК",

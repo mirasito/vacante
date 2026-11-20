@@ -14,7 +14,7 @@ from vacante.parse import CITIES, clean_text, detect_titles, fingerprint, parse_
 
 BOT_USERNAME = "vacantekz_bot"
 SOURCE = "bot"
-POST_URL = f"https://t.me/{BOT_USERNAME}?start=post"
+POST_URL = f"https://t.me/{BOT_USERNAME}?start=post_site"
 
 
 def apply_url(job_id: int) -> str:

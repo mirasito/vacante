@@ -35,6 +35,10 @@ QUERIES = [
      "(SELECT COUNT(*) FROM jobs o WHERE o.employer_chat = j.employer_chat AND o.status != 'draft') AS other_jobs "
      "FROM jobs j LEFT JOIN subscribers s ON s.chat_id = j.employer_chat "
      "WHERE j.status = 'draft' AND j.created_at >= ? ORDER BY j.created_at"),
+    ("открыли анкету работодателя, но ищут работу (кнопка «Я ищу работу»), по дням и откуда",
+     "SELECT day, came_from, n FROM role_switches WHERE day >= ? ORDER BY day"),
+    ("напоминания о брошенной анкете: отправлено / из них дошли до проверки или оплаты",
+     "SELECT COUNT(*) AS nudged, SUM(status != 'draft') AS finished FROM jobs WHERE nudged = 1 AND created_at >= ?"),
     ("работодатели: откуда пришли (came_from) с периода",
      "SELECT coalesce(nullif(came_from, ''), '—') AS came_from, COUNT(*) AS jobs, COUNT(DISTINCT employer_chat) AS employers "
      "FROM jobs WHERE created_at >= ? GROUP BY 1 ORDER BY 2 DESC"),

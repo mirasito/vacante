@@ -52,8 +52,8 @@ export async function employerButton(env, q, relay) {
   const action = q.data.split(":")[1];
   await answerCallback(env, q);
   if (!action) return employerMenu(env, chatId);
-  if (action === "vacancy") return startPost(env, m);
-  if (action === "shift") return startPost(env, m, "shift");
+  if (action === "vacancy") return startPost(env, m, "vacancy", "menu");
+  if (action === "shift") return startPost(env, m, "shift", "menu");
   if (action === "jobs") return send(env, chatId, ...screen(job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env))));
   if (action === "company") {
     await endDialog(env, chatId);
@@ -111,6 +111,16 @@ export async function postButton(env, q, ctx) {
   const draft = d && (await getJob(env, d.job_id));
   if (!draft || draft.status !== "draft") return answerCallback(env, q, "Анкета уже закрыта. Новая вакансия: /vacancy");
   await answerCallback(env, q);
+  if (q.data === "jobseeker") {
+    // Анкету открыл соискатель: черновик убираем, считаем и показываем, где искать работу
+    await env.DB.prepare("DELETE FROM jobs WHERE id = ?").bind(draft.id).run();
+    await endDialog(env, chatId);
+    await env.DB.prepare(
+      `INSERT INTO role_switches (day, came_from, n) VALUES (date('now', '+5 hours'), ?, 1)
+       ON CONFLICT(day, came_from) DO UPDATE SET n = n + 1`,
+    ).bind(draft.came_from || "").run();
+    return edit(env, chatId, messageId, ...screen(job.seekerScreen(env.SITE_URL, draft.kind)));
+  }
   if (q.data === "jobcancel") {
     await env.DB.prepare("DELETE FROM jobs WHERE id = ?").bind(draft.id).run();
     await endDialog(env, chatId);
@@ -198,3 +208,39 @@ export async function closeOwnJob(env, chatId, id) {
 
 // Платная услуга «🔥 Срочно»: работодатель переводит деньги на Kaspi и жмёт «Я оплатил»,
 // модераторы получают карточку и подтверждают перевод кнопкой, после этого вакансия поднимается
+
+// «▶️ Продолжить» и «Не нужно» под напоминанием о брошенной анкете
+export async function resumeButton(env, q) {
+  const chatId = q.message.chat.id;
+  const [action, id] = q.data.split(":");
+  const draft = await getJob(env, Number(id));
+  if (!draft || draft.employer_chat !== chatId || draft.status !== "draft") {
+    return answerCallback(env, q, "Анкета уже закрыта. Новая вакансия: /vacancy");
+  }
+  await answerCallback(env, q);
+  if (action === "jobdrop") {
+    await env.DB.prepare("DELETE FROM jobs WHERE id = ?").bind(draft.id).run();
+    await endDialog(env, chatId);
+    return edit(env, chatId, q.message.message_id, "Хорошо, убрал анкету. Если понадобятся сотрудники: /employer");
+  }
+  await setDialog(env, chatId, "post", draft.id);
+  const step = job.nextStep(draft);
+  const { text, keyboard } = step ? job.askScreen(step) : await preview(env, chatId, draft);
+  return edit(env, chatId, q.message.message_id, text, keyboard);
+}
+
+/** Раз в час: тем, кто бросил анкету час–сутки назад после первого ответа, одно напоминание днём. */
+export async function nudgeDrafts(env, now = new Date()) {
+  const hour = (now.getUTCHours() + 5) % 24;
+  if (hour < job.NUDGE_HOURS[0] || hour >= job.NUDGE_HOURS[1]) return 0;
+  const at = (min) => new Date(now.getTime() - min * 60e3).toISOString().slice(0, 19).replace("T", " ");
+  const { results } = await env.DB.prepare(
+    `SELECT * FROM jobs WHERE status = 'draft' AND nudged = 0 AND step IS NOT NULL AND city IS NOT NULL
+       AND updated_at <= ? AND updated_at >= ? ORDER BY id LIMIT 30`,
+  ).bind(at(job.NUDGE_AFTER_MIN), at(24 * 60)).all();
+  for (const draft of results) {
+    await env.DB.prepare("UPDATE jobs SET nudged = 1 WHERE id = ?").bind(draft.id).run();
+    await send(env, draft.employer_chat, ...screen(job.nudgeScreen(draft)));
+  }
+  return results.length;
+}

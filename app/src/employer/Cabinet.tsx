@@ -275,10 +275,10 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
         </Text>
         <View style={styles.row}>
           <View style={ui.flex}>
-            <Button c={c} label={t.post} onPress={() => bot('post')} />
+            <Button c={c} label={t.post} onPress={() => bot('post_app')} />
           </View>
           <View style={ui.flex}>
-            <Button c={c} ghost label={t.shift} onPress={() => bot('smena')} />
+            <Button c={c} ghost label={t.shift} onPress={() => bot('smena_app')} />
           </View>
         </View>
         {note ? (

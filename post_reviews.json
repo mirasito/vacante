@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T17:56:33+00:00",
+ "updated_at": "2026-11-20T18:56:33+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2952,31 +2952,6 @@
     "address": "Кульджинский тракт, 106, ТРЦ «Aport Mall East»"
    }
   },
-  "hh-139220329": {
-   "verdict": "approve",
-   "at": "2026-11-06T18:56:40+00:00",
-   "fields": {
-    "title": "Водитель микроавтобуса (категория D)",
-    "schedule": "5/2",
-    "address": "мкр. Баганашыл, ул. Подгорная, 14",
-    "perks": []
-   }
-  },
-  "hh-139220321": {
-   "verdict": "approve",
-   "at": "2026-11-06T18:56:40+00:00",
-   "fields": {
-    "schedule": "6/1"
-   }
-  },
-  "hh-139220296": {
-   "verdict": "approve",
-   "at": "2026-11-06T18:56:40+00:00",
-   "fields": {
-    "schedule": "5/2",
-    "address": "ул. Момынова, 5В"
-   }
-  },
   "hh-139222431": {
    "verdict": "approve",
    "at": "2026-11-07T03:56:36+00:00",
@@ -3090,15 +3065,6 @@
    "verdict": "reject",
    "at": "2026-11-07T04:56:47+00:00",
    "reason": "Офисные B2B-продажи с высоким чеком"
-  },
-  "hh-139220270": {
-   "verdict": "approve",
-   "at": "2026-11-07T04:56:47+00:00",
-   "fields": {
-    "employer": null,
-    "address": null,
-    "schedule": "5/2"
-   }
   },
   "rabota4almaty-6262": {
    "verdict": "approve",
@@ -5042,19 +5008,6 @@
    "verdict": "reject",
    "at": "2026-11-08T04:56:56+00:00",
    "reason": "Офисная должность: B2B-продажи"
-  },
-  "olx-402703298": {
-   "verdict": "approve",
-   "at": "2026-11-08T04:56:56+00:00",
-   "fields": {
-    "title": "Клинер",
-    "salary_min": 450000,
-    "salary_max": 500000,
-    "salary_period": "month",
-    "perks": [
-     "Ежедневная оплата"
-    ]
-   }
   },
   "astana_job_vakansii-130311": {
    "verdict": "approve",
@@ -42660,6 +42613,14 @@
    "verdict": "reject",
    "at": "2026-11-20T17:56:33+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "hh-139703392": {
+   "verdict": "approve",
+   "at": "2026-11-20T18:56:33+00:00",
+   "fields": {
+    "employer": "Вышина",
+    "schedule": "2/2"
+   }
   }
  }
 }

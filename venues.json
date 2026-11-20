@@ -15931,6 +15931,15 @@
   "instagram": "miso_koreanmarket",
   "source": "https://2gis.kz/almaty/firm/70000001044450563"
  },
+ "almaty:mix": {
+  "name": "Mix",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00",
+  "instagram": "mixprice_saryarka",
+  "source": "https://2gis.kz/almaty/firm/70000001119392381"
+ },
  "almaty:mix light": {
   "name": "Mix Light",
   "city": "almaty",
@@ -21568,6 +21577,21 @@
   "v": 3,
   "checked_at": "2026-11-18T06:44:42+00:00"
  },
+ "almaty:viva new technology": {
+  "name": "VIVA NEW technology",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00",
+  "website": "http://vnt.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001113373994",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4837f0036b9d0fb8.jpg",
+  "avatar_source": "website"
+ },
  "almaty:vivid auto kazakhstan": {
   "name": "Vivid Auto Kazakhstan",
   "city": "almaty",
@@ -23509,7 +23533,7 @@
   "checked_at": "2026-10-30T03:43:38+00:00",
   "website": "https://a-product.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792248",
-  "avatar_checked_at": "2026-11-13T04:42:57+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25463,7 +25487,7 @@
   "instagram": "geokurs",
   "website": "https://geokurs.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000794395",
-  "avatar_checked_at": "2026-11-13T04:42:57+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38330,7 +38354,7 @@
   "instagram": "brand_media_1",
   "website": "http://brand-media.kz/",
   "source": "https://2gis.kz/astana/firm/70000001066513153",
-  "avatar_checked_at": "2026-11-13T04:42:57+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -45005,6 +45029,15 @@
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
  },
+ "astana:sarmat cyberspace": {
+  "name": "SARMAT CYBERSPACE",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00",
+  "instagram": "sarmat.cyberspace",
+  "source": "https://2gis.kz/astana/firm/70000001061724899"
+ },
  "astana:satty ipoteka": {
   "name": "SATTY IPOTEKA",
   "city": "astana",
@@ -47329,7 +47362,7 @@
   "instagram": "autotrade_kz",
   "website": "http://autotrade.kz/",
   "source": "https://2gis.kz/astana/firm/70000001044705737",
-  "avatar_checked_at": "2026-11-13T04:42:57+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -63258,6 +63291,13 @@
   "v": 3,
   "checked_at": "2026-11-11T15:45:20+00:00"
  },
+ "karaganda:торговый дом шыгыс": {
+  "name": "Торговый дом Шыгыс",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00"
+ },
  "karaganda:транстелеком": {
   "name": "Транстелеком",
   "city": "karaganda",
@@ -63890,7 +63930,7 @@
   "instagram": "kaztech.selmash",
   "website": "http://kaztechselmash.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001063756903",
-  "avatar_checked_at": "2026-11-13T04:42:57+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -64176,7 +64216,7 @@
   "checked_at": "2026-11-06T03:43:44+00:00",
   "website": "https://www.technodom.kz/",
   "source": "https://cyclowiki.org/wiki/Technodom",
-  "avatar_checked_at": "2026-11-13T04:42:57+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67380,6 +67420,13 @@
   "avatar": "ebfe4857d381646a.jpg",
   "avatar_source": "website"
  },
+ "kostanay:шаттык костанай": {
+  "name": "Шаттык Костанай",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00"
+ },
  "kostanay:экспресс транспорт": {
   "name": "ЭКСПРЕСС ТРАНСПОРТ",
   "city": "kostanay",
@@ -68773,7 +68820,7 @@
   "instagram": "vash_domofon",
   "website": "https://vashdomofon.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001030167941",
-  "avatar_checked_at": "2026-11-13T00:44:07+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -69031,7 +69078,7 @@
   "instagram": "caustic_pvl",
   "website": "https://caustic.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018634394",
-  "avatar_checked_at": "2026-11-12T22:44:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -69510,10 +69557,12 @@
   "instagram": "ravelin.kz",
   "website": "http://www.ravelin.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001046317133",
-  "avatar_checked_at": "2026-11-12T22:44:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "26ec2639963619a1.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:радуга тоо компания raduga kdr": {
   "name": "Радуга, ТОО (Компания Raduga KDR)",
@@ -72331,7 +72380,7 @@
   "instagram": "technodomkz",
   "website": "https://technodom.kz/",
   "source": "https://2gis.kz/semej/firm/70000001051546946",
-  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -72657,7 +72706,7 @@
   "checked_at": "2026-11-13T01:44:50+00:00",
   "website": "https://vostokugolprom.kz/",
   "source": "https://2gis.kz/semej/firm/70000001053843591",
-  "avatar_checked_at": "2026-11-13T01:44:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -73032,6 +73081,19 @@
   "avatar": "83e88f30a69ab525.jpg",
   "avatar_source": "website"
  },
+ "semey:пкф семей сталь сервис": {
+  "name": "ПКФ Семей Сталь Сервис",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00",
+  "website": "http://pkfsss.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001053709063",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "semey:поликлиника андромеда": {
   "name": "Поликлиника АндроМеда",
   "city": "semey",
@@ -73071,7 +73133,7 @@
   "instagram": "radugakdr_semey",
   "website": "http://kdr.kz/",
   "source": "https://2gis.kz/semej/firm/70000001054810563",
-  "avatar_checked_at": "2026-11-13T01:44:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -74625,7 +74687,7 @@
   "instagram": "linepac_kz",
   "website": "https://toolinepac.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001037159885",
-  "avatar_checked_at": "2026-11-13T00:44:07+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -75686,7 +75748,7 @@
   "instagram": "profnastil_shymkent",
   "website": "https://www.ak-su.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001026068980",
-  "avatar_checked_at": "2026-11-12T20:44:07+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -75721,7 +75783,7 @@
   "instagram": "alma__plus",
   "website": "http://alma.plus/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033670630",
-  "avatar_checked_at": "2026-11-13T01:44:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -76121,7 +76183,7 @@
   "instagram": "yvesrocherkz",
   "website": "https://www.yves-rocher.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001026613716",
-  "avatar_checked_at": "2026-11-13T03:41:51+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -76468,6 +76530,13 @@
   "v": 3,
   "checked_at": "2026-11-09T12:45:04+00:00"
  },
+ "shymkent:мир инструмента алматы": {
+  "name": "Мир Инструмента Алматы",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T04:43:14+00:00"
+ },
  "shymkent:мир паркета bau group тоо": {
   "name": "Мир Паркета (BAU Group, ТОО)",
   "city": "shymkent",
@@ -76477,7 +76546,7 @@
   "instagram": "mirparketa_kz",
   "website": "https://mirparketa.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001067952992",
-  "avatar_checked_at": "2026-11-12T21:43:54+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -77128,7 +77197,7 @@
   "checked_at": "2026-11-13T00:44:06+00:00",
   "website": "https://www.cem.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001026665193",
-  "avatar_checked_at": "2026-11-13T00:44:07+00:00",
+  "avatar_checked_at": "2026-11-20T04:43:17+00:00",
   "avatar_tried": [
    "website"
   ]

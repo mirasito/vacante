@@ -263,6 +263,22 @@
   "instagram": "cocowear.aktau",
   "source": "https://2gis.kz/aktau/firm/70000001074629305"
  },
+ "aktau:coffee boom 14 58": {
+  "name": "Coffee BOOM 14-58",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "instagram": "coffeeboom.aqtau",
+  "website": "https://coffeeboom.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001050242365",
+  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "392679e21342566e.jpg",
+  "avatar_source": "website"
+ },
  "aktau:coffee mind": {
   "name": "Coffee Mind",
   "city": "aktau",
@@ -1728,6 +1744,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-13T09:43:52+00:00"
+ },
+ "aktau:зп": {
+  "name": "ЗП",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
  },
  "aktau:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
@@ -4160,6 +4183,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T06:45:01+00:00"
+ },
+ "aktobe:идеалпластconstruction": {
+  "name": "ИдеалПластConstruction",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
  },
  "aktobe:идирисова л м": {
   "name": "Идирисова Л.М.",
@@ -14166,6 +14196,19 @@
   "avatar": "68748cea6eb38ca6.jpg",
   "avatar_source": "website"
  },
+ "almaty:knowledge & business": {
+  "name": "Knowledge & Business",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "website": "http://kandb.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001076393",
+  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:kolesa ао колеса": {
   "name": "Kolesa (АО Колеса)",
   "city": "almaty",
@@ -15059,6 +15102,13 @@
   "instagram": "liliya_lash_studio",
   "source": "https://www.instagram.com/liliya_lash_studio/"
  },
+ "almaty:ls solution": {
+  "name": "LS Solution",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
+ },
  "almaty:ltc binst": {
   "name": "LTC-BINST",
   "city": "almaty",
@@ -15290,6 +15340,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:marketu ltd": {
+  "name": "Marketu LTD",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
  },
  "almaty:marrone rosso тм тоо dand m investments": {
   "name": "Marrone Rosso, ТМ ( ТОО DAND M INVESTMENTS)",
@@ -17612,6 +17669,13 @@
   "v": 3,
   "checked_at": "2026-11-11T04:44:03+00:00"
  },
+ "almaty:prime pharm": {
+  "name": "Prime Pharm",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
+ },
  "almaty:print house gerona": {
   "name": "Print House Gerona",
   "city": "almaty",
@@ -17845,6 +17909,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:push permanent": {
+  "name": "Push Permanent",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "instagram": "push.permanent",
+  "source": "https://2gis.kz/almaty/firm/70000001100172879"
  },
  "almaty:pyramid pride": {
   "name": "Pyramid Pride",
@@ -22538,6 +22611,13 @@
   "checked_at": "2026-10-30T00:43:00+00:00",
   "instagram": "8milya.autoimperiya",
   "source": "https://2gis.kz/almaty/firm/9429940000901993"
+ },
+ "almaty:автокомбинат 4": {
+  "name": "Автокомбинат №4",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
  },
  "almaty:автоломбард quick finance": {
   "name": "Автоломбард Quick finance",
@@ -36706,6 +36786,15 @@
   "v": 3,
   "checked_at": "2026-10-29T15:45:22+00:00"
  },
+ "astana:agaiyn taxi": {
+  "name": "Agaiyn Taxi",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "instagram": "agaiyn_taxi",
+  "source": "https://2gis.kz/astana/firm/70000001103032246"
+ },
  "astana:agash_oneri": {
   "name": "agash_oneri",
   "city": "astana",
@@ -39057,6 +39146,22 @@
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
  },
+ "astana:crocos крокос": {
+  "name": "Crocos (Крокос)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "instagram": "crocos_digital",
+  "website": "http://crocos.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001040952992",
+  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "725bba8c9a7ed49e.jpg",
+  "avatar_source": "website"
+ },
  "astana:croissant factory": {
   "name": "Croissant Factory",
   "city": "astana",
@@ -40118,6 +40223,21 @@
   "checked_at": "2026-11-01T03:43:33+00:00",
   "instagram": "future.astana",
   "source": "https://2gis.kz/astana/firm/70000001109842925"
+ },
+ "astana:galanz bottlers ао": {
+  "name": "Galanz Bottlers, АО",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "website": "http://www.galanz.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000935791",
+  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b7ded536e35cca13.jpg",
+  "avatar_source": "website"
  },
  "astana:game over kz": {
   "name": "Game Over KZ",
@@ -49625,6 +49745,13 @@
   "instagram": "dzhemkaast",
   "source": "https://2gis.kz/astana/firm/70000001079968705"
  },
+ "astana:диаман": {
+  "name": "ДиАман",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
+ },
  "astana:диана": {
   "name": "Диана",
   "city": "astana",
@@ -58697,6 +58824,13 @@
   "avatar": "342cc1d8a67576b2.jpg",
   "avatar_source": "website"
  },
+ "atyrau:жасакбаева тамара": {
+  "name": "Жасакбаева Тамара",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
+ },
  "atyrau:жемтранс": {
   "name": "Жемтранс",
   "city": "atyrau",
@@ -67404,6 +67538,21 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
+ },
+ "kostanay:шарафутдинов в г love republic": {
+  "name": "Шарафутдинов В.Г. «LOVE REPUBLIC»",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "website": "https://loverepublic.ru/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001037881770",
+  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1a57dcf9fc5ed5ad.jpg",
+  "avatar_source": "website"
  },
  "kostanay:шате м плюс": {
   "name": "ШАТЕ-М ПЛЮС",
@@ -77189,6 +77338,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "shymkent:шымкенттің": {
+  "name": "Шымкенттің",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
+ },
  "shymkent:шымкентцемент": {
   "name": "Шымкентцемент",
   "city": "shymkent",
@@ -78722,6 +78878,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T17:43:24+00:00"
+ },
+ "turkestan:burabay hotel management отель rixos borovoe": {
+  "name": "Burabay Hotel Management (Отель Rixos Borovoe)",
+  "city": "turkestan",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "instagram": "rixosborovoe",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
  },
  "turkestan:don": {
   "name": "DON",
@@ -81030,6 +81195,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T17:43:21+00:00"
+ },
+ "uralsk:частное крестьянское хозяйство": {
+  "name": "Частное крестьянское хозяйство",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00"
  },
  "uralsk:чудо": {
   "name": "ЧУДО",
@@ -83820,6 +83992,20 @@
   ],
   "avatar": "8613b9c17d97ab5f.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:транспортная компания kit": {
+  "name": "Транспортная компания Kit",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T05:43:48+00:00",
+  "instagram": "kitlogistic_kz",
+  "website": "https://tk-kit.ru/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001020926036",
+  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:трубачева н ю": {
   "name": "ТРУБАЧЁВА Н.Ю.",

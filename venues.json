@@ -7984,6 +7984,13 @@
   "v": 3,
   "checked_at": "2026-10-28T20:44:33+00:00"
  },
+ "almaty:bbq village": {
+  "name": "Bbq Village",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
+ },
  "almaty:bbs trade": {
   "name": "BBS TRADE",
   "city": "almaty",
@@ -21788,6 +21795,13 @@
   "v": 3,
   "checked_at": "2026-11-03T14:44:03+00:00"
  },
+ "almaty:uniquemed": {
+  "name": "UNIQUEMED",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
+ },
  "almaty:unirout station тоо автовокзал": {
   "name": "UniRout Station, ТОО, автовокзал",
   "city": "almaty",
@@ -22683,6 +22697,13 @@
   "v": 3,
   "checked_at": "2026-11-09T23:46:11+00:00"
  },
+ "almaty:z&b": {
+  "name": "Z&B",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
+ },
  "almaty:za start": {
   "name": "ZA START",
   "city": "almaty",
@@ -23568,6 +23589,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T15:44:45+00:00"
+ },
+ "almaty:айтбаева алия": {
+  "name": "Айтбаева Алия",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
  },
  "almaty:айтуар": {
   "name": "Айтуар",
@@ -34557,6 +34585,13 @@
   "v": 3,
   "checked_at": "2026-11-11T13:44:34+00:00"
  },
+ "almaty:танатаров раис талгатович": {
+  "name": "ТАНАТАРОВ РАИС ТАЛГАТОВИЧ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
+ },
  "almaty:танатов": {
   "name": "ТАНАТОВ",
   "city": "almaty",
@@ -37347,6 +37382,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T07:44:19+00:00"
+ },
+ "astana:a 2 energo": {
+  "name": "A-2 Energo",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
  },
  "astana:a_gym astana": {
   "name": "A_GYM ASTANA",
@@ -69977,6 +70019,15 @@
   "avatar": "cd6e83f0e494276b.jpg",
   "avatar_source": "telegram"
  },
+ "pavlodar:lider pvl": {
+  "name": "LIDER PVL",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00",
+  "instagram": "bazaprokatapvl",
+  "source": "https://2gis.kz/pavlodar/firm/70000001038275351"
+ },
  "pavlodar:lmarko": {
   "name": "L'MARKO",
   "city": "pavlodar",
@@ -82446,6 +82497,13 @@
   "checked_at": "2026-11-13T12:43:31+00:00",
   "instagram": "oqi_uralsk",
   "source": "https://2gis.kz/uralsk/firm/70000001062785788"
+ },
+ "uralsk:орал": {
+  "name": "Орал",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-20T16:42:40+00:00"
  },
  "uralsk:организация": {
   "name": "Организация",

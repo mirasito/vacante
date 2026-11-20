@@ -1,5 +1,38 @@
 [
  {
+  "id": "hh-138770409",
+  "title": "Водитель-экспедитор (ближний регион)",
+  "category": "delivery",
+  "city": "shymkent",
+  "salary_min": 250000,
+  "salary_max": 400000,
+  "salary_period": "month",
+  "schedule": "5/2, 8 часов",
+  "perks": [
+   "Питание",
+   "Развозка"
+  ],
+  "employer": "BGT Company",
+  "text": "Обязанности: Обязанности: загрузка/отгрузка товара со склада. Развоз товара до точек продаж (ближние регионы Туркестанской области: Арысь, Темирлановка, Бадам, Казыгурт, Тюлькубас...\nТребования: Мы занимаемся оптово-розничной реализацией продуктов питания, опыт в подобной сфере будет преимуществом! Автомобиль - Спринтер. Требования: ‼️ОПЫТ РАБОТЫ ВОДИТЕЛЕМ-ЭКСПЕДИТОРОМ...",
+  "source": "hh",
+  "source_url": "https://hh.kz/vacancy/138770409?tech_source=api",
+  "posted_at": "2026-11-20T23:11:55+00:00",
+  "fingerprint": "894f357284fcb087",
+  "also_seen_in": [],
+  "address": null,
+  "top_until": null,
+  "title_kk": null,
+  "contact": [],
+  "lat": null,
+  "lon": null,
+  "geo": null,
+  "approx": false,
+  "shift_date": null,
+  "shift_time": null,
+  "need": null,
+  "employer_hh": "10807256"
+ },
+ {
   "id": "hh-139663187",
   "title": "Менеджер call-центра",
   "category": "callcenter",

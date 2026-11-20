@@ -5,7 +5,7 @@ import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
 
 import { moderationKey } from "../src/employer.js";
-import worker from "../src/index.js";
+import worker, { nudgeDrafts } from "../src/index.js";
 import { webhookSecret } from "../src/logic.js";
 
 // D1 поверх встроенного в Node SQLite со всеми миграциями: проверяем настоящие запросы бота
@@ -975,4 +975,75 @@ test("вход на сайт через бота: код, подтвержден
   await env.DB.prepare("UPDATE logins SET created_at = datetime('now', '-11 minutes') WHERE code = ?").bind(old.code).run();
   await say(env, dana, `/start login_${old.code}`);
   assert.match(sentTo(calls, 100).at(-1).body.text, /устарела/);
+});
+
+test("анкета работодателя: метка ссылки, должность кнопкой, «Я ищу работу» ведёт к вакансиям", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(120, "Асель");
+  await say(env, boss, "/start post_site");
+  const first = sentTo(calls, 120).at(-1).body;
+  assert.ok(first.reply_markup.inline_keyboard.some((row) => row[0].callback_data === "jobseeker"));
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 120").came_from, "site");
+  await press(env, boss, "jobcity:astana", 5);
+  const ask = calls.at(-1).body;
+  assert.match(ask.text, /Нажмите кнопку или напишите свою должность/);
+  assert.deepEqual(ask.reply_markup.inline_keyboard[0][0], { text: "Официант", callback_data: "jobtitle:0" });
+  await press(env, boss, "jobtitle:1", 5);
+  assert.deepEqual(env.DB.get("SELECT title, step FROM jobs WHERE employer_chat = 120"), { title: "Повар", step: "company" });
+  await press(env, boss, "jobtitle:2", 5); // старая кнопка: должность уже выбрана
+  assert.equal(env.DB.get("SELECT title FROM jobs WHERE employer_chat = 120").title, "Повар");
+
+  // Соискатель по ссылке из канала о сменах: черновик убран, счётчик, кнопки к вакансиям и подписке
+  const seeker = user(121, "Нурлан");
+  await say(env, seeker, "/start smena_tg");
+  assert.equal(env.DB.get("SELECT kind, came_from FROM jobs WHERE employer_chat = 121").kind, "shift");
+  await press(env, seeker, "jobseeker", 6);
+  const out = calls.at(-1).body;
+  assert.match(out.text, /анкета для работодателей/);
+  assert.equal(out.reply_markup.inline_keyboard[1][0].callback_data, "settings");
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = 121").n, 0);
+  assert.deepEqual(env.DB.get("SELECT came_from, n FROM role_switches"), { came_from: "tg", n: 1 });
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM dialogs WHERE chat_id = 121").n, 0);
+
+  // Меню работодателя и старые ссылки тоже работают
+  await say(env, user(122, "Ерлан"), "/start post_pf");
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 122").came_from, "profile");
+  await say(env, user(123, "Дана"), "/start smena");
+  assert.deepEqual(env.DB.get("SELECT kind, came_from FROM jobs WHERE employer_chat = 123"), { kind: "shift", came_from: null });
+  await press(env, user(124, "Айдос"), "emp:vacancy");
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 124").came_from, "menu");
+});
+
+test("брошенная анкета: одно напоминание днём через час, «Продолжить» и «Не нужно»", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const boss = user(130, "Жанар");
+  await say(env, boss, "/start post");
+  await press(env, boss, "jobcity:almaty", 7);
+  await say(env, user(131, "Тимур"), "/start post"); // ничего не выбрал: возможно, нажал случайно, не пишем
+  // Одни и те же часы для базы и будильника: анкета брошена в 10:00, будильник в 12:00 и в 01:00 по Казахстану
+  env.DB.prepare("UPDATE jobs SET updated_at = '2026-11-20 05:00:00', created_at = '2026-11-20 05:00:00'").run();
+  const day = new Date("2026-11-20T07:00:00Z");
+  const night = new Date("2026-11-20T20:00:00Z");
+  assert.equal(await nudgeDrafts(env, night), 0);
+  assert.equal(await nudgeDrafts(env, day), 1);
+  assert.equal(await nudgeDrafts(env, day), 0); // только один раз
+  const nudge = sentTo(calls, 130).at(-1).body;
+  assert.match(nudge.text, /не закончили. Осталось 6 из 7 вопросов/);
+  const id = env.DB.get("SELECT id FROM jobs WHERE employer_chat = 130").id;
+  assert.deepEqual(nudge.reply_markup.inline_keyboard[0].map((b) => b.callback_data), [`jobresume:${id}`, `jobdrop:${id}`]);
+
+  // Ушёл в другую команду: диалога нет, «Продолжить» его возвращает на тот же вопрос
+  await say(env, boss, "/myjobs");
+  await press(env, boss, `jobresume:${id}`, 8);
+  assert.match(calls.at(-1).body.text, /Вопрос 2 из 7<\/i>\nКого ищете/);
+  await say(env, boss, "Бариста");
+  assert.equal(env.DB.get("SELECT title FROM jobs WHERE id = ?", id).title, "Бариста");
+  await press(env, user(999, "Чужой"), `jobresume:${id}`, 8);
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM dialogs WHERE chat_id = 999").n, 0);
+  await press(env, boss, `jobdrop:${id}`, 8);
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE id = ?", id).n, 0);
 });

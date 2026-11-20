@@ -28,6 +28,17 @@ QUERIES = [
      "COUNT(DISTINCT employer_chat) AS employers FROM jobs WHERE created_at >= ? GROUP BY 1, 2, 3 ORDER BY 1, 2, 3"),
     ("работодатели: на каком вопросе бросили черновик (kind, step)",
      "SELECT kind, coalesce(step, '—') AS step, COUNT(*) AS n FROM jobs WHERE status = 'draft' AND created_at >= ? GROUP BY 1, 2 ORDER BY 3 DESC"),
+    ("работодатели: брошенные черновики — подписан ли как соискатель, сек до последнего ответа, час (UTC+5)",
+     "SELECT j.kind, coalesce(j.step, '—') AS step, (s.chat_id IS NOT NULL) AS seeker_sub, "
+     "CAST(strftime('%s', j.updated_at) - strftime('%s', j.created_at) AS INTEGER) AS sec, "
+     "strftime('%H', j.created_at, '+5 hours') AS hour, j.city IS NOT NULL AS has_city, "
+     "(SELECT COUNT(*) FROM jobs o WHERE o.employer_chat = j.employer_chat AND o.status != 'draft') AS other_jobs "
+     "FROM jobs j LEFT JOIN subscribers s ON s.chat_id = j.employer_chat "
+     "WHERE j.status = 'draft' AND j.created_at >= ? ORDER BY j.created_at"),
+    ("открыли анкету работодателя, но ищут работу (кнопка «Я ищу работу»), по дням и откуда",
+     "SELECT day, came_from, n FROM role_switches WHERE day >= ? ORDER BY day"),
+    ("напоминания о брошенной анкете: отправлено / из них дошли до проверки или оплаты",
+     "SELECT COUNT(*) AS nudged, SUM(status != 'draft') AS finished FROM jobs WHERE nudged = 1 AND created_at >= ?"),
     ("работодатели: откуда пришли (came_from) с периода",
      "SELECT coalesce(nullif(came_from, ''), '—') AS came_from, COUNT(*) AS jobs, COUNT(DISTINCT employer_chat) AS employers "
      "FROM jobs WHERE created_at >= ? GROUP BY 1 ORDER BY 2 DESC"),

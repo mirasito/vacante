@@ -53,13 +53,29 @@ function rows(buttons, perRow) {
 
 const CANCEL = { text: "Отменить", callback_data: "jobcancel" };
 
+// Кнопка на первом вопросе: анкету открыл соискатель (ссылки «Нанимаете?» и «Нужны люди на смену?» видят все)
+export const SEEKER_BUTTON = { text: "🙋 Я ищу работу, а не сотрудников", callback_data: "jobseeker" };
+
+// Частые должности кнопками: на вопросе «Кого ищете?» уходило больше всего работодателей
+export const TITLE_CHOICES = {
+  vacancy: ["Официант", "Повар", "Бариста", "Продавец-консультант", "Кассир", "Администратор", "Уборщица", "Грузчик", "Курьер"],
+  shift: ["Официант", "Повар", "Помощник повара", "Грузчик", "Разнорабочий", "Уборщица", "Промоутер", "Кассир", "Курьер"],
+};
+const titleChoices = (kind) => TITLE_CHOICES[kind === "shift" ? "shift" : "vacancy"];
+
 // Экран вопроса анкеты
 export function askScreen(step, now = new Date()) {
-  const text = `${progress(step)}${step.ask}`;
+  let text = `${progress(step)}${step.ask}`;
   if (step.field === "shift_date" || step.field === "need") return { text, keyboard: [...shiftButtons(step.field, now), [CANCEL]] };
   if (step.field === "city") {
     const cities = options.cities.map(([slug, title]) => ({ text: title, callback_data: `jobcity:${slug}` }));
-    return { text, keyboard: [...rows(cities, 3), [CANCEL]] };
+    return { text, keyboard: [...rows(cities, 3), [SEEKER_BUTTON], [CANCEL]] };
+  }
+  if (step.field === "title") {
+    const kind = SHIFT_STEPS.includes(step) ? "shift" : "vacancy";
+    const titles = titleChoices(kind).map((t, i) => ({ text: t, callback_data: `jobtitle:${i}` }));
+    text += "\n\nНажмите кнопку или напишите свою должность.";
+    return { text, keyboard: [...rows(titles, 3), [CANCEL]] };
   }
   const keyboard = step.optional ? [[{ text: "Пропустить", callback_data: `skip:${step.field}` }, CANCEL]] : [[CANCEL]];
   return { text, keyboard };
@@ -91,6 +107,10 @@ export function answer(job, field, text) {
 export function pressed(job, data, now = new Date()) {
   const [action, value] = data.split(":");
   if (action === "jobredo") return { ...job, ...newJob(job.kind) };
+  if (action === "jobtitle") {
+    const title = titleChoices(job.kind)[Number(value)];
+    return job.step === "title" && title ? { ...job, title } : null;
+  }
   if (action === "jobcity") return job.step === "city" && CITY[value] ? { ...job, city: value } : null;
   if (action === "jobdate") return job.step === "shift_date" && validDate(value, now) ? { ...job, shift_date: value } : null;
   if (action === "jobneed") return job.step === "need" && NEED.includes(Number(value)) ? { ...job, need: Number(value) } : null;
@@ -544,3 +564,33 @@ export function paymentRejectedText(j, kind = "boost") {
 }
 
 export const ADMIN_STATUSES = ["creator", "administrator"];
+
+// Соискатель открыл анкету работодателя и нажал «Я ищу работу»: ведём его к вакансиям
+export function seekerScreen(siteUrl, kind = "vacancy") {
+  const what = kind === "shift" ? "смены и подработку" : "вакансии";
+  return {
+    text:
+      "Понял! Эта анкета для работодателей, которые ищут сотрудников.\n\n" +
+      `Чтобы найти работу, листайте ${what} в приложении, а новые вакансии по вашему городу я могу присылать сюда.`,
+    keyboard: [
+      [{ text: "🃏 Смотреть вакансии", web_app: { url: `${siteUrl}/app/` } }],
+      [{ text: "🔔 Присылать новые вакансии", callback_data: "settings" }],
+    ],
+  };
+}
+
+// Напоминание о брошенной анкете: один раз, через час
+export const NUDGE_AFTER_MIN = 60;
+export const NUDGE_HOURS = [9, 21]; // по времени Казахстана, ночью не пишем
+
+export function nudgeScreen(job) {
+  const steps = stepsFor(job);
+  const i = steps.findIndex((s) => s.field === job.step);
+  const what = job.kind === "shift" ? "смену" : "вакансию";
+  const title = job.title ? ` «${esc(job.title)}»` : "";
+  const left = i >= 0 ? ` Осталось ${steps.length - i} из ${steps.length} вопросов, это пара минут.` : "";
+  return {
+    text: `Вы начали размещать ${what}${title}, но не закончили.${left}\n\nПродолжим с того же места?`,
+    keyboard: [[{ text: "▶️ Продолжить", callback_data: `jobresume:${job.id}` }, { text: "Не нужно", callback_data: `jobdrop:${job.id}` }]],
+  };
+}

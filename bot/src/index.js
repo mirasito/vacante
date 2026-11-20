@@ -16,20 +16,24 @@ import * as bot from "./logic.js";
 import { confirmLogin, loginApi, startLogin } from "./login.js";
 import { becomeAdmin, moderate, moderationApi, reportApi } from "./moderation.js";
 import { boostFromCredit, boostJob, confirmPayment, packPaid, packPay, paid, postLater, postPaid, postPay, proReports, showPacks } from "./payments.js";
-import { closeJob, employerButton, employerMenu, postAnswer, postButton, showApplications, startPost } from "./posting.js";
+import { closeJob, employerButton, employerMenu, nudgeDrafts, postAnswer, postButton, resumeButton, showApplications, startPost } from "./posting.js";
 import { relayToServer } from "./server.js";
 import { attendance, shiftCron, shiftDecision, startTake, subscribeShifts, takeAnswer } from "./taking.js";
 import { answerCallback, screen, send, tg } from "./telegram.js";
 import { HELP } from "./texts.js";
 
 // Будильник смен вызывают тесты и scheduled ниже
-export { proReports, shiftCron };
+export { nudgeDrafts, proReports, shiftCron };
 
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
   "🃏 Их можно листать свайпами в приложении: вправо сохранить, влево пропустить.\n" +
   "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.\n\n" +
   "Ищете сотрудников? Нажмите «🏢 Ищу сотрудников».";
+
+// Метки в ссылках на анкету работодателя → jobs.came_from. pf: кнопка на странице профиля кандидата (server/src/page.ts)
+const ENTRY = /^(post|smena)(?:_([a-z]+))?$/;
+const ENTRY_FROM = { pf: "profile", site: "site", land: "land", tg: "tg", app: "app" };
 
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
 
@@ -79,6 +83,8 @@ export default {
     ctx.waitUntil(wakeDaily(env).then((result) => console.log(`утро: ${JSON.stringify(result)}`)));
     // Смены: напоминания, вопрос «кто пришёл» и закрытие прошедших
     ctx.waitUntil(shiftCron(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
+    // Напоминание тем, кто бросил анкету работодателя
+    ctx.waitUntil(nudgeDrafts(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
     // Итог тарифа Про тем, у кого срок закончился
     ctx.waitUntil(proReports(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },
@@ -122,6 +128,7 @@ async function handle(update, env, ctx) {
   if (data.startsWith("postpay:")) return postPay(env, q);
   if (data.startsWith("postpaid:")) return postPaid(env, q);
   if (data.startsWith("postlater:")) return postLater(env, q);
+  if (data.startsWith("jobresume:") || data.startsWith("jobdrop:")) return resumeButton(env, q);
   if (data.startsWith("job") || data.startsWith("skip:")) return postButton(env, q, ctx);
   if (data === "emp" || data.startsWith("emp:")) return employerButton(env, q, (u) => relayToServer(env, u));
   if (data.startsWith("apps:")) return showApplications(env, q);
@@ -149,11 +156,12 @@ async function onMessage(m, env) {
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
   if (name === "/start" && arg.startsWith("login_")) return startLogin(env, m, arg.slice(6));
   if (name === "/start" && arg.startsWith("take_")) return startTake(env, m, Number(arg.slice(5)));
-  if ((name === "/start" && arg === "post") || name === "/vacancy") return startPost(env, m);
+  if (name === "/vacancy") return startPost(env, m);
+  if (name === "/smena") return startPost(env, m, "shift");
+  // Ссылки на анкету: ?start=post, ?start=smena и с меткой, откуда пришли: post_site, smena_tg (см. ENTRY_FROM)
+  const entry = name === "/start" && ENTRY.exec(arg);
+  if (entry) return startPost(env, m, entry[1] === "smena" ? "shift" : "vacancy", ENTRY_FROM[entry[2]] ?? null);
   if ((name === "/start" && arg === "employer") || name === "/employer") return employerMenu(env, chatId);
-  // Кнопка на странице профиля кандидата (server/src/page.ts): работодатель увидел отклик и пришёл размещать
-  if (name === "/start" && arg === "post_pf") return startPost(env, m, "vacancy", "profile");
-  if ((name === "/start" && arg === "smena") || name === "/smena") return startPost(env, m, "shift");
   if ((name === "/start" && arg === "smeny") || name === "/smeny") return subscribeShifts(env, chatId);
   if (name === "/start" && bot.fromLink(arg)) {
     // Кнопка «Пришлём, когда появится» из приложения: подписка сразу с городом, сферой и зарплатой

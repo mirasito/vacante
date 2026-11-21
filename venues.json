@@ -5953,6 +5953,15 @@
    "website"
   ]
  },
+ "almaty:allera": {
+  "name": "Allera",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00",
+  "instagram": "allerastudio",
+  "source": "https://2gis.kz/almaty/firm/70000001119174484"
+ },
  "almaty:allergo clinic": {
   "name": "Allergo Clinic",
   "city": "almaty",
@@ -15701,6 +15710,13 @@
   "checked_at": "2026-10-31T00:43:30+00:00",
   "instagram": "maiqazan",
   "source": "https://2gis.kz/almaty/firm/70000001038678879"
+ },
+ "almaty:main corp": {
+  "name": "Main Corp.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
  },
  "almaty:maison market мини маркет": {
   "name": "Maison market, мини-маркет",
@@ -28939,7 +28955,7 @@
   "instagram": "kelet.kz",
   "website": "https://kelet.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796758",
-  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -35137,6 +35153,13 @@
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
  },
+ "almaty:топ продукт": {
+  "name": "Топ Продукт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
+ },
  "almaty:топаз 5": {
   "name": "Топаз-5",
   "city": "almaty",
@@ -38579,7 +38602,7 @@
   "checked_at": "2026-11-07T07:43:53+00:00",
   "website": "https://astana.atkglobal.kz/",
   "source": "https://2gis.kz/astana/firm/70000001093323985",
-  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42780,6 +42803,15 @@
   "instagram": "kaspiana.restaurant",
   "source": "https://2gis.kz/astana/firm/70000001032316121"
  },
+ "astana:kausar dental clinic": {
+  "name": "Kausar dental clinic",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00",
+  "instagram": "kausar_dental_clinic",
+  "source": "https://2gis.kz/astana/firm/70000001116396787"
+ },
  "astana:kaz farm каз фарм": {
   "name": "Kaz-Farm (Каз-Фарм)",
   "city": "astana",
@@ -43133,6 +43165,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
+ },
+ "astana:koton textile котон текстиль": {
+  "name": "KOTON TEXTILE (КОТОН Текстиль)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00",
+  "instagram": "koton.astana",
+  "source": "https://2gis.kz/astana/firm/70000001019233941"
  },
  "astana:koz in optica": {
   "name": "KOZ IN OPTICA",
@@ -43832,6 +43873,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T17:44:31+00:00"
+ },
+ "astana:mega silk way": {
+  "name": "MEGA Silk Way",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00",
+  "instagram": "megasilkway",
+  "telegram": "megalive",
+  "website": "https://mega.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001026995330",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "bbd4fc181aefc82a.jpg",
+  "avatar_source": "telegram"
  },
  "astana:megapolis": {
   "name": "Megapolis",
@@ -44574,6 +44633,13 @@
   "instagram": "ocular.optics",
   "source": "https://2gis.kz/astana/firm/70000001078760464"
  },
+ "astana:oda": {
+  "name": "oDa",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
+ },
  "astana:of corp": {
   "name": "OF Corp",
   "city": "astana",
@@ -45035,6 +45101,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
+ },
+ "astana:passo chantal": {
+  "name": "PASSO CHANTAL",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00",
+  "instagram": "passo.chantal",
+  "telegram": "passo_chantal",
+  "website": "https://passo-chantal.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001096333271",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "828193e73c43e86b.jpg",
+  "avatar_source": "telegram"
  },
  "astana:patentes talgo s l филиал в республике казахстан": {
   "name": "Patentes Talgo, S.L. Филиал в Республике Казахстан",
@@ -45847,7 +45931,7 @@
   "instagram": "negroni_astana",
   "website": "https://negroni.taptable.kz/",
   "source": "https://2gis.kz/astana/firm/70000001088744333",
-  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47261,6 +47345,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T07:43:16+00:00"
+ },
+ "astana:the relics": {
+  "name": "The Relics",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00",
+  "instagram": "the_relics_astana",
+  "source": "https://2gis.kz/astana/firm/70000001105115963"
  },
  "astana:the ritz carlton astana": {
   "name": "The Ritz-Carlton, Astana",
@@ -49370,6 +49463,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-11T14:44:52+00:00"
+ },
+ "astana:артем": {
+  "name": "Артем",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
  },
  "astana:аружан": {
   "name": "Аружан",
@@ -57679,6 +57779,13 @@
    "website"
   ]
  },
+ "astana:цветы": {
+  "name": "Цветы",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
+ },
  "astana:цдо открытая аудитория": {
   "name": "ЦДО Открытая аудитория",
   "city": "astana",
@@ -58122,6 +58229,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T05:43:00+00:00"
+ },
+ "astana:шарипов м к": {
+  "name": "Шарипов М.К",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
  },
  "astana:шате м плюс": {
   "name": "шате м плюс",
@@ -59490,7 +59604,7 @@
   "instagram": "lift_capital",
   "website": "https://liftcapital.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001095550821",
-  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -66650,7 +66764,7 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "website": "https://agro-s.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001042928156",
-  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67299,6 +67413,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kostanay:satti zher kz": {
+  "name": "Satti Zher Kz",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T08:43:06+00:00"
  },
  "kostanay:shans trade ltd kz шанс трейд лтд кз": {
   "name": "Shans Trade Ltd.KZ (Шанс Трейд Лтд.КЗ)",
@@ -79590,7 +79711,7 @@
   "checked_at": "2026-10-31T06:44:38+00:00",
   "website": "https://www.bcc.kz/",
   "source": "https://www.bcc.kz/llms.txt",
-  "avatar_checked_at": "2026-11-14T08:41:35+00:00",
+  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
   "avatar_tried": [
    "website"
   ]

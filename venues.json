@@ -12864,6 +12864,13 @@
   "v": 3,
   "checked_at": "2026-11-09T20:44:15+00:00"
  },
+ "almaty:huip": {
+  "name": "Huip",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00"
+ },
  "almaty:hulber group": {
   "name": "Hulber Group",
   "city": "almaty",
@@ -22466,7 +22473,7 @@
   "checked_at": "2026-10-31T05:43:11+00:00",
   "website": "https://wildberries.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001033122288",
-  "avatar_checked_at": "2026-11-14T07:42:16+00:00",
+  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31560,6 +31567,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T18:42:11+00:00"
+ },
+ "almaty:народный": {
+  "name": "Народный",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00"
  },
  "almaty:народный банк казахстана": {
   "name": "Народный банк Казахстана",
@@ -48609,6 +48623,15 @@
   "v": 3,
   "checked_at": "2026-11-12T03:44:21+00:00"
  },
+ "astana:аделини": {
+  "name": "Аделини",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00",
+  "instagram": "adelini.kz",
+  "source": "https://2gis.kz/astana/firm/70000001060160417"
+ },
  "astana:адили текстиль": {
   "name": "АДИЛИ ТЕКСТИЛЬ",
   "city": "astana",
@@ -48794,7 +48817,7 @@
   "instagram": "da_istina_official",
   "website": "https://istina.kz/",
   "source": "https://2gis.kz/astana/firm/70000001083260205",
-  "avatar_checked_at": "2026-11-14T07:42:16+00:00",
+  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -49399,6 +49422,13 @@
   "v": 3,
   "checked_at": "2026-11-13T04:42:56+00:00"
  },
+ "astana:асилбекова": {
+  "name": "ИП Асилбекова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00"
+ },
  "astana:аскарова": {
   "name": "Аскарова",
   "city": "astana",
@@ -49579,6 +49609,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-18T16:44:57+00:00"
+ },
+ "astana:ақмола еті": {
+  "name": "Ақмола Еті",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00"
  },
  "astana:ақылбек": {
   "name": "Ақылбек",
@@ -51148,6 +51185,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
+ },
+ "astana:дәм дәмді": {
+  "name": "Дәм-дәмді",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00",
+  "instagram": "dam.damdi",
+  "source": "https://2gis.kz/astana/firm/70000001066512458"
  },
  "astana:дөнерхана": {
   "name": "Дөнерхана",
@@ -57618,6 +57664,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-16T19:44:25+00:00"
+ },
+ "astana:цветочный салон ананас": {
+  "name": "Цветочный салон Ананас",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00",
+  "instagram": "ananasflowers.kz",
+  "website": "http://ananasflowers.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001075910091",
+  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:цдо открытая аудитория": {
   "name": "ЦДО Открытая аудитория",
@@ -66048,7 +66108,7 @@
   "telegram": "astralombard_kz",
   "website": "https://astra-lombard.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033357709",
-  "avatar_checked_at": "2026-11-14T07:42:16+00:00",
+  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -66997,6 +67057,15 @@
   ],
   "avatar": "be3110dffd9a96a7.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:jetiru motors": {
+  "name": "JETIRU MOTORS",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00",
+  "instagram": "jetiru_motors",
+  "source": "https://2gis.kz/kostanaj/firm/70000001110870002"
  },
  "kostanay:kaspi kz": {
   "name": "Kaspi.kz",
@@ -71885,6 +71954,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "petropavlovsk:botanika rolls": {
+  "name": "Botanika rolls",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T07:42:59+00:00"
  },
  "petropavlovsk:capital plast kz": {
   "name": "CAPITAL PLAST KZ",

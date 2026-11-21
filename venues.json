@@ -3070,6 +3070,13 @@
    "website"
   ]
  },
+ "aktobe:creative school 7": {
+  "name": "CREATIVE SCHOOL-7",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T15:42:46+00:00"
+ },
  "aktobe:d city group": {
   "name": "D city group",
   "city": "aktobe",
@@ -12266,6 +12273,20 @@
   "v": 3,
   "checked_at": "2026-10-31T14:43:47+00:00"
  },
+ "almaty:gorki kz": {
+  "name": "Gorki.kz",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T15:42:46+00:00",
+  "instagram": "gorki.kz",
+  "website": "http://gorki.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001096246272",
+  "avatar_checked_at": "2026-11-21T15:42:47+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:gotourist": {
   "name": "GOTOURIST",
   "city": "almaty",
@@ -18003,7 +18024,7 @@
   "checked_at": "2026-11-07T14:44:39+00:00",
   "website": "https://shop.phaeton.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001094364353",
-  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
+  "avatar_checked_at": "2026-11-21T15:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27411,7 +27432,7 @@
   "instagram": "eurasianbank",
   "website": "http://eubank.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000884856",
-  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
+  "avatar_checked_at": "2026-11-21T15:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32086,6 +32107,13 @@
   "avatar": "b40f95fa3fabfa3f.jpg",
   "avatar_source": "website"
  },
+ "almaty:нұраділ": {
+  "name": "НҰРАДІЛ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T15:42:46+00:00"
+ },
  "almaty:нұрекен д е": {
   "name": "НҰРЕКЕН Д.Е.",
   "city": "almaty",
@@ -36107,7 +36135,7 @@
   "instagram": "aprofile_kz",
   "website": "https://a-profile.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000792740",
-  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
+  "avatar_checked_at": "2026-11-21T15:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -45998,6 +46026,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T00:43:00+00:00"
+ },
+ "astana:ratmir": {
+  "name": "Ratmir",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T15:42:46+00:00"
  },
  "astana:rb brands": {
   "name": "RB Brands",
@@ -57117,6 +57152,13 @@
   "checked_at": "2026-11-03T15:44:31+00:00",
   "instagram": "toi_optom",
   "source": "https://2gis.kz/astana/firm/70000001075202592"
+ },
+ "astana:токарев виталий валерьевич": {
+  "name": "Токарев Виталий Валерьевич",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T15:42:46+00:00"
  },
  "astana:токбаева дм": {
   "name": "Токбаева ДМ",
@@ -73456,7 +73498,7 @@
   "checked_at": "2026-10-31T14:43:47+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-11-14T15:41:29+00:00",
+  "avatar_checked_at": "2026-11-21T15:42:47+00:00",
   "avatar_tried": [
    "website"
   ]

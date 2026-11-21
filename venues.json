@@ -388,6 +388,13 @@
   "avatar": "be801edb74859c73.jpg",
   "avatar_source": "website"
  },
+ "aktau:elshan": {
+  "name": "Elshan",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
+ },
  "aktau:f&b aktau": {
   "name": "F&B Aktau",
   "city": "aktau",
@@ -2566,6 +2573,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T22:43:58+00:00"
+ },
+ "aktau:хан кидс": {
+  "name": "Хан Кидс",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00",
+  "instagram": "xan_kids_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001105022514"
  },
  "aktau:химик": {
   "name": "Химик",
@@ -13087,6 +13103,13 @@
   "v": 3,
   "checked_at": "2026-11-10T09:46:44+00:00"
  },
+ "almaty:ik design": {
+  "name": "IK Design",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
+ },
  "almaty:ikomek ломбард": {
   "name": "iKomek Ломбард",
   "city": "almaty",
@@ -15261,6 +15284,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:level up": {
+  "name": "Level Up",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
  },
  "almaty:li technology": {
   "name": "Li Technology",
@@ -18487,6 +18517,13 @@
    "website"
   ]
  },
+ "almaty:qadamlegal": {
+  "name": "QadamLegal",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
+ },
  "almaty:qaimaq bakery": {
   "name": "QAIMAQ BAKERY",
   "city": "almaty",
@@ -21080,7 +21117,7 @@
   "instagram": "technosector_kz",
   "website": "https://www.technosector.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001019577023",
-  "avatar_checked_at": "2026-11-14T10:42:28+00:00",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -31899,6 +31936,15 @@
   "v": 3,
   "checked_at": "2026-11-10T05:43:22+00:00"
  },
+ "almaty:нурдаулет": {
+  "name": "Нурдаулет",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00",
+  "instagram": "nurdaulet_hippodrome",
+  "source": "https://2gis.kz/almaty/firm/70000001052283513"
+ },
  "almaty:нуржума": {
   "name": "Нуржума",
   "city": "almaty",
@@ -33696,6 +33742,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
+ },
+ "almaty:сартаева": {
+  "name": "Сартаева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
  },
  "almaty:сары арка": {
   "name": "Сары Арка",
@@ -43390,7 +43443,7 @@
   "instagram": "lanzhou_astana",
   "website": "https://lanzhou.kz/",
   "source": "https://2gis.kz/astana/firm/70000001104987225",
-  "avatar_checked_at": "2026-11-14T10:42:28+00:00",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46972,6 +47025,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T19:43:27+00:00"
+ },
+ "astana:stool kz": {
+  "name": "Stool.kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00",
+  "instagram": "stool.kz.astana",
+  "website": "https://stool.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001054703097",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:stratera": {
   "name": "STRATERA",
@@ -53913,6 +53980,13 @@
   ],
   "avatar": "4993faa228aef696.jpg",
   "avatar_source": "website"
+ },
+ "astana:мой склад": {
+  "name": "Мой склад",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
  },
  "astana:молоснова мария алексеевна": {
   "name": "Молоснова Мария Алексеевна",
@@ -61721,6 +61795,22 @@
   "v": 3,
   "checked_at": "2026-11-10T03:44:14+00:00"
  },
+ "karaganda:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001021013510",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "83c4a43c356524db.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:cbc group группа компаний свс": {
   "name": "CBC-GROUP (Группа компаний СВС)",
   "city": "karaganda",
@@ -65702,6 +65792,22 @@
    "website"
   ]
  },
+ "kokshetau:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00",
+  "instagram": "kfc_kokshetau",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001095602420",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "02fd4706695e483e.jpg",
+  "avatar_source": "website"
+ },
  "kokshetau:cfc": {
   "name": "CFC",
   "city": "kokshetau",
@@ -65852,7 +65958,7 @@
   "instagram": "kcell.kz",
   "website": "https://www.kcell.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033792530",
-  "avatar_checked_at": "2026-11-14T10:42:28+00:00",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -66381,6 +66487,13 @@
   ],
   "avatar": "567d0e9f878518ba.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:ергазиев": {
+  "name": "Ергазиев",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00"
  },
  "kokshetau:ергосаев о б": {
   "name": "Ергосаев О.Б.",
@@ -70152,6 +70265,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-16T21:44:14+00:00"
+ },
+ "pavlodar:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T11:42:45+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001021013510",
+  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "52d69f1136a0c14c.jpg",
+  "avatar_source": "website"
  },
  "pavlodar:delivery fast": {
   "name": "Delivery Fast",

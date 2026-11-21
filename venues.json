@@ -23068,7 +23068,7 @@
   "instagram": "zoomlion_kazakhstan",
   "website": "https://zoomlion.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001061693221",
-  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
+  "avatar_checked_at": "2026-11-21T16:42:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29419,6 +29419,22 @@
   "v": 3,
   "checked_at": "2026-11-16T11:43:54+00:00"
  },
+ "almaty:кок кола": {
+  "name": "Кок кола",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T16:42:32+00:00",
+  "instagram": "cocacola_kaz",
+  "website": "https://www.coca-cola.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000796917",
+  "avatar_checked_at": "2026-11-21T16:42:32+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "d2703fd3459d39ba.jpg",
+  "avatar_source": "website"
+ },
  "almaty:кокжанова": {
   "name": "Кокжанова",
   "city": "almaty",
@@ -30002,7 +30018,7 @@
   "checked_at": "2026-10-31T15:43:32+00:00",
   "website": "https://www.medservice.kz/",
   "source": "https://2gis.kz/taraz/firm/70000001066009845",
-  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
+  "avatar_checked_at": "2026-11-21T16:42:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33067,7 +33083,7 @@
   "instagram": "trubnoereshenie_almaty",
   "website": "https://almaty.truboproduct.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001095376731",
-  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
+  "avatar_checked_at": "2026-11-21T16:42:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33112,6 +33128,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
+ },
+ "almaty:профрезерв": {
+  "name": "Профрезерв",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T16:42:32+00:00"
  },
  "almaty:профсанэксперт": {
   "name": "ПрофСанЭксперт",
@@ -34939,7 +34962,7 @@
   "checked_at": "2026-11-07T15:44:26+00:00",
   "website": "https://tangens.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001069923435",
-  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
+  "avatar_checked_at": "2026-11-21T16:42:32+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -45301,6 +45324,13 @@
    "website"
   ]
  },
+ "astana:park hotel": {
+  "name": "PARK HOTEL",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T16:42:32+00:00"
+ },
  "astana:park service astana": {
   "name": "Park Service Astana",
   "city": "astana",
@@ -54710,7 +54740,7 @@
   "instagram": "onegeli.kz",
   "website": "http://onegeli.kz/",
   "source": "https://2gis.kz/astana/firm/70000001094707651",
-  "avatar_checked_at": "2026-11-14T16:40:52+00:00",
+  "avatar_checked_at": "2026-11-21T16:42:32+00:00",
   "avatar_tried": [
    "website"
   ]

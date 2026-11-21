@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-21T04:56:54+00:00",
+ "updated_at": "2026-11-21T05:56:34+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2956,45 +2956,6 @@
     "schedule": "5/2"
    }
   },
-  "astana_job_vakansii-130294": {
-   "verdict": "approve",
-   "at": "2026-11-07T05:56:31+00:00",
-   "fields": {
-    "title": "Продавец парфюмерии",
-    "employer": "Metis Parfum"
-   }
-  },
-  "astana_job_vakansii-130298": {
-   "verdict": "approve",
-   "at": "2026-11-07T05:56:31+00:00",
-   "fields": {
-    "employer": "Loft Park",
-    "schedule": "4/2, 09:00–21:00 или 21:00–09:00"
-   }
-  },
-  "astana_job_vakansii-130295": {
-   "verdict": "approve",
-   "at": "2026-11-07T05:56:31+00:00",
-   "fields": {
-    "title": "Повар-универсал, официант",
-    "schedule": "5/2, 11:00–00:00",
-    "perks": [
-     "Питание",
-     "Развозка",
-     "Ежедневная оплата"
-    ]
-   }
-  },
-  "rabota4almaty-6268": {
-   "verdict": "approve",
-   "at": "2026-11-07T05:56:31+00:00",
-   "fields": {
-    "title": "Продавец-кассир",
-    "employer": "ИП Сембина А.",
-    "schedule": "2/2, 07:30–20:30",
-    "address": "ул. Маметовой, 67"
-   }
-  },
   "hh-138238515": {
    "verdict": "approve",
    "at": "2026-11-07T05:56:31+00:00",
@@ -3003,32 +2964,10 @@
     "employer": "GT Oil Service"
    }
   },
-  "rabota4almaty-6267": {
-   "verdict": "approve",
-   "at": "2026-11-07T05:56:31+00:00",
-   "fields": {
-    "title": "Помощница по дому",
-    "employer": null,
-    "address": "пос. Бельбулак, ул. Шакарима"
-   }
-  },
   "hh-137145535": {
    "verdict": "approve",
    "at": "2026-11-07T05:56:31+00:00",
    "fields": {}
-  },
-  "hh-139222701": {
-   "verdict": "approve",
-   "at": "2026-11-07T05:56:31+00:00",
-   "fields": {
-    "employer": "«PROЦВЕТАЙ»",
-    "schedule": "2/2"
-   }
-  },
-  "vakansii_oskemen-9267": {
-   "verdict": "reject",
-   "at": "2026-11-07T05:56:31+00:00",
-   "reason": "Руководящая должность"
   },
   "rabota_astanakz-31334": {
    "verdict": "approve",
@@ -3126,14 +3065,6 @@
     "title": "Клинер",
     "employer": "«Магия чистоты»",
     "address": "ул. Пушкина, 23"
-   }
-  },
-  "rabota4almaty-6266": {
-   "verdict": "approve",
-   "at": "2026-11-07T06:56:39+00:00",
-   "fields": {
-    "employer": "Автомойка «So Fresh»",
-    "address": "пр. Абая, 150/230"
    }
   },
   "hh-137960038": {
@@ -4673,17 +4604,6 @@
    "fields": {
     "title": "Водитель-инкассатор",
     "address": null
-   }
-  },
-  "tengiz_vahta-951": {
-   "verdict": "approve",
-   "at": "2026-11-07T20:56:13+00:00",
-   "fields": {
-    "title": "Водитель автомобиля 5-го разряда",
-    "employer": "Даларо Оверсиз Лимитед",
-    "schedule": "вахтовый метод",
-    "address": "Жылыойский район, Тенгиз, мкр. Каратон",
-    "perks": []
    }
   },
   "hh-139228535": {
@@ -42749,6 +42669,99 @@
    "fields": {
     "employer": "«Одак»",
     "address": "ул. Карбышева, 36"
+   }
+  },
+  "rabota_astanakz-31630": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Курьер на личном автомобиле",
+    "employer": "Wolt",
+    "salary_period": null,
+    "schedule": "Свободный график",
+    "salary_min": null,
+    "salary_max": null
+   }
+  },
+  "hh-139186513": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Повар на пищевое производство",
+    "schedule": "5/2 или 2/2, смены по 8 или 12 часов",
+    "address": "пр. Рыскулова, 57/5"
+   }
+  },
+  "hh-139186498": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "schedule": "5/2 или 2/2, смены по 8 или 11 часов",
+    "address": "ул. Желтоксан, 181"
+   }
+  },
+  "rabotaalmatyyyy-15413": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Посудомойщица-уборщица",
+    "salary_min": 19000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "Разовая смена, до 23:00",
+    "address": "Джандосова – Береговой",
+    "perks": [
+     "Развозка",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-138819989": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "address": "ул. Толе би, 43"
+   }
+  },
+  "aktobevakansii-44630": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "employer": "«Арт Вижен»"
+   }
+  },
+  "hh-139678314": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Кладовщик (Тенгиз)",
+    "schedule": null
+   }
+  },
+  "rabotaaktau-143054": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Шашлычник",
+    "employer": "Кафе «Mangal City»",
+    "salary_min": 15000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "11:00–23:00",
+    "address": "27-й мкр, здание 71",
+    "perks": [
+     "Развозка"
+    ]
+   }
+  },
+  "rabota_semey_official-7013": {
+   "verdict": "approve",
+   "at": "2026-11-21T05:56:34+00:00",
+   "fields": {
+    "title": "Продавец-консультант",
+    "employer": "Магазин «Mikoservice»",
+    "address": "ул. Ауэзова, 37а2"
    }
   }
  }

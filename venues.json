@@ -75610,6 +75610,22 @@
   "v": 3,
   "checked_at": "2026-11-20T13:44:42+00:00"
  },
+ "shymkent:baekkey": {
+  "name": "Baekkey",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T01:42:15+00:00",
+  "instagram": "baekkey___",
+  "telegram": "baekkey_shymkent",
+  "website": "https://www.baekkey.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001080945535",
+  "avatar_checked_at": "2026-11-21T01:42:16+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
+ },
  "shymkent:baitun project": {
   "name": "BAITUN PROJECT",
   "city": "shymkent",

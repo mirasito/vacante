@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-21T01:56:32+00:00",
+ "updated_at": "2026-11-21T03:57:05+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2950,14 +2950,6 @@
     "employer": "Магазин «Lichi»",
     "schedule": "2/2",
     "address": "Кульджинский тракт, 106, ТРЦ «Aport Mall East»"
-   }
-  },
-  "hh-139222431": {
-   "verdict": "approve",
-   "at": "2026-11-07T03:56:36+00:00",
-   "fields": {
-    "employer": "Minestone",
-    "schedule": "5/2"
    }
   },
   "rabota_astanakz-31333": {
@@ -42581,6 +42573,208 @@
    "verdict": "reject",
    "at": "2026-11-21T01:56:32+00:00",
    "reason": "Мало сведений: непонятно, что за заведение и в чём работа администратора"
+  },
+  "rabota_astanakz-31635": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "ЁбиДоёби",
+    "address": "ул. Керей, Жанибек хандар, 9"
+   }
+  },
+  "astana_job_vakansii-130918": {
+   "verdict": "reject",
+   "at": "2026-11-21T03:57:05+00:00",
+   "reason": "Дискриминационные требования («не замужем»), обязательное проживание"
+  },
+  "rabota_astanakz-31628": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {}
+  },
+  "astana_job_vakansii-130858": {
+   "verdict": "reject",
+   "at": "2026-11-21T03:57:05+00:00",
+   "reason": "Сборное объявление на разные вакансии в разных местах"
+  },
+  "astana_job_vakansii-130909": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "Бутик «MAGNAT»",
+    "schedule": "5/2 или 6/1, 09:00–18:00 или 14:00–22:00"
+   }
+  },
+  "zhumys_astana_kz-17698": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "Магазин «Техномир»",
+    "schedule": "6/1, 10:00–21:30",
+    "perks": [
+     "Без опыта",
+     "Бонусы"
+    ]
+   }
+  },
+  "astana_rabota-90261": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "address": "ул. Кошкарбаева, 32"
+   }
+  },
+  "hh-139170589": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {}
+  },
+  "hh-139678650": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Ночной пекарь-универсал",
+    "employer": "Fort Vernyi Family",
+    "address": "ул. Толе би, 179А/22"
+   }
+  },
+  "rabota4almaty-6788": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "Бильярдный клуб «Z&B»",
+    "address": "мкр. Мамыр-4, 1А/2"
+   }
+  },
+  "hh-139708997": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Бармен",
+    "employer": "Ресторан «LETO»",
+    "schedule": "2/2",
+    "address": "ЖК «АФД Плаза»"
+   }
+  },
+  "hh-139682077": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Кофейня «Capito»",
+    "schedule": "5/2, 3/2 или 2/2",
+    "address": "ул. Курмангазы, 43"
+   }
+  },
+  "almaty_rabota_work-32007": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "Ocean Basket"
+   }
+  },
+  "rabota4almaty-6764": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "Shah Sultan",
+    "schedule": "6 дней в неделю, 07:00–18:00",
+    "address": "ул. Панфилова, 98"
+   }
+  },
+  "hh-139701646": {
+   "verdict": "reject",
+   "at": "2026-11-21T03:57:05+00:00",
+   "reason": "Должность технолога с высшим образованием, не рабочая специальность"
+  },
+  "hh-139685664": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "address": "ул. Н. Толеметова, 66"
+   }
+  },
+  "rabotaaktau-143049": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Продавец-консультант в магазин парфюмерии",
+    "employer": null,
+    "schedule": "2/2, 10:00–22:00",
+    "perks": [
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "hh-139683506": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-143030": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Кондитер-пекарь, повар, пекарь",
+    "employer": "Кулинария «Смак»",
+    "address": "15 мкр., ЖК «Оазис», 69"
+   }
+  },
+  "rabotaaktau-143055": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "Кафе «Otyrar»",
+    "schedule": "18:00–00:30"
+   }
+  },
+  "rabotaaktau-143063": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "employer": "«Мир Косметики»",
+    "schedule": "4/3, 5/2 или 2/2, 10:00–22:00"
+   }
+  },
+  "rabotaaktau-143045": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Курьер с личным авто",
+    "schedule": "5/2, 08:00–14:00"
+   }
+  },
+  "hh-139689206": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Продавец-кассир",
+    "schedule": "5/2, 4/4, 3/3 и другие, есть подработка",
+    "perks": [
+     "Без опыта",
+     "Обучение"
+    ]
+   }
+  },
+  "rabotaaktau-143038": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "title": "Бармен-бариста, раннер"
+   }
+  },
+  "hh-139701673": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {
+    "address": "пр. Абая, 1С"
+   }
+  },
+  "hh-139640600": {
+   "verdict": "approve",
+   "at": "2026-11-21T03:57:05+00:00",
+   "fields": {}
   }
  }
 }

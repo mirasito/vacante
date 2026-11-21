@@ -887,6 +887,13 @@
   "v": 3,
   "checked_at": "2026-11-01T18:43:47+00:00"
  },
+ "aktau:raithai": {
+  "name": "Raithai",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00"
+ },
  "aktau:raw": {
   "name": "Raw",
   "city": "aktau",
@@ -2349,6 +2356,13 @@
   ],
   "avatar": "2b427132a9edcb6d.jpg",
   "avatar_source": "website"
+ },
+ "aktau:сатушы кеңесші": {
+  "name": "САТУШЫ-КЕҢЕСШІ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00"
  },
  "aktau:сауда дистрибьюшн": {
   "name": "Сауда Дистрибьюшн",
@@ -5938,7 +5952,7 @@
   "instagram": "alidarservice",
   "telegram": "alidarservice",
   "source": "https://2gis.kz/almaty/firm/70000001118459437",
-  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -17898,6 +17912,20 @@
   "v": 3,
   "checked_at": "2026-11-10T00:43:46+00:00"
  },
+ "almaty:pca group": {
+  "name": "PCA Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00",
+  "instagram": "pcagroup.kz",
+  "website": "http://www.pcagroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001010624",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:pcg expert": {
   "name": "PCG Expert",
   "city": "almaty",
@@ -18063,7 +18091,7 @@
   "instagram": "spaplatinum_corona",
   "website": "http://new.platinum-corona.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110581207",
-  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -18742,7 +18770,7 @@
   "instagram": "rai_company",
   "website": "http://rai-company.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001035551354",
-  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21463,7 +21491,7 @@
   "instagram": "top.kz",
   "website": "https://top.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021055352",
-  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25375,6 +25403,13 @@
   "v": 3,
   "checked_at": "2026-11-02T01:43:26+00:00"
  },
+ "almaty:бектемирова": {
+  "name": "Бектемирова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00"
+ },
  "almaty:белорусские продукты": {
   "name": "Белорусские продукты",
   "city": "almaty",
@@ -25559,6 +25594,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
+ },
+ "almaty:борашева": {
+  "name": "ИП Борашева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00"
  },
  "almaty:борашева а р": {
   "name": "Борашева А.Р.",
@@ -29568,6 +29610,13 @@
   "v": 3,
   "checked_at": "2026-11-07T12:44:23+00:00"
  },
+ "almaty:корж": {
+  "name": "КОРЖ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00"
+ },
  "almaty:королевские окна": {
   "name": "Королевские окна",
   "city": "almaty",
@@ -31381,7 +31430,7 @@
   "checked_at": "2026-11-07T11:45:05+00:00",
   "website": "http://www.montazhproekt.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000798229",
-  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39721,7 +39770,7 @@
   "instagram": "caviarhouse.kz",
   "website": "http://caviarhouse.kz/",
   "source": "https://2gis.kz/astana/firm/70000001025428203",
-  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -45921,6 +45970,15 @@
   ],
   "avatar": "91be7d2bf2172b5e.jpg",
   "avatar_source": "website"
+ },
+ "astana:re start": {
+  "name": "Re-Start",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00",
+  "instagram": "re_start.astana",
+  "source": "https://2gis.kz/astana/firm/70000001053408741"
  },
  "astana:rec a": {
   "name": "REC-A",
@@ -59784,6 +59842,13 @@
   "instagram": "nan_cakesandbakes_atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001069503938"
  },
+ "atyrau:nbtech": {
+  "name": "NBtech",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00"
+ },
  "atyrau:nes": {
   "name": "NES",
   "city": "atyrau",
@@ -66022,7 +66087,7 @@
   "instagram": "mechta.kz",
   "website": "https://mechta.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001034028148",
-  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -71611,7 +71676,7 @@
   "checked_at": "2026-10-31T11:43:29+00:00",
   "website": "https://pavlodarenergo.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018658154",
-  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -74865,7 +74930,7 @@
   "telegram": "blin_coffee",
   "website": "https://blin-coffee.kz/",
   "source": "https://2gis.kz/semej/firm/70000001054630421",
-  "avatar_checked_at": "2026-11-14T11:43:06+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -78022,6 +78087,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:автосалон youcars": {
+  "name": "Автосалон YouCars",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T12:42:34+00:00",
+  "instagram": "you_cars_shymkent",
+  "source": "https://www.instagram.com/you_cars_shymkent/"
  },
  "shymkent:автотрейд": {
   "name": "Автотрейд",
@@ -84334,7 +84408,7 @@
   "instagram": "mechta.kz",
   "website": "https://www.mechta.kz/",
   "source": "https://www.instagram.com/mechta.kz/",
-  "avatar_checked_at": "2026-11-14T12:41:55+00:00",
+  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
   "avatar_tried": [
    "website"
   ]

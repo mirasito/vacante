@@ -1,4 +1,21 @@
 {
- "updated_at": "2026-11-21T00:26:24+00:00",
- "vacancies": []
+ "updated_at": "2026-11-21T01:26:20+00:00",
+ "vacancies": [
+  {
+   "id": "hh-139709278",
+   "city": "shymkent",
+   "title": "Администратор",
+   "employer": "Baekkey",
+   "salary_min": 280000,
+   "salary_max": 350000,
+   "salary_period": "month",
+   "schedule": "6/1, 10 часов",
+   "address": null,
+   "perks": [],
+   "category": "service",
+   "posted_at": "2026-11-21T00:56:48+00:00",
+   "source_url": "https://hh.kz/vacancy/139709278?tech_source=api",
+   "text": "Обязанности: Команда басқару қабілеті.\nТребования: WhatsApp арқылы клиенттермен жұмыс істей білу."
+  }
+ ]
 }

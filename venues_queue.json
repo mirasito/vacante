@@ -1,4 +1,16 @@
 {
- "updated_at": "2026-11-21T00:26:24+00:00",
- "venues": []
+ "updated_at": "2026-11-21T01:26:20+00:00",
+ "venues": [
+  {
+   "key": "shymkent:baekkey",
+   "name": "Baekkey",
+   "city": "shymkent",
+   "city_name": "Шымкент",
+   "vacancies": 1,
+   "title": "Администратор",
+   "address": null,
+   "text": "Обязанности: Команда басқару қабілеті.\nТребования: WhatsApp арқылы клиенттермен жұмыс істей білу.",
+   "twogis": "https://2gis.kz/shymkent/search/Baekkey"
+  }
+ ]
 }

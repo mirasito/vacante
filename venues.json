@@ -12653,7 +12653,7 @@
   "instagram": "hellagood_taxi",
   "website": "https://hellagood.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001043707108",
-  "avatar_checked_at": "2026-11-14T13:42:31+00:00",
+  "avatar_checked_at": "2026-11-21T13:42:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -25396,6 +25396,20 @@
   "v": 3,
   "checked_at": "2026-11-10T20:46:07+00:00"
  },
+ "almaty:бейсембекова а spa salon platinum": {
+  "name": "БЕЙСЕМБЕКОВА А. (Spa Salon Platinum)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00",
+  "instagram": "spaplatinum_corona",
+  "website": "http://new.platinum-corona.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001110581207",
+  "avatar_checked_at": "2026-11-21T13:42:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:бекзат кулмырза": {
   "name": "БЕКЗАТ КУЛМЫРЗА",
   "city": "almaty",
@@ -32144,6 +32158,15 @@
   "checked_at": "2026-11-04T18:44:42+00:00",
   "instagram": "aikune.astana.kz",
   "source": "https://2gis.kz/almaty/firm/70000001118522270"
+ },
+ "almaty:ок": {
+  "name": "ОК!",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00",
+  "instagram": "okstudio27",
+  "source": "https://2gis.kz/almaty/firm/9429940000789135"
  },
  "almaty:оксана": {
   "name": "оксана",
@@ -47447,6 +47470,20 @@
   "v": 3,
   "checked_at": "2026-10-31T08:43:03+00:00"
  },
+ "astana:teploheat": {
+  "name": "Teploheat",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00",
+  "instagram": "teploheat_too",
+  "website": "http://teploheat.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001054305561",
+  "avatar_checked_at": "2026-11-21T13:42:43+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:terra motors astana": {
   "name": "TERRA MOTORS Astana",
   "city": "astana",
@@ -50597,6 +50634,15 @@
   "v": 3,
   "checked_at": "2026-11-05T03:44:22+00:00"
  },
+ "astana:восстановление": {
+  "name": "Восстановление",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00",
+  "instagram": "vosstanovleniedushi",
+  "source": "https://2gis.kz/astana/firm/70000001110681631"
+ },
  "astana:восток инвест group": {
   "name": "Восток Инвест Group",
   "city": "astana",
@@ -51905,6 +51951,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T13:48:16+00:00"
+ },
+ "astana:записаться в офис": {
+  "name": "Записаться в офис",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00"
  },
  "astana:зинулла а с": {
   "name": "Зинулла А.С",
@@ -56290,6 +56343,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-18T08:44:10+00:00"
+ },
+ "astana:сп инновация": {
+  "name": "СП Инновация",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00"
  },
  "astana:спа комплекс": {
   "name": "Спа-комплекс",
@@ -68413,6 +68473,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T20:44:05+00:00"
+ },
+ "kostanay:инжу kst": {
+  "name": "Инжу KST",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T13:42:42+00:00"
  },
  "kostanay:инструмент": {
   "name": "Инструмент",

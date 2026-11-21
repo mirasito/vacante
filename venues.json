@@ -16855,6 +16855,15 @@
   "instagram": "nauryz.kz",
   "source": "https://2gis.kz/almaty/firm/70000001081531267"
  },
+ "almaty:nazik sezim": {
+  "name": "Nazik Sezim",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T06:43:10+00:00",
+  "instagram": "nazik_sezim.kz",
+  "source": "https://2gis.kz/almaty/firm/70000001112713941"
+ },
  "almaty:nazik тоо сеть фирменных магазинов": {
   "name": "Nazik, ТОО, сеть фирменных магазинов",
   "city": "almaty",
@@ -26256,6 +26265,22 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "almaty:главная бухгалтерия tm aksenta consulting": {
+  "name": "Главная бухгалтерия (TM Aksenta Consulting)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T06:43:10+00:00",
+  "instagram": "aksenta.kz",
+  "website": "http://aksenta.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100712839",
+  "avatar_checked_at": "2026-11-21T06:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0d57ee143b185155.jpg",
+  "avatar_source": "website"
+ },
  "almaty:глобал медикал": {
   "name": "Глобал Медикал",
   "city": "almaty",
@@ -35083,6 +35108,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T01:44:24+00:00"
+ },
+ "almaty:тоо alliance tg": {
+  "name": "ТОО. ALLIANCE TG",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T06:43:10+00:00"
  },
  "almaty:тоо персонал": {
   "name": "ТОО.Персонал",
@@ -46055,6 +46087,15 @@
   "v": 3,
   "checked_at": "2026-11-17T09:44:41+00:00"
  },
+ "astana:sanalux": {
+  "name": "SaNaLux",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T06:43:10+00:00",
+  "instagram": "sanalux_kz",
+  "source": "https://2gis.kz/astana/firm/70000001111845664"
+ },
  "astana:sandybay": {
   "name": "SANDYBAY",
   "city": "astana",
@@ -47468,6 +47509,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:tumar trans asia": {
+  "name": "Tumar Trans Asia",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T06:43:10+00:00"
  },
  "astana:turan": {
   "name": "Turan",
@@ -61457,6 +61505,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
+ },
+ "karaganda:chisto": {
+  "name": "Chisto",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T06:43:10+00:00"
  },
  "karaganda:common market corporation": {
   "name": "Common Market Corporation",

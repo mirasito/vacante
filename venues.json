@@ -2084,6 +2084,15 @@
   "v": 3,
   "checked_at": "2026-10-30T12:44:25+00:00"
  },
+ "aktau:махалля": {
+  "name": "Махалля",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T09:42:15+00:00",
+  "instagram": "mahallya_aktau_4_7",
+  "source": "https://2gis.kz/aktau/firm/70000001028516762"
+ },
  "aktau:маңғыстау": {
   "name": "Маңғыстау",
   "city": "aktau",
@@ -2763,6 +2772,13 @@
    "website"
   ]
  },
+ "aktobe:altiora": {
+  "name": "ALTIORA",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T09:42:15+00:00"
+ },
  "aktobe:altyn bala kz": {
   "name": "Altyn-bala.kz",
   "city": "aktobe",
@@ -2873,6 +2889,15 @@
   "checked_at": "2026-10-29T04:44:51+00:00",
   "instagram": "avtomarket04_arynova",
   "source": "https://2gis.kz/aktobe/firm/70000001058715484"
+ },
+ "aktobe:bakershop": {
+  "name": "BakerShop",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T09:42:15+00:00",
+  "instagram": "bakershop_aktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001045344158"
  },
  "aktobe:bereke bank": {
   "name": "Bereke Bank",
@@ -30519,6 +30544,13 @@
   "v": 3,
   "checked_at": "2026-11-02T15:09:09+00:00"
  },
+ "almaty:мария": {
+  "name": "Мария",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T09:42:15+00:00"
+ },
  "almaty:марк формэль": {
   "name": "Марк Формэль",
   "city": "almaty",
@@ -41466,6 +41498,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T20:44:20+00:00"
+ },
+ "astana:good clinic": {
+  "name": "GOOD CLINIC",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T09:42:15+00:00"
  },
  "astana:good night show astana": {
   "name": "Good Night Show Astana",
@@ -82526,6 +82565,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T00:45:10+00:00"
+ },
+ "uralsk:есмуратова фс": {
+  "name": "Есмуратова ФС",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T09:42:15+00:00"
  },
  "uralsk:жареной рыбы": {
   "name": "ЖАРЕНОЙ РЫБЫ",

@@ -29408,6 +29408,13 @@
    "website"
   ]
  },
+ "almaty:контракт": {
+  "name": "КОНТРАКТ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T02:41:53+00:00"
+ },
  "almaty:концепт медикал": {
   "name": "КОНЦЕПТ МЕДИКАЛ",
   "city": "almaty",

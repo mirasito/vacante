@@ -3010,7 +3010,7 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "website": "https://contineo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001042206719",
-  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -3301,7 +3301,7 @@
   "checked_at": "2026-11-14T05:42:43+00:00",
   "website": "https://www.jti.com/",
   "source": "https://2gis.kz/almaty/firm/70000001029199117",
-  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17480,7 +17480,7 @@
   "instagram": "opatra_almaty",
   "website": "http://opatra.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001077199790",
-  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -23401,6 +23401,13 @@
   "v": 3,
   "checked_at": "2026-11-09T21:43:37+00:00"
  },
+ "almaty:администратор": {
+  "name": "Администратор",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T05:42:45+00:00"
+ },
  "almaty:адрес": {
   "name": "Адрес",
   "city": "almaty",
@@ -27439,6 +27446,19 @@
   ],
   "avatar": "982a42b6d61117f3.jpg",
   "avatar_source": "website"
+ },
+ "almaty:жан спа": {
+  "name": "Жан Спа",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T05:42:45+00:00",
+  "website": "https://zhanspa.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001113994920",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:жана пост": {
   "name": "Жана Пост",
@@ -43792,6 +43812,15 @@
   "instagram": "mellyskz",
   "source": "https://2gis.kz/astana/firm/70000001114718628"
  },
+ "astana:mentorlab": {
+  "name": "MentorLab",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T05:42:45+00:00",
+  "instagram": "mentorlab.kz",
+  "source": "https://2gis.kz/astana/firm/70000001063715400"
+ },
  "astana:merci de france": {
   "name": "MERCI DE FRANCE",
   "city": "astana",
@@ -46140,6 +46169,13 @@
   "checked_at": "2026-10-31T21:43:05+00:00",
   "instagram": "sdelkaplus.kz",
   "source": "https://2gis.kz/astana/firm/70000001029993701"
+ },
+ "astana:sea oптика": {
+  "name": "SEA Oптика",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T05:42:45+00:00"
  },
  "astana:searchinform": {
   "name": "SearchInform",
@@ -52347,6 +52383,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T18:43:51+00:00"
+ },
+ "astana:компания wolt": {
+  "name": "Компания Wolt",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T05:42:45+00:00",
+  "instagram": "wolt.kazakhstan",
+  "website": "https://wolt.com/ru/kaz/nur-sultan",
+  "source": "https://2gis.kz/astana/firm/70000001041019928",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:компания акко": {
   "name": "Компания АККО",
@@ -69136,7 +69186,7 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "website": "https://contineo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001042206719",
-  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -71870,7 +71920,7 @@
   "checked_at": "2026-10-31T04:42:23+00:00",
   "website": "https://contineo.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001042206719",
-  "avatar_checked_at": "2026-11-14T05:42:44+00:00",
+  "avatar_checked_at": "2026-11-21T05:42:45+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -73846,6 +73896,15 @@
   "checked_at": "2026-11-10T08:43:53+00:00",
   "instagram": "sinsaykz",
   "source": "https://2gis.kz/semej/firm/70000001109645275"
+ },
+ "semey:mikoservice": {
+  "name": "Mikoservice",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T05:42:45+00:00",
+  "instagram": "mikoservice.kz",
+  "source": "https://2gis.kz/semej/firm/70000001089446751"
  },
  "semey:mont blanc dental clinic": {
   "name": "MONT BLANC DENTAL CLINIC",

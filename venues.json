@@ -28897,6 +28897,15 @@
   "v": 3,
   "checked_at": "2026-11-17T17:43:18+00:00"
  },
+ "almaty:кафе лачин": {
+  "name": "Кафе. ЛАЧИН",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T10:42:13+00:00",
+  "instagram": "cafelachin",
+  "source": "https://2gis.kz/almaty/firm/70000001032426489"
+ },
  "almaty:кафе софт kz": {
   "name": "Кафе Софт KZ",
   "city": "almaty",
@@ -30253,7 +30262,7 @@
   "checked_at": "2026-11-14T09:42:46+00:00",
   "website": "https://loftpark.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001119072622",
-  "avatar_checked_at": "2026-11-14T09:42:48+00:00",
+  "avatar_checked_at": "2026-11-21T10:42:13+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30463,6 +30472,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-13T08:45:10+00:00"
+ },
+ "almaty:максима": {
+  "name": "Максима",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-21T10:42:13+00:00"
  },
  "almaty:максимальный размах corporation": {
   "name": "Максимальный размах corporation",
@@ -51185,6 +51201,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T09:44:27+00:00"
+ },
+ "astana:доненова": {
+  "name": "Доненова",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-21T10:42:13+00:00"
  },
  "astana:донер на абая": {
   "name": "Донер на Абая",
@@ -74624,6 +74647,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "semey:арбат окошко": {
+  "name": "Арбат Окошко",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-21T10:42:13+00:00",
+  "instagram": "doner_okoshko",
+  "source": "https://2gis.kz/semej/firm/70000001102206422"
  },
  "semey:аргымак": {
   "name": "Аргымак",

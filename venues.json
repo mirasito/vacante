@@ -1841,7 +1841,7 @@
   "instagram": "intertopkz",
   "website": "https://intertop.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001102012452",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20529,7 +20529,7 @@
   "instagram": "spdex.kz",
   "website": "http://www.spdex.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001694535",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21239,7 +21239,7 @@
   "checked_at": "2026-11-01T09:43:31+00:00",
   "website": "https://technodom.kz/",
   "source": "https://technodom.kz",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24697,7 +24697,7 @@
   "instagram": "ankernye_bolty_fundamentnye",
   "website": "http://ankerstal.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032291297",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30400,7 +30400,7 @@
   "instagram": "liniya.kz",
   "website": "http://www.devline.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001103090761",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32979,6 +32979,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T21:43:51+00:00"
+ },
+ "almaty:поваров 1200": {
+  "name": "Поваров 1200",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T10:42:37+00:00"
  },
  "almaty:погуляева": {
   "name": "Погуляева",
@@ -37396,7 +37403,7 @@
   "instagram": "extremal.kz",
   "website": "https://extremal.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000946607",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -41321,7 +41328,7 @@
   "instagram": "fabricfactory.kz",
   "website": "http://fabricfactory.kz/",
   "source": "https://2gis.kz/astana/firm/70000001091839641",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -43675,6 +43682,22 @@
   "checked_at": "2026-11-01T10:43:41+00:00",
   "instagram": "la_creme_astana",
   "source": "https://www.instagram.com/la_creme_astana/"
+ },
+ "astana:la maro": {
+  "name": "La Maro",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T10:42:37+00:00",
+  "instagram": "lamaro.astana",
+  "website": "http://lamaro.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001075329477",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "4342ca4305762594.jpg",
+  "avatar_source": "website"
  },
  "astana:la maro kitchen": {
   "name": "La Maro kitchen",
@@ -46475,6 +46498,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T11:44:03+00:00"
+ },
+ "astana:rotor kz": {
+  "name": "ROTOR.KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T10:42:37+00:00"
  },
  "astana:royalstroy development": {
   "name": "RoyalStroy Development",
@@ -51199,6 +51229,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:гостиница шаттык": {
+  "name": "Гостиница Шаттык",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T10:42:37+00:00",
+  "instagram": "hotel_shattyk",
+  "source": "https://2gis.kz/astana/firm/70000001047372289"
  },
  "astana:гоцуляк": {
   "name": "Гоцуляк",
@@ -66659,6 +66698,19 @@
    "website"
   ]
  },
+ "kokshetau:stroykom kz": {
+  "name": "StroyKom.kz",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T10:42:37+00:00",
+  "website": "http://stroykom.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033570404",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:technodom operator технодом оператор": {
   "name": "TECHNODOM Operator (Технодом Оператор)",
   "city": "kokshetau",
@@ -70941,7 +70993,7 @@
   "instagram": "joseph.company.kz",
   "website": "https://joseph-company.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001105157575",
-  "avatar_checked_at": "2026-11-15T10:42:38+00:00",
+  "avatar_checked_at": "2026-11-22T10:42:38+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -83683,6 +83735,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
+ },
+ "uralsk:открывает набор сотрудников": {
+  "name": "ОТКРЫВАЕТ НАБОР СОТРУДНИКОВ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T10:42:37+00:00"
  },
  "uralsk:парк отель": {
   "name": "Парк Отель",

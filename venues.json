@@ -7838,7 +7838,7 @@
   "instagram": "b_express.kz",
   "website": "http://www.b-express.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001041157989",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -8749,7 +8749,7 @@
   "instagram": "brightrich.kz",
   "website": "https://brightrich.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001074374024",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -15184,7 +15184,7 @@
   "instagram": "lanzhou_kafe",
   "website": "http://lanzhou.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001031693292",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -15972,7 +15972,7 @@
   "instagram": "mastersupport.kz",
   "website": "https://www.msupport.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001029607055",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28514,6 +28514,13 @@
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
  },
+ "almaty:кадырбаева": {
+  "name": "ИП Кадырбаева",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00"
+ },
  "almaty:кадышев ерлан": {
   "name": "КАДЫШЕВ ЕРЛАН",
   "city": "almaty",
@@ -30265,6 +30272,23 @@
   "v": 3,
   "checked_at": "2026-11-15T07:42:23+00:00"
  },
+ "almaty:лепим и варим": {
+  "name": "ЛЕПИМ И ВАРИМ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00",
+  "telegram": "lepimivarim",
+  "website": "http://lepimivarim.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001041006918",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "4c01ecc28b28476e.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:лечебно оздоровительный комплекс алатау": {
   "name": "Лечебно-оздоровительный комплекс Алатау",
   "city": "almaty",
@@ -30435,7 +30459,7 @@
   "instagram": "lotte.rakhat",
   "website": "https://www.rakhat.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001032789637",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -35089,7 +35113,7 @@
   "instagram": "fitnestastak",
   "website": "https://www.fitnestastak.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000800982",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40105,6 +40129,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
+ },
+ "astana:chocoparty": {
+  "name": "Chocoparty",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00",
+  "instagram": "chocoparty.kz",
+  "source": "https://2gis.kz/astana/firm/70000001081279613"
  },
  "astana:chopchop": {
   "name": "CHOPCHOP",
@@ -45997,6 +46030,13 @@
   "avatar": "ca92e86388631a92.jpg",
   "avatar_source": "website"
  },
+ "astana:qazaqstan invest group": {
+  "name": "Qazaqstan Invest Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00"
+ },
  "astana:qazbeergroup": {
   "name": "QazBeerGroup",
   "city": "astana",
@@ -49128,7 +49168,7 @@
   "instagram": "asianord",
   "website": "http://asianord.com/",
   "source": "https://2gis.kz/astana/firm/70000001023344602",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58331,6 +58371,13 @@
   "v": 3,
   "checked_at": "2026-11-11T11:45:06+00:00"
  },
+ "astana:цех": {
+  "name": "Цех",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00"
+ },
  "astana:цех мясных полуфабрикатов": {
   "name": "Цех мясных полуфабрикатов",
   "city": "astana",
@@ -58812,7 +58859,7 @@
   "instagram": "stadler_kz",
   "website": "https://stadlerrail.com/",
   "source": "https://2gis.kz/astana/firm/70000001079217081",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60217,6 +60264,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
+ },
+ "atyrau:shafran": {
+  "name": "Shafran",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00",
+  "instagram": "shafran.kz",
+  "source": "https://2gis.kz/atyrau/firm/70000001034738612"
  },
  "atyrau:shishka edition": {
   "name": "shishka edition",
@@ -61904,7 +61960,7 @@
   "checked_at": "2026-11-01T04:43:00+00:00",
   "website": "https://qazcarbon.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302943550",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -66840,6 +66896,13 @@
   ],
   "avatar": "dd822770eb0b05d1.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:интернешнл консалт групп": {
+  "name": "Интернешнл консалт групп",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T05:42:30+00:00"
  },
  "kokshetau:интерполе": {
   "name": "ИНТЕРПОЛЕ",
@@ -73334,7 +73397,7 @@
   "instagram": "gorgaz.service",
   "website": "https://gorgaz.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001038111256",
-  "avatar_checked_at": "2026-11-15T05:42:25+00:00",
+  "avatar_checked_at": "2026-11-22T05:42:31+00:00",
   "avatar_tried": [
    "website"
   ]

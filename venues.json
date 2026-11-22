@@ -12831,6 +12831,13 @@
   "v": 3,
   "checked_at": "2026-11-11T13:44:34+00:00"
  },
+ "almaty:himtech": {
+  "name": "himtech",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T17:42:38+00:00"
+ },
  "almaty:himzone": {
   "name": "HIMZONE",
   "city": "almaty",
@@ -36976,6 +36983,13 @@
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
  },
+ "almaty:цех": {
+  "name": "Цех",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T17:42:38+00:00"
+ },
  "almaty:цифрал сервис": {
   "name": "Цифрал-Сервис",
   "city": "almaty",
@@ -38029,6 +38043,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-20T16:42:40+00:00"
+ },
+ "astana:a2 project group": {
+  "name": "A2 PROJECT GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T17:42:38+00:00"
  },
  "astana:a_gym astana": {
   "name": "A_GYM ASTANA",
@@ -50115,6 +50136,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T15:44:25+00:00"
+ },
+ "astana:арман сатхожин": {
+  "name": "Арман Сатхожин",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T17:42:38+00:00"
  },
  "astana:арсенал": {
   "name": "Арсенал",
@@ -78961,6 +78989,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-02T20:42:52+00:00"
+ },
+ "shymkent:атг": {
+  "name": "АТГ",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T17:42:38+00:00"
  },
  "shymkent:ауезов кайрат сейдуллаевич": {
   "name": "Ауезов Кайрат Сейдуллаевич",

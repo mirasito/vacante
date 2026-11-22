@@ -17960,7 +17960,7 @@
   "instagram": "paimon.kz",
   "telegram": "paimon_kz",
   "source": "https://2gis.kz/almaty/firm/70000001060239853",
-  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
+  "avatar_checked_at": "2026-11-22T16:42:18+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -37217,6 +37217,13 @@
   "instagram": "tefani_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001090070293"
  },
+ "almaty:шаров": {
+  "name": "Шаров",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T16:42:17+00:00"
+ },
  "almaty:шарыкта": {
   "name": "Шарыкта",
   "city": "almaty",
@@ -49546,7 +49553,7 @@
   "instagram": "akcentmicrosystems",
   "website": "https://www.ak-cent.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000791812",
-  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
+  "avatar_checked_at": "2026-11-22T16:42:18+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -60540,7 +60547,7 @@
   "checked_at": "2026-11-08T15:44:05+00:00",
   "website": "https://wildberries.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001038152697",
-  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
+  "avatar_checked_at": "2026-11-22T16:42:18+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67174,6 +67181,13 @@
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
  },
+ "kokshetau:ефремов е в": {
+  "name": "ЕФРЕМОВ Е.В",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T16:42:17+00:00"
+ },
  "kokshetau:завод абк бетон": {
   "name": "Завод АБК-Бетон",
   "city": "kokshetau",
@@ -71577,6 +71591,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T15:42:44+00:00"
+ },
+ "pavlodar:zhebe sas security": {
+  "name": "ZHEBE SAS Security",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T16:42:17+00:00"
  },
  "pavlodar:zmk trade": {
   "name": "ZMK Trade",
@@ -77635,7 +77656,7 @@
   "instagram": "too_kes",
   "website": "https://www.kamazeuro.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001027706144",
-  "avatar_checked_at": "2026-11-15T16:41:38+00:00",
+  "avatar_checked_at": "2026-11-22T16:42:18+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -83393,6 +83414,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "uralsk:генацвале": {
+  "name": "ГЕНАЦВАЛЕ",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T16:42:17+00:00",
+  "instagram": "genatsvale_uralsk",
+  "source": "https://2gis.kz/uralsk/firm/70000001033566614"
  },
  "uralsk:глазцентр": {
   "name": "ГлазЦентр",

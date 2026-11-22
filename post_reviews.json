@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T15:56:56+00:00",
+ "updated_at": "2026-11-22T16:56:42+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -2279,13 +2279,6 @@
     "employer": "Family Stories"
    }
   },
-  "vakansii_rabota_atyrau-50018": {
-   "verdict": "approve",
-   "at": "2026-11-05T06:58:27+00:00",
-   "fields": {
-    "schedule": "2/2, 09:00–22:30"
-   }
-  },
   "hh-138103205": {
    "verdict": "approve",
    "at": "2026-11-05T06:58:27+00:00",
@@ -3555,49 +3548,6 @@
   "almatyvacancies-11138": {
    "verdict": "reject",
    "at": "2026-11-08T15:56:55+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
-  "hh-129791006": {
-   "verdict": "reject",
-   "at": "2026-11-08T16:56:45+00:00",
-   "reason": "Работа в Москве, не в Казахстане"
-  },
-  "hh-139233245": {
-   "verdict": "approve",
-   "at": "2026-11-08T16:56:45+00:00",
-   "fields": {
-    "schedule": "Свободный график, 5–8 часов"
-   }
-  },
-  "hh-139233032": {
-   "verdict": "reject",
-   "at": "2026-11-08T16:56:45+00:00",
-   "reason": "Офисная должность"
-  },
-  "rabota4almaty-6353": {
-   "verdict": "reject",
-   "at": "2026-11-08T16:56:45+00:00",
-   "reason": "Офисная должность: договоры и документы"
-  },
-  "rabota_v_shymkente-1457": {
-   "verdict": "approve",
-   "at": "2026-11-08T16:56:45+00:00",
-   "fields": {
-    "title": "Няня в детский сад",
-    "address": "рядом с парком Победы"
-   }
-  },
-  "vakansii_rabota_atyrau-50072": {
-   "verdict": "approve",
-   "at": "2026-11-08T16:56:45+00:00",
-   "fields": {
-    "employer": "Кафе «Tuysqan»",
-    "schedule": "2/2, 08:00–01:00"
-   }
-  },
-  "vakansii_rabota_atyrau-50073": {
-   "verdict": "reject",
-   "at": "2026-11-08T16:56:45+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   },
   "hh-139233478": {
@@ -41051,6 +41001,47 @@
     "employer": "Ресторан «Velvet»",
     "schedule": "График по договорённости"
    }
+  },
+  "hh-139717978": {
+   "verdict": "approve",
+   "at": "2026-11-22T16:56:42+00:00",
+   "fields": {
+    "employer": "Liberty Space",
+    "schedule": "5/2"
+   }
+  },
+  "rabota_v_pavlodare-7374": {
+   "verdict": "approve",
+   "at": "2026-11-22T16:56:42+00:00",
+   "fields": {
+    "employer": "«ZHEBE SAS Security»",
+    "salary_min": 200000,
+    "salary_max": 300000,
+    "salary_period": "month",
+    "schedule": "Сменный график"
+   }
+  },
+  "rabota_v_pavlodare-7376": {
+   "verdict": "approve",
+   "at": "2026-11-22T16:56:42+00:00",
+   "fields": {
+    "address": "район Диспетчерской"
+   }
+  },
+  "rabota_v_pavlodare-7373": {
+   "verdict": "reject",
+   "at": "2026-11-22T16:56:42+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_v_semee-7994": {
+   "verdict": "reject",
+   "at": "2026-11-22T16:56:42+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota_v_semee-7993": {
+   "verdict": "reject",
+   "at": "2026-11-22T16:56:42+00:00",
+   "reason": "Мало сведений: нет зарплаты и заведения"
   }
  }
 }

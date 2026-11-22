@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T04:57:08+00:00",
+ "updated_at": "2026-11-22T05:56:34+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -3272,117 +3272,12 @@
     "address": "ул. Туран, 39а, ЖК «Four Seasons»"
    }
   },
-  "astana_job_vakansii-129887": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "employer": "Кафе «Fermento»",
-    "schedule": "2/2 или 5/2"
-   }
-  },
-  "astana_rabota-90172": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "employer": "Red Chocoberry",
-    "salary_min": 300000,
-    "salary_max": null,
-    "salary_period": "month",
-    "schedule": "6/1, 09:00–18:00",
-    "address": "ул. Толе би, 65"
-   }
-  },
-  "almaty_rabota05-11732": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "title": "Донерщик, техперсонал, бармен, кассир",
-    "employer": "Кафе «Konya Günaydın»",
-    "schedule": "1/1 или 2/2",
-    "address": "мкр. Алтай-1, 26"
-   }
-  },
-  "almaty_rabota_work-31853": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "employer": "Магазин «Baqstroy»",
-    "perks": [
-     "Бонусы",
-     "Без опыта",
-     "Можно студентам"
-    ]
-   }
-  },
-  "almaty_rabota_work-31851": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "title": "Посудомойщик",
-    "employer": "Отель «Rixos Almaty»",
-    "schedule": "08:00–17:00, 15:00–00:00 или 22:00–08:00",
-    "perks": [
-     "Питание",
-     "Спецодежда"
-    ]
-   }
-  },
-  "almatyrabota1-21294": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "employer": "Магазин «Stilalmaty»",
-    "schedule": "08:00–19:00",
-    "address": "ТД «Адем 3», сектор Е1"
-   }
-  },
-  "almatyrabota1-21338": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "employer": null,
-    "schedule": "выходные и праздничные дни, 10:00–21:00",
-    "address": "ул. Наурызбай батыра, 50, ТД «Арбат»"
-   }
-  },
-  "rabota4almaty-6316": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "title": "Водитель фуры",
-    "employer": "ТОО «Данияр»",
-    "address": "Алатауский район, Бакорда"
-   }
-  },
-  "rabota4almaty-6314": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "title": "Сборщик корпусной мебели",
-    "employer": "WAW Mebel",
-    "address": "пр. Назарбаева, 36"
-   }
-  },
   "hh-138257375": {
    "verdict": "approve",
    "at": "2026-11-08T05:56:39+00:00",
    "fields": {
     "employer": "Фронт-Лайн",
     "address": "ул. Байтурсынова, 18"
-   }
-  },
-  "rabota_semey_official-6838": {
-   "verdict": "approve",
-   "at": "2026-11-08T05:56:39+00:00",
-   "fields": {
-    "title": "Сварщик-слесарь по отоплению",
-    "employer": "ТОО «Маслосырбаза»",
-    "schedule": "5/2, 08:00–17:00",
-    "address": "ул. Чехова, 81 (за Бизнес-колледжем)",
-    "perks": [
-     "Питание",
-     "Официально"
-    ]
    }
   },
   "hh-139229598": {
@@ -3400,13 +3295,6 @@
     "employer": "Фитнес-клуб «Invictus Highvill»",
     "schedule": "2/2, ночные смены, 12 часов",
     "address": "ул. Ахмета Байтурсынова, 9"
-   }
-  },
-  "hh-139144909": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "address": "ул. Александра Пушкина, 67/1"
    }
   },
   "astana_job_vakansii-130324": {
@@ -3500,14 +3388,6 @@
    "fields": {
     "title": "Продавец-консультант в магазин игрушек",
     "address": "ТРК «Atakent Mall»"
-   }
-  },
-  "hh-138863279": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Оператор ТПА и экструзионного оборудования",
-    "employer": "World Agro Trade"
    }
   },
   "rabotaaktau-142349": {
@@ -41905,6 +41785,61 @@
    "verdict": "reject",
    "at": "2026-11-22T04:57:08+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса; водитель на рейсы в Россию"
+  },
+  "astana_job_vakansii-130931": {
+   "verdict": "approve",
+   "at": "2026-11-22T05:56:34+00:00",
+   "fields": {
+    "title": "Оператор кафе",
+    "employer": "Кафе «MIKO»",
+    "schedule": "6/1, ночные смены, 21:00–09:00",
+    "address": "ул. Кызылкол, 1"
+   }
+  },
+  "astana_job_vakansii-130528": {
+   "verdict": "approve",
+   "at": "2026-11-22T05:56:34+00:00",
+   "fields": {
+    "employer": "Wildberries",
+    "schedule": "2/2, 09:00–21:00",
+    "address": "Левый и правый берег"
+   }
+  },
+  "vakansii_rabota_atyrau-50323": {
+   "verdict": "approve",
+   "at": "2026-11-22T05:56:34+00:00",
+   "fields": {
+    "employer": "«Shafran»",
+    "schedule": "6/1, 10:00–00:00"
+   }
+  },
+  "rabotaaktau-143065": {
+   "verdict": "approve",
+   "at": "2026-11-22T05:56:34+00:00",
+   "fields": {
+    "title": "Чикенщик",
+    "employer": "Фастфуд «ALI DONER»",
+    "schedule": "2/2, 11:00–00:00",
+    "address": "12-й микрорайон, 30А",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "rabotaaktau-143090": {
+   "verdict": "approve",
+   "at": "2026-11-22T05:56:34+00:00",
+   "fields": {
+    "title": "Помощница по дому",
+    "schedule": "5/2, 11:00–20:00",
+    "address": "24-й микрорайон"
+   }
+  },
+  "rabota_v_pavlodare-7371": {
+   "verdict": "reject",
+   "at": "2026-11-22T05:56:34+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   }
  }
 }

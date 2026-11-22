@@ -21247,6 +21247,13 @@
   "avatar": "6d0fff72f3d2c0d2.jpg",
   "avatar_source": "website"
  },
+ "almaty:techno partners": {
+  "name": "TECHNO PARTNERS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T13:42:05+00:00"
+ },
  "almaty:techno power": {
   "name": "TECHNO POWER",
   "city": "almaty",
@@ -23661,6 +23668,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T21:43:37+00:00"
+ },
+ "almaty:адлгереев санат": {
+  "name": "Адлгереев Санат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T13:42:05+00:00"
  },
  "almaty:администратор": {
   "name": "Администратор",
@@ -60126,6 +60140,13 @@
   "checked_at": "2026-11-02T03:43:32+00:00",
   "instagram": "haiat_atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001095162774"
+ },
+ "atyrau:haridus харидус": {
+  "name": "Haridus (Харидус)",
+  "city": "atyrau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T13:42:05+00:00"
  },
  "atyrau:hydroserv central asia": {
   "name": "Hydroserv Central Asia",

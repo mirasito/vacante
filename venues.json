@@ -26792,6 +26792,21 @@
   "v": 3,
   "checked_at": "2026-11-18T16:44:57+00:00"
  },
+ "almaty:градкомплекс": {
+  "name": "Градкомплекс",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T22:41:38+00:00",
+  "website": "http://ecopolis.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001032215910",
+  "avatar_checked_at": "2026-11-22T22:41:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "224f42608fcb6c80.jpg",
+  "avatar_source": "website"
+ },
  "almaty:грамматикопуло к и": {
   "name": "ГРАММАТИКОПУЛО К.И.",
   "city": "almaty",

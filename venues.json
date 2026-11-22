@@ -14003,7 +14003,7 @@
   "telegram": "jsiclub",
   "website": "https://jsi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001068041909",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -28872,7 +28872,7 @@
   "instagram": "kazznt",
   "website": "https://kazznt.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001080994531",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29367,7 +29367,7 @@
   "instagram": "kinopark_kz",
   "website": "https://kinopark.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037363298",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30836,7 +30836,7 @@
   "instagram": "malenkaya_italiya",
   "website": "http://littleitaly.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001029247120",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34413,7 +34413,7 @@
   "instagram": "dns_qazaqstan",
   "website": "http://dns-shop.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001064968167",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39386,6 +39386,22 @@
   "checked_at": "2026-11-20T07:44:26+00:00",
   "instagram": "balyk_fish_astana",
   "source": "https://2gis.kz/astana/firm/70000001103312629"
+ },
+ "astana:bao sushi&noodles": {
+  "name": "BAO Sushi&Noodles",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T15:42:13+00:00",
+  "instagram": "bao_astana",
+  "website": "https://baofood.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001094695514",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "275478eac86a8c0f.jpg",
+  "avatar_source": "website"
  },
  "astana:barakat group 2050": {
   "name": "Barakat Group 2050",
@@ -53449,7 +53465,7 @@
   "instagram": "concreteastana",
   "website": "https://concrete-astana.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018134318",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55876,6 +55892,13 @@
   "checked_at": "2026-11-09T13:44:59+00:00",
   "instagram": "wyn_social_bar",
   "source": "https://2gis.kz/astana/firm/70000001115114309"
+ },
+ "astana:рахимберлин": {
+  "name": "Рахимберлин",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T15:42:13+00:00"
  },
  "astana:рахмет": {
   "name": "РАХМЕТ",
@@ -86990,7 +87013,7 @@
   "instagram": "siluminvostok",
   "website": "https://silumin.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721317694",
-  "avatar_checked_at": "2026-11-15T15:41:32+00:00",
+  "avatar_checked_at": "2026-11-22T15:42:14+00:00",
   "avatar_tried": [
    "website"
   ]

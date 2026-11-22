@@ -41422,6 +41422,13 @@
   "v": 3,
   "checked_at": "2026-11-02T13:55:32+00:00"
  },
+ "astana:finstart жакупова": {
+  "name": "Finstart ЖАКУПОВА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T11:42:17+00:00"
+ },
  "astana:fitness it": {
   "name": "Fitness IT",
   "city": "astana",
@@ -84215,6 +84222,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-16T20:44:15+00:00"
+ },
+ "uralsk:юникс": {
+  "name": "Юникс",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T11:42:17+00:00"
  },
  "uralsk:әлем плаза": {
   "name": "Әлем Плаза",

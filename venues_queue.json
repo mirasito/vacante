@@ -1,4 +1,16 @@
 {
- "updated_at": "2026-11-22T02:26:18+00:00",
- "venues": []
+ "updated_at": "2026-11-22T03:14:34+00:00",
+ "venues": [
+  {
+   "key": "almaty:пичин",
+   "name": "Пичин",
+   "city": "almaty",
+   "city_name": "Алматы",
+   "vacancies": 1,
+   "title": "Менеджер по продажам с таргета",
+   "address": "проспект Суюнбая, 292/7",
+   "text": "Менеджер по продажам с таргета",
+   "twogis": "https://2gis.kz/almaty/search/%D0%9F%D0%B8%D1%87%D0%B8%D0%BD"
+  }
+ ]
 }

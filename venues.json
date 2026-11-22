@@ -2294,6 +2294,13 @@
   "v": 3,
   "checked_at": "2026-11-17T10:43:23+00:00"
  },
+ "aktau:президент": {
+  "name": "Президент",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T08:42:14+00:00"
+ },
  "aktau:прессбук": {
   "name": "ПрессБук",
   "city": "aktau",
@@ -22136,7 +22143,7 @@
   "instagram": "valesco_kz",
   "website": "http://www.valesco.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790908",
-  "avatar_checked_at": "2026-11-15T08:42:08+00:00",
+  "avatar_checked_at": "2026-11-22T08:42:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33275,6 +33282,24 @@
   "v": 3,
   "checked_at": "2026-11-03T09:43:43+00:00"
  },
+ "almaty:протэк алматы": {
+  "name": "ПРОТЭК-АЛМАТЫ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T08:42:14+00:00",
+  "instagram": "protekgroup",
+  "telegram": "protek_kz",
+  "website": "http://protekgroup.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940001192411",
+  "avatar_checked_at": "2026-11-22T08:42:15+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "76a8dc63586b2d40.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:профрезерв": {
   "name": "Профрезерв",
   "city": "almaty",
@@ -43835,7 +43860,7 @@
   "checked_at": "2026-11-01T07:43:00+00:00",
   "website": "http://likedecor.kz/",
   "source": "https://2gis.kz/astana/firm/70000001044766457",
-  "avatar_checked_at": "2026-11-15T08:42:08+00:00",
+  "avatar_checked_at": "2026-11-22T08:42:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44926,6 +44951,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T10:44:46+00:00"
+ },
+ "astana:nomad auto studio": {
+  "name": "Nomad Auto Studio",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T08:42:14+00:00",
+  "instagram": "nomadautostudio",
+  "source": "https://2gis.kz/astana/firm/70000001115500034"
  },
  "astana:nomado partners": {
   "name": "Nomado Partners",
@@ -53573,7 +53607,7 @@
   "checked_at": "2026-11-15T08:42:08+00:00",
   "website": "https://like.service.kz/",
   "source": "https://2gis.kz/astana/firm/70000001111842779",
-  "avatar_checked_at": "2026-11-15T08:42:08+00:00",
+  "avatar_checked_at": "2026-11-22T08:42:15+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -69231,6 +69265,15 @@
   "avatar": "07147a5b252d9a57.jpg",
   "avatar_source": "website"
  },
+ "kostanay:мир телевизоров": {
+  "name": "Мир телевизоров",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T08:42:14+00:00",
+  "instagram": "televizory_kostanay",
+  "source": "https://2gis.kz/kostanaj/firm/70000001063791428"
+ },
  "kostanay:митсол": {
   "name": "МИТСОЛ",
   "city": "kostanay",
@@ -75087,6 +75130,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-16T21:44:14+00:00"
+ },
+ "semey:toi house": {
+  "name": "TOI HOUSE",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T08:42:14+00:00",
+  "instagram": "toi_house.semey",
+  "source": "https://2gis.kz/semej/firm/70000001089220832"
  },
  "semey:toptrans kz": {
   "name": "TopTrans-Kz",

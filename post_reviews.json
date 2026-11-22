@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-21T20:56:57+00:00",
+ "updated_at": "2026-11-22T03:57:02+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -3271,34 +3271,10 @@
     "address": "пр. Мангилик Ел, 38"
    }
   },
-  "hh-139228535": {
-   "verdict": "approve",
-   "at": "2026-11-07T23:56:51+00:00",
-   "fields": {
-    "schedule": "6/1",
-    "address": "ул. Сартай Батыра, 10А"
-   }
-  },
   "hh-139229148": {
    "verdict": "reject",
    "at": "2026-11-08T03:56:47+00:00",
    "reason": "Офисная должность: региональный менеджер B2B-продаж"
-  },
-  "hh-139228593": {
-   "verdict": "approve",
-   "at": "2026-11-08T03:56:47+00:00",
-   "fields": {
-    "title": "Консультант в ювелирный шоурум",
-    "schedule": "5/2 или 2/2, 8 часов"
-   }
-  },
-  "hh-138283427": {
-   "verdict": "approve",
-   "at": "2026-11-08T03:56:47+00:00",
-   "fields": {
-    "employer": "Фирма «Айгерим»",
-    "address": "ул. Авроры"
-   }
   },
   "rabota_uralsk-74441": {
    "verdict": "reject",
@@ -41730,6 +41706,222 @@
    "fields": {
     "employer": "«Дизендорф»",
     "schedule": "2/2"
+   }
+  },
+  "zhumys_astana_kz-17723": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Бармен, повар, помощник повара",
+    "employer": "Кафе «МИКО»",
+    "salary_min": 12000,
+    "salary_max": 20000,
+    "salary_period": "day",
+    "schedule": "6/1, 10:00–00:00",
+    "address": "ул. Айтматова, 36 (левый берег)",
+    "perks": [
+     "Питание",
+     "Развозка"
+    ]
+   }
+  },
+  "rabota_astanakz-31653": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "schedule": "2/2, 08:00–00:00",
+    "address": "ул. Акжол, 28 (Астыкжан)"
+   }
+  },
+  "astana_job_vakansii-130935": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "employer": null,
+    "schedule": "5/2, 10:00–19:00 или 13:00–22:00",
+    "address": "ТРЦ «Damu Mall», 1 этаж, бутик REAL8"
+   }
+  },
+  "astana_rabota-90266": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "employer": "Центр массажа «Восстановление»",
+    "schedule": "10:00–17:00",
+    "address": "ул. Кунаева, 12"
+   }
+  },
+  "rabota_astanakz-31652": {
+   "verdict": "reject",
+   "at": "2026-11-22T03:57:02+00:00",
+   "reason": "Офисная должность: менеджер по оптовым продажам"
+  },
+  "rabota_astanakz-31629": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Водитель автобуса, категория D",
+    "schedule": "Гибкий график",
+    "address": "ул. Кенесары, 40",
+    "perks": []
+   }
+  },
+  "astana_hh-1913": {
+   "verdict": "reject",
+   "at": "2026-11-22T03:57:02+00:00",
+   "reason": "Сборный пост нескольких заведений, карточка выйдет путаной"
+  },
+  "astana_job_vakansii-130944": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "employer": "GAMMA D’ORO",
+    "schedule": "5/2, 10:00–21:00 или 2/2, 10:00–22:00",
+    "perks": [
+     "Обучение",
+     "Бонусы"
+    ]
+   }
+  },
+  "almaty_rabota05-11781": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Повар, помощник повара, кассир",
+    "employer": "Iman Doner&Burger",
+    "salary_min": 15000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "3/1, 12:00–03:00",
+    "address": "ул. Радостовца, 292/1а",
+    "perks": [
+     "Без опыта",
+     "Обучение",
+     "Бонусы"
+    ]
+   }
+  },
+  "hh-139170329": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Старший бармен",
+    "employer": "Fruit Republic",
+    "schedule": "6/1, по 9 часов",
+    "address": "мкр. Самал-2, 111"
+   }
+  },
+  "hh-139692304": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "employer": "Tashkent Taom",
+    "schedule": "5/2, 3/2 или 2/1, по 10–12 часов",
+    "address": "пер. Минина, 8"
+   }
+  },
+  "hh-139696601": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Официант",
+    "employer": "Lounge bar «Koo-Koo»",
+    "schedule": "5/2, по 12 часов",
+    "address": "ул. Жумабека Ташенова, 16"
+   }
+  },
+  "hh-139713981": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Машинист экструдера",
+    "schedule": "4/2, по 11 часов",
+    "perks": [
+     "Развозка"
+    ]
+   }
+  },
+  "rabotaaktau-143074": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Оператор-кассир",
+    "schedule": "5/2, 09:00–22:00",
+    "address": "34-й микрорайон",
+    "perks": [
+     "Питание",
+     "Обучение",
+     "Без опыта"
+    ]
+   }
+  },
+  "rabotaaktau-143069": {
+   "verdict": "reject",
+   "at": "2026-11-22T03:57:02+00:00",
+   "reason": "Офисная должность: менеджер по продажам в строительной компании"
+  },
+  "rabotaaktau-143085": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "schedule": "1/1, суточные смены",
+    "address": "3Б микрорайон, дом 8А",
+    "perks": []
+   }
+  },
+  "rabotaaktau-143081": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "employer": "Столовая «Smak Time»",
+    "schedule": "5/2, 08:00–20:00",
+    "address": "4-й микрорайон, 84"
+   }
+  },
+  "rabotaaktau-143078": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "employer": "Магазин «Elshan»",
+    "schedule": "дневные и ночные смены"
+   }
+  },
+  "rabotaaktau-143048": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Продавец украшений",
+    "employer": null,
+    "address": "ТРЦ «Аққала», 3 этаж"
+   }
+  },
+  "rabotaaktau-143044": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Плотник-разнорабочий",
+    "employer": "Tempu Toys",
+    "schedule": "6/1, 09:45–20:00",
+    "address": "29А, 40, ТД «Зами», 0 этаж"
+   }
+  },
+  "rabotaaktau-143043": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Хостес, раннер, оператор",
+    "employer": "Шашлычная «Шашлыки от дяди Гадима»",
+    "address": "8 мкр., 39Б"
+   }
+  },
+  "hh-139710602": {
+   "verdict": "approve",
+   "at": "2026-11-22T03:57:02+00:00",
+   "fields": {
+    "title": "Доливщик масла, разнорабочий",
+    "employer": "Oil Центр",
+    "schedule": "4/2, по 12 часов",
+    "address": "пр. Кобыланды батыра, 28/2"
    }
   }
  }

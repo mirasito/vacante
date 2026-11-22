@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T05:56:34+00:00",
+ "updated_at": "2026-11-22T06:57:13+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -3280,43 +3280,6 @@
     "address": "ул. Байтурсынова, 18"
    }
   },
-  "hh-139229598": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Продавец детской одежды"
-   }
-  },
-  "hh-139229489": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Прачка (ночные смены)",
-    "employer": "Фитнес-клуб «Invictus Highvill»",
-    "schedule": "2/2, ночные смены, 12 часов",
-    "address": "ул. Ахмета Байтурсынова, 9"
-   }
-  },
-  "astana_job_vakansii-130324": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Продавец-консультант, кассир, бармен",
-    "employer": "Алкомаркет «Градус»",
-    "schedule": "10:00–23:00",
-    "address": "ул. Керей Жанибек, 44/3"
-   }
-  },
-  "zhumys_astana_kz-17285": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Официант, бариста, пекарь",
-    "employer": "Oneshott Coffee",
-    "schedule": "2/2, 08:00–23:00",
-    "address": "ул. Пушкина, 11/1"
-   }
-  },
   "hh-139229556": {
    "verdict": "approve",
    "at": "2026-11-08T06:57:03+00:00",
@@ -3329,51 +3292,6 @@
    "verdict": "reject",
    "at": "2026-11-08T06:57:03+00:00",
    "reason": "Удалённая работа из дома со своим компьютером"
-  },
-  "astana_job_vakansii-130321": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Официант, раздатчица",
-    "schedule": "сменный график, дневные и ночные смены"
-   }
-  },
-  "hh-139229635": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "employer": "Wei Bo"
-   }
-  },
-  "rabota4almaty-6318": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Кассир, продавец-консультант",
-    "employer": "Ice Konditer",
-    "address": "ул. Розыбакиева, 33/1"
-   }
-  },
-  "rabota4almaty-6320": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Механик по ремонту вилочных погрузчиков",
-    "employer": "Liftparts",
-    "address": "ул. Тайбагар, 4"
-   }
-  },
-  "rabota4almaty-6317": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "employer": "Terranova",
-    "schedule": "09:00–19:00",
-    "address": "ул. Касыма Аманжолова, 53",
-    "perks": [
-     "Ежедневная оплата"
-    ]
-   }
   },
   "hh-138065998": {
    "verdict": "approve",
@@ -3388,22 +3306,6 @@
    "fields": {
     "title": "Продавец-консультант в магазин игрушек",
     "address": "ТРК «Atakent Mall»"
-   }
-  },
-  "rabotaaktau-142349": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Водитель с личным автомобилем",
-    "schedule": "6 дней в неделю, 10:00–19:00"
-   }
-  },
-  "rabotaaktau-142348": {
-   "verdict": "approve",
-   "at": "2026-11-08T06:57:03+00:00",
-   "fields": {
-    "title": "Кондитер-шоколатье",
-    "address": "19-й микрорайон"
    }
   },
   "rabotaaktau-142350": {
@@ -41840,6 +41742,40 @@
    "verdict": "reject",
    "at": "2026-11-22T05:56:34+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "rabota4almaty-6821": {
+   "verdict": "approve",
+   "at": "2026-11-22T06:57:13+00:00",
+   "fields": {
+    "title": "Повар, пекарь, помощник повара",
+    "employer": "Дәмхана",
+    "schedule": "2/2, 07:00–19:00"
+   }
+  },
+  "hh-139714720": {
+   "verdict": "reject",
+   "at": "2026-11-22T06:57:13+00:00",
+   "reason": "Противоречие: город Караганда, адрес Уральск; завышенная зарплата для продавца"
+  },
+  "vakansii_rabota_atyrau-50325": {
+   "verdict": "approve",
+   "at": "2026-11-22T06:57:13+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-143092": {
+   "verdict": "approve",
+   "at": "2026-11-22T06:57:13+00:00",
+   "fields": {
+    "employer": "Credo Parfum",
+    "schedule": "5/2 или 2/2"
+   }
+  },
+  "hh-139714898": {
+   "verdict": "approve",
+   "at": "2026-11-22T06:57:13+00:00",
+   "fields": {
+    "schedule": "2/2, 12 часов"
+   }
   }
  }
 }

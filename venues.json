@@ -27435,6 +27435,13 @@
   "v": 3,
   "checked_at": "2026-11-09T08:44:48+00:00"
  },
+ "almaty:дәмхана": {
+  "name": "Дәмхана",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-22T06:41:54+00:00"
+ },
  "almaty:евгений цой алексеевич": {
   "name": "Евгений Цой Алексеевич",
   "city": "almaty",
@@ -27585,6 +27592,19 @@
   ],
   "avatar": "4007203ae9fedd3c.jpg",
   "avatar_source": "website"
+ },
+ "almaty:емк": {
+  "name": "ЕМК",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-22T06:41:54+00:00",
+  "website": "https://emk24.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001099069844",
+  "avatar_checked_at": "2026-11-22T06:41:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:енина надежда ивановна": {
   "name": "Енина Надежда Ивановна",
@@ -31452,6 +31472,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T07:43:16+00:00"
+ },
+ "almaty:мк мебель на заказ": {
+  "name": "ТОО мк мебель на заказ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T06:41:54+00:00"
  },
  "almaty:мкхоум": {
   "name": "МКХоум",
@@ -82793,6 +82820,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "uralsk:адал": {
+  "name": "АДАЛ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-22T06:41:54+00:00"
  },
  "uralsk:аджип": {
   "name": "Аджип",

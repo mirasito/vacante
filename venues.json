@@ -715,6 +715,13 @@
   "avatar": "20e8ce3c1d0b2235.jpg",
   "avatar_source": "website"
  },
+ "aktau:mirda": {
+  "name": "MIRDA",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T17:42:46+00:00"
+ },
  "aktau:mirror": {
   "name": "MIRROR",
   "city": "aktau",
@@ -10481,6 +10488,15 @@
    "website"
   ]
  },
+ "almaty:dos barbershop": {
+  "name": "Dos Barbershop",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T17:42:46+00:00",
+  "instagram": "dos_barbershop_almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001117833386"
+ },
  "almaty:dos optics": {
   "name": "Dos Optics",
   "city": "almaty",
@@ -19700,7 +19716,7 @@
   "instagram": "rixosalmaty",
   "website": "https://all.accor.com/hotel/B1N9/index.ru.shtml",
   "source": "https://2gis.kz/almaty/firm/9429940000789746",
-  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T17:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26548,7 +26564,7 @@
   "checked_at": "2026-11-16T16:44:05+00:00",
   "website": "https://buhta.com/",
   "source": "https://2gis.kz/almaty/firm/70000001096791916",
-  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T17:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30003,7 +30019,7 @@
   "instagram": "kinopark_kz",
   "website": "http://kinopark.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000788177",
-  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T17:42:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -75143,7 +75159,7 @@
   "instagram": "karpov.accounting",
   "website": "https://karpovaccounting.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001054732993",
-  "avatar_checked_at": "2026-11-16T16:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T17:42:46+00:00",
   "avatar_tried": [
    "website"
   ]

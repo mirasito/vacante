@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T14:56:30+00:00",
+ "updated_at": "2026-11-23T15:57:03+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1071,15 +1071,6 @@
     ]
    }
   },
-  "astana_job_vakansii-129829": {
-   "verdict": "approve",
-   "at": "2026-11-01T07:57:05+00:00",
-   "fields": {
-    "employer": "Минимаркет «BESTMART»",
-    "schedule": "2/2 или 5/2, 08:00–20:00 или 20:00–08:00",
-    "address": "ул. Сыганак, 54/2"
-   }
-  },
   "hh-138658660": {
    "verdict": "approve",
    "at": "2026-11-01T07:57:05+00:00",
@@ -1492,14 +1483,6 @@
    "verdict": "approve",
    "at": "2026-11-02T16:30:07+00:00",
    "fields": {}
-  },
-  "rabota_v_shymkente-1452": {
-   "verdict": "approve",
-   "at": "2026-11-02T16:30:07+00:00",
-   "fields": {
-    "title": "Помощник повара",
-    "employer": null
-   }
   },
   "vakansii_rabota_atyrau-49974": {
    "verdict": "approve",
@@ -3710,84 +3693,11 @@
    "at": "2026-11-09T14:57:27+00:00",
    "reason": "Мало сведений: нет зарплаты, заведения и адреса"
   },
-  "rabota_v_nursultane1-12902": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Санитарка, уборщица",
-    "employer": "ТОО «Формат 2020»",
-    "schedule": "5/2, 08:00–17:00"
-   }
-  },
-  "hh-139281044": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Продавец-консультант в магазин женской одежды",
-    "schedule": "2/2"
-   }
-  },
-  "hh-139280913": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "employer": "A_GYM Astana",
-    "schedule": "5/2",
-    "address": null
-   }
-  },
-  "hh-138566541": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Продавец-консультант электроники",
-    "employer": "Andamas Electronics",
-    "schedule": "2/2"
-   }
-  },
   "hh-138330599": {
    "verdict": "approve",
    "at": "2026-11-09T15:58:13+00:00",
    "fields": {
     "schedule": "6/1"
-   }
-  },
-  "hh-139280072": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Администратор детского центра",
-    "employer": "«Лучшие дети на свете»",
-    "schedule": "2/2, 3/3, подработка",
-    "address": "ул. Папанина, 140"
-   }
-  },
-  "hh-139280960": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Администратор клиники",
-    "employer": "Клиника «Пластика Плюс»",
-    "schedule": "5/2"
-   }
-  },
-  "hh-139280697": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Администратор косметологической клиники",
-    "employer": "Owly Clinic",
-    "schedule": "2/2",
-    "address": "мкр Горный Гигант, ул. Искендерова, 23"
-   }
-  },
-  "hh-139280649": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "employer": "Джеткор",
-    "schedule": "5/2",
-    "address": "ул. Толе би, 299А"
    }
   },
   "hh-138440585": {
@@ -3799,35 +3709,6 @@
     "address": "пр. Назарбаева, 179"
    }
   },
-  "hh-139281039": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Администратор гостиницы (ресепшен)",
-    "employer": "Alpen Park Hotel",
-    "schedule": "2/2",
-    "address": "ул. Акжиек, 172А"
-   }
-  },
-  "hh-138482453": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Работник морозильного склада",
-    "employer": "Кондитерский дом «Safia»",
-    "schedule": "6/1, 12 часов",
-    "address": "мкр Жидели, 1"
-   }
-  },
-  "hh-139280944": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Пеший курьер, велокурьер Яндекс Еды",
-    "employer": null,
-    "schedule": "Свободный график"
-   }
-  },
   "hh-139281010": {
    "verdict": "approve",
    "at": "2026-11-09T15:58:13+00:00",
@@ -3835,59 +3716,6 @@
     "title": "Автокурьер Яндекс Еды",
     "employer": null,
     "schedule": "Свободный график"
-   }
-  },
-  "rabota_v_semee-7949": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Повар в кофейню",
-    "schedule": "2/2, 09:30–23:00"
-   }
-  },
-  "rabota_v_semee-7947": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Охранник-кочегар",
-    "employer": "ИП Абухамит",
-    "schedule": "сутки через двое",
-    "address": "ул. Бегалина, 8А"
-   }
-  },
-  "rabota_semey_official-6858": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Повар, помощник повара, посудомойщица",
-    "employer": "Кафе «Дарабоз»",
-    "salary_min": 300000,
-    "salary_max": 450000,
-    "salary_period": "month",
-    "address": "въезд в Аксуатский район",
-    "perks": [
-     "Жильё",
-     "Питание"
-    ]
-   }
-  },
-  "rabota_v_semee-7951": {
-   "verdict": "reject",
-   "at": "2026-11-09T15:58:13+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
-  "rabota_v_semee-7950": {
-   "verdict": "reject",
-   "at": "2026-11-09T15:58:13+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
-  "rabota_v_semee-7948": {
-   "verdict": "approve",
-   "at": "2026-11-09T15:58:13+00:00",
-   "fields": {
-    "title": "Женский парикмахер",
-    "employer": "Салон красоты «Шафран»",
-    "address": "72 квартал"
    }
   },
   "hh-139282267": {
@@ -38672,6 +38500,101 @@
    "fields": {
     "schedule": "5/2"
    }
+  },
+  "rabota_astanakz-31673": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {
+    "title": "Официант, администратор",
+    "employer": "Гриль-бар «ШашлыкoFF»",
+    "perks": [
+     "Питание",
+     "Развозка",
+     "Бонусы"
+    ]
+   }
+  },
+  "vakansii_oskemen-9429": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {
+    "title": "Повар холодного и горячего цеха",
+    "salary_min": 20000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "2/2, 11:00–01:00",
+    "perks": [
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "vakansii_rabota_atyrau-50358": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {
+    "title": "Раннер, бариста, официант",
+    "employer": "Ресторан «NES»",
+    "salary_period": null,
+    "schedule": "2/2, 12:00–01:00",
+    "salary_min": null,
+    "salary_max": null
+   }
+  },
+  "vakansii_rabota_atyrau-50359": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {}
+  },
+  "hh-139765836": {
+   "verdict": "reject",
+   "at": "2026-11-23T15:57:03+00:00",
+   "reason": "Офисная должность: B2B-продажи"
+  },
+  "hh-139726194": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {}
+  },
+  "vakansii_rabota_atyrau-50360": {
+   "verdict": "reject",
+   "at": "2026-11-23T15:57:03+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "vakansii_rabota_atyrau-50361": {
+   "verdict": "reject",
+   "at": "2026-11-23T15:57:03+00:00",
+   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
+  },
+  "vakansii_rabota_atyrau-50357": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {
+    "title": "Работник кулинарного цеха",
+    "salary_min": 9000,
+    "salary_max": null,
+    "salary_period": "day",
+    "schedule": "6/1, 06:00–15:00",
+    "address": "Водник-3",
+    "perks": [
+     "Жильё",
+     "Ежедневная оплата"
+    ]
+   }
+  },
+  "hh-139747756": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {}
+  },
+  "hh-139762915": {
+   "verdict": "approve",
+   "at": "2026-11-23T15:57:03+00:00",
+   "fields": {}
+  },
+  "hh-139765632": {
+   "verdict": "reject",
+   "at": "2026-11-23T15:57:03+00:00",
+   "reason": "Офисная должность: B2B-продажи с высшим образованием"
   }
  }
 }

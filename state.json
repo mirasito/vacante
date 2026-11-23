@@ -58,16 +58,16 @@
   "almaty_rabota": 14827
  },
  "parser": "713d4e83342d",
- "hh_checked_at": "2026-11-23T20:25:58.943205+00:00",
+ "hh_checked_at": "2026-11-23T21:23:38.151375+00:00",
  "hh_backfill": "points",
- "olx_status": "import error: ConnectTimeout",
- "olx_imports_at": "2026-11-23T19:25:51.305981+00:00",
+ "olx_status": "inbox",
+ "olx_imports_at": "2026-11-23T21:23:38.151375+00:00",
  "olx_pages": 0,
  "olx_candidates": 0,
  "olx_contact_store_ok": true,
- "olx_checked_at": "2026-11-23T19:25:51.305981+00:00",
- "olx_hourly_status": "HTTP 403",
- "olx_hourly_at": "2026-11-23T19:25:52.989Z",
+ "olx_checked_at": "2026-11-23T21:23:38.151375+00:00",
+ "olx_hourly_status": "timeout",
+ "olx_hourly_at": "2026-11-23T20:25:53.036Z",
  "olx_hourly_pages": 0,
  "olx_hourly_stored": 0
 }

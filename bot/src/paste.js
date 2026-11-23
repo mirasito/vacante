@@ -46,33 +46,43 @@ export function parseVacancy(raw) {
   const text = String(raw ?? "").replace(/\r/g, "");
   const lines = text.split("\n").map(clean).filter(Boolean);
   const out = {};
-  const take = (field, value) => {
+  // Строки, которые уже разложены по полям: в «Подробности» их не повторяем
+  const used = new Set();
+  const take = (field, value, line) => {
     const v = clean(value).replace(/^[\s:–—-]+|[\s.,;!:]+$/g, "");
-    if (v && out[field] == null) out[field] = cut(field === "title" ? upper(v) : v, MAX[field]);
+    if (v && out[field] == null) {
+      out[field] = cut(field === "title" ? upper(v) : v, MAX[field]);
+      if (line !== undefined) used.add(line);
+    }
   };
   // Строки с подписью: «Зарплата: 250 000 ₸»
   for (const line of lines) {
     for (const [field, re] of Object.entries(LABELS)) {
       if (re.test(line)) {
         const rest = line.replace(re, "");
-        if (rest && !(field === "title" && rest.length > 60)) take(field, rest);
+        if (rest && !(field === "title" && rest.length > 60)) take(field, rest, line);
         break;
       }
     }
   }
   // Без подписей: деньги, график, адрес и название заведения по виду строки
   for (const line of lines) {
-    if (out.salary == null && MONEY.test(line)) take("salary", line);
-    else if (out.schedule == null && SCHEDULE.test(line) && line.length <= 80) take("schedule", line);
-    else if (out.address == null && ADDRESS.test(line) && line.length <= 120) take("address", line);
+    if (used.has(line)) continue;
+    if (out.salary == null && MONEY.test(line)) take("salary", line, line);
+    else if (out.schedule == null && SCHEDULE.test(line) && line.length <= 80) take("schedule", line, line);
+    else if (out.address == null && ADDRESS.test(line) && line.length <= 120) take("address", line, line);
   }
   const company = COMPANY.exec(text);
-  if (company) take("company", company[0]);
+  if (company) take("company", company[0], lines.find((l) => clean(company[0]).replace(/[\s.,;!:]+$/, "") === l.replace(/[\s.,;!:]+$/, "")));
   // Должность: первая короткая строка, если подписи не было
   if (out.title == null) {
     const first = lines.find((l) => !/^(?:срочно|внимание|вакансия)[!.:\s]*$/i.test(l));
     const t = first && first.replace(/^(?:срочно[!.,:\s]*)/i, "").replace(LABELS.title, "");
-    if (t && t.length <= 60 && !MONEY.test(t)) take("title", t);
+    if (t && t.length <= 60 && !MONEY.test(t)) take("title", t, first);
+  }
+  // «СРОЧНО!» и строка «Требуется официант в кафе …», из которой взяли должность, тоже уже разобраны
+  for (const l of lines) {
+    if (/^(?:срочно|внимание|вакансия)[!.:\s]*$/i.test(l) || (out.title && LABELS.title.test(l) && l.toLowerCase().includes(out.title.toLowerCase()))) used.add(l);
   }
   // «Официант в кафе «Зерно»» → должность «Официант», заведение отдельно
   if (out.title && out.company && out.title.toLowerCase().includes(out.company.toLowerCase())) {
@@ -82,7 +92,11 @@ export function parseVacancy(raw) {
   const city = findCity(text);
   if (city) out.city = city;
   // Подробности: весь текст без телефонов и ссылок — отклики придут в бот
-  const details = lines.join("\n").replace(PHONE, "").replace(LINK, "").replace(/[ \t]+\n/g, "\n").replace(/\n{2,}/g, "\n").trim();
+  const details = lines.filter((l) => !used.has(l)).join("\n").replace(PHONE, "").replace(LINK, "")
+    .split("\n").map((l) => l.replace(/[\s,;]+$/, "").trim())
+    // «Звоните: +7…» без номера и ссылки остаётся пустой подписью
+    .filter((l) => l && !/^(?:звоните|звонить|пишите|писать|тел\.?|телефон|контакты|whats ?app|ватсап|вацап|обращаться)(?:\s+(?:по номеру|в whats ?app|в телеграм|сюда))?[\s:.,-]*$/i.test(l))
+    .join("\n").trim();
   if (details.length >= 20) out.details = cut(details, MAX.details);
   return out;
 }

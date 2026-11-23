@@ -21,7 +21,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from vacante import channels, launch, shifts
 from vacante import venues as venue_store
-from vacante.direct import BOT_USERNAME, POST_URL
+from vacante.direct import BOT_USERNAME, FORM_URL, POST_URL
 from vacante.geo import MAP_WORTHY
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
@@ -221,7 +221,7 @@ def _env(lang: str = "ru") -> Environment:
                        search_text=lambda v: search_text(v, lang), money=money, perks_of=shifts.perks,
                        shift_day=lambda v: shifts.day_label(v.shift_date, lang),
                        SHIFTS=shifts.SLUG, shift_post_url=f"https://t.me/{BOT_USERNAME}?start=smena_site",
-                       FILTER_PERKS=FILTER_PERKS, PAGE_SIZE=PAGE_SIZE, employer_url=POST_URL, instagram_url=instagram_url,
+                       FILTER_PERKS=FILTER_PERKS, PAGE_SIZE=PAGE_SIZE, employer_url=POST_URL, form_url=FORM_URL, instagram_url=instagram_url,
                        site_name=site_name, more_links=more_links, initial=initial, lang=lang, LANGS=i18n.LANGS,
                        LANG_NAME=i18n.LANG_NAME, t=lambda text, **kw: i18n.t(lang, text, **kw),
                        title=lambda v: i18n.title(v, lang), perk=lambda p: i18n.perk(p, lang))

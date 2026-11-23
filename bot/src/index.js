@@ -16,6 +16,7 @@ import * as bot from "./logic.js";
 import { confirmLogin, loginApi, startLogin } from "./login.js";
 import { becomeAdmin, moderate, moderationApi, reportApi } from "./moderation.js";
 import { boostFromCredit, boostJob, confirmPayment, packPaid, packPay, paid, postLater, postPaid, postPay, proReports, showPacks } from "./payments.js";
+import { postApi } from "./webpost.js";
 import { closeJob, employerButton, employerMenu, nudgeDrafts, postAnswer, postButton, resumeButton, showApplications, startPost } from "./posting.js";
 import { relayToServer } from "./server.js";
 import { attendance, shiftCron, shiftDecision, startTake, subscribeShifts, takeAnswer } from "./taking.js";
@@ -28,8 +29,12 @@ export { nudgeDrafts, proReports, shiftCron };
 const GREETING =
   "Привет! Это бот vacante.kz. Я собираю вакансии из десятков Telegram-каналов.\n\n" +
   "🃏 Их можно листать свайпами в приложении: вправо сохранить, влево пропустить.\n" +
-  "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере, настройка ниже.\n\n" +
+  "🔔 А ещё я могу присылать новые вакансии по вашему городу и сфере: «🔔 Присылать вакансии».\n\n" +
   "Ищете сотрудников? Нажмите «🏢 Ищу сотрудников».";
+
+// На /start вопрос соискателя «Где ищете работу?» не задаём сразу: его видели и работодатели.
+// Он приходит по кнопке «🔔 Присылать вакансии» (callback settings), /settings открывает его сразу.
+const SUBSCRIBE_BUTTON = { text: "🔔 Присылать вакансии", callback_data: "settings" };
 
 // Метки в ссылках на анкету работодателя → jobs.came_from. pf: кнопка на странице профиля кандидата (server/src/page.ts),
 // ch: разовый пост для работодателей в наших каналах (vacante/announce.py)
@@ -57,6 +62,7 @@ export default {
     if (url.pathname === "/api/crm") return crmApi(request, env);  // CRM заведений в админке сайта
     if (url.pathname === "/api/jobs") return jobsApi(request, env);  // кто размещал вакансии, там же
     if (url.pathname === "/api/cabinet") return cabinetApi(request, env, ctx);  // кабинет работодателя в приложении
+    if (url.pathname === "/api/post") return postApi(request, env, cors(request, env));  // форма размещения на сайте
     if (url.pathname === "/api/login") {  // вход на сайт через бота, см. login.js
       const headers = cors(request, env);
       return request.method === "OPTIONS" ? new Response(null, { status: 204, headers }) : loginApi(request, env, headers);
@@ -175,7 +181,9 @@ async function onMessage(m, env) {
   if (name === "/start" || name === "/settings") {
     const sub = await load(env, chatId);
     await save(env, chatId, sub);
-    if (name === "/start") await send(env, chatId, GREETING, [[bot.appButton(env.SITE_URL, sub.city)], [job.EMPLOYER_BUTTON]]);
+    if (name === "/start") {
+      return send(env, chatId, GREETING, [[bot.appButton(env.SITE_URL, sub.city)], [SUBSCRIBE_BUTTON], [job.EMPLOYER_BUTTON]]);
+    }
     const { text: question, keyboard } = bot.screen("city", sub);
     return send(env, chatId, question, keyboard);
   }

@@ -4,6 +4,7 @@ import { fetchPasted, findCity, looksPasted, parseVacancy, pasteUrl } from "./pa
 import * as job from "./employer.js";
 import { sendNotice, wakeSite } from "./notices.js";
 import * as shift from "./shift.js";
+import { FIELD_NAMES, tidyJob } from "./tidy.js";
 import { answerCallback, edit, screen, send, tg } from "./telegram.js";
 import { HELP } from "./texts.js";
 
@@ -15,7 +16,7 @@ const postIntro = (price) =>
 const PASTE_HINT = "⚡ Быстрее: вставьте сюда текст вакансии или ссылку на неё (hh.kz, пост в Telegram-канале), я сам заполню анкету.";
 
 // Новый черновик вместо старого. Возвращает id черновика или текст ошибки.
-async function newDraft(env, chatId, from, kind, cameFrom) {
+export async function newDraft(env, chatId, from, kind, cameFrom) {
   const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status IN ('pending', 'payment')")
     .bind(chatId)
     .first("n");
@@ -38,7 +39,9 @@ export async function startPost(env, m, kind = "vacancy", cameFrom = null) {
   if (created.error) return send(env, chatId, created.error);
   const { text, keyboard } = job.askScreen(job.stepsFor({ kind })[0]);
   const price = await postPriceFor(env, chatId);
-  return send(env, chatId, `${kind === "shift" ? shift.shiftIntro(price) : postIntro(price)}\n\n${PASTE_HINT}\n\n${text}`, keyboard);
+  // Из меню работодателя: про размещение там уже рассказали, сразу к делу
+  const intro = cameFrom === "menu" ? "" : `${kind === "shift" ? shift.shiftIntro(price) : postIntro(price)}\n\n`;
+  return send(env, chatId, `${intro}${PASTE_HINT}\n\n${text}`, keyboard);
 }
 
 // Поля из вставленного текста, которые можно взять в анкету этого вида
@@ -77,12 +80,15 @@ export async function pasteFromApp(env, user, text) {
   return { message: "Готово! Анкета заполнена, проверьте её в чате с ботом", draft: created.id };
 }
 
-// Цена размещения для этого работодателя: модераторы (админы каналов) размещают бесплатно
-async function postPriceFor(env, chatId) {
-  const price = job.postPrice(job.boostOffer(env));
-  if (!price) return 0;
-  const admin = await env.DB.prepare("SELECT chat_id FROM admins WHERE chat_id = ?").bind(chatId).first();
-  return admin ? 0 : price;
+// Цена размещения. Одна для всех: модераторы (админы каналов) тоже видят тарифы и оплату, как работодатели,
+// а бесплатно размещают только отдельной кнопкой «🛡 Без оплаты» (раньше им всё было бесплатно молча,
+// и проверка пути работодателя выглядела как публикация без оплаты).
+async function postPriceFor(env) {
+  return job.postPrice(job.boostOffer(env));
+}
+
+export async function isAdmin(env, chatId) {
+  return !!(await env.DB.prepare("SELECT chat_id FROM admins WHERE chat_id = ?").bind(chatId).first());
 }
 
 // Меню работодателя: /employer, ?start=employer и кнопка «🏢 Ищу сотрудников» на /start
@@ -131,11 +137,17 @@ export async function resendApplications(env, chatId, jobId) {
   return { shown: ids.length, total: results.length };
 }
 
-// Предпросмотр с выбором тарифа: Базовый, Про и Про из пакета
-async function preview(env, chatId, draft) {
+// Предпросмотр с выбором тарифа: Базовый, Про и Про из пакета (модератору ещё «Без оплаты»)
+async function preview(env, chatId, draft, note = "") {
   const price = await postPriceFor(env, chatId);
-  return job.previewScreen(draft, price, price ? job.boostOffer(env) : null, price ? await creditsLeft(env, chatId) : 0);
+  const screen = job.previewScreen(draft, price, price ? job.boostOffer(env) : null, price ? await creditsLeft(env, chatId) : 0,
+    new Date(), price ? await isAdmin(env, chatId) : false);
+  return note ? { ...screen, text: `${note}\n\n${screen.text}` } : screen;
 }
+
+// «✨ Поправили оформление: зарплата, график»: что изменил tidy.js перед предпросмотром
+export const tidiedNote = (changed) =>
+  changed.length ? `✨ Поправили оформление: ${changed.map((f) => FIELD_NAMES[f]).join(", ")}. Если что-то не так, нажмите «Заполнить заново».` : "";
 
 export async function postAnswer(env, m, d) {
   const chatId = m.chat.id;
@@ -183,6 +195,7 @@ export async function postButton(env, q, ctx) {
     return edit(env, chatId, messageId, "Отменили. Разместить вакансию заново: /vacancy");
   }
   if (q.data === "jobsend") return draft.step ? null : submit(env, chatId, messageId, draft, ctx);
+  if (q.data === "jobfree") return draft.step ? null : submit(env, chatId, messageId, draft, ctx, "free");
   if (q.data === "jobpro") return draft.step ? null : submit(env, chatId, messageId, draft, ctx, "pro");
   if (q.data === "jobcredit") return draft.step ? null : submit(env, chatId, messageId, draft, ctx, "credit");
   const next = job.pressed(draft, q.data);
@@ -193,6 +206,13 @@ export async function postButton(env, q, ctx) {
 async function advance(env, chatId, draft, messageId, note) {
   const step = job.nextStep(draft);
   draft = { ...draft, step: step ? step.field : null };
+  // Анкета заполнена: сразу приводим текст в порядок, в предпросмотре работодатель видит уже аккуратный вариант
+  let tidied = "";
+  if (!step) {
+    const t = tidyJob(draft);
+    draft = t.job;
+    tidied = tidiedNote(t.changed);
+  }
   // У смены график — это её день и время: «Смена 07.11, 10:00–22:00»
   if (draft.kind === "shift") draft.schedule = draft.shift_date && draft.shift_start ? shift.scheduleText(draft) : null;
   await env.DB.prepare(
@@ -202,39 +222,55 @@ async function advance(env, chatId, draft, messageId, note) {
     .bind(draft.step, draft.city, draft.title, draft.company, draft.salary, draft.schedule, draft.address, draft.details,
       draft.shift_date ?? null, draft.shift_start ?? null, draft.shift_end ?? null, draft.need ?? null, draft.id)
     .run();
-  const { text: body, keyboard } = step ? job.askScreen(step) : await preview(env, chatId, draft);
+  const { text: body, keyboard } = step ? job.askScreen(step) : await preview(env, chatId, draft, tidied);
   const text = note ? `${note}\n\n${body}` : body;
   return messageId ? edit(env, chatId, messageId, text, keyboard) : send(env, chatId, text, keyboard);
 }
 
-// tariff: basic (Базовый), pro (Про с оплатой сразу за размещение и подъём) или credit (Про из пакета)
-async function submit(env, chatId, messageId, draft, ctx, tariff = "basic") {
+// tariff: basic (Базовый), pro (Про с оплатой сразу за размещение и подъём), credit (Про из пакета)
+// или free (только модератору: без оплаты). Возвращает { job, outcome: payment | pending } или { error }.
+// Общая для кнопок бота и формы на сайте (webSubmit).
+export async function submitDraft(env, chatId, draft, tariff = "basic", ctx) {
   const boost = job.boostOffer(env);
-  const paid = await postPriceFor(env, chatId);
+  const price = await postPriceFor(env);
   if (tariff === "credit") {
     // Про из пакета: без оплаты, срок Про считаем с этой минуты (проверка обычно до часа)
-    if (draft.kind === "shift" || !paid || !boost || !(await useCredit(env, chatId))) {
-      return edit(env, chatId, messageId, ...screen(await preview(env, chatId, draft)));
-    }
+    if (draft.kind === "shift" || !price || !boost) return { error: "Про из пакета сейчас недоступен" };
+    if (!(await useCredit(env, chatId))) return { error: "В пакетах не осталось Про" };
     await env.DB.prepare(
-      `UPDATE jobs SET status = 'pending', pro = 1, boost_until = datetime('now', '+' || ? || ' days'),
+      `UPDATE jobs SET status = 'pending', step = NULL, pro = 1, boost_until = datetime('now', '+' || ? || ' days'),
          updated_at = datetime('now') WHERE id = ?`,
     ).bind(boost.days, draft.id).run();
     await endDialog(env, chatId);
-    await edit(env, chatId, messageId, `${job.card(draft)}\n\n🔥 Тариф Про из пакета, осталось: ${await creditsLeft(env, chatId)}.\n⏳ Отправили на проверку, обычно это до часа. Напишу, когда опубликуем. Ваши вакансии: /myjobs`);
-    return notifyModerators(env, { ...draft, status: "pending", pro: 1 }, ctx);
+    const saved = { ...draft, status: "pending", pro: 1 };
+    await notifyModerators(env, saved, ctx);
+    return { job: saved, outcome: "pending", credits: await creditsLeft(env, chatId) };
   }
-  if (paid) {
-    // Платное размещение: сначала оплата, на проверку вакансия уйдёт после подтверждения перевода
+  if (tariff === "free" && !(price && (await isAdmin(env, chatId)))) return { error: "Без оплаты размещают только модераторы" };
+  if (price && tariff !== "free") {
+    // Платное размещение: сначала оплата, на проверку вакансия уйдёт только после подтверждения перевода
     const pro = tariff === "pro" && boost ? 1 : 0;
-    await env.DB.prepare("UPDATE jobs SET status = 'payment', pro = ?, updated_at = datetime('now') WHERE id = ?").bind(pro, draft.id).run();
+    await env.DB.prepare("UPDATE jobs SET status = 'payment', step = NULL, pro = ?, updated_at = datetime('now') WHERE id = ?")
+      .bind(pro, draft.id).run();
     await endDialog(env, chatId);
-    return edit(env, chatId, messageId, ...screen(job.postPayScreen({ ...draft, status: "payment", pro }, boost)));
+    wakeSite(env, ctx);  // агент-модератор оформит текст, пока работодатель платит (moderation.json)
+    return { job: { ...draft, status: "payment", pro }, outcome: "payment" };
   }
-  await env.DB.prepare("UPDATE jobs SET status = 'pending', updated_at = datetime('now') WHERE id = ?").bind(draft.id).run();
+  await env.DB.prepare("UPDATE jobs SET status = 'pending', step = NULL, updated_at = datetime('now') WHERE id = ?").bind(draft.id).run();
   await endDialog(env, chatId);
-  await edit(env, chatId, messageId, `${job.card(draft)}\n\n⏳ Отправили на проверку, обычно это до часа. Напишу, когда опубликуем. Ваши вакансии: /myjobs`);
-  return notifyModerators(env, { ...draft, status: "pending" }, ctx);
+  const saved = { ...draft, status: "pending" };
+  await notifyModerators(env, saved, ctx);
+  return { job: saved, outcome: "pending" };
+}
+
+const SENT = "⏳ Отправили на проверку, обычно это до часа. Напишу, когда опубликуем. Ваши вакансии: /myjobs";
+
+async function submit(env, chatId, messageId, draft, ctx, tariff = "basic") {
+  const r = await submitDraft(env, chatId, draft, tariff, ctx);
+  if (r.error) return edit(env, chatId, messageId, ...screen(await preview(env, chatId, draft)));
+  if (r.outcome === "payment") return edit(env, chatId, messageId, ...screen(job.postPayScreen(r.job, job.boostOffer(env))));
+  const extra = tariff === "credit" ? `🔥 Тариф Про из пакета, осталось: ${r.credits}.\n` : tariff === "free" ? "🛡 Без оплаты, как модератор.\n" : "";
+  return edit(env, chatId, messageId, `${job.card(draft)}\n\n${extra}${SENT}`);
 }
 
 async function notifyModerators(env, found, ctx) {

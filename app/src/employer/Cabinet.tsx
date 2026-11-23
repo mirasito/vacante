@@ -1,51 +1,31 @@
 // Кабинет работодателя: его вакансии и смены из бота, отклики, оплата размещения, тариф Про и пакеты.
 // Данные живут в базе бота (bot/src/cabinet.js), вход — подписанные данные Telegram (initData), как у профиля.
 // На сайте вне Telegram вход через бота (src/Login.tsx, bot/src/login.js): тот же ключ, что у профиля соискателя.
-// Анкету новой вакансии ведёт бот: кнопки «Разместить» открывают чат с ним. «Быстрое размещение»: текст или ссылку
-// разбирает бот (bot/src/paste.js) и спрашивает в чате только то, чего не нашёл.
+// Вакансию размещают прямо здесь, формой PostForm.tsx (вставить текст или ссылку, проверить, оплатить).
+// Смену на день пока ведёт анкета в боте.
 import { useCallback, useEffect, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon } from '../icons';
 import { Login } from '../Login';
-import { BOT, confirm, copyText, openUrl } from '../platform';
+import { BOT, confirm, openUrl } from '../platform';
 import { authHeader, initData, setSession } from '../session';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
 import { Badge, Button, Loading, styles as ui } from '../ui';
+import { AuthError, call, money, type Action, type CabinetState } from './api';
+import { PayBox } from './PayBox';
+import { PostForm } from './PostForm';
 
-const WORKER = 'https://vacante-bot.vacante-kz.workers.dev';
-export const CABINET_URL = `${WORKER}/api/cabinet`;
+export type { CabinetJob, CabinetState } from './api';
+export { CABINET_URL } from './api';
 
-export type CabinetJob = {
-  id: number;
-  kind: 'vacancy' | 'shift';
-  title: string;
-  company: string;
-  city: string;
-  salary: string;
-  status: 'payment' | 'pending' | 'approved' | 'rejected' | 'closed';
-  status_text: string;
-  applications: number;
-  confirmed?: number;
-  need?: number;
-  shift_date?: string;
-  pro_until: string | null;
-  url: string | null;
-  pay: { amount: number; tariff: 'basic' | 'pro'; waiting: boolean } | null;
-  boost: { price: number; days: number; shift: boolean; waiting: boolean } | null;
-};
-
-export type CabinetState = {
-  user: { id: number; first_name: string };
-  admin: boolean;
-  jobs: CabinetJob[];
-  credits: number;
-  kaspi: string | null;
-  tariffs: { post: number; pro: number; days: number; shift_pro: number; packs: { count: number; price: number; days: number }[] } | null;
-  pack_waiting: boolean;
-  bot: string;
+/** «1 вакансия», «3 вакансии», «10 вакансий» */
+const vacancies = (n: number) => {
+  const d = n % 10;
+  const h = n % 100;
+  return d === 1 && h !== 11 ? 'вакансия' : d >= 2 && d <= 4 && (h < 12 || h > 14) ? 'вакансии' : 'вакансий';
 };
 
 const T = {
@@ -53,15 +33,11 @@ const T = {
     title: 'Кабинет работодателя',
     back: 'Назад',
     hello: (name: string) => `Здравствуйте, ${name}!`,
-    lead: 'Здесь ваши вакансии и смены из бота @vacantekz_bot, отклики и оплата. Отклики приходят в чат с ботом.',
+    lead: 'Здесь ваши вакансии и смены, отклики и оплата. Отклики кандидатов приходят вам в Telegram, в чат с ботом @vacantekz_bot.',
     post: 'Разместить вакансию',
     shift: 'Смена на день',
-    quick: '⚡ Быстрое размещение',
-    quickLead: 'Вставьте текст вакансии или ссылку на неё (hh.kz, пост в Telegram-канале). Заполним анкету сами, в чате с ботом останется проверить.',
-    quickHint: 'Например: Требуется повар в кафе «Арман», 15 000 ₸ за смену, Алматы…',
-    quickGo: 'Заполнить анкету',
-    quickChat: 'Открыть чат с ботом',
-    empty: 'Вакансий пока нет. Разместите первую: это пара минут в боте, отклики придут туда же.',
+    draft: (title: string) => `Продолжить черновик${title ? ` «${title}»` : ''}`,
+    empty: 'Вакансий пока нет. Разместите первую: это пара минут, можно просто вставить готовый текст объявления.',
     noTelegram: 'Войдите, чтобы видеть свои вакансии, отклики и оплату.',
     logout: 'Выйти',
     openBot: 'Открыть бота',
@@ -76,6 +52,7 @@ const T = {
     yes: 'Закрыть',
     no: 'Отмена',
     pro: (price: string) => `🔥 Про: ${price}`,
+    proMore: (price: string) => `Продлить Про: ${price}`,
     proUntil: (d: string) => `🔥 Про до ${d}`,
     proWhat: (days: number, shift: boolean) =>
       shift
@@ -94,14 +71,14 @@ const T = {
     proName: 'Про',
     packs: 'Пакеты Про',
     packsLead: 'Для сетей и тех, кто нанимает часто: каждая вакансия из пакета получает тариф Про.',
-    pack: (count: number, price: string, one: string, days: number) => `${count} вакансий за ${price} · ${one} за одну · на ${days} дней`,
+    pack: (count: number, price: string, one: string, days: number) => `${count} ${vacancies(count)} за ${price} · ${one} за одну · на ${days} дней`,
     packBuy: 'Купить',
     credits: (n: number) => `Осталось Про в пакетах: ${n}`,
     packWaiting: 'Сверяем перевод за пакет. Напишем в чат с ботом, как только включим.',
     tariffs: 'Тарифы',
     tariffBasic: (price: string) => `Базовый ${price}: сайт, приложение, подборки и канал города на 30 дней.`,
     tariffPro: (price: string, days: number) => `Про ${price} на ${days} дней: первой в городе, закреп и повтор в канале.`,
-    free: 'Вы модератор каналов vacante: размещаете бесплатно.',
+    free: 'Вы модератор каналов vacante: видите оплату, как работодатели, а без оплаты можно разместить отдельной кнопкой «🛡 Без оплаты».',
   },
   kk: {
     title: 'Жұмыс беруші кабинеті',
@@ -110,12 +87,8 @@ const T = {
     lead: 'Мұнда @vacantekz_bot ботындағы вакансиялар мен ауысымдарыңыз, жауаптар және төлем. Жауаптар бот чатына келеді.',
     post: 'Вакансия орналастыру',
     shift: 'Бір күнге ауысым',
-    quick: '⚡ Жылдам орналастыру',
-    quickLead: 'Вакансия мәтінін немесе сілтемесін қойыңыз (hh.kz, Telegram-арнадағы пост). Сауалнаманы өзіміз толтырамыз, бот чатында тек тексересіз.',
-    quickHint: 'Мысалы: «Арман» кафесіне аспаз керек, ауысымына 15 000 ₸, Алматы…',
-    quickGo: 'Сауалнаманы толтыру',
-    quickChat: 'Бот чатын ашу',
-    empty: 'Әзірге вакансия жоқ. Біріншісін орналастырыңыз: ботта бірнеше минут, жауаптар сонда келеді.',
+    draft: (title: string) => `Жобаны жалғастыру${title ? ` «${title}»` : ''}`,
+    empty: 'Әзірге вакансия жоқ. Біріншісін орналастырыңыз: бірнеше минут, дайын хабарландыру мәтінін қоюға болады.',
     noTelegram: 'Вакансияларыңызды, жауаптар мен төлемді көру үшін кіріңіз.',
     logout: 'Шығу',
     openBot: 'Ботты ашу',
@@ -130,6 +103,7 @@ const T = {
     yes: 'Жабу',
     no: 'Болдырмау',
     pro: (price: string) => `🔥 Про: ${price}`,
+    proMore: (price: string) => `Про ұзарту: ${price}`,
     proUntil: (d: string) => `🔥 Про ${d} дейін`,
     proWhat: (days: number, shift: boolean) =>
       shift
@@ -155,62 +129,11 @@ const T = {
     tariffs: 'Тарифтер',
     tariffBasic: (price: string) => `Базалық ${price}: сайт, қосымша, іріктемелер және қала арнасы 30 күнге.`,
     tariffPro: (price: string, days: number) => `Про ${price}, ${days} күнге: қалада бірінші, арнада бекіту және қайта пост.`,
-    free: 'Сіз vacante арналарының модераторысыз: тегін орналастырасыз.',
+    free: 'Сіз vacante арналарының модераторысыз: төлемді жұмыс берушілер сияқты көресіз, төлемсіз «🛡 Төлемсіз» батырмасымен орналастыруға болады.',
   },
 };
 
-const money = (n: number) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₸`;
-
-class AuthError extends Error {}
-
-async function call(init?: { action: string; id?: number; count?: number; text?: string }): Promise<CabinetState & { message?: string; error?: string }> {
-  const res = await fetch(CABINET_URL, {
-    method: init ? 'POST' : 'GET',
-    headers: { Authorization: authHeader(), ...(init ? { 'Content-Type': 'application/json' } : {}) },
-    body: init ? JSON.stringify(init) : undefined,
-  });
-  const data = await res.json().catch(() => ({}));
-  if (res.status === 401 && !initData()) {
-    setSession('');  // ключ устарел: войти ещё раз
-    throw new AuthError(data.error || 'auth');
-  }
-  if (init) {
-    if (!data.state) throw new Error(data.error || `HTTP ${res.status}`);
-    return { ...data.state, message: data.message, error: data.error };
-  }
-  if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
-  return data;
-}
-
-/** Реквизиты Kaspi с комментарием и кнопкой «Я оплатил». */
-function PayBox(props: { c: Colors; t: (typeof T)['ru']; kaspi: string; comment: string; busy: boolean; onPaid(): void }) {
-  const { c, t } = props;
-  const [copied, setCopied] = useState('');
-  const copy = (text: string) => {
-    if (copyText(text)) setCopied(text);
-  };
-  return (
-    <View style={[styles.pay, { backgroundColor: c.soft, borderColor: c.line }]}>
-      <Text style={[styles.small, { color: c.quiet }]}>Kaspi</Text>
-      <Pressable onPress={() => copy(props.kaspi)} accessibilityRole="button" style={styles.copyRow}>
-        <Text style={[styles.strong, { color: c.ink }]} selectable>
-          {props.kaspi}
-        </Text>
-        <Text style={[styles.link, { color: c.brand }]}>{copied === props.kaspi ? t.copied : t.copy}</Text>
-      </Pressable>
-      <Text style={[styles.small, { color: c.quiet }]}>{t.payHow}</Text>
-      <Pressable onPress={() => copy(props.comment)} accessibilityRole="button" style={styles.copyRow}>
-        <Text style={[styles.strong, { color: c.ink }]} selectable>
-          {props.comment}
-        </Text>
-        <Text style={[styles.link, { color: c.brand }]}>{copied === props.comment ? t.copied : t.copy}</Text>
-      </Pressable>
-      <Button c={c} small label={t.paid} busy={props.busy} onPress={props.onPaid} />
-    </View>
-  );
-}
-
-export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
+export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPost?: boolean; from?: string }) {
   const { c, lang } = props;
   const t = T[lang];
   const [state, setState] = useState<CabinetState | null>(null);
@@ -219,8 +142,8 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
   const [note, setNote] = useState<{ text: string; error?: boolean } | null>(null);
   const [open, setOpen] = useState('');  // какая панель оплаты раскрыта: boost:12, post:12, pack:3
   const [authed, setAuthed] = useState(() => !!authHeader());
-  const [paste, setPaste] = useState('');
-  const [pasted, setPasted] = useState(false);
+  // Форма размещения: по ссылке ?tab=post (кнопка «Разместить вакансию» на сайте) или кнопкой здесь
+  const [posting, setPosting] = useState(!!props.startPost);
 
   const load = useCallback(async () => {
     setFailed(false);
@@ -240,7 +163,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
     setAuthed(false);
   };
 
-  const act = async (key: string, body: { action: string; id?: number; count?: number; text?: string }) => {
+  const act = async (key: string, body: Action) => {
     setBusy(key);
     setNote(null);
     try {
@@ -288,41 +211,8 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
           {state.user.first_name ? `${t.hello(state.user.first_name)} ` : ''}
           {t.lead}
         </Text>
-        <View style={styles.row}>
-          <View style={ui.flex}>
-            <Button c={c} label={t.post} onPress={() => bot('post_app')} />
-          </View>
-          <View style={ui.flex}>
-            <Button c={c} ghost label={t.shift} onPress={() => bot('smena_app')} />
-          </View>
-        </View>
-        <View style={[styles.card, { borderColor: c.line, backgroundColor: c.card }]}>
-          <Text style={[styles.h3, { color: c.ink }]}>{t.quick}</Text>
-          <Text style={[styles.small, { color: c.quiet }]}>{t.quickLead}</Text>
-          <TextInput
-            value={paste}
-            onChangeText={(v) => { setPaste(v); setPasted(false); }}
-            placeholder={t.quickHint}
-            placeholderTextColor={c.quiet}
-            multiline
-            maxLength={4000}
-            style={[styles.input, { color: c.ink, borderColor: c.line }]}
-          />
-          {pasted ? (
-            <Button c={c} label={t.quickChat} onPress={() => openUrl(`https://t.me/${BOT}`)} />
-          ) : (
-            <Button
-              c={c}
-              ghost
-              label={t.quickGo}
-              disabled={busy !== '' || paste.trim().length < 20}
-              onPress={async () => {
-                const ok = await act('paste', { action: 'paste', text: paste });
-                if (ok) { setPasted(true); setPaste(''); }
-              }}
-            />
-          )}
-        </View>
+        <Button c={c} label={state.draft ? t.draft(state.draft.title) : t.post} onPress={() => setPosting(true)} />
+        <Button c={c} ghost label={t.shift} onPress={() => bot('smena_app')} />
         {note ? (
           <View style={[styles.note, { backgroundColor: note.error ? c.warnBg : c.okBg }]}>
             <Text style={[styles.text, { color: note.error ? c.warnInk : c.okInk }]}>{note.text}</Text>
@@ -395,7 +285,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
                   <>
                     <View style={styles.row}>
                       <View style={ui.flex}>
-                        <Button c={c} small label={t.pro(money(j.boost.price))}
+                        <Button c={c} small label={(j.boost.active ? t.proMore : t.pro)(money(j.boost.price))}
                           onPress={() => setOpen(open === `boost:${j.id}` ? '' : `boost:${j.id}`)} />
                       </View>
                       {state.credits > 0 && !j.boost.shift ? (
@@ -469,6 +359,24 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void }) {
     );
   }
 
+  if (posting) {
+    return (
+      <PostForm
+        c={c}
+        lang={lang}
+        from={props.from || 'cabinet'}
+        state={authed ? state : null}
+        onState={setState}
+        onAuthed={() => setAuthed(true)}
+        onCabinet={() => {
+          setPosting(false);
+          if (authed) load();
+        }}
+        onClose={() => (props.startPost && !state ? props.onClose() : setPosting(false))}
+      />
+    );
+  }
+
   return (
     <SafeAreaView style={[styles.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
       <View style={ui.column}>
@@ -496,8 +404,5 @@ const styles = StyleSheet.create({
   note: { borderRadius: 12, padding: 12 },
   card: { borderWidth: 1, borderRadius: 16, padding: 14, gap: 10 },
   cardHead: { flexDirection: 'row', alignItems: 'flex-start', gap: 10 },
-  pay: { borderWidth: 1, borderRadius: 12, padding: 12, gap: 6 },
   logout: { alignSelf: 'center', padding: 12, marginTop: 8 },
-  copyRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
-  input: { borderWidth: 1, borderRadius: 12, padding: 12, minHeight: 96, fontSize: 15, lineHeight: 21, textAlignVertical: 'top' },
 });

@@ -105,7 +105,7 @@ def test_list_links_to_more_vacancies_elsewhere(tmp_path):
     assert 'href="https://www.olx.kz/rabota/"' in city
     horeca = (out / "almaty" / "horeca" / "index.html").read_text("utf-8")
     assert "area=160&amp;text=%D0%BE%D1%84" in horeca
-    assert "Разместите вакансию через бота" in city and "900 ₸" not in city
+    assert "Разместите вакансию прямо здесь" in city and "900 ₸" not in city
     assert site.more_links("astana")[1] == ("OLX", "https://www.olx.kz/rabota/astana/")
     assert site.more_links(None)[0] == ("hh.kz", "https://hh.kz/search/vacancy?area=40")
 
@@ -250,8 +250,12 @@ def test_employers_page_linked_from_header_and_feed_has_channels(tmp_path):
     prices = site.employer_prices()
     assert prices and f"{site.money(prices['pro'])} ₸" in ru and f"{site.money(prices['post'])} ₸" in ru
     assert "Пакеты Про:" in ru and "Про пакеттері:" in kk
-    assert 'class="post-job" href="/rabotodatelyam/"' in (out / "index.html").read_text("utf-8")
-    assert 'class="post-job" href="/kk/rabotodatelyam/"' in (out / "kk" / "index.html").read_text("utf-8")
+    # В шапке каждой страницы кнопка формы размещения на сайте, в подвале ссылка на тарифы
+    home = (out / "index.html").read_text("utf-8")
+    assert 'class="post-job" href="/app/?tab=post&amp;from=site_header"' in home and "Разместить вакансию" in home
+    assert 'href="/rabotodatelyam/">Тарифы и как это работает' in home
+    assert 'href="/kk/rabotodatelyam/">' in (out / "kk" / "index.html").read_text("utf-8")
+    assert 'href="/app/?tab=post&amp;from=land"' in ru
     # Бот по feed.json пишет работодателю, в каком канале выйдет вакансия
     feed = json.loads((out / "feed.json").read_text("utf-8"))
     assert feed["channels"]["astana"] == "@vacanteastana" and feed["channels"]["almaty"] == "@vacantealmaty"

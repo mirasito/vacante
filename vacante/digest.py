@@ -218,9 +218,9 @@ class D1:
         return self.query("SELECT * FROM jobs WHERE status = 'approved'")
 
     def review_queue(self) -> list[dict]:
-        """Что ждёт агента-модератора: вакансии на проверке и опубликованные модератором без оформления."""
+        """Что ждёт агента-модератора: вакансии на проверке, опубликованные модератором и ждущие оплаты без оформления."""
         return self.query("SELECT id, status, reviewed_at, created_at, city, title, company, salary, schedule, address, "
-                          "details FROM jobs WHERE status = 'pending' OR (status = 'approved' AND reviewed_at IS NULL) "
+                          "details FROM jobs WHERE status = 'pending' OR (status IN ('approved', 'payment') AND reviewed_at IS NULL) "
                           "ORDER BY id")
 
     def job_counts(self) -> dict:

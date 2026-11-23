@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T02:56:22+00:00",
+ "updated_at": "2026-11-23T03:56:38+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -1381,15 +1381,6 @@
    "verdict": "reject",
    "at": "2026-11-01T23:56:48+00:00",
    "reason": "Работа в Москве, не в Казахстане"
-  },
-  "hh-139042467": {
-   "verdict": "approve",
-   "at": "2026-11-02T03:57:08+00:00",
-   "fields": {
-    "title": "Менеджер по продажам",
-    "employer": "«М.двери»",
-    "address": "ул. Акпан батыра, 111"
-   }
   },
   "hh-137960609": {
    "verdict": "approve",
@@ -3564,35 +3555,6 @@
    "fields": {
     "employer": "Big Infinity Group",
     "address": "ул. Ахмета Байтурсынова, 22"
-   }
-  },
-  "hh-139238961": {
-   "verdict": "approve",
-   "at": "2026-11-09T03:56:52+00:00",
-   "fields": {
-    "employer": "ХБК «Аксай-Нан»",
-    "address": "ул. Бауыржана Момышулы, 36А"
-   }
-  },
-  "hh-139238797": {
-   "verdict": "approve",
-   "at": "2026-11-09T03:56:52+00:00",
-   "fields": {
-    "address": "пр. Райымбека, 212Б"
-   }
-  },
-  "hh-136340447": {
-   "verdict": "approve",
-   "at": "2026-11-09T03:56:52+00:00",
-   "fields": {
-    "address": "ул. Космонавтов, 1/2"
-   }
-  },
-  "hh-138420735": {
-   "verdict": "approve",
-   "at": "2026-11-09T03:56:52+00:00",
-   "fields": {
-    "employer": "Компания «Нефтехим LTD»"
    }
   },
   "hh-139240425": {
@@ -40983,6 +40945,150 @@
    "verdict": "reject",
    "at": "2026-11-23T02:56:22+00:00",
    "reason": "Работа в Семее, а не в Усть-Каменогорске"
+  },
+  "rabota_astanakz-31647": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Работник в цех мучных изделий",
+    "employer": null
+   }
+  },
+  "zhumys_astana_kz-17590": {
+   "verdict": "reject",
+   "at": "2026-11-23T03:56:38+00:00",
+   "reason": "Непонятно, кого ищут: нет работодателя и адреса"
+  },
+  "rabota_astanakz-31648": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Бариста-кассир",
+    "schedule": "5/2, 08:00–19:00",
+    "address": "Правый берег, район Дворца школьников"
+   }
+  },
+  "zhumys_astana_kz-17705": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Повар, заготовщик, кассир, раннер",
+    "employer": "Бургерная «CAIFU'I»",
+    "address": "ул. Аманжолова, 26",
+    "schedule": "5/2, 2/2",
+    "salary_min": 10000,
+    "salary_max": 12000,
+    "salary_period": "day",
+    "perks": []
+   }
+  },
+  "astana_job_vakansii-130979": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Техперсонал, посудомойщица, официант",
+    "employer": "JanymSoul",
+    "schedule": "2/2, 16:45–05:00"
+   }
+  },
+  "rabota_astanakz-31666": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Водитель погрузчика",
+    "schedule": "6/1, полный день"
+   }
+  },
+  "hh-139228261": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "schedule": "2/2",
+    "address": "ул. Еркегали Рахмадиева, 6"
+   }
+  },
+  "hh-139210077": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "schedule": "4/3",
+    "address": "ул. Кабанбай батыра, 104"
+   }
+  },
+  "hh-139722118": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "employer": "«М.двери»",
+    "address": "ул. Акпан батыра, 111",
+    "perks": [
+     "Обучение"
+    ]
+   }
+  },
+  "hh-139722490": {
+   "verdict": "reject",
+   "at": "2026-11-23T03:56:38+00:00",
+   "reason": "Офисные B2B-продажи"
+  },
+  "hh-139722113": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Монтажник трубопроводов, слесарь МСР",
+    "employer": "Borte Engineering"
+   }
+  },
+  "hh-139722477": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {}
+  },
+  "rabotaaktau-142843": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "employer": "Ресторан «Айтан»",
+    "address": "16/85",
+    "schedule": "09:00–21:00 или 21:00–09:00"
+   }
+  },
+  "rabotaaktau-143111": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "employer": "Магазин «Carducci»",
+    "address": "12А мкр., ТРЦ «Port Aktau», 3 этаж"
+   }
+  },
+  "rabotaaktau-143116": {
+   "verdict": "reject",
+   "at": "2026-11-23T03:56:38+00:00",
+   "reason": "Мало сведений: нет зарплаты и адреса"
+  },
+  "hh-139722400": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "address": "ул. Абая, 116"
+   }
+  },
+  "hh-139722324": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "address": "пос. Западный, Западный пер., 15"
+   }
+  },
+  "rabota_v_semee-7990": {
+   "verdict": "approve",
+   "at": "2026-11-23T03:56:38+00:00",
+   "fields": {
+    "title": "Повар в столовую",
+    "address": "Центральный автовокзал",
+    "schedule": "07:00–18:30",
+    "perks": []
+   }
   }
  }
 }

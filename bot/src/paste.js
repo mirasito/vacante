@@ -52,7 +52,8 @@ export function parseVacancy(raw) {
     const v = clean(value).replace(/^[\s:–—-]+|[\s.,;!:]+$/g, "");
     if (v && out[field] == null) {
       out[field] = cut(field === "title" ? upper(v) : v, MAX[field]);
-      if (line !== undefined) used.add(line);
+      // Обрезанную строку оставляем и в подробностях, чтобы хвост не потерялся
+      if (line !== undefined && v.length <= MAX[field]) used.add(line);
     }
   };
   // Строки с подписью: «Зарплата: 250 000 ₸»

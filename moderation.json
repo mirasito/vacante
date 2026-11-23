@@ -1,6 +1,36 @@
 {
- "updated_at": "2026-11-23T06:00:12+00:00",
+ "updated_at": "2026-11-23T06:17:31+00:00",
  "jobs": [
+  {
+   "id": 20,
+   "status": "payment",
+   "reviewed_at": null,
+   "created_at": "2026-11-13 08:39:00",
+   "city": "shymkent",
+   "title": "Подработка",
+   "company": "Либои",
+   "salary": "10000 смен",
+   "schedule": "",
+   "address": "",
+   "kind": null,
+   "city_name": "Шымкент",
+   "details": ""
+  },
+  {
+   "id": 41,
+   "status": "payment",
+   "reviewed_at": null,
+   "created_at": "2026-11-22 15:49:15",
+   "city": "semey",
+   "title": "Курьер",
+   "company": "Яндекс Еда",
+   "salary": "20000-35000",
+   "schedule": "Свободный",
+   "address": "Доставляет еду",
+   "kind": null,
+   "city_name": "Семей",
+   "details": "Доставка"
+  },
   {
    "id": 43,
    "status": "approved",

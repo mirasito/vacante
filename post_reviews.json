@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T15:57:03+00:00",
+ "updated_at": "2026-11-23T16:56:41+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -3716,73 +3716,6 @@
     "title": "Автокурьер Яндекс Еды",
     "employer": null,
     "schedule": "Свободный график"
-   }
-  },
-  "hh-139282267": {
-   "verdict": "approve",
-   "at": "2026-11-09T16:56:48+00:00",
-   "fields": {
-    "title": "Няня",
-    "employer": null,
-    "schedule": "5/2, 8 часов",
-    "address": "ул. Сыганак, 64"
-   }
-  },
-  "hh-139282121": {
-   "verdict": "approve",
-   "at": "2026-11-09T16:56:48+00:00",
-   "fields": {
-    "employer": null,
-    "schedule": "5/2",
-    "address": "ул. Кажымукана, 3",
-    "perks": [
-     "Без опыта"
-    ]
-   }
-  },
-  "hh-139281814": {
-   "verdict": "approve",
-   "at": "2026-11-09T16:56:48+00:00",
-   "fields": {
-    "title": "Бариста",
-    "employer": "Кофейня «Gold Coffee»",
-    "schedule": "5/2 или 2/2",
-    "address": "ул. Е-522, 15"
-   }
-  },
-  "hh-138446515": {
-   "verdict": "approve",
-   "at": "2026-11-09T16:56:48+00:00",
-   "fields": {
-    "title": "Старший повар (донерщик)",
-    "address": "ул. Байтурсынова"
-   }
-  },
-  "vakansii_rabota_atyrau-50089": {
-   "verdict": "approve",
-   "at": "2026-11-09T16:56:48+00:00",
-   "fields": {
-    "title": "Пиццамейкер",
-    "schedule": "08:00–17:00 или 17:00–01:00",
-    "address": "мкр. Алмагуль, 16/1",
-    "perks": [
-     "Питание",
-     "Развозка",
-     "Без опыта"
-    ]
-   }
-  },
-  "hh-139281938": {
-   "verdict": "approve",
-   "at": "2026-11-09T16:56:48+00:00",
-   "fields": {
-    "title": "Повар",
-    "employer": "Tigran Food",
-    "schedule": "5/2 или 2/2, 10 часов",
-    "perks": [
-     "Без опыта",
-     "Обучение"
-    ]
    }
   },
   "hh-139282447": {
@@ -38595,6 +38528,37 @@
    "verdict": "reject",
    "at": "2026-11-23T15:57:03+00:00",
    "reason": "Офисная должность: B2B-продажи с высшим образованием"
+  },
+  "vakansii_rabota_atyrau-50363": {
+   "verdict": "approve",
+   "at": "2026-11-23T16:56:41+00:00",
+   "fields": {
+    "title": "Курьер",
+    "employer": "Dodo Pizza",
+    "schedule": "1/1",
+    "address": "Алмагуль, 16/1; ул. Ауэзова, 59"
+   }
+  },
+  "vakansii_rabota_atyrau-50362": {
+   "verdict": "approve",
+   "at": "2026-11-23T16:56:41+00:00",
+   "fields": {
+    "title": "Кассир, продавец-консультант",
+    "employer": "Алкомаркет «Главалкомаг»",
+    "salary_min": 200000,
+    "salary_max": 250000,
+    "salary_period": "month",
+    "schedule": "2/2, 09:45–03:00",
+    "address": "ул. Орынгали Смагулова, 40 (Курсай); ул. Ахмедьярова, 26а"
+   }
+  },
+  "hh-138867585": {
+   "verdict": "approve",
+   "at": "2026-11-23T16:56:41+00:00",
+   "fields": {
+    "title": "Торговый представитель",
+    "schedule": "5/2, 8 часов"
+   }
   }
  }
 }

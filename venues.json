@@ -1867,6 +1867,15 @@
   "v": 3,
   "checked_at": "2026-11-20T05:43:48+00:00"
  },
+ "aktau:интегрософт": {
+  "name": "ИнтегроСофт",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "integrosoft.kz",
+  "source": "https://2gis.kz/aktau/firm/70000001034225148"
+ },
  "aktau:интертоп центральная азия тм intertop": {
   "name": "Интертоп Центральная Азия ,ТМ (INTERTOP)",
   "city": "aktau",
@@ -25040,6 +25049,20 @@
   "v": 3,
   "checked_at": "2026-11-18T13:44:46+00:00"
  },
+ "almaty:аптека n2": {
+  "name": "Аптека N2",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "apteka2",
+  "website": "http://www.apteka2.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000802105",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:аптекаплюс": {
   "name": "АПТЕКАПЛЮС",
   "city": "almaty",
@@ -25745,6 +25768,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:без": {
+  "name": "Без",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
  },
  "almaty:бейбарыс": {
   "name": "БЕЙБАРЫС",
@@ -28276,6 +28306,13 @@
   "v": 3,
   "checked_at": "2026-11-08T11:44:18+00:00"
  },
+ "almaty:зейналов": {
+  "name": "Зейналов",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
+ },
  "almaty:зеленого базара": {
   "name": "зеленого базара",
   "city": "almaty",
@@ -28824,7 +28861,7 @@
   "instagram": "qaganat_kz",
   "website": "http://qaganat24.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000824185",
-  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -29903,6 +29940,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T09:42:43+00:00"
+ },
+ "almaty:компания акко": {
+  "name": "Компания АККО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
  },
  "almaty:компания алматыхолод": {
   "name": "Компания АлматыХолод",
@@ -32367,7 +32411,7 @@
   "instagram": "neftetekhnika",
   "website": "https://neftetehnika.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001041804753",
-  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37255,6 +37299,13 @@
   "avatar": "3e1082713d29f738.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:центральный": {
+  "name": "Центральный",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
+ },
  "almaty:церинг": {
   "name": "Церинг",
   "city": "almaty",
@@ -38322,6 +38373,13 @@
   "checked_at": "2026-11-05T15:45:29+00:00",
   "instagram": "5th.ugol",
   "source": "https://2gis.kz/astana/firm/70000001110382750"
+ },
+ "astana:8 ка": {
+  "name": "8-КА",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
  },
  "astana:999": {
   "name": "999",
@@ -42394,6 +42452,20 @@
   "instagram": "good_lombard_astana",
   "source": "https://2gis.kz/astana/firm/70000001039438500"
  },
+ "astana:gra ltd": {
+  "name": "GRA LTD",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "baby_smile_ast",
+  "website": "http://baby-smile.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001028474678",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:grace": {
   "name": "Grace",
   "city": "astana",
@@ -44862,6 +44934,13 @@
   "avatar": "10ffe3c0c0876bb6.jpg",
   "avatar_source": "website"
  },
+ "astana:meridian story ltd": {
+  "name": "MERIDIAN story LTD",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
+ },
  "astana:meru stores": {
   "name": "Meru stores",
   "city": "astana",
@@ -45846,7 +45925,7 @@
   "instagram": "osmar.group",
   "website": "https://osmar.kz/",
   "source": "https://2gis.kz/astana/firm/70000001080571240",
-  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46722,7 +46801,7 @@
   "instagram": "rami__market",
   "telegram": "rami_market",
   "source": "https://2gis.kz/astana/firm/70000001101124890",
-  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -47258,6 +47337,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T07:45:16+00:00"
+ },
+ "astana:sbs ns": {
+  "name": "SbS NS",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "website": "http://sbsns.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018072857",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:sd realty кафе": {
   "name": "ТОО SD REALTY (Кафе)",
@@ -48103,6 +48195,22 @@
   "v": 3,
   "checked_at": "2026-11-03T17:44:34+00:00"
  },
+ "astana:talases tarlans stroy kz": {
+  "name": "TALASES TARLANS STROY.KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "tts_smesi_astana",
+  "website": "http://ttsgg.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001043166698",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e7542b0c68aed34b.jpg",
+  "avatar_source": "website"
+ },
  "astana:tamos space school тамос спэйс скул": {
   "name": "Tamos Space School (Тамос Спэйс Скул)",
   "city": "astana",
@@ -48208,6 +48316,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T10:44:24+00:00"
+ },
+ "astana:tedeco": {
+  "name": "TeDeCo",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "tedeco.kz",
+  "website": "http://tedeco.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001099301747",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:teg corporation": {
   "name": "TEG CORPORATION",
@@ -54332,6 +54454,19 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "astana:лс групп": {
+  "name": "ЛС ГРупп",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "website": "http://lsgroup.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001021915642",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:лучший менеджер": {
   "name": "Лучший менеджер",
   "city": "astana",
@@ -54440,6 +54575,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T05:43:53+00:00"
+ },
+ "astana:макашев б ж": {
+  "name": "Макашев Б.Ж.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
  },
  "astana:макашева а м": {
   "name": "Макашева А.М",
@@ -55676,7 +55818,7 @@
   "instagram": "tengri_hotel",
   "website": "http://www.tengrihotel.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018080224",
-  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58302,6 +58444,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:ттс астана 2007 к": {
+  "name": "ТТС Астана-2007 К",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
  },
  "astana:тулегенов ахлиддин": {
   "name": "ТУЛЕГЕНОВ АХЛИДДИН",
@@ -64233,6 +64382,13 @@
   "avatar": "d09cd1860a278952.jpg",
   "avatar_source": "website"
  },
+ "karaganda:steel manufacturing": {
+  "name": "Steel Manufacturing",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
+ },
  "karaganda:stratera": {
   "name": "STRATERA",
   "city": "karaganda",
@@ -66605,7 +66761,7 @@
   "instagram": "tsan_karaganda",
   "website": "http://tsan.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302836101",
-  "avatar_checked_at": "2026-11-16T07:44:06+00:00",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -80520,6 +80676,13 @@
   "v": 3,
   "checked_at": "2026-11-13T13:43:08+00:00"
  },
+ "shymkent:мц эко": {
+  "name": "МЦ ЭКО",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00"
+ },
  "shymkent:наурызбеков ильяс": {
   "name": "Наурызбеков Ильяс",
   "city": "shymkent",
@@ -84061,6 +84224,15 @@
   "v": 3,
   "checked_at": "2026-10-29T21:43:48+00:00"
  },
+ "uralsk:алем foods": {
+  "name": "Алем Foods",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "alem_foods_",
+  "source": "https://2gis.kz/uralsk/firm/70000001047725009"
+ },
  "uralsk:алешин илья андреевич": {
   "name": "Алешин Илья Андреевич",
   "city": "uralsk",
@@ -84889,6 +85061,20 @@
   "avatar": "61e4ab4ee4e68bbd.jpg",
   "avatar_source": "website"
  },
+ "uralsk:пушкин": {
+  "name": "ПУШКИН",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "instagram": "pushkinhoteluralsk",
+  "website": "http://pushkinhotel.com/",
+  "source": "https://2gis.kz/uralsk/firm/70000001024942487",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "uralsk:ребро": {
   "name": "РЕБРО",
   "city": "uralsk",
@@ -85320,6 +85506,19 @@
   "checked_at": "2026-11-06T02:45:50+00:00",
   "instagram": "2gis.ukg",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721338726"
+ },
+ "ust-kamenogorsk:adidas kazakhstan": {
+  "name": "adidas Kazakhstan",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T08:44:02+00:00",
+  "website": "http://adidas.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001089083730",
+  "avatar_checked_at": "2026-11-23T08:44:03+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "ust-kamenogorsk:adk river": {
   "name": "ADK River",

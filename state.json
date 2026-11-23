@@ -58,9 +58,9 @@
   "almaty_rabota": 14827
  },
  "parser": "713d4e83342d",
- "hh_checked_at": "2026-11-23T19:25:51.305981+00:00",
+ "hh_checked_at": "2026-11-23T20:25:58.943205+00:00",
  "hh_backfill": "points",
- "olx_status": "inbox",
+ "olx_status": "import error: ConnectTimeout",
  "olx_imports_at": "2026-11-23T19:25:51.305981+00:00",
  "olx_pages": 0,
  "olx_candidates": 0,

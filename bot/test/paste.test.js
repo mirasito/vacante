@@ -17,8 +17,8 @@ test("объявление из канала раскладывается по �
   assert.equal(got.schedule, "2/2 с 10:00 до 22:00");
   assert.equal(got.address, "ул. Кабанбай батыра 15, Астана");
   assert.equal(got.city, "astana");
-  assert.doesNotMatch(got.details, /701|@zerno_hr/);
-  assert.match(got.details, /Питание, развозка/);
+  // В подробностях только то, что не разложено по полям, без телефонов и пустого «Звонить:»
+  assert.equal(got.details, "Питание, развозка после 22:00.");
 });
 
 test("без подписей: должность первой строкой, деньги и график по виду", () => {

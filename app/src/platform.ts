@@ -146,7 +146,16 @@ export function openUrl(url: string) {
     return;
   }
   if (isWeb) {
-    window.open(url, '_blank', 'noopener');
+    // Встроенные браузеры (Telegram, Instagram, WhatsApp на телефоне) молча блокируют новые окна, и кнопка
+    // «не нажималась». Окно не открылось — переходим по ссылке в этой же вкладке: t.me откроет приложение Telegram.
+    let w: Window | null = null;
+    try {
+      w = window.open(url, '_blank');
+    } catch {
+      w = null;
+    }
+    if (w) w.opener = null;
+    else window.location.href = url;
     return;
   }
   Linking.openURL(url).catch(() => undefined);
@@ -315,10 +324,27 @@ export function downloadFile(url: string, name: string) {
  * Вкладка из ссылки: кнопка бота «Открыть профиль» открывает приложение с ?tab=profile,
  * сообщения об откликах — с ?tab=applications, напоминания — с ?tab=reminders.
  */
-export function launchTab(): 'profile' | 'applications' | 'reminders' | 'chats' | 'employer' | undefined {
+export function launchTab(): 'profile' | 'applications' | 'reminders' | 'chats' | 'employer' | 'post' | undefined {
   if (!isWeb) return undefined;
   const tab = new URLSearchParams(window.location.search).get('tab');
-  return tab === 'profile' || tab === 'applications' || tab === 'reminders' || tab === 'chats' || tab === 'employer' ? tab : undefined;
+  return tab === 'profile' || tab === 'applications' || tab === 'reminders' || tab === 'chats' || tab === 'employer' || tab === 'post'
+    ? tab
+    : undefined;
+}
+
+/** Откуда пришли на форму размещения: ?tab=post&from=site_header → jobs.came_from = web_site_header. */
+export function launchFrom(): string {
+  if (!isWeb) return 'app';
+  const from = new URLSearchParams(window.location.search).get('from') || '';
+  return /^[a-z_]{1,20}$/.test(from) ? from : inTelegram() ? 'miniapp' : 'site';
+}
+
+/** Сайт открыл кабинет или форму ссылкой (не Telegram): «Назад» ведёт обратно на сайт, а не в ленту соискателя. */
+export function leaveToSite(): boolean {
+  if (!isWeb || inTelegram()) return false;
+  if (document.referrer && new URL(document.referrer).origin === window.location.origin && window.history.length > 1) window.history.back();
+  else window.location.href = '/rabotodatelyam/';
+  return true;
 }
 
 /** Отклик из ссылки: кнопка «Перенести» под напоминанием о собеседовании открывает ?tab=applications&app=12. */

@@ -130,7 +130,8 @@ export function card(job) {
 
 // Предпросмотр анкеты и выбор тарифа. price: цена «Базового» (postPrice) или 0, если размещение бесплатное
 // (модератору или без реквизитов). boost: условия «Про» (boostOffer) или null. credits: сколько «Про» осталось в пакетах.
-export function previewScreen(job, price = 0, boost = null, credits = 0, now = new Date()) {
+// admin: модератор каналов, ему ещё кнопка «🛡 Без оплаты (модератор)».
+export function previewScreen(job, price = 0, boost = null, credits = 0, now = new Date(), admin = false) {
   const what = job.kind === "shift" ? "смену" : "вакансию";
   const where = job.kind === "shift"
     ? "смена появится на vacante.kz в разделе «Подработка и смены» и в подборках"
@@ -153,6 +154,7 @@ export function previewScreen(job, price = 0, boost = null, credits = 0, now = n
   } else if (pro && job.kind !== "shift" && boost.packs?.length) {
     keyboard.push([{ text: "📦 Пакеты Про со скидкой", callback_data: "packs" }]);
   }
+  if (admin) keyboard.push([{ text: "🛡 Без оплаты (вы модератор)", callback_data: "jobfree" }]);
   keyboard.push(redo);
   return { text: head + lines.join("\n"), keyboard };
 }
@@ -397,7 +399,7 @@ export function parsePacks(value) {
 
 export function packsScreen(boost, credits = 0) {
   const lines = boost.packs.map((p) =>
-    `📦 <b>${p.count} вакансий Про за ${money(p.price)}</b>: ${money(Math.round(p.price / p.count))} за одну вместо ${money(boost.price)}, ` +
+    `📦 <b>${p.count} ${vacancies(p.count)} Про за ${money(p.price)}</b>: ${money(Math.round(p.price / p.count))} за одну вместо ${money(boost.price)}, ` +
     `использовать в течение ${p.days} дней.`);
   return {
     text:
@@ -411,7 +413,7 @@ export function packsScreen(boost, credits = 0) {
 export function packPayScreen(pack, boost) {
   return {
     text:
-      `📦 <b>Пакет: ${pack.count} вакансий Про за ${money(pack.price)}</b>\n\n` +
+      `📦 <b>Пакет: ${pack.count} ${vacancies(pack.count)} Про за ${money(pack.price)}</b>\n\n` +
       `Как оплатить: переведите <b>${money(pack.price)}</b> на Kaspi\n${esc(boost.kaspi)}\n` +
       `В комментарии к переводу напишите «Пакет ${pack.count}». Потом нажмите кнопку ниже: мы сверим перевод и включим пакет.`,
     keyboard: [[{ text: "✅ Я оплатил", callback_data: `packpaid:${pack.count}` }]],
@@ -424,7 +426,7 @@ export function packWaitText(pack) {
 
 export function packReadyText(count, until) {
   return (
-    `📦 Пакет включён: ${count} вакансий Про до ${localDate(until)}.\n\n` +
+    `📦 Пакет включён: ${count} ${vacancies(count)} Про до ${localDate(until)}.\n\n` +
     "При новой вакансии выберите «🔥 Про из пакета», а уже опубликованную поднимите в /myjobs кнопкой «🔥 Про». /vacancy"
   );
 }
@@ -481,6 +483,12 @@ export function offerFor(boost, j, now = new Date()) {
   if (!boost || j.kind !== "shift" || !j.shift_date) return boost;
   const days = Math.max(1, Math.ceil((Date.parse(`${j.shift_date}T19:00:00Z`) - now.getTime()) / 86400e3));
   return { ...boost, price: boost.shiftPrice, days, shift: true };
+}
+
+// «1 вакансия», «3 вакансии», «10 вакансий»
+export function vacancies(n) {
+  const d = n % 10, h = n % 100;
+  return d === 1 && h !== 11 ? "вакансия" : d >= 2 && d <= 4 && (h < 12 || h > 14) ? "вакансии" : "вакансий";
 }
 
 export const money = (n) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₸`;

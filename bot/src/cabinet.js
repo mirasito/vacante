@@ -3,7 +3,8 @@
 // На сайте вне Telegram вход через бота (login.js): заголовок Authorization: session <ключ>.
 // Вакансии работодателя живут здесь, в D1 бота, поэтому кабинет ходит прямо в воркер:
 //   GET  /api/cabinet   — вакансии, отклики, тарифы, остаток пакетов, реквизиты Kaspi
-//   POST /api/cabinet   — { action, id?, count? }: close, apps, credit, paid_boost, paid_post, paid_pack
+//   POST /api/cabinet   — { action, id?, count? }: close, apps, credit, paid_boost, paid_post, paid_pack,
+//                         а форма размещения на сайте: save { fields } (черновик) и submit { fields, tariff } (webpost.js)
 // Отклики бот не хранит (только номера сообщений), поэтому «Отклики» присылает их ещё раз в чат с ботом.
 import options from "./options.json" with { type: "json" };
 import { creditsLeft, myJobs } from "./db.js";
@@ -12,6 +13,7 @@ import { verifySession } from "./login.js";
 import { boostWithCredit, requestBoost, requestPack, requestPost } from "./payments.js";
 import { closeOwnJob, pasteFromApp, resendApplications } from "./posting.js";
 import { send } from "./telegram.js";
+import { currentDraft, draftView, saveDraft, submitForm } from "./webpost.js";
 
 const CITY = Object.fromEntries(options.cities);
 export const INIT_DATA_MAX_AGE = 24 * 60 * 60;
@@ -87,7 +89,7 @@ export async function cabinetState(env, user, now = new Date()) {
       pay: j.status === "payment" && boost ? { amount: job.postPriceFor(j, boost, now), tariff: j.pro ? "pro" : "basic",
         waiting: waiting.some((p) => p.job_id === j.id && p.kind === "post") } : null,
       // Можно поднять по Про: цена, срок, ждём ли перевод
-      boost: j.status === "approved" && offer ? { price: offer.price, days: offer.days, shift: !!offer.shift,
+      boost: j.status === "approved" && offer ? { price: offer.price, days: offer.days, shift: !!offer.shift, active: job.isBoosted(j, now),
         waiting: waiting.some((p) => p.job_id === j.id && p.kind !== "post") } : null,
     };
   });
@@ -97,9 +99,11 @@ export async function cabinetState(env, user, now = new Date()) {
     jobs,
     credits: await creditsLeft(env, chatId),
     kaspi: boost ? boost.kaspi : null,
-    tariffs: boost && !admin ? { post: job.postPrice(boost), pro: boost.price, days: boost.days, shift_pro: boost.shiftPrice,
+    // Модератор видит тарифы, как все: бесплатно он размещает только кнопкой «Без оплаты»
+    tariffs: boost && job.postPrice(boost) ? { post: job.postPrice(boost), pro: boost.price, days: boost.days, shift_pro: boost.shiftPrice,
       packs: boost.packs } : null,
     pack_waiting: waiting.some((p) => p.kind === "pack"),
+    draft: draftView(await currentDraft(env, chatId)),
     bot: job.BOT_USERNAME,
   };
 }
@@ -141,6 +145,12 @@ async function act(env, user, body, ctx) {
       await send(env, chatId, job.packWaitText(r.pack));
       return { message: "Сверяем перевод за пакет. Напишем в чат с ботом, как только включим" };
     }
+    case "save": {
+      const r = await saveDraft(env, user, body.fields || {}, body.from);
+      return r.error ? r : { message: "" };
+    }
+    case "submit":
+      return submitForm(env, user, body.fields || {}, body.tariff, body.from, ctx);
     case "paste": {
       // Быстрое размещение: текст или ссылка из кабинета, анкета продолжается в чате с ботом
       const text = String(body.text ?? "").trim().slice(0, 4000);

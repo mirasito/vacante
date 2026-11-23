@@ -15,6 +15,8 @@ from vacante.parse import CITIES, clean_text, detect_titles, fingerprint, parse_
 BOT_USERNAME = "vacantekz_bot"
 SOURCE = "bot"
 POST_URL = f"https://t.me/{BOT_USERNAME}?start=post_site"
+# Форма размещения прямо на сайте (app/src/employer/PostForm.tsx): from — откуда пришли (jobs.came_from = web_<from>)
+FORM_URL = "/app/?tab=post&from="
 
 
 def apply_url(job_id: int) -> str:

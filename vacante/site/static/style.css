@@ -16,7 +16,12 @@ a { color: inherit; }
 .logo .on-dark { display: none; }
 @media (prefers-color-scheme: dark) { .logo .on-light { display: none; } .logo .on-dark { display: block; } }
 .tagline { color: var(--quiet); font-size: 14px; }
-.post-job { margin-left: auto; font-size: 14px; font-weight: 600; white-space: nowrap; }
+/* «＋ Разместить вакансию»: заметная кнопка в шапке на каждой странице */
+.post-job { margin-left: auto; align-self: center; font-size: 15px; font-weight: 700; white-space: nowrap; text-decoration: none;
+  background: var(--brand); color: #fff; border-radius: 999px; padding: 8px 16px; }
+.post-job:hover { filter: brightness(1.08); }
+.post-job .short { display: none; }
+@media (prefers-color-scheme: dark) { .post-job { color: #1B2023; } }
 /* Переключатель языка: Рус · Қаз */
 .langs { margin-left: auto; display: flex; gap: 8px; font-size: 14px; }
 .langs a { color: var(--quiet); text-decoration: none; }
@@ -78,6 +83,9 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 @media (max-width: 600px) {
   .tagline { display: none; }
   .topbar { gap: 12px; }
+  .post-job { padding: 7px 12px; font-size: 14px; }
+  .post-job .long { display: none; }
+  .post-job .short { display: inline; }
   /* Города и сферы в одну прокручиваемую строку, чтобы фильтры и вакансии были видны сразу */
   .hero .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; }
   .hero .chips::-webkit-scrollbar { display: none; }

@@ -164,8 +164,9 @@ export async function confirmPayment(env, q, ctx) {
   if (meta.changes && ok && payment.kind === "post") {
     // Размещение оплачено: вакансия уходит на проверку (даже если её успели закрыть, за неё заплатили).
     // Тариф Про (payment.days > 0): срок Про считаем с этой минуты, проверка обычно до часа.
+    // reviewed_at сбрасываем: пока ждали оплату, агент мог только оформить текст, теперь он решает, публиковать ли.
     await env.DB.prepare(
-      `UPDATE jobs SET status = 'pending', post_paid = ?, updated_at = datetime('now'),
+      `UPDATE jobs SET status = 'pending', post_paid = ?, updated_at = datetime('now'), reviewed_at = NULL,
          boost_until = CASE WHEN ? > 0 THEN datetime('now', '+' || ? || ' days') ELSE boost_until END
        WHERE id = ? AND status IN ('payment', 'closed')`,
     )

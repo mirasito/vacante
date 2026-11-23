@@ -96,7 +96,11 @@ test("от /start до «Готово» и первых примеров", async
   assert.equal(calls[0].method, "sendMessage");
   assert.match(calls[0].body.text, /листать свайпами/);
   assert.deepEqual(calls[0].body.reply_markup.inline_keyboard[0][0].web_app, { url: "https://vacante.kz/app/" });
-  assert.match(calls[1].body.text, /^Где ищете работу/);
+  // Вопрос соискателя не задаём сразу (его видели работодатели): он по кнопке «🔔 Присылать вакансии»
+  assert.equal(calls.length, 1);
+  assert.deepEqual(calls[0].body.reply_markup.inline_keyboard[1][0], { text: "🔔 Присылать вакансии", callback_data: "settings" });
+  await press(env, me, "settings");
+  assert.match(calls.at(-1).body.text, /^Где ищете работу/);
   for (const data of ["city:almaty", "go:perks", "done"]) await press(env, me, data);
   const done = calls.findLast((c) => c.method === "editMessageText");
   assert.match(done.body.text, /^Готово!/);
@@ -116,14 +120,15 @@ test("работодатель с /start: кнопка «Ищу сотрудни
   globalThis.fetch = fakeFetch(calls);
   const boss = user(110, "Айжан");
   await say(env, boss, "/start");
-  assert.deepEqual(calls[0].body.reply_markup.inline_keyboard[1][0], { text: "🏢 Ищу сотрудников", callback_data: "emp" });
+  assert.deepEqual(calls[0].body.reply_markup.inline_keyboard[2][0], { text: "🏢 Ищу сотрудников", callback_data: "emp" });
+  assert.equal(sentTo(calls, 110).length, 1);  // без вопроса соискателя «Где ищете работу?»
   await press(env, boss, "emp");
   assert.match(sentTo(calls, 110).at(-1).body.text, /Найдём сотрудников/);
   await say(env, boss, "/employer");
   const menu = sentTo(calls, 110).at(-1).body;
   assert.match(menu.text, /Размещение бесплатное/);
   await press(env, boss, "emp:vacancy");
-  assert.match(sentTo(calls, 110).at(-1).body.text, /Вопрос 1 из 7<\/i>\nВ каком городе работа/);
+  assert.match(sentTo(calls, 110).at(-1).body.text, /^⚡ Быстрее.*\n\n<i>Вопрос 1 из 7<\/i>\nВ каком городе работа/s);  // без повтора меню
   await press(env, boss, "emp:jobs");
   assert.match(sentTo(calls, 110).at(-1).body.text, /пока нет вакансий/);
   await press(env, boss, "emp:company");
@@ -456,9 +461,27 @@ test("платное размещение: оплата на Kaspi, потом �
   assert.match(sentTo(calls, 100).at(-1).body.text, /вернём на ваш Kaspi/);
   assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /заплатил 900 ₸ за размещение: верните перевод/);
 
-  // Модератор размещает сам без оплаты
+  // Работодатель не может нажать «Без оплаты»: кнопки у него нет, а старая кнопка вакансию не отправит
+  await say(env, boss, "/vacancy");
+  await press(env, boss, "jobcity:astana", 15);
+  for (const text of ["Официант", "Кафе", "250 000 ₸"]) await say(env, boss, text);
+  for (const f of ["schedule", "address", "details"]) await press(env, boss, `skip:${f}`, 16);
+  assert.ok(!calls.at(-1).body.reply_markup.inline_keyboard.flat().some((b) => b.callback_data === "jobfree"));
+  await press(env, boss, "jobfree", 16);
+  assert.equal(env.DB.get("SELECT status FROM jobs WHERE employer_chat = 100 ORDER BY id DESC").status, "draft");
+
+  // Модератор видит тот же путь с оплатой, как работодатель, а без оплаты только отдельной кнопкой
   await say(env, admin, "/vacancy");
-  assert.doesNotMatch(sentTo(calls, 900).at(-1).body.text, /900 ₸/);
+  assert.match(sentTo(calls, 900).at(-1).body.text, /Разместим вакансию за 900 ₸/);
+  await press(env, admin, "jobcity:almaty", 60);
+  for (const text of ["Бариста", "Кофейня", "200 000 ₸"]) await say(env, admin, text);
+  for (const f of ["schedule", "address", "details"]) await press(env, admin, `skip:${f}`, 61);
+  const adminPreview = calls.at(-1).body.reply_markup.inline_keyboard.map((r) => r[0].callback_data);
+  assert.deepEqual(adminPreview.slice(0, 2), ["jobsend", "jobpro"]);
+  assert.ok(adminPreview.includes("jobfree"));
+  await press(env, admin, "jobfree", 61);
+  assert.equal(env.DB.get("SELECT status FROM jobs WHERE employer_chat = 900").status, "pending");
+  assert.match(calls.at(-1).body.text, /Без оплаты, как модератор/);
 });
 
 test("тарифы: Про сразу при размещении, пакет Про, Про из пакета и итог по откликам", async () => {
@@ -498,7 +521,7 @@ test("тарифы: Про сразу при размещении, пакет П
   // Пакет: экран, оплата, модератор подтверждает, у работодателя 3 Про на 60 дней
   await press(env, boss, "packs");
   const packs = sentTo(calls, 100).at(-1).body;
-  assert.match(packs.text, /3 вакансий Про за 9 990 ₸<\/b>: 3 330 ₸ за одну вместо 3 990 ₸/);
+  assert.match(packs.text, /3 вакансии Про за 9 990 ₸<\/b>: 3 330 ₸ за одну вместо 3 990 ₸/);
   assert.deepEqual(packs.reply_markup.inline_keyboard.map((r) => r[0].callback_data), ["pack:3", "pack:10"]);
   await press(env, boss, "pack:7", 61);  // такого пакета нет
   await press(env, boss, "pack:3", 61);
@@ -510,7 +533,7 @@ test("тарифы: Про сразу при размещении, пакет П
   assert.match(sentTo(calls, 900).at(-1).body.text, /Оплата пакета «3 Про» №2: <b>9 990 ₸<\/b> на 60 дней\nОт: Дана \(@dana_cafe\)[\s\S]*«Пакет 3»/);
   await press(env, admin, "pay:ok:2", 62);
   assert.equal(env.DB.get("SELECT left FROM credits").left, 3);
-  assert.match(sentTo(calls, 100).at(-1).body.text, /Пакет включён: 3 вакансий Про/);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Пакет включён: 3 вакансии Про/);
   assert.match(calls.filter((c) => c.method === "editMessageText").at(-1).body.text, /✅ Деньги пришли: Мирас/);
 
   // Новая вакансия: «Про из пакета» без оплаты, сразу на проверку со сроком Про
@@ -642,7 +665,7 @@ test("кружок, /start video и кнопки «v:» ведёт сервер,
   const before = relayed().length;
   await say(env, seeker, "/start");
   assert.equal(relayed().length, before);
-  assert.match(sentTo(calls, 500).at(-2).body.text, /Привет! Это бот vacante.kz/);
+  assert.match(sentTo(calls, 500).at(-1).body.text, /Привет! Это бот vacante.kz/);
 
   // Обычное видео: сервер берёт его, только если у человека есть профиль, иначе отвечает бот
   const plain = { message: { chat, from: seeker, video: { file_id: "v", duration: 20 } } };
@@ -893,7 +916,7 @@ test("кабинет работодателя: вход по initData, вака�
   assert.deepEqual(state.jobs.map((j) => [j.id, j.status, j.applications]), [[2, "payment", 0], [1, "approved", 1]]);
   assert.deepEqual(state.jobs[0].pay, { amount: 990, tariff: "basic", waiting: false });
   assert.equal(state.jobs[1].url, "https://vacante.kz/v/bot-1/");
-  assert.deepEqual(state.jobs[1].boost, { price: 3990, days: 14, shift: false, waiting: false });
+  assert.deepEqual(state.jobs[1].boost, { price: 3990, days: 14, shift: false, active: false, waiting: false });
   assert.deepEqual(state.tariffs, { post: 990, pro: 3990, days: 14, shift_pro: 1390, packs: [{ count: 3, price: 9990, days: 60 }] });
   assert.equal(state.kaspi, "+7 700 000 00 00, Мирас Б.");
 
@@ -1070,8 +1093,9 @@ test("быстрое размещение: текст в чат, ссылка н
   const after = sentTo(calls, 140).at(-1).body.text;
   assert.match(after, /Заполнил анкету из вашего текста/);
   assert.match(after, /Проверьте вакансию/); // всё нашлось: сразу предпросмотр
+  assert.match(after, /✨ Поправили оформление: название, зарплата/);  // tidy.js сразу в черновике
   assert.deepEqual(env.DB.get("SELECT city, title, company, salary, schedule, step FROM jobs WHERE employer_chat = 140"),
-    { city: "almaty", title: "Повар", company: "кафе «Арман»", salary: "15 000 тг за смену", schedule: "", step: null });
+    { city: "almaty", title: "Повар", company: "Кафе «Арман»", salary: "15 000 ₸ за смену", schedule: "", step: null });
 
   // Ссылка на hh: берём из официального API, спрашиваем только недостающее
   const hr = user(141, "Ерке");
@@ -1112,4 +1136,73 @@ test("быстрое размещение: текст в чат, ссылка н
   assert.match(sentTo(calls, 142).at(-1).body.text, /Заполнил анкету[\s\S]*Как называется заведение/);
   await say(env, user(142, "Алия"), "Склад «Восток»");
   assert.match(sentTo(calls, 142).at(-1).body.text, /Проверьте вакансию/);
+});
+
+test("форма на сайте: разбор текста, черновик, отправка только с оплатой, агент оформляет до оплаты", async () => {
+  const env = { ...fakeEnv(), KASPI_DETAILS: "+7 700 000 00 00, Мирас Б.", POST_PRICE: "990", BOOST_PRICE: "3990", BOOST_DAYS: "14",
+    PACKS: "3:9990:60" };
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  await say(env, user(900, "Мирас"), "/admin");
+  const api = (path, auth, body) => worker.fetch(new Request(`https://bot.example${path}`, {
+    method: body ? "POST" : "GET",
+    headers: { Origin: "https://vacante.kz", ...(auth ? { Authorization: `tma ${auth}` } : {}), ...(body ? { "Content-Type": "application/json" } : {}) },
+    body: body ? JSON.stringify(body) : undefined }), env, ctx).then(async (r) => ({ status: r.status, cors: r.headers.get("Access-Control-Allow-Origin"), ...(await r.json()) }));
+
+  // Открытая часть: тарифы и разбор вставленного текста уже с поправленным оформлением
+  const info = await api("/api/post");
+  assert.equal(info.cors, "https://vacante.kz");
+  assert.deepEqual(info.tariffs, { post: 990, pro: 3990, days: 14, packs: [{ count: 3, price: 9990, days: 60 }] });
+  assert.equal(info.cities[0][0], "almaty");
+  const parsed = await api("/api/post", null, { action: "parse", text: "ТРЕБУЕТСЯ ОФИЦИАНТ\nКафе \"Зерно\"\nЗарплата: 250000тг\nГрафик: с 10 до 22\nАстана" });
+  // Всё разобрано по полям: в «Подробнее» те же строки не повторяются
+  assert.deepEqual(parsed.fields, { city: "astana", title: "Официант", company: "Кафе «Зерно»", salary: "250 000 ₸", schedule: "10:00–22:00" });
+  const tidy = await api("/api/post", null, { action: "tidy", fields: { title: "повар!!!", salary: "200-300 тыс", city: "мимо" } });
+  assert.deepEqual(tidy.fields, { title: "Повар", salary: "200 000–300 000 ₸" });
+  assert.deepEqual(tidy.changed_names, ["должность", "зарплата"]);
+
+  // Черновик: сохраняется по полям, без входа нельзя
+  const dana = initData(env.TELEGRAM_BOT_TOKEN, { id: 100, first_name: "Дана", username: "dana_cafe" });
+  assert.equal((await api("/api/cabinet", null, { action: "save", fields: {} })).status, 401);
+  let r = await api("/api/cabinet", dana, { action: "save", fields: { city: "almaty", title: "Повар" }, from: "site_header" });
+  assert.equal(r.state.draft.title, "Повар");
+  assert.deepEqual(env.DB.get("SELECT status, step, came_from, employer_name FROM jobs"),
+    { status: "draft", step: "company", came_from: "web_site_header", employer_name: "Дана (@dana_cafe)" });
+  // Не всё заполнено: не отправляем
+  r = await api("/api/cabinet", dana, { action: "submit", fields: { city: "almaty", title: "Повар" }, tariff: "basic" });
+  assert.equal(r.status, 400);
+  assert.match(r.error, /Заполните: название, зарплата/);
+  // «Без оплаты» работодателю нельзя
+  const full = { city: "almaty", title: "повар", company: "кафе \"Арман\"", salary: "300000 тг", schedule: "с 9 до 21", address: "", details: "" };
+  r = await api("/api/cabinet", dana, { action: "submit", fields: full, tariff: "free" });
+  assert.match(r.error, /только модераторы/);
+  assert.equal(env.DB.get("SELECT status FROM jobs").status, "draft");
+  // Базовый: ждёт оплаты, модераторам ничего, в чат реквизиты с «Я оплатил»
+  const before = sentTo(calls, 900).length;
+  r = await api("/api/cabinet", dana, { action: "submit", fields: full, tariff: "basic" });
+  assert.equal(r.outcome, "payment");
+  assert.deepEqual(env.DB.get("SELECT status, step, title, company, salary, schedule FROM jobs"),
+    { status: "payment", step: null, title: "Повар", company: "Кафе «Арман»", salary: "300 000 ₸", schedule: "09:00–21:00" });
+  assert.equal(sentTo(calls, 900).length, before);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /переведите <b>990 ₸<\/b>/);
+  assert.equal(r.state.jobs[0].pay.amount, 990);
+  assert.equal(r.state.draft, null);
+
+  // Агент-модератор оформляет, пока ждёт оплаты, но опубликовать не может
+  let res = await (await moderateApi(env, [{ id: 1, verdict: "approve", fields: { title: "Повар" } }])).json();
+  assert.match(res.results[0].result, /^skipped: ждёт оплаты/);
+  res = await (await moderateApi(env, [{ id: 1, verdict: "edit", fields: { details: "Питание и развозка." } }])).json();
+  assert.equal(res.results[0].result, "edited");
+  assert.deepEqual(env.DB.get("SELECT status, details, reviewed_at IS NOT NULL AS r FROM jobs"), { status: "payment", details: "Питание и развозка.", r: 1 });
+  // Деньги пришли: снова в очередь агента на решение
+  await api("/api/cabinet", dana, { action: "paid_post", id: 1 });
+  await press(env, user(900, "Мирас"), "pay:ok:1", 70);
+  assert.deepEqual(env.DB.get("SELECT status, reviewed_at FROM jobs"), { status: "pending", reviewed_at: null });
+
+  // Модератор с сайта: тарифы видит, без оплаты только отдельно
+  const miras = initData(env.TELEGRAM_BOT_TOKEN, { id: 900, first_name: "Мирас" });
+  r = await api("/api/cabinet", miras);
+  assert.ok(r.admin && r.tariffs.post === 990);
+  r = await api("/api/cabinet", miras, { action: "submit", fields: { ...full, title: "Бариста" }, tariff: "free" });
+  assert.equal(r.outcome, "pending");
 });

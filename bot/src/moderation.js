@@ -73,12 +73,14 @@ export async function moderationApi(request, env, ctx) {
 async function review(env, d) {
   const found = await getJob(env, Number(d.id));
   if (!found) return "error: нет такой вакансии";
-  if (found.status !== "pending" && found.status !== "approved") return `skipped: ${job.STATUS[found.status]}`;
+  if (!["pending", "approved", "payment"].includes(found.status)) return `skipped: ${job.STATUS[found.status]}`;
   if (!["approve", "reject", "edit"].includes(d.verdict)) return "error: verdict = approve, reject или edit";
+  // Ждёт оплаты: агент только оформляет текст, решать будет после оплаты (тогда reviewed_at сбросится)
+  if (found.status === "payment" && d.verdict !== "edit") return "skipped: ждёт оплаты, можно только edit";
   const { job: next, error } = job.reviewFields(found, d.fields);
   if (error) return `error: ${error}`;
   // Уже опубликованную (модератор нажал кнопку сам) агент только оформляет
-  const status = found.status === "approved" || d.verdict === "edit" ? found.status : d.verdict === "approve" ? "approved" : "rejected";
+  const status = found.status !== "pending" || d.verdict === "edit" ? found.status : d.verdict === "approve" ? "approved" : "rejected";
   const decided = status !== found.status;
   const { meta } = await env.DB.prepare(
     `UPDATE jobs SET status = ?, title = ?, company = ?, salary = ?, schedule = ?, address = ?, details = ?,

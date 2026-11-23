@@ -71,7 +71,7 @@ def test_site_shows_bot_job_with_apply_button(tmp_path):
     assert 'href="https://t.me/vacantekz_bot?start=apply_7"' in page and "Откликнуться в Telegram" in page
     assert "Источник:" not in page and "оригинальном объявлении</a>" not in page
     listing = (tmp_path / "out" / "almaty" / "index.html").read_text("utf-8")
-    assert "От работодателя" in listing and 'href="https://t.me/vacantekz_bot?start=post_site"' in listing
+    assert "От работодателя" in listing and 'href="/app/?tab=post&amp;from=site_list"' in listing
     admin = unseal(json.loads((tmp_path / "out" / "admin" / "sealed.json").read_text("utf-8")), "пароль")
     assert admin["totals"]["direct"] == 1
 

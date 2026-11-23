@@ -34,7 +34,9 @@ import {
   launchCity,
   launchRef,
   launchSource,
+  launchFrom,
   launchTab,
+  leaveToSite,
   launchVacancy,
   loadWebFont,
   notify,
@@ -160,7 +162,8 @@ function Main() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   // Кабинет работодателя: из настроек или по ссылке бота /app/?tab=employer
-  const [cabinetOpen, setCabinetOpen] = useState(() => launchTab() === 'employer');
+  // ?tab=post: кнопка «Разместить вакансию» на сайте сразу открывает форму (src/employer/PostForm.tsx)
+  const [cabinetOpen, setCabinetOpen] = useState(() => launchTab() === 'employer' || launchTab() === 'post');
   const [locError, setLocError] = useState('');
   // Профиль открыли кнопкой «Рядом с домом», а дома ещё нет: сразу шаг «Где вы живёте?»
   const [profileStart, setProfileStart] = useState<'home' | null>(null);
@@ -427,7 +430,7 @@ function Main() {
     if (!showProfile || launched.current) return;
     launched.current = true;
     const want = launchTab();
-    if (want === 'employer') return;  // кабинет открыт сразу (cabinetOpen)
+    if (want === 'employer' || want === 'post') return;  // кабинет открыт сразу (cabinetOpen)
     if ((want === 'reminders' || want === 'chats') && !account.profile) return;
     if (want) setTab(want);
     if (want === 'chats') setChat(launchChat() ?? null);
@@ -733,7 +736,21 @@ function Main() {
   if (!booted) return <Loading c={c} text="" />;
 
   // Кабинет работодателя поверх всего: работодателю не нужны выбор города и стартовые вопросы соискателя
-  if (cabinetOpen) return <Cabinet c={c} lang={lang} onClose={() => setCabinetOpen(false)} />;
+  if (cabinetOpen) {
+    return (
+      <Cabinet
+        c={c}
+        lang={lang}
+        startPost={launchTab() === 'post'}
+        from={launchFrom()}
+        // Пришли с сайта по ссылке: назад на сайт, а не в ленту соискателя с выбором города
+        onClose={() => {
+          if ((launchTab() === 'post' || launchTab() === 'employer') && leaveToSite()) return;
+          setCabinetOpen(false);
+        }}
+      />
+    );
+  }
 
   // Первый запуск: язык и город
   if (!city || picking) {

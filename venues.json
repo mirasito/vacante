@@ -11989,6 +11989,13 @@
   "v": 3,
   "checked_at": "2026-11-20T15:43:49+00:00"
  },
+ "almaty:gbempire": {
+  "name": "GBEMPIRE",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00"
+ },
  "almaty:gelato tutto bene": {
   "name": "Gelato tutto bene",
   "city": "almaty",
@@ -64733,6 +64740,22 @@
   "v": 3,
   "checked_at": "2026-11-01T09:43:31+00:00"
  },
+ "karaganda:жакко караганда": {
+  "name": "Жакко Караганда",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00",
+  "instagram": "jakko_kz",
+  "website": "http://www.jakko.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001031766844",
+  "avatar_checked_at": "2026-11-23T03:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "83e6096960f3e668.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:жамиева айнагуль": {
   "name": "Жамиева Айнагуль",
   "city": "karaganda",
@@ -74375,6 +74398,19 @@
    "website"
   ]
  },
+ "petropavlovsk:петропавловское отделение южно уральской железной дороги филиал открытого акционерного общества российские железные дороги": {
+  "name": "Петропавловское отделение Южно-Уральской железной дороги - филиал открытого акционерного общества Российские железные дороги",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00",
+  "website": "https://www.rzd.ru/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001045138909",
+  "avatar_checked_at": "2026-11-23T03:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "petropavlovsk:премьерстройдизайн": {
   "name": "ПремьерСтройДизайн",
   "city": "petropavlovsk",
@@ -75880,6 +75916,13 @@
   "v": 3,
   "checked_at": "2026-11-09T15:44:24+00:00"
  },
+ "semey:джакупжанова ж б": {
+  "name": "ДЖАКУПЖАНОВА Ж.Б.",
+  "city": "semey",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00"
+ },
  "semey:зая на бисс": {
   "name": "ЗАЯ НА БИСС",
   "city": "semey",
@@ -76295,6 +76338,19 @@
   "website": "https://semey-hyundai.kz/",
   "source": "https://2gis.kz/semej/firm/70000001067833944",
   "avatar_checked_at": "2026-11-17T04:41:59+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "semey:семей құрылыс материалдары": {
+  "name": "Семей Құрылыс Материалдары",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00",
+  "website": "http://shifer.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001053027972",
+  "avatar_checked_at": "2026-11-23T03:42:54+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -77139,6 +77195,21 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:borte engineering": {
+  "name": "Borte engineering",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00",
+  "website": "http://engborte.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001098159689",
+  "avatar_checked_at": "2026-11-23T03:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "52e24e2228f68ef0.jpg",
+  "avatar_source": "website"
  },
  "shymkent:brew кофейня": {
   "name": "Brew кофейня",
@@ -78442,6 +78513,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T09:44:47+00:00"
+ },
+ "shymkent:sanbel": {
+  "name": "SANBEL",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-23T03:42:54+00:00",
+  "instagram": "sbsanbel.kz",
+  "website": "http://www.sbsanbel.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001060177555",
+  "avatar_checked_at": "2026-11-23T03:42:54+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:sandyq world": {
   "name": "Sandyq World",

@@ -3833,6 +3833,22 @@
   "instagram": "reny_aktobe",
   "source": "https://2gis.kz/aktobe/firm/70000001109863379"
  },
+ "aktobe:rides and games": {
+  "name": "RIDES and GAMES",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "instagram": "mykids_aktobe",
+  "website": "http://tapter.one/mykidsaktobe",
+  "source": "https://2gis.kz/aktobe/firm/70000001111120571",
+  "avatar_checked_at": "2026-11-24T05:43:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9b38548b4aee3673.jpg",
+  "avatar_source": "website"
+ },
  "aktobe:rm": {
   "name": "RM",
   "city": "aktobe",
@@ -7421,6 +7437,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-20T09:44:07+00:00"
+ },
+ "almaty:assel": {
+  "name": "ИП ASSEL",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
  },
  "almaty:asstra almaty": {
   "name": "Asstra Almaty",
@@ -12788,6 +12811,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T02:45:03+00:00"
+ },
+ "almaty:grow trade": {
+  "name": "Grow Trade",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
  },
  "almaty:grunge space ип байсбаева лн": {
   "name": "Grunge space (ИП Байсбаева ЛН)",
@@ -28116,6 +28146,20 @@
   "v": 3,
   "checked_at": "2026-11-09T11:44:31+00:00"
  },
+ "almaty:достар мед сервис": {
+  "name": "Достар Мед сервис",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "instagram": "dostarmed.almaty",
+  "website": "https://dostarmed.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001065029885",
+  "avatar_checked_at": "2026-11-24T05:43:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:достык плаза": {
   "name": "Достык Плаза",
   "city": "almaty",
@@ -32859,6 +32903,19 @@
   "v": 3,
   "checked_at": "2026-11-01T06:43:07+00:00"
  },
+ "almaty:национальный центр государственной научно технической экспертизы": {
+  "name": "Национальный центр государственной научно-технической экспертизы",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "website": "https://ncste.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000798506",
+  "avatar_checked_at": "2026-11-24T05:43:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:нео медикал": {
   "name": "Нео медикал",
   "city": "almaty",
@@ -33024,6 +33081,24 @@
   "checked_at": "2026-11-01T07:43:00+00:00",
   "instagram": "nur_auto_service",
   "source": "https://2gis.kz/almaty/firm/70000001075075181"
+ },
+ "almaty:нурбанк": {
+  "name": "Нурбанк",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "instagram": "nurbank",
+  "telegram": "nurbank_kz",
+  "website": "https://nurbank.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001017390417",
+  "avatar_checked_at": "2026-11-24T05:43:09+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "d6b850e49aa9c288.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:нурбек назерке": {
   "name": "Нурбек Назерке",
@@ -36861,6 +36936,13 @@
    "website"
   ]
  },
+ "almaty:тулпар технологии": {
+  "name": "ТУЛПАР технологии",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "almaty:турегелдиева и к": {
   "name": "Турегелдиева И.К.",
   "city": "almaty",
@@ -37373,6 +37455,13 @@
   ],
   "avatar": "cc2b558202c475ae.jpg",
   "avatar_source": "website"
+ },
+ "almaty:фихт": {
+  "name": "Фихт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
  },
  "almaty:фларио кз": {
   "name": "ФЛАРИО КЗ",
@@ -43731,6 +43820,21 @@
   "v": 3,
   "checked_at": "2026-11-08T23:44:03+00:00"
  },
+ "astana:ic lab": {
+  "name": "IC Lab",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "website": "http://ic-lab.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001054443153",
+  "avatar_checked_at": "2026-11-24T05:43:09+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "5a763e7856125447.jpg",
+  "avatar_source": "website"
+ },
  "astana:icons beauty salon and school": {
   "name": "ICONS BEAUTY SALON AND SCHOOL",
   "city": "astana",
@@ -46068,6 +46172,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T12:44:14+00:00"
+ },
+ "astana:nb group": {
+  "name": "NB GROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
  },
  "astana:nbs company": {
   "name": "NBS Company",
@@ -52809,6 +52920,24 @@
   "avatar": "c111849dab2fedb1.jpg",
   "avatar_source": "website"
  },
+ "astana:группа компаний small": {
+  "name": "Группа компаний Small",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "instagram": "small.qz",
+  "telegram": "smallkz",
+  "website": "https://small.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018073340",
+  "avatar_checked_at": "2026-11-24T05:43:09+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "b7e08b28426d6626.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:группа компаний аллюр allur": {
   "name": "Группа компаний Аллюр (Allur)",
   "city": "astana",
@@ -56953,6 +57082,13 @@
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
  },
+ "astana:пк деметра": {
+  "name": "ПК Деметра",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "astana:пкф атриум": {
   "name": "ПКФ Атриум",
   "city": "astana",
@@ -57447,6 +57583,13 @@
   "checked_at": "2026-11-11T23:44:43+00:00",
   "instagram": "reyka.2021",
   "source": "https://2gis.kz/astana/firm/70000001046594509"
+ },
+ "astana:рекламное агентство zoom": {
+  "name": "Рекламное агентство ZOOM",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
  },
  "astana:рекрутинговое агентство change ип куприянова": {
   "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
@@ -64008,6 +64151,13 @@
   "instagram": "babyspa_09",
   "source": "https://2gis.kz/karaganda/firm/70000001118607883"
  },
+ "karaganda:beeline тм": {
+  "name": "Beeline, ТМ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "karaganda:bereke bank": {
   "name": "Bereke Bank",
   "city": "karaganda",
@@ -65921,6 +66071,13 @@
   ],
   "avatar": "d77cf2b29092c529.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:асп групп": {
+  "name": "АСП Групп",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
  },
  "karaganda:асылбаев к т": {
   "name": "Асылбаев К.Т",
@@ -74198,6 +74355,13 @@
   "v": 3,
   "checked_at": "2026-11-01T02:42:54+00:00"
  },
+ "pavlodar:ломбард орлан": {
+  "name": "Ломбард Орлан",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "pavlodar:м ломбард": {
   "name": "М-Ломбард",
   "city": "pavlodar",
@@ -79058,6 +79222,13 @@
    "website"
   ]
  },
+ "shymkent:astana motors otyrar": {
+  "name": "Astana Motors Otyrar",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "shymkent:aster автомобили": {
   "name": "ASTER Автомобили",
   "city": "shymkent",
@@ -80919,6 +81090,13 @@
   "v": 3,
   "checked_at": "2026-11-16T18:44:06+00:00"
  },
+ "shymkent:vici kazakhstan": {
+  "name": "VICI-KAZAKHSTAN",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "shymkent:vseparki всепарки": {
   "name": "VseParki (ВсеПарки)",
   "city": "shymkent",
@@ -81964,6 +82142,13 @@
   "v": 3,
   "checked_at": "2026-11-07T08:44:18+00:00"
  },
+ "shymkent:мебельные фурнитурные технологии": {
+  "name": "Мебельные фурнитурные технологии",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00"
+ },
  "shymkent:микрофинансовая организация финтехфинанс": {
   "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ФИНТЕХФИНАНС",
   "city": "shymkent",
@@ -82599,6 +82784,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:чк td zangar international windows & doors ltd": {
+  "name": "ЧК TD ZANGAR INTERNATIONAL WINDOWS & DOORS LTD.",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T05:43:07+00:00",
+  "instagram": "td_zangar",
+  "source": "https://2gis.kz/shymkent/firm/70000001117761965"
  },
  "shymkent:шахноза мамурова": {
   "name": "Шахноза Мамурова",

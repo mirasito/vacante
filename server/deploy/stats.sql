@@ -105,8 +105,9 @@ SELECT coalesce(s.source, '—') AS source,
 FROM seekers s LEFT JOIN sent a ON a.seeker_id = s.id
 WHERE s.id IN (SELECT id FROM prof) GROUP BY 1 ORDER BY 3 DESC, 2 DESC;
 
-SELECT '--- прямые кнопки связи по дням ---' AS '';
-SELECT day, SUM(n) AS n FROM contact_clicks WHERE day >= :since GROUP BY 1 ORDER BY 1;
+SELECT '--- прямые кнопки связи по дням (people — люди, robot — обход роботом под видом браузера) ---' AS '';
+SELECT day, SUM(CASE WHEN kind = 'robot' THEN 0 ELSE n END) AS people, SUM(CASE WHEN kind = 'robot' THEN n ELSE 0 END) AS robot
+FROM contact_clicks WHERE day >= :since GROUP BY 1 ORDER BY 1;
 
 SELECT '--- входы в админку по дням (без адресов) ---' AS '';
 SELECT date(at, '+5 hours') AS day, result, COUNT(*) AS n, COUNT(DISTINCT ip) AS addresses FROM admin_logins

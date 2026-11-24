@@ -269,9 +269,9 @@ td.nowrap { white-space: nowrap; }
     <tbody></tbody>
   </table></div>
   <h2>Прямые кнопки связи</h2>
-  <p class="quiet">Нажатия на «WhatsApp», «Позвонить» и «Telegram» на сайте (web), под постами в каналах (tg) и в подборках бота (bot). «Не нашли контакт» — человек ушёл на исходный пост: номера в посте не оказалось или пост удалён. «Разместить вакансию» — работодатель на странице профиля кандидата (page) нажал кнопку размещения. Считаются нажатия, а не люди.</p>
+  <p class="quiet">Нажатия на «WhatsApp», «Позвонить» и «Telegram» на сайте (web), под постами в каналах (tg) и в подборках бота (bot). «Не нашли контакт» — человек ушёл на исходный пост: номера в посте не оказалось или пост удалён. «Разместить вакансию» — работодатель на странице профиля кандидата (page) нажал кнопку размещения. «Роботы» — посетитель за день открыл кнопки больше чем у 15 разных вакансий: так обходит сайт программа под видом браузера, номер ей не отдаём. Считаются нажатия, а не люди.</p>
   <div class="scroll"><table id="funnel-clicks">
-    <thead><tr><th>День</th><th>Откуда</th><th class="num">WhatsApp</th><th class="num">Позвонить</th><th class="num">Telegram</th><th class="num">Не нашли контакт</th><th class="num">Разместить вакансию</th></tr></thead>
+    <thead><tr><th>День</th><th>Откуда</th><th class="num">WhatsApp</th><th class="num">Позвонить</th><th class="num">Telegram</th><th class="num">Не нашли контакт</th><th class="num">Разместить вакансию</th><th class="num">Роботы</th></tr></thead>
     <tbody></tbody>
   </table></div>
   </div>
@@ -687,12 +687,12 @@ td.nowrap { white-space: nowrap; }
       const clicks = new Map();
       for (const c of data.clicks || []) {
         const key = c.day + "|" + c.source;
-        if (!clicks.has(key)) clicks.set(key, { day: c.day, source: c.source, wa: 0, call: 0, tg: 0, miss: 0, post: 0 });
+        if (!clicks.has(key)) clicks.set(key, { day: c.day, source: c.source, wa: 0, call: 0, tg: 0, miss: 0, post: 0, robot: 0 });
         clicks.get(key)[c.kind] = c.n;
       }
       $("#funnel-clicks tbody").innerHTML = clicks.size
-        ? [...clicks.values()].map((r) => `<tr><td>${esc(r.day)}</td><td>${esc(r.source)}</td>${["wa", "call", "tg", "miss", "post"].map((k) => `<td class="num">${num(r[k])}</td>`).join("")}</tr>`).join("")
-        : empty(7);
+        ? [...clicks.values()].map((r) => `<tr><td>${esc(r.day)}</td><td>${esc(r.source)}</td>${["wa", "call", "tg", "miss", "post", "robot"].map((k) => `<td class="num">${num(r[k])}</td>`).join("")}</tr>`).join("")
+        : empty(8);
     };
     $("#funnel-days").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
       $("#funnel-days").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));

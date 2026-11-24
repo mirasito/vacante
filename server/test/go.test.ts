@@ -129,7 +129,8 @@ test("много нажатий по новым вакансиям подряд:
   const { s, fetched } = await server(pages);
   let direct = 0;
   for (let i = 1; i <= 80; i++) {
-    const r = await s.call("GET", `/go/almatyrabota1-${i}/wa`);
+    // Разные люди: с одного адреса столько вакансий подряд открывает только робот (тест ниже)
+    const r = await s.call("GET", `/go/almatyrabota1-${i}/wa`, { headers: { "x-forwarded-for": `198.51.100.${i}` } });
     if (String(r.headers.location).startsWith("https://wa.me/")) direct++;
   }
   assert.equal(fetched.length, 60);
@@ -173,4 +174,28 @@ test("роботы: нажатие не считается, номер не от
   assert.deepEqual(fetched, []);
   const robots = await s.call("GET", "/robots.txt");
   assert.equal(robots.text, "User-agent: *\nDisallow: /\n");
+});
+
+test("робот под видом браузера, который обходит все кнопки подряд, считается отдельно и номера не получает", async () => {
+  const posts: Record<string, string> = {};
+  for (let i = 0; i < 20; i++) posts[`almatyrabota1/${22000 + i}`] = embed("almatyrabota1", 22000 + i, "Нужен грузчик, WhatsApp: 8 701 123 45 67");
+  const { s } = await server(posts);
+  const robot = { "x-forwarded-for": "203.0.113.7" };
+  const statuses: string[] = [];
+  for (let i = 0; i < 20; i++) {
+    const r = await s.call("GET", `/go/almatyrabota1-${22000 + i}/wa?s=web`, { headers: robot });
+    statuses.push(String(r.headers.location).startsWith("https://wa.me/") ? "wa" : "post");
+  }
+  // Первые 15 разных вакансий — как у человека, дальше ведём на пост без номера
+  assert.deepEqual(statuses, [...Array(15).fill("wa"), ...Array(5).fill("post")]);
+  // Человек с другого адреса в тот же день получает номер как обычно
+  const person = await s.call("GET", "/go/almatyrabota1-22000/wa?s=web", { headers: { "x-forwarded-for": "198.51.100.2" } });
+  assert.match(String(person.headers.location), /^https:\/\/wa\.me\//);
+  const kinds = Object.fromEntries(
+    (s.db.prepare("SELECT kind, n FROM contact_clicks").all() as { kind: string; n: number }[]).map((r) => [r.kind, Number(r.n)]),
+  );
+  assert.deepEqual(kinds, { wa: 16, robot: 5 });
+  // Тот же человек много раз открывает одну вакансию — это не обход
+  for (let i = 0; i < 30; i++) await s.call("GET", "/go/almatyrabota1-22001/wa", { headers: { "x-forwarded-for": "198.51.100.3" } });
+  assert.equal((s.db.prepare("SELECT n FROM contact_clicks WHERE kind = 'robot'").get() as { n: number }).n, 5);
 });

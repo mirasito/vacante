@@ -4,10 +4,13 @@
 //
 // Контакты берём из открытого поста в канале и храним на сервере (vacancy_contacts): при первом нажатии
 // и заранее, фоновым сбором по вакансиям из CRM. В открытые данные сайта номера не попадают.
+import { createHash, randomBytes } from "node:crypto";
+
+import { clientIp } from "./admin-logins.ts";
 import type { Db } from "./db.ts";
 import { fetchPostContacts, type PostContacts } from "./contacts.ts";
 import { escapeHtml as esc } from "./html.ts";
-import { HttpError, route, type Route } from "./http.ts";
+import { HttpError, route, type Request, type Route } from "./http.ts";
 import { RateLimit } from "./limits.ts";
 import { isPreviewBot } from "./page.ts";
 import { iso } from "./seekers.ts";
@@ -18,6 +21,12 @@ const CHANNEL_VACANCY = /^([A-Za-z]\w{3,31})-(\d{1,10})$/;
 const KINDS = { wa: "whatsapp", call: "phone", tg: "telegram" } as const;
 type Kind = keyof typeof KINDS;
 const SOURCE_RE = /^[a-z0-9]{1,8}$/;
+/**
+ * Сколько разных вакансий за день один посетитель может открыть кнопками, пока мы считаем его человеком.
+ * Роботы, которые выдают себя за браузер, обходят все кнопки сайта подряд (17, 18 и 23 ноября — по 2,6–4 тыс.
+ * нажатий, почти ровно по одному на кнопку); человек столько разных работодателей за день не открывает.
+ */
+export const ROBOT_VACANCIES = 15;
 /** Сколько новых постов в минуту читаем с t.me по нажатиям: остальные нажатия уходят на исходный пост. */
 const FETCH_PER_MINUTE = 60;
 
@@ -120,7 +129,38 @@ export function startContactsBackfill(deps: Deps, everyMs = 5 * 60_000): () => v
   };
 }
 
-function countClick(db: Db, source: string, kind: Kind | "miss", now: number): void {
+/**
+ * Отличает обход роботом от людей без журнала адресов. Посетитель — хэш адреса и браузера с солью дня;
+ * соль и хэши живут только в памяти сервера и пропадают в конце дня, в базу ничего из этого не пишется.
+ */
+export class RobotGuard {
+  private day = "";
+  private salt = Buffer.alloc(0);
+  private seen = new Map<string, Set<string>>();
+
+  /** true — этот посетитель за сегодня открыл кнопки больше чем у ROBOT_VACANCIES разных вакансий. */
+  check(visitor: string, vacancyId: string, now: number): boolean {
+    const day = localDay(now);
+    if (day !== this.day) {
+      this.day = day;
+      this.salt = randomBytes(16);
+      this.seen.clear();
+    }
+    const key = createHash("sha256").update(this.salt).update(visitor).digest("base64url").slice(0, 16);
+    let ids = this.seen.get(key);
+    if (!ids) {
+      if (this.seen.size > 50_000) this.seen.clear();
+      ids = new Set();
+      this.seen.set(key, ids);
+    }
+    if (ids.size <= ROBOT_VACANCIES) ids.add(vacancyId);
+    return ids.size > ROBOT_VACANCIES;
+  }
+}
+
+const visitorOf = (req: Request) => `${clientIp(req)}\n${req.header("user-agent") ?? ""}`;
+
+function countClick(db: Db, source: string, kind: Kind | "miss" | "robot", now: number): void {
   db.prepare(
     `INSERT INTO contact_clicks (day, source, kind, n) VALUES (?, ?, ?, 1)
      ON CONFLICT (day, source, kind) DO UPDATE SET n = n + 1`,
@@ -177,6 +217,7 @@ ${title ? `<p>${esc(title)}</p>` : ""}
 
 export function goRoutes(ctx: Deps): Route[] {
   const fetches = new RateLimit(FETCH_PER_MINUTE, 60_000);
+  const robots = new RobotGuard();
   const noindex = { "X-Robots-Tag": "noindex, nofollow" };
 
   return [
@@ -190,6 +231,11 @@ export function goRoutes(ctx: Deps): Route[] {
       const source = SOURCE_RE.test(tag) ? tag : "";
       // Поисковые и другие роботы: не считаем нажатие и не отдаём номер, ведём к объявлению
       if (isPreviewBot(req.header("user-agent"))) return { status: 302, headers: { ...noindex, Location: url } };
+      // Робот под видом браузера обходит все кнопки подряд: считаем отдельно и номер не отдаём
+      if (robots.check(visitorOf(req), id, now)) {
+        countClick(ctx.db, source, "robot", now);
+        return { status: 302, headers: { ...noindex, Location: url } };
+      }
 
       let contacts = stored(ctx.db, id, now);
       if (contacts === undefined && fetches.take("t.me", now)) contacts = (await lookup(ctx, id, url)) ?? "miss";

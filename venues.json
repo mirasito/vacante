@@ -10183,7 +10183,7 @@
   "instagram": "dfitness_almaty",
   "website": "https://www.dfitness.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001396013",
-  "avatar_checked_at": "2026-11-17T16:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T17:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22195,6 +22195,13 @@
   "v": 3,
   "checked_at": "2026-11-08T12:43:42+00:00"
  },
+ "almaty:tatiana": {
+  "name": "Tatiana",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T17:42:46+00:00"
+ },
  "almaty:tatiyna": {
   "name": "Tatiyna",
   "city": "almaty",
@@ -30830,7 +30837,7 @@
   "instagram": "r_keeper.ala",
   "website": "http://r-keeper.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001035052795",
-  "avatar_checked_at": "2026-11-17T16:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T17:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -51388,7 +51395,7 @@
   "instagram": "zagranizza.kz",
   "website": "https://www.zagranizza.kz/",
   "source": "https://2gis.kz/astana/firm/70000001045006952",
-  "avatar_checked_at": "2026-11-17T16:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T17:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59646,7 +59653,7 @@
   "instagram": "snabtechmet",
   "website": "http://snabtechmet.kz/",
   "source": "https://2gis.kz/astana/firm/70000001044430764",
-  "avatar_checked_at": "2026-11-17T16:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T17:42:47+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -68990,6 +68997,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T21:43:43+00:00"
+ },
+ "karaganda:рекрутинговое агентство change ип куприянова": {
+  "name": "Рекрутинговое агентство CHANGE (ИП Куприянова)",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T17:42:46+00:00"
  },
  "karaganda:ресторан empire city": {
   "name": "Ресторан «Empire City»",
@@ -85264,6 +85278,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T05:44:09+00:00"
+ },
+ "taraz:akm group": {
+  "name": "AKM Group",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T17:42:46+00:00"
  },
  "taraz:alatau city bank": {
   "name": "Alatau City Bank",

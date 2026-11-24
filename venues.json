@@ -3270,7 +3270,7 @@
   "checked_at": "2026-11-16T21:44:14+00:00",
   "website": "https://www.erg.kz/",
   "source": "https://ergservice.erg.kz/en",
-  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T03:42:01+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -32421,7 +32421,7 @@
   "instagram": "luxusplasma_clinic",
   "website": "https://www.luxusplasma.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001037571202",
-  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T03:42:01+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -35947,7 +35947,7 @@
   "instagram": "sattyzhuldyz",
   "website": "https://sz.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001082977708",
-  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T03:42:01+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46879,6 +46879,19 @@
   "v": 3,
   "checked_at": "2026-10-31T00:43:30+00:00"
  },
+ "astana:phaeton kz": {
+  "name": "Phaeton.KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T03:42:00+00:00",
+  "website": "https://phaeton.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018124572",
+  "avatar_checked_at": "2026-11-24T03:42:01+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:pingwin bowling": {
   "name": "Pingwin bowling",
   "city": "astana",
@@ -47559,7 +47572,7 @@
   "instagram": "redpandakz",
   "website": "https://www.redpanda.kz/",
   "source": "https://2gis.kz/astana/firm/70000001067520759",
-  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T03:42:01+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -76013,7 +76026,7 @@
   "checked_at": "2026-11-16T21:44:14+00:00",
   "website": "https://nomadlife.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001110737724",
-  "avatar_checked_at": "2026-11-16T21:44:15+00:00",
+  "avatar_checked_at": "2026-11-24T03:42:01+00:00",
   "avatar_tried": [
    "website"
   ]

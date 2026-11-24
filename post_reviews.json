@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T21:56:59+00:00",
+ "updated_at": "2026-11-24T22:56:49+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -35847,6 +35847,11 @@
     "schedule": "6/1",
     "address": "ул. Маятас, 2"
    }
+  },
+  "hh-139814252": {
+   "verdict": "reject",
+   "at": "2026-11-24T22:56:49+00:00",
+   "reason": "Вахта в Россию"
   }
  }
 }

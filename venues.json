@@ -567,6 +567,22 @@
   "v": 3,
   "checked_at": "2026-11-07T13:43:51+00:00"
  },
+ "aktau:invitro тоо инвитро казахстан": {
+  "name": "INVITRO (ТОО ИНВИТРО-Казахстан)",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "invitro_kazakhstan",
+  "website": "https://www.invitro.kz/",
+  "source": "https://2gis.kz/aktau/firm/70000001069933779",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9e05babb8c8e2f6c.jpg",
+  "avatar_source": "website"
+ },
  "aktau:jamesburger 29мкр 229зд": {
   "name": "Jamesburger 29мкр 229зд",
   "city": "aktau",
@@ -16048,6 +16064,13 @@
   "checked_at": "2026-11-11T21:44:27+00:00",
   "instagram": "livisa_art",
   "source": "https://2gis.kz/almaty/firm/70000001118927966"
+ },
+ "almaty:llp ivs": {
+  "name": "LLP-IVS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
  },
  "almaty:lmb clinic": {
   "name": "LMB Clinic",
@@ -34324,6 +34347,13 @@
   "v": 3,
   "checked_at": "2026-10-28T10:43:31+00:00"
  },
+ "almaty:принт азия": {
+  "name": "Принт Азия",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
+ },
  "almaty:принцесса": {
   "name": "Принцесса",
   "city": "almaty",
@@ -36081,6 +36111,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:стоматология l stom": {
+  "name": "Стоматология «L-stom”",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "lstom.clinic",
+  "source": "https://2gis.kz/almaty/firm/70000001098644098"
  },
  "almaty:стофарм": {
   "name": "Стофарм",
@@ -37946,6 +37985,13 @@
   "instagram": "xata_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001088243710"
  },
+ "almaty:хбк алматынан": {
+  "name": "ХБК Алматынан",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
+ },
  "almaty:хефеле казахстан": {
   "name": "Хефеле Казахстан",
   "city": "almaty",
@@ -39356,6 +39402,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T15:43:20+00:00"
+ },
+ "astana:abdulla": {
+  "name": "Abdulla",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
  },
  "astana:abris distribution kazakhstan филиал компании в казахстане": {
   "name": "Abris Distribution Kazakhstan, Филиал Компании в Казахстане",
@@ -51674,6 +51727,22 @@
   "v": 3,
   "checked_at": "2026-11-08T15:44:05+00:00"
  },
+ "astana:аманжулова а м": {
+  "name": "Аманжулова А.М",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "whynot.kz",
+  "website": "https://taplink.cc/whynot.kz",
+  "source": "https://2gis.kz/astana/firm/70000001057529166",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "0821ffc358d83a40.jpg",
+  "avatar_source": "website"
+ },
  "astana:амантаева а е": {
   "name": "Амантаева А.Е.",
   "city": "astana",
@@ -51995,6 +52064,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T02:43:42+00:00"
+ },
+ "astana:астро бт": {
+  "name": "Астро БТ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
  },
  "astana:асхана": {
   "name": "Асхана",
@@ -54016,6 +54092,20 @@
   "v": 3,
   "checked_at": "2026-11-11T07:44:35+00:00"
  },
+ "astana:жантас": {
+  "name": "ЖанТаС",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "jantas_lombard",
+  "website": "http://lomb.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001033199735",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:жас канат 2006": {
   "name": "Жас-Канат 2006",
   "city": "astana",
@@ -54978,6 +55068,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:кемелова а а": {
+  "name": "Кемелова А.А",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
  },
  "astana:кереев": {
   "name": "Кереев",
@@ -58141,6 +58238,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T03:44:14+00:00"
+ },
+ "astana:саад отель тм saad": {
+  "name": "СААД ОТЕЛЬ, ТМ (Saad)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "astanasaadhotel",
+  "website": "http://saad-hotel.com/",
+  "source": "https://2gis.kz/astana/firm/70000001019509853",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "9db01a8c7eaa90da.jpg",
+  "avatar_source": "website"
  },
  "astana:сабина": {
   "name": "Сабина",
@@ -61374,6 +61487,15 @@
   ],
   "avatar": "fc29842f9072f1c8.jpg",
   "avatar_source": "website"
+ },
+ "astana:электросервис": {
+  "name": "Электросервис",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "electroservice.kaz",
+  "source": "https://2gis.kz/astana/firm/70000001104817144"
  },
  "astana:электростроймаркет": {
   "name": "ЭЛЕКТРОСТРОЙМАРКЕТ",
@@ -67486,6 +67608,13 @@
   "v": 3,
   "checked_at": "2026-11-03T01:44:22+00:00"
  },
+ "karaganda:кушенов е к": {
+  "name": "Кушенов Е.К",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
+ },
  "karaganda:кфк medservice plus": {
   "name": "КФК Medservice Plus",
   "city": "karaganda",
@@ -70094,6 +70223,13 @@
    "website"
   ]
  },
+ "kostanay:alina group": {
+  "name": "Alina Group",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
+ },
  "kostanay:allur auto qostanay": {
   "name": "Allur Auto Qostanay",
   "city": "kostanay",
@@ -72583,6 +72719,20 @@
   "avatar": "b5705e02f098bd10.jpg",
   "avatar_source": "website"
  },
+ "kostanay:тк аромика": {
+  "name": "ТК АРОМИКА",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "aromika.info",
+  "website": "http://aromika.info/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001069476444",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kostanay:торговая компания мегаполис казахстан": {
   "name": "Торговая Компания Мегаполис-Казахстан",
   "city": "kostanay",
@@ -72877,6 +73027,13 @@
   "checked_at": "2026-11-03T13:44:33+00:00",
   "instagram": "auto_house_kzo",
   "source": "https://2gis.kz/kyzylorda/firm/70000001101711600"
+ },
+ "kyzylorda:baraka 1": {
+  "name": "BARAKA №1",
+  "city": "kyzylorda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
  },
  "kyzylorda:belostan kz": {
   "name": "BELOSTAN.KZ",
@@ -77643,6 +77800,22 @@
   "instagram": "camel_rest_semey",
   "source": "https://2gis.kz/semej/firm/70000001051300980"
  },
+ "semey:caspian international restaurants company": {
+  "name": "Caspian International Restaurants company",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "instagram": "kfc_kz",
+  "website": "https://kfc.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001094078914",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "aa2e8be7fe4c1673.jpg",
+  "avatar_source": "website"
+ },
  "semey:dn mebel": {
   "name": "DN Mebel",
   "city": "semey",
@@ -78539,6 +78712,19 @@
   "website": "https://vostokugolprom.kz/",
   "source": "https://2gis.kz/semej/firm/70000001053843591",
   "avatar_checked_at": "2026-11-20T04:43:17+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "semey:востокэлектропривод": {
+  "name": "Востокэлектропривод",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00",
+  "website": "https://vep.kz/",
+  "source": "https://2gis.kz/semej/firm/70000001052645565",
+  "avatar_checked_at": "2026-11-24T09:44:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -85837,6 +86023,13 @@
   "instagram": "inkor.company",
   "source": "https://2gis.kz/uralsk/firm/70000001025062247"
  },
+ "uralsk:invest project kz": {
+  "name": "Invest Project KZ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
+ },
  "uralsk:irada arzan": {
   "name": "Irada arzan",
   "city": "uralsk",
@@ -88619,6 +88812,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-13T08:45:10+00:00"
+ },
+ "ust-kamenogorsk:prime motors": {
+  "name": "Prime Motors",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T09:44:12+00:00"
  },
  "ust-kamenogorsk:product mix": {
   "name": "Product-Mix",

@@ -917,6 +917,13 @@
   "instagram": "pr_wellness_club",
   "source": "https://www.instagram.com/pr_wellness_club/"
  },
+ "aktau:praga": {
+  "name": "Praga",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
+ },
  "aktau:qara bala": {
   "name": "Qara Bala",
   "city": "aktau",
@@ -1551,6 +1558,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-06T01:44:25+00:00"
+ },
+ "aktau:бауырсак": {
+  "name": "Бауырсак",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "aktau:бейсекеева г а": {
   "name": "Бейсекеева Г.А.",
@@ -3336,6 +3350,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "aktobe:dizzy": {
+  "name": "Dizzy",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "aktobe:dostyk": {
   "name": "DOSTYK",
@@ -12261,6 +12282,22 @@
   "v": 3,
   "checked_at": "2026-11-09T03:44:14+00:00"
  },
+ "almaty:fun&sun": {
+  "name": "FUN&SUN",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "fstravel_kazakhstan",
+  "website": "https://www.fstravel.asia/",
+  "source": "https://2gis.kz/almaty/firm/70000001047792555",
+  "avatar_checked_at": "2026-11-24T11:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3eff1c40182b8c56.jpg",
+  "avatar_source": "website"
+ },
  "almaty:funsim international": {
   "name": "Funsim international",
   "city": "almaty",
@@ -12464,6 +12501,22 @@
    "website"
   ],
   "avatar": "cb1faee675bc053e.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:general mechanical": {
+  "name": "General Mechanical",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "generalmechanical",
+  "website": "http://gmclimate.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037251825",
+  "avatar_checked_at": "2026-11-24T11:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "406993075bef156e.jpg",
   "avatar_source": "website"
  },
  "almaty:geo fresh meat": {
@@ -17623,6 +17676,15 @@
    "website"
   ]
  },
+ "almaty:myrza group": {
+  "name": "MYRZA GROUP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "myrza.brands",
+  "source": "https://2gis.kz/almaty/firm/70000001059310460"
+ },
  "almaty:nag kazakhstan наг казахстан": {
   "name": "NAG Kazakhstan (НАГ Казахстан)",
   "city": "almaty",
@@ -21606,6 +21668,13 @@
   "v": 3,
   "checked_at": "2026-11-20T15:43:49+00:00"
  },
+ "almaty:street hub": {
+  "name": "Street Hub",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
+ },
  "almaty:strong co тоо": {
   "name": "Strong Co, ТОО",
   "city": "almaty",
@@ -21785,6 +21854,13 @@
   ],
   "avatar": "c103764a4ec48b4c.jpg",
   "avatar_source": "website"
+ },
+ "almaty:tabys km": {
+  "name": "TABYS-KM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "almaty:tafam": {
   "name": "TAFAM",
@@ -27601,6 +27677,15 @@
   "instagram": "gold_kazyna_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001024854330"
  },
+ "almaty:голден лотус": {
+  "name": "Голден Лотус",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "goldenlotus_hogo",
+  "source": "https://2gis.kz/almaty/firm/70000001119564029"
+ },
  "almaty:гордиюк а м basilic тм": {
   "name": "Гордиюк А.М , Basilic ТМ",
   "city": "almaty",
@@ -28713,6 +28798,20 @@
   ],
   "avatar": "90a9dae3058d1584.jpg",
   "avatar_source": "website"
+ },
+ "almaty:енпф": {
+  "name": "ЕНПФ",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "enpf.kz",
+  "website": "https://enpf.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001062761144",
+  "avatar_checked_at": "2026-11-24T11:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:есенгельдин и б": {
   "name": "ЕСЕНГЕЛЬДИН И Б",
@@ -38152,6 +38251,15 @@
   "v": 3,
   "checked_at": "2026-10-29T12:47:32+00:00"
  },
+ "almaty:хостел сайран": {
+  "name": "Хостел Сайран",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "sajranhostol",
+  "source": "https://2gis.kz/almaty/firm/70000001106041856"
+ },
  "almaty:хрустальный мир": {
   "name": "Хрустальный Мир",
   "city": "almaty",
@@ -43193,6 +43301,13 @@
   "instagram": "fox_hookahs_ast",
   "source": "https://2gis.kz/astana/firm/70000001061122067"
  },
+ "astana:fragrance almaty фрагранс алматы": {
+  "name": "Fragrance almaty (Фрагранс алматы)",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
+ },
  "astana:freedom bank kazakhstan": {
   "name": "АО «Freedom Bank Kazakhstan»",
   "city": "astana",
@@ -44361,6 +44476,13 @@
   ],
   "avatar": "3a0bcab910a96961.jpg",
   "avatar_source": "website"
+ },
+ "astana:inbox group": {
+  "name": "Inbox Group",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "astana:inditex kazakhstan": {
   "name": "INDITEX Kazakhstan",
@@ -46303,6 +46425,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T19:44:27+00:00"
+ },
+ "astana:miskbar": {
+  "name": "MISKBAR",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "miskbar_astana",
+  "source": "https://2gis.kz/astana/firm/70000001118935686"
+ },
+ "astana:mk alba": {
+  "name": "MK ALBA",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "astana:mm shop": {
   "name": "MM Shop",
@@ -51458,6 +51596,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T07:44:30+00:00"
+ },
+ "astana:аккожина н о": {
+  "name": "АККОЖИНА Н. О.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "astana:аккумуляторная компания алатау tm voltman": {
   "name": "Аккумуляторная компания Алатау ( TM Voltman )",
@@ -67147,6 +67292,20 @@
   "avatar": "ead5957cbfe33187.jpg",
   "avatar_source": "website"
  },
+ "karaganda:евразийский банк ао": {
+  "name": "Евразийский банк, АО",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00",
+  "instagram": "eurasianbank",
+  "website": "https://eubank.kz/",
+  "source": "https://2gis.kz/karaganda/firm/11822477302837461",
+  "avatar_checked_at": "2026-11-24T11:43:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:евро маркет комплект": {
   "name": "Евро Маркет Комплект",
   "city": "karaganda",
@@ -73750,6 +73909,13 @@
   "v": 3,
   "checked_at": "2026-11-10T16:45:28+00:00"
  },
+ "pavlodar:add system": {
+  "name": "ADD System",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
+ },
  "pavlodar:agrinur": {
   "name": "AgriNur",
   "city": "pavlodar",
@@ -76531,6 +76697,13 @@
   ],
   "avatar": "b9531784717b7cc7.jpg",
   "avatar_source": "website"
+ },
+ "petropavlovsk:sneg": {
+  "name": "Sneg",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "petropavlovsk:sulpak": {
   "name": "Sulpak",
@@ -80852,6 +81025,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T18:43:51+00:00"
+ },
+ "shymkent:inbox group": {
+  "name": "Inbox Group",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T11:43:54+00:00"
  },
  "shymkent:inngress": {
   "name": "InnGress",

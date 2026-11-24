@@ -2232,6 +2232,13 @@
   "v": 3,
   "checked_at": "2026-11-23T06:43:05+00:00"
  },
+ "aktau:мвс групп": {
+  "name": "МВС-Групп",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
+ },
  "aktau:международный аэропорт актау ао": {
   "name": "Международный аэропорт Актау, АО",
   "city": "aktau",
@@ -4129,6 +4136,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
+ },
+ "aktobe:азия креп": {
+  "name": "Азия Креп",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
  },
  "aktobe:айко": {
   "name": "АйКо",
@@ -6926,6 +6940,13 @@
   "checked_at": "2026-11-01T05:43:29+00:00",
   "instagram": "apodit_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001096911022"
+ },
+ "almaty:apple": {
+  "name": "Apple",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
  },
  "almaty:apple city": {
   "name": "ТОО Apple city",
@@ -11556,6 +11577,19 @@
   "v": 3,
   "checked_at": "2026-11-09T19:45:11+00:00"
  },
+ "almaty:expro solutions": {
+  "name": "EXPRO Solutions",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "website": "http://expro.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001118769015",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:exsolcom": {
   "name": "ExSolCom",
   "city": "almaty",
@@ -12054,6 +12088,20 @@
   "website": "http://www.fa.com.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001028334387",
   "avatar_checked_at": "2026-11-23T09:43:10+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:free style": {
+  "name": "Free Style",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "freestyle.kazakhstan",
+  "website": "http://free-style.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000829024",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13766,6 +13814,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-20T10:43:56+00:00"
+ },
+ "almaty:industrial and airport technology": {
+  "name": "Industrial and Airport Technology",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "website": "http://ia-t.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001066531375",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8352f64b0e0e0840.jpg",
+  "avatar_source": "website"
  },
  "almaty:industry": {
   "name": "INDUSTRY",
@@ -24667,6 +24730,13 @@
   "instagram": "akadembala",
   "source": "https://2gis.kz/almaty/firm/70000001116314241"
  },
+ "almaty:академия кайрат 1995": {
+  "name": "Академия Кайрат 1995",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
+ },
  "almaty:акбулак": {
   "name": "Акбулак",
   "city": "almaty",
@@ -28918,6 +28988,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T16:43:11+00:00"
+ },
+ "almaty:зеленый город kz": {
+  "name": "Зелёный Город KZ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
  },
  "almaty:зеленый дом kz": {
   "name": "ЗЕЛЕНЫЙ ДОМ KZ",
@@ -35193,6 +35270,13 @@
   "v": 3,
   "checked_at": "2026-11-08T15:44:05+00:00"
  },
+ "almaty:сату": {
+  "name": "Сату",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
+ },
  "almaty:сату менеджерлері": {
   "name": "САТУ МЕНЕДЖЕРЛЕРІ",
   "city": "almaty",
@@ -37689,6 +37773,20 @@
   "v": 3,
   "checked_at": "2026-11-09T17:44:21+00:00"
  },
+ "almaty:футбольный клуб кайрат": {
+  "name": "Футбольный клуб Кайрат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "f.c.kairat",
+  "website": "https://fckairat.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940001206321",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:хагай": {
   "name": "ХАГАЙ",
   "city": "almaty",
@@ -40001,6 +40099,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-13T17:42:38+00:00"
+ },
+ "astana:asia mebel qazaqstan": {
+  "name": "Asia Mebel Qazaqstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "asiamebel",
+  "website": "http://asiamebel.com/",
+  "source": "https://2gis.kz/astana/firm/70000001018400713",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "556f54d0cb34d8f0.jpg",
+  "avatar_source": "website"
  },
  "astana:asia park": {
   "name": "ASIA PARK",
@@ -48215,6 +48329,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T06:44:48+00:00"
+ },
+ "astana:sandyk sklad": {
+  "name": "Sandyk Sklad",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "sandyq.sklad",
+  "telegram": "sandyksklad",
+  "website": "http://sandyksklad.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001084109076",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ]
  },
  "astana:sandyq world": {
   "name": "Sandyq World",
@@ -57230,6 +57360,20 @@
   "v": 3,
   "checked_at": "2026-11-02T22:43:44+00:00"
  },
+ "astana:пк akashi data center plc": {
+  "name": "ПК AKASHI Data Center PLC",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "akashi.datacenter",
+  "website": "http://akashi.cloud/",
+  "source": "https://2gis.kz/astana/firm/70000001103898634",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:пк деметра": {
   "name": "ПК Деметра",
   "city": "astana",
@@ -57286,6 +57430,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T16:44:32+00:00"
+ },
+ "astana:полимер пласт": {
+  "name": "ТОО Полимер-Пласт",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "polimerplast.kaz",
+  "website": "http://www.polimerplast.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018110180",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:полимерстрой казахстан": {
   "name": "Полимерстрой Казахстан",
@@ -57704,7 +57862,7 @@
   "instagram": "gosgradkadastr.kz",
   "website": "https://gov.ggk.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018084040",
-  "avatar_checked_at": "2026-11-17T06:44:56+00:00",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -72634,6 +72792,15 @@
   "v": 3,
   "checked_at": "2026-11-10T18:43:51+00:00"
  },
+ "kyzylorda:doscar group": {
+  "name": "DOSCAR GROUP",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "chevrolet.doscar.kzo",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001081854787"
+ },
  "kyzylorda:green house limited": {
   "name": "Green House Limited",
   "city": "kyzylorda",
@@ -77949,6 +78116,15 @@
   "v": 3,
   "checked_at": "2026-10-30T11:43:44+00:00"
  },
+ "semey:zhandent": {
+  "name": "ZHANDENT",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "zhandent_semey",
+  "source": "https://2gis.kz/semej/firm/70000001090815771"
+ },
  "semey:абай букет": {
   "name": "АБАЙ БУКЕТ",
   "city": "semey",
@@ -82325,6 +82501,13 @@
   "v": 3,
   "checked_at": "2026-11-24T05:43:07+00:00"
  },
+ "shymkent:менеджер по продажам binotel": {
+  "name": "Менеджер по продажам — Binotel",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
+ },
  "shymkent:микрофинансовая организация финтехфинанс": {
   "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ФИНТЕХФИНАНС",
   "city": "shymkent",
@@ -83074,6 +83257,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-17T07:44:49+00:00"
+ },
+ "shymkent:эргешева э ф": {
+  "name": "Эргешева Э.Ф.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00"
  },
  "shymkent:эрсиджи": {
   "name": "ЭРСИДЖИ",
@@ -84368,6 +84558,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T23:43:42+00:00"
+ },
+ "taraz:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "telegram": "kariofficial",
+  "source": "https://2gis.kz/taraz/firm/70000001054456258",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "telegram"
+  ],
+  "avatar": "9199ac8c11ec977d.jpg",
+  "avatar_source": "telegram"
  },
  "taraz:коллекторское агентство seven": {
   "name": "Коллекторское агентство Seven",
@@ -89345,6 +89550,22 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "ust-kamenogorsk:компания эврика": {
+  "name": "Компания ЭВРИКА",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-24T07:44:46+00:00",
+  "instagram": "evrika.kazakhstan",
+  "website": "https://evrika.com/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001105293963",
+  "avatar_checked_at": "2026-11-24T07:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "866281a3c797040a.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:кондитер + тоо": {
   "name": "Кондитер +,ТОО",

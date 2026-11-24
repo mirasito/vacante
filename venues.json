@@ -15054,7 +15054,7 @@
   "checked_at": "2026-11-10T18:43:51+00:00",
   "website": "https://kazintake.info/",
   "source": "https://2gis.kz/almaty/firm/70000001098518628",
-  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
+  "avatar_checked_at": "2026-11-24T20:41:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -22939,6 +22939,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "almaty:trivium": {
+  "name": "Trivium",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T20:41:42+00:00"
  },
  "almaty:trs engineering": {
   "name": "TRS Engineering",
@@ -53628,7 +53635,7 @@
   "instagram": "vodometr_kz",
   "website": "https://www.vodometr.kz/",
   "source": "https://2gis.kz/astana/firm/70000001032506791",
-  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
+  "avatar_checked_at": "2026-11-24T20:41:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55440,7 +55447,7 @@
   "checked_at": "2026-11-10T18:43:51+00:00",
   "website": "https://petrolcompany.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018076542",
-  "avatar_checked_at": "2026-11-17T19:42:21+00:00",
+  "avatar_checked_at": "2026-11-24T20:41:43+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -81953,6 +81960,13 @@
   "checked_at": "2026-11-13T06:43:11+00:00",
   "instagram": "kulanoil.kz",
   "source": "https://2gis.kz/shymkent/firm/70000001046241372"
+ },
+ "shymkent:kz export": {
+  "name": "KZ Export",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-24T20:41:42+00:00"
  },
  "shymkent:kоллекторское агентство smart recovery": {
   "name": "Kоллекторское агентство «Smart Recovery",

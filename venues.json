@@ -416,6 +416,15 @@
   "instagram": "dentapro.aktau",
   "source": "https://2gis.kz/aktau/firm/70000001069033167"
  },
+ "aktau:doral": {
+  "name": "DORAL",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00",
+  "instagram": "doral_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001034363294"
+ },
  "aktau:dostyk business hotel": {
   "name": "Dostyk Business Hotel",
   "city": "aktau",
@@ -25123,6 +25132,13 @@
   "v": 3,
   "checked_at": "2026-11-08T11:44:18+00:00"
  },
+ "almaty:азтм ао": {
+  "name": "АЗТМ, АО",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "almaty:азур хоум": {
   "name": "АЗУР ХОУМ",
   "city": "almaty",
@@ -28446,6 +28462,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-24T06:44:17+00:00"
+ },
+ "almaty:дайана": {
+  "name": "Дайана",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "almaty:дакенов": {
   "name": "Дакенов",
@@ -38008,6 +38031,13 @@
    "website"
   ]
  },
+ "almaty:тукенова": {
+  "name": "ИП тукенова",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "almaty:тулпар технологии": {
   "name": "ТУЛПАР технологии",
   "city": "almaty",
@@ -40731,6 +40761,13 @@
   "v": 3,
   "checked_at": "2026-11-13T14:45:29+00:00"
  },
+ "astana:altyn dama": {
+  "name": "Altyn Dama",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "astana:alver group": {
   "name": "Alver Group",
   "city": "astana",
@@ -41041,6 +41078,13 @@
   "checked_at": "2026-11-05T09:44:32+00:00",
   "instagram": "arzanmix.kz",
   "source": "https://2gis.kz/astana/firm/70000001030814289"
+ },
+ "astana:as er company": {
+  "name": "AS-ER Company",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "astana:asai clinic": {
   "name": "ASAI-CLINIC",
@@ -45246,6 +45290,13 @@
   "avatar": "3a0bcab910a96961.jpg",
   "avatar_source": "website"
  },
+ "astana:in&juice": {
+  "name": "In&Juice",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "astana:inbox group": {
   "name": "Inbox Group",
   "city": "astana",
@@ -45963,6 +46014,13 @@
   "v": 3,
   "checked_at": "2026-11-11T11:45:06+00:00"
  },
+ "astana:kaztrading": {
+  "name": "KazTrading",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "astana:kc интернейшнл": {
   "name": "KC Интернейшнл",
   "city": "astana",
@@ -46660,6 +46718,15 @@
   "instagram": "luna_coffee_astana",
   "source": "https://2gis.kz/astana/firm/70000001077040083"
  },
+ "astana:luxe oil": {
+  "name": "Luxe oil",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00",
+  "instagram": "luxe.autooil",
+  "source": "https://2gis.kz/astana/firm/70000001110329573"
+ },
  "astana:luxury house тоо анвик": {
   "name": "LUXURY HOUSE (ТОО АНВИК)",
   "city": "astana",
@@ -46906,6 +46973,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T05:44:48+00:00"
+ },
+ "astana:mca 013": {
+  "name": "MCA 013",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "astana:me group": {
   "name": "ME Group",
@@ -53241,6 +53315,13 @@
   "v": 3,
   "checked_at": "2026-11-02T01:43:26+00:00"
  },
+ "astana:ателье": {
+  "name": "Ателье",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "astana:атри": {
   "name": "Атри",
   "city": "astana",
@@ -56957,6 +57038,13 @@
   "v": 3,
   "checked_at": "2026-11-12T15:44:25+00:00"
  },
+ "astana:көркем": {
+  "name": "Көркем",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
+ },
  "astana:лаврут": {
   "name": "Лаврут",
   "city": "astana",
@@ -60510,6 +60598,13 @@
   "checked_at": "2026-11-18T16:44:57+00:00",
   "instagram": "symbat_dental_clinic",
   "source": "https://2gis.kz/astana/firm/70000001019881240"
+ },
+ "astana:сыргалым": {
+  "name": "Сыргалым",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "astana:сырные традиции": {
   "name": "Сырные традиции",
@@ -66172,6 +66267,15 @@
   "v": 3,
   "checked_at": "2026-10-31T20:44:52+00:00"
  },
+ "karaganda:chaikhana navat чайхана нават": {
+  "name": "Chaikhana NAVAT ( Чайхана НАВАТ)",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00",
+  "instagram": "navat_karaganda",
+  "source": "https://2gis.kz/karaganda/firm/70000001102378643"
+ },
  "karaganda:chisto": {
   "name": "Chisto",
   "city": "karaganda",
@@ -67587,6 +67691,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "karaganda:tarassova elena": {
+  "name": "Tarassova Elena",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "karaganda:technodom operator технодом оператор": {
   "name": "TECHNODOM Operator (Технодом Оператор)",
@@ -70209,6 +70320,20 @@
   "v": 3,
   "checked_at": "2026-11-07T13:43:51+00:00"
  },
+ "karaganda:эпирок центральная азия": {
+  "name": "Эпирок Центральная Азия",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00",
+  "instagram": "epirocgroup",
+  "website": "https://epiroc.com/",
+  "source": "https://2gis.kz/karaganda/firm/70000001080617335",
+  "avatar_checked_at": "2026-11-25T09:43:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "karaganda:эталон лтд": {
   "name": "ЭТАЛОН ЛТД",
   "city": "karaganda",
@@ -71756,6 +71881,22 @@
   "checked_at": "2026-11-01T00:42:45+00:00",
   "instagram": "alpinakostanay",
   "source": "https://2gis.kz/kostanaj/firm/70000001040656758"
+ },
+ "kostanay:altra tyres": {
+  "name": "ALTRA TYRES",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00",
+  "instagram": "altraauto.kz",
+  "website": "http://altraauto.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001061610834",
+  "avatar_checked_at": "2026-11-25T09:43:04+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "23390fb1112e6f03.jpg",
+  "avatar_source": "website"
  },
  "kostanay:alvin market": {
   "name": "Alvin Market",
@@ -76644,6 +76785,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:марк формэль": {
+  "name": "Марк Формэль",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "pavlodar:масло дел": {
   "name": "Масло-Дел",
@@ -81950,6 +82098,15 @@
   "instagram": "rixosborovoe",
   "source": "https://2gis.kz/kokshetau/firm/70000001033481087"
  },
+ "shymkent:buruko": {
+  "name": "Buruko",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00",
+  "instagram": "magazin.buruko",
+  "source": "https://2gis.kz/shymkent/firm/70000001054103581"
+ },
  "shymkent:business partner": {
   "name": "Business partner",
   "city": "shymkent",
@@ -83066,6 +83223,13 @@
   "checked_at": "2026-10-28T17:44:31+00:00",
   "instagram": "procoffee_kz",
   "source": "https://2gis.kz/shymkent/firm/70000001063864737"
+ },
+ "shymkent:profmedpharm shymkent": {
+  "name": "ProfmedPharm shymkent",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T09:43:03+00:00"
  },
  "shymkent:profy gargo": {
   "name": "Profy Gargo",

@@ -7,6 +7,7 @@
 # попросит убрать его из сбора, удалите строку целиком.
 # 29.10.2026 отключена сетка досок объявлений (enabled: false): одни и те же рекламные посты
 # во всех каналах сразу, барахолка и почти ни одной вакансии за две недели.
+# 25.11.2026 отключены horeca_kz1 и kz_job_opportunities: 0% вакансий за неделю.
 
 channels:
   # Алматы
@@ -50,9 +51,9 @@ channels:
   - {username: jobkz_1, city: null}
   - {username: jumystap1, city: null}
   - {username: jobs_kazakhstan, city: null}
-  - {username: horeca_kz1, city: null}
+  - {username: horeca_kz1, city: null, enabled: false}
   - {username: trudogolikz, city: null, enabled: false}
-  - {username: kz_job_opportunities, city: null}
+  - {username: kz_job_opportunities, city: null, enabled: false}
   - {username: tengiz_vahta, city: null}
 
   # Другие города

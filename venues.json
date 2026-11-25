@@ -3282,6 +3282,13 @@
   "avatar": "bf03e6f7081b9ff7.jpg",
   "avatar_source": "website"
  },
+ "aktobe:cat qazaqstan": {
+  "name": "CAT Qazaqstan",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "aktobe:centercontact kz ип лидер 2023": {
   "name": "CenterContact.kz(ИП Лидер 2023)",
   "city": "aktobe",
@@ -11621,6 +11628,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T02:44:10+00:00"
+ },
+ "almaty:etari kazakhstan етари казахстан": {
+  "name": "Etari Kazakhstan (Етари Казахстан)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "instagram": "etari.kz",
+  "website": "http://www.etari.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001044257263",
+  "avatar_checked_at": "2026-11-25T05:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "f53f84d76580c4bd.jpg",
+  "avatar_source": "website"
  },
  "almaty:eurasia foods": {
   "name": "Eurasia Foods",
@@ -22717,6 +22740,13 @@
   "v": 3,
   "checked_at": "2026-11-04T23:43:42+00:00"
  },
+ "almaty:tm group": {
+  "name": "TM GROUP",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "almaty:tn an": {
   "name": "TN.AN",
   "city": "almaty",
@@ -26784,6 +26814,15 @@
   "v": 3,
   "checked_at": "2026-11-10T23:44:04+00:00"
  },
+ "almaty:бао holder coffee": {
+  "name": "БАО Holder coffee",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "instagram": "holder_coffee",
+  "source": "https://2gis.kz/almaty/firm/70000001033709469"
+ },
  "almaty:барбершоп": {
   "name": "Барбершоп",
   "city": "almaty",
@@ -29787,6 +29826,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T11:45:05+00:00"
+ },
+ "almaty:инженерно производственный центр альянс": {
+  "name": "Инженерно-производственный центр Альянс",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
  },
  "almaty:инжиниринговая компания казгипронефтетранс": {
   "name": "ИНЖИНИРИНГОВАЯ КОМПАНИЯ КАЗГИПРОНЕФТЕТРАНС",
@@ -35053,6 +35099,13 @@
   "avatar": "9a3b6db2fde67d92.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:промснаб альянс": {
+  "name": "ПРОМСНАБ-АЛЬЯНС",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "almaty:просто аутсорсинг алматы": {
   "name": "Просто Аутсорсинг Алматы",
   "city": "almaty",
@@ -38970,6 +39023,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
+ },
+ "almaty:частная компания vekas ltd": {
+  "name": "Частная компания Vekas Ltd",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "website": "http://vekas-automation.ru/",
+  "source": "https://2gis.kz/almaty/firm/70000001116585117",
+  "avatar_checked_at": "2026-11-25T05:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "bff0da08fd4a2e57.jpg",
+  "avatar_source": "website"
  },
  "almaty:частная организация": {
   "name": "частная организация",
@@ -48444,6 +48512,13 @@
   "instagram": "proseccarna",
   "source": "https://2gis.kz/astana/firm/70000001066302390"
  },
+ "astana:provider kz": {
+  "name": "Provider KZ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "astana:proxymo": {
   "name": "Proxymo",
   "city": "astana",
@@ -51954,6 +52029,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-24T08:44:32+00:00"
+ },
+ "astana:азия см": {
+  "name": "АЗИЯ-СМ",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
  },
  "astana:азиябьютико": {
   "name": "АзияБьютиКо",
@@ -66835,6 +66917,22 @@
   "avatar": "2857477625e89bed.jpg",
   "avatar_source": "website"
  },
+ "karaganda:qazclinker": {
+  "name": "QAZCLINKER",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "instagram": "qazclinker",
+  "website": "http://qazclinker.kz/",
+  "source": "https://2gis.kz/karaganda/firm/70000001091417840",
+  "avatar_checked_at": "2026-11-25T05:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "117aaf95cdb80935.jpg",
+  "avatar_source": "website"
+ },
  "karaganda:qaztehna": {
   "name": "QazTehna",
   "city": "karaganda",
@@ -70589,6 +70687,13 @@
    "website"
   ]
  },
+ "kokshetau:асыл арман": {
+  "name": "Асыл Арман",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "kokshetau:ахметова а г": {
   "name": "Ахметова А.Г.",
   "city": "kokshetau",
@@ -70995,6 +71100,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-30T23:43:10+00:00"
+ },
+ "kokshetau:тссп казахстан": {
+  "name": "ТССП Казахстан",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "instagram": "tssp.kz",
+  "website": "http://tssp.kz/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001061960966",
+  "avatar_checked_at": "2026-11-25T05:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kokshetau:управляющая компания marden property": {
   "name": "Управляющая компания Marden Property",
@@ -72890,6 +73009,13 @@
   "v": 3,
   "checked_at": "2026-11-11T23:44:43+00:00"
  },
+ "kostanay:кмк pioneer": {
+  "name": "КМК-PIONEER",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "kostanay:кодерлайн": {
   "name": "Кодерлайн",
   "city": "kostanay",
@@ -74479,6 +74605,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T15:45:20+00:00"
+ },
+ "kyzylorda:радуга тоо компания raduga kdr": {
+  "name": "Радуга, ТОО (Компания Raduga KDR)",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "website": "http://www.kdr.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001111570615",
+  "avatar_checked_at": "2026-11-25T05:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "kyzylorda:рт стройсервис": {
   "name": "Рт-СтройСервис",
@@ -84267,6 +84406,13 @@
   "instagram": "primus.corporation",
   "source": "https://2gis.kz/shymkent/firm/70000001094440136"
  },
+ "shymkent:промспецстройпроект": {
+  "name": "ПромСпецСтройПроект",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "shymkent:пфк ордабасы": {
   "name": "ПФК Ордабасы",
   "city": "shymkent",
@@ -84565,6 +84711,13 @@
   "v": 3,
   "checked_at": "2026-11-06T03:43:44+00:00"
  },
+ "shymkent:турлыбеков е т": {
+  "name": "ТУРЛЫБЕКОВ Е. Т.",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
+ },
  "shymkent:тымакбаева": {
   "name": "Тымакбаева",
   "city": "shymkent",
@@ -84783,6 +84936,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-16T19:44:25+00:00"
+ },
+ "shymkent:шымкент мунай онімдері": {
+  "name": "Шымкент Мунай онімдері",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00"
  },
  "shymkent:шымкентский пивоваренный завод": {
   "name": "Шымкентский пивоваренный завод",
@@ -87637,6 +87797,15 @@
    "website"
   ]
  },
+ "uralsk:scandic school": {
+  "name": "SCANDIC SCHOOL",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "instagram": "scandic.school",
+  "source": "https://2gis.kz/uralsk/firm/70000001065980045"
+ },
  "uralsk:sevalo engineering machinery kazakhstan": {
   "name": "Sevalo Engineering Machinery Kazakhstan",
   "city": "uralsk",
@@ -88551,6 +88720,19 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T03:44:24+00:00"
+ },
+ "uralsk:кублей": {
+  "name": "Кублей",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T05:44:13+00:00",
+  "website": "http://kublei.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001024992749",
+  "avatar_checked_at": "2026-11-25T05:44:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:курьер": {
   "name": "КУРЬЕР",

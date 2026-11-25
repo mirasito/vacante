@@ -8572,7 +8572,7 @@
   "instagram": "baikonur_machinery_company_",
   "website": "https://www.baikonur.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000914522",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13796,6 +13796,20 @@
   "avatar": "d4f0168ecffbca0b.jpg",
   "avatar_source": "telegram"
  },
+ "almaty:high point enterprises": {
+  "name": "High Point Enterprises",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T18:42:30+00:00",
+  "instagram": "hplift.kz",
+  "website": "https://www.hplift.asia/",
+  "source": "https://2gis.kz/almaty/firm/70000001036557439",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:hightechdent хайтэкдент": {
   "name": "HighTechDent» (ХайТэкДент)",
   "city": "almaty",
@@ -16765,6 +16779,20 @@
   "checked_at": "2026-11-13T06:43:11+00:00",
   "instagram": "lord.barbershop.almaty",
   "source": "https://2gis.kz/almaty/firm/70000001087677298"
+ },
+ "almaty:lotte рахат": {
+  "name": "Lotte Рахат",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T18:42:30+00:00",
+  "instagram": "lotte.rakhat",
+  "website": "https://www.rakhat.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001103343829",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:loveliness": {
   "name": "Loveliness",
@@ -22294,7 +22322,7 @@
   "instagram": "stynergy_kz",
   "website": "http://stynergy.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790394",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -28648,7 +28676,7 @@
   "checked_at": "2026-10-28T16:44:42+00:00",
   "telegram": "allur_auto",
   "source": "https://2gis.kz/almaty/firm/70000001049695959",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -31903,7 +31931,7 @@
   "checked_at": "2026-10-28T16:44:42+00:00",
   "website": "https://www.asiaelectro.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001554583",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -38249,7 +38277,7 @@
   "instagram": "torgstroy.kz",
   "website": "http://torgstroy.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000801291",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -39247,7 +39275,7 @@
   "instagram": "lanzhou_kafe",
   "website": "https://lanzhou.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001078763000",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -59827,6 +59855,13 @@
   "v": 3,
   "checked_at": "2026-11-07T16:43:36+00:00"
  },
+ "astana:раисова аида муратовна": {
+  "name": "Раисова Аида Муратовна",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T18:42:30+00:00"
+ },
  "astana:райбер": {
   "name": "РайБер",
   "city": "astana",
@@ -65059,7 +65094,7 @@
   "instagram": "westdalallp",
   "website": "https://www.westdala.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001035892642",
-  "avatar_checked_at": "2026-11-18T18:41:16+00:00",
+  "avatar_checked_at": "2026-11-25T18:42:31+00:00",
   "avatar_tried": [
    "website"
   ]

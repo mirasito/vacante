@@ -688,6 +688,15 @@
   "instagram": "kitsu.rolls",
   "source": "https://2gis.kz/aktau/firm/70000001102936200"
  },
+ "aktau:korkem alem": {
+  "name": "Korkem Alem",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "korkemalemkz",
+  "source": "https://2gis.kz/aktau/firm/70000001067742923"
+ },
  "aktau:la terrasse city cafe": {
   "name": "La Terrasse City Cafe",
   "city": "aktau",
@@ -5975,6 +5984,20 @@
   "v": 3,
   "checked_at": "2026-11-23T15:43:10+00:00"
  },
+ "almaty:aerostar kz аэростар кз": {
+  "name": "Aerostar KZ (Аэростар КЗ)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "aerostar_kz",
+  "website": "http://www.aerostar.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001112740785",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:ag company торговля": {
   "name": "AG Company, торговля",
   "city": "almaty",
@@ -6072,7 +6095,7 @@
   "instagram": "aitaskz",
   "website": "http://aitas.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001084082556",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -6383,7 +6406,7 @@
   "checked_at": "2026-11-11T10:44:24+00:00",
   "website": "http://www.alcor.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001075190531",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -11226,6 +11249,15 @@
   "v": 3,
   "checked_at": "2026-11-16T20:44:15+00:00"
  },
+ "almaty:e s t construction": {
+  "name": "E.S.T. Construction",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "est_construction",
+  "source": "https://2gis.kz/almaty/firm/70000001102011553"
+ },
  "almaty:eagle eye construction": {
   "name": "Eagle Eye Construction",
   "city": "almaty",
@@ -15531,7 +15563,7 @@
   "instagram": "kcell.kz",
   "website": "https://www.kcell.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021329927",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -19717,7 +19749,7 @@
   "instagram": "pulsar.kz",
   "website": "http://pulsar.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001036926809",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20132,7 +20164,7 @@
   "instagram": "reddragon.kz",
   "website": "https://reddragon.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001034593282",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24010,6 +24042,13 @@
   "v": 3,
   "checked_at": "2026-11-10T18:43:51+00:00"
  },
+ "almaty:wec group": {
+  "name": "WEC Group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
+ },
  "almaty:wefind": {
   "name": "WeFind",
   "city": "almaty",
@@ -24109,6 +24148,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T02:45:04+00:00"
+ },
+ "almaty:windoor solutions": {
+  "name": "WINDOOR SOLUTIONS",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
  },
  "almaty:winnerөнер спорт орталығы": {
   "name": "Winnerөнер-спорт орталығы",
@@ -24767,7 +24813,7 @@
   "instagram": "avatariya.almaty",
   "website": "https://avatariya.com/",
   "source": "https://2gis.kz/almaty/firm/70000001067380312",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -26146,6 +26192,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T19:44:27+00:00"
+ },
+ "almaty:амзе": {
+  "name": "Амзе",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
  },
  "almaty:амир": {
   "name": "Амир",
@@ -31822,6 +31875,13 @@
   "v": 3,
   "checked_at": "2026-11-13T13:43:08+00:00"
  },
+ "almaty:кс компани": {
+  "name": "КС КОМПАНИ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
+ },
  "almaty:ксж freedom life": {
   "name": "КСЖ Freedom Life",
   "city": "almaty",
@@ -34687,6 +34747,22 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-09T17:44:21+00:00"
+ },
+ "almaty:отис": {
+  "name": "ОТИС",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "otis.kz",
+  "website": "http://www.otis.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000799059",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "1aa6bdc89303c5bd.jpg",
+  "avatar_source": "website"
  },
  "almaty:откликнуться": {
   "name": "Откликнуться",
@@ -46722,6 +46798,22 @@
   "v": 3,
   "checked_at": "2026-11-09T10:43:43+00:00"
  },
+ "astana:limerence": {
+  "name": "Limerence",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "limerence.kz_",
+  "website": "http://limerence.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001083816262",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2ad6d6508e64450a.jpg",
+  "avatar_source": "website"
+ },
  "astana:link up абдыкалыков т с": {
   "name": "Link up (Абдыкалыков Т.С)",
   "city": "astana",
@@ -48952,7 +49044,7 @@
   "instagram": "proreklama.kz",
   "website": "https://proreklama.kz/",
   "source": "https://2gis.kz/astana/firm/70000001038029504",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55266,6 +55358,13 @@
   "instagram": "dam.damdi",
   "source": "https://2gis.kz/astana/firm/70000001066512458"
  },
+ "astana:дәмді": {
+  "name": "Дәмді",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
+ },
  "astana:дөнерхана": {
   "name": "Дөнерхана",
   "city": "astana",
@@ -57537,6 +57636,13 @@
   ],
   "avatar": "ddc916bc9fd7fee4.jpg",
   "avatar_source": "website"
+ },
+ "astana:мамыр тлендиева": {
+  "name": "МАМЫР ТЛЕНДИЕВА",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
  },
  "astana:манабаева": {
   "name": "Манабаева",
@@ -70658,6 +70764,20 @@
   "avatar": "84bf6eeb7b5ae6f2.jpg",
   "avatar_source": "website"
  },
+ "kokshetau:alem agro holding алемагро холдинг": {
+  "name": "Alem Agro Holding (АлемАгро Холдинг)",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "alemagro",
+  "website": "http://alemagro.com/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001091866817",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "kokshetau:altyntau kokshetau": {
   "name": "Altyntau Kokshetau",
   "city": "kokshetau",
@@ -71002,6 +71122,13 @@
   "checked_at": "2026-11-06T02:44:46+00:00",
   "instagram": "life_food_kz",
   "source": "https://2gis.kz/kokshetau/firm/70000001097440674"
+ },
+ "kokshetau:manai agro": {
+  "name": "TOO Manai Agro",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
  },
  "kokshetau:master coffee 03": {
   "name": "MASTER COFFEE 03",
@@ -72386,7 +72513,7 @@
   "checked_at": "2026-11-11T10:44:24+00:00",
   "website": "https://erg.kz/",
   "source": "https://erg.kz/en/about",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -72639,6 +72766,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-31T15:43:32+00:00"
+ },
+ "kostanay:lifefood company": {
+  "name": "LifeFOOD Company",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
  },
  "kostanay:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
@@ -74637,6 +74771,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-28T23:45:40+00:00"
+ },
+ "kostanay:тави павлодар": {
+  "name": "Тави Павлодар",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "tavi_group",
+  "website": "http://tavigroup.kz/",
+  "source": "https://2gis.kz/kostanaj/firm/70000001055198331",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "11274cb042cabe53.jpg",
+  "avatar_source": "website"
  },
  "kostanay:тарлан сервис": {
   "name": "Тарлан Сервис",
@@ -78631,6 +78781,13 @@
   "avatar": "52c59d0ed24c2d78.jpg",
   "avatar_source": "website"
  },
+ "petropavlovsk:атса": {
+  "name": "АТСА",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
+ },
  "petropavlovsk:аушахметов т ш": {
   "name": "Аушахметов Т.Ш",
   "city": "petropavlovsk",
@@ -79419,6 +79576,20 @@
   "website": "https://sevkazenergo.kz/",
   "source": "https://2gis.kz/petropavlovsk/firm/70000001069546790",
   "avatar_checked_at": "2026-11-22T14:42:39+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "petropavlovsk:севказэнерго": {
+  "name": "СЕВКАЗЭНЕРГО",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "sevkazenergo",
+  "website": "http://sevkazenergo.kz/",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001038411403",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -80528,6 +80699,15 @@
   "checked_at": "2026-11-22T08:42:14+00:00",
   "instagram": "toi_house.semey",
   "source": "https://2gis.kz/semej/firm/70000001089220832"
+ },
+ "semey:tooman": {
+  "name": "TOOMAN",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "tooman_semey",
+  "source": "https://2gis.kz/semej/firm/70000001054927057"
  },
  "semey:toptrans kz": {
   "name": "TopTrans-Kz",
@@ -89323,7 +89503,7 @@
   "instagram": "virazh_kz",
   "website": "http://www.virazh.kz/",
   "source": "https://2gis.kz/uralsk/firm/70000001025051700",
-  "avatar_checked_at": "2026-11-18T11:44:31+00:00",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -89456,6 +89636,13 @@
   ],
   "avatar": "9a7af994cbf90ab7.jpg",
   "avatar_source": "website"
+ },
+ "uralsk:елжас": {
+  "name": "Елжас",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00"
  },
  "uralsk:ескерткыш кызмет казахстан": {
   "name": "Ескерткыш Кызмет Казахстан",
@@ -93297,6 +93484,22 @@
   ],
   "avatar": "99e3e9b8f2243589.jpg",
   "avatar_source": "telegram"
+ },
+ "ust-kamenogorsk:тави павлодар": {
+  "name": "Тави Павлодар",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-25T12:43:25+00:00",
+  "instagram": "tavi_group",
+  "website": "http://tavigroup.kz/",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001069086001",
+  "avatar_checked_at": "2026-11-25T12:43:25+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "8067614a8cb98bc3.jpg",
+  "avatar_source": "website"
  },
  "ust-kamenogorsk:тексти лайн сервис": {
   "name": "Тексти-Лайн Сервис",

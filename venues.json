@@ -7819,7 +7819,7 @@
   "checked_at": "2026-11-11T18:43:31+00:00",
   "website": "http://aspan-asia.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001051413738",
-  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
+  "avatar_checked_at": "2026-11-25T19:42:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -33424,7 +33424,7 @@
   "instagram": "metallpro1m",
   "website": "https://metallpro1.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001088822718",
-  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
+  "avatar_checked_at": "2026-11-25T19:42:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37304,7 +37304,7 @@
   "checked_at": "2026-11-11T18:43:31+00:00",
   "website": "https://implant-proffi.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001084544037",
-  "avatar_checked_at": "2026-11-18T19:42:05+00:00",
+  "avatar_checked_at": "2026-11-25T19:42:28+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40319,6 +40319,13 @@
   ],
   "avatar": "87b1c6078e4c107d.jpg",
   "avatar_source": "website"
+ },
+ "almaty:юджиси мэтч": {
+  "name": "ЮДЖИСИ МЭТЧ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T19:42:27+00:00"
  },
  "almaty:южаков а а": {
   "name": "Южаков А.А",
@@ -51014,6 +51021,13 @@
   "v": 3,
   "checked_at": "2026-11-09T18:44:06+00:00"
  },
+ "astana:tabys km": {
+  "name": "TABYS-KM",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-25T19:42:27+00:00"
+ },
  "astana:tabysty urpaq": {
   "name": "Tabysty Urpaq",
   "city": "astana",
@@ -54296,6 +54310,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-01T07:43:00+00:00"
+ },
+ "astana:боровом": {
+  "name": "Боровом",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-25T19:42:27+00:00"
  },
  "astana:бостан": {
   "name": "Бостан",

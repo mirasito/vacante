@@ -2627,6 +2627,13 @@
   "avatar": "2b427132a9edcb6d.jpg",
   "avatar_source": "website"
  },
+ "aktau:сатушы": {
+  "name": "САТУШЫ",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
+ },
  "aktau:сатушы кеңесші": {
   "name": "САТУШЫ-КЕҢЕСШІ",
   "city": "aktau",
@@ -3623,6 +3630,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T07:45:13+00:00"
+ },
+ "aktobe:global wine aktobe": {
+  "name": "Global Wine Aktobe",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
  },
  "aktobe:glovo kazakhstan": {
   "name": "Glovo Kazakhstan",
@@ -8588,6 +8602,13 @@
   "v": 3,
   "checked_at": "2026-11-25T17:43:40+00:00"
  },
+ "almaty:baicheng central asia consulting co ltd": {
+  "name": "BAICHENG (CENTRAL ASIA) CONSULTING CO.,LTD.",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
+ },
  "almaty:baikonur machinery company": {
   "name": "BAIKONUR MACHINERY COMPANY",
   "city": "almaty",
@@ -10176,7 +10197,7 @@
   "instagram": "coffeelogia.kz",
   "website": "http://coffeelogia.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001024009865",
-  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -15874,6 +15895,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T19:44:10+00:00"
+ },
+ "almaty:king atelier": {
+  "name": "King Atelier",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "king_atelier_kz",
+  "website": "http://kingatelier.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001117509420",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:kingboost": {
   "name": "KingBoost",
@@ -25039,6 +25074,13 @@
   "v": 3,
   "checked_at": "2026-11-09T01:43:39+00:00"
  },
+ "almaty:абылкасымова гульнара аббасовна": {
+  "name": "Абылкасымова Гульнара Аббасовна",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
+ },
  "almaty:авангард": {
   "name": "Авангард",
   "city": "almaty",
@@ -31272,7 +31314,7 @@
   "checked_at": "2026-11-19T08:44:53+00:00",
   "website": "http://qasozen.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001109532365",
-  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -37258,6 +37300,22 @@
   "v": 3,
   "checked_at": "2026-11-19T04:42:45+00:00"
  },
+ "almaty:специализированный учебный центрказпроф": {
+  "name": "Специализированный учебный центрКазпроф",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "qazprof.kz",
+  "website": "http://qazprof.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001067863240",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "ca5b9f6c5a2ed369.jpg",
+  "avatar_source": "website"
+ },
  "almaty:специалист": {
   "name": "Специалист",
   "city": "almaty",
@@ -38906,6 +38964,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:фарух": {
+  "name": "Фарух",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
  },
  "almaty:федерация тенниса казахстана роо": {
   "name": "Федерация тенниса Казахстана, РОО",
@@ -40833,6 +40898,22 @@
   "avatar": "c0e59642afaaff84.jpg",
   "avatar_source": "website"
  },
+ "astana:3d scan kz": {
+  "name": "3D SCAN KZ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "3d_scan.kz",
+  "website": "http://www.3d-scan.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001117246997",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "fc7c4b144c512f48.jpg",
+  "avatar_source": "website"
+ },
  "astana:4bro": {
   "name": "4BRO",
   "city": "astana",
@@ -41052,6 +41133,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T01:44:11+00:00"
+ },
+ "astana:ai koilek": {
+  "name": "Ai-koilek",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "prokatkostymov.ast",
+  "source": "https://2gis.kz/astana/firm/70000001117831662"
  },
  "astana:ai pro school": {
   "name": "AI Pro School",
@@ -43761,6 +43851,13 @@
   "v": 3,
   "checked_at": "2026-11-17T09:44:41+00:00"
  },
+ "astana:dakar": {
+  "name": "Dakar",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
+ },
  "astana:damu decor": {
   "name": "DAMU DECOR",
   "city": "astana",
@@ -44236,7 +44333,7 @@
   "instagram": "ecomaf.kz",
   "website": "http://ecomaf.kz/",
   "source": "https://2gis.kz/astana/firm/70000001040776702",
-  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -44568,6 +44665,24 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-07T04:43:59+00:00"
+ },
+ "astana:farш": {
+  "name": "Farш",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "farsh_burger_kz",
+  "telegram": "farshburgerskz",
+  "website": "http://farsh-burger.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001051826442",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "1d16dc762b9c8807.jpg",
+  "avatar_source": "website"
  },
  "astana:farш бургерная": {
   "name": "FARШ (Бургерная)",
@@ -48825,7 +48940,7 @@
   "instagram": "orient_1c",
   "website": "http://ors.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018342899",
-  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -57356,6 +57471,22 @@
   "v": 3,
   "checked_at": "2026-11-02T06:43:30+00:00"
  },
+ "astana:компания по страхованию жизни евразия": {
+  "name": "Компания по страхованию жизни Евразия",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "eurasia_life.kz",
+  "website": "http://eurasia-life.com/",
+  "source": "https://2gis.kz/astana/firm/70000001075803152",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "65138cde2f10d518.jpg",
+  "avatar_source": "website"
+ },
  "astana:компания стройдекор тм": {
   "name": "Компания СтройДекор, ТМ",
   "city": "astana",
@@ -61348,7 +61479,7 @@
   "checked_at": "2026-11-19T08:44:53+00:00",
   "website": "http://stopharm.kz/",
   "source": "https://2gis.kz/astana/firm/70000001031371623",
-  "avatar_checked_at": "2026-11-19T08:44:54+00:00",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65507,6 +65638,20 @@
   "v": 3,
   "checked_at": "2026-10-29T04:44:51+00:00"
  },
+ "atyrau:адал трэйд сервис": {
+  "name": "Адал Трэйд Сервис.",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00",
+  "instagram": "adaltradeservice",
+  "website": "http://www.adal-sauda.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001036219328",
+  "avatar_checked_at": "2026-11-26T08:48:30+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:аджип": {
   "name": "Аджип",
   "city": "atyrau",
@@ -68887,6 +69032,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T10:44:35+00:00"
+ },
+ "karaganda:xpress link logistics": {
+  "name": "XPRESS LINK LOGISTICS",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
  },
  "karaganda:zebra coffee krg": {
   "name": "Zebra Coffee krg",
@@ -87406,6 +87558,13 @@
   "v": 3,
   "checked_at": "2026-11-04T05:44:16+00:00"
  },
+ "taldykorgan:медицинский центр жансая": {
+  "name": "Медицинский центр Жансая",
+  "city": "taldykorgan",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
+ },
  "taldykorgan:мой арбитр": {
   "name": "Мой арбитр",
   "city": "taldykorgan",
@@ -88684,6 +88843,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-12T20:44:05+00:00"
+ },
+ "taraz:юском": {
+  "name": "ЮсКом",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
  },
  "turkestan:aknazar holding": {
   "name": "AKNAZAR HOLDING",
@@ -90565,6 +90731,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-17T08:44:12+00:00"
+ },
+ "uralsk:желісіне": {
+  "name": "ЖЕЛІСІНЕ",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T08:48:30+00:00"
  },
  "uralsk:женской обуви": {
   "name": "ЖЕНСКОЙ ОБУВИ",

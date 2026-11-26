@@ -137,7 +137,7 @@
   "telegram": "arabicacoffee",
   "website": "https://www.arabicacoffee.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001062335875",
-  "avatar_checked_at": "2026-11-19T16:42:13+00:00",
+  "avatar_checked_at": "2026-11-26T16:44:46+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -14763,6 +14763,15 @@
    "website"
   ]
  },
+ "almaty:intercontinental laser": {
+  "name": "InterContinental Laser",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T16:44:45+00:00",
+  "instagram": "intercontinental_laser",
+  "source": "https://2gis.kz/almaty/firm/70000001094285103"
+ },
  "almaty:intermode интермоде": {
   "name": "Intermode (Интермоде)",
   "city": "almaty",
@@ -27876,6 +27885,13 @@
   "instagram": "hotelbereke",
   "source": "https://2gis.kz/almaty/firm/9429940001247705"
  },
+ "almaty:беремкулов б о": {
+  "name": "Беремкулов Б.О.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T16:44:45+00:00"
+ },
  "almaty:бесказан": {
   "name": "Бесказан",
   "city": "almaty",
@@ -33007,6 +33023,22 @@
    "website"
   ],
   "avatar": "29841df949d762f9.jpg",
+  "avatar_source": "website"
+ },
+ "almaty:леший": {
+  "name": "Леший",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T16:44:45+00:00",
+  "instagram": "leshiy.kaz",
+  "website": "http://leshiy.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001057283902",
+  "avatar_checked_at": "2026-11-26T16:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "b4e5f12cbe4cf822.jpg",
   "avatar_source": "website"
  },
  "almaty:ли": {
@@ -53872,6 +53904,22 @@
   "instagram": "aurum_astana",
   "source": "https://2gis.kz/astana/firm/70000001117640041"
  },
+ "astana:академия статей": {
+  "name": "Академия статей",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T16:44:45+00:00",
+  "instagram": "arti_academ.kz",
+  "website": "http://a-articles.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001094578793",
+  "avatar_checked_at": "2026-11-26T16:44:46+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "be5ff446b1a73f06.jpg",
+  "avatar_source": "website"
+ },
  "astana:академия танца и спорта": {
   "name": "Академия танца и спорта",
   "city": "astana",
@@ -61510,6 +61558,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T10:43:49+00:00"
+ },
+ "astana:сеть кофеен": {
+  "name": "Сеть кофеен",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T16:44:45+00:00"
  },
  "astana:сеть кофеен coffee hub": {
   "name": "Сеть кофеен Coffee Hub",

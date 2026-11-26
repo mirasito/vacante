@@ -10058,6 +10058,19 @@
   "v": 3,
   "checked_at": "2026-11-19T14:44:22+00:00"
  },
+ "almaty:clever medical": {
+  "name": "Clever Medical",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T03:41:54+00:00",
+  "website": "http://clevermedical.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001034970947",
+  "avatar_checked_at": "2026-11-26T03:41:55+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:climcom": {
   "name": "ClimCom",
   "city": "almaty",
@@ -85934,6 +85947,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T02:44:07+00:00"
+ },
+ "shymkent:полежаев андрей валерьевич": {
+  "name": "Полежаев Андрей Валерьевич",
+  "city": "shymkent",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T03:41:54+00:00"
  },
  "shymkent:премьерстройдизайн": {
   "name": "ПремьерСтройДизайн",

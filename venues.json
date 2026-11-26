@@ -15949,6 +15949,13 @@
   "v": 3,
   "checked_at": "2026-11-17T09:44:41+00:00"
  },
+ "almaty:kidslandiya kz": {
+  "name": "kidslandiya.kz",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
+ },
  "almaty:kiehls": {
   "name": "Kiehl's",
   "city": "almaty",
@@ -16457,6 +16464,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T12:44:06+00:00"
+ },
+ "almaty:labmarketing": {
+  "name": "LABmarketing",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00",
+  "instagram": "lab.optics",
+  "source": "https://2gis.kz/almaty/firm/70000001066707875"
  },
  "almaty:lady collection леди коллекшн": {
   "name": "Lady Collection (Леди Коллекшн)",
@@ -20726,6 +20742,24 @@
   "avatar": "9c54fba4472fd33d.jpg",
   "avatar_source": "website"
  },
+ "almaty:reportix": {
+  "name": "ReportiX",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00",
+  "instagram": "reportix.kz",
+  "telegram": "reportix_kz",
+  "website": "https://reportix.kz/",
+  "source": "https://www.instagram.com/reportix.kz/",
+  "avatar_checked_at": "2026-11-26T13:53:35+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2288fcbe65b3db07.jpg",
+  "avatar_source": "telegram"
+ },
  "almaty:resident group": {
   "name": "Resident Group",
   "city": "almaty",
@@ -21872,7 +21906,7 @@
   "checked_at": "2026-11-19T13:43:14+00:00",
   "website": "https://sirius-store.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001118454677",
-  "avatar_checked_at": "2026-11-19T13:43:16+00:00",
+  "avatar_checked_at": "2026-11-26T13:53:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -24245,6 +24279,13 @@
   "checked_at": "2026-10-29T02:44:24+00:00",
   "instagram": "vici.kazakhstan",
   "source": "https://2gis.kz/almaty/firm/70000001060647899"
+ },
+ "almaty:vicol": {
+  "name": "VICOL",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
  },
  "almaty:vie de famille": {
   "name": "Vie de famille",
@@ -37223,6 +37264,13 @@
    "website"
   ]
  },
+ "almaty:семья": {
+  "name": "Семья",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
+ },
  "almaty:сентрас капитал": {
   "name": "Сентрас Капитал",
   "city": "almaty",
@@ -40283,6 +40331,13 @@
   "v": 3,
   "checked_at": "2026-11-14T15:41:27+00:00"
  },
+ "almaty:чернухин магазин my brand": {
+  "name": "Чернухин (магазин My Brand)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
+ },
  "almaty:чимиров м": {
   "name": "Чимиров М",
   "city": "almaty",
@@ -41110,6 +41165,13 @@
   ],
   "avatar": "2a6101898f6d2f33.jpg",
   "avatar_source": "website"
+ },
+ "astana:1д группа а": {
+  "name": "1Д ГРУППА А",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
  },
  "astana:2 зерделі мектебі": {
   "name": "№2 Зерделі мектебі",
@@ -48680,6 +48742,22 @@
   "checked_at": "2026-11-20T08:43:21+00:00",
   "instagram": "na_chile_food_astana01",
   "source": "https://2gis.kz/astana/firm/70000001101202169"
+ },
+ "astana:nami_sushi": {
+  "name": "Nami_sushi",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00",
+  "instagram": "nami_sushi.kz",
+  "website": "http://namisushi.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001110344309",
+  "avatar_checked_at": "2026-11-26T13:53:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3f003615da434f65.jpg",
+  "avatar_source": "website"
  },
  "astana:namys": {
   "name": "NAMYS",
@@ -58115,6 +58193,22 @@
   "v": 3,
   "checked_at": "2026-11-02T18:43:31+00:00"
  },
+ "astana:кофемания": {
+  "name": "Кофемания",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00",
+  "instagram": "coffeeboom2010",
+  "website": "http://coffeeboom.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001022125480",
+  "avatar_checked_at": "2026-11-26T13:53:35+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "54ab71043a421884.jpg",
+  "avatar_source": "website"
+ },
  "astana:кравченко ю а": {
   "name": "Кравченко Ю.А.",
   "city": "astana",
@@ -60473,6 +60567,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T01:44:11+00:00"
+ },
+ "astana:прокопенко": {
+  "name": "Прокопенко",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
  },
  "astana:промстрой": {
   "name": "ПромСтрой",
@@ -65946,6 +66047,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T20:44:20+00:00"
+ },
+ "atyrau:vio imperial": {
+  "name": "VIO Imperial",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00",
+  "instagram": "vioimperial",
+  "website": "http://vioimperial.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001037097385",
+  "avatar_checked_at": "2026-11-26T13:53:35+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:voice": {
   "name": "Voice",
@@ -72497,7 +72612,7 @@
   "instagram": "multivac_kazakhstan",
   "website": "https://multivac.com/",
   "source": "https://2gis.kz/almaty/firm/9429940001734064",
-  "avatar_checked_at": "2026-11-19T13:43:16+00:00",
+  "avatar_checked_at": "2026-11-26T13:53:35+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -88768,6 +88883,15 @@
   "avatar": "b7ded582a7c134d8.jpg",
   "avatar_source": "website"
  },
+ "taraz:moby t": {
+  "name": "MOBY T",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00",
+  "instagram": "moby_taraz",
+  "source": "https://2gis.kz/taraz/firm/70000001051429276"
+ },
  "taraz:nd": {
   "name": "ND",
   "city": "taraz",
@@ -91793,6 +91917,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-20T16:42:40+00:00"
+ },
+ "uralsk:орал жби": {
+  "name": "Орал ЖБИ",
+  "city": "uralsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T13:53:34+00:00"
  },
  "uralsk:организация": {
   "name": "Организация",

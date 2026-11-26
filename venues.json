@@ -21298,6 +21298,20 @@
    "website"
   ]
  },
+ "almaty:salut hotel": {
+  "name": "Salut Hotel",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T15:47:01+00:00",
+  "instagram": "salut_de_luxe",
+  "website": "http://saluthotel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001027991312",
+  "avatar_checked_at": "2026-11-26T15:47:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:sam place": {
   "name": "SAM PLACE",
   "city": "almaty",
@@ -35925,6 +35939,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T03:43:38+00:00"
+ },
+ "almaty:полимерсбыт": {
+  "name": "Полимерсбыт",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T15:47:01+00:00"
  },
  "almaty:полина": {
   "name": "Полина",
@@ -55933,6 +55954,20 @@
   "instagram": "allur.kz",
   "source": "https://www.instagram.com/allur.kz/"
  },
+ "astana:группа роботек": {
+  "name": "Группа Роботек",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T15:47:01+00:00",
+  "instagram": "robotek_school",
+  "website": "http://robotek.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001039266390",
+  "avatar_checked_at": "2026-11-26T15:47:02+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:гульжан": {
   "name": "Гульжан",
   "city": "astana",
@@ -65962,7 +65997,7 @@
   "checked_at": "2026-11-19T15:42:44+00:00",
   "website": "https://bayansulu.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033678476",
-  "avatar_checked_at": "2026-11-19T15:42:45+00:00",
+  "avatar_checked_at": "2026-11-26T15:47:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -74496,7 +74531,7 @@
   "checked_at": "2026-11-19T15:42:44+00:00",
   "website": "https://bayansulu.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033678476",
-  "avatar_checked_at": "2026-11-19T15:42:45+00:00",
+  "avatar_checked_at": "2026-11-26T15:47:02+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -82773,6 +82808,13 @@
   "v": 3,
   "checked_at": "2026-11-23T03:42:54+00:00"
  },
+ "semey:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T15:47:01+00:00"
+ },
  "semey:добровольская": {
   "name": "Добровольская",
   "city": "semey",
@@ -83222,6 +83264,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T18:44:42+00:00"
+ },
+ "semey:сапа газ": {
+  "name": "Сапа Газ",
+  "city": "semey",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T15:47:01+00:00"
  },
  "semey:сапаров": {
   "name": "Сапаров",

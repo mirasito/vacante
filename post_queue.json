@@ -1,42 +1,28 @@
 {
- "updated_at": "2026-11-26T19:26:17+00:00",
+ "updated_at": "2026-11-26T20:26:23+00:00",
  "vacancies": [
   {
-   "id": "rabota4almaty-6889",
-   "city": "almaty",
-   "title": "Повар",
-   "employer": null,
-   "salary_min": 250000,
-   "salary_max": 300000,
-   "salary_period": "month",
-   "schedule": "5/2",
-   "address": null,
-   "perks": [],
-   "category": "horeca",
-   "posted_at": "2026-11-25T04:41:05+00:00",
-   "source_url": "https://t.me/rabota4almaty/6889",
-   "text": "💼 Вакансии в Алматы\n\n• Требуется Повар 5 разряд — З/П: 250 000 - 300 000 тг\n Требуется Повар 5разряда в школьную столовую. График работы 5/2 с 07.00 до 17.00. Объект находится возле Центрального стадиона. Обязательное наличие профессионального образования…\n\n📍 Адрес: Алматы, Алмалинский район, Бухар жирау-Мусрепова\n📞\n\nПодробнее на poiskraboty.kz\n🔔 Получать такие вакансии первым\n🌐 В канале не всё: больше вакансий — на poiskraboty.kz\n\n#Алматы #повар"
-  },
-  {
-   "id": "rabota_v_aktobe-3032",
-   "city": "aktobe",
-   "title": "Оператор станков",
-   "employer": null,
-   "salary_min": null,
-   "salary_max": null,
-   "salary_period": null,
-   "schedule": null,
-   "address": null,
-   "perks": [],
-   "category": "warehouse",
-   "posted_at": "2026-11-26T19:17:21+00:00",
-   "source_url": "https://t.me/rabota_v_aktobe/3032",
-   "text": "В компанию по производству полипропиленовой упаковке требуется оператор ткацкого станка\n\nграфик 2 на 2, своевременная оплата труда\n\nпо интересующим вопросам обращаться по номеру в Whatsapp"
-  },
-  {
-   "id": "rabota_v_pavlodare-7385",
+   "id": "rabota_v_pavlodare-7386",
    "city": "pavlodar",
-   "title": "Продавец",
+   "title": "Мебельщик",
+   "employer": null,
+   "salary_min": null,
+   "salary_max": null,
+   "salary_period": null,
+   "schedule": null,
+   "address": null,
+   "perks": [
+    "Без опыта"
+   ],
+   "category": "warehouse",
+   "posted_at": "2026-11-26T19:27:00+00:00",
+   "source_url": "https://t.me/rabota_v_pavlodare/7386",
+   "text": "Требуется сборщики корпусной мебели,,опыт обязателен!Оплата 17% от общей стоимости заказа,оплата каждую субботу без задержек!!!\nБез опыта просьба не беспокоить!!!\nТел"
+  },
+  {
+   "id": "rabota_v_pavlodare-7387",
+   "city": "pavlodar",
+   "title": "Охранник",
    "employer": null,
    "salary_min": null,
    "salary_max": null,
@@ -44,10 +30,26 @@
    "schedule": null,
    "address": null,
    "perks": [],
-   "category": "retail",
-   "posted_at": "2026-11-26T19:25:26+00:00",
-   "source_url": "https://t.me/rabota_v_pavlodare/7385",
-   "text": "Требуется помощник продавца,парень!\n\nЧто входит в обязанности:(нужно относить размеры,обувь (когда просит продавец)быстро,шустро,поэтому нужен активный человек!\nНа постоянной основе!\nОт вас требуется быть:ответственным,пунктуальным,шустрым!!!\nОплата ежедневная!\nПонедельник-выходной\nРабочий день с 10:00 до 19:00.\nЗвонить по указанному номеру с 10:00 до 19:00!!!\n\nТел"
+   "category": "service",
+   "posted_at": "2026-11-26T19:29:27+00:00",
+   "source_url": "https://t.me/rabota_v_pavlodare/7387",
+   "text": "Требуется сторож на смену\n\n_ график: сутки через двое\n\n_ оплата: 100’000 тг в месяц\n\nТребования: ответственность и без вредных привычек\n\nТел"
+  },
+  {
+   "id": "hh-139896116",
+   "city": "ust-kamenogorsk",
+   "title": "Курьер на электровелосипеде",
+   "employer": "Налобнов Максим Валентинович",
+   "salary_min": null,
+   "salary_max": null,
+   "salary_period": null,
+   "schedule": "6/1, 12 часов, По договорённости",
+   "address": "Саратов",
+   "perks": [],
+   "category": "delivery",
+   "posted_at": "2026-11-26T19:49:30+00:00",
+   "source_url": "https://hh.kz/vacancy/139896116?tech_source=api",
+   "text": "Обязанности: Путешествуй и доставляй заказы для клиентов «Самоката»! — Доставлять оплаченные продукты от даркстора до квартиры клиента. — Быть на связи с директором..."
   }
  ]
 }

@@ -2984,6 +2984,13 @@
   "instagram": "shiroyama_aktau",
   "source": "https://2gis.kz/aktau/firm/70000001082010472"
  },
+ "aktau:шум": {
+  "name": "Шум",
+  "city": "aktau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
+ },
  "aktau:шыныбек д б": {
   "name": "Шыныбек Д.Б.",
   "city": "aktau",
@@ -6530,6 +6537,19 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
+ },
+ "almaty:alfa delivery services": {
+  "name": "Alfa Delivery Services",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00",
+  "website": "http://www.adskz.com/",
+  "source": "https://2gis.kz/almaty/firm/9429940000934165",
+  "avatar_checked_at": "2026-11-26T09:50:04+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:alfa link": {
   "name": "Alfa Link",
@@ -23634,6 +23654,13 @@
   "instagram": "tyres.trade",
   "source": "https://2gis.kz/almaty/firm/70000001056966120"
  },
+ "almaty:uak a": {
+  "name": "UAK A",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
+ },
  "almaty:uchina ючайна": {
   "name": "UChina (ЮЧайна)",
   "city": "almaty",
@@ -30016,6 +30043,13 @@
   "v": 3,
   "checked_at": "2026-11-12T21:43:52+00:00"
  },
+ "almaty:жупай шынар": {
+  "name": "Жупай Шынар",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
+ },
  "almaty:жылкайдарова м н сеть отелей ренион": {
   "name": "Жылкайдарова М.Н (сеть отелей Ренион)",
   "city": "almaty",
@@ -35240,6 +35274,13 @@
   ],
   "avatar": "2dfe030e41ccee6b.jpg",
   "avatar_source": "website"
+ },
+ "almaty:палеткз": {
+  "name": "ПалетКз",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
  },
  "almaty:панелао фм казахстан": {
   "name": "Панелао ФМ Казахстан",
@@ -60355,10 +60396,12 @@
   "instagram": "neoclinic2011",
   "website": "https://neoclinic.kz/",
   "source": "https://2gis.kz/astana/firm/70000001057241452",
-  "avatar_checked_at": "2026-11-19T09:42:47+00:00",
+  "avatar_checked_at": "2026-11-26T09:50:04+00:00",
   "avatar_tried": [
    "website"
-  ]
+  ],
+  "avatar": "e39e39cc8cc3e95c.jpg",
+  "avatar_source": "website"
  },
  "astana:рейка": {
   "name": "Рейка",
@@ -60714,6 +60757,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T15:44:05+00:00"
+ },
+ "astana:сандульская о в": {
+  "name": "Сандульская О.В.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
  },
  "astana:сап ин вэст": {
   "name": "САП-ИН-ВЭСТ",
@@ -70183,7 +70233,7 @@
   "checked_at": "2026-11-19T09:42:46+00:00",
   "website": "https://www.kengroup.kz/",
   "source": "https://2gis.kz/karaganda/firm/11822477302907708",
-  "avatar_checked_at": "2026-11-19T09:42:47+00:00",
+  "avatar_checked_at": "2026-11-26T09:50:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70208,6 +70258,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T23:43:18+00:00"
+ },
+ "karaganda:козубова": {
+  "name": "КОЗУБОВА",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
  },
  "karaganda:колбасный цех мецгер": {
   "name": "Колбасный цех Мецгер",
@@ -73635,6 +73692,15 @@
   "v": 3,
   "checked_at": "2026-11-25T12:43:25+00:00"
  },
+ "kostanay:madlenbeautystudio": {
+  "name": "Madlenbeautystudio",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00",
+  "instagram": "madlenbeautystudio",
+  "source": "https://2gis.kz/kostanaj/firm/70000001075873923"
+ },
  "kostanay:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
   "city": "kostanay",
@@ -74921,6 +74987,13 @@
   "v": 3,
   "checked_at": "2026-11-07T11:45:05+00:00"
  },
+ "kostanay:костанай dwt двт": {
+  "name": "Костанай DWT/ДВТ",
+  "city": "kostanay",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00"
+ },
  "kostanay:костанайская железнодорожная больница": {
   "name": "Костанайская железнодорожная больница",
   "city": "kostanay",
@@ -75993,6 +76066,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "kyzylorda:2gis semey": {
+  "name": "2GIS-SEMEY",
+  "city": "kyzylorda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00",
+  "instagram": "2gisqyzylorda",
+  "source": "https://2gis.kz/kyzylorda/firm/70000001064195891"
  },
  "kyzylorda:adam group inc": {
   "name": "Adam Group Inc",
@@ -82142,6 +82224,15 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "semey:кавказ": {
+  "name": "КАВКАЗ",
+  "city": "semey",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00",
+  "instagram": "kafe_kavkaz005",
+  "source": "https://2gis.kz/semej/firm/70000001052300392"
+ },
  "semey:казахтелеком": {
   "name": "Казахтелеком",
   "city": "semey",
@@ -83833,6 +83924,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "shymkent:eurasia group kazakhstan": {
+  "name": "Eurasia Group Kazakhstan",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00",
+  "instagram": "eurasiagroup_kz",
+  "source": "https://2gis.kz/shymkent/firm/70000001026524064"
  },
  "shymkent:eurasia support services": {
   "name": "Eurasia Support Services",
@@ -92000,6 +92100,15 @@
   ],
   "avatar": "2b0ae8a61ea649e5.jpg",
   "avatar_source": "website"
+ },
+ "ust-kamenogorsk:chaikhana navat чайхана нават": {
+  "name": "Chaikhana NAVAT ( Чайхана НАВАТ)",
+  "city": "ust-kamenogorsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-26T09:50:03+00:00",
+  "instagram": "navat_oskemen",
+  "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001119279147"
  },
  "ust-kamenogorsk:common market corporation": {
   "name": "Common Market Corporation",

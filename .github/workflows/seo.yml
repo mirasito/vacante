@@ -3,8 +3,9 @@
 # Вторым шагом выборочная проверка индекса (searchping.py inspect): сколько страниц каждого вида Google
 # держит в индексе, где выбрал главной чужую страницу и когда заходил в последний раз.
 #
-# Нужен секрет GSC_SERVICE_ACCOUNT (один раз, ~10 минут). Он же включает мгновенную отправку
-# новых вакансий в Google (Indexing API) в каждом часовом обновлении.
+# Нужен секрет GSC_SERVICE_ACCOUNT (один раз, ~10 минут). Он же включает отправку новых вакансий
+# с разметкой JobPosting в Google (Indexing API) в каждом часовом обновлении. Записывает ли Google эти
+# сообщения, показывает строка «Google Indexing API» в журнале обновления и шаг probe ниже.
 # 1. https://console.cloud.google.com/projectcreate — создать проект «vacante».
 # 2. Включить в нём два API:
 #    https://console.cloud.google.com/apis/library/searchconsole.googleapis.com
@@ -21,11 +22,15 @@ on:
   workflow_dispatch:
     inputs:
       days:
-        description: "За сколько последних дней"
+        description: "За сколько последних дней (0 — без сводки)"
         default: "28"
       inspect:
         description: "Проверить индекс на стольких страницах (0 — не проверять, не больше 600)"
         default: "120"
+      probe:
+        description: "Проверить Indexing API на двух вакансиях: сообщить Google и спросить, записал ли он"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -41,6 +46,7 @@ jobs:
           cache: pip
       - run: pip install .
       - name: Цифры
+        if: inputs.days != '0'
         env:
           GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
         run: |
@@ -57,3 +63,14 @@ jobs:
           [[ $PAGES =~ ^[0-9]+$ ]] || { echo "::error::В поле inspect должно быть число"; exit 1; }
           python -m vacante.searchping inspect "$PAGES" | tee index.txt
           { echo '```'; cat index.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      # Часовое обновление видит только «200» на отправку. Здесь две вакансии (с разметкой JobPosting и без)
+      # проходят весь путь: что Google знал о странице до сообщения, что ответил на сообщение и записал ли его.
+      # Тратит два сообщения из 200 в сутки
+      - name: Indexing API на двух вакансиях
+        if: inputs.probe
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+        run: |
+          set -o pipefail
+          python -m vacante.searchping probe | tee probe.txt
+          { echo '```'; cat probe.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

@@ -204,7 +204,8 @@ jobs:
         uses: actions/deploy-pages@v4
 
   # Сообщить поисковикам о новых страницах, когда они уже доступны: IndexNow (Bing и поиск ChatGPT) всегда,
-  # Google Indexing API — если есть секрет GSC_SERVICE_ACCOUNT (шаги в .github/workflows/seo.yml)
+  # Google Indexing API — если есть секрет GSC_SERVICE_ACCOUNT (шаги в .github/workflows/seo.yml): только свои
+  # вакансии с разметкой JobPosting, и в журнале видно, записал ли Google сообщение
   search:
     needs: [collect, deploy]
     runs-on: ubuntu-latest

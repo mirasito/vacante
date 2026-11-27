@@ -4,11 +4,18 @@
   python -m vacante.searchping send URLS_FILE                     — отправить их в IndexNow и Google Indexing API
   python -m vacante.searchping report [дней]                      — сводка Search Console и отправка карты сайта
   python -m vacante.searchping inspect [страниц]                  — выборочная проверка: что из карты сайта в индексе Google
+  python -m vacante.searchping probe                              — записывает ли Google наши сообщения: одна вакансия от начала до конца
 
 IndexNow (Bing, а через него поиск ChatGPT, Яндекс, Seznam и др.) работает без регистрации: ключ публичный,
-лежит файлом в корне сайта (INDEXNOW_KEY в vacante/site/build.py). Google Indexing API официально принимает
-страницы с разметкой JobPosting, но нужен сервисный аккаунт Google: JSON-ключ в секрете GSC_SERVICE_ACCOUNT,
-а почта аккаунта добавлена владельцем сайта в Search Console. Без секрета шаги Google пропускаются.
+лежит файлом в корне сайта (INDEXNOW_KEY в vacante/site/build.py). Google Indexing API принимает только
+страницы с разметкой JobPosting, поэтому send сообщает ему о новых своих вакансиях, у которых она есть.
+Нужен сервисный аккаунт Google: JSON-ключ в секрете GSC_SERVICE_ACCOUNT, а почта аккаунта добавлена
+владельцем сайта в Search Console. Без секрета шаги Google пропускаются.
+
+Ответ 200 на сообщение не значит, что Google его записал: 27 ноября 2026 проверка показала, что Google
+отвечает 200, а на вопрос о том же адресе говорит «не сообщали» (404), со страницей с разметкой так же.
+Поэтому send после отправки спрашивает Google о первой странице и пишет в журнал, записано ли сообщение,
+а probe показывает весь путь на двух страницах.
 """
 
 from __future__ import annotations
@@ -36,6 +43,7 @@ SITE = os.environ.get("SITE_URL", "https://vacante.kz").rstrip("/")
 GOOGLE_PER_RUN = int(os.environ.get("GOOGLE_PER_RUN", "8"))
 INDEXNOW_MAX = 10_000  # больше за один запрос IndexNow не принимает
 SCOPES = "https://www.googleapis.com/auth/indexing https://www.googleapis.com/auth/webmasters"
+PUBLISH = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 
 
 def sitemap_urls(xml: str) -> list[str]:
@@ -96,20 +104,32 @@ def google_index(client: httpx.Client, urls: list[str]) -> str:
     account = service_account()
     if not account:
         return "Google Indexing API: нет секрета GSC_SERVICE_ACCOUNT, пропускаю"
-    picked = google_order(urls)[:GOOGLE_PER_RUN]
-    if not picked:
+    own = google_order(urls)
+    if not own:
         return "Google Indexing API: новых своих вакансий нет"
+    # Indexing API принимает только страницы с разметкой JobPosting, а она есть не у каждой своей вакансии
+    # (build.job_posting_ld). Смотрим саму выложенную страницу: сайт к этому шагу уже обновлён
+    picked = [url for url in own[:MARKUP_LOOK] if _has_job_markup(client, url)][:GOOGLE_PER_RUN]
+    if not picked:
+        return f"Google Indexing API: среди {len(own)} новых своих вакансий нет страниц с разметкой JobPosting"
     auth = {"Authorization": f"Bearer {google_token(client, account)}"}
     codes = []
     for url in picked:
-        r = client.post("https://indexing.googleapis.com/v3/urlNotifications:publish", headers=auth,
-                        json={"url": url, "type": "URL_UPDATED"})
+        r = client.post(PUBLISH, headers=auth, json={"url": url, "type": "URL_UPDATED"})
         codes.append(r.status_code)
         if r.status_code == 403:  # аккаунт не добавлен владельцем в Search Console
             return f"Google Indexing API: 403, добавьте {account['client_email']} владельцем в Search Console"
         if r.status_code == 429:  # квота на сутки кончилась
             break
-    return f"Google Indexing API: {len(codes)} адресов, ответы {sorted(set(codes))}"
+    # Ответ 200 значит только, что запрос принят. Записал ли Google сообщение, видно по вопросу о первой странице
+    code, stamp = _notified(client, auth, picked[0], pause=RECORD_PAUSE)
+    recorded = "записал" if code == 200 and stamp else f"не записал (на вопрос о сообщении ответ {code or 'не пришёл'})"
+    return (f"Google Indexing API: {len(codes)} адресов с разметкой JobPosting из {len(own)} новых своих вакансий, "
+            f"ответы {sorted(set(codes))}, сообщение Google {recorded}")
+
+
+MARKUP_LOOK = 60  # на стольких новых своих вакансиях за прогон проверяем разметку
+RECORD_PAUSE = 2  # через сколько секунд после отправки спрашиваем Google, записал ли он сообщение
 
 
 def send(path: Path) -> None:
@@ -174,6 +194,106 @@ def report(days: int) -> None:
             if not rows:
                 print("пока нет данных")
 
+        # Что именно просело или выросло: показы по видам страниц за каждый день
+        rows = _search_rows(client, base, auth, {"startDate": start.isoformat(), "endDate": end.isoformat(),
+                                                 "dimensions": ["date", "page"]})
+        print(f"\n== показы по видам страниц по дням: {', '.join(name for name, _ in DAILY_COLUMNS)}; "
+              "из них казахские версии; страниц с показами")
+        if isinstance(rows, str):
+            print(rows)
+        for day, d in sorted(by_kind_and_day(rows if isinstance(rows, list) else []).items()):
+            cells = " ".join(f"{d['kinds'][kind]:7.0f}" for _, kind in DAILY_COLUMNS)
+            print(f"{day} {cells}   kk {d['kk']:5.0f}   страниц {d['pages']:5}")
+
+        # Блок вакансий Google (Google Jobs) отдельно от обычной выдачи: показы каждого вида результата по дням
+        kinds = _search_rows(client, base, auth, {"startDate": start.isoformat(), "endDate": end.isoformat(),
+                                                  "dimensions": ["searchAppearance"]})
+        for kind in [row["keys"][0] for row in kinds] if isinstance(kinds, list) else []:
+            rows = _search_rows(client, base, auth, {
+                "startDate": start.isoformat(), "endDate": end.isoformat(), "dimensions": ["date"],
+                "dimensionFilterGroups": [{"filters": [{"dimension": "searchAppearance", "operator": "equals", "expression": kind}]}]})
+            print(f"\n== {kind} по дням: показы (клики)")
+            if isinstance(rows, str):
+                print(rows)
+                continue
+            print("  ".join(f"{row['keys'][0][5:]} {row['impressions']:.0f} ({row['clicks']:.0f})"
+                            for row in sorted(rows, key=lambda x: x["keys"][0])))
+
+        # Какие запросы ушли или пришли: первая половина периода против второй, по показам
+        middle = start + timedelta(days=(end - start).days // 2)
+        for title, since, until in [("первая половина", start, middle), ("вторая половина", middle + timedelta(days=1), end)]:
+            rows = _search_rows(client, base, auth, {"startDate": since.isoformat(), "endDate": until.isoformat(),
+                                                     "dimensions": ["query"]})
+            print(f"\n== запросы по показам, {title} ({since} — {until}): клики, показы, средняя позиция")
+            if isinstance(rows, str):
+                print(rows)
+                continue
+            print(f"запросов с показами: {len(rows)}, показов по ним: {sum(row['impressions'] for row in rows):.0f}")
+            for row in sorted(rows, key=lambda x: -x["impressions"])[:QUERY_TOP]:
+                print(f"{row['keys'][0][:70]:70} {row['clicks']:6.0f} {row['impressions']:8.0f} {row['position']:6.1f}")
+
+        # Доходят ли до Google наши сообщения о новых вакансиях (часовое обновление, google_index): спрашиваем
+        # у Indexing API про свои вакансии из карты сайта. Квоту проверки индекса это не тратит
+        own = [(url, day) for url, day in sitemap_pages(client.get(f"{SITE}/sitemap.xml", follow_redirects=True).text)
+               if page_group(url) == OWN_VACANCY]
+        # Самые новые идут в карте сайта первыми: о них часовое обновление сообщало в последних прогонах
+        newest = own[:NOTIFY_NEWEST]
+        print("\n== Indexing API: самые новые свои вакансии по порядку карты сайта: адрес, ответ, время сообщения")
+        for url, _ in newest:
+            code, text = _notified(client, auth, url, pause=NOTIFY_PAUSE)
+            print(f"{url.replace(SITE, '')[:50]:50} {code or 'нет ответа'} {text or '—'}")
+        rest = sorted(set(own) - set(newest))
+        asked = random.Random(date.today().isoformat()).sample(rest, min(len(rest), NOTIFY_SAMPLE))
+        answers = [(day, *_notified(client, auth, url, pause=NOTIFY_PAUSE)) for url, day in asked]
+        print(f"\n== Indexing API: о скольких своих вакансиях Google получил наше сообщение "
+              f"(спросил про {len(asked)} случайных из {len(own)} в карте сайта)")
+        print("ответы: " + "; ".join(f"{code or 'нет ответа'} — {n}" for code, n in Counter(a[1] for a in answers).most_common())
+              + ". 200 — сообщение дошло, 404 — о странице не сообщали")
+        for code, text in {a[1]: a[2] for a in answers if a[1] not in (200, 404)}.items():
+            print(f"  {code or 'нет ответа'}: {text}")
+        print("по дате публикации вакансии: дата, спросил, сообщение дошло")
+        for day, n, told in notify_days(answers):
+            print(f"{day} {n:5} {told:5}")
+        stamps = Counter(a[2][:10] for a in answers if a[1] == 200 and a[2])
+        print("по дате самого сообщения: " + ("  ".join(f"{day} {n}" for day, n in sorted(stamps.items())) or "—"))
+
+
+# Столбцы отчёта «показы по видам страниц по дням»: (заголовок, вид страницы из page_group без пометки языка)
+DAILY_COLUMNS = [("главная", "главная"), ("города", "город или раздел"), ("сферы", "сфера, профессия или смены в городе"),
+                 ("hh", "вакансия hh"), ("каналы", "вакансия из каналов и от работодателей"), ("OLX", "вакансия OLX")]
+QUERY_TOP = 20  # сколько запросов показывать в каждой половине периода
+SEARCH_ROWS = 25_000  # больше строк за один запрос searchAnalytics не отдаёт
+
+
+def _search_rows(client: httpx.Client, base: str, auth: dict, body: dict, pages: int = 4) -> list[dict] | str:
+    """Все строки ответа searchAnalytics (по 25 000 за запрос) или текст ошибки."""
+    rows: list[dict] = []
+    for page in range(pages):
+        r = client.post(f"{base}/searchAnalytics/query", headers=auth,
+                        json={**body, "rowLimit": SEARCH_ROWS, "startRow": page * SEARCH_ROWS})
+        if r.status_code != 200:
+            return f"ошибка {r.status_code} {r.text[:200]}"
+        got = r.json().get("rows", [])
+        rows += got
+        if len(got) < SEARCH_ROWS:
+            break
+    return rows
+
+
+def by_kind_and_day(rows: list[dict]) -> dict[str, dict]:
+    """Строки Search Console с ключами (дата, адрес) → по дням: показы по видам страниц (русская и казахская
+    версии вместе), показы казахских версий отдельно и число страниц, у которых были показы."""
+    days: dict[str, dict] = {}
+    for row in rows:
+        day, url = row["keys"]
+        group = page_group(url)
+        d = days.setdefault(day, {"kinds": Counter(), "kk": 0.0, "pages": 0})
+        d["kinds"][group.removesuffix(" (kk)")] += row["impressions"]
+        if group.endswith(" (kk)"):
+            d["kk"] += row["impressions"]
+        d["pages"] += 1
+    return days
+
 
 # Суточная квота URL Inspection API — 2000 адресов на ресурс, в минуту 600
 INSPECT_MAX = 600
@@ -232,6 +352,116 @@ def _days_ago(stamp: str | None, now: datetime) -> float | None:
     return (now - datetime.fromisoformat(stamp.replace("Z", "+00:00"))).total_seconds() / 86400
 
 
+def crawl_days(crawls: list[tuple[str, str | None]]) -> dict[str, tuple[int, int]]:
+    """[(вид страницы, время последнего захода робота)] → дата: (страниц, из них вакансий).
+    Страницы, на которые робот не заходил, не считаются."""
+    days: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+    for group, stamp in crawls:
+        if stamp:
+            days[stamp[:10]][0] += 1
+            days[stamp[:10]][1] += group.startswith("вакансия")
+    return {day: (n, vacancies) for day, (n, vacancies) in days.items()}
+
+
+OWN_VACANCY = "вакансия из каналов и от работодателей"  # о таких страницах часовое обновление сообщает в Indexing API
+
+
+# Про сколько своих вакансий отчёт спрашивает Indexing API: самые новые и случайные. На вопросы у Google квота
+# в минуту (на 88-м подряд ответил 429), поэтому между вопросами пауза: выходит не больше 75 в минуту
+NOTIFY_NEWEST = 30
+NOTIFY_SAMPLE = 60
+NOTIFY_PAUSE = 0.8
+
+
+def _notified(client: httpx.Client, auth: dict, url: str, pause: float = 0) -> tuple[int, str | None]:
+    """Дошло ли до Google наше сообщение об этой странице через Indexing API: (код ответа, пояснение).
+    200 — дошло, пояснение — время последнего сообщения (None, если сообщали только об удалении).
+    404 — о странице не сообщали. Другой код — отказ Google, пояснение — начало его текста. 0 — сбой сети.
+    pause — сколько секунд подождать перед вопросом, чтобы не выйти за квоту в минуту."""
+    time.sleep(pause)
+    try:
+        r = client.get("https://indexing.googleapis.com/v3/urlNotifications/metadata", headers=auth, params={"url": url})
+    except httpx.HTTPError as exc:
+        return 0, type(exc).__name__
+    if r.status_code == 200:
+        return 200, r.json().get("latestUpdate", {}).get("notifyTime")
+    if r.status_code == 404:
+        return 404, None
+    try:  # Google объясняет отказ в error.message; если ответ не JSON, показываем его начало как есть
+        text = r.json()["error"]["message"]
+    except (ValueError, KeyError, TypeError):
+        text = r.text
+    return r.status_code, " ".join(str(text).split())[:200]
+
+
+def notify_days(answers: list[tuple[str, int, str | None]]) -> list[tuple[str, int, int]]:
+    """[(дата публикации вакансии, код ответа Indexing API, время сообщения)] → по датам публикации:
+    (дата, про сколько страниц спросили, о скольких сообщение дошло)."""
+    days: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+    for day, code, stamp in answers:
+        days[day[:10]][0] += 1
+        days[day[:10]][1] += code == 200 and bool(stamp)
+    return [(day, n, told) for day, (n, told) in sorted(days.items())]
+
+
+def probe() -> None:
+    """Indexing API от начала до конца на двух своих вакансиях, самой новой без разметки JobPosting и самой
+    новой с разметкой: спросить Google о странице, сообщить, спросить снова. Показывает, записывает ли Google
+    наши сообщения: часовое обновление видит только код ответа на отправку. Тратит два сообщения из суточной
+    квоты (200), страницам не вредит: о них и так положено сообщать."""
+    account = service_account()
+    if not account:
+        sys.exit("Нет секрета GSC_SERVICE_ACCOUNT: шаги в шапке .github/workflows/seo.yml")
+    with httpx.Client(timeout=60) as client:
+        own = [url for url, _ in sitemap_pages(client.get(f"{SITE}/sitemap.xml", follow_redirects=True).text)
+               if page_group(url) == OWN_VACANCY]
+        if not own:
+            sys.exit(f"В {SITE}/sitemap.xml нет своих вакансий")
+        # Самые новые идут первыми. Страницу с разметкой ищем среди первых PROBE_LOOK: дальше читать сайт незачем
+        marked = {url: _has_job_markup(client, url) for url in own[:PROBE_LOOK]}
+        picked = [next((url for url, has in marked.items() if has == want), None) for want in (False, True)]
+        auth = {"Authorization": f"Bearer {google_token(client, account)}"}
+        for url in filter(None, picked):
+            print(f"\nСтраница {url}, разметка JobPosting на ней {'есть' if marked[url] else 'нет'}")
+            code, text = _notified(client, auth, url)
+            print(f"до сообщения Google отвечает о ней: {code or 'нет ответа'} {text or '—'}")
+            r = client.post(PUBLISH, headers=auth, json={"url": url, "type": "URL_UPDATED"})
+            # Ответ печатаем без фигурных скобок: GitHub закрывает их в журнале звёздочками из-за секрета с JSON
+            print(f"сообщение отправлено: ответ {r.status_code} {' '.join(r.text.translate(BRACES).split())[:500]}")
+            for wait in PROBE_WAITS:
+                code, text = _notified(client, auth, url, pause=wait)
+                print(f"через {wait} с Google отвечает о ней: {code or 'нет ответа'} {text or '—'}")
+                if code == 200:
+                    break
+        if None in picked:
+            print(f"\nСреди {len(marked)} самых новых своих вакансий нет страницы "
+                  f"{'без разметки' if picked[0] is None else 'с разметкой'} JobPosting")
+
+
+BRACES = str.maketrans("", "", "{}")
+PROBE_LOOK = 40  # среди скольких самых новых своих вакансий ищем по одной странице с разметкой и без
+PROBE_WAITS = (2, 20)  # через сколько секунд после сообщения спрашиваем, записал ли его Google
+
+
+def _has_job_markup(client: httpx.Client, url: str) -> bool:
+    """Есть ли на живой странице разметка JobPosting: Indexing API официально принимает только такие."""
+    try:
+        return '"JobPosting"' in client.get(url, follow_redirects=True).text
+    except httpx.HTTPError:
+        return False
+
+
+def notified_table(pages: list[tuple[bool, bool, bool, bool]]) -> list[tuple[str, int, int, int]]:
+    """[(сообщали, есть разметка, робот заходил, в индексе)] → строки отчёта: (подпись, страниц, заходил, в индексе)."""
+    table = []
+    for told in (True, False):
+        for markup in (True, False):
+            mine = [page for page in pages if page[0] == told and page[1] == markup]
+            label = f"{'сообщали' if told else 'не сообщали'}, {'с разметкой' if markup else 'без разметки'}"
+            table.append((label, len(mine), sum(page[2] for page in mine), sum(page[3] for page in mine)))
+    return table
+
+
 def _inspect_one(client: httpx.Client, auth: dict, prop: str, url: str) -> tuple[int, dict | str]:
     """Один запрос URL Inspection API: (200, результат проверки) или (код ответа, начало текста ошибки).
     Сбой сети — код 0: одна неответившая страница не должна ронять весь отчёт."""
@@ -287,6 +517,11 @@ def inspect(total: int) -> None:
                 else:
                     rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
                     rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
+        # Помогает ли Indexing API: о своих вакансиях мы сообщаем Google сразу, заходит ли после этого робот
+        told = {row[2]: _notified(client, auth, row[2], pause=NOTIFY_PAUSE) for row in rows if row[0] == OWN_VACANCY}
+        pushed = [(told[row[2]][0] == 200 and bool(told[row[2]][1]), _has_job_markup(client, row[2]),
+                   bool(row[3].get("lastCrawlTime")), row[3].get("verdict") == "PASS")
+                  for row in rows if row[0] == OWN_VACANCY]
 
     def indexed(status: dict) -> bool:
         return status.get("verdict") == "PASS"
@@ -335,6 +570,18 @@ def inspect(total: int) -> None:
             print(f"{group[:44]:44} {len(ages) - len(known):5} {sum(a < 3 for a in known):5} "
                   f"{sum(3 <= a <= 14 for a in known):5} {sum(a > 14 for a in known):5}")
 
+    print(f"\n== Indexing API, {OWN_VACANCY}: страниц, из них робот заходил, в индексе")
+    for label, n, crawled, good in notified_table(pushed):
+        print(f"{label[:44]:44} {n:5} {crawled:5} {good:5}")
+    for code, text in {code: text for code, text in told.values() if code not in (200, 404)}.items():
+        print(f"  Indexing API не ответил на вопрос о сообщении, такие страницы посчитаны как «не сообщали»: "
+              f"{code or 'нет ответа'} {text}")
+
+    # Встал ли обход и когда: последний заход робота на каждую проверенную страницу, по датам
+    print("\n== последний заход Google по датам: дата, страниц, из них вакансий")
+    for day, (n, vacancies) in sorted(crawl_days([(row[0], row[3].get("lastCrawlTime")) for row in rows]).items()):
+        print(f"{day} {n:5} {vacancies:5}")
+
     print("\n== разметка, которую Google увидел на страницах: вид разметки, страниц")
     for kind, n in Counter(k for row in rows for k in row[4]).most_common():
         print(f"{kind[:60]:60} {n:5}")
@@ -360,6 +607,8 @@ def main(argv: list[str]) -> None:
         report(int(argv[1]) if len(argv) > 1 else 28)
     elif argv[:1] == ["inspect"]:
         inspect(int(argv[1]) if len(argv) > 1 else 120)
+    elif argv[:1] == ["probe"]:
+        probe()
     else:
         sys.exit(__doc__)
 

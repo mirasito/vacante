@@ -208,3 +208,16 @@ export async function webhookSecret(token) {
   const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(token));
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("").slice(0, 32);
 }
+
+/**
+ * Ссылка на сайт из сообщения бота с метками utm, как у ссылок из Python (vacante/launch.py, utm): без них Метрика
+ * считает переход прямым заходом. campaign — что за сообщение (approved, shifts_sub), city — город, если известен.
+ */
+export function utm(url, campaign, city = null) {
+  const u = new URL(url);
+  u.searchParams.set("utm_source", "telegram");
+  u.searchParams.set("utm_medium", "bot");
+  u.searchParams.set("utm_campaign", campaign);
+  if (city) u.searchParams.set("utm_content", city);
+  return u.href;
+}

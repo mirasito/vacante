@@ -1,5 +1,6 @@
 // Запросы кабинета и формы размещения к боту (bot/src/cabinet.js, bot/src/webpost.js) и общие типы.
 import { authHeader, initData, setSession } from '../session';
+import { withCame, type Came } from './came';
 
 export const WORKER = 'https://vacante-bot.vacante-kz.workers.dev';
 export const CABINET_URL = `${WORKER}/api/cabinet`;
@@ -57,7 +58,7 @@ export type PostInfo = {
 
 export const POST_URL = `${WORKER}/api/post`;
 
-export type Action = { action: string; id?: number; count?: number; text?: string; fields?: Partial<PostFields>; tariff?: string; from?: string };
+export type Action = { action: string; id?: number; count?: number; text?: string; fields?: Partial<PostFields>; tariff?: string } & Came;
 export type ActionResult = CabinetState & { message?: string; error?: string; submitted?: number; outcome?: 'payment' | 'pending' };
 
 export const money = (n: number) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₸`;
@@ -84,12 +85,15 @@ export async function call(init?: Action): Promise<ActionResult> {
 }
 
 
-/** Открытая часть формы: города, тарифы, разбор текста и оформление (без входа). */
-export async function postApi<T>(body?: object): Promise<T & { error?: string }> {
-  const res = await fetch(POST_URL, {
+/**
+ * Открытая часть формы: города, тарифы, разбор текста и оформление (без входа).
+ * came — откуда пришли на форму: в адресе запроса настроек и в теле остальных, бот считает по ним воронку формы.
+ */
+export async function postApi<T>(came: Came, body?: object): Promise<T & { error?: string }> {
+  const res = await fetch(body ? POST_URL : withCame(POST_URL, came), {
     method: body ? 'POST' : 'GET',
     headers: body ? { 'Content-Type': 'application/json' } : undefined,
-    body: body ? JSON.stringify(body) : undefined,
+    body: body ? JSON.stringify({ ...body, ...came }) : undefined,
   });
   const data = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
   return data;

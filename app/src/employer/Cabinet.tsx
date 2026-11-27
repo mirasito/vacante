@@ -133,7 +133,7 @@ const T = {
   },
 };
 
-export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPost?: boolean; from?: string }) {
+export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPost?: boolean; from?: string; via?: string }) {
   const { c, lang } = props;
   const t = T[lang];
   const [state, setState] = useState<CabinetState | null>(null);
@@ -365,6 +365,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPo
         c={c}
         lang={lang}
         from={props.from || 'cabinet'}
+        via={props.via}
         state={authed ? state : null}
         onState={setState}
         onAuthed={() => setAuthed(true)}

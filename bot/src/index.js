@@ -36,10 +36,17 @@ const GREETING =
 // Он приходит по кнопке «🔔 Присылать вакансии» (callback settings), /settings открывает его сразу.
 const SUBSCRIBE_BUTTON = { text: "🔔 Присылать вакансии", callback_data: "settings" };
 
-// Метки в ссылках на анкету работодателя → jobs.came_from. pf: кнопка на странице профиля кандидата (server/src/page.ts),
-// ch: разовый пост для работодателей в наших каналах (vacante/announce.py)
+// Откуда работодатель пришёл в анкету → jobs.came_from, заполнено всегда. Команды /vacancy и /smena: cmd,
+// кнопки внутри бота: menu (posting.js), вставка из кабинета: app, форма на сайте: web и web_<from> (webpost.js).
+// Ссылки ?start=post_<метка> и ?start=smena_<метка>: сама метка (site, land, tg, app и любая новая до 12 букв,
+// код для неё менять не нужно), без метки link. У двух меток в базе своё имя: pf — кнопка на странице профиля
+// кандидата (server/src/page.ts), ch — разовый пост для работодателей в наших каналах (vacante/announce.py)
 const ENTRY = /^(post|smena)(?:_([a-z]+))?$/;
-const ENTRY_FROM = { pf: "profile", site: "site", land: "land", tg: "tg", app: "app", ch: "channel" };
+const ENTRY_FROM = { pf: "profile", ch: "channel" };
+// Так называются входы не по ссылке: ссылке эти имена не отдаём, иначе её не отличить от команды или кнопки
+const NOT_LINKS = ["cmd", "menu", "web"];
+const entryFrom = (label = "") =>
+  Object.hasOwn(ENTRY_FROM, label) ? ENTRY_FROM[label] : /^[a-z]{1,12}$/.test(label) && !NOT_LINKS.includes(label) ? label : "link";
 
 const STOPPED = "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start.";
 
@@ -62,7 +69,7 @@ export default {
     if (url.pathname === "/api/crm") return crmApi(request, env);  // CRM заведений в админке сайта
     if (url.pathname === "/api/jobs") return jobsApi(request, env);  // кто размещал вакансии, там же
     if (url.pathname === "/api/cabinet") return cabinetApi(request, env, ctx);  // кабинет работодателя в приложении
-    if (url.pathname === "/api/post") return postApi(request, env, cors(request, env));  // форма размещения на сайте
+    if (url.pathname === "/api/post") return postApi(request, env, cors(request, env), ctx);  // форма размещения на сайте
     if (url.pathname === "/api/login") {  // вход на сайт через бота, см. login.js
       const headers = cors(request, env);
       return request.method === "OPTIONS" ? new Response(null, { status: 204, headers }) : loginApi(request, env, headers);
@@ -165,11 +172,11 @@ async function onMessage(m, env) {
   if (name === "/start" && arg.startsWith("apply_")) return startApply(env, m, Number(arg.slice(6)));
   if (name === "/start" && arg.startsWith("login_")) return startLogin(env, m, arg.slice(6));
   if (name === "/start" && arg.startsWith("take_")) return startTake(env, m, Number(arg.slice(5)));
-  if (name === "/vacancy") return startPost(env, m);
-  if (name === "/smena") return startPost(env, m, "shift");
-  // Ссылки на анкету: ?start=post, ?start=smena и с меткой, откуда пришли: post_site, smena_tg (см. ENTRY_FROM)
+  if (name === "/vacancy") return startPost(env, m, "vacancy", "cmd");
+  if (name === "/smena") return startPost(env, m, "shift", "cmd");
+  // Ссылки на анкету: ?start=post, ?start=smena и с меткой, откуда пришли: post_site, smena_tg (см. entryFrom)
   const entry = name === "/start" && ENTRY.exec(arg);
-  if (entry) return startPost(env, m, entry[1] === "smena" ? "shift" : "vacancy", ENTRY_FROM[entry[2]] ?? null);
+  if (entry) return startPost(env, m, entry[1] === "smena" ? "shift" : "vacancy", entryFrom(entry[2]));
   if ((name === "/start" && arg === "employer") || name === "/employer") return employerMenu(env, chatId);
   if ((name === "/start" && arg === "smeny") || name === "/smeny") return subscribeShifts(env, chatId);
   if (name === "/start" && bot.fromLink(arg)) {

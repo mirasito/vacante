@@ -6,7 +6,7 @@
 // 3. Оплатить: платный тариф ставит вакансию в «ждёт оплаты» (bot/src/webpost.js), на проверку она уходит только
 //    после подтверждения перевода. Реквизиты Kaspi и «Я оплатил» здесь же.
 // Вход через Telegram нужен один раз перед отправкой: туда приходят отклики кандидатов.
-import { type ComponentRef, useCallback, useEffect, useRef, useState } from 'react';
+import { type ComponentRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -18,6 +18,7 @@ import type { Colors } from '../theme';
 import type { Lang } from '../types';
 import { Button, Chip, Loading, styles as ui } from '../ui';
 import { AuthError, call, money, postApi, type ActionResult, type CabinetState, type PostFields, type PostInfo } from './api';
+import { cameOf } from './came';
 import { PayBox } from './PayBox';
 
 const LOCAL = 'vacante.postDraft';
@@ -151,7 +152,9 @@ const REQUIRED: (keyof PostFields)[] = ['city', 'title', 'company', 'salary'];
 export function PostForm(props: {
   c: Colors;
   lang: Lang;
+  /** Откуда пришли на форму (came.ts): с какой кнопки и из какого источника визита на сайт. */
   from: string;
+  via?: string;
   /** Состояние кабинета, если уже вошли: черновик из бота, пакеты, модератор ли. */
   state: CabinetState | null;
   onState(next: CabinetState): void;
@@ -176,15 +179,17 @@ export function PostForm(props: {
   const [paidSent, setPaidSent] = useState(false);
   const scroll = useRef<ComponentRef<typeof ScrollView>>(null);
   const top = () => scroll.current?.scrollTo({ y: 0, animated: true });
+  // Метки идут с каждым запросом формы: бот считает по ним, на каком шаге её бросают
+  const came = useMemo(() => cameOf(props.from, props.via), [props.from, props.via]);
 
   // Города и тарифы открыты всем; черновик: с устройства, иначе из бота
   useEffect(() => {
-    postApi<PostInfo>().then((i) => (i.cities ? setInfo(i) : setNote({ text: t.error, error: true }))).catch(() => setNote({ text: t.error, error: true }));
+    postApi<PostInfo>(came).then((i) => (i.cities ? setInfo(i) : setNote({ text: t.error, error: true }))).catch(() => setNote({ text: t.error, error: true }));
     read<PostFields | null>(LOCAL, null).then((local) => {
       if (local && Object.values(local).some(Boolean)) setFields({ ...EMPTY, ...local });
       setLoaded(true);
     });
-  }, [t]);
+  }, [t, came]);
   const serverDraft = state?.draft;
   useEffect(() => {
     if (!loaded || !serverDraft) return;
@@ -204,12 +209,12 @@ export function PostForm(props: {
     setSaved(t.savedHere);
     if (!authed || !Object.values(fields).some(Boolean)) return;
     const timer = setTimeout(() => {
-      call({ action: 'save', fields, from: props.from })
+      call({ action: 'save', fields, ...came })
         .then(() => setSaved(t.saved))
         .catch(() => undefined);
     }, 2000);
     return () => clearTimeout(timer);
-  }, [fields, loaded, authed, step, t, props.from]);
+  }, [fields, loaded, authed, step, t, came]);
 
   const set = (field: keyof PostFields, value: string) => setFields((f) => ({ ...f, [field]: value }));
   const labels: Record<keyof PostFields, string> = {
@@ -221,7 +226,7 @@ export function PostForm(props: {
     setBusy('paste');
     setNote(null);
     try {
-      const r = await postApi<{ fields: Partial<PostFields>; found: (keyof PostFields)[] }>({ action: 'parse', text: paste });
+      const r = await postApi<{ fields: Partial<PostFields>; found: (keyof PostFields)[] }>(came, { action: 'parse', text: paste });
       if (r.error || !r.fields) {
         setNote({ text: r.error || t.error, error: true });
         return;
@@ -240,7 +245,7 @@ export function PostForm(props: {
     setBusy('check');
     setNote(null);
     try {
-      const r = await postApi<{ fields: Partial<PostFields>; changed_names: string[] }>({ action: 'tidy', fields });
+      const r = await postApi<{ fields: Partial<PostFields>; changed_names: string[] }>(came, { action: 'tidy', fields });
       if (r.fields) setFields((f) => ({ ...f, ...r.fields }));
       setTidied(r.changed_names?.length ? t.tidied(r.changed_names.join(', ')) : '');
       setStep('check');
@@ -260,7 +265,7 @@ export function PostForm(props: {
     setBusy('submit');
     setNote(null);
     try {
-      const r = await call({ action: 'submit', fields, tariff, from: props.from });
+      const r = await call({ action: 'submit', fields, tariff, ...came });
       props.onState(r);
       if (r.error) {
         setNote({ text: r.error, error: true });
@@ -276,7 +281,7 @@ export function PostForm(props: {
     } finally {
       setBusy('');
     }
-  }, [fields, tariff, props, t]);
+  }, [fields, tariff, props, t, came]);
 
   const paid = async () => {
     if (!result?.submitted) return;

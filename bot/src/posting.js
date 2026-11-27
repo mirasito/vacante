@@ -16,6 +16,7 @@ const postIntro = (price) =>
 const PASTE_HINT = "⚡ Быстрее: вставьте сюда текст вакансии или ссылку на неё (hh.kz, пост в Telegram-канале), я сам заполню анкету.";
 
 // Новый черновик вместо старого. Возвращает id черновика или текст ошибки.
+// cameFrom — откуда пришёл работодатель (jobs.came_from): его называет каждый вход в анкету, список в index.js
 export async function newDraft(env, chatId, from, kind, cameFrom) {
   const pending = await env.DB.prepare("SELECT COUNT(*) AS n FROM jobs WHERE employer_chat = ? AND status IN ('pending', 'payment')")
     .bind(chatId)
@@ -33,7 +34,7 @@ export async function newDraft(env, chatId, from, kind, cameFrom) {
   return { id: meta.last_row_id };
 }
 
-export async function startPost(env, m, kind = "vacancy", cameFrom = null) {
+export async function startPost(env, m, kind, cameFrom) {
   const chatId = m.chat.id;
   const created = await newDraft(env, chatId, m.from, kind, cameFrom);
   if (created.error) return send(env, chatId, created.error);

@@ -4,6 +4,8 @@
 // Черновик и отправка идут через кабинет (cabinet.js, нужен вход): действия save и submit ниже.
 // Отправка та же, что у кнопок бота (posting.submitDraft): платный тариф ставит вакансию в «ждёт оплаты»,
 // на проверку она уходит только после подтверждения перевода.
+// Воронка формы (form_events, миграция 0015): с каждым запросом приложение передаёт метки from и via (в адресе GET,
+// в теле POST), а бот считает шаги open, parse, tidy, draft и submit числами за день. Кто именно открыл форму, не пишем.
 import options from "./options.json" with { type: "json" };
 import * as job from "./employer.js";
 import { fetchPasted, parseVacancy, pasteUrl } from "./paste.js";
@@ -65,18 +67,70 @@ export function postInfo(env) {
   };
 }
 
-export async function postApi(request, env, headers) {
+const CAME_FROM = /^[a-z_]{1,20}$/;
+const VIA = /^[a-z0-9]{1,8}$/;
+const label = (re, value) => (typeof value === "string" && re.test(value) ? value : "");
+
+/**
+ * Метки запроса формы для воронки. from — с какой кнопки пришли: в базе web_<from> или web, то же потом в jobs.came_from.
+ * via — источник визита на сайт (google, chatgpt, tg, direct…): его считает сайт и дописывает к ссылке на форму,
+ * '' если неизвестен. given — запрос назвал хотя бы одну метку. steps — шаги воронки за этот запрос, их пишет countForm.
+ */
+export function formLabels(from, via) {
+  const known = label(CAME_FROM, from);
+  return { cameFrom: known ? `web_${known}` : "web", via: label(VIA, via), given: Boolean(from || via), steps: [] };
+}
+
+/**
+ * Пишет шаги формы за запрос в воронку (form_events): числа за день по меткам, о человеке и его устройстве ничего.
+ * Одна запись в D1 на запрос и в фоне: ответ её не ждёт, а ошибка счётчика запрос не роняет.
+ */
+export function countForm(env, ctx, form) {
+  if (!form.steps.length) return;
+  const written = writeSteps(env, form);
+  ctx?.waitUntil(written);
+}
+
+async function writeSteps(env, { cameFrom, via, steps }) {
+  try {
+    await env.DB.prepare(
+      `INSERT INTO form_events (day, came_from, via, step, n) VALUES ${steps.map(() => "(date('now', '+5 hours'), ?, ?, ?, 1)").join(", ")}
+       ON CONFLICT(day, came_from, via, step) DO UPDATE SET n = n + 1`,
+    ).bind(...steps.flatMap((step) => [cameFrom, via, step])).run();
+  } catch (err) {
+    console.error(err && err.stack ? err.stack : err);
+  }
+}
+
+// Шаг открытой части формы: open, parse или tidy. Запрос без from и via не считаем: так приходят роботы и старая сборка приложения
+function countStep(env, ctx, form, step) {
+  if (!form.given) return;
+  form.steps.push(step);
+  countForm(env, ctx, form);
+}
+
+export async function postApi(request, env, headers, ctx) {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
-  if (request.method === "GET") return Response.json(postInfo(env), { headers });
+  if (request.method === "GET") {
+    const query = new URL(request.url).searchParams;
+    countStep(env, ctx, formLabels(query.get("from"), query.get("via")), "open");
+    return Response.json(postInfo(env), { headers });
+  }
   if (request.method !== "POST") return Response.json({ error: "method" }, { status: 405, headers });
   const body = await request.json().catch(() => ({}));
+  const form = formLabels(body.from, body.via);
   if (body.action === "parse") {
     const text = String(body.text ?? "").trim().slice(0, 4000);
     if (text.length < 10) return Response.json({ error: "Вставьте текст вакансии целиком или ссылку на неё" }, { status: 400, headers });
     const r = await parseForForm(text);
+    if (!r.error) countStep(env, ctx, form, "parse");
     return Response.json(r, { status: r.error ? 400 : 200, headers });
   }
-  if (body.action === "tidy") return Response.json(tidyForForm(body.fields || {}), { headers });
+  if (body.action === "tidy") {
+    const r = tidyForForm(body.fields || {});
+    countStep(env, ctx, form, "tidy");
+    return Response.json(r, { headers });
+  }
   return Response.json({ error: "Неизвестное действие" }, { status: 400, headers });
 }
 
@@ -88,15 +142,14 @@ export function currentDraft(env, chatId) {
 
 export const draftView = (d) => (d ? { id: d.id, ...Object.fromEntries(Object.keys(STEP).map((f) => [f, d[f] ?? ""])) } : null);
 
-const CAME_FROM = /^[a-z_]{1,20}$/;
-
-/** Сохраняет поля формы в черновик (создаёт, если его нет). → { draft } или { error } */
-export async function saveDraft(env, user, input, from) {
+/** Сохраняет поля формы в черновик (создаёт, если его нет). form — метки запроса (formLabels). → { draft } или { error } */
+export async function saveDraft(env, user, input, form) {
   const fields = formFields(input);
   let draft = await currentDraft(env, user.id);
   if (!draft) {
-    const created = await newDraft(env, user.id, user, "vacancy", CAME_FROM.test(from || "") ? `web_${from}`.slice(0, 24) : "web");
+    const created = await newDraft(env, user.id, user, "vacancy", form.cameFrom);
     if (created.error) return created;
+    form.steps.push("draft");  // черновик завела форма: шаг воронки
     draft = await env.DB.prepare("SELECT * FROM jobs WHERE id = ?").bind(created.id).first();
   }
   const next = { ...draft };
@@ -113,9 +166,9 @@ export async function saveDraft(env, user, input, from) {
 const TARIFFS = ["basic", "pro", "credit", "free"];
 
 /** Отправка формы: сохранить, поправить текст, выбрать тариф. Копию бот пишет в чат, там же потом отклики. */
-export async function submitForm(env, user, input, tariff, from, ctx) {
+export async function submitForm(env, user, input, tariff, form, ctx) {
   if (!TARIFFS.includes(tariff)) return { error: "Выберите тариф" };
-  const saved = await saveDraft(env, user, input, from);
+  const saved = await saveDraft(env, user, input, form);
   if (saved.error) return saved;
   const lack = missing(saved.draft);
   if (lack.length) return { error: `Заполните: ${lack.map((f) => (f === "city" ? "город" : FIELD_NAMES[f])).join(", ")}` };
@@ -126,6 +179,7 @@ export async function submitForm(env, user, input, tariff, from, ctx) {
   ).bind(tidied.title, tidied.company, tidied.salary, tidied.schedule, tidied.address, tidied.details, tidied.id).run();
   const r = await submitDraft(env, user.id, { ...tidied, step: null }, tariff, ctx);
   if (r.error) return r;
+  form.steps.push("submit");  // ушла на оплату или на проверку: шаг воронки
   if (r.outcome === "payment") {
     // В чате те же реквизиты и «Я оплатил»: можно оплатить и оттуда
     await send(env, user.id, ...screen(job.postPayScreen(r.job, job.boostOffer(env))));

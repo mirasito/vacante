@@ -385,12 +385,12 @@ export function myJobsScreen(jobs, boost = null, now = new Date()) {
 export function boostOffer(env) {
   const kaspi = String(env.KASPI_DETAILS || "").trim();
   if (!kaspi) return null;
-  return { price: Number(env.BOOST_PRICE) || 3990, days: Number(env.BOOST_DAYS) || 14, kaspi,
-    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 1390, postPrice: env.POST_PRICE === undefined ? 990 : Number(env.POST_PRICE) || 0,
+  return { price: Number(env.BOOST_PRICE) || 4000, days: Number(env.BOOST_DAYS) || 14, kaspi,
+    shiftPrice: Number(env.SHIFT_BOOST_PRICE) || 1000, postPrice: env.POST_PRICE === undefined ? 1000 : Number(env.POST_PRICE) || 0,
     packs: parsePacks(env.PACKS), instagram: String(env.INSTAGRAM || "").trim() };
 }
 
-// Пакеты «Про»: PACKS = "3:9990:60,10:29990:90" — сколько вакансий, цена в тенге, сколько дней действует пакет
+// Пакеты «Про»: PACKS = "3:10000:60,10:30000:90" — сколько вакансий, цена в тенге, сколько дней действует пакет
 export function parsePacks(value) {
   return String(value || "").split(",").map((part) => part.trim().split(":").map(Number))
     .filter(([count, price, days]) => count > 0 && price > 0 && days > 0)
@@ -440,7 +440,7 @@ export function proReportScreen(j, applications, boost) {
   return { text, keyboard };
 }
 
-// Платное размещение (POST_PRICE, по умолчанию 900 ₸): вакансия или смена уходит на проверку только после
+// Платное размещение (POST_PRICE, по умолчанию 1 000 ₸): вакансия или смена уходит на проверку только после
 // оплаты. Без реквизитов Kaspi или с POST_PRICE = "0" размещение бесплатное, как раньше.
 export const postPrice = (boost) => (boost && boost.postPrice > 0 ? boost.postPrice : 0);
 

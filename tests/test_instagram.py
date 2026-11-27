@@ -101,7 +101,7 @@ def test_tips_and_employers_cards():
     image, text = instagram.tip_card(len(instagram.TIPS) + 1)
     assert text.startswith(instagram.TIPS[1][0]) and image[:2] == b"\xff\xd8"
     image, text = instagram.employers_card()
-    assert "990 ₸" in text and "Instagram" in text
+    assert "1\xa0000 ₸" in text and "Instagram" in text
 
 
 def graph(scopes=("instagram_basic", "instagram_content_publish"), fail_city_image=None, quota=0):

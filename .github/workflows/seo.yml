@@ -1,5 +1,7 @@
 # Google Search Console: клики и показы в поиске Google по дням, запросы, страницы, устройства,
 # и отправка карты сайта (vacante/searchping.py report). Запуск: Actions → «Поиск Google» → Run workflow.
+# Вторым шагом выборочная проверка индекса (searchping.py inspect): сколько страниц каждого вида Google
+# держит в индексе, где выбрал главной чужую страницу и когда заходил в последний раз.
 #
 # Нужен секрет GSC_SERVICE_ACCOUNT (один раз, ~10 минут). Он же включает мгновенную отправку
 # новых вакансий в Google (Indexing API) в каждом часовом обновлении.
@@ -21,6 +23,9 @@ on:
       days:
         description: "За сколько последних дней"
         default: "28"
+      inspect:
+        description: "Проверить индекс на стольких страницах (0 — не проверять, не больше 600)"
+        default: "120"
 
 permissions:
   contents: read
@@ -42,3 +47,13 @@ jobs:
           set -o pipefail
           python -m vacante.searchping report "${{ inputs.days || '28' }}" | tee gsc.txt
           { echo '```'; cat gsc.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Индекс
+        if: inputs.inspect != '0'
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+          PAGES: ${{ inputs.inspect || '120' }}
+        run: |
+          set -o pipefail
+          [[ $PAGES =~ ^[0-9]+$ ]] || { echo "::error::В поле inspect должно быть число"; exit 1; }
+          python -m vacante.searchping inspect "$PAGES" | tee index.txt
+          { echo '```'; cat index.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

@@ -325,6 +325,27 @@ def test_search_ping_sends_only_new_urls_and_own_vacancies_to_google():
     assert searchping.google_order(urls) == ["https://vacante.kz/v/a-2/"]
 
 
+def test_index_check_samples_every_kind_of_page_and_gives_spare_quota_to_vacancies():
+    from datetime import date
+
+    from vacante import searchping
+    assert searchping.page_group("https://vacante.kz/kk/v/hh-5/") == "вакансия hh (kk)"
+    assert searchping.page_group("https://vacante.kz/v/rabota4almaty-7/") == "вакансия из каналов и от работодателей"
+    assert searchping.page_group("https://vacante.kz/almaty/") == "город или раздел"
+    assert searchping.page_group("https://vacante.kz/kk/almaty/povar/") == "сфера, профессия или смены в городе (kk)"
+    assert searchping.page_group("https://vacante.kz/") == "главная"
+    xml = ('<url><loc>https://vacante.kz/</loc><lastmod>2026-11-27</lastmod>\n</url>'
+           + "".join(f'<url><loc>https://vacante.kz/v/hh-{i}/</loc><lastmod>2026-11-{10 + i:02}</lastmod></url>'
+                     for i in range(1, 18)))
+    pages = searchping.sitemap_pages(xml)
+    assert len(pages) == 18 and pages[0] == ("https://vacante.kz/", "2026-11-27")
+    sample = searchping.inspect_sample(pages, 10, date(2026, 11, 27), "день")
+    # Главная одна, остальные девять мест достались вакансиям; свежими считаются страницы моложе трёх дней
+    assert [g for g, _, _ in sample].count("главная") == 1 and len(sample) == 10
+    assert all(fresh == (url.endswith(("hh-15/", "hh-16/", "hh-17/")) or group == "главная") for group, url, fresh in sample)
+    assert sample == searchping.inspect_sample(pages, 10, date(2026, 11, 27), "день")
+
+
 def test_footer_has_google_preferred_source_button(tmp_path):
     raw = RawPost("telegram", "chan", 11, "https://t.me/chan/11", "Требуется повар, 300 000 тг",
                   datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")

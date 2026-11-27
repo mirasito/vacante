@@ -3,6 +3,7 @@
   python -m vacante.searchping diff OLD_SITEMAP NEW_SITEMAP OUT   — адреса, которых не было в прошлой карте сайта
   python -m vacante.searchping send URLS_FILE                     — отправить их в IndexNow и Google Indexing API
   python -m vacante.searchping report [дней]                      — сводка Search Console и отправка карты сайта
+  python -m vacante.searchping inspect [страниц]                  — выборочная проверка: что из карты сайта в индексе Google
 
 IndexNow (Bing, а через него поиск ChatGPT, Яндекс, Seznam и др.) работает без регистрации: ключ публичный,
 лежит файлом в корне сайта (INDEXNOW_KEY в vacante/site/build.py). Google Indexing API официально принимает
@@ -15,10 +16,12 @@ from __future__ import annotations
 import base64
 import json
 import os
+import random
 import re
 import sys
 import time
-from datetime import date, timedelta
+from collections import Counter, defaultdict
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote, urlparse
 
@@ -170,6 +173,155 @@ def report(days: int) -> None:
                 print("пока нет данных")
 
 
+# Суточная квота URL Inspection API — 2000 адресов на ресурс, в минуту 600
+INSPECT_MAX = 600
+# Страница моложе стольких дней: Google мог до неё ещё не дойти, считаем отдельно
+FRESH_DAYS = 3
+
+
+def page_group(url: str) -> str:
+    """Вид страницы для выборочной проверки индекса: копия hh, вакансия из канала, список города и т. д."""
+    parts = [p for p in urlparse(url).path.split("/") if p]
+    kk = parts[:1] == ["kk"]
+    if kk:
+        parts = parts[1:]
+    if parts[:1] == ["v"] and len(parts) > 1:
+        source = parts[1].split("-", 1)[0]
+        kind = {"hh": "вакансия hh", "olx": "вакансия OLX"}.get(source, "вакансия из каналов и от работодателей")
+    elif not parts:
+        kind = "главная"
+    elif len(parts) == 1:
+        kind = "город или раздел"
+    else:
+        kind = "сфера, профессия или смены в городе"
+    return kind + (" (kk)" if kk else "")
+
+
+def sitemap_pages(xml: str) -> list[tuple[str, str]]:
+    """[(адрес, дата изменения)] из карты сайта."""
+    return re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", xml)
+
+
+def inspect_sample(pages: list[tuple[str, str]], total: int, today: date, seed: str) -> list[tuple[str, str, bool]]:
+    """Выборка для проверки: поровну на каждый вид страниц, внутри вида случайно, но одинаково за день.
+    Возвращает [(вид, адрес, свежая)]: свежим страницам Google мог ещё не успеть."""
+    groups: dict[str, list[tuple[str, bool]]] = defaultdict(list)
+    for url, lastmod in pages:
+        fresh = (today - date.fromisoformat(lastmod[:10])).days < FRESH_DAYS
+        groups[page_group(url)].append((url, fresh))
+    rng = random.Random(seed)
+    picked = []
+    left = total
+    # От малых видов к большим: что не выбрали у главной и городов (их единицы), достаётся вакансиям
+    for i, group in enumerate(sorted(groups, key=lambda g: (len(groups[g]), g))):
+        items = sorted(groups[group])
+        take = min(len(items), max(1, left // (len(groups) - i)))
+        left -= take
+        for url, fresh in rng.sample(items, take):
+            picked.append((group, url, fresh))
+    return picked
+
+
+def _days_ago(stamp: str | None, now: datetime) -> float | None:
+    if not stamp:
+        return None
+    return (now - datetime.fromisoformat(stamp.replace("Z", "+00:00"))).total_seconds() / 86400
+
+
+def inspect(total: int) -> None:
+    """Что из карты сайта Google держит в индексе: URL Inspection API по выборке страниц каждого вида.
+    Сводного числа «Проиндексировано» в API нет, оно только в интерфейсе Search Console."""
+    account = service_account()
+    if not account:
+        sys.exit("Нет секрета GSC_SERVICE_ACCOUNT: шаги в шапке .github/workflows/seo.yml")
+    total = max(1, min(total, INSPECT_MAX))
+    now = datetime.now(timezone.utc)
+    with httpx.Client(timeout=60) as client:
+        pages = sitemap_pages(client.get(f"{SITE}/sitemap.xml", follow_redirects=True).text)
+        if not pages:
+            sys.exit(f"В {SITE}/sitemap.xml не нашлось адресов")
+        sizes = Counter(page_group(url) for url, _ in pages)
+        sample = inspect_sample(pages, total, now.date(), now.date().isoformat())
+        auth = {"Authorization": f"Bearer {google_token(client, account)}"}
+        prop = _property(client, auth)
+        print(f"Ресурс {prop}. В карте сайта {len(pages)} адресов, проверяю {len(sample)}")
+        rows = []  # (вид, свежая, адрес, ответ indexStatusResult, найденные виды разметки)
+        for group, url, fresh in sample:
+            r = client.post("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", headers=auth,
+                            json={"inspectionUrl": url, "siteUrl": prop, "languageCode": "ru"})
+            if r.status_code == 429:
+                print("Квота на сегодня кончилась, считаю по тому, что успел")
+                break
+            if r.status_code != 200:
+                print(f"  {url.replace(SITE, '')}: ошибка {r.status_code} {r.text[:160]}")
+                if r.status_code in (401, 403):
+                    break
+                continue
+            result = r.json().get("inspectionResult", {})
+            rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
+            rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
+            time.sleep(0.15)
+
+    def indexed(status: dict) -> bool:
+        return status.get("verdict") == "PASS"
+
+    print("\n== по видам страниц: в карте сайта, проверено, в индексе, % (отдельно страницы старше "
+          f"{FRESH_DAYS} дн.), оценка страниц в индексе")
+    estimate = 0.0
+    for group in sorted(sizes, key=lambda g: -sizes[g]):
+        mine = [row for row in rows if row[0] == group]
+        if not mine:
+            print(f"{group[:44]:44} {sizes[group]:6} —")
+            continue
+        good = sum(indexed(row[3]) for row in mine)
+        old = [row for row in mine if not row[1]]
+        old_good = sum(indexed(row[3]) for row in old)
+        share = good / len(mine)
+        estimate += share * sizes[group]
+        old_share = f"{old_good / len(old) * 100:5.0f}% из {len(old)}" if old else "    —"
+        print(f"{group[:44]:44} {sizes[group]:6} {len(mine):5} {good:5} {share * 100:5.0f}%   старше: {old_share}"
+              f"   ≈{share * sizes[group]:6.0f}")
+    print(f"Оценка: в индексе около {estimate:.0f} из {len(pages)} страниц карты сайта "
+          f"(выборка {len(rows)}, точность ±{100 / max(1, len(rows)) ** 0.5:.0f} п. п.)")
+
+    print("\n== состояние по ответу Google (все проверенные): страниц")
+    for state, n in Counter(row[3].get("coverageState", "—") for row in rows).most_common():
+        print(f"{state[:90]:90} {n:5}")
+
+    print("\n== состояние по видам страниц")
+    for group in sorted(sizes, key=lambda g: -sizes[g]):
+        states = Counter(row[3].get("coverageState", "—") for row in rows if row[0] == group)
+        if states:
+            print(f"{group}: " + "; ".join(f"{state} — {n}" for state, n in states.most_common()))
+
+    print("\n== какую страницу Google считает главной (canonical), когда выбрал не нашу")
+    other = [(row[2], row[3]) for row in rows
+             if row[3].get("googleCanonical") and row[3].get("googleCanonical") != row[3].get("userCanonical", row[2])]
+    print(f"не нашу выбрал у {len(other)} из {len(rows)}")
+    for url, status in other[:25]:
+        print(f"  {url.replace(SITE, '')[:60]:60} → {status['googleCanonical'].replace(SITE, '')[:70]}")
+
+    print("\n== когда Google последний раз заходил на страницу (дней назад): вид, никогда, до 3, 3–14, больше 14")
+    for group in sorted(sizes, key=lambda g: -sizes[g]):
+        ages = [_days_ago(row[3].get("lastCrawlTime"), now) for row in rows if row[0] == group]
+        if ages:
+            known = [a for a in ages if a is not None]
+            print(f"{group[:44]:44} {len(ages) - len(known):5} {sum(a < 3 for a in known):5} "
+                  f"{sum(3 <= a <= 14 for a in known):5} {sum(a > 14 for a in known):5}")
+
+    print("\n== разметка, которую Google увидел на страницах: вид разметки, страниц")
+    for kind, n in Counter(k for row in rows for k in row[4]).most_common():
+        print(f"{kind[:60]:60} {n:5}")
+    with_jobs = sum(any("ваканс" in k.lower() or "job" in k.lower() for k in row[4]) for row in rows
+                    if row[0].startswith("вакансия"))
+    print(f"вакансий с разметкой объявления о работе: {with_jobs} из "
+          f"{sum(row[0].startswith('вакансия') for row in rows)}")
+
+    print("\n== прочее: как Google получил страницу, робот, запреты")
+    for field in ("pageFetchState", "crawledAs", "robotsTxtState", "indexingState"):
+        print(f"{field}: " + "; ".join(f"{k} — {n}" for k, n in Counter(row[3].get(field, "—") for row in rows).most_common()))
+
+
 def main(argv: list[str]) -> None:
     if argv[:1] == ["diff"] and len(argv) == 4:
         old = Path(argv[1]).read_text("utf-8") if Path(argv[1]).exists() else ""
@@ -180,6 +332,8 @@ def main(argv: list[str]) -> None:
         send(Path(argv[1]))
     elif argv[:1] == ["report"]:
         report(int(argv[1]) if len(argv) > 1 else 28)
+    elif argv[:1] == ["inspect"]:
+        inspect(int(argv[1]) if len(argv) > 1 else 120)
     else:
         sys.exit(__doc__)
 

@@ -213,13 +213,20 @@ def report(days: int) -> None:
                 print(f"{row['keys'][0][:70]:70} {row['clicks']:6.0f} {row['impressions']:8.0f} {row['position']:6.1f}")
 
         # Доходят ли до Google наши сообщения о новых вакансиях (часовое обновление, google_index): спрашиваем
-        # у Indexing API про случайные свои вакансии из карты сайта. Квоту проверки индекса это не тратит
+        # у Indexing API про свои вакансии из карты сайта. Квоту проверки индекса это не тратит
         own = [(url, day) for url, day in sitemap_pages(client.get(f"{SITE}/sitemap.xml", follow_redirects=True).text)
                if page_group(url) == OWN_VACANCY]
-        asked = random.Random(date.today().isoformat()).sample(sorted(own), min(len(own), NOTIFY_SAMPLE))
-        answers = [(day, *_notified(client, auth, url)) for url, day in asked]
+        # Самые новые идут в карте сайта первыми: о них часовое обновление сообщало в последних прогонах
+        newest = own[:NOTIFY_NEWEST]
+        print("\n== Indexing API: самые новые свои вакансии по порядку карты сайта: адрес, ответ, время сообщения")
+        for url, _ in newest:
+            code, text = _notified(client, auth, url, pause=NOTIFY_PAUSE)
+            print(f"{url.replace(SITE, '')[:50]:50} {code or 'нет ответа'} {text or '—'}")
+        rest = sorted(set(own) - set(newest))
+        asked = random.Random(date.today().isoformat()).sample(rest, min(len(rest), NOTIFY_SAMPLE))
+        answers = [(day, *_notified(client, auth, url, pause=NOTIFY_PAUSE)) for url, day in asked]
         print(f"\n== Indexing API: о скольких своих вакансиях Google получил наше сообщение "
-              f"(спросил про {len(asked)} из {len(own)} в карте сайта)")
+              f"(спросил про {len(asked)} случайных из {len(own)} в карте сайта)")
         print("ответы: " + "; ".join(f"{code or 'нет ответа'} — {n}" for code, n in Counter(a[1] for a in answers).most_common())
               + ". 200 — сообщение дошло, 404 — о странице не сообщали")
         for code, text in {a[1]: a[2] for a in answers if a[1] not in (200, 404)}.items():
@@ -339,13 +346,19 @@ def crawl_days(crawls: list[tuple[str, str | None]]) -> dict[str, tuple[int, int
 OWN_VACANCY = "вакансия из каналов и от работодателей"  # о таких страницах часовое обновление сообщает в Indexing API
 
 
-NOTIFY_SAMPLE = 120  # про сколько своих вакансий спрашиваем Indexing API в отчёте: его квота на вопросы 180 в минуту
+# Про сколько своих вакансий отчёт спрашивает Indexing API: самые новые и случайные. На вопросы у Google квота
+# в минуту (на 88-м подряд ответил 429), поэтому между вопросами пауза: выходит не больше 75 в минуту
+NOTIFY_NEWEST = 30
+NOTIFY_SAMPLE = 60
+NOTIFY_PAUSE = 0.8
 
 
-def _notified(client: httpx.Client, auth: dict, url: str) -> tuple[int, str | None]:
+def _notified(client: httpx.Client, auth: dict, url: str, pause: float = 0) -> tuple[int, str | None]:
     """Дошло ли до Google наше сообщение об этой странице через Indexing API: (код ответа, пояснение).
     200 — дошло, пояснение — время последнего сообщения (None, если сообщали только об удалении).
-    404 — о странице не сообщали. Другой код — отказ Google, пояснение — начало его текста. 0 — сбой сети."""
+    404 — о странице не сообщали. Другой код — отказ Google, пояснение — начало его текста. 0 — сбой сети.
+    pause — сколько секунд подождать перед вопросом, чтобы не выйти за квоту в минуту."""
+    time.sleep(pause)
     try:
         r = client.get("https://indexing.googleapis.com/v3/urlNotifications/metadata", headers=auth, params={"url": url})
     except httpx.HTTPError as exc:
@@ -446,7 +459,7 @@ def inspect(total: int) -> None:
                     rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
                     rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
         # Помогает ли Indexing API: о своих вакансиях мы сообщаем Google сразу, заходит ли после этого робот
-        told = {row[2]: _notified(client, auth, row[2]) for row in rows if row[0] == OWN_VACANCY}
+        told = {row[2]: _notified(client, auth, row[2], pause=NOTIFY_PAUSE) for row in rows if row[0] == OWN_VACANCY}
         pushed = [(told[row[2]][0] == 200 and bool(told[row[2]][1]), _has_job_markup(client, row[2]),
                    bool(row[3].get("lastCrawlTime")), row[3].get("verdict") == "PASS")
                   for row in rows if row[0] == OWN_VACANCY]

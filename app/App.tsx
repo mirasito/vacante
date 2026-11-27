@@ -1094,7 +1094,7 @@ function Main() {
         />
       )}
 
-      <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]}>
+      <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]} role="tablist">
         <Tab c={c} active={tab === 'feed'} icon="pin" label={t('feed')} onPress={() => setTab('feed')} />
         <Tab
           c={c}

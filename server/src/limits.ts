@@ -29,11 +29,17 @@ export class DayCap {
   }
 }
 
+/** Сколько ключей держим, прежде чем убрать те, чьё окно уже кончилось. */
+const PRUNE_AT = 10_000;
+/** Больше стольких ключей с живым окном не держим: память важнее счётчиков. */
+const HARD_CAP = 200_000;
+
 /** Не больше limit очков за windowMs с одного ключа (адрес, пользователь). */
 export class RateLimit {
   private hits = new Map<string, { start: number; points: number }>();
   private readonly limit: number;
   private readonly windowMs: number;
+  private pruneAt = PRUNE_AT;
   constructor(limit = 60, windowMs = 60_000) {
     this.limit = limit;
     this.windowMs = windowMs;
@@ -41,7 +47,15 @@ export class RateLimit {
   take(key: string, now: number, points = 1): boolean {
     const hit = this.hits.get(key);
     if (!hit || now - hit.start >= this.windowMs) {
-      if (this.hits.size > 10_000) this.hits.clear();
+      // Раньше при 10 000 ключей карта очищалась целиком, и вместе с мусором пропадали
+      // заблокированные адреса: 10 000 запросов с разных адресов снимали блокировку подбора
+      // пароля. Теперь убираем только записи с кончившимся окном, а следующую чистку
+      // откладываем, пока карта снова не вырастет вдвое, чтобы не перебирать её на каждом запросе.
+      if (this.hits.size >= this.pruneAt) {
+        for (const [k, h] of this.hits) if (now - h.start >= this.windowMs) this.hits.delete(k);
+        if (this.hits.size > HARD_CAP) this.hits.clear();
+        this.pruneAt = Math.max(PRUNE_AT, this.hits.size * 2);
+      }
       this.hits.set(key, { start: now, points });
       return points <= this.limit;
     }

@@ -1,12 +1,17 @@
 """Архив закрытых вакансий (vacante.closed): что в него попадает после сбора и что из него уходит."""
 
 import json
+import shutil
+import subprocess
 from dataclasses import replace
 from datetime import datetime, timedelta, timezone
+
+import pytest
 
 from vacante import closed, collect, direct
 from vacante.models import RawPost, Vacancy
 from vacante.parse import parse_post
+from vacante.site.build import build
 from vacante.store import load_vacancies, save_vacancies
 
 NOW = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
@@ -167,3 +172,204 @@ def test_shard_number_is_stable():
     """Часть архива для id: числа записаны здесь, чтобы формула не поменялась незаметно (её повторяет страница 404)."""
     assert [closed.shard(i) for i in ("hh-1", "bot-7", "olx-398112345", "almaty_rabota01-12345", "")] == [78, 33, 188, 451, 0]
     assert all(0 <= closed.shard(f"chan_{i}-{i * 7919}") < closed.SHARDS for i in range(2000))
+
+
+# Страница 404 и части архива на сайте
+
+# Запускает скрипт страницы 404 в node: вместо браузера — заготовки document, location и fetch (части архива
+# читаются из собранного сайта). Печатает, что стало со страницей для каждого адреса
+HARNESS = r"""
+const fs = require('fs'), path = require('path');
+const [out, root, cases] = [process.argv[2], process.argv[3], JSON.parse(process.argv[4])];
+const html = fs.readFileSync(path.join(out, '404.html'), 'utf8');
+const code = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]).find((s) => s.includes("'/closed/'"));
+const el = () => ({ textContent: '', hidden: false, children: [], appendChild(child) { this.children.push(child); } });
+const run = ({ pathname, mode }) => new Promise((done) => {
+  const els = { 'gone-title': el(), 'gone-links': el(), 'gone-text': el() };
+  els['gone-title'].textContent = 'Вакансия уже закрыта';
+  els['gone-links'].hidden = true;
+  const document = { title: '404', documentElement: { lang: 'ru' }, getElementById: (id) => els[id], createElement: el };
+  const fetched = [];
+  const fetch = (url) => {
+    fetched.push(url);
+    if (mode === 'offline') return Promise.reject(new Error('нет сети'));
+    const file = path.join(out, url.slice(root.length));
+    if (!url.startsWith(root + '/') || !fs.existsSync(file)) return Promise.resolve({ ok: false, json: () => Promise.reject(new Error('это не JSON')) });
+    return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(fs.readFileSync(file, 'utf8'))) });
+  };
+  new Function('location', 'document', 'window', 'fetch', code)({ pathname }, document, mode === 'old' ? {} : { fetch }, fetch);
+  setTimeout(() => done({ title: els['gone-title'].textContent, links: els['gone-links'].children.map((a) => [a.textContent, a.href]),
+                          shown: !els['gone-links'].hidden, generic: !els['gone-text'].hidden, tab: document.title,
+                          lang: document.documentElement.lang, fetched }), 5);
+});
+(async () => {
+  const results = [];
+  for (const one of cases) results.push(await run(one));
+  console.log(JSON.stringify(results));
+})();
+"""
+
+
+def open_404(tmp_path, out, *addresses: str, root: str = "", mode: str = "") -> list[dict]:
+    """Что покажет страница 404 по каждому адресу: заголовок, ссылки, остался ли общий текст."""
+    node = shutil.which("node")
+    if not node:
+        pytest.skip("нет node: скрипт страницы 404 запустить нечем")
+    (tmp_path / "open404.js").write_text(HARNESS, "utf-8")
+    cases = json.dumps([{"pathname": address, "mode": mode} for address in addresses])
+    done = subprocess.run([node, str(tmp_path / "open404.js"), str(out), root, cases], capture_output=True, text=True,
+                          timeout=60, check=False)
+    assert done.returncode == 0, done.stderr
+    return json.loads(done.stdout)
+
+
+GENERIC = {"title": "Вакансия уже закрыта", "links": [], "shown": False, "generic": True, "tab": "404", "lang": "ru"}
+
+
+def site_with_archive(tmp_path, base_url: str = "https://vacante.kz", extra: dict | None = None):
+    """Сайт с тремя официантами и поваром в Алматы и продавцом в Астане; в архиве закрытые вакансии на все случаи."""
+    live = [card("chan_a", 100 + i, text=f"Кафе «Зерно {i}» ищет официанта, 2/2, {200 + i} 000 тг") for i in range(3)]
+    live += [card("chan_a", 110, text=COOK), card("chan_a", 111, text="Нужен продавец в магазин, 200 000 тг", city="astana")]
+    data = tmp_path / "data"
+    save_vacancies(data, live)
+    entry = lambda title, city, category, **more: {"title": title, "city": city, "category": category,  # noqa: E731
+                                                   "closed": "2026-10-20", **more}
+    closed.save(data, {
+        "chan_a-1": entry("Официант", "almaty", "horeca"),  # есть страница профессии
+        "chan_a-2": entry("Повар", "almaty", "horeca"),  # поваров мало для своей страницы: страница сферы
+        "chan_a-3": entry("Грузчик", "almaty", "warehouse"),  # ни профессии, ни сферы: страница города
+        "chan_a-4": entry("Курьер", "taraz", "delivery"),  # в городе сейчас нет вакансий
+        "hh-5": entry("Продавец в магазин у дома", None, "retail", title_kk="Үй жанындағы дүкенге сатушы"),
+        "chan_a-6": entry("Повар, Официант", "almaty", "horeca"),
+        "chan_a-7": entry("Официант", "atlantis", "horeca"),  # города больше нет в списке городов
+        "chan_a-8": entry("Сотрудник", "almaty", "space"),  # и сферы такой нет
+        "chan_a-100": entry("Официант", "almaty", "horeca"),  # снова на сайте: в частях архива её нет
+        **(extra or {})})
+    out = tmp_path / "public"
+    build(data, out, base_url, now=NOW)
+    return out
+
+
+def test_site_gets_the_archive_in_small_parts_with_the_best_list_page(tmp_path):
+    """Сборка кладёт архив частями closed/<n>.json: название, казахское название, город и лучшая страница списка
+    из тех, что есть в этой сборке."""
+    out = site_with_archive(tmp_path)
+    rows = {}
+    for part in (out / "closed").iterdir():
+        found = json.loads(part.read_text("utf-8"))
+        assert all(part.name == f"{closed.shard(key)}.json" for key in found)
+        rows.update(found)
+    assert rows == {
+        "chan_a-1": ["Официант", "Даяшы", "almaty", "almaty/oficiant"],
+        "chan_a-2": ["Повар", "Аспаз", "almaty", "almaty/horeca"],
+        "chan_a-3": ["Грузчик", "Жүк тиеуші", "almaty", "almaty"],
+        "chan_a-4": ["Курьер", "", "taraz", ""],
+        "hh-5": ["Продавец в магазин у дома", "Үй жанындағы дүкенге сатушы", "", ""],
+        "chan_a-6": ["Повар, Официант", "Аспаз, Даяшы", "almaty", "almaty/oficiant"],
+        "chan_a-7": ["Официант", "Даяшы", "", ""],
+        "chan_a-8": ["Сотрудник", "Қызметкер", "almaty", "almaty"],
+    }
+    # Адреса карты сайта прежние: части архива в неё не попадают
+    assert "closed" not in (out / "sitemap.xml").read_text("utf-8")
+
+
+def test_site_builds_without_the_archive_or_with_a_broken_one(tmp_path):
+    for number, junk in enumerate((None, "{ мусор", "[]", '{"chan_a-1": {"title": 5}}')):
+        data = tmp_path / str(number) / "data"
+        save_vacancies(data, [card("chan_a", 1, text=COOK)])
+        if junk is not None:
+            (data / closed.FILE).write_text(junk, "utf-8")
+        out = tmp_path / str(number) / "public"
+        build(data, out, now=NOW)
+        assert not (out / "closed").exists() and "Вакансия уже закрыта" in (out / "404.html").read_text("utf-8")
+
+
+def test_404_page_names_the_closed_vacancy_and_links_to_similar_ones(tmp_path):
+    """По адресу закрытой вакансии страница 404 называет её и город и ведёт на похожие; под /kk/ — по-казахски."""
+    out = site_with_archive(tmp_path)
+    page = (out / "404.html").read_text("utf-8")
+    assert "<h1 id=\"gone-title\">Вакансия уже закрыта</h1>" in page and "http-equiv" not in page
+    assert len(page.encode()) < 10_000  # страница остаётся маленькой
+    ru, kk, no_slash, city_only, no_page, no_city, two = open_404(
+        tmp_path, out, "/v/chan_a-1/", "/kk/v/chan_a-1/", "/v/chan_a-2", "/v/chan_a-3/", "/v/chan_a-4/", "/kk/v/hh-5/",
+        "/v/chan_a-6/")
+    assert ru == {"title": "Вакансия «Официант» в Алматы закрыта", "shown": True, "generic": False, "lang": "ru",
+                  "links": [["Похожие вакансии в Алматы", "/almaty/oficiant/"], ["Работа в Алматы", "/almaty/"]],
+                  "tab": "Вакансия «Официант» в Алматы закрыта | vacante.kz",
+                  "fetched": [f"/closed/{closed.shard('chan_a-1')}.json"]}
+    assert kk == {"title": "Алматыдағы «Даяшы» вакансиясы жабылған", "shown": True, "generic": False, "lang": "kk",
+                  "links": [["Алматыдағы ұқсас вакансиялар", "/kk/almaty/oficiant/"], ["Алматыдағы жұмыс", "/kk/almaty/"]],
+                  "tab": "Алматыдағы «Даяшы» вакансиясы жабылған | vacante.kz",
+                  "fetched": [f"/closed/{closed.shard('chan_a-1')}.json"]}
+    assert no_slash["links"] == [["Похожие вакансии в Алматы", "/almaty/horeca/"], ["Работа в Алматы", "/almaty/"]]
+    assert (city_only["title"], city_only["links"]) == ("Вакансия «Грузчик» в Алматы закрыта", [["Работа в Алматы", "/almaty/"]])
+    # Страницы города в этой сборке нет: город называем, а ссылка ведёт на главную
+    assert (no_page["title"], no_page["links"]) == ("Вакансия «Курьер» в Таразе закрыта", [["Работа в Казахстане", "/"]])
+    assert (no_city["title"], no_city["links"]) == ("«Үй жанындағы дүкенге сатушы» вакансиясы жабылған",
+                                                    [["Қазақстандағы жұмыс", "/kk/"]])
+    assert two["title"] == "Вакансия «Повар, Официант» в Алматы закрыта"
+
+
+def test_404_page_keeps_the_generic_text_when_it_knows_nothing(tmp_path):
+    """Вакансии в архиве нет, адрес не вакансии, сеть подвела, браузер без fetch: остаётся прежний общий текст."""
+    out = site_with_archive(tmp_path)
+    unknown, live_again, other, deep, wrong_id = open_404(tmp_path, out, "/v/chan_a-999/", "/v/chan_a-100/", "/almaty/nothing/",
+                                                          "/v/chan_a-1/extra/", "/v/chan a-1/")
+    assert unknown == {**GENERIC, "fetched": [f"/closed/{closed.shard('chan_a-999')}.json"]}
+    assert live_again == {**GENERIC, "fetched": [f"/closed/{closed.shard('chan_a-100')}.json"]}
+    assert other == deep == wrong_id == {**GENERIC, "fetched": []}  # не адрес вакансии: архив и не спрашиваем
+    [offline] = open_404(tmp_path, out, "/v/chan_a-1/", mode="offline")
+    assert offline == {**GENERIC, "fetched": [f"/closed/{closed.shard('chan_a-1')}.json"]}
+    [old] = open_404(tmp_path, out, "/v/chan_a-1/", mode="old")
+    assert old == {**GENERIC, "fetched": []}
+
+
+def test_404_page_trusts_nothing_from_the_archive_file(tmp_path):
+    """Значения из части архива идут на страницу только текстом, а в ссылку — только путь списка в городе вакансии."""
+    out = site_with_archive(tmp_path)
+    bad = {"evil-1": ["<img src=x onerror=alert(1)>", "", "almaty", "//evil.example/x"],
+           "evil-2": ["Повар", "", "almaty", "astana/povar"], "evil-3": "строка", "evil-4": ["Повар", "", "nowhere", "nowhere/povar"],
+           "evil-5": ["Повар", "", "almaty", "almaty/povar?x=1"], "evil-6": ["Повар", "", "almaty", "javascript:alert(1)"],
+           "evil-7": [5, "", "almaty", "almaty"], "evil-8": ["Повар", 5, 5, 5], "evil-9": ["{where} $& Повар", "", "almaty", "almaty"]}
+    for key, row in bad.items():
+        part = out / "closed" / f"{closed.shard(key)}.json"
+        part.parent.mkdir(exist_ok=True)
+        part.write_text(json.dumps({**(json.loads(part.read_text("utf-8")) if part.exists() else {}), key: row}), "utf-8")
+    home = [["Работа в Казахстане", "/"]]
+    html, other_city, not_a_row, no_such_city, query, script, number, numbers, braces, proto = open_404(
+        tmp_path, out, *(f"/v/{key}/" for key in bad), "/v/constructor/")
+    assert (html["title"], html["links"]) == ("Вакансия «<img src=x onerror=alert(1)>» в Алматы закрыта", home)
+    assert other_city["links"] == query["links"] == script["links"] == home
+    assert (no_such_city["title"], no_such_city["links"]) == ("Вакансия «Повар» закрыта", home)
+    assert (numbers["title"], numbers["links"]) == ("Вакансия «Повар» закрыта", home)
+    assert braces["title"] == "Вакансия «{where} $& Повар» в Алматы закрыта"
+    for untouched in (not_a_row, number, proto):
+        assert untouched["title"] == GENERIC["title"] and untouched["generic"] and not untouched["shown"]
+
+
+def test_404_page_works_under_a_base_path_and_finds_every_id_in_its_part(tmp_path):
+    """Сайт на <user>.github.io/vacante: адреса с /vacante. И браузер считает номер части так же, как сборка."""
+    ids = ["bot-7", "olx-398112345", "hh-123456789", "almaty_rabota01-12345", "A-Z_09-1", "-", "_", "x" * 80,
+           *(f"chan_{i}-{i * 7919}" for i in range(40))]
+    extra = {key: {"title": f"Повар {number}", "city": "almaty", "category": "horeca", "closed": "2026-10-20"}
+             for number, key in enumerate(ids)}
+    out = site_with_archive(tmp_path, "https://example.github.io/vacante", extra)
+    results = open_404(tmp_path, out, *(f"/vacante/v/{key}/" for key in ids), root="/vacante")
+    assert [r["title"] for r in results] == [f"Вакансия «Повар {number}» в Алматы закрыта" for number in range(len(ids))]
+    assert results[0]["links"] == [["Похожие вакансии в Алматы", "/vacante/almaty/horeca/"], ["Работа в Алматы", "/vacante/almaty/"]]
+    assert results[0]["fetched"] == [f"/vacante/closed/{closed.shard('bot-7')}.json"]
+    [kk, outside] = open_404(tmp_path, out, "/vacante/kk/v/bot-7/", "/v/bot-7/", root="/vacante")
+    assert kk["links"][1] == ["Алматыдағы жұмыс", "/vacante/kk/almaty/"]
+    assert outside == {**GENERIC, "fetched": []}  # адрес не под /vacante: это не наш сайт
+
+
+def test_expired_vacancy_goes_all_the_way_from_collection_to_the_404_page(tmp_path):
+    """Вся цепочка: у вакансии вышел срок — сбор записал её в архив — сборка положила в часть — страница 404 её назвала."""
+    save_vacancies(tmp_path / "data", [card("chan_a", 1, days_ago=15), card("chan_a", 2, text=COOK)])
+    collect_once(tmp_path)
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, now=NOW)
+    assert not (out / "v" / "chan_a-1").exists() and (out / "v" / "chan_a-2" / "index.html").exists()
+    [gone] = open_404(tmp_path, out, "/v/chan_a-1/")
+    assert (gone["title"], gone["links"]) == ("Вакансия «Бариста» в Алматы закрыта",
+                                              [["Похожие вакансии в Алматы", "/almaty/horeca/"], ["Работа в Алматы", "/almaty/"]])

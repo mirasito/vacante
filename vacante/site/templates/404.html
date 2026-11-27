@@ -1,7 +1,52 @@
 {% extends "base.html" %}
 {% block title %}Страница не найдена · Бет табылмады | vacante.kz{% endblock %}
+{% block head %}<style>
+#gone-links a { display: block; background: var(--pill); border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; text-decoration: none; font-weight: 600; }
+#gone-links a:first-child { background: var(--accent); color: var(--on-accent); }
+</style>{% endblock %}
 {% block content %}
-<section class="hero"><h1>Вакансия уже закрыта</h1></section>
+<section class="hero"><h1 id="gone-title">Вакансия уже закрыта</h1></section>
+<nav id="gone-links" hidden></nav>
+<div id="gone-text">
 <p>Эта страница больше не существует: скорее всего, вакансию закрыли. <a href="{{ root }}/">Смотрите свежие вакансии</a>.</p>
 <p lang="kk">Бұл бет енді жоқ: вакансия жабылған болуы мүмкін. <a href="{{ root }}/kk/">Жаңа вакансияларды қараңыз</a>.</p>
+</div>
+{# По адресу ушедшей вакансии (/v/<id>/ или /kk/v/<id>/) страница узнаёт её в архиве закрытых (vacante/closed.py):
+   берёт одну часть closed/<n>.json и вместо общего текста пишет, какая вакансия закрыта, со ссылками на похожие
+   и на город. n считается из id так же, как closed.shard. Архива нет, id в нём нет, сеть подвела — остаётся общий
+   текст выше. Значения из архива идут на страницу только текстом (textContent), а путь списка в ссылку — только
+   если он из букв a-z, цифр и дефиса и лежит в городе вакансии. Ответ сервера остаётся 404, переходов нет. #}
+<script>
+(() => {
+  const D = {{ gone | safe }};
+  const path = location.pathname, m = path.slice(D.root.length).match(/^\/(kk\/)?v\/([A-Za-z0-9_-]+)\/?$/);
+  if (!m || path.indexOf(D.root) || !window.fetch) return;
+  const id = m[2], kk = m[1] ? 1 : 0, T = D.texts[kk], $ = (name) => document.getElementById(name);
+  let n = 0;
+  for (let i = 0; i < id.length; i++) n = (n * 31 + id.charCodeAt(i)) % D.shards;
+  fetch(D.root + '/closed/' + n + '.json').then((r) => (r.ok ? r.json() : null)).then((rows) => {
+    const row = rows && rows[id];
+    if (!Array.isArray(row) || typeof row[0] != 'string' || !row[0]) return;
+    const title = (kk && typeof row[1] == 'string' && row[1]) || row[0];
+    const city = typeof row[2] == 'string' && Object.prototype.hasOwnProperty.call(D.cities, row[2]) ? row[2] : '';
+    let page = typeof row[3] == 'string' && /^[a-z0-9-]+(\/[a-z0-9-]+)?$/.test(row[3]) ? row[3] : '';
+    if (!city || (page != city && page.indexOf(city + '/'))) page = '';
+    const fill = (text, slug) => text.replace(/\{(title|where)\}/g, (_, key) => (key == 'title' ? title : D.cities[slug][kk]));
+    const home = D.root + (kk ? '/kk/' : '/'), links = [];
+    if (page.indexOf('/') > 0) links.push([fill(T[2], city), home + page + '/']);
+    links.push(page ? [fill(T[3], city), home + city + '/'] : [fill(T[3], ''), home]);
+    for (const [text, href] of links) {
+      const a = document.createElement('a');
+      a.href = href;
+      a.textContent = text;
+      $('gone-links').appendChild(a);
+    }
+    $('gone-title').textContent = document.title = fill(T[city ? 0 : 1], city);
+    document.title += ' | vacante.kz';
+    if (kk) document.documentElement.lang = 'kk';
+    $('gone-links').hidden = false;
+    $('gone-text').hidden = true;
+  }).catch(() => {});
+})();
+</script>
 {% endblock %}

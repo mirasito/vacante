@@ -15,11 +15,12 @@ import zlib
 from collections import defaultdict
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from vacante import channels, launch, shifts
+from vacante import channels, closed, launch, shifts
 from vacante import venues as venue_store
 from vacante.direct import BOT_USERNAME, FORM_URL, POST_URL
 from vacante.geo import MAP_WORTHY
@@ -432,6 +433,34 @@ def site_ld(base_url: str, lang: str) -> str:
     ])
 
 
+def closed_parts(archive: dict[str, dict], live: set[str], written: set[str]) -> dict[int, dict[str, list[str]]]:
+    """Архив закрытых вакансий (vacante.closed) частями для страницы 404: {номер части: {id: [название,
+    казахское название, если оно другое, город, страница списка]}}. Страница списка — лучшая из тех, что есть
+    в этой сборке (written): профессия в городе, иначе сфера в городе, иначе город, иначе пусто.
+    Вакансий, которые сейчас на сайте (live), в частях нет."""
+    parts: dict[int, dict[str, list[str]]] = defaultdict(dict)
+    for key, item in archive.items():
+        if key in live:
+            continue
+        city = item["city"] if item["city"] in CITIES else ""
+        named = SimpleNamespace(title=item["title"], title_kk=item.get("title_kk"))  # всё, что нужно названию и профессиям
+        places = [f"{city}/{prof}" for prof in professions_of(named)] + [f"{city}/{item['category']}", city]
+        title_kk = i18n.title(named, "kk")
+        parts[closed.shard(key)][key] = [item["title"], title_kk if title_kk != item["title"] else "", city,
+                                         next((p for p in places if p in written), "") if city else ""]
+    return parts
+
+
+def gone_data(root: str) -> str:
+    """Данные для скрипта страницы 404: тексты на обоих языках (0 — русский, 1 — казахский) и города в форме «где»;
+    под пустым ключом — вся страна, для ссылки на главную."""
+    texts = ["Вакансия «{title}» в {where} закрыта", "Вакансия «{title}» закрыта", "Похожие вакансии в {where}",
+             "Работа в {where}"]
+    return ld_json({"root": root, "shards": closed.SHARDS,
+                    "texts": [[i18n.t(lang, text) for text in texts] for lang in i18n.LANGS],
+                    "cities": {slug: [city_in(slug or None, lang) for lang in i18n.LANGS] for slug in ("", *CITIES)}})
+
+
 def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: datetime | None = None,
           admin_password: str | None = None) -> int:
     now = now or datetime.now(timezone.utc)
@@ -595,7 +624,15 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
               pay_note=pay_note(v), job=lambda lang: job if lang == "ru" else None,
               crumbs=lambda lang, v=v: vacancy_crumbs(v, base_url, lang, prof_of(v)))
 
-    (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404"), "utf-8")
+    # Страница 404 и архив закрытых вакансий для неё: по ссылке на ушедшую вакансию она называет её и ведёт к похожим
+    parts = closed_parts(closed.load(data_dir), {v.id for v in vacancies}, {path for path, _ in pages})
+    if parts:
+        (out / "closed").mkdir()
+    for number, rows in parts.items():
+        (out / "closed" / f"{number}.json").write_text(
+            json.dumps(rows, ensure_ascii=False, sort_keys=True, separators=(",", ":")), "utf-8")
+    (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404", gone=gone_data(root)),
+                                  "utf-8")
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки. Больше html из этого
     # файла никуда не идёт (bot/src/logic.js, examples), поэтому ссылки в нём помечены как «examples»
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": shifts.perks(v), "pay": monthly_pay(v) or 0,

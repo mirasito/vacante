@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Vacante — вакансии свайпами</title>
+    <!-- Шаблон страницы веб-версии (npx expo customize public/index.html): у шаблона Expo нет описания,
+         канонического адреса и превью ссылки, поэтому поисковик и мессенджеры видели одно «You need to enable JavaScript» -->
+    <meta name="description" content="Вакансии Казахстана свайпами: кафе, магазины, склады, доставка. Откликайтесь с профилем и видеокружком, без резюме." />
+    <link rel="canonical" href="https://vacante.kz/app/" />
+    <meta property="og:site_name" content="vacante.kz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vacante.kz/app/" />
+    <meta property="og:title" content="Vacante — вакансии свайпами" />
+    <meta property="og:description" content="Вакансии Казахстана свайпами: кафе, магазины, склады, доставка." />
+    <meta property="og:image" content="https://vacante.kz/static/icon-512.png" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary" />
+    <!-- Тёмная тема с первого кадра: без этого до запуска приложения белая вспышка -->
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // В Telegram скрипт Mini App грузим сразу, вместе с бандлом, а не после него (app/src/platform.ts
+      // ждёт этот же тег). onerror ставит флаг, чтобы приложение не ждало ответа, которого не будет
+      if (/tgWebApp/.test(location.hash + location.search)) {
+        var tg = document.createElement('script');
+        tg.src = 'https://telegram.org/js/telegram-web-app.js';
+        tg.async = true;
+        tg.onerror = function () { window.__vacanteTelegramFailed = true; };
+        document.head.appendChild(tg);
+      }
+    </script>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+      /* Браузерные 8 px отступа сдвигали экран при каждом запуске */
+      body { margin: 0; background: #fff; color: #1B2023; }
+      @media (prefers-color-scheme: dark) { body { background: #1B2023; color: #F2F5F6; } }
+      /* Заглушка, пока качается и запускается бандл: React заменит её своим экраном */
+      #boot { margin: auto; padding: 24px; text-align: center; font: 17px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      #boot a { color: inherit; }
+    </style>
+  <meta name="theme-color" content="#1B2023">
+<link rel="icon" href="/app/favicon.ico"/></head>
+
+  <body>
+    <noscript>
+      <p style="font: 17px/1.5 system-ui, sans-serif; padding: 24px">
+        Приложение Vacante работает с включённым JavaScript. Все вакансии без него — на
+        <a href="https://vacante.kz/">vacante.kz</a>.
+      </p>
+    </noscript>
+    <div id="root"><div id="boot" role="status">Загружаем вакансии…<br />Бос орындар жүктелуде…</div></div>
+    <script>
+      // Бандл не загрузился или не запустился за 15 с (обрыв сети): не оставляем человека с пустым экраном
+      setTimeout(function () {
+        var boot = document.getElementById('boot');
+        if (boot) boot.innerHTML = 'Не загрузилось. <a href="">Обновить страницу</a> или открыть ' +
+          '<a href="https://t.me/vacantekz_bot">бота @vacantekz_bot</a>.<br />Жүктелмеді. Бетті жаңартыңыз.';
+      }, 15000);
+    </script>
+  <script src="/app/_expo/static/js/web/index-d3c00178d9f5f6c48817f1acb4d16af1.js" defer></script>
+</body>
+</html>

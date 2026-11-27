@@ -3,8 +3,9 @@
 # Вторым шагом выборочная проверка индекса (searchping.py inspect): сколько страниц каждого вида Google
 # держит в индексе, где выбрал главной чужую страницу и когда заходил в последний раз.
 #
-# Нужен секрет GSC_SERVICE_ACCOUNT (один раз, ~10 минут). Он же включает мгновенную отправку
-# новых вакансий в Google (Indexing API) в каждом часовом обновлении.
+# Нужен секрет GSC_SERVICE_ACCOUNT (один раз, ~10 минут). Он же включает отправку новых вакансий
+# с разметкой JobPosting в Google (Indexing API) в каждом часовом обновлении. Записывает ли Google эти
+# сообщения, показывает строка «Google Indexing API» в журнале обновления и шаг probe ниже.
 # 1. https://console.cloud.google.com/projectcreate — создать проект «vacante».
 # 2. Включить в нём два API:
 #    https://console.cloud.google.com/apis/library/searchconsole.googleapis.com

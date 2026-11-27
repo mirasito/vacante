@@ -121,3 +121,39 @@ def test_probe_tells_google_about_two_newest_own_vacancies_and_asks_whether_it_w
     # Фигурных скобок в журнале нет: GitHub закрыл бы их звёздочками
     assert 'сообщение отправлено: ответ 200 "urlNotificationMetadata"' in out and "{" not in out and "}" not in out
     assert out.count("Google отвечает о ней: 404") == 6
+
+
+def test_hourly_send_tells_google_only_about_pages_with_job_markup_and_says_whether_it_was_recorded(monkeypatch):
+    urls = ["https://vacante.kz/almaty/", "https://vacante.kz/v/hh-1/", "https://vacante.kz/kk/v/kanal-3/",
+            "https://vacante.kz/v/kanal-3/", "https://vacante.kz/v/kanal-2/", "https://vacante.kz/v/kanal-1/"]
+    told, recorded = [], {"yes": False}
+
+    def answer(request: httpx.Request) -> httpx.Response:
+        if request.url.host == "indexing.googleapis.com" and request.method == "POST":
+            import json
+            told.append(json.loads(request.content)["url"])
+            return httpx.Response(200, json={"urlNotificationMetadata": {"url": told[-1]}})
+        if request.url.host == "indexing.googleapis.com":
+            if recorded["yes"]:
+                return httpx.Response(200, json={"latestUpdate": {"notifyTime": "2026-11-27T06:28:09Z"}})
+            return httpx.Response(404, json={"error": {"code": 404, "message": "Requested entity was not found."}})
+        # Разметка есть у вакансий с работодателем: kanal-3 без неё
+        return httpx.Response(200, text="<p>вакансия</p>" if request.url.path == "/v/kanal-3/"
+                              else '<script type="application/ld+json">{"@type": "JobPosting"}</script>')
+
+    monkeypatch.setattr(searchping, "service_account", lambda: {"client_email": "a@b"})
+    monkeypatch.setattr(searchping, "google_token", lambda client, account: "t")
+    monkeypatch.setattr(searchping, "RECORD_PAUSE", 0)
+    with httpx.Client(transport=httpx.MockTransport(answer)) as client:
+        # Google ответил 200, но на вопрос о сообщении говорит «не сообщали»: в журнале это видно
+        line = searchping.google_index(client, urls)
+        assert told == ["https://vacante.kz/v/kanal-2/", "https://vacante.kz/v/kanal-1/"]
+        assert line == ("Google Indexing API: 2 адресов с разметкой JobPosting из 3 новых своих вакансий, "
+                        "ответы [200], сообщение Google не записал (на вопрос о сообщении ответ 404)")
+        recorded["yes"] = True
+        assert searchping.google_index(client, urls).endswith("ответы [200], сообщение Google записал")
+        # Страниц с разметкой среди новых нет: ничего не отправляем
+        told.clear()
+        assert searchping.google_index(client, urls[:4]) == (
+            "Google Indexing API: среди 1 новых своих вакансий нет страниц с разметкой JobPosting")
+        assert told == []

@@ -7,9 +7,15 @@
   python -m vacante.searchping probe                              — записывает ли Google наши сообщения: одна вакансия от начала до конца
 
 IndexNow (Bing, а через него поиск ChatGPT, Яндекс, Seznam и др.) работает без регистрации: ключ публичный,
-лежит файлом в корне сайта (INDEXNOW_KEY в vacante/site/build.py). Google Indexing API официально принимает
-страницы с разметкой JobPosting, но нужен сервисный аккаунт Google: JSON-ключ в секрете GSC_SERVICE_ACCOUNT,
-а почта аккаунта добавлена владельцем сайта в Search Console. Без секрета шаги Google пропускаются.
+лежит файлом в корне сайта (INDEXNOW_KEY в vacante/site/build.py). Google Indexing API принимает только
+страницы с разметкой JobPosting, поэтому send сообщает ему о новых своих вакансиях, у которых она есть.
+Нужен сервисный аккаунт Google: JSON-ключ в секрете GSC_SERVICE_ACCOUNT, а почта аккаунта добавлена
+владельцем сайта в Search Console. Без секрета шаги Google пропускаются.
+
+Ответ 200 на сообщение не значит, что Google его записал: 27 ноября 2026 проверка показала, что Google
+отвечает 200, а на вопрос о том же адресе говорит «не сообщали» (404), со страницей с разметкой так же.
+Поэтому send после отправки спрашивает Google о первой странице и пишет в журнал, записано ли сообщение,
+а probe показывает весь путь на двух страницах.
 """
 
 from __future__ import annotations
@@ -37,6 +43,7 @@ SITE = os.environ.get("SITE_URL", "https://vacante.kz").rstrip("/")
 GOOGLE_PER_RUN = int(os.environ.get("GOOGLE_PER_RUN", "8"))
 INDEXNOW_MAX = 10_000  # больше за один запрос IndexNow не принимает
 SCOPES = "https://www.googleapis.com/auth/indexing https://www.googleapis.com/auth/webmasters"
+PUBLISH = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 
 
 def sitemap_urls(xml: str) -> list[str]:
@@ -97,9 +104,14 @@ def google_index(client: httpx.Client, urls: list[str]) -> str:
     account = service_account()
     if not account:
         return "Google Indexing API: нет секрета GSC_SERVICE_ACCOUNT, пропускаю"
-    picked = google_order(urls)[:GOOGLE_PER_RUN]
-    if not picked:
+    own = google_order(urls)
+    if not own:
         return "Google Indexing API: новых своих вакансий нет"
+    # Indexing API принимает только страницы с разметкой JobPosting, а она есть не у каждой своей вакансии
+    # (build.job_posting_ld). Смотрим саму выложенную страницу: сайт к этому шагу уже обновлён
+    picked = [url for url in own[:MARKUP_LOOK] if _has_job_markup(client, url)][:GOOGLE_PER_RUN]
+    if not picked:
+        return f"Google Indexing API: среди {len(own)} новых своих вакансий нет страниц с разметкой JobPosting"
     auth = {"Authorization": f"Bearer {google_token(client, account)}"}
     codes = []
     for url in picked:
@@ -109,7 +121,15 @@ def google_index(client: httpx.Client, urls: list[str]) -> str:
             return f"Google Indexing API: 403, добавьте {account['client_email']} владельцем в Search Console"
         if r.status_code == 429:  # квота на сутки кончилась
             break
-    return f"Google Indexing API: {len(codes)} адресов, ответы {sorted(set(codes))}"
+    # Ответ 200 значит только, что запрос принят. Записал ли Google сообщение, видно по вопросу о первой странице
+    code, stamp = _notified(client, auth, picked[0], pause=RECORD_PAUSE)
+    recorded = "записал" if code == 200 and stamp else f"не записал (на вопрос о сообщении ответ {code or 'не пришёл'})"
+    return (f"Google Indexing API: {len(codes)} адресов с разметкой JobPosting из {len(own)} новых своих вакансий, "
+            f"ответы {sorted(set(codes))}, сообщение Google {recorded}")
+
+
+MARKUP_LOOK = 60  # на стольких новых своих вакансиях за прогон проверяем разметку
+RECORD_PAUSE = 2  # через сколько секунд после отправки спрашиваем Google, записал ли он сообщение
 
 
 def send(path: Path) -> None:
@@ -382,9 +402,6 @@ def notify_days(answers: list[tuple[str, int, str | None]]) -> list[tuple[str, i
         days[day[:10]][0] += 1
         days[day[:10]][1] += code == 200 and bool(stamp)
     return [(day, n, told) for day, (n, told) in sorted(days.items())]
-
-
-PUBLISH = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 
 
 def probe() -> None:

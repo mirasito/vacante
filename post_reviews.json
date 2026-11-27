@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T16:57:36+00:00",
+ "updated_at": "2026-11-27T17:57:53+00:00",
  "reviews": {
   "astana_job_vakansii-129780": {
    "verdict": "approve",
@@ -4104,34 +4104,6 @@
    "at": "2026-11-13T16:57:06+00:00",
    "reason": "Вакансия в Костанае, не в Алматы"
   },
-  "astana_hh-1880": {
-   "verdict": "approve",
-   "at": "2026-11-13T17:56:42+00:00",
-   "fields": {
-    "title": "Продавец-кассир",
-    "employer": "Korean Shop",
-    "salary_min": 250000,
-    "salary_max": null,
-    "salary_period": "month",
-    "schedule": "2/2",
-    "perks": []
-   }
-  },
-  "hh-139488117": {
-   "verdict": "approve",
-   "at": "2026-11-13T17:56:42+00:00",
-   "fields": {
-    "title": "Повар",
-    "employer": "Рестобар «Proseccarna»",
-    "schedule": "4/2",
-    "address": "ул. Бухар Жырау, 28"
-   }
-  },
-  "hh-139487648": {
-   "verdict": "reject",
-   "at": "2026-11-13T17:56:42+00:00",
-   "reason": "Офисная должность: продажи в тендерах"
-  },
   "zhumys_astana_kz-17466": {
    "verdict": "approve",
    "at": "2026-11-13T17:56:42+00:00",
@@ -4145,35 +4117,6 @@
     ]
    }
   },
-  "rabota_semey_official-6925": {
-   "verdict": "reject",
-   "at": "2026-11-13T17:56:42+00:00",
-   "reason": "Мало сведений: нет зарплаты, заведения и адреса"
-  },
-  "rabota_semey_official-6924": {
-   "verdict": "approve",
-   "at": "2026-11-13T17:56:42+00:00",
-   "fields": {
-    "title": "Сушист",
-    "schedule": "10:00–23:00",
-    "address": "район Затона",
-    "perks": [
-     "Без опыта",
-     "Обучение"
-    ]
-   }
-  },
-  "rabota_semey_official-6927": {
-   "verdict": "approve",
-   "at": "2026-11-13T17:56:42+00:00",
-   "fields": {
-    "title": "Банщица",
-    "employer": "Баня «Алтын Тага»",
-    "perks": [
-     "Ежедневная оплата"
-    ]
-   }
-  },
   "hh-139488534": {
    "verdict": "approve",
    "at": "2026-11-13T18:56:45+00:00",
@@ -4182,11 +4125,6 @@
     "schedule": "Подработка, по договорённости",
     "address": "пр. Аль-Фараби, 5"
    }
-  },
-  "hh-138984713": {
-   "verdict": "reject",
-   "at": "2026-11-13T18:56:45+00:00",
-   "reason": "Офисная должность"
   },
   "hh-139488267": {
    "verdict": "approve",
@@ -28219,6 +28157,22 @@
     "title": "Продавец-консультант одежды и обуви",
     "employer": "Магазин «RM»",
     "address": "Азия Орталыгы, ж/м Жанаконыс, 394А"
+   }
+  },
+  "rabota4almaty-6952": {
+   "verdict": "approve",
+   "at": "2026-11-27T17:57:53+00:00",
+   "fields": {
+    "employer": "Чайхана «Каусар»"
+   }
+  },
+  "rabota4almaty-6948": {
+   "verdict": "approve",
+   "at": "2026-11-27T17:57:53+00:00",
+   "fields": {
+    "title": "Кальянный мастер",
+    "employer": "Лаундж-бар «Chasha»",
+    "address": "ул. Утепова, 31, блок 4"
    }
   }
  }

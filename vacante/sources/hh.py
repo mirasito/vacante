@@ -145,6 +145,11 @@ def _salary(item: dict) -> tuple[int | None, int | None, str | None]:
     return low, high, period
 
 
+_ADDRESS_IN_NAME = re.compile(
+    r"\s*\((?=[^()]*(?:\bул\b|улиц|\bпр\b|пр-т|проспект|\bмкр\b|микрорайон|\bд\.|\bтрц\b|\bтц\b|\bбц\b|\bжк\b|көше|даңғыл|шоссе|"
+    r"переул))[^()]*\)", re.I)
+
+
 def _text(item: dict) -> str:
     snippet = item.get("snippet") or {}
     parts = []
@@ -197,7 +202,9 @@ def to_vacancy(item: dict) -> Vacancy | None:
     schedule = _schedule(item)
     published = datetime.fromisoformat(item["published_at"]).astimezone(timezone.utc)
     # «Сату менеджер/Менеджер по продажам»: на сайте и в каналах по-русски, казахское для казахской версии
-    title, title_kk = split_title(name[:1].upper() + name[1:])
+    # «Пекарь (ул. Карла Маркса, 9)»: адрес в названии делает заголовки страниц длинными и разными только адресом,
+    # а адрес и так есть на странице отдельной строкой
+    title, title_kk = split_title(_ADDRESS_IN_NAME.sub("", name[:1].upper() + name[1:]).strip() or name)
     lat, lon = _point(item, city)
     return Vacancy(
         id=f"{SOURCE}-{item['id']}",

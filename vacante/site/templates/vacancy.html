@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block title %}{{ title(v) }}{% if v.employer %}, {{ v.employer }}{% endif %} — {{ city_name(v.city) }} | vacante.kz{% endblock %}
+{# Без работодателя заголовок различает зарплата, без неё адрес: иначе «Продавец-консультант — Астана» повторялся десятки раз #}
+{% block title %}{{ title(v) }}{% if v.employer %}, {{ v.employer }}{% else %}{% set s = salary_label(v) %}{% if s %}, {{ s }}{% elif v.address %}, {{ v.address[:40] }}{% endif %}{% endif %} — {{ city_name(v.city) }} | vacante.kz{% endblock %}
 {% block description %}{{ t("{title} в {where}", title=title(v), where=city_in(v.city), city=city_name(v.city)) }}{% set s = salary_label(v) %}{% if s %}, {{ s }}{% endif %}{% if v.schedule %}, {{ t("график {schedule}", schedule=v.schedule) }}{% endif %}. {{ v.text[:120] }}{% endblock %}
 {% block og_image %}{% set place = venue(v) %}{% if place and place.avatar %}{{ base_url }}/venues/{{ place.avatar }}{% else %}{{ base_url }}/static/icon-512.png{% endif %}{% endblock %}
 {% block head %}{% if job %}<script type="application/ld+json">{{ job | safe }}</script>

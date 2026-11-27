@@ -23,19 +23,43 @@ function cors(request, env) {
   };
 }
 
+// Подбор пароля: как у сервера (server/src/admin-logins.ts), после MAX_WRONG неверных ключей за окно
+// с одного адреса отвечаем 429 до конца окна и ключ не сравниваем. Счётчик в D1, таблица admin_tries.
+export const MAX_WRONG = 10;
+export const WRONG_WINDOW_S = 15 * 60;
+
 // null, если пароль админки верный, иначе готовый ответ с ошибкой
-async function deny(request, env, headers) {
+async function deny(request, env, headers, now) {
   if (!env.ADMIN_PASSWORD) return Response.json({ error: "нет пароля админки" }, { status: 503, headers });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const at = Math.floor(now.getTime() / 1000);
+  const tries = await env.DB.prepare("SELECT start, wrong FROM admin_tries WHERE ip = ?").bind(ip).first();
+  if (tries && at - tries.start < WRONG_WINDOW_S && tries.wrong >= MAX_WRONG) {
+    const wait = WRONG_WINDOW_S - (at - tries.start);
+    return Response.json({ error: `Слишком много неверных паролей, попробуйте через ${Math.ceil(wait / 60)} мин.` },
+      { status: 429, headers: { ...headers, "Retry-After": String(wait) } });
+  }
   if (request.headers.get("Authorization") !== `Bearer ${await crmKey(env.ADMIN_PASSWORD)}`) {
+    // Окно кончилось: счёт с единицы; в SET все start и wrong берутся из старой строки
+    await env.DB.prepare(
+      "INSERT INTO admin_tries (ip, start, wrong) VALUES (?1, ?2, 1) ON CONFLICT(ip) DO UPDATE SET " +
+        "wrong = CASE WHEN ?2 - start >= ?3 THEN 1 ELSE wrong + 1 END, " +
+        "start = CASE WHEN ?2 - start >= ?3 THEN ?2 ELSE start END",
+    ).bind(ip, at, WRONG_WINDOW_S).run();
     return Response.json({ error: "forbidden" }, { status: 403, headers });
   }
   return null;
 }
 
+/** Раз в час из scheduled: убрать счётчики, у которых окно кончилось. */
+export async function cleanTries(env, now = new Date()) {
+  await env.DB.prepare("DELETE FROM admin_tries WHERE start < ?").bind(Math.floor(now.getTime() / 1000) - WRONG_WINDOW_S).run();
+}
+
 export async function crmApi(request, env, now = new Date()) {
   const headers = cors(request, env);
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
-  const denied = await deny(request, env, headers);
+  const denied = await deny(request, env, headers, now);
   if (denied) return denied;
   if (request.method === "GET") {
     const { results } = await env.DB.prepare("SELECT venue, status, note, contacted_at, updated_at FROM crm").all();
@@ -71,10 +95,10 @@ export async function crmApi(request, env, now = new Date()) {
 // Кто размещал вакансии через бота: для вкладки «Работодатели» в админке. Только то, что бот и так
 // показывает модераторам в карточке «От: …» (имя и @username из Telegram), плюс id чата для ссылки.
 // Отдаётся по запросу из браузера и нигде не сохраняется на GitHub.
-export async function jobsApi(request, env) {
+export async function jobsApi(request, env, now = new Date()) {
   const headers = cors(request, env);
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
-  const denied = await deny(request, env, headers);
+  const denied = await deny(request, env, headers, now);
   if (denied) return denied;
   if (request.method !== "GET") return new Response("method not allowed", { status: 405, headers });
   const { results } = await env.DB.prepare(

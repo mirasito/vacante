@@ -8,7 +8,7 @@
 // Профили соискателей хранит сервер в Казахстане: что касается профиля, бот передаёт ему (server.js).
 import { applyAnswer, startApply } from "./applying.js";
 import { cabinetApi, cors } from "./cabinet.js";
-import { crmApi, jobsApi } from "./crm.js";
+import { cleanTries, crmApi, jobsApi } from "./crm.js";
 import { wakeDaily, wakeUpdate } from "./cron.js";
 import { endDialog, load, myJobs, save } from "./db.js";
 import * as job from "./employer.js";
@@ -105,6 +105,8 @@ export default {
     ctx.waitUntil(proReports(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
     // Старые коды входа на сайт: каждый POST /api/login только добавляет строку, чистим здесь
     ctx.waitUntil(cleanLogins(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
+    // Счётчики неверных паролей админки с кончившимся окном
+    ctx.waitUntil(cleanTries(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },
 };
 

@@ -295,9 +295,15 @@ test("напоминание о подписке: сбой отправки и �
   ).run();
 
   // Отметка ставится до отправки: Telegram не ответил, но второй раз не пишем
-  await seed([231]);
-  globalThis.fetch = async () => { throw new Error("нет сети"); };
-  await assert.rejects(nudgeSubscribers(env, day), /нет сети/);
+  // Сбой одной отправки не прерывает остальных
+  await seed([231, 235]);
+  globalThis.fetch = async (url, init) => {
+    if (JSON.parse(init.body).chat_id === 231) throw new Error("нет сети");
+    return fakeFetch(calls)(url, init);
+  };
+  assert.equal(await nudgeSubscribers(env, day), 1);
+  assert.equal(calls.length, 1);
+  calls.length = 0;
   globalThis.fetch = fakeFetch(calls);
   assert.equal(await nudgeSubscribers(env, day), 0);
   assert.equal(calls.length, 0);

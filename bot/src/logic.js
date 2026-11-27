@@ -125,7 +125,7 @@ export function screen(name, sub) {
 // Напоминание тому, кто начал настраивать подписку и не включил её: один раз (index.js nudgeSubscribers).
 // Город не выбран (шаг city): тот же вопрос ещё раз. Выбран: говорим, что будем присылать, а включает человек кнопкой
 export function nudgeScreen(sub) {
-  if (sub.setup === "city") {
+  if (sub.setup === "city" && !sub.city) {
     const { text, keyboard } = screen("city", sub);
     return { text: `Вы просили присылать вакансии, но не выбрали город, поэтому я пока ничего не присылаю.\n\n${text}`, keyboard };
   }

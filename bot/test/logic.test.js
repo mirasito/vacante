@@ -153,6 +153,12 @@ test("напоминание о незаконченной подписке: б�
     text: `${unfinished}Могу присылать новые вакансии: Астана · Кафе и рестораны. Включить?`,
     keyboard,
   });
+  // Строка до миграции с уже выбранным городом снова открыла вопрос о городе: напоминание не говорит, что города нет
+  const reopened = { ...bot.newSubscription(), city: "astana", categories: ["horeca"], setup: "city" };
+  assert.deepEqual(bot.nudgeScreen(reopened), {
+    text: `${unfinished}Могу присылать новые вакансии: Астана · Кафе и рестораны. Включить?`,
+    keyboard,
+  });
   const everywhere = press(bot.newSubscription(), "city:all", "go:perks", "perk:salary", "pay");
   assert.equal(everywhere.setup, "perks");
   assert.deepEqual(bot.nudgeScreen(everywhere), {

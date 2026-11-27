@@ -249,8 +249,13 @@ export async function nudgeSubscribers(env, now = new Date()) {
     const { meta } = await env.DB.prepare("UPDATE subscribers SET nudged = 1 WHERE chat_id = ? AND nudged = 0 AND updated_at = ?")
       .bind(row.chat_id, row.updated_at).run();
     if (!meta.changes) continue;
-    await send(env, row.chat_id, ...screen(bot.nudgeScreen(bot.fromRow(row))));
-    sent++;
+    try {
+      await send(env, row.chat_id, ...screen(bot.nudgeScreen(bot.fromRow(row))));
+      sent++;
+    } catch (e) {
+      // Сеть или лимит запросов: этому человеку напоминания уже не будет, остальным пишем дальше
+      console.log(`напоминание о подписке не отправлено: ${e?.message ?? e}`);
+    }
   }
   return sent;
 }

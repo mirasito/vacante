@@ -4185,6 +4185,13 @@
   "v": 3,
   "checked_at": "2026-11-04T13:44:39+00:00"
  },
+ "aktobe:shabut": {
+  "name": "Shabut",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
+ },
  "aktobe:shefkuhni qazaqstan": {
   "name": "ShefKuhni Qazaqstan",
   "city": "aktobe",
@@ -5815,6 +5822,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T09:43:32+00:00"
+ },
+ "almaty:aba group": {
+  "name": "ABA group",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
  },
  "almaty:abay academy online": {
   "name": "Abay academy online",
@@ -16129,7 +16143,7 @@
   "checked_at": "2026-11-20T05:43:48+00:00",
   "website": "http://kandb.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001076393",
-  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -16207,6 +16221,21 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T19:45:11+00:00"
+ },
+ "almaty:kran group": {
+  "name": "KRAN GROUP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "website": "http://krangroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001100257874",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "e538a7e36b20f509.jpg",
+  "avatar_source": "website"
  },
  "almaty:kraska kz": {
   "name": "KRASKA.KZ",
@@ -21314,6 +21343,20 @@
    "website"
   ]
  },
+ "almaty:salut de lux": {
+  "name": "Salut de Lux",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "instagram": "salut_de_luxe",
+  "website": "http://saluthotel.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001027991312",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:salut hotel": {
   "name": "Salut Hotel",
   "city": "almaty",
@@ -23314,6 +23357,13 @@
   "v": 3,
   "checked_at": "2026-11-22T07:42:58+00:00"
  },
+ "almaty:tgl kaz logistics тиджиэл каз логистикс": {
+  "name": "TGL KAZ LOGISTICS (ТИДЖИЭЛ КАЗ ЛОГИСТИКС)",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
+ },
  "almaty:th consulting kazakhstan тиэйч консалтинг казахстан": {
   "name": "TH CONSULTING KAZAKHSTAN (ТИЭЙЧ КОНСАЛТИНГ КАЗАХСТАН)",
   "city": "almaty",
@@ -24792,6 +24842,13 @@
    "telegram",
    "website"
   ]
+ },
+ "almaty:xconnect": {
+  "name": "Xconnect",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
  },
  "almaty:xpress link logistics": {
   "name": "XPRESS LINK LOGISTICS",
@@ -40358,6 +40415,13 @@
   "v": 3,
   "checked_at": "2026-10-29T06:44:07+00:00"
  },
+ "almaty:частная компания international trading system limited": {
+  "name": "ЧАСТНАЯ КОМПАНИЯ INTERNATIONAL TRADING SYSTEM LIMITED",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
+ },
  "almaty:частная компания vekas ltd": {
   "name": "Частная компания Vekas Ltd",
   "city": "almaty",
@@ -41251,6 +41315,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-15T20:41:19+00:00"
+ },
+ "almaty:әдемі ай": {
+  "name": "Әдемі-ай",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "instagram": "ademi_ai",
+  "website": "http://ademi-ai.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000839009",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:026 промышленное решение": {
   "name": "026 Промышленное решение",
@@ -42883,6 +42961,20 @@
   "website": "https://ayacom.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001087729750",
   "avatar_checked_at": "2026-11-23T19:42:31+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "astana:azmt": {
+  "name": "AZMT",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "instagram": "azmt.kz",
+  "website": "http://azmt.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001029279498",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -45003,6 +45095,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-09T23:46:11+00:00"
+ },
+ "astana:erg kazakhstan": {
+  "name": "ERG Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "instagram": "ergkazakhstan",
+  "website": "http://erg.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001022258252",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:etalon holding": {
   "name": "Etalon Holding",
@@ -57693,6 +57799,23 @@
   "instagram": "baritonkaraoke",
   "source": "https://2gis.kz/astana/firm/70000001032443131"
  },
+ "astana:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "telegram": "kariofficial",
+  "website": "http://kari.com/",
+  "source": "https://2gis.kz/astana/firm/70000001068997834",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "1375e6a330280e2c.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:карлов": {
   "name": "Карлов",
   "city": "astana",
@@ -57770,6 +57893,15 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-03T04:43:49+00:00"
+ },
+ "astana:кафе chinar": {
+  "name": "кафе CHINAR",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "instagram": "chinar___kafe",
+  "source": "https://2gis.kz/astana/firm/70000001089776074"
  },
  "astana:кафе nanmai": {
   "name": "Кафе Nanmai",
@@ -61798,6 +61930,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T15:45:29+00:00"
+ },
+ "astana:ситимед": {
+  "name": "СитиМед",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
  },
  "astana:ск рахат": {
   "name": "СК Рахат",
@@ -67008,6 +67147,20 @@
   "v": 3,
   "checked_at": "2026-10-31T02:43:59+00:00"
  },
+ "atyrau:медфармимпорт": {
+  "name": "МЕДФАРМИМПОРТ",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "instagram": "medpharmimport.kz",
+  "website": "http://medpharmimport.kz/",
+  "source": "https://2gis.kz/atyrau/firm/70000001051408481",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "atyrau:мейман": {
   "name": "МЕЙМАН",
   "city": "atyrau",
@@ -67243,6 +67396,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-01T15:43:07+00:00"
+ },
+ "atyrau:сапаров": {
+  "name": "Сапаров",
+  "city": "atyrau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
  },
  "atyrau:сапсан": {
   "name": "САПСАН",
@@ -73449,6 +73609,23 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-10-31T07:43:27+00:00"
+ },
+ "kokshetau:кари кз": {
+  "name": "КАРИ КЗ",
+  "city": "kokshetau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00",
+  "telegram": "kariofficial",
+  "website": "http://kari.com/",
+  "source": "https://2gis.kz/kokshetau/firm/70000001033007781",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "f3791e909685e25e.jpg",
+  "avatar_source": "telegram"
  },
  "kokshetau:касенов а ж": {
   "name": "Касенов А.Ж",
@@ -80304,6 +80481,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T18:43:31+00:00"
+ },
+ "petropavlovsk:sales ups": {
+  "name": "Sales Ups",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
  },
  "petropavlovsk:sardana": {
   "name": "SARDANA",
@@ -93079,6 +93263,13 @@
   "v": 3,
   "checked_at": "2026-11-19T06:44:05+00:00"
  },
+ "ust-kamenogorsk:dobren group": {
+  "name": "Dobren Group",
+  "city": "ust-kamenogorsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T06:03:24+00:00"
+ },
  "ust-kamenogorsk:doscar group": {
   "name": "DOSCAR GROUP",
   "city": "ust-kamenogorsk",
@@ -95776,7 +95967,7 @@
   "instagram": "kitlogistic_kz",
   "website": "https://tk-kit.ru/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001020926036",
-  "avatar_checked_at": "2026-11-20T05:43:49+00:00",
+  "avatar_checked_at": "2026-11-27T06:03:26+00:00",
   "avatar_tried": [
    "website"
   ]

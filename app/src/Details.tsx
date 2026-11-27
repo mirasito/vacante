@@ -31,6 +31,8 @@ export function Details(props: {
   onOther(v: Vacancy): void;
   onClose(): void;
   onSave(): void;
+  /** «Скрыть»: то же, что свайп влево. Свайп доступен не всем, поэтому есть и кнопка. */
+  onHide?(): void;
   onApply?(): void;
   /** «Пожаловаться»: только когда вошли через Telegram (жалоба уходит модератору с аккаунтом). */
   onReport?(): void;
@@ -69,7 +71,8 @@ export function Details(props: {
           />
         ) : (
           <>
-            <ScrollView style={ui.flex}>
+            {/* Прокрутку текста вакансии можно сфокусировать и листать стрелками (WCAG 2.1.1) */}
+            <ScrollView style={ui.flex} focusable aria-label={i18n.title(v, lang)}>
               <VacancyFull v={v} lang={lang} c={c} home={props.home} />
               {v.employer ? (
                 <Pressable
@@ -94,6 +97,7 @@ export function Details(props: {
                 <Button c={c} small ghost icon="chat" label="WhatsApp" onPress={() => shareVacancy(v, lang, 'whatsapp')} />
                 {v.map ? <Button c={c} small ghost icon="map" label={t('onMap')} onPress={() => openUrl(v.map!)} /> : null}
                 <Button c={c} small ghost icon="link" label={t('onSite')} onPress={() => openUrl(v.url)} />
+                {props.onHide ? <Button c={c} small ghost icon="close" label={t('skip')} onPress={props.onHide} /> : null}
                 {props.onReport ? <Button c={c} small ghost icon="shield" label={V[lang].report} onPress={props.onReport} /> : null}
               </View>
             </View>

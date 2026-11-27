@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import * as i18n from '../i18n';
 import { copyText, haptic, openUrl, openWhatsapp } from '../platform';
 import { phoneLabel } from '../profile/texts';
 import {
@@ -185,7 +186,13 @@ export function ApplySheet(props: {
   return (
     <View style={s.backdrop}>
       <SafeAreaView style={[s.sheet, { backgroundColor: c.card }]} edges={['bottom']}>
-        <Pressable onPress={props.onClose} style={s.close} hitSlop={12} accessibilityLabel="✕">
+        <Pressable
+          onPress={props.onClose}
+          style={s.close}
+          hitSlop={12}
+          accessibilityRole="button"
+          accessibilityLabel={i18n.t(lang, 'close')}
+        >
           <Text style={[s.closeText, { color: c.quiet }]}>✕</Text>
         </Pressable>
         <ScrollView style={s.scroll} contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">

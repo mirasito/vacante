@@ -16,7 +16,7 @@ import { authHeader } from '../session';
 import { read, write } from '../storage';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
-import { Button, Chip, Loading, styles as ui } from '../ui';
+import { Button, Chip, focusTarget, Live, Loading, ScreenTitle, spaceKey, styles as ui } from '../ui';
 import { AuthError, call, money, postApi, type ActionResult, type CabinetState, type PostFields, type PostInfo } from './api';
 import { cameOf } from './came';
 import DEFAULTS from './postDefaults.json';
@@ -179,6 +179,11 @@ export function PostForm(props: {
   const [result, setResult] = useState<ActionResult | null>(null);
   const [paidSent, setPaidSent] = useState(false);
   const scroll = useRef<ComponentRef<typeof ScrollView>>(null);
+  const title = useRef<ComponentRef<typeof Text>>(null);
+  const cityGroup = useRef<ComponentRef<typeof View>>(null);
+  const inputs = useRef<Partial<Record<keyof PostFields, ComponentRef<typeof TextInput> | null>>>({});
+  // Нажали «Дальше» с пустыми обязательными полями: подсвечиваем их (aria-invalid)
+  const [tried, setTried] = useState(false);
   // Города и частые должности видны сразу, не дожидаясь сервера бота (~1.3 s): раньше кнопки появлялись
   // позже и сдвигали форму вниз (CLS 0.11–0.16). Ответ сервера их заменяет; тест бота следит, что списки те же
   const cities = (info?.cities ?? DEFAULTS.cities) as [string, string][];
@@ -226,6 +231,24 @@ export function PostForm(props: {
     city: t.city, title: t.jobTitle, company: t.company, salary: t.salary, schedule: t.schedule, address: t.address, details: t.details,
   };
   const lack = REQUIRED.filter((f) => !fields[f].trim());
+
+  // Новый шаг: фокус на заголовок формы. Иначе он остаётся на исчезнувшей кнопке, то есть в body,
+  // и место на странице приходится искать заново (клавиатурой и скринридером)
+  const shownStep = useRef(step);
+  useEffect(() => {
+    if (shownStep.current === step) return;
+    shownStep.current = step;
+    (title.current as unknown as { focus?(): void } | null)?.focus?.();
+  }, [step]);
+
+  // «Дальше» с пустыми полями не отключена (отключённую клавиатура и скринридер не находят):
+  // нажатие ведёт к первому пустому полю, а строка «Осталось заполнить» описывает кнопку
+  const next = () => {
+    if (!lack.length) return void check();
+    setTried(true);
+    const target = lack[0] === 'city' ? cityGroup.current : inputs.current[lack[0]!];
+    (target as unknown as { focus?(): void } | null)?.focus?.();
+  };
 
   const fill = async () => {
     setBusy('paste');
@@ -319,7 +342,7 @@ export function PostForm(props: {
       >
         <Icon name="back" color={c.ink} />
       </Pressable>
-      <Text style={[s.h1, { color: c.ink }]} role="heading" aria-level={1}>
+      <Text ref={title} style={[s.h1, { color: c.ink }]} role="heading" aria-level={1} {...focusTarget}>
         {t.title}
       </Text>
     </View>
@@ -340,11 +363,16 @@ export function PostForm(props: {
     </View>
   );
 
-  const noteBox = note ? (
-    <View style={[s.note, { backgroundColor: note.error ? c.warnBg : c.okBg }]}>
-      <Text style={[s.text, { color: note.error ? c.warnInk : c.okInk }]}>{note.text}</Text>
-    </View>
-  ) : null;
+  // Ошибки разбора и отправки объявляются скринридеру (role=alert), остальное вежливо (aria-live)
+  const noteBox = (
+    <Live>
+      {note ? (
+        <View style={[s.note, { backgroundColor: note.error ? c.warnBg : c.okBg }]} role={note.error ? 'alert' : undefined}>
+          <Text style={[s.text, { color: note.error ? c.warnInk : c.okInk }]}>{note.text}</Text>
+        </View>
+      ) : null}
+    </Live>
+  );
 
   let body;
   if (!loaded) {
@@ -364,15 +392,25 @@ export function PostForm(props: {
             multiline
             maxLength={4000}
             accessibilityLabel={t.pasteTitle}
-            style={[s.input, s.area, { color: c.ink, borderColor: c.line, backgroundColor: c.card }]}
+            style={[s.input, s.area, { color: c.ink, borderColor: c.control, backgroundColor: c.card }]}
           />
           <Button c={c} label={t.pasteGo} busy={busy === 'paste'} disabled={paste.trim().length < 10} onPress={fill} />
         </View>
         {noteBox}
         <Text style={[s.or, { color: c.quiet }]}>{t.or}</Text>
 
-        <Text style={[s.label, { color: c.ink }]}>{t.city} *</Text>
-        <View style={s.wrap}>
+        <Text style={[s.label, { color: c.ink }]} nativeID="post-city-label">
+          {t.city} *
+        </Text>
+        <View
+          ref={cityGroup}
+          style={s.wrap}
+          role="group"
+          aria-labelledby="post-city-label"
+          {...focusTarget}
+          // aria-required у group недопустим: что город обязателен, говорит звёздочка в подписи группы
+          {...({ 'aria-invalid': (tried && !fields.city) || undefined } as object)}
+        >
           {cities.map(([slug, name]) => (
             <Chip key={slug} c={c} active={fields.city === slug} label={name} onPress={() => set('city', slug)} />
           ))}
@@ -385,14 +423,22 @@ export function PostForm(props: {
               {REQUIRED.includes(field) ? ' *' : <Text style={{ color: c.quiet, fontWeight: '400' }}>{` · ${t.optional}`}</Text>}
             </Text>
             <TextInput
+              ref={(el) => {
+                inputs.current[field] = el;
+              }}
               value={fields[field]}
               onChangeText={(v) => set(field, v)}
+              // Звёздочку скринридер не читает: «обязательное» скажет он сам по aria-required
+              {...({
+                'aria-required': REQUIRED.includes(field) || undefined,
+                'aria-invalid': (tried && lack.includes(field)) || undefined,
+              } as object)}
               placeholder={t[`${field === 'title' ? 'jobTitle' : field}Hint` as 'salaryHint']}
               placeholderTextColor={c.quiet}
               maxLength={info?.limits[field] ?? 1000}
               multiline={field === 'details'}
               accessibilityLabel={labels[field]}
-              style={[s.input, field === 'details' && s.area, { color: c.ink, borderColor: c.line, backgroundColor: c.card }]}
+              style={[s.input, field === 'details' && s.area, { color: c.ink, borderColor: c.control, backgroundColor: c.card }]}
             />
             {field === 'title' && titles.length ? (
               <View style={s.wrap}>
@@ -405,8 +451,19 @@ export function PostForm(props: {
           </View>
         ))}
 
-        {lack.length ? <Text style={[s.small, { color: c.quiet }]}>{t.need(lack.map((f) => labels[f].toLowerCase()).join(', '))}</Text> : null}
-        <Button c={c} label={t.next} busy={busy === 'check'} disabled={lack.length > 0} onPress={check} />
+        {lack.length ? (
+          <Text style={[s.small, { color: tried ? c.skip : c.quiet }]} nativeID="post-lack">
+            {t.need(lack.map((f) => labels[f].toLowerCase()).join(', '))}
+          </Text>
+        ) : null}
+        <Button
+          c={c}
+          label={t.next}
+          busy={busy === 'check'}
+          blocked={lack.length > 0}
+          describedBy={lack.length ? 'post-lack' : undefined}
+          onPress={next}
+        />
         {saved ? <Text style={[s.small, s.center, { color: c.quiet }]}>✓ {saved}</Text> : null}
       </View>
     );
@@ -438,34 +495,42 @@ export function PostForm(props: {
 
         {options.length ? (
           <>
-            <Text style={[s.sec, { color: c.quiet }]}>{t.tariff}</Text>
-            {options.map((o) => (
-              <Pressable
-                key={o.key}
-                onPress={() => setTariff(o.key)}
-                accessibilityRole="radio"
-                aria-checked={chosen === o.key}
-                style={[s.tariff, { borderColor: chosen === o.key ? c.accent : c.line, backgroundColor: c.card }]}
-              >
-                <View style={[s.radio, { borderColor: chosen === o.key ? c.accent : c.line }]}>
-                  {chosen === o.key ? <View style={[s.radioDot, { backgroundColor: c.accent }]} /> : null}
-                </View>
-                <View style={ui.flex}>
-                  <Text style={[s.h3, { color: c.ink }]}>
-                    {o.key === 'pro' ? '🔥 ' : ''}
-                    {o.name}
-                    {o.price ? `: ${money(o.price)}` : ''}
-                  </Text>
-                  <Text style={[s.small, { color: c.quiet }]}>{o.what}</Text>
-                </View>
-              </Pressable>
-            ))}
+            <Text style={[s.sec, { color: c.quiet }]} nativeID="post-tariff-label">
+              {t.tariff}
+            </Text>
+            <View style={s.gap} role="radiogroup" aria-labelledby="post-tariff-label">
+              {options.map((o) => (
+                <Pressable
+                  key={o.key}
+                  onPress={() => setTariff(o.key)}
+                  {...spaceKey(() => setTariff(o.key))}
+                  accessibilityRole="radio"
+                  aria-checked={chosen === o.key}
+                  style={[s.tariff, { borderColor: chosen === o.key ? c.accent : c.line, backgroundColor: c.card }]}
+                >
+                  <View style={[s.radio, { borderColor: chosen === o.key ? c.accent : c.control }]}>
+                    {chosen === o.key ? <View style={[s.radioDot, { backgroundColor: c.accent }]} /> : null}
+                  </View>
+                  <View style={ui.flex}>
+                    <Text style={[s.h3, { color: c.ink }]}>
+                      {o.key === 'pro' ? '🔥 ' : ''}
+                      {o.name}
+                      {o.price ? `: ${money(o.price)}` : ''}
+                    </Text>
+                    <Text style={[s.small, { color: c.quiet }]}>{o.what}</Text>
+                  </View>
+                </Pressable>
+              ))}
+            </View>
           </>
         ) : null}
         {noteBox}
         {askLogin && !authHeader() ? (
           <View style={[s.paste, { borderColor: c.brand, backgroundColor: c.soft }]}>
-            <Text style={[s.h3, { color: c.ink }]}>{t.loginTitle}</Text>
+            {/* Блок входа встаёт на место кнопки «Отправить»: фокус на его заголовок, а не в body */}
+            <ScreenTitle level={2} style={[s.h3, { color: c.ink }]}>
+              {t.loginTitle}
+            </ScreenTitle>
             <Login
               c={c}
               lang={lang}
@@ -526,9 +591,10 @@ export function PostForm(props: {
 
   return (
     <SafeAreaView style={[s.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
-      <View style={ui.column}>
+      {/* main вместе с шапкой: заголовок формы тоже основное содержимое (axe region) */}
+      <View style={ui.column} role="main">
         {header}
-        <ScrollView ref={scroll} contentContainerStyle={s.body} keyboardShouldPersistTaps="handled" role="main">
+        <ScrollView ref={scroll} contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">
           {stepper}
           {body}
         </ScrollView>

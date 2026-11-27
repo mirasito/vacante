@@ -195,7 +195,7 @@ export function Wizard(props: {
   return (
     <View style={ui.flex}>
       <View style={s.head}>
-        <Pressable onPress={back} hitSlop={12} accessibilityLabel={t.back}>
+        <Pressable onPress={back} hitSlop={12} accessibilityRole="button" accessibilityLabel={t.back}>
           <Text style={[s.backText, { color: c.accent }]}>← {t.back}</Text>
         </Pressable>
         {stepNumber > 0 ? <Text style={{ color: c.quiet }}>{t.step(stepNumber, steps.length)}</Text> : null}
@@ -426,10 +426,16 @@ function Roles({ c, lang, index, draft, set }: { c: Colors; lang: Lang; index: I
       <Field c={c} placeholder={t.search} value={query} onChangeText={setQuery} maxLength={60} />
       <View style={s.options}>
         {found.map((r) => (
-          <Chip key={r.title} c={c} active={false} label={lang === 'kk' ? r.title_kk : r.title} onPress={() => toggle(r.title)} />
+          <Chip key={r.title} c={c} active={false} toggle={false} label={lang === 'kk' ? r.title_kk : r.title} onPress={() => toggle(r.title)} />
         ))}
         {custom.length >= 3 && !exact ? (
-          <Chip c={c} active={false} label={t.addRole(custom)} onPress={() => toggle(custom[0]!.toUpperCase() + custom.slice(1))} />
+          <Chip
+            c={c}
+            active={false}
+            toggle={false}
+            label={t.addRole(custom)}
+            onPress={() => toggle(custom[0]!.toUpperCase() + custom.slice(1))}
+          />
         ) : null}
       </View>
     </>

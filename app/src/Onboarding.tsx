@@ -11,7 +11,7 @@ import type { Located } from './platform';
 import { EMPLOYMENT, EXPERIENCE } from './profile/texts';
 import type { Colors } from './theme';
 import type { Index, Lang } from './types';
-import { Button, Chip, LangSwitch, Logo, Screen } from './ui';
+import { Button, Chip, LangSwitch, Logo, Screen, ScreenTitle, spaceKey } from './ui';
 
 const T = {
   ru: {
@@ -136,7 +136,7 @@ export function Onboarding(props: {
         {step === 1 ? (
           <>
             <View>
-              <Text style={[styles.h1, { color: c.ink }]}>{t.rolesTitle}</Text>
+              <ScreenTitle style={[styles.h1, { color: c.ink }]}>{t.rolesTitle}</ScreenTitle>
               <Text style={[styles.sub, { color: c.quiet }]}>{t.rolesSub}</Text>
             </View>
             <View style={styles.grid}>
@@ -146,6 +146,7 @@ export function Onboarding(props: {
                   <Pressable
                     key={r.title}
                     onPress={() => toggle('roles', r.title)}
+                    {...spaceKey(() => toggle('roles', r.title))}
                     accessibilityRole="checkbox"
                     aria-checked={on}
                     style={[
@@ -190,21 +191,26 @@ export function Onboarding(props: {
         ) : (
           <>
             <View>
-              <Text style={[styles.h1, { color: c.ink }]}>{t.whereTitle}</Text>
+              <ScreenTitle style={[styles.h1, { color: c.ink }]}>{t.whereTitle}</ScreenTitle>
               <Text style={[styles.sub, { color: c.quiet }]}>{t.whereSub}</Text>
             </View>
             <View style={styles.section}>
               <Text style={[styles.h3, { color: c.ink }]}>{t.place}</Text>
               <Pressable
-                onPress={locate}
-                disabled={locating}
+                // Не disabled: отключённая кнопка теряет фокус, пока телефон ищет место
+                onPress={locating ? undefined : locate}
+                aria-busy={locating || undefined}
                 accessibilityRole="button"
                 style={[styles.locate, { backgroundColor: here ? c.okBg : c.pill }]}
               >
                 {locating ? <ActivityIndicator color={c.accent} /> : <Icon name="pin" color={here ? c.okInk : c.accent} />}
                 <Text style={[styles.locateText, { color: here ? c.okInk : c.ink }]}>{here ? t.located : t.locate}</Text>
               </Pressable>
-              {error ? <Text style={[styles.sub, { color: c.skip }]}>{t[error]}</Text> : null}
+              {error ? (
+                <Text style={[styles.sub, { color: c.skip }]} role="alert">
+                  {t[error]}
+                </Text>
+              ) : null}
               {here ? (
                 <>
                   <Text style={[styles.h3, styles.gap, { color: c.ink }]}>{t.radius}</Text>

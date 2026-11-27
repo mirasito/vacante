@@ -1,6 +1,6 @@
 // Общие кусочки интерфейса: экран, кнопки, чипы, флажки, поля ввода.
-import type { ReactNode } from 'react';
-import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, TextInput, View, type TextInputProps } from 'react-native';
+import { type ComponentRef, type ReactNode, useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, TextInput, View, type TextInputProps, type TextProps } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { Icon, type IconName } from './icons';
@@ -20,11 +20,102 @@ export function Logo({ c, height = 28 }: { c: Colors; height?: number }) {
   );
 }
 
-export function Screen({ c, children }: { c: Colors; children: ReactNode }) {
+/**
+ * Экран приложения. role=main: скринридер прыгает к содержимому. hidden — поверх открыто окно:
+ * Modal в вебе рисуется отдельно в body, а экран под ним прячем от скринридера, чтобы свайпом
+ * по экрану не уйти из окна в ленту под ним.
+ */
+export function Screen({ c, children, hidden }: { c: Colors; children: ReactNode; hidden?: boolean }) {
   return (
     <SafeAreaView style={[styles.screen, { backgroundColor: c.bg }]}>
-      <View style={styles.column}>{children}</View>
+      <View style={styles.column} role="main" aria-hidden={hidden || undefined}>
+        {children}
+      </View>
     </SafeAreaView>
+  );
+}
+
+/**
+ * Пробел для radio, checkbox и tab. react-native-web нажимает пробелом только role=button,
+ * а у настоящих флажков и переключателей пробел — главная клавиша (Enter у них работает и так).
+ */
+export function spaceKey(onPress: () => void): object {
+  if (Platform.OS !== 'web') return {};
+  return {
+    onKeyDown: (e: { key?: string; nativeEvent?: { key?: string }; preventDefault(): void }) => {
+      const key = e.key ?? e.nativeEvent?.key;
+      if (key === ' ' || key === 'Spacebar') {
+        e.preventDefault();
+        onPress();
+      }
+    },
+  };
+}
+
+/**
+ * Затемнение под листом снизу: нажатие мышью или пальцем закрывает лист. Это не кнопка и не цель Tab:
+ * с клавиатуры лист закрывают Escape и крестик. Pressable здесь не годится: он всегда focusable, и окно
+ * при открытии ставило фокус на безымянное затемнение вместо заголовка.
+ */
+export function Backdrop({ onClose }: { onClose(): void }) {
+  return <View style={styles.flex} onStartShouldSetResponder={() => true} onResponderRelease={onClose} />;
+}
+
+/**
+ * Область объявлений (aria-live): есть на экране всегда, иначе первое сообщение в только что вставленном
+ * блоке часто не объявляется. Пустая она вне потока, чтобы gap родителя не давал лишний отступ.
+ */
+export function Live({ children }: { children: ReactNode }) {
+  return (
+    <View aria-live="polite" style={children ? undefined : styles.liveEmpty}>
+      {children}
+    </View>
+  );
+}
+
+/** Заголовок окна принимает фокус программно (tabIndex -1): окно при открытии ставит фокус на него. */
+export const focusTarget: object = Platform.OS === 'web' ? { tabIndex: -1 } : {};
+
+/**
+ * Кнопка-«прыжок» для клавиатуры: видна, только пока в фокусе. Лента догружается без конца, и Tab-ом
+ * через неё до нижнего меню не дойти (WCAG 2.4.1).
+ */
+export function SkipLink({ c, label, onPress }: { c: Colors; label: string; onPress(): void }) {
+  const [shown, setShown] = useState(false);
+  return (
+    <Pressable
+      onPress={onPress}
+      onFocus={() => setShown(true)}
+      onBlur={() => setShown(false)}
+      accessibilityRole="button"
+      style={shown ? [styles.skip, { backgroundColor: c.strong }] : styles.srOnly}
+    >
+      <Text style={[styles.skipText, { color: c.onStrong }]}>{label}</Text>
+    </Pressable>
+  );
+}
+
+/** Имя окна (Modal): иначе скринридер объявляет просто «диалог». В вебе RNW отдаёт его role=dialog. */
+export const dialogName = (label: string): object => ({ 'aria-label': label });
+
+/** Заголовок для скринридера: по заголовкам он прыгает по экрану. */
+export const heading = (level: 1 | 2 | 3 = 1) => ({ role: 'heading' as const, 'aria-level': level });
+
+/**
+ * Заголовок экрана (h1). Появился — забирает фокус: после выбора города или шага старта фокус иначе
+ * остаётся на исчезнувшей кнопке, то есть в body, и место приходится искать заново. hidden — заголовок
+ * только для скринридера (у ленты видимого заголовка нет).
+ */
+export function ScreenTitle(props: { style?: TextProps['style']; hidden?: boolean; level?: 1 | 2 | 3; children: ReactNode }) {
+  const { style, hidden, level = 1, children } = props;
+  const ref = useRef<ComponentRef<typeof Text>>(null);
+  useEffect(() => {
+    if (Platform.OS === 'web') (ref.current as unknown as { focus?(): void } | null)?.focus?.();
+  }, []);
+  return (
+    <Text ref={ref} style={hidden ? styles.srOnly : style} {...heading(level)} {...focusTarget}>
+      {children}
+    </Text>
   );
 }
 
@@ -87,6 +178,7 @@ export function Seg<T extends string>(props: {
           <Pressable
             key={o.value}
             onPress={() => onChange(o.value)}
+            {...spaceKey(() => onChange(o.value))}
             accessibilityRole="radio"
             aria-checked={on}
             style={[styles.segItem, small && styles.segSmall, on && [styles.segOn, { backgroundColor: c.card }]]}
@@ -110,8 +202,17 @@ export function Badge({ c, label, tone }: { c: Colors; label: string; tone?: 'ok
   );
 }
 
-export function Chip(props: { c: Colors; active: boolean; label: string; onPress(): void; big?: boolean; icon?: IconName }) {
-  const { c, active, label, onPress, big, icon } = props;
+export function Chip(props: {
+  c: Colors;
+  active: boolean;
+  label: string;
+  onPress(): void;
+  big?: boolean;
+  icon?: IconName;
+  /** false — чип просто кнопка (открывает окно, возвращает скрытое): у него нет состояния «нажата». */
+  toggle?: boolean;
+}) {
+  const { c, active, label, onPress, big, icon, toggle = true } = props;
   const color = active ? c.onStrong : c.ink;
   return (
     <Pressable
@@ -119,7 +220,7 @@ export function Chip(props: { c: Colors; active: boolean; label: string; onPress
       accessibilityRole="button"
       // Кнопка-переключатель: «нажата» (aria-pressed), а не «выбрана». aria-selected у кнопки недопустим,
       // из-за него PageSpeed ругался на роли ARIA и снимал оценку «Agentic Browsing» у формы работодателя
-      aria-pressed={active}
+      aria-pressed={toggle ? active : undefined}
       style={[
         styles.chip,
         big && styles.chipBig,
@@ -142,6 +243,7 @@ export function Tab(props: { c: Colors; active: boolean; icon: IconName; label: 
   return (
     <Pressable
       onPress={onPress}
+      {...spaceKey(onPress)}
       style={styles.tab}
       accessibilityRole="tab"
       aria-selected={active}
@@ -151,7 +253,7 @@ export function Tab(props: { c: Colors; active: boolean; icon: IconName; label: 
         <Icon name={icon} color={color} />
         {badge ? (
           <View style={[styles.badge, { backgroundColor: alert ? c.accent : c.quiet, borderColor: c.card }]}>
-            <Text style={[styles.badgeText, { color: alert ? c.onAccent : '#fff' }]}>{badge > 99 ? '99+' : badge}</Text>
+            <Text style={[styles.badgeText, { color: alert ? c.onAccent : c.onStrong }]}>{badge > 99 ? '99+' : badge}</Text>
           </View>
         ) : null}
       </View>
@@ -169,22 +271,37 @@ export function Button(props: {
   small?: boolean;
   danger?: boolean;
   disabled?: boolean;
+  /**
+   * Пока идёт запрос. Кнопка не отключается (отключённая <button> теряет фокус, и он улетает в начало
+   * страницы), а говорит «занята» (aria-busy) и не нажимается второй раз.
+   */
   busy?: boolean;
+  /**
+   * Выглядит неактивной, но остаётся в порядке Tab и нажимается: onPress сам объясняет, чего не хватает.
+   * Отключённую кнопку «Дальше» клавиатура и скринридер просто не находят.
+   */
+  blocked?: boolean;
+  /** id текста, который объясняет кнопку (например «Осталось заполнить: …»). */
+  describedBy?: string;
   icon?: IconName;
   onPress(): void;
 }) {
-  const { c, label, ghost, small, danger, disabled, busy, icon, onPress } = props;
+  const { c, label, ghost, small, danger, disabled, busy, blocked, describedBy, icon, onPress } = props;
   const color = danger ? c.skip : ghost ? c.ink : c.onAccent;
   return (
     <Pressable
-      onPress={onPress}
-      disabled={disabled || busy}
+      onPress={busy ? undefined : onPress}
+      disabled={disabled}
       accessibilityRole="button"
+      aria-busy={busy || undefined}
+      aria-describedby={describedBy}
+      // Пока крутится индикатор, подписи нет: имя кнопки оставляем
+      accessibilityLabel={busy ? label : undefined}
       style={[
         styles.button,
         small && styles.buttonSmall,
         { backgroundColor: ghost || danger ? c.pill : c.accent },
-        (disabled || busy) && styles.disabled,
+        (disabled || busy || blocked) && styles.disabled,
       ]}
     >
       {busy ? (
@@ -214,11 +331,12 @@ export function Check(props: { c: Colors; checked: boolean; label: string; hint?
   return (
     <Pressable
       onPress={onPress}
+      {...spaceKey(onPress)}
       accessibilityRole="checkbox"
       aria-checked={checked}
       style={[styles.check, { borderColor: c.line, backgroundColor: c.card }]}
     >
-      <View style={[styles.box, { borderColor: checked ? c.like : c.line, backgroundColor: checked ? c.like : 'transparent' }]}>
+      <View style={[styles.box, { borderColor: checked ? c.like : c.control, backgroundColor: checked ? c.like : 'transparent' }]}>
         {checked ? <Text style={styles.tick}>✓</Text> : null}
       </View>
       <View style={styles.flex}>
@@ -240,7 +358,7 @@ export function Field(props: TextInputProps & { c: Colors; label?: string }) {
         // (например «Имя для работодателя» в анкете перед первым откликом)
         accessibilityLabel={label}
         {...input}
-        style={[styles.input, { color: c.ink, borderColor: c.line, backgroundColor: c.card }, style]}
+        style={[styles.input, { color: c.ink, borderColor: c.control, backgroundColor: c.card }, style]}
       />
     </View>
   );
@@ -269,9 +387,11 @@ export function Ring(props: {
   /** Цвет середины и промежутков между долями: фон карточки. */
   hole: string;
   segments?: number;
+  /** Что показывает кольцо: без имени progressbar для скринридера просто «45 процентов». */
+  label?: string;
   children?: ReactNode;
 }) {
-  const { size: d, width, color, track, hole, segments = 0 } = props;
+  const { size: d, width, color, track, hole, segments = 0, label } = props;
   const p = Math.max(0, Math.min(1, props.progress));
   const r = d / 2;
   const gap = 3;
@@ -312,6 +432,7 @@ export function Ring(props: {
     <View
       style={{ width: d, height: d, borderRadius: r, overflow: 'hidden', backgroundColor: p >= 1 ? color : track }}
       accessibilityRole="progressbar"
+      aria-label={label}
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={Math.round(p * 100)}
@@ -358,6 +479,10 @@ export const styles = StyleSheet.create({
   screen: { flex: 1 },
   column: { flex: 1, width: '100%', maxWidth: 520, alignSelf: 'center' },
   flex: { flex: 1 },
+  liveEmpty: { position: 'absolute', width: 1, height: 1, overflow: 'hidden' },
+  srOnly: { position: 'absolute', width: 1, height: 1, overflow: 'hidden', opacity: 0 },
+  skip: { position: 'absolute', top: 4, left: 16, zIndex: 10, paddingHorizontal: 14, paddingVertical: 10, borderRadius: 12 },
+  skipText: { fontSize: 15, fontWeight: '700' },
   row: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 12 },
   big: { fontSize: 48 },

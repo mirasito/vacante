@@ -2498,6 +2498,15 @@
   "v": 3,
   "checked_at": "2026-11-24T10:43:37+00:00"
  },
+ "aktau:олжа": {
+  "name": "Олжа",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00",
+  "instagram": "supermarketolzha",
+  "source": "https://2gis.kz/aktau/firm/70000001104018196"
+ },
  "aktau:осака": {
   "name": "Осака",
   "city": "aktau",
@@ -6828,6 +6837,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-23T13:43:37+00:00"
+ },
+ "almaty:almaly hotel management": {
+  "name": "«ALMALY HOTEL MANAGEMENT»",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "almaty:almaly travel": {
   "name": "ALMALY-TRAVEL",
@@ -12644,6 +12660,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-17T15:43:17+00:00"
+ },
+ "almaty:flexway kazakhstan": {
+  "name": "Flexway Kazakhstan",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "almaty:flip kz": {
   "name": "Flip.kz",
@@ -19719,6 +19742,13 @@
    "website"
   ]
  },
+ "almaty:pero": {
+  "name": "PERO",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
+ },
  "almaty:pet": {
   "name": "PET",
   "city": "almaty",
@@ -24004,6 +24034,15 @@
   "instagram": "uchina.kz",
   "source": "https://2gis.kz/almaty/firm/70000001097172803"
  },
+ "almaty:uiren": {
+  "name": "Uiren",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00",
+  "instagram": "uiren__kz",
+  "source": "https://2gis.kz/almaty/firm/70000001061518765"
+ },
  "almaty:ultra alm": {
   "name": "Ultra ALM",
   "city": "almaty",
@@ -24231,6 +24270,20 @@
   "website": "http://www.valesco.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000790908",
   "avatar_checked_at": "2026-11-22T08:42:15+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
+ "almaty:valesco тоо": {
+  "name": "Valesco, ТОО",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00",
+  "instagram": "valesco_kz",
+  "website": "http://www.valesco.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000790908",
+  "avatar_checked_at": "2026-11-27T08:46:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -27937,6 +27990,13 @@
    "website"
   ]
  },
+ "almaty:бекболат": {
+  "name": "Бекболат",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
+ },
  "almaty:бекзат кулмырза": {
   "name": "БЕКЗАТ КУЛМЫРЗА",
   "city": "almaty",
@@ -29722,6 +29782,13 @@
   ],
   "avatar": "fd61dc0693707ca6.jpg",
   "avatar_source": "website"
+ },
+ "almaty:джумабаева а р": {
+  "name": "Джумабаева А.Р.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "almaty:диал строй": {
   "name": "Диал-Строй",
@@ -36742,6 +36809,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-10T14:44:20+00:00"
+ },
+ "almaty:ремстрой а": {
+  "name": "РемСтрой-А",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "almaty:ренессанс": {
   "name": "Ренессанс",
@@ -43815,7 +43889,7 @@
   "instagram": "chaplincinemas",
   "website": "https://chaplin.kz/",
   "source": "https://2gis.kz/astana/firm/70000001027048493",
-  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
+  "avatar_checked_at": "2026-11-27T08:46:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -55175,6 +55249,13 @@
   "v": 3,
   "checked_at": "2026-11-13T09:43:52+00:00"
  },
+ "astana:балнур": {
+  "name": "Балнур",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
+ },
  "astana:балтабаев м к": {
   "name": "Балтабаев М.К.",
   "city": "astana",
@@ -59186,6 +59267,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-25T12:43:25+00:00"
+ },
+ "astana:мамыралиев": {
+  "name": "Мамыралиев",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "astana:манабаева": {
   "name": "Манабаева",
@@ -63819,7 +63907,7 @@
   "instagram": "stalnoy_soyuz",
   "website": "https://stalsoyuz.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018124894",
-  "avatar_checked_at": "2026-11-20T08:43:21+00:00",
+  "avatar_checked_at": "2026-11-27T08:46:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -64923,6 +65011,20 @@
   "checked_at": "2026-11-09T08:44:48+00:00",
   "instagram": "elitfurnitura",
   "source": "https://2gis.kz/astana/firm/70000001027048395"
+ },
+ "astana:элитком": {
+  "name": "Элитком",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00",
+  "instagram": "elitecom.kz",
+  "website": "http://www.elitecom.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001018514317",
+  "avatar_checked_at": "2026-11-27T08:46:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:элитная баня": {
   "name": "Элитная баня",
@@ -70348,12 +70450,26 @@
   "v": 3,
   "checked_at": "2026-11-24T05:43:07+00:00"
  },
+ "karaganda:асхан сүт өнімдері": {
+  "name": "Асхан сүт өнімдері",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
+ },
  "karaganda:асылбаев к т": {
   "name": "Асылбаев К.Т",
   "city": "karaganda",
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-17T15:43:17+00:00"
+ },
+ "karaganda:асылым": {
+  "name": "АСЫЛЫМ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "karaganda:базис ст": {
   "name": "БАЗИС-СТ",
@@ -72152,6 +72268,13 @@
   "v": 3,
   "checked_at": "2026-11-02T18:01:00+00:00"
  },
+ "karaganda:тоo ihsan stroi kz": {
+  "name": "ТОO IHSAN STROI KZ",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
+ },
  "karaganda:торговая компания": {
   "name": "Торговая Компания",
   "city": "karaganda",
@@ -73806,6 +73929,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T18:45:16+00:00"
+ },
+ "kokshetau:максим максим": {
+  "name": "Максим Максим",
+  "city": "kokshetau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "kokshetau:мирзаева г с": {
   "name": "Мирзаева Г.С.",
@@ -75618,6 +75748,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-10T19:44:27+00:00"
+ },
+ "kostanay:джунусов": {
+  "name": "Джунусов",
+  "city": "kostanay",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "kostanay:дико&полезно": {
   "name": "Дико&Полезно",
@@ -81577,6 +81714,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-30T18:42:57+00:00"
+ },
+ "petropavlovsk:птицефабрика северный бройлер": {
+  "name": "Птицефабрика СЕВЕРНЫЙ БРОЙЛЕР",
+  "city": "petropavlovsk",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "petropavlovsk:публичная компания freedom finance global plc": {
   "name": "Публичная Компания «Freedom Finance Global PLC»",
@@ -92068,6 +92212,13 @@
   "v": 3,
   "checked_at": "2026-11-25T12:43:25+00:00"
  },
+ "uralsk:еркенова з к": {
+  "name": "ЕРКЕНОВА З.К.",
+  "city": "uralsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
+ },
  "uralsk:ескерткыш кызмет казахстан": {
   "name": "Ескерткыш Кызмет Казахстан",
   "city": "uralsk",
@@ -95692,6 +95843,13 @@
   "checked_at": "2026-11-08T00:45:10+00:00",
   "instagram": "r_daidgest",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/70000001062140564"
+ },
+ "ust-kamenogorsk:пилецкая": {
+  "name": "ПИЛЕЦКАЯ",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T08:46:11+00:00"
  },
  "ust-kamenogorsk:пицца блюз сервис": {
   "name": "Пицца Блюз Сервис",

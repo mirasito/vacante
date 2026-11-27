@@ -53,6 +53,12 @@ const KNOWN_PLACES = ["web", "tg", "bot", "app"];
 export const VACANCIES_PER_DAY = 5000;
 /** Сколько новых постов в минуту читаем с t.me по нажатиям: остальные нажатия уходят на исходный пост. */
 const FETCH_PER_MINUTE = 60;
+/**
+ * Сколько нажатий в минуту с одного адреса записываем (кнопки связи и маячок вместе). Человек столько не нажмёт,
+ * а поток запросов с одного адреса иначе растил бы базу без предела. Сверх предела человек видит то же самое,
+ * просто нажатие не пишется. Предел с запасом: за одним адресом мобильного оператора бывает много людей.
+ */
+export const COUNTS_PER_MINUTE = 120;
 
 export interface Deps {
   db: Db;
@@ -274,6 +280,9 @@ export function goRoutes(ctx: Ctx): Route[] {
   const hitIds = new DayCap(VACANCIES_PER_DAY);
   const record = (id: string, kind: ClickKind, via: unknown, source: string, now: number) =>
     countVacancyClick(ctx.db, id, kind, capped(vias, labelOf(via), now), capped(places, source, now), now);
+  // Запись нажатия с этого адреса ещё помещается в предел минуты
+  const counts = new RateLimit(COUNTS_PER_MINUTE, 60_000);
+  const mayCount = (req: Request, now: number) => counts.take(clientIp(req), now);
 
   return [
     route("GET", "api", "/go/:id/:kind", async (req) => {
@@ -282,9 +291,11 @@ export function goRoutes(ctx: Ctx): Route[] {
       const url = postUrl(id);
       if (!url || !Object.hasOwn(KINDS, kind)) throw new HttpError(404, "Не найдено");
       const now = ctx.now();
-      const source = labelOf(req.query.get("s"));
+      // Место кнопки приходит в ссылке, слать его может кто угодно: разных за день не больше предела, как и по вакансиям
+      const source = capped(places, labelOf(req.query.get("s")), now);
       // Нажатие человека: общее число, как раньше, и запись по вакансии с источником визита из ссылки
       const press = (pressed: Kind | "miss") => {
+        if (!mayCount(req, now)) return;
         countClick(ctx.db, source, pressed, now);
         if (goIds.take(id, now)) record(id, pressed, req.query.get("via"), source, now);
       };
@@ -292,7 +303,7 @@ export function goRoutes(ctx: Ctx): Route[] {
       if (isPreviewBot(req.header("user-agent"))) return { status: 302, headers: { ...noindex, Location: url } };
       // Робот под видом браузера обходит все кнопки подряд: считаем отдельно и номер не отдаём
       if (robots.check(visitorOf(req), id, now)) {
-        countClick(ctx.db, source, "robot", now);
+        if (mayCount(req, now)) countClick(ctx.db, source, "robot", now);
         return { status: 302, headers: { ...noindex, Location: url } };
       }
 
@@ -319,8 +330,9 @@ export function goRoutes(ctx: Ctx): Route[] {
     // и ответа не читает. Кук нет; посчитан переход или нет, ответ один — 204
     route("POST", "api", "/hit", async (req) => {
       const origin = req.header("origin");
-      // Роботы и чужие сайты: не считаем
-      if (isPreviewBot(req.header("user-agent")) || (origin !== undefined && !origins.has(origin))) return { status: 204 };
+      // Роботы, чужие сайты и запросы без Origin: не считаем. Браузер ставит Origin на любой POST с другого адреса,
+      // в том числе на sendBeacon и fetch со страниц сайта, так что без него приходят только скрипты
+      if (isPreviewBot(req.header("user-agent")) || origin === undefined || !origins.has(origin)) return { status: 204 };
       const body = await req.json<unknown>();
       const { id, kind, via, s } = (body && typeof body === "object" ? body : {}) as Record<string, unknown>;
       if (typeof id !== "string" || !VACANCY_RE.test(id) || !(HIT_KINDS as readonly unknown[]).includes(kind)) {
@@ -328,7 +340,7 @@ export function goRoutes(ctx: Ctx): Route[] {
       }
       const now = ctx.now();
       // Обход всех ссылок подряд и поток выдуманных вакансий молча не считаем
-      if (hitRobots.check(visitorOf(req), id, now) || !hitIds.take(id, now)) return { status: 204 };
+      if (hitRobots.check(visitorOf(req), id, now) || !mayCount(req, now) || !hitIds.take(id, now)) return { status: 204 };
       record(id, kind as ClickKind, via, s === undefined ? "web" : labelOf(s), now);
       return { status: 204 };
     }),

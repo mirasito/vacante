@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import { after, test } from "node:test";
 
-import { backfillContacts, HIT_VACANCIES, LABELS_PER_DAY, RobotGuard, VACANCIES_PER_DAY } from "../src/go.ts";
+import { backfillContacts, COUNTS_PER_MINUTE, HIT_VACANCIES, LABELS_PER_DAY, RobotGuard, VACANCIES_PER_DAY } from "../src/go.ts";
 import { BROWSER, count, startServer, type TestServer } from "./helpers.ts";
 
 const KEY = "ab".repeat(32);
@@ -335,11 +335,14 @@ test("маячок с чужого сайта и от роботов не счи
     assert.equal(r.text, "");
   }
   assert.deepEqual(clicks(s), []);
-  // Свой сайт (оба адреса) и запрос без Origin считаются
+  // Запрос без Origin не от браузера: браузер ставит Origin на любой POST с другого адреса, sendBeacon тоже
+  const bare = await s.call("POST", "/hit", { body: JSON.stringify(hit), headers: { "content-type": "text/plain;charset=UTF-8" } });
+  assert.equal(bare.status, 204);
+  assert.deepEqual(clicks(s), []);
+  // Свой сайт (оба адреса) считается
   await beacon(s, hit);
   await beacon(s, hit, { origin: "https://www.vacante.kz" });
-  await s.call("POST", "/hit", { body: JSON.stringify(hit), headers: { "content-type": "text/plain;charset=UTF-8" } });
-  assert.deepEqual(clicks(s), [{ day: "2026-11-04", vacancy_id: "hh-139501020", kind: "hh", via: "google", source: "web", n: 3 }]);
+  assert.deepEqual(clicks(s), [{ day: "2026-11-04", vacancy_id: "hh-139501020", kind: "hh", via: "google", source: "web", n: 2 }]);
 });
 
 test("маячок: от одного посетителя за день считается не больше 60 разных вакансий; кнопки связи от этого не зависят", async () => {
@@ -399,12 +402,13 @@ test("разных источников визита и мест кнопки з
   assert.equal(distinct("via"), LABELS_PER_DAY);
   assert.equal(distinct("source"), LABELS_PER_DAY + 1);
 
-  // Предел общий для маячка и кнопок связи; общий счётчик кнопок пишет свою метку как раньше
+  // Предел общий для маячка и кнопок связи, общий счётчик кнопок (contact_clicks) тоже пишет новую метку как other
   await s.call("GET", "/go/almatyrabota1-21258/wa?s=more&via=more");
   assert.deepEqual(clicks(s, "vacancy_id = 'almatyrabota1-21258'"), [
     { day: "2026-11-04", vacancy_id: "almatyrabota1-21258", kind: "wa", via: "other", source: "other", n: 1 },
   ]);
-  assert.equal(count(s, "SELECT n FROM contact_clicks WHERE source = 'more'"), 1);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM contact_clicks WHERE source = 'more'"), 0);
+  assert.equal(count(s, "SELECT n FROM contact_clicks WHERE source = 'other' AND kind = 'wa'"), 1);
 
   // На следующий день новые метки снова пишутся как есть
   tick(DAY);
@@ -444,4 +448,36 @@ test("разных вакансий за день пишется не больш
     { day: "2026-11-05", vacancy_id: "almatyrabota1-21258", kind: "wa", via: "google", source: "web", n: 1 },
     { day: "2026-11-05", vacancy_id: "hh-new", kind: "hh", via: "", source: "web", n: 1 },
   ]);
+});
+
+test("поток выдуманных меток в /go не раздувает общий счётчик кнопок: разных мест кнопки за день не больше предела", async () => {
+  const { s } = await server();
+  // С разных адресов, чтобы предел минуты на адрес был ни при чём
+  for (let i = 0; i < 3 * LABELS_PER_DAY; i++) {
+    await s.call("GET", `/go/somechannel-${i}/wa?s=x${i}`, { headers: { "x-forwarded-for": `192.0.2.${i}` } });
+  }
+  assert.ok(count(s, "SELECT COUNT(DISTINCT source) AS n FROM contact_clicks") <= LABELS_PER_DAY + 1);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM contact_clicks WHERE source IN ('web', 'tg', 'bot', 'app')"), 0);
+  await s.call("GET", "/go/somechannel-1/wa?s=web", { headers: { "x-forwarded-for": "192.0.2.250" } });
+  assert.equal(count(s, "SELECT n FROM contact_clicks WHERE source = 'web'"), 1); // свои места всегда пишутся как есть
+});
+
+test("с одного адреса в минуту записывается не больше 120 нажатий; что видит человек, не меняется", async () => {
+  const { s, tick } = await server();
+  const ip = { "x-forwarded-for": "203.0.113.9" };
+  // Робот-фильтр (15 вакансий) не должен сработать раньше: жмём одну и ту же вакансию
+  for (let i = 0; i < COUNTS_PER_MINUTE + 30; i++) {
+    const r = await s.call("GET", "/go/almatyrabota1-21300/wa?s=web", { headers: ip });
+    assert.equal(r.status, 302);
+  }
+  assert.equal(count(s, "SELECT SUM(n) AS n FROM contact_clicks"), COUNTS_PER_MINUTE);
+  // Маячок с того же адреса в ту же минуту тоже не пишется, с другого адреса пишется
+  await beacon(s, { id: "hh-5", kind: "hh" }, ip);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE vacancy_id = 'hh-5'"), 0);
+  await beacon(s, { id: "hh-5", kind: "hh" }, { "x-forwarded-for": "198.51.100.9" });
+  assert.equal(count(s, "SELECT n FROM vacancy_clicks WHERE vacancy_id = 'hh-5'"), 1);
+  // Новая минута: снова пишется
+  tick(61_000);
+  await s.call("GET", "/go/almatyrabota1-21300/wa?s=web", { headers: ip });
+  assert.equal(count(s, "SELECT SUM(n) AS n FROM contact_clicks"), COUNTS_PER_MINUTE + 1);
 });

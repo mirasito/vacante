@@ -40,7 +40,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="logo" href="{{ home }}/" aria-label="vacante.kz"><img class="on-light" src="{{ root }}/static/logo-dark.png" alt="вакантэ" width="125" height="30"><img class="on-dark" src="{{ root }}/static/logo-light.png" alt="" width="125" height="30"></a>
+  <a class="logo" href="{{ home }}/" aria-label="vacante.kz">{# Один файл логотипа под тему: раньше качались оба по 20 КБ на каждой странице #}<picture><source media="(prefers-color-scheme: dark)" srcset="{{ root }}/static/logo-light.png"><img src="{{ root }}/static/logo-dark.png" alt="вакантэ" width="125" height="30"></picture></a>
   <span class="tagline">{{ t("работа рядом с домом") }}</span>
   {% if page != "404" and page != "admin" %}
   <nav class="langs" aria-label="Тіл / Язык">

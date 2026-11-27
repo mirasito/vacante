@@ -16,7 +16,7 @@ from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain, split_title
 from vacante.sources import hh, olx, telegram
-from vacante.store import expire, load_state, load_vacancies, merge, save_state, save_vacancies
+from vacante.store import MAX_AGE_DAYS, expire, load_state, load_vacancies, merge, save_state, save_vacancies
 
 log = logging.getLogger(__name__)
 
@@ -67,7 +67,7 @@ def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
     return result
 
 
-def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegram.fetch_channel,
+def run(config_path: Path, data_dir: Path, max_age_days: int = MAX_AGE_DAYS, fetch=telegram.fetch_channel,
         now: datetime | None = None, direct: list[Vacancy] | None = None, from_hh=hh.collect,
         locate=None, from_olx=olx.collect) -> dict:
     """direct: одобренные вакансии от работодателей из бота (vacante.direct). None значит, что базу бота

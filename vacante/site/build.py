@@ -13,7 +13,7 @@ import shutil
 import tomllib
 import zlib
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote, urlparse
 
@@ -23,11 +23,12 @@ from vacante import channels, launch, shifts
 from vacante import venues as venue_store
 from vacante.direct import BOT_USERNAME, FORM_URL, POST_URL
 from vacante.geo import MAP_WORTHY
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
 from vacante.site import appfeed, i18n
 from vacante.site.admin import admin_data, seal
-from vacante.store import load_vacancies
+from vacante.store import MAX_AGE_DAYS, load_vacancies
 
 HERE = Path(__file__).parent
 # Для фильтра «Зарплата от …»: смены и часы пересчитываем в полный месяц.
@@ -298,6 +299,17 @@ def profession_heading(slug: str, city: str, lang: str) -> str:
     return f"{name}: вакансии в {_locative(city)}"
 
 
+def valid_through(v: Vacancy) -> datetime:
+    """До какого времени страница вакансии будет на сайте: срок хранения от публикации (store.expire),
+    оплаченное «🔥 Срочно» держит её дольше, а смена на конкретный день уходит, когда этот день прошёл."""
+    until = datetime.fromisoformat(v.posted_at) + timedelta(days=MAX_AGE_DAYS)
+    if v.top_until:
+        until = max(until, datetime.fromisoformat(v.top_until))
+    if v.shift_date:
+        until = min(until, datetime.combine(date.fromisoformat(v.shift_date) + timedelta(days=1), time.min, LOCAL))
+    return until
+
+
 def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str | None:
     """Разметка JobPosting для Google Jobs. Google требует работодателя, без него не выводим."""
     if not v.employer:
@@ -317,7 +329,8 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
         "description": html.escape(v.text).replace("\n", "<br>"),
         "identifier": {"@type": "PropertyValue", "name": "vacante.kz", "value": v.id},
         "datePosted": posted.date().isoformat(),
-        "validThrough": (posted + timedelta(days=30)).isoformat(),
+        # Не дольше, чем живёт страница: иначе Google считает объявление открытым, а по ссылке уже 404
+        "validThrough": valid_through(v).isoformat(),
         "hiringOrganization": {"@type": "Organization", "name": v.employer},
         "jobLocation": place,
         "url": f"{base_url}/v/{v.id}/",

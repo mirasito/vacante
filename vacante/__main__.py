@@ -10,7 +10,7 @@ import httpx
 from vacante import autopost, channels, collect, digest, direct, geocode, instagram, quality, reach, review, tg, venues
 from vacante.localtime import LOCAL
 from vacante.site import build
-from vacante.store import load_vacancies
+from vacante.store import MAX_AGE_DAYS, load_vacancies
 
 
 # Секреты бота: токен Telegram и доступ к его базе D1 в Cloudflare
@@ -53,7 +53,7 @@ def main() -> None:
     p_collect = sub.add_parser("collect", help="собрать новые вакансии из источников")
     p_collect.add_argument("--config", type=Path, default=Path("config/telegram_channels.yaml"))
     p_collect.add_argument("--data-dir", type=Path, default=Path("data"))
-    p_collect.add_argument("--max-age-days", type=int, default=14)
+    p_collect.add_argument("--max-age-days", type=int, default=MAX_AGE_DAYS)
 
     p_post = sub.add_parser("post", help="опубликовать свежие вакансии в свои Telegram-каналы")
     p_post.add_argument("--data-dir", type=Path, default=Path("data"))

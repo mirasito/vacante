@@ -29,9 +29,9 @@ export function internalGuard(ctx: Ctx): (req: Request) => void {
  * Проверка пароля админки: 503, пока секрета нет (what — что не настроено), 403 при неверном пароле
  * и 429, если с адреса подбирают пароль. Попытки пишутся в журнал (server/src/admin-logins.ts).
  */
-export function adminGuard(ctx: Ctx, what = "Админка"): (req: Request) => void {
+export function adminGuard(ctx: Ctx, what = "Админка", keyOf: () => string | undefined = () => ctx.config.crmKey): (req: Request) => void {
   return (req) => {
-    const key = ctx.config.crmKey;
+    const key = keyOf();
     if (!key) throw new HttpError(503, `${what} не настроена: нет секрета ADMIN_PASSWORD`);
     const now = ctx.now ? ctx.now() : Date.now();
     if (isBlocked(ctx.db, clientIp(req), now)) {

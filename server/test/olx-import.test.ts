@@ -213,3 +213,22 @@ test("worker token is import-only, expires and repeated batches insert no duplic
     assert.equal((await req()).status, 403);
   } finally { await s.close(); }
 });
+
+test("импорт: подбор пароля блокируется так же, как в админке, и попадает в журнал входов", async () => {
+  const s = await startServer({}, { OLX_IMPORT_KEY: KEY });
+  const from = (ip: string, key: string) => ({ authorization: `Bearer ${key}`, "x-forwarded-for": ip });
+  try {
+    const statuses = [];
+    for (let i = 0; i < 11; i++) {
+      statuses.push((await s.call("POST", "/olx/import", { headers: from("203.0.113.7", "0".repeat(64)), body: { items: [] } })).status);
+    }
+    assert.deepEqual(statuses, [...Array(10).fill(403), 429]);
+    // С заблокированного адреса не проходит даже верный ключ, с другого адреса проходит
+    assert.equal((await s.call("POST", "/olx/import", { headers: from("203.0.113.7", KEY), body: { items: [] } })).status, 429);
+    assert.equal((await s.call("POST", "/olx/import", { headers: from("198.51.100.20", KEY), body: { items: [] } })).status, 200);
+    const log = s.db.prepare("SELECT result, COUNT(*) AS n FROM admin_logins WHERE path = '/olx/import' GROUP BY result ORDER BY result").all();
+    assert.deepEqual(log.map((r: any) => [r.result, r.n]), [["blocked", 2], ["ok", 1], ["wrong", 10]]);
+  } finally {
+    await s.close();
+  }
+});

@@ -113,7 +113,8 @@
     perks: c.dataset.perks.split('|'), search: c.dataset.search,
   }));
   if (!items.length) return;
-  let full = !list.dataset.src, loading = null, shown = STEP;
+  // shown: сколько карточек нужно показать, drawn: сколько их уже на странице
+  let full = !list.dataset.src, loading = null, shown = STEP, drawn = items.length;
   function load() {
     if (full) return Promise.resolve();
     if (!loading) {
@@ -140,28 +141,40 @@
       words: q.value.toLowerCase().trim().split(/\s+/).filter(Boolean),
       min: pay ? +pay.value : 0,
       fresh: fresh ? fresh.value : '',
+      // Порог свежести считаем один раз на ввод, а не на каждую карточку
+      edge: fresh && fresh.value !== '' ? since(+fresh.value) : null,
       cat: cat ? cat.value : '',
       need: toggles.filter((t) => t.getAttribute('aria-pressed') === 'true').map((t) => t.dataset.perk),
       byPay: !!sort && sort.value === 'pay',
     };
   }
   const blank = (s) => !s.words.length && !s.min && !s.fresh && !s.cat && !s.need.length && !s.byPay;
-  function fits(d, s) {
+  // Слова, зарплата и условия: всё, кроме свежести и сферы
+  function basic(d, s) {
     return s.words.every((w) => d.search.includes(w)) && d.pay >= s.min
-      && (s.fresh === '' || d.posted >= since(+s.fresh))
-      && (s.cat === '' || d.cat === s.cat)
       && s.need.every((p) => (p === 'salary' ? d.pay > 0 : d.perks.includes(p)));
   }
-  // Умные подсказки: сколько вакансий даст каждый вариант при остальных фильтрах; пустые варианты гаснут
-  function counts(select, key, s) {
-    if (!select) return;
-    for (const o of select.options) {
-      const alt = { ...s, [key]: o.value };
-      let n = 0;
-      for (const d of items) if (fits(d, alt)) n++;
+  const fresher = (d, edge) => edge === null || d.posted >= edge;
+  const fits = (d, s) => basic(d, s) && fresher(d, s.edge) && (s.cat === '' || d.cat === s.cat);
+  // Умные подсказки: сколько вакансий даст каждый вариант свежести и сферы при остальных фильтрах;
+  // пустые варианты гаснут. Один проход по карточкам на все варианты сразу: раньше было по проходу
+  // на вариант (13 штук), и на телефоне каждая буква в поиске ждала по 300–500 ms
+  function counts(s) {
+    const fo = fresh ? [...fresh.options] : [];
+    const edges = fo.map((o) => (o.value === '' ? null : since(+o.value)));
+    const byFresh = edges.map(() => 0), byCat = new Map();
+    let anyCat = 0;
+    for (const d of items) {
+      if (!basic(d, s)) continue;
+      if (s.cat === '' || d.cat === s.cat) for (let k = 0; k < edges.length; k++) if (fresher(d, edges[k])) byFresh[k]++;
+      if (fresher(d, s.edge)) { anyCat++; byCat.set(d.cat, (byCat.get(d.cat) || 0) + 1); }
+    }
+    const label = (select, o, n) => {
       o.textContent = `${o.dataset.label} · ${n}`;
       o.disabled = n === 0 && o.value !== select.value;
-    }
+    };
+    fo.forEach((o, k) => label(fresh, o, byFresh[k]));
+    if (cat) for (const o of cat.options) label(cat, o, o.value === '' ? anyCat : byCat.get(o.value) || 0);
   }
   function save() {
     // В адресе меняем только свои параметры. Чужие (utm_source из ChatGPT и своих ссылок в Telegram, yclid, gclid)
@@ -178,27 +191,35 @@
     const qs = p.toString();
     history.replaceState(null, '', (qs ? `?${qs}` : location.pathname) + location.hash);
   }
-  function render() {
+  // append: «Показать ещё» дописывает новые карточки, не пересобирая уже показанные
+  // (иначе каждое следующее нажатие тормозило сильнее, двадцатое до 0.9 s)
+  function render(append = false) {
     const s = state();
     const hits = items.filter((d) => fits(d, s));
     if (s.byPay) hits.sort((x, y) => (y.pay - x.pay) || (x.i - y.i));  // без зарплаты в конце, внутри по новизне
     // Пока весь список не загружен, на странице только первые карточки, а всего их data-total
     const n = full ? hits.length : +list.dataset.total;
-    list.innerHTML = hits.slice(0, shown).map((d) => d.html).join('');
-    if (full) {
-      counts(fresh, 'fresh', s);
-      counts(cat, 'cat', s);
+    const html = hits.slice(append ? drawn : 0, shown).map((d) => d.html).join('');
+    if (append) list.insertAdjacentHTML('beforeend', html);
+    else {
+      list.innerHTML = html;
+      if (full) counts(s);
     }
+    drawn = Math.min(shown, hits.length);
     $('count').textContent = n;
     $('none').hidden = n > 0;
     if (more) more.hidden = n <= shown;
     if (pay) $('pay-note').hidden = !(+pay.value || s.byPay);
     save();
   }
+  // Номер последнего ввода: пока грузится список, человек успевает набрать слово целиком,
+  // и рисовать после загрузки нужно только последний ввод, а не каждую букву подряд
+  let turn = 0;
   async function apply() {
+    const mine = ++turn;
     shown = STEP;
     if (!blank(state())) await load();
-    render();
+    if (mine === turn) render();
   }
   // Фильтры из адреса страницы: ссылкой с ними можно поделиться
   const saved = new URLSearchParams(location.search);
@@ -220,8 +241,16 @@
     apply();
   });
   if (more) more.addEventListener('click', async () => {
+    const mine = ++turn;
     shown += STEP;
+    if (full) return render(true);
+    // Весь список ещё грузится (на главной это несколько мегабайт): сразу ставим заглушки на место
+    // будущих карточек, иначе кнопка и подвал прыгают вниз через секунды после нажатия
+    const n = Math.min(STEP, +list.dataset.total - list.querySelectorAll('.card').length);
+    list.insertAdjacentHTML('beforeend', '<div class="card skeleton" aria-hidden="true"></div>'.repeat(Math.max(0, n)));
     await load();
+    if (mine !== turn) return;  // пока грузилось, было новое нажатие или фильтр: нарисует оно
+    if (!full) shown = STEP;  // не загрузилось: остаёмся на первых карточках, кнопку можно нажать снова
     render();
   });
   if (full || !blank(state())) apply();

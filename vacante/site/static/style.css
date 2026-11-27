@@ -102,6 +102,8 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .show-more{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:12px;background:none;color:inherit;font:inherit;cursor:pointer;opacity:.85}
 .show-more[hidden]{display:none}
 .list[aria-busy="true"]{opacity:.6}
+/* Заглушки на месте следующих карточек, пока грузится весь список (высота средней карточки) */
+.card.skeleton{height:150px;padding:0;background:linear-gradient(var(--line),var(--line)) 0 24px/60% 14px no-repeat,linear-gradient(var(--line),var(--line)) 0 52px/40% 12px no-repeat}
 .pay-stats{margin:4px 0 10px;opacity:.8;font-size:.95em}
 .similar{margin-top:28px}
 .footer .cities{margin:8px 0;line-height:1.8}

@@ -11,7 +11,7 @@ import httpx
 import yaml
 
 from vacante import direct as direct_jobs
-from vacante import contacts, geocode, parse, quality
+from vacante import closed, contacts, geocode, parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain, split_title
@@ -150,7 +150,8 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = MAX_AGE_DAYS, fet
         if v.lat is not None and v.geo is None:  # точки, сохранённые до поля geo, поставил hh
             v.geo = hh.SOURCE
     # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
-    vacancies = expire(merge(from_bot + existing + from_hh_saved + from_olx_saved, incoming), max_age_days, now)
+    merged = merge(from_bot + existing + from_hh_saved + from_olx_saved, incoming)
+    vacancies = expire(merged, max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)
     for v in saved:
         if v.id in dropped:
@@ -167,5 +168,8 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = MAX_AGE_DAYS, fet
     save_state(data_dir, state)
     journal.save(data_dir)
     quality.save_rejected(data_dir, rejected, journal.posts)
+    # Архив для страницы 404 (vacante.closed): помним только тех, у кого вышел срок или кого закрыл работодатель
+    stats["closed"] = closed.update(data_dir, closed.leavers(saved, merged, vacancies, direct), vacancies,
+                                    set(cities), now)
     stats["total"] = len(vacancies)
     return stats

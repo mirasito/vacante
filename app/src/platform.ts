@@ -112,6 +112,7 @@ export function initTelegram(): Promise<WebApp | undefined> {
  * telegram.org крутилка оставалась навсегда; если скрипт придёт позже, done всё равно позовёт ready и expand.
  */
 const TELEGRAM_WAIT_MS = 8000;
+const TELEGRAM_SCRIPT = 'https://telegram.org/js/telegram-web-app.js';
 
 /** Язык страницы для скринридера и переводчика браузера: html lang меняется вместе с языком интерфейса. */
 export function setPageLang(lang: string) {
@@ -132,11 +133,17 @@ function start(): Promise<WebApp | undefined> {
       resolve(app);
     };
     if (telegram()) return done();
-    const script = document.createElement('script');
-    script.src = 'https://telegram.org/js/telegram-web-app.js';
-    script.onload = done;
-    script.onerror = () => resolve(undefined);
-    document.head.appendChild(script);
+    // Шаблон app/public/index.html уже поставил этот тег в начале загрузки: ждём его, а не качаем второй раз
+    const w = window as unknown as { __vacanteTelegramFailed?: boolean };
+    if (w.__vacanteTelegramFailed) return resolve(undefined);
+    const early = document.querySelector<HTMLScriptElement>(`script[src="${TELEGRAM_SCRIPT}"]`);
+    const script = early ?? document.createElement('script');
+    script.addEventListener('load', done);
+    script.addEventListener('error', () => resolve(undefined));
+    if (!early) {
+      script.src = TELEGRAM_SCRIPT;
+      document.head.appendChild(script);
+    }
     setTimeout(() => resolve(undefined), TELEGRAM_WAIT_MS);
   });
 }

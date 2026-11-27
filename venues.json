@@ -2944,7 +2944,7 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "website": "https://ttc.kz/",
   "source": "https://2gis.kz/aktau/firm/70000001028924180",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -13862,7 +13862,7 @@
   "checked_at": "2026-10-30T16:42:48+00:00",
   "website": "https://grandlinelogistics.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110238116",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -17781,6 +17781,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-20T05:43:48+00:00"
+ },
+ "almaty:marks & spencer": {
+  "name": "Marks & Spencer",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T17:42:52+00:00"
  },
  "almaty:marrone rosso тм тоо dand m investments": {
   "name": "Marrone Rosso, ТМ ( ТОО DAND M INVESTMENTS)",
@@ -30075,7 +30082,7 @@
   "instagram": "dep_company",
   "website": "https://dep.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001115178504",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -30157,7 +30164,7 @@
   "instagram": "sultankurgan",
   "website": "https://sultankurgan.edu.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000800824",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -40032,6 +40039,13 @@
   "v": 3,
   "checked_at": "2026-11-08T12:43:42+00:00"
  },
+ "almaty:уткелбаева": {
+  "name": "УТКЕЛБАЕВА",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T17:42:52+00:00"
+ },
  "almaty:уткелов ж б": {
   "name": "Уткелов Ж.Б.",
   "city": "almaty",
@@ -43005,7 +43019,7 @@
   "checked_at": "2026-11-06T16:45:18+00:00",
   "website": "https://voltrix.kz/",
   "source": "https://2gis.kz/astana/firm/70000001109834367",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -46232,7 +46246,7 @@
   "instagram": "bankffin.kz",
   "website": "http://freedombank.kz/",
   "source": "https://2gis.kz/astana/firm/70000001059385165",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47724,7 +47738,7 @@
   "instagram": "iswimastana",
   "website": "http://iswim.kz/",
   "source": "https://2gis.kz/astana/firm/70000001118349809",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58928,7 +58942,7 @@
   "instagram": "kelet.kz",
   "website": "https://www.kelet.kz/",
   "source": "https://2gis.kz/astana/firm/70000001018099257",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62685,7 +62699,7 @@
   "checked_at": "2026-10-30T15:44:36+00:00",
   "website": "https://dodopizza.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001025209348",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65372,7 +65386,7 @@
   "instagram": "bga.asia",
   "website": "https://www.bga.asia/",
   "source": "https://2gis.kz/astana/firm/70000001104833378",
-  "avatar_checked_at": "2026-11-20T17:42:53+00:00",
+  "avatar_checked_at": "2026-11-27T17:42:53+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -74607,6 +74621,13 @@
   ],
   "avatar": "567d0e9f878518ba.jpg",
   "avatar_source": "website"
+ },
+ "kokshetau:дико&полезно": {
+  "name": "Дико&Полезно",
+  "city": "kokshetau",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T17:42:52+00:00"
  },
  "kokshetau:ергазиев": {
   "name": "Ергазиев",

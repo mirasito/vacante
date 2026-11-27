@@ -67,18 +67,23 @@ export function postInfo(env) {
   };
 }
 
-const CAME_FROM = /^[a-z_]{1,20}$/;
-const VIA = /^[a-z0-9]{1,8}$/;
-const label = (re, value) => (typeof value === "string" && re.test(value) ? value : "");
+// Метки формы приходят в запросе без входа, прислать любую может кто угодно. В воронку и в jobs.came_from идут
+// только свои: кнопки сайта и приложения (from) и источники визита, которые определяет сайт (via, static/via.js),
+// остальные как other. Так число строк form_events за день ограничено, сколько бы меток ни выдумали
+export const FORM_FROM = ["land", "site_header", "site_footer", "site_list", "site", "miniapp", "cabinet"];
+export const FORM_VIAS = ["direct", "other", "google", "yandex", "bing", "ddg", "chatgpt", "perplex", "gemini", "copilot",
+  "claude", "tg", "ig", "2gis"];
+const known = (list, value) => (typeof value !== "string" || !value ? "" : list.includes(value) ? value : "other");
 
 /**
  * Метки запроса формы для воронки. from — с какой кнопки пришли: в базе web_<from> или web, то же потом в jobs.came_from.
  * via — источник визита на сайт (google, chatgpt, tg, direct…): его считает сайт и дописывает к ссылке на форму,
- * '' если неизвестен. given — запрос назвал хотя бы одну метку. steps — шаги воронки за этот запрос, их пишет countForm.
+ * '' если неизвестен. Незнакомые метки — other. given — запрос назвал хотя бы одну метку.
+ * steps — шаги воронки за этот запрос, их пишет countForm.
  */
 export function formLabels(from, via) {
-  const known = label(CAME_FROM, from);
-  return { cameFrom: known ? `web_${known}` : "web", via: label(VIA, via), given: Boolean(from || via), steps: [] };
+  const button = known(FORM_FROM, from);
+  return { cameFrom: button ? `web_${button}` : "web", via: known(FORM_VIAS, via), given: Boolean(from || via), steps: [] };
 }
 
 /**
@@ -102,9 +107,26 @@ async function writeSteps(env, { cameFrom, via, steps }) {
   }
 }
 
-// Шаг открытой части формы: open, parse или tidy. Запрос без from и via не считаем: так приходят роботы и старая сборка приложения
-function countStep(env, ctx, form, step) {
-  if (!form.given) return;
+// С одного адреса в минуту пишем не больше стольких шагов открытой части формы. Память своя у каждого экземпляра
+// воркера, поэтому предел приблизительный, но поток запросов с одного адреса квоту записей D1 не съест
+export const OPEN_STEPS_PER_MINUTE = 20;
+const recent = new Map();
+function mayCount(request, now = Date.now()) {
+  const ip = request.headers.get("CF-Connecting-IP") || "local";
+  const hit = recent.get(ip);
+  if (!hit || now - hit.start >= 60_000) {
+    if (recent.size > 5000) recent.clear();
+    recent.set(ip, { start: now, n: 1 });
+    return true;
+  }
+  hit.n += 1;
+  return hit.n <= OPEN_STEPS_PER_MINUTE;
+}
+
+// Шаг открытой части формы: open, parse или tidy. Не считаем запрос без from и via (роботы и старая сборка
+// приложения), не со страниц сайта и приложения (нет разрешённого Origin, его ставит браузер) и сверх предела минуты
+function countStep(env, ctx, form, step, request, headers) {
+  if (!form.given || !headers["Access-Control-Allow-Origin"] || !mayCount(request)) return;
   form.steps.push(step);
   countForm(env, ctx, form);
 }
@@ -113,7 +135,7 @@ export async function postApi(request, env, headers, ctx) {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
   if (request.method === "GET") {
     const query = new URL(request.url).searchParams;
-    countStep(env, ctx, formLabels(query.get("from"), query.get("via")), "open");
+    countStep(env, ctx, formLabels(query.get("from"), query.get("via")), "open", request, headers);
     return Response.json(postInfo(env), { headers });
   }
   if (request.method !== "POST") return Response.json({ error: "method" }, { status: 405, headers });
@@ -123,12 +145,12 @@ export async function postApi(request, env, headers, ctx) {
     const text = String(body.text ?? "").trim().slice(0, 4000);
     if (text.length < 10) return Response.json({ error: "Вставьте текст вакансии целиком или ссылку на неё" }, { status: 400, headers });
     const r = await parseForForm(text);
-    if (!r.error) countStep(env, ctx, form, "parse");
+    if (!r.error) countStep(env, ctx, form, "parse", request, headers);
     return Response.json(r, { status: r.error ? 400 : 200, headers });
   }
   if (body.action === "tidy") {
     const r = tidyForForm(body.fields || {});
-    countStep(env, ctx, form, "tidy");
+    countStep(env, ctx, form, "tidy", request, headers);
     return Response.json(r, { headers });
   }
   return Response.json({ error: "Неизвестное действие" }, { status: 400, headers });

@@ -7,6 +7,7 @@ import { test } from "node:test";
 import { moderationKey } from "../src/employer.js";
 import worker, { nudgeDrafts, nudgeSubscribers } from "../src/index.js";
 import { webhookSecret } from "../src/logic.js";
+import { OPEN_STEPS_PER_MINUTE } from "../src/webpost.js";
 
 // D1 поверх встроенного в Node SQLite со всеми миграциями: проверяем настоящие запросы бота
 function testDB() {
@@ -1498,9 +1499,22 @@ test("воронка формы размещения: шаги числами п
   assert.equal(sql.length, 1);  // одна запись и ничего больше
   await api("/api/post?from=site_header&via=google");
   await api("/api/post?via=chatgpt");
-  await api("/api/post?from=land&via=Google%20Ads");  // via не по формату: источник неизвестен
-  await api("/api/post?from=SITE");  // from не по формату: как форма без метки
-  assert.deepEqual(await funnel(), ["web — open 1", "web chatgpt open 1", "web_land — open 1", "web_site_header google open 2"]);
+  await api("/api/post?from=land&via=Google%20Ads");  // незнакомый источник: other
+  await api("/api/post?from=SITE");  // незнакомая кнопка: other
+  assert.deepEqual(await funnel(), ["web chatgpt open 1", "web_land other open 1", "web_other — open 1", "web_site_header google open 2"]);
+  // Выдуманные метки строк не прибавляют: всё незнакомое ложится в other
+  for (let i = 0; i < 5; i++) await api(`/api/post?from=made_up_${i}&via=x${i}`);
+  assert.deepEqual((await funnel()).filter((row) => /^web_other other/.test(row)), ["web_other other open 5"]);
+  await prepare("DELETE FROM form_events WHERE came_from = 'web_other' AND via = 'other'").run();
+  // Не со страниц сайта или приложения (нет разрешённого Origin): не считаем
+  for (const origin of [null, "https://evil.example"]) {
+    sql = [];
+    const res = await worker.fetch(new Request("https://bot.example/api/post?from=land&via=google",
+      { headers: origin ? { Origin: origin } : {} }), env, ctx);
+    await Promise.all(ctx.tasks.splice(0));
+    assert.equal(res.status, 200);
+    assert.equal(counted(), 0, String(origin));
+  }
   assert.deepEqual(env.DB.get("SELECT COUNT(DISTINCT day) AS days, MIN(day) = date('now', '+5 hours') AS today FROM form_events"), { days: 1, today: 1 });
 
   // Разбор текста считается, только когда получился; проверка оформления всегда. Без меток не считаем
@@ -1512,7 +1526,7 @@ test("воронка формы размещения: шаги числами п
   assert.equal((await api("/api/post", null, { action: "parse", text })).status, 200);
   assert.equal((await api("/api/post", null, { action: "tidy", fields: { title: "повар!!!" }, ...labels })).fields.title, "Повар");
   assert.equal((await api("/api/post", null, { action: "tidy", fields: { title: "повар" } })).status, 200);
-  assert.deepEqual(await funnel(), ["web — open 1", "web chatgpt open 1", "web_land — open 1",
+  assert.deepEqual(await funnel(), ["web chatgpt open 1", "web_land other open 1", "web_other — open 1",
     "web_site_header google open 2", "web_site_header google parse 1", "web_site_header google tidy 1"]);
 
   // Черновик считается один раз, когда форма его завела; неудачная отправка не считается
@@ -1557,4 +1571,15 @@ test("воронка формы размещения: шаги числами п
   }
   assert.equal(errors.length, 2);
   assert.match(String(errors[0][0]), /no such table: form_events/);
+});
+
+test("воронка формы: с одного адреса в минуту пишется не больше 20 шагов открытой части", async () => {
+  const env = fakeEnv();
+  globalThis.fetch = fakeFetch([]);
+  const ctx = { tasks: [], waitUntil(p) { this.tasks.push(p); } };
+  const open = () => worker.fetch(new Request("https://bot.example/api/post?from=land&via=google",
+    { headers: { Origin: "https://vacante.kz", "CF-Connecting-IP": "203.0.113.50" } }), env, ctx);
+  for (let i = 0; i < OPEN_STEPS_PER_MINUTE + 10; i++) assert.equal((await open()).status, 200);
+  await Promise.all(ctx.tasks.splice(0));
+  assert.equal(env.DB.get("SELECT SUM(n) AS n FROM form_events").n, OPEN_STEPS_PER_MINUTE);
 });

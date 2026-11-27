@@ -11,7 +11,8 @@ const CITY_WORDS = [
   ["karaganda", /караганд|қарағанд|karaganda/i], ["aktobe", /актобе|ақтөбе|aktobe/i], ["atyrau", /атырау|atyrau/i],
   ["uralsk", /уральск|орал(?![а-яё])|oral|uralsk/i], ["semey", /семей|semey/i], ["ust-kamenogorsk", /усть-каменогорск|өскемен|oskemen/i],
   ["petropavlovsk", /петропавловск|petropavl/i], ["turkestan", /туркестан|түркістан/i], ["kostanay", /костанай|қостанай|kostanay/i],
-  ["pavlodar", /павлодар|pavlodar/i],
+  ["pavlodar", /павлодар|pavlodar/i], ["aktau", /актау|ақтау|aktau/i], ["kokshetau", /кокшета|көкшета|kokshetau/i],
+  ["taraz", /тараз|taraz/i], ["taldykorgan", /талдыкорган|талдықорған|taldykorgan/i], ["kyzylorda", /кызылорд|қызылорд|kyzylorda/i],
 ];
 const CITIES = new Set(options.cities.map(([slug]) => slug));
 

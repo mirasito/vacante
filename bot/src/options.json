@@ -4,6 +4,7 @@
   ["astana", "Астана"],
   ["shymkent", "Шымкент"],
   ["karaganda", "Караганда"],
+  ["aktau", "Актау"],
   ["aktobe", "Актобе"],
   ["atyrau", "Атырау"],
   ["uralsk", "Уральск"],
@@ -12,7 +13,11 @@
   ["petropavlovsk", "Петропавловск"],
   ["turkestan", "Туркестан"],
   ["kostanay", "Костанай"],
-  ["pavlodar", "Павлодар"]
+  ["pavlodar", "Павлодар"],
+  ["kokshetau", "Кокшетау"],
+  ["taraz", "Тараз"],
+  ["taldykorgan", "Талдыкорган"],
+  ["kyzylorda", "Кызылорда"]
  ],
  "categories": [
   ["horeca", "Кафе и рестораны"],

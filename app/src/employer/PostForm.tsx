@@ -19,6 +19,7 @@ import type { Lang } from '../types';
 import { Button, Chip, Loading, styles as ui } from '../ui';
 import { AuthError, call, money, postApi, type ActionResult, type CabinetState, type PostFields, type PostInfo } from './api';
 import { cameOf } from './came';
+import DEFAULTS from './postDefaults.json';
 import { PayBox } from './PayBox';
 
 const LOCAL = 'vacante.postDraft';
@@ -178,6 +179,10 @@ export function PostForm(props: {
   const [result, setResult] = useState<ActionResult | null>(null);
   const [paidSent, setPaidSent] = useState(false);
   const scroll = useRef<ComponentRef<typeof ScrollView>>(null);
+  // Города и частые должности видны сразу, не дожидаясь сервера бота (~1.3 s): раньше кнопки появлялись
+  // позже и сдвигали форму вниз (CLS 0.11–0.16). Ответ сервера их заменяет; тест бота следит, что списки те же
+  const cities = (info?.cities ?? DEFAULTS.cities) as [string, string][];
+  const titles = info?.titles ?? DEFAULTS.titles;
   const top = () => scroll.current?.scrollTo({ y: 0, animated: true });
   // Метки идут с каждым запросом формы: бот считает по ним, на каком шаге её бросают
   const came = useMemo(() => cameOf(props.from, props.via), [props.from, props.via]);
@@ -364,7 +369,7 @@ export function PostForm(props: {
 
         <Text style={[s.label, { color: c.ink }]}>{t.city} *</Text>
         <View style={s.wrap}>
-          {(info?.cities ?? []).map(([slug, name]) => (
+          {cities.map(([slug, name]) => (
             <Chip key={slug} c={c} active={fields.city === slug} label={name} onPress={() => set('city', slug)} />
           ))}
         </View>
@@ -385,9 +390,9 @@ export function PostForm(props: {
               accessibilityLabel={labels[field]}
               style={[s.input, field === 'details' && s.area, { color: c.ink, borderColor: c.line, backgroundColor: c.card }]}
             />
-            {field === 'title' && info?.titles.length ? (
+            {field === 'title' && titles.length ? (
               <View style={s.wrap}>
-                {info.titles.map((name) => (
+                {titles.map((name) => (
                   <Chip key={name} c={c} active={fields.title === name} label={name} onPress={() => set('title', name)} />
                 ))}
               </View>
@@ -402,7 +407,7 @@ export function PostForm(props: {
       </View>
     );
   } else if (step === 'check') {
-    const cityName = info?.cities.find(([slug]) => slug === fields.city)?.[1] ?? '';
+    const cityName = cities.find(([slug]) => slug === fields.city)?.[1] ?? '';
     const options: { key: Tariff; name: string; what: string; price?: number }[] = [];
     if (tariffs) {
       options.push({ key: 'basic', name: t.basic, what: t.basicWhat, price: tariffs.post });

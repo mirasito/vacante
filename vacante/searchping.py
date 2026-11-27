@@ -304,6 +304,38 @@ def crawl_days(crawls: list[tuple[str, str | None]]) -> dict[str, tuple[int, int
     return {day: (n, vacancies) for day, (n, vacancies) in days.items()}
 
 
+OWN_VACANCY = "вакансия из каналов и от работодателей"  # о таких страницах часовое обновление сообщает в Indexing API
+
+
+def _notified(client: httpx.Client, auth: dict, url: str) -> str | None:
+    """Когда мы последний раз сообщали Google об этой странице через Indexing API. None — не сообщали
+    (ответ 404) или Google не ответил."""
+    try:
+        r = client.get("https://indexing.googleapis.com/v3/urlNotifications/metadata", headers=auth, params={"url": url})
+    except httpx.HTTPError:
+        return None
+    return r.json().get("latestUpdate", {}).get("notifyTime") if r.status_code == 200 else None
+
+
+def _has_job_markup(client: httpx.Client, url: str) -> bool:
+    """Есть ли на живой странице разметка JobPosting: Indexing API официально принимает только такие."""
+    try:
+        return '"JobPosting"' in client.get(url, follow_redirects=True).text
+    except httpx.HTTPError:
+        return False
+
+
+def notified_table(pages: list[tuple[bool, bool, bool, bool]]) -> list[tuple[str, int, int, int]]:
+    """[(сообщали, есть разметка, робот заходил, в индексе)] → строки отчёта: (подпись, страниц, заходил, в индексе)."""
+    table = []
+    for told in (True, False):
+        for markup in (True, False):
+            mine = [page for page in pages if page[0] == told and page[1] == markup]
+            label = f"{'сообщали' if told else 'не сообщали'}, {'с разметкой' if markup else 'без разметки'}"
+            table.append((label, len(mine), sum(page[2] for page in mine), sum(page[3] for page in mine)))
+    return table
+
+
 def _inspect_one(client: httpx.Client, auth: dict, prop: str, url: str) -> tuple[int, dict | str]:
     """Один запрос URL Inspection API: (200, результат проверки) или (код ответа, начало текста ошибки).
     Сбой сети — код 0: одна неответившая страница не должна ронять весь отчёт."""
@@ -359,6 +391,10 @@ def inspect(total: int) -> None:
                 else:
                     rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
                     rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
+        # Помогает ли Indexing API: о своих вакансиях мы сообщаем Google сразу, заходит ли после этого робот
+        pushed = [(bool(_notified(client, auth, row[2])), _has_job_markup(client, row[2]),
+                   bool(row[3].get("lastCrawlTime")), row[3].get("verdict") == "PASS")
+                  for row in rows if row[0] == OWN_VACANCY]
 
     def indexed(status: dict) -> bool:
         return status.get("verdict") == "PASS"
@@ -406,6 +442,10 @@ def inspect(total: int) -> None:
             known = [a for a in ages if a is not None]
             print(f"{group[:44]:44} {len(ages) - len(known):5} {sum(a < 3 for a in known):5} "
                   f"{sum(3 <= a <= 14 for a in known):5} {sum(a > 14 for a in known):5}")
+
+    print(f"\n== Indexing API, {OWN_VACANCY}: страниц, из них робот заходил, в индексе")
+    for label, n, crawled, good in notified_table(pushed):
+        print(f"{label[:44]:44} {n:5} {crawled:5} {good:5}")
 
     # Встал ли обход и когда: последний заход робота на каждую проверенную страницу, по датам
     print("\n== последний заход Google по датам: дата, страниц, из них вакансий")

@@ -46,3 +46,27 @@ def test_crawl_days_count_only_pages_the_robot_visited():
     days = searchping.crawl_days([("вакансия hh", "2026-11-09T10:00:00Z"), ("город или раздел", "2026-11-09T23:59:59Z"),
                                   ("вакансия hh (kk)", "2026-11-25T01:00:00Z"), ("главная", None)])
     assert days == {"2026-11-09": (2, 1), "2026-11-25": (1, 1)}
+
+
+def test_indexing_api_table_splits_pages_by_notification_and_markup():
+    # (сообщали, есть разметка, робот заходил, в индексе)
+    pages = [(True, True, True, True), (True, True, False, False), (True, False, False, False), (False, False, True, False)]
+    assert searchping.notified_table(pages) == [
+        ("сообщали, с разметкой", 2, 1, 1), ("сообщали, без разметки", 1, 0, 0),
+        ("не сообщали, с разметкой", 0, 0, 0), ("не сообщали, без разметки", 1, 1, 0)]
+
+
+def test_notification_time_and_job_markup_are_read_from_google_and_the_live_page():
+    def answer(request: httpx.Request) -> httpx.Response:
+        if request.url.host == "indexing.googleapis.com":
+            if request.url.params["url"].endswith("/v/a-1/"):
+                return httpx.Response(200, json={"url": "x", "latestUpdate": {"type": "URL_UPDATED", "notifyTime": "2026-11-25T05:28:09Z"}})
+            return httpx.Response(404, json={"error": {"code": 404}})
+        return httpx.Response(200, text='<script type="application/ld+json">{"@type": "JobPosting"}</script>'
+                              if request.url.path == "/v/a-1/" else "<p>без разметки</p>")
+
+    with httpx.Client(transport=httpx.MockTransport(answer)) as client:
+        assert searchping._notified(client, {}, "https://vacante.kz/v/a-1/") == "2026-11-25T05:28:09Z"
+        assert searchping._notified(client, {}, "https://vacante.kz/v/a-2/") is None
+        assert searchping._has_job_markup(client, "https://vacante.kz/v/a-1/")
+        assert not searchping._has_job_markup(client, "https://vacante.kz/v/a-2/")

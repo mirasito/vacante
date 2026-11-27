@@ -84,11 +84,13 @@ def test_notifications_are_counted_by_the_day_the_vacancy_was_published():
     assert searchping.notify_days(answers) == [("2026-11-24", 1, 0), ("2026-11-25", 2, 1), ("2026-11-26", 2, 0)]
 
 
-def test_probe_tells_google_about_the_newest_own_vacancy_and_asks_whether_it_was_recorded(monkeypatch, capsys):
+def test_probe_tells_google_about_two_newest_own_vacancies_and_asks_whether_it_was_recorded(monkeypatch, capsys):
     sitemap = ("<url><loc>https://vacante.kz/almaty/</loc><lastmod>2026-11-27</lastmod></url>"
                "<url><loc>https://vacante.kz/v/hh-1/</loc><lastmod>2026-11-27</lastmod></url>"
                "<url><loc>https://vacante.kz/v/kanal-9/</loc><lastmod>2026-11-27</lastmod></url>"
-               "<url><loc>https://vacante.kz/v/kanal-8/</loc><lastmod>2026-11-26</lastmod></url>")
+               "<url><loc>https://vacante.kz/v/kanal-8/</loc><lastmod>2026-11-26</lastmod></url>"
+               "<url><loc>https://vacante.kz/v/kanal-7/</loc><lastmod>2026-11-26</lastmod></url>"
+               "<url><loc>https://vacante.kz/v/kanal-6/</loc><lastmod>2026-11-26</lastmod></url>")
     told = []
 
     def answer(request: httpx.Request) -> httpx.Response:
@@ -99,7 +101,10 @@ def test_probe_tells_google_about_the_newest_own_vacancy_and_asks_whether_it_was
         if request.url.host == "indexing.googleapis.com":
             # Google принял сообщение, но на вопрос о нём отвечает «не сообщали»: это и должно быть видно
             return httpx.Response(404, json={"error": {"code": 404, "message": "Requested entity was not found."}})
-        return httpx.Response(200, text=sitemap if request.url.path == "/sitemap.xml" else "<p>вакансия</p>")
+        if request.url.path == "/sitemap.xml":
+            return httpx.Response(200, text=sitemap)
+        return httpx.Response(200, text='<script type="application/ld+json">{"@type": "JobPosting"}</script>'
+                              if request.url.path in ("/v/kanal-7/", "/v/kanal-6/") else "<p>вакансия</p>")
 
     real_client, transport = httpx.Client, httpx.MockTransport(answer)
     monkeypatch.setattr(searchping.httpx, "Client", lambda **kw: real_client(transport=transport))
@@ -108,8 +113,11 @@ def test_probe_tells_google_about_the_newest_own_vacancy_and_asks_whether_it_was
     monkeypatch.setattr(searchping, "PROBE_WAITS", (0, 0))
     searchping.main(["probe"])
     out = capsys.readouterr().out
-    # Сообщаем об одной странице: самой новой своей вакансии, не о копии hh и не о списке
-    assert told == [{"url": "https://vacante.kz/v/kanal-9/", "type": "URL_UPDATED"}]
-    assert "разметка JobPosting на ней нет" in out
-    assert "сообщение отправлено: ответ 200" in out
-    assert out.count("Google отвечает о ней: 404") == 2
+    # Сообщаем о двух страницах: самой новой своей вакансии без разметки и самой новой с разметкой.
+    # Не о копии hh и не о списке
+    assert told == [{"url": "https://vacante.kz/v/kanal-9/", "type": "URL_UPDATED"},
+                    {"url": "https://vacante.kz/v/kanal-7/", "type": "URL_UPDATED"}]
+    assert "kanal-9/, разметка JobPosting на ней нет" in out and "kanal-7/, разметка JobPosting на ней есть" in out
+    # Фигурных скобок в журнале нет: GitHub закрыл бы их звёздочками
+    assert 'сообщение отправлено: ответ 200 "urlNotificationMetadata"' in out and "{" not in out and "}" not in out
+    assert out.count("Google отвечает о ней: 404") == 6

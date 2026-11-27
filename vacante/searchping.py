@@ -388,9 +388,10 @@ PUBLISH = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 
 
 def probe() -> None:
-    """Indexing API от начала до конца на одной своей вакансии: спросить Google о ней, сообщить, спросить снова.
-    Показывает, записывает ли Google наши сообщения: часовое обновление видит только код ответа на отправку.
-    Тратит одно сообщение из суточной квоты (200), странице не вредит: о ней и так положено сообщать."""
+    """Indexing API от начала до конца на двух своих вакансиях, самой новой без разметки JobPosting и самой
+    новой с разметкой: спросить Google о странице, сообщить, спросить снова. Показывает, записывает ли Google
+    наши сообщения: часовое обновление видит только код ответа на отправку. Тратит два сообщения из суточной
+    квоты (200), страницам не вредит: о них и так положено сообщать."""
     account = service_account()
     if not account:
         sys.exit("Нет секрета GSC_SERVICE_ACCOUNT: шаги в шапке .github/workflows/seo.yml")
@@ -399,20 +400,30 @@ def probe() -> None:
                if page_group(url) == OWN_VACANCY]
         if not own:
             sys.exit(f"В {SITE}/sitemap.xml нет своих вакансий")
-        url = own[0]  # самая новая
+        # Самые новые идут первыми. Страницу с разметкой ищем среди первых PROBE_LOOK: дальше читать сайт незачем
+        marked = {url: _has_job_markup(client, url) for url in own[:PROBE_LOOK]}
+        picked = [next((url for url, has in marked.items() if has == want), None) for want in (False, True)]
         auth = {"Authorization": f"Bearer {google_token(client, account)}"}
-        print(f"Страница {url}, разметка JobPosting на ней {'есть' if _has_job_markup(client, url) else 'нет'}")
-        print(f"до сообщения Google отвечает о ней: {_notified(client, auth, url)}")
-        r = client.post(PUBLISH, headers=auth, json={"url": url, "type": "URL_UPDATED"})
-        print(f"сообщение отправлено: ответ {r.status_code} {' '.join(r.text.split())[:500]}")
-        for wait in PROBE_WAITS:
-            code, text = _notified(client, auth, url, pause=wait)
-            print(f"через {wait} с Google отвечает о ней: {code or 'нет ответа'} {text or '—'}")
-            if code == 200:
-                break
+        for url in filter(None, picked):
+            print(f"\nСтраница {url}, разметка JobPosting на ней {'есть' if marked[url] else 'нет'}")
+            code, text = _notified(client, auth, url)
+            print(f"до сообщения Google отвечает о ней: {code or 'нет ответа'} {text or '—'}")
+            r = client.post(PUBLISH, headers=auth, json={"url": url, "type": "URL_UPDATED"})
+            # Ответ печатаем без фигурных скобок: GitHub закрывает их в журнале звёздочками из-за секрета с JSON
+            print(f"сообщение отправлено: ответ {r.status_code} {' '.join(r.text.translate(BRACES).split())[:500]}")
+            for wait in PROBE_WAITS:
+                code, text = _notified(client, auth, url, pause=wait)
+                print(f"через {wait} с Google отвечает о ней: {code or 'нет ответа'} {text or '—'}")
+                if code == 200:
+                    break
+        if None in picked:
+            print(f"\nСреди {len(marked)} самых новых своих вакансий нет страницы "
+                  f"{'без разметки' if picked[0] is None else 'с разметкой'} JobPosting")
 
 
-PROBE_WAITS = (2, 15, 45)  # через сколько секунд после сообщения спрашиваем, записал ли его Google
+BRACES = str.maketrans("", "", "{}")
+PROBE_LOOK = 40  # среди скольких самых новых своих вакансий ищем по одной странице с разметкой и без
+PROBE_WAITS = (2, 20)  # через сколько секунд после сообщения спрашиваем, записал ли его Google
 
 
 def _has_job_markup(client: httpx.Client, url: str) -> bool:

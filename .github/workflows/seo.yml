@@ -27,7 +27,7 @@ on:
         description: "Проверить индекс на стольких страницах (0 — не проверять, не больше 600)"
         default: "120"
       probe:
-        description: "Проверить Indexing API на одной вакансии: сообщить Google и спросить, записал ли он"
+        description: "Проверить Indexing API на двух вакансиях: сообщить Google и спросить, записал ли он"
         type: boolean
         default: false
 
@@ -62,9 +62,10 @@ jobs:
           [[ $PAGES =~ ^[0-9]+$ ]] || { echo "::error::В поле inspect должно быть число"; exit 1; }
           python -m vacante.searchping inspect "$PAGES" | tee index.txt
           { echo '```'; cat index.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
-      # Часовое обновление видит только «200» на отправку. Здесь одна вакансия проходит весь путь: что Google
-      # знал о ней до сообщения, что ответил на сообщение и записал ли его. Тратит одно сообщение из 200 в сутки
-      - name: Indexing API на одной вакансии
+      # Часовое обновление видит только «200» на отправку. Здесь две вакансии (с разметкой JobPosting и без)
+      # проходят весь путь: что Google знал о странице до сообщения, что ответил на сообщение и записал ли его.
+      # Тратит два сообщения из 200 в сутки
+      - name: Indexing API на двух вакансиях
         if: inputs.probe
         env:
           GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}

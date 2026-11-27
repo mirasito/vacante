@@ -220,7 +220,8 @@ def _env(lang: str = "ru") -> Environment:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.globals.update(city_name=lambda slug: city_name(slug, lang), cat_name=lambda c: category_name(c, lang),
+    env.globals.update(city_name=lambda slug: city_name(slug, lang), city_in=lambda slug: city_in(slug, lang),
+                       cat_name=lambda c: category_name(c, lang),
                        salary_label=lambda v: salary_label(v, lang), twogis_url=twogis_url,
                        app_replies=app_replies, profile_link=lambda v: launch.profile_link(v, "web"),
                        monthly_pay=monthly_pay, monthly_label=lambda v: monthly_label(v, lang),
@@ -596,8 +597,16 @@ _LOCATIVE = {"almaty": "Алматы", "astana": "Астане", "shymkent": "Ш
              "kokshetau": "Кокшетау", "taldykorgan": "Талдыкоргане"}
 
 
-def _locative(slug: str) -> str:
-    return _LOCATIVE.get(slug, city_name(slug))
+def _locative(slug: str | None) -> str:
+    """Город в предложном падеже, для «в …»: «Астане». Без города — «Казахстане»."""
+    return _LOCATIVE.get(slug, city_name(slug)) if slug in CITIES else "Казахстане"
+
+
+def city_in(slug: str | None, lang: str = "ru") -> str:
+    """Город в форме «где», в текстах это {where}: «(в) Астане» по-русски, «Астанадағы» по-казахски."""
+    if lang == "kk":
+        return i18n.CITIES_KK_IN.get(slug, city_name(slug, lang)) if slug in CITIES else "Қазақстандағы"
+    return _locative(slug)
 
 
 def city_heading(slug: str, lang: str) -> str:

@@ -30,7 +30,7 @@
   {% endif %}
 </section>
 {% if city and channels.get(city) %}
-<a class="subscribe" href="{{ channels[city] }}">{{ t("Новые вакансии {city} каждый день в Telegram →", city=city_name(city)) }}</a>
+<a class="subscribe" href="{{ channels[city] }}">{{ t("Новые вакансии в {where} каждый день в Telegram →", where=city_in(city), city=city_name(city)) }}</a>
 {% endif %}
 {% if vacancies %}
 <div class="filters selects">
@@ -77,7 +77,7 @@
 </div>
 {% if total > PAGE_SIZE %}<button type="button" id="more" class="show-more">{{ t("Показать ещё") }}</button>{% endif %}
 <p id="none" class="empty" hidden>{{ t("Ничего не нашлось. Попробуйте убрать часть фильтров.") }}</p>
-<p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ city_name(city) }}{% endif %}:
+<p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ t("в городе {city}", city=city_name(city)) }}{% endif %}:
   {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
 </p>
 {% if shifts_page %}

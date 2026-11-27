@@ -9,9 +9,11 @@ import httpx
 
 from vacante import collect, direct, searchping
 from vacante.models import RawPost
-from vacante.parse import parse_post
+from vacante.parse import CITIES, parse_post
 from vacante.site import build as site
-from vacante.store import MAX_AGE_DAYS
+from vacante.site import i18n
+from vacante.site.build import build
+from vacante.store import MAX_AGE_DAYS, save_vacancies
 
 NOW = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
 
@@ -106,3 +108,45 @@ def test_indexnow_keeps_the_request_limit_and_new_urls_go_first():
         assert searchping.indexnow(client, []) == "IndexNow: новых и снятых адресов нет"
     assert len(seen) == 1 and seen[0]["host"] == "vacante.kz" and seen[0]["key"] == site.INDEXNOW_KEY
     assert seen[0]["urlList"] == new + gone[:2]
+
+
+def build_site(tmp_path, vacancies, now=NOW, **kwargs):
+    """Маленький сайт из данных теста: возвращает папку, куда он собран."""
+    save_vacancies(tmp_path / "data", vacancies)
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=now, **kwargs)
+    return out
+
+
+def test_vacancy_description_names_the_city_in_the_right_case(tmp_path):
+    """«Официант в Астане», а не «в Астана»; без города «в Казахстане». По-казахски город идёт через запятую."""
+    out = build_site(tmp_path, [post(1, "Кафе ищет официанта, 250 000 тг, 2/2", "astana"),
+                                post(2, "Требуется повар, 300 000 тг", None)])
+    pay = f"от {site.money(250000)} ₸/мес"
+    page = (out / "v" / "chan-1" / "index.html").read_text("utf-8")
+    assert f'<meta name="description" content="Официант в Астане, {pay}, график 2/2. ' in page
+    assert f'<meta property="og:description" content="Официант в Астане, {pay}' in page
+    assert "в Астана" not in page
+    kk = (out / "kk" / "v" / "chan-1" / "index.html").read_text("utf-8")
+    assert '<meta name="description" content="Даяшы, Астана, ' in kk
+    nowhere = (out / "v" / "chan-2" / "index.html").read_text("utf-8")
+    assert '<meta name="description" content="Повар в Казахстане, ' in nowhere and "в Казахстан," not in nowhere
+    assert '<meta name="description" content="Аспаз, Қазақстан, ' in (out / "kk" / "v" / "chan-2" / "index.html").read_text("utf-8")
+
+
+def test_city_page_texts_name_the_city_in_the_right_case(tmp_path):
+    """На странице города «Новые вакансии в Астане…» и «Ещё вакансии в городе Астана», а не «вакансии Астана»."""
+    out = build_site(tmp_path, [post(1, "Кафе ищет официанта, 250 000 тг, 2/2", "astana")])
+    page = (out / "astana" / "index.html").read_text("utf-8")
+    assert "Новые вакансии в Астане каждый день в Telegram →" in page
+    assert "Ещё вакансии в городе Астана:" in page and "вакансии Астана" not in page
+    kk = (out / "kk" / "astana" / "index.html").read_text("utf-8")
+    assert "Астана: жаңа вакансиялар күн сайын Telegram-да →" in kk and "Басқа вакансиялар Астана қаласында:" in kk
+    assert "Ещё вакансии:" in (out / "index.html").read_text("utf-8")  # без города фраза прежняя
+
+
+def test_every_city_has_its_forms_for_both_languages():
+    """Новый город в parse.CITIES без падежных форм дал бы «в Кокшетау» наугад: формы есть у каждого города."""
+    assert set(site._LOCATIVE) == set(CITIES) == set(i18n.CITIES_KK) == set(i18n.CITIES_KK_IN)
+    assert (site.city_in("astana"), site.city_in("astana", "kk")) == ("Астане", "Астанадағы")
+    assert (site.city_in(None), site.city_in(None, "kk")) == ("Казахстане", "Қазақстандағы")

@@ -61,7 +61,7 @@ def test_list_has_filters_and_counts_in_russian(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     home = (tmp_path / "public" / "index.html").read_text("utf-8")
-    assert "<title>Вакансии — 1 вакансия | vacante.kz</title>" in home
+    assert "<title>Работа в Казахстане: 1 вакансия — без опыта, подработка и смены | vacante.kz</title>" in home
     assert 'data-pay="396000"' in home  # 18 000 за смену × 22 смены
     assert 'data-perks="Питание|Без опыта|Смены и подработка"' in home  # оплата за смену
     assert 'data-perk="Без опыта"' in home and 'value="300000"' in home

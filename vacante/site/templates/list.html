@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }} | vacante.kz{% endblock %}
-{% block description %}{{ t("{heading}: свежие вакансии с зарплатой, графиком и условиями, сейчас {total}. Обновляется каждый час.", heading=heading, total=total) }}{% endblock %}
+{# Главная (page пустой) говорит, что это за сайт и для кого; пока вакансий нет, у неё обычные заголовок и описание списка #}
+{% block title %}{% if page or not total %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }}{% else %}{{ t("{heading}: {total} {vacancies} — без опыта, подработка и смены", heading=heading, total=total, vacancies=total | plural("вакансия", "вакансии", "вакансий")) }}{% endif %} | vacante.kz{% endblock %}
+{% block description %}{% if page or not total %}{{ t("{heading}: свежие вакансии с зарплатой, графиком и условиями, сейчас {total}. Обновляется каждый час.", heading=heading, total=total) }}{% else %}{{ t("vacante.kz — {total} {vacancies} для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы, Астане и других городах Казахстана. Есть работа без опыта, подработка и смены. Список обновляется каждый час.", total=total, vacancies=total | plural("вакансия", "вакансии", "вакансий")) }}{% endif %}{% endblock %}
 {% block head %}{% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}{% endblock %}
 {% block content %}
 <section class="hero">

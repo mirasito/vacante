@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 
 import httpx
 
-from vacante import collect, direct, searchping
+from vacante import collect, direct, searchping, shifts
 from vacante.models import RawPost
 from vacante.parse import CITIES, parse_post
 from vacante.site import build as site
@@ -150,3 +150,29 @@ def test_every_city_has_its_forms_for_both_languages():
     assert set(site._LOCATIVE) == set(CITIES) == set(i18n.CITIES_KK) == set(i18n.CITIES_KK_IN)
     assert (site.city_in("astana"), site.city_in("astana", "kk")) == ("Астане", "Астанадағы")
     assert (site.city_in(None), site.city_in(None, "kk")) == ("Казахстане", "Қазақстандағы")
+
+
+def test_home_page_says_what_the_site_is_and_for_whom(tmp_path):
+    """Главная: «Работа в Казахстане» в заголовке, свои название вкладки и описание с живым числом вакансий."""
+    out = build_site(tmp_path, [post(1, "Кафе ищет официанта, 250 000 тг", "astana"), post(2, "Требуется повар, 300 000 тг"),
+                                post(3, "Нужен курьер, 12 000 тг за смену")])
+    home = (out / "index.html").read_text("utf-8")
+    assert "<h1>Работа в Казахстане</h1>" in home
+    assert "<title>Работа в Казахстане: 3 вакансии — без опыта, подработка и смены | vacante.kz</title>" in home
+    assert ('<meta name="description" content="vacante.kz — 3 вакансии для официантов, поваров, продавцов, курьеров '
+            "и других рабочих профессий в Алматы, Астане и других городах Казахстана. Есть работа без опыта, "
+            'подработка и смены. Список обновляется каждый час.">') in home
+    assert '"@type": "WebSite"' in home and '"@type": "Organization"' in home  # разметка сайта осталась
+    kk = (out / "kk" / "index.html").read_text("utf-8")
+    assert "<h1>Қазақстандағы жұмыс</h1>" in kk
+    assert "<title>Қазақстандағы жұмыс: 3 вакансия — тәжірибесіз, қосымша жұмыс және ауысымдар | vacante.kz</title>" in kk
+    assert "мамандықтарына арналған 3 вакансия: Алматы, Астана және Қазақстанның басқа қалалары. " in kk
+    # Остальные списки называются как раньше
+    assert "<title>Работа в Астане — 1 вакансия | vacante.kz</title>" in (out / "astana" / "index.html").read_text("utf-8")
+    assert "<h1>Астанадағы жұмыс</h1>" in (out / "kk" / "astana" / "index.html").read_text("utf-8")
+    assert "<h1>Подработка и смены в Казахстане</h1>" in (out / shifts.SLUG / "index.html").read_text("utf-8")
+    assert "<h1>Қазақстандағы қосымша жұмыс және ауысымдар</h1>" in (out / "kk" / shifts.SLUG / "index.html").read_text("utf-8")
+    assert "<h1>Подработка и смены в Алматы</h1>" in (out / "almaty" / shifts.SLUG / "index.html").read_text("utf-8")
+    # Пока вакансий нет, главная не обещает «0 вакансий для официантов»
+    empty = (build_site(tmp_path / "empty", []) / "index.html").read_text("utf-8")
+    assert "<title>Работа в Казахстане — 0 вакансий | vacante.kz</title>" in empty and "0 вакансий для" not in empty

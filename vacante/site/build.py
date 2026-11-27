@@ -490,7 +490,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                                                                     else PROFESSIONS[slug]))
 
     # Фильтры и сортировка работают в браузере по всему списку (cards.json), в HTML только первые карточки
-    write_list("", vacancies, heading=lambda lang: i18n.t(lang, "Вакансии"),
+    write_list("", vacancies, heading=lambda lang: city_heading(None, lang),
                city=None, category=None, city_counts=city_counts, category_counts=_category_counts(vacancies),
                channels=tg_channels, ld=lambda lang: site_ld(base_url, lang))
 
@@ -609,18 +609,16 @@ def city_in(slug: str | None, lang: str = "ru") -> str:
     return _locative(slug)
 
 
-def city_heading(slug: str, lang: str) -> str:
-    """«Работа в Алматы» / «Алматыдағы жұмыс»."""
-    if lang == "kk":
-        return f"{i18n.CITIES_KK_IN.get(slug, city_name(slug, lang))} жұмыс"
-    return f"Работа в {_locative(slug)}"
+def city_heading(slug: str | None, lang: str) -> str:
+    """«Работа в Алматы» / «Алматыдағы жұмыс»; без города — заголовок главной: «Работа в Казахстане»."""
+    return i18n.t(lang, "Работа в {where}", where=city_in(slug, lang))
 
 
 def shifts_heading(slug: str | None, lang: str) -> str:
     """«Подработка и смены в Алматы» / «Алматыдағы қосымша жұмыс және ауысымдар»."""
     if lang == "kk":
-        return f"{i18n.CITIES_KK_IN.get(slug, city_name(slug, lang)) if slug else 'Қазақстандағы'} қосымша жұмыс және ауысымдар"
-    return f"Подработка и смены в {_locative(slug)}" if slug else "Подработка и смены в Казахстане"
+        return f"{city_in(slug, lang)} қосымша жұмыс және ауысымдар"
+    return f"Подработка и смены в {_locative(slug)}"
 
 
 def category_heading(cat: str, slug: str, lang: str) -> str:

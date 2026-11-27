@@ -1,6 +1,7 @@
 # Статистика соискателей: сколько людей заполнили профиль и отправили отклики с выбранного дня.
 # Только чтение: заходит на сервер ключом выкладки и открывает базу sqlite3 -readonly,
-# в лог пишет только числа (server/deploy/stats.sql), без имён, телефонов и id.
+# в лог пишет числа (server/deploy/stats.sql), без имён соискателей, телефонов и id людей. В конце — нажатия
+# по вакансиям с названиями вакансий и работодателей, как в открытых объявлениях (без правок и статусов CRM).
 # Запуск: Actions → «Статистика» → Run workflow, в поле «С какого дня» дата ГГГГ-ММ-ДД.
 name: Статистика
 
@@ -46,10 +47,18 @@ jobs:
           echo "::add-mask::$backup_key"
       - name: Цифры
         run: |
-          ssh -i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20 \
-            -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes "root@$SERVER_HOST" \
-            "sqlite3 -readonly /var/lib/vacante/vacante.db" \
-            < <(sed "s/:since/'$SINCE'/g" server/deploy/stats.sql) | head -c 200000 | tee stats.txt
+          db() {
+            ssh -i "$KEYS/deploy_ed25519" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=20 \
+              -o UserKnownHostsFile="$KEYS/known_hosts" -o StrictHostKeyChecking=yes "root@$SERVER_HOST" \
+              "sqlite3 -readonly /var/lib/vacante/vacante.db"
+          }
+          sql=$(sed "s/:since/'$SINCE'/g" server/deploy/stats.sql)
+          # Разделы о нажатиях по вакансиям нужны таблице из миграции 0024: до выкладки сервера с ней их пропускаем
+          if [[ $(db <<< "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table' AND name = 'vacancy_clicks';") != 1 ]]; then
+            echo "::notice::На сервере ещё нет таблицы vacancy_clicks (миграция 0024): нажатия по вакансиям пропущены"
+            sql=$(sed '/^-- ==== нужна таблица vacancy_clicks ====/,$d' <<< "$sql")
+          fi
+          db <<< "$sql" | head -c 200000 | tee stats.txt
           { echo '```'; cat stats.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - name: Бот
         env:

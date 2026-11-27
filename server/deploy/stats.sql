@@ -1,5 +1,5 @@
 -- Сводка по соискателям для workflow «Статистика»: только числа, без имён, телефонов и id.
--- В конце — нажатия по вакансиям: там есть названия работодателей и вакансий из открытых объявлений (CRM).
+-- В конце — нажатия по вакансиям: там есть названия работодателей и вакансий, как в открытых объявлениях.
 -- База открывается только на чтение (sqlite3 -readonly). Дни — по времени Казахстана (UTC+5).
 -- Начало периода — :since (ГГГГ-ММ-ДД): workflow заменяет его на дату в кавычках.
 .headers on
@@ -114,8 +114,15 @@ SELECT '--- входы в админку по дням (без адресов) -
 SELECT date(at, '+5 hours') AS day, result, COUNT(*) AS n, COUNT(DISTINCT ip) AS addresses FROM admin_logins
 WHERE at >= (SELECT cut FROM t) GROUP BY 1, 2 ORDER BY 1, 2;
 
--- Дальше — нажатия по вакансиям (vacancy_clicks, миграция 0024). Эти разделы стоят в самом конце: на базе,
--- где миграции ещё нет, они дадут ошибку «no such table», а всё, что выше, уже напечатано.
+SELECT '--- возвраты в приложение с периода: сколько дней прошло с прошлого открытия (давнее 90 дней не хранится) ---' AS '';
+WITH buckets(ord, gap, lo, hi) AS (VALUES (1, '1 день', 1, 1), (2, '2–3 дня', 2, 3), (3, '4–7 дней', 4, 7), (4, '8–30 дней', 8, 30), (5, '31–90 дней', 31, 90))
+SELECT b.gap, coalesce(SUM(r.n), 0) AS returns
+FROM buckets b LEFT JOIN funnel_returns r ON r.gap BETWEEN b.lo AND b.hi AND r.day >= :since
+GROUP BY b.ord ORDER BY b.ord;
+
+-- Дальше — нажатия по вакансиям (vacancy_clicks, миграция 0024). Пока сервер с этой миграцией не выложен,
+-- workflow «Статистика» отрезает файл по строке ниже и пишет об этом в лог: не меняйте её текст.
+-- ==== нужна таблица vacancy_clicks ====
 
 SELECT '--- North Star по неделям (week — понедельник недели; days — сколько её дней попало в период) ---' AS '';
 -- North Star: сколько раз за неделю человек через vacante дошёл до работодателя или до его объявления.
@@ -168,11 +175,11 @@ CREATE TEMP VIEW touches AS
     CASE a.method WHEN 'whatsapp' THEN 'wa' WHEN 'telegram' THEN 'tg' WHEN 'call' THEN 'call' WHEN 'hh' THEN 'hh' WHEN 'bot' THEN 'bot' ELSE 'orig' END,
     1, 1
   FROM applications a WHERE a.sent_at IS NOT NULL AND a.seeker_id NOT IN (SELECT id FROM testers);
--- Вакансия → заведение и работодатель из CRM. Названия — с ручными правками из админки (edits), как в карточке
+-- Вакансия → заведение и работодатель из CRM. Лог workflow открытый (репозиторий публичный), поэтому здесь только
+-- названия из самих объявлений: ручные правки из админки (edits) и статус работодателя в CRM сюда не попадают.
+-- Полный список с правками и статусом — в админке.
 CREATE TEMP VIEW known AS
-  SELECT v.id AS vacancy_id, v.title, e.id AS employer_id, e.status,
-    coalesce(nullif(CASE WHEN json_valid(e.edits) THEN json_extract(e.edits, '$.name') END, ''), e.name) AS employer,
-    coalesce(nullif(CASE WHEN json_valid(p.edits) THEN json_extract(p.edits, '$.name') END, ''), p.name) AS venue
+  SELECT v.id AS vacancy_id, v.title, e.id AS employer_id, e.name AS employer, p.name AS venue
   FROM employer_vacancies v JOIN venues p ON p.id = v.venue_id JOIN employers e ON e.id = p.employer_id;
 
 SELECT '--- топ-30 вакансий по контактам за 7 дней (total = direct + out + to_app; with_profile — из них отклики с профилем) ---' AS '';
@@ -194,9 +201,8 @@ GROUP BY x.vacancy_id ORDER BY total DESC, x.vacancy_id LIMIT 30;
 
 SELECT '--- топ-30 работодателей по контактам за 14 дней (те же столбцы; только вакансии, которые есть в CRM) ---' AS '';
 -- Кому из работодателей звонить первым: direct — число для разговора «через vacante вам написали или
--- позвонили N раз». vacancies — у скольких его вакансий были контакты; crm — статус работодателя в CRM.
+-- позвонили N раз». vacancies — у скольких его вакансий были контакты.
 SELECT substr(k.employer, 1, 40) AS employer,
-  CASE k.status WHEN '' THEN '—' ELSE k.status END AS crm,
   COUNT(DISTINCT x.vacancy_id) AS vacancies,
   SUM(x.n) AS total,
   SUM(CASE WHEN x.kind IN ('wa', 'call', 'tg') THEN x.n ELSE 0 END) AS direct,
@@ -206,9 +212,3 @@ SELECT substr(k.employer, 1, 40) AS employer,
 FROM touches x JOIN known k ON k.vacancy_id = x.vacancy_id
 WHERE x.day >= date('now', '+5 hours', '-13 days')
 GROUP BY k.employer_id ORDER BY total DESC, k.employer_id LIMIT 30;
-
-SELECT '--- возвраты в приложение с периода: сколько дней прошло с прошлого открытия (давнее 90 дней не хранится) ---' AS '';
-WITH buckets(ord, gap, lo, hi) AS (VALUES (1, '1 день', 1, 1), (2, '2–3 дня', 2, 3), (3, '4–7 дней', 4, 7), (4, '8–30 дней', 8, 30), (5, '31–90 дней', 31, 90))
-SELECT b.gap, coalesce(SUM(r.n), 0) AS returns
-FROM buckets b LEFT JOIN funnel_returns r ON r.gap BETWEEN b.lo AND b.hi AND r.day >= :since
-GROUP BY b.ord ORDER BY b.ord;

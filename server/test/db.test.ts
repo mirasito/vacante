@@ -94,3 +94,39 @@ test("миграция 0020 проходит на базе с данными: с
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test("миграция 0024 проходит на базе с данными: счётчик кнопок связи на месте, новый вид нажатия таблицу не ломает", () => {
+  const dir = mkdtempSync(join(tmpdir(), "vacante-mig-"));
+  try {
+    const all = readdirSync(MIGRATIONS).filter((f) => f.endsWith(".sql")).sort();
+    for (const name of all.filter((f) => f < "0024")) copyFileSync(join(MIGRATIONS, name), join(dir, name));
+    const db = new DatabaseSync(":memory:");
+    migrate(db, dir);
+    db.prepare(
+      "INSERT INTO contact_clicks (day, source, kind, n) VALUES ('2026-11-25', 'web', 'wa', 7), ('2026-11-25', 'web', 'robot', 3), ('2026-11-26', 'tg', 'miss', 1)",
+    ).run();
+    const before = {
+      clicks: db.prepare("SELECT * FROM contact_clicks ORDER BY day, kind").all().map((r) => ({ ...r })),
+      tables: tables(db),
+    };
+    copyFileSync(join(MIGRATIONS, "0024_vacancy_clicks.sql"), join(dir, "0024_vacancy_clicks.sql"));
+    assert.deepEqual(migrate(db, dir), ["0024_vacancy_clicks.sql"]);
+    assert.deepEqual(db.prepare("SELECT * FROM contact_clicks ORDER BY day, kind").all().map((r) => ({ ...r })), before.clicks);
+    // Только новая таблица: существующие не перестраиваются
+    assert.deepEqual(tables(db), [...before.tables, "vacancy_clicks"].sort());
+    // Метки по умолчанию пустые; на виде нет CHECK, чтобы новый вид не требовал пересборки таблицы
+    db.prepare("INSERT INTO vacancy_clicks (day, vacancy_id, kind, n) VALUES ('2026-11-27', 'hh-1', 'hh', 1), ('2026-11-27', 'hh-1', 'new_kind', 2)").run();
+    assert.deepEqual(
+      db.prepare("SELECT * FROM vacancy_clicks ORDER BY kind").all().map((r) => ({ ...r })),
+      [
+        { day: "2026-11-27", vacancy_id: "hh-1", kind: "hh", via: "", source: "", n: 1 },
+        { day: "2026-11-27", vacancy_id: "hh-1", kind: "new_kind", via: "", source: "", n: 2 },
+      ],
+    );
+    // Одна строка на день, вакансию, вид, источник визита и место кнопки
+    assert.throws(() => db.prepare("INSERT INTO vacancy_clicks (day, vacancy_id, kind) VALUES ('2026-11-27', 'hh-1', 'hh')").run(), /UNIQUE/);
+    db.close();
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});

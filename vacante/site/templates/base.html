@@ -31,6 +31,8 @@
 <meta name="theme-color" content="#1B2023">
 {% if google_verification %}<meta name="google-site-verification" content="{{ google_verification }}">{% endif %}
 {% if yandex_verification %}<meta name="yandex-verification" content="{{ yandex_verification }}">{% endif %}
+{# Счётчики без имён: с какого сайта человек пришёл и на какую кнопку отклика нажал (static/via.js) #}
+<script defer src="{{ root }}/static/via.js" data-api="{{ api_url }}" data-metrika="{{ metrika_id }}"></script>
 {% block head %}{% endblock %}
 </head>
 <body>

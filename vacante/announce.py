@@ -20,10 +20,11 @@ log = logging.getLogger(__name__)
 
 # имя → (текст в HTML-разметке, кнопки). {ru_in} — «в Алматы», {kk} — «Алматыдағы».
 # Кнопка — (подпись, ссылка): "app:<метка>" — лента города в мини-приложении с меткой источника для воронки,
+# страница сайта — с метками utm (launch.utm: кампания — имя объявления, плюс город канала),
 # иначе обычная ссылка, {city} в ней заменяется на город.
 BOT_POST = "https://t.me/vacantekz_bot?start=post_ch"  # анкета работодателя, jobs.came_from = 'channel'
-EMPLOYERS_PAGE = ("https://vacante.kz/rabotodatelyam/?utm_source=telegram&utm_medium=channel"
-                  "&utm_campaign={name}&utm_content={city}")
+SITE = "https://vacante.kz/"
+EMPLOYERS_PAGE = SITE + "rabotodatelyam/"
 
 ANNOUNCEMENTS: dict[str, tuple[str, list[tuple[str, str]]]] = {
     "apply-button": (
@@ -70,8 +71,10 @@ def buttons_for(name: str, city: str) -> list[tuple[str, str]]:
     for label, url in ANNOUNCEMENTS[name][1]:
         if url.startswith("app:"):
             url = launch.app_link(launch.start_param(source=url[4:], city=city) or city)
+        elif url.startswith(SITE):
+            url = launch.utm(url, "channel", name.replace("-", "_"), city)
         else:
-            url = url.format(city=city, name=name.replace("-", "_"))
+            url = url.format(city=city)
         buttons.append((label, url))
     return buttons
 

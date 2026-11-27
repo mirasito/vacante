@@ -1,4 +1,5 @@
 -- Сводка по соискателям для workflow «Статистика»: только числа, без имён, телефонов и id.
+-- В конце — нажатия по вакансиям: там есть названия работодателей и вакансий, как в открытых объявлениях.
 -- База открывается только на чтение (sqlite3 -readonly). Дни — по времени Казахстана (UTC+5).
 -- Начало периода — :since (ГГГГ-ММ-ДД): workflow заменяет его на дату в кавычках.
 .headers on
@@ -112,3 +113,102 @@ FROM contact_clicks WHERE day >= :since GROUP BY 1 ORDER BY 1;
 SELECT '--- входы в админку по дням (без адресов) ---' AS '';
 SELECT date(at, '+5 hours') AS day, result, COUNT(*) AS n, COUNT(DISTINCT ip) AS addresses FROM admin_logins
 WHERE at >= (SELECT cut FROM t) GROUP BY 1, 2 ORDER BY 1, 2;
+
+SELECT '--- возвраты в приложение с периода: сколько дней прошло с прошлого открытия (давнее 90 дней не хранится) ---' AS '';
+WITH buckets(ord, gap, lo, hi) AS (VALUES (1, '1 день', 1, 1), (2, '2–3 дня', 2, 3), (3, '4–7 дней', 4, 7), (4, '8–30 дней', 8, 30), (5, '31–90 дней', 31, 90))
+SELECT b.gap, coalesce(SUM(r.n), 0) AS returns
+FROM buckets b LEFT JOIN funnel_returns r ON r.gap BETWEEN b.lo AND b.hi AND r.day >= :since
+GROUP BY b.ord ORDER BY b.ord;
+
+-- Дальше — нажатия по вакансиям (vacancy_clicks, миграция 0024). Пока сервер с этой миграцией не выложен,
+-- workflow «Статистика» отрезает файл по строке ниже и пишет об этом в лог: не меняйте её текст.
+-- ==== нужна таблица vacancy_clicks ====
+
+SELECT '--- North Star по неделям (week — понедельник недели; days — сколько её дней попало в период) ---' AS '';
+-- North Star: сколько раз за неделю человек через vacante дошёл до работодателя или до его объявления.
+--   site_direct — прямые кнопки связи «WhatsApp», «Позвонить», «Telegram» (contact_clicks: wa + call + tg);
+--   site_out    — переходы с сайта на hh.kz, OLX и исходный пост, «Откликнуться в Telegram» и «Беру смену»
+--                 (vacancy_clicks: hh, olx, orig, bot, take; до миграции 0024 они не считались);
+--   app_sent    — отклики из приложения: с профилем (applications, без тестовых) и без профиля
+--                 (funnel_counts, шаг sent_plain: один на человека в день);
+--   north_star  = site_direct + site_out + app_sent.
+-- Не входят: to_app — переходы с сайта в приложение (app, pf): показаны рядом, но не прибавлены, потому что
+-- отклик, сделанный в приложении, уже есть в app_sent; miss (контакта в посте не нашлось) и robot; отклики
+-- в боте на вакансии самих работодателей — они лежат в базе бота (D1), их показывает bot_stats.py.
+WITH days(day) AS (SELECT :since UNION ALL SELECT date(day, '+1 day') FROM days WHERE day < date('now', '+5 hours') AND day < date(:since, '+400 days')),
+weeks AS (SELECT date(day, 'weekday 0', '-6 days') AS week, MIN(day) AS first_day, MAX(day) AS last_day, COUNT(*) AS days FROM days GROUP BY 1)
+SELECT week, days, site_direct, site_out, app_sent, site_direct + site_out + app_sent AS north_star, to_app FROM (
+  SELECT w.week, w.days,
+    (SELECT coalesce(SUM(n), 0) FROM contact_clicks c WHERE c.day BETWEEN w.first_day AND w.last_day AND c.kind IN ('wa', 'call', 'tg')) AS site_direct,
+    (SELECT coalesce(SUM(n), 0) FROM vacancy_clicks c WHERE c.day BETWEEN w.first_day AND w.last_day
+       AND c.kind IN ('hh', 'olx', 'orig', 'bot', 'take') AND c.source <> 'app') AS site_out,
+    (SELECT COUNT(*) FROM sent s WHERE s.day BETWEEN w.first_day AND w.last_day)
+      + (SELECT coalesce(SUM(n), 0) FROM funnel_counts f WHERE f.day BETWEEN w.first_day AND w.last_day AND f.step = 'sent_plain') AS app_sent,
+    (SELECT coalesce(SUM(n), 0) FROM vacancy_clicks c WHERE c.day BETWEEN w.first_day AND w.last_day AND c.kind IN ('app', 'pf')) AS to_app
+  FROM weeks w
+) ORDER BY week;
+
+SELECT '--- нажатия по источнику визита с периода (кнопки сайта; via — откуда человек пришёл на сайт; total — без miss) ---' AS '';
+SELECT coalesce(nullif(via, ''), '—') AS via,
+  SUM(CASE WHEN kind <> 'miss' THEN n ELSE 0 END) AS total,
+  SUM(CASE WHEN kind = 'wa' THEN n ELSE 0 END) AS wa,
+  SUM(CASE WHEN kind = 'call' THEN n ELSE 0 END) AS call,
+  SUM(CASE WHEN kind = 'tg' THEN n ELSE 0 END) AS tg,
+  SUM(CASE WHEN kind = 'hh' THEN n ELSE 0 END) AS hh,
+  SUM(CASE WHEN kind = 'olx' THEN n ELSE 0 END) AS olx,
+  SUM(CASE WHEN kind = 'orig' THEN n ELSE 0 END) AS orig,
+  SUM(CASE WHEN kind = 'bot' THEN n ELSE 0 END) AS bot,
+  SUM(CASE WHEN kind = 'take' THEN n ELSE 0 END) AS take,
+  SUM(CASE WHEN kind = 'app' THEN n ELSE 0 END) AS app,
+  SUM(CASE WHEN kind = 'pf' THEN n ELSE 0 END) AS pf,
+  SUM(CASE WHEN kind = 'miss' THEN n ELSE 0 END) AS miss
+FROM vacancy_clicks WHERE day >= :since AND source = 'web' GROUP BY 1 ORDER BY 2 DESC, 1;
+
+-- Контакты по вакансиям из трёх мест в одном виде: нажатия на сайте и отклики без профиля из приложения
+-- (vacancy_clicks; miss не берём: контакта не нашлось) и отклики с профилем (applications, без тестовых:
+-- способ отклика переведён в тот же вид, with_profile = 1). Отклики с профилем добавлены, чтобы в списки
+-- попадали и вакансии, на которые откликаются из каналов: там кнопка ведёт сразу в приложение, мимо сайта.
+CREATE TEMP VIEW touches AS
+  SELECT day, vacancy_id, kind, n, 0 AS with_profile FROM vacancy_clicks WHERE kind <> 'miss'
+  UNION ALL
+  SELECT date(a.sent_at, '+5 hours'), a.vacancy_id,
+    CASE a.method WHEN 'whatsapp' THEN 'wa' WHEN 'telegram' THEN 'tg' WHEN 'call' THEN 'call' WHEN 'hh' THEN 'hh' WHEN 'bot' THEN 'bot' ELSE 'orig' END,
+    1, 1
+  FROM applications a WHERE a.sent_at IS NOT NULL AND a.seeker_id NOT IN (SELECT id FROM testers);
+-- Вакансия → заведение и работодатель из CRM. Лог workflow открытый (репозиторий публичный), поэтому здесь только
+-- названия из самих объявлений: ручные правки из админки (edits) и статус работодателя в CRM сюда не попадают.
+-- Полный список с правками и статусом — в админке.
+CREATE TEMP VIEW known AS
+  SELECT v.id AS vacancy_id, v.title, e.id AS employer_id, e.name AS employer, p.name AS venue
+  FROM employer_vacancies v JOIN venues p ON p.id = v.venue_id JOIN employers e ON e.id = p.employer_id;
+
+SELECT '--- топ-30 вакансий по контактам за 7 дней (total = direct + out + to_app; with_profile — из них отклики с профилем) ---' AS '';
+-- direct — написали или позвонили работодателю напрямую (wa, call, tg); out — ушли к его объявлению на hh.kz,
+-- OLX, в исходный пост или в бота (hh, olx, orig, bot, take); to_app — перешли с сайта в приложение (app, pf).
+-- «—» вместо названий — вакансии нет в CRM.
+SELECT x.vacancy_id,
+  SUM(x.n) AS total,
+  SUM(CASE WHEN x.kind IN ('wa', 'call', 'tg') THEN x.n ELSE 0 END) AS direct,
+  SUM(CASE WHEN x.kind IN ('hh', 'olx', 'orig', 'bot', 'take') THEN x.n ELSE 0 END) AS out,
+  SUM(CASE WHEN x.kind IN ('app', 'pf') THEN x.n ELSE 0 END) AS to_app,
+  SUM(x.n * x.with_profile) AS with_profile,
+  coalesce(substr(k.title, 1, 40), '—') AS title,
+  coalesce(substr(k.employer, 1, 40), '—') AS employer,
+  coalesce(substr(k.venue, 1, 40), '—') AS venue
+FROM touches x LEFT JOIN known k ON k.vacancy_id = x.vacancy_id
+WHERE x.day >= date('now', '+5 hours', '-6 days')
+GROUP BY x.vacancy_id ORDER BY total DESC, x.vacancy_id LIMIT 30;
+
+SELECT '--- топ-30 работодателей по контактам за 14 дней (те же столбцы; только вакансии, которые есть в CRM) ---' AS '';
+-- Кому из работодателей звонить первым: direct — число для разговора «через vacante вам написали или
+-- позвонили N раз». vacancies — у скольких его вакансий были контакты.
+SELECT substr(k.employer, 1, 40) AS employer,
+  COUNT(DISTINCT x.vacancy_id) AS vacancies,
+  SUM(x.n) AS total,
+  SUM(CASE WHEN x.kind IN ('wa', 'call', 'tg') THEN x.n ELSE 0 END) AS direct,
+  SUM(CASE WHEN x.kind IN ('hh', 'olx', 'orig', 'bot', 'take') THEN x.n ELSE 0 END) AS out,
+  SUM(CASE WHEN x.kind IN ('app', 'pf') THEN x.n ELSE 0 END) AS to_app,
+  SUM(x.n * x.with_profile) AS with_profile
+FROM touches x JOIN known k ON k.vacancy_id = x.vacancy_id
+WHERE x.day >= date('now', '+5 hours', '-13 days')
+GROUP BY k.employer_id ORDER BY total DESC, k.employer_id LIMIT 30;

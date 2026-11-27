@@ -38,7 +38,7 @@ def test_links_follow_base_path_on_github_pages(tmp_path):
     out = tmp_path / "public"
     build(tmp_path / "data", out, "https://mirasito.github.io/vacante", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     home = (out / "index.html").read_text("utf-8")
-    assert 'href="/vacante/static/style.css"' in home
+    assert 'href="/vacante/static/style.css"' in home and '<script defer src="/vacante/static/via.js"' in home
     assert 'href="/vacante/v/chan-6/"' in home
     assert 'href="/v/' not in home
     assert not (out / "CNAME").exists()
@@ -85,13 +85,14 @@ def test_search_tags_and_metrika_only_when_set(tmp_path, monkeypatch):
     build(tmp_path / "data", tmp_path / "a", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     plain = (tmp_path / "a" / "index.html").read_text("utf-8")
     assert "verification" not in plain and "mc.yandex.ru" not in plain
+    assert 'data-metrika=""' in plain  # скрипту счётчиков (static/via.js) звать нечего
     monkeypatch.setattr(site, "SITE_TAGS", {"google_verification": "g123", "yandex_verification": "y456",
                                             "metrika_id": "98765432"})
     build(tmp_path / "data", tmp_path / "b", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     home = (tmp_path / "b" / "index.html").read_text("utf-8")
     assert '<meta name="google-site-verification" content="g123">' in home
     assert '<meta name="yandex-verification" content="y456">' in home
-    assert 'ym(98765432, "init"' in home
+    assert 'ym(98765432, "init"' in home and 'data-metrika="98765432"' in home
 
 
 def test_list_links_to_more_vacancies_elsewhere(tmp_path):
@@ -274,7 +275,8 @@ def test_vacancy_page_has_whatsapp_and_call_buttons_when_post_has_contacts(tmp_p
     assert "Откликнуться в приложении" not in page  # есть способы связи: общая кнопка не нужна
     assert "wa.me" not in page and "tel:" not in page
     # Профиль можно сделать и придя с сайта: кнопка ведёт в приложение на эту вакансию
-    assert '<a class="apply second" href="https://t.me/vacantekz_bot?startapp=swebpf_a_almaty_chan-31" rel="nofollow">👤 Откликнуться с профилем</a>' in page
+    assert ('<a class="apply second" href="https://t.me/vacantekz_bot?startapp=swebpf_a_almaty_chan-31" data-kind="pf" '
+            'data-id="chan-31" rel="nofollow">👤 Откликнуться с профилем</a>') in page
     assert "С профилем отвечают охотнее" in page
     kk = (tmp_path / "public" / "kk" / "v" / "chan-31" / "index.html").read_text("utf-8")
     assert "WhatsApp-қа жазу" in kk and "Қоңырау шалу" in kk
@@ -375,3 +377,112 @@ def test_footer_has_google_preferred_source_button(tmp_path):
     link = 'href="https://www.google.com/preferences/source?q=vacante.kz"'
     assert link in (tmp_path / "public" / "index.html").read_text("utf-8")
     assert "таңдаулы дереккөздерге" in (tmp_path / "public" / "kk" / "v" / "chan-11" / "index.html").read_text("utf-8")
+
+
+def test_reply_buttons_are_marked_for_click_counters(tmp_path):
+    import re
+    from dataclasses import replace
+
+    from tests.test_olx import offer
+    from vacante import direct
+    from vacante.sources import hh, olx
+
+    def chan(post_id: int, contact: list[str]):
+        raw = RawPost("telegram", "chan", post_id, f"https://t.me/chan/{post_id}", "Требуется повар, 300 000 тг",
+                      datetime(2026, 11, 6, tzinfo=timezone.utc), "almaty")
+        return replace(parse_post(raw), contact=contact)
+
+    job = {"id": 8, "kind": "vacancy", "city": "almaty", "title": "официант", "company": "Кафе «Зерно»",
+           "salary": "12 000 ₸ за смену", "schedule": "2/2", "address": "Абая, 10", "details": "",
+           "approved_at": "2026-11-06 07:00:00"}
+    shift = {**job, "id": 9, "kind": "shift", "shift_date": "2026-11-07", "shift_start": "10:00", "shift_end": "22:00",
+             "need": 3}
+    from_hh = hh.to_vacancy({"id": "5", "name": "Менеджер по продажам", "area": {"name": "Алматы"},
+                             "published_at": "2026-11-06T10:00:00+0500", "alternate_url": "https://hh.kz/vacancy/5",
+                             "employer": {"name": "ZERFARM"}})
+    save_vacancies(tmp_path / "data", [chan(41, ["whatsapp", "phone"]), chan(42, []), from_hh,
+                                       olx.to_vacancy(offer(101, created="2026-11-06T10:00:00+05:00")),
+                                       direct.to_vacancy(job), direct.to_vacancy(shift)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 11, 6, 12, tzinfo=timezone.utc))
+
+    def marks(vacancy_id: str, lang: str = "") -> list[tuple[str, str]]:
+        """Отмеченные ссылки карточки по порядку: (вид нажатия, адрес). У каждой id этой вакансии."""
+        page = (out / lang / "v" / vacancy_id / "index.html").read_text("utf-8")
+        found = re.findall(r'<a [^>]*href="([^"]+)" data-kind="([^"]+)" data-id="([^"]+)"', page)
+        assert {i for _, _, i in found} == {vacancy_id} and page.count("data-kind=") == len(found)
+        return [(kind, url) for url, kind, _ in found]
+
+    app = "https://t.me/vacantekz_bot?startapp="
+    # Смена и вакансия от работодателя: одна кнопка в бот, ссылки «Источник» нет
+    assert marks("bot-9") == [("take", "https://t.me/vacantekz_bot?start=take_9")]
+    assert marks("bot-8") == [("bot", "https://t.me/vacantekz_bot?start=apply_8")]
+    # Пост из канала с контактами: прямые кнопки без отметки (их нажатия сервер считает на переходе /go/),
+    # дальше отклик с профилем, оригинал и ссылка «Источник»
+    assert marks("chan-41") == [("pf", app + "swebpf_a_almaty_chan-41"), ("orig", "https://t.me/chan/41"),
+                                ("orig", "https://t.me/chan/41")]
+    direct_buttons = re.findall(r'<a class="apply" href="https://api\.vacante\.kz/go/chan-41/(\w+)\?[^"]*" rel="nofollow">',
+                                (out / "v" / "chan-41" / "index.html").read_text("utf-8"))
+    assert direct_buttons == ["wa", "call"]
+    # Пост из канала без контактов, hh.kz и OLX: кнопка в приложение, оригинал и ссылка «Источник»
+    assert marks("chan-42") == [("app", app + "sweb_a_almaty_chan-42"), ("orig", "https://t.me/chan/42"),
+                                ("orig", "https://t.me/chan/42")]
+    assert marks("hh-5") == [("app", app + "sweb_a_almaty_hh-5"), ("hh", "https://hh.kz/vacancy/5"),
+                             ("hh", "https://hh.kz/vacancy/5")]
+    olx_url = "https://www.olx.kz/d/obyavlenie/oficiant-ID101.html"
+    assert marks("olx-101") == [("app", app + "sweb_a_almaty_olx-101"), ("olx", olx_url), ("olx", olx_url)]
+    # Казахская версия отмечена так же
+    assert marks("hh-5", "kk") == marks("hh-5") and marks("bot-9", "kk") == marks("bot-9")
+    # В списках кнопок отклика нет: карточка ведёт на страницу вакансии
+    assert "data-kind=" not in (out / "almaty" / "index.html").read_text("utf-8")
+
+
+def test_counter_script_on_every_page_except_admin(tmp_path):
+    raw = RawPost("telegram", "chan", 12, "https://t.me/chan/12", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    # Скрипту нужны адрес сервера со счётчиками нажатий и номер счётчика Метрики
+    tag = ('<script defer src="/static/via.js" data-api="https://api.vacante.kz" '
+           f'data-metrika="{site.SITE_TAGS["metrika_id"]}"></script>')
+    for name in ("index.html", "astana/index.html", "astana/horeca/index.html", "v/chan-12/index.html", "kk/index.html",
+                 "kk/v/chan-12/index.html", "privacy/index.html", "rabotodatelyam/index.html", "404.html"):
+        assert (out / name).read_text("utf-8").count(tag) == 1, name
+    assert (out / "static" / "via.js").read_bytes() == (site.HERE / "static" / "via.js").read_bytes()
+    # Админка — страница владельца: посетителей на ней нет, счётчики не нужны
+    assert "via.js" not in (out / "admin" / "index.html").read_text("utf-8")
+
+
+def test_list_filters_keep_foreign_parameters_in_address(tmp_path):
+    raw = RawPost("telegram", "chan", 13, "https://t.me/chan/13", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
+    home = (tmp_path / "public" / "index.html").read_text("utf-8")
+    save = home[home.index("function save() {"):home.index("function render() {")]
+    # Фильтры пишут в адрес только свои параметры. Раньше адрес собирался с нуля, и метки utm_source с yclid
+    # пропадали из него раньше, чем запускалась Метрика: визит из ChatGPT записывался без источника
+    assert "const p = new URLSearchParams(location.search);" in save and "new URLSearchParams()" not in save
+    assert "for (const own of ['q', 'sort', 'fresh', 'cat', 'pay', 'perks']) p.delete(own);" in save
+    assert "history.replaceState(null, '', (qs ? `?${qs}` : location.pathname) + location.hash);" in save
+    # Этот код стоит на странице раньше Метрики: она читает адрес уже после него
+    assert home.index("function save() {") < home.index("mc.yandex.ru/metrika/tag.js")
+
+
+def test_utm_marks_only_in_links_that_go_to_telegram(tmp_path):
+    raw = RawPost("telegram", "chan", 14, "https://t.me/chan/14", "Требуется повар, 300 000 тг",
+                  datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")
+    save_vacancies(tmp_path / "data", [parse_post(raw)])
+    out = tmp_path / "public"
+    build(tmp_path / "data", out, "https://vacante.kz", now=datetime(2026, 10, 27, 12, tzinfo=timezone.utc))
+    # Примеры вакансий бот показывает сразу после подписки: ссылка на сайт помечена как «examples»
+    feed = json.loads((out / "feed.json").read_text("utf-8"))
+    assert feed["vacancies"][0]["html"].startswith(
+        '<b><a href="https://vacante.kz/v/chan-14/?utm_source=telegram&amp;utm_medium=bot&amp;utm_campaign=examples'
+        '&amp;utm_content=astana">Повар</a></b>')
+    # На страницах сайта, в sitemap и в лентах приложения адреса остаются без меток
+    texts = [f for f in out.rglob("*") if f.suffix in (".html", ".xml", ".json", ".txt") and f.name != "feed.json"]
+    assert texts and not [f for f in texts if "utm_medium" in f.read_text("utf-8")]
+    assert json.loads((out / "app" / "data" / "astana.json").read_text("utf-8"))["vacancies"][0]["url"] == (
+        "https://vacante.kz/v/chan-14/")

@@ -4,14 +4,20 @@
 //
 // Контакты берём из открытого поста в канале и храним на сервере (vacancy_contacts): при первом нажатии
 // и заранее, фоновым сбором по вакансиям из CRM. В открытые данные сайта номера не попадают.
+//
+// Нажатие человека считается дважды: общим числом за день (contact_clicks) и по вакансии (vacancy_clicks),
+// с источником визита на сайт (via: chatgpt, google, tg, direct…), который сайт дописывает к ссылке.
+// Переходы мимо сервера — на hh.kz, OLX, исходный пост, в бота и в приложение — сайт сообщает маячком
+// POST /hit, они пишутся туда же. Всё это числа за день: кто нажал, сервер не хранит.
 import { createHash, randomBytes } from "node:crypto";
 
 import { clientIp } from "./admin-logins.ts";
+import type { Ctx } from "./app.ts";
 import type { Db } from "./db.ts";
 import { fetchPostContacts, type PostContacts } from "./contacts.ts";
 import { escapeHtml as esc } from "./html.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
-import { RateLimit } from "./limits.ts";
+import { DayCap, RateLimit } from "./limits.ts";
 import { isPreviewBot } from "./page.ts";
 import { iso } from "./seekers.ts";
 import { DAY_MS, localDay } from "./time.ts";
@@ -21,12 +27,30 @@ const CHANNEL_VACANCY = /^([A-Za-z]\w{3,31})-(\d{1,10})$/;
 const KINDS = { wa: "whatsapp", call: "phone", tg: "telegram" } as const;
 type Kind = keyof typeof KINDS;
 const SOURCE_RE = /^[a-z0-9]{1,8}$/;
+/** Переходы, о которых сообщает маячок сайта. Какая кнопка какого вида, решает сайт (data-kind). */
+const HIT_KINDS = ["hh", "olx", "orig", "app", "pf", "bot", "take"] as const;
+/** Вид нажатия по вакансии (vacancy_clicks.kind). */
+export type ClickKind = Kind | "miss" | (typeof HIT_KINDS)[number];
+/** id вакансии на сайте: <канал>-<номер поста>, hh-…, olx-… или bot-…. */
+export const VACANCY_RE = /^[A-Za-z0-9_-]{3,64}$/;
 /**
  * Сколько разных вакансий за день один посетитель может открыть кнопками, пока мы считаем его человеком.
  * Роботы, которые выдают себя за браузер, обходят все кнопки сайта подряд (17, 18 и 23 ноября — по 2,6–4 тыс.
  * нажатий, почти ровно по одному на кнопку); человек столько разных работодателей за день не открывает.
  */
 export const ROBOT_VACANCIES = 15;
+/**
+ * То же для маячка, но порог выше: человек в поиске открывает и 30 объявлений hh.kz за день. Переходы
+ * сверх порога молча не считаются; что видит человек, от этого не зависит.
+ */
+export const HIT_VACANCIES = 60;
+/** Сколько разных меток за день пишем по вакансиям как есть (источник визита, место кнопки); новые сверх этого идут в other. */
+export const LABELS_PER_DAY = 40;
+/** Источники визита, которые сайт определяет сам (правила — в скрипте сайта), и места кнопок: им место среди меток дня есть всегда. */
+const KNOWN_VIAS = ["direct", "other", "google", "yandex", "bing", "ddg", "chatgpt", "perplex", "gemini", "copilot", "claude", "tg", "ig", "2gis"];
+const KNOWN_PLACES = ["web", "tg", "bot", "app"];
+/** По стольким разным вакансиям за день пишем нажатия; новые сверх этого не пишутся. */
+export const VACANCIES_PER_DAY = 5000;
 /** Сколько новых постов в минуту читаем с t.me по нажатиям: остальные нажатия уходят на исходный пост. */
 const FETCH_PER_MINUTE = 60;
 
@@ -137,8 +161,15 @@ export class RobotGuard {
   private day = "";
   private salt = Buffer.alloc(0);
   private seen = new Map<string, Set<string>>();
+  private readonly limit: number;
+  private readonly visitors: number;
+  /** visitors — скольких посетителей помним за день: когда их больше, счёт начинается заново, чтобы память не росла. */
+  constructor(limit = ROBOT_VACANCIES, visitors = 50_000) {
+    this.limit = limit;
+    this.visitors = visitors;
+  }
 
-  /** true — этот посетитель за сегодня открыл кнопки больше чем у ROBOT_VACANCIES разных вакансий. */
+  /** true — этот посетитель за сегодня открыл кнопки больше чем у limit разных вакансий. */
   check(visitor: string, vacancyId: string, now: number): boolean {
     const day = localDay(now);
     if (day !== this.day) {
@@ -149,22 +180,35 @@ export class RobotGuard {
     const key = createHash("sha256").update(this.salt).update(visitor).digest("base64url").slice(0, 16);
     let ids = this.seen.get(key);
     if (!ids) {
-      if (this.seen.size > 50_000) this.seen.clear();
+      if (this.seen.size > this.visitors) this.seen.clear();
       ids = new Set();
       this.seen.set(key, ids);
     }
-    if (ids.size <= ROBOT_VACANCIES) ids.add(vacancyId);
-    return ids.size > ROBOT_VACANCIES;
+    if (ids.size <= this.limit) ids.add(vacancyId);
+    return ids.size > this.limit;
   }
 }
 
 const visitorOf = (req: Request) => `${clientIp(req)}\n${req.header("user-agent") ?? ""}`;
+
+/** Метка из запроса (место кнопки, источник визита) или пусто, если её нет или она не по формату. */
+const labelOf = (value: unknown): string => (typeof value === "string" && SOURCE_RE.test(value) ? value : "");
+/** Метка как есть, пока разных меток за день не больше предела; дальше новые пишутся как other. */
+const capped = (cap: DayCap, label: string, now: number): string => (label && !cap.take(label, now) ? "other" : label);
 
 function countClick(db: Db, source: string, kind: Kind | "miss" | "robot", now: number): void {
   db.prepare(
     `INSERT INTO contact_clicks (day, source, kind, n) VALUES (?, ?, ?, 1)
      ON CONFLICT (day, source, kind) DO UPDATE SET n = n + 1`,
   ).run(localDay(now), source, kind);
+}
+
+/** Нажатие по вакансии: число за день по вакансии, виду, источнику визита (via) и месту кнопки (source). */
+export function countVacancyClick(db: Db, id: string, kind: ClickKind, via: string, source: string, now: number): void {
+  db.prepare(
+    `INSERT INTO vacancy_clicks (day, vacancy_id, kind, via, source, n) VALUES (?, ?, ?, ?, ?, 1)
+     ON CONFLICT (day, vacancy_id, kind, via, source) DO UPDATE SET n = n + 1`,
+  ).run(localDay(now), id, kind, via, source);
 }
 
 /** Нажатия на кнопки связи за дни from…to включительно. */
@@ -215,10 +259,21 @@ ${title ? `<p>${esc(title)}</p>` : ""}
 </main></body></html>`;
 }
 
-export function goRoutes(ctx: Deps): Route[] {
+export function goRoutes(ctx: Ctx): Route[] {
   const fetches = new RateLimit(FETCH_PER_MINUTE, 60_000);
   const robots = new RobotGuard();
   const noindex = { "X-Robots-Tag": "noindex, nofollow" };
+  // У маячка свой счёт обхода: порог кнопок связи он не трогает и сам от них не зависит. Посетителей помнит
+  // меньше: вакансий у каждого вчетверо больше, а памяти должно уходить столько же
+  const hitRobots = new RobotGuard(HIT_VACANCIES, 10_000);
+  const origins = new Set(ctx.config.appOrigins);
+  // Метки и id вакансий приходят в запросе, слать их может кто угодно: разных за день пишем не больше предела
+  const vias = new DayCap(LABELS_PER_DAY, KNOWN_VIAS);
+  const places = new DayCap(LABELS_PER_DAY, KNOWN_PLACES);
+  const goIds = new DayCap(VACANCIES_PER_DAY);
+  const hitIds = new DayCap(VACANCIES_PER_DAY);
+  const record = (id: string, kind: ClickKind, via: unknown, source: string, now: number) =>
+    countVacancyClick(ctx.db, id, kind, capped(vias, labelOf(via), now), capped(places, source, now), now);
 
   return [
     route("GET", "api", "/go/:id/:kind", async (req) => {
@@ -227,8 +282,12 @@ export function goRoutes(ctx: Deps): Route[] {
       const url = postUrl(id);
       if (!url || !Object.hasOwn(KINDS, kind)) throw new HttpError(404, "Не найдено");
       const now = ctx.now();
-      const tag = req.query.get("s") ?? "";
-      const source = SOURCE_RE.test(tag) ? tag : "";
+      const source = labelOf(req.query.get("s"));
+      // Нажатие человека: общее число, как раньше, и запись по вакансии с источником визита из ссылки
+      const press = (pressed: Kind | "miss") => {
+        countClick(ctx.db, source, pressed, now);
+        if (goIds.take(id, now)) record(id, pressed, req.query.get("via"), source, now);
+      };
       // Поисковые и другие роботы: не считаем нажатие и не отдаём номер, ведём к объявлению
       if (isPreviewBot(req.header("user-agent"))) return { status: 302, headers: { ...noindex, Location: url } };
       // Робот под видом браузера обходит все кнопки подряд: считаем отдельно и номер не отдаём
@@ -242,10 +301,10 @@ export function goRoutes(ctx: Deps): Route[] {
       const value = contacts && contacts !== "miss" ? contacts[KINDS[kind]] : null;
       if (!value) {
         // Контакта нет, пост удалён или t.me не ответил: человек всё равно попадает к объявлению
-        countClick(ctx.db, source, "miss", now);
+        press("miss");
         return { status: 302, headers: { ...noindex, Location: url } };
       }
-      countClick(ctx.db, source, kind, now);
+      press(kind);
       const title = cleanTitle(req.query.get("t"));
       if (kind === "wa") {
         const to = `https://wa.me/${value.replace(/\D/g, "")}?text=${encodeURIComponent(greeting(title))}`;
@@ -253,6 +312,25 @@ export function goRoutes(ctx: Deps): Route[] {
       }
       if (kind === "tg") return { status: 302, headers: { ...noindex, Location: `https://t.me/${encodeURIComponent(value)}` } };
       return { headers: noindex, html: callPage(value, title, url) };
+    }),
+
+    // Маячок сайта: человек нажал ссылку, которая ведёт мимо сервера. Страница шлёт его через
+    // navigator.sendBeacon простым текстом (так браузер не делает предварительный запрос CORS)
+    // и ответа не читает. Кук нет; посчитан переход или нет, ответ один — 204
+    route("POST", "api", "/hit", async (req) => {
+      const origin = req.header("origin");
+      // Роботы и чужие сайты: не считаем
+      if (isPreviewBot(req.header("user-agent")) || (origin !== undefined && !origins.has(origin))) return { status: 204 };
+      const body = await req.json<unknown>();
+      const { id, kind, via, s } = (body && typeof body === "object" ? body : {}) as Record<string, unknown>;
+      if (typeof id !== "string" || !VACANCY_RE.test(id) || !(HIT_KINDS as readonly unknown[]).includes(kind)) {
+        throw new HttpError(400, `Поле id: вакансия с сайта, поле kind: ${HIT_KINDS.join(", ")}`);
+      }
+      const now = ctx.now();
+      // Обход всех ссылок подряд и поток выдуманных вакансий молча не считаем
+      if (hitRobots.check(visitorOf(req), id, now) || !hitIds.take(id, now)) return { status: 204 };
+      record(id, kind as ClickKind, via, s === undefined ? "web" : labelOf(s), now);
+      return { status: 204 };
     }),
   ];
 }

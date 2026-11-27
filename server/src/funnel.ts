@@ -10,12 +10,16 @@
 // Открытие, чьё прошлое открытие попало в тот же период, в итог не идёт; остаются люди.
 //
 // Шаги полной анкеты (funnel_form): дошёл до экрана и прошёл его, теми же обезличенными числами за день.
+//
+// Отклик без профиля (sent_plain) новое приложение присылает с вакансией и способом отклика: он пишется ещё
+// и числом по вакансии (vacancy_clicks, место кнопки app), рядом с нажатиями кнопок сайта (go.ts).
 
 import type { Ctx } from "./app.ts";
+import { METHODS, type Method } from "./applications.ts";
 import { adminGuard } from "./auth.ts";
 import type { Db } from "./db.ts";
 import { HttpError, route, type Route } from "./http.ts";
-import { contactClicks } from "./go.ts";
+import { contactClicks, countVacancyClick, HIT_VACANCIES, VACANCY_RE, type ClickKind } from "./go.ts";
 import { postClicks } from "./page.ts";
 import { getSeeker, iso } from "./seekers.ts";
 import { DAY_MS, localDay } from "./time.ts";
@@ -61,6 +65,21 @@ export function countForm(db: Db, step: FormStep, screen: FormScreen, source: st
     `INSERT INTO funnel_form (day, source, screen, ${column}) VALUES (?, ?, ?, 1)
      ON CONFLICT (day, source, screen) DO UPDATE SET ${column} = ${column} + 1`,
   ).run(localDay(now), source ?? "", screen);
+}
+
+/**
+ * На какую вакансию и как откликнулся человек без профиля (поля vacancy_id и method события sent_plain)
+ * или null: прежние версии приложения их не присылают, а значения не по формату не считаем.
+ * Способ отклика переводится в вид нажатия; «открыл исходное объявление» у вакансий hh.kz и OLX — их сайт.
+ */
+function replyOf(body: Record<string, unknown>): { id: string; kind: ClickKind } | null {
+  const id = body.vacancy_id;
+  if (typeof id !== "string" || !VACANCY_RE.test(id) || !(METHODS as readonly unknown[]).includes(body.method)) return null;
+  const method = body.method as Method;
+  if (method === "whatsapp") return { id, kind: "wa" };
+  if (method === "telegram") return { id, kind: "tg" };
+  if (method === "post") return { id, kind: id.startsWith("hh-") ? "hh" : id.startsWith("olx-") ? "olx" : "orig" };
+  return { id, kind: method };
 }
 
 /** Первая метка источника остаётся навсегда: следующие ссылки её не меняют. */
@@ -220,15 +239,29 @@ export function funnelRoutes(ctx: Ctx): Route[] {
   // Один человек — одно событие шага в день. Только в памяти: до согласия о человеке ничего не пишем на диск
   let seenDay = "";
   let seen = new Set<string>();
-  const first = (userId: number, step: string, now: number) => {
+  let replied = new Map<number, Set<string>>();
+  const startDay = (now: number) => {
     const day = localDay(now);
-    if (day !== seenDay) {
-      seenDay = day;
-      seen = new Set();
-    }
+    if (day === seenDay) return;
+    seenDay = day;
+    seen = new Set();
+    replied = new Map();
+  };
+  const first = (userId: number, step: string, now: number) => {
+    startDay(now);
     const key = `${userId}:${step}`;
     if (seen.has(key)) return false;
     seen.add(key);
+    return true;
+  };
+  // Отклик без профиля по вакансии: один на человека и вакансию в день и не больше HIT_VACANCIES разных
+  // вакансий, как у маячка сайта. Тоже только в памяти
+  const firstReply = (userId: number, vacancyId: string, now: number) => {
+    startDay(now);
+    let ids = replied.get(userId);
+    if (!ids) replied.set(userId, (ids = new Set()));
+    if (ids.has(vacancyId) || ids.size >= HIT_VACANCIES) return false;
+    ids.add(vacancyId);
     return true;
   };
   const admin = adminGuard(ctx);
@@ -258,6 +291,10 @@ export function funnelRoutes(ctx: Ctx): Route[] {
         const gap = step === "open" ? gapOf(body.gap) : null;
         if (gap !== null) countReturn(ctx.db, source, gap, now);
       }
+      // Отклик без профиля на названную вакансию: число по вакансии. Сам шаг выше считается раз в день,
+      // как раньше, а здесь — каждая новая вакансия: по ним видно, кому из работодателей написали
+      const reply = step === "sent_plain" ? replyOf(body) : null;
+      if (reply && firstReply(user.id, reply.id, now)) countVacancyClick(ctx.db, reply.id, reply.kind, source ?? "", "app", now);
       if (getSeeker(ctx.db, user.id)) attachSource(ctx.db, user.id, source, now);
       return { status: 204 };
     }),

@@ -1,7 +1,7 @@
 from dataclasses import replace
 from datetime import datetime, timezone
 
-from vacante.launch import app_link, profile_link, reply_buttons, start_param
+from vacante.launch import app_link, profile_link, reply_buttons, start_param, utm
 from vacante.models import RawPost
 from vacante.parse import parse_post
 
@@ -96,3 +96,29 @@ def test_profile_link_goes_with_direct_buttons_only():
     assert profile_link(vacancy(contact=[]), "web") is None
     assert profile_link(vacancy(source="bot"), "web") is None
     assert profile_link(vacancy(id="a" * 60, source="telegram", contact=["whatsapp"]), "web") is None
+
+
+def test_utm_marks_site_links_sent_to_telegram():
+    assert utm("https://vacante.kz/v/chan-5/", "channel", "post", "almaty") == (
+        "https://vacante.kz/v/chan-5/?utm_source=telegram&utm_medium=channel&utm_campaign=post&utm_content=almaty")
+    # Город неизвестен: метки utm_content нет
+    assert utm("https://vacante.kz/smeny/", "bot", "morning") == (
+        "https://vacante.kz/smeny/?utm_source=telegram&utm_medium=bot&utm_campaign=morning")
+    assert utm("https://vacante.kz/", "bot", "sub", None).endswith("/?utm_source=telegram&utm_medium=bot&utm_campaign=sub")
+    assert utm("https://vacante.kz", "bot", "sub") == "https://vacante.kz?utm_source=telegram&utm_medium=bot&utm_campaign=sub"
+
+
+def test_utm_keeps_query_and_fragment_of_the_link():
+    # У адреса уже есть параметры: метки дописываются через «&», второго «?» нет
+    assert utm("https://vacante.kz/almaty/?q=%D0%BF%D0%BE%D0%B2%D0%B0%D1%80&sort=pay", "bot", "sub", "almaty") == (
+        "https://vacante.kz/almaty/?q=%D0%BF%D0%BE%D0%B2%D0%B0%D1%80&sort=pay"
+        "&utm_source=telegram&utm_medium=bot&utm_campaign=sub&utm_content=almaty")
+    # Якорь остаётся в конце адреса, после меток
+    assert utm("https://vacante.kz/rabotodatelyam/?from=tg#tarify", "channel", "post", "ust-kamenogorsk") == (
+        "https://vacante.kz/rabotodatelyam/?from=tg&utm_source=telegram&utm_medium=channel&utm_campaign=post"
+        "&utm_content=ust-kamenogorsk#tarify")
+    assert utm("https://vacante.kz/almaty/#list", "bot", "examples").endswith("/almaty/?utm_source=telegram"
+                                                                              "&utm_medium=bot&utm_campaign=examples#list")
+    # Адрес сайта при локальной сборке: порт и путь остаются как есть
+    assert utm("http://localhost:8000/vacante/v/chan-5/", "bot", "sub", "almaty").startswith(
+        "http://localhost:8000/vacante/v/chan-5/?utm_source=telegram&")

@@ -345,8 +345,10 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
     }
     if v.schedule:
         data["workHours"] = v.schedule
-    if shifts.is_shift(v):
-        data["employmentType"] = ["PART_TIME", "TEMPORARY"]
+    # Тип занятости только когда он точно известен: смена на конкретный день — TEMPORARY, «подработка» — PART_TIME.
+    # Оплата за день или час сама по себе ничего не говорит о занятости: у многих таких вакансий график 2/2 или 5/2
+    if employment := {"slot": "TEMPORARY", "part": "PART_TIME"}.get(shifts.kind(v) or ""):
+        data["employmentType"] = employment
     if venue and venue.get("avatar"):
         data["hiringOrganization"]["logo"] = f"{base_url}/{venue_store.AVATARS}/{venue['avatar']}"
     if same := [u for u in (instagram_url(venue), venue and venue.get("website")) if u]:

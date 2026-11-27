@@ -347,7 +347,7 @@ _EMPLOYER_LABEL = re.compile(
 _EMPLOYER_INVITES = re.compile(r"^[^\w\n]*([^\n]{2,40}?)\s+приглашает на работу", re.M)
 _EMPLOYER_QUOTED = re.compile(r"[«\"]([^«»\"\n]{2,40})[»\"]")
 _EMPLOYER_PLACE = re.compile(
-    r"(?i:\b(?:кафе|ресторан\w*|рестопарк\w*|рестобар\w*|кофейн\w*|магазин\w*|бар\w*|сет(ь|и)(?:[ \t]+[а-яё]+){1,3}|компани\w*|супермаркет\w*|"
+    r"(?i:\b(?:кафе|ресторан\w*|рестопарк\w*|рестобар\w*|кофейн\w*|магазин\w*|бар(?:а|е|ы|ов)?\b|сет(ь|и)(?:[ \t]+[а-яё]+){1,3}|компани\w*|супермаркет\w*|"
     r"пекарн\w*|столов\w*|пункт\w* выдачи|салон\w*|отел\w*|гостиниц\w*))[ \t]+"
     r"([A-ZА-ЯЁ][\w&'’.-]*(?:[ \t]+[A-ZА-ЯЁ0-9][\w&'’.-]*){0,2})"
 )
@@ -579,7 +579,7 @@ def detect_city(text: str, default: str | None) -> str | None:
     return default if default in found else None
 
 
-_NOT_EMPLOYER = re.compile(r"не указан|частн\w* лиц|объявлени|хозяин|^я\b|^требу|^нужн|^срочн|ж[ұу]мыс")
+_NOT_EMPLOYER = re.compile(r"не указан|частн\w* лиц|объявлени|хозяин|^я\b|^требу|^нужн|^срочн|ж[ұу]мыс|^график|шебер")
 
 
 _VERB_TAIL = re.compile(r"(?i)\s+(?:приглашает|ищет|требу|набирает)\w*\b.*$")
@@ -620,15 +620,41 @@ def detect_employer(text: str) -> str | None:
         return name
     if name := _employer_under_title(text):
         return name
-    m = _EMPLOYER_QUOTED.search(text)
-    if m:
-        return m[1].strip()
+    if name := _quoted_employer(text):
+        return name
     m = _EMPLOYER_PLACE.search(text)
-    if m and (name := _VERB_TAIL.sub("", m[2]).strip(" .,")) and not _NOT_EMPLOYER.search(_lower(name)):
-        return name  # но не «в кафе Требуется повар»
+    if m and (name := _VERB_TAIL.sub("", m[2]).strip(" .,")) and not _NOT_EMPLOYER.search(_lower(name)) \
+            and not _PLACE_NAME_START.match(name):
+        return name  # но не «в кафе Требуется повар», не «столовую БЦ» и не «бар В КОФЕЙНЮ»
     m = _EMPLOYER_INVITES.search(text)
-    if m:
+    # «Юлия приглашает на работу» — это рекрутер, а не компания: одно русское слово без кавычек не берём
+    if m and not _LONE_WORD.match(m[1].strip()):
         return _clean_name(m[1])
+    return None
+
+
+# Название в кавычках, которое на самом деле место: «в ТРЦ "Хан Шатыр"», «"Ақтау" ТРК маңында», «Район "Артем"»
+_PLACE_BEFORE_QUOTE = re.compile(
+    r"(?i)(?:\b(?:трк|трц|тц|тд|бц|жк|рынок\w*|базар\w*|район\w*|мкр|микрорайон\w*|ул|улиц\w*|проспект\w*|пр|остановк\w*|"
+    r"кв-л|квартал\w*|көше\w*|даңғыл\w*|ауыл\w*|посел\w*|город\w*|г)\.?)\s*$")
+_PLACE_AFTER_QUOTE = re.compile(r"(?i)^\s*(?:трк|трц|тц|тд|бц|жк|маңында|ауданы|көшесі|рынок|базар)\b")
+_LONE_WORD = re.compile(r"^[А-ЯЁ][а-яё]+$")
+# Не название, а начало места или предлог: «БЦ «Карасай»», «В КОФЕЙНЮ»
+_PLACE_NAME_START = re.compile(r"(?i)^(?:в|во|на|трк|трц|тц|тд|бц|жк|г|ул)\b")
+
+
+def _quoted_employer(text: str) -> str | None:
+    """Первое название в кавычках, похожее на заведение: с большой буквы или цифры (не «греть кресло»), не место
+    рядом с ТРЦ, БЦ, районом или улицей и не должность («САТУ МЕНЕДЖЕРЛЕРІ»)."""
+    for m in _EMPLOYER_QUOTED.finditer(text):
+        name = m[1].strip()
+        if not name or not (name[0].isupper() or name[0].isdigit()):
+            continue
+        if _PLACE_BEFORE_QUOTE.search(text[max(0, m.start() - 20):m.start()]) or _PLACE_AFTER_QUOTE.match(text[m.end():m.end() + 20]):
+            continue
+        if _NOT_EMPLOYER.search(_lower(name)) or _lower(name) in _TITLE_NAMES or "менеджер" in _lower(name):
+            continue
+        return name
     return None
 
 

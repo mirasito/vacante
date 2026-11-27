@@ -1398,3 +1398,26 @@ def test_professions_found_by_technologist_29(text, title):
 def test_professions_found_by_technologist_30(text, title):
     vacancy = _post(text)
     assert vacancy is not None and title in vacancy.title.split(", ")
+
+
+def test_employer_is_not_a_place_a_person_or_a_phrase_in_quotes():
+    """Сборка 27.11: у 11–24% вакансий из каналов «работодатель» был местом, именем рекрутера или фразой."""
+    from vacante.parse import detect_employer
+    not_employers = [
+        'Требуется продавец в магазин "Ақтау" ТРК маңында',  # торговый центр рядом
+        'Офис в БЦ "Нурлы Тау", требуется уборщица',
+        'Район "Артем", требуется повар',
+        '📍 Мекенжайы: 17-1, ЖК «Дукат».',
+        '"САТУ МЕНЕДЖЕРЛЕРІ" керек',  # должность
+        'Не хотите "греть кресло"? Работа курьером',  # фраза с маленькой буквы
+        'Юлия приглашает на работу',  # рекрутер
+        'ТРЕБУЮТСЯ ОПЫТНЫЕ БАРИСТА В КОФЕЙНЮ\n\nЧТО МЫ ПРЕДЛАГАЕМ',  # «бариста» не «бар»
+        '✅ В столовую БЦ «КАРАСАЙ» требуется кухонная рабочая',
+    ]
+    for text in not_employers:
+        assert detect_employer(text) is None, text
+    assert detect_employer("В ТРЦ «Хан Шатыр» магазин MAGNAT ищет продавца") == "MAGNAT"
+    assert detect_employer("Кафе «Зерно» ищет официанта") == "Зерно"
+    assert detect_employer('Ресторан "Del Papa" приглашает') == "Del Papa"
+    assert detect_employer("Magnum приглашает на работу") == "Magnum"
+    assert detect_employer("Бар Мята ищет бармена") == "Мята"

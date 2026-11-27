@@ -303,3 +303,36 @@ def test_vacancy_without_employer_goes_to_google_jobs_as_confidential_only_when_
     assert site.job_posting_ld(replace(v, salary_min=None, salary_max=None), "https://vacante.kz") is None
     assert site.job_posting_ld(replace(v, city=None), "https://vacante.kz") is None
     assert site.job_posting_ld(replace(v, text=text[:150]), "https://vacante.kz") is None
+
+
+def test_employment_type_only_when_known():
+    """Оплата за смену или час не значит «временно»: у многих таких вакансий график 2/2. Тип только у смены
+    на конкретный день (TEMPORARY) и у подработки (PART_TIME)."""
+    base = replace(post(3, "Кафе «Зерно» ищет официанта, 12 000 тг за смену, график 2/2"), employer="Зерно")
+    assert base.salary_period == "day"
+    assert "employmentType" not in json.loads(site.job_posting_ld(base, "https://vacante.kz"))
+    part = replace(base, schedule="подработка")
+    assert json.loads(site.job_posting_ld(part, "https://vacante.kz"))["employmentType"] == "PART_TIME"
+    slot = replace(base, shift_date="2026-10-28")
+    assert json.loads(site.job_posting_ld(slot, "https://vacante.kz"))["employmentType"] == "TEMPORARY"
+
+
+def test_vacancy_title_without_employer_names_salary_or_address(tmp_path):
+    """Без работодателя «Продавец-консультант — Астана» повторялся на десятках страниц: добавляем зарплату или адрес."""
+    with_pay = replace(post(4, "Требуется продавец-консультант, зарплата 250 000 тг", city="astana"), employer=None)
+    with_address = replace(post(5, "Требуется продавец-консультант", city="astana"), employer=None,
+                           address="ул. Кенесары, 40", salary_min=None, salary_max=None)
+    save_vacancies(tmp_path / "data", [with_pay, with_address])
+    build(tmp_path / "data", tmp_path / "out", now=NOW)
+    title = lambda v: (tmp_path / "out" / "v" / v.id / "index.html").read_text("utf-8").split("<title>")[1].split("</title>")[0]
+    assert "250" in title(with_pay) and "Астана | vacante.kz" in title(with_pay)
+    assert "ул. Кенесары, 40" in title(with_address)
+
+
+def test_hh_title_without_address_in_parentheses():
+    from vacante.sources import hh
+    item = {"id": "7", "name": "Пекарь (ул. Карла Маркса, 9)", "area": {"name": "Астана"},
+            "published_at": "2026-10-28T10:00:00+0500", "alternate_url": "https://hh.kz/vacancy/7",
+            "employer": {"name": "Хлебный"}}
+    assert hh.to_vacancy(item).title == "Пекарь"
+    assert hh.to_vacancy({**item, "name": "Повар (2/2)"}).title == "Повар (2/2)"

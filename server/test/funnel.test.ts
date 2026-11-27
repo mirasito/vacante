@@ -53,6 +53,12 @@ async function server() {
     profile: (extra: Record<string, unknown> = {}, user?: Record<string, unknown>) =>
       s.call("PUT", "/me/profile", { headers: auth(user), body: { profile: ANKETA, consent: CONSENT, ...extra } }),
     counts: () => s.db.prepare("SELECT day, source, step, n FROM funnel_counts ORDER BY source, step").all().map((r) => ({ ...r })),
+    /** Нажатия по вакансиям: [день, вакансия, вид, источник визита, место кнопки, число]. */
+    clicks: () =>
+      s.db
+        .prepare("SELECT day, vacancy_id, kind, via, source, n FROM vacancy_clicks ORDER BY day, vacancy_id, kind, via")
+        .all()
+        .map((r) => [r.day, r.vacancy_id, r.kind, r.via, r.source, r.n]),
     source: (id = AIGERIM.id) => (s.db.prepare("SELECT source FROM seekers WHERE id = ?").get(id) as { source: string | null } | undefined)?.source,
   };
 }
@@ -338,5 +344,81 @@ test("шаг анкеты без экрана или с неизвестным �
   const r = (await t.s.call("GET", "/admin/funnel?days=7", { headers: admin })).json;
   assert.equal(r.form.length, 9);
   assert.ok(r.form.every((x: { reached: number; passed: number }) => x.reached === 0 && x.passed === 0));
+  await t.s.close();
+});
+
+test("отклик без профиля с вакансией и способом пишется ещё и по вакансии: способ отклика → вид нажатия", async () => {
+  const t = await server();
+  const sent = (vacancy_id: string, method: string) => t.event({ step: "sent_plain", source: "tg", vacancy_id, method });
+  assert.equal((await sent("almatyrabota1-21258", "whatsapp")).status, 204);
+  await sent("almatyrabota1-21259", "telegram");
+  await sent("almatyrabota1-21260", "call");
+  await sent("almatyrabota1-21261", "post"); // открыл исходный пост в канале
+  await sent("bot-15", "bot");
+  await sent("hh-139501020", "hh");
+  await sent("hh-139501021", "post"); // исходное объявление вакансии hh.kz — сайт hh.kz
+  await sent("olx-777", "post"); // и так же OLX
+  assert.deepEqual(t.clicks(), [
+    ["2026-11-04", "almatyrabota1-21258", "wa", "tg", "app", 1],
+    ["2026-11-04", "almatyrabota1-21259", "tg", "tg", "app", 1],
+    ["2026-11-04", "almatyrabota1-21260", "call", "tg", "app", 1],
+    ["2026-11-04", "almatyrabota1-21261", "orig", "tg", "app", 1],
+    ["2026-11-04", "bot-15", "bot", "tg", "app", 1],
+    ["2026-11-04", "hh-139501020", "hh", "tg", "app", 1],
+    ["2026-11-04", "hh-139501021", "hh", "tg", "app", 1],
+    ["2026-11-04", "olx-777", "olx", "tg", "app", 1],
+  ]);
+  // Шаг воронки по-прежнему один на человека в день, о самом человеке ничего не записано
+  assert.deepEqual(t.counts(), [{ day: "2026-11-04", source: "tg", step: "sent_plain", n: 1 }]);
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM seekers").get()!.n, 0);
+  await t.s.close();
+});
+
+test("отклик без профиля по вакансии: раз в день на человека и вакансию, не больше 60 вакансий в день", async () => {
+  const t = await server();
+  const sent = (vacancy_id: string, method: string, user?: Record<string, unknown>) =>
+    t.event({ step: "sent_plain", source: "tg", vacancy_id, method }, user);
+  await sent("hh-1", "hh");
+  await sent("hh-1", "hh"); // «Написать ещё раз» в тот же день — тот же отклик
+  await sent("hh-1", "post");
+  await sent("hh-1", "hh", OTHER); // другой человек
+  assert.deepEqual(t.clicks(), [["2026-11-04", "hh-1", "hh", "tg", "app", 2]]);
+  // Поток выдуманных вакансий от одного человека: считаются первые 60 разных за день
+  for (let i = 2; i <= 70; i++) await sent(`hh-${i}`, "hh");
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM vacancy_clicks").get()!.n, 60);
+  await sent("hh-70", "hh", OTHER); // на других людей это не влияет
+  assert.equal(t.s.db.prepare("SELECT COUNT(*) AS n FROM vacancy_clicks").get()!.n, 61);
+  // На следующий день тот же человек и та же вакансия считаются снова
+  t.tick(24 * HOUR);
+  await sent("hh-1", "hh");
+  assert.deepEqual(t.clicks().at(-1), ["2026-11-05", "hh-1", "hh", "tg", "app", 1]);
+  await t.s.close();
+});
+
+test("прежнее приложение шлёт sent_plain без вакансии, а поля не по формату не считаются: шаг считается как раньше", async () => {
+  const t = await server();
+  assert.equal((await t.event({ step: "sent_plain", source: "tg" })).status, 204);
+  const users = (i: number) => ({ ...OTHER, id: 8000 + i });
+  const bad: Record<string, unknown>[] = [
+    { vacancy_id: "hh-139501020" }, // способа нет
+    { method: "whatsapp" }, // вакансии нет
+    { vacancy_id: "hh-139501020", method: "sms" },
+    { vacancy_id: "hh-139501020", method: ["hh"] },
+    { vacancy_id: "hh", method: "hh" },
+    { vacancy_id: "hh 139501020", method: "hh" },
+    { vacancy_id: "a".repeat(65), method: "hh" },
+    { vacancy_id: 139501020, method: "hh" },
+    { vacancy_id: "hh-1'; DROP TABLE vacancy_clicks; --", method: "hh" },
+  ];
+  for (const [i, extra] of bad.entries()) {
+    assert.equal((await t.event({ step: "sent_plain", source: "tg", ...extra }, users(i))).status, 204, JSON.stringify(extra));
+  }
+  assert.deepEqual(t.clicks(), []);
+  assert.deepEqual(t.counts(), [{ day: "2026-11-04", source: "tg", step: "sent_plain", n: 1 + bad.length }]);
+  // Вакансия при другом шаге ничего не значит; метка источника не по формату — отклик без источника
+  await t.event({ step: "open", source: "tg", vacancy_id: "hh-139501020", method: "hh" });
+  await t.event({ step: "sent_plain", source: "TG<script>", vacancy_id: "hh-139501020", method: "hh" }, users(100));
+  await t.event({ step: "sent_plain", vacancy_id: "hh-139501020", method: "hh" }, users(101));
+  assert.deepEqual(t.clicks(), [["2026-11-04", "hh-139501020", "hh", "", "app", 2]]);
   await t.s.close();
 });

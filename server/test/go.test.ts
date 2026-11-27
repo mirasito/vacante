@@ -1,8 +1,9 @@
 // Прямые кнопки связи: /go/<вакансия>/<wa|call|tg> сразу ведёт в WhatsApp, на звонок или в Telegram.
+// Нажатия по вакансиям: те же кнопки с источником визита (via) и маячок сайта POST /hit.
 import assert from "node:assert/strict";
 import { after, test } from "node:test";
 
-import { backfillContacts } from "../src/go.ts";
+import { backfillContacts, HIT_VACANCIES, LABELS_PER_DAY, RobotGuard, VACANCIES_PER_DAY } from "../src/go.ts";
 import { BROWSER, count, startServer, type TestServer } from "./helpers.ts";
 
 const KEY = "ab".repeat(32);
@@ -50,6 +51,22 @@ async function server(pages: Record<string, string> = { "almatyrabota1/21258": P
   s.call = (method, path, opts = {}) => call(method, path, { ...opts, headers: { "user-agent": BROWSER, ...opts.headers } });
   return { s, fetched, fetchImpl, tick: (ms: number) => void (clock += ms) };
 }
+
+const DAY = 24 * 3_600_000;
+
+/** Нажатия по вакансиям, как они лежат в базе. */
+const clicks = (s: TestServer, where = "1 = 1") =>
+  s.db
+    .prepare(`SELECT day, vacancy_id, kind, via, source, n FROM vacancy_clicks WHERE ${where} ORDER BY day, vacancy_id, kind, via, source`)
+    .all()
+    .map((r) => ({ ...r }));
+
+/** Маячок так, как его шлёт страница сайта через navigator.sendBeacon: JSON простым текстом, без предварительного запроса. */
+const beacon = (s: TestServer, body: unknown, headers: Record<string, string> = {}) =>
+  s.call("POST", "/hit", {
+    body: typeof body === "string" ? body : JSON.stringify(body),
+    headers: { "content-type": "text/plain;charset=UTF-8", origin: "https://vacante.kz", ...headers },
+  });
 
 test("WhatsApp: сразу в чат с номером из поста и готовым текстом; номер сохраняется на сервере", async () => {
   const { s, fetched } = await server();
@@ -198,4 +215,233 @@ test("робот под видом браузера, который обходи
   // Тот же человек много раз открывает одну вакансию — это не обход
   for (let i = 0; i < 30; i++) await s.call("GET", "/go/almatyrabota1-22001/wa", { headers: { "x-forwarded-for": "198.51.100.3" } });
   assert.equal((s.db.prepare("SELECT n FROM contact_clicks WHERE kind = 'robot'").get() as { n: number }).n, 5);
+});
+
+test("нажатие человека пишется ещё и по вакансии, с источником визита из ссылки (via)", async () => {
+  const { s } = await server();
+  const first = await s.call("GET", "/go/almatyrabota1-21258/wa?s=web&via=chatgpt&t=" + encodeURIComponent("Бариста"));
+  // Сам переход от метки не меняется
+  assert.equal(first.status, 302);
+  assert.match(String(first.headers.location), /^https:\/\/wa\.me\/77011234567\?text=/);
+  await s.call("GET", "/go/almatyrabota1-21258/wa?s=web&via=chatgpt");
+  await s.call("GET", "/go/almatyrabota1-21258/call?s=web&via=google");
+  await s.call("GET", "/go/almatyrabota1-21258/tg?s=tg"); // ссылка без via: страница из кэша или старая ссылка
+  await s.call("GET", "/go/almatyrabota1-21258/wa?s=web&via=" + encodeURIComponent("Chat GPT<script>")); // via не по формату
+  await s.call("GET", "/go/almatyrabota1-21300/wa?s=web&via=direct"); // контакта нет: человек ушёл на пост
+  assert.deepEqual(clicks(s), [
+    { day: "2026-11-04", vacancy_id: "almatyrabota1-21258", kind: "call", via: "google", source: "web", n: 1 },
+    { day: "2026-11-04", vacancy_id: "almatyrabota1-21258", kind: "tg", via: "", source: "tg", n: 1 },
+    { day: "2026-11-04", vacancy_id: "almatyrabota1-21258", kind: "wa", via: "", source: "web", n: 1 },
+    { day: "2026-11-04", vacancy_id: "almatyrabota1-21258", kind: "wa", via: "chatgpt", source: "web", n: 2 },
+    { day: "2026-11-04", vacancy_id: "almatyrabota1-21300", kind: "miss", via: "direct", source: "web", n: 1 },
+  ]);
+  // Общий счётчик по дням, источникам и видам считает те же нажатия, как раньше
+  assert.deepEqual(
+    s.db.prepare("SELECT source, kind, n FROM contact_clicks ORDER BY source, kind").all().map((r) => ({ ...r })),
+    [
+      { source: "tg", kind: "tg", n: 1 },
+      { source: "web", kind: "call", n: 1 },
+      { source: "web", kind: "miss", n: 1 },
+      { source: "web", kind: "wa", n: 3 },
+    ],
+  );
+});
+
+test("нажатия роботов и превью по вакансиям не пишутся", async () => {
+  const posts: Record<string, string> = {};
+  for (let i = 0; i < 20; i++) posts[`almatyrabota1/${22000 + i}`] = embed("almatyrabota1", 22000 + i, "Нужен грузчик, WhatsApp: 8 701 123 45 67");
+  const { s } = await server(posts);
+  for (const ua of ["Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)", "TelegramBot (like TwitterBot)", ""]) {
+    await s.call("GET", "/go/almatyrabota1-22000/wa?s=web&via=google", { headers: { "user-agent": ua } });
+  }
+  assert.deepEqual(clicks(s), []);
+  // Робот под видом браузера: первые 15 вакансий — как у человека, остальные идут только в общее число robot
+  const robot = { "x-forwarded-for": "203.0.113.7" };
+  for (let i = 0; i < 20; i++) await s.call("GET", `/go/almatyrabota1-${22000 + i}/wa?s=web&via=google`, { headers: robot });
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks"), 15);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE vacancy_id >= 'almatyrabota1-22015'"), 0);
+  assert.equal(count(s, "SELECT n FROM contact_clicks WHERE kind = 'robot'"), 5);
+});
+
+test("маячок /hit считает переходы с сайта по вакансии, виду и источнику визита", async () => {
+  const { s } = await server();
+  for (const kind of ["hh", "olx", "orig", "app", "pf", "bot", "take"]) {
+    const r = await beacon(s, { id: "hh-139501020", kind, via: "chatgpt", s: "web" });
+    assert.equal(r.status, 204, kind);
+    assert.equal(r.text, "");
+    assert.equal(r.headers["set-cookie"], undefined);
+  }
+  await beacon(s, { id: "hh-139501020", kind: "hh", via: "chatgpt", s: "web" }); // ещё один переход того же вида
+  await beacon(s, { id: "olx-77", kind: "olx" }); // без меток: кнопка на сайте, источник визита неизвестен
+  await beacon(s, { id: "bot-15", kind: "take", via: "Chat GPT", s: "<b>" }); // метки не по формату переход не отменяют
+  const row = (vacancy_id: string, kind: string, via: string, source: string, n: number) => ({ day: "2026-11-04", vacancy_id, kind, via, source, n });
+  assert.deepEqual(clicks(s), [
+    row("bot-15", "take", "", "", 1),
+    row("hh-139501020", "app", "chatgpt", "web", 1),
+    row("hh-139501020", "bot", "chatgpt", "web", 1),
+    row("hh-139501020", "hh", "chatgpt", "web", 2),
+    row("hh-139501020", "olx", "chatgpt", "web", 1),
+    row("hh-139501020", "orig", "chatgpt", "web", 1),
+    row("hh-139501020", "pf", "chatgpt", "web", 1),
+    row("hh-139501020", "take", "chatgpt", "web", 1),
+    row("olx-77", "olx", "", "web", 1),
+  ]);
+  // Общий счётчик прямых кнопок маячок не трогает
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM contact_clicks"), 0);
+});
+
+test("маячок: тело не по формату — 400, в базу ничего не попадает", async () => {
+  const { s } = await server();
+  const bad = [
+    "",
+    "не json",
+    "null",
+    "[]",
+    '"hh-139501020"',
+    {},
+    { id: "hh-139501020" },
+    { kind: "hh" },
+    { id: "hh", kind: "hh" },
+    { id: "hh 139501020", kind: "hh" },
+    { id: "../../etc", kind: "hh" },
+    { id: "a".repeat(65), kind: "hh" },
+    { id: 139501020, kind: "hh" },
+    { id: "hh-139501020", kind: "sms" },
+    { id: "hh-139501020", kind: ["hh"] },
+    // Прямые кнопки сервер считает сам на переходе /go/…: маячком их не прислать
+    { id: "almatyrabota1-21258", kind: "wa" },
+    { id: "almatyrabota1-21258", kind: "miss" },
+    { id: "almatyrabota1-21258", kind: "robot" },
+  ];
+  for (const body of bad) assert.equal((await beacon(s, body)).status, 400, JSON.stringify(body));
+  assert.deepEqual(clicks(s), []);
+  assert.equal((await s.call("GET", "/hit")).status, 405);
+});
+
+test("маячок с чужого сайта и от роботов не считается, но и ошибкой не отвечает", async () => {
+  const { s } = await server();
+  const hit = { id: "hh-139501020", kind: "hh", via: "google", s: "web" };
+  const ignored: Record<string, string>[] = [
+    { origin: "https://evil.example" },
+    { origin: "https://vacante.kz.evil.example" },
+    { origin: "null" },
+    { "user-agent": "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)" },
+    { "user-agent": "python-requests/2.32" },
+    { "user-agent": "" },
+  ];
+  for (const headers of ignored) {
+    const r = await beacon(s, hit, headers);
+    assert.equal(r.status, 204, JSON.stringify(headers));
+    assert.equal(r.text, "");
+  }
+  assert.deepEqual(clicks(s), []);
+  // Свой сайт (оба адреса) и запрос без Origin считаются
+  await beacon(s, hit);
+  await beacon(s, hit, { origin: "https://www.vacante.kz" });
+  await s.call("POST", "/hit", { body: JSON.stringify(hit), headers: { "content-type": "text/plain;charset=UTF-8" } });
+  assert.deepEqual(clicks(s), [{ day: "2026-11-04", vacancy_id: "hh-139501020", kind: "hh", via: "google", source: "web", n: 3 }]);
+});
+
+test("маячок: от одного посетителя за день считается не больше 60 разных вакансий; кнопки связи от этого не зависят", async () => {
+  const { s, tick } = await server();
+  const visitor = { "x-forwarded-for": "203.0.113.7" };
+  for (let i = 1; i <= HIT_VACANCIES + 5; i++) {
+    // Что видит человек, не меняется: ответ тот же, переход сверх предела просто не считается
+    assert.equal((await beacon(s, { id: `hh-${i}`, kind: "hh", via: "google" }, visitor)).status, 204);
+  }
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks"), HIT_VACANCIES);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE n != 1"), 0);
+  // Дальше не считаются и уже знакомые вакансии: это обход ссылок, а не человек
+  await beacon(s, { id: "hh-1", kind: "hh", via: "google" }, visitor);
+  assert.equal(count(s, "SELECT n FROM vacancy_clicks WHERE vacancy_id = 'hh-1'"), 1);
+  // Человек с другого адреса в тот же день считается как обычно, сколько бы раз он ни открыл одну вакансию
+  for (let i = 0; i < 3; i++) await beacon(s, { id: "hh-1", kind: "hh", via: "google" }, { "x-forwarded-for": "198.51.100.2" });
+  assert.equal(count(s, "SELECT n FROM vacancy_clicks WHERE vacancy_id = 'hh-1'"), 4);
+  // Порог кнопок связи маячок не трогает: тот же посетитель получает номер работодателя
+  const go = await s.call("GET", "/go/almatyrabota1-21258/wa?s=web", { headers: visitor });
+  assert.match(String(go.headers.location), /^https:\/\/wa\.me\//);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM contact_clicks WHERE kind = 'robot'"), 0);
+  // На следующий день счёт посетителя начинается заново
+  tick(DAY);
+  await beacon(s, { id: "hh-1", kind: "hh", via: "google" }, visitor);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE day = '2026-11-05'"), 1);
+});
+
+test("счёт обхода помнит ограниченное число посетителей: от потока разных адресов память не растёт", () => {
+  const guard = new RobotGuard(1, 3);
+  const now = Date.parse("2026-11-04T06:00:00Z");
+  // Порог — одна вакансия: на второй посетитель уже робот
+  assert.equal(guard.check("a", "hh-1", now), false);
+  assert.equal(guard.check("a", "hh-2", now), true);
+  // Посетителей стало больше, чем помним: счёт у всех начинается заново
+  for (const visitor of ["b", "c", "d", "e"]) guard.check(visitor, "hh-1", now);
+  assert.equal(guard.check("a", "hh-3", now), false);
+});
+
+test("разных источников визита и мест кнопки за день пишется не больше 40: новые сверх этого идут в other", async () => {
+  const { s, tick } = await server();
+  const distinct = (column: string) => count(s, `SELECT COUNT(DISTINCT ${column}) AS n FROM vacancy_clicks WHERE ${column} != ''`);
+  // Поток выдуманных меток: как есть пишутся первые, остальные — в other
+  for (let i = 0; i < 2 * LABELS_PER_DAY; i++) await beacon(s, { id: "hh-1", kind: "hh", via: `v${i}`, s: `s${i}` });
+  assert.ok(distinct("via") <= LABELS_PER_DAY);
+  assert.equal(count(s, "SELECT n FROM vacancy_clicks WHERE via = 'v0' AND source = 's0'"), 1);
+  assert.ok(count(s, "SELECT SUM(n) AS n FROM vacancy_clicks WHERE via = 'other' AND source = 'other'") >= LABELS_PER_DAY);
+  await beacon(s, { id: "hh-1", kind: "hh", via: "v0", s: "s0" }); // знакомая метка и дальше пишется как есть
+  assert.equal(count(s, "SELECT n FROM vacancy_clicks WHERE via = 'v0' AND source = 's0'"), 2);
+
+  // Свои метки поток не вытесняет: источники визита, которые определяет сайт, и места кнопок пишутся как есть
+  const SITE_VIAS = ["direct", "other", "google", "yandex", "bing", "ddg", "chatgpt", "perplex", "gemini", "copilot", "claude", "tg", "ig", "2gis"];
+  for (const via of SITE_VIAS) await beacon(s, { id: "hh-2", kind: "hh", via, s: "web" });
+  assert.deepEqual(clicks(s, "vacancy_id = 'hh-2'").map((r) => [r.via, r.source, r.n]), [...SITE_VIAS].sort().map((via) => [via, "web", 1]));
+  for (const place of ["web", "tg", "bot", "app"]) await beacon(s, { id: "hh-3", kind: "hh", s: place });
+  assert.deepEqual(clicks(s, "vacancy_id = 'hh-3'").map((r) => r.source), ["app", "bot", "tg", "web"]);
+  // Всего за день: 40 источников визита (other среди них) и 40 мест кнопки, не считая other
+  assert.equal(distinct("via"), LABELS_PER_DAY);
+  assert.equal(distinct("source"), LABELS_PER_DAY + 1);
+
+  // Предел общий для маячка и кнопок связи; общий счётчик кнопок пишет свою метку как раньше
+  await s.call("GET", "/go/almatyrabota1-21258/wa?s=more&via=more");
+  assert.deepEqual(clicks(s, "vacancy_id = 'almatyrabota1-21258'"), [
+    { day: "2026-11-04", vacancy_id: "almatyrabota1-21258", kind: "wa", via: "other", source: "other", n: 1 },
+  ]);
+  assert.equal(count(s, "SELECT n FROM contact_clicks WHERE source = 'more'"), 1);
+
+  // На следующий день новые метки снова пишутся как есть
+  tick(DAY);
+  await beacon(s, { id: "hh-1", kind: "hh", via: "extra", s: "extra" });
+  assert.deepEqual(clicks(s, "day = '2026-11-05'"), [{ day: "2026-11-05", vacancy_id: "hh-1", kind: "hh", via: "extra", source: "extra", n: 1 }]);
+});
+
+test("разных вакансий за день пишется не больше 5000: выдуманные id базу не раздувают", async () => {
+  const { s, tick } = await server();
+  // Каждая вакансия с нового адреса, чтобы предел на одного посетителя был ни при чём
+  const from = (i: number) => ({ "x-forwarded-for": `10.${i >> 16}.${(i >> 8) & 255}.${i & 255}` });
+  const each = async (send: (i: number) => Promise<unknown>) => {
+    for (let start = 0; start < VACANCIES_PER_DAY; start += 250) await Promise.all(Array.from({ length: 250 }, (_, k) => send(start + k)));
+  };
+  await each((i) => beacon(s, { id: `hh-${i}`, kind: "hh" }, from(i)));
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks"), VACANCIES_PER_DAY);
+  assert.equal((await beacon(s, { id: "hh-new", kind: "hh" }, from(VACANCIES_PER_DAY))).status, 204);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE vacancy_id = 'hh-new'"), 0);
+  // Знакомая вакансия считается дальше
+  await beacon(s, { id: "hh-42", kind: "hh" }, from(VACANCIES_PER_DAY + 1));
+  assert.equal(count(s, "SELECT n FROM vacancy_clicks WHERE vacancy_id = 'hh-42'"), 2);
+
+  // У кнопок связи свой такой же предел: маячок его не расходует, а сверх него переход и общий счётчик работают как раньше
+  await each((i) => s.call("GET", `/go/channel-${i}/wa?s=web`, { headers: from(i) }));
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE kind = 'miss'"), VACANCIES_PER_DAY);
+  tick(61_000); // новая минута: сервер снова читает посты с t.me
+  const r = await s.call("GET", "/go/almatyrabota1-21258/wa?s=web&via=google", { headers: from(VACANCIES_PER_DAY) });
+  assert.match(String(r.headers.location), /^https:\/\/wa\.me\//);
+  assert.equal(count(s, "SELECT COUNT(*) AS n FROM vacancy_clicks WHERE vacancy_id = 'almatyrabota1-21258'"), 0);
+  assert.equal(count(s, "SELECT n FROM contact_clicks WHERE kind = 'wa'"), 1);
+
+  // На следующий день счёт начинается заново
+  tick(DAY);
+  await beacon(s, { id: "hh-new", kind: "hh" }, from(1));
+  await s.call("GET", "/go/almatyrabota1-21258/wa?s=web&via=google", { headers: from(1) });
+  assert.deepEqual(clicks(s, "day = '2026-11-05'"), [
+    { day: "2026-11-05", vacancy_id: "almatyrabota1-21258", kind: "wa", via: "google", source: "web", n: 1 },
+    { day: "2026-11-05", vacancy_id: "hh-new", kind: "hh", via: "", source: "web", n: 1 },
+  ]);
 });

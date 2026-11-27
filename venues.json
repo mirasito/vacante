@@ -11309,6 +11309,15 @@
   "v": 3,
   "checked_at": "2026-11-06T22:44:17+00:00"
  },
+ "almaty:dinastia avtospa": {
+  "name": "Dinastia Avtospa",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T18:44:08+00:00",
+  "instagram": "dinastia.almaty",
+  "source": "https://2gis.kz/almaty/firm/9429940000893754"
+ },
  "almaty:dino fest": {
   "name": "DINO FEST",
   "city": "almaty",
@@ -31239,6 +31248,15 @@
   "instagram": "ziyaruss",
   "source": "https://2gis.kz/almaty/firm/70000001048137196"
  },
+ "almaty:золотая лагуна": {
+  "name": "Золотая лагуна",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T18:44:08+00:00",
+  "instagram": "zolotaya_laguna_banya",
+  "source": "https://2gis.kz/almaty/firm/9429940000795644"
+ },
  "almaty:зооторг сеть зоомагазинов": {
   "name": "ЗооТорг (Сеть зоомагазинов)",
   "city": "almaty",
@@ -34160,6 +34178,13 @@
   "instagram": "mamaznaet_almata",
   "source": "https://2gis.kz/almaty/firm/70000001066688179"
  },
+ "almaty:маманов ильхом махамединович": {
+  "name": "Маманов Ильхом Махамединович",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T18:44:08+00:00"
+ },
  "almaty:мамедова": {
   "name": "Мамедова",
   "city": "almaty",
@@ -34578,6 +34603,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-08T13:43:36+00:00"
+ },
+ "almaty:мерген беркут": {
+  "name": "Мерген Беркут",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T18:44:08+00:00",
+  "instagram": "mergen_group_official",
+  "website": "http://mergengroup.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001039788691",
+  "avatar_checked_at": "2026-11-27T18:44:09+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:меса ltd меса лтд": {
   "name": "МЕСА LTD (МЕСА ЛТД)",
@@ -46913,7 +46952,7 @@
   "checked_at": "2026-10-30T17:43:02+00:00",
   "website": "https://handoors.kz/",
   "source": "https://2gis.kz/astana/firm/70000001056422463",
-  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
+  "avatar_checked_at": "2026-11-27T18:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -62789,7 +62828,7 @@
   "instagram": "gaissina_com",
   "website": "https://gaissina.com/",
   "source": "https://2gis.kz/astana/firm/70000001115504137",
-  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
+  "avatar_checked_at": "2026-11-27T18:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -64611,7 +64650,7 @@
   "checked_at": "2026-11-06T17:44:18+00:00",
   "website": "https://ffins.kz/",
   "source": "https://2gis.kz/astana/firm/70000001116773966",
-  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
+  "avatar_checked_at": "2026-11-27T18:44:09+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -71453,6 +71492,13 @@
   "avatar": "3dd43ff8d89130e7.jpg",
   "avatar_source": "telegram"
  },
+ "karaganda:боксерский клуб double jab": {
+  "name": "Боксерский клуб Double Jab",
+  "city": "karaganda",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T18:44:08+00:00"
+ },
  "karaganda:бпи астана": {
   "name": "БПИ-Астана",
   "city": "karaganda",
@@ -77231,7 +77277,7 @@
   "instagram": "lux_voda_lux_kostanay",
   "website": "http://lsu.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001035753410",
-  "avatar_checked_at": "2026-11-20T18:42:48+00:00",
+  "avatar_checked_at": "2026-11-27T18:44:09+00:00",
   "avatar_tried": [
    "website"
   ]

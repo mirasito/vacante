@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import * as i18n from './i18n';
 import { Icon } from './icons';
 import { Login } from './Login';
 import { haptic, shareLink, whatsapp } from './platform';
 import { getReferral, getReliability, REPORT_REASONS, reportVacancy, type Reliability, type ReportReason } from './server';
 import type { Colors } from './theme';
 import type { Lang, Vacancy } from './types';
-import { Button, IconCircle, Loading, styles as ui } from './ui';
+import { Backdrop, Button, focusTarget, heading, IconCircle, Live, Loading, spaceKey, styles as ui } from './ui';
 import { V } from './v2texts';
 
 /**
@@ -78,17 +79,17 @@ export function ReliabilityCard(props: { c: Colors; lang: Lang; data: Reliabilit
   return (
     <Pressable onPress={props.onOpen} accessibilityRole="button" style={[s.dark, { backgroundColor: c.strong }]}>
       <View style={s.darkHead}>
-        <Text style={[s.kicker, { color: c.faint }]}>{t.reliability}</Text>
-        <Icon name="next" color={c.faint} size={18} />
+        <Text style={[s.kicker, { color: c.strongQuiet }]}>{t.reliability}</Text>
+        <Icon name="next" color={c.strongQuiet} size={18} />
       </View>
       <Text style={[s.level, { color: c.onStrong }]}>
         {data.level ? `${MEDAL[data.level]} ${t.level[data.level]}` : t.noLevel}
       </Text>
       <Text style={[s.stats, { color: c.onStrong }]}>{t.stats(data.attended, data.missed, data.cancelled)}</Text>
       {data.next ? (
-        <Text style={[s.next, { color: c.faint }]}>{t.next(t.level[data.next.level]!, data.next.need)}</Text>
+        <Text style={[s.next, { color: c.strongQuiet }]}>{t.next(t.level[data.next.level]!, data.next.need)}</Text>
       ) : (
-        <Text style={[s.next, { color: c.faint }]}>{t.top}</Text>
+        <Text style={[s.next, { color: c.strongQuiet }]}>{t.top}</Text>
       )}
     </Pressable>
   );
@@ -105,10 +106,18 @@ export function ReliabilityPage(props: { c: Colors; lang: Lang; onClose(): void 
     <SafeAreaView style={[s.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
       <View style={ui.column}>
         <View style={s.top}>
-          <Pressable onPress={props.onClose} hitSlop={10} accessibilityRole="button" accessibilityLabel="←" style={s.back}>
+          <Pressable
+            onPress={props.onClose}
+            hitSlop={10}
+            accessibilityRole="button"
+            accessibilityLabel={i18n.t(lang, 'back')}
+            style={s.back}
+          >
             <Icon name="back" color={c.ink} />
           </Pressable>
-          <Text style={[s.h1, { color: c.ink }]}>{t.reliability}</Text>
+          <Text style={[s.h1, { color: c.ink }]} {...heading(1)}>
+            {t.reliability}
+          </Text>
         </View>
         <ScrollView contentContainerStyle={s.body}>
           {data ? <ReliabilityCard c={c} lang={lang} data={data} onOpen={() => undefined} /> : <Loading c={c} text="" />}
@@ -134,16 +143,18 @@ export function ReliabilityPage(props: { c: Colors; lang: Lang; onClose(): void 
 }
 
 /** Лист снизу: тёмный фон, карточка с заголовком и крестиком. */
-function Sheet(props: { c: Colors; title: string; onClose(): void; children: React.ReactNode }) {
+function Sheet(props: { c: Colors; lang: Lang; title: string; onClose(): void; children: React.ReactNode }) {
   const { c } = props;
   return (
     <View style={s.backdrop}>
-      <Pressable style={ui.flex} onPress={props.onClose} accessibilityLabel="✕" />
+      <Backdrop onClose={props.onClose} />
       <SafeAreaView edges={['bottom']} style={[s.sheet, { backgroundColor: c.card }]}>
         <View style={[s.grab, { backgroundColor: c.line }]} />
         <View style={s.sheetHead}>
-          <Text style={[s.h2, { color: c.ink }]}>{props.title}</Text>
-          <Pressable onPress={props.onClose} hitSlop={10} accessibilityRole="button" accessibilityLabel="✕">
+          <Text style={[s.h2, { color: c.ink }]} {...heading(2)} {...focusTarget}>
+            {props.title}
+          </Text>
+          <Pressable onPress={props.onClose} hitSlop={10} accessibilityRole="button" accessibilityLabel={i18n.t(props.lang, 'close')}>
             <Icon name="close" color={c.quiet} />
           </Pressable>
         </View>
@@ -162,7 +173,7 @@ export function InviteSheet(props: { c: Colors; lang: Lang; onClose(): void }) {
     getReferral().then(setRef, () => setFailed(true));
   }, []);
   return (
-    <Sheet c={c} title={t.invite} onClose={props.onClose}>
+    <Sheet c={c} lang={lang} title={t.invite} onClose={props.onClose}>
       <Text style={[s.text, { color: c.ink }]}>{t.inviteText}</Text>
       {ref ? (
         <>
@@ -208,7 +219,7 @@ export function ReportSheet(props: { c: Colors; lang: Lang; v: Vacancy; onClose(
     }
   };
   return (
-    <Sheet c={c} title={done ? t.report : t.reportTitle} onClose={props.onClose}>
+    <Sheet c={c} lang={lang} title={done ? t.report : t.reportTitle} onClose={props.onClose}>
       {done ? (
         <>
           <Text style={[s.text, { color: c.ink }]}>✓ {t.reportDone}</Text>
@@ -216,31 +227,50 @@ export function ReportSheet(props: { c: Colors; lang: Lang; v: Vacancy; onClose(
         </>
       ) : (
         <>
-          {REPORT_REASONS.map((r) => (
-            <Pressable
-              key={r}
-              onPress={() => setReason(r)}
-              accessibilityRole="radio"
-              accessibilityState={{ checked: reason === r }}
-              style={[s.reason, { borderColor: reason === r ? c.accent : c.line }]}
-            >
-              <View style={[s.radio, { borderColor: reason === r ? c.accent : c.faint }]}>
-                {reason === r ? <View style={[s.dot, { backgroundColor: c.accent }]} /> : null}
-              </View>
-              <Text style={[s.reasonText, { color: c.ink }]}>{t.reasons[r]}</Text>
-            </Pressable>
-          ))}
+          {/* aria-checked, а не accessibilityState: react-native-web 0.21 accessibilityState не читает,
+              и выбранная причина не объявлялась */}
+          <View accessibilityRole="radiogroup" accessibilityLabel={t.reportTitle} style={s.reasons}>
+            {REPORT_REASONS.map((r) => (
+              <Pressable
+                key={r}
+                onPress={() => setReason(r)}
+                {...spaceKey(() => setReason(r))}
+                accessibilityRole="radio"
+                aria-checked={reason === r}
+                style={[s.reason, { borderColor: reason === r ? c.accent : c.line }]}
+              >
+                <View style={[s.radio, { borderColor: reason === r ? c.accent : c.control }]}>
+                  {reason === r ? <View style={[s.dot, { backgroundColor: c.accent }]} /> : null}
+                </View>
+                <Text style={[s.reasonText, { color: c.ink }]}>{t.reasons[r]}</Text>
+              </Pressable>
+            ))}
+          </View>
           <TextInput
             value={text}
             onChangeText={setText}
             placeholder={t.reportText}
-            placeholderTextColor={c.faint}
+            placeholderTextColor={c.quiet}
+            accessibilityLabel={t.reportText}
             multiline
             maxLength={500}
-            style={[s.input, { color: c.ink, borderColor: c.line }]}
+            style={[s.input, { color: c.ink, borderColor: c.control }]}
           />
-          {error ? <Text style={[s.small, { color: c.skip }]}>{error}</Text> : null}
-          <Button c={c} label={t.reportSend} disabled={!reason} busy={busy} onPress={send} />
+          <Live>
+            {error ? (
+              <Text style={[s.small, { color: c.skip }]} role="alert">
+                {error}
+              </Text>
+            ) : null}
+          </Live>
+          {/* Без причины кнопка выглядит неактивной, но с клавиатуры и скринридером её видно: нажатие просит выбрать причину */}
+          <Button
+            c={c}
+            label={t.reportSend}
+            blocked={!reason}
+            busy={busy}
+            onPress={reason ? send : () => setError(t.reportTitle)}
+          />
         </>
       )}
     </Sheet>
@@ -290,6 +320,7 @@ const s = StyleSheet.create({
   link: { borderRadius: 12, padding: 12 },
   linkText: { fontSize: 14, fontWeight: '600' },
   reason: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: 1, borderRadius: 14, padding: 14 },
+  reasons: { gap: 10 },
   radio: { width: 22, height: 22, borderRadius: 11, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   dot: { width: 10, height: 10, borderRadius: 5 },
   reasonText: { flex: 1, fontSize: 15, fontWeight: '600' },

@@ -13,9 +13,12 @@ const light = {
   card: '#ffffff',
   ink: '#1B2023',
   quiet: '#5C6066',
-  /** Значки и стрелки, которые не надо читать. */
+  /** Значки и стрелки, которые не надо читать. Текстом не набирать: на белом 2.64:1. */
   faint: '#9AA0A8',
+  /** Разделители. Для рамок полей, флажков и переключателей мало (1.26:1), там control. */
   line: '#E3E5E9',
+  /** Рамки полей, пустой флажок, невыбранный тариф, выключенный переключатель: 3.39:1 на белом, 3.19:1 на soft (норма 3:1). */
+  control: '#868C95',
   /** Главные кнопки, активная вкладка, выделенный текст. */
   accent: '#1B2023',
   /** Текст и значки на accent. */
@@ -38,6 +41,8 @@ const light = {
   /** Выбранный чип и тёмные карточки: фон и текст на нём. */
   strong: '#1B2023',
   onStrong: '#ffffff',
+  /** Вторичный текст на strong: 6.24:1. */
+  strongQuiet: '#9AA0A8',
 };
 
 const dark: typeof light = {
@@ -48,6 +53,7 @@ const dark: typeof light = {
   quiet: '#A3ADB3',
   faint: '#6B767C',
   line: '#323B40',
+  control: '#78838A',
   accent: '#8AF0FF',
   onAccent: '#1B2023',
   brand: '#8AF0FF',
@@ -63,6 +69,7 @@ const dark: typeof light = {
   warnInk: '#fcd9a0',
   strong: '#F2F5F6',
   onStrong: '#1B2023',
+  strongQuiet: '#5C6066',
 };
 
 export type Colors = typeof light;

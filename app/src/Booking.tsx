@@ -110,7 +110,7 @@ export function Booking(props: {
 
           {at !== null ? (
             <View style={[s.card, { backgroundColor: c.strong }]}>
-              <Text style={[s.kicker, { color: c.faint }]}>{t.bookingTitle}</Text>
+              <Text style={[s.kicker, { color: c.strongQuiet }]}>{t.bookingTitle}</Text>
               <Text style={[s.when, { color: c.onStrong }]}>{whenRelative(a.interview_at!, lang, now)}</Text>
               {a.vacancy.address ? <Text style={[s.addr, { color: c.onStrong }]}>{a.vacancy.address}</Text> : null}
             </View>
@@ -244,7 +244,7 @@ export function Booking(props: {
                     value={text}
                     onChangeText={setText}
                     placeholder={t.reviewText}
-                    placeholderTextColor={c.faint}
+                    placeholderTextColor={c.quiet}
                     multiline
                     maxLength={500}
                     style={[s.input, { color: c.ink, borderColor: c.line, backgroundColor: c.card }]}

@@ -7,7 +7,7 @@ import { Icon } from './icons';
 import { confirm, openUrl } from './platform';
 import type { Colors } from './theme';
 import type { Lang } from './types';
-import { Seg, styles as ui } from './ui';
+import { heading, Seg, styles as ui } from './ui';
 import { V } from './v2texts';
 
 const T = {
@@ -127,7 +127,9 @@ export function Settings(props: {
           <Pressable onPress={props.onClose} hitSlop={10} accessibilityRole="button" accessibilityLabel={t.back} style={styles.back}>
             <Icon name="back" color={c.ink} />
           </Pressable>
-          <Text style={[styles.h1, { color: c.ink }]}>{t.title}</Text>
+          <Text style={[styles.h1, { color: c.ink }]} {...heading(1)}>
+            {t.title}
+          </Text>
         </View>
         <ScrollView contentContainerStyle={styles.body}>
           {props.site ? (
@@ -153,6 +155,7 @@ export function Settings(props: {
             <Seg<Lang>
               c={c}
               small
+              label={t.lang}
               value={lang}
               options={[
                 { value: 'ru', label: 'Русский' },

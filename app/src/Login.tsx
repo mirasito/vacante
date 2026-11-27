@@ -101,7 +101,10 @@ export function Login(props: { c: Colors; lang: Lang; intro?: string; onDone?():
   return (
     <View style={s.gap}>
       {props.intro && !waiting ? <Text style={[s.text, { color: c.ink }]}>{props.intro}</Text> : null}
-      <Text style={[s.small, { color: waiting ? c.ink : c.quiet }]}>{waiting ? t.wait : t.how}</Text>
+      {/* Строка меняется на «Ждём подтверждения…»: скринридер её объявит */}
+      <Text style={[s.small, { color: waiting ? c.ink : c.quiet }]} aria-live="polite">
+        {waiting ? t.wait : t.how}
+      </Text>
       {note ? <Text style={[s.small, { color: c.quiet }]}>{note}</Text> : null}
       <Button c={c} icon="link" label={waiting ? t.again : t.login} busy={loading} ghost={waiting} onPress={go} />
     </View>

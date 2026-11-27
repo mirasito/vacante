@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { type ComponentRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -88,7 +88,22 @@ import { useCityFeed } from './src/useCityFeed';
 import { useServerTracker } from './src/useServerTracker';
 import { useColors } from './src/theme';
 import type { Index, Lang, Liked, Vacancy } from './src/types';
-import { Button, Chip, LangSwitch, Loading, Logo, ModalArea, Retry, Screen, Tab, styles as ui } from './src/ui';
+import {
+  Button,
+  Chip,
+  dialogName,
+  focusTarget,
+  LangSwitch,
+  Loading,
+  Logo,
+  ModalArea,
+  Retry,
+  Screen,
+  ScreenTitle,
+  SkipLink,
+  Tab,
+  styles as ui,
+} from './src/ui';
 import { V } from './src/v2texts';
 
 // hint: подсказку про свайпы закрыли; home: про значок на экране телефона уже спросили;
@@ -214,6 +229,7 @@ function Main() {
   const [pendingApply, setPendingApply] = useState<ApplyTarget | null>(null);
   const quickSkipped = useRef(false);
   const quickBack = useRef<(() => boolean) | null>(null);
+  const tabsRef = useRef<ComponentRef<typeof View>>(null);
 
   const lang: Lang = prefs.lang ?? 'ru';
   langRef.current = lang;
@@ -774,14 +790,15 @@ function Main() {
         {account ? (
           <Text style={[styles.account, { color: c.quiet }]}>✓ {i18n.signedIn(lang, account.first_name)}</Text>
         ) : null}
-        <Text style={[ui.h1, { color: c.ink }]}>{t('chooseCity')}</Text>
+        <ScreenTitle style={[ui.h1, { color: c.ink }]}>{t('chooseCity')}</ScreenTitle>
         {index ? (
           <ScrollView contentContainerStyle={styles.cityList}>
             {index.cities.map((ct) => (
               <Pressable
                 key={ct.slug}
                 accessibilityRole="button"
-                accessibilityLabel={`${i18n.cityName(ct, lang)}: ${i18n.count(ct.count, lang)}`}
+                // Имя из видимого текста «Алматы 3407 вакансий»: своё имя с двоеточием axe считал
+                // несовпадением с видимым текстом (WCAG 2.5.3)
                 {...({ 'aria-current': ct.slug === city ? 'true' : undefined } as object)}
                 onPress={() => {
                   haptic();
@@ -842,20 +859,37 @@ function Main() {
   }
 
   const cityInfo = index?.cities.find((ct) => ct.slug === city);
+  const cityLabel = cityInfo ? i18n.cityName(cityInfo, lang) : city;
   const subscribeUrl = city ? subscribeLink(city, prefs.cat, filter.payFrom, filter.shift) : null;
+  // Поверх ленты открыто окно: ленту прячем от скринридера (окна в вебе рисуются отдельно, в body)
+  const covered =
+    !!open ||
+    (!!pendingApply && !accountKnown) ||
+    !!quickFor ||
+    !!applying ||
+    filtersOpen ||
+    settingsOpen ||
+    !!booking ||
+    reliabilityOpen ||
+    inviteOpen ||
+    !!reportFor ||
+    (!!fresh.length && !applying && !open);
   return (
-    <Screen c={c}>
+    <Screen c={c} hidden={covered}>
+      {/* Видимого заголовка у ленты нет: h1 для скринридера, на него встаёт фокус после выбора города */}
+      <ScreenTitle hidden>{`${lang === 'kk' ? 'Бос орындар' : 'Вакансии'}: ${cityLabel}`}</ScreenTitle>
       <View style={styles.header}>
         <Pressable
           onPress={() => setPicking(true)}
           hitSlop={8}
           style={styles.cityButton}
           accessibilityRole="button"
-          accessibilityLabel={t('chooseCity')}
+          // Имя начинается с видимого текста: «Алматы. Выберите город» (голосовое «нажми Алматы» тоже находит)
+          accessibilityLabel={`${cityLabel}${near ? ` · ${i18n.upToKm(near, lang)}` : ''}. ${t('chooseCity')}`}
         >
           <Icon name="pin" color={c.accent} />
           <Text style={[styles.cityText, { color: c.ink }]} numberOfLines={1}>
-            {cityInfo ? i18n.cityName(cityInfo, lang) : city}
+            {cityLabel}
             {near ? ` · ${i18n.upToKm(near, lang)}` : ''}
           </Text>
           <Icon name="down" color={c.faint} />
@@ -892,6 +926,16 @@ function Main() {
 
       {tab === 'feed' ? (
         <>
+          <SkipLink
+            c={c}
+            label={lang === 'kk' ? 'Төменгі мәзірге өту' : 'К меню внизу'}
+            onPress={() => {
+              // В вебе ref — это сам DOM-узел: фокус на выбранную вкладку, иначе на меню целиком
+              const menu = tabsRef.current as unknown as (HTMLElement & { focus?(): void }) | null;
+              const active = menu?.querySelector?.<HTMLElement>('[role=tab][aria-selected=true]');
+              (active ?? menu)?.focus?.();
+            }}
+          />
           {index ? (
             <ScrollView
               horizontal
@@ -904,6 +948,7 @@ function Main() {
                 active={!!sheetFilters}
                 icon="sliders"
                 label={sheetFilters ? `${t('filters')} · ${sheetFilters}` : t('filters')}
+                toggle={false}
                 onPress={() => setFiltersOpen(true)}
               />
               <Chip
@@ -956,7 +1001,7 @@ function Main() {
                       {near ? ` · ${t('near').toLowerCase()}` : ''}
                       {filters ? (lang === 'kk' ? ' · сүзгі бойынша' : ' · по фильтрам') : ''}
                     </Text>
-                    {history.length ? <Chip c={c} active={false} icon="undo" label={t('undo')} onPress={undo} /> : null}
+                    {history.length ? <Chip c={c} active={false} toggle={false} icon="undo" label={t('undo')} onPress={undo} /> : null}
                   </View>
                 }
               />
@@ -977,7 +1022,7 @@ function Main() {
             {feed && cards.length && !prefs.hint ? (
               <View style={[styles.hint, { backgroundColor: c.strong }]}>
                 <Text style={[styles.hintText, { color: c.onStrong }]}>{t('hint')}</Text>
-                <Pressable onPress={() => setPref({ hint: true })} hitSlop={8}>
+                <Pressable onPress={() => setPref({ hint: true })} hitSlop={8} accessibilityRole="button" style={styles.hintButton}>
                   <Text style={[styles.hintOk, { color: c.onStrong }]}>{t('hintOk')}</Text>
                 </Pressable>
               </View>
@@ -991,11 +1036,19 @@ function Main() {
                     setPref({ home: true });
                   }}
                   hitSlop={8}
+                  accessibilityRole="button"
+                  style={styles.hintButton}
                 >
                   <Text style={[styles.hintOk, { color: c.onStrong }]}>{t('homeAdd')}</Text>
                 </Pressable>
-                <Pressable onPress={() => setPref({ home: true })} hitSlop={8} accessibilityLabel={t('close')}>
-                  <Icon name="close" color={c.faint} size={20} />
+                <Pressable
+                  onPress={() => setPref({ home: true })}
+                  hitSlop={8}
+                  accessibilityRole="button"
+                  accessibilityLabel={t('close')}
+                  style={styles.hintButton}
+                >
+                  <Icon name="close" color={c.strongQuiet} size={20} />
                 </Pressable>
               </View>
             ) : null}
@@ -1103,7 +1156,7 @@ function Main() {
         />
       )}
 
-      <View style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]} role="tablist">
+      <View ref={tabsRef} style={[styles.tabs, { borderColor: c.line, backgroundColor: c.card }]} role="tablist" {...focusTarget}>
         <Tab c={c} active={tab === 'feed'} icon="pin" label={t('feed')} onPress={() => setTab('feed')} />
         <Tab
           c={c}
@@ -1117,7 +1170,7 @@ function Main() {
         <Tab c={c} active={tab === 'profile'} icon="user" label={P[lang].tab} onPress={() => setTab('profile')} />
       </View>
 
-      <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)}>
+      <Modal visible={!!open} animationType="slide" onRequestClose={() => setOpen(null)} {...dialogName(open ? i18n.title(open, lang) : '')}>
         {/* У модального окна своя иерархия view: отступы под вырез экрана считаем заново */}
         <ModalArea>
           {open ? (
@@ -1134,6 +1187,11 @@ function Main() {
                 setOpen(null);
                 onSwipe(open, 'right');
               }}
+              // То же, что свайп влево, но кнопкой: свайп доступен не всем (WCAG 2.5.7)
+              onHide={() => {
+                setOpen(null);
+                onSwipe(open, 'left');
+              }}
               onApply={() => {
                 setOpen(null);
                 startApply(open);
@@ -1143,12 +1201,17 @@ function Main() {
         </ModalArea>
       </Modal>
       {/* Нажали «Откликнуться» раньше, чем сервер ответил о профиле: ждём ответа, анкету не пропускаем */}
-      <Modal visible={!!pendingApply && !accountKnown} animationType="fade" onRequestClose={() => setPendingApply(null)}>
+      <Modal
+        visible={!!pendingApply && !accountKnown}
+        animationType="fade"
+        onRequestClose={() => setPendingApply(null)}
+        {...dialogName(t('loading'))}
+      >
         <ModalArea>
           <Loading c={c} text="" />
         </ModalArea>
       </Modal>
-      <Modal visible={!!quickFor} animationType="slide" onRequestClose={() => void quickBack.current?.()}>
+      <Modal visible={!!quickFor} animationType="slide" onRequestClose={() => void quickBack.current?.()} {...dialogName(P[lang].tab)}>
         <ModalArea>
           {quickFor && account ? (
             <Wizard
@@ -1178,7 +1241,7 @@ function Main() {
         </ModalArea>
       </Modal>
 
-      <Modal visible={!!applying} animationType="slide" onRequestClose={closeApplying} transparent>
+      <Modal visible={!!applying} animationType="slide" onRequestClose={closeApplying} transparent {...dialogName(t('apply'))}>
         <ModalArea>
           {applying ? (
             <ApplySheet
@@ -1205,7 +1268,7 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
-      <Modal visible={filtersOpen} animationType="slide" transparent onRequestClose={() => setFiltersOpen(false)}>
+      <Modal visible={filtersOpen} animationType="slide" transparent onRequestClose={() => setFiltersOpen(false)} {...dialogName(t('filters'))}>
         <ModalArea>
           {filtersOpen ? (
             <Filters
@@ -1229,7 +1292,7 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
-      <Modal visible={settingsOpen} animationType="slide" onRequestClose={() => setSettingsOpen(false)}>
+      <Modal visible={settingsOpen} animationType="slide" onRequestClose={() => setSettingsOpen(false)} {...dialogName(t('settings'))}>
         <ModalArea>
           {settingsOpen ? (
             <Settings
@@ -1287,7 +1350,7 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
-      <Modal visible={!!booking} animationType="slide" onRequestClose={() => setBooking(null)}>
+      <Modal visible={!!booking} animationType="slide" onRequestClose={() => setBooking(null)} {...dialogName(V[lang].bookingTitle)}>
         <ModalArea>
           {booking ? (
             <Booking
@@ -1315,13 +1378,18 @@ function Main() {
           ) : null}
         </ModalArea>
       </Modal>
-      <Modal visible={reliabilityOpen} animationType="slide" onRequestClose={() => setReliabilityOpen(false)}>
+      <Modal
+        visible={reliabilityOpen}
+        animationType="slide"
+        onRequestClose={() => setReliabilityOpen(false)}
+        {...dialogName(V[lang].reliability)}
+      >
         <ModalArea>{reliabilityOpen ? <ReliabilityPage c={c} lang={lang} onClose={() => setReliabilityOpen(false)} /> : null}</ModalArea>
       </Modal>
-      <Modal visible={inviteOpen} animationType="slide" transparent onRequestClose={() => setInviteOpen(false)}>
+      <Modal visible={inviteOpen} animationType="slide" transparent onRequestClose={() => setInviteOpen(false)} {...dialogName(V[lang].invite)}>
         <ModalArea>{inviteOpen ? <InviteSheet c={c} lang={lang} onClose={() => setInviteOpen(false)} /> : null}</ModalArea>
       </Modal>
-      <Modal visible={!!reportFor} animationType="slide" transparent onRequestClose={() => setReportFor(null)}>
+      <Modal visible={!!reportFor} animationType="slide" transparent onRequestClose={() => setReportFor(null)} {...dialogName(V[lang].report)}>
         <ModalArea>
           {reportFor ? (
             <ReportSheet
@@ -1394,11 +1462,11 @@ const styles = StyleSheet.create({
   deckArea: { flex: 1 },
   countRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 36 },
   count: { fontSize: 13, fontWeight: '600' },
+  // Подсказка в потоке под лентой, а не поверх неё: поверх она закрывала кнопку в фокусе (WCAG 2.4.11)
   hint: {
-    position: 'absolute',
-    left: 16,
-    right: 16,
-    bottom: 12,
+    marginHorizontal: 16,
+    marginTop: 8,
+    marginBottom: 12,
     borderRadius: 16,
     padding: 14,
     flexDirection: 'row',
@@ -1407,6 +1475,7 @@ const styles = StyleSheet.create({
   },
   hintText: { flex: 1, fontSize: 14, lineHeight: 19 },
   hintOk: { fontSize: 15, fontWeight: '800', textDecorationLine: 'underline' },
+  hintButton: { minHeight: 24, minWidth: 24, justifyContent: 'center', alignItems: 'center' },
   tabs: { flexDirection: 'row', borderTopWidth: 1, paddingHorizontal: 8 },
   headerRight: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   gear: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },

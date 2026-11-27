@@ -46,7 +46,7 @@ export function VacancyCard(props: Props & { reason?: string | null; onOpen(): v
           ) : null}
         </View>
         <Pressable onPress={props.onSave} hitSlop={10} accessibilityRole="button" accessibilityLabel={i18n.t(lang, 'like')}>
-          <Icon name="heart" color={c.faint} />
+          <Icon name="heart" color={c.quiet} />
         </Pressable>
       </View>
       {pay ? (
@@ -107,7 +107,9 @@ export function VacancyFull({ v, lang, c, home }: Props) {
       <View style={styles.head}>
         <Avatar v={v} c={c} size={56} />
         <View style={styles.flex}>
-          <Text style={[styles.h1, { color: c.ink }]}>{i18n.title(v, lang)}</Text>
+          <Text style={[styles.h1, { color: c.ink }]} role="heading" aria-level={1}>
+            {i18n.title(v, lang)}
+          </Text>
           {v.employer ? <Text style={[styles.employer, { color: c.accent }]}>{v.employer}</Text> : null}
         </View>
       </View>

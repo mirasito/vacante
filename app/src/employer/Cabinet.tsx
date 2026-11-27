@@ -13,7 +13,7 @@ import { BOT, confirm, openUrl } from '../platform';
 import { authHeader, initData, setSession } from '../session';
 import type { Colors } from '../theme';
 import type { Lang } from '../types';
-import { Badge, Button, Loading, styles as ui } from '../ui';
+import { Badge, Button, heading, Live, Loading, styles as ui } from '../ui';
 import { AuthError, call, money, type Action, type CabinetState } from './api';
 import { PayBox } from './PayBox';
 import { PostForm } from './PostForm';
@@ -187,7 +187,9 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPo
       <Pressable onPress={props.onClose} hitSlop={10} accessibilityRole="button" accessibilityLabel={t.back} style={styles.back}>
         <Icon name="back" color={c.ink} />
       </Pressable>
-      <Text style={[styles.h1, { color: c.ink }]}>{t.title}</Text>
+      <Text style={[styles.h1, { color: c.ink }]} {...heading(1)}>
+        {t.title}
+      </Text>
     </View>
   );
 
@@ -213,11 +215,13 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPo
         </Text>
         <Button c={c} label={state.draft ? t.draft(state.draft.title) : t.post} onPress={() => setPosting(true)} />
         <Button c={c} ghost label={t.shift} onPress={() => bot('smena_app')} />
-        {note ? (
-          <View style={[styles.note, { backgroundColor: note.error ? c.warnBg : c.okBg }]}>
-            <Text style={[styles.text, { color: note.error ? c.warnInk : c.okInk }]}>{note.text}</Text>
-          </View>
-        ) : null}
+        <Live>
+          {note ? (
+            <View style={[styles.note, { backgroundColor: note.error ? c.warnBg : c.okBg }]} role={note.error ? 'alert' : undefined}>
+              <Text style={[styles.text, { color: note.error ? c.warnInk : c.okInk }]}>{note.text}</Text>
+            </View>
+          ) : null}
+        </Live>
         {state.admin ? <Text style={[styles.small, { color: c.quiet }]}>{t.free}</Text> : null}
         {state.credits ? <Badge c={c} tone="ok" label={t.credits(state.credits)} /> : null}
 
@@ -380,7 +384,7 @@ export function Cabinet(props: { c: Colors; lang: Lang; onClose(): void; startPo
 
   return (
     <SafeAreaView style={[styles.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
-      <View style={ui.column}>
+      <View style={ui.column} role="main">
         {header}
         <ScrollView contentContainerStyle={styles.body}>{body}</ScrollView>
       </View>

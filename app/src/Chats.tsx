@@ -83,7 +83,7 @@ export function ChatsTab(props: {
               <Text style={[s.name, { color: c.ink }]} numberOfLines={1}>
                 {a.vacancy.employer || title(a, lang)}
               </Text>
-              {last ? <Text style={[s.time, { color: c.faint }]}>{i18n.age(last.at, lang)}</Text> : null}
+              {last ? <Text style={[s.time, { color: c.quiet }]}>{i18n.age(last.at, lang)}</Text> : null}
             </View>
             <Text style={[s.sub, { color: c.quiet }]} numberOfLines={1}>
               {title(a, lang)}
@@ -202,7 +202,7 @@ export function ChatView(props: { c: Colors; lang: Lang; id: number; onBack(): v
           value={text}
           onChangeText={setText}
           placeholder={t.placeholder}
-          placeholderTextColor={c.faint}
+          placeholderTextColor={c.quiet}
           multiline
           maxLength={1000}
           style={[s.input, { color: c.ink, backgroundColor: c.soft }]}

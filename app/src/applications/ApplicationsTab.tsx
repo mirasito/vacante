@@ -163,6 +163,7 @@ export function ApplicationsTab(props: {
       <ScrollView contentContainerStyle={s.body}>
         <Seg<Part>
           c={c}
+          label={t.tab}
           value={part}
           onChange={setPart}
           options={(['active', 'saved', 'history'] as const).map((p) => ({
@@ -307,7 +308,7 @@ function GoalCard(props: { c: Colors; lang: Lang; goal: Goal; onGoal(goal: GoalV
           {GOALS.map((g) => (
             <Chip key={g} c={c} big active={goal.goal === g} label={String(g)} onPress={() => void pick(g)} />
           ))}
-          {goal.goal ? <Chip c={c} big active={false} label={t.off} onPress={() => void pick(null)} /> : null}
+          {goal.goal ? <Chip c={c} big active={false} toggle={false} label={t.off} onPress={() => void pick(null)} /> : null}
         </View>
         {editing ? (
           <View style={ui.row}>
@@ -332,6 +333,7 @@ function GoalCard(props: { c: Colors; lang: Lang; goal: Goal; onGoal(goal: GoalV
         color={done ? c.like : c.accent}
         track={c.line}
         hole={c.card}
+        label={t.of(goal.goal)}
       >
         <Text style={[s.ringNumber, { color: c.ink }]}>
           {goal.sent}/{goal.goal}

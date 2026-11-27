@@ -9,7 +9,8 @@ import * as i18n from './i18n';
 import { money } from './profile/texts';
 import type { Colors } from './theme';
 import type { Index, Lang, Vacancy } from './types';
-import { Button, Chip, Seg } from './ui';
+import { Icon } from './icons';
+import { Backdrop, Button, Chip, focusTarget, heading, Seg } from './ui';
 
 const T = {
   ru: {
@@ -89,21 +90,36 @@ export function Filters(props: {
 
   return (
     <View style={styles.backdrop}>
-      <Pressable style={styles.flex} onPress={props.onClose} accessibilityLabel={i18n.t(lang, 'close')} />
+      <Backdrop onClose={props.onClose} />
       <SafeAreaView edges={['bottom']} style={[styles.sheet, { backgroundColor: c.card }]}>
         <View style={[styles.grab, { backgroundColor: c.line }]} />
         <View style={styles.head}>
-          <Text style={[styles.h2, { color: c.ink }]}>{t.title}</Text>
-          <Pressable
-            onPress={() => {
-              setF({});
-              setNear(null);
-            }}
-            hitSlop={8}
-            accessibilityRole="button"
-          >
-            <Text style={[styles.reset, { color: c.quiet }]}>{t.reset}</Text>
-          </Pressable>
+          {/* Окно при открытии ставит фокус на заголовок, а не на «Сбросить» */}
+          <Text style={[styles.h2, { color: c.ink }]} {...heading(2)} {...focusTarget}>
+            {t.title}
+          </Text>
+          <View style={styles.headRight}>
+            <Pressable
+              onPress={() => {
+                setF({});
+                setNear(null);
+              }}
+              hitSlop={8}
+              accessibilityRole="button"
+            >
+              <Text style={[styles.reset, { color: c.quiet }]}>{t.reset}</Text>
+            </Pressable>
+            {/* Закрыть без применения: раньше это умели только Escape и затемнение */}
+            <Pressable
+              onPress={props.onClose}
+              hitSlop={8}
+              accessibilityRole="button"
+              accessibilityLabel={i18n.t(lang, 'close')}
+              style={styles.close}
+            >
+              <Icon name="close" color={c.quiet} />
+            </Pressable>
+          </View>
         </View>
         <ScrollView contentContainerStyle={styles.body}>
           <View style={styles.section}>
@@ -143,6 +159,7 @@ export function Filters(props: {
             {props.canNear ? (
               <Seg<string>
                 c={c}
+                label={t.distance}
                 value={near ? String(near) : 'city'}
                 options={[...NEAR_KM.map((km) => ({ value: String(km), label: `${km} км` })), { value: 'city', label: t.city }]}
                 onChange={(v) => setNear(v === 'city' ? null : (Number(v) as NearKm))}
@@ -156,7 +173,7 @@ export function Filters(props: {
             <Switch
               value={!!f.noExp}
               onValueChange={(v) => setF({ ...f, noExp: v })}
-              trackColor={{ true: c.like, false: c.line }}
+              trackColor={{ true: c.like, false: c.control }}
               thumbColor="#fff"
               accessibilityLabel={t.noExp}
             />
@@ -186,6 +203,8 @@ const styles = StyleSheet.create({
   head: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, paddingVertical: 6 },
   h2: { fontSize: 20, fontWeight: '800', letterSpacing: -0.3 },
   reset: { fontSize: 14, fontWeight: '700' },
+  headRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  close: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   body: { paddingHorizontal: 20, paddingBottom: 8, gap: 16 },
   section: { gap: 8 },
   h3: { fontSize: 15, fontWeight: '700' },

@@ -45,6 +45,7 @@ import {
   onAppVisible,
   phoneLocation,
   openUrl,
+  setPageLang,
   telegram,
   useBackButton,
   type HomeScreen,
@@ -265,6 +266,8 @@ function Main() {
       } else setAccountKnown(true);
     })();
   }, []);
+
+  useEffect(() => setPageLang(lang), [lang]);
 
   // Вход и выход на сайте вне Telegram: заново узнаём, кто это. Отклики с устройства переносятся
   // в аккаунт сами, когда у него есть профиль (src/useServerTracker.ts)
@@ -777,6 +780,9 @@ function Main() {
             {index.cities.map((ct) => (
               <Pressable
                 key={ct.slug}
+                accessibilityRole="button"
+                accessibilityLabel={`${i18n.cityName(ct, lang)}: ${i18n.count(ct.count, lang)}`}
+                {...({ 'aria-current': ct.slug === city ? 'true' : undefined } as object)}
                 onPress={() => {
                   haptic();
                   setPref({ city: ct.slug });

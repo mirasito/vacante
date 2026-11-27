@@ -174,6 +174,67 @@ def report(days: int) -> None:
             if not rows:
                 print("пока нет данных")
 
+        # Что именно просело или выросло: показы по видам страниц за каждый день
+        rows = _search_rows(client, base, auth, {"startDate": start.isoformat(), "endDate": end.isoformat(),
+                                                 "dimensions": ["date", "page"]})
+        print(f"\n== показы по видам страниц по дням: {', '.join(name for name, _ in DAILY_COLUMNS)}; "
+              "из них казахские версии; страниц с показами")
+        if isinstance(rows, str):
+            print(rows)
+        for day, d in sorted(by_kind_and_day(rows if isinstance(rows, list) else []).items()):
+            cells = " ".join(f"{d['kinds'][kind]:7.0f}" for _, kind in DAILY_COLUMNS)
+            print(f"{day} {cells}   kk {d['kk']:5.0f}   страниц {d['pages']:5}")
+
+        # Какие запросы ушли или пришли: первая половина периода против второй, по показам
+        middle = start + timedelta(days=(end - start).days // 2)
+        for title, since, until in [("первая половина", start, middle), ("вторая половина", middle + timedelta(days=1), end)]:
+            rows = _search_rows(client, base, auth, {"startDate": since.isoformat(), "endDate": until.isoformat(),
+                                                     "dimensions": ["query"]})
+            print(f"\n== запросы по показам, {title} ({since} — {until}): клики, показы, средняя позиция")
+            if isinstance(rows, str):
+                print(rows)
+                continue
+            print(f"запросов с показами: {len(rows)}, показов по ним: {sum(row['impressions'] for row in rows):.0f}")
+            for row in sorted(rows, key=lambda x: -x["impressions"])[:QUERY_TOP]:
+                print(f"{row['keys'][0][:70]:70} {row['clicks']:6.0f} {row['impressions']:8.0f} {row['position']:6.1f}")
+
+
+# Столбцы отчёта «показы по видам страниц по дням»: (заголовок, вид страницы из page_group без пометки языка)
+DAILY_COLUMNS = [("главная", "главная"), ("города", "город или раздел"), ("сферы", "сфера, профессия или смены в городе"),
+                 ("hh", "вакансия hh"), ("каналы", "вакансия из каналов и от работодателей"), ("OLX", "вакансия OLX")]
+QUERY_TOP = 20  # сколько запросов показывать в каждой половине периода
+SEARCH_ROWS = 25_000  # больше строк за один запрос searchAnalytics не отдаёт
+
+
+def _search_rows(client: httpx.Client, base: str, auth: dict, body: dict, pages: int = 4) -> list[dict] | str:
+    """Все строки ответа searchAnalytics (по 25 000 за запрос) или текст ошибки."""
+    rows: list[dict] = []
+    for page in range(pages):
+        r = client.post(f"{base}/searchAnalytics/query", headers=auth,
+                        json={**body, "rowLimit": SEARCH_ROWS, "startRow": page * SEARCH_ROWS})
+        if r.status_code != 200:
+            return f"ошибка {r.status_code} {r.text[:200]}"
+        got = r.json().get("rows", [])
+        rows += got
+        if len(got) < SEARCH_ROWS:
+            break
+    return rows
+
+
+def by_kind_and_day(rows: list[dict]) -> dict[str, dict]:
+    """Строки Search Console с ключами (дата, адрес) → по дням: показы по видам страниц (русская и казахская
+    версии вместе), показы казахских версий отдельно и число страниц, у которых были показы."""
+    days: dict[str, dict] = {}
+    for row in rows:
+        day, url = row["keys"]
+        group = page_group(url)
+        d = days.setdefault(day, {"kinds": Counter(), "kk": 0.0, "pages": 0})
+        d["kinds"][group.removesuffix(" (kk)")] += row["impressions"]
+        if group.endswith(" (kk)"):
+            d["kk"] += row["impressions"]
+        d["pages"] += 1
+    return days
+
 
 # Суточная квота URL Inspection API — 2000 адресов на ресурс, в минуту 600
 INSPECT_MAX = 600
@@ -230,6 +291,17 @@ def _days_ago(stamp: str | None, now: datetime) -> float | None:
     if not stamp:
         return None
     return (now - datetime.fromisoformat(stamp.replace("Z", "+00:00"))).total_seconds() / 86400
+
+
+def crawl_days(crawls: list[tuple[str, str | None]]) -> dict[str, tuple[int, int]]:
+    """[(вид страницы, время последнего захода робота)] → дата: (страниц, из них вакансий).
+    Страницы, на которые робот не заходил, не считаются."""
+    days: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+    for group, stamp in crawls:
+        if stamp:
+            days[stamp[:10]][0] += 1
+            days[stamp[:10]][1] += group.startswith("вакансия")
+    return {day: (n, vacancies) for day, (n, vacancies) in days.items()}
 
 
 def _inspect_one(client: httpx.Client, auth: dict, prop: str, url: str) -> tuple[int, dict | str]:
@@ -334,6 +406,11 @@ def inspect(total: int) -> None:
             known = [a for a in ages if a is not None]
             print(f"{group[:44]:44} {len(ages) - len(known):5} {sum(a < 3 for a in known):5} "
                   f"{sum(3 <= a <= 14 for a in known):5} {sum(a > 14 for a in known):5}")
+
+    # Встал ли обход и когда: последний заход робота на каждую проверенную страницу, по датам
+    print("\n== последний заход Google по датам: дата, страниц, из них вакансий")
+    for day, (n, vacancies) in sorted(crawl_days([(row[0], row[3].get("lastCrawlTime")) for row in rows]).items()):
+        print(f"{day} {n:5} {vacancies:5}")
 
     print("\n== разметка, которую Google увидел на страницах: вид разметки, страниц")
     for kind, n in Counter(k for row in rows for k in row[4]).most_common():

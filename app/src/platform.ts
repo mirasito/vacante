@@ -107,6 +107,17 @@ export function initTelegram(): Promise<WebApp | undefined> {
   return started;
 }
 
+/**
+ * Сколько ждём telegram-web-app.js, прежде чем открыть приложение без него. Раньше при молчащем
+ * telegram.org крутилка оставалась навсегда; если скрипт придёт позже, done всё равно позовёт ready и expand.
+ */
+const TELEGRAM_WAIT_MS = 8000;
+
+/** Язык страницы для скринридера и переводчика браузера: html lang меняется вместе с языком интерфейса. */
+export function setPageLang(lang: string) {
+  if (isWeb && typeof document !== 'undefined') document.documentElement.lang = lang;
+}
+
 function start(): Promise<WebApp | undefined> {
   if (!inTelegram()) return Promise.resolve(undefined);
   return new Promise((resolve) => {
@@ -126,6 +137,7 @@ function start(): Promise<WebApp | undefined> {
     script.onload = done;
     script.onerror = () => resolve(undefined);
     document.head.appendChild(script);
+    setTimeout(() => resolve(undefined), TELEGRAM_WAIT_MS);
   });
 }
 

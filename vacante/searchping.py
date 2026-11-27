@@ -212,6 +212,24 @@ def report(days: int) -> None:
             for row in sorted(rows, key=lambda x: -x["impressions"])[:QUERY_TOP]:
                 print(f"{row['keys'][0][:70]:70} {row['clicks']:6.0f} {row['impressions']:8.0f} {row['position']:6.1f}")
 
+        # Доходят ли до Google наши сообщения о новых вакансиях (часовое обновление, google_index): спрашиваем
+        # у Indexing API про случайные свои вакансии из карты сайта. Квоту проверки индекса это не тратит
+        own = [(url, day) for url, day in sitemap_pages(client.get(f"{SITE}/sitemap.xml", follow_redirects=True).text)
+               if page_group(url) == OWN_VACANCY]
+        asked = random.Random(date.today().isoformat()).sample(sorted(own), min(len(own), NOTIFY_SAMPLE))
+        answers = [(day, *_notified(client, auth, url)) for url, day in asked]
+        print(f"\n== Indexing API: о скольких своих вакансиях Google получил наше сообщение "
+              f"(спросил про {len(asked)} из {len(own)} в карте сайта)")
+        print("ответы: " + "; ".join(f"{code or 'нет ответа'} — {n}" for code, n in Counter(a[1] for a in answers).most_common())
+              + ". 200 — сообщение дошло, 404 — о странице не сообщали")
+        for code, text in {a[1]: a[2] for a in answers if a[1] not in (200, 404)}.items():
+            print(f"  {code or 'нет ответа'}: {text}")
+        print("по дате публикации вакансии: дата, спросил, сообщение дошло")
+        for day, n, told in notify_days(answers):
+            print(f"{day} {n:5} {told:5}")
+        stamps = Counter(a[2][:10] for a in answers if a[1] == 200 and a[2])
+        print("по дате самого сообщения: " + ("  ".join(f"{day} {n}" for day, n in sorted(stamps.items())) or "—"))
+
 
 # Столбцы отчёта «показы по видам страниц по дням»: (заголовок, вид страницы из page_group без пометки языка)
 DAILY_COLUMNS = [("главная", "главная"), ("города", "город или раздел"), ("сферы", "сфера, профессия или смены в городе"),
@@ -321,14 +339,36 @@ def crawl_days(crawls: list[tuple[str, str | None]]) -> dict[str, tuple[int, int
 OWN_VACANCY = "вакансия из каналов и от работодателей"  # о таких страницах часовое обновление сообщает в Indexing API
 
 
-def _notified(client: httpx.Client, auth: dict, url: str) -> str | None:
-    """Когда мы последний раз сообщали Google об этой странице через Indexing API. None — не сообщали
-    (ответ 404) или Google не ответил."""
+NOTIFY_SAMPLE = 120  # про сколько своих вакансий спрашиваем Indexing API в отчёте: его квота на вопросы 180 в минуту
+
+
+def _notified(client: httpx.Client, auth: dict, url: str) -> tuple[int, str | None]:
+    """Дошло ли до Google наше сообщение об этой странице через Indexing API: (код ответа, пояснение).
+    200 — дошло, пояснение — время последнего сообщения (None, если сообщали только об удалении).
+    404 — о странице не сообщали. Другой код — отказ Google, пояснение — начало его текста. 0 — сбой сети."""
     try:
         r = client.get("https://indexing.googleapis.com/v3/urlNotifications/metadata", headers=auth, params={"url": url})
-    except httpx.HTTPError:
-        return None
-    return r.json().get("latestUpdate", {}).get("notifyTime") if r.status_code == 200 else None
+    except httpx.HTTPError as exc:
+        return 0, type(exc).__name__
+    if r.status_code == 200:
+        return 200, r.json().get("latestUpdate", {}).get("notifyTime")
+    if r.status_code == 404:
+        return 404, None
+    try:  # Google объясняет отказ в error.message; если ответ не JSON, показываем его начало как есть
+        text = r.json()["error"]["message"]
+    except (ValueError, KeyError, TypeError):
+        text = r.text
+    return r.status_code, " ".join(str(text).split())[:200]
+
+
+def notify_days(answers: list[tuple[str, int, str | None]]) -> list[tuple[str, int, int]]:
+    """[(дата публикации вакансии, код ответа Indexing API, время сообщения)] → по датам публикации:
+    (дата, про сколько страниц спросили, о скольких сообщение дошло)."""
+    days: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+    for day, code, stamp in answers:
+        days[day[:10]][0] += 1
+        days[day[:10]][1] += code == 200 and bool(stamp)
+    return [(day, n, told) for day, (n, told) in sorted(days.items())]
 
 
 def _has_job_markup(client: httpx.Client, url: str) -> bool:
@@ -406,7 +446,8 @@ def inspect(total: int) -> None:
                     rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
                     rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
         # Помогает ли Indexing API: о своих вакансиях мы сообщаем Google сразу, заходит ли после этого робот
-        pushed = [(bool(_notified(client, auth, row[2])), _has_job_markup(client, row[2]),
+        told = {row[2]: _notified(client, auth, row[2]) for row in rows if row[0] == OWN_VACANCY}
+        pushed = [(told[row[2]][0] == 200 and bool(told[row[2]][1]), _has_job_markup(client, row[2]),
                    bool(row[3].get("lastCrawlTime")), row[3].get("verdict") == "PASS")
                   for row in rows if row[0] == OWN_VACANCY]
 
@@ -460,6 +501,9 @@ def inspect(total: int) -> None:
     print(f"\n== Indexing API, {OWN_VACANCY}: страниц, из них робот заходил, в индексе")
     for label, n, crawled, good in notified_table(pushed):
         print(f"{label[:44]:44} {n:5} {crawled:5} {good:5}")
+    for code, text in {code: text for code, text in told.values() if code not in (200, 404)}.items():
+        print(f"  Indexing API не ответил на вопрос о сообщении, такие страницы посчитаны как «не сообщали»: "
+              f"{code or 'нет ответа'} {text}")
 
     # Встал ли обход и когда: последний заход робота на каждую проверенную страницу, по датам
     print("\n== последний заход Google по датам: дата, страниц, из них вакансий")

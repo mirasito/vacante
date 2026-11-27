@@ -61,12 +61,24 @@ def test_notification_time_and_job_markup_are_read_from_google_and_the_live_page
         if request.url.host == "indexing.googleapis.com":
             if request.url.params["url"].endswith("/v/a-1/"):
                 return httpx.Response(200, json={"url": "x", "latestUpdate": {"type": "URL_UPDATED", "notifyTime": "2026-11-25T05:28:09Z"}})
+            if request.url.params["url"].endswith("/v/a-3/"):
+                return httpx.Response(403, json={"error": {"code": 403, "message": "Permission denied.\nFailed to verify"}})
             return httpx.Response(404, json={"error": {"code": 404}})
         return httpx.Response(200, text='<script type="application/ld+json">{"@type": "JobPosting"}</script>'
                               if request.url.path == "/v/a-1/" else "<p>без разметки</p>")
 
     with httpx.Client(transport=httpx.MockTransport(answer)) as client:
-        assert searchping._notified(client, {}, "https://vacante.kz/v/a-1/") == "2026-11-25T05:28:09Z"
-        assert searchping._notified(client, {}, "https://vacante.kz/v/a-2/") is None
+        assert searchping._notified(client, {}, "https://vacante.kz/v/a-1/") == (200, "2026-11-25T05:28:09Z")
+        assert searchping._notified(client, {}, "https://vacante.kz/v/a-2/") == (404, None)
+        # Отказ Google не должен выглядеть как «не сообщали»: код и начало текста видны в отчёте
+        code, text = searchping._notified(client, {}, "https://vacante.kz/v/a-3/")
+        assert code == 403 and "Permission denied. Failed to verify" in text
         assert searchping._has_job_markup(client, "https://vacante.kz/v/a-1/")
         assert not searchping._has_job_markup(client, "https://vacante.kz/v/a-2/")
+
+
+def test_notifications_are_counted_by_the_day_the_vacancy_was_published():
+    answers = [("2026-11-25", 200, "2026-11-25T05:28:09Z"), ("2026-11-25", 404, None), ("2026-11-26", 403, "Permission denied"),
+               ("2026-11-26", 200, None), ("2026-11-24", 0, "ConnectTimeout")]
+    # Сообщение дошло — только ответ 200 со временем сообщения об обновлении
+    assert searchping.notify_days(answers) == [("2026-11-24", 1, 0), ("2026-11-25", 2, 1), ("2026-11-26", 2, 0)]

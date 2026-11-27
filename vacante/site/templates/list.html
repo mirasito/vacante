@@ -13,21 +13,21 @@
     <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" aria-label="{{ t("Поиск по должности") }}" autocomplete="off">
   </div>
   {% set tail = SHIFTS ~ "/" if shifts_page else "" %}
-  <nav class="chips">
-    <a class="chip{% if not city %} on{% endif %}" href="{{ home }}/{{ tail }}">{{ t("Все города") }}</a>
+  <nav class="chips" aria-label="{{ t("Города") }}">
+    <a class="chip{% if not city %} on{% endif %}"{% if not city %} aria-current="page"{% endif %} href="{{ home }}/{{ tail }}">{{ t("Все города") }}</a>
     {% for slug, n in city_counts[:8] %}
-    <a class="chip{% if city == slug %} on{% endif %}" href="{{ home }}/{{ slug }}/{% if slug in shift_cities %}{{ tail }}{% endif %}">{{ city_name(slug) }}{% if not shifts_page %} <small>{{ n }}</small>{% endif %}</a>
+    <a class="chip{% if city == slug %} on{% endif %}"{% if city == slug %} aria-current="page"{% endif %} href="{{ home }}/{{ slug }}/{% if slug in shift_cities %}{{ tail }}{% endif %}">{{ city_name(slug) }}{% if not shifts_page %} <small>{{ n }}</small>{% endif %}</a>
     {% endfor %}
   </nav>
   {% if not category and (not city or city in shift_cities) %}
-  <nav class="chips">
-    <a class="chip shifts{% if shifts_page %} on{% endif %}" href="{{ home }}/{% if city %}{{ city }}/{% endif %}{% if not shifts_page %}{{ SHIFTS }}/{% endif %}">⚡ {{ t("Подработка и смены") }}</a>
+  <nav class="chips" aria-label="{{ t("Подработка и смены") }}">
+    <a class="chip shifts{% if shifts_page %} on{% endif %}"{% if shifts_page %} aria-current="page"{% endif %} href="{{ home }}/{% if city %}{{ city }}/{% endif %}{% if not shifts_page %}{{ SHIFTS }}/{% endif %}">⚡ {{ t("Подработка и смены") }}</a>
   </nav>
   {% endif %}
   {% if category %}
-  <nav class="chips">
+  <nav class="chips" aria-label="{{ t("Сферы") }}">
     {% for cat, n in category_counts %}
-    <a class="chip{% if category == cat %} on{% endif %}" href="{{ home }}/{{ city }}/{{ cat }}/">{{ cat_name(cat) }} <small>{{ n }}</small></a>
+    <a class="chip{% if category == cat %} on{% endif %}"{% if category == cat %} aria-current="page"{% endif %} href="{{ home }}/{{ city }}/{{ cat }}/">{{ cat_name(cat) }} <small>{{ n }}</small></a>
     {% endfor %}
   </nav>
   {% endif %}
@@ -73,6 +73,7 @@
 <p class="count">{{ t("Результаты:") }} <span id="count">{{ total }}</span></p>
 {# Скринридер слышит итог поиска и фильтров: «Результаты: N» или «Ничего не нашлось» (видимый счётчик меняется молча) #}
 <p id="status" class="sr-only" role="status"></p>
+<h2 class="sr-only">{{ t("Вакансии") }}</h2>
 <div id="list" class="list"{% if cards %} data-src="{{ cards }}" data-total="{{ total }}"{% if ids %} data-ids="{{ ids }}"{% endif %}{% endif %}>
 {% for v in vacancies[:PAGE_SIZE] %}
 {% include "_card.html" %}
@@ -82,6 +83,7 @@
 </div>
 {% if total > PAGE_SIZE %}<button type="button" id="more" class="show-more">{{ t("Показать ещё") }}</button>{% endif %}
 <p id="none" class="empty" hidden>{{ t("Ничего не нашлось. Попробуйте убрать часть фильтров.") }}</p>
+<p id="failed" class="empty" hidden>{{ t("Не удалось загрузить все вакансии: проверьте интернет и попробуйте ещё раз.") }}</p>
 <p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ t("в городе {city}", city=city_name(city)) }}{% endif %}:
   {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
 </p>
@@ -90,7 +92,7 @@
 {% endif %}
 <a class="employer" href="{{ root }}{{ form_url }}site_list" rel="nofollow">{{ t("Нанимаете? Разместите вакансию прямо здесь: она появится в этом списке, в приложении и в подборках соискателям →") }}</a>
 {% if city and not category and category_counts %}
-<nav class="by-category">
+<nav class="by-category" aria-label="{{ t("Вакансии по сферам") }}">
   <h2>{{ t("Вакансии по сферам") }}</h2>
   {% for cat, n in category_counts %}
   <a href="{{ home }}/{{ city }}/{{ cat }}/">{{ cat_name(cat) }} <small>{{ n }}</small></a>
@@ -98,7 +100,7 @@
 </nav>
 {% endif %}
 {% if professions %}
-<nav class="by-category">
+<nav class="by-category" aria-label="{{ t("Вакансии по профессиям") }}">
   <h2>{{ t("Вакансии по профессиям") }}</h2>
   {% for prof, n in professions %}
   <a href="{{ home }}/{{ city }}/{{ prof }}/"{% if prof == profession %} aria-current="page"{% endif %}>{{ prof_name(prof) }} <small>{{ n }}</small></a>
@@ -119,10 +121,12 @@
   }));
   if (!items.length) return;
   // shown: сколько карточек нужно показать, drawn: сколько их уже на странице
-  let full = !list.dataset.src, loading = null, shown = STEP, drawn = items.length;
+  // failed: полный список не загрузился (обрыв сети); «Показать ещё» и новый ввод пробуют снова
+  let full = !list.dataset.src, loading = null, shown = STEP, drawn = items.length, failed = false;
   function load() {
     if (full) return Promise.resolve();
     if (!loading) {
+      failed = false;
       list.setAttribute('aria-busy', 'true');
       loading = fetch(list.dataset.src).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((rows) => {
         // Страница сферы или профессии берёт из файла города только свои вакансии, в своём порядке
@@ -133,7 +137,7 @@
           i, html, posted: Date.parse(posted), pay, cat, perks: perks.split('|'), search,
         }));
         full = true;
-      }).catch(() => { loading = null; }).finally(() => list.removeAttribute('aria-busy'));
+      }).catch(() => { loading = null; failed = true; }).finally(() => list.removeAttribute('aria-busy'));
     }
     return loading;
   }
@@ -202,8 +206,9 @@
     const s = state();
     const hits = items.filter((d) => fits(d, s));
     if (s.byPay) hits.sort((x, y) => (y.pay - x.pay) || (x.i - y.i));  // без зарплаты в конце, внутри по новизне
-    // Пока весь список не загружен, на странице только первые карточки, а всего их data-total
-    const n = full ? hits.length : +list.dataset.total;
+    // Пока весь список не загружен, на странице только первые карточки, а всего их data-total.
+    // Не загрузился, а поиск или фильтр уже есть: честно считаем то, что нашлось среди показанных
+    const n = full || (failed && !blank(s)) ? hits.length : +list.dataset.total;
     const html = hits.slice(append ? drawn : 0, shown).map((d) => d.html).join('');
     if (append) list.insertAdjacentHTML('beforeend', html);
     else {
@@ -212,11 +217,14 @@
     }
     drawn = Math.min(shown, hits.length);
     $('count').textContent = n;
-    $('none').hidden = n > 0;
+    $('none').hidden = n > 0 || failed;
+    $('failed').hidden = !failed;
     // Объявляем, когда человек перестал печатать, иначе скринридер перебивает сам себя на каждой букве
     clearTimeout(said);
-    said = setTimeout(() => { $('status').textContent = n ? $('count').parentElement.textContent.trim() : $('none').textContent; }, 700);
-    if (more) more.hidden = n <= shown;
+    said = setTimeout(() => {
+      $('status').textContent = failed ? $('failed').textContent : n ? $('count').parentElement.textContent.trim() : $('none').textContent;
+    }, 700);
+    if (more) more.hidden = !failed && n <= shown;
     if (pay) $('pay-note').hidden = !(+pay.value || s.byPay);
     save();
   }

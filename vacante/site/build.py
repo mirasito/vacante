@@ -417,8 +417,10 @@ def fresh_line(day: int, three: int, now: datetime, lang: str) -> str | None:
 
 
 def ld_json(data: dict | list) -> str:
-    """JSON-LD для <script>: «</» внутри текста не закроет тег."""
-    return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    """JSON-LD для <script>: < > & внутри текста как \\u-коды, тогда ни «</script>», ни «<!--<script>»
+    из названия работодателя не сломают страницу (раньше экранировалось только «</»)."""
+    text = json.dumps(data, ensure_ascii=False)
+    return text.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
 
 
 def breadcrumbs_ld(items: list[tuple[str, str]]) -> str:
@@ -512,6 +514,8 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
         shutil.rmtree(out)
     out.mkdir(parents=True)
     shutil.copytree(HERE / "static", out / "static")
+    # Браузеры и роботы сами спрашивают /favicon.ico; PNG под этим именем они понимают
+    shutil.copyfile(HERE / "static" / "favicon-32.png", out / "favicon.ico")
     if (data_dir / venue_store.AVATARS).is_dir():
         shutil.copytree(data_dir / venue_store.AVATARS, out / venue_store.AVATARS)
     # Пути страниц без языка, дата их изменения и языки, которые идут в sitemap: обычно русская и казахская

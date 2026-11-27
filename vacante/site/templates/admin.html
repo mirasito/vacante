@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Админка vacante.kz</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png">
 <style>
 :root {
   --ink: #1d1d1f; --quiet: #6b6b70; --line: #e4e4e7; --bg: #ffffff; --soft: #f5f5f7;
@@ -1338,7 +1339,11 @@ td.nowrap { white-space: nowrap; }
     $("#crm-q").addEventListener("input", () => draw(true));
     $("#crm-more").addEventListener("click", () => { shown += PAGE; draw(false); });
     $("#crm-csv").addEventListener("click", () => {
-      const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+      // Ячейка с = + - @ в начале Excel считает формулой: такие названия заведений и заметки начинаем с '
+      const cell = (v) => {
+        const text = String(v ?? "");
+        return `"${(/^[=+\-@\t\r]/.test(text) ? "'" + text : text).replace(/"/g, '""')}"`;
+      };
       const head = ["Заведение", "Город", "Вакансий", "Последняя вакансия", "Кого ищут", "Сайт", "Instagram", "Telegram", "2ГИС", "Статус", "Заметка", "Последний контакт"];
       const lines = filtered().map((r) => {
         const m = marks[r.key] || {};

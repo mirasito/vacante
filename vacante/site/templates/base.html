@@ -40,7 +40,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="logo" href="{{ home }}/" aria-label="vacante.kz">{# Один файл логотипа под тему: раньше качались оба по 20 КБ на каждой странице #}<picture><source media="(prefers-color-scheme: dark)" srcset="{{ root }}/static/logo-light.png"><img src="{{ root }}/static/logo-dark.png" alt="вакантэ" width="125" height="30"></picture></a>
+  <a class="logo" href="{{ home }}/">{# Один файл логотипа под тему: раньше качались оба по 20 КБ на каждой странице #}<picture><source media="(prefers-color-scheme: dark)" srcset="{{ root }}/static/logo-light.png"><img src="{{ root }}/static/logo-dark.png" alt="вакантэ" width="125" height="30"></picture></a>
   <span class="tagline">{{ t("работа рядом с домом") }}</span>
   {% if page != "404" and page != "admin" %}
   <nav class="langs" aria-label="Тіл / Язык">
@@ -51,7 +51,7 @@
   </nav>
   {% endif %}
   {# Кнопка размещения на каждой странице, как «Разместить вакансию» у hh и «Подать объявление» у OLX: форма сразу на сайте #}
-  <a class="post-job" href="{{ root }}{{ form_url }}site_header" rel="nofollow"><span aria-hidden="true">＋</span> <span class="long">{{ t("Разместить вакансию") }}</span><span class="short">{{ t("Вакансия") }}</span></a>
+  <a class="post-job" href="{{ root }}{{ form_url }}site_header" rel="nofollow"><span aria-hidden="true">＋</span> <span class="long">{{ t("Разместить вакансию") }}</span><span class="short">{{ t("Вакансия") }}<span class="sr-only">: {{ t("разместить") }}</span></span></a>
 </header>
 <main class="wrap">
 {% block content %}{% endblock %}
@@ -64,7 +64,7 @@
      ему в «Главных новостях», Discover и ответах ИИ (developers.google.com/search/docs/appearance/preferred-sources) #}
   <p><a class="preferred" href="https://www.google.com/preferences/source?q=vacante.kz" rel="noopener" target="_blank">★ {{ t("Добавить vacante.kz в предпочитаемые источники Google") }}</a></p>
   {% if all_cities %}
-  <nav class="cities"><b>{{ t("Работа по городам:") }}</b>
+  <nav class="cities" aria-label="{{ t("Работа по городам") }}"><b>{{ t("Работа по городам:") }}</b>
     {% for slug, n in all_cities %}<a href="{{ home }}/{{ slug }}/">{{ city_name(slug) }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
   </nav>
   {% endif %}

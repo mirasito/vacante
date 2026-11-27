@@ -113,6 +113,9 @@ def test_bot_options_match_site():
     assert opts["categories"] == [[slug, name] for slug, name in CATEGORIES.items()]
     assert opts["perks"] == FILTER_PERKS
     assert all(CITIES[slug][0] == name for slug, name in opts["cities"])
+    # Все города сайта есть в боте и в форме размещения: без Актау, Кокшетау, Тараза, Талдыкоргана и Кызылорды
+    # работодатель оттуда не мог разместить вакансию, а соискатель не мог подписаться на свой город
+    assert sorted(slug for slug, _ in opts["cities"]) == sorted(CITIES)
 
 
 def test_digest_item_has_one_apply_link_even_when_post_has_contacts():

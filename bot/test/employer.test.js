@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { readFileSync } from "node:fs";
+
 import * as job from "../src/employer.js";
+import options from "../src/options.json" with { type: "json" };
 
 const filled = { ...job.newJob(), id: 5, city: "astana", title: "Повар <горячий цех>", company: "Кафе", salary: "300 000 ₸" };
 
@@ -93,4 +96,11 @@ test("меню работодателя, вопрос N из M и повторн
   assert.match(job.applicationsIntro(filled, 2, 2), /: 2\. Ниже они ещё раз/);
   assert.match(job.applicationsIntro(filled, 1, 3), /последние 1, остальные выше/);
   assert.match(job.applicationsIntro(filled, 0, 3), /Они выше в этом чате/);
+});
+
+test("форма на сайте сразу показывает те же города и должности, что отдаёт бот", () => {
+  // Приложение рисует их до ответа /api/post, чтобы форма не прыгала; разойтись они не должны
+  const defaults = JSON.parse(readFileSync(new URL("../../app/src/employer/postDefaults.json", import.meta.url), "utf8"));
+  assert.deepEqual(defaults.cities, options.cities);
+  assert.deepEqual(defaults.titles, job.TITLE_CHOICES.vacancy);
 });

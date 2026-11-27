@@ -117,7 +117,9 @@ export function Chip(props: { c: Colors; active: boolean; label: string; onPress
     <Pressable
       onPress={onPress}
       accessibilityRole="button"
-      aria-selected={active}
+      // Кнопка-переключатель: «нажата» (aria-pressed), а не «выбрана». aria-selected у кнопки недопустим,
+      // из-за него PageSpeed ругался на роли ARIA и снимал оценку «Agentic Browsing» у формы работодателя
+      aria-pressed={active}
       style={[
         styles.chip,
         big && styles.chipBig,

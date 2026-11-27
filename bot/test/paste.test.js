@@ -57,3 +57,13 @@ test("длинная строка зарплаты обрезается в по�
   assert.ok(got.salary.length <= 80 && got.salary.endsWith("…"));
   assert.match(got.details, /бесплатное питание и развозка/);
 });
+
+test("город по тексту: и пять городов, которых раньше не было в боте", () => {
+  assert.equal(findCity("Требуется продавец в Актау, 15 мкр"), "aktau");
+  assert.equal(findCity("Ақтау қаласына сатушы керек"), "aktau");
+  assert.equal(findCity("Повар в кафе, г. Кокшетау"), "kokshetau");
+  assert.equal(findCity("Курьер, Тараз"), "taraz");
+  assert.equal(findCity("Официант в Талдыкоргане"), "taldykorgan");
+  assert.equal(findCity("Кассир, Кызылорда"), "kyzylorda");
+  assert.equal(findCity("Кассир, Актобе"), "aktobe");
+});

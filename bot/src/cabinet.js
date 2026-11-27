@@ -4,7 +4,8 @@
 // Вакансии работодателя живут здесь, в D1 бота, поэтому кабинет ходит прямо в воркер:
 //   GET  /api/cabinet   — вакансии, отклики, тарифы, остаток пакетов, реквизиты Kaspi
 //   POST /api/cabinet   — { action, id?, count? }: close, apps, credit, paid_boost, paid_post, paid_pack,
-//                         а форма размещения на сайте: save { fields } (черновик) и submit { fields, tariff } (webpost.js)
+//                         а форма размещения на сайте: save { fields } (черновик) и submit { fields, tariff } (webpost.js),
+//                         оба с метками from и via: откуда пришли на форму
 // Отклики бот не хранит (только номера сообщений), поэтому «Отклики» присылает их ещё раз в чат с ботом.
 import options from "./options.json" with { type: "json" };
 import { creditsLeft, myJobs } from "./db.js";
@@ -13,7 +14,7 @@ import { verifySession } from "./login.js";
 import { boostWithCredit, requestBoost, requestPack, requestPost } from "./payments.js";
 import { closeOwnJob, pasteFromApp, resendApplications } from "./posting.js";
 import { send } from "./telegram.js";
-import { currentDraft, draftView, saveDraft, submitForm } from "./webpost.js";
+import { countForm, currentDraft, draftView, formLabels, saveDraft, submitForm } from "./webpost.js";
 
 const CITY = Object.fromEntries(options.cities);
 export const INIT_DATA_MAX_AGE = 24 * 60 * 60;
@@ -145,12 +146,19 @@ async function act(env, user, body, ctx) {
       await send(env, chatId, job.packWaitText(r.pack));
       return { message: "Сверяем перевод за пакет. Напишем в чат с ботом, как только включим" };
     }
+    // Форма размещения: шаги воронки draft и submit (webpost.js) пишутся одной записью, когда действие закончилось
     case "save": {
-      const r = await saveDraft(env, user, body.fields || {}, body.from);
+      const form = formLabels(body.from, body.via);
+      const r = await saveDraft(env, user, body.fields || {}, form);
+      countForm(env, ctx, form);
       return r.error ? r : { message: "" };
     }
-    case "submit":
-      return submitForm(env, user, body.fields || {}, body.tariff, body.from, ctx);
+    case "submit": {
+      const form = formLabels(body.from, body.via);
+      const r = await submitForm(env, user, body.fields || {}, body.tariff, form, ctx);
+      countForm(env, ctx, form);
+      return r;
+    }
     case "paste": {
       // Быстрое размещение: текст или ссылка из кабинета, анкета продолжается в чате с ботом
       const text = String(body.text ?? "").trim().slice(0, 4000);

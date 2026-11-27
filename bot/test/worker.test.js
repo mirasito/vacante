@@ -464,7 +464,7 @@ test("работодатель со страницы профиля кандид
   assert.match(sentTo(calls, 100).at(-1).body.text, /В каком городе работа/);
   assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 100").came_from, "profile");
   await say(env, user(101, "Ерлан"), "/start post");
-  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 101").came_from, null);
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 101").came_from, "link");  // ссылка без метки
 });
 
 test("вакансии до /admin ждут модератора, лимит на проверке, отмена анкеты", async () => {
@@ -1259,9 +1259,49 @@ test("анкета работодателя: метка ссылки, должн
   await say(env, user(122, "Ерлан"), "/start post_pf");
   assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 122").came_from, "profile");
   await say(env, user(123, "Дана"), "/start smena");
-  assert.deepEqual(env.DB.get("SELECT kind, came_from FROM jobs WHERE employer_chat = 123"), { kind: "shift", came_from: null });
+  assert.deepEqual(env.DB.get("SELECT kind, came_from FROM jobs WHERE employer_chat = 123"), { kind: "shift", came_from: "link" });
   await press(env, user(124, "Айдос"), "emp:vacancy");
   assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 124").came_from, "menu");
+});
+
+test("откуда пришёл работодатель: метка есть у каждой анкеты", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  let id = 200;
+  // Каждый вход от нового человека: в базе остаётся его черновик с меткой
+  const cameFrom = async (enter) => {
+    const boss = user(++id, "Дана");
+    await enter(boss);
+    return env.DB.get("SELECT kind, came_from FROM jobs WHERE employer_chat = ?", boss.id);
+  };
+  const start = (text) => cameFrom((boss) => say(env, boss, text));
+
+  // Команды и кнопки внутри бота
+  assert.deepEqual(await start("/vacancy"), { kind: "vacancy", came_from: "cmd" });
+  assert.deepEqual(await start("/smena@vacantekz_bot"), { kind: "shift", came_from: "cmd" });
+  assert.deepEqual(await cameFrom((boss) => press(env, boss, "emp:shift")), { kind: "shift", came_from: "menu" });
+  // Ссылки: без метки, с прежними метками и с новой, которой в коде нет
+  assert.deepEqual(await start("/start post"), { kind: "vacancy", came_from: "link" });
+  assert.deepEqual(await start("/start smena_land"), { kind: "shift", came_from: "land" });
+  assert.deepEqual(await start("/start smena_app"), { kind: "shift", came_from: "app" });
+  assert.deepEqual(await start("/start post_pf"), { kind: "vacancy", came_from: "profile" });
+  assert.deepEqual(await start("/start post_insta"), { kind: "vacancy", came_from: "insta" });
+  assert.deepEqual(await start("/start smena_constructor"), { kind: "shift", came_from: "constructor" });
+  // Метка длиннее 12 букв и имена входов не по ссылке: просто ссылка
+  assert.deepEqual(await start("/start post_abcdefghijklm"), { kind: "vacancy", came_from: "link" });
+  for (const inner of ["cmd", "web", "menu"]) {
+    assert.deepEqual(await start(`/start post_${inner}`), { kind: "vacancy", came_from: "link" });
+  }
+  // И ведёт себя ссылка с меткой menu как ссылка: перед первым вопросом рассказ о размещении, которого нет у кнопки меню
+  assert.match(sentTo(calls, id).at(-1).body.text, /^Разместим вакансию/);
+  assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE came_from IS NULL OR came_from = ''").n, 0);
+
+  // «Я ищу работу» считается с той же меткой, что у черновика
+  const seeker = user(299, "Нурлан");
+  await say(env, seeker, "/vacancy");
+  await press(env, seeker, "jobseeker", 3);
+  assert.deepEqual(env.DB.get("SELECT came_from, n FROM role_switches"), { came_from: "cmd", n: 1 });
 });
 
 test("брошенная анкета: одно напоминание днём через час, «Продолжить» и «Не нужно»", async () => {
@@ -1428,4 +1468,93 @@ test("форма на сайте: разбор текста, черновик, �
   assert.ok(r.admin && r.tariffs.post === 1000);
   r = await api("/api/cabinet", miras, { action: "submit", fields: { ...full, title: "Бариста" }, tariff: "free" });
   assert.equal(r.outcome, "pending");
+});
+
+test("воронка формы размещения: шаги числами по меткам from и via, без меток открытая часть не считается", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  // Все запросы к базе за один запрос к воркеру: счётчик должен добавлять не больше одной записи
+  let sql = [];
+  const prepare = env.DB.prepare;
+  env.DB.prepare = (text) => (sql.push(text), prepare(text));
+  const api = async (path, auth, body) => {
+    sql = [];
+    const res = await worker.fetch(new Request(`https://bot.example${path}`, {
+      method: body ? "POST" : "GET",
+      headers: { Origin: "https://vacante.kz", ...(auth ? { Authorization: `tma ${auth}` } : {}), ...(body ? { "Content-Type": "application/json" } : {}) },
+      body: body ? JSON.stringify(body) : undefined }), env, ctx);
+    await Promise.all(ctx.tasks.splice(0));  // счётчик пишется в фоне, ответ его не ждёт
+    return { status: res.status, ...(await res.json()) };
+  };
+  const counted = () => sql.filter((text) => /INSERT INTO form_events/.test(text)).length;
+  const funnel = async () => (await prepare("SELECT came_from, via, step, n FROM form_events ORDER BY came_from, via, step").all()).results
+    .map((r) => `${r.came_from} ${r.via || "—"} ${r.step} ${r.n}`);
+
+  // Открытие формы: без меток (робот, старая сборка приложения) не считаем и базу не трогаем
+  assert.equal((await api("/api/post")).cities[0][0], "almaty");
+  assert.deepEqual(sql, []);
+  await api("/api/post?from=site_header&via=google");
+  assert.equal(sql.length, 1);  // одна запись и ничего больше
+  await api("/api/post?from=site_header&via=google");
+  await api("/api/post?via=chatgpt");
+  await api("/api/post?from=land&via=Google%20Ads");  // via не по формату: источник неизвестен
+  await api("/api/post?from=SITE");  // from не по формату: как форма без метки
+  assert.deepEqual(await funnel(), ["web — open 1", "web chatgpt open 1", "web_land — open 1", "web_site_header google open 2"]);
+  assert.deepEqual(env.DB.get("SELECT COUNT(DISTINCT day) AS days, MIN(day) = date('now', '+5 hours') AS today FROM form_events"), { days: 1, today: 1 });
+
+  // Разбор текста считается, только когда получился; проверка оформления всегда. Без меток не считаем
+  const labels = { from: "site_header", via: "google" };
+  const text = "ТРЕБУЕТСЯ ОФИЦИАНТ\nКафе \"Зерно\"\nЗарплата: 250000тг\nГрафик: с 10 до 22\nАстана";
+  assert.equal((await api("/api/post", null, { action: "parse", text, ...labels })).fields.title, "Официант");
+  assert.equal(counted(), 1);
+  assert.equal((await api("/api/post", null, { action: "parse", text: "https://www.olx.kz/d/obyavlenie/x", ...labels })).status, 400);
+  assert.equal((await api("/api/post", null, { action: "parse", text })).status, 200);
+  assert.equal((await api("/api/post", null, { action: "tidy", fields: { title: "повар!!!" }, ...labels })).fields.title, "Повар");
+  assert.equal((await api("/api/post", null, { action: "tidy", fields: { title: "повар" } })).status, 200);
+  assert.deepEqual(await funnel(), ["web — open 1", "web chatgpt open 1", "web_land — open 1",
+    "web_site_header google open 2", "web_site_header google parse 1", "web_site_header google tidy 1"]);
+
+  // Черновик считается один раз, когда форма его завела; неудачная отправка не считается
+  const dana = initData(env.TELEGRAM_BOT_TOKEN, { id: 100, first_name: "Дана" });
+  const full = { city: "almaty", title: "Повар", company: "Кафе", salary: "300 000 ₸", schedule: "", address: "", details: "" };
+  await api("/api/cabinet", dana, { action: "save", fields: { city: "almaty" }, ...labels });
+  assert.equal(counted(), 1);
+  await api("/api/cabinet", dana, { action: "save", fields: { city: "almaty", title: "Повар" }, ...labels });
+  assert.equal(counted(), 0);
+  assert.equal((await api("/api/cabinet", dana, { action: "submit", fields: { city: "almaty", title: "Повар" }, tariff: "basic", ...labels })).status, 400);
+  assert.equal((await api("/api/cabinet", dana, { action: "submit", fields: full, tariff: "basic", ...labels })).outcome, "pending");
+  assert.deepEqual((await funnel()).filter((row) => /google (draft|submit)/.test(row)),
+    ["web_site_header google draft 1", "web_site_header google submit 1"]);
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 100").came_from, "web_site_header");
+
+  // Вошёл только перед отправкой: черновик и отправка в одном запросе, запись в воронку всё равно одна
+  const erlan = initData(env.TELEGRAM_BOT_TOKEN, { id: 101, first_name: "Ерлан" });
+  assert.equal((await api("/api/cabinet", erlan, { action: "submit", fields: full, tariff: "basic", from: "land", via: "tg" })).outcome, "pending");
+  assert.equal(counted(), 1);
+  assert.deepEqual((await funnel()).filter((row) => / tg /.test(row)), ["web_land tg draft 1", "web_land tg submit 1"]);
+
+  // Анкету начали в боте, а дописали в форме: черновик не новый, метка вакансии прежняя, отправка считается форме
+  await say(env, user(102, "Асель"), "/vacancy");
+  const asel = initData(env.TELEGRAM_BOT_TOKEN, { id: 102, first_name: "Асель" });
+  await api("/api/cabinet", asel, { action: "save", fields: full, from: "cabinet" });
+  assert.equal(counted(), 0);
+  await api("/api/cabinet", asel, { action: "submit", fields: full, tariff: "basic", from: "cabinet" });
+  assert.deepEqual((await funnel()).filter((row) => /cabinet/.test(row)), ["web_cabinet — submit 1"]);
+  assert.equal(env.DB.get("SELECT came_from FROM jobs WHERE employer_chat = 102").came_from, "cmd");
+
+  // Счётчик сломался (таблицы нет): форма работает как раньше, ошибка только в журнале
+  await prepare("DROP TABLE form_events").run();
+  const errors = [];
+  const consoleError = console.error;
+  console.error = (...args) => errors.push(args);
+  try {
+    assert.equal((await api("/api/post?from=land")).status, 200);
+    const timur = initData(env.TELEGRAM_BOT_TOKEN, { id: 103, first_name: "Тимур" });
+    assert.equal((await api("/api/cabinet", timur, { action: "submit", fields: full, tariff: "basic", from: "land" })).outcome, "pending");
+  } finally {
+    console.error = consoleError;
+  }
+  assert.equal(errors.length, 2);
+  assert.match(String(errors[0][0]), /no such table: form_events/);
 });

@@ -136,7 +136,7 @@ export async function subscribeShifts(env, chatId) {
   return send(
     env,
     chatId,
-    `⚡ Готово: присылаю смены и подработку (${bot.summary(next)}).\n\nВсе смены сейчас: ${env.SITE_URL}/${next.city}/smeny/\nИзменить: /settings`,
+    `⚡ Готово: присылаю смены и подработку (${bot.summary(next)}).\n\nВсе смены сейчас: ${bot.utm(`${env.SITE_URL}/${next.city}/smeny/`, "shifts_sub", next.city)}\nИзменить: /settings`,
   );
 }
 

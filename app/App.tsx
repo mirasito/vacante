@@ -36,6 +36,7 @@ import {
   launchSource,
   launchFrom,
   launchTab,
+  launchVia,
   leaveToSite,
   launchVacancy,
   loadWebFont,
@@ -66,6 +67,7 @@ import {
   setBeta,
   useReferral,
   sendEvent,
+  sendSentPlain,
   whoAmI,
   type Account,
   type Application,
@@ -557,8 +559,9 @@ function Main() {
       putApp(r.application, r.summary);
       return;
     }
-    // Отклик без профиля: человек отказался от анкеты. В воронке это обезличенное число, иначе его не отличить от ушедшего
-    void sendEvent('sent_plain', prefs.source);
+    // Отклик без профиля: человек отказался от анкеты. В воронке это обезличенное число, иначе его не отличить от ушедшего.
+    // Вакансия и способ связи идут туда же: по ним сервер считает переходы к работодателю, тоже числом
+    void sendSentPlain(applying.copy.id, method, prefs.source);
     const known = liked.find((x) => x.id === applying.copy.id);
     saveLocal(applying.copy, applying.full, !known?.stage || known.stage === 'liked' ? { stage: 'sent', method } : { method });
   };
@@ -743,6 +746,7 @@ function Main() {
         lang={lang}
         startPost={launchTab() === 'post'}
         from={launchFrom()}
+        via={launchVia()}
         // Пришли с сайта по ссылке: назад на сайт, а не в ленту соискателя с выбором города
         onClose={() => {
           if ((launchTab() === 'post' || launchTab() === 'employer') && leaveToSite()) return;

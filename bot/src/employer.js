@@ -1,6 +1,7 @@
 // Вакансии от работодателей: анкета в боте, проверка модератором и отклики кандидатов.
 // Здесь только тексты и разбор ответов, без сети и базы, чтобы всё проверялось тестами.
 import options from "./options.json" with { type: "json" };
+import { utm } from "./logic.js";
 import { NEED, parseTime, SHIFT_STEPS, shiftButtons, shiftCard, validDate } from "./shift.js";
 
 const CITY = Object.fromEntries(options.cities);
@@ -253,7 +254,7 @@ const SITE = "https://vacante.kz";
 export const jobUrl = (job, siteUrl = SITE) => `${siteUrl}/v/bot-${job.id}/`;
 
 export function approvedText(job, channels = DEFAULT_CHANNELS, siteUrl = SITE) {
-  const link = `\n\n🌐 Страница на сайте (появится через несколько минут): ${jobUrl(job, siteUrl)}`;
+  const link = `\n\n🌐 Страница на сайте (появится через несколько минут): ${utm(jobUrl(job, siteUrl), "approved", job.city)}`;
   if (job.kind === "shift") {
     return (
       `✅ Смена прошла проверку и публикуется:\n\n${card(job)}\n\n` +

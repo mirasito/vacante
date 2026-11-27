@@ -192,16 +192,30 @@ export const saveProfile = (
   });
 
 /**
- * Шаг воронки: открыл приложение, начал анкету или откликнулся без профиля (sent_plain),
+ * Шаг воронки: открыл приложение или начал анкету (отклик без профиля шлёт sendSentPlain ниже),
  * с меткой источника из ссылки запуска. gap — только у открытия: сколько дней назад приложение
  * открывали на этом устройстве в прошлый раз (opens.ts), чтобы итог за период считал людей, а не дни.
  * Сервер считает шаги обезличенно. Ошибки не важны: приложение работает и без этого.
  * Возвращает, принял ли сервер событие.
  */
-export const sendEvent = (step: 'open' | 'profile_start' | 'sent_plain', source?: string, gap?: number): Promise<boolean> =>
+export const sendEvent = (step: 'open' | 'profile_start', source?: string, gap?: number): Promise<boolean> =>
   api<unknown>('/me/events', { method: 'POST', body: { step, ...(source ? { source } : {}), ...(gap ? { gap } : {}) } }).then(
     () => true,
     () => false,
+  );
+
+/**
+ * Шаг воронки «откликнулся без профиля» (sent_plain): человек подтвердил, что написал или позвонил работодателю.
+ * Вакансия и способ связи нужны счётчику переходов к работодателю: сервер прибавляет по ним число за день
+ * у этой вакансии, так же обезличенно, как сам шаг.
+ */
+export const sendSentPlain = (vacancyId: string, method: Method, source?: string): Promise<void> =>
+  api<unknown>('/me/events', {
+    method: 'POST',
+    body: { step: 'sent_plain', vacancy_id: vacancyId, method, ...(source ? { source } : {}) },
+  }).then(
+    () => undefined,
+    () => undefined,
   );
 
 /** Экраны полной анкеты по порядку; сервер знает тот же список (FORM_SCREENS в server/src/funnel.ts). */

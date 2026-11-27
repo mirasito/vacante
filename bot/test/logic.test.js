@@ -170,3 +170,13 @@ test("напоминание о незаконченной подписке: б�
   assert.deepEqual([bot.press(chosen, "go:city").sub.active, bot.press(chosen, "go:city").show], [0, "city"]);
   assert.deepEqual([bot.press(chosen, "stop").sub.active, bot.press(chosen, "stop").show], [0, "stopped"]);
 });
+
+test("ссылки на сайт из сообщений бота несут метки utm, как ссылки из подборок", async () => {
+  assert.equal(bot.utm("https://vacante.kz/v/bot-5/", "approved", "almaty"),
+    "https://vacante.kz/v/bot-5/?utm_source=telegram&utm_medium=bot&utm_campaign=approved&utm_content=almaty");
+  assert.equal(bot.utm("https://vacante.kz/astana/smeny/", "shifts_sub"),
+    "https://vacante.kz/astana/smeny/?utm_source=telegram&utm_medium=bot&utm_campaign=shifts_sub");
+  const job = await import("../src/employer.js");
+  assert.match(job.approvedText({ id: 7, kind: "vacancy", city: "astana", title: "Повар" }),
+    /https:\/\/vacante\.kz\/v\/bot-7\/\?utm_source=telegram&utm_medium=bot&utm_campaign=approved&utm_content=astana/);
+});

@@ -50,6 +50,15 @@ QUERIES = [
     ("работодатели: откуда пришли (came_from) с периода",
      "SELECT coalesce(nullif(came_from, ''), '—') AS came_from, COUNT(*) AS jobs, COUNT(DISTINCT employer_chat) AS employers "
      "FROM jobs WHERE created_at >= ? GROUP BY 1 ORDER BY 2 DESC"),
+    ("форма размещения на сайте: воронка по кнопке, с которой пришли (came_from), с периода: "
+     "открыли / разобрали текст / проверили оформление / завели черновик / отправили",
+     "SELECT came_from, SUM(n * (step = 'open')) AS open, SUM(n * (step = 'parse')) AS parse, SUM(n * (step = 'tidy')) AS tidy, "
+     "SUM(n * (step = 'draft')) AS draft, SUM(n * (step = 'submit')) AS submit "
+     "FROM form_events WHERE day >= ? GROUP BY 1 ORDER BY 2 DESC, 1"),
+    ("форма размещения на сайте: та же воронка по источнику визита на сайт (via) с периода",
+     "SELECT coalesce(nullif(via, ''), '—') AS via, SUM(n * (step = 'open')) AS open, SUM(n * (step = 'parse')) AS parse, "
+     "SUM(n * (step = 'tidy')) AS tidy, SUM(n * (step = 'draft')) AS draft, SUM(n * (step = 'submit')) AS submit "
+     "FROM form_events WHERE day >= ? GROUP BY 1 ORDER BY 2 DESC, 1"),
     ("работодатели: одобренные по дням одобрения с периода (UTC+5)",
      "SELECT date(approved_at, '+5 hours') AS day, kind, COUNT(*) AS n, SUM(pro) AS pro FROM jobs "
      "WHERE approved_at >= ? GROUP BY 1, 2 ORDER BY 1, 2"),

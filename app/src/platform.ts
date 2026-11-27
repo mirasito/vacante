@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Alert, Linking, Platform, Share } from 'react-native';
 
+import { viaOf } from './employer/came';
 import { parseLaunch } from './launch';
 
 // Внутри Telegram приложение открывается как Mini App: окно Telegram.WebApp даёт тему,
@@ -337,6 +338,12 @@ export function launchFrom(): string {
   if (!isWeb) return 'app';
   const from = new URLSearchParams(window.location.search).get('from') || '';
   return /^[a-z_]{1,20}$/.test(from) ? from : inTelegram() ? 'miniapp' : 'site';
+}
+
+/** Источник визита на сайт (google, chatgpt, tg, direct…): сайт дописывает его к ссылке на форму, ?tab=post&from=land&via=google. */
+export function launchVia(): string {
+  if (!isWeb) return '';
+  return viaOf(new URLSearchParams(window.location.search).get('via'));
 }
 
 /** Сайт открыл кабинет или форму ссылкой (не Telegram): «Назад» ведёт обратно на сайт, а не в ленту соискателя. */

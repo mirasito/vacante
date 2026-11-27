@@ -1,10 +1,13 @@
 {% extends "base.html" %}
-{% block title %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }} | vacante.kz{% endblock %}
-{% block description %}{{ t("{heading}: свежие вакансии с зарплатой, графиком и условиями, сейчас {total}. Обновляется каждый час.", heading=heading, total=total) }}{% endblock %}
+{# Главная (page пустой) говорит, что это за сайт и для кого; пока вакансий нет, у неё обычные заголовок и описание списка #}
+{% block title %}{% if page or not total %}{{ heading }} — {{ total }} {{ total | plural("вакансия", "вакансии", "вакансий") }}{% else %}{{ t("{heading}: {total} {vacancies} — без опыта, подработка и смены", heading=heading, total=total, vacancies=total | plural("вакансия", "вакансии", "вакансий")) }}{% endif %} | vacante.kz{% endblock %}
+{% block description %}{% if page or not total %}{{ t("{heading}: свежие вакансии с зарплатой, графиком и условиями, сейчас {total}. Обновляется каждый час.", heading=heading, total=total) }}{% else %}{{ t("vacante.kz — {total} {vacancies} для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы, Астане и других городах Казахстана. Есть работа без опыта, подработка и смены. Список обновляется каждый час.", total=total, vacancies=total | plural("вакансия", "вакансии", "вакансий")) }}{% endif %}{% endblock %}
 {% block head %}{% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}{% endblock %}
 {% block content %}
 <section class="hero">
   <h1>{{ heading }}</h1>
+  {% if fresh %}<p class="pay-stats">{{ fresh }}</p>{% endif %}
+  {% if shift_stats %}<p class="pay-stats">{{ t("Оплата за смену по {n} {vacancies}: в среднем {median} ₸, обычно от {low} до {high} ₸.", n=shift_stats[0], vacancies=shift_stats[0] | plural("вакансии", "вакансиям", "вакансиям"), median=money(shift_stats[1]), low=money(shift_stats[2]), high=money(shift_stats[3])) }}</p>{% endif %}
   {% if stats %}<p class="pay-stats">{{ t("Зарплата по {n} вакансиям с месячной оплатой: в среднем {median} ₸, обычно от {low} до {high} ₸ в месяц.", n=stats[0], median=money(stats[1]), low=money(stats[2]), high=money(stats[3])) }}</p>{% endif %}
   <div class="search">
     <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" autocomplete="off">
@@ -30,7 +33,7 @@
   {% endif %}
 </section>
 {% if city and channels.get(city) %}
-<a class="subscribe" href="{{ channels[city] }}">{{ t("Новые вакансии {city} каждый день в Telegram →", city=city_name(city)) }}</a>
+<a class="subscribe" href="{{ channels[city] }}">{{ t("Новые вакансии в {where} каждый день в Telegram →", where=city_in(city), city=city_name(city)) }}</a>
 {% endif %}
 {% if vacancies %}
 <div class="filters selects">
@@ -77,7 +80,7 @@
 </div>
 {% if total > PAGE_SIZE %}<button type="button" id="more" class="show-more">{{ t("Показать ещё") }}</button>{% endif %}
 <p id="none" class="empty" hidden>{{ t("Ничего не нашлось. Попробуйте убрать часть фильтров.") }}</p>
-<p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ city_name(city) }}{% endif %}:
+<p class="more">{{ t("Ещё вакансии") }}{% if city %} {{ t("в городе {city}", city=city_name(city)) }}{% endif %}:
   {% for name, url in more_links(city, category) %}<a href="{{ url }}" rel="nofollow noopener" target="_blank">{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
 </p>
 {% if shifts_page %}

@@ -61,7 +61,7 @@ def test_list_has_filters_and_counts_in_russian(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     home = (tmp_path / "public" / "index.html").read_text("utf-8")
-    assert "<title>Вакансии — 1 вакансия | vacante.kz</title>" in home
+    assert "<title>Работа в Казахстане: 1 вакансия — без опыта, подработка и смены | vacante.kz</title>" in home
     assert 'data-pay="396000"' in home  # 18 000 за смену × 22 смены
     assert 'data-perks="Питание|Без опыта|Смены и подработка"' in home  # оплата за смену
     assert 'data-perk="Без опыта"' in home and 'value="300000"' in home
@@ -130,11 +130,17 @@ def test_kazakh_version_with_language_switch_and_hreflang(tmp_path):
     assert "Работа в Алматы" in ru and "<h3>Официант</h3>" in ru
     page = (out / "kk" / "v" / "chan-9" / "index.html").read_text("utf-8")
     assert "<h1>Даяшы</h1>" in page and "Ramen77" in page and "JobPosting" not in page
+    # Текст вакансии один на оба языка: каноническая у казахской копии русская, hreflang нет, в sitemap её нет
+    assert '<link rel="canonical" href="https://vacante.kz/v/chan-9/">' in page and "hreflang=\"ru\" href=\"https" not in page
+    assert '<a href="/v/chan-9/" hreflang="ru"' in page  # переключатель языка для людей остаётся
+    ru_page = (out / "v" / "chan-9" / "index.html").read_text("utf-8")
+    assert '<link rel="canonical" href="https://vacante.kz/v/chan-9/">' in ru_page and 'rel="alternate"' not in ru_page
     assert (out / "kk" / "almaty" / "horeca" / "index.html").exists()
     assert "Кафе мен мейрамханалар: Алматыдағы жұмыс" in (out / "kk" / "almaty" / "horeca" / "index.html").read_text()
     sitemap = (out / "sitemap.xml").read_text("utf-8")
     assert "<loc>https://vacante.kz/kk/</loc>" in sitemap
-    assert '<xhtml:link rel="alternate" hreflang="kk" href="https://vacante.kz/kk/v/chan-9/"/>' in sitemap
+    assert '<xhtml:link rel="alternate" hreflang="kk" href="https://vacante.kz/kk/almaty/"/>' in sitemap
+    assert "<loc>https://vacante.kz/v/chan-9/</loc>" in sitemap and "kk/v/" not in sitemap
 
 
 def test_kazakh_title_from_hh(tmp_path):
@@ -486,3 +492,17 @@ def test_utm_marks_only_in_links_that_go_to_telegram(tmp_path):
     assert texts and not [f for f in texts if "utm_medium" in f.read_text("utf-8")]
     assert json.loads((out / "app" / "data" / "astana.json").read_text("utf-8"))["vacancies"][0]["url"] == (
         "https://vacante.kz/v/chan-14/")
+
+
+def test_similar_links_reach_every_vacancy_of_the_sphere():
+    from collections import Counter
+
+    from vacante.site.build import similar_of
+    items = list(range(100))
+    assert similar_of(items, 0) == [1, 2, 3, 4, 33, 66]  # у самой новой соседи только старше
+    assert similar_of(items, 50) == [48, 49, 51, 52, 83, 16]
+    assert similar_of(list(range(5)), 2) == [0, 1, 3, 4]  # короткий список: все остальные
+    links = Counter(j for i in items for j in similar_of(items, i))
+    # Раньше все ссылались на шесть новейших; теперь на каждую вакансию ведут ссылки хотя бы с четырёх других
+    assert all(j != i for i in items for j in similar_of(items, i))
+    assert len(links) == 100 and min(links.values()) >= 4 and max(links.values()) <= 8

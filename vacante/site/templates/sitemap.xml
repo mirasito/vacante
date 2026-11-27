@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{% for page, lastmod in pages %}
-{% for lang in LANGS %}
+{% for page, lastmod, langs in pages %}
+{% for lang in langs %}
   <url><loc>{{ base_url }}/{{ lang_path(lang, page) ~ '/' if lang_path(lang, page) else '' }}</loc><lastmod>{{ lastmod }}</lastmod>
-{% for alt in LANGS %}
+{% if langs | length > 1 %}
+{% for alt in langs %}
     <xhtml:link rel="alternate" hreflang="{{ alt }}" href="{{ base_url }}/{{ lang_path(alt, page) ~ '/' if lang_path(alt, page) else '' }}"/>
 {% endfor %}
+{% endif %}
   </url>
 {% endfor %}
 {% endfor %}

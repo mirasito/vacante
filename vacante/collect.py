@@ -11,12 +11,12 @@ import httpx
 import yaml
 
 from vacante import direct as direct_jobs
-from vacante import contacts, geocode, parse, quality
+from vacante import closed, contacts, geocode, parse, quality
 from vacante.journal import Journal
 from vacante.models import RawPost, Vacancy
 from vacante.parse import explain, split_title
 from vacante.sources import hh, olx, telegram
-from vacante.store import expire, load_state, load_vacancies, merge, save_state, save_vacancies
+from vacante.store import MAX_AGE_DAYS, expire, load_state, load_vacancies, merge, save_state, save_vacancies
 
 log = logging.getLogger(__name__)
 
@@ -67,7 +67,7 @@ def reparse(vacancies: list[Vacancy], cities: dict[str, str | None],
     return result
 
 
-def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegram.fetch_channel,
+def run(config_path: Path, data_dir: Path, max_age_days: int = MAX_AGE_DAYS, fetch=telegram.fetch_channel,
         now: datetime | None = None, direct: list[Vacancy] | None = None, from_hh=hh.collect,
         locate=None, from_olx=olx.collect) -> dict:
     """direct: одобренные вакансии от работодателей из бота (vacante.direct). None значит, что базу бота
@@ -150,7 +150,8 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
         if v.lat is not None and v.geo is None:  # точки, сохранённые до поля geo, поставил hh
             v.geo = hh.SOURCE
     # Вакансии от работодателей первыми: повтор той же вакансии из канала склеится с ними, а не наоборот
-    vacancies = expire(merge(from_bot + existing + from_hh_saved + from_olx_saved, incoming), max_age_days, now)
+    merged = merge(from_bot + existing + from_hh_saved + from_olx_saved, incoming)
+    vacancies = expire(merged, max_age_days, now)
     journal.settle(vacancies, dropped, max_age_days, now)
     for v in saved:
         if v.id in dropped:
@@ -167,5 +168,8 @@ def run(config_path: Path, data_dir: Path, max_age_days: int = 14, fetch=telegra
     save_state(data_dir, state)
     journal.save(data_dir)
     quality.save_rejected(data_dir, rejected, journal.posts)
+    # Архив для страницы 404 (vacante.closed): помним только тех, у кого вышел срок или кого закрыл работодатель
+    stats["closed"] = closed.update(data_dir, closed.leavers(saved, merged, vacancies, direct), vacancies,
+                                    set(cities), now)
     stats["total"] = len(vacancies)
     return stats

@@ -13,21 +13,23 @@ import shutil
 import tomllib
 import zlib
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from urllib.parse import quote, urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from vacante import channels, launch, shifts
+from vacante import channels, closed, launch, shifts
 from vacante import venues as venue_store
 from vacante.direct import BOT_USERNAME, FORM_URL, POST_URL
 from vacante.geo import MAP_WORTHY
+from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.parse import CATEGORIES, CITIES
 from vacante.site import appfeed, i18n
 from vacante.site.admin import admin_data, seal
-from vacante.store import load_vacancies
+from vacante.store import MAX_AGE_DAYS, load_vacancies
 
 HERE = Path(__file__).parent
 # Для фильтра «Зарплата от …»: смены и часы пересчитываем в полный месяц.
@@ -77,6 +79,8 @@ PROFESSION_MIN = 3
 PROFESSION_SKIP = {"Сотрудник", "Рабочий", "Оператор"}
 # Похожих вакансий внизу страницы вакансии
 SIMILAR = 6
+# Текст объявления без работодателя, с которого оно идёт в Google Jobs как «confidential» (job_posting_ld)
+CONFIDENTIAL_TEXT = 200
 # Ключ IndexNow: публичный, лежит файлом в корне сайта (vacante/indexnow.py)
 INDEXNOW_KEY = "5f0c2a7e9b3d4c18a6e1f7d2b9c4a3e8"
 # Сколько первых символов текста объявления попадает в поиск на странице списка: страница
@@ -219,7 +223,8 @@ def _env(lang: str = "ru") -> Environment:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.globals.update(city_name=lambda slug: city_name(slug, lang), cat_name=lambda c: category_name(c, lang),
+    env.globals.update(city_name=lambda slug: city_name(slug, lang), city_in=lambda slug: city_in(slug, lang),
+                       cat_name=lambda c: category_name(c, lang),
                        salary_label=lambda v: salary_label(v, lang), twogis_url=twogis_url,
                        app_replies=app_replies, profile_link=lambda v: launch.profile_link(v, "web"),
                        monthly_pay=monthly_pay, monthly_label=lambda v: monthly_label(v, lang),
@@ -298,9 +303,22 @@ def profession_heading(slug: str, city: str, lang: str) -> str:
     return f"{name}: вакансии в {_locative(city)}"
 
 
+def valid_through(v: Vacancy) -> datetime:
+    """До какого времени страница вакансии будет на сайте: срок хранения от публикации (store.expire),
+    оплаченное «🔥 Срочно» держит её дольше, а смена на конкретный день уходит, когда этот день прошёл."""
+    until = datetime.fromisoformat(v.posted_at) + timedelta(days=MAX_AGE_DAYS)
+    if v.top_until:
+        until = max(until, datetime.fromisoformat(v.top_until))
+    if v.shift_date:
+        until = min(until, datetime.combine(date.fromisoformat(v.shift_date) + timedelta(days=1), time.min, LOCAL))
+    return until
+
+
 def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str | None:
-    """Разметка JobPosting для Google Jobs. Google требует работодателя, без него не выводим."""
-    if not v.employer:
+    """Разметка JobPosting для Google Jobs. Google требует работодателя; если он не назван, Google разрешает
+    «confidential», но такое объявление размечаем, только когда в нём есть суть: город, зарплата и текст
+    не короче CONFIDENTIAL_TEXT знаков. Короткие посты без работодателя и зарплаты в Google Jobs не нужны."""
+    if not v.employer and not (v.city and (v.salary_min or v.salary_max) and len(v.text) >= CONFIDENTIAL_TEXT):
         return None
     posted = datetime.fromisoformat(v.posted_at)
     address = {"@type": "PostalAddress", "addressLocality": city_name(v.city), "addressCountry": "KZ"}
@@ -317,8 +335,9 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
         "description": html.escape(v.text).replace("\n", "<br>"),
         "identifier": {"@type": "PropertyValue", "name": "vacante.kz", "value": v.id},
         "datePosted": posted.date().isoformat(),
-        "validThrough": (posted + timedelta(days=30)).isoformat(),
-        "hiringOrganization": {"@type": "Organization", "name": v.employer},
+        # Не дольше, чем живёт страница: иначе Google считает объявление открытым, а по ссылке уже 404
+        "validThrough": valid_through(v).isoformat(),
+        "hiringOrganization": {"@type": "Organization", "name": v.employer or "confidential"},
         "jobLocation": place,
         "url": f"{base_url}/v/{v.id}/",
     }
@@ -345,15 +364,54 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
 _DATA_ATTRS = re.compile(r' data-[a-z]+="[^"]*"')
 
 
-def pay_stats(items: list[Vacancy]) -> tuple[int, int, int, int] | None:
+def pay_of(v: Vacancy, period: str = "month") -> int | None:
+    """Оплата вакансии одним числом, середина вилки, если она названа за period; иначе None."""
+    if v.salary_period != period or not (v.salary_min or v.salary_max):
+        return None
+    return ((v.salary_min or v.salary_max) + (v.salary_max or v.salary_min)) // 2
+
+
+def pay_stats(items: list[Vacancy], period: str = "month") -> tuple[int, int, int, int] | None:
     """Свои данные о зарплатах для страницы списка: (сколько вакансий, медиана, нижняя и верхняя четверть)
-    в тенге в месяц. Только вакансии с месячной оплатой: смены и часы в пересчёте исказили бы картину."""
-    pays = sorted(((v.salary_min or v.salary_max) + (v.salary_max or v.salary_min)) // 2 for v in items
-                  if v.salary_period == "month" and (v.salary_min or v.salary_max))
+    в тенге в месяц. Только вакансии с месячной оплатой: смены и часы в пересчёте исказили бы картину.
+    period="day" — то же по вакансиям с оплатой за смену, в тенге за смену (раздел «Подработка и смены»)."""
+    pays = sorted(pay for pay in (pay_of(v, period) for v in items) if pay)
     if len(pays) < 5:
         return None
-    pick = lambda share: round(pays[min(len(pays) - 1, int(len(pays) * share))], -3)  # noqa: E731
+    digits = -3 if period == "month" else -2  # месячные суммы округляем до тысяч, оплату за смену до сотен
+    pick = lambda share: round(pays[min(len(pays) - 1, int(len(pays) * share))], digits)  # noqa: E731
     return len(pays), pick(0.5), pick(0.25), pick(0.75)
+
+
+def pay_level(pay: int, median: int) -> str:
+    """Зарплата вакансии рядом с медианой похожих: отличие до 10% в любую сторону — «на уровне»."""
+    if pay * 10 > median * 11:
+        return "выше медианы"
+    if pay * 10 < median * 9:
+        return "ниже медианы"
+    return "на уровне медианы"
+
+
+def fresh_counts(items: list[Vacancy], now: datetime) -> tuple[int, int]:
+    """Сколько вакансий списка опубликовано за последние сутки и за три дня."""
+    ages = [now - datetime.fromisoformat(v.posted_at) for v in items]
+    return sum(age < timedelta(days=1) for age in ages), sum(age < timedelta(days=3) for age in ages)
+
+
+def fresh_line(day: int, three: int, now: datetime, lang: str) -> str | None:
+    """Строка под заголовком списка: когда он собран (время Казахстана) и сколько в нём новых вакансий за сутки
+    и за три дня (fresh_counts). Дата числом, а не «сегодня»: страницу читают и из кеша поисковика, спустя дни.
+    Новых за три дня нет — строки нет: «0 новых» читателю ничего не говорит."""
+    if not three:
+        return None
+    local = now.astimezone(LOCAL)
+    values = {"date": f"{local:%d.%m}", "time": f"{local:%H:%M}", "day": day, "three": three,
+              "new": plural(day or three, "новая вакансия", "новые вакансии", "новых вакансий", lang)}
+    if not day:
+        return i18n.t(lang, "Обновлено {date} в {time}: {three} {new} за три дня.", **values)
+    if day == three:
+        return i18n.t(lang, "Обновлено {date} в {time}: {day} {new} за сутки.", **values)
+    return i18n.t(lang, "Обновлено {date} в {time}: {day} {new} за сутки, {three} за три дня.", **values)
 
 
 def ld_json(data: dict | list) -> str:
@@ -377,6 +435,55 @@ def site_ld(base_url: str, lang: str) -> str:
          "logo": f"{base_url}/static/icon-512.png",
          "sameAs": ["https://t.me/vacantealmaty", "https://t.me/vacanteastana", f"https://t.me/{BOT_USERNAME}"]},
     ])
+
+
+def closed_parts(archive: dict[str, dict], live: set[str], written: set[str]) -> dict[int, dict[str, list[str]]]:
+    """Архив закрытых вакансий (vacante.closed) частями для страницы 404: {номер части: {id: [название,
+    казахское название, если оно другое, город, страница списка]}}. Страница списка — лучшая из тех, что есть
+    в этой сборке (written): профессия в городе, иначе сфера в городе, иначе город, иначе пусто.
+    Вакансий, которые сейчас на сайте (live), в частях нет."""
+    parts: dict[int, dict[str, list[str]]] = defaultdict(dict)
+    for key, item in archive.items():
+        if key in live:
+            continue
+        city = item["city"] if item["city"] in CITIES else ""
+        named = SimpleNamespace(title=item["title"], title_kk=item.get("title_kk"))  # всё, что нужно названию и профессиям
+        places = [f"{city}/{prof}" for prof in professions_of(named)] + [f"{city}/{item['category']}", city]
+        title_kk = i18n.title(named, "kk")
+        parts[closed.shard(key)][key] = [item["title"], title_kk if title_kk != item["title"] else "", city,
+                                         next((p for p in places if p in written), "") if city else ""]
+    return parts
+
+
+def similar_of(items: list, i: int, k: int = SIMILAR) -> list:
+    """«Похожие» для items[i] из той же сферы города (список от новых к старым): соседи по времени, по два с каждой
+    стороны, и два прыжка на треть и две трети списка. Раньше все вакансии ссылались на одни и те же шесть новейших,
+    и до старых поисковый робот не доходил: страницы списков показывают только новые карточки. Так на каждую
+    вакансию ведут ссылки с соседей, а прыжки укорачивают путь к любой из них."""
+    n = len(items)
+    if n <= k + 1:
+        return [o for j, o in enumerate(items) if j != i]
+    near = k - 2
+    newer = min(i, near // 2)
+    older = min(n - 1 - i, near - newer)
+    newer = min(i, near - older)
+    picked = list(range(i - newer, i)) + list(range(i + 1, i + 1 + older))
+    for step in (n // 3, 2 * n // 3):
+        j = (i + step) % n
+        while j == i or j in picked:
+            j = (j + 1) % n
+        picked.append(j)
+    return [items[j] for j in picked]
+
+
+def gone_data(root: str) -> str:
+    """Данные для скрипта страницы 404: тексты на обоих языках (0 — русский, 1 — казахский) и города в форме «где»;
+    под пустым ключом — вся страна, для ссылки на главную."""
+    texts = ["Вакансия «{title}» в {where} закрыта", "Вакансия «{title}» закрыта", "Похожие вакансии в {where}",
+             "Работа в {where}"]
+    return ld_json({"root": root, "shards": closed.SHARDS,
+                    "texts": [[i18n.t(lang, text) for text in texts] for lang in i18n.LANGS],
+                    "cities": {slug: [city_in(slug or None, lang) for lang in i18n.LANGS] for slug in ("", *CITIES)}})
 
 
 def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: datetime | None = None,
@@ -405,19 +512,21 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     shutil.copytree(HERE / "static", out / "static")
     if (data_dir / venue_store.AVATARS).is_dir():
         shutil.copytree(data_dir / venue_store.AVATARS, out / venue_store.AVATARS)
-    # Пути страниц без языка и дата их изменения для sitemap: каждая идёт русской и казахской
-    pages: list[tuple[str, str]] = []
+    # Пути страниц без языка, дата их изменения и языки, которые идут в sitemap: обычно русская и казахская
+    pages: list[tuple[str, str, tuple[str, ...]]] = []
     today = now.date().isoformat()
 
-    def write(path: str, template: str, lastmod: str = today, **ctx) -> None:
-        """Страница на всех языках: русская по path, казахская по kk/path. В ctx значения или функции от языка."""
+    def write(path: str, template: str, lastmod: str = today, ru_only: bool = False, **ctx) -> None:
+        """Страница на всех языках: русская по path, казахская по kk/path. В ctx значения или функции от языка.
+        ru_only: казахская версия есть для людей, но каноническая у неё русская, и в sitemap идёт только русская."""
         for lang, lang_env in envs.items():
             full = lang_path(lang, path)
             target = out / full / "index.html" if full else out / "index.html"
             target.parent.mkdir(parents=True, exist_ok=True)
             values = {k: v(lang) if callable(v) else v for k, v in ctx.items()}
-            target.write_text(lang_env.get_template(template).render(path=full, page=path, **values), "utf-8")
-        pages.append((path, lastmod))
+            target.write_text(lang_env.get_template(template).render(path=full, page=path, ru_only=ru_only, **values),
+                              "utf-8")
+        pages.append((path, lastmod, ("ru",) if ru_only else tuple(envs)))
 
     card_cache: dict[tuple[str, str], list] = {}
 
@@ -447,8 +556,10 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                 (out / full if full else out).mkdir(parents=True, exist_ok=True)
                 ((out / full if full else out) / "cards.json").write_text(
                     json.dumps([card_row(v, lang) for v in items], ensure_ascii=False, separators=(",", ":")), "utf-8")
+        day, three = fresh_counts(items, now)
         write(path, "list.html", vacancies=items, total=len(items), cards=src, ids=ids, stats=pay_stats(items),
-              **ctx)
+              shift_stats=pay_stats(items, "day") if ctx.get("shifts_page") else None,
+              fresh=lambda lang: fresh_line(day, three, now, lang), **ctx)
 
     by_city: dict[str, list[Vacancy]] = defaultdict(list)
     for v in vacancies:
@@ -476,7 +587,7 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                                                                     else PROFESSIONS[slug]))
 
     # Фильтры и сортировка работают в браузере по всему списку (cards.json), в HTML только первые карточки
-    write_list("", vacancies, heading=lambda lang: i18n.t(lang, "Вакансии"),
+    write_list("", vacancies, heading=lambda lang: city_heading(None, lang),
                city=None, category=None, city_counts=city_counts, category_counts=_category_counts(vacancies),
                channels=tg_channels, ld=lambda lang: site_ld(base_url, lang))
 
@@ -515,17 +626,42 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     write("rabotodatelyam", "employers.html", channels=tg_channels, prices=employer_prices())
 
     by_city_cat: dict[tuple[str | None, str], list[Vacancy]] = defaultdict(list)
+    place_in: dict[str, int] = {}  # место вакансии в списке её сферы города
     for v in vacancies:
+        place_in[v.id] = len(by_city_cat[(v.city, v.category)])
         by_city_cat[(v.city, v.category)].append(v)
+    # Медиана месячной зарплаты по профессии в городе и по сфере в городе: с ней страница вакансии сравнивает свою
+    prof_pay = {(city, prof): pay_stats(items) for city, found in by_prof.items() for prof, items in found.items()}
+    cat_pay = {key: pay_stats(items) for key, items in by_city_cat.items()}
+
+    def pay_note(v: Vacancy) -> tuple[str, bool, int, int, str] | None:
+        """Строка о медиане на странице вакансии: (страница списка, профессия ли это, по скольким вакансиям медиана,
+        сама медиана, где рядом с ней зарплата вакансии). Сравниваем с той же профессией в городе, а где таких
+        вакансий с месячной зарплатой меньше пяти — со сферой. «Другое» не сфера: с ним не сравниваем."""
+        pay = pay_of(v)
+        if not pay or not v.city:
+            return None
+        prof = next((p for p in professions_of(v) if prof_pay.get((v.city, p))), None)
+        stats = prof_pay[(v.city, prof)] if prof else cat_pay[(v.city, v.category)] if v.category != "other" else None
+        return (prof or v.category, bool(prof), stats[0], stats[1], pay_level(pay, stats[1])) if stats else None
+
     for v in vacancies:
         # Разметка для Google Jobs только на русской странице: одна вакансия — одно объявление
         job = job_posting_ld(v, base_url, venue_store.lookup(venues, v))
-        similar = [o for o in by_city_cat[(v.city, v.category)][:SIMILAR + 1] if o.id != v.id][:SIMILAR]
-        write(f"v/{v.id}", "vacancy.html", lastmod=v.posted_at[:10], v=v, similar=similar, channels=tg_channels,
-              job=lambda lang: job if lang == "ru" else None,
+        similar = similar_of(by_city_cat[(v.city, v.category)], place_in[v.id])
+        write(f"v/{v.id}", "vacancy.html", lastmod=v.posted_at[:10], ru_only=True, v=v, similar=similar, channels=tg_channels,
+              pay_note=pay_note(v), job=lambda lang: job if lang == "ru" else None,
               crumbs=lambda lang, v=v: vacancy_crumbs(v, base_url, lang, prof_of(v)))
 
-    (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404"), "utf-8")
+    # Страница 404 и архив закрытых вакансий для неё: по ссылке на ушедшую вакансию она называет её и ведёт к похожим
+    parts = closed_parts(closed.load(data_dir), {v.id for v in vacancies}, {path for path, _, _ in pages})
+    if parts:
+        (out / "closed").mkdir()
+    for number, rows in parts.items():
+        (out / "closed" / f"{number}.json").write_text(
+            json.dumps(rows, ensure_ascii=False, sort_keys=True, separators=(",", ":")), "utf-8")
+    (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404", gone=gone_data(root)),
+                                  "utf-8")
     # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки. Больше html из этого
     # файла никуда не идёт (bot/src/logic.js, examples), поэтому ссылки в нём помечены как «examples»
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": shifts.perks(v), "pay": monthly_pay(v) or 0,
@@ -583,22 +719,28 @@ _LOCATIVE = {"almaty": "Алматы", "astana": "Астане", "shymkent": "Ш
              "kokshetau": "Кокшетау", "taldykorgan": "Талдыкоргане"}
 
 
-def _locative(slug: str) -> str:
-    return _LOCATIVE.get(slug, city_name(slug))
+def _locative(slug: str | None) -> str:
+    """Город в предложном падеже, для «в …»: «Астане». Без города — «Казахстане»."""
+    return _LOCATIVE.get(slug, city_name(slug)) if slug in CITIES else "Казахстане"
 
 
-def city_heading(slug: str, lang: str) -> str:
-    """«Работа в Алматы» / «Алматыдағы жұмыс»."""
+def city_in(slug: str | None, lang: str = "ru") -> str:
+    """Город в форме «где», в текстах это {where}: «(в) Астане» по-русски, «Астанадағы» по-казахски."""
     if lang == "kk":
-        return f"{i18n.CITIES_KK_IN.get(slug, city_name(slug, lang))} жұмыс"
-    return f"Работа в {_locative(slug)}"
+        return i18n.CITIES_KK_IN.get(slug, city_name(slug, lang)) if slug in CITIES else "Қазақстандағы"
+    return _locative(slug)
+
+
+def city_heading(slug: str | None, lang: str) -> str:
+    """«Работа в Алматы» / «Алматыдағы жұмыс»; без города — заголовок главной: «Работа в Казахстане»."""
+    return i18n.t(lang, "Работа в {where}", where=city_in(slug, lang))
 
 
 def shifts_heading(slug: str | None, lang: str) -> str:
     """«Подработка и смены в Алматы» / «Алматыдағы қосымша жұмыс және ауысымдар»."""
     if lang == "kk":
-        return f"{i18n.CITIES_KK_IN.get(slug, city_name(slug, lang)) if slug else 'Қазақстандағы'} қосымша жұмыс және ауысымдар"
-    return f"Подработка и смены в {_locative(slug)}" if slug else "Подработка и смены в Казахстане"
+        return f"{city_in(slug, lang)} қосымша жұмыс және ауысымдар"
+    return f"Подработка и смены в {_locative(slug)}"
 
 
 def category_heading(cat: str, slug: str, lang: str) -> str:

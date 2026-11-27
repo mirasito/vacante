@@ -1,7 +1,8 @@
 """Сообщить поисковикам о новых страницах сайта сразу после выкладки и читать Google Search Console.
 
-  python -m vacante.searchping diff OLD_SITEMAP NEW_SITEMAP OUT   — адреса, которых не было в прошлой карте сайта
-  python -m vacante.searchping send URLS_FILE                     — отправить их в IndexNow и Google Indexing API
+  python -m vacante.searchping diff OLD_SITEMAP NEW_SITEMAP OUT   — адреса, которых не было в прошлой карте сайта,
+                                                                    и адреса, которых в новой карте уже нет
+  python -m vacante.searchping send URLS_FILE                     — отправить их в IndexNow, новые ещё и в Google Indexing API
   python -m vacante.searchping report [дней]                      — сводка Search Console и отправка карты сайта
   python -m vacante.searchping inspect [страниц]                  — выборочная проверка: что из карты сайта в индексе Google
   python -m vacante.searchping probe                              — записывает ли Google наши сообщения: одна вакансия от начала до конца
@@ -16,6 +17,10 @@ IndexNow (Bing, а через него поиск ChatGPT, Яндекс, Seznam 
 отвечает 200, а на вопрос о том же адресе говорит «не сообщали» (404), со страницей с разметкой так же.
 Поэтому send после отправки спрашивает Google о первой странице и пишет в журнал, записано ли сообщение,
 а probe показывает весь путь на двух страницах.
+
+О снятых страницах (вакансию закрыли, адрес отдаёт 404) узнаёт только IndexNow: поисковик заходит на адрес
+ещё раз, видит 404 и убирает его из выдачи. Google получает то же, что и раньше: только новые страницы.
+Файл адресов: новые по одному в строке, как и было, затем пустая строка и снятые.
 """
 
 from __future__ import annotations
@@ -56,6 +61,24 @@ def new_urls(old_xml: str, new_xml: str) -> list[str]:
     return [u for u in sitemap_urls(new_xml) if u not in old]
 
 
+def removed_urls(old_xml: str, new_xml: str) -> list[str]:
+    """Адреса старой карты сайта, которых нет в новой, в порядке старой карты: эти страницы сняты."""
+    new = set(sitemap_urls(new_xml))
+    return [u for u in sitemap_urls(old_xml) if u not in new]
+
+
+def join_urls(new: list[str], gone: list[str]) -> str:
+    """Файл адресов для send: новые по одному в строке, после пустой строки снятые. Без снятых файл такой же,
+    как до их появления, и в любом случае в нём только адреса сайта: прошлая версия send его тоже прочтёт."""
+    return "\n".join(new) + ("\n\n" + "\n".join(gone) if gone else "")
+
+
+def split_urls(text: str) -> tuple[list[str], list[str]]:
+    """Файл адресов → (новые, снятые). В файле прошлого формата пустой строки нет: все адреса в нём новые."""
+    new, _, gone = text.partition("\n\n")
+    return new.split(), gone.split()
+
+
 def google_order(urls: list[str]) -> list[str]:
     """Для Google сначала свои вакансии: из Telegram и от работодателей. Копии hh.kz и OLX Google
     и так найдёт у первоисточника, на них квоту не тратим. Казахские версии — по hreflang из карты сайта."""
@@ -66,7 +89,7 @@ def google_order(urls: list[str]) -> list[str]:
 
 def indexnow(client: httpx.Client, urls: list[str]) -> str:
     if not urls:
-        return "IndexNow: новых адресов нет"
+        return "IndexNow: новых и снятых адресов нет"
     host = urlparse(SITE).netloc
     r = client.post("https://api.indexnow.org/indexnow", json={
         "host": host, "key": INDEXNOW_KEY, "keyLocation": f"{SITE}/{INDEXNOW_KEY}.txt", "urlList": urls[:INDEXNOW_MAX]})
@@ -133,11 +156,13 @@ RECORD_PAUSE = 2  # через сколько секунд после отпра
 
 
 def send(path: Path) -> None:
-    urls = [u for u in path.read_text("utf-8").split() if u]
+    urls, gone = split_urls(path.read_text("utf-8"))
     with httpx.Client(timeout=30) as client:
-        for step in (indexnow, google_index):
+        # IndexNow узнаёт и о снятых страницах (новые первыми: в лимит запроса попадают сначала они),
+        # Google получает только новые, как раньше
+        for step, batch in ((indexnow, urls + gone), (google_index, urls)):
             try:
-                print(step(client, urls))
+                print(step(client, batch))
             except httpx.HTTPError as e:  # поисковик недоступен: сайт уже выложен, следующий прогон попробует снова
                 print(f"{step.__name__}: ошибка {e}")
 
@@ -598,9 +623,11 @@ def inspect(total: int) -> None:
 def main(argv: list[str]) -> None:
     if argv[:1] == ["diff"] and len(argv) == 4:
         old = Path(argv[1]).read_text("utf-8") if Path(argv[1]).exists() else ""
-        urls = new_urls(old, Path(argv[2]).read_text("utf-8")) if old else []
-        Path(argv[3]).write_text("\n".join(urls), "utf-8")
-        print(f"новых адресов: {len(urls)}" if old else "прошлой карты сайта нет, отправлять нечего")
+        new = Path(argv[2]).read_text("utf-8") if old else ""
+        urls, gone = new_urls(old, new), removed_urls(old, new)
+        Path(argv[3]).write_text(join_urls(urls, gone), "utf-8")
+        print(f"новых адресов: {len(urls)}, снятых: {len(gone)}" if old
+              else "прошлой карты сайта нет, отправлять нечего")
     elif argv[:1] == ["send"] and len(argv) == 2:
         send(Path(argv[1]))
     elif argv[:1] == ["report"]:

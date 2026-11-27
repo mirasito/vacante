@@ -10,6 +10,9 @@ from vacante.models import Vacancy
 from vacante.parse import word_set
 
 NEAR_DUPLICATE = 0.85  # доля общих слов, начиная с которой два поста считаем одной вакансией
+# Сколько дней вакансия живёт на сайте (expire). По этому же числу страница вакансии называет Google
+# срок объявления: validThrough в разметке JobPosting (vacante/site/build.py)
+MAX_AGE_DAYS = 14
 
 
 def load_vacancies(data_dir: Path) -> list[Vacancy]:

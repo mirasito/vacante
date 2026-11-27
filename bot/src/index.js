@@ -13,7 +13,7 @@ import { wakeDaily, wakeUpdate } from "./cron.js";
 import { endDialog, load, myJobs, save } from "./db.js";
 import * as job from "./employer.js";
 import * as bot from "./logic.js";
-import { confirmLogin, loginApi, startLogin } from "./login.js";
+import { cleanLogins, confirmLogin, loginApi, startLogin } from "./login.js";
 import { becomeAdmin, moderate, moderationApi, reportApi } from "./moderation.js";
 import { boostFromCredit, boostJob, confirmPayment, packPaid, packPay, paid, postLater, postPaid, postPay, proReports, showPacks } from "./payments.js";
 import { postApi } from "./webpost.js";
@@ -103,6 +103,8 @@ export default {
     ctx.waitUntil(nudgeSubscribers(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
     // Итог тарифа Про тем, у кого срок закончился
     ctx.waitUntil(proReports(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
+    // Старые коды входа на сайт: каждый POST /api/login только добавляет строку, чистим здесь
+    ctx.waitUntil(cleanLogins(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },
 };
 

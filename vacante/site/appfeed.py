@@ -117,6 +117,10 @@ def write(out: Path, vacancies: list[Vacancy], base_url: str, now: datetime, ven
         (folder / f"{slug}.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), "utf-8")
         if pages > 1:
             (folder / slug).mkdir(parents=True, exist_ok=True)
+            # id всех вакансий города в порядке ленты: ссылка «Откликнуться» с сайта или из канала
+            # по нему сразу берёт нужную страницу, а не перебирает ленту (Алматы ~13 КБ gzip)
+            ids = {"per_page": PER_CITY, "ids": [v.id for v in items]}
+            (folder / slug / "ids.json").write_text(json.dumps(ids, ensure_ascii=False, separators=(",", ":")), "utf-8")
         for n in range(2, pages + 1):
             chunk = items[(n - 1) * PER_CITY:n * PER_CITY]
             page = {"city": slug, "page": n, "vacancies": [item(v, base_url, now, venues) for v in chunk]}

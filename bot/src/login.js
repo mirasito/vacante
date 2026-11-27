@@ -43,9 +43,13 @@ export async function verifySession(raw, token, nowMs = Date.now()) {
 
 const fresh = `datetime('now', '-${CODE_MINUTES} minutes')`;
 
+/** Раз в час из scheduled: убрать коды старше CODE_MINUTES (по индексу logins_created). */
+export async function cleanLogins(env) {
+  await env.DB.prepare(`DELETE FROM logins WHERE created_at < ${fresh}`).run();
+}
+
 export async function loginApi(request, env, headers) {
   if (request.method === "POST") {
-    await env.DB.prepare(`DELETE FROM logins WHERE created_at < ${fresh}`).run();
     const code = hex(crypto.getRandomValues(new Uint8Array(12)));
     await env.DB.prepare("INSERT INTO logins (code) VALUES (?)").bind(code).run();
     return Response.json({ code, link: `https://t.me/${BOT_USERNAME}?start=login_${code}`, minutes: CODE_MINUTES }, { headers });

@@ -42,6 +42,12 @@ export const loadPage = async (slug: string, n: number) =>
   (await getJson<{ vacancies: Vacancy[] }>(`${slug}/p${n}.json`)).vacancies;
 
 /**
+ * id всех вакансий города в порядке ленты (app/data/<город>/ids.json, есть только у городов больше
+ * чем с одной страницей): по нему ссылка на вакансию находит её страницу без перебора ленты.
+ */
+export const loadIds = (slug: string) => getJson<{ per_page: number; ids: string[] }>(`${slug}/ids.json`);
+
+/**
  * Вакансии одной профессии по всему городу: лента города держит только 400 свежих, а фильтр
  * «Профессия» должен находить все. Файла нет, если все вакансии профессии уже в ленте: тогда пусто.
  */

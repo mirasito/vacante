@@ -56645,6 +56645,15 @@
   "v": 3,
   "checked_at": "2026-10-30T04:43:33+00:00"
  },
+ "astana:галерея дизайна": {
+  "name": "Галерея дизайна",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T15:42:32+00:00",
+  "instagram": "designgallery.kz",
+  "source": "https://2gis.kz/astana/firm/70000001102698869"
+ },
  "astana:гарант авто сити": {
   "name": "Гарант Авто Сити",
   "city": "astana",
@@ -75303,6 +75312,15 @@
   ],
   "avatar": "9b64edf839ce14d9.jpg",
   "avatar_source": "website"
+ },
+ "kostanay:business 360": {
+  "name": "Business 360",
+  "city": "kostanay",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T15:42:32+00:00",
+  "instagram": "business_360_kz",
+  "source": "https://2gis.kz/kostanaj/firm/70000001116740853"
  },
  "kostanay:call center ecommerce": {
   "name": "Call-center ecommerce",

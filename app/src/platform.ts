@@ -332,6 +332,13 @@ export function launchTab(): 'profile' | 'applications' | 'reminders' | 'chats' 
     : undefined;
 }
 
+/** Язык из ссылки: казахские страницы сайта открывают форму с ?lang=kk, раньше она всегда была на русском. */
+export function launchLang(): 'ru' | 'kk' | undefined {
+  if (!isWeb) return undefined;
+  const lang = new URLSearchParams(window.location.search).get('lang');
+  return lang === 'kk' || lang === 'ru' ? lang : undefined;
+}
+
 /** Откуда пришли на форму размещения: ?tab=post&from=site_header → jobs.came_from = web_site_header. */
 export function launchFrom(): string {
   if (!isWeb) return 'app';

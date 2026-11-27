@@ -13,8 +13,6 @@ a { color: inherit; }
 .topbar { display: flex; align-items: baseline; gap: 16px; padding: 16px; max-width: 920px; margin: 0 auto; }
 .logo { display: inline-flex; align-self: center; text-decoration: none; }
 .logo img { height: 30px; width: auto; display: block; }
-.logo .on-dark { display: none; }
-@media (prefers-color-scheme: dark) { .logo .on-light { display: none; } .logo .on-dark { display: block; } }
 .tagline { color: var(--quiet); font-size: 14px; }
 /* «＋ Разместить вакансию»: заметная кнопка в шапке на каждой странице */
 .post-job { margin-left: auto; align-self: center; font-size: 15px; font-weight: 700; white-space: nowrap; text-decoration: none;

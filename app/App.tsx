@@ -35,6 +35,7 @@ import {
   launchRef,
   launchSource,
   launchFrom,
+  launchLang,
   launchTab,
   leaveToSite,
   launchVacancy,
@@ -237,7 +238,7 @@ function Main() {
       setBeta(beta);
       setPrefs({
         ...stored,
-        lang: stored.lang ?? tgLang ?? 'ru',
+        lang: launchLang() ?? stored.lang ?? tgLang ?? 'ru',
         ...(linkCity ? { city: linkCity } : {}),
         ...(beta ? { beta: true } : {}),
         ...(ref && !stored.ref ? { ref } : {}),

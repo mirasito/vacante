@@ -225,7 +225,7 @@ def test_list_filters_keep_utm_marks_in_address(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     site.build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     page = (tmp_path / "public" / "almaty" / "index.html").read_text("utf-8")
-    save = page[page.index("function save() {"):page.index("function render() {")]
+    save = page[page.index("function save() {"):page.index("function render(")]
     telegram = "?utm_source=telegram&utm_medium=bot&utm_campaign=sub&utm_content=almaty"
     cases = [
         # Пришли из ChatGPT, фильтры не трогали: метка остаётся в адресе, её увидят Метрика и via.js

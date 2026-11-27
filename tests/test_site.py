@@ -460,7 +460,7 @@ def test_list_filters_keep_foreign_parameters_in_address(tmp_path):
     save_vacancies(tmp_path / "data", [parse_post(raw)])
     build(tmp_path / "data", tmp_path / "public", now=datetime(2026, 10, 27, tzinfo=timezone.utc))
     home = (tmp_path / "public" / "index.html").read_text("utf-8")
-    save = home[home.index("function save() {"):home.index("function render() {")]
+    save = home[home.index("function save() {"):home.index("function render(")]
     # Фильтры пишут в адрес только свои параметры. Раньше адрес собирался с нуля, и метки utm_source с yclid
     # пропадали из него раньше, чем запускалась Метрика: визит из ChatGPT записывался без источника
     assert "const p = new URLSearchParams(location.search);" in save and "new URLSearchParams()" not in save

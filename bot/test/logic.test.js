@@ -79,3 +79,94 @@ test("подписка по ссылке из приложения", () => {
   assert.equal(bot.fromLink("apply_5"), null);
   assert.deepEqual(bot.fromLink("sub_almaty_all_0_s").perks, ["Смены и подработка"]);
 });
+
+test("на экране сфер можно закончить сразу: «Готово», условия по отдельной кнопке", () => {
+  const sub = press(bot.newSubscription(), "city:almaty");
+  assert.deepEqual(bot.screen("cats", sub).keyboard.slice(-2), [
+    [{ text: "← Город", callback_data: "go:city" }, { text: "Условия и зарплата →", callback_data: "go:perks" }],
+    [{ text: "Готово ✅", callback_data: "done" }],
+  ]);
+  // «Готово» сразу после города: подписка на все сферы этого города
+  assert.deepEqual(bot.press(sub, "done"), {
+    sub: { city: "almaty", categories: [], perks: [], min_pay: 0, active: 1, setup: "done" },
+    show: "done",
+  });
+  // Старые клавиатуры в чатах работают: «Дальше →» вело на условия тем же нажатием, «Готово» там осталось
+  assert.equal(bot.press(sub, "go:perks").show, "perks");
+  assert.deepEqual(bot.screen("perks", sub).keyboard.at(-1).map((b) => b.callback_data), ["go:cats", "done"]);
+});
+
+test("шаг настройки подписки: каждое нажатие с каждого шага", () => {
+  const buttons = ["go:city", "go:cats", "go:perks", "city:almaty", "cat:horeca", "perk:0", "pay", "done", "stop"];
+  // Просмотр экранов (go:) запоминает самый дальний и не трогает итог. Выбор после «Готово» или остановки начинает заново
+  const after = [
+    [null, ["city", "cats", "perks", "cats", "cats", "perks", "perks", "done", "stopped"]],
+    ["city", ["city", "cats", "perks", "cats", "cats", "perks", "perks", "done", "stopped"]],
+    ["cats", ["cats", "cats", "perks", "cats", "cats", "perks", "perks", "done", "stopped"]],
+    ["perks", ["perks", "perks", "perks", "perks", "perks", "perks", "perks", "done", "stopped"]],
+    ["done", ["done", "done", "done", "cats", "cats", "perks", "perks", "done", "stopped"]],
+    ["stopped", ["stopped", "stopped", "stopped", "cats", "cats", "perks", "perks", "done", "stopped"]],
+  ];
+  for (const [setup, expected] of after) {
+    const sub = { ...bot.newSubscription(), setup };
+    assert.deepEqual(buttons.map((data) => bot.press(sub, data).sub.setup), expected, `с шага ${setup}`);
+  }
+  assert.equal(bot.newSubscription().setup, null); // только /start
+  assert.equal(press(bot.newSubscription(), "city:all").setup, "cats"); // «Весь Казахстан» тоже выбор
+  assert.equal(press(bot.newSubscription(), "незнакомая кнопка").setup, "city"); // показывает вопрос о городе
+
+  // Включает и выключает подписку только «Готово» и «Остановить»: правка включённой её не останавливает
+  const active = press(bot.newSubscription(), "city:almaty", "done");
+  for (const data of buttons.slice(0, 7)) assert.equal(bot.press(active, data).sub.active, 1, data);
+  for (const data of buttons.slice(0, 7)) assert.equal(bot.press(press(active, "stop"), data).sub.active, 0, data);
+
+  // Вопрос о городе не с экрана настройки: «🔔 Присылать вакансии» и /settings его только показывают,
+  // а /smeny без города ещё и добавляет условие «Смены и подработка», это выбор
+  assert.deepEqual([null, "city", "cats", "perks", "done", "stopped"].map((setup) => bot.reached(setup, "city")),
+    ["city", "city", "cats", "perks", "done", "stopped"]);
+  assert.deepEqual([null, "city", "cats", "perks", "done", "stopped"].map((setup) => bot.reached(setup, "city", true)),
+    ["city", "city", "cats", "perks", "city", "city"]);
+});
+
+test("шаг настройки в строке базы: у активной строки до миграции «Готово» уже было", () => {
+  assert.equal(bot.toRow(press(bot.newSubscription(), "city:almaty")).at(-1), "cats");
+  assert.equal(bot.toRow(bot.fromLink("sub_almaty_all_0")).at(-1), null); // «Готово» ссылке ставит index.js
+  assert.equal(bot.fromRow({ city: "almaty", active: 0, setup: "perks" }).setup, "perks");
+  assert.equal(bot.fromRow({ city: "almaty", active: 1, setup: "cats" }).setup, "cats");
+  assert.equal(bot.fromRow({ city: "almaty", active: 1, setup: null }).setup, "done");
+  assert.equal(bot.fromRow({ city: "almaty", active: 0, setup: null }).setup, null);
+});
+
+test("напоминание о незаконченной подписке: без города вопрос ещё раз, с городом «Включить»", () => {
+  const asked = { ...bot.newSubscription(), setup: "city" };
+  assert.deepEqual(bot.nudgeScreen(asked), {
+    text: "Вы просили присылать вакансии, но не выбрали город, поэтому я пока ничего не присылаю.\n\nГде ищете работу?",
+    keyboard: bot.screen("city", asked).keyboard,
+  });
+  const unfinished = "Вы просили присылать вакансии, но не закончили настройку, поэтому я пока ничего не присылаю.\n\n";
+  const keyboard = [
+    [{ text: "✅ Включить", callback_data: "done" }],
+    [{ text: "⚙️ Настроить", callback_data: "go:city" }, { text: "Не нужно", callback_data: "stop" }],
+  ];
+  const chosen = press(bot.newSubscription(), "city:astana", "cat:horeca");
+  assert.deepEqual(bot.nudgeScreen(chosen), {
+    text: `${unfinished}Могу присылать новые вакансии: Астана · Кафе и рестораны. Включить?`,
+    keyboard,
+  });
+  // Строка до миграции с уже выбранным городом снова открыла вопрос о городе: напоминание не говорит, что города нет
+  const reopened = { ...bot.newSubscription(), city: "astana", categories: ["horeca"], setup: "city" };
+  assert.deepEqual(bot.nudgeScreen(reopened), {
+    text: `${unfinished}Могу присылать новые вакансии: Астана · Кафе и рестораны. Включить?`,
+    keyboard,
+  });
+  const everywhere = press(bot.newSubscription(), "city:all", "go:perks", "perk:salary", "pay");
+  assert.equal(everywhere.setup, "perks");
+  assert.deepEqual(bot.nudgeScreen(everywhere), {
+    text: `${unfinished}Могу присылать новые вакансии: весь Казахстан · любая сфера · с зарплатой · от 200 000 ₸ в месяц. Включить?`,
+    keyboard,
+  });
+  // Кнопки делают то, что на них написано: включает только «Включить»
+  assert.deepEqual([bot.press(chosen, "done").sub.active, bot.press(chosen, "done").show], [1, "done"]);
+  assert.deepEqual([bot.press(chosen, "go:city").sub.active, bot.press(chosen, "go:city").show], [0, "city"]);
+  assert.deepEqual([bot.press(chosen, "stop").sub.active, bot.press(chosen, "stop").show], [0, "stopped"]);
+});

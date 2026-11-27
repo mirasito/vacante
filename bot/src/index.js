@@ -92,6 +92,8 @@ export default {
     ctx.waitUntil(shiftCron(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
     // Напоминание тем, кто бросил анкету работодателя
     ctx.waitUntil(nudgeDrafts(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
+    // Напоминание тем, кто начал настраивать подписку и не включил её
+    ctx.waitUntil(nudgeSubscribers(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
     // Итог тарифа Про тем, у кого срок закончился
     ctx.waitUntil(proReports(env).catch((err) => console.error(err && err.stack ? err.stack : err)));
   },
@@ -173,13 +175,15 @@ async function onMessage(m, env) {
   if (name === "/start" && bot.fromLink(arg)) {
     // Кнопка «Пришлём, когда появится» из приложения: подписка сразу с городом, сферой и зарплатой
     const sub = bot.fromLink(arg);
-    await save(env, chatId, sub);
+    await save(env, chatId, { ...sub, setup: "done" });
     return send(env, chatId, `✅ Подписка включена: ${bot.summary(sub)}.\n\nНовые вакансии пришлю сюда. Изменить: /settings, отписаться: /stop`);
   }
   if (name === "/myjobs") return send(env, chatId, ...screen(job.myJobsScreen(await myJobs(env, chatId), job.boostOffer(env))));
   if (name === "/admin") return becomeAdmin(env, m);
   if (name === "/start" || name === "/settings") {
     const sub = await load(env, chatId);
+    // /start шаг настройки не трогает: его жмут и работодатели. /settings сразу задаёт вопрос «Где ищете работу?»
+    if (name === "/settings") sub.setup = bot.reached(sub.setup, "city");
     await save(env, chatId, sub);
     if (name === "/start") {
       return send(env, chatId, GREETING, [[bot.appButton(env.SITE_URL, sub.city)], [SUBSCRIBE_BUTTON], [job.EMPLOYER_BUTTON]]);
@@ -188,7 +192,7 @@ async function onMessage(m, env) {
     return send(env, chatId, question, keyboard);
   }
   if (name === "/stop") {
-    await save(env, chatId, { ...(await load(env, chatId)), active: 0 });
+    await save(env, chatId, { ...(await load(env, chatId)), active: 0, setup: "stopped" });
     return send(env, chatId, STOPPED);
   }
   return send(env, chatId, HELP);
@@ -200,7 +204,10 @@ async function subscriptionButton(env, q) {
   if (q.data === "settings") {
     // Кнопка под подборкой: настройки новым сообщением, саму подборку не трогаем
     await tg(env, "answerCallbackQuery", { callback_query_id: q.id });
-    const { text, keyboard } = bot.screen("city", await load(env, chatId));
+    const sub = await load(env, chatId);
+    // Вопрос «Где ищете работу?» задан: запоминаем шаг, по нему видно, кто открыл настройку и ушёл
+    await save(env, chatId, { ...sub, setup: bot.reached(sub.setup, "city") });
+    const { text, keyboard } = bot.screen("city", sub);
     return send(env, chatId, text, keyboard);
   }
   const { sub, show } = bot.press(await load(env, chatId), q.data || "");
@@ -222,6 +229,35 @@ async function subscriptionButton(env, q) {
     const feed = await fetch(`${env.SITE_URL}/feed.json`, { cf: { cacheTtl: 300 } }).then((r) => r.json());
     await send(env, chatId, bot.examples(sub, feed.vacancies));
   }
+}
+
+/**
+ * Раз в час: тем, кто начал настраивать подписку час–сутки назад и не включил её, одно напоминание днём.
+ * Строкам до миграции 0014 (setup пуст) не пишем: неизвестно, кто из них остановил подписку сам.
+ */
+export async function nudgeSubscribers(env, now = new Date()) {
+  const hour = (now.getUTCHours() + 5) % 24;
+  if (hour < job.NUDGE_HOURS[0] || hour >= job.NUDGE_HOURS[1]) return 0;
+  const at = (min) => new Date(now.getTime() - min * 60e3).toISOString().slice(0, 19).replace("T", " ");
+  const { results } = await env.DB.prepare(
+    `SELECT * FROM subscribers WHERE active = 0 AND nudged = 0 AND setup IN ('city', 'cats', 'perks')
+       AND updated_at <= ? AND updated_at >= ? ORDER BY updated_at, chat_id LIMIT 30`,
+  ).bind(at(job.NUDGE_AFTER_MIN), at(24 * 60)).all();
+  let sent = 0;
+  for (const row of results) {
+    // Отметку ставим до отправки: сбой не даст второго напоминания. Кто за это время что-то нажал, того пропускаем
+    const { meta } = await env.DB.prepare("UPDATE subscribers SET nudged = 1 WHERE chat_id = ? AND nudged = 0 AND updated_at = ?")
+      .bind(row.chat_id, row.updated_at).run();
+    if (!meta.changes) continue;
+    try {
+      await send(env, row.chat_id, ...screen(bot.nudgeScreen(bot.fromRow(row))));
+      sent++;
+    } catch (e) {
+      // Сеть или лимит запросов: этому человеку напоминания уже не будет, остальным пишем дальше
+      console.log(`напоминание о подписке не отправлено: ${e?.message ?? e}`);
+    }
+  }
+  return sent;
 }
 
 // Работодатель: анкета вакансии

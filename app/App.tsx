@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { loadCity, loadIndex, loadPage } from './src/api';
+import { loadCity, loadIds, loadIndex, loadPage } from './src/api';
 import { ApplicationsTab, type Focus } from './src/applications/ApplicationsTab';
 import { ApplySheet, type Preset } from './src/applications/ApplySheet';
 import { applyGate } from './src/applications/gate';
@@ -307,6 +307,9 @@ function Main() {
     setError(false);
     seenCity.current = null;
     pages.current = { city, next: 2, last: 1, busy: null };
+    // Пришли по ссылке на вакансию: список id города качаем сразу, вместе с первой страницей,
+    // чтобы, если вакансия дальше 400 свежих, сразу взять её страницу. Ошибка здесь не мешает ленте
+    const ids = launchedVacancy.current ? loadIds(city).catch(() => undefined) : undefined;
     Promise.all([loadCity(city), read<Seen>(`seen:${city}`, {})]).then(
       ([{ items, total, pages: last }, stored]) => {
         if (!alive) return;
@@ -329,8 +332,8 @@ function Main() {
           launchedApply.current && v.shift !== 'slot' ? setPendingApply({ copy: copyOf(v, city), full: v, fromLink: true }) : setOpen(v);
         if (launched.vacancy) show(launched.vacancy);
         else if (launched.closed && wanted) {
-          // В большом городе пост двухдневной давности уже не в первых 400: смотрим следующие страницы
-          void findOnPages(wanted, last, (n) => loadPage(city, n)).then((found) => {
+          // В большом городе вакансия недельной давности уже не в первых 400: берём её страницу по списку id
+          void findOnPages(wanted, last, (n) => loadPage(city, n), ids).then((found) => {
             if (!alive) return;
             if (found) show(found);
             else notify(i18n.t(langRef.current, 'vacancyClosed'));

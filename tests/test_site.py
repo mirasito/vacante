@@ -509,3 +509,12 @@ def test_similar_links_reach_every_vacancy_of_the_sphere():
     # Раньше все ссылались на шесть новейших; теперь на каждую вакансию ведут ссылки хотя бы с четырёх других
     assert all(j != i for i in items for j in similar_of(items, i))
     assert len(links) == 100 and min(links.values()) >= 4 and max(links.values()) <= 8
+
+
+def test_ld_json_cannot_break_out_of_script_tag():
+    import json
+    from vacante.site.build import ld_json
+    data = {"name": "Кафе <!--<script> & </script><b>"}
+    text = ld_json(data)
+    assert "<" not in text and ">" not in text and "&" not in text
+    assert json.loads(text) == data

@@ -51,15 +51,23 @@ def test_digest_lists_ten_and_points_to_site():
     # У каждой вакансии ссылка на карточку сайта и ссылка «Откликнуться» в приложение
     assert text.count("<a href=") == 20 and "Остальные 2 на сайте" in text
     assert '<a href="https://t.me/vacantekz_bot?startapp=sbot_a_almaty_chan-3">✉️ Откликнуться</a>' in text
-    assert '<b><a href="https://vacante.kz/v/chan-3/">Официант</a></b> · Луна' in text
+    # Ссылка на сайт несёт метки utm: Метрика видит, что человек пришёл из часовой подборки бота
+    assert ('<b><a href="https://vacante.kz/v/chan-3/?utm_source=telegram&amp;utm_medium=bot&amp;utm_campaign=sub'
+            '&amp;utm_content=almaty">Официант</a></b> · Луна') in text
     assert "📍 Алматы, ул. Абая, 3" in text
 
 
 def test_buttons_open_swipe_app_on_subscribers_city():
     rows = digest.buttons(sub(city="almaty"), "https://vacante.kz")
     assert rows[0] == [{"text": "🃏 Листать свайпами", "web_app": {"url": "https://vacante.kz/app/?city=almaty"}}]
-    assert rows[1][0] == {"text": "Все вакансии на сайте", "url": "https://vacante.kz/almaty/"}
-    assert digest.buttons(sub(city=None), "https://vacante.kz")[0][0]["web_app"] == {"url": "https://vacante.kz/app/"}
+    assert rows[1][0] == {"text": "Все вакансии на сайте", "url": "https://vacante.kz/almaty/?utm_source=telegram"
+                                                                  "&utm_medium=bot&utm_campaign=sub&utm_content=almaty"}
+    # Без города в подписке метки города нет; под утренними сменами кампания своя
+    no_city = digest.buttons(sub(city=None), "https://vacante.kz")
+    assert no_city[0][0]["web_app"] == {"url": "https://vacante.kz/app/"}
+    assert no_city[1][0]["url"] == "https://vacante.kz/?utm_source=telegram&utm_medium=bot&utm_campaign=sub"
+    assert digest.buttons(sub(), "https://vacante.kz", "morning")[1][0]["url"].endswith(
+        "/almaty/?utm_source=telegram&utm_medium=bot&utm_campaign=morning&utm_content=almaty")
     # Telegram открывает приложение только по https: без него кнопки нет, подборка всё равно уходит
     assert all("web_app" not in b for row in digest.buttons(sub(), "http://localhost:8000") for b in row)
 

@@ -8,6 +8,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 import logging
 import time
@@ -18,7 +19,7 @@ from pathlib import Path
 
 import httpx
 
-from vacante import shifts, tg
+from vacante import launch, shifts, tg
 from vacante.localtime import LOCAL
 from vacante.models import Vacancy
 from vacante.site.build import bot_item, monthly_pay
@@ -69,7 +70,7 @@ def matches(sub: Subscription, v: Vacancy) -> bool:
 
 def format_digest(hits: list[Vacancy], base_url: str) -> str:
     head = "🆕 Новая вакансия для вас" if len(hits) == 1 else f"🆕 Новые вакансии для вас: {len(hits)}"
-    parts = [head] + [bot_item(v, base_url) for v in hits[:MAX_ITEMS]]
+    parts = [head] + [bot_item(v, base_url, "sub") for v in hits[:MAX_ITEMS]]
     if len(hits) > MAX_ITEMS:
         parts.append(f"Остальные {len(hits) - MAX_ITEMS} на сайте, кнопка ниже.")
     return "\n\n".join(parts)
@@ -77,10 +78,13 @@ def format_digest(hits: list[Vacancy], base_url: str) -> str:
 
 def format_morning(hits: list[Vacancy], base_url: str, city: str | None) -> str:
     head = f"☀️ Доброе утро! Смены и подработка на сегодня: {len(hits)}"
-    parts = [head] + [bot_item(v, base_url) + (f"\n📅 Смена: {shifts.day_label(v.shift_date)}, {v.shift_time}"
-                                              if v.shift_date else "") for v in hits[:MAX_ITEMS]]
-    where = f"{base_url}/{city}/{shifts.SLUG}/" if city else f"{base_url}/{shifts.SLUG}/"
-    parts.append(f"Все смены: {where}")
+    parts = [head] + [bot_item(v, base_url, "morning")
+                      + (f"\n📅 Смена: {shifts.day_label(v.shift_date)}, {v.shift_time}" if v.shift_date else "")
+                      for v in hits[:MAX_ITEMS]]
+    # Ссылка с метками utm длинная, поэтому в сообщении она под коротким адресом, как в подборке смен канала
+    where = f"{city}/{shifts.SLUG}" if city else shifts.SLUG
+    url = launch.utm(f"{base_url}/{where}/", "bot", "morning", city)
+    parts.append(f'Все смены: <a href="{html.escape(url)}">vacante.kz/{where}</a>')
     return "\n\n".join(parts)
 
 
@@ -91,8 +95,9 @@ def morning(sub: Subscription, vacancies: list[Vacancy], now: datetime) -> list[
     return [v for v in shifts.upcoming(vacancies, now, hours=24, days=1) if matches(sub, v)]
 
 
-def buttons(sub: Subscription, base_url: str) -> list:
-    site = f"{base_url}/{sub.city}/" if sub.city else f"{base_url}/"
+def buttons(sub: Subscription, base_url: str, campaign: str = "sub") -> list:
+    """campaign — под каким сообщением кнопки (launch.utm): sub — часовая подборка, morning — утренние смены."""
+    site = launch.utm(f"{base_url}/{sub.city}/" if sub.city else f"{base_url}/", "bot", campaign, sub.city)
     rows = [[{"text": "Все вакансии на сайте", "url": site}, {"text": "⚙️ Настроить", "callback_data": "settings"}]]
     # Приложение со свайпами открывается внутри Telegram (кнопка web_app), Telegram пускает туда только https
     if base_url.startswith("https://"):
@@ -145,7 +150,7 @@ def _morning(vacancies: list[Vacancy], subs: list[Subscription], base_url: str, 
         if not hits:
             continue
         try:
-            send(sub.chat_id, format_morning(hits, base_url, sub.city), buttons(sub, base_url))
+            send(sub.chat_id, format_morning(hits, base_url, sub.city), buttons(sub, base_url, "morning"))
         except Blocked:
             stats["blocked"].append(sub.chat_id)
         except (httpx.HTTPError, RuntimeError) as exc:

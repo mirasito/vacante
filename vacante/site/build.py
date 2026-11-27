@@ -153,10 +153,12 @@ def twogis_url(v: Vacancy) -> str | None:
     return f"https://2gis.kz/{city}/search/{quote(query)}"
 
 
-def bot_item(v: Vacancy, base_url: str) -> str:
-    """Вакансия в подборке бота (HTML-разметка Telegram). Её же бот берёт из feed.json для первых примеров."""
+def bot_item(v: Vacancy, base_url: str, campaign: str) -> str:
+    """Вакансия в подборке бота (HTML-разметка Telegram). Её же бот берёт из feed.json для первых примеров.
+    campaign — в каком сообщении она стоит (launch.utm): sub, morning или examples."""
     e = html.escape
-    lines = [f'<b><a href="{base_url}/v/{v.id}/">{e(v.title)}</a></b>' + (f" · {e(v.employer)}" if v.employer else "")]
+    page = launch.utm(f"{base_url}/v/{v.id}/", "bot", campaign, v.city)
+    lines = [f'<b><a href="{e(page)}">{e(v.title)}</a></b>' + (f" · {e(v.employer)}" if v.employer else "")]
     facts = [f"💰 {e(s)}" for s in [salary_label(v)] if s] + ([f"🕒 {e(v.schedule)}"] if v.schedule else [])
     if facts:
         lines.append(" · ".join(facts))
@@ -173,9 +175,12 @@ REPLY_LABELS = {"whatsapp": "💬 Написать в WhatsApp", "phone": "📞 
                 "apply": "Откликнуться в приложении"}
 
 
-def app_replies(v: Vacancy) -> list[tuple[str, str]]:
-    """Кнопки отклика через приложение для карточки сайта: [(подпись, ссылка)]."""
-    return [(REPLY_LABELS[kind], url) for kind, url in launch.reply_buttons(v, "web")]
+def app_replies(v: Vacancy) -> list[tuple[str, str, str | None]]:
+    """Кнопки отклика через приложение для карточки сайта: [(подпись, ссылка, вид нажатия для счётчика)].
+    Вид «app» у кнопки в мини-приложение (static/via.js). У прямых кнопок связи вида нет: их нажатия сервер
+    считает сам, на переходе /go/."""
+    return [(REPLY_LABELS[kind], url, "app" if kind == "apply" else None)
+            for kind, url in launch.reply_buttons(v, "web")]
 
 
 def age_label(posted_at: str, now: datetime, lang: str = "ru") -> str:
@@ -224,7 +229,9 @@ def _env(lang: str = "ru") -> Environment:
                        FILTER_PERKS=FILTER_PERKS, PAGE_SIZE=PAGE_SIZE, employer_url=POST_URL, form_url=FORM_URL, instagram_url=instagram_url,
                        site_name=site_name, more_links=more_links, initial=initial, lang=lang, LANGS=i18n.LANGS,
                        LANG_NAME=i18n.LANG_NAME, t=lambda text, **kw: i18n.t(lang, text, **kw),
-                       title=lambda v: i18n.title(v, lang), perk=lambda p: i18n.perk(p, lang))
+                       title=lambda v: i18n.title(v, lang), perk=lambda p: i18n.perk(p, lang),
+                       # Сервер, куда static/via.js отправляет нажатия на кнопки отклика
+                       api_url=launch.GO_URL)
     env.filters["plural"] = lambda n, *forms: plural(n, *forms, lang=lang)
     env.filters["tenge"] = lambda n: f"{money(n)} ₸"
     return env
@@ -519,9 +526,10 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
               crumbs=lambda lang, v=v: vacancy_crumbs(v, base_url, lang, prof_of(v)))
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404"), "utf-8")
-    # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки
+    # Свежие вакансии для бота: по ним он показывает первые примеры сразу после подписки. Больше html из этого
+    # файла никуда не идёт (bot/src/logic.js, examples), поэтому ссылки в нём помечены как «examples»
     feed = [{"id": v.id, "city": v.city, "category": v.category, "perks": shifts.perks(v), "pay": monthly_pay(v) or 0,
-             "html": bot_item(v, base_url)} for v in vacancies[:FEED_SIZE]]
+             "html": bot_item(v, base_url, "examples")} for v in vacancies[:FEED_SIZE]]
     # channels: свои каналы по городам (город → @канал), бот пишет работодателю, в каком канале выйдет вакансия
     (out / "feed.json").write_text(json.dumps({"vacancies": feed, "channels": channels.live(data_dir)},
                                               ensure_ascii=False), "utf-8")

@@ -76,7 +76,12 @@ def test_morning_digest_once_a_day_for_shift_subscribers(tmp_path):
     digest.run(tmp_path, "https://vacante.kz", lambda: subs, lambda *a: sent.append(a), now=now)
     assert [s[0] for s in sent] == [1]
     assert sent[0][1].startswith("☀️ Доброе утро! Смены и подработка на сегодня: 1")
-    assert "https://vacante.kz/almaty/smeny/" in sent[0][1]
+    # Ссылки на сайт помечены: Метрика видит, что человек пришёл из утреннего сообщения бота
+    utm = "utm_source=telegram&amp;utm_medium=bot&amp;utm_campaign=morning&amp;utm_content=almaty"
+    assert f'<b><a href="https://vacante.kz/v/chan-1/?{utm}">Официант</a></b>' in sent[0][1]
+    assert sent[0][1].endswith(f'Все смены: <a href="https://vacante.kz/almaty/smeny/?{utm}">vacante.kz/almaty/smeny</a>')
+    assert sent[0][2][1][0]["url"] == ("https://vacante.kz/almaty/?utm_source=telegram&utm_medium=bot"
+                                      "&utm_campaign=morning&utm_content=almaty")
     digest.run(tmp_path, "https://vacante.kz", lambda: subs, lambda *a: sent.append(a), now=now.replace(hour=5))
     assert len(sent) == 1  # второй раз за день не шлём
 
@@ -99,6 +104,10 @@ def test_channel_shifts_digest_needs_three_and_lists_slots_first():
     assert text.index("Официант") < text.index("Грузчик")
     assert "📅 сб, 07.11, 10:00–22:00" in text
     assert "start=smena" in text
+    # Ссылки на сайт помечены как подборка смен в канале, на виду остаётся короткий адрес
+    utm = "utm_source=telegram&amp;utm_medium=channel&amp;utm_campaign=shifts&amp;utm_content=almaty"
+    assert f'• <a href="https://vacante.kz/v/bot-9/?{utm}">Официант</a> · Кафе' in text
+    assert f'<a href="https://vacante.kz/almaty/smeny/?{utm}">vacante.kz/almaty/smeny</a>' in text
     assert autopost.shifts_digest(items, "almaty", "https://vacante.kz", now, lambda v: False) is None
 
 

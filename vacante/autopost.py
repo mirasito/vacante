@@ -217,11 +217,12 @@ def digest_text(items: list[Vacancy], city: str, base_url: str, now: datetime) -
     lines = [f"☀️ <b>{SPHERE_WORK.get(only, 'Работа')} {e(where)}: {local.day} {MONTHS[local.month - 1]}</b>", ""]
     for v in items:
         param = launch.start_param(source=DIGEST_SOURCE, city=city, vacancy_id=v.id)
-        url = launch.app_link(param) if param else f"{base_url}/v/{v.id}/"
+        # Ссылка в приложение не поместилась в 64 знака: карточка сайта, с метками utm для Метрики
+        url = launch.app_link(param) if param else launch.utm(f"{base_url}/v/{v.id}/", "channel", "digest", city)
         facts = [e(v.employer)] if v.employer else []
         if pay := salary_label(v):
             facts.append(e(pay))
-        lines.append(f'• <a href="{url}">{e(v.title)}</a>' + (f" · {' · '.join(facts)}" if facts else ""))
+        lines.append(f'• <a href="{e(url)}">{e(v.title)}</a>' + (f" · {' · '.join(facts)}" if facts else ""))
     lines += ["", "Нажмите на должность: вакансия откроется в приложении, откликнуться можно сразу.",
               "Перешлите другу, который ищет работу 🙌", "", f"#вакансии {HASHTAGS.get(only, '')}".strip()]
     return "\n".join(lines)
@@ -280,7 +281,7 @@ def format_caption(v: Vacancy, urgent: bool = False) -> str:
 
 def make_post(v: Vacancy, base_url: str, venue: dict | None = None, avatar: bytes | None = None,
               urgent: bool = False) -> Post:
-    buttons = [("👆 Подробнее", f"{base_url}/v/{v.id}/")]
+    buttons = [("👆 Подробнее", launch.utm(f"{base_url}/v/{v.id}/", "channel", "post", v.city))]
     if v.source == direct.SOURCE:
         buttons.append(("✉️ Откликнуться", v.source_url))
     else:
@@ -397,15 +398,20 @@ def shifts_digest(vacancies: list[Vacancy], city: str, base_url: str, now: datet
         return None
     where = city_heading(city, "ru").removeprefix("Работа ")
     lines = [f"⚡ <b>Подработка и смены {e(where)}: на завтра</b>", ""]
+
+    def page(path: str) -> str:
+        """Адрес страницы сайта для ссылки в подборке, с метками utm."""
+        return e(launch.utm(f"{base_url}/{path}/", "channel", "shifts", city))
+
     for v in items[:SHIFTS_MAX]:
         facts = [e(v.employer)] if v.employer else []
         if pay := salary_label(v):
             facts.append(e(pay))
-        line = f'• <a href="{base_url}/v/{v.id}/">{e(v.title)}</a>' + (f" · {' · '.join(facts)}" if facts else "")
+        line = f'• <a href="{page(f"v/{v.id}")}">{e(v.title)}</a>' + (f" · {' · '.join(facts)}" if facts else "")
         if v.shift_date:
             line += f"\n   📅 {shifts.day_label(v.shift_date)}, {e(v.shift_time or '')}"
         lines.append(line)
-    lines += ["", f'Все смены и подработка: <a href="{base_url}/{city}/{shifts.SLUG}/">vacante.kz/{city}/{shifts.SLUG}</a>',
+    lines += ["", f'Все смены и подработка: <a href="{page(f"{city}/{shifts.SLUG}")}">vacante.kz/{city}/{shifts.SLUG}</a>',
               f'Нужны люди на смену? <a href="https://t.me/{direct.BOT_USERNAME}?start=smena_tg">Разместите за минуту</a>',
               "Перешлите другу, который ищет подработку 🙌", "", "#подработка #смены"]
     return "\n".join(lines)

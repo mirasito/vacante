@@ -164,7 +164,10 @@
     }
   }
   function save() {
-    const p = new URLSearchParams();
+    // В адресе меняем только свои параметры. Чужие (utm_source из ChatGPT и своих ссылок в Telegram, yclid, gclid)
+    // и якорь остаются: этот код работает раньше Метрики, и без них визит записывался без источника
+    const p = new URLSearchParams(location.search);
+    for (const own of ['q', 'sort', 'fresh', 'cat', 'pay', 'perks']) p.delete(own);
     if (q.value.trim()) p.set('q', q.value.trim());
     if (sort && sort.value !== 'new') p.set('sort', sort.value);
     if (fresh && fresh.value) p.set('fresh', fresh.value);
@@ -173,7 +176,7 @@
     const need = state().need;
     if (need.length) p.set('perks', need.join(','));
     const qs = p.toString();
-    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+    history.replaceState(null, '', (qs ? `?${qs}` : location.pathname) + location.hash);
   }
   function render() {
     const s = state();

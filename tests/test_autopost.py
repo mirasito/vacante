@@ -8,6 +8,8 @@ from vacante.parse import parse_post
 from vacante.store import save_vacancies
 
 NOON = datetime(2026, 10, 27, 7, tzinfo=timezone.utc)  # 12:00 в Казахстане
+# Метки utm кнопки «Подробнее» под постом в канале, в конце идёт город
+UTM_POST = "?utm_source=telegram&utm_medium=channel&utm_campaign=post&utm_content="
 
 
 def make(post_id: int, text: str, city: str = "almaty", hour: int = 5):
@@ -84,9 +86,10 @@ def test_post_is_picture_with_map_button():
     v = make(10, "Кафе «Зерно» ищет бариста, 12 000 тг за смену\n📍 Адрес: г. Алматы, ул. Жибек Жолы, 65А (Арбат)")
     post = autopost.make_post(v, "https://vacante.kz")
     assert post.photo.startswith(b"\x89PNG")
-    # Первая кнопка открывает эту вакансию в мини-приложении, с меткой «свои каналы» для воронки
+    # Первая кнопка открывает эту вакансию в мини-приложении, с меткой «свои каналы» для воронки.
+    # «Подробнее» ведёт на сайт с метками utm: по ним Метрика видит, что человек пришёл из поста в канале
     assert post.buttons == [("✉️ Откликнуться", "https://t.me/vacantekz_bot?startapp=stg_a_almaty_chan-10"),
-                            ("👆 Подробнее", "https://vacante.kz/v/chan-10/"),
+                            ("👆 Подробнее", "https://vacante.kz/v/chan-10/" + UTM_POST + "almaty"),
                             ("📍 Открыть в 2ГИС", "https://2gis.kz/almaty/search/"
                              "%D1%83%D0%BB.%20%D0%96%D0%B8%D0%B1%D0%B5%D0%BA%20%D0%96%D0%BE%D0%BB%D1%8B%2C%2065%D0%90")]
     no_address = autopost.make_post(make(11, "Кафе «Зерно» ищет бариста"), "https://vacante.kz")
@@ -99,7 +102,7 @@ def test_post_has_one_apply_button_even_when_original_post_has_contacts():
     v = replace(make(14, "Кафе «Зерно» ищет бариста"), contact=["whatsapp", "phone"])
     assert autopost.make_post(v, "https://vacante.kz").buttons == [
         ("✉️ Откликнуться", "https://t.me/vacantekz_bot?startapp=stg_a_almaty_chan-14"),
-        ("👆 Подробнее", "https://vacante.kz/v/chan-14/")]
+        ("👆 Подробнее", "https://vacante.kz/v/chan-14/" + UTM_POST + "almaty")]
 
 
 def test_post_without_apply_button_when_link_is_too_long():
@@ -108,14 +111,23 @@ def test_post_without_apply_button_when_link_is_too_long():
     assert [text for text, _ in autopost.make_post(v, "https://vacante.kz").buttons] == ["👆 Подробнее"]
 
 
+def test_more_button_with_utm_stays_short():
+    # С метками ссылка под кнопкой длиннее прежней. Предел её длины в описании Bot API не назван, поэтому
+    # держим её короткой: даже с самым длинным id вакансии и названием города меньше 200 знаков
+    v = replace(make(15, "Кафе «Зерно» ищет бариста", city="ust-kamenogorsk"), id="a" * 64)
+    url = dict(autopost.make_post(v, "https://vacante.kz").buttons)["👆 Подробнее"]
+    assert url == "https://vacante.kz/v/" + "a" * 64 + "/" + UTM_POST + "ust-kamenogorsk"
+    assert len(url) < 200
+
+
 def test_run_posts_once_per_channel_and_remembers(tmp_path):
     save_vacancies(tmp_path, [make(6, "Кафе «Зерно» ищет бариста, 12 000 тг за смену"),
                               make(7, "Ресторан «Луна» ищет повара, 400 000 тг", city="astana")])
     sent = []
     stats = autopost.run(tmp_path, "https://vacante.kz/", lambda chat, post: sent.append((chat, dict(post.buttons)["👆 Подробнее"])), now=NOON)
     assert stats == {"posted": 2, "failed": 0}
-    assert sorted(sent) == [("@vacantealmaty", "https://vacante.kz/v/chan-6/"),
-                            ("@vacanteastana", "https://vacante.kz/v/chan-7/")]
+    assert sorted(sent) == [("@vacantealmaty", "https://vacante.kz/v/chan-6/" + UTM_POST + "almaty"),
+                            ("@vacanteastana", "https://vacante.kz/v/chan-7/" + UTM_POST + "astana")]
     # Через час идёт тот же слот; в следующем публиковать нечего: всё уже вышло
     assert autopost.run(tmp_path, "https://vacante.kz", lambda *a: sent.append(a),
                         now=datetime(2026, 10, 27, 8, tzinfo=timezone.utc))["posted"] == 0
@@ -142,7 +154,8 @@ def test_same_employer_is_not_posted_again_for_three_days(tmp_path):
     for hours in (0, 2, 4):  # слоты 12:00, 14:00 и 16:00
         autopost.run(tmp_path, "https://vacante.kz", lambda chat, post: sent.append(dict(post.buttons)["👆 Подробнее"]),
                      now=NOON + timedelta(hours=hours))
-    assert sent == ["https://vacante.kz/v/chan-21/", "https://vacante.kz/v/chan-22/"]
+    assert sent == ["https://vacante.kz/v/chan-21/" + UTM_POST + "almaty",
+                    "https://vacante.kz/v/chan-22/" + UTM_POST + "almaty"]
     state = autopost.load_posted(tmp_path)["almaty"]
     assert state["employers"] == {"almaty:dino fest": NOON.isoformat(),
                                   "almaty:луна": (NOON + timedelta(hours=2)).isoformat()}
@@ -211,6 +224,14 @@ def test_morning_digest_once_a_day_and_its_vacancies_are_not_posted_again(tmp_pa
     # Все шесть вышли в подборке: в слот 9:00 публиковать нечего
     assert run(local(9))["posted"] == 0 and cards == []
     assert len(autopost.load_posted(tmp_path)["almaty"]["ids"]) == 6
+
+
+def test_digest_links_to_site_card_with_utm_when_app_link_is_too_long():
+    # Ссылка запуска приложения не длиннее 64 знаков: вакансия с длинным id ведёт из подборки на карточку сайта
+    v = replace(make(230, "Кафе «Зерно» ищет бариста, 250 000 тг"), id="a" * 60)
+    text = autopost.digest_text([v], "almaty", "https://vacante.kz", NOON)
+    assert ('• <a href="https://vacante.kz/v/' + "a" * 60 + '/?utm_source=telegram&amp;utm_medium=channel'
+            '&amp;utm_campaign=digest&amp;utm_content=almaty">Бариста</a> · Зерно') in text
 
 
 def test_no_digest_when_vacancies_are_few(tmp_path):

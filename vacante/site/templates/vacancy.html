@@ -26,26 +26,29 @@
     {% if place and place.website %}<dt>{{ t("Сайт") }}</dt><dd><a href="{{ place.website }}" rel="nofollow noopener" target="_blank">{{ site_name(place.website) }}</a></dd>{% endif %}
     {% if v.address %}<dt>{{ t("Адрес") }}</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t("в 2ГИС") }}</a>{% endif %}</dd>{% endif %}
   </dl>
+  {# data-kind и data-id: по ним static/via.js считает нажатия на кнопки отклика, без имён. У прямых кнопок связи
+     их нет: переход /go/ считает сам сервер. source_kind — вид ссылок на исходное объявление: hh.kz, OLX или пост #}
+  {% set source_kind = v.source if v.source in ("hh", "olx") else "orig" %}
   {% if v.shift_date %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("⚡ Беру смену") }}</a>
+  <a class="apply" href="{{ v.source_url }}" data-kind="take" data-id="{{ v.id }}" rel="nofollow noopener" target="_blank">{{ t("⚡ Беру смену") }}</a>
   <p class="direct">{{ t("Смену разместил сам работодатель. Нажмите кнопку: бот попросит номер, работодатель подтвердит, а перед сменой бот напомнит.") }}</p>
   {% elif v.source == "bot" %}
-  <a class="apply" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в Telegram") }}</a>
+  <a class="apply" href="{{ v.source_url }}" data-kind="bot" data-id="{{ v.id }}" rel="nofollow noopener" target="_blank">{{ t("Откликнуться в Telegram") }}</a>
   <p class="direct">{{ t("Вакансию разместил сам работодатель на vacante.kz. Отклик придёт ему через наш Telegram-бот.") }}</p>
   {% else %}
   {# Главные кнопки сразу ведут к работодателю: WhatsApp с готовым текстом, звонок или Telegram (через сервер,
      где хранятся номера). Если контактов в посте нет — отклик в приложении. Оригинал остаётся второй ссылкой #}
   {% set replies = app_replies(v) %}
-  {% for label, url in replies %}
-  <a class="apply" href="{{ url }}" rel="nofollow">{{ t(label) }}</a>
+  {% for label, url, kind in replies %}
+  <a class="apply" href="{{ url }}"{% if kind %} data-kind="{{ kind }}" data-id="{{ v.id }}"{% endif %} rel="nofollow">{{ t(label) }}</a>
   {% endfor %}
   {# Прямые кнопки идут мимо приложения: рядом путь, где за минуту делается профиль и отклик уходит со ссылкой на него #}
   {% set with_profile = profile_link(v) %}
   {% if with_profile %}
-  <a class="apply second" href="{{ with_profile }}" rel="nofollow">{{ t("👤 Откликнуться с профилем") }}</a>
+  <a class="apply second" href="{{ with_profile }}" data-kind="pf" data-id="{{ v.id }}" rel="nofollow">{{ t("👤 Откликнуться с профилем") }}</a>
   <p class="direct">{{ t("С профилем отвечают охотнее: имя и профессия за минуту в Telegram, а работодатель получит ссылку на вас.") }}</p>
   {% endif %}
-  <a class="apply{% if replies %} second{% endif %}" href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{% if v.source == "olx" %}{{ t("Откликнуться на OLX") }}{% elif v.source == "hh" %}{{ t("Откликнуться на hh.kz") }}{% else %}{{ t("Откликнуться в оригинальном объявлении") }}{% endif %}</a>
+  <a class="apply{% if replies %} second{% endif %}" href="{{ v.source_url }}" data-kind="{{ source_kind }}" data-id="{{ v.id }}" rel="nofollow noopener" target="_blank">{% if v.source == "olx" %}{{ t("Откликнуться на OLX") }}{% elif v.source == "hh" %}{{ t("Откликнуться на hh.kz") }}{% else %}{{ t("Откликнуться в оригинальном объявлении") }}{% endif %}</a>
   {% endif %}
   <h2>{{ t("Описание") }}</h2>
   {% if lang != "ru" %}<p class="note">{{ t("Текст объявления на языке оригинала.") }}</p>{% endif %}
@@ -56,7 +59,7 @@
   </p>
   {% endif %}
   {% if v.source != "bot" %}
-  <p class="source">{{ t("Источник:") }} <a href="{{ v.source_url }}" rel="nofollow noopener" target="_blank">{{ v.source_url }}</a></p>
+  <p class="source">{{ t("Источник:") }} <a href="{{ v.source_url }}" data-kind="{{ source_kind }}" data-id="{{ v.id }}" rel="nofollow noopener" target="_blank">{{ v.source_url }}</a></p>
   {% endif %}
 </article>
 {% if similar %}

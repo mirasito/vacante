@@ -10,13 +10,16 @@ Telegram передаёт приложению одно значение до 64
 
 Метка источника — до 8 строчных букв и цифр («tg» — свои каналы). В городе нет «_», поэтому «_» после
 него однозначен, а id вакансии идёт до конца строки и может содержать и «_», и «-».
+
+Ссылки из Telegram на страницы сайта (кнопка «Подробнее» под постом, подборки бота) несут метки utm,
+их ставит utm() в конце модуля.
 """
 
 from __future__ import annotations
 
 import os
 import re
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit, urlunsplit
 
 from vacante import direct
 from vacante.models import Vacancy
@@ -102,3 +105,22 @@ def profile_link(v: Vacancy, source: str) -> str | None:
         return None
     param = start_param(source=source + "pf", city=v.city, vacancy_id=v.id, apply=True)
     return app_link(param) if param else None
+
+
+def utm(url: str, medium: str, campaign: str, city: str | None = None) -> str:
+    """Ссылка на страницу сайта, которая уходит в Telegram, с метками utm: без них Метрика считает такой
+    переход прямым заходом и не видит, что человек пришёл из своего канала или из бота.
+
+    medium — «channel» (пост в своём канале) или «bot» (сообщение бота @vacantekz_bot). campaign — что это
+    за сообщение: post (кнопка под постом вакансии), digest (утренняя подборка канала), shifts (подборка смен
+    в канале), sub (часовая подборка подписчику), morning (утренние смены подписчику), examples (примеры сразу
+    после подписки), у объявления в каналах — его имя (vacante.announce). city — город, если он известен.
+    Только для ссылок, которые уходят в Telegram: на самом сайте, в sitemap и в лентах приложения адреса
+    остаются без меток. У ссылок запуска мини-приложения (startapp) своя метка источника, им utm не нужен.
+    """
+    params = {"utm_source": "telegram", "utm_medium": medium, "utm_campaign": campaign}
+    if city:
+        params["utm_content"] = city
+    parts = urlsplit(url)
+    # У адреса могут быть свои параметры и якорь: метки идут после параметров и перед якорем
+    return urlunsplit(parts._replace(query="&".join(q for q in (parts.query, urlencode(params)) if q)))

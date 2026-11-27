@@ -21,11 +21,15 @@ on:
   workflow_dispatch:
     inputs:
       days:
-        description: "За сколько последних дней"
+        description: "За сколько последних дней (0 — без сводки)"
         default: "28"
       inspect:
         description: "Проверить индекс на стольких страницах (0 — не проверять, не больше 600)"
         default: "120"
+      probe:
+        description: "Проверить Indexing API на одной вакансии: сообщить Google и спросить, записал ли он"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -41,6 +45,7 @@ jobs:
           cache: pip
       - run: pip install .
       - name: Цифры
+        if: inputs.days != '0'
         env:
           GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
         run: |
@@ -57,3 +62,13 @@ jobs:
           [[ $PAGES =~ ^[0-9]+$ ]] || { echo "::error::В поле inspect должно быть число"; exit 1; }
           python -m vacante.searchping inspect "$PAGES" | tee index.txt
           { echo '```'; cat index.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      # Часовое обновление видит только «200» на отправку. Здесь одна вакансия проходит весь путь: что Google
+      # знал о ней до сообщения, что ответил на сообщение и записал ли его. Тратит одно сообщение из 200 в сутки
+      - name: Indexing API на одной вакансии
+        if: inputs.probe
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+        run: |
+          set -o pipefail
+          python -m vacante.searchping probe | tee probe.txt
+          { echo '```'; cat probe.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

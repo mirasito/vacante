@@ -82,3 +82,34 @@ def test_notifications_are_counted_by_the_day_the_vacancy_was_published():
                ("2026-11-26", 200, None), ("2026-11-24", 0, "ConnectTimeout")]
     # Сообщение дошло — только ответ 200 со временем сообщения об обновлении
     assert searchping.notify_days(answers) == [("2026-11-24", 1, 0), ("2026-11-25", 2, 1), ("2026-11-26", 2, 0)]
+
+
+def test_probe_tells_google_about_the_newest_own_vacancy_and_asks_whether_it_was_recorded(monkeypatch, capsys):
+    sitemap = ("<url><loc>https://vacante.kz/almaty/</loc><lastmod>2026-11-27</lastmod></url>"
+               "<url><loc>https://vacante.kz/v/hh-1/</loc><lastmod>2026-11-27</lastmod></url>"
+               "<url><loc>https://vacante.kz/v/kanal-9/</loc><lastmod>2026-11-27</lastmod></url>"
+               "<url><loc>https://vacante.kz/v/kanal-8/</loc><lastmod>2026-11-26</lastmod></url>")
+    told = []
+
+    def answer(request: httpx.Request) -> httpx.Response:
+        if request.url.host == "indexing.googleapis.com" and request.method == "POST":
+            import json
+            told.append(json.loads(request.content))
+            return httpx.Response(200, json={"urlNotificationMetadata": {"url": told[-1]["url"]}})
+        if request.url.host == "indexing.googleapis.com":
+            # Google принял сообщение, но на вопрос о нём отвечает «не сообщали»: это и должно быть видно
+            return httpx.Response(404, json={"error": {"code": 404, "message": "Requested entity was not found."}})
+        return httpx.Response(200, text=sitemap if request.url.path == "/sitemap.xml" else "<p>вакансия</p>")
+
+    real_client, transport = httpx.Client, httpx.MockTransport(answer)
+    monkeypatch.setattr(searchping.httpx, "Client", lambda **kw: real_client(transport=transport))
+    monkeypatch.setattr(searchping, "service_account", lambda: {"client_email": "a@b"})
+    monkeypatch.setattr(searchping, "google_token", lambda client, account: "t")
+    monkeypatch.setattr(searchping, "PROBE_WAITS", (0, 0))
+    searchping.main(["probe"])
+    out = capsys.readouterr().out
+    # Сообщаем об одной странице: самой новой своей вакансии, не о копии hh и не о списке
+    assert told == [{"url": "https://vacante.kz/v/kanal-9/", "type": "URL_UPDATED"}]
+    assert "разметка JobPosting на ней нет" in out
+    assert "сообщение отправлено: ответ 200" in out
+    assert out.count("Google отвечает о ней: 404") == 2

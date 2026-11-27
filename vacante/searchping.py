@@ -4,6 +4,7 @@
   python -m vacante.searchping send URLS_FILE                     — отправить их в IndexNow и Google Indexing API
   python -m vacante.searchping report [дней]                      — сводка Search Console и отправка карты сайта
   python -m vacante.searchping inspect [страниц]                  — выборочная проверка: что из карты сайта в индексе Google
+  python -m vacante.searchping probe                              — записывает ли Google наши сообщения: одна вакансия от начала до конца
 
 IndexNow (Bing, а через него поиск ChatGPT, Яндекс, Seznam и др.) работает без регистрации: ключ публичный,
 лежит файлом в корне сайта (INDEXNOW_KEY в vacante/site/build.py). Google Indexing API официально принимает
@@ -102,8 +103,7 @@ def google_index(client: httpx.Client, urls: list[str]) -> str:
     auth = {"Authorization": f"Bearer {google_token(client, account)}"}
     codes = []
     for url in picked:
-        r = client.post("https://indexing.googleapis.com/v3/urlNotifications:publish", headers=auth,
-                        json={"url": url, "type": "URL_UPDATED"})
+        r = client.post(PUBLISH, headers=auth, json={"url": url, "type": "URL_UPDATED"})
         codes.append(r.status_code)
         if r.status_code == 403:  # аккаунт не добавлен владельцем в Search Console
             return f"Google Indexing API: 403, добавьте {account['client_email']} владельцем в Search Console"
@@ -384,6 +384,37 @@ def notify_days(answers: list[tuple[str, int, str | None]]) -> list[tuple[str, i
     return [(day, n, told) for day, (n, told) in sorted(days.items())]
 
 
+PUBLISH = "https://indexing.googleapis.com/v3/urlNotifications:publish"
+
+
+def probe() -> None:
+    """Indexing API от начала до конца на одной своей вакансии: спросить Google о ней, сообщить, спросить снова.
+    Показывает, записывает ли Google наши сообщения: часовое обновление видит только код ответа на отправку.
+    Тратит одно сообщение из суточной квоты (200), странице не вредит: о ней и так положено сообщать."""
+    account = service_account()
+    if not account:
+        sys.exit("Нет секрета GSC_SERVICE_ACCOUNT: шаги в шапке .github/workflows/seo.yml")
+    with httpx.Client(timeout=60) as client:
+        own = [url for url, _ in sitemap_pages(client.get(f"{SITE}/sitemap.xml", follow_redirects=True).text)
+               if page_group(url) == OWN_VACANCY]
+        if not own:
+            sys.exit(f"В {SITE}/sitemap.xml нет своих вакансий")
+        url = own[0]  # самая новая
+        auth = {"Authorization": f"Bearer {google_token(client, account)}"}
+        print(f"Страница {url}, разметка JobPosting на ней {'есть' if _has_job_markup(client, url) else 'нет'}")
+        print(f"до сообщения Google отвечает о ней: {_notified(client, auth, url)}")
+        r = client.post(PUBLISH, headers=auth, json={"url": url, "type": "URL_UPDATED"})
+        print(f"сообщение отправлено: ответ {r.status_code} {' '.join(r.text.split())[:500]}")
+        for wait in PROBE_WAITS:
+            code, text = _notified(client, auth, url, pause=wait)
+            print(f"через {wait} с Google отвечает о ней: {code or 'нет ответа'} {text or '—'}")
+            if code == 200:
+                break
+
+
+PROBE_WAITS = (2, 15, 45)  # через сколько секунд после сообщения спрашиваем, записал ли его Google
+
+
 def _has_job_markup(client: httpx.Client, url: str) -> bool:
     """Есть ли на живой странице разметка JobPosting: Indexing API официально принимает только такие."""
     try:
@@ -548,6 +579,8 @@ def main(argv: list[str]) -> None:
         report(int(argv[1]) if len(argv) > 1 else 28)
     elif argv[:1] == ["inspect"]:
         inspect(int(argv[1]) if len(argv) > 1 else 120)
+    elif argv[:1] == ["probe"]:
+        probe()
     else:
         sys.exit(__doc__)
 

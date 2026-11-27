@@ -185,6 +185,20 @@ def report(days: int) -> None:
             cells = " ".join(f"{d['kinds'][kind]:7.0f}" for _, kind in DAILY_COLUMNS)
             print(f"{day} {cells}   kk {d['kk']:5.0f}   страниц {d['pages']:5}")
 
+        # Блок вакансий Google (Google Jobs) отдельно от обычной выдачи: показы каждого вида результата по дням
+        kinds = _search_rows(client, base, auth, {"startDate": start.isoformat(), "endDate": end.isoformat(),
+                                                  "dimensions": ["searchAppearance"]})
+        for kind in [row["keys"][0] for row in kinds] if isinstance(kinds, list) else []:
+            rows = _search_rows(client, base, auth, {
+                "startDate": start.isoformat(), "endDate": end.isoformat(), "dimensions": ["date"],
+                "dimensionFilterGroups": [{"filters": [{"dimension": "searchAppearance", "operator": "equals", "expression": kind}]}]})
+            print(f"\n== {kind} по дням: показы (клики)")
+            if isinstance(rows, str):
+                print(rows)
+                continue
+            print("  ".join(f"{row['keys'][0][5:]} {row['impressions']:.0f} ({row['clicks']:.0f})"
+                            for row in sorted(rows, key=lambda x: x["keys"][0])))
+
         # Какие запросы ушли или пришли: первая половина периода против второй, по показам
         middle = start + timedelta(days=(end - start).days // 2)
         for title, since, until in [("первая половина", start, middle), ("вторая половина", middle + timedelta(days=1), end)]:

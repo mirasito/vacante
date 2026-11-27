@@ -19,8 +19,10 @@ import os
 import random
 import re
 import sys
+import threading
 import time
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote, urlparse
@@ -175,6 +177,8 @@ def report(days: int) -> None:
 
 # Суточная квота URL Inspection API — 2000 адресов на ресурс, в минуту 600
 INSPECT_MAX = 600
+# Сколько запросов проверки идёт одновременно: квота 600 в минуту, один ответ занимает несколько секунд
+INSPECT_WORKERS = 4
 # Страница моложе стольких дней: Google мог до неё ещё не дойти, считаем отдельно
 FRESH_DAYS = 3
 
@@ -228,6 +232,19 @@ def _days_ago(stamp: str | None, now: datetime) -> float | None:
     return (now - datetime.fromisoformat(stamp.replace("Z", "+00:00"))).total_seconds() / 86400
 
 
+def _inspect_one(client: httpx.Client, auth: dict, prop: str, url: str) -> tuple[int, dict | str]:
+    """Один запрос URL Inspection API: (200, результат проверки) или (код ответа, начало текста ошибки).
+    Сбой сети — код 0: одна неответившая страница не должна ронять весь отчёт."""
+    try:
+        r = client.post("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", headers=auth,
+                        json={"inspectionUrl": url, "siteUrl": prop, "languageCode": "ru"})
+    except httpx.HTTPError as exc:
+        return 0, type(exc).__name__
+    if r.status_code != 200:
+        return r.status_code, r.text[:160]
+    return 200, r.json().get("inspectionResult", {})
+
+
 def inspect(total: int) -> None:
     """Что из карты сайта Google держит в индексе: URL Inspection API по выборке страниц каждого вида.
     Сводного числа «Проиндексировано» в API нет, оно только в интерфейсе Search Console."""
@@ -246,21 +263,30 @@ def inspect(total: int) -> None:
         prop = _property(client, auth)
         print(f"Ресурс {prop}. В карте сайта {len(pages)} адресов, проверяю {len(sample)}")
         rows = []  # (вид, свежая, адрес, ответ indexStatusResult, найденные виды разметки)
-        for group, url, fresh in sample:
-            r = client.post("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", headers=auth,
-                            json={"inspectionUrl": url, "siteUrl": prop, "languageCode": "ru"})
-            if r.status_code == 429:
-                print("Квота на сегодня кончилась, считаю по тому, что успел")
-                break
-            if r.status_code != 200:
-                print(f"  {url.replace(SITE, '')}: ошибка {r.status_code} {r.text[:160]}")
-                if r.status_code in (401, 403):
-                    break
-                continue
-            result = r.json().get("inspectionResult", {})
-            rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
-            rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
-            time.sleep(0.15)
+        stop = threading.Event()  # квота кончилась или доступ закрыт: оставшиеся адреса не спрашиваем
+
+        def ask(item: tuple[str, str, bool]) -> tuple[int, dict | str] | None:
+            return None if stop.is_set() else _inspect_one(client, auth, prop, item[1])
+
+        # Один ответ Google идёт несколько секунд, поэтому спрашиваем в несколько потоков
+        with ThreadPoolExecutor(INSPECT_WORKERS) as pool:
+            for n, ((group, url, fresh), answer) in enumerate(zip(sample, pool.map(ask, sample)), 1):
+                if n % 50 == 0:
+                    print(f"  проверено {n} из {len(sample)}", flush=True)
+                if answer is None:
+                    continue
+                code, result = answer
+                if code == 429:
+                    if not stop.is_set():
+                        print("Квота на сегодня кончилась, считаю по тому, что успел")
+                    stop.set()
+                elif code != 200:
+                    print(f"  {url.replace(SITE, '')}: ошибка {code or ''} {result}".rstrip())
+                    if code in (401, 403):
+                        stop.set()
+                else:
+                    rich = [i.get("richResultType", "") for i in result.get("richResultsResult", {}).get("detectedItems", [])]
+                    rows.append((group, fresh, url, result.get("indexStatusResult", {}), rich))
 
     def indexed(status: dict) -> bool:
         return status.get("verdict") == "PASS"

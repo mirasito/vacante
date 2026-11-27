@@ -346,6 +346,27 @@ def test_index_check_samples_every_kind_of_page_and_gives_spare_quota_to_vacanci
     assert sample == searchping.inspect_sample(pages, 10, date(2026, 11, 27), "день")
 
 
+def test_index_check_survives_a_page_google_did_not_answer_for():
+    import httpx
+
+    from vacante import searchping
+
+    def answer(request: httpx.Request) -> httpx.Response:
+        url = json.loads(request.content)["inspectionUrl"]
+        if url.endswith("/slow/"):
+            raise httpx.ReadTimeout("нет ответа", request=request)
+        if url.endswith("/quota/"):
+            return httpx.Response(429, text="Quota exceeded")
+        return httpx.Response(200, json={"inspectionResult": {"indexStatusResult": {"verdict": "PASS"}}})
+
+    with httpx.Client(transport=httpx.MockTransport(answer)) as client:
+        ask = lambda path: searchping._inspect_one(client, {}, "https://vacante.kz/", f"https://vacante.kz{path}")  # noqa: E731
+        assert ask("/v/a-1/") == (200, {"indexStatusResult": {"verdict": "PASS"}})
+        # Сбой сети и отказ по квоте возвращаются кодом, а не исключением: отчёт считается по остальным страницам
+        assert ask("/slow/") == (0, "ReadTimeout")
+        assert ask("/quota/") == (429, "Quota exceeded")
+
+
 def test_footer_has_google_preferred_source_button(tmp_path):
     raw = RawPost("telegram", "chan", 11, "https://t.me/chan/11", "Требуется повар, 300 000 тг",
                   datetime(2026, 10, 27, tzinfo=timezone.utc), "astana")

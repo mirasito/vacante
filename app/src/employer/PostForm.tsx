@@ -319,14 +319,18 @@ export function PostForm(props: {
       >
         <Icon name="back" color={c.ink} />
       </Pressable>
-      <Text style={[s.h1, { color: c.ink }]}>{t.title}</Text>
+      <Text style={[s.h1, { color: c.ink }]} role="heading" aria-level={1}>
+        {t.title}
+      </Text>
     </View>
   );
 
   const stepper = (
-    <View style={s.steps} accessibilityRole="progressbar">
+    // Шаги списком, текущий отмечен aria-current. Раньше это был progressbar без имени и без значения:
+    // PageSpeed снимал за него оценку доступности и «Agentic Browsing» у формы
+    <View style={s.steps} role="list" aria-label={t.title}>
       {t.steps.map((name, i) => (
-        <View key={name} style={s.stepItem}>
+        <View key={name} style={s.stepItem} role="listitem" {...({ 'aria-current': i === stepIndex ? 'step' : undefined } as object)}>
           <View style={[s.dot, { backgroundColor: i <= stepIndex ? c.accent : c.pill }]}>
             <Text style={[s.dotText, { color: i <= stepIndex ? c.onAccent : c.quiet }]}>{i < stepIndex ? '✓' : i + 1}</Text>
           </View>
@@ -524,7 +528,7 @@ export function PostForm(props: {
     <SafeAreaView style={[s.page, { backgroundColor: c.bg }]} edges={['top', 'bottom']}>
       <View style={ui.column}>
         {header}
-        <ScrollView ref={scroll} contentContainerStyle={s.body} keyboardShouldPersistTaps="handled">
+        <ScrollView ref={scroll} contentContainerStyle={s.body} keyboardShouldPersistTaps="handled" role="main">
           {stepper}
           {body}
         </ScrollView>

@@ -3140,6 +3140,15 @@
   "v": 3,
   "checked_at": "2026-11-06T22:44:17+00:00"
  },
+ "aktau:қымызхана 1": {
+  "name": "Қымызхана №1",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00",
+  "instagram": "qymyzhana_n1",
+  "source": "https://2gis.kz/aktau/firm/70000001090002603"
+ },
  "aktau:үйретесіз бе": {
   "name": "үйретесіз бе?",
   "city": "aktau",
@@ -8703,7 +8712,7 @@
   "instagram": "avtovozy_axios",
   "website": "http://axioslogistic.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001080550080",
-  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -10795,6 +10804,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-04T04:44:51+00:00"
+ },
+ "almaty:dadizhizhu": {
+  "name": "DaDiZhiZhu",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
  },
  "almaty:dado": {
   "name": "Dado",
@@ -15339,6 +15355,13 @@
   ],
   "avatar": "995a878c79afc2af.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:izi hotel": {
+  "name": "Izi Hotel",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
  },
  "almaty:izobilie": {
   "name": "Izobilie",
@@ -25945,6 +25968,13 @@
   "v": 3,
   "checked_at": "2026-11-17T19:42:20+00:00"
  },
+ "almaty:аврора сервис": {
+  "name": "Аврора Сервис",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
+ },
  "almaty:аврора холдинг": {
   "name": "Аврора Холдинг",
   "city": "almaty",
@@ -33829,6 +33859,13 @@
    "website"
   ]
  },
+ "almaty:лучшие вакансии рф": {
+  "name": "Лучшие Вакансии РФ",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
+ },
  "almaty:лучшие дети на свете": {
   "name": "Лучшие дети на свете",
   "city": "almaty",
@@ -34638,6 +34675,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-05T02:43:49+00:00"
+ },
+ "almaty:микрофинансовая организация fast finance link": {
+  "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ FAST FINANCE LINK",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
  },
  "almaty:микрофинансовая организация orda finance": {
   "name": "МИКРОФИНАНСОВАЯ ОРГАНИЗАЦИЯ ORDA FINANCE",
@@ -45301,7 +45345,7 @@
   "instagram": "diaverum.kz",
   "website": "https://www.diaverum.com/",
   "source": "https://2gis.kz/astana/firm/70000001091213892",
-  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -47166,6 +47210,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T10:44:10+00:00"
+ },
+ "astana:hörmann kazakhstan": {
+  "name": "Hörmann Kazakhstan",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00",
+  "instagram": "hormann.kz",
+  "website": "https://kz.hoermann.com/",
+  "source": "https://2gis.kz/almaty/firm/70000001068831862",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "12a84ca4fed9d1af.jpg",
+  "avatar_source": "website"
  },
  "astana:i con": {
   "name": "I-Con",
@@ -54430,7 +54490,7 @@
   "instagram": "avangardstone",
   "website": "http://avangardstone.kz/",
   "source": "https://2gis.kz/astana/firm/70000001069618266",
-  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -58704,6 +58764,13 @@
   "instagram": "kausar.astana.shayhana",
   "source": "https://2gis.kz/astana/firm/70000001092518472"
  },
+ "astana:каусар шайхана халал заведение": {
+  "name": "Каусар шайхана Халал заведение",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
+ },
  "astana:кафе": {
   "name": "Кафе",
   "city": "astana",
@@ -59520,6 +59587,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-05T13:44:20+00:00"
+ },
+ "astana:курмаева nelly dental clinic": {
+  "name": "Курмаева Nelly dental clinic",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00",
+  "instagram": "nelly_dental",
+  "website": "http://www.nellydental.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001062508343",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:курылыс тан сервис": {
   "name": "Курылыс тан сервис",
@@ -63104,6 +63185,20 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-10T05:43:22+00:00"
+ },
+ "astana:степногорский трубный завод арыстан": {
+  "name": "Степногорский трубный завод Арыстан",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00",
+  "instagram": "polyplastic.kz",
+  "website": "https://www.polyplastic.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001033559684",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "astana:сто по ремонту радиаторов и автопечек": {
   "name": "СТО по ремонту радиаторов и автопечек",
@@ -85933,6 +86028,13 @@
   "v": 3,
   "checked_at": "2026-11-19T05:44:05+00:00"
  },
+ "shymkent:come on gym": {
+  "name": "Come On Gym",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
+ },
  "shymkent:consumer trade company": {
   "name": "Consumer Trade Company",
   "city": "shymkent",
@@ -86683,7 +86785,7 @@
   "instagram": "medcomfort.kz",
   "website": "http://www.medcomfort.kz/",
   "source": "https://2gis.kz/shymkent/firm/70000001056584033",
-  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -89227,6 +89329,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-10-29T19:43:27+00:00"
+ },
+ "shymkent:фаворит мс": {
+  "name": "Фаворит-МС",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T14:45:19+00:00"
  },
  "shymkent:фармация юниверсал": {
   "name": "Фармация Юниверсал",
@@ -96893,7 +97002,7 @@
   "instagram": "produktoff.kz",
   "website": "http://produktoff.kz/",
   "source": "https://2gis.kz/ust-kamenogorsk/firm/12807639721392351",
-  "avatar_checked_at": "2026-11-20T14:43:25+00:00",
+  "avatar_checked_at": "2026-11-27T14:45:20+00:00",
   "avatar_tried": [
    "website"
   ]

@@ -16,6 +16,7 @@ import type { Db } from "./db.ts";
 import type { Ctx } from "./app.ts";
 import { html, raw } from "./html.ts";
 import { HttpError, route, type Request, type Route } from "./http.ts";
+import { adminGuard } from "./auth.ts";
 import { internalKey } from "./telegram.ts";
 
 export const OLX_ORIGINS = ["https://www.olx.kz", "https://olx.kz", "https://m.olx.kz"];
@@ -192,6 +193,7 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
     return g.length === key.length && timingSafeEqual(g, key);
   };
   const bearer = (req: Request) => (req.header("authorization") ?? "").replace(/^Bearer /, "");
+  const olxGuard = adminGuard(ctx, "Импорт через браузер", () => ctx.config.olxImportKey);
   const page = `${ctx.config.apiOrigin}/olx/`;
 
   // Only writers of this repository can publish a verifier. The bearer token
@@ -238,7 +240,9 @@ export function olxImportRoutes(ctx: Ctx): Route[] {
 
     route("POST", "api", "/olx/import", async (req) => {
       if (!ctx.config.olxImportKey) throw new HttpError(503, "Импорт через браузер не настроен");
-      if (!same(bearer(req), Buffer.from(ctx.config.olxImportKey))) throw new HttpError(403, "Неверный пароль админки");
+      // Ключ выводится из пароля админки, поэтому и проверка та же: журнал входов и 429 после 10 неверных
+      // попыток за 15 минут с адреса. Раньше здесь пароль можно было подбирать без всякого счётчика
+      olxGuard(req);
       return storeAds(req, false);
     }),
     route("POST", "api", "/olx/worker/import", async (req) => {

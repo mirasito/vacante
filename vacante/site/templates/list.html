@@ -9,8 +9,8 @@
   {% if fresh %}<p class="pay-stats">{{ fresh }}</p>{% endif %}
   {% if shift_stats %}<p class="pay-stats">{{ t("Оплата за смену по {n} {vacancies}: в среднем {median} ₸, обычно от {low} до {high} ₸.", n=shift_stats[0], vacancies=shift_stats[0] | plural("вакансии", "вакансиям", "вакансиям"), median=money(shift_stats[1]), low=money(shift_stats[2]), high=money(shift_stats[3])) }}</p>{% endif %}
   {% if stats %}<p class="pay-stats">{{ t("Зарплата по {n} вакансиям с месячной оплатой: в среднем {median} ₸, обычно от {low} до {high} ₸ в месяц.", n=stats[0], median=money(stats[1]), low=money(stats[2]), high=money(stats[3])) }}</p>{% endif %}
-  <div class="search">
-    <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" autocomplete="off">
+  <div class="search" role="search">
+    <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" aria-label="{{ t("Поиск по должности") }}" autocomplete="off">
   </div>
   {% set tail = SHIFTS ~ "/" if shifts_page else "" %}
   <nav class="chips">
@@ -71,6 +71,8 @@
 <p id="pay-note" class="note" hidden>{{ t("Зарплату сравниваем в тенге в месяц: смену считаем как 22 смены в месяц, час как 176 часов.") }}</p>
 {% endif %}
 <p class="count">{{ t("Результаты:") }} <span id="count">{{ total }}</span></p>
+{# Скринридер слышит итог поиска и фильтров: «Результаты: N» или «Ничего не нашлось» (видимый счётчик меняется молча) #}
+<p id="status" class="sr-only" role="status"></p>
 <div id="list" class="list"{% if cards %} data-src="{{ cards }}" data-total="{{ total }}"{% if ids %} data-ids="{{ ids }}"{% endif %}{% endif %}>
 {% for v in vacancies[:PAGE_SIZE] %}
 {% include "_card.html" %}
@@ -211,13 +213,16 @@
     drawn = Math.min(shown, hits.length);
     $('count').textContent = n;
     $('none').hidden = n > 0;
+    // Объявляем, когда человек перестал печатать, иначе скринридер перебивает сам себя на каждой букве
+    clearTimeout(said);
+    said = setTimeout(() => { $('status').textContent = n ? $('count').parentElement.textContent.trim() : $('none').textContent; }, 700);
     if (more) more.hidden = n <= shown;
     if (pay) $('pay-note').hidden = !(+pay.value || s.byPay);
     save();
   }
   // Номер последнего ввода: пока грузится список, человек успевает набрать слово целиком,
   // и рисовать после загрузки нужно только последний ввод, а не каждую букву подряд
-  let turn = 0;
+  let turn = 0, said = 0;
   async function apply() {
     const mine = ++turn;
     shown = STEP;
@@ -243,10 +248,13 @@
     t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true');
     apply();
   });
-  if (more) more.addEventListener('click', async () => {
-    const mine = ++turn;
+  // С клавиатуры (Enter или пробел на кнопке) фокус переходит на первую новую карточку:
+  // карточки встают перед кнопкой, и без этого следующий Tab уводил со списка
+  const focusFrom = (from, keys) => { if (keys && list.children[from]) list.children[from].focus(); };
+  if (more) more.addEventListener('click', async (e) => {
+    const mine = ++turn, from = drawn, keys = e.detail === 0;
     shown += STEP;
-    if (full) return render(true);
+    if (full) return (render(true), focusFrom(from, keys));
     // Весь список ещё грузится (на главной это несколько мегабайт): сразу ставим заглушки на место
     // будущих карточек, иначе кнопка и подвал прыгают вниз через секунды после нажатия
     const n = Math.min(STEP, +list.dataset.total - list.querySelectorAll('.card').length);
@@ -255,6 +263,7 @@
     if (mine !== turn) return;  // пока грузилось, было новое нажатие или фильтр: нарисует оно
     if (!full) shown = STEP;  // не загрузилось: остаёмся на первых карточках, кнопку можно нажать снова
     render();
+    focusFrom(from, keys && full);
   });
   if (full || !blank(state())) apply();
 })();

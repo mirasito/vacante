@@ -1,7 +1,7 @@
 :root {
   /* Стиль логотипа «.вакантэ»: графит и голубая точка */
   --ink: #1B2023; --quiet: #5C666C; --line: #E3E6E8; --bg: #ffffff;
-  --hero: #1B2023; --accent: #1B2023; --on-accent: #ffffff; --brand: #0A8CA8; --pill: #E8F7FB; --radius: 16px;
+  --hero: #1B2023; --accent: #1B2023; --on-accent: #ffffff; --brand: #08758C; --pill: #E8F7FB; --radius: 16px;
 }
 @media (prefers-color-scheme: dark) {
   :root { --ink: #F2F5F6; --quiet: #A3ADB3; --line: #323B40; --bg: #1B2023; --hero: #22292D; --accent: #8AF0FF; --on-accent: #1B2023; --brand: #8AF0FF; --pill: #263A40; }
@@ -19,7 +19,8 @@ a { color: inherit; }
 /* «＋ Разместить вакансию»: заметная кнопка в шапке на каждой странице */
 .post-job { margin-left: auto; align-self: center; font-size: 15px; font-weight: 700; white-space: nowrap; text-decoration: none;
   background: var(--brand); color: #fff; border-radius: 999px; padding: 8px 16px; }
-.post-job:hover { filter: brightness(1.08); }
+/* Тёмнее, а не светлее: белый текст на бирюзовом должен держать контраст 4.5:1 (#08758C = 5.3:1) */
+.post-job:hover { filter: brightness(0.9); }
 .post-job .short { display: none; }
 @media (prefers-color-scheme: dark) { .post-job { color: #1B2023; } }
 /* Переключатель языка: Рус · Қаз */
@@ -76,7 +77,7 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .also, .source, .direct { color: var(--quiet); font-size: 14px; word-break: break-all; }
 .direct { word-break: normal; margin-top: -8px; }
 .pill.direct-pill { background: var(--accent); color: var(--on-accent); }
-.pill.top-pill { background: #e8590c; color: #fff; font-weight: 600; }
+.pill.top-pill { background: #C2410C; color: #fff; font-weight: 600; }  /* 5.2:1, у #e8590c было 3.6:1 */
 .card.top { background: rgba(232, 89, 12, 0.08); border-left: 3px solid #e8590c; padding-left: 12px; padding-right: 12px; }
 .empty { color: var(--quiet); padding: 24px 0; }
 .footer { color: var(--quiet); font-size: 13px; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 12px; padding-bottom: 32px; }
@@ -102,6 +103,10 @@ a.employer { display: block; border: 1px dashed var(--quiet); border-radius: 12p
 .show-more{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:12px;background:none;color:inherit;font:inherit;cursor:pointer;opacity:.85}
 .show-more[hidden]{display:none}
 .list[aria-busy="true"]{opacity:.6}
+/* Только для скринридера */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* Плейсхолдер поиска: в Safari по умолчанию светло-серый, около 2.4:1 */
+.search input::placeholder{color:var(--quiet);opacity:1}
 /* Заглушки на месте следующих карточек, пока грузится весь список (высота средней карточки) */
 .card.skeleton{height:150px;padding:0;background:linear-gradient(var(--line),var(--line)) 0 24px/60% 14px no-repeat,linear-gradient(var(--line),var(--line)) 0 52px/40% 12px no-repeat}
 .pay-stats{margin:4px 0 10px;opacity:.8;font-size:.95em}

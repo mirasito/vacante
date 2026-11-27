@@ -236,6 +236,9 @@ export function Field(props: TextInputProps & { c: Colors; label?: string }) {
       {label ? <Text style={[styles.label, { color: c.ink }]}>{label}</Text> : null}
       <TextInput
         placeholderTextColor={c.quiet}
+        // Подпись над полем видна глазами, а скринридеру её надо отдать явно: иначе у поля нет имени
+        // (например «Имя для работодателя» в анкете перед первым откликом)
+        accessibilityLabel={label}
         {...input}
         style={[styles.input, { color: c.ink, borderColor: c.line, backgroundColor: c.card }, style]}
       />

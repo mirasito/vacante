@@ -54,11 +54,14 @@ export function spaceKey(onPress: () => void): object {
 
 /**
  * Затемнение под листом снизу: нажатие мышью или пальцем закрывает лист. Это не кнопка и не цель Tab:
- * с клавиатуры лист закрывают Escape и крестик. Pressable здесь не годится: он всегда focusable, и окно
- * при открытии ставило фокус на безымянное затемнение вместо заголовка.
+ * с клавиатуры лист закрывают Escape и крестик. В вебе Pressable не годится: он всегда с tabIndex, и окно
+ * при открытии ставило фокус на безымянное затемнение вместо заголовка. Поэтому там простой onClick:
+ * он срабатывает на сам click (а не на отпускание пальца, после которого click «проваливался» на кнопку
+ * под закрывшимся листом) и не срабатывает, если палец протащили. На телефоне Pressable без доступности.
  */
 export function Backdrop({ onClose }: { onClose(): void }) {
-  return <View style={styles.flex} onStartShouldSetResponder={() => true} onResponderRelease={onClose} />;
+  if (Platform.OS === 'web') return <View style={styles.flex} {...({ onClick: onClose } as object)} />;
+  return <Pressable style={styles.flex} onPress={onClose} accessible={false} />;
 }
 
 /**
@@ -82,6 +85,8 @@ export const focusTarget: object = Platform.OS === 'web' ? { tabIndex: -1 } : {}
  */
 export function SkipLink({ c, label, onPress }: { c: Colors; label: string; onPress(): void }) {
   const [shown, setShown] = useState(false);
+  // Только для веба: на телефоне фокус на нижнее меню программно не перевести, кнопка была бы пустой
+  if (Platform.OS !== 'web') return null;
   return (
     <Pressable
       onPress={onPress}
@@ -101,16 +106,28 @@ export const dialogName = (label: string): object => ({ 'aria-label': label });
 /** Заголовок для скринридера: по заголовкам он прыгает по экрану. */
 export const heading = (level: 1 | 2 | 3 = 1) => ({ role: 'heading' as const, 'aria-level': level });
 
+// Человек уже нажимал или касался страницы. До этого ScreenTitle фокус не трогает: на первом экране
+// программный фокус Chrome считает «клавиатурным» и рисует рамку вокруг заголовка у каждого нового гостя
+let touched = false;
+if (Platform.OS === 'web' && typeof window !== 'undefined') {
+  const mark = () => {
+    touched = true;
+  };
+  window.addEventListener('pointerdown', mark, { capture: true, once: true });
+  window.addEventListener('keydown', mark, { capture: true, once: true });
+}
+
 /**
- * Заголовок экрана (h1). Появился — забирает фокус: после выбора города или шага старта фокус иначе
- * остаётся на исчезнувшей кнопке, то есть в body, и место приходится искать заново. hidden — заголовок
- * только для скринридера (у ленты видимого заголовка нет).
+ * Заголовок экрана (h1). Появился после действия человека — забирает фокус: после выбора города или шага
+ * старта фокус иначе остаётся на исчезнувшей кнопке, то есть в body, и место приходится искать заново.
+ * Для нового шага на том же месте нужен key, иначе React переиспользует заголовок и фокус не двинется.
+ * hidden — заголовок только для скринридера (у ленты видимого заголовка нет).
  */
 export function ScreenTitle(props: { style?: TextProps['style']; hidden?: boolean; level?: 1 | 2 | 3; children: ReactNode }) {
   const { style, hidden, level = 1, children } = props;
   const ref = useRef<ComponentRef<typeof Text>>(null);
   useEffect(() => {
-    if (Platform.OS === 'web') (ref.current as unknown as { focus?(): void } | null)?.focus?.();
+    if (Platform.OS === 'web' && touched) (ref.current as unknown as { focus?(): void } | null)?.focus?.();
   }, []);
   return (
     <Text ref={ref} style={hidden ? styles.srOnly : style} {...heading(level)} {...focusTarget}>
@@ -291,7 +308,9 @@ export function Button(props: {
   return (
     <Pressable
       onPress={busy ? undefined : onPress}
-      disabled={disabled}
+      // blocked остаётся нажимаемой только в вебе. VoiceOver и TalkBack находят и отключённую кнопку
+      // («недоступно»), а программно перевести фокус к пустому полю на телефоне нельзя
+      disabled={disabled || (blocked && Platform.OS !== 'web')}
       accessibilityRole="button"
       aria-busy={busy || undefined}
       aria-describedby={describedBy}

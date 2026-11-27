@@ -136,7 +136,9 @@ export function Onboarding(props: {
         {step === 1 ? (
           <>
             <View>
-              <ScreenTitle style={[styles.h1, { color: c.ink }]}>{t.rolesTitle}</ScreenTitle>
+              <ScreenTitle key="roles" style={[styles.h1, { color: c.ink }]}>
+                {t.rolesTitle}
+              </ScreenTitle>
               <Text style={[styles.sub, { color: c.quiet }]}>{t.rolesSub}</Text>
             </View>
             <View style={styles.grid}>
@@ -191,7 +193,9 @@ export function Onboarding(props: {
         ) : (
           <>
             <View>
-              <ScreenTitle style={[styles.h1, { color: c.ink }]}>{t.whereTitle}</ScreenTitle>
+              <ScreenTitle key="where" style={[styles.h1, { color: c.ink }]}>
+                {t.whereTitle}
+              </ScreenTitle>
               <Text style={[styles.sub, { color: c.quiet }]}>{t.whereSub}</Text>
             </View>
             <View style={styles.section}>

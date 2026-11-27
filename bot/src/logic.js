@@ -7,7 +7,7 @@ const CITY = Object.fromEntries(options.cities);
 const CATEGORY = Object.fromEntries(options.categories);
 
 export function newSubscription() {
-  return { city: null, categories: [], perks: [], min_pay: 0, active: 0 };
+  return { city: null, categories: [], perks: [], min_pay: 0, active: 0, setup: null };
 }
 
 export function fromRow(row) {
@@ -18,11 +18,27 @@ export function fromRow(row) {
     perks: row.perks ? row.perks.split("|") : [],
     min_pay: Number(row.min_pay) || 0,
     active: Number(row.active) || 0,
+    // У строк до миграции 0014 шаг не записан. Раз подписка активна, человек её включил: это done
+    setup: row.setup || (Number(row.active) ? "done" : null),
   };
 }
 
 export function toRow(sub) {
-  return [sub.city, sub.categories.join(","), sub.perks.join("|"), sub.min_pay, sub.active];
+  return [sub.city, sub.categories.join(","), sub.perks.join("|"), sub.min_pay, sub.active, sub.setup ?? null];
+}
+
+// Шаг настройки подписки (subscribers.setup): city — увидел вопрос «Где ищете работу?», cats — выбрал город,
+// perks — открыл условия. Итог: done — нажал «Готово», stopped — «Остановить» или /stop. Пусто — только /start
+// или строка до миграции 0014. По шагу видно, где настройку бросают, и кому один раз о ней напомнить (nudgeScreen)
+const STEPS = ["city", "cats", "perks"];
+
+/**
+ * Шаг после того, как человеку показали экран step. Помним самый дальний: «← Город» шаг не уменьшает.
+ * Итог (done, stopped) от просмотра экранов не меняется, а после нового выбора (changed) шаги считаются заново.
+ */
+export function reached(setup, step, changed = false) {
+  if (setup === "done" || setup === "stopped") return changed ? step : setup;
+  return STEPS.indexOf(setup) > STEPS.indexOf(step) ? setup : step;
 }
 
 // Условие «Смены и подработка» (vacante/shifts.py): последнее в options.perks, чтобы номера кнопок старых условий не сдвинулись
@@ -75,7 +91,13 @@ export function screen(name, sub) {
     const cats = options.categories.map(([slug, title]) => ({ text: mark(sub.categories.includes(slug), title), callback_data: `cat:${slug}` }));
     return {
       text: "Какая работа интересна? Можно выбрать несколько. Если ничего не выбрать, пришлю все сферы.",
-      keyboard: [...rows(cats, 2), [{ text: "← Город", callback_data: "go:city" }, { text: "Дальше →", callback_data: "go:perks" }]],
+      // Закончить можно уже здесь: раньше «Готово» было только на экране условий, до него доходили не все,
+      // а без «Готово» подписка не включается и человек ничего не получает
+      keyboard: [
+        ...rows(cats, 2),
+        [{ text: "← Город", callback_data: "go:city" }, { text: "Условия и зарплата →", callback_data: "go:perks" }],
+        [{ text: "Готово ✅", callback_data: "done" }],
+      ],
     };
   }
   if (name === "perks") {
@@ -100,6 +122,24 @@ export function screen(name, sub) {
   };
 }
 
+// Напоминание тому, кто начал настраивать подписку и не включил её: один раз (index.js nudgeSubscribers).
+// Город не выбран (шаг city): тот же вопрос ещё раз. Выбран: говорим, что будем присылать, а включает человек кнопкой
+export function nudgeScreen(sub) {
+  if (sub.setup === "city") {
+    const { text, keyboard } = screen("city", sub);
+    return { text: `Вы просили присылать вакансии, но не выбрали город, поэтому я пока ничего не присылаю.\n\n${text}`, keyboard };
+  }
+  return {
+    text:
+      "Вы просили присылать вакансии, но не закончили настройку, поэтому я пока ничего не присылаю.\n\n" +
+      `Могу присылать новые вакансии: ${summary(sub)}. Включить?`,
+    keyboard: [
+      [{ text: "✅ Включить", callback_data: "done" }],
+      [{ text: "⚙️ Настроить", callback_data: "go:city" }, { text: "Не нужно", callback_data: "stop" }],
+    ],
+  };
+}
+
 // Кнопка приложения со свайпами (app/, выложено на сайте в /app/): открывает его внутри Telegram.
 // Город передаём в адресе, чтобы лента сразу открылась на нём
 export function appButton(siteUrl, city) {
@@ -111,33 +151,37 @@ export function appButton(siteUrl, city) {
 export function press(sub, data) {
   const [action, arg] = data.split(":");
   const next = { ...sub, categories: [...sub.categories], perks: [...sub.perks] };
+  // Экран настройки и шаг, до которого человек с ним дошёл. changed: он что-то выбрал, а не только открыл экран
+  const show = (name, changed) => ({ sub: { ...next, setup: reached(sub.setup, name, changed) }, show: name });
   switch (action) {
     case "city":
       next.city = arg === "all" ? null : CITY[arg] ? arg : next.city;
-      return { sub: next, show: "cats" };
+      return show("cats", true);
     case "cat":
       if (CATEGORY[arg]) next.categories = toggle(next.categories, arg);
-      return { sub: next, show: "cats" };
+      return show("cats", true);
     case "perk": {
       const value = arg === SALARY ? SALARY : options.perks[Number(arg)];
       if (value) next.perks = toggle(next.perks, value);
-      return { sub: next, show: "perks" };
+      return show("perks", true);
     }
     case "pay": {
       const steps = [0, ...options.pay];
       next.min_pay = steps[(steps.indexOf(next.min_pay) + 1) % steps.length];
-      return { sub: next, show: "perks" };
+      return show("perks", true);
     }
     case "go":
-      return { sub: next, show: ["city", "cats", "perks"].includes(arg) ? arg : "city" };
+      return show(["city", "cats", "perks"].includes(arg) ? arg : "city");
     case "done":
       next.active = 1;
+      next.setup = "done";
       return { sub: next, show: "done" };
     case "stop":
       next.active = 0;
+      next.setup = "stopped";
       return { sub: next, show: "stopped" };
     default:
-      return { sub: next, show: "city" };
+      return show("city");
   }
 }
 

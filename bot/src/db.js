@@ -46,9 +46,9 @@ export async function load(env, chatId) {
 
 export async function save(env, chatId, sub) {
   await env.DB.prepare(
-    `INSERT INTO subscribers (chat_id, city, categories, perks, min_pay, active) VALUES (?, ?, ?, ?, ?, ?)
+    `INSERT INTO subscribers (chat_id, city, categories, perks, min_pay, active, setup) VALUES (?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(chat_id) DO UPDATE SET city = excluded.city, categories = excluded.categories, perks = excluded.perks,
-       min_pay = excluded.min_pay, active = excluded.active, updated_at = datetime('now')`,
+       min_pay = excluded.min_pay, active = excluded.active, setup = excluded.setup, updated_at = datetime('now')`,
   )
     .bind(chatId, ...bot.toRow(sub))
     .run();

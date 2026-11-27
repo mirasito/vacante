@@ -127,10 +127,12 @@ export async function subscribeShifts(env, chatId) {
   const sub = await load(env, chatId);
   const next = { ...sub, perks: sub.perks.includes(bot.SHIFT) ? sub.perks : [...sub.perks, bot.SHIFT] };
   if (!next.city) {
-    await save(env, chatId, { ...next, active: 0 });
+    // Тот же вопрос о городе, что в настройке подписки. Условие добавлено, это выбор: шаг city (subscribers.setup),
+    // даже если раньше было «Готово» или «Остановить»
+    await save(env, chatId, { ...next, active: 0, setup: bot.reached(next.setup, "city", true) });
     return send(env, chatId, "⚡ Буду присылать смены и подработку. Где ищете?", bot.screen("city", next).keyboard);
   }
-  await save(env, chatId, { ...next, active: 1 });
+  await save(env, chatId, { ...next, active: 1, setup: "done" });
   return send(
     env,
     chatId,

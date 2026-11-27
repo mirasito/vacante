@@ -5,7 +5,7 @@ import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
 
 import { moderationKey } from "../src/employer.js";
-import worker, { nudgeDrafts } from "../src/index.js";
+import worker, { nudgeDrafts, nudgeSubscribers } from "../src/index.js";
 import { webhookSecret } from "../src/logic.js";
 
 // D1 поверх встроенного в Node SQLite со всеми миграциями: проверяем настоящие запросы бота
@@ -112,6 +112,223 @@ test("от /start до «Готово» и первых примеров", async
   assert.equal(last.body.text, "Вот последние подходящие:\n\n<b>Бариста</b>");
   await say(env, me, "/stop");
   assert.equal(env.DB.get("SELECT active FROM subscribers WHERE chat_id = 7").active, 0);
+});
+
+test("шаги настройки подписки: вопрос о городе, «Готово» после города, правка, остановка, ссылка и /smeny", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const me = user(220, "Аян");
+  const row = (id) => env.DB.get("SELECT active, setup FROM subscribers WHERE chat_id = ?", id);
+  await say(env, me, "/start");
+  assert.deepEqual(row(220), { active: 0, setup: null }); // только /start: вопроса о городе не видел
+  await press(env, me, "settings");
+  assert.deepEqual(row(220), { active: 0, setup: "city" });
+  // После города можно сразу нажать «Готово», условия открываются отдельной кнопкой
+  await press(env, me, "city:almaty");
+  const cats = calls.at(-1).body;
+  assert.match(cats.text, /^Какая работа интересна/);
+  assert.deepEqual(cats.reply_markup.inline_keyboard.slice(-2), [
+    [{ text: "← Город", callback_data: "go:city" }, { text: "Условия и зарплата →", callback_data: "go:perks" }],
+    [{ text: "Готово ✅", callback_data: "done" }],
+  ]);
+  assert.deepEqual(row(220), { active: 0, setup: "cats" });
+  await press(env, me, "go:perks");
+  assert.deepEqual(row(220), { active: 0, setup: "perks" });
+  await press(env, me, "go:cats"); // назад к сферам: шаг не уменьшается
+  assert.deepEqual(row(220), { active: 0, setup: "perks" });
+  await press(env, me, "done");
+  assert.deepEqual(row(220), { active: 1, setup: "done" });
+
+  // «⚙️ Изменить» у включённой подписки: подборки идут как шли, шаг меняется только с новым выбором
+  await press(env, me, "go:city");
+  assert.deepEqual(row(220), { active: 1, setup: "done" });
+  await press(env, me, "city:astana");
+  assert.deepEqual(row(220), { active: 1, setup: "cats" });
+  await press(env, me, "done");
+  assert.deepEqual(row(220), { active: 1, setup: "done" });
+  await press(env, me, "stop");
+  assert.deepEqual(row(220), { active: 0, setup: "stopped" });
+  // После остановки посмотреть вопрос мало: настройка начинается заново с выбора
+  await say(env, me, "/settings");
+  await press(env, me, "settings");
+  assert.deepEqual(row(220), { active: 0, setup: "stopped" });
+  await press(env, me, "cat:horeca");
+  assert.deepEqual(row(220), { active: 0, setup: "cats" });
+  await say(env, me, "/stop");
+  assert.deepEqual(row(220), { active: 0, setup: "stopped" });
+
+  // К вопросу без /start: кнопка «🔔 Присылать новые вакансии» в анкете работодателя и команда /settings
+  await press(env, user(221, "Дана"), "settings");
+  await say(env, user(222, "Ерлан"), "/settings");
+  assert.deepEqual([row(221), row(222)], [{ active: 0, setup: "city" }, { active: 0, setup: "city" }]);
+  // Ссылка из приложения включает подписку сразу
+  await say(env, user(223, "Асель"), "/start sub_almaty_all_0");
+  assert.deepEqual(row(223), { active: 1, setup: "done" });
+  // /smeny: без города тот же вопрос, с городом подписка включается сразу
+  const shifts = user(224, "Тимур");
+  await say(env, shifts, "/smeny");
+  assert.deepEqual(row(224), { active: 0, setup: "city" });
+  await press(env, shifts, "city:almaty");
+  assert.deepEqual(row(224), { active: 0, setup: "cats" });
+  await say(env, shifts, "/smeny");
+  assert.deepEqual(row(224), { active: 1, setup: "done" });
+  // Строки до миграции: в активной «Готово» уже нажимали, неактивная начинает с вопроса
+  await env.DB.prepare("INSERT INTO subscribers (chat_id, city, active) VALUES (225, 'astana', 1), (226, 'astana', 0)").run();
+  await press(env, user(225, "Жанар"), "settings");
+  await press(env, user(226, "Нурлан"), "settings");
+  assert.deepEqual([row(225), row(226)], [{ active: 1, setup: "done" }, { active: 0, setup: "city" }]);
+});
+
+test("незаконченная подписка: одно напоминание днём через час, старым строкам и остановившим не пишем", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  // Бросили настройку: 201 на вопросе о городе, 202 после города и сферы, 203 на условиях
+  await press(env, user(201, "Аян"), "settings");
+  for (const data of ["settings", "city:almaty", "cat:horeca"]) await press(env, user(202, "Дана"), data);
+  for (const data of ["settings", "city:all", "go:perks", "perk:0", "pay"]) await press(env, user(203, "Ерлан"), data);
+  // Этим не пишем: 204 только /start, 205 и 206 строки до миграции, 207 включил подписку и потом менял город, 208 остановил
+  await say(env, user(204, "Жанар"), "/start");
+  await env.DB.prepare("INSERT INTO subscribers (chat_id, city) VALUES (205, 'astana'), (206, NULL)").run();
+  for (const data of ["settings", "city:astana", "done", "go:city", "city:almaty"]) await press(env, user(207, "Тимур"), data);
+  assert.deepEqual(env.DB.get("SELECT active, setup FROM subscribers WHERE chat_id = 207"), { active: 1, setup: "cats" });
+  for (const data of ["settings", "city:astana"]) await press(env, user(208, "Асель"), data);
+  await say(env, user(208, "Асель"), "/stop");
+  // 209 бросил больше суток назад, 210 меньше часа назад
+  await press(env, user(209, "Нурлан"), "settings");
+  await press(env, user(210, "Айдос"), "settings");
+  // Одни и те же часы для базы и будильника: настройку бросили в 01:00 по Казахстану, будильник в 08:59, 09:00 и 21:00
+  await env.DB.prepare("UPDATE subscribers SET updated_at = '2026-11-19 20:00:00'").run();
+  await env.DB.prepare("UPDATE subscribers SET updated_at = '2026-11-19 03:59:59' WHERE chat_id = 209").run();
+  await env.DB.prepare("UPDATE subscribers SET updated_at = '2026-11-20 03:30:00' WHERE chat_id = 210").run();
+  calls.length = 0;
+
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-20T03:59:00Z")), 0); // рано
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-20T16:00:00Z")), 0); // поздно
+  assert.equal(calls.length, 0);
+  const day = new Date("2026-11-20T04:00:00Z");
+  assert.equal(await nudgeSubscribers(env, day), 3);
+  assert.equal(await nudgeSubscribers(env, day), 0); // только один раз
+  assert.deepEqual(calls.map((c) => [c.method, c.body.chat_id]), [["sendMessage", 201], ["sendMessage", 202], ["sendMessage", 203]]);
+  const nudged = () => env.DB.get("SELECT group_concat(chat_id) AS ids FROM (SELECT chat_id FROM subscribers WHERE nudged = 1 ORDER BY chat_id)").ids;
+  assert.equal(nudged(), "201,202,203");
+
+  // Город не выбран: тот же вопрос с теми же кнопками. Выбран: что будем присылать и «Включить»
+  const [noCity, chosen, withPerks] = calls.map((c) => c.body);
+  assert.equal(noCity.text, "Вы просили присылать вакансии, но не выбрали город, поэтому я пока ничего не присылаю.\n\nГде ищете работу?");
+  assert.deepEqual(noCity.reply_markup.inline_keyboard[0][0], { text: "Алматы", callback_data: "city:almaty" });
+  const unfinished = "Вы просили присылать вакансии, но не закончили настройку, поэтому я пока ничего не присылаю.\n\n";
+  assert.equal(chosen.text, `${unfinished}Могу присылать новые вакансии: Алматы · Кафе и рестораны. Включить?`);
+  assert.deepEqual(chosen.reply_markup.inline_keyboard, [
+    [{ text: "✅ Включить", callback_data: "done" }],
+    [{ text: "⚙️ Настроить", callback_data: "go:city" }, { text: "Не нужно", callback_data: "stop" }],
+  ]);
+  assert.equal(withPerks.text, `${unfinished}Могу присылать новые вакансии: весь Казахстан · любая сфера · без опыта · от 200 000 ₸ в месяц. Включить?`);
+  // Напоминание подписку не включает и шаг не меняет
+  assert.deepEqual(env.DB.get("SELECT active, setup FROM subscribers WHERE chat_id = 202"), { active: 0, setup: "cats" });
+
+  // Кто бросил в 08:30: в 09:29 часа ещё не прошло, в 20:59 можно. Кто бросил больше суток назад, напоминания не получит
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-20T04:29:00Z")), 0);
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-20T15:59:00Z")), 1);
+  assert.equal(calls.at(-1).body.chat_id, 210);
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-20T15:59:00Z")), 0);
+  assert.equal(nudged(), "201,202,203,210");
+});
+
+test("кнопки под напоминанием о подписке: «Включить», «Настроить», «Не нужно» и выбор города", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const [on, tune, no, noCity] = [user(211, "Аян"), user(212, "Дана"), user(213, "Ерлан"), user(214, "Асель")];
+  for (const who of [on, tune, no]) for (const data of ["settings", "city:almaty"]) await press(env, who, data);
+  await press(env, noCity, "settings");
+  await env.DB.prepare("UPDATE subscribers SET updated_at = '2026-11-20 05:00:00'").run();
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-20T07:00:00Z")), 4);
+  const edited = () => calls.findLast((c) => c.method === "editMessageText").body;
+  const row = (id) => env.DB.get("SELECT city, active, setup, nudged FROM subscribers WHERE chat_id = ?", id);
+
+  // «✅ Включить»: подписка включена, напоминание стало экраном «Готово», следом примеры вакансий
+  await press(env, on, "done", 501);
+  assert.equal(edited().message_id, 501);
+  assert.match(edited().text, /^Готово! Буду присылать новые вакансии: Алматы · любая сфера\./);
+  assert.deepEqual(row(211), { city: "almaty", active: 1, setup: "done", nudged: 1 });
+  assert.equal(sentTo(calls, 211).at(-1).body.text, "Вот последние подходящие:\n\n<b>Бариста</b>");
+
+  // «⚙️ Настроить»: в том же сообщении вопрос о городе, подписка сама не включается
+  await press(env, tune, "go:city", 502);
+  assert.equal(edited().message_id, 502);
+  assert.equal(edited().text, "Где ищете работу?");
+  assert.ok(edited().reply_markup.inline_keyboard.flat().some((b) => b.text === "✅ Алматы"));
+  await press(env, tune, "city:astana", 502);
+  assert.deepEqual(row(212), { city: "astana", active: 0, setup: "cats", nudged: 1 });
+
+  // «Не нужно»: прежний текст остановки, без кнопок
+  await press(env, no, "stop", 503);
+  assert.deepEqual(edited(), { chat_id: 213, message_id: 503, text: "Больше не присылаю. Чтобы снова получать вакансии, нажмите /start." });
+  assert.deepEqual(row(213), { city: "almaty", active: 0, setup: "stopped", nudged: 1 });
+
+  // Город под напоминанием без города: в том же сообщении экран сфер, с него «Готово»
+  await press(env, noCity, "city:astana", 504);
+  assert.equal(edited().message_id, 504);
+  assert.match(edited().text, /^Какая работа интересна/);
+  assert.deepEqual(row(214), { city: "astana", active: 0, setup: "cats", nudged: 1 });
+  await press(env, noCity, "done", 504);
+  assert.deepEqual(row(214), { city: "astana", active: 1, setup: "done", nudged: 1 });
+
+  // Второго напоминания не бывает: ни тому, кто поменял город и снова бросил, ни тому, кто отказался, а потом начал заново
+  for (const data of ["settings", "city:astana"]) await press(env, no, data);
+  assert.deepEqual(row(213), { city: "astana", active: 0, setup: "cats", nudged: 1 });
+  await env.DB.prepare("UPDATE subscribers SET updated_at = '2026-11-21 05:00:00'").run();
+  const sent = calls.length;
+  assert.equal(await nudgeSubscribers(env, new Date("2026-11-21T07:00:00Z")), 0);
+  assert.equal(calls.length, sent);
+});
+
+test("напоминание о подписке: сбой отправки и два будильника разом не дают повтора, за раз не больше 30", async () => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  const day = new Date("2026-11-20T07:00:00Z");
+  const seed = (ids) => env.DB.prepare(
+    `INSERT INTO subscribers (chat_id, setup, updated_at) VALUES ${ids.map((id) => `(${id}, 'city', '2026-11-20 05:00:00')`).join(", ")}`,
+  ).run();
+
+  // Отметка ставится до отправки: Telegram не ответил, но второй раз не пишем
+  await seed([231]);
+  globalThis.fetch = async () => { throw new Error("нет сети"); };
+  await assert.rejects(nudgeSubscribers(env, day), /нет сети/);
+  globalThis.fetch = fakeFetch(calls);
+  assert.equal(await nudgeSubscribers(env, day), 0);
+  assert.equal(calls.length, 0);
+
+  // Два запуска одновременно: каждому человеку одно сообщение
+  await seed([232, 233, 234]);
+  const both = await Promise.all([nudgeSubscribers(env, day), nudgeSubscribers(env, day)]);
+  assert.equal(both[0] + both[1], 3);
+  assert.deepEqual(calls.map((c) => c.body.chat_id).sort(), [232, 233, 234]);
+
+  // Больше 30 за запуск не шлём, остальным через час
+  calls.length = 0;
+  await seed(Array.from({ length: 31 }, (_, i) => 300 + i));
+  assert.equal(await nudgeSubscribers(env, day), 30);
+  assert.equal(await nudgeSubscribers(env, day), 1);
+  assert.equal(new Set(calls.map((c) => c.body.chat_id)).size, 31);
+});
+
+test("часовой будильник воркера сам шлёт напоминание о подписке", async (t) => {
+  const env = fakeEnv();
+  const calls = [];
+  globalThis.fetch = fakeFetch(calls);
+  await press(env, user(241, "Аян"), "settings");
+  await env.DB.prepare("UPDATE subscribers SET updated_at = '2026-11-20 05:00:00'").run();
+  calls.length = 0;
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-11-20T07:25:00Z") }); // 12:25 по Казахстану
+  const cron = { tasks: [], waitUntil(promise) { this.tasks.push(promise); } };
+  await worker.scheduled({}, env, cron);
+  await Promise.all(cron.tasks);
+  assert.deepEqual(calls.map((c) => [c.method, c.body.chat_id]), [["sendMessage", 241]]);
+  assert.match(calls[0].body.text, /^Вы просили присылать вакансии, но не выбрали город/);
 });
 
 test("работодатель с /start: кнопка «Ищу сотрудников», меню и анкета из меню", async () => {

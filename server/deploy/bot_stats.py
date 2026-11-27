@@ -16,6 +16,14 @@ QUERIES = [
     ("новые по дням с периода (UTC)",
      "SELECT date(created_at) AS day, COUNT(*) AS n, SUM(active) AS active FROM subscribers WHERE created_at >= ? GROUP BY 1 ORDER BY 1"),
     ("с фильтрами", "SELECT SUM(categories != '') AS with_categories, SUM(perks != '') AS with_perks, SUM(min_pay > 0) AS with_pay FROM subscribers WHERE active = 1"),
+    ("воронка подписки с периода: до какого шага дошли (city — увидели вопрос о городе, cats — выбрали город, "
+     "perks — открыли условия, done — нажали «Готово», stopped — остановили) / из них активны. «только /start» — ещё и все, "
+     "кто пришёл до 2026-11-27: шаг тогда не записывался. Активные на city, cats, perks правят уже включённую подписку",
+     "SELECT coalesce(setup, 'только /start') AS step, COUNT(*) AS total, SUM(active) AS active FROM subscribers "
+     "WHERE created_at >= ? GROUP BY setup ORDER BY CASE coalesce(setup, '') WHEN '' THEN 0 WHEN 'city' THEN 1 "
+     "WHEN 'cats' THEN 2 WHEN 'perks' THEN 3 WHEN 'done' THEN 4 ELSE 5 END"),
+    ("напоминания о незаконченной подписке (подписчики с периода): отправлено / из них сейчас активны",
+     "SELECT COUNT(*) AS nudged, SUM(active) AS active FROM subscribers WHERE nudged = 1 AND created_at >= ?"),
     ("модераторы (админы бота) и их подписка",
      "SELECT COUNT(*) AS admins, SUM(s.chat_id IS NOT NULL) AS subscribed, SUM(coalesce(s.active, 0)) AS active, "
      "group_concat(coalesce(s.city, 'весь КЗ') || ' / сферы: ' || coalesce(nullif(s.categories, ''), 'любые') || ' / от ' || coalesce(s.min_pay, 0), '; ') AS filters "

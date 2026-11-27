@@ -4619,6 +4619,20 @@
   "avatar": "48d5a9dcdece71b8.jpg",
   "avatar_source": "website"
  },
+ "aktobe:апорт": {
+  "name": "АПОРТ",
+  "city": "aktobe",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "aport_aktobe",
+  "website": "http://aport-jelisi.kz/",
+  "source": "https://2gis.kz/aktobe/firm/70000001057747263",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "aktobe:арт вижен": {
   "name": "АРТ ВИЖЕН",
   "city": "aktobe",
@@ -5218,6 +5232,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-24T04:43:35+00:00"
+ },
+ "aktobe:норд строй холдинг": {
+  "name": "Норд Строй Холдинг",
+  "city": "aktobe",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
  },
  "aktobe:нурдаулет": {
   "name": "Нурдаулет",
@@ -6728,6 +6749,20 @@
   "checked_at": "2026-11-11T04:44:03+00:00",
   "instagram": "alidentkz",
   "source": "https://2gis.kz/almaty/firm/70000001070549541"
+ },
+ "almaty:alias valve group": {
+  "name": "ALIAS VALVE GROUP",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "aliasvalvegroup",
+  "website": "http://www.alias.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000925116",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:alidar service": {
   "name": "Alidar Service",
@@ -8851,6 +8886,24 @@
   "checked_at": "2026-11-11T11:45:06+00:00",
   "instagram": "balbakery",
   "source": "https://2gis.kz/almaty/firm/70000001116397066"
+ },
+ "almaty:balbobek group": {
+  "name": "Balbobek Group",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "balbobek.toys.almaty",
+  "telegram": "balbobek0",
+  "website": "http://www.bbtoys.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001054103797",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "2f85a6b807a52de7.jpg",
+  "avatar_source": "telegram"
  },
  "almaty:baldáuren balabaqshasy": {
   "name": "Baldáuren balabaqshasy",
@@ -16673,6 +16726,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-08T01:44:24+00:00"
+ },
+ "almaty:l inc": {
+  "name": "L.Inc",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "linc.kz",
+  "website": "http://www.linc.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001043717560",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:la baia": {
   "name": "La Baia",
@@ -28317,6 +28384,13 @@
   "v": 3,
   "checked_at": "2026-11-05T20:43:06+00:00"
  },
+ "almaty:бисенгалиев ит": {
+  "name": "Бисенгалиев ИТ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
+ },
  "almaty:бисенева лх": {
   "name": "БИСЕНЕВА ЛХ",
   "city": "almaty",
@@ -30319,6 +30393,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:европа тускагаздар": {
+  "name": "Европа тускагаздар",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
  },
  "almaty:европейский имплантационный центр": {
   "name": "ЕВРОПЕЙСКИЙ ИМПЛАНТАЦИОННЫЙ ЦЕНТР",
@@ -36564,6 +36645,20 @@
   "instagram": "pinta_almaty",
   "source": "https://www.instagram.com/pinta_almaty/"
  },
+ "almaty:проектная академия kazgor": {
+  "name": "Проектная Академия KAZGOR",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "kazgor.kz",
+  "website": "http://www.kazgor.kz/",
+  "source": "https://2gis.kz/almaty/firm/9429940000788083",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:производитель напитков": {
   "name": "производитель напитков",
   "city": "almaty",
@@ -37076,6 +37171,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-19T08:44:53+00:00"
+ },
+ "almaty:решетникова в м": {
+  "name": "Решетникова В. М.",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
  },
  "almaty:риза кочиев": {
   "name": "Риза Кочиев",
@@ -39065,6 +39167,20 @@
   ],
   "avatar": "aadfc1cfcc2e9bcf.jpg",
   "avatar_source": "telegram"
+ },
+ "almaty:типография kazprint": {
+  "name": "Типография KazPrint",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "kazprint_kz",
+  "website": "http://www.kazprint.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001025075950",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "almaty:тк пищевик": {
   "name": "ТК Пищевик",
@@ -42524,6 +42640,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:aqjol food": {
+  "name": "AQJOL FOOD",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
  },
  "astana:ar berry tours": {
   "name": "AR Berry tours",
@@ -50695,6 +50818,21 @@
   "v": 3,
   "checked_at": "2026-11-06T22:44:17+00:00"
  },
+ "astana:ptc holding": {
+  "name": "PTC Holding",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "website": "https://ptc-holding.kz/",
+  "source": "https://ptc-holding.kz",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "253c50d375ee7936.jpg",
+  "avatar_source": "website"
+ },
  "astana:pulsar": {
   "name": "Pulsar",
   "city": "astana",
@@ -54625,6 +54763,13 @@
   ],
   "avatar": "82c3eadf1c468d03.jpg",
   "avatar_source": "telegram"
+ },
+ "astana:акшеев": {
+  "name": "Акшеев",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
  },
  "astana:акылханова а б": {
   "name": "АКЫЛХАНОВА А.Б.",
@@ -63485,6 +63630,13 @@
   "avatar": "9fb68c6c91a85b55.jpg",
   "avatar_source": "website"
  },
+ "astana:торговая компания basseven": {
+  "name": "ТОРГОВАЯ КОМПАНИЯ BASSEVEN",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
+ },
  "astana:торговая компания unity": {
   "name": "Торговая компания UNITY",
   "city": "astana",
@@ -66595,6 +66747,15 @@
   "v": 3,
   "checked_at": "2026-10-30T15:44:36+00:00"
  },
+ "atyrau:quatt": {
+  "name": "Quatt",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "quatt_qurylys",
+  "source": "https://2gis.kz/atyrau/firm/70000001067099906"
+ },
  "atyrau:rommix": {
   "name": "RomMix",
   "city": "atyrau",
@@ -67118,6 +67279,15 @@
   "checked_at": "2026-11-08T00:45:10+00:00",
   "instagram": "atyrau.nedvizhka",
   "source": "https://2gis.kz/atyrau/firm/70000001104878039"
+ },
+ "atyrau:атырауский филиал тоо бақ тау": {
+  "name": "Атырауский филиал ТОО Бақ-Тау",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "smilecenter_atyrau",
+  "source": "https://2gis.kz/atyrau/firm/70000001104911579"
  },
  "atyrau:атыраутехинвест": {
   "name": "АтырауТехИнвест",
@@ -70802,6 +70972,13 @@
   ],
   "avatar": "8a6ccf646c0076b6.jpg",
   "avatar_source": "website"
+ },
+ "karaganda:баскаков": {
+  "name": "Баскаков",
+  "city": "karaganda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
  },
  "karaganda:батия": {
   "name": "БАТИЯ",
@@ -78942,6 +79119,13 @@
    "website"
   ]
  },
+ "pavlodar:sameri logistic": {
+  "name": "SaMeRi Logistic",
+  "city": "pavlodar",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
+ },
  "pavlodar:silkwaytransit": {
   "name": "SilkwayTransit",
   "city": "pavlodar",
@@ -86487,6 +86671,13 @@
   "v": 3,
   "checked_at": "2026-10-30T14:43:59+00:00"
  },
+ "shymkent:qazalpack": {
+  "name": "QazAlPack",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00"
+ },
  "shymkent:qazaq bitum processing": {
   "name": "QAZAQ BITUM Processing",
   "city": "shymkent",
@@ -91499,6 +91690,20 @@
   ],
   "avatar": "b210aa60adc43b38.jpg",
   "avatar_source": "telegram"
+ },
+ "uralsk:freedom bank kazakhstan": {
+  "name": "АО «Freedom Bank Kazakhstan»",
+  "city": "uralsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-27T11:46:33+00:00",
+  "instagram": "bankffin.kz",
+  "website": "http://freedombank.kz/",
+  "source": "https://2gis.kz/uralsk/firm/70000001089558555",
+  "avatar_checked_at": "2026-11-27T11:46:34+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "uralsk:gayaz brand": {
   "name": "GAYAZ BRAND",

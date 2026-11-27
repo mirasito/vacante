@@ -57,7 +57,7 @@ def test_employer_post_leads_to_bot_questionnaire_and_tagged_landing():
     bot = Bot()
     assert announce.run("employers-paste", {}, LIVE, bot.send)["sent"] == 2
     _, text, buttons = bot.sent[0]
-    assert "вставьте в бот" in text and "hh.kz" in text and "990 ₸" in text and "3 990 ₸" in text
+    assert "вставьте в бот" in text and "hh.kz" in text and "1 000 ₸" in text and "4 000 ₸" in text
     assert "в Алматы" in text and "Алматыдағы" in text
     assert buttons[0] == ("⚡ Разместить вакансию · Орналастыру", "https://t.me/vacantekz_bot?start=post_ch")
     assert buttons[1][1] == ("https://vacante.kz/rabotodatelyam/?utm_source=telegram&utm_medium=channel"

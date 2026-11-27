@@ -46,7 +46,7 @@ test("мои вакансии: закрыть можно только откры
 
 test("«Срочно»: условия из настроек, дата по Казахстану, пост в канале города, если он есть", () => {
   assert.equal(job.boostOffer({}), null);
-  assert.deepEqual(job.boostOffer({ KASPI_DETAILS: " +7 700 ", BOOST_PRICE: "5000", BOOST_DAYS: "3" }), { price: 5000, days: 3, kaspi: "+7 700", shiftPrice: 1390, postPrice: 990, packs: [], instagram: "" });
+  assert.deepEqual(job.boostOffer({ KASPI_DETAILS: " +7 700 ", BOOST_PRICE: "5000", BOOST_DAYS: "3" }), { price: 5000, days: 3, kaspi: "+7 700", shiftPrice: 1000, postPrice: 1000, packs: [], instagram: "" });
   // Instagram в описании Про — только когда он задан в настройках
   const pro = job.boostOffer({ KASPI_DETAILS: "x" });
   assert.doesNotMatch(job.tariffText("pro", { kind: "job" }, pro), /Instagram/);
@@ -74,9 +74,9 @@ test("«Срочно» для смены: до дня смены", () => {
   const boost = job.boostOffer({ KASPI_DETAILS: "Kaspi 8 777 000 00 00, Мирас" });
   const now = new Date("2026-11-06T07:00:00Z");
   const s = { ...filled, kind: "shift", shift_date: "2026-11-08", shift_start: "10:00", shift_end: "22:00", need: 2, status: "approved" };
-  assert.deepEqual([job.offerFor(boost, s, now).price, job.offerFor(boost, s, now).days], [1390, 3]);
-  assert.equal(job.offerFor(boost, filled, now).price, 3990);
-  assert.match(job.boostScreen(s, boost, now).text, /до начала смены за 1 390 ₸/);
+  assert.deepEqual([job.offerFor(boost, s, now).price, job.offerFor(boost, s, now).days], [1000, 3]);
+  assert.equal(job.offerFor(boost, filled, now).price, 4000);
+  assert.match(job.boostScreen(s, boost, now).text, /до начала смены за 1 000 ₸/);
   assert.match(job.approvedScreen(s, boost, now).text, /Смена прошла проверку/);
   assert.match(job.myJobsScreen([{ ...s, applications: 3, confirmed: 1 }], boost, now).text, /⚡ <b>Повар &lt;горячий цех&gt;<\/b>, Астана 08\.11: опубликована, взяли 1 из 2, просились: 3/);
 });
@@ -87,7 +87,7 @@ test("меню работодателя, вопрос N из M и повторн
   assert.deepEqual(menu.keyboard[0][0].web_app, { url: "https://vacante.kz/app/?tab=employer" });
   assert.deepEqual(menu.keyboard.slice(1).flat().map((b) => b.callback_data), ["emp:vacancy", "emp:shift", "emp:jobs", "emp:company"]);
   assert.match(job.employerMenu(900).text, /Тариф Базовый: 900 ₸\./);
-  assert.deepEqual(job.parsePacks("3:9990:60, 10:29990:90,x,0:1:1"), [{ count: 3, price: 9990, days: 60 }, { count: 10, price: 29990, days: 90 }]);
+  assert.deepEqual(job.parsePacks("3:10000:60, 10:30000:90,x,0:1:1"), [{ count: 3, price: 10000, days: 60 }, { count: 10, price: 30000, days: 90 }]);
   assert.match(job.askScreen(job.STEPS[1]).text, /^<i>Вопрос 2 из 7<\/i>\nКого ищете/);
   assert.match(job.applicationsIntro(filled, 0, 0), /пока нет откликов/);
   assert.match(job.applicationsIntro(filled, 2, 2), /: 2\. Ниже они ещё раз/);

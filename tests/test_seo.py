@@ -246,3 +246,46 @@ def test_shift_pages_tell_the_usual_pay_per_shift(tmp_path):
     assert f"Оплата за смену по 21 вакансии: в среднем {m(9000)} ₸, обычно от {m(8500)} до {m(10000)} ₸." in page(shifts.SLUG)
     assert site.pay_stats(per_shift + monthly) == (5, 250000, 220000, 280000)
     assert site.pay_stats(per_shift[:4], "day") is None
+
+
+def test_vacancy_page_compares_the_salary_with_the_median(tmp_path):
+    """Под фактами вакансии: медиана месячной зарплаты той же профессии в городе, по скольким вакансиям она
+    посчитана и где рядом с ней эта вакансия. Профессии не хватает на медиану — сравниваем со сферой."""
+    waiters = [paid(i, amount) for i, amount in enumerate((200_000, 220_000, 250_000, 270_000, 280_000, 300_000, 350_000), 1)]
+    cooks = [replace(post(20 + i, "Требуется повар"), salary_min=amount, salary_max=amount, salary_period="month")
+             for i, amount in enumerate((240_000, 400_000))]
+    others = [paid(30, 12_000, "day"), post(31, "Кафе ищет официанта"), paid(32, 250_000, city=None),
+              *(paid(40 + i, 250_000, city="astana") for i in range(4)),
+              *(replace(paid(50 + i, 300_000), title="Сотрудник", category="other") for i in range(5))]
+    out = build_site(tmp_path, waiters + cooks + others)
+    page = lambda *path: out.joinpath(*path, "index.html").read_text("utf-8")  # noqa: E731
+    m = site.money
+    line = ('<p class="pay-stats"><a href="/almaty/oficiant/">Официант в Алматы</a>: медианная зарплата по 7 вакансиям — '
+            f"{m(270000)} ₸ в месяц, в этой вакансии %s.</p>")
+    assert line % "ниже медианы" in page("v", "chan-2")  # 220 000 при медиане 270 000
+    assert line % "на уровне медианы" in page("v", "chan-3") and line % "на уровне медианы" in page("v", "chan-5")
+    assert line % "выше медианы" in page("v", "chan-6")  # 300 000: больше чем на 10% выше
+    low = page("v", "chan-1")
+    assert low.index("</dl>") < low.index("медианная зарплата") < low.index('class="apply"')
+    assert ('<a href="/kk/almaty/oficiant/">Даяшы, Алматы</a>: 7 вакансия бойынша медианалық жалақы — '
+            f"айына {m(270000)} ₸, бұл вакансияда медианадан жоғары.</p>") in page("kk", "v", "chan-7")
+    assert "бұл вакансияда медиана деңгейінде." in page("kk", "v", "chan-4")
+    assert "бұл вакансияда медианадан төмен." in page("kk", "v", "chan-1")
+    # Поваров с месячной зарплатой двое: медиана по сфере в городе, ссылка на страницу сферы
+    assert ('<a href="/almaty/horeca/">Кафе и рестораны в Алматы</a>: медианная зарплата по 9 вакансиям — '
+            f"{m(270000)} ₸ в месяц, в этой вакансии ниже медианы.</p>") in page("v", "chan-20")
+    assert "Кафе мен мейрамханалар, Алматы</a>: 9 вакансия бойынша" in page("kk", "v", "chan-21")
+    # Не сравниваем: оплата за смену, зарплаты нет, города нет, в городе меньше пяти вакансий с зарплатой, сфера «Другое»
+    for vacancy_id in ("chan-30", "chan-31", "chan-32", "chan-40", "chan-50"):
+        assert "медиан" not in page("v", vacancy_id) and "медиан" not in page("kk", "v", vacancy_id)
+
+
+def test_pay_level_counts_ten_percent_as_the_same():
+    """Отличие от медианы до 10% в любую сторону — «на уровне»; зарплата вилкой сравнивается по середине."""
+    assert site.pay_level(297_000, 270_000) == site.pay_level(243_000, 270_000) == "на уровне медианы"
+    assert (site.pay_level(297_001, 270_000), site.pay_level(242_999, 270_000)) == ("выше медианы", "ниже медианы")
+    waiter = paid(1, 250_000)
+    assert site.pay_of(replace(waiter, salary_min=200_000, salary_max=400_000)) == 300_000
+    assert site.pay_of(replace(waiter, salary_min=None)) == 250_000
+    assert site.pay_of(replace(waiter, salary_period="day")) is None and site.pay_of(waiter, "day") is None
+    assert site.pay_of(post(2, "Кафе ищет официанта")) is None

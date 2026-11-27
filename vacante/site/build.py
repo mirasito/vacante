@@ -359,17 +359,32 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
 _DATA_ATTRS = re.compile(r' data-[a-z]+="[^"]*"')
 
 
+def pay_of(v: Vacancy, period: str = "month") -> int | None:
+    """Оплата вакансии одним числом, середина вилки, если она названа за period; иначе None."""
+    if v.salary_period != period or not (v.salary_min or v.salary_max):
+        return None
+    return ((v.salary_min or v.salary_max) + (v.salary_max or v.salary_min)) // 2
+
+
 def pay_stats(items: list[Vacancy], period: str = "month") -> tuple[int, int, int, int] | None:
     """Свои данные о зарплатах для страницы списка: (сколько вакансий, медиана, нижняя и верхняя четверть)
     в тенге в месяц. Только вакансии с месячной оплатой: смены и часы в пересчёте исказили бы картину.
     period="day" — то же по вакансиям с оплатой за смену, в тенге за смену (раздел «Подработка и смены»)."""
-    pays = sorted(((v.salary_min or v.salary_max) + (v.salary_max or v.salary_min)) // 2 for v in items
-                  if v.salary_period == period and (v.salary_min or v.salary_max))
+    pays = sorted(pay for pay in (pay_of(v, period) for v in items) if pay)
     if len(pays) < 5:
         return None
     digits = -3 if period == "month" else -2  # месячные суммы округляем до тысяч, оплату за смену до сотен
     pick = lambda share: round(pays[min(len(pays) - 1, int(len(pays) * share))], digits)  # noqa: E731
     return len(pays), pick(0.5), pick(0.25), pick(0.75)
+
+
+def pay_level(pay: int, median: int) -> str:
+    """Зарплата вакансии рядом с медианой похожих: отличие до 10% в любую сторону — «на уровне»."""
+    if pay * 10 > median * 11:
+        return "выше медианы"
+    if pay * 10 < median * 9:
+        return "ниже медианы"
+    return "на уровне медианы"
 
 
 def fresh_counts(items: list[Vacancy], now: datetime) -> tuple[int, int]:
@@ -557,12 +572,27 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
     by_city_cat: dict[tuple[str | None, str], list[Vacancy]] = defaultdict(list)
     for v in vacancies:
         by_city_cat[(v.city, v.category)].append(v)
+    # Медиана месячной зарплаты по профессии в городе и по сфере в городе: с ней страница вакансии сравнивает свою
+    prof_pay = {(city, prof): pay_stats(items) for city, found in by_prof.items() for prof, items in found.items()}
+    cat_pay = {key: pay_stats(items) for key, items in by_city_cat.items()}
+
+    def pay_note(v: Vacancy) -> tuple[str, bool, int, int, str] | None:
+        """Строка о медиане на странице вакансии: (страница списка, профессия ли это, по скольким вакансиям медиана,
+        сама медиана, где рядом с ней зарплата вакансии). Сравниваем с той же профессией в городе, а где таких
+        вакансий с месячной зарплатой меньше пяти — со сферой. «Другое» не сфера: с ним не сравниваем."""
+        pay = pay_of(v)
+        if not pay or not v.city:
+            return None
+        prof = next((p for p in professions_of(v) if prof_pay.get((v.city, p))), None)
+        stats = prof_pay[(v.city, prof)] if prof else cat_pay[(v.city, v.category)] if v.category != "other" else None
+        return (prof or v.category, bool(prof), stats[0], stats[1], pay_level(pay, stats[1])) if stats else None
+
     for v in vacancies:
         # Разметка для Google Jobs только на русской странице: одна вакансия — одно объявление
         job = job_posting_ld(v, base_url, venue_store.lookup(venues, v))
         similar = [o for o in by_city_cat[(v.city, v.category)][:SIMILAR + 1] if o.id != v.id][:SIMILAR]
         write(f"v/{v.id}", "vacancy.html", lastmod=v.posted_at[:10], v=v, similar=similar, channels=tg_channels,
-              job=lambda lang: job if lang == "ru" else None,
+              pay_note=pay_note(v), job=lambda lang: job if lang == "ru" else None,
               crumbs=lambda lang, v=v: vacancy_crumbs(v, base_url, lang, prof_of(v)))
 
     (out / "404.html").write_text(env.get_template("404.html").render(path="404", page="404"), "utf-8")

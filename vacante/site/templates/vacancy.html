@@ -26,6 +26,7 @@
     {% if place and place.website %}<dt>{{ t("Сайт") }}</dt><dd><a href="{{ place.website }}" rel="nofollow noopener" target="_blank">{{ site_name(place.website) }}</a></dd>{% endif %}
     {% if v.address %}<dt>{{ t("Адрес") }}</dt><dd>{{ v.address }}{% set map = twogis_url(v) %}{% if map %} · <a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t("в 2ГИС") }}</a>{% endif %}</dd>{% endif %}
   </dl>
+  {% if pay_note %}{% set slug, is_prof, n, median, level = pay_note %}<p class="pay-stats"><a href="{{ home }}/{{ v.city }}/{{ slug }}/">{{ t("{title} в {where}", title=prof_name(slug) if is_prof else cat_name(slug), where=city_in(v.city), city=city_name(v.city)) }}</a>{{ t(": медианная зарплата по {n} {vacancies} — {median} ₸ в месяц, в этой вакансии {level}.", n=n, vacancies=n | plural("вакансии", "вакансиям", "вакансиям"), median=money(median), level=t(level)) }}</p>{% endif %}
   {# data-kind и data-id: по ним static/via.js считает нажатия на кнопки отклика, без имён. У прямых кнопок связи
      их нет: переход /go/ считает сам сервер. source_kind — вид ссылок на исходное объявление: hh.kz, OLX или пост #}
   {% set source_kind = v.source if v.source in ("hh", "olx") else "orig" %}

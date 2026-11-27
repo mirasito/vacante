@@ -110,6 +110,12 @@ def test_indexnow_keeps_the_request_limit_and_new_urls_go_first():
     assert seen[0]["urlList"] == new + gone[:2]
 
 
+def paid(post_id: int, amount: int, period: str = "month", city: str = "almaty", **fields):
+    """Вакансия официанта с оплатой amount за period (месяц или смену)."""
+    return replace(post(post_id, "Кафе ищет официанта", city), salary_min=amount, salary_max=amount,
+                   salary_period=period, **fields)
+
+
 def build_site(tmp_path, vacancies, now=NOW, **kwargs):
     """Маленький сайт из данных теста: возвращает папку, куда он собран."""
     save_vacancies(tmp_path / "data", vacancies)
@@ -176,3 +182,67 @@ def test_home_page_says_what_the_site_is_and_for_whom(tmp_path):
     # Пока вакансий нет, главная не обещает «0 вакансий для официантов»
     empty = (build_site(tmp_path / "empty", []) / "index.html").read_text("utf-8")
     assert "<title>Работа в Казахстане — 0 вакансий | vacante.kz</title>" in empty and "0 вакансий для" not in empty
+
+
+def test_list_pages_say_how_fresh_they_are(tmp_path):
+    """Под заголовком списка: когда он собран (время Казахстана) и сколько вакансий вышло за сутки и за три дня."""
+    out = build_site(tmp_path, [post(1, "Кафе ищет официанта, 250 000 тг", hours_ago=2),
+                                post(2, "Требуется повар, 300 000 тг", hours_ago=30),
+                                post(3, "Нужен продавец, 200 000 тг", hours_ago=71),
+                                post(4, "Требуется бармен, 280 000 тг", "astana", hours_ago=100),
+                                post(5, "Нужен кассир, 190 000 тг", "shymkent", hours_ago=40),
+                                post(6, "Требуется грузчик, 210 000 тг", "karaganda", hours_ago=1)],
+                     now=NOW + timedelta(minutes=17))
+    page = lambda *path: out.joinpath(*path, "index.html").read_text("utf-8")  # noqa: E731
+    assert ('<h1>Работа в Казахстане</h1>\n<p class="pay-stats">Обновлено 27.10 в 17:17: 2 новые вакансии за сутки, '
+            "5 за три дня.</p>") in page()
+    assert "Обновлено 27.10 в 17:17: 1 новая вакансия за сутки, 3 за три дня." in page("almaty")
+    assert "Обновлено 27.10 в 17:17: 1 новая вакансия за сутки, 2 за три дня." in page("almaty", "horeca")
+    # Всё, что вышло за три дня, вышло за сутки: второе число не повторяем. За сутки ничего: только три дня
+    assert "Обновлено 27.10 в 17:17: 1 новая вакансия за сутки.</p>" in page("karaganda")
+    assert "Обновлено 27.10 в 17:17: 1 новая вакансия за три дня.</p>" in page("shymkent")
+    # Новых за три дня нет: строки нет вовсе, «0 новых» не пишем
+    assert "Обновлено" not in page("astana") and "pay-stats" not in page("astana")
+    assert "Жаңартылды: 27.10, 17:17. 24 сағатта 2 жаңа вакансия, 3 күнде 5.</p>" in page("kk")
+    assert "Жаңартылды: 27.10, 17:17. 24 сағатта 1 жаңа вакансия.</p>" in page("kk", "karaganda")
+    assert "Жаңартылды: 27.10, 17:17. 3 күнде 1 жаңа вакансия.</p>" in page("kk", "shymkent")
+    assert "Жаңартылды" not in page("kk", "astana")
+
+
+def test_fresh_line_counts_by_kazakhstan_time_and_declines_the_words():
+    """Сутки и три дня считаются от времени сборки; дата и время в строке — по времени Казахстана."""
+    late = datetime(2026, 10, 27, 20, 30, tzinfo=timezone.utc)  # в Казахстане уже 28 октября, 01:30
+    items = [post(i, "Кафе ищет официанта", hours_ago=h) for i, h in enumerate((0, 15, 32, 60, 63, 64, 200), 1)]
+    assert site.fresh_counts(items, late) == (2, 5)  # к late постам 8,5–23,5 часа и до 71,5; следующему уже 72,5
+    assert site.fresh_line(2, 5, late, "ru") == "Обновлено 28.10 в 01:30: 2 новые вакансии за сутки, 5 за три дня."
+    assert site.fresh_line(21, 105, late, "ru") == "Обновлено 28.10 в 01:30: 21 новая вакансия за сутки, 105 за три дня."
+    assert site.fresh_line(0, 12, late, "ru") == "Обновлено 28.10 в 01:30: 12 новых вакансий за три дня."
+    assert site.fresh_line(0, 12, late, "kk") == "Жаңартылды: 28.10, 01:30. 3 күнде 12 жаңа вакансия."
+    assert site.fresh_line(0, 0, late, "ru") is None and site.fresh_line(0, 0, late, "kk") is None
+
+
+def test_shift_pages_tell_the_usual_pay_per_shift(tmp_path):
+    """«Подработка и смены»: от пяти вакансий с оплатой за смену — обычная оплата за смену, до сотен тенге."""
+    per_shift = [paid(i, amount, "day") for i, amount in enumerate((10_000, 11_540, 12_000, 13_560, 15_000, 18_000), 1)]
+    monthly = [paid(10 + i, amount, perks=["Ежедневная оплата"])
+               for i, amount in enumerate((200_000, 220_000, 250_000, 280_000, 300_000))]
+    few = [paid(20 + i, 9_000, "day", "astana") for i in range(4)]
+    many = [paid(30 + i, 8_000 + 100 * i, "day", "shymkent") for i in range(11)]
+    out = build_site(tmp_path, per_shift + monthly + few + many)
+    page = lambda *path: out.joinpath(*path, "index.html").read_text("utf-8")  # noqa: E731
+    m = site.money
+    almaty = page("almaty", shifts.SLUG)
+    assert (f'<p class="pay-stats">Оплата за смену по 6 вакансиям: в среднем {m(13600)} ₸, обычно от {m(11500)} '
+            f"до {m(15000)} ₸.</p>") in almaty
+    # Строка о месячной зарплате остаётся: в разделе есть и вакансии с месячной оплатой (платят каждый день)
+    monthly_line = f"Зарплата по 5 вакансиям с месячной оплатой: в среднем {m(250000)} ₸, обычно от {m(220000)} до {m(280000)} ₸ в месяц."
+    assert almaty.index("<h1>") < almaty.index("Обновлено") < almaty.index("Оплата за смену по") < almaty.index(monthly_line)
+    assert (f"Ауысым үшін төлем, 6 вакансия бойынша: орташа {m(13600)} ₸, әдетте {m(11500)} – {m(15000)} ₸."
+            in page("kk", "almaty", shifts.SLUG))
+    # Меньше пяти вакансий с оплатой за смену: «обычной» оплаты не называем
+    assert "Оплата за смену по" not in page("astana", shifts.SLUG)
+    # Только в разделе смен: на странице города этой строки нет
+    assert "Оплата за смену по" not in page("almaty") and "Оплата за смену по" not in page()
+    assert f"Оплата за смену по 21 вакансии: в среднем {m(9000)} ₸, обычно от {m(8500)} до {m(10000)} ₸." in page(shifts.SLUG)
+    assert site.pay_stats(per_shift + monthly) == (5, 250000, 220000, 280000)
+    assert site.pay_stats(per_shift[:4], "day") is None

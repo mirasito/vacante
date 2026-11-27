@@ -6,6 +6,8 @@
 {% block content %}
 <section class="hero">
   <h1>{{ heading }}</h1>
+  {% if fresh %}<p class="pay-stats">{{ fresh }}</p>{% endif %}
+  {% if shift_stats %}<p class="pay-stats">{{ t("Оплата за смену по {n} {vacancies}: в среднем {median} ₸, обычно от {low} до {high} ₸.", n=shift_stats[0], vacancies=shift_stats[0] | plural("вакансии", "вакансиям", "вакансиям"), median=money(shift_stats[1]), low=money(shift_stats[2]), high=money(shift_stats[3])) }}</p>{% endif %}
   {% if stats %}<p class="pay-stats">{{ t("Зарплата по {n} вакансиям с месячной оплатой: в среднем {median} ₸, обычно от {low} до {high} ₸ в месяц.", n=stats[0], median=money(stats[1]), low=money(stats[2]), high=money(stats[3])) }}</p>{% endif %}
   <div class="search">
     <input id="q" type="search" placeholder="{{ t("Должность, например «официант»") }}" autocomplete="off">

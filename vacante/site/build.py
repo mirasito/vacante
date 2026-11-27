@@ -359,15 +359,39 @@ def job_posting_ld(v: Vacancy, base_url: str, venue: dict | None = None) -> str 
 _DATA_ATTRS = re.compile(r' data-[a-z]+="[^"]*"')
 
 
-def pay_stats(items: list[Vacancy]) -> tuple[int, int, int, int] | None:
+def pay_stats(items: list[Vacancy], period: str = "month") -> tuple[int, int, int, int] | None:
     """Свои данные о зарплатах для страницы списка: (сколько вакансий, медиана, нижняя и верхняя четверть)
-    в тенге в месяц. Только вакансии с месячной оплатой: смены и часы в пересчёте исказили бы картину."""
+    в тенге в месяц. Только вакансии с месячной оплатой: смены и часы в пересчёте исказили бы картину.
+    period="day" — то же по вакансиям с оплатой за смену, в тенге за смену (раздел «Подработка и смены»)."""
     pays = sorted(((v.salary_min or v.salary_max) + (v.salary_max or v.salary_min)) // 2 for v in items
-                  if v.salary_period == "month" and (v.salary_min or v.salary_max))
+                  if v.salary_period == period and (v.salary_min or v.salary_max))
     if len(pays) < 5:
         return None
-    pick = lambda share: round(pays[min(len(pays) - 1, int(len(pays) * share))], -3)  # noqa: E731
+    digits = -3 if period == "month" else -2  # месячные суммы округляем до тысяч, оплату за смену до сотен
+    pick = lambda share: round(pays[min(len(pays) - 1, int(len(pays) * share))], digits)  # noqa: E731
     return len(pays), pick(0.5), pick(0.25), pick(0.75)
+
+
+def fresh_counts(items: list[Vacancy], now: datetime) -> tuple[int, int]:
+    """Сколько вакансий списка опубликовано за последние сутки и за три дня."""
+    ages = [now - datetime.fromisoformat(v.posted_at) for v in items]
+    return sum(age < timedelta(days=1) for age in ages), sum(age < timedelta(days=3) for age in ages)
+
+
+def fresh_line(day: int, three: int, now: datetime, lang: str) -> str | None:
+    """Строка под заголовком списка: когда он собран (время Казахстана) и сколько в нём новых вакансий за сутки
+    и за три дня (fresh_counts). Дата числом, а не «сегодня»: страницу читают и из кеша поисковика, спустя дни.
+    Новых за три дня нет — строки нет: «0 новых» читателю ничего не говорит."""
+    if not three:
+        return None
+    local = now.astimezone(LOCAL)
+    values = {"date": f"{local:%d.%m}", "time": f"{local:%H:%M}", "day": day, "three": three,
+              "new": plural(day or three, "новая вакансия", "новые вакансии", "новых вакансий", lang)}
+    if not day:
+        return i18n.t(lang, "Обновлено {date} в {time}: {three} {new} за три дня.", **values)
+    if day == three:
+        return i18n.t(lang, "Обновлено {date} в {time}: {day} {new} за сутки.", **values)
+    return i18n.t(lang, "Обновлено {date} в {time}: {day} {new} за сутки, {three} за три дня.", **values)
 
 
 def ld_json(data: dict | list) -> str:
@@ -461,8 +485,10 @@ def build(data_dir: Path, out: Path, base_url: str = "https://vacante.kz", now: 
                 (out / full if full else out).mkdir(parents=True, exist_ok=True)
                 ((out / full if full else out) / "cards.json").write_text(
                     json.dumps([card_row(v, lang) for v in items], ensure_ascii=False, separators=(",", ":")), "utf-8")
+        day, three = fresh_counts(items, now)
         write(path, "list.html", vacancies=items, total=len(items), cards=src, ids=ids, stats=pay_stats(items),
-              **ctx)
+              shift_stats=pay_stats(items, "day") if ctx.get("shifts_page") else None,
+              fresh=lambda lang: fresh_line(day, three, now, lang), **ctx)
 
     by_city: dict[str, list[Vacancy]] = defaultdict(list)
     for v in vacancies:

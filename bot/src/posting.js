@@ -9,11 +9,14 @@ import { answerCallback, edit, screen, send, tg } from "./telegram.js";
 import { HELP } from "./texts.js";
 
 const postIntro = (price) =>
-  `Разместим вакансию${price ? ` за ${job.money(price)}` : ""}: на vacante.kz, в приложении, в подборках подписчикам бота ` +
-  "и в Telegram-канале вашего города. " +
-  "Отклики кандидатов придут вам сюда. Ответьте на несколько вопросов, это пара минут.";
+  `Нет текста — ответьте на вопросы ниже, это пара минут. Вакансия выйдет${price ? ` за ${job.money(price)}` : ""} ` +
+  "на vacante.kz, в приложении, в подборках подписчикам бота и в Telegram-канале вашего города, отклики кандидатов придут сюда.";
 
-const PASTE_HINT = "⚡ Быстрее: вставьте сюда текст вакансии или ссылку на неё (hh.kz, пост в Telegram-канале), я сам заполню анкету.";
+// Первым делом — вставить готовый текст: из 25 брошенных в ноябре анкет 19 бросили на первых двух вопросах,
+// а текст вакансии у работодателя обычно уже есть (пост в другом канале, объявление на hh.kz)
+const PASTE_HINT =
+  "<b>Есть текст вакансии? Просто вставьте его сюда</b> или пришлите ссылку (hh.kz, пост в Telegram-канале): " +
+  "я сам заполню анкету, останется проверить.";
 
 // Новый черновик вместо старого. Возвращает id черновика или текст ошибки.
 // cameFrom — откуда пришёл работодатель (jobs.came_from): его называет каждый вход в анкету, список в index.js
@@ -42,7 +45,7 @@ export async function startPost(env, m, kind, cameFrom) {
   const price = await postPriceFor(env, chatId);
   // Из меню работодателя: про размещение там уже рассказали, сразу к делу
   const intro = cameFrom === "menu" ? "" : `${kind === "shift" ? shift.shiftIntro(price) : postIntro(price)}\n\n`;
-  return send(env, chatId, `${intro}${PASTE_HINT}\n\n${text}`, keyboard);
+  return send(env, chatId, `${PASTE_HINT}\n\n${intro}${text}`, keyboard);
 }
 
 // Поля из вставленного текста, которые можно взять в анкету этого вида

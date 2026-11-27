@@ -351,7 +351,7 @@ test("работодатель с /start: кнопка «Ищу сотрудни
   const menu = sentTo(calls, 110).at(-1).body;
   assert.match(menu.text, /Размещение бесплатное/);
   await press(env, boss, "emp:vacancy");
-  assert.match(sentTo(calls, 110).at(-1).body.text, /^⚡ Быстрее.*\n\n<i>Вопрос 1 из 7<\/i>\nВ каком городе работа/s);  // без повтора меню
+  assert.match(sentTo(calls, 110).at(-1).body.text, /^<b>Есть текст вакансии\? Просто вставьте его сюда<\/b>.*\n\n<i>Вопрос 1 из 7<\/i>\nВ каком городе работа/s);  // без повтора меню
   await press(env, boss, "emp:jobs");
   assert.match(sentTo(calls, 110).at(-1).body.text, /пока нет вакансий/);
   await press(env, boss, "emp:company");
@@ -636,7 +636,7 @@ test("платное размещение: оплата на Kaspi, потом �
   await say(env, admin, "/admin");
 
   await say(env, boss, "/vacancy");
-  assert.match(sentTo(calls, 100).at(-1).body.text, /Разместим вакансию за 900 ₸/);
+  assert.match(sentTo(calls, 100).at(-1).body.text, /Вакансия выйдет за 900 ₸/);
   await press(env, boss, "jobcity:astana", 11);
   await say(env, boss, "Повар");
   await say(env, boss, "Кафе");
@@ -695,7 +695,7 @@ test("платное размещение: оплата на Kaspi, потом �
 
   // Модератор видит тот же путь с оплатой, как работодатель, а без оплаты только отдельной кнопкой
   await say(env, admin, "/vacancy");
-  assert.match(sentTo(calls, 900).at(-1).body.text, /Разместим вакансию за 900 ₸/);
+  assert.match(sentTo(calls, 900).at(-1).body.text, /Вакансия выйдет за 900 ₸/);
   await press(env, admin, "jobcity:almaty", 60);
   for (const text of ["Бариста", "Кофейня", "200 000 ₸"]) await say(env, admin, text);
   for (const f of ["schedule", "address", "details"]) await press(env, admin, `skip:${f}`, 61);
@@ -1294,7 +1294,7 @@ test("откуда пришёл работодатель: метка есть у
     assert.deepEqual(await start(`/start post_${inner}`), { kind: "vacancy", came_from: "link" });
   }
   // И ведёт себя ссылка с меткой menu как ссылка: перед первым вопросом рассказ о размещении, которого нет у кнопки меню
-  assert.match(sentTo(calls, id).at(-1).body.text, /^Разместим вакансию/);
+  assert.match(sentTo(calls, id).at(-1).body.text, /^<b>Есть текст вакансии\?.*\n\nНет текста — ответьте на вопросы/s);
   assert.equal(env.DB.get("SELECT COUNT(*) AS n FROM jobs WHERE came_from IS NULL OR came_from = ''").n, 0);
 
   // «Я ищу работу» считается с той же меткой, что у черновика
@@ -1351,7 +1351,7 @@ test("быстрое размещение: текст в чат, ссылка н
   };
   const boss = user(140, "Самал");
   await say(env, boss, "/start post_site");
-  assert.match(sentTo(calls, 140).at(-1).body.text, /вставьте сюда текст вакансии или ссылку/);
+  assert.match(sentTo(calls, 140).at(-1).body.text, /Просто вставьте его сюда<\/b> или пришлите ссылку/);
   await say(env, boss, "Требуется повар в кафе «Арман»\nЗарплата: 15 000 тг за смену\nАлматы, мкр Самал-2\nПитание");
   const after = sentTo(calls, 140).at(-1).body.text;
   assert.match(after, /Заполнил анкету из вашего текста/);

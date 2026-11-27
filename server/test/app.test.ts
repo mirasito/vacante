@@ -67,3 +67,13 @@ test("страницы профиля закрыты от поисковиков
   assert.match(String(r.headers["x-robots-tag"]), /noindex/);
   assert.equal(r.headers["referrer-policy"], "no-referrer");
 });
+
+test("кривой адрес даёт 400 и не роняет сервер", async () => {
+  for (const path of ["//", "//x:99999999/", "//[::1/x"]) {
+    const r = await s.call("GET", path);
+    assert.equal(r.status, 400, path);
+    assert.deepEqual(r.json, { error: "Неверный адрес" });
+  }
+  const alive = await s.call("GET", "/health");
+  assert.equal(alive.status, 200);
+});

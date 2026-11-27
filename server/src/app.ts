@@ -68,11 +68,10 @@ export function createApp(deps: Deps) {
   const profileHost = hostOf(deps.config.profileOrigin);
   const origins = new Set(deps.config.appOrigins);
 
-  return async (raw: IncomingMessage, res: ServerResponse) => {
+  const handle = async (raw: IncomingMessage, res: ServerResponse) => {
     const host = (raw.headers.host ?? "").toLowerCase();
     const site: Site | undefined =
       host === apiHost || /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host) ? "api" : host === profileHost ? "profile" : undefined;
-    const url = new URL(raw.url ?? "/", "http://local");
     const origin = raw.headers.origin;
     const cors: Record<string, string> =
       site === "api" && origin && origins.has(origin)
@@ -80,6 +79,14 @@ export function createApp(deps: Deps) {
         : {};
     try {
       if (!site) throw new HttpError(404, "Неизвестный адрес");
+      // Адрес вида «//» или «//x:99999999/» new URL не разбирает: раньше исключение вылетало
+      // до try и роняло весь процесс, теперь это обычный ответ 400
+      let url: URL;
+      try {
+        url = new URL(raw.url ?? "/", "http://local");
+      } catch {
+        throw new HttpError(400, "Неверный адрес");
+      }
       if (raw.method === "OPTIONS") {
         return send(res, {
           status: 204,
@@ -100,6 +107,18 @@ export function createApp(deps: Deps) {
       const message = err instanceof HttpError ? err.message : "Ошибка сервера";
       send(res, { status, json: { error: message }, headers: { ...cors, "Cache-Control": "no-store" } });
     }
+  };
+  // Последняя страховка: ни один запрос не должен уронить процесс необработанным отказом промиса
+  return (raw: IncomingMessage, res: ServerResponse) => {
+    handle(raw, res).catch((err) => {
+      console.error(err instanceof Error ? err.stack : err);
+      if (!res.headersSent) {
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
+        res.end(JSON.stringify({ error: "Ошибка сервера" }));
+      } else {
+        res.destroy();
+      }
+    });
   };
 }
 

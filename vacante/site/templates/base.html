@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{{ t("vacante.kz — работа рядом с домом") }}{% endblock %}</title>
 <meta name="description" content="{% block description %}{{ t("Свежие вакансии для официантов, поваров, продавцов, курьеров и других рабочих профессий в Алматы и Астане. Собираем объявления со всего Казахстана в одном месте.") }}{% endblock %}">
-{% set canonical = base_url ~ "/" ~ (path ~ "/" if path else "") %}
+{# ru_only: у страницы вакансии текст один (как его написал работодатель), поэтому каноническая у обеих
+   версий русская, а казахская копия не в sitemap и без hreflang: поисковик не тратит обход на дубли #}
+{% set canon_path = page if ru_only else path %}
+{% set canonical = base_url ~ "/" ~ (canon_path ~ "/" if canon_path else "") %}
 <link rel="canonical" href="{{ canonical }}">
 {% if page != "404" and page != "admin" %}
 <meta property="og:site_name" content="vacante.kz">
@@ -17,7 +20,7 @@
 <meta property="og:locale" content="{{ 'kk_KZ' if lang == 'kk' else 'ru_RU' }}">
 <meta name="twitter:card" content="summary">
 {% endif %}
-{% if page != "404" and page != "admin" %}
+{% if page != "404" and page != "admin" and not ru_only %}
 {% for l in LANGS %}
 {% set p = (("kk/" if l == "kk" else "") ~ page) | trim("/") %}
 <link rel="alternate" hreflang="{{ l }}" href="{{ base_url }}/{{ p ~ '/' if p else '' }}">

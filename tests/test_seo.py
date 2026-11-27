@@ -289,3 +289,17 @@ def test_pay_level_counts_ten_percent_as_the_same():
     assert site.pay_of(replace(waiter, salary_min=None)) == 250_000
     assert site.pay_of(replace(waiter, salary_period="day")) is None and site.pay_of(waiter, "day") is None
     assert site.pay_of(post(2, "Кафе ищет официанта")) is None
+
+
+def test_vacancy_without_employer_goes_to_google_jobs_as_confidential_only_when_substantial():
+    """Google разрешает скрытого работодателя («confidential»), но короткий пост без зарплаты размечать незачем."""
+    text = ("Требуется официант в кафе в центре города. График 2/2 с 10:00 до 22:00, зарплата 250 000 тг, "
+            "питание за счёт заведения, официальное оформление, обучение на месте. Опыт не обязателен. "
+            "Звоните или пишите в WhatsApp.")
+    v = replace(post(2, text), employer=None)
+    assert len(v.text) >= site.CONFIDENTIAL_TEXT and v.salary_min and v.city
+    assert json.loads(site.job_posting_ld(v, "https://vacante.kz"))["hiringOrganization"] == {
+        "@type": "Organization", "name": "confidential"}
+    assert site.job_posting_ld(replace(v, salary_min=None, salary_max=None), "https://vacante.kz") is None
+    assert site.job_posting_ld(replace(v, city=None), "https://vacante.kz") is None
+    assert site.job_posting_ld(replace(v, text=text[:150]), "https://vacante.kz") is None

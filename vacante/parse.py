@@ -319,18 +319,24 @@ _PERKS = [(name, re.compile(p)) for name, p in PERKS]
 _FOR_STUDENTS = re.compile(r"(?<!не )студент")
 _NO_STUDENTS = re.compile(r"студент\w*[^.\n]{0,40}не (?:беспоко|рассматрива|подход|бер)|(?:без|кроме) студент")
 
-_NUM = r"\d{1,3}(?:[   .,]\d{3})+|\d+"
-_MULT = r"\s*(?:к|k|тыс\.?|тысяч[аи]?)(?![а-яa-z])"
+# Разделитель тысяч: пробелы, точка, запятая, апостроф («400’000»)
+_NUM = r"\d{1,3}(?:[   .,’']\d{3})+|\d+"
+# После «к» не должно быть буквы, в том числе казахской: «1 күн демалыс» — это день, а не «1к». «мың» — тысяча
+_MULT = r"\s*(?:к|k|тыс\.?|тысяч[аи]?|мың|мын)(?![а-яёa-zәғқңөұүһі])"
 SALARY = re.compile(
     rf"(?P<a>{_NUM})(?P<am>{_MULT})?"
     rf"(?:\s*(?:-|–|—|до)\s*(?P<b>{_NUM})(?P<bm>{_MULT})?)?"
     r"(?=(?P<tail>[^\n]{0,30}))"
 )
-_CURRENCY = re.compile(r"^\s*(тг|тенге|₸|kzt|tg)", re.I)
-_MONEY_CONTEXT = re.compile(r"зп|з/п|зарплат|оклад|оплат|доход|ставк|платим|выплат|смен")
+_CURRENCY = re.compile(r"^\s*(тг|тенге|теңге|₸|kzt|tg)", re.I)
+# Казахские «жалақы», «айлық», «төлемақы», «күндік ақы» тоже о зарплате
+_MONEY_CONTEXT = re.compile(r"зп|з/п|зарплат|заработн|оклад|оплат|доход|ставк|платим|выплат|смен|жалақ|айлы|ақы")
 _NOT_MONEY_TAIL = re.compile(r"^\s*(лет|год|:\d|/\s*\d|%|шт|кг|м\b|км|мин|чел|ч\b|час(а|ов)\b|\$|usd|руб|€|eur|долл)")
 _FOREIGN_CURRENCY_HEAD = re.compile(r"(\$|usd|€|руб\.?)\s*$")
 _LIMITS = {"hour": (300, 15_000), "day": (2_000, 150_000), "month": (40_000, 5_000_000)}
+# Слова периода целиком: «частичная выплата», «12-часовой день», казахское «немесе» и «ежемесячно» — не период
+_PER_HOUR = re.compile(r"час(?:а|ов)?\b|почасов")
+_PER_MONTH = re.compile(r"\bмес\b|месяц")
 
 _SCHEDULE = re.compile(r"(?<![\d/])(\d{1,2})\s*/\s*(\d{1,2})(?![\d/])")
 # Обычные сменные графики и вахты. Другие пары («11/4») принимаем только в строке про график,
@@ -475,7 +481,12 @@ def split_title(name: str) -> tuple[str, str | None]:
 
 
 def _to_int(num: str) -> int:
-    return int(re.sub(r"[   .,]", "", num))
+    return int(re.sub(r"[   .,’']", "", num))
+
+
+def _in_limits(period: str, a: int, b: int | None) -> bool:
+    lo, hi = _LIMITS[period]
+    return lo <= a <= hi and (b is None or lo <= b <= hi)
 
 
 def parse_salary(text: str) -> tuple[int | None, int | None, str | None]:
@@ -494,22 +505,28 @@ def parse_salary(text: str) -> tuple[int | None, int | None, str | None]:
             continue
         if _FOREIGN_CURRENCY_HEAD.search(head):
             continue
-        a = _to_int(a_raw) * (1000 if m["am"] else 1)
-        b = _to_int(b_raw) * (1000 if m["bm"] else 1) if b_raw else None
-        if m["bm"] and not m["am"] and a < 1000:
-            a *= 1000  # «от 250 до 400 тыс»
+        a, b = _to_int(a_raw), _to_int(b_raw) if b_raw else None
+        # «160 000 тыс.», «200.000 тысяч»: сумма уже полная, «тыс» лишнее
+        a *= 1000 if m["am"] and a < 10_000 else 1
+        if b is not None:
+            b *= 1000 if m["bm"] and b < 10_000 else 1
+            if a < 1000 and (m["bm"] or (b >= 10_000 and a * 1000 <= b)):
+                a *= 1000  # «от 250 до 400 тыс», «250 - 300.000»
         context = tail + " " + head[-15:]
-        if re.search(r"час", context):
+        by_amount = "hour" if a < 3_000 else "day" if a < 40_000 else "month"
+        if _PER_HOUR.search(context):
             period = "hour"
         elif re.search(r"день|дн\b|смен|сутк", context):
             period = "day"
-        elif re.search(r"мес", context):
+        elif _PER_MONTH.search(context):
             period = "month"
         else:
-            period = "hour" if a < 3_000 else "day" if a < 40_000 else "month"
-        lo, hi = _LIMITS[period]
-        if not lo <= a <= hi or (b is not None and not lo <= b <= hi):
-            continue
+            period = by_amount
+        if not _in_limits(period, a, b):
+            # Сумма велика для слова рядом: «270 000 тг за 15 смен», «в ночную смену … 160 000» — это месяц
+            if max(a, b or a) <= _LIMITS[period][1] or not _in_limits(by_amount, a, b):
+                continue
+            period = by_amount
         if b is not None and b < a:
             a, b = b, a
         if head.rstrip().endswith("до"):

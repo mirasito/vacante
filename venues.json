@@ -10735,6 +10735,15 @@
    "website"
   ]
  },
+ "almaty:cu": {
+  "name": "CU",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00",
+  "instagram": "cu_kazakhstan",
+  "source": "https://2gis.kz/almaty/firm/70000001102632707"
+ },
  "almaty:cu central asia": {
   "name": "CU Central Asia",
   "city": "almaty",
@@ -28344,6 +28353,22 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-26T14:47:22+00:00"
+ },
+ "almaty:барик": {
+  "name": "Барик",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00",
+  "instagram": "barik.kz_",
+  "website": "https://barik.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001078718777",
+  "avatar_checked_at": "2026-11-28T06:43:39+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3453d0f94fd3a544.jpg",
+  "avatar_source": "website"
  },
  "almaty:бариста": {
   "name": "Бариста",
@@ -54573,6 +54598,13 @@
   "v": 3,
   "checked_at": "2026-10-31T11:43:29+00:00"
  },
+ "astana:абдыкаримов е к": {
+  "name": "Абдыкаримов Е.К.",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00"
+ },
  "astana:абилов бауыржан": {
   "name": "Абилов Бауыржан",
   "city": "astana",
@@ -61838,6 +61870,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-10T12:44:06+00:00"
+ },
+ "astana:престиж": {
+  "name": "ИП Престиж",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00"
  },
  "astana:приведи друга": {
   "name": "Приведи друга",
@@ -78765,6 +78804,13 @@
   "v": 3,
   "checked_at": "2026-11-11T15:45:20+00:00"
  },
+ "kyzylorda:работа вахтой в россии": {
+  "name": "Работа Вахтой в России",
+  "city": "kyzylorda",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00"
+ },
  "kyzylorda:радуга тоо компания raduga kdr": {
   "name": "Радуга, ТОО (Компания Raduga KDR)",
   "city": "kyzylorda",
@@ -81336,6 +81382,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-25T11:43:29+00:00"
+ },
+ "petropavlovsk:alash": {
+  "name": "Alash",
+  "city": "petropavlovsk",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00",
+  "instagram": "alash_music_studio",
+  "source": "https://2gis.kz/petropavlovsk/firm/70000001083304453"
  },
  "petropavlovsk:alcomag": {
   "name": "AlcoMag",
@@ -88457,6 +88512,13 @@
   "v": 3,
   "checked_at": "2026-11-01T11:43:30+00:00"
  },
+ "shymkent:ера": {
+  "name": "ЕРА",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00"
+ },
  "shymkent:есть сыр сыроварня": {
   "name": "“Есть сыр” сыроварня",
   "city": "shymkent",
@@ -90850,6 +90912,13 @@
   "checked_at": "2026-11-13T17:42:38+00:00",
   "instagram": "nd_sport_taraz",
   "source": "https://2gis.kz/taraz/firm/70000001087555309"
+ },
+ "taraz:nlaser": {
+  "name": "Nlaser",
+  "city": "taraz",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T06:43:37+00:00"
  },
  "taraz:nur ai": {
   "name": "Nur-Ai",

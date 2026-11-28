@@ -1075,6 +1075,15 @@
   "v": 3,
   "checked_at": "2026-11-02T16:21:33+00:00"
  },
+ "aktau:saff": {
+  "name": "Saff",
+  "city": "aktau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T12:42:57+00:00",
+  "instagram": "saff_cafe_aktau",
+  "source": "https://2gis.kz/aktau/firm/70000001080581822"
+ },
  "aktau:sak monshasy": {
   "name": "Sak Monshasy",
   "city": "aktau",
@@ -6855,7 +6864,7 @@
   "instagram": "alidarservice",
   "telegram": "alidarservice",
   "source": "https://2gis.kz/almaty/firm/70000001118459437",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "telegram"
   ]
@@ -11725,6 +11734,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:drum family": {
+  "name": "DRUM FAMILY",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T12:42:57+00:00",
+  "instagram": "drumfamily.almaty",
+  "source": "https://2gis.kz/almaty/firm/70000001114704805"
  },
  "almaty:druzya druzey друзья друзей": {
   "name": "Druzya Druzey (Друзья Друзей)",
@@ -20114,7 +20132,7 @@
   "instagram": "pcagroup.kz",
   "website": "http://www.pcagroup.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940001010624",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -20334,7 +20352,7 @@
   "instagram": "spaplatinum_corona",
   "website": "http://new.platinum-corona.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001110581207",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21086,7 +21104,7 @@
   "instagram": "rai_company",
   "website": "http://rai-company.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001035551354",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -21755,6 +21773,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-11T15:45:20+00:00"
+ },
+ "almaty:ruslan": {
+  "name": "Ruslan",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T12:42:57+00:00"
  },
  "almaty:rv service": {
   "name": "RV SERVICE",
@@ -24189,7 +24214,7 @@
   "instagram": "top.kz",
   "website": "https://top.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001021055352",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34344,6 +34369,22 @@
   "v": 3,
   "checked_at": "2026-11-27T18:44:08+00:00"
  },
+ "almaty:мамедов м к world citizen": {
+  "name": "Мамедов М.К. (World Citizen)",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T12:42:57+00:00",
+  "instagram": "world_citizen.kz",
+  "website": "http://world-citizen.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001028610971",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "3c4bafaf6bd08d02.jpg",
+  "avatar_source": "website"
+ },
  "almaty:мамедова": {
   "name": "Мамедова",
   "city": "almaty",
@@ -35244,7 +35285,7 @@
   "checked_at": "2026-11-07T11:45:05+00:00",
   "website": "http://www.montazhproekt.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000798229",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -36150,6 +36191,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:омаров м ғ": {
+  "name": "Омаров М.Ғ",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T12:42:57+00:00"
  },
  "almaty:омарова н қ": {
   "name": "ОМАРОВА Н Қ",
@@ -44842,7 +44890,7 @@
   "instagram": "caviarhouse.kz",
   "website": "http://caviarhouse.kz/",
   "source": "https://2gis.kz/astana/firm/70000001025428203",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65282,6 +65330,15 @@
   "avatar": "1f4570a98e64b8c3.jpg",
   "avatar_source": "website"
  },
+ "astana:хинкальная": {
+  "name": "Хинкальная",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T12:42:57+00:00",
+  "instagram": "xinkalnaya_1_qazaqstan",
+  "source": "https://2gis.kz/astana/firm/70000001106049642"
+ },
  "astana:хинкальная 1": {
   "name": "Хинкальная 1",
   "city": "astana",
@@ -74459,7 +74516,7 @@
   "instagram": "mechta.kz",
   "website": "https://mechta.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001034028148",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -81028,7 +81085,7 @@
   "checked_at": "2026-10-31T11:43:29+00:00",
   "website": "https://pavlodarenergo.kz/",
   "source": "https://2gis.kz/pavlodar/firm/70000001018658154",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -84676,7 +84733,7 @@
   "telegram": "blin_coffee",
   "website": "https://blin-coffee.kz/",
   "source": "https://2gis.kz/semej/firm/70000001054630421",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "telegram",
    "website"
@@ -95669,7 +95726,7 @@
   "instagram": "mechta.kz",
   "website": "https://www.mechta.kz/",
   "source": "https://www.instagram.com/mechta.kz/",
-  "avatar_checked_at": "2026-11-21T12:42:35+00:00",
+  "avatar_checked_at": "2026-11-28T12:42:58+00:00",
   "avatar_tried": [
    "website"
   ]

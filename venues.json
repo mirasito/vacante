@@ -18288,6 +18288,22 @@
   "v": 3,
   "checked_at": "2026-11-03T00:43:42+00:00"
  },
+ "almaty:menzo zhez": {
+  "name": "Menzo Zhez",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00",
+  "instagram": "menzo.jez",
+  "website": "http://jez.menzo.kz/",
+  "source": "https://2gis.kz/zhezkazgan/firm/70000001068498192",
+  "avatar_checked_at": "2026-11-28T09:43:45+00:00",
+  "avatar_tried": [
+   "website"
+  ],
+  "avatar": "2c1819f120f2cc3b.jpg",
+  "avatar_source": "website"
+ },
  "almaty:meowtattoohome": {
   "name": "Meowtattoohome",
   "city": "almaty",
@@ -19005,6 +19021,13 @@
   "checked_at": "2026-10-30T03:43:38+00:00",
   "instagram": "nauryz.kz",
   "source": "https://2gis.kz/almaty/firm/70000001081531267"
+ },
+ "almaty:nazarov": {
+  "name": "Nazarov",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00"
  },
  "almaty:nazik sezim": {
   "name": "Nazik Sezim",
@@ -20350,6 +20373,13 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-12T17:43:50+00:00"
+ },
+ "almaty:portadoсалон премиальных дверей": {
+  "name": "“Portado”салон премиальных дверей",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00"
  },
  "almaty:poseidon co": {
   "name": "POSEIDON CO",
@@ -40054,6 +40084,13 @@
   "v": 3,
   "checked_at": "2026-10-31T21:43:05+00:00"
  },
+ "almaty:тусенова роза": {
+  "name": "Тусенова Роза",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00"
+ },
  "almaty:тэрра компани": {
   "name": "ТЭРРА Компани",
   "city": "almaty",
@@ -41462,6 +41499,13 @@
   "checked_at": "2026-11-11T18:43:31+00:00",
   "instagram": "tefani_almaty",
   "source": "https://2gis.kz/almaty/firm/70000001090070293"
+ },
+ "almaty:шанырак": {
+  "name": "Шанырак",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00"
  },
  "almaty:шаров": {
   "name": "Шаров",
@@ -58208,6 +58252,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-07T09:44:22+00:00"
+ },
+ "astana:женской одежды": {
+  "name": "ЖЕНСКОЙ ОДЕЖДЫ",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00"
  },
  "astana:жетысу": {
   "name": "Жетысу",
@@ -97443,6 +97494,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-02T21:44:39+00:00"
+ },
+ "ust-kamenogorsk:сайдашева т в": {
+  "name": "Сайдашева Т.В.",
+  "city": "ust-kamenogorsk",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T09:43:44+00:00"
  },
  "ust-kamenogorsk:сапаров": {
   "name": "Сапаров",

@@ -1685,6 +1685,13 @@
   "v": 3,
   "checked_at": "2026-11-12T05:44:57+00:00"
  },
+ "aktau:бекибаев": {
+  "name": "Бекибаев",
+  "city": "aktau",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00"
+ },
  "aktau:берекет": {
   "name": "Берекет",
   "city": "aktau",
@@ -17614,6 +17621,15 @@
   "v": 3,
   "checked_at": "2026-10-28T21:46:06+00:00"
  },
+ "almaty:luna": {
+  "name": "LUNA",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00",
+  "instagram": "luna_dostyk",
+  "source": "https://2gis.kz/almaty/firm/70000001040360311"
+ },
  "almaty:lux flowers": {
   "name": "LUX FLOWERS",
   "city": "almaty",
@@ -23720,7 +23736,7 @@
   "instagram": "technosector_kz",
   "website": "https://www.technosector.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001019577023",
-  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42532,6 +42548,13 @@
   "v": 3,
   "checked_at": "2026-11-03T18:45:16+00:00"
  },
+ "astana:adal work": {
+  "name": "Adal work",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00"
+ },
  "astana:adidas kazakhstan": {
   "name": "adidas Kazakhstan",
   "city": "astana",
@@ -46567,6 +46590,20 @@
   "v": 3,
   "checked_at": "2026-11-23T12:44:32+00:00"
  },
+ "astana:galamat company": {
+  "name": "Galamat Company",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00",
+  "instagram": "galamat.astana",
+  "website": "http://galamat.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001101165265",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "astana:galanz bottlers ао": {
   "name": "Galanz Bottlers, АО",
   "city": "astana",
@@ -48900,7 +48937,7 @@
   "instagram": "lanzhou_astana",
   "website": "https://lanzhou.kz/",
   "source": "https://2gis.kz/astana/firm/70000001104987225",
-  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -51582,6 +51619,13 @@
   "instagram": "qazdrivetaxi",
   "source": "https://2gis.kz/astana/firm/70000001117635608"
  },
+ "astana:qazgroup": {
+  "name": "QAZGROUP",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00"
+ },
  "astana:qazmedbio казмедбио": {
   "name": "QazMedBio (КазМедБио)",
   "city": "astana",
@@ -52987,7 +53031,7 @@
   "instagram": "stool.kz.astana",
   "website": "https://stool.kz/",
   "source": "https://2gis.kz/astana/firm/70000001054703097",
-  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -64605,6 +64649,13 @@
   "v": 3,
   "checked_at": "2026-11-04T23:43:42+00:00"
  },
+ "astana:тургунова асель": {
+  "name": "Тургунова Асель",
+  "city": "astana",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00"
+ },
  "astana:туркестан сауда 2005": {
   "name": "Туркестан Сауда - 2005",
   "city": "astana",
@@ -69162,6 +69213,20 @@
   "checked_at": "2026-11-05T02:43:49+00:00",
   "instagram": "gadim_atyrau",
   "source": "https://2gis.kz/atyrau/firm/70000001067516867"
+ },
+ "atyrau:шашлыкоff": {
+  "name": "ШашлыкоFF",
+  "city": "atyrau",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00",
+  "instagram": "shashlikoff_atyrau",
+  "website": "http://atyrau.shashlikoff.com/",
+  "source": "https://2gis.kz/atyrau/firm/70000001041137385",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "atyrau:шашлыкофф": {
   "name": "ШАШЛЫКОФФ",
@@ -74323,7 +74388,7 @@
   "instagram": "kcell.kz",
   "website": "https://www.kcell.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033792530",
-  "avatar_checked_at": "2026-11-21T11:42:46+00:00",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -89402,6 +89467,20 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-25T05:44:13+00:00"
+ },
+ "shymkent:просервис юг": {
+  "name": "Просервис Юг",
+  "city": "shymkent",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T11:43:11+00:00",
+  "instagram": "proservis.shymkent",
+  "website": "http://pross.kz/",
+  "source": "https://2gis.kz/shymkent/firm/70000001026013728",
+  "avatar_checked_at": "2026-11-28T11:43:12+00:00",
+  "avatar_tried": [
+   "website"
+  ]
  },
  "shymkent:пфк ордабасы": {
   "name": "ПФК Ордабасы",

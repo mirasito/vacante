@@ -24980,6 +24980,20 @@
   "v": 3,
   "checked_at": "2026-11-20T08:43:21+00:00"
  },
+ "almaty:vistaline": {
+  "name": "VistaLine",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T07:43:13+00:00",
+  "instagram": "vistaline.kz",
+  "website": "http://www.vistaline.kz/",
+  "source": "https://2gis.kz/almaty/firm/70000001037933871",
+  "avatar_checked_at": "2026-11-28T07:43:14+00:00",
+  "avatar_tried": [
+   "website"
+  ]
+ },
  "almaty:vito": {
   "name": "VITO",
   "city": "almaty",
@@ -25291,7 +25305,7 @@
   "checked_at": "2026-10-31T05:43:11+00:00",
   "website": "https://wildberries.ru/",
   "source": "https://2gis.kz/almaty/firm/70000001033122288",
-  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
+  "avatar_checked_at": "2026-11-28T07:43:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -34315,6 +34329,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "almaty:марлин & ko": {
+  "name": "Марлин & Ko",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T07:43:13+00:00",
+  "instagram": "marlin.alkoshop",
+  "source": "https://2gis.kz/almaty/firm/70000001024945614"
  },
  "almaty:масло дел": {
   "name": "Масло-Дел",
@@ -43818,6 +43841,13 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "astana:aқhұр астана 2005": {
+  "name": "ТОО AқHұр-Астана 2005",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T07:43:13+00:00"
  },
  "astana:b b nura": {
   "name": "B.B.Nura",
@@ -55090,7 +55120,7 @@
   "instagram": "da_istina_official",
   "website": "https://istina.kz/",
   "source": "https://2gis.kz/astana/firm/70000001083260205",
-  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
+  "avatar_checked_at": "2026-11-28T07:43:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -65153,7 +65183,7 @@
   "instagram": "ananasflowers.kz",
   "website": "http://ananasflowers.kz/",
   "source": "https://2gis.kz/astana/firm/70000001075910091",
-  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
+  "avatar_checked_at": "2026-11-28T07:43:14+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -74631,7 +74661,7 @@
   "telegram": "astralombard_kz",
   "website": "https://astra-lombard.kz/",
   "source": "https://2gis.kz/kokshetau/firm/70000001033357709",
-  "avatar_checked_at": "2026-11-21T07:43:00+00:00",
+  "avatar_checked_at": "2026-11-28T07:43:14+00:00",
   "avatar_tried": [
    "telegram",
    "website"

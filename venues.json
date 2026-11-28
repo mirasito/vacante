@@ -28092,6 +28092,15 @@
   "v": 3,
   "checked_at": "2026-11-13T08:45:10+00:00"
  },
+ "almaty:атабаев барбершоп brotherhood": {
+  "name": "Атабаев «Барбершоп Brotherhood»",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T10:43:02+00:00",
+  "instagram": "brotherhood.bes",
+  "source": "https://2gis.kz/almaty/firm/70000001083875207"
+ },
  "almaty:ателье": {
   "name": "Ателье",
   "city": "almaty",
@@ -34035,7 +34044,7 @@
   "checked_at": "2026-11-14T09:42:46+00:00",
   "website": "https://loftpark.kz/",
   "source": "https://2gis.kz/almaty/firm/70000001119072622",
-  "avatar_checked_at": "2026-11-21T10:42:13+00:00",
+  "avatar_checked_at": "2026-11-28T10:43:04+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -61438,6 +61447,15 @@
   "instagram": "cotton_astana_kz",
   "source": "https://2gis.kz/astana/firm/70000001082729560"
  },
+ "astana:озюрт": {
+  "name": "ОЗЮРТ",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T10:43:02+00:00",
+  "instagram": "ozyurt.kz",
+  "source": "https://2gis.kz/astana/firm/70000001019237907"
+ },
  "astana:ойл": {
   "name": "ОЙЛ",
   "city": "astana",
@@ -88438,6 +88456,13 @@
   "status": "skip",
   "v": 3,
   "checked_at": "2026-11-11T04:44:03+00:00"
+ },
+ "shymkent:бекамед": {
+  "name": "БЕКАМЕД",
+  "city": "shymkent",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T10:43:02+00:00"
  },
  "shymkent:бексултан 2014": {
   "name": "БЕКСУЛТАН-2014",

@@ -6329,6 +6329,13 @@
   "v": 3,
   "checked_at": "2026-11-10T22:44:38+00:00"
  },
+ "almaty:air gym": {
+  "name": "AIR GYM",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00"
+ },
  "almaty:ais__team": {
   "name": "Ais__team",
   "city": "almaty",
@@ -18935,6 +18942,13 @@
   "instagram": "myrza.brands",
   "source": "https://2gis.kz/almaty/firm/70000001059310460"
  },
+ "almaty:myservice": {
+  "name": "MYService",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00"
+ },
  "almaty:nag kazakhstan наг казахстан": {
   "name": "NAG Kazakhstan (НАГ Казахстан)",
   "city": "almaty",
@@ -23928,6 +23942,13 @@
   "instagram": "the.onesystem",
   "source": "https://2gis.kz/almaty/firm/70000001064905924"
  },
+ "almaty:the outlet store": {
+  "name": "The outlet store",
+  "city": "almaty",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00"
+ },
  "almaty:the rdb group": {
   "name": "THE RDB-GROUP",
   "city": "almaty",
@@ -26452,6 +26473,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-06T04:43:35+00:00"
+ },
+ "almaty:азия кухня": {
+  "name": "Азия Кухня",
+  "city": "almaty",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00",
+  "instagram": "_kafe_aziya_",
+  "source": "https://2gis.kz/almaty/firm/70000001045777492"
  },
  "almaty:азия см": {
   "name": "АЗИЯ-СМ",
@@ -32533,7 +32563,7 @@
   "instagram": "kelet.kz",
   "website": "https://kelet.kz/",
   "source": "https://2gis.kz/almaty/firm/9429940000796758",
-  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -42151,6 +42181,13 @@
   "v": 3,
   "checked_at": "2026-11-15T20:41:19+00:00"
  },
+ "almaty:ұзақова р а": {
+  "name": "ҰЗАҚОВА Р.А",
+  "city": "almaty",
+  "status": "skip",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00"
+ },
  "almaty:әдемі ай": {
   "name": "Әдемі-ай",
   "city": "almaty",
@@ -43591,7 +43628,7 @@
   "checked_at": "2026-11-07T07:43:53+00:00",
   "website": "https://astana.atkglobal.kz/",
   "source": "https://2gis.kz/astana/firm/70000001093323985",
-  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -45841,6 +45878,15 @@
   "v": 3,
   "checked_at": "2026-11-10T19:44:27+00:00"
  },
+ "astana:edukey kz": {
+  "name": "Edukey.kz",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00",
+  "instagram": "edukey.kz",
+  "source": "https://www.instagram.com/edukey.kz/"
+ },
  "astana:eea group": {
   "name": "EEA GROUP",
   "city": "astana",
@@ -46743,6 +46789,13 @@
   ],
   "avatar": "23edf9c7784624b4.jpg",
   "avatar_source": "website"
+ },
+ "astana:golden doe": {
+  "name": "Golden Doe",
+  "city": "astana",
+  "status": "none",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00"
  },
  "astana:golden nuts": {
   "name": "Golden Nuts",
@@ -51257,6 +51310,24 @@
   "v": 3,
   "checked_at": "2026-11-25T05:44:13+00:00"
  },
+ "astana:provino astana федина ип": {
+  "name": "ProVino Astana (Федина, ИП)",
+  "city": "astana",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00",
+  "instagram": "provinoastana",
+  "telegram": "provinolife",
+  "website": "http://provino.com.kz/",
+  "source": "https://2gis.kz/astana/firm/70000001086834971",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
+  "avatar_tried": [
+   "telegram",
+   "website"
+  ],
+  "avatar": "d1cc65030f4b8d4f.jpg",
+  "avatar_source": "telegram"
+ },
  "astana:proxymo": {
   "name": "Proxymo",
   "city": "astana",
@@ -51721,7 +51792,7 @@
   "instagram": "negroni_astana",
   "website": "https://negroni.taptable.kz/",
   "source": "https://2gis.kz/astana/firm/70000001088744333",
-  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -67166,7 +67237,7 @@
   "instagram": "lift_capital",
   "website": "https://liftcapital.kz/",
   "source": "https://2gis.kz/atyrau/firm/70000001095550821",
-  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -70273,6 +70344,15 @@
   "status": "none",
   "v": 3,
   "checked_at": "2026-11-03T13:44:33+00:00"
+ },
+ "karaganda:lider avto": {
+  "name": "LIDER AVTO",
+  "city": "karaganda",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00",
+  "instagram": "lider.avto.krg",
+  "source": "https://2gis.kz/karaganda/firm/70000001103104531"
  },
  "karaganda:lissa": {
   "name": "LISSA",
@@ -75365,7 +75445,7 @@
   "checked_at": "2026-10-31T07:43:27+00:00",
   "website": "https://agro-s.kz/",
   "source": "https://2gis.kz/kostanaj/firm/70000001042928156",
-  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -80550,6 +80630,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "pavlodar:макел пв": {
+  "name": "МАКЕЛ ПВ",
+  "city": "pavlodar",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00",
+  "instagram": "too_makel_pv",
+  "source": "https://2gis.kz/pavlodar/firm/70000001041759343"
  },
  "pavlodar:максимальный размах corporation": {
   "name": "Максимальный размах corporation",
@@ -90217,7 +90306,7 @@
   "checked_at": "2026-10-31T06:44:38+00:00",
   "website": "https://www.bcc.kz/",
   "source": "https://www.bcc.kz/llms.txt",
-  "avatar_checked_at": "2026-11-21T08:43:07+00:00",
+  "avatar_checked_at": "2026-11-28T08:43:48+00:00",
   "avatar_tried": [
    "website"
   ]
@@ -90908,6 +90997,15 @@
   "avatar_tried": [
    "website"
   ]
+ },
+ "taraz:maison222hotel": {
+  "name": "Maison222Hotel",
+  "city": "taraz",
+  "status": "found",
+  "v": 3,
+  "checked_at": "2026-11-28T08:43:47+00:00",
+  "instagram": "maison222hotel",
+  "source": "https://2gis.kz/taraz/firm/70000001119434003"
  },
  "taraz:miniso kazakhstan": {
   "name": "MINISO Kazakhstan",
